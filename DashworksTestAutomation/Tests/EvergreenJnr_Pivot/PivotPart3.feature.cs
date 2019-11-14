@@ -667,7 +667,7 @@ this.FeatureBackground();
                         "BLUE"});
             table21.AddRow(new string[] {
                         "20",
-                        "NONE"});
+                        "IGNORE"});
             table21.AddRow(new string[] {
                         "21",
                         "BLUE"});

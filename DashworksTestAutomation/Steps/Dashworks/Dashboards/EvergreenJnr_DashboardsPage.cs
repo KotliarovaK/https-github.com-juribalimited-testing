@@ -37,6 +37,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _user = user;
         }
 
+        //TODO should be deleted and replaced by the same step as it done for Lists - GetAllListNames
         [Then(@"Dashboard with '(.*)' title displayed in All Dashboards")]
         public void ThenFollowingDashboardDisplayedInAllDashboardList(string dashboardName)
         {
@@ -725,14 +726,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"Card '(.*)' Widget is displayed to the user")]
-        public void ThenCardWidgetIsDisplayedToTheUser(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
-        }
-
         [Then(@"'(.*)' color is displayed for widget")]
         public void ThenColorIsDisplayedForWidget(string color)
         {
@@ -963,6 +956,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
+
             List<string> labelList = page.GetPointOfColumnWidgetByName(widgetName);
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
 
@@ -1116,6 +1110,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Verify.That(page.GetTableGridValues(widget)
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
+        }
+
+        public void WhenUserOpensDashboard(string p0)
+        {
+            //For dashboards navigations is used the same method as for List Navigation
         }
 
         #region Dashboards details

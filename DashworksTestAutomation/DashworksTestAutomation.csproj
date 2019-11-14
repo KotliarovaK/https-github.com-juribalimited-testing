@@ -168,6 +168,7 @@
     <Compile Include="DTO\RuntimeVariables\ColumnValue.cs" />
     <Compile Include="DTO\RuntimeVariables\CustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\ElementCoordinates.cs" />
+    <Compile Include="DTO\RuntimeVariables\Readiness\DefaultReadinessId.cs" />
     <Compile Include="DTO\RuntimeVariables\Readiness\Readiness.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
@@ -357,6 +358,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\BeforeScenario\SetDefaultReadinessBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\ReadinessSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\AfterScenario\RemoveReadinessAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Scope\ScopeChangesSteps.cs" />
@@ -1331,6 +1333,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EvergreenOwned.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart10.feature.cs">
+      <DependentUpon>ListDetailsFunctionalityPart10.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
       <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
@@ -2337,6 +2344,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenOwned.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EvergreenOwned.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart10.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ListDetailsFunctionalityPart10.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

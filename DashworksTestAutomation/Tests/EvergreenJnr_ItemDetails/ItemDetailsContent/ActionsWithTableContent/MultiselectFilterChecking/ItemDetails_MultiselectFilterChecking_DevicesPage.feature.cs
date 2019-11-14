@@ -170,7 +170,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
-                        "NONE"});
+                        "IGNORE"});
 #line 28
  testRunner.Then("following String Values are displayed in the filter dropdown for the \'Application" +
                     " Readiness\' column", ((string)(null)), table3, "Then ");

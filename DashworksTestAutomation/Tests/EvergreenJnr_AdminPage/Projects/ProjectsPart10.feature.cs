@@ -368,6 +368,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
+        [NUnit.Framework.CategoryAttribute("DAS18943")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Operating System", "Windows 8", "28", "All Users", "All Devices", "Devices", "Device Scope", "Devices to add (0 of 16819 selected)", "StaticList6429", "Devices to add (0 of 24 selected)", "Devices to add (0 of 16819 selected)", null)]
@@ -406,6 +407,7 @@ this.FeatureBackground();
                     "EvergreenJnr_AdminPage",
                     "AdminPage",
                     "DAS12999",
+                    "DAS18943",
                     "Cleanup",
                     "Projects"};
             if ((exampleTags != null))

@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks 'CREATE' button 
-	Then Card 'WidgetForDAS15207' Widget is displayed to the user
+	Then 'WidgetForDAS15207' Widget is displayed to the user
 	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'WidgetForDAS16138' Widget is displayed to the user
+	Then 'WidgetForDAS16138' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks data in card 'WidgetForDAS16138' widget
 	Then Save as a new list option is available
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	| Card       | WidgetForDAS16069_2 | 1803 App Compliance | Aggregate | Count             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'WidgetForDAS16069_2' Widget is displayed to the user
+	Then 'WidgetForDAS16069_2' Widget is displayed to the user	
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks data in card 'WidgetForDAS16069_2' widget
 	Then Save as a new list option is available
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 	And User selects 'Pink' in the Colour Scheme
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then Card 'WidgetForDAS15134' Widget is displayed to the user
+	Then 'WidgetForDAS16069_2' Widget is displayed to the user
 	And 'Pink' color is displayed for widget
 	When User clicks Ellipsis menu for 'WidgetForDAS15134' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks 'CREATE' button 
-	Then Card 'WidgetForDAS15722' Widget is displayed to the user
+	Then 'WidgetForDAS15722' Widget is displayed to the user
 	And There are no errors in the browser console
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks data in card 'WidgetForDAS15722' widget

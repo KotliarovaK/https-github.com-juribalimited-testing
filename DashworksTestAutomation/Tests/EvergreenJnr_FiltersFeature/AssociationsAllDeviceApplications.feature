@@ -125,24 +125,21 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterC
 	When User removes 'Used on device' association in Association panel
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @DAS18531
+@Evergreen @AllDeviceApplications @DAS18531 @DAS18763
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Used on device' option in expanded associations list
 	When User clicks the Filters button
-	When User add "App Vendor" filter where type is "Equals" with added column and following value:
+	When User add "App Version" filter where type is "Equals" with added column and following value:
 	| Values |
-	| 0      |
-	When User clicks 'RUN LIST' button
-	Then table content is present
+	| sss    |
 	When User clicks the Associations button
+	When User clicks 'RUN LIST' button
 	When User have reset all filters
-	Then message 'No device applications found' is displayed to the user
-	
-#link with DAS-18763 after fail
+	Then message 'No list generated Use association panel to create a list' is displayed to the user
+
 @Evergreen @AllDeviceApplications @DAS18531 @Cleanup
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList
 	When User clicks 'Devices' on the left-hand menu
@@ -155,7 +152,6 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User create dynamic list with "DevicesList18531" name on "Devices" page
 	Then "DevicesList18531" list is displayed to user
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Used on device' option in expanded associations list
@@ -171,11 +167,11 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User removes custom list with "DevicesList18531" name
 	Then list with "DevicesList18531" name is removed
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User navigates to the "AssociationList18531" list
 	When User clicks the Associations button
-	Then message 'This list has errors' is displayed to the user
+	#link with DAS-18763 after fail
+	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
 @Evergreen @AllDeviceApplications @DAS18424
 Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdde
@@ -210,3 +206,29 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	Then "AssociationList18379" list is displayed to user
 	When User clicks Export button on the Admin page
 	Then User checks that file "Dashworks-Device-Applications-TestAllDeviceApplications" was downloaded
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18426 @Cleanup
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects '<operator1>' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator2>' option in expanded associations list
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator3>' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User clicks content from "Hostname" column
+	Then Details page for "<hostname>" item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	When User enters "<application>" text in the Search field for "Application" column
+	Then '<installed>' content is displayed in the 'Installed' column
+	Then '<used>' content is displayed in the 'Used' column
+	Then '<entitled>' content is displayed in the 'Entitled' column
+
+Examples: 
+	| operator1           | operator2               | operator3               | hostname        | application                   | installed | used    | entitled |
+	| Used on device      | Not entitled to device  | Not installed on device | 00BDM1JUR8IF419 | 20040610sqlserverck           | UNKNOWN   | TRUE    | FALSE    |
+	| Entitled to device  | Installed on device     | Not used on device      | 001BAQXT6JWFPI  | AddressGrabber Standard       | TRUE      | UNKNOWN | TRUE     |
+	| Entitled to device  | Not installed on device | Not used on device      | 00BDM1JUR8IF419 | cdparanoia-libs               | UNKNOWN   | FALSE   | TRUE     |
+	| Installed on device | Not entitled to device  | Not used on device      | 00KWQ4J3WKQM0G  | Adobe Reader 6.0.1 - Fran?ais | TRUE      | UNKNOWN | FALSE    |

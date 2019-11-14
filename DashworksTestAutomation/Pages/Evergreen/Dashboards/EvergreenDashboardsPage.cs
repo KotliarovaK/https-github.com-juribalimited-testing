@@ -437,14 +437,6 @@ namespace DashworksTestAutomation.Pages
             { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']")); }
         }
 
-        public IWebElement GetCardWidgetByName(string widgetName)
-        {
-            var dashboardWidget =
-                By.XPath($".//div[@class='widget']//h5/span[text()='{widgetName}']//ancestor::div/div[@class='widget']");
-            Driver.WaitForElementToBeDisplayed(dashboardWidget);
-            return Driver.FindElement(dashboardWidget);
-        }
-
         public IWebElement GetCardWidgetContent(string widgetTitle)
         {
             var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
@@ -464,30 +456,9 @@ namespace DashworksTestAutomation.Pages
 
         public List<string> GetPointOfLineWidgetByName(string widgetName)
         {
-            var totalLabelsCount = By.XPath($".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']//*[@text-anchor='end']");
-
+            var totalLabelsCount = By.XPath($".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class,'highcharts-point')]");
             Driver.WaitForDataLoading();
-            var foundPoints = Driver.FindElements(totalLabelsCount).Count;
-
-            List<string> webLabels = new List<string>();
-
-            for (int i = 1; i <= foundPoints; i++)
-            {
-                if (string.IsNullOrEmpty(Driver.FindElement(By.XPath(
-                        $".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']//*[@text-anchor='end'][{i}]"))
-                    .Text))
-                {
-                    webLabels.Add(Driver.FindElement(By.XPath(
-                        $".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']//*[@text-anchor='end'][{i}]/*")).Text);
-                }
-                else
-                {
-                    webLabels.Add(Driver.FindElement(By.XPath(
-                        $".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']//*[@text-anchor='end'][{i}]")).Text);
-                }
-            }
-
-            return webLabels;
+            return Driver.FindElements(totalLabelsCount).Select(x=>x.GetAttribute("widget-name")).ToList();
         }
 
         public bool IsLineWidgetPointsAreDisplayed(string widgetName)
@@ -503,27 +474,8 @@ namespace DashworksTestAutomation.Pages
         #region Column
         public List<string> GetPointOfColumnWidgetByName(string widgetName)
         {
-            var totalLabelsCount = By.XPath($".//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']//*[@text-anchor]");
-
-            List<string> webLabels = new List<string>();
-
-            for (int i = 1; i <= Driver.FindElements(totalLabelsCount).Count; i++)
-            {
-                if (string.IsNullOrEmpty(Driver.FindElement(By.XPath(
-                        $".//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='middle'][{i}]"))
-                    .Text))
-                {
-                    webLabels.Add(Driver.FindElement(By.XPath(
-                        $".//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='middle'][{i}]/*")).Text);
-                }
-                else
-                {
-                    webLabels.Add(Driver.FindElement(By.XPath(
-                        $".//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='middle'][{i}]")).Text);
-                }
-            }
-            Driver.WaitForDataLoading();
-            return webLabels;
+            var totalLabelsCount = By.XPath($"//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class, 'xaxis-labels')]/*[@text-anchor='middle']");
+            return Driver.FindElements(totalLabelsCount).Select(x => x.Text).ToList();
         }
         #endregion
 

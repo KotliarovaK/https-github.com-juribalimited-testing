@@ -639,13 +639,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public string GetTextboxErrorMessage(string placeholder)
         {
-            var error = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
+            var error = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[not (@class)]"));
             return error.Text;
         }
 
         public IWebElement GetTextboxErrorMessageExclamationIcon(string placeholder)
         {
-            var exclamationIcon = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[2]"));
+            var exclamationIcon = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[@class]"));
             return exclamationIcon;
         }
 
@@ -810,13 +810,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public string GetDropdownErrorMessage(string placeholder)
         {
-            var error = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[1]"));
+            var error = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[not (@class)]"));
             return error.Text;
         }
 
         public IWebElement GetDropdownErrorMessageExclamationIcon(string placeholder)
         {
-            var exclamationIcon = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[2]"));
+            var exclamationIcon = GetDropdownErrorMessageElement(placeholder).FindElement(By.XPath("./span[@class]"));
             return exclamationIcon;
         }
 

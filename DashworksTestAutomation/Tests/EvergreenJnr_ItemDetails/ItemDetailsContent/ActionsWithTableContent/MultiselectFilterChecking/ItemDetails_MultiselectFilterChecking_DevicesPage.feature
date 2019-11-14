@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| True   |
 	Then following String Values are displayed in the filter dropdown for the 'Application Readiness' column
 	| Values |
-	| NONE   |
+	| IGNORE |
 	Then following String Values are displayed in the filter dropdown for the 'Pre-Migration' column
 	| Values |
 	| GREY   |

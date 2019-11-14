@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string TopSubMenuItemByName = ".//div[contains(@class,'submenu-top')]//*[text()='{0}']";
 
-        public By AllListNamesInListsPanel = By.XPath(".//span[contains(@class,'list-name')]");
+        public By AllListNamesInListsPanel = By.XPath(".//*[contains(@class,'-name')]"); //old .//span[contains(@class,'list-name')]
 
         public By ListSubMenusInListsPanel = By.XPath(".//ancestor::submenu-item");
 
@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'SelectDropdownActions')]//mat-select")]
         public IWebElement DropdownFilterList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@id,'submenuBlock')]//ul[contains(@class,'submenu-actions')]/li")]  /// old .//div[contains(@id,'submenuBlock')]//ul[contains(@class,'submenu-actions-list')]/li
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@id,'submenuBlock')]//ul[contains(@class,'submenu-actions')]/li")]
         public IList<IWebElement> ListElementsInListsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
