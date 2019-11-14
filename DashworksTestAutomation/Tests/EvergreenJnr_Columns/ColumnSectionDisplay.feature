@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	When User moves "Device Type" column beyond the Grid
 	When User moves "Operating System" column beyond the Grid
 	When User moves "Owner Display Name" column beyond the Grid
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Hostname           |
 	| Device Type        |
@@ -206,7 +206,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	When User moves "Domain" column beyond the Grid
 	When User moves "Display Name" column beyond the Grid
 	When User moves "Distinguished Name" column beyond the Grid
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Username           |
 	| Domain             |
@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	Then 'All Applications' list should be displayed to the user
 	When User moves "Vendor" column beyond the Grid
 	When User moves "Version" column beyond the Grid
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName  |
 	| Application |
 	| Vendor      |
@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	When User moves "Mail Server" column beyond the Grid
 	When User moves "Mailbox Type" column beyond the Grid
 	When User moves "Owner Display Name" column beyond the Grid
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Email Address      |
 	| Mailbox Platform   |
@@ -309,7 +309,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	And User selects "StaticListFromTheAllList" List in Saved List dropdown
 	When User clicks 'ADD' button 
 	Then "4" rows are displayed in the agGrid
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Hostname           |
 	| Device Type        |
@@ -350,7 +350,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAl
 	| 00DB4000EDD84951993 |
 	Then User add selected rows in "StaticListFromTheAllList" list
 	Then "4" rows are displayed in the agGrid
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Username           |
 	| Domain             |
@@ -391,7 +391,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	| 20040610sqlserverck                      |
 	Then User add selected rows in "StaticListFromTheAllList" list
 	Then "4" rows are displayed in the agGrid
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Application        |
 	| Vendor             |
@@ -431,7 +431,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 	| 00B5CCB89AD0404B965@bclabs.local |
 	Then User add selected rows in "StaticListFromTheAllList" list
 	And "4" rows are displayed in the agGrid
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Email Address      |
 	| Mailbox Platform   |
@@ -479,7 +479,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	| 018UQ6KL9TF4YF   |
 	Then User add selected rows in "StaticListFromADynamicList" list
 	Then "2" rows are displayed in the agGrid
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Hostname           |
 	| Device Type        |
@@ -532,7 +532,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	| 00BDM1JUR8IF419  |
 	Then User add selected rows in "SecondStaticList13059" list
 	Then "2" rows are displayed in the agGrid
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Hostname           |
 	| Device Type        |
@@ -606,7 +606,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDispl
 	| Operating System   |
 	| Owner Display Name |
 	| Compliance         |
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Hostname           |
 	| Device Type        |
@@ -660,7 +660,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	Then "Application Key" filter is added to the list
 	When User add "Inventory Site" filter where type is "Equals" with added column and "Altiris" Lookup option
 	Then "Inventory Site" filter is added to the list
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Application        |
 	| Vendor             |
@@ -686,7 +686,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Department" filter where type is "Equals" with added column and "Finance" Tree List option
-	Then Column is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName         |
 	| Username           |
 	| Domain             |

@@ -225,9 +225,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//mat-option[@aria-disabled='true']//span[text()='Project']")]
         public IWebElement DisabledCreateProjectButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
-        public IList<IWebElement> ColumnSubcategories { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DateTime')]/span[contains(text(), ':')]")]
         public IWebElement DateTimeColumnValue { get; set; }
 
@@ -321,14 +318,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.ContextClick(GetGridCellByText(cellText));
         }
 
-        public IWebElement GetColorByName(string colorName)
-        {
-            var selector = By.XPath(
-                $".//span[@class='status-text'][text()='{colorName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetItalicContentByColumnName(string text)
         {
             var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
@@ -365,122 +354,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
             return Driver.FindElement(By.XPath(
                 $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
-        }
-
-        public string GetPinnedColumnName(string pinStatus)
-        {
-            switch (pinStatus)
-            {
-                case "Left":
-                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-left-header']//span[@ref='eText']"))
-                        .Text;
-
-                case "Right":
-                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-right-header']//span[@ref='eText']"))
-                        .Text;
-
-                default: throw new Exception($"{pinStatus} is not valid Pin Value");
-            }
-        }
-
-        public string GetColorContainer(string styleColorItem)
-        {
-            switch (styleColorItem)
-            {
-                case "background-color: rgba(245, 96, 86, 0.5); border: 2px solid rgb(245, 96, 86);":
-                    return "RED";
-                case "background-color: rgba(47, 133, 184, 0.5); border: 2px solid rgb(47, 133, 184);":
-                    return "BLUE";
-                case "background-color: rgba(55, 61, 69, 0.5); border: 2px solid rgb(55, 61, 69);":
-                    return "OUT OF SCOPE";
-                case "background-color: rgba(71, 209, 209, 0.5); border: 2px solid rgb(71, 209, 209);":
-                    return "LIGHT BLUE";
-                case "background-color: rgba(153, 118, 84, 0.5); border: 2px solid rgb(153, 118, 84);":
-                    return "BROWN";
-                case "background-color: rgba(235, 175, 37, 0.5); border: 2px solid rgb(235, 175, 37);":
-                    return "AMBER";
-                case "background-color: rgba(226, 123, 54, 0.5); border: 2px solid rgb(226, 123, 54);":
-                    return "REALLY EXTREMELY ORANGE";
-                case "background-color: rgba(186, 94, 186, 0.5); border: 2px solid rgb(186, 94, 186);":
-                    return "PURPLE";
-                case "background-color: rgba(126, 189, 56, 0.5); border: 2px solid rgb(126, 189, 56);":
-                    return "GREEN";
-                case "background-color: rgba(128, 139, 153, 0.5); border: 2px solid rgb(128, 139, 153);":
-                    return "GREY";
-                default: throw new Exception($"{styleColorItem} is not valid Color");
-            }
-        }
-
-        public string GetImageContainer(string styleImageItem)
-        {
-            switch (styleImageItem)
-            {
-                case "forwardPath.png":
-                    return "FORWARD PATH";
-                case "tick.png":
-                    return "KEEP";
-                case "cross.png":
-                    return "RETIRE";
-                case "unknown.png":
-                    return "UNCATEGORISED";
-                default: throw new Exception($"{styleImageItem} is not valid Image path");
-            }
-        }
-
-        public IList<IWebElement> GetAllColumnHeaders()
-        {
-            var selector = By.XPath(".//span[@role='columnheader']");
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(selector);
-        }
-
-        public IList<IWebElement> GetAllColumnHeadersWithSettingMenuColumn()
-        {
-            var selector = By.XPath("//div[@class='ag-header-row']/div[@class='ag-header-cell ag-header-cell-sortable']");
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(selector);
-        }
-
-        public void ExpandColumnsSectionByName(string sectionsName)
-        {
-            if (Driver.IsElementExists(By.XPath(
-                $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
-            )
-                try
-                {
-                    Driver.FindElement(By.XPath(
-                            $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
-                        .Click();
-                }
-                catch
-                {
-                    Driver.MouseHover(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"));
-                    Driver.FindElement(By.XPath(
-                            $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
-                        .Click();
-                }
-
-            if (ColumnSubcategories.Any())
-                Driver.MouseHover(ColumnSubcategories.Last());
-        }
-
-        public void CloseColumnsSectionByName(string sectionsName)
-        {
-            try
-            {
-                Driver.FindElement(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"))
-                    .Click();
-            }
-            catch
-            {
-                Driver.MouseHover(By.XPath(
-                    $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"));
-                Driver.FindElement(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"))
-                    .Click();
-            }
         }
 
         #region Autocomplete
@@ -1030,10 +903,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Chips
+
         public IList<IWebElement> GetChipsOfTextbox(string textbox)
         {
             var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//span[contains(@class, 'chips-item')]");
             return GetTextbox(textbox).FindElements(chipsSelector);
         }
+
+        #endregion
     }
 }

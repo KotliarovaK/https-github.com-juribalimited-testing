@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 	And '918' count is displayed for 'Microsoft Corporation' in the table Widget
 	When User clicks '918' value for 'Microsoft Corporation' column
 	Then "918" rows are displayed in the agGrid
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Application        |
 	| Vendor             |

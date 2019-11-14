@@ -238,7 +238,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Ring"});
 #line 46
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table5, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table5, "Then ");
 #line 55
  testRunner.When("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
@@ -276,7 +276,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Status"});
 #line 63
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table7, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table7, "Then ");
 #line 73
  testRunner.When("User enters \"Units\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 74

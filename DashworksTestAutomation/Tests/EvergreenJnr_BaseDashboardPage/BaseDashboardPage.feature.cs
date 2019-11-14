@@ -290,7 +290,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         string.Format("{0}", column5)});
 #line 41
- testRunner.Then("Column is displayed in following order:", ((string)(null)), table1, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

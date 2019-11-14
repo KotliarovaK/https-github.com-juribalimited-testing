@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	And User enters 'Default Capacity Unit' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
-	And Columns on Admin page is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName    |
 	|               |
 	| Capacity Unit |
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUni
 	| 13431DevicesProject | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName    |
 	| Capacity Unit |
 	|               |
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 	| 13431MailboxesProject | All Mailboxes | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName    |
 	| Capacity Unit |
 	|               |

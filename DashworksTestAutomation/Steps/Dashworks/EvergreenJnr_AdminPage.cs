@@ -1612,26 +1612,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"Columns on Admin page is displayed in following order:")]
-        public void ThenColumnsOnAdminPageIsDisplayedInFollowingOrder(Table table)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            var columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Utils.Verify.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
-        }
-
-        [Then(@"table with Setting menu column on Admin page is displayed in following order:")]
-        public void ThenTableWithSettingMenuColumnOnAdminPageIsDisplayedInFollowingOrder(Table table)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            var columnNames = page.GetAllColumnHeadersWithSettingMenuColumn().Select(column => column.Text).ToList();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Utils.Verify.AreEqual(expectedList, columnNames, "Columns order on Admin page with Setting menu column is incorrect");
-        }
-
         [Then(@"Delete ""(.*)"" Project in the Administration")]
         public void ThenDeleteProjectInTheAdministration(string projectName)
         {

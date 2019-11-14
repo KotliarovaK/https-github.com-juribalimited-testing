@@ -50,13 +50,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetSettingButtonByName(settingName).Click();
         }
 
-        [Then(@"""(.*)"" column is ""(.*)"" Pinned")]
-        public void ThenColumnIsPinned(string columnName, string pinStatus)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
-        }
-
         [When(@"User opens settings for ""(.*)"" row")]
         public void WhenUserOpensSettingsForRow(string rowName)
         {
@@ -230,16 +223,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             Utils.Verify.AreEqual("400", dashboardPage.GetHeaderFontWeight(), "Header font weight is incorrect");
-        }
-
-        [Then(@"Column is displayed in following order:")]
-        public void ThenColumnIsDisplayedInFollowingOrder(Table table)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            var columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
-            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
-            Utils.Verify.AreEqual(expectedList, columnNames, "Columns order is incorrect");
         }
 
         [Then(@"URL is ""(.*)""")]

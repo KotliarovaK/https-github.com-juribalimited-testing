@@ -321,7 +321,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "1803: Pre-Migration \\ Scheduled Date"});
 #line 63
- testRunner.And("Column is displayed in following order:", ((string)(null)), table6, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
