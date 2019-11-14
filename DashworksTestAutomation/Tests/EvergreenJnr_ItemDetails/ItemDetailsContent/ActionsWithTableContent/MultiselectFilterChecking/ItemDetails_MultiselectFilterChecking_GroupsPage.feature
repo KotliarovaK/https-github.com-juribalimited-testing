@@ -19,18 +19,12 @@ Scenario: EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplay
 	And User select "Username" checkbox on the Column Settings panel
 	And User select "Directory Type" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	When User clicks String Filter button for "Domain" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Domain' column
 	| Values |
 	| DEV50  |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Enabled" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Enabled' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Directory Type" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Directory Type' column
 	| Values           |
 	| Active Directory |
-	When User closes Checkbox filter

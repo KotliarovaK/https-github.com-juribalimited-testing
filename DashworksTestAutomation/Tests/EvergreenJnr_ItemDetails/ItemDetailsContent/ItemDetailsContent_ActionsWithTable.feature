@@ -24,7 +24,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	And following columns added to the table:
 	| ColumnName |
 	| Vendor     |
-	Then string filter is displayed for "Vendor" column on the Details Page
+	Then string filter is displayed for 'Vendor' column
 
 Examples:
 	| PageName | SelectedName   | CountRows |
@@ -94,17 +94,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Details page for "Microsoft DirectX 5 DDK" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item
-	And User clicks String Filter button for "Used" column
-	And User clicks "False" checkbox from String Filter on the Details Page
-	And User closes Checkbox filter
+	When User clicks 'False' checkbox from String Filter in the filter dropdown for the 'Used' column
 	And User have opened Column Settings for "User" column
 	And User have select "Sort descending" option from column settings
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 	When User navigates to the 'Devices' left submenu item
-	And User clicks String Filter button for "Used" column
-	And User clicks "False" checkbox from String Filter on the Details Page
-	And User closes Checkbox filter
+	When User clicks 'False' checkbox from String Filter in the filter dropdown for the 'Used' column
 	And User have opened Column Settings for "Device" column
 	And User have select "Sort descending" option from column settings
 	Then Content is present in the table on the Details Page
