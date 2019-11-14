@@ -49,3 +49,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	Then Success message is displayed and contains "Application successfully relinked" text
 	#waiting for the relink process to be completed
 	When User waits for three seconds
+
+	#ready only on 'terminator'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18769 @Not_Run
+Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnteringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton
+	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
+	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	And User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button 
+	Then Dialog Pop-up is displayed for User
+	When User enters 'k9 ' text to 'Application' textbox
+	Then Error message is not displayed
