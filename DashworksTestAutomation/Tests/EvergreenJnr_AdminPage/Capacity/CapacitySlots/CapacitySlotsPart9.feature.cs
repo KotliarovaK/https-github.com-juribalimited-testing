@@ -139,7 +139,7 @@ this.FeatureBackground();
  testRunner.When("User moves \"Birmingham Morning\" slot to \"London Depot 15:00 - 17:00\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table1.AddRow(new string[] {
                         "Birmingham Afternoon"});
             table1.AddRow(new string[] {
@@ -165,12 +165,12 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
 #line 14
- testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table1, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table1, "Then ");
 #line 28
  testRunner.When("User moves \"Birmingham Morning\" slot to \"Birmingham Afternoon\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table2.AddRow(new string[] {
                         "Birmingham Afternoon"});
             table2.AddRow(new string[] {
@@ -196,7 +196,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
 #line 29
- testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table2, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

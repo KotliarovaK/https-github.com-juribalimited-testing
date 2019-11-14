@@ -235,26 +235,27 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Cleanup @DAS11758 @DAS14190 @DAS15528
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
+	# added zeros to Project names to male sure they always on top of grid
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	| 1Checkbox11758 | All Users | None            | Standalone Project |
+	| 001Checkbox11758 | All Users | None            | Standalone Project |
 	And Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	| 2Checkbox11758 | All Users | None            | Standalone Project |
+	| 002Checkbox11758 | All Users | None            | Standalone Project |
 	And Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	| 3Checkbox11758 | All Users | None            | Standalone Project |
+	| 003Checkbox11758 | All Users | None            | Standalone Project |
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
-	Then created Project with "1Checkbox11758" name is displayed correctly
-	And created Project with "2Checkbox11758" name is displayed correctly
-	And created Project with "3Checkbox11758" name is displayed correctly
+	Then '001Checkbox11758' content is displayed in the 'Project' column
+	Then '002Checkbox11758' content is displayed in the 'Project' column
+	Then '003Checkbox11758' content is displayed in the 'Project' column
 	When User selects all rows on the grid
 	Then Select All checkbox have full checked state
 	When User select "Project" rows in the grid
 	| SelectedRowsName |
-	| 1Checkbox11758   |
+	| 001Checkbox11758 |
 	Then Select All checkbox have indeterminate checked state
 	When User deselect all rows on the grid
 	Then Select All checkbox have unchecked state

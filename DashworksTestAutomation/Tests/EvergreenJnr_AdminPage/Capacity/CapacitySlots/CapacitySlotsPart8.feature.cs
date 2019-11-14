@@ -579,7 +579,7 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table15.AddRow(new string[] {
                         "User Slot 1"});
             table15.AddRow(new string[] {
@@ -593,7 +593,7 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "Application Slot 2"});
 #line 142
- testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table15, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table15, "Then ");
 #line 150
  testRunner.When("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
@@ -703,7 +703,7 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table18.AddRow(new string[] {
                         "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
             table18.AddRow(new string[] {
@@ -715,7 +715,7 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "CA-Mailbox-Jan 1, 2018-Oct 31, 2018"});
 #line 177
- testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table18, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table18, "Then ");
 #line 184
  testRunner.When("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 185

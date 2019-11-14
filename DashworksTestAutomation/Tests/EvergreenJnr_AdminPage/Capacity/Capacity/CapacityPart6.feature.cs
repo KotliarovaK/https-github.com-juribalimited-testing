@@ -360,13 +360,13 @@ this.FeatureBackground();
  testRunner.When("User clicks on \'Capacity Slot\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table2.AddRow(new string[] {
                         "Birmingham Afternoon"});
             table2.AddRow(new string[] {
                         "Birmingham Morning"});
 #line 67
- testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table2, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

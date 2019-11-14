@@ -378,7 +378,7 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table7.AddRow(new string[] {
                         "Unassigned"});
             table7.AddRow(new string[] {
@@ -390,7 +390,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "NewUnit"});
 #line 63
- testRunner.Then("\"Capacity Unit\" column content is displayed in the following order:", ((string)(null)), table7, "Then ");
+ testRunner.Then("Content in the \'Capacity Unit\' column is equal to", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

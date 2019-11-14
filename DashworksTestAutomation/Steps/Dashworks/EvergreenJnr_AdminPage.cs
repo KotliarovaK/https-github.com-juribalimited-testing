@@ -916,14 +916,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.DetailsPageWasNotFound.Text, Is.EqualTo("404"), "Page 404 was not opened");
         }
 
-        [Then(@"created Project with ""(.*)"" name is displayed correctly")]
-        public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.GetCreatedProjectName(projectName, true), $"The {projectName} Project is not found");
-        }
-
         [Then(@"Import Project button is not displayed")]
         public void ThenImportProjectButtonIsNotDisplayed()
         {
@@ -1357,17 +1349,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Text in search field is different");
         }
 
-        //TODO move to the BaseGrid
-        [Then(@"""(.*)"" column content is displayed in the following order:")]
-        public void ThenColumnContentIsDisplayedInTheFollowingOrder(string columnName, Table table)
-        {
-            var action = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.GetColumnContentByColumnName(columnName);
-            Verify.AreEqual(expectedList, actualList, "Column content is different");
-        }
-
         [Then(@"""(.*)"" dropdown is not displayed")]
         public void ThenDropdownIsNotDisplayed(string dropdownName)
         {
@@ -1547,13 +1528,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
             _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
-        }
-
-        [Then(@"""(.*)"" item was removed")]
-        public void ThenItemWasRemoved(string itemName)
-        {
-            var item = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(item.GetCreatedProjectName(itemName), "Selected item was not removed");
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]

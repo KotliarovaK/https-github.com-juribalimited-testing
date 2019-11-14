@@ -432,17 +432,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        //TODO probably should be removed
-        private static string ProjectSelector = ".//div[@col-id='projectName']//a[text()='{0}']";
-
-        public bool GetCreatedProjectName(string projectName, bool wait = false)
-        {
-            var by = By.XPath(string.Format(ProjectSelector, projectName));
-            if (wait)
-                Driver.WaitForElementToBeDisplayedAfterRefresh(by);
-            return Driver.IsElementDisplayed(by);
-        }
-
         public void GetStringFilterByColumnName(string columnName)
         {
             var byControl =

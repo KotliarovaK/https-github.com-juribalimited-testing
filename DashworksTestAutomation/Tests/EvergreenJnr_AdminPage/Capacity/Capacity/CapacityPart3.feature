@@ -60,8 +60,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	| A13159Unit        |             | false     | 13159ProjectForCapacity |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
-	Then "Capacity Unit" column content is displayed in the following order:
-	| Items             |
+	Then Content in the 'Capacity Unit' column is equal to
+	| Content           |
 	| Unassigned        |
 	| 13159             |
 	| A13159Unit        |
