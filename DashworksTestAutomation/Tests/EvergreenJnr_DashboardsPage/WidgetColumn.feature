@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	And User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then 'ColumnWidget' Widget is displayed to the user
+	Then 'ColumnWidget#1' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'ColumnWidget#1' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Pie' in the 'WidgetType' dropdown

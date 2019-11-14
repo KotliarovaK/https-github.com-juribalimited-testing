@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	Then "1803 Team" content is displayed in "Team" field
 	Then "Akhila Varghese" content is displayed in "Owner" field
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18432 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18432 @DAS18739 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
@@ -103,6 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	#DAS18491
 	When User clicks content from "Action" column
 	#Actions content check
+	Then Error message is not displayed on the Projects page
 	Then '18432_Action' content is displayed in 'Action Name' textbox
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '[Project not found]' content is displayed in 'Project' textbox
