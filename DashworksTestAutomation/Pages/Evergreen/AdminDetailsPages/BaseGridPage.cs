@@ -658,6 +658,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return result;
         }
 
+        public List<string> GetColorColumnContent(string columnName)
+        {
+            var firstPartSelector = $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']";
+            var result = Driver.FindElements(By.XPath($"{firstPartSelector}//div[@class='status']"))
+                .Select(x => x.GetAttribute("style")).Select(GetColorContainer).ToList();
+            return result;
+        }
+
         private string ConvertImageContainerSrc(string styleImageItem)
         {
             styleImageItem = styleImageItem.Split('/').Last();
@@ -672,6 +680,34 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 case "unknown.png":
                     return "UNCATEGORISED";
                 default: throw new Exception($"{styleImageItem} is not valid Image path");
+            }
+        }
+
+        private string GetColorContainer(string styleColorItem)
+        {
+            switch (styleColorItem)
+            {
+                case "background-color: rgba(245, 96, 86, 0.5); border: 2px solid rgb(245, 96, 86);":
+                    return "RED";
+                case "background-color: rgba(47, 133, 184, 0.5); border: 2px solid rgb(47, 133, 184);":
+                    return "BLUE";
+                case "background-color: rgba(55, 61, 69, 0.5); border: 2px solid rgb(55, 61, 69);":
+                    return "OUT OF SCOPE";
+                case "background-color: rgba(71, 209, 209, 0.5); border: 2px solid rgb(71, 209, 209);":
+                    return "LIGHT BLUE";
+                case "background-color: rgba(153, 118, 84, 0.5); border: 2px solid rgb(153, 118, 84);":
+                    return "BROWN";
+                case "background-color: rgba(235, 175, 37, 0.5); border: 2px solid rgb(235, 175, 37);":
+                    return "AMBER";
+                case "background-color: rgba(226, 123, 54, 0.5); border: 2px solid rgb(226, 123, 54);":
+                    return "REALLY EXTREMELY ORANGE";
+                case "background-color: rgba(186, 94, 186, 0.5); border: 2px solid rgb(186, 94, 186);":
+                    return "PURPLE";
+                case "background-color: rgba(126, 189, 56, 0.5); border: 2px solid rgb(126, 189, 56);":
+                    return "GREEN";
+                case "background-color: rgba(128, 139, 153, 0.5); border: 2px solid rgb(128, 139, 153);":
+                    return "GREY";
+                default: throw new Exception($"{styleColorItem} is not valid Color");
             }
         }
 

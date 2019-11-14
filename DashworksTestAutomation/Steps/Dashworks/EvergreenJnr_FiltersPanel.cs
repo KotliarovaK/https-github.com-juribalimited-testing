@@ -1461,23 +1461,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterPanel.SaveButton.Click();
         }
 
-        [Then(@"""(.*)"" color is matching the caption")]
-        public void ThenColorIsMatchingTheCaption(string colorName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var colorItem = By.XPath(BaseDashboardPage.ColorItem);
-            var colors = _driver.FindElements(colorItem);
-            foreach (var color in colors)
-            {
-                var styleColorItem = color.GetAttribute("style");
-                //_driver.WaitForElementToBeDisplayed(page.ColorItem);
-                _driver.WaitForElementToBeDisplayed(colorItem);
-                Verify.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
-                Verify.AreEqual(page.GetColorContainer(styleColorItem), colorName,
-                    "Items color does not match the caption");
-            }
-        }
-
         [Then(@"reset button in Search field at selected Filter is displayed")]
         public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
         {

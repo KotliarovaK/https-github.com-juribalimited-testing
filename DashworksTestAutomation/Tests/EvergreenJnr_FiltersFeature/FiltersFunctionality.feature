@@ -535,7 +535,8 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetApp
 	When User add "ComputerSc: Target App Readiness" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues     |
 	| <SelectedCheckbox> |
-	Then "<ColorName>" color is matching the caption
+	Then '<ColorName>' content is displayed in all 'ComputerSc: Target App Readiness' column
+	Then '<SelectedCheckbox>' path is displayed in the 'ComputerSc: Target App Readiness' column
 
 Examples:
 	| SelectedCheckbox        | ColorName               |

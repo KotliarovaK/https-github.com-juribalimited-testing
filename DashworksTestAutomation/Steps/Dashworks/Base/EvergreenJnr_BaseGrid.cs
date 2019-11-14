@@ -246,6 +246,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(paths.All(x => x.Equals(path)), $"Some paths are incorrect in the '{column}' column");
         }
 
+        [Then(@"'(.*)' color is displayed in the '(.*)' column")]
+        public void ThenColorIsDisplayedInTheColumn(string color, string column)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var paths = page.GetColorColumnContent(column);
+            Verify.IsTrue(paths.All(x => x.Equals(color)), $"Some paths are incorrect in the '{column}' column");
+        }
+
         [Then(@"Content in the '(.*)' column is equal to")]
         public void ThenContentInTheColumnIsEqualTo(string columnName, Table table)
         {
