@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	When User select "Display Order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
-	Then "Capacity Slot" column content is displayed in the following order:
-	| Items     |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content   |
 	| Slot13147 |
 	| NewName   |
 	| Name1     |

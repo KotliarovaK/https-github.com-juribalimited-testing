@@ -479,11 +479,11 @@ this.FeatureBackground();
  testRunner.And("Rows counter contains \"1\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table11.AddRow(new string[] {
                         "Slot1"});
 #line 80
- testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table11, "And ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table11, "Then ");
 #line 84
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 85
@@ -502,13 +502,13 @@ this.FeatureBackground();
  testRunner.And("Rows counter contains \"2\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table12.AddRow(new string[] {
                         "Slot1"});
             table12.AddRow(new string[] {
                         "Slot2"});
 #line 91
- testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table12, "And ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table12, "Then ");
 #line 96
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
@@ -527,13 +527,13 @@ this.FeatureBackground();
  testRunner.And("Rows counter contains \"2\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table13.AddRow(new string[] {
                         "Slot1"});
             table13.AddRow(new string[] {
                         "Slot3"});
 #line 103
- testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table13, "And ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

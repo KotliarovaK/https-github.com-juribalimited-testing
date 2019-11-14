@@ -53,15 +53,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	| ProjectName              | Scope       | ProjectTemplate | Mode               |
 	| TESTNAME_capital letters | All Devices | None            | Standalone Project |
 	And User click on Back button
-	Then created Project with "TESTNAME_capital letters" name is displayed correctly
+	When User enters "TESTNAME_capital letters" text in the Search field for "Project" column
+	Then 'TESTNAME_capital letters' content is displayed in the 'Project' column
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| testname_small letters | All Devices | None            | Standalone Project |
 	And User click on Back button
-	Then created Project with "testname_small letters" name is displayed correctly
+	When User enters "testname_small letters" text in the Search field for "Project" column
+	Then 'testname_small letters' content is displayed in the 'Project' column
 	When User enters "TestName" text in the Search field for "Project" column
-	Then created Project with "testname_small letters" name is displayed correctly
-	Then created Project with "TESTNAME_capital letters" name is displayed correctly
+	Then 'testname_small letters' content is displayed in the 'Project' column
+	Then 'TESTNAME_capital letters' content is displayed in the 'Project' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12680 @DAS12157 @DAS13014 @Cleanup @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingAppropriate

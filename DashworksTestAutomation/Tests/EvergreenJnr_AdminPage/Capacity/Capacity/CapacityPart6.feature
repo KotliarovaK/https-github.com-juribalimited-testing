@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDispl
 	When User clicks content from "Slots" column
 	Then URL contains "/capacity/slots/:Birmingham"
 	When User clicks on 'Capacity Slot' column header
-	Then "Capacity Slot" column content is displayed in the following order:
-	| Items                |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content              |
 	| Birmingham Afternoon |
 	| Birmingham Morning   |

@@ -30,7 +30,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	And User removes selected item
 	Then Success message is displayed and contains "The selected project has been deleted" text
 	And There are no errors in the browser console
-	Then "<ProjectName>" item was removed
+	Then '<ProjectName>' content is not displayed in the 'Project' column
 	When User create static list with "<StaticList>" name on "<PageName>" page with following items
 	| ItemName |
 	| <Item>   |

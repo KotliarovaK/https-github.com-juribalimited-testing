@@ -35,7 +35,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	| 10_Project13096 | All Devices | None            | Standalone Project |
 	Then Page with '10_Project13096' header is displayed to user
 	When User click on Back button
-	Then created Project with "10_Project13096" name is displayed correctly
+	When User enters "10_Project13096" text in the Search field for "Project" column
+	Then '10_Project13096' content is displayed in the 'Project' column
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "10_Project13096" Project
@@ -49,9 +50,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
-	And created Project with "1_Project13096 upd on Senior" name is displayed correctly
 	When User enters "1_Project13096 upd on Senior" text in the Search field for "Project" column
-	And User selects all rows on the grid
+	Then '1_Project13096 upd on Senior' content is displayed in the 'Project' column
+	When User selects all rows on the grid
 	And User removes selected item
 	Then There are no errors in the browser console
 

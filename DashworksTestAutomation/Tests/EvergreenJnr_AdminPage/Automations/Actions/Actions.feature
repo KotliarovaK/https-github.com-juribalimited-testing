@@ -103,15 +103,15 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	#Then User checks that file "Dashworks export" was downloaded
 	#Create Action
 	When User clicks "Move to top" option in Cog-menu for "Secont_Action" item on Admin page
-	Then "Action" column content is displayed in the following order:
-	| Items           |
+	Then Content in the 'Action' column is equal to
+	| Content         |
 	| Secont_Action   |
 	| First_Action    |
 	| Third_Action    |
 	| DAS15427_Action |
 	When User clicks "Move to bottom" option in Cog-menu for "First_Action" item on Admin page
-	Then "Action" column content is displayed in the following order:
-	| Items           |
+	Then Content in the 'Action' column is equal to
+	| Content         |
 	| Secont_Action   |
 	| Third_Action    |
 	| DAS15427_Action |
@@ -122,22 +122,22 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	When User move "Secont_Action" item to "4" position on Admin page
-	Then "Action" column content is displayed in the following order:
-	| Items           |
+	Then Content in the 'Action' column is equal to
+	| Content         |
 	| Third_Action    |
 	| DAS15427_Action |
 	| First_Action    |
 	| Secont_Action   |
 	When User move "Secont_Action" item to "1" position on Admin page
-	Then "Action" column content is displayed in the following order:
-	| Items           |
+	Then Content in the 'Action' column is equal to
+	| Content         |
 	| Secont_Action   |
 	| Third_Action    |
 	| DAS15427_Action |
 	| First_Action    |
 	When User move "Secont_Action" item to "20" position on Admin page
-	Then "Action" column content is displayed in the following order:
-	| Items           |
+	Then Content in the 'Action' column is equal to
+	| Content         |
 	| Third_Action    |
 	| DAS15427_Action |
 	| First_Action    |
@@ -204,8 +204,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	Then "Action" column content is displayed in the following order:
-	| Items          |
+	Then Content in the 'Action' column is equal to
+	| Content        |
 	| 15428_Action_2 |
 	| 15428_Action_1 |
 	| 15428_Action_3 |
