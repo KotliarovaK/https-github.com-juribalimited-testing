@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 	Then following values are displayed for "USA" column on Pivot
 	| Value1            | Value2 |
 	| 101 Hudson Street | BLUE   |
-	| 20                | NONE   |
+	| 20                | IGNORE |
 	| 21                | BLUE   |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS17669
