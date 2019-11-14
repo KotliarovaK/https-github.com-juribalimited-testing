@@ -50,13 +50,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetSettingButtonByName(settingName).Click();
         }
 
-        [When(@"User opens settings for ""(.*)"" row")]
-        public void WhenUserOpensSettingsForRow(string rowName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetSettingIconByRowName(rowName).Click();
-        }
-
         [When(@"User selects ""(.*)"" option from settings menu")]
         public void WhenUserSelectsOptionFromSettingsMenu(string optionName)
         {

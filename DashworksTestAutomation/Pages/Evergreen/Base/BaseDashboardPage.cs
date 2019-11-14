@@ -34,8 +34,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
 
-        public const string OptionOnActionsPanel = ".//mat-option[@role='option']";
-
         public const string ColumnWithEvergreenIconSelector = ".//div[@col-id='projectName'][@role='gridcell']";
 
         public const string ImageSelector = ".//i";
@@ -240,9 +238,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = SelectedColumnSubcategory)]
         public IList<IWebElement> SelectedColumnsSubcategoryList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = OptionOnActionsPanel)]
-        public IList<IWebElement> OptionListOnActionsPanel { get; set; }
-
         #region TableColumns
 
         [FindsBy(How = How.XPath, Using = ".//div[@col-id='hostname' and @role='gridcell']//*[contains(text(),'Empty')]")]
@@ -346,14 +341,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForElementToBeDisplayed(By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
             return Driver.FindElement(
                 By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
-        }
-
-        public IWebElement GetSettingIconByRowName(string rowName)
-        {
-            Driver.WaitForElementToBeDisplayed(By.XPath(
-                $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
-            return Driver.FindElement(By.XPath(
-                $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
         }
 
         #region Autocomplete
