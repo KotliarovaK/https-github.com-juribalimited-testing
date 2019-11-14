@@ -822,5 +822,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         }
 
         #endregion
+
+        #region Pinned column
+
+        public string GetPinnedColumnName(string pinStatus)
+        {
+            switch (pinStatus)
+            {
+                case "Left":
+                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-left-header']//span[@ref='eText']"))
+                        .Text;
+
+                case "Right":
+                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-right-header']//span[@ref='eText']"))
+                        .Text;
+
+                default: throw new Exception($"{pinStatus} is not valid Pin Value");
+            }
+        }
+
+        #endregion
     }
 }

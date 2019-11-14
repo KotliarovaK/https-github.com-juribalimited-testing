@@ -748,5 +748,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Pinned column
+
+        [Then(@"'(.*)' column is '(.*)' Pinned")]
+        public void ThenColumnIsPinned(string columnName, string pinStatus)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
+        }
+
+        #endregion
     }
 }

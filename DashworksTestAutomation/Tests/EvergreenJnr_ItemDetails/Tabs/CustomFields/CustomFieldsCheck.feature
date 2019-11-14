@@ -99,12 +99,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedFo
 	And Reset Filters button on the Item Details page is disable
 	When User have opened column settings for "Custom Field" column
 	When User have select "Pin left" option from column settings
-	Then "Custom Field" column is "Left" Pinned
+	Then 'Custom Field' column is 'Left' Pinned
 	When User clicks Group By button on the Details page and selects "Custom Field" value
 	Then Grid is grouped
 	#Ann.Ilchenko 8/10/19: This is a TEMPORARY step. 
 	When User clicks Refresh button on grid action bar
-	Then "Custom Field" column is "Left" Pinned
+	Then 'Custom Field' column is 'Left' Pinned
 	Then Grid is grouped
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18121 @Cleanup

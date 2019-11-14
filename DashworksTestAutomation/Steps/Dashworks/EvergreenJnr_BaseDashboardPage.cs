@@ -50,13 +50,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetSettingButtonByName(settingName).Click();
         }
 
-        [Then(@"""(.*)"" column is ""(.*)"" Pinned")]
-        public void ThenColumnIsPinned(string columnName, string pinStatus)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
-        }
-
         [When(@"User opens settings for ""(.*)"" row")]
         public void WhenUserOpensSettingsForRow(string rowName)
         {

@@ -12,11 +12,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
 	Then 'All Devices' list should be displayed to the user
 	When User have opened column settings for "Owner Display Name" column
 	When User have select "Pin Left" option from column settings
-	Then "Owner Display Name" column is "Left" Pinned
+	Then 'Owner Display Name' column is 'Left' Pinned
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 11           |
-	Then "Owner Display Name" column is "Left" Pinned
+	Then 'Owner Display Name' column is 'Left' Pinned
 
 @Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11664 @DAS12325 @DAS14183
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
@@ -29,11 +29,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	| Compliance          |
 	When User have opened column settings for "Compliance" column
 	When User have select "Pin Right" option from column settings
-	Then "Compliance" column is "Right" Pinned
+	Then 'Compliance' column is 'Right' Pinned
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Smith          | 59           |
-	Then "Compliance" column is "Right" Pinned
+	Then 'Compliance' column is 'Right' Pinned
 
 @Evergreen @Devices @EvergreenJnr_GridActions @ColumnOrder @DAS10621 @DAS11666 @DAS12156 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter

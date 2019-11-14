@@ -356,22 +356,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
         }
 
-        public string GetPinnedColumnName(string pinStatus)
-        {
-            switch (pinStatus)
-            {
-                case "Left":
-                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-left-header']//span[@ref='eText']"))
-                        .Text;
-
-                case "Right":
-                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-right-header']//span[@ref='eText']"))
-                        .Text;
-
-                default: throw new Exception($"{pinStatus} is not valid Pin Value");
-            }
-        }
-
         #region Autocomplete
 
         public List<string> GetAllAutocompleteOptions(string placeholder)
