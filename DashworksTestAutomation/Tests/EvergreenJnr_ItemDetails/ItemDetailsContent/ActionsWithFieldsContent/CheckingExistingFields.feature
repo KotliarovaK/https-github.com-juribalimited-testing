@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
+	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
 	#| App Owner        |
 	| Device Owner     |
 	| Readiness        |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
+	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
 	#| App Owner        |
 	| Primary Device   |
 	| Readiness        |
@@ -83,7 +83,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Fields              |
 	| Object ID           |
 	| Name                |
-	| App Owner           |
+	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
+	#| App Owner           |
 	| Readiness           |
 	| App Readiness       |
 	| App Rationalisation |
@@ -107,7 +108,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#This is not ready on 'automation' server. Ready for 'radiant' (see DAS17810)
+	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
 	#| App Owner        |
 	| Mailbox Owner    |
 	| Readiness        |
