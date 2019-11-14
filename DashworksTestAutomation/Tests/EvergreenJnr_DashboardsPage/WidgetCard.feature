@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 	And User selects 'Pink' in the Colour Scheme
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then 'WidgetForDAS16069_2' Widget is displayed to the user
+	Then 'WidgetForDAS15134' Widget is displayed to the user
 	And 'Pink' color is displayed for widget
 	When User clicks Ellipsis menu for 'WidgetForDAS15134' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page

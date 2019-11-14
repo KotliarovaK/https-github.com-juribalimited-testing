@@ -727,7 +727,7 @@ this.FeatureBackground();
 #line 164
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 165
- testRunner.Then("\'WidgetForDAS16069_2\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'WidgetForDAS15134\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 166
  testRunner.And("\'Pink\' color is displayed for widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 167

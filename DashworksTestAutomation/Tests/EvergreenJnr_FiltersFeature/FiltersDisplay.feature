@@ -2152,3 +2152,27 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilter
 	When User clicks Add New button on the Filter panel
 	When User selects "Mailbox (Saved List)" filter from "Saved List" category
 	Then "Empty" checkbox is not available for current opened filter
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS18065
+Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanel
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When user select "Hostname" filter
+	When User select "Equals" Operator value
+	When User enters "Text1" text in Search field at selected Filter
+	When User clicks Add button for input filter value
+	Then following chips value displayed for 'Hostname' textbox
+	| ChipValue |
+	| Text1     |
+	Then tooltip is not displayed for 'Text1' chip of 'Hostname' textbox
+	When User enters "Text2" text in Search field at selected Filter
+	When User clicks Add button for input filter value
+	When User enters "Text3" text in Search field at selected Filter
+	When User clicks Add button for input filter value
+	Then following chips value displayed for 'Hostname' textbox
+	| ChipValue |
+	| Text1     |
+	| Text2     |
+	| 1 more    |
+	Then tooltip is not displayed for '1 more' chip of 'Hostname' textbox
