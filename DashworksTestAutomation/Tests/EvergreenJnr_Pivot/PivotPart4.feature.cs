@@ -311,7 +311,7 @@ this.FeatureBackground();
                         "GREEN"});
             table8.AddRow(new string[] {
                         "9",
-                        "NONE"});
+                        "IGNORE"});
             table8.AddRow(new string[] {
                         "3",
                         "GREEN"});

@@ -20,7 +20,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness.Be
         }
 
         [Given(@"User remembers default Readiness for '(.*)' project")]
-        public void GivenUserRemembersDefaultReadinessForProject(string projectName)
+        [When(@"User remembers default Readiness for '(.*)' project")]
+        public void WhenGivenUserRemembersDefaultReadinessForProject(string projectName)
         {
             var projId = int.Parse(DatabaseHelper.GetProjectId(projectName));
             var readinessId = int.Parse(DatabaseHelper.GetProjectDefaultReadinessId(projId));
