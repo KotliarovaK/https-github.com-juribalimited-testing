@@ -225,9 +225,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//mat-option[@aria-disabled='true']//span[text()='Project']")]
         public IWebElement DisabledCreateProjectButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
-        public IList<IWebElement> ColumnSubcategories { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DateTime')]/span[contains(text(), ':')]")]
         public IWebElement DateTimeColumnValue { get; set; }
 
@@ -439,48 +436,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector = By.XPath("//div[@class='ag-header-row']/div[@class='ag-header-cell ag-header-cell-sortable']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
-        }
-
-        public void ExpandColumnsSectionByName(string sectionsName)
-        {
-            if (Driver.IsElementExists(By.XPath(
-                $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
-            )
-                try
-                {
-                    Driver.FindElement(By.XPath(
-                            $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
-                        .Click();
-                }
-                catch
-                {
-                    Driver.MouseHover(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"));
-                    Driver.FindElement(By.XPath(
-                            $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
-                        .Click();
-                }
-
-            if (ColumnSubcategories.Any())
-                Driver.MouseHover(ColumnSubcategories.Last());
-        }
-
-        public void CloseColumnsSectionByName(string sectionsName)
-        {
-            try
-            {
-                Driver.FindElement(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"))
-                    .Click();
-            }
-            catch
-            {
-                Driver.MouseHover(By.XPath(
-                    $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"));
-                Driver.FindElement(By.XPath(
-                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"))
-                    .Click();
-            }
         }
 
         #region Autocomplete
@@ -1030,10 +985,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Chips
+
         public IList<IWebElement> GetChipsOfTextbox(string textbox)
         {
             var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//li[contains(@class, 'chips-item')]/span");
             return GetTextbox(textbox).FindElements(chipsSelector);
         }
+
+        #endregion
     }
 }
