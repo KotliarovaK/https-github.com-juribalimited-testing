@@ -390,3 +390,16 @@ Scenario: EvergreenJnr_Devices_CheckOrderByStatusColumnSorting
 	Then 'Not Onboarded' content is displayed in the '1803: Status' column
 	When User clicks on '1803: Status' column header
 	Then 'Offboarded' content is displayed in the '1803: Status' column
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18762 @Not_Ready
+#Waiting for 'Sticky Compliance' column
+Scenario: EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying
+	When User clicks 'Applications' on the left-hand menu
+	And User add following columns using URL to the "Applications" page:
+	| ColumnName        |
+	| Sticky Compliance |
+	When User create dynamic list with "DAS18762_List" name on "Applications" page
+	Then "DAS18762_List" list is displayed to user
+	When User clicks on 'Sticky Compliance' column header
+	When User clicks on 'Sticky Compliance' column header
+	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column

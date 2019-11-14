@@ -108,3 +108,19 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	When User clicks Reset Filters button on the Admin page
 	When User enters '9 Aug 2019' text in the Search field for 'Created Date' datepicker
 	Then Rows counter contains "6" found row of all rows
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18346 @Cleanup @Not_Ready
+#Waiting for "Object Type" column
+Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Object Type" checkbox on the Column Settings panel
+	When User clicks String Filter button for "Object Type" column
+	When User selects "Devices" checkbox from String Filter on the Admin page
+	Then "DAS-15949 - all users scope" content is displayed for "Automation" column
+	When User clicks content from "Automation" column
+	Then 'Users' content is displayed in 'Object Type' autocomplete
