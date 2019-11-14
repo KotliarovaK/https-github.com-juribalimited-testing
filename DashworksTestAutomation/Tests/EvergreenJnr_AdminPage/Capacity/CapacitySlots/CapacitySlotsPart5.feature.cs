@@ -290,7 +290,7 @@ this.FeatureBackground();
  testRunner.And("User sees following duplicates counts for columns:", ((string)(null)), table4, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table5.AddRow(new string[] {
                         "Slot 13979"});
             table5.AddRow(new string[] {
@@ -298,7 +298,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Slot 13979 (copy) (copy)"});
 #line 46
- testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table5, "And ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table5, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -604,7 +604,7 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table11.AddRow(new string[] {
                         "Slot 10001"});
             table11.AddRow(new string[] {
@@ -612,12 +612,12 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Slot 10003"});
 #line 106
- testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table11, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table11, "Then ");
 #line 111
  testRunner.When("User move \"Slot 10001\" item to \"32767\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table12.AddRow(new string[] {
                         "Slot 10002"});
             table12.AddRow(new string[] {
@@ -625,7 +625,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Slot 10001"});
 #line 112
- testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table12, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table12, "Then ");
 #line 117
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
