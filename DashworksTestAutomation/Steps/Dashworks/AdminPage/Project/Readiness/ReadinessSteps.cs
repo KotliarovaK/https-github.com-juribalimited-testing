@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Readiness;
+using DashworksTestAutomation.DTO.RuntimeVariables.Readiness;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -22,11 +23,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
         private readonly RemoteWebDriver _driver;
         private readonly DTO.RuntimeVariables.Readiness.Readiness _readiness;
         private readonly ReadinessDto readinessDto = new ReadinessDto();
+        private readonly DefaultReadinessId _defaultReadinessId;
 
-        public ReadinessSteps(RemoteWebDriver driver, DTO.RuntimeVariables.Readiness.Readiness readiness)
+        public ReadinessSteps(RemoteWebDriver driver, DTO.RuntimeVariables.Readiness.Readiness readiness, DefaultReadinessId defaultReadinessId)
         {
             _driver = driver;
             _readiness = readiness;
+            _defaultReadinessId = defaultReadinessId;
         }
 
         [When(@"User updates readiness properties on Edit Readiness")]
@@ -54,7 +57,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
 
                 if (!string.IsNullOrEmpty(row["DefaultForApplications"]))
                 {
-                    bpage.GetCheckbox("Default").SetCheckboxState(bool.Parse(row["DefaultForApplications"].ToLower()));
+                    var condition = bool.Parse(row["DefaultForApplications"].ToLower());
+                    if (condition)
+                    {
+                        if (!_defaultReadinessId.Value.Any())
+                        {
+                            throw new Exception("Use specific Given step (from SetDefaultReadinessBeforeScenario class) before your tests to store Default Readiness ID");
+                        }
+                    }
+                    bpage.GetCheckbox("Default").SetCheckboxState(condition);
                 }
 
                 if (!string.IsNullOrEmpty(row["ColourTemplate"]))
@@ -144,13 +155,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness
             Utils.Verify.That(readinessDto.DefaultForApplications.ToString(), Is.EqualTo(defaultFor).IgnoreCase, "Default For state different from stored one");
         }
 
-        [Then(@"Readiness ""(.*)"" displayed before None")]
+        [Then(@"Readiness ""(.*)"" displayed before Ignore")]
         public void ThenReadinessDisplayedBeforeNone(string title)
         {
             var readiness = _driver.NowAt<ReadinessPage>();
             List<string> labels = readiness.GetListOfReadinessLabel();
 
-            Utils.Verify.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("NONE"))));
+            Utils.Verify.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("IGNORE"))));
         }
     }
 }

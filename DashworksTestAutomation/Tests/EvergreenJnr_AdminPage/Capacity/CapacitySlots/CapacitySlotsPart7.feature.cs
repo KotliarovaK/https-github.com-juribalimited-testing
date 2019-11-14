@@ -974,15 +974,15 @@ this.FeatureBackground();
                         "Pre-Migration \\ Scheduled Date"});
 #line 245
  testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table24, "Then ");
-#line 251
+#line 248
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 252
+#line 249
  testRunner.And("User clicks \'CREATE SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 253
+#line 250
  testRunner.And("User enters \'Slot 2\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 254
+#line 251
  testRunner.And("User enters \'Slot 2\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 255
+#line 252
  testRunner.And("User selects \'Capacity Units\' in the \'Capacity Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -991,9 +991,9 @@ this.FeatureBackground();
                         "Computer Information ---- Text fill; Text fill; \\ 1Task13500"});
             table25.AddRow(new string[] {
                         "Computer Information ---- Text fill; Text fill; \\ 2Task13500"});
-#line 256
+#line 253
  testRunner.Then("Next checkboxes in the \"Tasks\" dropdown are not available to select:", ((string)(null)), table25, "Then ");
-#line 260
+#line 257
  testRunner.And("\"Pre-Migration \\ Scheduled Date\" checkbox in the \"Tasks\" field are available to s" +
                     "elect", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1054,23 +1054,23 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Slots",
                         "Do_Not_Run_With_Senior",
                         "Cleanup"});
-#line 263
+#line 260
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 264
+#line 261
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 265
+#line 262
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 266
+#line 263
  testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 267
+#line 264
  testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
                     " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 268
+#line 265
  testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 269
+#line 266
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1089,13 +1089,13 @@ this.FeatureBackground();
                         "Date",
                         "Computer",
                         ""});
-#line 270
+#line 267
  testRunner.And("User creates Task", ((string)(null)), table26, "And ");
-#line 273
+#line 270
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 274
+#line 271
  testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 275
+#line 272
  testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1110,14 +1110,14 @@ this.FeatureBackground();
                         "Slot Task17507",
                         "Capacity Units",
                         "Computer Information ---- Text fill; Text fill; \\ Task17507"});
-#line 276
+#line 273
  testRunner.When("User creates new Slot via Api", ((string)(null)), table27, "When ");
-#line 279
+#line 276
  testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 280
+#line 277
  testRunner.When("User removes \"Computer Information ---- Text fill; Text fill; \\ Task17507\" on the" +
                     " Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 281
+#line 278
  testRunner.Then("\"Computer Information ---- Text fill; Text fill; \\ Task17507\" checkbox in the \"Ta" +
                     "sks\" field are available to select", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

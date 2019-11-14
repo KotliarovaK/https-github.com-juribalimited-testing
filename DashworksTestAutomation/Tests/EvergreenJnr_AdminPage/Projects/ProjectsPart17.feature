@@ -100,6 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
+	When User enters "TestProject1" text in the Search field for "Project" column
 	When User clicks on 'TestProject1' cell from 'Project' column
 	Then Page with 'TestProject1' header is displayed to user
 	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page

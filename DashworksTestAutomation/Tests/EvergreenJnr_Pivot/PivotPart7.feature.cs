@@ -175,7 +175,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "GREEN"});
             table4.AddRow(new string[] {
-                        "NONE"});
+                        "IGNORE"});
 #line 25
  testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table4, "Then ");
 #line hidden
@@ -381,7 +381,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "GREEN"});
             table12.AddRow(new string[] {
-                        "NONE"});
+                        "IGNORE"});
 #line 74
  testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table12, "Then ");
 #line hidden

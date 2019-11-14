@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	And User creates new Widget
 	| WidgetType | Title           | List                  | SplitBy                      | AggregateFunction | OrderBy                          | TableOrientation |
 	| Table      | DAS15826_Widget | DeviceListForDAS15826 | UserEvergr: Ring (All Users) | Count             | UserEvergr: Ring (All Users) ASC | Vertical         |
-	Then Card 'DAS15826_Widget' Widget is displayed to the user
+	Then 'DAS15826_Widget' Widget is displayed to the user
 	And content in the Widget is displayed in following order:
 	| TableValue       |
 	| Empty            |
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'UserEvergr: Ring (All Users) DESC' in the 'OrderBy' dropdown
 	And User clicks 'UPDATE' button 
-	Then Card 'DAS15826_Widget' Widget is displayed to the user
+	Then 'DAS15826_Widget' Widget is displayed to the user
 	And content in the Widget is displayed in following order:
 	| TableValue       |
 	| Evergreen Ring 3 |
@@ -336,6 +336,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessValuesAreShownWithTheCor
 	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | 1803: Readiness | 1803: Readiness Severity ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
+	Then 'DAS16275_Widget' Widget is displayed to the user
 	Then 'Green' color displayed for 'GREEN' value in table 'DAS16275_Widget' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
@@ -355,7 +356,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceValuesAreShownWithTheCo
 	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy      | OrderBy                       |
 	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | Owner Compliance | Owner Compliance Severity ASC |
 	Then Widget Preview is displayed to the user
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
+	Then 'DAS16275_Widget' Widget is displayed to the user
 	Then 'Green' color displayed for 'GREEN' value in table 'DAS16275_Widget' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
@@ -403,7 +405,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	| TRUE               |
 	When User Add And "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| None               |
+	| Empty              |
 	| Green              |
 	| Amber              |
 	When User clicks Save button on the list panel
@@ -422,5 +424,4 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
-	Then Filter Expression displayed within Filter Panel
-	Then "(1803: In Scope = true AND 1803: Readiness = None, Green or Amber)" text is displayed in filter container
+	Then "(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber)" text is displayed in filter container

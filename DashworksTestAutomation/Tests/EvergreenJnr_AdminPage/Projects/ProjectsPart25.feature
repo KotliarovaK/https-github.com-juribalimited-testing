@@ -26,7 +26,7 @@ Examples:
 	| 1803 Rollout                       | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
 	| Mailbox Evergreen Capacity Project | User Scope   | Users Readiness Columns & Filters | Application Scope | 1803 Apps |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699 @DAS18943
 Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject
 	When User navigates to "<ProjectName>" project details
 	And User navigates to the 'Scope' left menu item

@@ -70,7 +70,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	| List       | 10_Widget | All Devices | 5       | 5          |
 	Then '10_Widget' Widget is displayed to the user
 	#==========================================================#
-	Then 'ADD SECTION' button is disabled
 	And 'ADD WIDGET' button is disabled
 	Then 'ADD WIDGET' button has tooltip with 'Maximum number of widgets has been reached for this dashboard' text
 	When User clicks Ellipsis menu for '10_Widget' Widget on Dashboards page
@@ -93,7 +92,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    |
 	| Pie        | WidgetForDAS14618 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |
-	And User clicks 'ADD SECTION' button 
+	Then 'WidgetForDAS14618' Widget is displayed to the user
+	When User clicks 'ADD SECTION' button 
 	And User clicks Ellipsis menu for 'WidgetForDAS14618' Widget on Dashboards page
 	And User clicks 'Move to section' item from Ellipsis menu on Dashboards page
 	Then Move to Section pop up is displayed to the User

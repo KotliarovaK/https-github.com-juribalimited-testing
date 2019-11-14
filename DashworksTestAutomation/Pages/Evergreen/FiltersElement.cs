@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'addColumn')]//span[@class='mat-checkbox-label']")]
         public IWebElement AddFiltersColumnName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='filterAddPanel ng-star-inserted']//i[@class='material-icons mat-item_delete']/ancestor::button")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filterAddPanel')]//i[contains(@class,'delete')]/ancestor::button")]
         public IWebElement RemoveFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'reset')]")]
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-container')]//span/span/span")]
         public IList<IWebElement> FilterCheckboxOptionsLabels { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-label')]")]
         public IList<IWebElement> AddedFilterLabels { get; set; }
 
         [FindsBy(How = How.XPath, Using = GroupTitleSelector)]
@@ -368,10 +368,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetFiltersNamesFromFilterPanel(string filterName)
         {
-            return Driver.FindElements(By.XPath($".//div[@class='filter-label']//span[@class='filter-label-name']"))
+            return Driver.FindElements(By.XPath($".//div[contains(@class,'filter-label')]//span[@class='filter-label-name']"))
                 .Select(x => x.Text).ToList();
-
-            //return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));//TODO: remove if fix above works for all
         }
 
         public IWebElement CloseFiltersLookupValue(string filterValue)

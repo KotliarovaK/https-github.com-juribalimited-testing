@@ -245,9 +245,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	Then only below options are selected in the 'Tasks' autocomplete
 	| Options                        |
 	| Pre-Migration \ Scheduled Date |
-	#Then Next values are selected for the "Tasks" field:
-	#| Value                          |
-	#| Pre-Migration \ Scheduled Date |
 	When User clicks 'CANCEL' button 
 	And User clicks 'CREATE SLOT' button 
 	And User enters 'Slot 2' text to 'Slot Name' textbox

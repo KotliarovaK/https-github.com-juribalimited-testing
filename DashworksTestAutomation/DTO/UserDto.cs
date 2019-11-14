@@ -31,6 +31,44 @@ namespace DashworksTestAutomation.DTO
             }
         }
         public List<string> UserRoles { get; set; }
+
+        public List<string> ApiUserRoles
+        {
+            get
+            {
+                var resultList = new List<string>();
+                foreach (string role in UserRoles)
+                {
+                    switch (role)
+                    {
+                        case "Self Service User":
+                            resultList.Add("Self Service Users");
+                            break;
+                        case "API User":
+                            resultList.Add("API Users");
+                            break;
+                        case "Project Administrator":
+                            resultList.Add("Project Administrators");
+                            break;
+                        case "Project Bulk Updater":
+                            resultList.Add("Project Bulk Updaters");
+                            break;
+                        case "Project Onboarder":
+                            resultList.Add("Project Onboarders");
+                            break;
+                        case "System Administrator":
+                            resultList.Add("System Administrators");
+                            break;
+                        default:
+                            resultList.Add(role);
+                            break;
+                    }
+                }
+
+                return resultList;
+            }
+        }
+
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         //'on' in case disabled

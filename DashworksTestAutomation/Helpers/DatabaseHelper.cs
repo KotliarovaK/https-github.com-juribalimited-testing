@@ -508,7 +508,7 @@ namespace DashworksTestAutomation.Helpers
         {
             try
             {
-                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId] = projectId and [RAGStatus] = '{readinessName}'", 0)[0];
+                return DatabaseHelper.ExecuteReader($"select [RAGStatusId] from [PM].[dbo].[RAGStatus] where [ProjectId] = {projectId} and [RAGStatus] = '{readinessName}'", 0)[0];
             }
             catch (Exception e)
             {
@@ -526,6 +526,16 @@ namespace DashworksTestAutomation.Helpers
             {
                 throw new Exception("GetProjectReadinessesIds returned no results", e);
             }
+        }
+
+        public static string GetProjectDefaultReadinessId(int projectId)
+        {
+            return DatabaseHelper.ExecuteReader($"SELECT [DefaultPkgOnboardRagStatusID] FROM [PM].[dbo].[Projects] WHERE [ProjectID] = {projectId}", 0)[0];
+        }
+
+        public static void SetProjectDefaultReadinessId(int projectId, int readinessId)
+        {
+            DatabaseHelper.ExecuteQuery($"UPDATE [PM].[dbo].[Projects] SET [DefaultPkgOnboardRagStatusID] = {readinessId} WHERE  [ProjectID] = {projectId}");
         }
 
         #endregion

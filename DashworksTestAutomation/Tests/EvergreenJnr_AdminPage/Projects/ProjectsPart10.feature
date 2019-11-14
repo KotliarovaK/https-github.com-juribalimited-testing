@@ -89,7 +89,7 @@ Examples:
 	| All Users       | StaticList6329  | Clone from Evergreen to Project | Users to add (0 of 41339 selected) | Users to add (0 of 2 selected)  |
 	| StaticList6329  | DynamicList37   | Standalone Project              | Users to add (0 of 2 selected)     | Users to add (0 of 92 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS18943 @Cleanup @Projects
 Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndMailboxProjects
 	When User clicks '<ListName>' on the left-hand menu
 	Then 'All <ListName>' list should be displayed to the user

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
@@ -6,6 +7,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Readiness;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
+using DashworksTestAutomation.DTO.RuntimeVariables.Readiness;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
@@ -20,16 +22,35 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness.Af
     {
         private readonly DTO.RuntimeVariables.Readiness.Readiness _readiness;
         private readonly RestWebClient _client;
+        private readonly DefaultReadinessId _defaultReadinessId;
 
-        private RemoveReadinessAfterScenario(DTO.RuntimeVariables.Readiness.Readiness readiness, RestWebClient client)
+        private RemoveReadinessAfterScenario(DTO.RuntimeVariables.Readiness.Readiness readiness, RestWebClient client, DefaultReadinessId defaultReadinessId)
         {
             _readiness = readiness;
             _client = client;
+            _defaultReadinessId = defaultReadinessId;
         }
 
         [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedReadiness()
         {
+            //Default readiness
+            if (_defaultReadinessId.Value.Any())
+            {
+                foreach (KeyValuePair<int, int> pair in _defaultReadinessId.Value)
+                {
+                    try
+                    {
+                        DatabaseHelper.SetProjectDefaultReadinessId(pair.Key, pair.Value);
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Write($"Some issues appears during set of Default Bucket in after scenario: {e}");
+                    }
+                }
+            }
+
+            //Delete readiness
             if (!_readiness.Value.Any())
                 return;
 

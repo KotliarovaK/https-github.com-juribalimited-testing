@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	| 87          | GREEN  |
 	| 86          | GREEN  |
 	| 20          | GREEN  |
-	| 9           | NONE   |
+	| 9           | IGNORE |
 	| 3           | GREEN  |
 	| 2           | GREEN  |
 	| 0           | GREEN  |
