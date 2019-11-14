@@ -807,7 +807,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18607")]
+        [NUnit.Framework.CategoryAttribute("DAS18865")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab()
         {
@@ -843,7 +843,7 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18607",
+                        "DAS18865",
                         "Not_Ready"});
 #line 236
 this.ScenarioInitialize(scenarioInfo);

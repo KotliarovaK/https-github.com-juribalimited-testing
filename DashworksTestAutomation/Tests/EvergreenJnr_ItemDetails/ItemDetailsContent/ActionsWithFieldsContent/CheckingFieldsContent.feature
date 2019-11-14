@@ -232,7 +232,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogAndCriticalityFieldsAr
 	| Criticality | Uncategorised |
 
 #Ann.I. 11/14/19: ready only for the 'terminator'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18607 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18865 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab 
 	When User navigates to the 'Application' details page for 'Axosoft OnTime 2005 Enterprise Server' item
 	Then Details page for "Axosoft OnTime 2005 Enterprise Server" item is displayed to the user
