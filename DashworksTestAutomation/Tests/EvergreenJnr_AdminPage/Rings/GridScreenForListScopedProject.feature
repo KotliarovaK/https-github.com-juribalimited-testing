@@ -46,11 +46,11 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| 1      |
 	| 2      |
 	| 3      |
-	Then "Ring" column content is displayed in the following order:
-    | Items      |
-    | Unassigned |
-    | 14695_Ring |
-    | Ring_Test  |
+	Then Content in the 'Ring' column is equal to
+	| Content    |
+	| Unassigned |
+	| 14695_Ring |
+	| Ring_Test  |
 	When User clicks on 'Ring' column header
 	Then data in table is sorted by "Ring" column in ascending order on the Admin page
 	When User clicks on 'Ring' column header

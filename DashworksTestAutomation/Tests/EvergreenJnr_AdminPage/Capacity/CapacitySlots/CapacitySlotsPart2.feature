@@ -75,32 +75,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then '1' content is displayed in the 'Slots' column
 	When User clicks content from "Slots" column
-	Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	Then 'All Capacity Units' text is displayed in the filter dropdown for the 'Capacity Units' column
 	And Rows counter contains "1" found row of all rows
-	And "Capacity Slot" column content is displayed in the following order:
-	| slots |
-	| Slot1 |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content |
+	| Slot1   |
 	#act2
 	When User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User enters "Capacity Unit 1" text in the Search field for "Capacity Unit" column
 	Then '2' content is displayed in the 'Slots' column
 	When User clicks content from "Slots" column
-	Then "Capacity Unit 1,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	Then 'Capacity Unit 1,All Capacity Units' text is displayed in the filter dropdown for the 'Capacity Units' column
 	And Rows counter contains "2" found row of all rows
-	And "Capacity Slot" column content is displayed in the following order:
-	| slots |
-	| Slot1 |
-	| Slot2 |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content |
+	| Slot1   |
+	| Slot2   |
 	#act3
 	When User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User enters "Capacity Unit 2" text in the Search field for "Capacity Unit" column
 	Then '2' content is displayed in the 'Slots' column
 	When User clicks content from "Slots" column
-	Then "Capacity Unit 2,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	Then 'Capacity Unit 2,All Capacity Units' text is displayed in the filter dropdown for the 'Capacity Units' column
 	And Rows counter contains "2" found row of all rows
-	And "Capacity Slot" column content is displayed in the following order:
-	| slots |
-	| Slot1 |
-	| Slot3 |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content |
+	| Slot1   |
+	| Slot3   |

@@ -12,16 +12,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	When User navigates to the 'Email Addresses' left submenu item
 	Then 'SMTP' content is displayed in the 'Type' column
 	Then 'TRUE' content is displayed in the 'Reply To' column
-	When User clicks String Filter button for "Type" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Type' column
 	| Values |
 	| SMTP   |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Reply To" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Reply To' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForUsersTabOnMailboxesPage
@@ -32,38 +28,28 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then 'TRUE' content is displayed in the 'Owner' column
 	Then '' content is displayed in the 'Domain' column
-	When User clicks String Filter button for "Owner" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Owner' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Domain" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Domain' column
 	| Values |
 	| Empty  |
-	When User closes Checkbox filter
 	When User navigates to the 'Groups' left submenu item
 	Then 'BCLABS' content is displayed in the 'Domain' column
-	When User clicks String Filter button for "Domain" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Domain' column
 	| Values |
 	| BCLABS |
-	When User closes Checkbox filter
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	Then 'BCLABS' content is displayed in the 'Domain' column
 	Then 'FullAccess' content is displayed in the 'Permission' column
-	When User clicks String Filter button for "Domain" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Domain' column
 	| Values |
 	| BCLABS |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Permission" column
-	#Order of the options in the dropdown is the same as on Senior
-	Then following String Values are displayed in the filter on the Details Page
+	#Order of the options in the 'Permission' dropdown is the same as on Senior
+	Then following String Values are displayed in the filter dropdown for the 'Permission' column
 	| Values           |
 	| FullAccess       |
 	| ReadPermission   |
 	| DeleteItem       |
 	| ChangeOwner      |
 	| ChangePermission |
-	When User closes Checkbox filter

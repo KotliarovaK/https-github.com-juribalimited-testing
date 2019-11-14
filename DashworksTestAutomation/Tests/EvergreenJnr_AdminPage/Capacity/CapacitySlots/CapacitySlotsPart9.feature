@@ -11,8 +11,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot
-	Then "Capacity Slot" column content is displayed in the following order:
-	| Items                        |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content                      |
 	| Birmingham Afternoon         |
 	| Manchester Morning           |
 	| Manchester Afternoon         |
@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| Birmingham Morning           |
 	| London Depot 15:00 - 17:00   |
 	When User moves "Birmingham Morning" slot to "Birmingham Afternoon" slot
-	Then "Capacity Slot" column content is displayed in the following order:
-	| Items                        |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content                      |
 	| Birmingham Afternoon         |
 	| Birmingham Morning           |
 	| Manchester Morning           |

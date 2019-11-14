@@ -34,13 +34,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	And There are no errors in the browser console
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
-	Then "No units,Unassigned" is displayed in the dropdown filter for "Capacity Units" column
+	Then 'No units,Unassigned' text is displayed in the filter dropdown for the 'Capacity Units' column
 	And There are no errors in the browser console
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "Unassigned" checkbox from String Filter on the Admin page
-	Then "All Capacity Units,No units" is displayed in the dropdown filter for "Capacity Units" column
+	Then 'All Capacity Units,No units' text is displayed in the filter dropdown for the 'Capacity Units' column
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13811 @Cleanup
