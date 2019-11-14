@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.ActionsPanel.B
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SpecFlowFeature1.feature"
+#line 1 "UpdateApplicationAttributes.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -109,21 +109,42 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table1.AddRow(new string[] {
-                        "<Row>"});
+                        "7-Zip 16.02 (x64)"});
 #line 14
- testRunner.When("User select \" \" rows in the grid", ((string)(null)), table1, "When ");
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table1, "When ");
 #line 17
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
- testRunner.And("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
- testRunner.And("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\"Sticky Compliance\" dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
- testRunner.And("User selects \'Remove specific values\' in the \'Update Values\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
- testRunner.When("User adds \'test\' value from \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 22
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table2.AddRow(new string[] {
+                        "No Change"});
+            table2.AddRow(new string[] {
+                        "Ignore"});
+            table2.AddRow(new string[] {
+                        "Amber"});
+            table2.AddRow(new string[] {
+                        "Red"});
+            table2.AddRow(new string[] {
+                        "Green"});
+#line 23
+ testRunner.Then("following Values are displayed in the \'Sticky Compliance\' dropdown:", ((string)(null)), table2, "Then ");
+#line 30
+ testRunner.When("User selects \'Red\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 32
+ testRunner.Then("\'CANCEL\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
