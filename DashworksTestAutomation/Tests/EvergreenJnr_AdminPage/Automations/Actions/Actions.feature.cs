@@ -389,7 +389,7 @@ this.FeatureBackground();
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table5.AddRow(new string[] {
                         "Secont_Action"});
             table5.AddRow(new string[] {
@@ -399,13 +399,13 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "DAS15427_Action"});
 #line 106
- testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table5, "Then ");
+ testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table5, "Then ");
 #line 112
  testRunner.When("User clicks \"Move to bottom\" option in Cog-menu for \"First_Action\" item on Admin " +
                     "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table6.AddRow(new string[] {
                         "Secont_Action"});
             table6.AddRow(new string[] {
@@ -415,7 +415,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "First_Action"});
 #line 113
- testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table6, "Then ");
+ testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table6, "Then ");
 #line 119
  testRunner.When("User have opened column settings for \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 120
@@ -431,7 +431,7 @@ this.FeatureBackground();
  testRunner.When("User move \"Secont_Action\" item to \"4\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table7.AddRow(new string[] {
                         "Third_Action"});
             table7.AddRow(new string[] {
@@ -441,12 +441,12 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Secont_Action"});
 #line 125
- testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table7, "Then ");
+ testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table7, "Then ");
 #line 131
  testRunner.When("User move \"Secont_Action\" item to \"1\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table8.AddRow(new string[] {
                         "Secont_Action"});
             table8.AddRow(new string[] {
@@ -456,12 +456,12 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "First_Action"});
 #line 132
- testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table8, "Then ");
+ testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table8, "Then ");
 #line 138
  testRunner.When("User move \"Secont_Action\" item to \"20\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table9.AddRow(new string[] {
                         "Third_Action"});
             table9.AddRow(new string[] {
@@ -471,7 +471,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "Secont_Action"});
 #line 139
- testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table9, "Then ");
+ testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table9, "Then ");
 #line 145
  testRunner.When("User have opened column settings for \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 146
@@ -660,7 +660,7 @@ this.FeatureBackground();
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table12.AddRow(new string[] {
                         "15428_Action_2"});
             table12.AddRow(new string[] {
@@ -668,7 +668,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "15428_Action_3"});
 #line 207
- testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table12, "Then ");
+ testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table12, "Then ");
 #line 212
  testRunner.When("User clicks on \'Task or Field\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 213

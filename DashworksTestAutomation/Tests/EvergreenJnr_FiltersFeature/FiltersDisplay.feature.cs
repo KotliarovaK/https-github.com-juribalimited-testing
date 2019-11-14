@@ -9397,6 +9397,101 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanel")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS18065")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanel()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanelInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanelInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPanel", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS18065"});
+#line 2157
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2158
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2159
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2160
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2161
+ testRunner.When("user select \"Hostname\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2162
+ testRunner.When("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2163
+ testRunner.When("User enters \"Text1\" text in Search field at selected Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2164
+ testRunner.When("User clicks Add button for input filter value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table143 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ChipValue"});
+            table143.AddRow(new string[] {
+                        "Text1"});
+#line 2165
+ testRunner.Then("following chips value displayed for \'Hostname\' textbox", ((string)(null)), table143, "Then ");
+#line 2168
+ testRunner.Then("tooltip is not displayed for \'Text1\' chip of \'Hostname\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2169
+ testRunner.When("User enters \"Text2\" text in Search field at selected Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2170
+ testRunner.When("User clicks Add button for input filter value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2171
+ testRunner.When("User enters \"Text3\" text in Search field at selected Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2172
+ testRunner.When("User clicks Add button for input filter value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ChipValue"});
+            table144.AddRow(new string[] {
+                        "Text1"});
+            table144.AddRow(new string[] {
+                        "Text2"});
+            table144.AddRow(new string[] {
+                        "1 more"});
+#line 2173
+ testRunner.Then("following chips value displayed for \'Hostname\' textbox", ((string)(null)), table144, "Then ");
+#line 2178
+ testRunner.Then("tooltip is not displayed for \'1 more\' chip of \'Hostname\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

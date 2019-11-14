@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 	| Line       | Project AllDevicesDAS15462 | All Devices | Hostname    | Count distinct    | Operating System | Operating System ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
-	Then 'AllDevicesDAS15462' Widget is displayed to the user
+	Then 'Project AllDevicesDAS15462' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName                 | NumberOfPoint | Tooltip     |

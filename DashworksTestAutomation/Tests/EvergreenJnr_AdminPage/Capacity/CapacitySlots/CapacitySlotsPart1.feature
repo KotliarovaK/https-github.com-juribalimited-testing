@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
-	Then "No units" is displayed in the dropdown filter for "Capacity Units" column
+	Then 'No units' text is displayed in the filter dropdown for the 'Capacity Units' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13780 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrideDateForSameSlotWithSameDate

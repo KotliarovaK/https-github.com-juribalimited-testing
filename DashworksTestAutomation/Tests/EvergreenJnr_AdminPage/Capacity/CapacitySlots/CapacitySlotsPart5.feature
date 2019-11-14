@@ -43,8 +43,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| Paths          | All Paths       | 3              |
 	| Teams          | All Teams       | 3              |
 	| Capacity Units |                 | 3              |
-	And "Capacity Slot" column content is displayed in the following order:
-	| slots                    |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content                  |
 	| Slot 13979               |
 	| Slot 13979 (copy)        |
 	| Slot 13979 (copy) (copy) |
@@ -103,14 +103,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	| ProjectForDAS13791 | Slot 10003 | 10003       | Teams and Paths |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	Then "Capacity Slot" column content is displayed in the following order:
-	| slots      |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content    |
 	| Slot 10001 |
 	| Slot 10002 |
 	| Slot 10003 |
 	When User move "Slot 10001" item to "32767" position on Admin page
-	Then "Capacity Slot" column content is displayed in the following order:
-	| slots      |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content    |
 	| Slot 10002 |
 	| Slot 10003 |
 	| Slot 10001 |

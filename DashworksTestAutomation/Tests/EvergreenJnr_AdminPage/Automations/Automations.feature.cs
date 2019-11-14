@@ -736,13 +736,13 @@ this.FeatureBackground();
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table12.AddRow(new string[] {
                         "AM 150419 II"});
             table12.AddRow(new string[] {
                         "Add data"});
 #line 212
- testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table12, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table12, "Then ");
 #line 216
  testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 217
@@ -762,13 +762,13 @@ this.FeatureBackground();
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table13.AddRow(new string[] {
                         "AM 150419 II"});
             table13.AddRow(new string[] {
                         "Add data"});
 #line 224
- testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table13, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -905,7 +905,7 @@ this.FeatureBackground();
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table16.AddRow(new string[] {
                         "AM 150419 I"});
             table16.AddRow(new string[] {
@@ -915,7 +915,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "AM 150419 II"});
 #line 269
- testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table16, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table16, "Then ");
 #line 275
  testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 276
@@ -935,7 +935,7 @@ this.FeatureBackground();
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table17.AddRow(new string[] {
                         "AM 150419 I"});
             table17.AddRow(new string[] {
@@ -945,7 +945,7 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "AM 150419 II"});
 #line 283
- testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table17, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table17, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1039,7 +1039,7 @@ this.FeatureBackground();
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table18.AddRow(new string[] {
                         "AM 150419 I"});
             table18.AddRow(new string[] {
@@ -1049,7 +1049,7 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "AM Test 1"});
 #line 308
- testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table18, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table18, "Then ");
 #line 314
  testRunner.When("User move \"AM 150419 I\" item to \"100\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 315
@@ -1065,7 +1065,7 @@ this.FeatureBackground();
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table19.AddRow(new string[] {
                         "AM 150419 II"});
             table19.AddRow(new string[] {
@@ -1075,7 +1075,7 @@ this.FeatureBackground();
             table19.AddRow(new string[] {
                         "AM 150419 I"});
 #line 320
- testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table19, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table19, "Then ");
 #line 326
  testRunner.When("User move \" AM 150419 II\" item to \"1\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 327
@@ -1091,7 +1091,7 @@ this.FeatureBackground();
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table20.AddRow(new string[] {
                         "AM 150419 II"});
             table20.AddRow(new string[] {
@@ -1101,7 +1101,7 @@ this.FeatureBackground();
             table20.AddRow(new string[] {
                         "AM 150419 I"});
 #line 332
- testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table20, "Then ");
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

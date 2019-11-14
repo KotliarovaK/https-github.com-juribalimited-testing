@@ -149,7 +149,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Onboard User Object"});
 #line 15
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table1, "Then ");
+ testRunner.Then("following String Values are displayed in the filter", ((string)(null)), table1, "Then ");
 #line 21
  testRunner.When("User selects \"Onboard Application Object\" checkbox from String Filter with item l" +
                     "ist on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -237,7 +237,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Re-onboard User Object"});
 #line 33
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table2, "Then ");
+ testRunner.Then("following String Values are displayed in the filter", ((string)(null)), table2, "Then ");
 #line 40
  testRunner.When("User selects \"Onboard User Object\" checkbox from String Filter with item list on " +
                     "the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -320,7 +320,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Onboard User Object"});
 #line 50
- testRunner.Then("following String Values are displayed in the filter on the Details Page", ((string)(null)), table3, "Then ");
+ testRunner.Then("following String Values are displayed in the filter", ((string)(null)), table3, "Then ");
 #line 56
  testRunner.When("User selects \"Onboard Application Object\" checkbox from String Filter with item l" +
                     "ist on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

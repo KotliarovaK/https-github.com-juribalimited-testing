@@ -981,6 +981,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Utils.Verify.AreEqual(expectedChipList, chipsValueList, "Chips value are different");
         }
 
-        #endregion
+        [Then(@"tooltip is not displayed for '(.*)' chip of '(.*)' textbox")]
+        public void ThenTooltipIsNotDisplayedForChip(string chipName, string textbox)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            var chip = page.GetChipsOfTextbox(textbox).First(value => value.Text.Equals(chipName));
+
+            _driver.MouseHover(chip);
+            //For tooltip display
+            Thread.Sleep(300);
+            Verify.IsFalse(_driver.IsTooltipDisplayed(),
+                $"Tooltip for '{chipName}' chip is displayed");
         }
+
+        #endregion
+    }
 }

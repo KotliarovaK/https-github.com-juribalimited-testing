@@ -188,7 +188,7 @@ this.FeatureBackground();
                     " the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table3.AddRow(new string[] {
                         "Slot13147"});
             table3.AddRow(new string[] {
@@ -196,7 +196,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Name1"});
 #line 26
- testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table3, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

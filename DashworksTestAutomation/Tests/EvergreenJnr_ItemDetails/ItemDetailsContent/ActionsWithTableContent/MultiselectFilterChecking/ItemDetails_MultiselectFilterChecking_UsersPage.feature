@@ -17,21 +17,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	And User clicks Column button on the Column Settings panel
 	And User select "Directory Type" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	When User clicks String Filter button for "Domain" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Domain' column
 	| Values |
 	| US-W   |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Type" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Type' column
 	| Values                |
 	| Global Security Group |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Directory Type" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Directory Type' column
 	| Values           |
 	| Active Directory |
-	When User closes Checkbox filter
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnUsersPage
@@ -44,36 +38,24 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	And 'UNKNOWN' content is displayed in the 'Used' column
 	And 'TRUE' content is displayed in the 'Entitled' column
 	And 'FALSE' content is displayed in the 'Entitled To Device' column
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values  |
 	| UNKNOWN |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Site" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values      |
 	| JuribaDEV50 |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Installed" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Installed' column
 	| Values  |
 	| Unknown |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Used" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Used' column
 	| Values  |
 	| Unknown |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Entitled" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Entitled' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Entitled To Device" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Entitled To Device' column
 	| Values |
 	| False  |
-	When User closes Checkbox filter
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnUsersPage
@@ -84,21 +66,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	Then 'UNKNOWN' content is displayed in the 'Compliance' column
 	And 'JuribaDEV50' content is displayed in the 'Site' column
 	Then 'Entitled' content is displayed in the 'Association Type' column
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values  |
 	| UNKNOWN |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Site" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values      |
 	| JuribaDEV50 |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Association Type" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Association Type' column
 	| Values   |
 	| Entitled |
-	When User closes Checkbox filter
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnUsersPage
@@ -107,11 +83,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Advertisements' left submenu item
 	Then 'JuribaDEV50' content is displayed in the 'Site' column
-	When User clicks String Filter button for "Site" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values      |
 	| JuribaDEV50 |
-	When User closes Checkbox filter
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnUsersPage
@@ -122,21 +96,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
 	And 'DC1 SMS (DEV50)' content is displayed in the 'Source' column
 	And 'JuribaDEV50' content is displayed in the 'Site' column
-	When User clicks String Filter button for "Source Type" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Source Type' column
 	| Values        |
 	| SMS/SCCM 2007 |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Source" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Source' column
 	| Values          |
 	| DC1 SMS (DEV50) |
-	When User closes Checkbox filter
-	And User clicks String Filter button for "Site" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values      |
 	| JuribaDEV50 |
-	When User closes Checkbox filter
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMailboxesTabOnUsersPage
@@ -146,19 +114,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	And User navigates to the 'Mailboxes' left submenu item
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then 'TRUE' content is displayed in the 'Owner' column
-	When User clicks String Filter button for "Owner" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Owner' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	And User navigates to the 'Mailbox Permissions' left submenu item
+	When User navigates to the 'Mailbox Permissions' left submenu item
 	Then 'FullAccess' content is displayed in the 'Permission' column
-	When User clicks String Filter button for "Permission" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Permission' column
 	| Values         |
 	| FullAccess     |
 	| ReadPermission |
-	When User closes Checkbox filter
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabOnUsersPage
@@ -167,12 +131,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	When User navigates to the 'Compliance' left menu item
 	And User navigates to the 'Hardware Rules' left submenu item
 	Then 'AMBER' content is displayed in the 'Compliance' column
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values |
 	| AMBER  |
-	When User closes Checkbox filter
-	And User navigates to the 'Application Issues' left submenu item
+	When User navigates to the 'Application Issues' left submenu item
 	And User have opened Column Settings for "Type" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Application" checkbox on the Column Settings panel
@@ -180,19 +142,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	Then 'TierA Site01' content is displayed in the 'Site' column
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'RED' content is displayed in the 'Compliance' column
-	When User clicks String Filter button for "Site" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values       |
 	| TierA Site01 |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Installed" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Installed' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values |
 	| RED    |
 	| AMBER  |
-	When User closes Checkbox filter

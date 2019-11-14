@@ -299,11 +299,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.GetGreyedOutCheckboxByName(checkbox).Displayed(), "checkbox is available");
         }
 
-        [Then(@"""(.*)"" is displayed in the dropdown filter for ""(.*)"" column")]
-        public void ThenIsDisplayedInTheDropdownFilterForColumn(string text, string columnName)
+        [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"{text} is not displayed in the dropdown filter for {columnName}");
+            Verify.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
+        }
+
+        [Then(@"'(.*)' text is not displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenTextIsNotDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"'{text}' text is not displayed in the dropdown filter for the'{columnName}'");
         }
 
         [Then(@"All Associations are selected by default")]
@@ -916,14 +923,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(page.DetailsPageWasNotFound.Text, Is.EqualTo("404"), "Page 404 was not opened");
         }
 
-        [Then(@"created Project with ""(.*)"" name is displayed correctly")]
-        public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.GetCreatedProjectName(projectName, true), $"The {projectName} Project is not found");
-        }
-
         [Then(@"Import Project button is not displayed")]
         public void ThenImportProjectButtonIsNotDisplayed()
         {
@@ -1357,17 +1356,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Text in search field is different");
         }
 
-        //TODO move to the BaseGrid
-        [Then(@"""(.*)"" column content is displayed in the following order:")]
-        public void ThenColumnContentIsDisplayedInTheFollowingOrder(string columnName, Table table)
-        {
-            var action = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.GetColumnContentByColumnName(columnName);
-            Verify.AreEqual(expectedList, actualList, "Column content is different");
-        }
-
         [Then(@"""(.*)"" dropdown is not displayed")]
         public void ThenDropdownIsNotDisplayed(string dropdownName)
         {
@@ -1424,19 +1412,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetStringFilterByColumnName(columnName);
         }
 
-        [Then(@"""(.*)"" checkbox is checked in the filter dropdown")]
-        public void ThenCheckboxIsCheckedInTheFilterDropdown(string filterName)
-        {
-            var filterElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(filterElement.GetCheckedFilterByCheckboxName(filterName).Displayed(),
-                $"{filterName} checkbox is not checked");
-        }
-
         [Then(@"""(.*)"" is not displayed in the filter dropdown")]
         public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(filterElement.GetStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
@@ -1547,13 +1527,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
             _driver.WaitForDataLoading();
             projectElement.DeleteButtonInWarningMessage.Click();
-        }
-
-        [Then(@"""(.*)"" item was removed")]
-        public void ThenItemWasRemoved(string itemName)
-        {
-            var item = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(item.GetCreatedProjectName(itemName), "Selected item was not removed");
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]

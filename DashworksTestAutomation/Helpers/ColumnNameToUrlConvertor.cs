@@ -262,6 +262,9 @@ namespace DashworksTestAutomation.Helpers
                 case "CPU Architecture":
                     return "processorArchitecture";
 
+                case "Sticky Compliance":
+                    return "stickyCompliance";
+
                 case "Model":
                     return "model";
 
