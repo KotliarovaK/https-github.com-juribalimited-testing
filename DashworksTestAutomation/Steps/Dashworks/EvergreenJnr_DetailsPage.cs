@@ -29,28 +29,125 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [When(@"User opens ""(.*)"" section on the Details Page")]
-        public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
+        [Then(@"Details object page is displayed to the user")]
+        public void ThenDetailsObjectPageIsDisplayedToTheUser()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(detailsPage.PopupChangesPanel);
-            if (!detailsPage.OpenedSection.Displayed())
-            {
-                _driver.MouseHover(detailsPage.NavigateToSectionByName(sectionName));
-                detailsPage.NavigateToSectionByName(sectionName).Click();
-            }
-            else
-                Verify.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
+            _driver.WaitForDataLoading();
+            Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Group con is not displayed to the user!");
+            Verify.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Details object page is not displayed to the user!");
         }
 
-        [When(@"User clicks ""(.*)"" link on the Details Page")]
-        public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
+        #region Column dropdown filter
+
+        [Then(@"string filter is displayed for '(.*)' column")]
+        public void ThenStringFilterIsDisplayedForColumn(string columnName)
+        {
+            var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Verify.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")), $"String filter is not displayed for {columnName} column!");
+        }
+
+        [Then(@"following String Values are displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenFollowingStringValuesAreDisplayedInTheFilterDropdownForTheColumn(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+            page.GetStringFilterByColumnName(columnName);
+
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text);
+            Verify.AreEqual(expectedList, actualList, $"String Values in the filter dropdown for the '{columnName}' column are different!");
+
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following String Values are contained in the filter dropdown for the '(.*)' column")]
+        public void ThenFollowingStringValuesAreContainedInTheFilterDropdownForTheColumn(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+            page.GetStringFilterByColumnName(columnName);
+
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text).ToList();
+            foreach (var row in table.Rows)
+            {
+                Verify.Contains(row["Values"], actualList, $"{row["Values"]} String values are not contained in the filter!");
+            }
+
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following String Values are displayed in the filter")]
+        public void ThenFollowingValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text);
+            Verify.AreEqual(expectedList, actualList, "Filter checkbox String values are different!");
+        }
+
+        [Then(@"following Boolean Values are displayed in the filter dropdown for the '(.*)' column")]
+        public void ThenFollowingBooleanValuesAreDisplayedInTheFilterDropdownForTheColumn(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+            page.GetStringFilterByColumnName(columnName);
+
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterCheckboxBooleanValues.Select(value => value.Text);
+            Verify.AreEqual(expectedList, actualList, "Boolean Values in the filter dropdown for the '{columnName}' column are different!");
+
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"All text is not displayed for ""(.*)"" column in the String Filter")]
+        public void ThenAllTextIsNotDisplayedForColumnInTheStringFilter(string columnName)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Verify.IsFalse(filterElement.GetStringFilterTextByColumnName(columnName),
+                $"All text is displayed for {columnName} column");
+        }
+
+        [When(@"User clicks '(.*)' checkbox from String Filter in the filter dropdown for the '(.*)' column")]
+        public void WhenUserClicksCheckboxFromStringFilterInTheFilterDropdownForTheColumn(string filterName, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+            page.GetStringFilterByColumnName(columnName);
+
+            var filter = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            if (filter.CheckboxesStringFilter.Displayed())
+                page.GetStringFilterByName(filterName);
+            else
+                page.GetBooleanStringFilterByName(filterName);
+
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"'(.*)' checkbox is checked in the filter dropdown for the '(.*)' column")]
+        public void ThenCheckboxIsCheckedInTheFilterDropdownForTheColumn(string checkboxName, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+            page.GetStringFilterByColumnName(columnName);
+
+            Verify.IsTrue(page.GetCheckedFilterByCheckboxName(checkboxName).Displayed(), $"{checkboxName} Checkbox is not selected");
+
+            page.BodyContainer.Click();
+        }
+
+        #endregion
+
+        #region Fields content
+
+        [Then(@"Item content is displayed to the User")]
+        public void ThenItemContentIsDisplayedToTheUser()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            if (!_driver.IsElementDisplayed(detailsPage.GetLinkByNameSelector(linkName), WebDriverExtensions.WaitTime.Short))
-                _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.GetLinkByNameSelector(linkName), true, 50);
-            detailsPage.GetLinkByName(linkName).Click();
-            _driver.WaitForDataLoading();
+            Verify.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Item content is not displayed");
         }
 
         //	| Field | Data |
@@ -67,6 +164,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        //	| Title | Value |
         [Then(@"following content is displayed on the Details Page")]
         public void ThenFollowingContentIsDisplayedOnTheDetailsPage(Table table)
         {
@@ -105,7 +203,62 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Verify.AreEqual(detailsPage.GetFildWithEmptyValueByName(fieldName), "", $"{fieldName} field must be empty!");
+        }
 
+        #endregion
+
+        #region Columns
+
+        [Then(@"""(.*)"" column is displayed to the user")]
+        public void ThenColumnIsDisplayedToTheUser(string columnName)
+        {
+            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Verify.IsTrue(columnHeader.ColumnIsDisplayed(columnName),
+                $"{columnName} column is not displayed");
+        }
+
+        [Then(@"""(.*)"" column is not displayed to the user")]
+        public void ThenColumnIsNotDisplayedToTheUser(string columnName)
+        {
+            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            Verify.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
+                $"{columnName} column still displayed");
+        }
+
+        [Then(@"following columns are displayed on the Item details page:")]
+        public void ThenFollowingColumnsAreDisplayedOnTheItemDetailsPage(Table table)
+        {
+            var column = _driver.NowAt<DetailsPage>();
+
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var columnNames = column.ColumnHeadersList.Select(value => value.Text).ToList();
+            Verify.AreEqual(expectedList, columnNames, "The column order is incorrect.");
+        }
+
+        #endregion
+
+        [When(@"User opens ""(.*)"" section on the Details Page")]
+        public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitForElementToBeDisplayed(detailsPage.PopupChangesPanel);
+            if (!detailsPage.OpenedSection.Displayed())
+            {
+                _driver.MouseHover(detailsPage.NavigateToSectionByName(sectionName));
+                detailsPage.NavigateToSectionByName(sectionName).Click();
+            }
+            else
+                Verify.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
+        }
+
+        [When(@"User clicks ""(.*)"" link on the Details Page")]
+        public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            if (!_driver.IsElementDisplayed(detailsPage.GetLinkByNameSelector(linkName), WebDriverExtensions.WaitTime.Short))
+                _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.GetLinkByNameSelector(linkName), true, 50);
+            detailsPage.GetLinkByName(linkName).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Highcharts graphic is displayed on the Details Page")]
@@ -114,22 +267,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             _driver.WaitForElementToBeDisplayed(detailsPage.GraphicInOpenedSection);
             Utils.Verify.IsTrue(detailsPage.GraphicInOpenedSection.Displayed(), "Graphic content is not displayed");
-        }
-
-        [Then(@"Item content is displayed to the User")]
-        public void ThenItemContentIsDisplayedToTheUser()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Item content is not displayed");
-        }
-
-        [Then(@"Details object page is displayed to the user")]
-        public void ThenDetailsObjectPageIsDisplayedToTheUser()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Group con is not displayed to the user!");
-            Utils.Verify.IsTrue(detailsPage.ItemDetailsContainer.Displayed(), "Details object page is not displayed to the user!");
         }
 
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
@@ -158,32 +295,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(content.GetHrefByColumnName(columnName) != null, $"Links from '{columnName}' column is displayed, but should not be displayed!");
         }
 
-        [Then(@"""(.*)"" column is displayed to the user")]
-        public void ThenColumnIsDisplayedToTheUser(string columnName)
-        {
-            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.IsTrue(columnHeader.ColumnIsDisplayed(columnName),
-                $"{columnName} column is not displayed");
-        }
-
-        [Then(@"""(.*)"" column is not displayed to the user")]
-        public void ThenColumnIsNotDisplayedToTheUser(string columnName)
-        {
-            var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
-                $"{columnName} column still displayed");
-        }
-
-        [Then(@"following columns are displayed on the Item details page:")]
-        public void ThenFollowingColumnsAreDisplayedOnTheItemDetailsPage(Table table)
-        {
-            var column = _driver.NowAt<DetailsPage>();
-
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var columnNames = column.ColumnHeadersList.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, columnNames, "Columns order on Item details page is incorrect");
-        }
-
         [When(@"User clicks String Filter button for ""(.*)"" column")]
         public void WhenUserClicksStringFilterButtonForColumn(string columnName)
         {
@@ -197,22 +308,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             filterElement.BodyContainer.Click();
-        }
-
-        [Then(@"All text is displayed for ""(.*)"" column in the String Filter")]
-        public void ThenAllTextIsDisplayedForColumnInTheStringFilter(string columnName)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.IsTrue(filterElement.GetStringFilterTextByColumnName(columnName),
-                $"All text is not displayed for {columnName} column");
-        }
-
-        [Then(@"All text is not displayed for ""(.*)"" column in the String Filter")]
-        public void ThenAllTextIsNotDisplayedForColumnInTheStringFilter(string columnName)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.IsFalse(filterElement.GetStringFilterTextByColumnName(columnName),
-                $"All text is displayed for {columnName} column");
         }
 
         [Then(@"Dropdown List is displayed correctly in the Filter on the Details Page")]
@@ -245,35 +340,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<DetailsPage>();
 
             Utils.Verify.That(page.GetSelectedText(), Is.EqualTo(textSelected));
-        }
-
-        [Then(@"following Boolean Values are displayed in the filter on the Details Page")]
-        public void ThenFollowingBooleanValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterCheckboxBooleanValues.Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedList, actualList, "Filter checkbox Boolean values are different");
-        }
-
-        [Then(@"following String Values are displayed in the filter on the Details Page")]
-        public void ThenFollowingValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedList, actualList, "Filter checkbox String values are different!");
-        }
-
-        [Then(@"following String Values are contained in the filter on the Details Page")]
-        public void ThenFollowingStringValuesAreContainedInTheFilterOnTheDetailsPage(Table table)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text).ToList();
-            foreach (var row in table.Rows)
-            {
-                Utils.Verify.Contains(row["Values"], actualList, $"{row["Values"]} String values are not contained in the filter!");
-            }
         }
 
         [When(@"User clicks Column button on the Column Settings panel")]
@@ -372,38 +438,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Utils.Verify.That(page.DateRegularValueFirst.Location.X, Is.InRange(_elementCoordinates.Height - 10, _elementCoordinates.Height + 10)); // calibration
             Utils.Verify.That(page.DateRegularValueFirst.Location.Y, Is.InRange(_elementCoordinates.Width - 10, _elementCoordinates.Width + 10)); // calibration
-        }
-
-        [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
-        public void ThenUserSelectCheckboxFromFilterOnTheDetailsPage(string filterName)
-        {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.GetFilterByName(filterName).Click();
-        }
-
-        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Details Page")]
-        public void WhenUserClicksCheckboxFromStringFilterOnTheDetailsPage(string filterName)
-        {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            if (page.CheckboxesStringFilter.Displayed())
-                page.GetStringFilterByName(filterName).Click();
-            else
-                page.GetBooleanStringFilterByName(filterName).Click();
-        }
-
-        [When(@"User selects ""(.*)"" checkbox from String Filter on the Details Page")]
-        public void WhenUserSelectsCheckboxFromStringFilterOnTheDetailsPage(string filterName)
-        {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.GetCheckboxStringFilterByName(filterName);
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"""(.*)"" checkbox is checked on the Details Page")]
-        public void ThenCheckboxIsCheckedOnTheDetailsPage(string checkboxName)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.IsTrue(filterElement.ColumnCheckboxChecked.Displayed(), $"{checkboxName} Checkbox is not selected");
         }
 
         [When(@"User selects following date filter on the Details Page")]
@@ -562,13 +596,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(detailsPage.NoFoundContent);
             Utils.Verify.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
                 $"{textMessage} is not displayed");
-        }
-
-        [Then(@"string filter is displayed for ""(.*)"" column on the Details Page")]
-        public void ThenStringFilterIsDisplayedForColumnOnTheDetailsPage(string columnName)
-        {
-            var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Utils.Verify.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")), $"String filter is not displayed for {columnName} column!");
         }
 
         [Then(@"User sees ""(.*)"" Evergreen Bucket in Project Summary section on the Details Page")]

@@ -271,8 +271,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	And "GREEN" content is displayed for "Stage 3" column
 	And "BLUE" content is displayed for "Stage Z" column
 	Then "1" rows found label displays on Details Page
-	When User clicks String Filter button for "Path" column
-	Then "[Default (User)]" checkbox is checked on the Details Page
+	Then '[Default (User)]' checkbox is checked in the filter dropdown for the 'Path' column
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns

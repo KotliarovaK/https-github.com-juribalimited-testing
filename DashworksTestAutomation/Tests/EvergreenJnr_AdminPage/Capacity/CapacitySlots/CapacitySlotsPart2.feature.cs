@@ -473,17 +473,17 @@ this.FeatureBackground();
 #line 77
  testRunner.When("User clicks content from \"Slots\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 78
- testRunner.Then("\"All Capacity Units\" is displayed in the dropdown filter for \"Capacity Units\" col" +
-                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'All Capacity Units\' text is displayed in the filter dropdown for the \'Capacity U" +
+                    "nits\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 79
  testRunner.And("Rows counter contains \"1\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table11.AddRow(new string[] {
                         "Slot1"});
 #line 80
- testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table11, "And ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table11, "Then ");
 #line 84
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 85
@@ -496,19 +496,19 @@ this.FeatureBackground();
 #line 88
  testRunner.When("User clicks content from \"Slots\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 89
- testRunner.Then("\"Capacity Unit 1,All Capacity Units\" is displayed in the dropdown filter for \"Cap" +
-                    "acity Units\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Capacity Unit 1,All Capacity Units\' text is displayed in the filter dropdown for" +
+                    " the \'Capacity Units\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 90
  testRunner.And("Rows counter contains \"2\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table12.AddRow(new string[] {
                         "Slot1"});
             table12.AddRow(new string[] {
                         "Slot2"});
 #line 91
- testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table12, "And ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table12, "Then ");
 #line 96
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
@@ -521,19 +521,19 @@ this.FeatureBackground();
 #line 100
  testRunner.When("User clicks content from \"Slots\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 101
- testRunner.Then("\"Capacity Unit 2,All Capacity Units\" is displayed in the dropdown filter for \"Cap" +
-                    "acity Units\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Capacity Unit 2,All Capacity Units\' text is displayed in the filter dropdown for" +
+                    " the \'Capacity Units\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 102
  testRunner.And("Rows counter contains \"2\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "slots"});
+                        "Content"});
             table13.AddRow(new string[] {
                         "Slot1"});
             table13.AddRow(new string[] {
                         "Slot3"});
 #line 103
- testRunner.And("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table13, "And ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

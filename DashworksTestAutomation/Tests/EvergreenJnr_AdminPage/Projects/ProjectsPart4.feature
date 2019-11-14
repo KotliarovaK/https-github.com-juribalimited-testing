@@ -39,7 +39,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhen
 	When User enters '<TestProject11985>' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then created Project with "<TestProject11985>" name is displayed correctly
+	When User enters "<TestProject11985>" text in the Search field for "Project" column
+	Then '<TestProject11985>' content is displayed in the 'Project' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12364 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS12108 @DAS12645 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
@@ -100,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Cleanup @Cleanup @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -116,7 +117,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User enters 'TestName11729' text to 'Project Name' textbox
 	And User selects 'TestDynamicList11729' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then created Project with "TestName11729" name is displayed correctly
+	When User enters "TestName11729" text in the Search field for "Project" column
+	Then 'TestName11729' content is displayed in the 'Project' column
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "TestDynamicList11729" list

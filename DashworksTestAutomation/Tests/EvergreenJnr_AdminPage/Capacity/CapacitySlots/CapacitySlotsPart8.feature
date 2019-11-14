@@ -139,8 +139,8 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	When User navigates to "User Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	Then "Capacity Slot" column content is displayed in the following order:
-	| Items              |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content            |
 	| User Slot 1        |
 	| User Slot 2        |
 	| Device Slot 1      |
@@ -174,8 +174,8 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	When User navigates to "Mailbox Evergreen Capacity Project" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	Then "Capacity Slot" column content is displayed in the following order:
-	| Items                                              |
+	Then Content in the 'Capacity Slot' column is equal to
+	| Content                                            |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |

@@ -393,9 +393,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(headerSelector);
         }
 
-        public bool GetStringFilterByName(string filterName)
+        public bool GetDisplayStateForStringFilterByName(string filterName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
+        }
+
+        public void GetStringFilterByName(string filterName)
+        {
+            var filterSelector = $".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
         public void GetBooleanStringFilterByName(string filterName)
@@ -430,17 +437,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]//span[text()='{checkboxName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
-        }
-
-        //TODO probably should be removed
-        private static string ProjectSelector = ".//div[@col-id='projectName']//a[text()='{0}']";
-
-        public bool GetCreatedProjectName(string projectName, bool wait = false)
-        {
-            var by = By.XPath(string.Format(ProjectSelector, projectName));
-            if (wait)
-                Driver.WaitForElementToBeDisplayedAfterRefresh(by);
-            return Driver.IsElementDisplayed(by);
         }
 
         public void GetStringFilterByColumnName(string columnName)

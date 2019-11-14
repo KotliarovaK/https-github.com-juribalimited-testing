@@ -11,11 +11,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
 	When User navigates to the 'Advertisements' left submenu item
 	Then 'TRUE' content is displayed in the 'Active' column
-	When User clicks String Filter button for "Active" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Active' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMsiTabOnApplicationsPage
@@ -30,40 +28,28 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then 'AOK Import' content is displayed in the 'Source' column
 	Then 'ChangeBASE AOK' content is displayed in the 'Source Type' column
 	Then 'GREEN' content is displayed in the 'Compliance' column
-	When User clicks String Filter button for "Source" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Source' column
 	| Values     |
 	| AOK Import |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Source Type" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Source Type' column
 	| Values         |
 	| ChangeBASE AOK |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Compliance" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
 	| Values |
 	| GREEN  |
-	When User closes Checkbox filter
 	When User navigates to the 'AOK' left submenu item
 	Then 'AOK Import' content is displayed in the 'Source' column
 	Then 'Windows 7' content is displayed in the 'AOK Report' column
 	Then 'GREEN' content is displayed in the 'Compatibility' column
-	When User clicks String Filter button for "Source" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Source' column
 	| Values     |
 	| AOK Import |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "AOK Report" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'AOK Report' column
 	| Values    |
 	| Windows 7 |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Compatibility" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Compatibility' column
 	| Values |
 	| GREEN  |
-	When User closes Checkbox filter
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDistributionTabOnApplicationsPage
@@ -74,29 +60,21 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'UNKNOWN' content is displayed in the 'Used' column
 	Then 'TRUE' content is displayed in the 'Entitled' column
-	When User clicks String Filter button for "Installed" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Installed' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Used" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Used' column
 	| Values  |
 	| Unknown |
-	When User closes Checkbox filter
-	When User clicks String Filter button for "Entitled" column
-	Then following Boolean Values are displayed in the filter on the Details Page
+	Then following Boolean Values are displayed in the filter dropdown for the 'Entitled' column
 	| Values |
 	| True   |
-	When User closes Checkbox filter
 	When User navigates to the 'AD' left submenu item
 	Then 'UK' content is displayed in the 'Domain' column
-	When User clicks String Filter button for "Domain" column
-	Then following String Values are displayed in the filter on the Details Page
+	Then following String Values are displayed in the filter dropdown for the 'Domain' column
 	| Values |
 	| AU     |
 	| CA     |
 	| UK     |
 	| US-E   |
 	| US-W   |
-	When User closes Checkbox filter

@@ -20,8 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 	Then Evergreen Icon is displayed to the user
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
 	And Evergreen Unit is displayed to the user
-	When User clicks String Filter button for "Project" column on the Admin page
-	Then "Evergreen" checkbox is checked in the filter dropdown
+	Then 'Evergreen' checkbox is checked in the filter dropdown for the 'Project' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12921
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDeletionMessages

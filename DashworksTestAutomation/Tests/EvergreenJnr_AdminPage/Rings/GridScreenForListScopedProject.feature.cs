@@ -225,7 +225,7 @@ this.FeatureBackground();
  testRunner.Then("User sees following Display order on the Automation page", ((string)(null)), table4, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "Content"});
             table5.AddRow(new string[] {
                         "Unassigned"});
             table5.AddRow(new string[] {
@@ -233,7 +233,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Ring_Test"});
 #line 49
- testRunner.Then("\"Ring\" column content is displayed in the following order:", ((string)(null)), table5, "Then ");
+ testRunner.Then("Content in the \'Ring\' column is equal to", ((string)(null)), table5, "Then ");
 #line 54
  testRunner.When("User clicks on \'Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
