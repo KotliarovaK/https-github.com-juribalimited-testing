@@ -558,14 +558,15 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicati
 	When User add "ComputerSc: Application Rationalisation" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| <SelectedCheckbox> |
-	Then "<ImageName>" image is matching the caption
+	Then '<SelectedCheckbox>' content is displayed in all 'ComputerSc: Application Rationalisation' column
+	Then '<SelectedCheckbox>' path is displayed in the 'ComputerSc: Application Rationalisation' column
 
 Examples:
-	| SelectedCheckbox | ImageName     |
-	| FORWARD PATH     | FORWARD PATH  |
-	| KEEP             | KEEP          |
-	| RETIRE           | RETIRE        |
-	| UNCATEGORISED    | UNCATEGORISED |
+	| SelectedCheckbox |
+	| FORWARD PATH     |
+	| KEEP             |
+	| RETIRE           |
+	| UNCATEGORISED    |
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12076 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter

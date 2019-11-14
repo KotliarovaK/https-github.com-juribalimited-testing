@@ -617,8 +617,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             //Used for some columns on Projects->Capacity->Override Dates table
             var firstPartSelector = $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']";
-            var selector =
-                By.XPath($"{firstPartSelector}//*[not(*)][last()]");
+
+            By selector;
+            //This is for Colors, Paths and other stuff
+            if (Driver.FindElements(By.XPath("./child-cell")).Any())
+            {
+                selector =
+                    By.XPath($"{firstPartSelector}//*[not(*)][last()]");
+            }
+            else
+            {
+                selector =
+                    By.XPath($"{firstPartSelector}//*[string-length(text())>0]");
+            }
             Driver.WaitForDataLoading();
             IList<IWebElement> elements = new List<IWebElement>();
             if (!Driver.FindElements(selector).Any())
@@ -636,6 +647,35 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
         }
+
+        #region Get Specific cell content
+
+        public List<string> GetPathsColumnContent(string columnName)
+        {
+            var firstPartSelector = $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']";
+            var result = Driver.FindElements(By.XPath($"{firstPartSelector}//img"))
+                .Select(x => x.GetAttribute("src")).Select(ConvertImageContainerSrc).ToList();
+            return result;
+        }
+
+        private string ConvertImageContainerSrc(string styleImageItem)
+        {
+            styleImageItem = styleImageItem.Split('/').Last();
+            switch (styleImageItem)
+            {
+                case "forwardPath.png":
+                    return "FORWARD PATH";
+                case "tick.png":
+                    return "KEEP";
+                case "cross.png":
+                    return "RETIRE";
+                case "unknown.png":
+                    return "UNCATEGORISED";
+                default: throw new Exception($"{styleImageItem} is not valid Image path");
+            }
+        }
+
+        #endregion
 
         public IWebElement GetCellFromColumn(string columnName, string cellText)
         {

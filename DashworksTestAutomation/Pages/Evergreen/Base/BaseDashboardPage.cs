@@ -408,22 +408,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
-        public string GetImageContainer(string styleImageItem)
-        {
-            switch (styleImageItem)
-            {
-                case "forwardPath.png":
-                    return "FORWARD PATH";
-                case "tick.png":
-                    return "KEEP";
-                case "cross.png":
-                    return "RETIRE";
-                case "unknown.png":
-                    return "UNCATEGORISED";
-                default: throw new Exception($"{styleImageItem} is not valid Image path");
-            }
-        }
-
         #region Autocomplete
 
         public List<string> GetAllAutocompleteOptions(string placeholder)

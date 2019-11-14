@@ -1478,22 +1478,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"""(.*)"" image is matching the caption")]
-        public void ThenImageIsMatchingTheCaption(string imageName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var imageItem = By.XPath(BaseDashboardPage.ImageItem);
-            var images = _driver.FindElements(imageItem);
-            foreach (var image in images)
-            {
-                var imageItemSource = image.GetAttribute("src");
-                var imageItemName = imageItemSource.Split('/').Last();
-                _driver.WaitForElementToBeDisplayed(imageItem);
-                //_driver.WaitForElementToBeDisplayed(page.ImageItemSelector);
-                Utils.Verify.AreEqual(page.GetImageContainer(imageItemName), imageName, "Image does not match the caption");
-            }
-        }
-
         [Then(@"reset button in Search field at selected Filter is displayed")]
         public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
         {

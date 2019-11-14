@@ -229,6 +229,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        [Then(@"'(.*)' content is displayed in all '(.*)' column")]
+        public void ThenContentIsDisplayedInAllColumn(string textContent, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var columnContent = page.GetColumnContentByColumnName(columnName);
+            Verify.IsTrue(columnContent.All(x => x.Equals(textContent)), $"'{textContent}' is not present in the '{columnName}' column");
+        }
+
+        [Then(@"'(.*)' path is displayed in the '(.*)' column")]
+        public void ThenPathIsDisplayedInTheColumn(string path, string column)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var paths = page.GetPathsColumnContent(column);
+            Verify.IsTrue(paths.All(x => x.Equals(path)), $"Some paths are incorrect in the '{column}' column");
+        }
+
         [Then(@"Content in the '(.*)' column is equal to")]
         public void ThenContentInTheColumnIsEqualTo(string columnName, Table table)
         {
