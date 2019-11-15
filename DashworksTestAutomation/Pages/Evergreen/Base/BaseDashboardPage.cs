@@ -20,10 +20,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private string NamedDropdownForFieldSelector = ".//span[text()='{0}']/../ancestor::tr//mat-select";
 
-        public const string ColorItem = ".//div[@class='status']";
-
-        public const string ImageItem = ".//div[contains(@class, 'ag-body-container')]//img[contains(@src,'png')]";
-
         public const string GridCell = ".//div[@role='gridcell']";
 
         public const string ColumnSubcategory = "//div[@class='selected-column-name']//span";
