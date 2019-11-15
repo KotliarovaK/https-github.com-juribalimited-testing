@@ -47,7 +47,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<TabName>' left menu item
-	And User have opened Column Settings for "<SelectedColumn>" column
+	And User opens '<SelectedColumn>' column settings
 	And User clicks Filter button on the Column Settings panel
 	When  User enters "123455465" text in the Filter field
 	When User clears Filter field
@@ -66,8 +66,8 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectly
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the '<SubMenuName>' left submenu item
 	Then "87" rows found label displays on Details Page
-	When User have opened Column Settings for "Site" column
-	And User have select "Autosize this column" option from column settings
+	When User opens 'Site' column settings
+	And User selects 'Autosize this column' option from column settings
 	Then Site column has standard size
 
 Examples:
@@ -95,14 +95,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item
 	When User clicks 'False' checkbox from String Filter in the filter dropdown for the 'Used' column
-	And User have opened Column Settings for "User" column
-	And User have select "Sort descending" option from column settings
+	And User opens 'User' column settings
+	And User selects 'Sort descending' option from column settings
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 	When User navigates to the 'Devices' left submenu item
 	When User clicks 'False' checkbox from String Filter in the filter dropdown for the 'Used' column
-	And User have opened Column Settings for "Device" column
-	And User have select "Sort descending" option from column settings
+	And User opens 'Device' column settings
+	And User selects 'Sort descending' option from column settings
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Entitled    |
 	When User navigates to the 'Evergreen Detail' left submenu item
 	Then "Application" column is displayed to the user
-	When User have opened Column Settings for "Vendor" column
+	When User opens 'Vendor' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Application" checkbox on the Column Settings panel
 	And User select "Vendor" checkbox on the Column Settings panel
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	When User navigates to the 'Device' details page for '0G0WTR5KN85N2X' item
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects Summary' left submenu item
-	And User have opened Column Settings for "Project" column
+	And User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
 	And User select "Path" checkbox on the Column Settings panel

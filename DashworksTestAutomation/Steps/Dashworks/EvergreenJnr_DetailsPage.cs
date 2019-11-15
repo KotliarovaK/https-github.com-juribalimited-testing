@@ -496,7 +496,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var column = _driver.NowAt<BaseGridPage>();
-            column.OpenColumnSettingsByName(columnName);
+            column.OpenColumnSettings(columnName);
             Verify.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
         }
 

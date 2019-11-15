@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then "1" rows found label displays on Details Page
-	When User have opened column settings for "Current App" column
+	When User opens 'Current App' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Current App" checkbox on the Column Settings panel
 	And User select "Target App" checkbox on the Column Settings panel

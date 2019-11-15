@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	And User enters "DDPP" text in the Search field for "Short Name" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Admin page 
-	And User have opened Column Settings for "Project" column
+	And User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Project ID" checkbox on the Column Settings panel

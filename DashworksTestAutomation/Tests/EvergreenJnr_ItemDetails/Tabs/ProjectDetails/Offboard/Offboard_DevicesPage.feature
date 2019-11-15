@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User have opened Column Settings for "Owner" column
+	When User opens 'Owner' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Username" checkbox on the Column Settings panel
 	And User select "Display Name" checkbox on the Column Settings panel
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| ColumnName   |
 	| Domain       |
 	| Owner        |
-	When User have opened Column Settings for "Owner" column
+	When User opens 'Owner' column settings
 	And User select "Display Name" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns are displayed on the Item details page:
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User have opened Column Settings for "Owner" column
+	When User opens 'Owner' column settings
 	And User select "Username" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns are displayed on the Item details page:

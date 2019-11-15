@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
 	When User navigates to the 'MSI' left menu item
 	When User navigates to the 'MSI Files' left submenu item
-	And User have opened Column Settings for "File Name" column
+	And User opens 'File Name' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Product Code" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel

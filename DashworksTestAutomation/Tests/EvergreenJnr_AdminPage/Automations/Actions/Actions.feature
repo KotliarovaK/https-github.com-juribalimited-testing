@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	| Third_Action    |
 	| DAS15427_Action |
 	| First_Action    |
-	When User have opened column settings for "Action" column
+	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	| DAS15427_Action |
 	| First_Action    |
 	| Secont_Action   |
-	When User have opened column settings for "Action" column
+	When User opens 'Action' column settings
 	When User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then 'An action with this name already exists for this automation' error message is displayed for 'Action Name' field
 	When User clicks 'CANCEL' button 
 	When User moves '15428_Action_1' item to '15428_Action_3' item in the 'Action' column
-	When User have opened column settings for "Action" column
+	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel

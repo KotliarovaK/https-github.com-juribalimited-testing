@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 	And User click back button in the browser
 	And Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 	And User click back button in the browser
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
 	And Details page for "000F977AC8824FE39B8" item is displayed to the user
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
 	And Details page for "000F977AC8824FE39B8" item is displayed to the user
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 	And User click back button in the browser
 	And Details page for "QLL295118" item is displayed to the user
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	And PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
 	And User click back button in the browser
 	And Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
 	And Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
 	And Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel

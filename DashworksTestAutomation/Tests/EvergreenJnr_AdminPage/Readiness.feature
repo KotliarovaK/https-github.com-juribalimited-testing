@@ -286,7 +286,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 
 	When User clicks "Make default for applications" option in Cog-menu for "BLOCKED" item on Admin page
-	When User have opened column settings for "Readiness" column
+	When User opens 'Readiness' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Ready" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -337,7 +337,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
-	When User have opened Column Settings for "Readiness" column
+	When User opens 'Readiness' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Priority" checkbox on the Column Settings panel

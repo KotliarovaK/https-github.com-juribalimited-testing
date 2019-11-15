@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	| 13382ProjectForCapacity | Name1     | Name1       |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	When User have opened Column Settings for "Capacity Slot" column
+	When User opens 'Capacity Slot' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Display Order" checkbox on the Column Settings panel

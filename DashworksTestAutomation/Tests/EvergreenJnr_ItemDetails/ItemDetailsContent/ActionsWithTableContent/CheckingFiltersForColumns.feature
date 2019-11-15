@@ -69,7 +69,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
 	And User select "Slot" checkbox on the Column Settings panel
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	Then Details page for "001PSUMZYOW581" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Projects Summary' left submenu item
-	And User have opened Column Settings for "Date" column
+	And User opens 'Date' column settings
 	And User clicks Filter button on the Column Settings panel
 	And User select In Range value with following date:
 	| DateFrom    | DateTo      |
@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Projects' left submenu item
-	And User have opened Column Settings for "Delivery Date" column
+	And User opens 'Delivery Date' column settings
 	And User clicks Filter button on the Column Settings panel
 	And User remembers the date input position
 	And User select criteria with following date:

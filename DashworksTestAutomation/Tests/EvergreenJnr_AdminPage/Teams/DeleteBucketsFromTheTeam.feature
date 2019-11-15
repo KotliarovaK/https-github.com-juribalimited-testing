@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
 	Then Page with 'Teams' header is displayed to user
-	When User have opened Column Settings for "Members" column
+	When User opens 'Members' column settings
 	And User clicks Filter button on the Column Settings panel
 	When User clicks the filter type dropdown on the Column Settings panel
 	Then following Values are displayed in the filter type dropdown

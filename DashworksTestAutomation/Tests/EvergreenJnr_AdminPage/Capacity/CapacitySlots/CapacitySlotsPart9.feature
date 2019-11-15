@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDisplayOrderIsResetAfterSlotDeletion
 	When User clicks 'DELETE' button
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected slot has been deleted" text
-	When User have opened Column Settings for "Capacity Slot" column
+	When User opens 'Capacity Slot' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Display Order" checkbox on the Column Settings panel

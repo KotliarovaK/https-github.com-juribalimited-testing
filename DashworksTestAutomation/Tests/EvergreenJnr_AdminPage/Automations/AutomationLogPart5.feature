@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionValueIDInTheAutomationLog
 	When User clicks "Run now" option in Cog-menu for "Applications_Scope" item on Admin page
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
-	When User have opened column settings for "Type" column
+	When User opens 'Type' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Action Value ID" checkbox on the Column Settings panel
 	When User enters "527" text in the Search field for "Action Value ID" column
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOpIdColumnInTheAutomationLog
 	When User clicks "Run now" option in Cog-menu for "Mailboxes_Scope" item on Admin page
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
-	When User have opened column settings for "Type" column
+	When User opens 'Type' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Operation ID" checkbox on the Column Settings panel
 	When User select "Scope" checkbox on the Column Settings panel

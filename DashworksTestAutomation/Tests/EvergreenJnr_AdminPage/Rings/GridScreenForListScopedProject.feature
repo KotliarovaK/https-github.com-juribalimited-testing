@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User enters 'Ring_Test' text to 'Ring name' textbox
 	When User clicks Default Ring checkbox
 	And User clicks Create button on the Create Ring page
-	When User have opened Column Settings for "Ring" column
+	When User opens 'Ring' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Display Order" checkbox on the Column Settings panel

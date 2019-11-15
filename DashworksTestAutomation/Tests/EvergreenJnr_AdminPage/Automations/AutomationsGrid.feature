@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Created By" checkbox on the Column Settings panel
 	When User select "Created Date" checkbox on the Column Settings panel
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Object Type" checkbox on the Column Settings panel
 	When User clicks String Filter button for "Object Type" column

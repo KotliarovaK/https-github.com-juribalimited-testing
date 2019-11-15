@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
 	Then Page with 'Teams' header is displayed to user
-	When User have opened Column Settings for "Team" column
+	When User opens 'Team' column settings
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	And User enters "123455465" text in the Filter field
 	And User clears Filter field
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Rows counter contains "1" found row of all rows
 	When User clicks content from "Team" column
 	Then Page with 'Administrative Team' header is displayed to user
-	When User have opened Column Settings for "Username" column
+	When User opens 'Username' column settings
 	And User clicks Filter button in the Column Settings panel on the Teams Page
 	And User enters "123455465" text in the Filter field
 	And User clears Filter field

@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User navigates to "Devices Evergreen Capacity Project" project details
 	When User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
-	When User have opened Column Settings for "Capacity Unit" column
+	When User opens 'Capacity Unit' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel

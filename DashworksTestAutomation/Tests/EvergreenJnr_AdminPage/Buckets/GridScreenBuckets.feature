@@ -13,20 +13,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks Reset Filters button on the Admin page
 	#Then Counter shows "558" found rows
-	When User have opened Column Settings for "Bucket" column
+	When User opens 'Bucket' column settings
 	And User clicks Filter button on the Column Settings panel
 	And User enters "123455465" text in the Filter field
 	And User clears Filter field
 	Then There are no errors in the browser console
-	When User have opened Column Settings for "Devices" column
+	When User opens 'Devices' column settings
 	And User enters "123455465" text in the Filter field
 	And User clears Filter field
 	Then Content is present in the table on the Admin page
 	Then There are no errors in the browser console
-	When User have opened Column Settings for "Default" column
+	When User opens 'Default' column settings
 	When User clicks "True" checkbox from boolean filter on the Admin page
 	Then There are no errors in the browser console
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page

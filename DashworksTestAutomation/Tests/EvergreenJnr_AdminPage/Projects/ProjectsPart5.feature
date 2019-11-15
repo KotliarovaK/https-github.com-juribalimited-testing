@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "TestProject22" checkbox from String Filter with item list on the Admin page
-	And User have opened Column Settings for "Project" column
+	And User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "TestProject22" checkbox from String Filter with item list on the Admin page
-	And User have opened Column Settings for "Project" column
+	And User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel

@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	Then "Maps to Evergreen Ring" dropdown is not displayed on the Admin Settings screen
 	When User clicks 'CANCEL' button 
 	Then 'TRUE' content is displayed in the 'Default' column
-	When User have opened Column Settings for "Ring" column
+	When User opens 'Ring' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel

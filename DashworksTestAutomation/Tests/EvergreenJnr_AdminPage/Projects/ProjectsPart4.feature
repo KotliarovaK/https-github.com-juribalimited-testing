@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	When User enters 'TestProject11700' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CREATE' button 
-	When User have opened Column Settings for "Project" column
+	When User opens 'Project' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Project ID" checkbox on the Column Settings panel

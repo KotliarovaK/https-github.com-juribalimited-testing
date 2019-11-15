@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Outcome             |
 	Then Export button is displayed in panel
 	Then 'SUCCESS' content is displayed in the 'Outcome' column
-	When User have opened column settings for "Date" column
+	When User opens 'Date' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Scope Object Type" checkbox on the Column Settings panel
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
 	When User moves "Applications_Scope" automation to "DELAY_8" automation
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Processing order" checkbox on the Column Settings panel
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
     | Description      |
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	When User clicks "Move to top" option in Cog-menu for "Add data" item on Admin page
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -216,7 +216,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -233,7 +233,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| Make inactive    |
 	| Delete           |
 	When User clicks "Move to bottom" option in Cog-menu for "AM 150419 II" item on Admin page
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -294,13 +294,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	When User move "AM 150419 II" item to "2" position on Admin page
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -312,7 +312,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	| AM 150419 III |
 	| AM Test 1     |
 	When User move "AM 150419 I" item to "100" position on Admin page
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -324,7 +324,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	| AM Test 1     |
 	| AM 150419 I   |
 	When User move " AM 150419 II" item to "1" position on Admin page
-	When User have opened column settings for "Automation" column
+	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -395,7 +395,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	| Project       |
 	| Task or Field |
 	| Value         |
-	When User have opened column settings for "Action" column
+	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Action ID" checkbox on the Column Settings panel
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "click here to view the 15309_Action action" link
-	When User have opened column settings for "Action" column
+	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Processing order" checkbox on the Column Settings panel

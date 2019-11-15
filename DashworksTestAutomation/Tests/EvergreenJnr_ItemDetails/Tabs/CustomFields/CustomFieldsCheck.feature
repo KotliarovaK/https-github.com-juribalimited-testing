@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIs
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User navigates to the '<ItemType>' details page for '<ItemName>' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User have opened Column Settings for "Custom Field" column
+	And User opens 'Custom Field' column settings
 	Then User sees the following Column Settings
 	| ColumnSettings        |
 	| Pin left              |
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTrans
 	When User language is changed to "Deutsch" via API
 	And User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Benutzerdefinierte Felder' left submenu item
-	And User have opened Column Settings for "Benutzerdefiniertes Feld" column
+	And User opens 'Benutzerdefiniertes Feld' column settings
 	Then User sees the following Column Settings
 	| ColumnSettings                            |
 	| Links fixieren                            |
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTrans
 Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContainOnlyVisibleColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User have opened Column Settings for "Custom Field" column
+	And User opens 'Custom Field' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Value" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User have opened Column Settings for "Custom Field" column
+	And User opens 'Custom Field' column settings
 	And User clicks Column button on the Column Settings panel
 	And User clicks Select All checkbox on Column Settings panel
 	And User clicks Column button on the Column Settings panel
@@ -97,8 +97,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedFo
 	And Group By button is displayed on the Item Details page
 	And Reset Filters button is displayed on the Item Details page
 	And Reset Filters button on the Item Details page is disable
-	When User have opened column settings for "Custom Field" column
-	When User have select "Pin left" option from column settings
+	When User opens 'Custom Field' column settings
+	When User selects 'Pin left' option from column settings
 	Then 'Custom Field' column is 'Left' Pinned
 	When User clicks Group By button on the Details page and selects "Custom Field" value
 	Then Grid is grouped

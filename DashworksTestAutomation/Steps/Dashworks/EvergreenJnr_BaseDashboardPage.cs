@@ -36,20 +36,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _columnValue = columnValue;
         }
 
-        [When(@"User have opened column settings for ""(.*)"" column")]
-        public void WhenUserHaveOpenedColumnSettingsForColumn(string columnName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.OpenColumnSettingsByName(columnName);
-        }
-
-        [When(@"User have select ""(.*)"" option from column settings")]
-        public void WhenUserHaveSelectOptionFromColumnSettings(string settingName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetSettingButtonByName(settingName).Click();
-        }
-
         [When(@"User navigate to the bottom of the Action panel")]
         public void WhenUserNavigateToTheBottomOfTheActionPanel()
         {
