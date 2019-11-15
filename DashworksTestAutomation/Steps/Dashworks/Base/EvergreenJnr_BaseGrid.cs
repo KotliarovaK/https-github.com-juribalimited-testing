@@ -28,6 +28,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
+        #region Headers
+
+        [Then(@"grid headers are displayed in the following order")]
+        public void ThenGridHeadersAreDisplayedInTheFollowingOrder(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var allHeaders = page.GetAllHeadersText();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Verify.AreEqual(expectedList, allHeaders, "Columns order is incorrect");
+        }
+
+        #endregion
+
         #region Select content
 
         [When(@"User deselect all rows on the grid")]
@@ -214,6 +227,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     return;
                 }
             }
+        }
+
+        [Then(@"'(.*)' content is displayed in all '(.*)' column")]
+        public void ThenContentIsDisplayedInAllColumn(string textContent, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var columnContent = page.GetColumnContentByColumnName(columnName);
+            Verify.IsTrue(columnContent.All(x => x.Equals(textContent)), $"'{textContent}' is not present in the '{columnName}' column");
+        }
+
+        [Then(@"'(.*)' path is displayed in the '(.*)' column")]
+        public void ThenPathIsDisplayedInTheColumn(string path, string column)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var paths = page.GetPathsColumnContent(column);
+            Verify.IsTrue(paths.All(x => x.Equals(path)), $"Some paths are incorrect in the '{column}' column");
+        }
+
+        [Then(@"'(.*)' color is displayed in the '(.*)' column")]
+        public void ThenColorIsDisplayedInTheColumn(string color, string column)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var paths = page.GetColorColumnContent(column);
+            Verify.IsTrue(paths.All(x => x.Equals(color)), $"Some paths are incorrect in the '{column}' column");
         }
 
         [Then(@"Content in the '(.*)' column is equal to")]
@@ -707,6 +745,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     .KeyUp(OpenQA.Selenium.Keys.Shift).Perform();
             }
             _driver.WaitForDataLoading();
+        }
+
+        #endregion
+
+        #region Pinned column
+
+        [Then(@"'(.*)' column is '(.*)' Pinned")]
+        public void ThenColumnIsPinned(string columnName, string pinStatus)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
         }
 
         #endregion

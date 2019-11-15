@@ -164,7 +164,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Devices"});
 #line 15
- testRunner.Then("table with Setting menu column on Admin page is displayed in following order:", ((string)(null)), table2, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2, "Then ");
 #line 21
  testRunner.When("User clicks Cog-menu on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -364,7 +364,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Mailboxes"});
 #line 86
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table8, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table8, "Then ");
 #line 93
  testRunner.When("User clicks Cog-menu on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

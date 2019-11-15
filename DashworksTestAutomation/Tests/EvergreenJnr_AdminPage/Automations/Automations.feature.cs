@@ -175,7 +175,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Outcome"});
 #line 17
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table1, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1, "Then ");
 #line 28
  testRunner.Then("Export button is displayed in panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
@@ -322,7 +322,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Description"});
 #line 64
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table3, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table3, "Then ");
 #line 75
  testRunner.Then("\'FALSE\' content is displayed in the \'Running\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 76
@@ -717,7 +717,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Description"});
 #line 193
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table11, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table11, "Then ");
 #line 205
  testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1331,7 +1331,7 @@ this.FeatureBackground();
             table22.AddRow(new string[] {
                         "Value"});
 #line 389
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table22, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table22, "Then ");
 #line 398
  testRunner.When("User have opened column settings for \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 399
@@ -1372,7 +1372,7 @@ this.FeatureBackground();
             table23.AddRow(new string[] {
                         "Value"});
 #line 405
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table23, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table23, "Then ");
 #line 419
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 420

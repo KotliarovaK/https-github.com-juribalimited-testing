@@ -13,6 +13,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     public class BaseGridPage : SeleniumBasePage
     {
+        public const string AllHeadersSelector = ".//div[@class='ag-header-container']/div[1]/div"; //.//span[@role='columnheader']
+
+        public const string AllHeadersTextSelector = ".//span[@class='ag-header-cell-text']";
+
         //Text that displayed near expand (plus) button for grouped values in the grid
         public const string GroupedValue =
             ".//div[@role='row'][@row-index]//span[@class='ag-group-value']";
@@ -220,12 +224,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public int GetColumnNumberByName(string columnName)
         {
-            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
-            var allHeaders = Driver.FindElements(allHeadersSelector);
-            List<string> allHeadersWithText =
-                allHeaders.Where(x => x.FindElements(By.XPath(".//span[@class='ag-header-cell-text']")).Count > 0).Select(x => x.Text).ToList();
+            List<string> allHeadersWithText = GetAllHeadersText();
             if (!allHeadersWithText.Any())
                 throw new Exception("Table does not contains any columns");
 
@@ -237,6 +236,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
             return columnNumber;
         }
+
+        #region Headers
+
+        public IList<IWebElement> GetAllHeaders()
+        {
+            var allHeadersSelector = By.XPath(AllHeadersSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            return allHeaders;
+        }
+
+        public List<string> GetAllHeadersText()
+        {
+            var allHeaders = GetAllHeaders()/*.Where(x => x.FindElements(By.XPath(AllHeadersTextSelector)).Count > 0)*/.Select(x => x.Text).ToList();
+            return allHeaders;
+        }
+
+        #endregion
 
         //Selector to the Action element below Column header
         //This can be textbox filter or other
@@ -595,8 +613,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             //Used for some columns on Projects->Capacity->Override Dates table
             var firstPartSelector = $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']";
-            var selector =
-                By.XPath($"{firstPartSelector}//*[not(*)][last()]");
+
+            By selector;
+            //This is for Colors, Paths and other stuff
+            if (Driver.FindElements(By.XPath("./child-cell")).Any())
+            {
+                selector =
+                    By.XPath($"{firstPartSelector}//*[not(*)][last()]");
+            }
+            else
+            {
+                selector =
+                    By.XPath($"{firstPartSelector}//*[string-length(text())>0]");
+            }
             Driver.WaitForDataLoading();
             IList<IWebElement> elements = new List<IWebElement>();
             if (!Driver.FindElements(selector).Any())
@@ -614,6 +643,71 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return GetColumnElementsByColumnName(columnName).Select(x => x.Text).ToList();
         }
+
+        #region Get Specific cell content
+
+        public List<string> GetPathsColumnContent(string columnName)
+        {
+            var firstPartSelector = $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']";
+            var result = Driver.FindElements(By.XPath($"{firstPartSelector}//img"))
+                .Select(x => x.GetAttribute("src")).Select(ConvertImageContainerSrc).ToList();
+            return result;
+        }
+
+        public List<string> GetColorColumnContent(string columnName)
+        {
+            var firstPartSelector = $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']";
+            var result = Driver.FindElements(By.XPath($"{firstPartSelector}//div[@class='status']"))
+                .Select(x => x.GetAttribute("style")).Select(GetColorContainer).ToList();
+            return result;
+        }
+
+        private string ConvertImageContainerSrc(string styleImageItem)
+        {
+            styleImageItem = styleImageItem.Split('/').Last();
+            switch (styleImageItem)
+            {
+                case "forwardPath.png":
+                    return "FORWARD PATH";
+                case "tick.png":
+                    return "KEEP";
+                case "cross.png":
+                    return "RETIRE";
+                case "unknown.png":
+                    return "UNCATEGORISED";
+                default: throw new Exception($"{styleImageItem} is not valid Image path");
+            }
+        }
+
+        private string GetColorContainer(string styleColorItem)
+        {
+            switch (styleColorItem)
+            {
+                case "background-color: rgba(245, 96, 86, 0.5); border: 2px solid rgb(245, 96, 86);":
+                    return "RED";
+                case "background-color: rgba(47, 133, 184, 0.5); border: 2px solid rgb(47, 133, 184);":
+                    return "BLUE";
+                case "background-color: rgba(55, 61, 69, 0.5); border: 2px solid rgb(55, 61, 69);":
+                    return "OUT OF SCOPE";
+                case "background-color: rgba(71, 209, 209, 0.5); border: 2px solid rgb(71, 209, 209);":
+                    return "LIGHT BLUE";
+                case "background-color: rgba(153, 118, 84, 0.5); border: 2px solid rgb(153, 118, 84);":
+                    return "BROWN";
+                case "background-color: rgba(235, 175, 37, 0.5); border: 2px solid rgb(235, 175, 37);":
+                    return "AMBER";
+                case "background-color: rgba(226, 123, 54, 0.5); border: 2px solid rgb(226, 123, 54);":
+                    return "REALLY EXTREMELY ORANGE";
+                case "background-color: rgba(186, 94, 186, 0.5); border: 2px solid rgb(186, 94, 186);":
+                    return "PURPLE";
+                case "background-color: rgba(126, 189, 56, 0.5); border: 2px solid rgb(126, 189, 56);":
+                    return "GREEN";
+                case "background-color: rgba(128, 139, 153, 0.5); border: 2px solid rgb(128, 139, 153);":
+                    return "GREY";
+                default: throw new Exception($"{styleColorItem} is not valid Color");
+            }
+        }
+
+        #endregion
 
         public IWebElement GetCellFromColumn(string columnName, string cellText)
         {
@@ -721,6 +815,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).GetAttribute("href");
             return Driver.FindElement(byControl);
+        }
+
+        #endregion
+
+        #region Pinned column
+
+        public string GetPinnedColumnName(string pinStatus)
+        {
+            switch (pinStatus)
+            {
+                case "Left":
+                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-left-header']//span[@ref='eText']"))
+                        .Text;
+
+                case "Right":
+                    return Driver.FindElement(By.XPath(".//div[@class='ag-pinned-right-header']//span[@ref='eText']"))
+                        .Text;
+
+                default: throw new Exception($"{pinStatus} is not valid Pin Value");
+            }
         }
 
         #endregion

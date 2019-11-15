@@ -282,7 +282,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Task Values Templates Count"});
 #line 41
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table5, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table5, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -416,7 +416,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "Task Values Templates Count"});
 #line 77
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table9, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table9, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -1312,7 +1312,7 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "Task Values Templates Count"});
 #line 293
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table18, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

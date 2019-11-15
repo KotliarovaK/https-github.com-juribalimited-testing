@@ -266,7 +266,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Owner Display Name"});
 #line 41
- testRunner.And("Column is displayed in following order:", ((string)(null)), table2, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table2, "And ");
 #line 47
  testRunner.And(string.Format("URL contains \"{0}\"", uRL), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
