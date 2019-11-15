@@ -320,18 +320,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #endregion
 
-        public void OpenColumnSettingsByName(string columnName)
-        {
-            var columnSettingsSelector =
-                $".//div[@role='presentation']//span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
-            var columnHeaderSelector = $".//span[@class='ag-header-cell-text'][text()='{columnName}']";
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(By.XPath(columnHeaderSelector));
-            Driver.MouseHover(By.XPath(columnHeaderSelector));
-            Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
-            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
-        }
-
         public IWebElement QueueOnboardedObjectDisplayed(string objectName)
         {
             var selector = By.XPath($"//span[text()='{objectName}']");
@@ -540,6 +528,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
             return result;
         }
+
+        #region Column Settings
+
+        public void OpenColumnSettings(string columnName)
+        {
+            var columnSettingsSelector =
+                $".//div[@role='presentation']//span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
+            var columnHeaderSelector = $".//span[@class='ag-header-cell-text'][text()='{columnName}']";
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(By.XPath(columnHeaderSelector));
+            Driver.MouseHover(By.XPath(columnHeaderSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
+            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
+        }
+
+        public IWebElement GetColumnSettingButton(string settingName)
+        {
+            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
+            return Driver.FindElement(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
+        }
+
+        #endregion
 
         #region GroupBy
 

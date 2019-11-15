@@ -50,13 +50,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetSettingButtonByName(settingName).Click();
         }
 
-        [When(@"User selects ""(.*)"" option from settings menu")]
-        public void WhenUserSelectsOptionFromSettingsMenu(string optionName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetSettingOptionByName(optionName).Click();
-        }
-
         [When(@"User navigate to the bottom of the Action panel")]
         public void WhenUserNavigateToTheBottomOfTheActionPanel()
         {

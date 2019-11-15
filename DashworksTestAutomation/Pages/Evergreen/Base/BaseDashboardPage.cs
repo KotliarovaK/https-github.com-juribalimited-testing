@@ -320,29 +320,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        public void OpenColumnSettingsByName(string columnName)
-        {
-            var columnSettingsSelector =
-                $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
-            Driver.WaitForDataLoading();
-            Driver.MouseHover(By.XPath(columnSettingsSelector));
-            Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
-            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
-        }
-
-        public IWebElement GetSettingButtonByName(string settingName)
-        {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
-            return Driver.FindElement(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
-        }
-
-        public IWebElement GetSettingOptionByName(string optionName)
-        {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
-            return Driver.FindElement(
-                By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
-        }
-
         #region Autocomplete
 
         public List<string> GetAllAutocompleteOptions(string placeholder)
