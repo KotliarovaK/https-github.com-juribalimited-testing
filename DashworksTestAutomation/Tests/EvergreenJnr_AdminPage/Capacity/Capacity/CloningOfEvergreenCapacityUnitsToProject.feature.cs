@@ -575,38 +575,29 @@ this.FeatureBackground();
 #line 167
  testRunner.Then("Success message is displayed and contains \"1 object queued for onboarding, 0 obje" +
                     "cts offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 169
- testRunner.When("User navigates to the \'Queue\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 174
+ testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table17.AddRow(new string[] {
                         "Windows Live Messenger (8.1.0178.00)"});
-#line 170
- testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table17, "Then ");
-#line 173
- testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
-            table18.AddRow(new string[] {
-                        "Windows Live Messenger (8.1.0178.00)"});
-#line 174
- testRunner.Then("following Items are displayed in the History table", ((string)(null)), table18, "Then ");
-#line 177
- testRunner.Then("\'Applications_CU_DAS14103\' content is displayed in the \'Capacity Unit\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 175
+ testRunner.Then("following Items are displayed in the History table", ((string)(null)), table17, "Then ");
 #line 178
- testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'Applications_CU_DAS14103\' content is displayed in the \'Capacity Unit\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 179
- testRunner.When("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 180
+ testRunner.When("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 181
  testRunner.When("User enters \"Applications_CU_DAS14103\" text in the Search field for \"Capacity Uni" +
                     "t\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 181
- testRunner.Then("\'\' content is displayed in the \'Devices\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 182
- testRunner.Then("\'\' content is displayed in the \'Users\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'\' content is displayed in the \'Devices\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 183
+ testRunner.Then("\'\' content is displayed in the \'Users\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 184
  testRunner.Then("\'1\' content is displayed in the \'Applications\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

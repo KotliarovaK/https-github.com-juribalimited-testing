@@ -166,10 +166,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	#Test
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items                                |
-	| Windows Live Messenger (8.1.0178.00) |
+	#Ann.I. 11/15/19: Objects go to the history tab too quickly. We are waiting for Lisa's response.
+	#When User navigates to the 'Queue' left menu item
+	#Then following Items are displayed in the Queue table
+	#| Items                                |
+	#| Windows Live Messenger (8.1.0178.00) |
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items                                |
