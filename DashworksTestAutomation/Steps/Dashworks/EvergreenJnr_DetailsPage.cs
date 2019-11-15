@@ -185,17 +185,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = fields.FieldListOnDetailsPage.Select(value => value.Text).ToList();
-            try
-            {
-                _driver.WaitForElementToBeDisplayed(fields.ItemDetailsContainer);
-                Verify.AreEqual(expectedList, actualList, "Fields in the open section are different");
-            }
-            catch (Exception)
-            {
-                _driver.WaitForElementToBeDisplayed(fields.ItemDetailsContainer);
-                Thread.Sleep(10000);
-                Verify.AreEqual(expectedList, actualList, "Fields in the open section are different");
-            }
+            _driver.WaitForElementsToBeDisplayed(fields.FieldListOnDetailsPage);
+            Verify.AreEqual(expectedList, actualList, "Fields in the open section are different");
         }
 
         [Then(@"empty value is displayed for ""(.*)"" field on the Details Page")]
