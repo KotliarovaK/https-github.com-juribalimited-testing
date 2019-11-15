@@ -195,7 +195,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Applications"});
 #line 22
- testRunner.And("Columns on Admin page is displayed in following order:", ((string)(null)), table2, "And ");
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table2, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -288,7 +288,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Applications"});
 #line 41
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table4, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -381,7 +381,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Applications"});
 #line 59
- testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table6, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

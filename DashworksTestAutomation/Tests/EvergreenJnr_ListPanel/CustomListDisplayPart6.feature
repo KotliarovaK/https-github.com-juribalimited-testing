@@ -38,7 +38,7 @@ Scenario Outline: EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDispla
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "TestList274E0A" list
 	Then "TestList274E0A" list is displayed to user 
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName         |
 	| Hostname           |
 	| Device Type        |

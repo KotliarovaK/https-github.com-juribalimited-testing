@@ -232,3 +232,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogAndCriticalityFieldsAr
 	Then following content is displayed on the Details Page
 	| Title       | Value         |
 	| Criticality | Uncategorised |
+
+#Ann.I. 11/14/19: ready only for the 'terminator'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18865 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab 
+	When User navigates to the 'Application' details page for 'Axosoft OnTime 2005 Enterprise Server' item
+	Then Details page for "Axosoft OnTime 2005 Enterprise Server" item is displayed to the user
+	Then User verifies data in the fields on details page
+	| Field             | Data |
+	| Sticky Compliance |      |
+	When User navigates to the 'Application' details page for 'Standard SDK for Windows CE .NET 4.2' item
+	Then Details page for "Standard SDK for Windows CE .NET 4.2" item is displayed to the user
+	Then User verifies data in the fields on details page
+	| Field             | Data   |
+	| Sticky Compliance | IGNORE |

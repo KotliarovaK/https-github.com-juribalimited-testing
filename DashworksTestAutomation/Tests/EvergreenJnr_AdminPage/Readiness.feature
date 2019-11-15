@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| DAS15884_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName                  |
 	| Readiness                   |
 	|                             |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| DAS16131_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName |
 	| Readiness  |
 	|            |
@@ -290,7 +290,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	And User clicks Column button on the Column Settings panel
 	And User select "Ready" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then Columns on Admin page is displayed in following order:
+	Then grid headers are displayed in the following order
 	| ColumnName                  |
 	| Readiness                   |
 	|                             |

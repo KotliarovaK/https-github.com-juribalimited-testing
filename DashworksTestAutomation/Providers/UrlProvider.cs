@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Linq;
 using DashworksTestAutomation.Extensions;
 
@@ -6,15 +7,43 @@ namespace DashworksTestAutomation.Providers
 {
     internal class UrlProvider
     {
-        private static readonly string BaseUrl = bool.Parse(ConfigurationManager.AppSettings["isFutureRelease"]) ?
-            ConfigurationManager.AppSettings["appURLFuture"] : ConfigurationManager.AppSettings["appURL"];
-        
+        private static string BaseUrl
+        {
+            get
+            {
+                switch (ConfigurationManager.AppSettings["environmentFlag"])
+                {
+                    case "arelease":
+                        return ConfigurationManager.AppSettings["appURL"];
+                    case "amaster":
+                        return ConfigurationManager.AppSettings["appURLAmaster"];
+                    case "master":
+                        return ConfigurationManager.AppSettings["appURLFuture"];
+                    default: throw new Exception("Unable to generate Base URL");
+                }
+            }
+        }
+
         public static string Host = BaseUrl.Split("//").Last();
         public static string Url => $"{BaseUrl}/";
         public static string BackupUrl => ConfigurationManager.AppSettings["backupAppURL"];
 
-        private static string _port = bool.Parse(ConfigurationManager.AppSettings["isFutureRelease"]) ?
-            ConfigurationManager.AppSettings["restClientBaseUrlPortFuture"] : ConfigurationManager.AppSettings["restClientBaseUrlPort"];
+        private static string _port
+        {
+            get
+            {
+                switch (ConfigurationManager.AppSettings["environmentFlag"])
+                {
+                    case "arelease":
+                        return ConfigurationManager.AppSettings["restClientBaseUrlPort"];
+                    case "amaster":
+                        return ConfigurationManager.AppSettings["restClientBaseUrlPort"];
+                    case "master":
+                        return ConfigurationManager.AppSettings["restClientBaseUrlPortFuture"];
+                    default: throw new Exception("Unable to generate connection string");
+                }
+            }
+        }
 
         public static string RestClientBaseUrl =>
             $"{BaseUrl}:{_port}/";

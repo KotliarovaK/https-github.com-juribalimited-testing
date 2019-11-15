@@ -232,3 +232,33 @@ Examples:
 	| Entitled to device  | Installed on device     | Not used on device      | 001BAQXT6JWFPI  | AddressGrabber Standard       | TRUE      | UNKNOWN | TRUE     |
 	| Entitled to device  | Not installed on device | Not used on device      | 00BDM1JUR8IF419 | cdparanoia-libs               | UNKNOWN   | FALSE   | TRUE     |
 	| Installed on device | Not entitled to device  | Not used on device      | 00KWQ4J3WKQM0G  | Adobe Reader 6.0.1 - Fran?ais | TRUE      | UNKNOWN | FALSE    |
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18804
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks the Filters button
+	When User add "<filter>" filter where type is "Equals" with added column and following value:
+	| Values |
+	| -1     |
+	When User clicks the Associations button
+	When User clicks 'RUN LIST' button
+	Then There are no errors in the browser console
+
+Examples: 
+	| filter                       |
+	| Device Key                   |
+	| Application Key              |
+	| CPU Count                    |
+	| CPU Count                    |
+	| CPU Speed (GHz)              |
+	| HDD Count                    |
+	| HDD Total Size (GB)          |
+	| Memory (GB)                  |
+	| Monitor Count                |
+	| Network Card Count           |
+	| Sound Card Count             |
+	| Target Drive Free Space (GB) |
+	| Video Card Count             |

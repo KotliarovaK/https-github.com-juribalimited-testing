@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| Project ScheduleDAS16069 | 1             | 
 	Then Save as a new list option is available
 	And "4" rows are displayed in the agGrid
-	And Column is displayed in following order:
+	And grid headers are displayed in the following order
 	| ColumnName                           |
 	| Hostname                             |
 	| Device Type                          |
