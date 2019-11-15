@@ -214,7 +214,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	When User navigates to the 'Projects Summary' left submenu item
 	Then All data is unique in the 'Project' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup
+	#Ann.I. 11/08/19: This test needs to be updated accordingly with new functionality.
+	#Will be updated in 41 or 42 Zion sprint, along with DAS-18852;
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
