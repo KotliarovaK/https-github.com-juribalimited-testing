@@ -140,7 +140,7 @@ this.FeatureBackground();
 #line 15
  testRunner.When("User navigates to the \'Groups\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.And("User have opened Column Settings for \"Group\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User opens \'Group\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
@@ -706,7 +706,7 @@ this.FeatureBackground();
 #line 137
  testRunner.When("User navigates to the \'Application Issues\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
- testRunner.And("User have opened Column Settings for \"Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User opens \'Type\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 139
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 140

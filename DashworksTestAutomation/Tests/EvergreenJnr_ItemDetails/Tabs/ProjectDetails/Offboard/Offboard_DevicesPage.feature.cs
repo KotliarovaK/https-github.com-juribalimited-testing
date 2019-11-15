@@ -585,7 +585,7 @@ this.FeatureBackground();
 #line 127
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table6, "Then ");
 #line 133
- testRunner.When("User have opened Column Settings for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User opens \'Owner\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 134
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
@@ -604,7 +604,7 @@ this.FeatureBackground();
 #line 138
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table7, "Then ");
 #line 142
- testRunner.When("User have opened Column Settings for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User opens \'Owner\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 143
  testRunner.And("User select \"Display Name\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
@@ -621,7 +621,7 @@ this.FeatureBackground();
 #line 145
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table8, "Then ");
 #line 150
- testRunner.When("User have opened Column Settings for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User opens \'Owner\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
  testRunner.And("User select \"Username\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152

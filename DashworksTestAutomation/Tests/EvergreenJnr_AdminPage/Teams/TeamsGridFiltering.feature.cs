@@ -209,7 +209,7 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("Page with \'Teams\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
- testRunner.When("User have opened Column Settings for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User opens \'Team\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
  testRunner.And("User clicks Filter button in the Column Settings panel on the Teams Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
@@ -227,7 +227,7 @@ this.FeatureBackground();
 #line 29
  testRunner.Then("Page with \'Administrative Team\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 30
- testRunner.When("User have opened Column Settings for \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User opens \'Username\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
  testRunner.And("User clicks Filter button in the Column Settings panel on the Teams Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32

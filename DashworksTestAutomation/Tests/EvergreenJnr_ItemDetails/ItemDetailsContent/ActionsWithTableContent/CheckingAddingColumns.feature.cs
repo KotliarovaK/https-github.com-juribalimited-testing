@@ -152,7 +152,7 @@ this.FeatureBackground();
 #line 13
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.And(string.Format("User have opened Column Settings for \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User opens \'{0}\' column settings", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
@@ -260,7 +260,7 @@ this.FeatureBackground();
 #line 38
  testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
- testRunner.And(string.Format("User have opened Column Settings for \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User opens \'{0}\' column settings", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
@@ -371,7 +371,7 @@ this.FeatureBackground();
 #line 67
  testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
- testRunner.And(string.Format("User have opened Column Settings for \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User opens \'{0}\' column settings", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
@@ -466,7 +466,7 @@ this.FeatureBackground();
 #line 104
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 105
- testRunner.And(string.Format("User have opened Column Settings for \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User opens \'{0}\' column settings", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 106
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
@@ -562,7 +562,7 @@ this.FeatureBackground();
 #line 128
  testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.And("User have opened Column Settings for \"Device\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User opens \'Device\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 130
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 131
@@ -659,7 +659,7 @@ this.FeatureBackground();
 #line 157
  testRunner.And("User navigates to the \'Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 158
- testRunner.And("User have opened Column Settings for \"Project Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User opens \'Project Type\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 159
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 160
