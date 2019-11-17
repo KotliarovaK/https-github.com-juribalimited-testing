@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	Then following String Values are displayed in the filter dropdown for the 'Type' column
 	| Values |
 	| SMTP   |
-	Then following String Values are displayed in the filter dropdown for the 'Reply To' column
+	Then following Boolean Values are displayed in the filter dropdown for the 'Reply To' column
 	| Values |
 	| True   |
 

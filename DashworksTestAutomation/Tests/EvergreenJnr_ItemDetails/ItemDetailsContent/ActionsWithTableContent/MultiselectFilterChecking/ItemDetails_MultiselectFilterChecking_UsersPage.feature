@@ -145,7 +145,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	Then following String Values are displayed in the filter dropdown for the 'Site' column
 	| Values       |
 	| TierA Site01 |
-	Then following String Values are displayed in the filter dropdown for the 'Installed' column
+	Then following Boolean Values are displayed in the filter dropdown for the 'Installed' column
 	| Values |
 	| True   |
 	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
