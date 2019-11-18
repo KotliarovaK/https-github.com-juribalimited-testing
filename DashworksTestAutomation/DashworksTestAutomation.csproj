@@ -2589,15 +2589,6 @@
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Buckets\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Projects\Scope\History\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Rings\" />
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Teams\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
