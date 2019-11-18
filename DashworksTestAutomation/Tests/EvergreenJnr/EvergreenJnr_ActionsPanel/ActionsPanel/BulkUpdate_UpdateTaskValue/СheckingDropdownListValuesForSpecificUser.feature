@@ -110,9 +110,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| No change |
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Update Owner' dropdown:
-	| Options      |
-	| Update       |
-	| Remove owner |
+	| Options               |
+	| Update                |
+	| Remove owner          |
 	| Remove owner and team |
 	| No change             |
 	When User selects 'Update' in the 'Update Owner' dropdown

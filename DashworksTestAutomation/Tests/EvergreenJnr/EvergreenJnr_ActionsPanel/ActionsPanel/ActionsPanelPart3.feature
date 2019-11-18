@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOperationHasCorrectOptionsFo
 	And User selects 'Project' in the 'Project or Evergreen' dropdown
 	And User selects 'Email Migration' option from 'Project' autocomplete
 	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
-	Then following Values are displayed in the 'Also Move Users' dropdown:
+	Then following Values are displayed in the 'Also Move Mailboxes' dropdown:
 	| Options              |
 	| None                 |
 	| Owned mailboxes only |
