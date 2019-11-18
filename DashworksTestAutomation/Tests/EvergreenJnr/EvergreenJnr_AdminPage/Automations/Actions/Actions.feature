@@ -70,9 +70,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
 	#Then Edit Action page is displayed to the User
 	Then 'Edit Action' page subheader is displayed to user
-	And 'UPDATE' button is disabled
-	And 'CANCEL' button is displayed
-	And Page with 'Test_Automation_15427' header is displayed to user
+	Then 'UPDATE' button is disabled
+	Then 'CANCEL' button is displayed
+	Then Page with 'Test_Automation_15427' header is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @DAS17594 @DAS17774 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
@@ -282,8 +282,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The automation action has been created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Cleanup @Not_Ready
-#Change value after gold data complete added
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -298,7 +297,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User selects '[Default (User)]' option from 'Path' autocomplete
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	Then There are no errors in the browser console
@@ -310,8 +309,9 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
 	Then "15425_Action" content is displayed in "Action Name" field
-	Then '[Default (User)]' value is displayed in the 'Path' dropdown
 	Then 'Update path' content is displayed in 'Action Type' dropdown
+	Then 'User Evergreen Capacity Project' content is displayed in 'Project' autocomplete
+	Then '[Default (User)]' content is displayed in 'Path' autocomplete
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
 	When User enters '' text to 'Action Name' textbox
@@ -323,10 +323,10 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then 'UPDATE' button is not disabled
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
 	Then 'UPDATE' button is disabled
-	Then '' value is displayed in the 'Path' dropdown
+	Then '' content is displayed in 'Path' autocomplete
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	When User clicks 'CANCEL' button 
-	Then Create Action page is displayed to the User
+	Then '[Default (User)]' content is displayed in the 'Value' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @DAS17625 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
