@@ -91,8 +91,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	And User closed "Suggested" columns category
 	And User is expand "Evergreen" columns category
 	Then the following Column subcategories are displayed for open category:
-	| Subcategories           |
-	| Evergreen Capacity Unit |
+	| Subcategories             |
+	| Evergreen Capacity Unit   |
+	| Evergreen Rationalisation |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD COLUMN" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -100,8 +101,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	And User closed "Suggested" columns category
 	And User is expand "Evergreen" columns category
 	Then the following Column subcategories are displayed for open category:
-	| Subcategories           |
-	| Evergreen Capacity Unit |
+	| Subcategories             |
+	| Evergreen Capacity Unit   |
+	| Evergreen Rationalisation |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD VALUE" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -109,8 +111,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	And User closed "Suggested" columns category
 	And User is expand "Evergreen" columns category
 	Then the following Column subcategories are displayed for open category:
-	| Subcategories           |
-	| Evergreen Capacity Unit |
+	| Subcategories             |
+	| Evergreen Capacity Unit   |
+	| Evergreen Rationalisation |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
