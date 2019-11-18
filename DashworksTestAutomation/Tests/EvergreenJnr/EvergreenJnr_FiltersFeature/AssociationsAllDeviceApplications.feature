@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedI
 	Then Remove icon displayed in 'true' state for 'Not installed on device' association
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @18562 @18127 @Cleanup
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @DAS18562 @DAS18127 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
