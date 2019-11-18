@@ -75,17 +75,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14705 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
-	When User clicks 'Admin' on the left-hand menu
-	And User navigates to the 'Projects' left menu item
-	Then Page with 'Projects' header is displayed to user
-	When User enters "Email Migration" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	When User navigates to "Email Migration" project details
 	Then Page with 'Email Migration' header is displayed to user
 	When User navigates to the 'Rings' left menu item
 	Then '729' content is displayed in the 'Mailboxes' column
 	Then grid headers are displayed in the following order
 	| ColumnName |
-	|            |
 	| Ring       |
 	|            |
 	| Default    |
