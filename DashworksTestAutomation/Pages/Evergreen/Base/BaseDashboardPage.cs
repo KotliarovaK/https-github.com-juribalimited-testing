@@ -20,10 +20,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private string NamedDropdownForFieldSelector = ".//span[text()='{0}']/../ancestor::tr//mat-select";
 
-        public const string ColorItem = ".//div[@class='status']";
-
-        public const string ImageItem = ".//div[contains(@class, 'ag-body-container')]//img[contains(@src,'png')]";
-
         public const string GridCell = ".//div[@role='gridcell']";
 
         public const string ColumnSubcategory = "//div[@class='selected-column-name']//span";
@@ -318,29 +314,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
-        }
-
-        public void OpenColumnSettingsByName(string columnName)
-        {
-            var columnSettingsSelector =
-                $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
-            Driver.WaitForDataLoading();
-            Driver.MouseHover(By.XPath(columnSettingsSelector));
-            Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
-            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
-        }
-
-        public IWebElement GetSettingButtonByName(string settingName)
-        {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
-            return Driver.FindElement(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
-        }
-
-        public IWebElement GetSettingOptionByName(string optionName)
-        {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
-            return Driver.FindElement(
-                By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
         }
 
         #region Autocomplete

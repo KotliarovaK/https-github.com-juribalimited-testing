@@ -182,9 +182,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingFieldsAreDisplayedInTheOpenSection(Table table)
         {
             var fields = _driver.NowAt<DetailsPage>();
+
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = fields.FieldListOnDetailsPage.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Fields in the open section are different");
+            _driver.WaitForElementsToBeDisplayed(fields.FieldListOnDetailsPage);
+            Verify.AreEqual(expectedList, actualList, "Fields in the open section are different");
         }
 
         [Then(@"empty value is displayed for ""(.*)"" field on the Details Page")]
@@ -488,6 +490,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.GetCheckboxByName(checkboxName);
         }
+
         //TODO change check logic for checkboxes
         [Then(@"Checkboxes are checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
         public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName,
@@ -496,7 +499,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var column = _driver.NowAt<BaseGridPage>();
-            column.OpenColumnSettingsByName(columnName);
+            column.OpenColumnSettings(columnName);
             Verify.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
         }
 

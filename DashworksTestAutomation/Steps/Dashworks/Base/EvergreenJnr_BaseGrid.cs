@@ -759,5 +759,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Collumn settings
+
+        [When(@"User opens '(.*)' column settings")]
+        public void WhenUserOpensColumnSettings(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.OpenColumnSettings(columnName);
+        }
+
+        [When(@"User selects '(.*)' option from column settings")]
+        public void WhenUserSelectsOptionFromColumnSettings(string setting)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetColumnSettingButton(setting).Click();
+        }
+
+        #endregion
     }
 }

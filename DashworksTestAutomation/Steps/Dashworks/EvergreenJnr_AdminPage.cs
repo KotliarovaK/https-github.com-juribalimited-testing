@@ -616,13 +616,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Column Settings
 
-        [When(@"User have opened Column Settings for ""(.*)"" column")]
-        public void WhenUserHaveOpenedColumnSettingsForColumn(string columnName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.OpenColumnSettingsByName(columnName);
-        }
-
         [When(@"User clicks Filter button in the Column Settings panel on the Teams Page")]
         public void WhenUserClicksFilterButtonInTheColumnSettingsPanelOnTheTeamsPage()
         {
