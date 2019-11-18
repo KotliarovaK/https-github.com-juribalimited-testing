@@ -2589,12 +2589,6 @@
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\" />
-    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
-    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
-    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCustomField\" />
-    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdatePath\" />
-    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\" />
-    <Folder Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\" />
     <Folder Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\" />
     <Folder Include="Tests\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\" />
     <Folder Include="Tests\EvergreenJnr_AdminPage\Buckets\" />
@@ -2604,30 +2598,6 @@
     <Folder Include="Tests\EvergreenJnr_AdminPage\Projects\Scope\History\" />
     <Folder Include="Tests\EvergreenJnr_AdminPage\Rings\" />
     <Folder Include="Tests\EvergreenJnr_AdminPage\Teams\" />
-    <Folder Include="Tests\EvergreenJnr_API_FiltersAndColumns\" />
-    <Folder Include="Tests\EvergreenJnr_BaseDashboardPage\" />
-    <Folder Include="Tests\EvergreenJnr_Columns\" />
-    <Folder Include="Tests\EvergreenJnr_DashboardsPage\" />
-    <Folder Include="Tests\EvergreenJnr_DynamicLists\" />
-    <Folder Include="Tests\EvergreenJnr_FiltersFeature\" />
-    <Folder Include="Tests\EvergreenJnr_GlobalSearch\" />
-    <Folder Include="Tests\EvergreenJnr_GridActions\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithFieldsContent\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\MultiselectFilterChecking\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\Tabs\Applications\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\Tabs\CustomFields\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\Offboard\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\Relink\" />
-    <Folder Include="Tests\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\Resync\" />
-    <Folder Include="Tests\EvergreenJnr_ListDetails\" />
-    <Folder Include="Tests\EvergreenJnr_ListFromCSV\" />
-    <Folder Include="Tests\EvergreenJnr_ListPanel\" />
-    <Folder Include="Tests\EvergreenJnr_Pivot\" />
-    <Folder Include="Tests\EvergreenJnr_ProfileDetails\" />
-    <Folder Include="Tests\EvergreenJnr_QueryStrings\" />
-    <Folder Include="Tests\EvergreenJnr_Search\" />
-    <Folder Include="Tests\EvergreenJnr_StaticLists\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
