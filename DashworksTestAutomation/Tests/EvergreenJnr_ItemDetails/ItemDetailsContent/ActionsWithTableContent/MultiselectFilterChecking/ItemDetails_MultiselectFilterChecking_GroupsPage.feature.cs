@@ -165,8 +165,8 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "True"});
 #line 25
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Enabled\' co" +
-                    "lumn", ((string)(null)), table2, "Then ");
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Enabled\' c" +
+                    "olumn", ((string)(null)), table2, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});

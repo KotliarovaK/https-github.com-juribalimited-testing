@@ -114,14 +114,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
-	| List       | Widget_For_DAS16326 | Device List (Complex) - BROKEN LIST | 10      | 10         |
-	Then User sees 'This widget refers to list Device List (Complex) - BROKEN LIST which has errors' text in warning message on Dashboards page
-	Then 'Device List (Complex) - BROKEN LIST' link is displayed in warning message on Dashboards page
-	And There are no errors in the browser console
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title               | List                                 | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS16326 | Mailbox List (Complex) - BROKEN LIST | 10      | 10         |
+	Then User sees 'This widget refers to list Mailbox List (Complex) - BROKEN LIST which has errors' text in warning message on Dashboards page
+	Then 'Mailbox List (Complex) - BROKEN LIST' link is displayed in warning message on Dashboards page
+	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList

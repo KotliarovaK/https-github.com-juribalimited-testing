@@ -1134,7 +1134,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
             dashboardDetailsElement.DefaultDashboardCheckboxLabel.Click();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading(60);
         }
 
         [Then(@"Default dashboard checkbox becomes disabled in Dashboard details")]

@@ -521,9 +521,9 @@ this.FeatureBackground();
 #line 116
  testRunner.When("Dashboard with \'Dashboard_DAS16326\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 117
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 118
- testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -534,19 +534,19 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "List",
                         "Widget_For_DAS16326",
-                        "Device List (Complex) - BROKEN LIST",
+                        "Mailbox List (Complex) - BROKEN LIST",
                         "10",
                         "10"});
 #line 119
- testRunner.And("User creates new Widget", ((string)(null)), table13, "And ");
+ testRunner.When("User creates new Widget", ((string)(null)), table13, "When ");
 #line 122
- testRunner.Then("User sees \'This widget refers to list Device List (Complex) - BROKEN LIST which h" +
-                    "as errors\' text in warning message on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User sees \'This widget refers to list Mailbox List (Complex) - BROKEN LIST which " +
+                    "has errors\' text in warning message on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 123
- testRunner.Then("\'Device List (Complex) - BROKEN LIST\' link is displayed in warning message on Das" +
-                    "hboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Mailbox List (Complex) - BROKEN LIST\' link is displayed in warning message on Da" +
+                    "shboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 124
- testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

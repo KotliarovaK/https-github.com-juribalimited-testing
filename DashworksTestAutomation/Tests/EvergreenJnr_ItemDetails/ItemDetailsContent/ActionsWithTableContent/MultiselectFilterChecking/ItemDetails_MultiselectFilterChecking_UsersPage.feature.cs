@@ -733,8 +733,8 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "True"});
 #line 148
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Installed\' " +
-                    "column", ((string)(null)), table21, "Then ");
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Installed\'" +
+                    " column", ((string)(null)), table21, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});

@@ -856,6 +856,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12963")]
         [NUnit.Framework.CategoryAttribute("DAS16233")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded()
         {
             System.Exception lastException = null;
@@ -894,54 +895,55 @@ this.FeatureBackground();
                         "DAS14923",
                         "DAS12963",
                         "DAS16233",
-                        "Cleanup"});
-#line 218
+                        "Cleanup",
+                        "Not_Run"});
+#line 220
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 219
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 220
- testRunner.When("User navigates to the \'Evergreen\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 221
- testRunner.When("User navigates to the \'Buckets\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 222
- testRunner.And("User clicks \'CREATE EVERGREEN BUCKET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Evergreen\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 223
- testRunner.And("User enters \'AutoTestBucket_DAS_13335\' text to \'Bucket Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Buckets\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 224
- testRunner.When("User selects \'Admin IT\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User clicks \'CREATE EVERGREEN BUCKET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 225
- testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'AutoTestBucket_DAS_13335\' text to \'Bucket Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 226
- testRunner.When("User navigates to the \'User\' details page for \'AAG081456\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Admin IT\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 227
- testRunner.Then("Details page for \"AAG081456\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 228
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'User\' details page for \'AAG081456\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 229
- testRunner.When("User clicks on \"Unassigned\" link for Evergreen Bucket field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"AAG081456\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 230
- testRunner.And("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 231
- testRunner.And("User select \"AutoTestBucket_DAS_13335\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
- testRunner.When("User selects all rows on the grid on the Details Page for \"Related Devices\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 233
- testRunner.And("User opens \"Related Mailboxes\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 234
- testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
- testRunner.When("User navigates to the \'Device\' details page for \'I55HL8MSBYK0VG\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 236
- testRunner.Then("Details page for \"I55HL8MSBYK0VG\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 237
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 231
+ testRunner.When("User clicks on \"Unassigned\" link for Evergreen Bucket field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 232
+ testRunner.And("User clicks on \"New Bucket\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 233
+ testRunner.And("User select \"AutoTestBucket_DAS_13335\" value on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 234
+ testRunner.When("User selects all rows on the grid on the Details Page for \"Related Devices\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 235
+ testRunner.And("User opens \"Related Mailboxes\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 236
+ testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 237
+ testRunner.When("User navigates to the \'Device\' details page for \'I55HL8MSBYK0VG\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 238
+ testRunner.Then("Details page for \"I55HL8MSBYK0VG\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 239
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 240
  testRunner.Then("User sees \"AutoTestBucket_DAS_13335\" Evergreen Bucket in Project Summary section " +
                     "on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 239
+#line 241
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -997,18 +999,18 @@ this.FeatureBackground();
                         "DAS17219",
                         "DAS17254",
                         "DAS17255"});
-#line 242
+#line 244
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 243
+#line 245
  testRunner.When("User navigates to the \'Mailbox\' details page for \'000F977AC8824FE39B8@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 244
+#line 246
  testRunner.Then("Details page for \"000F977AC8824FE39B8@bclabs.local\" item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 245
+#line 247
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1021,9 +1023,9 @@ this.FeatureBackground();
                         "Display Name"});
             table9.AddRow(new string[] {
                         "Distinguished Name"});
-#line 246
+#line 248
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table9, "Then ");
-#line 252
+#line 254
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1053,19 +1055,19 @@ this.FeatureBackground();
                         "Stage 3"});
             table10.AddRow(new string[] {
                         "Stage Z"});
-#line 253
+#line 255
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table10, "Then ");
-#line 267
- testRunner.And("\"AMBER\" content is displayed for \"Stage 1\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 268
- testRunner.And("\"RED\" content is displayed for \"Stage 2\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 269
- testRunner.And("\"GREEN\" content is displayed for \"Stage 3\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"AMBER\" content is displayed for \"Stage 1\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 270
- testRunner.And("\"BLUE\" content is displayed for \"Stage Z\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"RED\" content is displayed for \"Stage 2\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 271
- testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\"GREEN\" content is displayed for \"Stage 3\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 272
+ testRunner.And("\"BLUE\" content is displayed for \"Stage Z\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 273
+ testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 274
  testRunner.Then("\'[Default (User)]\' checkbox is checked in the filter dropdown for the \'Path\' colu" +
                     "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1190,7 +1192,7 @@ this.FeatureBackground();
  testRunner.And("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 309
  testRunner.When("User navigates to the \'Related\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 310
+#line 313
  testRunner.And("User enters \"James N. Snow\" text in the Search field for \"Owner Display Name\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 311
