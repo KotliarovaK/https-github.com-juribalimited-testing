@@ -262,3 +262,17 @@ Examples:
 	| Sound Card Count             |
 	| Target Drive Free Space (GB) |
 	| Video Card Count             |
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18454 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAfterSortingAndRunninList
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	Then table content is present
+	When User clicks on 'Hostname' column header
+	When User clicks the Columns button
+	When User removes "App Vendor" column by Column panel
+	When User clicks 'RUN LIST' button
+	Then table content is present

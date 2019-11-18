@@ -361,7 +361,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading();
             _driver.ExecuteAction(() => _driver.ClickByJavascript(page.GetListElementByName(listName)));
-            _driver.WaitForDataLoading(45);
+            _driver.WaitForDataLoading(60);
         }
 
         [Then(@"""(.*)"" message is displayed")]

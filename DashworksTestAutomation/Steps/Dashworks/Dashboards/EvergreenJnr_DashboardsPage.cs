@@ -92,15 +92,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             WhenUserClicksMenuForDashboard(dashboardName);
             _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardMenuItem(menuItem));
             dashboardElement.DashboardMenuItem(menuItem).Click();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading(60);
 
             if (menuItem.Equals("Duplicate"))
             {
-                _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage);
+                _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage, 60);
                 _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
             }
         }
-
 
         [Then(@"Dashboard with name '(.*)' marked as favorite")]
         public void ThenUserSeesDashboardsMarkedAsFavorite(string dashboardName)
