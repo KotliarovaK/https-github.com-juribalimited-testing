@@ -285,7 +285,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersTextToTextbox(string text, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetTextbox(placeholder).Clear();
+            page.GetTextbox(placeholder).ClearWithBackspaces();
             page.GetTextbox(placeholder).SendKeys(text);
             page.BodyContainer.Click();
 
