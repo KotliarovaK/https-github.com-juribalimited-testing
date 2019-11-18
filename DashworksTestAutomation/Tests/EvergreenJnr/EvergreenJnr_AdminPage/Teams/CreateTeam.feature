@@ -23,10 +23,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
 	When User enters 'TestTeam' text to 'Team Name' textbox
-	And User enters "test" in the Team Description field
-	And User clicks 'CREATE' button 
-	Then Error message with "A team already exists with this name" text is displayed
-	And There are no errors in the browser console
+	When User enters "test" in the Team Description field
+	Then 'A team already exists with this name' error message is displayed for 'Team Name' field
+	Then 'CREATE' button has tooltip with 'Some settings are not valid' text
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Teams @Do_Not_Run_With_Teams @Save_Default_Team @Set_Default_Team @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol

@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplay
 	Then following String Values are displayed in the filter dropdown for the 'Domain' column
 	| Values |
 	| DEV50  |
-	Then following String Values are displayed in the filter dropdown for the 'Enabled' column
+	Then following Boolean Values are displayed in the filter dropdown for the 'Enabled' column
 	| Values |
 	| True   |
 	Then following String Values are displayed in the filter dropdown for the 'Directory Type' column

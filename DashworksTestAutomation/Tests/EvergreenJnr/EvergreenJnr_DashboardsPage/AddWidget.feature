@@ -145,8 +145,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	And User clicks 'Mailboxes' on the left-hand menu
 	And User clicks the Filters button
 	And User add "17539Snr: Path" filter where type is "Does not equal" with added column and following checkboxes:
-	| SelectedCheckboxes   |
-	| MailboxPath17539 |
+	| SelectedCheckboxes |
+	| MailboxPath17539   |
 	And User clicks the Actions button
 	And User select "Email Address" rows in the grid
 	| SelectedRowsName |

@@ -1136,10 +1136,11 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16857")]
         [NUnit.Framework.CategoryAttribute("DAS16928")]
+        [NUnit.Framework.CategoryAttribute("DAS18405")]
         [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Readiness", "GREY", "Devices Evergreen Capacity Project", null)]
         [NUnit.Framework.TestCaseAttribute("User", "ACG370114", "Readiness", "GREY", "User Evergreen Capacity Project", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "7zip", "Readiness", "GREY", "Devices Evergreen Capacity Project", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "000F977AC8824FE39B8@bclabs.local", "Readiness", "NONE", "Mailbox Evergreen Capacity Project", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailbox", "000F977AC8824FE39B8@bclabs.local", "Readiness", "IGNORE", "Mailbox Evergreen Capacity Project", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode(string pageName, string itemName, string title, string value, string projectName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1174,7 +1175,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS16857",
-                    "DAS16928"};
+                    "DAS16928",
+                    "DAS18405"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

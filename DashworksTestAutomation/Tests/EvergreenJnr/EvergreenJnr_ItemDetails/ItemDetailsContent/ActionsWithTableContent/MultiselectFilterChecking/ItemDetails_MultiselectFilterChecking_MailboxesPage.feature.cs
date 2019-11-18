@@ -153,8 +153,8 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "True"});
 #line 18
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Reply To\' c" +
-                    "olumn", ((string)(null)), table2, "Then ");
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Reply To\' " +
+                    "column", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
