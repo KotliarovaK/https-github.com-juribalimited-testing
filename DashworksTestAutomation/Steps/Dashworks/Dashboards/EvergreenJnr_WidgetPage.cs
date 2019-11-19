@@ -453,9 +453,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int prevY = preview.WidgetPreview.Location.Y;
 
             var widget = _driver.NowAt<AddWidgetPage>();
-            int widgetWidth = widget.GetCardWidgetPreviewText().Size.Width;
-            int widgetX = widget.GetCardWidgetPreviewText().Location.X;
-            int widgetY = widget.GetCardWidgetPreviewText().Location.Y;
+            int widgetWidth = widget.GetWidgetPreviewText().Size.Width;
+            int widgetX = widget.GetWidgetPreviewText().Location.X;
+            int widgetY = widget.GetWidgetPreviewText().Location.Y;
 
             Verify.That(prevX < widgetX && prevY < widgetY, Is.True, "Widget XY coordinate displayed outside preview box");
             Verify.That(prevWidth > widgetWidth, Is.True, "Widget width displayed outside preview box");
@@ -466,7 +466,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
+            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
             Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -522,7 +522,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Verify.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
+            Verify.That(page.GetWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
         [Then(@"'(.*)' option displayed for Widget OrderBy")]

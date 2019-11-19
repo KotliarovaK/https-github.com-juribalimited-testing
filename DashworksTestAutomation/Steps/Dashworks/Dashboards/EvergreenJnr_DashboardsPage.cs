@@ -729,7 +729,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsDisplayedForWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
+            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
             Verify.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -738,7 +738,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
+            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
             Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
