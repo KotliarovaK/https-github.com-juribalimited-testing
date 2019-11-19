@@ -39,6 +39,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedList, allHeaders, "Columns order is incorrect");
         }
 
+        [Then(@"All column headers are unique")]
+        public void ThenAllColumnsAreUnique()
+        {
+            var grid = _driver.NowAt<BaseGridPage>();
+            var allHeaders = grid.GetAllHeadersText();
+
+            //Get all elements that has more than one occurence in the list
+            var duplicates = allHeaders.GroupBy(x => x)
+                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .Where(x => x.Count > 1).ToList();
+            if (duplicates.Any())
+                throw new Exception($"Some duplicated columns are spotted in the '{allHeaders}'");
+        }
+
         #endregion
 
         #region Select content

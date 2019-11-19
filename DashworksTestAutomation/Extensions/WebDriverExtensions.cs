@@ -57,7 +57,7 @@ namespace DashworksTestAutomation.Extensions
         //For Datepicker tooltip is already on the page. No need to hover
         public static IList<IWebElement> GetDatepickerTooltipElements(this RemoteWebDriver driver, int dayNumber)
         {
-            var selector = By.XPath($".//td[@role='gridcell']//div[text()='{dayNumber}']/span/span");
+            var selector = By.XPath($".//td[@role='button']//div[text()='{dayNumber}']/span/span");
             return driver.FindElements(selector);
         }
 

@@ -276,3 +276,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAft
 	When User removes "App Vendor" column by Column panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18897 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfterRunningList
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	Then table content is present
+	Then All column headers are unique
