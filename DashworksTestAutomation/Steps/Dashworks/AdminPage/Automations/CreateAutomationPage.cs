@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using System.Threading;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -29,6 +30,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             Verify.IsTrue(autocompleteElement.IsTextboxDisplayed("Automation Name"),
                 "Automation page is not displayed correctly");
             _driver.WaitForElementToHaveText(autocompleteElement.GetTextbox("Scope"));
+            //For the stability of the Automation's tests
+            Thread.Sleep(800);
         }
     }
 }
