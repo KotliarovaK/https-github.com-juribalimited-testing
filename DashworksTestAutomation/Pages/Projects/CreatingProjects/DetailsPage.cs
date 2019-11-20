@@ -46,8 +46,8 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Include Site Name in Application Name']")]
         public IWebElement IncludeSiteNameCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Onboard Not Applicable Applications']")]
-        public IWebElement OnboardNotApplicableApplicationsCheckbox { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Include Version in Application Name']")]
+        public IWebElement IncludeVersionInApplicationNameCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Onboard Installed Applications by Association']")]
         public IWebElement OnboardInstalledApplicationsByAssociationCheckbox { get; set; }

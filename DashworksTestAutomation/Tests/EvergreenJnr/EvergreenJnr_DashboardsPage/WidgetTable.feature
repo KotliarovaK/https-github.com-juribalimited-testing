@@ -396,7 +396,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingE
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18327 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18327 @DAS19007 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyAfterClickingThroughTableWidget
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
@@ -424,4 +424,44 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
-	Then "(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber)" text is displayed in filter container
+	Then "(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber AND 1803: In Scope = true)" text is displayed in filter container
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18232 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInTableWidget
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	When User create custom list with "AppCompliance18232" name
+	Then "AppCompliance18232" list is displayed to user
+	When Dashboard with 'Dashboard for DAS18232' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List               | SplitBy    | AggregateFunction | AggregateBy | OrderBy        | MaxValues |
+	| Table      | WidgetForDAS18232 | AppCompliance18232 | Compliance | Severity          | Compliance  | Compliance ASC | 1         |
+	Then Icon and Text is displayed for Card widget on Preview
+	Then 'Red' color is displayed for Card Widget on Preview
+	When User clicks 'CREATE' button
+	Then 'WidgetForDAS18232' Widget is displayed to the user
+	Then Icon and Text is displayed for Card widget
+	Then 'Red' color is displayed for Card Widget
+	When User clicks Ellipsis menu for 'WidgetForDAS18232' Widget on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User selects 'Text Only' in the 'Layout' dropdown
+	Then Text Only is displayed for Card widget on Preview
+	Then 'Red' color is displayed for Card Widget on Preview
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS18232' Widget is displayed to the user
+	Then Text Only is displayed for Card widget
+	Then 'Red' color is displayed for Card Widget
+	When User clicks Ellipsis menu for 'WidgetForDAS18232' Widget on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User selects 'Icon Only' in the 'Layout' dropdown
+	Then Icon Only is displayed for Card widget on Preview
+	Then 'Red' color is displayed for Card Widget on Preview
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS18232' Widget is displayed to the user
+	Then Icon Only is displayed for Card widget
+	Then 'Red' color is displayed for Card Widget

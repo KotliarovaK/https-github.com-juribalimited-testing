@@ -2566,3 +2566,13 @@ Examples:
 	| Empty    | UNKNOWN |
 	| FALSE    | FALSE   |
 	| TRUE     | TRUE    |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS18922
+Scenario: EvergreenJnr_DevicesList_CheckThatGridDataDisplayedAfterSortingByOwnerCompliance
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Owner Compliance" filter where type is "Equals" with added column and Lookup option
+    | SelectedValues |
+    | Empty          |
+	When User clicks on 'Owner Compliance' column header
+	Then table content is present

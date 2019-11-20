@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public DefaultValueForApplicationRationalizationEnum DefaultValueForApplicationRationalization;
         public bool ShowOriginalColumn { get; set; }
         public bool IncludeSiteName{ get; set; }
-        public bool NotApplicableApplications { get; set; }
+        public bool IncludeVersionInApplicationName { get; set; }
         public bool InstalledApplications { get; set; }
         public bool EntitledApplications { get; set; }
         public OnboardUsedApplicationsByAssociationToEnum OnboardUsedApplicationsByAssociationTo;

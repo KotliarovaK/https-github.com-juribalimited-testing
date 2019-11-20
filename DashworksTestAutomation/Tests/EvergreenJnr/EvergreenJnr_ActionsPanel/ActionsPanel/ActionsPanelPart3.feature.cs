@@ -570,7 +570,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "All linked mailboxes"});
 #line 117
- testRunner.Then("following Values are displayed in the \'Also Move Users\' dropdown:", ((string)(null)), table11, "Then ");
+ testRunner.Then("following Values are displayed in the \'Also Move Mailboxes\' dropdown:", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

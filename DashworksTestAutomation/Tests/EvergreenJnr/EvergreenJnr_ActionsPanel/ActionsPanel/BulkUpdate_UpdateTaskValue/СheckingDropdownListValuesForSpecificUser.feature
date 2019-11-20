@@ -7,23 +7,13 @@ Background: Pre-Conditions
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278 @DAS14448 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username   | FullName | Password | ConfirmPassword | Roles                |
-	| <UserName> | DAS13264 | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username   | Password |
-	| <UserName> | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username   | Email | FullName | Password  | Roles                                            |
+	| <UserName> | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| <User>   | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -66,23 +56,13 @@ Examples:
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13268 | DAS13268 | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| DAS13268 | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username | Email | FullName | Password  | Roles                                            |
+	| DAS13268 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| DAS13268 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -104,15 +84,17 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| No change             |
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options   |
-	| Update    |
-	| Remove    |
-	| No change |
+	| Options                          |
+	| Update                           |
+	| Update relative to current value |
+	| Update relative to now           |
+	| Remove                           |
+	| No change                        |
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Update Owner' dropdown:
-	| Options      |
-	| Update       |
-	| Remove owner |
+	| Options               |
+	| Update                |
+	| Remove owner          |
 	| Remove owner and team |
 	| No change             |
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -134,23 +116,13 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13280 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13280 | DAS13280 | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| DAS13280 | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username | Email | FullName | Password  | Roles                                            |
+	| DAS13280 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| DAS13280 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -179,23 +151,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13281 | DAS13281 | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| DAS13281 | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username | Email | FullName | Password  | Roles                                            |
+	| DAS13281 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| DAS13281 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -214,10 +176,12 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Update                |
 	| No change             |
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options   |
-	| Update    |
-	| Remove    |
-	| No change |
+	| Options                          |
+	| Update                           |
+	| Update relative to current value |
+	| Update relative to now           |
+	| Remove                           |
+	| No change                        |
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
 	| Update                |
@@ -266,23 +230,13 @@ Examples:
 #Awaiting Lisa's response and updating the autotest scenario 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| <Name>   | DAS13288 | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| <Name>   | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username | Email | FullName | Password  | Roles                                            |
+	| <Name>   | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| <Name>   | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
