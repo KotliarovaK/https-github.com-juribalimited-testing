@@ -56,8 +56,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             OpenItemDetailsById(listName, id);
         }
 
-        [When(@"User navigates to the '(.*)' details page for the item with '(.*)' identifier")]
-        public void WhenUserNavigatesToTheDetailsPageForItemWithIdentifier(string listName, string id)
+        [When(@"User navigates to the '(.*)' details page for the item with '(.*)' ID")]
+        public void WhenUserNavigatesToTheDetailsPageForItemWithId(string listName, string id)
         {
             listName = listName.ToLower();
 
