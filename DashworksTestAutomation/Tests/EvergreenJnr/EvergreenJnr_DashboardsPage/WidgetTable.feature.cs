@@ -1940,6 +1940,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS18327")]
+        [NUnit.Framework.CategoryAttribute("DAS19007")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyAfterClickingThroughTableWidget()
         {
@@ -1975,6 +1976,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS18327",
+                        "DAS19007",
                         "Cleanup"});
 #line 400
 this.ScenarioInitialize(scenarioInfo);
@@ -2051,8 +2053,8 @@ this.FeatureBackground();
 #line 426
  testRunner.When("User clicks Filter Expression icon in Filter Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 427
- testRunner.Then("\"(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber)\" text is dis" +
-                    "played in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber AND 1803: In " +
+                    "Scope = true)\" text is displayed in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -568,6 +568,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17602_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User selects 'Update task value' in the 'Action Type' dropdown
