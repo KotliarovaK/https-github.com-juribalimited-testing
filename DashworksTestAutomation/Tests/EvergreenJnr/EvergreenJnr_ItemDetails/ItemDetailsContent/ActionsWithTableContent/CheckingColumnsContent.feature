@@ -214,26 +214,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	When User navigates to the 'Projects Summary' left submenu item
 	Then All data is unique in the 'Project' column
 
-	#Ann.I. 11/08/19: This test needs to be updated accordingly with new functionality.
-	#Will be updated in 41 or 42 Zion sprint, along with DAS-18852;
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
-	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Evergreen' left menu item
-	When User navigates to the 'Buckets' left menu item
-	And User clicks 'CREATE EVERGREEN BUCKET' button 
-	And User enters 'AutoTestBucket_DAS_13335' text to 'Bucket Name' textbox
-	When User selects 'Admin IT' option from 'Team' autocomplete
-	And User clicks 'CREATE' button 
+	When User creates new Bucket via api
+	| Name                     | TeamName | IsDefault |
+	| AutoTestBucket_DAS_13335 | Admin IT | false     |
+	#============================================================================#
 	When User navigates to the 'User' details page for 'AAG081456' item
 	Then Details page for "AAG081456" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on "Unassigned" link for Evergreen Bucket field
-	And User clicks on "New Bucket" dropdown
-	And User select "AutoTestBucket_DAS_13335" value on the Details Page
-	When User selects all rows on the grid on the Details Page for "Related Devices"
-	And User opens "Related Mailboxes" section on the Details Page
-	And User clicks 'UPDATE' button 
+	When User selects 'AutoTestBucket_DAS_13335' option from 'New Bucket' autocomplete
+	When User expands the 'Related Devices' field
+	When User selects all rows on the grid
+	And User clicks 'UPDATE' button
 	When User navigates to the 'Device' details page for 'I55HL8MSBYK0VG' item
 	Then Details page for "I55HL8MSBYK0VG" item is displayed to the user
 	When User navigates to the 'Projects' left menu item

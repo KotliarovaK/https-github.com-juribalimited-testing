@@ -62,9 +62,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
         public IList<IWebElement> OperatorOptions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'dialogContainer ')]")]
-        public IWebElement PopupChangesPanel { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
 
@@ -90,13 +87,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(By.XPath("//mat-dialog-container[contains(@class, 'mat-dialog-container')]"))
                 .GetCssValue("width");
-        }
-
-        public IWebElement NavigateToSectionByName(string sectionName)
-        {
-            var selector = By.XPath($"//*[text()='{sectionName}']/ancestor::div[@class='field-category']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public IWebElement GetCellByTextFromKeyValueGrid(string text)
@@ -225,13 +215,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
 
-        public IWebElement GetValueByName(string value)
-        {
-            var selector = By.XPath($"//mat-option[@role='option']//span[text()='{value}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetBucketLinkByName(string bucketName)
         {
             var selector = By.XPath($"//div[@class='editText']//span[text()='{bucketName}']");
@@ -263,13 +246,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetLinkOnTheDetailsPageByName(string linkName)
         {
             var selector = By.XPath($"//span[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetChangeValueInPopUpByName(string value)
-        {
-            var selector = By.XPath($".//label[text()='{value}']/ancestor::mat-form-field");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

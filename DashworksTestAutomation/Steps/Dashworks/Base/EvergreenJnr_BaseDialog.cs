@@ -38,5 +38,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualText = dialogContainer.GetPopupText().Replace("\r\n", " ");
             Verify.Contains(text, actualText, $"'{text}' in Dialog Pop-up is not displayed correctly!");
         }
+
+        //TODO : recheck this step
+        [When(@"User expands the '(.*)' field")]
+        public void WhenUserExpandsTheField(string fieldTitle)
+        {
+            var basePage = _driver.NowAt<BaseDialogPage>();
+            basePage.ExpandCollapseField(fieldTitle).Click();
+        }
     }
 }

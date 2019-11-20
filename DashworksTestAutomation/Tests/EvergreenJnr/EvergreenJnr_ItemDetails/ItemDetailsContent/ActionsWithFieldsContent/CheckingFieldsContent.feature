@@ -40,9 +40,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	| Title    | Value   |
 	| Language | English |
 
-	#Ann.I. 11/08/19: This test needs to be updated accordingly with new functionality.
-	#Will be updated in 41 or 42 Zion sprint, along with DAS-18852;
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Cleanup @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Cleanup
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User creates new Bucket via api
 	| Name        | TeamName | IsDefault |
@@ -54,20 +52,21 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User navigates to the 'Projects' left menu item
 	Then Error message is not displayed
 	When User clicks on "Unassigned" link for Evergreen Bucket field
-	Then popup changes window opened
-	And User clicks on "New Bucket" dropdown
-	When User select "Bucket12883" value on the Details Page
-	And User opens "Related Users" section on the Details Page
-	And User selects all rows on the grid on the Details Page for "Related Users"
+	Then Dialog Pop-up is displayed for User
+	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
+	When User expands the 'Related Users' field
+	When User selects all rows on the grid
+	#TODO Ann.I Check again the step that expand the field.
+	#And User selects all rows on the grid on the Details Page for "Related Users"
 	And User clicks 'UPDATE' button 
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
-	Then popup changes window opened
-	When User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Bucket" dropdown
-	When User select "Unassigned" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Users' field
+	When User selects all rows on the grid
+	When User selects 'Unassigned' option from 'New Bucket' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -77,19 +76,18 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then Details page for "00DBB114BE1B41B0A38" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Bucket field
-	Then popup changes window opened
-	When User opens "Related Mailboxes" section on the Details Page
-	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
-	Then User clicks on "New Bucket" dropdown
-	When User select "Bucket12883" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Mailboxes' field
+	When User selects all rows on the grid
+	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
-	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
-	Then User clicks on "New Bucket" dropdown
-	When User select "Unassigned" value on the Details Page
+	When User expands the 'Related Mailboxes' field
+	When User selects all rows on the grid
+	When User selects 'Unassigned' option from 'New Bucket' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -99,20 +97,19 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then Details page for "0845467C65E5438D83E@bclabs.local" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Bucket field
-	Then popup changes window opened
-	When User opens "Related Users" section on the Details Page
-	And User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Bucket" dropdown
-	When User select "Bucket12883" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Users' field
+	When User selects all rows on the grid
+	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
-	Then popup changes window opened
-	When User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Bucket" dropdown
-	When User select "Unassigned" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Users' field
+	When User selects all rows on the grid
+	When User selects 'Unassigned' option from 'New Bucket' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -129,20 +126,19 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then Details page for "ZZNKKYW97AL4VS" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
-	Then popup changes window opened
-	When User opens "Related Users" section on the Details Page
-	And User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "CapacityUnit12883" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Users' field
+	When User selects all rows on the grid
+	When User selects 'CapacityUnit12883' option from 'New Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
-	Then popup changes window opened
-	When User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "Unassigned" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Users' field
+	When User selects all rows on the grid
+	When User selects 'Unassigned' option from 'New Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -152,20 +148,19 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then Details page for "ZZNKKYW97AL4VS" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
-	Then popup changes window opened
-	When User opens "Related Mailboxes" section on the Details Page
-	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "CapacityUnit12883" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Mailboxes' field
+	When User selects all rows on the grid
+	When User selects 'CapacityUnit12883' option from 'New Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
-	Then popup changes window opened
-	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "Unassigned" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Mailboxes' field
+	When User selects all rows on the grid
+	When User selects 'Unassigned' option from 'New Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
@@ -175,20 +170,19 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then Details page for "0845467C65E5438D83E@bclabs.local" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
-	Then popup changes window opened
-	When User opens "Related Users" section on the Details Page
-	And User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "CapacityUnit12883" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Users' field
+	When User selects all rows on the grid
+	When User selects 'CapacityUnit12883' option from 'New Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
-	Then popup changes window opened
-	When User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "Unassigned" value on the Details Page
+	Then Dialog Pop-up is displayed for User
+	When User expands the 'Related Users' field
+	When User selects all rows on the grid
+	When User selects 'Unassigned' option from 'New Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console

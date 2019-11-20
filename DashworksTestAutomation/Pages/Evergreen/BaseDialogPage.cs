@@ -30,5 +30,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;
         }
+
+        public IWebElement GetExpandableField(string fieldTitle)
+        {
+            var selector =
+                By.XPath($".//div[contains(@class,'field-category')]//span[contains(text(),'{fieldTitle}')]/..");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{fieldTitle}' field was not found!");
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement ExpandCollapseField(string titleText)
+        {
+            var buttonSelector = By.XPath(".//button");
+
+            var element = GetExpandableField(titleText);
+
+            var button = element.FindElement(buttonSelector);
+            return button;
+        }
     }
 }
