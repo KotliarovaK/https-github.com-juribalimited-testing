@@ -286,3 +286,19 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfte
 	When User clicks 'RUN LIST' button
 	Then table content is present
 	Then All column headers are unique
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18447 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAfterGoingToAllDeviceApplicationsPageFromSavedList
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "AssociationList18447" name
+	Then table content is present
+	When User navigates to the "All Device Applications" list
+	Then table content is present
+	Then Associations Button is highlighted
+	Then Associations panel is displayed to the user
