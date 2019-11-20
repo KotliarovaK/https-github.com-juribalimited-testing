@@ -1553,6 +1553,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PermissionsSettings.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateApplicationAttributes\UpdateApplicationAttributes1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateApplicationAttributes.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesAutomations1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateApplicationAttributesAutomations.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Login_Logout.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2524,6 +2534,14 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_StaticLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateApplicationAttributes\UpdateApplicationAttributes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateApplicationAttributes1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesAutomations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateApplicationAttributesAutomations1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Login_Logout.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
