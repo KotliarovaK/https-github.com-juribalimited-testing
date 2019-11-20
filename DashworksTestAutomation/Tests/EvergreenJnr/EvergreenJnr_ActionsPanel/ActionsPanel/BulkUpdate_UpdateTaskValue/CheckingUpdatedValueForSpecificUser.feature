@@ -7,23 +7,13 @@ Background: Pre-Conditions
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @DAS18267 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| <Name>   | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| <Name>   | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username | Email | FullName | Password  | Roles                                            |
+	| <Name>   | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| <Name>   | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -85,23 +75,13 @@ Examples:
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName  | Password | ConfirmPassword | Roles                |
-	| <Name>   | DAS132881 | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| <Name>   | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username | Email | FullName | Password  | Roles                                            |
+	| <Name>   | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| <Name>   | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -166,23 +146,13 @@ Examples:
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13290 | DAS13290 | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| DAS13290 | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username | Email | FullName | Password  | Roles                                            |
+	| DAS13290 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| DAS13290 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -236,23 +206,13 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13291 | DAS13291 | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username | Password |
-	| DAS13291 | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username | Email | FullName | Password  | Roles                                            |
+	| DAS13291 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username | Password  |
+	| DAS13291 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
