@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @DAS18267 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| <Name>   | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| <Name>   | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -76,8 +76,8 @@ Examples:
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| <Name>   | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| <Name>   | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -147,8 +147,8 @@ Examples:
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| DAS13290 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| DAS13290 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -207,8 +207,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| DAS13291 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| DAS13291 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
