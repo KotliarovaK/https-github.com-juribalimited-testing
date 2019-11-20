@@ -53,6 +53,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
                     throw new Exception($"Unknown list type: {listName}");
             }
 
+            OpenItemDetailsById(listName, id);
+        }
+
+        [When(@"User navigates to the '(.*)' details page for the item with '(.*)' ID")]
+        public void WhenUserNavigatesToTheDetailsPageForItemWithId(string listName, string id)
+        {
+            listName = listName.ToLower();
+
+            OpenItemDetailsById(listName, id);
+        }
+
+        private void OpenItemDetailsById(string listName, string id)
+        {
             _driver.NowAt<BaseHeaderElement>();
             var url = $"{UrlProvider.EvergreenUrl}#/{listName}/{id}/details/{listName}";
 

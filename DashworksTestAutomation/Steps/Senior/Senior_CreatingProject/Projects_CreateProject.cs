@@ -223,7 +223,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
                 .GetValue());
             page.OriginalApplicationColumnCheckbox.SetCheckboxState(_detailsDto.ShowOriginalColumn);
             page.IncludeSiteNameCheckbox.SetCheckboxState(_detailsDto.IncludeSiteName);
-            page.OnboardNotApplicableApplicationsCheckbox.SetCheckboxState(_detailsDto.NotApplicableApplications);
+            page.IncludeVersionInApplicationNameCheckbox.SetCheckboxState(_detailsDto.IncludeVersionInApplicationName);
             page.OnboardInstalledApplicationsByAssociationCheckbox.SetCheckboxState(_detailsDto.InstalledApplications);
             page.OnboardEntitledApplicationsByAssociationCheckbox.SetCheckboxState(_detailsDto.EntitledApplications);
             page.OnboardUsedApplicationsByAssociationTo.SelectboxSelect(_detailsDto
@@ -520,7 +520,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             }
 
             page.BulkUpdate.SetCheckboxState(_taskPropertiesDetailsDto.BulkUpdate);
-            page.Automation.SetCheckboxState(_taskPropertiesDetailsDto.Automation);
+            //page.Automation.SetCheckboxState(_taskPropertiesDetailsDto.Automation);
 
             page.UpdateTaskButton.Click();
         }

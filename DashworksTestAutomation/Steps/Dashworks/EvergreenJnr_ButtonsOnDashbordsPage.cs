@@ -125,6 +125,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")), "Filter Button is active");
         }
 
+        [Then(@"Associations Button is highlighted")]
+        public void ThenAssociationsButtonIsEnabled()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForElementToBeDisplayed(menu.AssociationButton);
+            Verify.IsTrue(Convert.ToBoolean(menu.AssociationButton.GetAttribute("class").Contains("active")), "Association Button is inactive");
+        }
+
         [Then(@"Filter button on AGgrid is disabled")]
         public void ThenFilterButtonOnAGgridIsDisabled()
         {

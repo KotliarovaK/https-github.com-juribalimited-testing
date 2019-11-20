@@ -396,7 +396,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingE
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18327 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18327 @DAS19007 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyAfterClickingThroughTableWidget
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
-	Then "(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber)" text is displayed in filter container
+	Then "(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber AND 1803: In Scope = true)" text is displayed in filter container
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18232 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInTableWidget
