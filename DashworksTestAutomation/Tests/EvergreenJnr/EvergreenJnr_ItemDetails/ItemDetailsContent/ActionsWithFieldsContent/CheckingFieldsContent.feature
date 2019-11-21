@@ -185,17 +185,14 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 
-	#Ann.I. 11/6/19: ready only for the 'spectrum'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18607 @Not_Ready
-Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogAndCriticalityFieldsAreDisplayedAndWorkingCorrectly
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18607
+Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'GogoTools version 2.1.0.9' item
 	Then Details page for "GogoTools version 2.1.0.9" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then following content is displayed on the Details Page
 	| Title       | Value         |
 	| In Catalog  | FALSE         |
-	| Criticality | Uncategorised |
-	#===In Catalog===#
 	When User selects 'TRUE' in the dropdown for the 'In Catalog' field
 	Then Success message is displayed and contains "In catalog successfully changed" text
 	When User clicks refresh button in the browser
@@ -206,7 +203,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogAndCriticalityFieldsAr
 	Then following content is displayed on the Details Page
 	| Title      | Value |
 	| In Catalog | FALSE |
-	#===Criticality===#
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18607
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAndWorkingCorrectly
+	When User navigates to the 'Application' details page for 'GogoTools version 2.1.0.9' item
+	Then Details page for "GogoTools version 2.1.0.9" item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then following content is displayed on the Details Page
+	| Title       | Value         |
+	| Criticality | Uncategorised |
 	Then following Values are displayed in the dropdown for the 'Criticality' field:
 	| Value         |
 	| Core          |
@@ -238,3 +243,24 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 	Then User verifies data in the fields on details page
 	| Field             | Data   |
 	| Sticky Compliance | IGNORE |
+
+#Ann.I. 11/21/19: ready only for the 'terminator'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly
+	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
+	Then Details page for "ACDSee for Windows 95" item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then following content is displayed on the Details Page
+	| Title              | Value |
+	| Hide From End User | FALSE |
+	When User selects 'TRUE' in the dropdown for the 'Hide From End User' field
+	Then Success message is displayed and contains "Hide from end user successfully changed" text
+	When User clicks refresh button in the browser
+	Then following content is displayed on the Details Page
+	| Title              | Value |
+	| Hide From End User | TRUE  |
+	When User selects 'FALSE' in the dropdown for the 'Hide From End User' field
+	Then Success message is displayed and contains "Hide from end user successfully changed" text
+	Then following content is displayed on the Details Page
+	| Title              | Value |
+	| Hide From End User | FALSE |

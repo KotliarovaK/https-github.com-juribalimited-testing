@@ -1757,10 +1757,11 @@ this.FeatureBackground();
 #line 377
  testRunner.Then("Content is present in the newly added column", ((string)(null)), table39, "Then ");
 #line 380
- testRunner.Then("Color data displayed with correct color for \"Barry\'sUse: Application Readiness\" c" +
+ testRunner.Then("Color data displayed with correct color for \'Barry\'sUse: Application Readiness\' c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 381
- testRunner.Then("\"NONE\" tooltip displayed in \"Barry\'sUse: Application Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Ignore\' tooltip is displayed for \'IGNORE\' content in the \'Barry\'sUse: Applicatio" +
+                    "n Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

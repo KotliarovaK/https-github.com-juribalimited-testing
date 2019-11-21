@@ -453,7 +453,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.SelectDropdown(value, dropdownName);
             //Used for Projects Scope to wait for changes to be applied
-            Thread.Sleep(3000);
+            //TODO: 21.11.2019 Oleksandr - increased sleep from 3 to 7 seconds to make sure that change list operation is applied
+            Thread.Sleep(7000);
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]

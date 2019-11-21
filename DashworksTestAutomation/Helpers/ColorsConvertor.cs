@@ -40,8 +40,8 @@ namespace DashworksTestAutomation.Helpers
                 case "Grey":
                 case "GREY":
                     return "rgba(128, 139, 153, 0.5)";
-                case "None":
-                case "NONE":
+                case "Ignore":
+                case "IGNORE":
                     return "rgba(198, 203, 210, 0.5)";
                 default:
                     throw new Exception($"{colorName} color not found in convertor");
