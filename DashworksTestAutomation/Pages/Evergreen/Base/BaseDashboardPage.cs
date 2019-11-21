@@ -193,9 +193,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-menu')]")]
-        public IWebElement AgMenu { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-menu')]//span[@ref='eName']")]
         public IList<IWebElement> AgMenuOptions { get; set; }
 

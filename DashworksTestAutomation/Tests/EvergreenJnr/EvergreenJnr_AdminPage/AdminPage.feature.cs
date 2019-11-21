@@ -341,7 +341,7 @@ this.FeatureBackground();
 #line 61
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", cellText, column), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
- testRunner.Then(string.Format("User sees context menu placed near \"{0}\" cell in the grid", cellText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("User sees context menu placed near \'{0}\' cell in the \'{1}\' column", cellText, column), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -413,7 +413,7 @@ this.FeatureBackground();
 #line 74
  testRunner.When("User right clicks on \'Evergreen\' cell from \'Project\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 75
- testRunner.Then("User sees context menu placed near \"Evergreen\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User sees context menu placed near \'Evergreen\' cell in the \'Project\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

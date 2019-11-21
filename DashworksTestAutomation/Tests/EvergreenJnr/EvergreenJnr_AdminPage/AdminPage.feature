@@ -59,7 +59,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the '<PageName>' left menu item
 	When User right clicks on '<CellText>' cell from '<Column>' column
-	Then User sees context menu placed near "<CellText>" cell in the grid
+	Then User sees context menu placed near '<CellText>' cell in the '<Column>' column
 
 Examples:
 	| PageName | CellText   | Column     |
@@ -72,7 +72,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBuck
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	When User right clicks on 'Evergreen' cell from 'Project' column
-	Then User sees context menu placed near "Evergreen" cell in the grid
+	Then User sees context menu placed near 'Evergreen' cell in the 'Project' column
 
 Examples:
 	| PageName       | CellText  | Column  |
