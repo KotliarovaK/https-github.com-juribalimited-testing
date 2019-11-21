@@ -1216,20 +1216,22 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_checks that all fields are displayed correctly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDe" +
+            "tailsTab")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18423")]
-        public virtual void EvergreenJnr_ApplicationsList_ChecksThatAllFieldsAreDisplayedCorrectly()
+        [NUnit.Framework.CategoryAttribute("DAS18850")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTab()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_ChecksThatAllFieldsAreDisplayedCorrectlyInternal();
+                    this.EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTabInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1248,26 +1250,28 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_ApplicationsList_ChecksThatAllFieldsAreDisplayedCorrectlyInternal()
+        private void EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTabInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_checks that all fields are displayed correctly", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDe" +
+                    "tailsTab", null, new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18423"});
-#line 262
+                        "DAS18850",
+                        "Not_Run"});
+#line 263
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 263
+#line 264
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                     "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 264
+#line 265
  testRunner.Then("Details page for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 265
+#line 266
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1283,8 +1287,10 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Rationalisation"});
             table10.AddRow(new string[] {
+                        "Target App"});
+            table10.AddRow(new string[] {
                         "Hide From End User"});
-#line 266
+#line 267
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();

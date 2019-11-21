@@ -258,8 +258,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDevice
 	| TPM Version                  |
 	Then There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18423
-Scenario: EvergreenJnr_ApplicationsList_checks that all fields are displayed correctly
+	#Ann.I. 11/21/19: not ready yet (will be ready on the 'terminator')
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18850 @Not_Run
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTab
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
@@ -270,4 +271,5 @@ Scenario: EvergreenJnr_ApplicationsList_checks that all fields are displayed cor
 	| In Catalog              |
 	| Criticality             |
 	| Rationalisation         |
+	| Target App              |
 	| Hide From End User      |
