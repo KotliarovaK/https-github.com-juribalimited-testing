@@ -112,17 +112,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
-        [Then(@"""(.*)"" tooltip displayed in ""(.*)"" column")]
-        public void ThenTooltipIsDisplayedInColumn(string textTooltip, string columnName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            var cellElement = page.GetGridCellByText(textTooltip);
-            _driver.MouseHover(cellElement);
-            var tooltip = _driver.GetTooltipBubbleText();
-            Verify.AreEqual(textTooltip.ToLower(), tooltip.ToLower(), "Tooltip is not displayed correctly");
-        }
-
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
         public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
         {
