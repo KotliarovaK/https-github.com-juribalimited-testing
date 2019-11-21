@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Update application attributes")]
+    [NUnit.Framework.DescriptionAttribute("UpdateApplicationAttributes")]
     public partial class UpdateApplicationAttributesFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Update application attributes", "\tRuns Update application attributes actions type related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UpdateApplicationAttributes", "\tRuns Update application attributes actions type related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -142,8 +142,6 @@ this.FeatureBackground();
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 19
- testRunner.Then("\"Sticky Compliance\" dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
  testRunner.Then("\'Evergreen\' content is displayed in \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 22
@@ -151,26 +149,26 @@ this.FeatureBackground();
 #line 23
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
- testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Select at least one value to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table2.AddRow(new string[] {
                         "No Change"});
             table2.AddRow(new string[] {
-                        "Unknown"});
+                        "UNKNOWN"});
             table2.AddRow(new string[] {
-                        "Amber"});
+                        "RED"});
             table2.AddRow(new string[] {
-                        "Red"});
+                        "AMBER"});
             table2.AddRow(new string[] {
-                        "Green"});
+                        "GREEN"});
             table2.AddRow(new string[] {
-                        "Ignore"});
+                        "IGNORE"});
 #line 25
  testRunner.Then("following Values are displayed in the \'Sticky Compliance\' dropdown:", ((string)(null)), table2, "Then ");
 #line 33
- testRunner.When("User selects \'Red\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'RED\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
@@ -255,7 +253,7 @@ this.FeatureBackground();
 #line 52
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
- testRunner.When("User selects \'Amber\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'AMBER\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
@@ -275,7 +273,7 @@ this.FeatureBackground();
 #line 62
  testRunner.And("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.When("User selects \'Unknown\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'UNKNOWN\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
