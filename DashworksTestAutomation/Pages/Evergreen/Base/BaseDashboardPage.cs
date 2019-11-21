@@ -249,7 +249,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         //For cases when more than 4 items are selected they are collapsed to '1 more'
         public string SelectedValuesForNamedTextboxSelector = ".//preceding-sibling::mat-chip/span";
 
-        private static string AutocompleteOptionsSelector = ".//mat-option";
+        private static string AutocompleteOptionsSelector = ".//mat-option[@tabindex!='-1']";
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
         public IWebElement AutocompleteDropdown { get; set; }
@@ -339,6 +339,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 }
             }
 
+            Driver.WaitForElementInElementToBeDisplayed(AutocompleteDropdown, By.XPath(AutocompleteOptionsSelector));
             var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
             if (foundOptions.Any())
             {
