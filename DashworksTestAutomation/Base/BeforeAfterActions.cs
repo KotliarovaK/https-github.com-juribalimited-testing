@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using BoDi;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
@@ -27,12 +28,14 @@ namespace DashworksTestAutomation.Base
         private readonly IObjectContainer _objectContainer;
         private readonly ScenarioContext _scenarioContext;
         private readonly RestWebClient _client;
+        private readonly TestInfo _testInfo;
 
-        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext, RestWebClient client)
+        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext, RestWebClient client, TestInfo testInfo)
         {
             _objectContainer = objectContainer;
             _scenarioContext = scenarioContext;
             _client = client;
+            _testInfo = testInfo;
         }
 
         [BeforeTestRun]
@@ -45,17 +48,17 @@ namespace DashworksTestAutomation.Base
         [BeforeScenario]
         public void OnStartUp()
         {
-            var testName = GetTestName();
+            _testInfo.StartTime = DateTime.Now;
+            _testInfo.Name = GetTestName();
+            _testInfo.Tags = GetTags();
 
-            Logger.Write($"TEST STARTED: {testName}");
+            Logger.Write($"TEST STARTED: {_testInfo.Name}");
 
-            List<string> testTags = GetTags();
-
-            LockCategory.AwaitTags(testTags);
-            LockCategory.AddTags(testName, testTags);
+            LockCategory.AwaitTags(_testInfo.Tags);
+            LockCategory.AddTags(_testInfo.Name, _testInfo.Tags);
 
             //Create browser if not API test
-            if (!testTags.Contains("API"))
+            if (!_testInfo.Tags.Contains("API"))
             {
                 var driverInstance = CreateBrowserDriver();
                 if (!Browser.RemoteDriver.Equals("local"))
@@ -69,10 +72,8 @@ namespace DashworksTestAutomation.Base
         {
             try
             {
-                List<string> testTags = GetTags();
-
                 RemoteWebDriver driver = null;
-                if (!testTags.Contains("API"))
+                if (!_testInfo.Tags.Contains("API"))
                     try
                     {
                         driver = _objectContainer.Resolve<RemoteWebDriver>();
@@ -89,11 +90,10 @@ namespace DashworksTestAutomation.Base
                     Logger.Write($"Test status is '{testStatus}'");
                     if (!string.IsNullOrEmpty(testStatus) && (testStatus.Equals("Failed") || testStatus.Equals("Inconclusive")))
                     {
-                        var testName = GetTestName();
-                        if (!string.IsNullOrEmpty(testName))
+                        if (!string.IsNullOrEmpty(_testInfo.Name))
                         {
                             if (driver != null)
-                                driver.CreateScreenshot(testName);
+                                driver.CreateScreenshot(_testInfo.Name);
                             else
                                 Logger.Write("Unable to get screenshot as no Driver in the context");
                         }
@@ -119,9 +119,7 @@ namespace DashworksTestAutomation.Base
         {
             try
             {
-                List<string> testTags = GetTags();
-
-                LockCategory.RemoveTestTags(GetTestName());
+                LockCategory.RemoveTestTags(_testInfo.Name);
 
                 //Unleash test only if NOT in local run
                 if (!Browser.RemoteDriver.Equals("local"))
@@ -129,7 +127,7 @@ namespace DashworksTestAutomation.Base
                     {
                         var testStatus = GetTestStatus();
                         if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
-                            BambooUtil.UnleashTest(GetTestName());
+                            BambooUtil.UnleashTest(_testInfo.Name);
                     }
                     catch (Exception e)
                     {
@@ -137,7 +135,7 @@ namespace DashworksTestAutomation.Base
                     }
 
                 RemoteWebDriver driver = null;
-                if (!testTags.Contains("API"))
+                if (!_testInfo.Tags.Contains("API"))
                     try
                     {
                         driver = _objectContainer.Resolve<RemoteWebDriver>();
@@ -158,7 +156,7 @@ namespace DashworksTestAutomation.Base
             {
                 try
                 {
-                    Logger.Write($"TEST FINISHED: {GetTestName()}");
+                    Logger.Write($"TEST FINISHED: {_testInfo.Name}");
                 }
                 catch { }
             }

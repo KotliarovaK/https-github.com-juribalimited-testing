@@ -11,6 +11,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.DTO.Projects;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
@@ -498,6 +499,34 @@ namespace DashworksTestAutomation.Helpers
         public static bool IsAutomationRunFinishedSuccess(string automationId)
         {
             return Convert.ToInt32(DatabaseHelper.ExecuteReader($"select count(*) from [PM].[dbo].[AutomationLog] as al join[PM].[dbo].[AutomationLogOutcomes] as alo on al.OutcomeId = alo.OutcomeId join[PM].[dbo].[AutomationLogTypes] as alt on al.LogTypeId = alt.LogTypeId where alo.Outcome = 'Success' and alt.LogType = 'Action Finish' and al.AutomationId = {automationId}", 0)[0]) > 0;
+        }
+
+        public static bool IsAutomationRunFinished(string automation, DateTime dateTime)
+        {
+            try
+            {
+                var time = dateTime.UkTime().ToString("yyyy-MM-dd HH:mm:ss.fff");
+                var result = Convert.ToInt32(ExecuteReader($"SELECT [LogId] FROM [PM].[dbo].[AutomationLog] WHERE [AutomationName] = '{automation}' AND [LogDate] >= Convert(datetime, '{time}')  AND [LogTypeId] = 2", 0)[0]) > 0;
+                return result;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool IsAutomationActionRunFinished(string automation, string action, DateTime dateTime)
+        {
+            try
+            {
+                var time = dateTime.UkTime().ToString("yyyy-MM-dd HH:mm:ss.fff");
+                var result = Convert.ToInt32(ExecuteReader($"SELECT [LogId] FROM [PM].[dbo].[AutomationLog] WHERE [AutomationName] = '{automation}' AND [ActionName] = '{action}' AND [LogDate] >= Convert(datetime, '{time}')  AND [LogTypeId] = 2", 0)[0]) > 0;
+                return result;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         #endregion

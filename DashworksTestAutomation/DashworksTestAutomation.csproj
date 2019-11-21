@@ -198,8 +198,10 @@
     <Compile Include="DTO\RuntimeVariables\Users.cs" />
     <Compile Include="DTO\RuntimeVariables\UsersWithSharedLists.cs" />
     <Compile Include="DTO\RuntimeVariables\WebsiteUrl.cs" />
+    <Compile Include="DTO\TestInfo.cs" />
     <Compile Include="DTO\UserDto.cs" />
     <Compile Include="Extensions\CookieExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\ExtensionMethods.cs" />
     <Compile Include="Extensions\ReflectionExtensions.cs" />
@@ -341,6 +343,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationSteps\CreateAutomationBase.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateActionPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomationPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\RunAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\RemoveBucketAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\SetDefaultBucketAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\Api\CreateBucketViaApi.cs" />
