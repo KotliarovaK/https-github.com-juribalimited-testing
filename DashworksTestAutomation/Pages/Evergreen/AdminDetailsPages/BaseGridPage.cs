@@ -776,8 +776,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public List<string> GetColumnColors(string columnName)
         {
-            return Driver.FindElements(By.XPath(string.Concat(string.Format(GridCellByColumnName,
-                GetColIdByColumnName(columnName)), "//div[@class='status']"))).Select(x => x.GetAttribute("style")).ToList();
+            var firstPartSelector = string.Format(GridCellByColumnName, GetColIdByColumnName(columnName));
+
+            return Driver.FindElements(By.XPath($"{firstPartSelector}//div[@class='status']"))
+                .Select(x => x.GetAttribute("style")).ToList();
         }
 
         public string GetColumnWidthByName(string columnName)

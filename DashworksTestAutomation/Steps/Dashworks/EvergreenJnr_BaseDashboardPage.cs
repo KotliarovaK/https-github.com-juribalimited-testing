@@ -112,17 +112,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
-        [Then(@"""(.*)"" tooltip displayed in ""(.*)"" column")]
-        public void ThenTooltipIsDisplayedInColumn(string textTooltip, string columnName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            var cellElement = page.GetGridCellByText(textTooltip);
-            _driver.MouseHover(cellElement);
-            var tooltip = _driver.GetTooltipBubbleText();
-            Verify.AreEqual(textTooltip.ToLower(), tooltip.ToLower(), "Tooltip is not displayed correctly");
-        }
-
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
         public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
         {
@@ -258,10 +247,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"User sees following text in cell truncated with ellipsis:")]
         public void ThenUserSeesFollowingTextInCellTruncatedWithEllipsis(Table table)
         {
-            var grid = _driver.NowAt<BaseDashboardPage>();
+            var grid = _driver.NowAt<BaseGridPage>();
             foreach (var column in table.Rows)
             {
-                var cell = grid.GetGridCellByText(column["cellText"]);
+                var cell = grid.GetCellFromColumn(column["Column"], column["CellText"]);
 
                 Verify.That(cell.GetCssValue("text-overflow"), Is.EqualTo("ellipsis"), "Data in cell not truncated");
                 Verify.That(cell.GetCssValue("overflow"), Is.EqualTo("hidden"), "Data in cell not truncated");
