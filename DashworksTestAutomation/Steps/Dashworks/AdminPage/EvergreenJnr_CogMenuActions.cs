@@ -13,11 +13,11 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 {
     [Binding]
-    internal class EvergreenJnr_AdminPage_CogMenuActions : SpecFlowContext
+    internal class EvergreenJnr_CogMenuActions : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_AdminPage_CogMenuActions (RemoteWebDriver driver)
+        public EvergreenJnr_CogMenuActions (RemoteWebDriver driver)
         {
             _driver = driver;
         }
