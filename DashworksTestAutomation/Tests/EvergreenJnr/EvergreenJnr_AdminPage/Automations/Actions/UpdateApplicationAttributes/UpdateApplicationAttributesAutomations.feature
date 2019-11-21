@@ -18,26 +18,24 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	And User enters '18727_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
-	Then following Values are displayed in the 'Sticky Compliance' dropdown:
-	| Options   |
-	| Evergreen |
-	| Project   |
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
-	Then 'No Change' content is displayed in 'Project or Evergreen' dropdown
+	Then 'No Change' content is displayed in 'Sticky Compliance' dropdown
+	#Then following Values are displayed in the 'Sticky Compliance' dropdown:
+	#| Options   |
+	#| Evergreen |
+	#| Project   |
 	Then following Values are displayed in the 'Sticky Compliance' dropdown:
 	| Options   |
 	| No Change |
-	| Empty     |
-	| Unknown   |
-	| Red       |
-	| Amber     |
-	| Green     |
-	| Ignore    |
+	| UNKNOWN   |
+	| RED       |
+	| AMBER     |
+	| GREEN     |
+	| IGNORE    |
 	Then 'CREATE' button is disabled
 	Then 'SAVE AND CREATE ANOTHER' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
-	When User selects 'Red' in the 'Sticky Compliance' dropdown
+	When User selects 'RED' in the 'Sticky Compliance' dropdown
 	Then 'CREATE' button is not disabled
 	Then 'SAVE AND CREATE ANOTHER' button is not disabled
 	Then 'CANCEL' button is not disabled
@@ -55,9 +53,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	When User clicks 'CREATE ACTION' button
 	And User enters '18830_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
-	When User selects 'Green' in the 'Sticky Compliance' dropdown
-	When User clicks "CREATE" button
+	When User selects 'GREEN' in the 'Sticky Compliance' dropdown
+	When User clicks 'CREATE' button
 	#Actions grid check
 	Then "Sticky Compliance " content is displayed for "Task or Field" column
 	Then "Update application attributes " content is displayed for "Type" column
@@ -68,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	Then '18830_Action' content is displayed in 'Action Name' textbox
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
-	Then 'Green' content is displayed in 'Sticky Compliance' dropdown
+	Then 'GREEN' content is displayed in 'Sticky Compliance' dropdown
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @Cleanup @Not_Ready
 #Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
@@ -84,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Red' in the 'Sticky Compliance' dropdown
-	When User clicks "CREATE" button
+	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18834_Automation" text in the Search field for "Automation" column
