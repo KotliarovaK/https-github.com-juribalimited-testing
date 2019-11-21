@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
 
             _driver.Navigate()
                 .GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{id}");
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading(60);
         }
 
         [AfterScenario("Cleanup", Order = 10)]

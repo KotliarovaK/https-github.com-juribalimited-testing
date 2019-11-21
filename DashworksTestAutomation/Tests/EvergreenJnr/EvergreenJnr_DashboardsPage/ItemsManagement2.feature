@@ -242,11 +242,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
 	When User selects 'Duplicate' menu for 'Executive Summary' dashboard
 	Then Dashboard with 'Executive Summary2' title displayed in All Dashboards
 	When User language is changed to "Deutsch" via API
-	And Dashboard with 'Executive Summary2' name is opened via API
-	And User clicks Edit mode trigger on Dashboards page
+	When Dashboard with 'Executive Summary2' name is opened via API
+	When User clicks Edit mode trigger on Dashboards page
 	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in '2' warning messages on Dashboards page
 	When User clicks Dashboards Details icon on Dashboards page
-	And User expands the list of shared lists
+	When User expands the list of shared lists
 	Then User sees table headers as 'Widget' and 'Liste'
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup

@@ -56,23 +56,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(2000);
         }
 
-        [When(@"User performs right-click on ""(.*)"" cell in the grid")]
-        public void WhenUserPerformsRightClickOnCellInTheGrid(string cellText)
+        [Then(@"User sees context menu placed near '(.*)' cell in the '(.*)' column")]
+        public void ThenUserSeesContextMenuPlacedNearCellInTheColumn(string cellText, string columnName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            page.ContextClickOnCell(cellText);
-        }
+            var page = _driver.NowAt<BaseGridPage>();
+            var cell = page.GetCellFromColumn(columnName, cellText);
 
-        [Then(@"User sees context menu placed near ""(.*)"" cell in the grid")]
-        public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(string columnName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            var cellTopYCoordinte = page.GetGridCellByText(columnName).Location.Y;
-            var cellBottomYCoordinte = page.GetGridCellByText(columnName).BottomLocation().Y;
-            var cellLeftXCoordinte = page.GetGridCellByText(columnName).BottomLocation().X;
-            var cellRightXCoordinte = page.GetGridCellByText(columnName).RightTopLocation().X;
+            var cellTopYCoordinte = cell.Location.Y;
+            var cellBottomYCoordinte = cell.BottomLocation().Y;
+            var cellLeftXCoordinte = cell.BottomLocation().X;
+            var cellRightXCoordinte = cell.RightTopLocation().X;
 
             var menuTopYCoordinate = page.AgMenu.Location.Y;
             var manuLeftXCoordinate = page.AgMenu.Location.X;
