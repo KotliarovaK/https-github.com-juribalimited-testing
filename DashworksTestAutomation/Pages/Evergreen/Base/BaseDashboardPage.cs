@@ -193,7 +193,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-menu']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-menu')]")]
         public IWebElement AgMenu { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-menu')]//span[@ref='eName']")]
@@ -269,25 +269,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).GetCssValue("font-weight");
         }
 
-        public bool IsColumnPresent(string columnName)
-        {
-            Driver.WaitForDataLoading();
-
-            string selector;
-            if (columnName.Contains("'"))
-            {
-                var strings = columnName.Split('\'');
-                selector =
-                    $".//div[@role='presentation']/span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
-            }
-            else
-            {
-                selector = $".//div[@role='presentation']/span[text()='{columnName}']";
-            }
-
-            return Driver.IsElementDisplayed(By.XPath(selector));
-        }
-
         public IWebElement GetGridCellByText(string cellText)
         {
             var allCellsWithExpectedText = Driver.FindElements(By.XPath(GridCell))
@@ -301,12 +282,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             {
                 throw new Exception($"Unable to find cell with '{cellText}' text");
             }
-        }
-
-        public void ContextClickOnCell(string cellText)
-        {
-            Driver.WaitForDataLoading();
-            Driver.ContextClick(GetGridCellByText(cellText));
         }
 
         public IWebElement GetItalicContentByColumnName(string text)

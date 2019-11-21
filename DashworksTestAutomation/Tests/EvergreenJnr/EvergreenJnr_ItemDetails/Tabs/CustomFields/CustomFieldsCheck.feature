@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User performs right-click on "ComputerCustomField" cell in the grid
+	When User right clicks on 'ComputerCustomField' cell from 'Custom Field' column
 	And User selects 'Copy cell' option in context menu
 	Then Next data 'ComputerCustomField' is copied
 
@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyСellForTheRowActions
 Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User performs right-click on "ComputerCustomField" cell in the grid
+	When User right clicks on 'ComputerCustomField' cell from 'Custom Field' column
 	And User selects 'Copy row' option in context menu
 	Then Next data 'ComputerCustomField      0.665371384' is copied
 
