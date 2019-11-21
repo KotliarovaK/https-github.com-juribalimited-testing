@@ -15,9 +15,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[contains(@class, 'dialogContainer')]")]
         public IWebElement DialogPopUp { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='field-category']")]
-        public IWebElement FieldContainer { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -34,7 +31,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;
         }
 
-        public IWebElement GetExpandableField(string fieldTitle)
+        public IWebElement GetCollapsedField(string fieldTitle)
         {
             var selector =
                 By.XPath($".//div[contains(@class,'field-category')]//span[contains(text(),'{fieldTitle}')]/..");
@@ -51,11 +48,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement ExpandField(string titleText)
+        public IWebElement ExpandFieldInDialogPopup(string titleText)
         {
             var buttonSelector = By.XPath(".//button");
 
-            var element = GetExpandableField(titleText);
+            var element = GetCollapsedField(titleText);
 
             var button = element.FindElement(buttonSelector);
             return button;

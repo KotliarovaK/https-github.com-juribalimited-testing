@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	When User navigates to the 'Projects' left menu item
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	When User selects 'AutoTestBucket_DAS_13335' option from 'New Bucket' autocomplete
-	When User expands the 'Related Devices' field
+	When User expands the 'Related Devices' field in Dialog Pop-up
 	When User selects all rows on the grid
 	And User clicks 'UPDATE' button
 	When User navigates to the 'Device' details page for 'I55HL8MSBYK0VG' item

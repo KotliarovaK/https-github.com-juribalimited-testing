@@ -350,7 +350,7 @@ this.FeatureBackground();
 #line 56
  testRunner.When("User selects \'Bucket12883\' option from \'New Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
- testRunner.When("User expands the \'Related Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Users\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
@@ -364,7 +364,7 @@ this.FeatureBackground();
 #line 64
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 65
- testRunner.When("User expands the \'Related Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Users\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 66
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
@@ -386,7 +386,7 @@ this.FeatureBackground();
 #line 77
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 78
- testRunner.When("User expands the \'Related Mailboxes\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Mailboxes\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
@@ -400,7 +400,7 @@ this.FeatureBackground();
 #line 85
  testRunner.When("User clicks on \"Bucket12883\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
- testRunner.When("User expands the \'Related Mailboxes\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Mailboxes\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
@@ -424,7 +424,7 @@ this.FeatureBackground();
 #line 98
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
- testRunner.When("User expands the \'Related Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Users\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 100
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 101
@@ -440,7 +440,7 @@ this.FeatureBackground();
 #line 107
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 108
- testRunner.When("User expands the \'Related Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Users\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 109
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 110
@@ -536,7 +536,7 @@ this.FeatureBackground();
 #line 127
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 128
- testRunner.When("User expands the \'Related Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Users\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 129
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 130
@@ -552,7 +552,7 @@ this.FeatureBackground();
 #line 136
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 137
- testRunner.When("User expands the \'Related Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Users\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 139
@@ -574,7 +574,7 @@ this.FeatureBackground();
 #line 149
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 150
- testRunner.When("User expands the \'Related Mailboxes\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Mailboxes\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 152
@@ -590,7 +590,7 @@ this.FeatureBackground();
 #line 158
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 159
- testRunner.When("User expands the \'Related Mailboxes\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Mailboxes\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 160
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 161
@@ -614,7 +614,7 @@ this.FeatureBackground();
 #line 171
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 172
- testRunner.When("User expands the \'Related Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Users\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 173
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 174
@@ -630,7 +630,7 @@ this.FeatureBackground();
 #line 180
  testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 181
- testRunner.When("User expands the \'Related Users\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User expands the \'Related Users\' field in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 182
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 183
@@ -689,17 +689,17 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS18607"});
-#line 197
+#line 189
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 198
+#line 190
  testRunner.When("User navigates to the \'Application\' details page for \'GogoTools version 2.1.0.9\' " +
                     "item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 199
+#line 191
  testRunner.Then("Details page for \"GogoTools version 2.1.0.9\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 200
+#line 192
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -708,13 +708,13 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "In Catalog",
                         "FALSE"});
-#line 201
+#line 193
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table6, "Then ");
-#line 204
+#line 196
  testRunner.When("User selects \'TRUE\' in the dropdown for the \'In Catalog\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 205
+#line 197
  testRunner.Then("Success message is displayed and contains \"In catalog successfully changed\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 206
+#line 198
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -723,9 +723,9 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "In Catalog",
                         "TRUE"});
-#line 207
+#line 199
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table7, "Then ");
-#line 210
+#line 202
  testRunner.When("User selects \'FALSE\' in the dropdown for the \'In Catalog\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -734,7 +734,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "In Catalog",
                         "FALSE"});
-#line 211
+#line 203
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -784,17 +784,17 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS18607"});
-#line 216
+#line 208
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 217
+#line 209
  testRunner.When("User navigates to the \'Application\' details page for \'GogoTools version 2.1.0.9\' " +
                     "item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 218
+#line 210
  testRunner.Then("Details page for \"GogoTools version 2.1.0.9\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 219
+#line 211
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -803,7 +803,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "Criticality",
                         "Uncategorised"});
-#line 220
+#line 212
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table9, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -818,14 +818,14 @@ this.FeatureBackground();
                         "Not Important"});
             table10.AddRow(new string[] {
                         "Uncategorised"});
-#line 223
+#line 215
  testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table10, "Then ");
-#line 230
+#line 222
  testRunner.When("User selects \'Important\' in the dropdown for the \'Criticality\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 231
+#line 223
  testRunner.Then("Success message is displayed and contains \"Criticality successfully changed\" text" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 232
+#line 224
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -834,9 +834,9 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Criticality",
                         "Important"});
-#line 233
+#line 225
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table11, "Then ");
-#line 236
+#line 228
  testRunner.When("User selects \'Uncategorised\' in the dropdown for the \'Criticality\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -845,7 +845,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Criticality",
                         "Uncategorised"});
-#line 237
+#line 229
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -897,15 +897,15 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS18865",
                         "Not_Ready"});
-#line 243
+#line 235
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 244
+#line 236
  testRunner.When("User navigates to the \'Application\' details page for \'Axosoft OnTime 2005 Enterpr" +
                     "ise Server\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 245
+#line 237
  testRunner.Then("Details page for \"Axosoft OnTime 2005 Enterprise Server\" item is displayed to the" +
                     " user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -915,12 +915,12 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "Sticky Compliance",
                         ""});
-#line 246
+#line 238
  testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table13, "Then ");
-#line 249
+#line 241
  testRunner.When("User navigates to the \'Application\' details page for \'Standard SDK for Windows CE" +
                     " .NET 4.2\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 250
+#line 242
  testRunner.Then("Details page for \"Standard SDK for Windows CE .NET 4.2\" item is displayed to the " +
                     "user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -930,7 +930,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "Sticky Compliance",
                         "IGNORE"});
-#line 251
+#line 243
  testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -982,17 +982,17 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS18849",
                         "Not_Ready"});
-#line 257
+#line 249
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 258
+#line 250
  testRunner.When("User navigates to the \'Application\' details page for \'ACDSee for Windows 95\' item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 259
+#line 251
  testRunner.Then("Details page for \"ACDSee for Windows 95\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 260
+#line 252
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1001,14 +1001,14 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "Hide From End User",
                         "FALSE"});
-#line 261
+#line 253
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table15, "Then ");
-#line 264
+#line 256
  testRunner.When("User selects \'TRUE\' in the dropdown for the \'Hide From End User\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 265
+#line 257
  testRunner.Then("Success message is displayed and contains \"Hide from end user successfully change" +
                     "d\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 266
+#line 258
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1017,11 +1017,11 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Hide From End User",
                         "TRUE"});
-#line 267
+#line 259
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table16, "Then ");
-#line 270
+#line 262
  testRunner.When("User selects \'FALSE\' in the dropdown for the \'Hide From End User\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 271
+#line 263
  testRunner.Then("Success message is displayed and contains \"Hide from end user successfully change" +
                     "d\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1031,7 +1031,7 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "Hide From End User",
                         "FALSE"});
-#line 272
+#line 264
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table17, "Then ");
 #line hidden
             this.ScenarioCleanup();
