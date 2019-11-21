@@ -321,7 +321,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18112")]
         [NUnit.Framework.CategoryAttribute("DAS17899")]
         [NUnit.Framework.CategoryAttribute("DAS18196")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithOwnerToWithoutOwner()
         {
             System.Exception lastException = null;
@@ -359,8 +358,7 @@ this.FeatureBackground();
                         "DAS18002",
                         "DAS18112",
                         "DAS17899",
-                        "DAS18196",
-                        "Not_Run"});
+                        "DAS18196"});
 #line 67
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -432,7 +430,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18112")]
         [NUnit.Framework.CategoryAttribute("DAS17899")]
         [NUnit.Framework.CategoryAttribute("DAS18196")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithoutOwnerToWithoutOwner()
         {
             System.Exception lastException = null;
@@ -470,8 +467,7 @@ this.FeatureBackground();
                         "DAS18002",
                         "DAS18112",
                         "DAS17899",
-                        "DAS18196",
-                        "Not_Run"});
+                        "DAS18196"});
 #line 91
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
