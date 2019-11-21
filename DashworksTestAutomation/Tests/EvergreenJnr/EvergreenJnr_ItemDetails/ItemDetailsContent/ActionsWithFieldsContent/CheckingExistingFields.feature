@@ -257,3 +257,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDevice
 	| TPM Enabled                  |
 	| TPM Version                  |
 	Then There are no errors in the browser console
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18423
+Scenario: EvergreenJnr_ApplicationsList_checks that all fields are displayed correctly
+	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
+	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then following fields are displayed in the open section:
+	| Fields                  |
+	| Project Count           |
+	| Evergreen Capacity Unit |
+	| In Catalog              |
+	| Criticality             |
+	| Rationalisation         |
+	| Hide From End User      |
