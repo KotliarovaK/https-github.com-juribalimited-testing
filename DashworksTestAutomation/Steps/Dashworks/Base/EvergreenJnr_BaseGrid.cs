@@ -205,6 +205,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             cell.Click();
         }
 
+        [When(@"User right clicks on '(.*)' cell from '(.*)' column")]
+        public void WhenUserRightClicksOnCellFromColumn(string cellText, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _driver.ContextClick(page.GetCellFromColumn(columnName, cellText));
+        }
+
         #endregion
 
         #region Check Content in the columns

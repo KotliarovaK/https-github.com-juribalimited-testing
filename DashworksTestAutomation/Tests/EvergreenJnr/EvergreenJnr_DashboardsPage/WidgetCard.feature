@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 	Then Widget Preview is displayed to the user
 	And Card widget displayed inside preview pane
 	And There are no errors in the browser console
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15207 @Cleanup
@@ -126,7 +126,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	When User selects 'Text Only' in the 'Layout' dropdown
 	Then Text Only is displayed for Card widget on Preview
 	And 'Red' color is displayed for Card Widget on Preview
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
+	Then 'WidgetForDAS15355' Widget is displayed to the user
 	
 	Then Text Only is displayed for Card widget
 	And 'Red' color is displayed for Card Widget
@@ -136,7 +137,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
 	And 'Red' color is displayed for Card Widget on Preview
-	When User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS15355' Widget is displayed to the user
 	
 	Then 'Red' color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget
@@ -147,28 +149,29 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	Then Icon Only is displayed for Card widget on Preview
 	And 'Red' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
-	
+	Then 'WidgetForDAS15355' Widget is displayed to the user
+
 	Then 'Red' color is displayed for Card Widget
 	And Icon Only is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15134 @DAS16263 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
 	When Dashboard with 'Dashboard for DAS15134' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title             | List        | Type       |
 	| Card       | WidgetForDAS15134 | All Devices | First Cell |
-	And User selects 'Pink' in the Colour Scheme
+	When User selects 'Pink' in the Colour Scheme
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS15134' Widget is displayed to the user
-	And 'Pink' color is displayed for widget
+	Then 'Pink' color is displayed for Card Widget
 	When User clicks Ellipsis menu for 'WidgetForDAS15134' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User selects 'Amber' in the Colour Scheme
-	And User clicks 'UPDATE' button 
-	Then 'Amber' color is displayed for widget
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User selects 'Amber' in the Colour Scheme
+	When User clicks 'UPDATE' button 
+	Then 'Amber' color is displayed for Card Widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
@@ -218,6 +221,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	And Text Only is displayed for Card widget on Preview
 	And 'Amber' color is displayed for Card Widget on Preview
 	When User clicks 'CREATE' button 
+	Then 'WidgetForDAS15355' Widget is displayed to the user
 	Then Text Only is displayed for Card widget
 	
 	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
@@ -225,7 +229,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
 	And 'Amber' color is displayed for Card Widget on Preview
-	When User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS15355' Widget is displayed to the user
 	Then Icon and Text is displayed for Card widget
 
 	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
@@ -233,7 +238,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
 	And 'Amber' color is displayed for Card Widget on Preview
-	When User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS15355' Widget is displayed to the user
 	Then Icon Only is displayed for Card widget
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Cleanup
@@ -259,7 +265,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	Then Text Only is displayed for Card widget on Preview
 	And 'Green' color is displayed for Card Widget on Preview
 	And 'Data Label' checkbox is not displayed on the Create Widget page
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
+	Then 'WidgetForDAS15355_1' Widget is displayed to the user
 	Then Text Only is displayed for Card widget
 	And 'Green' color is displayed for Card Widget
 	
@@ -268,7 +275,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
 	And 'Green' color is displayed for Card Widget on Preview
-	When User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS15355_1' Widget is displayed to the user
 	Then 'Green' color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget
 
@@ -277,26 +285,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
 	And 'Green' color is displayed for Card Widget on Preview
-	When User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS15355_1' Widget is displayed to the user
 	Then 'Green' color is displayed for Card Widget
 	And Icon Only is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks on 'Owner Display Name' column header
-	And User move 'Owner Display Name' column to 'Hostname' column
-	And User move 'Hostname' column to 'Operating System' column
+	Then 'All Devices' list should be displayed to the user
+	When User clicks on 'Owner Display Name' column header
+	When User move 'Owner Display Name' column to 'Hostname' column
+	When User move 'Hostname' column to 'Operating System' column
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DAS16266_List" name on "Devices" page
 	Then "DAS16266_List" list is displayed to user
 	When Dashboard with 'DAS16266_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title             | List          | Type       |
 	| Card       | WidgetForDAS16266 | DAS16266_List | First Cell |
-	And User clicks 'CREATE' button 
+	Then Widget Preview is displayed to the user
 	Then Widget Preview shows 'Empty' as First Cell value
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15914 @Cleanup
@@ -403,7 +413,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	And Text Only is displayed for Card widget on Preview
 	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
 	
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
+	Then 'WidgetForDAS16336' Widget is displayed to the user
 	Then There are no errors in the browser console
 	Then Text Only is displayed for Card widget
 	And 'Really Extremely Orange' color is displayed for Card Widget
@@ -414,7 +425,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then Icon Only is displayed for Card widget on Preview
 	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
 	
-	When User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS16336' Widget is displayed to the user
 	Then There are no errors in the browser console
 	And Icon Only is displayed for Card widget
 	And 'Really Extremely Orange' color is displayed for Card Widget
@@ -425,7 +437,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then Icon and Text is displayed for Card widget on Preview
 	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
 	
-	When User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button
+	Then 'WidgetForDAS16336' Widget is displayed to the user
 	Then There are no errors in the browser console
 	And 'Really Extremely Orange' color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget

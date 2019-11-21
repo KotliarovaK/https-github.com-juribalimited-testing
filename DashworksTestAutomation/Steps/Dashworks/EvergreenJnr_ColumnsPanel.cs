@@ -436,9 +436,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listPageMenu.RefreshTableButton.Click();
             _driver.WaitForDataLoading();
             Thread.Sleep(1000);
+            var baseGrid = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
-                Verify.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
+            {
+                Verify.AreEqual(displayedState, baseGrid.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
+            }
         }
 
         [Then(@"Category with counter is displayed on Columns panel")]

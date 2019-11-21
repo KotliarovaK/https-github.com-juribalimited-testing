@@ -390,15 +390,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(locator);
         }
 
-        public IWebElement GetColumnHeaderByName(string columnName)
-        {
-            var colId = GetColIdByColumnName(columnName);
-            var headerSelector = By.XPath($".//div[contains(@class,'ag-header')][@col-id='{colId}']");
-            if (!Driver.IsElementDisplayed(headerSelector, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"'{columnName}' header was not displayed");
-            return Driver.FindElement(headerSelector);
-        }
-
         public bool GetDisplayStateForStringFilterByName(string filterName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
@@ -429,13 +420,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]//span[text()='{checkboxName}']");
             return Driver.IsElementExists(selector);
-        }
-
-        public IWebElement GetUnCheckedCheckboxByName(string checkboxName)
-        {
-            var selector = By.XPath($".//mat-checkbox[contains(@class, 'ng-untouched ng-pristine ng-valid')]//span[text()='{checkboxName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public IWebElement GetGreyedOutCheckboxByName(string checkboxName)
@@ -844,6 +828,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                         .Text;
 
                 default: throw new Exception($"{pinStatus} is not valid Pin Value");
+            }
+        }
+
+        #endregion
+
+        #region Column Header
+
+        public IWebElement GetColumnHeaderByName(string columnName, WebDriverExtensions.WaitTime timeout = WebDriverExtensions.WaitTime.Long)
+        {
+            var colId = GetColIdByColumnName(columnName);
+            var headerSelector = By.XPath($".//div[contains(@class,'ag-header')][@col-id='{colId}']");
+            if (!Driver.IsElementDisplayed(headerSelector, timeout))
+                throw new Exception($"'{columnName}' header was not displayed");
+            return Driver.FindElement(headerSelector);
+        }
+
+        public bool IsColumnPresent(string columnName)
+        {
+            try
+            {
+                return GetColumnHeaderByName(columnName, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 

@@ -56,14 +56,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(2000);
         }
 
-        [When(@"User performs right-click on ""(.*)"" cell in the grid")]
-        public void WhenUserPerformsRightClickOnCellInTheGrid(string cellText)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            page.ContextClickOnCell(cellText);
-        }
-
         [Then(@"User sees context menu placed near ""(.*)"" cell in the grid")]
         public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(string columnName)
         {
