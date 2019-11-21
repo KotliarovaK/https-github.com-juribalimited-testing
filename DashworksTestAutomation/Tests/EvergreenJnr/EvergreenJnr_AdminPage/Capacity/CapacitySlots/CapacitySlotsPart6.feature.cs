@@ -330,13 +330,17 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "cellText"});
+                        "CellText",
+                        "Column"});
             table4.AddRow(new string[] {
-                        "Computer: PC Rebuild, Computer: Workstation Replacement"});
+                        "Computer: PC Rebuild, Computer: Workstation Replacement",
+                        "Paths"});
             table4.AddRow(new string[] {
-                        "Admin IT, Administrative Team"});
+                        "Admin IT, Administrative Team",
+                        "Teams"});
             table4.AddRow(new string[] {
-                        "Capacity Unit 1, Capacity Unit 2, Unassigned"});
+                        "Capacity Unit 1, Capacity Unit 2, Unassigned",
+                        "Capacity Units"});
 #line 55
  testRunner.Then("User sees following text in cell truncated with ellipsis:", ((string)(null)), table4, "Then ");
 #line hidden
