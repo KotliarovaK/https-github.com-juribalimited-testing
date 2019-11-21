@@ -35,6 +35,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         private string GridCellByColumnName = ".//div[@col-id='{0}' and @role='gridcell']";
 
+        //TODO I think there should be some duplicated webElement simillar to this one
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'ag-menu')]")]
+        public IWebElement AgMenu { get; set; }
+
         //TODO probably can be changed to something more generic
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
         public IWebElement SelectAllCheckbox { get; set; }
