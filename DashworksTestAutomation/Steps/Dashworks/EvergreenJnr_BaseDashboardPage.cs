@@ -247,10 +247,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"User sees following text in cell truncated with ellipsis:")]
         public void ThenUserSeesFollowingTextInCellTruncatedWithEllipsis(Table table)
         {
-            var grid = _driver.NowAt<BaseDashboardPage>();
+            var grid = _driver.NowAt<BaseGridPage>();
             foreach (var column in table.Rows)
             {
-                var cell = grid.GetGridCellByText(column["cellText"]);
+                var cell = grid.GetCellFromColumn(column["Column"], column["CellText"]);
 
                 Verify.That(cell.GetCssValue("text-overflow"), Is.EqualTo("ellipsis"), "Data in cell not truncated");
                 Verify.That(cell.GetCssValue("overflow"), Is.EqualTo("hidden"), "Data in cell not truncated");
