@@ -39,12 +39,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.Contains(text, actualText, $"'{text}' in Dialog Pop-up is not displayed correctly!");
         }
 
-        //TODO : recheck this step
         [When(@"User expands the '(.*)' field")]
         public void WhenUserExpandsTheField(string fieldTitle)
         {
-            var basePage = _driver.NowAt<BaseDialogPage>();
-            basePage.ExpandCollapseField(fieldTitle).Click();
+            var dialogPopup = _driver.NowAt<BaseDialogPage>();
+            try
+            {
+                Verify.IsTrue(dialogPopup.GetExpandedField(fieldTitle).Displayed(), $"'{fieldTitle}' field is not expanded");
+            }
+            catch (Exception)
+            {
+                _driver.WaitForElementToBeDisplayed(dialogPopup.FieldContainer);
+                dialogPopup.ExpandField(fieldTitle).Click();
+            }
         }
     }
 }

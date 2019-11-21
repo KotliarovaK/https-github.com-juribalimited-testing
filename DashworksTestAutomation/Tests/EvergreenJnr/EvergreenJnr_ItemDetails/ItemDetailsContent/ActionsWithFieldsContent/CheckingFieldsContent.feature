@@ -56,8 +56,6 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
 	When User expands the 'Related Users' field
 	When User selects all rows on the grid
-	#TODO Ann.I Check again the step that expand the field.
-	#And User selects all rows on the grid on the Details Page for "Related Users"
 	And User clicks 'UPDATE' button 
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console

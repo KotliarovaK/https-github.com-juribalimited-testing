@@ -15,6 +15,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[contains(@class, 'dialogContainer')]")]
         public IWebElement DialogPopUp { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='field-category']")]
+        public IWebElement FieldContainer { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -39,8 +42,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 throw new Exception($"'{fieldTitle}' field was not found!");
             return Driver.FindElement(selector);
         }
+        public IWebElement GetExpandedField(string fieldTitle)
+        {
+            var selector =
+                By.XPath($"//mat-dialog-container//div[@class='field-category collapsed']//span[contains(text(),'{fieldTitle}')]/..");
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+                throw new Exception($"'{fieldTitle}' field was not found!");
+            return Driver.FindElement(selector);
+        }
 
-        public IWebElement ExpandCollapseField(string titleText)
+        public IWebElement ExpandField(string titleText)
         {
             var buttonSelector = By.XPath(".//button");
 

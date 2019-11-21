@@ -717,26 +717,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
         }
 
-        [When(@"User selects all rows on the grid on the Details Page for ""(.*)""")]
-        public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPageFor(string fieldName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            if (!detailsPage.OpenedPanelForUpdatingItems.Displayed())
-            {
-                var button = detailsPage.GetFieldToOpenTheTableByName(fieldName);
-                _driver.MouseHover(button);
-                button.Click();
-                _driver.WaitForDataLoading();
-                _driver.WaitForElementToBeDisplayed(detailsPage.SelectAllCheckBox);
-                detailsPage.SelectAllCheckBox.Click();
-            }
-            else
-            {
-                _driver.WaitForElementToBeDisplayed(detailsPage.SelectAllCheckBox);
-                detailsPage.SelectAllCheckBox.Click();
-            }
-        }
-
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
             var listPageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
