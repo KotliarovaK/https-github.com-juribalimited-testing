@@ -725,14 +725,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"'(.*)' color is displayed for widget")]
-        public void ThenColorIsDisplayedForWidget(string color)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
-            Verify.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
-        }
-
         [Then(@"'(.*)' color is displayed for Card Widget")]
         public void ThenColorIsDisplayedForCardWidget(string color)
         {
