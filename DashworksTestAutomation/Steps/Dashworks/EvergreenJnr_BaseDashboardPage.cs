@@ -56,23 +56,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(2000);
         }
 
-        [When(@"User performs right-click on ""(.*)"" cell in the grid")]
-        public void WhenUserPerformsRightClickOnCellInTheGrid(string cellText)
+        [Then(@"User sees context menu placed near '(.*)' cell in the '(.*)' column")]
+        public void ThenUserSeesContextMenuPlacedNearCellInTheColumn(string cellText, string columnName)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            page.ContextClickOnCell(cellText);
-        }
+            var page = _driver.NowAt<BaseGridPage>();
+            var cell = page.GetCellFromColumn(columnName, cellText);
 
-        [Then(@"User sees context menu placed near ""(.*)"" cell in the grid")]
-        public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(string columnName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            var cellTopYCoordinte = page.GetGridCellByText(columnName).Location.Y;
-            var cellBottomYCoordinte = page.GetGridCellByText(columnName).BottomLocation().Y;
-            var cellLeftXCoordinte = page.GetGridCellByText(columnName).BottomLocation().X;
-            var cellRightXCoordinte = page.GetGridCellByText(columnName).RightTopLocation().X;
+            var cellTopYCoordinte = cell.Location.Y;
+            var cellBottomYCoordinte = cell.BottomLocation().Y;
+            var cellLeftXCoordinte = cell.BottomLocation().X;
+            var cellRightXCoordinte = cell.RightTopLocation().X;
 
             var menuTopYCoordinate = page.AgMenu.Location.Y;
             var manuLeftXCoordinate = page.AgMenu.Location.X;
@@ -117,17 +110,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   ").Trim(),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
-        }
-
-        [Then(@"""(.*)"" tooltip displayed in ""(.*)"" column")]
-        public void ThenTooltipIsDisplayedInColumn(string textTooltip, string columnName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            var cellElement = page.GetGridCellByText(textTooltip);
-            _driver.MouseHover(cellElement);
-            var tooltip = _driver.GetTooltipBubbleText();
-            Verify.AreEqual(textTooltip.ToLower(), tooltip.ToLower(), "Tooltip is not displayed correctly");
         }
 
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
@@ -265,10 +247,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"User sees following text in cell truncated with ellipsis:")]
         public void ThenUserSeesFollowingTextInCellTruncatedWithEllipsis(Table table)
         {
-            var grid = _driver.NowAt<BaseDashboardPage>();
+            var grid = _driver.NowAt<BaseGridPage>();
             foreach (var column in table.Rows)
             {
-                var cell = grid.GetGridCellByText(column["cellText"]);
+                var cell = grid.GetCellFromColumn(column["Column"], column["CellText"]);
 
                 Verify.That(cell.GetCssValue("text-overflow"), Is.EqualTo("ellipsis"), "Data in cell not truncated");
                 Verify.That(cell.GetCssValue("overflow"), Is.EqualTo("hidden"), "Data in cell not truncated");
