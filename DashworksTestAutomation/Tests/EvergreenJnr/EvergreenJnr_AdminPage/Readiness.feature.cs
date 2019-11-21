@@ -1444,7 +1444,7 @@ this.FeatureBackground();
 #line 322
  testRunner.And("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 323
- testRunner.And("User performs right-click on \"Red\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User right clicks on \'Red\' cell from \'Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 324
  testRunner.And("User selects \'Copy row\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 325
@@ -1454,7 +1454,7 @@ this.FeatureBackground();
 #line 327
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 328
- testRunner.And("User performs right-click on \"Amber\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User right clicks on \'Amber\' cell from \'Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 329
  testRunner.And("User selects \'Copy cell\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 330

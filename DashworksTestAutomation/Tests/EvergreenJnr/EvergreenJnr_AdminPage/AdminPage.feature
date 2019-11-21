@@ -58,29 +58,26 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the '<PageName>' left menu item
-	And User performs right-click on "<CellText>" cell in the grid
+	When User right clicks on '<CellText>' cell from '<Column>' column
 	Then User sees context menu placed near "<CellText>" cell in the grid
 
 Examples:
-	| PageName       | CellText   |
-	| Projects       | EmailMigra |
-	| Teams          | IB Team    |
+	| PageName | CellText   | Column     |
+	| Projects | EmailMigra | Short Name |
+	| Teams    | IB Team    | Team       |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153
-Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBuckets
+Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBucketsAndCapacityUnits
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
-	And User performs right-click on "Evergreen" cell in the grid
+	When User right clicks on 'Evergreen' cell from 'Project' column
 	Then User sees context menu placed near "Evergreen" cell in the grid
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153
-Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForCapacityUnits
-	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Evergreen' left menu item
-	When User navigates to the 'Capacity Units' left menu item
-	And User performs right-click on "True" cell in the grid
-	Then User sees context menu placed near "True" cell in the grid
+Examples:
+	| PageName       | CellText  | Column  |
+	| Buckets        | Evergreen | Project |
+	| Capacity Units | True      | Default |
 
 #Should be added one more beforeScenario to make Unassigned backed default again
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Cleanup @Set_Default_Bucket @Do_Not_Run_With_Buckets

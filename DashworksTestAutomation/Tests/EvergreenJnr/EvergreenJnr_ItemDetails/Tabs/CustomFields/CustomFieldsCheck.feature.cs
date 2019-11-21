@@ -132,7 +132,7 @@ this.FeatureBackground();
 #line 11
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("User performs right-click on \"ComputerCustomField\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User right clicks on \'ComputerCustomField\' cell from \'Custom Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.And("User selects \'Copy cell\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
@@ -195,7 +195,7 @@ this.FeatureBackground();
 #line 19
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("User performs right-click on \"ComputerCustomField\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User right clicks on \'ComputerCustomField\' cell from \'Custom Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
  testRunner.And("User selects \'Copy row\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
