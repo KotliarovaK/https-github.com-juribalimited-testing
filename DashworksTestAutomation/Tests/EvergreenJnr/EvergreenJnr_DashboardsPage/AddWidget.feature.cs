@@ -236,9 +236,9 @@ this.FeatureBackground();
 #line 25
  testRunner.When("Dashboard with \'Dashboard for DAS14578\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -262,13 +262,13 @@ this.FeatureBackground();
                         "Horizontal",
                         "10"});
 #line 28
- testRunner.And("User creates new Widget", ((string)(null)), table3, "And ");
+ testRunner.When("User creates new Widget", ((string)(null)), table3, "When ");
 #line 31
  testRunner.Then("\'Line with one hundred and seven chars Line with one hundred and seven chars Line" +
                     " with one hundred an\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 32
- testRunner.And("Widget name \'Line with one hundred and seven chars Line with one hundred and seve" +
-                    "n chars Line with one hundred an\' has word break style on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Widget name \'Line with one hundred and seven chars Line with one hundred and seve" +
+                    "n chars Line with one hundred an\' has word break style on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

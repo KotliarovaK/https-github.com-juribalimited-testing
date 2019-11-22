@@ -16,8 +16,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	When User create custom list with "DeviceListFor14841_Admin" name
-	Then "DeviceListFor14841_Admin" list is displayed to user
+	When User create custom list with "ADeviceListFor14841_Admin" name
+	Then "ADeviceListFor14841_Admin" list is displayed to user
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
 	When User clicks 'ADD USER' button 
@@ -32,24 +32,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| automation_admin10 | m!gration |
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841_Admin' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title                   | List                     | SplitBy  | AggregateFunction | OrderBy    |
-	| Table      | WidgetForDAS14841_Admin | DeviceListFor14841_Admin | Hostname | Count             | Count DESC |
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title                   | List                      | SplitBy  | AggregateFunction | OrderBy    |
+	| Table      | WidgetForDAS14841_Admin | ADeviceListFor14841_Admin | Hostname | Count             | Count DESC |
+	Then 'WidgetForDAS14841_Admin' Widget is displayed to the user
 	#display permission modal
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 	When User select 'Everyone can see' sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
-	And Widget 'WidgetForDAS14841_Admin' displayed for 'DeviceListFor14841_Admin' list on Permissions Pop-up
-	And User 'Automation Admin 1' displayed for 'DeviceListFor14841_Admin' list on Permissions Pop-up
-	And Current permission 'Specific users / teams' displayed for 'DeviceListFor14841_Admin' list on Permissions Pop-up
-	And New Permission 'Do not change' displayed for 'DeviceListFor14841_Admin' list on Permissions Pop-up
-	When User selects 'Everyone can see' permission for 'DeviceListFor14841_Admin' list on Permissions Pop-up
-	And User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
+	Then Widget 'WidgetForDAS14841_Admin' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
+	Then User 'Automation Admin 1' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
+	Then Current permission 'Specific users / teams' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
+	Then New Permission 'Do not change' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
+	When User selects 'Everyone can see' permission for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
+	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
-	And Permission 'Everyone can see' displayed in Dashboard Details
+	Then Permission 'Everyone can see' displayed in Dashboard Details
 	#login as user1 and check if list permission changed
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -57,21 +58,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| automation_admin1 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks Settings button for "DeviceListFor14841_Admin" list
+	When User clicks Settings button for "ADeviceListFor14841_Admin" list
 	When User clicks 'Manage' option in opened Cog-menu
 	Then List details panel is displayed to the user
-	And "Everyone can see" sharing option is selected
+	Then "Everyone can see" sharing option is selected
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboard
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS15876' name created via API and opened
-	And User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks Settings button for 'Dashboard for DAS15876' dashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User selects 'Specific users' dashboard sharing option
-	And User adds user to list of shared person
+	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
 	Then User 'automation_admin10' was added to shared list with 'Admin' permission
@@ -81,30 +82,31 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
 	#remove share
-	And User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks Settings button for 'Dashboard for DAS15876' dashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User clicks Settings button for 'automation_admin10' shared user
-	And User selects 'Remove' option from Settings
+	When User selects 'Remove' option from Settings
 	Then There is no user in shared list
-	And User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
+	Then User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15550 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS15550' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Table      | WidgetForDAS15550 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
-	And User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks Settings button for 'Dashboard for DAS15550' dashboard
+	Then 'WidgetForDAS15550' Widget is displayed to the user
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Settings button for 'Dashboard for DAS15550' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User selects 'Specific users' dashboard sharing option
-	And User adds user to list of shared person
+	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Edit       |
 	Then User 'automation_admin10' was added to shared list with 'Edit' permission
@@ -114,13 +116,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
 	#edit widget
-	And User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks Settings button for 'Dashboard for DAS15550' dashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Settings button for 'Dashboard for DAS15550' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks Ellipsis menu for 'WidgetForDAS15550' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User updates Widget with following info:
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks Ellipsis menu for 'WidgetForDAS15550' Widget on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User updates Widget with following info:
 	| WidgetType | Title                    | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Table      | WidgetForDAS15550_Edited | All Applications | Application | Application | Count distinct    | Application ASC | 5         |
 	Then 'WidgetForDAS15550_Edited' Widget is displayed to the user
@@ -129,12 +131,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardName
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS14915' name created via API and opened
-	And User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks Settings button for 'Dashboard for DAS14915' dashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User selects 'Specific users' dashboard sharing option
-	And User adds user to list of shared person
+	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
 	Then User 'automation_admin10' was added to shared list with 'Admin' permission
@@ -143,8 +145,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	And User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks Settings button for 'Dashboard for DAS14915' dashboard
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Permission panel is displayed to the user
 	When User changes dashboard name to 'DashboardUpdated'
