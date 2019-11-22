@@ -145,7 +145,7 @@ this.FeatureBackground();
 #line 20
  testRunner.Then("\'Evergreen\' content is displayed in \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 22
- testRunner.Then("\'No Change\' content is displayed in \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'No сhange\' content is displayed in \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
@@ -154,7 +154,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table2.AddRow(new string[] {
-                        "No Change"});
+                        "No сhange"});
             table2.AddRow(new string[] {
                         "UNKNOWN"});
             table2.AddRow(new string[] {

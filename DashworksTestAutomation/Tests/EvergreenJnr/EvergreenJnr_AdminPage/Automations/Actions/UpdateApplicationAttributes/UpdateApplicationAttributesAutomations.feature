@@ -18,14 +18,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	And User enters '18727_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
-	Then 'No Change' content is displayed in 'Sticky Compliance' dropdown
-	#Then following Values are displayed in the 'Sticky Compliance' dropdown:
-	#| Options   |
-	#| Evergreen |
-	#| Project   |
+	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then following Values are displayed in the 'Sticky Compliance' dropdown:
 	| Options   |
-	| No Change |
+	| No change |
 	| UNKNOWN   |
 	| RED       |
 	| AMBER     |
@@ -56,8 +52,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	When User selects 'GREEN' in the 'Sticky Compliance' dropdown
 	When User clicks 'CREATE' button
 	#Actions grid check
-	Then "Sticky Compliance " content is displayed for "Task or Field" column
-	Then "Update application attributes " content is displayed for "Type" column
+	Then "Sticky Compliance" content is displayed for "Task or Field" column
+	Then "Update application attributes" content is displayed for "Type" column
 	Then "GREEN" content is displayed for "Value" column
 	#Actions content check
 	When User clicks content from "Action" column
