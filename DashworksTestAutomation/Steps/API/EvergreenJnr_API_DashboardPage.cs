@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Linq;
 using System.Net;
@@ -13,6 +14,7 @@ using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium;
 using RestSharp;
 using TechTalk.SpecFlow;
 
@@ -22,14 +24,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
     public class EvergreenJnr_API_DashboardPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly UsedUsers _usedUsers;
         private readonly Dashboards _dashboard;
         private readonly RestWebClient _client;
         private readonly UserDto _user;
 
-        private EvergreenJnr_API_DashboardPage(RemoteWebDriver driver, Dashboards dashboard,
+        private EvergreenJnr_API_DashboardPage(RemoteWebDriver driver, UsedUsers usedUsers, Dashboards dashboard,
             RestWebClient client, UserDto user)
         {
             _driver = driver;
+            _usedUsers = usedUsers;
             _dashboard = dashboard;
             _client = client;
             _user = user;
@@ -86,26 +90,53 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             if (!_dashboard.Value.Any())
                 return;
 
-            foreach (DashboardDto dashboardDto in _dashboard.Value)
+            List<UserDto> noDupes = _usedUsers.Value.GroupBy(x => x.Username).Select(y => y.FirstOrDefault()).ToList();
+
+            foreach (UserDto user in noDupes)
             {
-                try
+                var restClient = new RestClient(UrlProvider.Url);
+                
+                //Get cookies
+                var client = new HttpClientHelper(user, restClient);
+                
+                //Init session
+                if (_driver != null)
                 {
-                    var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{dashboardDto.DashboardId}";
+                    _driver.NavigateToUrl(UrlProvider.Url);
 
-                    var request = new RestRequest(requestUri);
-                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                    var response = _client.Value.Delete(request);
-
-                    if (response.StatusCode != HttpStatusCode.OK)
+                    //Set cookies to browser
+                    foreach (var cookie in client.SeleniumCookiesJar)
                     {
-                        Console.WriteLine($"Unable to delete dashboard with '{dashboardDto.DashboardName}' name: {response.StatusCode}");
+                        //TODO remove this workaround for Expiry until https://github.com/Codeception/Codeception/issues/5401 not fixed
+                        OpenQA.Selenium.Cookie nc = new OpenQA.Selenium.Cookie(cookie.Name, cookie.Value, cookie.Path, DateTime.Now.AddDays(1));
+                        _driver.Manage().Cookies.AddCookie(nc);
                     }
                 }
-                catch (Exception e)
+
+                // Add cookies to the RestClient to authorize it
+                _client.Value.AddCookies(client.CookiesJar);
+
+                foreach (DashboardDto dashboardDto in _dashboard.Value)
                 {
-                    Console.WriteLine($"Unable to delete dashboard with '{dashboardDto.DashboardName}' name: {e}");
+                    try
+                    {
+                        var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{dashboardDto.DashboardId}";
+
+                        var request = new RestRequest(requestUri);
+                        request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                        request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                        request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                        var response = _client.Value.Delete(request);
+
+                        if (response.StatusCode != HttpStatusCode.OK)
+                        {
+                            Console.WriteLine($"Unable to delete dashboard with '{dashboardDto.DashboardName}' name: {response.StatusCode}");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Unable to delete dashboard with '{dashboardDto.DashboardName}' name: {e}");
+                    }
                 }
             }
         }
