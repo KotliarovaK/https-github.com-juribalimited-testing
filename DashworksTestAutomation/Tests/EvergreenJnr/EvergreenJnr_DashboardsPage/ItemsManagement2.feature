@@ -119,6 +119,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When User creates new Widget
 	| WidgetType | Title               | List                                 | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16326 | Mailbox List (Complex) - BROKEN LIST | 10      | 10         |
+	Then 'Widget_For_DAS16326' Widget is displayed to the user
 	Then User sees 'This widget refers to list Mailbox List (Complex) - BROKEN LIST which has errors' text in warning message on Dashboards page
 	Then 'Mailbox List (Complex) - BROKEN LIST' link is displayed in warning message on Dashboards page
 	Then There are no errors in the browser console
@@ -131,6 +132,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	And User creates new Widget
 	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS17551 | Dependant List Filter - BROKEN LIST | 10      | 10         |
+	Then 'Widget_For_DAS17551' Widget is displayed to the user
 	Then User sees 'This widget refers to list Dependant List Filter - BROKEN LIST which has errors' text in warning message on Dashboards page
 	Then 'Dependant List Filter - BROKEN LIST' link is displayed in warning message on Dashboards page
 	Then There are no errors in the browser console
@@ -204,22 +206,24 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	When Dashboard with 'Dashboard for DAS12974SECTION' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks 'ADD SECTION' button 
-	And User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
-	And User creates new Widget
+	Then 'DAS12974SECTION1' Widget is displayed to the user
+	When User clicks 'ADD SECTION' button 
+	When User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
+	When User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | DAS12974SECTION2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User remembers number of Sections and Widgets on Dashboards page
-	And User clicks Ellipsis menu for Section having 'DAS12974SECTION1' Widget on Dashboards page
-	And User clicks 'Delete' item from Ellipsis menu on Dashboards page
-	And User confirms item deleting on Dashboards page
+	Then 'DAS12974SECTION2' Widget is displayed to the user
+	When User remembers number of Sections and Widgets on Dashboards page
+	When User clicks Ellipsis menu for Section having 'DAS12974SECTION1' Widget on Dashboards page
+	When User clicks 'Delete' item from Ellipsis menu on Dashboards page
+	When User confirms item deleting on Dashboards page
 	Then User sees number of Sections increased by '-1' on Dashboards page
-	And User sees number of Widgets increased by '-1' on Dashboards page
+	Then User sees number of Widgets increased by '-1' on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
