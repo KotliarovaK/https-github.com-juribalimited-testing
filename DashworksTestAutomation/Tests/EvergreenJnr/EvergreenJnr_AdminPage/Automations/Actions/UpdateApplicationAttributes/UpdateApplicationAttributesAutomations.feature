@@ -29,8 +29,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	| IGNORE    |
 	Then 'CREATE' button is disabled
 	Then 'SAVE AND CREATE ANOTHER' button is disabled
-	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
+	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
 	When User selects 'RED' in the 'Sticky Compliance' dropdown
 	Then 'CREATE' button is not disabled
 	Then 'SAVE AND CREATE ANOTHER' button is not disabled
@@ -66,17 +66,26 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @Cleanup @Not_Ready
 #Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                                                 |
+	| Infragistics NetAdvantage for .NET 2006 Vol. 3 CLR 2.0 |
+	When User clicks the Actions button
+	When User selects all rows on the grid
+	When User selects 'Create static list' in the 'Action' dropdown
+	When User create static list with "StaticList18834" name
+	Then "StaticList18834" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18834_Automation | 18834       | true   | false              | All Applications | Manual |
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope           | Run    |
+	| 18834_Automation | 18834       | true   | false              | StaticList18834 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
 	And User enters '18834_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
-	When User selects 'Red' in the 'Sticky Compliance' dropdown
+	When User selects 'RED' in the 'Sticky Compliance' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -92,18 +101,19 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| ******     |
-	Then '******' content is displayed in the '******' column
+	| ColumnName        |
+	| Sticky Compliance |
+	Then 'RED' content is displayed in the 'Sticky Compliance' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	When User enters "18834_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	When User selects 'After current value' in the 'Before or After' dropdown
+	When User selects 'IGNORE' in the 'Sticky Compliance' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18834_Automation" text in the Search field for "Automation" column
@@ -118,6 +128,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| *****      |
-	Then '*****' content is displayed in the '*****' column
+	| ColumnName        |
+	| Sticky Compliance |
+	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
