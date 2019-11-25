@@ -175,8 +175,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Appropriate header font weight is displayed")]
         public void ThenAppropriateHeaderFontWeightIsDisplayed()
         {
-            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual("400", dashboardPage.GetHeaderFontWeight(), "Header font weight is incorrect");
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(dashboardPage.GetAllHeadersTextElements().Select(x => x.GetCssValue("font-weight")).All(x => x.Equals("400")), "Header font weight is incorrect");
         }
 
         [Then(@"URL is ""(.*)""")]
