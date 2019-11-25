@@ -733,10 +733,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditi
 	Then Filters panel is displayed to the user
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
     | SelectedCheckboxes |
-    | None               |
+    | Empty              |
 	Then message 'No devices found' is displayed to the user
 	When User click Edit button for "Compliance" filter
-	And User closes "None" Chip item in the Filter panel
+	And User closes "Empty" Chip item in the Filter panel
 	When User change selected checkboxes:
     | Option | State |
     | Green  | true  |
@@ -1761,13 +1761,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFiel
 	Then Filters panel is displayed to the user
 	When user select "User Dashworks First Seen" filter
 	And User select "Equals" Operator value
-	Then 'UPDATE' button has tooltip with 'You must enter a date' text
+	Then 'ADD' button has tooltip with 'You must enter a date' text
 	When User select "Between" Operator value
-	Then 'UPDATE' button has tooltip with 'You must enter a start date' text
+	Then 'ADD' button has tooltip with 'You must enter a start date' text
 	When User select "Empty" Operator value
-	Then 'UPDATE' button has tooltip with 'Complete all fields before saving this filter' text
+	Then 'ADD' button has tooltip with 'Complete all fields before saving this filter' text
 	When User select "Not empty" Operator value
-	Then 'UPDATE' button has tooltip with 'Complete all fields before saving this filter' text
+	Then 'ADD' button has tooltip with 'Complete all fields before saving this filter' text
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS16845
 Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsMissingForProjectOfMailboxesLists
@@ -2096,20 +2096,28 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCorrectScopedProjectAppearsForS
     | Devices      | All Devices      | Project: zUserAutom |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS18367
-Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoEmptyOptionInInListFilter
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoEmptyOptionInDeviceAndApplicationSavedList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	When User clicks Add New button on the Filter panel
 	When User selects "<List>" filter from "Saved List" category
 	When User enters "Empty" text in Search field at selected Lookup Filter
-	Then "0 shown" results are displayed in the Filter panel
+	Then "Empty" checkbox is not available for current opened filter
 
 Examples:
     | List                     |
     | Device (Saved List)      |
     | Application (Saved List) |
-    | 1803: Owner (Saved List) |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS18367
+Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoEmptyOptionInProjectSpecificSavedList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "1803: Owner (Saved List)" filter from "Saved List" category
+	Then "Empty" checkbox is not available for current opened filter
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS18367
 Scenario Outline: EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter

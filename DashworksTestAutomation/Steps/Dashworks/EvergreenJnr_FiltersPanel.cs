@@ -645,7 +645,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndDateOptions(string filterName, string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
-            filtersNames.AddAndFilter(filterName);
+            filtersNames.AddFilter(filterName);
             var filter = new BetweenOperatorFilter(_driver, operatorValue, true, table);
             filter.Do();
         }
@@ -663,7 +663,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddFilterWhereTypeIsWithFollowingDateOptionsAndAssociations(string filterName, string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
-            filtersNames.AddAndFilter(filterName);
+            filtersNames.AddFilter(filterName);
             var filter = new BetweenDataAssociationFilter(_driver, operatorValue, table);
             filter.Do();
         }
