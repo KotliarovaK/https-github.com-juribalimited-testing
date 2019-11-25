@@ -320,12 +320,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
-	When User right clicks on 'Red' cell from 'Readiness' column
+	When User right clicks on 'RED' cell from 'Readiness' column
 	And User selects 'Copy row' option in context menu
 	Then There are no errors in the browser console
-	And Next data 'Red\t\tRed\tFalse\tFalse\t50\t1\t0\t0\t4' is copied
+	And Next data 'Red\t\tRed\tFalse\tFalse\t51\t1\t0\t0\t4' is copied
 	When User clicks refresh button in the browser
-	When User right clicks on 'Amber' cell from 'Readiness' column
+	When User right clicks on 'AMBER' cell from 'Readiness' column
 	And User selects 'Copy cell' option in context menu
 	Then There are no errors in the browser console
 	And Next data 'Amber' is copied
