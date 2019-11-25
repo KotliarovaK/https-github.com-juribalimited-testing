@@ -272,3 +272,32 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplay
 	Then following content is displayed on the Details Page
 	| Title              | Value |
 	| Hide From End User | FALSE |
+
+#Ann.I. 11/26/19: ready only for the 'terminator'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18852 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirementsForAnalysisEditorRole
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username       | Password |
+ 	| TestBucketAuto | 123456   |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
+	Then Details page for "ACDSee for Windows 95" item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then following Values are displayed in the dropdown for the 'In Catalog' field:
+	| Value |
+	| FALSE |
+	| TRUE  |
+	Then following Values are displayed in the dropdown for the 'Criticality' field:
+	| Value         |
+	| Core          |
+	| Critical      |
+	| Important     |
+	| Not Important |
+	| Uncategorised |
+	Then following Values are displayed in the dropdown for the 'Hide From End User' field:
+	| Value |
+	| FALSE |
+	| TRUE  |
+	When User clicks on "Evergreen Capacity Unit 3" link for Evergreen Bucket field
+	Then Dialog Pop-up is displayed for User
