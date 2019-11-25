@@ -1776,15 +1776,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsM
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
 	And User enters "readiness" text in Search field at Filters Panel
-	And User closes "Project Tasks: EmailMigra" filter category
-	And User closes "Project: MailboxEve" filter category
-	And User closes "Project: TST" filter category
-	And User closes "Project: USEMEFORA1" filter category
-	And User closes "Project: zMailboxAu" filter category
-	And User closes "Project Tasks: zMailboxAu" filter category
-	Then the following Filters subcategories are displayed for open category:
-    | Subcategories         |
+	Then the following Filters subcategories are presented for open category:
+	| Subcategories         |
     | EmailMigra: Readiness |
+	Then the following subcategories are NOT displayed for Filters categories:
+	| Subcategories                     |
+	| EmailMigra: Application Readiness |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS16071
 Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList

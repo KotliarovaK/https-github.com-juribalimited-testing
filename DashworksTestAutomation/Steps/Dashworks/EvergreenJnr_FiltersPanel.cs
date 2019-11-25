@@ -1384,6 +1384,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Utils.Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
         }
 
+        [Then(@"the following subcategories are NOT displayed for Filters categories:")]
+        public void ThenTheFollowingSubcategoriesAreNotDisplayedForFiltersCategories(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
+            foreach (var value in expectedList)
+                Utils.Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
+        }
+
         [Then(@"the following subcategories are displayed for Selected Filters category:")]
         public void ThenTheFollowingSubcategoriesAreDisplayedForSelectedFiltersCategory(Table table)
         {
