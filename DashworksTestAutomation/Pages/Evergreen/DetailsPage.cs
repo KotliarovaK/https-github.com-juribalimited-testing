@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ColumnWithImageAndLinkSelector = ".//div[@col-id='userName'][@role='gridcell']";
 
-        public const string FieldOnDetailsPageSelector = ".//td[contains(@class, 'mat-column-key')]";
+        public const string FieldOnDetailsPageSelector = ".//td[@class='fld-label' or contains(@class, 'mat-column-key')]";
 
         public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
 

@@ -19,8 +19,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	When User clicks 'RELINK' button 
 	Then Dialog Pop-up is displayed for User
-	And 'Resync owner' checkbox is checked
-	And 'Resync name' checkbox is checked
+	#And 'Resync owner' checkbox is checked
+	#And 'Resync name' checkbox is checked
 	When User enters 'Microsoft SQL' in the 'Application' autocomplete field and selects 'Microsoft SQL Server 2012' value
 	When User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button in Dialog Pop-up

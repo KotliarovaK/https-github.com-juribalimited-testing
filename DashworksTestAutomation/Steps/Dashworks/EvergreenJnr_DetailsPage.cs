@@ -664,6 +664,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(expectedList, columnHeaders, "Column headers names are incorrect");
         }
 
+        //TODO should be removed. All methods that check assertion methods should check errors below textbox elements or datepickers etch
         [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
         [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Slots page")]
         [Then(@"""(.*)"" rows label displays in Action panel")]

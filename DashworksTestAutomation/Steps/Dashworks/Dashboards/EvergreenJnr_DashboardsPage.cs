@@ -89,15 +89,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
 
-            WhenUserClicksMenuForDashboard(dashboardName);
-            _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardMenuItem(menuItem));
-            dashboardElement.DashboardMenuItem(menuItem).Click();
-            _driver.WaitForDataLoading(60);
-
-            if (menuItem.Equals("Duplicate"))
+            try
             {
-                _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage, 60);
-                _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
+                WhenUserClicksMenuForDashboard(dashboardName);
+                _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardMenuItem(menuItem));
+                dashboardElement.DashboardMenuItem(menuItem).Click();
+
+                _driver.WaitForDataLoading(60);
+            }
+            catch (Exception)
+            {
+                if (menuItem.Equals("Duplicate"))
+                {
+                    _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage, 60);
+                    _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
+                }
             }
         }
 
@@ -680,7 +686,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), 
+            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(),
                 Does.Contain(label), $"'{label}' label is not found");
         }
 
@@ -991,9 +997,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects '(.*)' option in the '(.*)' dropdown for Print Preview Settings")]
         public void WhenUserSelectsOptionInTheDropdownForPrintPreviewSettings(string option, string dropdown)
         {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            _driver.ClickByJavascript(page.GetPrintPreviewDropdownByName(dropdown));
-            page.SelectPrintPreviewSettings(option);
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdown(option, dropdown);
         }
 
         [Then(@"Print Preview is displayed in A4 format view")]

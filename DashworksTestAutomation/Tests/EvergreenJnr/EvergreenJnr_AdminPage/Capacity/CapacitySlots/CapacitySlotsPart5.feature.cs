@@ -614,7 +614,7 @@ this.FeatureBackground();
 #line 106
  testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table11, "Then ");
 #line 111
- testRunner.When("User move \"Slot 10001\" item to \"32767\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User moves \'Slot 10001\' item from \'Capacity Slot\' column to the \'32767\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
