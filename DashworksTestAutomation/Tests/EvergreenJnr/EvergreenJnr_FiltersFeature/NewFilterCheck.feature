@@ -83,10 +83,10 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilte
 Examples:
 	| ColumnName                       | Operators                         | FilterOption | Text                                      | RowsCount |
 	| Windows7Mi: Target App Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
-	| Babel(Engl: Target App Readiness | Equals, Does not equal, Not empty | None         | Babel(Engl: Target App Readiness is None  | 302       |
-	| Barry'sUse: Target App Readiness | Equals, Does not equal, Not empty | None         | Barry'sUse: Target App Readiness is None  | 1,045     |
+	| Babel(Engl: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Target App Readiness is Empty | 1,921     |
+	| Barry'sUse: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Target App Readiness is Empty | 1,046     |
 	| ComputerSc: Target App Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Target App Readiness is Green | 913       |
-	| Havoc(BigD: Target App Readiness | Equals, Does not equal, Not empty | None         | Havoc(BigD: Target App Readiness is None  | 1,066     |
+	| Havoc(BigD: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Target App Readiness is Empty | 1,156     |
 	| MigrationP: Target App Readiness | Equals, Does not equal, Not empty | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal, Not empty | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 
@@ -183,12 +183,12 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 Examples:
 	| ColumnName                        | Operators                         | FilterOption | Text                                       | RowsCount |
 	| Windows7Mi: Application Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Application Readiness is Red   | 27        |
-	| Babel(Engl: Application Readiness | Equals, Does not equal, Not empty | None         | Babel(Engl: Application Readiness is None  | 302       |
-	| Barry'sUse: Application Readiness | Equals, Does not equal, Not empty | None         | Barry'sUse: Application Readiness is None  | 1,072     |
+	| Babel(Engl: Application Readiness | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Application Readiness is Empty | 1,921     |
+	| Barry'sUse: Application Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Application Readiness is Empty | 1,146     |
 	| ComputerSc: Application Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Application Readiness is Green | 911       |
-	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | None         | Havoc(BigD: Application Readiness is None  | 1,066     |
+	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Application Readiness is Empty | 1,156     |
 	| MigrationP: Application Readiness | Equals, Does not equal, Not empty | Blue         | MigrationP: Application Readiness is Blue  | 189       |
-	| UserSchedu: Application Readiness | Equals, Does not equal, Not empty | None         | UserSchedu: Application Readiness is None  | 981       |
+	| UserSchedu: Application Readiness | Equals, Does not equal, Not empty | Empty        | UserSchedu: Application Readiness is Empty | 1,242     |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList

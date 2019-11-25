@@ -645,7 +645,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndDateOptions(string filterName, string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
-            filtersNames.AddAndFilter(filterName);
+            filtersNames.AddFilter(filterName);
             var filter = new BetweenOperatorFilter(_driver, operatorValue, true, table);
             filter.Do();
         }
@@ -663,7 +663,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddFilterWhereTypeIsWithFollowingDateOptionsAndAssociations(string filterName, string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
-            filtersNames.AddAndFilter(filterName);
+            filtersNames.AddFilter(filterName);
             var filter = new BetweenDataAssociationFilter(_driver, operatorValue, table);
             filter.Do();
         }
@@ -1394,6 +1394,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
+            foreach (var value in expectedList)
+                Utils.Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
+        }
+
+        [Then(@"the following subcategories are NOT displayed for Filters categories:")]
+        public void ThenTheFollowingSubcategoriesAreNotDisplayedForFiltersCategories(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
             foreach (var value in expectedList)
                 Utils.Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
         }
