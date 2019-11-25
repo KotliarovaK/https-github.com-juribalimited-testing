@@ -396,6 +396,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Override_Dates")]
         [NUnit.Framework.CategoryAttribute("DAS13723")]
         [NUnit.Framework.CategoryAttribute("DAS13370")]
+        [NUnit.Framework.CategoryAttribute("DAS18646")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn()
         {
@@ -433,6 +434,7 @@ this.FeatureBackground();
                         "Override_Dates",
                         "DAS13723",
                         "DAS13370",
+                        "DAS18646",
                         "Cleanup"});
 #line 71
 this.ScenarioInitialize(scenarioInfo);
@@ -453,15 +455,15 @@ this.FeatureBackground();
 #line 72
  testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
 #line 75
- testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
- testRunner.And("User navigates to the \'Override Dates\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Override Dates\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
  testRunner.When("User clicks \'CREATE OVERRIDE DATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 78
- testRunner.And("User enters \'5 Jan 2019\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \'5 Jan 2019\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
- testRunner.And("User enters \'\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \'\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
  testRunner.Then("\'An override end date must be entered\' error message is displayed for \'Override E" +
                     "nd Date\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -479,14 +481,14 @@ this.FeatureBackground();
 #line 86
  testRunner.When("User enters \'4 Oct 2018\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
- testRunner.And("User enters \'7 Oct 2018\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \'7 Oct 2018\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
- testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 89
  testRunner.Then("Success message is displayed and contains \"Your override date has been created\" t" +
                     "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 90
- testRunner.And("\'Unlimited\' content is displayed in the \'Capacity\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'Unlimited\' content is displayed in the \'Capacity\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
  testRunner.When("User enters \">1\" text in the Search field for \"Capacity\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
@@ -494,7 +496,7 @@ this.FeatureBackground();
 #line 93
  testRunner.When("User clicks content from \"Start Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94
- testRunner.And("User enters \'3 Oct 2018\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \'3 Oct 2018\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 96
@@ -502,13 +504,22 @@ this.FeatureBackground();
 #line 97
  testRunner.When("User enters \'\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 98
- testRunner.And("User enters \'\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \'\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99
  testRunner.Then("\'An override end date must be entered\' error message is displayed for \'Override E" +
                     "nd Date\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 100
- testRunner.And("\'An override start date must be entered\' error message is displayed for \'Override" +
-                    " Start Date\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'An override start date must be entered\' error message is displayed for \'Override" +
+                    " Start Date\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 101
+ testRunner.When("User enters \'5 Oct 2019\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 102
+ testRunner.When("User enters \'5 Oct 2019\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 103
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 104
+ testRunner.Then("Success message is displayed and contains \"The override date details have been up" +
+                    "dated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

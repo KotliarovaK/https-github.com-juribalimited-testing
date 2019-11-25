@@ -222,6 +222,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 filterElement.FilterSearchTextBox.SendKeys(searchedText);
             }
         }
+        
+        [Then(@"User sees instruction '(.*)' below '(.*)' field")]
+        public void ThenValueIsDisplayedForSelectedLookupFilter(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Verify.That(filterElement.FilterFieldInstruction(fieldName).Text, Is.EqualTo(instruction), $"{fieldName} has no or wrong instruction");
+        }
+
+        [Then(@"Ahead or Ago dropdown is disabled")]
+        public void ThenValueIsDisplayedForSelectedLookupFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Verify.That(filterElement.AheadOrAgoInput.Disabled(), Is.True, $"Dropdown enabled");
+        }
 
         [When(@"User clicks Add button for input filter value")]
         public void WhenUserClicksAddButtonForInputFilterValue()

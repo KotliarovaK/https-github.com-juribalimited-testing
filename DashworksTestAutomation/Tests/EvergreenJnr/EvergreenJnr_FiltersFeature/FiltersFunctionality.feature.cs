@@ -11485,6 +11485,80 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS18387")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Boot Up Date", "Equals (relative)", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Device Owner Last Logon Date", "Before (relative)", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Last Logon Date", "After (relative)", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Created Date", "On or before (relative)", null)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilter(string list, string filter, string @operator, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilterInternal(list,filter,@operator,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilterInternal(string list, string filter, string @operator, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_FiltersFeature",
+                    "FilterFunctionality",
+                    "DAS18387"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilter", null, @__tags);
+#line 2581
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2582
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2583
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2584
+ testRunner.When(string.Format("user select \"{0}\" filter", filter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2585
+ testRunner.When(string.Format("User select \"{0}\" Operator value", @operator), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2586
+ testRunner.When("User enters \'0\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2587
+ testRunner.Then("User sees instruction \'Enter a value between 0 and 100,000\' below \'Value\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2588
+ testRunner.Then("Ahead or Ago dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

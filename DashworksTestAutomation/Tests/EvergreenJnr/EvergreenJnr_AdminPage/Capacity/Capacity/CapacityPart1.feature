@@ -67,16 +67,16 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 	| Mailboxes     |
 	| Applications  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13723 @DAS13370 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13723 @DAS13370 @DAS18646 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13723 | All Devices | None            | Standalone Project |
-	And User navigates to the 'Capacity' left menu item
-	And User navigates to the 'Override Dates' left menu item
+	When User navigates to the 'Capacity' left menu item
+	When User navigates to the 'Override Dates' left menu item
 	When User clicks 'CREATE OVERRIDE DATE' button 
-	And User enters '5 Jan 2019' text to 'Override Start Date' datepicker
-	And User enters '' text to 'Override End Date' datepicker
+	When User enters '5 Jan 2019' text to 'Override Start Date' datepicker
+	When User enters '' text to 'Override End Date' datepicker
 	Then 'An override end date must be entered' error message is displayed for 'Override End Date' field
 	When User enters '4 Oct 2018' text to 'Override End Date' datepicker
 	Then 'CREATE' button is disabled
@@ -84,17 +84,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User enters '' text to 'Override Start Date' datepicker
 	Then 'An override start date must be entered' error message is displayed for 'Override Start Date' field
 	When User enters '4 Oct 2018' text to 'Override Start Date' datepicker
-	And User enters '7 Oct 2018' text to 'Override End Date' datepicker
-	And User clicks 'CREATE' button 
+	When User enters '7 Oct 2018' text to 'Override End Date' datepicker
+	When User clicks 'CREATE' button 
 	Then Success message is displayed and contains "Your override date has been created" text
-	And 'Unlimited' content is displayed in the 'Capacity' column
+	Then 'Unlimited' content is displayed in the 'Capacity' column
 	When User enters ">1" text in the Search field for "Capacity" column
 	Then Rows counter shows "1" of "1" rows
 	When User clicks content from "Start Date" column
-	And User enters '3 Oct 2018' text to 'Override End Date' datepicker
+	When User enters '3 Oct 2018' text to 'Override End Date' datepicker
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User enters '' text to 'Override Start Date' datepicker
-	And User enters '' text to 'Override End Date' datepicker
+	When User enters '' text to 'Override End Date' datepicker
 	Then 'An override end date must be entered' error message is displayed for 'Override End Date' field
-	And 'An override start date must be entered' error message is displayed for 'Override Start Date' field
+	Then 'An override start date must be entered' error message is displayed for 'Override Start Date' field
+	When User enters '5 Oct 2019' text to 'Override Start Date' datepicker
+	When User enters '5 Oct 2019' text to 'Override End Date' datepicker
+	When User clicks 'UPDATE' button
+	Then Success message is displayed and contains "The override date details have been updated" text
