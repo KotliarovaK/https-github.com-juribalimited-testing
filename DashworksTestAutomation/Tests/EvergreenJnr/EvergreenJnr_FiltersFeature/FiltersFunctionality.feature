@@ -2566,3 +2566,30 @@ Examples:
 	| Empty    | UNKNOWN |
 	| FALSE    | FALSE   |
 	| TRUE     | TRUE    |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS18922
+Scenario: EvergreenJnr_DevicesList_CheckThatGridDataDisplayedAfterSortingByOwnerCompliance
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Owner Compliance" filter where type is "Equals" with added column and Lookup option
+    | SelectedValues |
+    | Empty          |
+	When User clicks on 'Owner Compliance' column header
+	Then table content is present
+
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18387
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilter
+	When User clicks '<List>' on the left-hand menu
+	When User clicks the Filters button
+	When user select "<Filter>" filter
+	When User select "<Operator>" Operator value
+	When User enters '0' text to 'Value' textbox
+	Then User sees instruction 'Enter a value between 0 and 100,000' below 'Value' field
+	Then Ahead or Ago dropdown is disabled
+
+Examples:
+	| List         | Filter                       | Operator                |
+	| Devices      | Boot Up Date                 | Equals (relative)       |
+	| Applications | Device Owner Last Logon Date | Before (relative)       |
+	| Users        | Last Logon Date              | After (relative)        |
+	| Mailboxes    | Created Date                 | On or before (relative) |

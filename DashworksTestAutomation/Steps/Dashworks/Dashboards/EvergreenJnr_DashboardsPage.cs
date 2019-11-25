@@ -89,18 +89,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
 
-            WhenUserClicksMenuForDashboard(dashboardName);
-            _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardMenuItem(menuItem));
-            dashboardElement.DashboardMenuItem(menuItem).Click();
-            _driver.WaitForDataLoading();
-
-            if (menuItem.Equals("Duplicate"))
+            try
             {
-                _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage);
-                _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
+                WhenUserClicksMenuForDashboard(dashboardName);
+                _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardMenuItem(menuItem));
+                dashboardElement.DashboardMenuItem(menuItem).Click();
+
+                _driver.WaitForDataLoading(60);
+            }
+            catch (Exception)
+            {
+                if (menuItem.Equals("Duplicate"))
+                {
+                    _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage, 60);
+                    _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
+                }
             }
         }
-
 
         [Then(@"Dashboard with name '(.*)' marked as favorite")]
         public void ThenUserSeesDashboardsMarkedAsFavorite(string dashboardName)
@@ -681,7 +686,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), 
+            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(),
                 Does.Contain(label), $"'{label}' label is not found");
         }
 
@@ -726,20 +731,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"'(.*)' color is displayed for widget")]
-        public void ThenColorIsDisplayedForWidget(string color)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
-            Verify.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
-        }
-
         [Then(@"'(.*)' color is displayed for Card Widget")]
         public void ThenColorIsDisplayedForCardWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
+            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
             Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 

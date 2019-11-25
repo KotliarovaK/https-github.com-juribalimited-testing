@@ -428,13 +428,18 @@ namespace DashworksTestAutomation.Pages
         #endregion
 
         #region Card
-        public IWebElement GetCardWidgetPreviewText()
+        public IWebElement GetWidgetPreviewText()
         {
-            var nested = By.XPath(".//div[@class='card-widget-data']//*");
-            if (Driver.FindElements(nested).Count > 0)
-            { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']//span[contains(@class, 'text')]")); }
-            else
-            { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']")); }
+            try
+            {
+                return Driver.FindElement(
+                    By.XPath(".//div[contains(@class, 'widget-value')]//span[contains(@class, 'text')]"));
+            }
+            catch (NoSuchElementException)
+            {
+                return Driver.FindElement(
+                    By.XPath(".//div[contains(@class, 'widget-data')]"));
+            }
         }
 
         public IWebElement GetCardWidgetContent(string widgetTitle)

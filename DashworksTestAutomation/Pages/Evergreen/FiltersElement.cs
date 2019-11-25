@@ -169,6 +169,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = FilterValue)]
         public IList<IWebElement> FilterValueList { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='dateDirection']")]
+        public IWebElement AheadOrAgoInput { get; set; }
+        
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -182,6 +185,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(By.XPath(
                 $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()=\"" + filterCategoryName + "\"]/ancestor::div[@class='filter-category ng-star-inserted']"));
+        }
+
+        public IWebElement FilterFieldInstruction(string filterField)
+        {
+            return Driver.FindElement(By.XPath($".//input[@placeholder='{filterField}']/ancestor::div[@class='mat-form-field-wrapper']//mat-hint"));
         }
 
         public List<string> GetFilterValuesByFilterName(string filterName)

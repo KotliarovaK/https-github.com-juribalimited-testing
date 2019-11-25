@@ -119,6 +119,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When User creates new Widget
 	| WidgetType | Title               | List                                 | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16326 | Mailbox List (Complex) - BROKEN LIST | 10      | 10         |
+	Then 'Widget_For_DAS16326' Widget is displayed to the user
 	Then User sees 'This widget refers to list Mailbox List (Complex) - BROKEN LIST which has errors' text in warning message on Dashboards page
 	Then 'Mailbox List (Complex) - BROKEN LIST' link is displayed in warning message on Dashboards page
 	Then There are no errors in the browser console
@@ -131,9 +132,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	And User creates new Widget
 	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS17551 | Dependant List Filter - BROKEN LIST | 10      | 10         |
+	Then 'Widget_For_DAS17551' Widget is displayed to the user
 	Then User sees 'This widget refers to list Dependant List Filter - BROKEN LIST which has errors' text in warning message on Dashboards page
 	Then 'Dependant List Filter - BROKEN LIST' link is displayed in warning message on Dashboards page
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenLists
@@ -166,67 +168,62 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	When User clicks 'Dashboards' on the left-hand menu
-	And User clicks 'CREATE DASHBOARD' button 
-	And User creates new Dashboard with 'Dashboard_DAS12974' name
+	When User clicks 'CREATE DASHBOARD' button 
+	When User creates new Dashboard with 'Dashboard_DAS12974' name
 	Then Dashboard with 'Dashboard_DAS12974' title displayed in All Dashboards
-	
 	When User selects 'Manage' menu for 'Dashboard_DAS12974' dashboard
-	And User changes dashboard name to 'Dashboard_DAS12974Updated'
+	When User changes dashboard name to 'Dashboard_DAS12974Updated'
 	Then Dashboard with 'Dashboard_DAS12974Updated' title displayed in All Dashboards
-	
 	When User sets 'true' as favorite state in dashboard details for 'Dashboard_DAS12974Updated' dashboard
 	Then Dashboard with name 'Dashboard_DAS12974Updated' marked as favorite
-	
 	When User sets 'false' as favorite state in dashboard details for 'Dashboard_DAS12974Updated' dashboard
 	Then Dashboard with name 'Dashboard_DAS12974Updated' not marked as favorite
-
 	When User selects 'Manage' menu for 'Project Status' dashboard
 	When User sets 'true' as favorite state in dashboard details for 'Project Status' dashboard
 	Then Dashboard with name 'Project Status' marked as favorite
-	
 	When User sets 'false' as favorite state in dashboard details for 'Project Status' dashboard
 	Then Dashboard with name 'Project Status' not marked as favorite
-
 	When User selects 'Make favourite' menu for 'Project Summary' dashboard
 	Then Dashboard with name 'Project Summary' marked as favorite
-	
 	When User selects 'Unfavourite' menu for 'Project Summary' dashboard
 	Then Dashboard with name 'Project Summary' not marked as favorite
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	When Dashboard with 'Dashboard_DAS12974Default' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks Edit mode trigger on Dashboards page
 	Then User sees correct tooltip for Show Dashboards panel
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User selects 'Manage' menu for 'Dashboard_DAS12974Default' dashboard
-	And User clicks Default dashboard checkbox in Dashboard details
+	When User clicks Default dashboard checkbox in Dashboard details
 	Then Default dashboard checkbox becomes disabled in Dashboard details
-	And Default dashboard checkbox displayed checked in Dashboard details
-	And Dashboard with name 'Dashboard_DAS12974Default' marked as default
+	Then Default dashboard checkbox displayed checked in Dashboard details
+	Then Dashboard with name 'Dashboard_DAS12974Default' marked as default
 	When User selects 'Set default' menu for 'Project Status' dashboard
 	Then Dashboard with name 'Project Status' marked as default
-	And Dashboard with name 'Dashboard_DAS12974Default' not marked as default
+	Then Dashboard with name 'Dashboard_DAS12974Default' not marked as default
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	When Dashboard with 'Dashboard for DAS12974SECTION' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks 'ADD SECTION' button 
-	And User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
-	And User creates new Widget
+	Then 'DAS12974SECTION1' Widget is displayed to the user
+	When User clicks 'ADD SECTION' button 
+	When User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
+	When User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | DAS12974SECTION2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User remembers number of Sections and Widgets on Dashboards page
-	And User clicks Ellipsis menu for Section having 'DAS12974SECTION1' Widget on Dashboards page
-	And User clicks 'Delete' item from Ellipsis menu on Dashboards page
-	And User confirms item deleting on Dashboards page
+	Then 'DAS12974SECTION2' Widget is displayed to the user
+	When User remembers number of Sections and Widgets on Dashboards page
+	When User clicks Ellipsis menu for Section having 'DAS12974SECTION1' Widget on Dashboards page
+	When User clicks 'Delete' item from Ellipsis menu on Dashboards page
+	When User confirms item deleting on Dashboards page
 	Then User sees number of Sections increased by '-1' on Dashboards page
-	And User sees number of Widgets increased by '-1' on Dashboards page
+	Then User sees number of Widgets increased by '-1' on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
@@ -249,11 +246,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
 	When User selects 'Duplicate' menu for 'Executive Summary' dashboard
 	Then Dashboard with 'Executive Summary2' title displayed in All Dashboards
 	When User language is changed to "Deutsch" via API
-	And Dashboard with 'Executive Summary2' name is opened via API
-	And User clicks Edit mode trigger on Dashboards page
+	When Dashboard with 'Executive Summary2' name is opened via API
+	When User clicks Edit mode trigger on Dashboards page
 	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in '2' warning messages on Dashboards page
 	When User clicks Dashboards Details icon on Dashboards page
-	And User expands the list of shared lists
+	When User expands the list of shared lists
 	Then User sees table headers as 'Widget' and 'Liste'
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup

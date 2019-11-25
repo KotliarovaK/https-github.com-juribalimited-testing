@@ -101,9 +101,13 @@ Scenario: EvergreenJnr_AdminPage_CheckActionValueIDInTheAutomationLog
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Applications_Scope" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "Applications_Scope" item on Admin page
+	When User selects all rows on the grid
+	And User selects 'Run now' in the 'Actions' dropdown
+	When User clicks 'RUN' button
+	When User clicks "RUN" button in the warning message on Admin page
+	When 'Applications_Scope' automation run has finished
+	When 'Applications_Scope' automation 'Action_3' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
 	When User opens 'Type' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Action Value ID" checkbox on the Column Settings panel

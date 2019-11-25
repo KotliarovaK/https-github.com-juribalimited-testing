@@ -285,9 +285,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects the ""(.*)"" user for sharing")]
         public void WhenUserSelectsTheUserForSharing(string userName)
         {
-            var page = _driver.NowAt<ListDetailsElement>();
-            page.SharingUserField.SendKeys(userName);
-            page.GetSharingUserInDllByName(userName).Click();
+            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
+            baseActionItem.AutocompleteSelect("User", userName);
         }
 
         [When(@"User selects the ""(.*)"" team for sharing")]

@@ -123,16 +123,16 @@ namespace DashworksTestAutomation.Pages
             return Convert.ToBoolean(ColorSchemeDropdown.GetAttribute("aria-disabled"));
         }
 
-        public IWebElement GetCardWidgetPreviewText()
+        public IWebElement GetWidgetPreviewText()
         {
-            var nested = By.XPath(".//div[@class='card-widget-data']//*");
-            if (Driver.FindElements(nested).Count > 0)
+            try
             {
-                return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']//span[contains(@class, 'text')]"));
+                return Driver.FindElement(
+                    By.XPath(".//div[contains(@class, 'widget-value')]//span[contains(@class, 'text')]"));
             }
-            else
+            catch (NoSuchElementException)
             {
-                return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']"));
+                return Driver.FindElement(By.XPath(".//div[contains(@class, 'widget-data')]"));
             }
         }
 

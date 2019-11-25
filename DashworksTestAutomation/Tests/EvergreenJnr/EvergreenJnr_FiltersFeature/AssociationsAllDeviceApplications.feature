@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedI
 	Then Remove icon displayed in 'true' state for 'Not installed on device' association
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @18562 @18127 @Cleanup
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @DAS18562 @DAS18127 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -262,3 +262,43 @@ Examples:
 	| Sound Card Count             |
 	| Target Drive Free Space (GB) |
 	| Video Card Count             |
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18454 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAfterSortingAndRunninList
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	Then table content is present
+	When User clicks on 'Hostname' column header
+	When User clicks the Columns button
+	When User removes "App Vendor" column by Column panel
+	When User clicks 'RUN LIST' button
+	Then table content is present
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18897 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfterRunningList
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	Then table content is present
+	Then All column headers are unique
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18447 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAfterGoingToAllDeviceApplicationsPageFromSavedList
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks 'RUN LIST' button
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "AssociationList18447" name
+	Then table content is present
+	When User navigates to the "All Device Applications" list
+	Then table content is present
+	Then Associations Button is highlighted
+	Then Associations panel is displayed to the user

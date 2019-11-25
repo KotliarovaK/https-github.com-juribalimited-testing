@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16278 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName          |
 	| Windows7Mi: Status  |
 	| HDD Total Size (GB) |
@@ -18,12 +18,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	And User create dynamic list with "ListForDAS16278" name on "Devices" page
+	When User create dynamic list with "ListForDAS16278" name on "Devices" page
 	Then "ListForDAS16278" list is displayed to user
 	When Dashboard with 'DAS16278_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User adds new Widget
 	| WidgetType | Title           | List            | SplitBy            | AggregateBy         | AggregateFunction | OrderBy                | MaxValues | ShowLegend |
 	| Column     | DAS16278_Widget | ListForDAS16278 | Windows7Mi: Status | HDD Total Size (GB) | Sum               | Windows7Mi: Status ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Complete      |
 	| Offboarded    |
 	When User clicks Ellipsis menu for 'DAS16278_Widget' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Windows7Mi: Status DESC' in the 'OrderBy' dropdown
 	When User clicks 'UPDATE' button 
 	Then 'DAS16278_Widget' Widget is displayed to the user
@@ -88,21 +88,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	When Dashboard with 'Dashboard12983' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And  User clicks 'ADD WIDGET' button 
-	When User selects 'Column' in the 'WidgetType' dropdown
-	And User enters 'ColumnWidget' as Widget Title
-	And User selects 'All Devices' as Widget List
-	When User selects 'Operating System' in the 'SplitBy' dropdown
-	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
-	When User selects 'Hostname' in the 'AggregateBy' dropdown
-	When User selects 'Operating System ASC' in the 'OrderBy' dropdown
-	And User enters '2' as Widget Max Values
-	And User selects the Colour Scheme by index '2'
+	When User clicks Edit mode trigger on Dashboards page
+	When  User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy |
+	| Column     | ColumnWidget | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    |
+	When User enters '2' as Widget Max Values
+	When User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'ColumnWidget' Widget is displayed to the user
-	And Line X labels of 'ColumnWidget' column widget is displayed in following order:
+	Then Line X labels of 'ColumnWidget' column widget is displayed in following order:
 	| ColumnName |
 	| Other      |
 	| OS X 10.5  |
@@ -110,31 +106,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When Dashboard with 'Dashboard12983' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And  User clicks 'ADD WIDGET' button 
-	When User selects 'Column' in the 'WidgetType' dropdown
-	And User enters 'ColumnWidget#1' as Widget Title
-	And User selects 'All Devices' as Widget List
-	When User selects 'Operating System' in the 'SplitBy' dropdown
-	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
-	When User selects 'Hostname' in the 'AggregateBy' dropdown
-	When User selects 'Operating System ASC' in the 'OrderBy' dropdown
-	And User enters '2' as Widget Max Values
-	And User selects the Colour Scheme by index '2'
+	When User clicks Edit mode trigger on Dashboards page
+	When  User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy |
+	| Column     | ColumnWidget#1 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    |
+	When User enters '2' as Widget Max Values
+	When User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'ColumnWidget#1' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'ColumnWidget#1' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	When User selects 'Pie' in the 'WidgetType' dropdown
-	And User enters 'ColumnWidget#2' as Widget Title
-	And User selects 'All Devices' as Widget List
-	When User selects 'Operating System' in the 'SplitBy' dropdown
-	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
-	When User selects 'Hostname' in the 'AggregateBy' dropdown
-	When User selects 'Operating System ASC' in the 'OrderBy' dropdown
-	And User enters '3' as Widget Max Values
-	And User selects the Colour Scheme by index '3'
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User adds new Widget
+	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy |
+	| Pie        | ColumnWidget#2 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    |
+	When User enters '3' as Widget Max Values
+	When User selects the Colour Scheme by index '3'
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button 
 	Then 'ColumnWidget#2' Widget is displayed to the user

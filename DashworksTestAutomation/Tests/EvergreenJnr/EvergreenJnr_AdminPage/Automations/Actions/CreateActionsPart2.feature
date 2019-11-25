@@ -15,8 +15,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17617_Automation" text in the Search field for "Automation" column
-	And User clicks content from "Automation" column
-	And User navigates to the 'Actions' left menu item
+	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
@@ -24,22 +25,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
-	And User selects 'No change' in the 'Update Value' dropdown
-	And User selects 'No change' in the 'Update Date' dropdown
-	And User selects 'Update' in the 'Update Owner' dropdown
+	When User selects 'No change' in the 'Update Value' dropdown
+	When User selects 'No change' in the 'Update Date' dropdown
+	When User selects 'Update' in the 'Update Owner' dropdown
 	When User selects '1803 Team' option from 'Team' autocomplete
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
-	And User clicks 'CREATE' button 
+	When User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17617_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
-	And 'One' content is displayed in 'Stage' textbox
-	And 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
+	Then 'One' content is displayed in 'Stage' textbox
+	Then 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Update' value is displayed in the 'Update Owner' dropdown

@@ -39,6 +39,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedList, allHeaders, "Columns order is incorrect");
         }
 
+        [Then(@"All column headers are unique")]
+        public void ThenAllColumnsAreUnique()
+        {
+            var grid = _driver.NowAt<BaseGridPage>();
+            var allHeaders = grid.GetAllHeadersText();
+
+            //Get all elements that has more than one occurence in the list
+            var duplicates = allHeaders.GroupBy(x => x)
+                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .Where(x => x.Count > 1).ToList();
+            if (duplicates.Any())
+                throw new Exception($"Some duplicated columns are spotted in the '{allHeaders}'");
+        }
+
         #endregion
 
         #region Select content
@@ -189,6 +203,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseGridPage>();
             var cell = page.GetCellFromColumn(columnName, cellText);
             cell.Click();
+        }
+
+        [When(@"User right clicks on '(.*)' cell from '(.*)' column")]
+        public void WhenUserRightClicksOnCellFromColumn(string cellText, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _driver.ContextClick(page.GetCellFromColumn(columnName, cellText));
         }
 
         #endregion
@@ -405,18 +427,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [Then(@"Color data displayed with correct color for ""(.*)"" column")]
+        [Then(@"Color data displayed with correct color for '(.*)' column")]
         public void ThenColorDataDisplayedWithCorrectColor(string column)
         {
             var page = _driver.NowAt<BaseGridPage>();
 
-            var ColumnValues = page.GetColumnContentByColumnName(column).Where(x => !x.Equals("")).ToList();
-            var ColumnColors = page.GetColumnColors(column).Where(x => !x.Equals("")).ToList();
+            var columnValues = page.GetColumnContentByColumnName(column).Where(x => !x.Equals("")).ToList();
+            var columnColors = page.GetColumnColors(column).Where(x => !x.Equals("")).ToList();
 
-            for (int i = 0; i < ColumnValues.Count; i++)
+            //Page load less colors than content cells
+            for (int i = 0; i < columnColors.Count; i++)
             {
-                Verify.That(ColumnColors[i], Does.Contain(ColorsConvertor.Convert(ColumnValues[i])),
-                    $"Wrong color {ColumnColors[i]} for label {ColumnValues[i]}");
+                Verify.That(columnColors[i], Does.Contain(ColorsConvertor.Convert(columnValues[i])),
+                    $"Wrong color '{columnColors[i]}' for label '{columnValues[i]}'");
             }
         }
 
@@ -760,7 +783,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Collumn settings
+        #region Column settings
 
         [When(@"User opens '(.*)' column settings")]
         public void WhenUserOpensColumnSettings(string columnName)
@@ -774,6 +797,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GetColumnSettingButton(setting).Click();
+        }
+
+        #endregion
+
+        #region Column content tooltip
+
+        [Then(@"'(.*)' tooltip is displayed for '(.*)' content in the '(.*)' column")]
+        public void ThenTooltipIsDisplayedForContentInTheColumn(string expectedTooltip, string content, string column)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var cellElement = page.GetCellFromColumn(column, content);
+            _driver.MouseHover(cellElement);
+            var tooltip = _driver.GetTooltipBubbleText();
+            Verify.AreEqual(expectedTooltip, tooltip,
+                "Incorrect tooltip is displayed");
         }
 
         #endregion

@@ -23,13 +23,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When Dashboard with 'Dashboard for DAS14578' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title                                                                                                       | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues |
 	| Table      | Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred and seven | All Applications | Application | Application | Count distinct    | Application ASC | Horizontal       | 10        |
 	Then 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' Widget is displayed to the user
-	And Widget name 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' has word break style on Dashboards page
+	Then Widget name 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' has word break style on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
