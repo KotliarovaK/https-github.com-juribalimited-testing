@@ -39,6 +39,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 throw new Exception($"'{fieldTitle}' field was not found!");
             return Driver.FindElement(selector);
         }
+
         public IWebElement GetExpandedField(string fieldTitle)
         {
             var selector =
