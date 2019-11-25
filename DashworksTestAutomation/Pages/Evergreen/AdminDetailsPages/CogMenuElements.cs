@@ -66,8 +66,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var page = Driver.NowAt<BaseGridPage>();
 
-            var selector = page.GetCellFromColumn(column, item)
-                .FindElement(By.XPath($".//following-sibling::div//div[@class='cell-menu-settings']"));
+            var cell = page.GetCellFromColumn(column, item);
+            var selector = cell
+                .FindElement(By.XPath(".//ancestor::div[@role='gridcell']//following-sibling::div//div[@class='cell-menu-settings']"));
             Driver.WaitForElementToBeDisplayed(selector);
             return selector;
         }
