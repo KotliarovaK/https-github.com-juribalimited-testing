@@ -76,22 +76,22 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	#Filters
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "False" checkbox from boolean filter on the Admin page
-	Then Rows counter shows "0" of "11" rows
+	Then Rows counter shows "0" of "9" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
-	Then Rows counter shows "7" of "11" rows
+	Then Rows counter shows "6" of "9" rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Birmingham" text in the Search field for "Bucket" column
-	Then Rows counter shows "2" of "11" rows
+	Then Rows counter shows "2" of "9" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "14" text in the Search field for "Devices" column
-	Then Rows counter shows "1" of "11" rows
+	Then Rows counter shows "1" of "9" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters ">10" text in the Search field for "Users" column
-	Then Rows counter shows "6" of "11" rows
+	Then Rows counter shows "4" of "9" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "100" text in the Search field for "Mailboxes" column
-	Then Rows counter shows "0" of "11" rows
+	Then Rows counter shows "0" of "9" rows
 	When User clicks Reset Filters button on the Admin page
 	Then There are no errors in the browser console
