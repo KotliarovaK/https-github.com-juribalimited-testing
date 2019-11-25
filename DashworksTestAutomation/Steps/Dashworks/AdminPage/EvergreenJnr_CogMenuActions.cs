@@ -17,9 +17,33 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_CogMenuActions (RemoteWebDriver driver)
+        public EvergreenJnr_CogMenuActions(RemoteWebDriver driver)
         {
             _driver = driver;
+        }
+
+        [When(@"User clicks Cog-menu for '(.*)' item in the '(.*)' column")]
+        public void WhenUserClicksCog_MenuForItemInTheColumn(string columnContent, string column)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.BodyContainer.Click();
+            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
+            cogMenu.GetCogMenuByItem(column, columnContent).Click();
+        }
+
+        [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]
+        public void WhenUserMovesItemFromColumnToThePosition(string columnContent, string column, string position)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.BodyContainer.Click();
+            _driver.MouseHover(cogMenu.GetCogMenuByItem(columnContent, column));
+            cogMenu.GetCogMenuByItem(columnContent, column).Click();
+            _driver.WaitForDataLoading();
+            cogMenu.GetCogMenuOptionByName("Move to position").Click();
+            cogMenu.MoveToPositionField.Clear();
+            cogMenu.MoveToPositionField.SendKeys(position);
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetButtonByName("MOVE").Click();
         }
 
         [When(@"User clicks Cog-menu on the Admin page")]
@@ -27,17 +51,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             cogMenu.CogMenu.Click();
-        }
-
-        //TODO make it generic
-        [When(@"User clicks Cog-menu for ""(.*)"" item on Admin page")]
-        public void WhenUserClicksCog_MenuForItemOnAdminPage(string itemName)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            filterElement.BodyContainer.Click();
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
-            cogMenu.GetCogMenuByItem(itemName).Click();
         }
 
         [Then(@"Cog menu is displayed to the user")]
@@ -102,22 +115,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 }
                 Thread.Sleep(5000);
             }
-        }
-
-        [When(@"User move ""(.*)"" item to ""(.*)"" position on Admin page")]
-        public void WhenUserMoveItemToPositionOnAdminPage(string itemName, string position)
-        {
-            var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            body.BodyContainer.Click();
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
-            cogMenu.GetCogMenuByItem(itemName).Click();
-            _driver.WaitForDataLoading();
-            cogMenu.GetCogMenuOptionByName("Move to position").Click();
-            cogMenu.MoveToPositionField.Clear();
-            cogMenu.MoveToPositionField.SendKeys(position);
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetButtonByName("MOVE").Click();
         }
 
         [Then(@"Cog-menu DDL is displayed in High Contrast mode")]

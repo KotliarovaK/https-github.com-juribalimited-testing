@@ -214,7 +214,7 @@ this.FeatureBackground();
 #line 43
  testRunner.When("User clicks Group By button on the Admin page and selects \"Type\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44
- testRunner.And("User clicks Cog-menu for \"15427_Action1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks Cog-menu for \'15427_Action1\' item in the \'Action\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
@@ -231,7 +231,7 @@ this.FeatureBackground();
 #line 45
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table2, "Then ");
 #line 53
- testRunner.When("User clicks Cog-menu for \"15427_Action2\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks Cog-menu for \'15427_Action2\' item in the \'Action\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
@@ -248,7 +248,7 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table3, "Then ");
 #line 62
- testRunner.When("User clicks Cog-menu for \"15427_Action3\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks Cog-menu for \'15427_Action3\' item in the \'Action\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
@@ -428,7 +428,7 @@ this.FeatureBackground();
  testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 124
- testRunner.When("User move \"Secont_Action\" item to \"4\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User moves \'Secont_Action\' item from \'Action\' column to the \'4\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -443,7 +443,7 @@ this.FeatureBackground();
 #line 125
  testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table7, "Then ");
 #line 131
- testRunner.When("User move \"Secont_Action\" item to \"1\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User moves \'Secont_Action\' item from \'Action\' column to the \'1\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -458,7 +458,7 @@ this.FeatureBackground();
 #line 132
  testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table8, "Then ");
 #line 138
- testRunner.When("User move \"Secont_Action\" item to \"20\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User moves \'Secont_Action\' item from \'Action\' column to the \'20\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});

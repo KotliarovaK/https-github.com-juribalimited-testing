@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         private const string SearchTextBoxSelector = ".//input[@name='search']";
 
-        private const string ShowedResultsCount = ".//div[@class='pagination-info ng-star-inserted']";
+        private const string ShowedResultsCount = ".//div[contains(@class,'pagination')]";
 
         public const string FilterValuesSelector = ".//span[contains(@class, 'filter-label-value')]";
 

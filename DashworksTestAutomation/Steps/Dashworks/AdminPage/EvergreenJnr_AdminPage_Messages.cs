@@ -154,6 +154,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Verify.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
         }
 
+        //TODO remove this method. All error messages should be linked to appropriate controls like textboxes or dropdowns
         [Then(@"Error message with ""(.*)"" text is displayed")]
         public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
