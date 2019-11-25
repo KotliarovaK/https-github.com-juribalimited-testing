@@ -62,6 +62,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return selector;
         }
 
+        public IWebElement GetCogMenuByItem(string column, string item)
+        {
+            var page = Driver.NowAt<BaseGridPage>();
+
+            var selector = page.GetCellFromColumn(column, item)
+                .FindElement(By.XPath($".//following-sibling::div//div[@class='cell-menu-settings']"));
+            Driver.WaitForElementToBeDisplayed(selector);
+            return selector;
+        }
+
         public IWebElement GetCogMenuOptionByName(string option)
         {
             if (CogMenuItems.Any(x => x.Text.Equals(option)))
