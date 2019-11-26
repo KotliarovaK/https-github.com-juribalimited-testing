@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -85,6 +86,48 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var panel = _driver.NowAt<FiltersElement>();
             _driver.MoveToElement(panel.FilterCategories.Last());
             Logger.Write("Filter panel is scrolled down");
+        }
+
+        [Then(@"Categories '(.*)' placed next to corresponding project group")]
+        public void ThenSpecifiedCategoriesPlacedInParticularProjectGroup(string categoryName)
+        {
+            var allCats = GetCategoriesFromFilterPanelPageByPage();
+
+            foreach (var cat in allCats)
+            {
+                if (cat.StartsWith(categoryName))
+                {
+                    string projectName = cat.Split(':').ToList().Last();
+                    int curentCategoryIndex = allCats.IndexOf(cat);
+                    Verify.That((allCats[curentCategoryIndex - 1].EndsWith(projectName) || allCats[curentCategoryIndex + 1].EndsWith(projectName)), Is.True, $"{cat} category possible appears in wrong place");
+                }
+            }
+        }
+
+        private List<string> GetCategoriesFromFilterPanelPageByPage()
+        {
+            List<string> categories = new List<string>();
+
+            var page = _driver.NowAt<FiltersElement>();
+
+            var allCats = page.FilterCategoryLabels.Count;
+            var visibleCats = page.FilterCategoryLabels.Count(x => x.Displayed);
+            int attempts = allCats / visibleCats + 1;
+
+            for (int i = 0; i < attempts; i++)
+            {
+                IList<IWebElement> cats = page.FilterCategoryLabels.Where(z => !string.IsNullOrEmpty(z.Text)).ToList();
+
+                if (categories.Count > 0 && cats.Last().Text.Equals(categories.Last()))
+                {
+                    break;
+                }
+
+                categories.AddRange(cats.Select(x => x.Text));
+                _driver.MouseHoverByJavascript(cats.Last());
+            }
+            //remove duplicates which are possible when paging
+            return categories.Distinct().ToList();
         }
 
         [Then(@"User sees ""(.*)"" section expanded by default in Filters panel")]
@@ -222,7 +265,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 filterElement.FilterSearchTextBox.SendKeys(searchedText);
             }
         }
-        
+
         [Then(@"User sees instruction '(.*)' below '(.*)' field")]
         public void ThenValueIsDisplayedForSelectedLookupFilter(string instruction, string fieldName)
         {

@@ -1014,3 +1014,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplication
 	| Subcategories                              |
 	| DeviceSche: Stage 2 \ app date task        |
 	| DeviceSche: Stage 2 \ app radiobutton task |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS18795
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectRingsCategoryCorrectlyPlacedInColumnsPanel
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Columns button
+	When User closed "Selected Columns" columns category
+	Then Categories 'Project Rings' placed next to corresponding project group
