@@ -84,7 +84,7 @@ Examples:
 	| ColumnName                       | Operators                         | FilterOption | Text                                      | RowsCount |
 	| Windows7Mi: Target App Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
 	| Babel(Engl: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Target App Readiness is Empty | 1,921     |
-	| Barry'sUse: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Target App Readiness is Empty | 1,045     |
+	| Barry'sUse: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Target App Readiness is Empty | 1,145     |
 	| ComputerSc: Target App Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Target App Readiness is Green | 913       |
 	| Havoc(BigD: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Target App Readiness is Empty | 1,155     |
 	| MigrationP: Target App Readiness | Equals, Does not equal, Not empty | Blue         | MigrationP: Target App Readiness is Blue  | 189       |

@@ -260,7 +260,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13001")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Readiness", "Equals, Does not equal, Not empty", "Red", "Windows7Mi: Target App Readiness is Red", "28", null)]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App Readiness", "Equals, Does not equal, Not empty", "Empty", "Babel(Engl: Target App Readiness is Empty", "1,921", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App Readiness", "Equals, Does not equal, Not empty", "Empty", "Barry\'sUse: Target App Readiness is Empty", "1,045", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App Readiness", "Equals, Does not equal, Not empty", "Empty", "Barry\'sUse: Target App Readiness is Empty", "1,145", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App Readiness", "Equals, Does not equal, Not empty", "Green", "ComputerSc: Target App Readiness is Green", "913", null)]
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App Readiness", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Target App Readiness is Empty", "1,155", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Target App Readiness", "Equals, Does not equal, Not empty", "Blue", "MigrationP: Target App Readiness is Blue", "189", null)]
