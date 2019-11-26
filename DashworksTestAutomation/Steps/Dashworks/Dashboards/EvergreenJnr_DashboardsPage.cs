@@ -997,9 +997,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects '(.*)' option in the '(.*)' dropdown for Print Preview Settings")]
         public void WhenUserSelectsOptionInTheDropdownForPrintPreviewSettings(string option, string dropdown)
         {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            _driver.ClickByJavascript(page.GetPrintPreviewDropdownByName(dropdown));
-            page.SelectPrintPreviewSettings(option);
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdown(option, dropdown);
         }
 
         [Then(@"Print Preview is displayed in A4 format view")]
