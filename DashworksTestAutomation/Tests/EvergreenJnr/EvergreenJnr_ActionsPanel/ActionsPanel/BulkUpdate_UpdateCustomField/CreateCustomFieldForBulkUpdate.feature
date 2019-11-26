@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	When User navigate to Manage link
 	And User select "Custom Fields" option in Management Console
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18166 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @BulkUpdate @DAS18166 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckBulkUpdateCustomFieldActionsForDisabledCustomField
 	When User creates new Custom Field
 	| FieldName | FieldLabel | AllowExternalUpdate | Enabled | User |

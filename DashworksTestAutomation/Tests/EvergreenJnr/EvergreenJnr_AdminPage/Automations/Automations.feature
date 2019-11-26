@@ -15,16 +15,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User navigates to the 'Automation Log' left menu item
 	Then 'Automations' left menu item is expanded
 	Then grid headers are displayed in the following order
-	| ColumnName          |
-	| Date                |
-	| Type                |
-	| Automation          |
-	| Action              |
-	| Run                 |
-	| Objects             |
-	| Duration (hh:mm:ss) |
-	| User                |
-	| Outcome             |
+	| ColumnName       |
+	| Date             |
+	| Type             |
+	| Automation       |
+	| Action           |
+	| Run              |
+	| Objects          |
+	| Duration (hh:mm) |
+	| User             |
+	| Outcome          |
 	Then Export button is displayed in panel
 	Then 'SUCCESS' content is displayed in the 'Outcome' column
 	When User opens 'Date' column settings
@@ -35,7 +35,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User select "Action Type" checkbox on the Column Settings panel
 	When User select "Action Project" checkbox on the Column Settings panel
 	When User select "Action Task or Field" checkbox on the Column Settings panel
-	When User select "Action Value" checkbox on the Column Settings panel
 	When User select "Action Value ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
@@ -46,11 +45,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Project       |
 	| Action Task or Field |
 	| Action Value ID      |
-	| Action Value         |
 	When User clicks String Filter button for "Scope" column on the Admin page
 	When User selects "1803 Rollout" checkbox from String Filter on the Admin page
-	#Update rows count
-	#Then Counter shows "8 of 10" found rows
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
@@ -110,8 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-#Need to use three Automations: inactive, inactive, active
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
