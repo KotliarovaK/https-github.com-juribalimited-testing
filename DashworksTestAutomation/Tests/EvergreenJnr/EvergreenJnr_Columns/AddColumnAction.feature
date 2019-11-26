@@ -145,7 +145,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddi
 	| Red                |
 	| Amber              |
 	| Green              |
-	| None               |
+	| Empty              |
 	Then "<FilterName>" filter is added to the list
 	When User clicks the Filters button
 	And User clicks on '<ColumnHeader>' column header
