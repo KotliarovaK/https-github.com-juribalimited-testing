@@ -12,8 +12,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	| <UserName> | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username | Password  |
-	| <User>   | m!gration |
+	| Username   | Password  |
+	| <UserName> | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user

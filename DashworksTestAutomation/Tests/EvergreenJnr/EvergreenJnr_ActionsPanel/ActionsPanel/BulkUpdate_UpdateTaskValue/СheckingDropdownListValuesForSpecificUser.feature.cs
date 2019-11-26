@@ -168,7 +168,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table2.AddRow(new string[] {
-                        "<User>",
+                        string.Format("{0}", userName),
                         "m!gration"});
 #line 14
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2, "When ");

@@ -37,18 +37,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
-        #region Popup
-
-        private const string PopupSelector = ".//mat-dialog-container";
-
-        [FindsBy(How = How.XPath, Using = PopupSelector)]
-        public IWebElement PopupElement { get; set; }
-
-        [FindsBy(How = How.XPath, Using = PopupSelector + "//div[@mat-dialog-title]")]
-        public IWebElement PopupTitle { get; set; }
-
-        #endregion
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 
@@ -261,11 +249,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return new List<By> { };
         }
 
-        public string GetHeaderFontWeight()
-        {
-            return Driver.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).GetCssValue("font-weight");
-        }
-
+        //TODO NOT USE THIS METHOD! Should be removed after Kate refactoring
         public IWebElement GetGridCellByText(string cellText)
         {
             var allCellsWithExpectedText = Driver.FindElements(By.XPath(GridCell))
@@ -281,6 +265,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        //TODO Find out what this method is doing and remove ti from BDP, for now test is marked as Not_Run and it is not possible to execute it
         public IWebElement GetItalicContentByColumnName(string text)
         {
             var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
@@ -475,11 +460,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         #endregion
 
         #region Button
-
-        public IWebElement GetButtonByNameOnPopup(string button)
-        {
-            return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
-        }
 
         public IWebElement GetButtonByName(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
