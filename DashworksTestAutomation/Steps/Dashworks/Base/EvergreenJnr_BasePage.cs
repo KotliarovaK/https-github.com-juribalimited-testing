@@ -832,37 +832,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Popup
-
-        [Then(@"Popup with '(.*)' title is displayed")]
-        public void ThenPopupWithTitleIsDisplayed(string title)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToContainsText(page.PopupTitle, title);
-        }
-
-        #endregion
-
-        #region Button on popup
-
-        [When(@"User clicks '(.*)' button in Dialog Pop-up")]
-        public void WhenUserClicksButtonInDialogPopUp(string buttonName)
-        {
-            var dialogContainer = _driver.NowAt<BaseDashboardPage>();
-            dialogContainer.GetButtonByNameOnPopup(buttonName).Click();
-        }
-
-        [Then(@"'(.*)' popup button color is '(.*)'")]
-        public void ThenPopupButtonColorIs(string button, string color)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var getColor = page.GetButtonByNameOnPopup(button).GetCssValue("background-color");
-            Verify.AreEqual(color, getColor,
-                $"'{button}' sah incorrect color");
-        }
-
-        #endregion
-
         #region Menu button
 
         [When(@"User clicks '(.*)' button and select '(.*)' menu button")]
