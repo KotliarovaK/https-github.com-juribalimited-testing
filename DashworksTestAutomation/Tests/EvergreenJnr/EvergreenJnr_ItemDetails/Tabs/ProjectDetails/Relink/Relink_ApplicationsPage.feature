@@ -79,13 +79,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	Then User verifies data in the fields on details page
 	| Field     | Data |
 	| App Owner |      |
-	When User clicks 'RELINK' button 
 	#return values ​​back
-	When User navigates to the 'Application' details page for the item with '4016' ID
-	Then Details page for "Microsoft Exchange Client Language Pack - Vietnamese" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
-	When User navigates to the 'Projects' left menu item
-	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
 	Then Dialog Pop-up is displayed for User
 	When User enters '4017' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Exchange Client Language Pack - Lithuanian 15.0.847.32 (4017)' value
@@ -107,11 +101,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button in Dialog Pop-up
 	Then Success message is displayed and contains "Application successfully relinked" text
 	#return values ​​back
-	When User navigates to the 'Application' details page for the item with '4019' ID
-	Then Details page for "Microsoft .NET Framework 4.5" item is displayed to the user
-	When User switches to the "Project 00 M Computer Scheduled" project in the Top bar on Item details page
-	When User navigates to the 'Projects' left menu item
-	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
 	Then Dialog Pop-up is displayed for User
 	When User enters '4018' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030 11.0.61030 (4018)' value
