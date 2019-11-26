@@ -400,4 +400,3 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewCurrentAndLastSeenFiltersAreAvail
 	And User add "Dashworks Last Seen" filter where type is "Equals" with added column and "25 Jul 2019" Date filter
 	And User create custom list with "TestNewColumnsAndFilters" name
 	Then "TestNewColumnsAndFilters" list is displayed to user
-	

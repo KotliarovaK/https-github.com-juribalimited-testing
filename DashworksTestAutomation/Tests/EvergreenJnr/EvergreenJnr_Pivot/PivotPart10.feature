@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
 	| TRUE               |
 	And User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
-	| RowGroups  |
+	| RowGroups        |
 	| Operating System |
 	And User selects the following Values on Pivot:
 	| Values      |
