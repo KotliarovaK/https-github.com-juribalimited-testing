@@ -5,15 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
-    public class BaseDialogPage : SeleniumBasePage
+    public class BaseDialogPage : BaseDashboardPage
     {
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[contains(@class, 'dialogContainer')]")]
-        public IWebElement DialogPopUp { get; set; }
+        private const string PopupSelector = ".//mat-dialog-container[contains(@class, 'dialogContainer')]";
+
+        [FindsBy(How = How.XPath, Using = PopupSelector)]
+        public IWebElement PopupElement { get; set; }
+
+        [FindsBy(How = How.XPath, Using = PopupSelector + "//div[@mat-dialog-title]")]
+        public IWebElement PopupTitle { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -21,14 +27,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             return new List<By>
             {
-                SelectorFor(this, p => p.DialogPopUp)
+                SelectorFor(this, p => p.PopupElement)
             };
         }
 
-        //TODO why this is method but not webElement?
-        public string GetPopupText()
+        #region Button
+
+        public IWebElement GetButtonByNameOnPopup(string button)
         {
-            return Driver.FindElement(By.XPath(".//div[@class='mat-dialog-content']")).Text;
+            return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
         }
+
+        #endregion
     }
 }
