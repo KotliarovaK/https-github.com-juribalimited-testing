@@ -77,9 +77,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	And User enters '17 Oct 2018' text to 'Override Start Date' datepicker
 	And User enters '17 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'All' in the 'Slot' dropdown
-	And User clicks 'CREATE' button 
-	Then Error message with "An override already exists for this date" text is displayed
-	And "2" rows label displays in Action panel
+	Then 'CREATE' button is disabled
+	Then 'An override date already exists with this date range' error message is displayed for 'Override Start Date' field
+	Then 'An override date already exists with this date range' error message is displayed for 'Override End Date' field
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Units @DAS13789 @Cleanup

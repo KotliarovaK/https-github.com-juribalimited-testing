@@ -168,9 +168,6 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	Then list with "DevicesList18531" name is removed
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
-	When User navigates to the "AssociationList18531" list
-	When User clicks the Associations button
-	#link with DAS-18763 after fail
 	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
 @Evergreen @AllDeviceApplications @DAS18424
