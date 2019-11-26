@@ -492,13 +492,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetLinkByText(string text)
-        {
-            var selector = By.XPath($".//span[contains(@class, 'inline-link')]//a[text()='{text}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         //TODO probably should be separate control or moved to GridHeaderElement 
         public IWebElement GetValueInGroupByFilterOnAdminPage(string value)
         {

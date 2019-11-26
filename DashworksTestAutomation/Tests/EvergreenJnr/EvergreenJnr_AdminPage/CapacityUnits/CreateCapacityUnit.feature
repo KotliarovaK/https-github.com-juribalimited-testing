@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And User enters '13720' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	And Success message is displayed and contains "Click here to view the NotDefaultCapacityUnit13720 capacity unit" link
+	And 'Click here to view the NotDefaultCapacityUnit13720 capacity unit' link is displayed
 	And There are no errors in the browser console
 	And 'NotDefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
 	When User enters "NotDefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column

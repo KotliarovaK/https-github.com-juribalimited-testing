@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -256,13 +257,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForElementToBeDisplayed(projectElement.NewProjectLink);
             projectElement.NewProjectLink.Click();
             _driver.WaitForDataLoading();
-        }
-
-        [Then(@"Success message is displayed and contains ""(.*)"" link")]
-        public void ThenSuccessMessageIsDisplayedAndContainsLink(string text)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(projectElement.GetLinkByText(text).Displayed(), $"Message with {text} link is not displayed");
         }
 
         [Then(@"Error message is not displayed on the Capacity Units page")]

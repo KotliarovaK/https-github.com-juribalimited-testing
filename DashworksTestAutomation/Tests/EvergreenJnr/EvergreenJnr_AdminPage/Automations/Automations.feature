@@ -418,7 +418,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "click here to view the 15309_Action action" link
+	Then 'click here to view the 15309_Action action' link is displayed
 	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -441,7 +441,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
+	Then 'click here to view the 16764_Automation automation' link is displayed
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
 	Then 'All Devices' content is displayed in 'Scope' textbox
