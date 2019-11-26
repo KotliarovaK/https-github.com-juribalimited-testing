@@ -84,9 +84,9 @@ Examples:
 	| ColumnName                       | Operators                         | FilterOption | Text                                      | RowsCount |
 	| Windows7Mi: Target App Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
 	| Babel(Engl: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Target App Readiness is Empty | 1,921     |
-	| Barry'sUse: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Target App Readiness is Empty | 1,046     |
+	| Barry'sUse: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Target App Readiness is Empty | 1,145     |
 	| ComputerSc: Target App Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Target App Readiness is Green | 913       |
-	| Havoc(BigD: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Target App Readiness is Empty | 1,156     |
+	| Havoc(BigD: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Target App Readiness is Empty | 1,155     |
 	| MigrationP: Target App Readiness | Equals, Does not equal, Not empty | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal, Not empty | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 
@@ -184,9 +184,9 @@ Examples:
 	| ColumnName                        | Operators                         | FilterOption | Text                                       | RowsCount |
 	| Windows7Mi: Application Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Application Readiness is Red   | 27        |
 	| Babel(Engl: Application Readiness | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Application Readiness is Empty | 1,921     |
-	| Barry'sUse: Application Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Application Readiness is Empty | 1,146     |
+	| Barry'sUse: Application Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Application Readiness is Empty | 1,145     |
 	| ComputerSc: Application Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Application Readiness is Green | 911       |
-	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Application Readiness is Empty | 1,156     |
+	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Application Readiness is Empty | 1,155     |
 	| MigrationP: Application Readiness | Equals, Does not equal, Not empty | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal, Not empty | Empty        | UserSchedu: Application Readiness is Empty | 1,242     |
 
@@ -217,7 +217,7 @@ Examples:
 	#| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
 	| Barry'sUse: Application Rationalisation | Equals, Does not equal, Not empty | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
 	| ComputerSc: Application Rationalisation | Equals, Does not equal, Not empty | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 15        |
-	| Havoc(BigD: Application Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,067     |
+	| Havoc(BigD: Application Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,068     |
 	| MigrationP: Application Rationalisation | Equals, Does not equal, Not empty | RETIRE        | MigrationP: Application Rationalisation is Retire        | 1         |
 	| UserSchedu: Application Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised | 981       |
 
@@ -246,9 +246,9 @@ Examples:
 	| ColumnName                   | Operators                         | FilterOption | Text                                  | RowsCount |
 	| Windows7Mi: Core Application | Equals, Does not equal, Not empty | TRUE         | Windows7Mi: Core Application is True  | 11        |
 	| Babel(Engl: Core Application | Equals, Does not equal, Not empty | FALSE        | Babel(Engl: Core Application is False | 302       |
-	| Barry'sUse: Core Application | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Core Application is Empty | 1,146     |
+	| Barry'sUse: Core Application | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Core Application is Empty | 1,145     |
 	| ComputerSc: Core Application | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Core Application is False | 1,043     |
-	| Havoc(BigD: Core Application | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Core Application is Empty | 1,156     |
+	| Havoc(BigD: Core Application | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Core Application is Empty | 1,155     |
 	| MigrationP: Core Application | Equals, Does not equal, Not empty | FALSE        | MigrationP: Core Application is False | 220       |
 	| UserSchedu: Core Application | Equals, Does not equal, Not empty | Empty        | UserSchedu: Core Application is Empty | 1,242     |
 
@@ -277,9 +277,9 @@ Examples:
 	| ColumnName                      | Operators                         | FilterOption | Text                                     | RowsCount |
 	| Windows7Mi: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Windows7Mi: Hide from End Users is False | 1,067     |
 	| Babel(Engl: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Hide from End Users is Empty | 1,921     |
-	| Barry'sUse: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide from End Users is False | 1,077     |
+	| Barry'sUse: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide from End Users is False | 1,078     |
 	| ComputerSc: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide from End Users is False | 1,043     |
-	| Havoc(BigD: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide from End Users is Empty | 1,156     |
+	| Havoc(BigD: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide from End Users is Empty | 1,155     |
 	| MigrationP: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | MigrationP: Hide from End Users is False | 220       |
 	| UserSchedu: Hide from End Users | Equals, Does not equal, Not empty | Empty        | UserSchedu: Hide from End Users is Empty | 1,242     |
 
@@ -400,4 +400,3 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewCurrentAndLastSeenFiltersAreAvail
 	And User add "Dashworks Last Seen" filter where type is "Equals" with added column and "25 Jul 2019" Date filter
 	And User create custom list with "TestNewColumnsAndFilters" name
 	Then "TestNewColumnsAndFilters" list is displayed to user
-	
