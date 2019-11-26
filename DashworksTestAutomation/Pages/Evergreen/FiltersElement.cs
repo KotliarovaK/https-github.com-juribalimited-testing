@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         private const string SearchTextBoxSelector = ".//input[@name='search']";
 
-        private const string ShowedResultsCount = ".//div[@class='pagination-info ng-star-inserted']";
+        private const string ShowedResultsCount = ".//div[contains(@class,'pagination')]";
 
         public const string FilterValuesSelector = ".//span[contains(@class, 'filter-label-value')]";
 
@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'addColumn')]//span[@class='mat-checkbox-label']")]
         public IWebElement AddFiltersColumnName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filterAddPanel')]//i[contains(@class,'delete')]/ancestor::button")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filterAddPanel')]//i[contains(@class,'delete') or contains(@class,'clear')]/ancestor::button")]
         public IWebElement RemoveFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'reset')]")]
@@ -196,7 +196,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var filterValues = new List<string>();
             filterValues.AddRange(Driver.FindElements(By.XPath(
-                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
+                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[contains(@class,'filter-label')]//span[contains(@class, 'filter-label-value')]"))
                 .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
             return filterValues;
         }

@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	| Slot 10001 |
 	| Slot 10002 |
 	| Slot 10003 |
-	When User move "Slot 10001" item to "32767" position on Admin page
+	When User moves 'Slot 10001' item from 'Capacity Slot' column to the '32767' position
 	Then Content in the 'Capacity Slot' column is equal to
 	| Content    |
 	| Slot 10002 |

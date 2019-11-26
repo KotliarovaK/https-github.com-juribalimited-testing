@@ -258,6 +258,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allHeaders;
         }
 
+        public List<IWebElement> GetAllHeadersTextElements()
+        {
+            var allHeaders = GetAllHeaders().Select(x => x.FindElement(By.XPath(AllHeadersTextSelector))).ToList();
+            return allHeaders;
+        }
+
         #endregion
 
         //Selector to the Action element below Column header

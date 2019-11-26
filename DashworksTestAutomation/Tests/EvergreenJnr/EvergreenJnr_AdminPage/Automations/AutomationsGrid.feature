@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Do_Not_Run_With_Automations @Do_Not_Run_With_Actions @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Do_Not_Run_With_Automations @Do_Not_Run_With_Actions
 Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -17,27 +17,23 @@ Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 	Then 'FALSE' content is displayed in the 'Active' column
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Scope" column on the Admin page
-	When User selects "All Mailboxes" checkbox from String Filter on the Admin page
-	When User clicks String Filter button for "Scope" column on the Admin page
-	When User selects "All Users" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter on the Admin page
 	When User clicks String Filter button for "Scope" column on the Admin page
 	When User selects "Auto: X-Proj Paths Scope" checkbox from String Filter on the Admin page
-	When User clicks String Filter button for "Scope" column on the Admin page
-	When User selects "Empty" checkbox from String Filter on the Admin page
-	Then 'All Devices' content is displayed in the 'Scope' column
+	Then 'Auto: X-Proj Paths Scope' content is displayed in the 'Scope' column
 	When User clicks Reset Filters button on the Admin page
-	And User enters "3" text in the Search field for "Actions" column
-	Then Rows counter shows "4" of "16" rows
+	When User enters "3" text in the Search field for "Actions" column
+	When User enters "test" text in the Search field for "Description" column
+	Then 'Devices_Scope' content is displayed in the 'Automation' column
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Delay" text in the Search field for "Automation" column
-	Then Rows counter shows "8" of "16" rows
+	Then Rows counter contains "8" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks Group By button on the Admin page and selects "Active" value
 	Then Cog menu is not displayed on the Admin page
 	Then Grid is grouped
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Not_Ready
-#Run steps after fixing Boolean sorting
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774
 Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -47,10 +43,11 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	Then data in table is sorted by "Automation" column in ascending order on the Admin page
 	When User clicks on 'Automation' column header
 	Then data in table is sorted by "Automation" column in descending order on the Admin page
-	When User clicks on 'Active' column header
-	Then Boolean data in table is sorted by "Active" column in ascending order on the Admin page
-	When User clicks on 'Active' column header
-	Then Boolean data in table is sorted by "Active" column in descending order on the Admin page
+	#Run steps after fixing Boolean sorting
+	#When User clicks on 'Active' column header
+	#Then Boolean data in table is sorted by "Active" column in ascending order on the Admin page
+	#When User clicks on 'Active' column header
+	#Then Boolean data in table is sorted by "Active" column in descending order on the Admin page
 	When User clicks on 'Running' column header
 	Then Boolean data in table is sorted by "Running" column in ascending order on the Admin page
 	When User clicks on 'Running' column header
@@ -109,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	When User enters '9 Aug 2019' text in the Search field for 'Created Date' datepicker
 	Then Rows counter contains "6" found row of all rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18346 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18346 @Cleanup
 #Waiting for "Object Type" column
 Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu

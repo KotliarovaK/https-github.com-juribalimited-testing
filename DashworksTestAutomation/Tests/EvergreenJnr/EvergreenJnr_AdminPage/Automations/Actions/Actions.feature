@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then Cog menu is not displayed on the Admin page
 	And Grid is grouped
 	When User clicks Group By button on the Admin page and selects "Type" value
-	And User clicks Cog-menu for "15427_Action1" item on Admin page
+	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the second Action
-	When User clicks Cog-menu for "15427_Action2" item on Admin page
+	When User clicks Cog-menu for '15427_Action2' item in the 'Action' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the last Action
-	When User clicks Cog-menu for "15427_Action3" item on Admin page
+	When User clicks Cog-menu for '15427_Action3' item in the 'Action' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -121,21 +121,21 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	When User move "Secont_Action" item to "4" position on Admin page
+	When User moves 'Secont_Action' item from 'Action' column to the '4' position
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Third_Action    |
 	| DAS15427_Action |
 	| First_Action    |
 	| Secont_Action   |
-	When User move "Secont_Action" item to "1" position on Admin page
+	When User moves 'Secont_Action' item from 'Action' column to the '1' position
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Secont_Action   |
 	| Third_Action    |
 	| DAS15427_Action |
 	| First_Action    |
-	When User move "Secont_Action" item to "20" position on Admin page
+	When User moves 'Secont_Action' item from 'Action' column to the '20' position
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Third_Action    |
@@ -793,3 +793,16 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User enters "17778 Slot" text in the Search field for "Action" column
 	And User clicks content from "Action" column
 	Then 'Scheduled Slot' content is displayed in 'Capacity Slot' dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @Not_Ready
+#Waiting for GD issue fixed
+Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	When User enters "Devices_Scope" text in the Search field for "Automation" column
+	And User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
+	When User clicks content from "Action" column
+	Then 'Edit Action' page subheader is displayed to user
+	Then 'UPDATE' button is disabled

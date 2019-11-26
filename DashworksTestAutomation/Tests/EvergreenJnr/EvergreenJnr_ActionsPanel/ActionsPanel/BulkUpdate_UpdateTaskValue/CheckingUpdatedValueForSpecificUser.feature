@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Nov 21, 2018' text to 'Date' datepicker
+	And User enters '21 Nov 2018' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
@@ -252,7 +252,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Dec 27, 2018' text to 'Date' datepicker
+	And User enters '27 Dec 2018' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 

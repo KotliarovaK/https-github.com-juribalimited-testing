@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| ProjectName          | Scope       | ProjectTemplate | Mode               |
 	| Project for DAS15665 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
-	When User clicks Cog-menu for "RED" item on Admin page
+	When User clicks Cog-menu for 'RED' item in the 'Readiness' column
 	Then User sees following cog-menu items on Admin page:
 	| items                         |
 	| Edit                          |
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| Change to ready               |
 	| Make default for applications |
 	| Delete                        |
-	When User clicks Cog-menu for "GREEN" item on Admin page
+	When User clicks Cog-menu for 'GREEN' item in the 'Readiness' column
 	Then User sees following cog-menu items on Admin page:
 	| items                         |
 	| Edit                          |
@@ -323,7 +323,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 	When User right clicks on 'RED' cell from 'Readiness' column
 	And User selects 'Copy row' option in context menu
 	Then There are no errors in the browser console
-	And Next data 'Red\t\tRed\tFalse\tFalse\t52\t1\t0\t0\t4' is copied
+	And Next data 'Red\t\tRed\tFalse\tFalse\t50\t1\t0\t0\t4' is copied
 	When User clicks refresh button in the browser
 	When User right clicks on 'AMBER' cell from 'Readiness' column
 	And User selects 'Copy cell' option in context menu

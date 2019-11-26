@@ -15,16 +15,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User navigates to the 'Automation Log' left menu item
 	Then 'Automations' left menu item is expanded
 	Then grid headers are displayed in the following order
-	| ColumnName          |
-	| Date                |
-	| Type                |
-	| Automation          |
-	| Action              |
-	| Run                 |
-	| Objects             |
-	| Duration (hh:mm:ss) |
-	| User                |
-	| Outcome             |
+	| ColumnName       |
+	| Date             |
+	| Type             |
+	| Automation       |
+	| Action           |
+	| Run              |
+	| Objects          |
+	| Duration (hh:mm) |
+	| User             |
+	| Outcome          |
 	Then Export button is displayed in panel
 	Then 'SUCCESS' content is displayed in the 'Outcome' column
 	When User opens 'Date' column settings
@@ -35,7 +35,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User select "Action Type" checkbox on the Column Settings panel
 	When User select "Action Project" checkbox on the Column Settings panel
 	When User select "Action Task or Field" checkbox on the Column Settings panel
-	When User select "Action Value" checkbox on the Column Settings panel
 	When User select "Action Value ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
@@ -46,11 +45,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Project       |
 	| Action Task or Field |
 	| Action Value ID      |
-	| Action Value         |
 	When User clicks String Filter button for "Scope" column on the Admin page
 	When User selects "1803 Rollout" checkbox from String Filter on the Admin page
-	#Update rows count
-	#Then Counter shows "8 of 10" found rows
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
@@ -89,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	Then Success message is displayed and contains "1 automation started," text
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then 'TRUE' content is displayed in the 'Running' column
-	When User clicks Cog-menu for "DELAY_2" item on Admin page
+	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -110,8 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-#Need to use three Automations: inactive, inactive, active
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -123,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	#First inactive automation
-	When User clicks Cog-menu for "15431_First_Inactive" item on Admin page
+	When User clicks Cog-menu for '15431_First_Inactive' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -134,7 +129,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	#Second inactive automation
-	When User clicks Cog-menu for "15431_Second_Inactive" item on Admin page
+	When User clicks Cog-menu for '15431_Second_Inactive' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -145,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	#Third active automation
-	When User clicks Cog-menu for "15431_Third_Active" item on Admin page
+	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -161,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks "Make inactive" option in Cog-menu for "15431_Third_Active" item on Admin page
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
-	When User clicks Cog-menu for "15431_Third_Active" item on Admin page
+	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -239,7 +234,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	#Update after gold data was complete
-	When User clicks Cog-menu for "AM Test 1" item on Admin page
+	When User clicks Cog-menu for 'AM Test 1' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -249,7 +244,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| Move to position |
 	| Make inactive    |
 	| Delete           |
-	When User clicks Cog-menu for "AM 150419 II" item on Admin page
+	When User clicks Cog-menu for 'AM 150419 II' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -299,7 +294,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	When User move "AM 150419 II" item to "2" position on Admin page
+	When User moves 'AM 150419 II' item from 'Automation' column to the '2' position
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
@@ -311,7 +306,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	| AM 150419 II  |
 	| AM 150419 III |
 	| AM Test 1     |
-	When User move "AM 150419 I" item to "100" position on Admin page
+	When User moves 'AM 150419 I' item from 'Automation' column to the '100' position
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
@@ -323,7 +318,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	| AM 150419 III |
 	| AM Test 1     |
 	| AM 150419 I   |
-	When User move " AM 150419 II" item to "1" position on Admin page
+	When User moves ' AM 150419 II' item from 'Automation' column to the '1' position
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
@@ -364,7 +359,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	And User clicks 'DELETE' button
 	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
-	When User clicks Cog-menu for "DELAY - do not delete3" item on Admin page
+	When User clicks Cog-menu for 'DELAY - do not delete3' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
