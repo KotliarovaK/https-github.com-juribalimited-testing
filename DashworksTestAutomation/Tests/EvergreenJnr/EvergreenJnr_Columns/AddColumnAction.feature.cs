@@ -798,7 +798,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Green"});
             table16.AddRow(new string[] {
-                        "None"});
+                        "Empty"});
 #line 142
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
                         "kboxes:", filterName), ((string)(null)), table16, "When ");
