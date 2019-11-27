@@ -126,15 +126,35 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
+    | SelectedValues |
+    | Mobile         |
+	When User create dynamic list with "ADevicesList17551" name on "Devices" page
+	Then "ADevicesList17551" list is displayed to user
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
+	| SelectedValues    | Association        |
+	| ADevicesList17551 | Entitled to device |
+	When User create dynamic list with "AApplicationsList17551" name on "Applications" page
+	Then "AApplicationsList17551" list is displayed to user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User removes custom list with "ADevicesList17551" name
+	Then list with "ADevicesList17551" name is removed
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
-	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
-	| List       | Widget_For_DAS17551 | Dependant List Filter - BROKEN LIST | 10      | 10         |
+	| WidgetType | Title               | List                   | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS17551 | AApplicationsList17551 | 10      | 10         |
 	Then 'Widget_For_DAS17551' Widget is displayed to the user
-	Then User sees 'This widget refers to list Dependant List Filter - BROKEN LIST which has errors' text in warning message on Dashboards page
-	Then 'Dependant List Filter - BROKEN LIST' link is displayed in warning message on Dashboards page
+	Then User sees 'This widget refers to list AApplicationsList17551 which has errors' text in warning message on Dashboards page
+	Then 'AApplicationsList17551' link is displayed in warning message on Dashboards page
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623

@@ -22,17 +22,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'cdk-drop-list')]//div[@class='widget']")]
         public IWebElement PrintPreviewWidgets { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='dashboardsModes' and contains(@style, 'min-width: 777px;')]")]
-        public IWebElement A4PrintPreviewView { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@id='dashboardsModes' and contains(@style, 'min-width: 799px;')]")]
-        public IWebElement LetterPrintPreviewView { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@id='dashboardsModes' and contains(@style, 'min-width: 799px;')]")]
-        public IWebElement PortraitPrintPreviewOrientation { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@id='dashboardsModes' and contains(@style, 'min-width: 1039px;')]")]
-        public IWebElement LandscapePrintPreviewOrientation { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@id='dashboardsModes']")]
+        public IWebElement DashboardMode { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='print-preview-buttons']/button/span[text()='CANCEL']")]
         public IWebElement CancelButton { get; set; }

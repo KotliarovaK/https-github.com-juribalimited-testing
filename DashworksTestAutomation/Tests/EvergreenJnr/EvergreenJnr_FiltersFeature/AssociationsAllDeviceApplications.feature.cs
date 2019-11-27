@@ -699,9 +699,9 @@ this.FeatureBackground();
  testRunner.When("User add \"Device Type\" filter where type is \"Equals\" with added column and Lookup" +
                     " option", ((string)(null)), table5, "When ");
 #line 152
- testRunner.When("User create dynamic list with \"DevicesList18531\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User create dynamic list with \"ADevicesList18531\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 153
- testRunner.Then("\"DevicesList18531\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"ADevicesList18531\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 154
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 155
@@ -714,7 +714,7 @@ this.FeatureBackground();
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 159
  testRunner.When("User add \"Device (Saved List)\" filter where type is \"In list\" without added colum" +
-                    "n and \"DevicesList18531\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "n and \"ADevicesList18531\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 160
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 161
@@ -730,9 +730,9 @@ this.FeatureBackground();
 #line 166
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 167
- testRunner.When("User removes custom list with \"DevicesList18531\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User removes custom list with \"ADevicesList18531\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 168
- testRunner.Then("list with \"DevicesList18531\" name is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("list with \"ADevicesList18531\" name is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 169
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 170
