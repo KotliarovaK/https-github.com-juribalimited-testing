@@ -402,9 +402,8 @@ this.FeatureBackground();
 #line 87
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 88
- testRunner.Then("following text \'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offbo" +
-                    "arding an object deletes all project related information about it.\' is displayed" +
-                    " in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an objec" +
+                    "t deletes all project related information about it.\' text is displayed on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

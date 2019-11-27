@@ -384,9 +384,9 @@ this.FeatureBackground();
 #line 82
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83
- testRunner.And("following text \'Offboarding user BCLABS\\0088FC8A50DD4344B92 (Barland, Steinar). O" +
-                    "ffboarding an object deletes all project related information about it.\' is displ" +
-                    "ayed in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Offboarding user BCLABS\\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an o" +
+                    "bject deletes all project related information about it.\' text is displayed on po" +
+                    "pup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
