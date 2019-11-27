@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Offboard all associated devices' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Offboard all associated devices' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -79,5 +79,5 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
-	And following text 'Offboarding user BCLABS\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
+	Then popup is displayed to User
+	And 'Offboarding user BCLABS\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an object deletes all project related information about it.' text is displayed on popup

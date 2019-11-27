@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResyncOptionIsWorkedCorrectlyForProj
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	Then 'Resync owner' checkbox is checked
 	Then 'Resync apps' checkbox is checked
 	Then 'Resync name' checkbox is checked
