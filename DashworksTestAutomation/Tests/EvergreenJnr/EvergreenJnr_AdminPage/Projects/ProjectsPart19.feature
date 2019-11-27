@@ -66,12 +66,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items           |
-	| 00HA7MKAVVFDAV  |
-	| 001PSUMZYOW581  |
-	| 00BDM1JUR8IF419 |
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
