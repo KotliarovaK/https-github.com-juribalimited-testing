@@ -94,6 +94,11 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories             |
 	| Evergreen Capacity Unit   |
 	| Evergreen Rationalisation |
+	| Target App                |
+	| Target App Compliance     |
+	| Target App Key            |
+	| Target App Vendor         |
+	| Target App Verson         |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD COLUMN" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -104,6 +109,11 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories             |
 	| Evergreen Capacity Unit   |
 	| Evergreen Rationalisation |
+	| Target App                |
+	| Target App Compliance     |
+	| Target App Key            |
+	| Target App Vendor         |
+	| Target App Verson         |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD VALUE" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -114,6 +124,11 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories             |
 	| Evergreen Capacity Unit   |
 	| Evergreen Rationalisation |
+	| Target App                |
+	| Target App Compliance     |
+	| Target App Key            |
+	| Target App Vendor         |
+	| Target App Verson         |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
