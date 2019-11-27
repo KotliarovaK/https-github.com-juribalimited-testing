@@ -127,7 +127,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']//button")]
         public IWebElement DetailsPanelExpandListsIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//table//tr[1]/td")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'dependants')]//table//tr[1]/td")]
         public IList<IWebElement> DetailsPanelSharedListsTableHeaders { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='Review Widget List Permissions']")]

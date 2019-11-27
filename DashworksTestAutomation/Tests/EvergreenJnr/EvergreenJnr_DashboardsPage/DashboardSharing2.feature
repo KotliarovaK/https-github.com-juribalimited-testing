@@ -184,6 +184,66 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	| Administrator | Read       |
 	Then User 'Admin' was added to shared list with 'Read Only' permission
 
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17592 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username           | Password  |
+	| automation_admin10 | m!gration |
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
+    | SelectedValues |
+    | Mobile         |
+	When User waits for three seconds
+	When User create dynamic list with "ADevicesList17592" name on "Devices" page
+	Then "ADevicesList17592" list is displayed to user
+	When User clicks the List Details button
+	When User select "Specific users / teams" sharing option
+	When User clicks 'ADD USER' button 
+	When User selects the "Automation Admin 1" user for sharing
+	When User select "Read" in Select Access dropdown
+	When User clicks 'ADD USER' button 
+	When User clicks 'ADD USER' button 
+	#login as user2
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username          | Password  |
+	| automation_admin1 | m!gration |
+	When Dashboard with 'Dashboard_DAS17592' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title               | List              | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS17592 | ADevicesList17592 | 10      | 10         |
+	Then 'Widget_For_DAS17592' Widget is displayed to the user
+	When User language is changed to "Deutsch" via API
+	When User clicks Dashboards Details icon on Dashboards page
+	When User expands the list of shared lists
+	Then User sees table headers as 'Widget' and 'Liste'
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username           | Password  |
+	| automation_admin10 | m!gration |
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User removes custom list with "ADevicesList17592" name
+	Then list with "ADevicesList17592" name is removed
+	#login as user2
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username          | Password  |
+	| automation_admin1 | m!gration |
+	When User language is changed to "Deutsch" via API
+	When Dashboard with 'Dashboard_DAS17592' name is opened via API
+	When User clicks Edit mode trigger on Dashboards page
+	Then User sees 'Dieses Widget verweist auf Liste , die Fehler enthält' text in '1' warning messages on Dashboards page
+
+
 	#Sergiy: DAS14263 create test and recomment issue
 	#When User clicks Dashboards Details icon on Dashboards page
 	#Then Permission panel is displayed to the user
