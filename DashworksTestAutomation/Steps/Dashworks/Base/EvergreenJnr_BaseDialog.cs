@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Button
 
-        [When(@"User clicks '(.*)' button in Dialog Pop-up")]
+        [When(@"User clicks '(.*)' button on popup")]
         public void WhenUserClicksButtonInDialogPopUp(string buttonName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
