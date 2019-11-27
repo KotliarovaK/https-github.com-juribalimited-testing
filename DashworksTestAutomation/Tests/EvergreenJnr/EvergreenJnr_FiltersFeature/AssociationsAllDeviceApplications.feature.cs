@@ -893,8 +893,8 @@ this.FeatureBackground();
 #line 204
  testRunner.When("User clicks Export button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 205
- testRunner.Then("User checks that file \"Dashworks-Device-Applications-TestAllDeviceApplications\" w" +
-                    "as downloaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User checks that file \"Dashworks-Device-Applications-AssociationList18379\" was do" +
+                    "wnloaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
