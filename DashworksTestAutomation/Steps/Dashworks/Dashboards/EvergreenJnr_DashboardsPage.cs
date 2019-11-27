@@ -1001,41 +1001,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectDropdown(option, dropdown);
         }
 
-        [Then(@"Print Preview is displayed in A4 format view")]
-        public void ThenPrintPreviewIsDisplayedInA4FormatView()
+        [Then(@"Print Preview is displayed in '(.*)' format view")]
+        public void ThenPrintPreviewIsDisplayedInFormatView(string format)
         {
             var page = _driver.NowAt<PrintDashboardsPage>();
             _driver.WaitForDataLoading();
-            //Wait for style changing
-            Thread.Sleep(1000);
-            Verify.IsTrue(page.A4PrintPreviewView.Displayed, "Print Preview is not displayed in A4 format view");
-        }
 
-        [Then(@"Print Preview is displayed in Letter format view")]
-        public void ThenPrintPreviewIsDisplayedInLetterFormatView()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.LetterPrintPreviewView.Displayed, "Print Preview is not displayed in Letter format view");
-        }
+            switch (format.ToLower())
+            {
+                case "a4":
+                    Verify.That(page.DashboardMode.GetAttribute("style").Contains("min-width: 777px;"), Is.True, "Print Preview is not displayed in A4 format view");
+                    break;
 
-        [Then(@"Print Preview is displayed in Portrait orientation")]
-        public void ThenPrintPreviewIsDisplayedInPortraitOrientation()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.PortraitPrintPreviewOrientation.Displayed, "Print Preview is not displayed in Portrait orientation");
-        }
+                case "letter":
+                    Verify.That(page.DashboardMode.GetAttribute("style").Contains("min-width: 799;"), Is.True, "Print Preview is not displayed in Letter format view");
+                    break;
 
-        [Then(@"Print Preview is displayed in Landscape orientation")]
-        public void ThenPrintPreviewIsDisplayedInLandscapeOrientation()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.LandscapePrintPreviewOrientation.Displayed, "Print Preview is not displayed in Landscape orientation");
+                case "portrait":
+                    Verify.That(page.DashboardMode.GetAttribute("style").Contains("min-width: 777px;"), Is.True, "Print Preview is not displayed in Portrait format view");
+                    break;
+
+                case "landscape":
+                    Verify.That(page.DashboardMode.GetAttribute("style").Contains("min-width: 1106px;"), Is.True, "Print Preview is not displayed in Landscape format view");
+                    break;
+
+                default:
+                    throw new Exception($"Format {format} not expected");
+            }
         }
 
         [When(@"User clicks Cancel button on the Print Preview Settings pop-up")]
