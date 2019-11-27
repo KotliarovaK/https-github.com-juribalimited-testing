@@ -88,10 +88,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Filter panel is scrolled down");
         }
 
-        [Then(@"Categories '(.*)' placed next to corresponding project group")]
+        [Then(@"'(.*)' category is placed next to the corresponding project group")]
         public void ThenSpecifiedCategoriesPlacedInParticularProjectGroup(string categoryName)
         {
-            var allCats = GetCategoriesFromFilterPanelPageByPage();
+            var panel = _driver.NowAt<FiltersElement>();
+
+            var allCats = panel.GetCategoriesFromFilterPanelPageByPage();
 
             foreach (var cat in allCats)
             {
@@ -102,32 +104,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     Verify.That((allCats[curentCategoryIndex - 1].EndsWith(projectName) || allCats[curentCategoryIndex + 1].EndsWith(projectName)), Is.True, $"{cat} category possible appears in wrong place");
                 }
             }
-        }
-
-        private List<string> GetCategoriesFromFilterPanelPageByPage()
-        {
-            List<string> categories = new List<string>();
-
-            var page = _driver.NowAt<FiltersElement>();
-
-            var allCats = page.FilterCategoryLabels.Count;
-            var visibleCats = page.FilterCategoryLabels.Count(x => x.Displayed);
-            int attempts = allCats / visibleCats + 1;
-
-            for (int i = 0; i < attempts; i++)
-            {
-                IList<IWebElement> cats = page.FilterCategoryLabels.Where(z => !string.IsNullOrEmpty(z.Text)).ToList();
-
-                if (categories.Count > 0 && cats.Last().Text.Equals(categories.Last()))
-                {
-                    break;
-                }
-
-                categories.AddRange(cats.Select(x => x.Text));
-                _driver.MouseHoverByJavascript(cats.Last());
-            }
-            //remove duplicates which are possible when paging
-            return categories.Distinct().ToList();
         }
 
         [Then(@"User sees ""(.*)"" section expanded by default in Filters panel")]

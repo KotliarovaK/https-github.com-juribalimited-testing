@@ -589,5 +589,29 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement AssociationItem(string option) => Driver.FindElementByXPath($".//div[@class='sub-categories-associations']//div[contains(text(), '{option}')]");
 
         public IWebElement RemoveIconForAssociation(string association) => Driver.FindElementByXPath($".//span[@class='filter-label-name' and text()=' {association.ToLower()}']/ancestor::div[@class='filter-group no-border-bottom']//i[contains(@class, 'mat-item_delete')]/ancestor::button");
+
+        public List<string> GetCategoriesFromFilterPanelPageByPage()
+        {
+            List<string> categories = new List<string>();
+
+            var allCats = FilterCategoryLabels.Count;
+            var visibleCats = FilterCategoryLabels.Count(x => x.Displayed);
+            int attempts = allCats / visibleCats + 1;
+
+            for (int i = 0; i < attempts; i++)
+            {
+                IList<IWebElement> cats = FilterCategoryLabels.Where(z => !string.IsNullOrEmpty(z.Text)).ToList();
+
+                if (categories.Count > 0 && cats.Last().Text.Equals(categories.Last()))
+                {
+                    break;
+                }
+
+                categories.AddRange(cats.Select(x => x.Text));
+                Driver.MouseHoverByJavascript(cats.Last());
+            }
+            //remove duplicates which are possible when paging
+            return categories.Distinct().ToList();
+        }
     }
 }

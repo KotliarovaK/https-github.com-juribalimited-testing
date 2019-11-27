@@ -1021,4 +1021,4 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectRingsCategoryCorrectlyPl
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
 	When User closed "Selected Columns" columns category
-	Then Categories 'Project Rings' placed next to corresponding project group
+	Then 'Project Rings' category is placed next to the corresponding project group
