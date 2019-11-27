@@ -124,7 +124,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<DefaultValue>' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Jan 9, 2019' text to 'Date' datepicker
+	And User enters '9 Jan 2019' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
