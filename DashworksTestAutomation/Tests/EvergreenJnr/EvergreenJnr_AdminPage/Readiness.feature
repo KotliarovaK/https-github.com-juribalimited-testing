@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then "1" content is displayed for "Task Values Count" column
 	When User clicks "Change to ready" option in Cog-menu for "GREY" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
-	Then Success message is displayed and contains "click here to view the Grey readiness" link
+	Then 'click here to view the Grey readiness' link is displayed
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
@@ -272,7 +272,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User clicks Reset Filters button on the Admin page
 	When User clicks "Change to not ready" option in Cog-menu for "GREEN" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
-	Then Success message is displayed and contains "click here to view the Green readiness" link
+	Then 'click here to view the Green readiness' link is displayed
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
@@ -280,7 +280,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User clicks "Change to ready" option in Cog-menu for "GREEN" item on Admin page
 	When User clicks "Make default for applications" option in Cog-menu for "AMBER" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
-	Then Success message is displayed and contains "click here to view the Amber readiness" link
+	Then 'click here to view the Amber readiness' link is displayed
+	Then 'click here to view the Amber readiness' link is displayed
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user

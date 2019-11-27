@@ -966,5 +966,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Links
+
+        [Then(@"'(.*)' link is displayed")]
+        public void ThenLinkIsDisplayed(string text)
+        {
+            var projectElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(projectElement.IsLinkDisplayed(text), 
+                $"Link with '{text}' text was not displayed");
+        }
+
+        #endregion
     }
 }
