@@ -737,7 +737,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	| Stage 2 |
 	| Stage 3 |
 	When User clicks 'Users' on the left-hand menu
-	When User clicks "YES" button in the Warning Pop-up message
+	When User clicks 'YES' button on popup
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
 	When User select "Username" rows in the grid

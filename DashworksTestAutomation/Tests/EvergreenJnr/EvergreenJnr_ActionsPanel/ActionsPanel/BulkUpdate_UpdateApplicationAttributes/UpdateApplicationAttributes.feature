@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	#Then "Sticky Compliance" dropdown is not displayed
+	Then 'Sticky Compliance' dropdown is not displayed
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
 	#When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	Then 'No сhange' content is displayed in 'Sticky Compliance' dropdown

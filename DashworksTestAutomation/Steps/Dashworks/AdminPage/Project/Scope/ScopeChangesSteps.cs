@@ -22,12 +22,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
     public class ScopeChangesSteps : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly LastUsedBucket _lastUsedBucket;
 
-        public ScopeChangesSteps(RemoteWebDriver driver, LastUsedBucket lastUsedBucket)
+        public ScopeChangesSteps(RemoteWebDriver driver)
         {
             _driver = driver;
-            _lastUsedBucket = lastUsedBucket;
         }
 
         [When(@"User navigates to the '(.*)' tab on Project Scope Changes page")]
@@ -36,6 +34,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Scope
             var page = _driver.NowAt<ScopeChangePage>();
             _driver.ExecuteAction(() => page.GetTabByName(tabName).Click());
             _driver.WaitForDataLoading(40);
+        }
+
+        [Then(@"'(.*)' tab is displayed on Project Scope Changes page")]
+        public void ThenTabIsDisplayedOnProjectScopeChangesPage(string tabName)
+        {
+            var page = _driver.NowAt<ScopeChangePage>();
+            Verify.IsTrue(page.IsTabDisplayed(tabName),$"'{tabName}' tab was not displayed");
         }
 
         [Then(@"following objects were not found")]
