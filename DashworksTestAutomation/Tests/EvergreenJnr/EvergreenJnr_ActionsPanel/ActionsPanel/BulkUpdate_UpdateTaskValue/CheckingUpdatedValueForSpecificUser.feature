@@ -137,12 +137,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then '<DefaultValue>' content is displayed in the 'Windows7Mi: User Acceptance Test \ Perform User Acceptance Test' column
 
 Examples:
-	| Name     | RowName    | NewValue       | DefaultValue   |
-	| DAS13280 | CQV0623434 | Complete       | Started        |
-	| DAS13281 | BBZ877343  | Failed         | Not Applicable |
-	| DAS13282 | DLL972653  | Complete       | Not Started    |
-	| DAS13283 | LZI970280  | Not Applicable | Failed         |
-	| DAS13284 | ZQX656408  | Not Applicable | Complete       |
+	| Name       | RowName    | NewValue       | DefaultValue   |
+	| DAS13280   | CQV0623434 | Complete       | Started        |
+	| DAS13281_1 | BBZ877343  | Failed         | Not Applicable |
+	| DAS13282   | DLL972653  | Complete       | Not Started    |
+	| DAS13283   | LZI970280  | Not Applicable | Failed         |
+	| DAS13284   | ZQX656408  | Not Applicable | Complete       |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
