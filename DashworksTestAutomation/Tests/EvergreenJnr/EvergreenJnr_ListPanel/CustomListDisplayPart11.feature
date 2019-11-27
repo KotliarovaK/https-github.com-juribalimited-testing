@@ -49,47 +49,47 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterForCreatedListsIsWorkedC
 	Then "PivotFilterList_2" list is displayed to user
 	When User navigates to the "All Devices" list
 	When User apply "Standard" filter to lists panel
-	Then "DynamicFilterList_2" list is displayed in the bottom section of the List Panel
-	And "StaticFilterList_2" list is displayed in the bottom section of the List Panel
-	And "PivotDynamicFilterList_2" list is not displayed in the bottom section of the List Panel
-	And "PivotFilterList_2" list is not displayed in the bottom section of the List Panel
+	Then 'DynamicFilterList_2' list is displayed in the Lists panel
+	Then 'StaticFilterList_2' list is displayed in the Lists panel
+	Then 'PivotDynamicFilterList_2' list is not displayed in the Lists panel
+	Then 'PivotFilterList_2' list is not displayed in the Lists panel
 	When User enters "2" text in Search field at List Panel
-	Then "DynamicFilterList_2" list is displayed in the bottom section of the List Panel
-	And "StaticFilterList_2" list is displayed in the bottom section of the List Panel
-	And "PivotDynamicFilterList_2" list is not displayed in the bottom section of the List Panel
-	And "PivotFilterList_2" list is not displayed in the bottom section of the List Panel
+	Then 'DynamicFilterList_2' list is displayed in the Lists panel
+	Then 'StaticFilterList_2' list is displayed in the Lists panel
+	Then 'PivotDynamicFilterList_2' list is not displayed in the Lists panel
+	Then 'PivotFilterList_2' list is not displayed in the Lists panel
 	When User apply "Pivot" filter to lists panel
-	Then "DynamicFilterList_2" list is not displayed in the bottom section of the List Panel
-	And "StaticFilterList_2" list is not displayed in the bottom section of the List Panel
-	And "PivotDynamicFilterList_2" list is displayed in the bottom section of the List Panel
-	And "PivotFilterList_2" list is displayed in the bottom section of the List Panel
+	Then 'DynamicFilterList_2' list is not displayed in the Lists panel
+	Then 'StaticFilterList_2' list is not displayed in the Lists panel
+	Then 'PivotDynamicFilterList_2' list is displayed in the Lists panel
+	Then 'PivotFilterList_2' list is displayed in the Lists panel
 	When User enters "2" text in Search field at List Panel
-	Then "DynamicFilterList_2" list is not displayed in the bottom section of the List Panel
-	And "StaticFilterList_2" list is not displayed in the bottom section of the List Panel	
-	And "PivotDynamicFilterList_2" list is displayed in the bottom section of the List Panel
-	And "PivotFilterList_2" list is displayed in the bottom section of the List Panel
+	Then 'DynamicFilterList_2' list is not displayed in the Lists panel
+	Then 'StaticFilterList_2' list is not displayed in the Lists panel
+	Then 'PivotDynamicFilterList_2' list is displayed in the Lists panel
+	Then 'PivotFilterList_2' list is displayed in the Lists panel
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13643
 Scenario: EvergreenJnr_DevicesList_CheckThatFavouriteFilterForListsIsWorkedCorrectly
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User apply "Not favourite" filter to lists panel
-	Then "1803 Rollout" list is displayed in the bottom section of the List Panel
+	Then '1803 Rollout' list is displayed in the Lists panel
 	When User apply "Favourite" filter to lists panel
-	Then "1803 Rollout" list is not displayed in the bottom section of the List Panel
+	Then '1803 Rollout' list is not displayed in the Lists panel
 	When User enters "1803" text in Search field at List Panel
-	Then "1803 Rollout" list is not displayed in the bottom section of the List Panel
+	Then '1803 Rollout' list is not displayed in the Lists panel
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13643
 Scenario: EvergreenJnr_DevicesList_CheckThatSharingiteFilterForListsIsWorkedCorrectly
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User apply "Shared with me " filter to lists panel
-	Then "1803 Rollout" list is displayed in the bottom section of the List Panel
+	Then '1803 Rollout' list is displayed in the Lists panel
 	When User apply "Owned by me " filter to lists panel
-	Then "1803 Rollout" list is not displayed in the bottom section of the List Panel
+	Then '1803 Rollout' list is not displayed in the Lists panel
 	When User enters "1803" text in Search field at List Panel
-	Then "1803 Rollout" list is not displayed in the bottom section of the List Panel
+	Then '1803 Rollout' list is not displayed in the Lists panel
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS17627 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSettings
@@ -177,6 +177,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavi
 Scenario: EvergreenJnr_DevicesList_CheckThatListCanBeFoundUsingAnyCapsOrSmallLetters
 	When User clicks 'Devices' on the left-hand menu
 	When User enters "new" text in Search field at List Panel
-	Then "New York - Devices" list is not displayed in the bottom section of the List Panel
+	Then 'New York - Devices' list is displayed in the Lists panel
 	When User enters "New" text in Search field at List Panel
-	Then "New York - Devices" list is not displayed in the bottom section of the List Panel
+	Then 'New York - Devices' list is displayed in the Lists panel
