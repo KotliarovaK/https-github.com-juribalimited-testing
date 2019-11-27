@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User clicks "Entitled to the device owner" checkbox on the Project details page
+	And User checks 'Entitled to the device owner' checkbox
 	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 2129 selected)" is displayed to the user in the Project Scope Changes section

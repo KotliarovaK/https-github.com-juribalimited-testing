@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -85,6 +86,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var panel = _driver.NowAt<FiltersElement>();
             _driver.MoveToElement(panel.FilterCategories.Last());
             Logger.Write("Filter panel is scrolled down");
+        }
+
+        [Then(@"'(.*)' category is placed next to the corresponding project group")]
+        public void ThenSpecifiedCategoriesPlacedInParticularProjectGroup(string categoryName)
+        {
+            var panel = _driver.NowAt<FiltersElement>();
+
+            var allCats = panel.GetCategoriesFromFilterPanelPageByPage();
+
+            foreach (var cat in allCats)
+            {
+                if (cat.StartsWith(categoryName))
+                {
+                    string projectName = cat.Split(':').ToList().Last();
+                    int curentCategoryIndex = allCats.IndexOf(cat);
+                    Verify.That((allCats[curentCategoryIndex - 1].EndsWith(projectName) || allCats[curentCategoryIndex + 1].EndsWith(projectName)), Is.True, $"{cat} category possible appears in wrong place");
+                }
+            }
         }
 
         [Then(@"User sees ""(.*)"" section expanded by default in Filters panel")]
@@ -222,7 +241,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 filterElement.FilterSearchTextBox.SendKeys(searchedText);
             }
         }
-        
+
         [Then(@"User sees instruction '(.*)' below '(.*)' field")]
         public void ThenValueIsDisplayedForSelectedLookupFilter(string instruction, string fieldName)
         {

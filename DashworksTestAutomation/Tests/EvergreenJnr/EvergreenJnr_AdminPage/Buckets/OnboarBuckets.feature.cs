@@ -185,7 +185,7 @@ this.FeatureBackground();
 #line 19
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table2, "When ");
 #line 23
- testRunner.Then("\"Devices 2/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Devices 2/0\' tab is displayed on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
  testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
@@ -194,7 +194,7 @@ this.FeatureBackground();
  testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 27
- testRunner.Then("\"Devices 0/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Devices 0/0\' tab is displayed on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
  testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29

@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	| Field | Data                                                       |
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	#And 'Resync owner' checkbox is checked
 	#And 'Resync name' checkbox is checked
 	When User enters 'Microsoft SQL' in the 'Application' autocomplete field and selects 'Microsoft SQL Server 2012' value
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	| Field | Data                      |
 	| Name  | Microsoft SQL Server 2012 |
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User enters 'WPF' in the 'Application' autocomplete field and selects '"WPF/E" (codename) Community Technology Preview (Feb 2007)' value
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
@@ -59,6 +59,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPo
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User enters 'k9 ' text to 'Application' textbox
 	Then Error message is not displayed

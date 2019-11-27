@@ -447,8 +447,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then 'All Devices' content is displayed in 'Scope' textbox
 	Then "16764" content is displayed in "Description" field
 	Then 'Manual' content is displayed in 'Run' dropdown
-	Then "Active" checkbox is checked on the Admin page
-	Then "Stop on failed action" checkbox is checked on the Admin page
+	Then 'Active' checkbox is checked
+	Then 'Stop on failed action' checkbox is checked
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text

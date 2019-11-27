@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Offboard all associated users' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Offboard all associated users' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -84,8 +84,8 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
-	Then following text 'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
+	Then popup is displayed to User
+	Then 'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object deletes all project related information about it.' text is displayed on popup
 
 	#Ann.I. 11/06/19: ready only for the 'spectrum'
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS18785 @Not_Ready
@@ -96,6 +96,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssoci
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User clicks "0286449FB2C34A12809" link on the Details Page
 	Then Details page for "0286449FB2C34A12809 (McFadden, Susan)" item is displayed to the user

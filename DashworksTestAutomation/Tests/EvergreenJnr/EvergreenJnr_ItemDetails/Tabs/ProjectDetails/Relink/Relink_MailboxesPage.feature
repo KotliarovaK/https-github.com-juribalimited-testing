@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	| Name          | 01A921EFD05545818AA@bclabs.local |
 	| Mailbox Owner | Leon, Nacoma                     |
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Resync owner and users' checkbox is checked
 	And 'Resync name' checkbox is checked
 	When User enters '04D158C83A0142F3B79' in the 'Mailbox' autocomplete field and selects '04D158C83A0142F3B79@bclabs.local' value

@@ -146,14 +146,14 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| Objects                        |
 	| ABQ575757 (Salvador K. Waller) |
 	| ADG685492 (Eugene N. Stanton)  |
-	Then "Devices 2/0" is displayed in the tab header on the Admin page
-	And "Users 2/0" is displayed in the tab header on the Admin page
-	And "Applications 2/0" is displayed in the tab header on the Admin page
+	Then 'Devices 2/0' tab is displayed on Project Scope Changes page
+	And 'Users 2/0' tab is displayed on Project Scope Changes page
+	And 'Applications 2/0' tab is displayed on Project Scope Changes page
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then "Devices 0/0" is displayed in the tab header on the Admin page
-	And "Users 0/0" is displayed in the tab header on the Admin page
-	And "Applications 0/0" is displayed in the tab header on the Admin page
+	Then 'Devices 0/0' tab is displayed on Project Scope Changes page
+	And 'Users 0/0' tab is displayed on Project Scope Changes page
+	And 'Applications 0/0' tab is displayed on Project Scope Changes page
 	When User navigates to the 'Queue' left menu item
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
