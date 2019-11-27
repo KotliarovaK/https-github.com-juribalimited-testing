@@ -388,16 +388,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
         }
 
+        //TODO should be removed
         public bool TextMessage(string textMessage)
         {
             return Driver.IsElementDisplayed(By.XPath($".//*[text()='{textMessage}']"));
-        }
-
-        public bool GetTabHeaderInTheScopeChangesSection(string text)
-        {
-            By locator = By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{text}']");
-            Driver.WaitForElementToBeDisplayed(locator);
-            return Driver.IsElementDisplayed(locator);
         }
 
         public bool GetDisplayStateForStringFilterByName(string filterName)

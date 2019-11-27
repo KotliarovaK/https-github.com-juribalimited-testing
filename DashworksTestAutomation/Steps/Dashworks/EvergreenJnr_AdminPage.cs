@@ -416,15 +416,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
-        [Then(@"""(.*)"" is displayed in the tab header on the Admin page")]
-        public void ThenIsDisplayedInTheTabHeaderOnTheAdminPage(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetTabHeaderInTheScopeChangesSection(text),
-                $"{text} is not displayed in the Project Scope Changes section");
-        }
-
         //TODO replace by WhenUserDeselectAllRowsOnTheGrid
         [When(@"User clicks Select All checkbox on the grid")]
         public void WhenUserSelectsAllRowsOnTheGrid()

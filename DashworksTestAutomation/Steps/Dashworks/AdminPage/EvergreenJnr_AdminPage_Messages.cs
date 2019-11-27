@@ -44,6 +44,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
+        //TODO this method should be removed
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
         {
