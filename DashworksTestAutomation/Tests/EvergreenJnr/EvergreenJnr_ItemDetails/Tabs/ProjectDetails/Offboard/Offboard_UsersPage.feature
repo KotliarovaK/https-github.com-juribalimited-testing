@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
 	Then " 02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -57,8 +57,8 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	| ColumnName   |
 	| Hostname     |
 	| Owned        |
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

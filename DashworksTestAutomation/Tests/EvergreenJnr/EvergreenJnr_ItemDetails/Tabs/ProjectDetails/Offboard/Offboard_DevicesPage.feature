@@ -28,8 +28,8 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	| SelectedRowsName |
 	| ABQ575757        |
 	Then " UK\ABQ575757" chip have tooltip with "UK\ABQ575757" text
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up 
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup 
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -95,8 +95,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	And User clicks 'OFFBOARD' button in Dialog Pop-up 
-	And User clicks 'OFFBOARD' button in Dialog Pop-up 
+	And User clicks 'OFFBOARD' button on popup 
+	And User clicks 'OFFBOARD' button on popup 
 	Then Success message is displayed and contains "The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)" text
 	When User navigates to the 'Projects Summary' left submenu item
 	Then Success message is not displayed
@@ -170,8 +170,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObje
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'OFFBOARD' button
-	When User clicks 'OFFBOARD' button in Dialog Pop-up 
-	When User clicks 'OFFBOARD' button in Dialog Pop-up 
+	When User clicks 'OFFBOARD' button on popup 
+	When User clicks 'OFFBOARD' button on popup 
 	When User switches to previous tab
 	When User clicks 'OFFBOARD' button
 	Then Warning message with "This device has already been offboarded from User Evergreen Capacity Project" text is displayed on the Project Details Page

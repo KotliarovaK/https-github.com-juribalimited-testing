@@ -28,8 +28,8 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
 	Then " BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup
 	Then Success message is displayed and contains "The selected objects were successfully queued for offboarding from USE ME FOR AUTOMATION(MAIL SCHDLD)" text
 	#going to check the object state
 	When User clicks 'Admin' on the left-hand menu

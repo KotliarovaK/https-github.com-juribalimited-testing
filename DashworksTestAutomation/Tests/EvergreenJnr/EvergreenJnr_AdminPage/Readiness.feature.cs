@@ -297,7 +297,7 @@ this.FeatureBackground();
 #line 58
  testRunner.Then("Popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
- testRunner.When("User clicks \'DELETE\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
  testRunner.Then("Success message is displayed and contains \"The selected readiness has been delete" +
                     "d\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -317,7 +317,7 @@ this.FeatureBackground();
 #line 67
  testRunner.Then("Popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
- testRunner.When("User clicks \'DELETE\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -431,7 +431,7 @@ this.FeatureBackground();
 #line 94
  testRunner.Then("Popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 95
- testRunner.When("User clicks \'CANCEL\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'CANCEL\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -448,7 +448,7 @@ this.FeatureBackground();
 #line 102
  testRunner.Then("\'DELETE\' popup button color is \'rgba(242, 88, 49, 1)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 103
- testRunner.When("User clicks \'DELETE\' button in Dialog Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 104
  testRunner.Then("Success message is displayed and contains \"The selected readinesses have been del" +
                     "eted, changes might not take effect immediately\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -16,5 +16,5 @@ Scenario: EvergreenJnr_UsersList_CheckThatResyncOptionIsWorkedCorrectlyForProjec
 	Then Dialog Pop-up is displayed for User
 	Then 'Resync apps' checkbox is checked
 	Then 'Resync name' checkbox is checked
-	When User clicks 'RESYNC' button in Dialog Pop-up
+	When User clicks 'RESYNC' button on popup
 	Then Success message is displayed and contains "User successfully resynced" text

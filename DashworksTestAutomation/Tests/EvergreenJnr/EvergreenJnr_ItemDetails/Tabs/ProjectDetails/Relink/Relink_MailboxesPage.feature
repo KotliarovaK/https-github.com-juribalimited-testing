@@ -24,9 +24,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	When User enters '04D158C83A0142F3B79' in the 'Mailbox' autocomplete field and selects '04D158C83A0142F3B79@bclabs.local' value
 	When User selects state 'true' for 'Resync owner and users' checkbox
 	When User selects state 'true' for 'Resync name' checkbox
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Mailbox successfully relinked" text
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	| Name          | 01A921EFD05545818AA@bclabs.local |
 	| Mailbox Owner | Leon, Nacoma                     |
 	When User clicks 'RESYNC' button 
-	And User clicks 'RESYNC' button in Dialog Pop-up
+	And User clicks 'RESYNC' button on popup
 	Then Success message is displayed and contains "The Evergreen owner of this Mailbox has been queued for onboarding into this project, the change in ownership for this Mailbox will show once this is complete" text
 	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
@@ -46,8 +46,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	| Mailbox Owner | Jin, Jh                          |
 	When User clicks 'RELINK' button 
 	And User enters '01A921EFD05545818AA' in the 'Mailbox' autocomplete field and selects '01A921EFD05545818AA@bclabs.local' value
-	And User clicks 'RELINK' button in Dialog Pop-up
-	And User clicks 'RELINK' button in Dialog Pop-up
+	And User clicks 'RELINK' button on popup
+	And User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Mailbox successfully relinked" text
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
@@ -56,5 +56,5 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup

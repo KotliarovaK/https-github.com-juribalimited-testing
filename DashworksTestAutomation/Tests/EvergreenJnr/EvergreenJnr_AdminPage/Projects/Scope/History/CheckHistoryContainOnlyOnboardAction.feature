@@ -45,15 +45,14 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEverg
 	When User navigates to "User Evergreen Capacity Project" project details
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
-	Then Counter shows "60,371" found rows
+	Then Counter shows "60,305" found rows
 	When User clicks String Filter button for "Action" column on the Admin page
 	Then following String Values are displayed in the filter
 	| Values                     |
-	| Offboard Device Object     |
 	| Onboard Application Object |
 	| Onboard Device Object      |
 	| Onboard User Object        |
 	When User selects "Onboard Application Object" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
-	Then Rows counter shows "41,405" of "60,371" rows
+	Then Rows counter shows "41,339" of "60,305" rows
