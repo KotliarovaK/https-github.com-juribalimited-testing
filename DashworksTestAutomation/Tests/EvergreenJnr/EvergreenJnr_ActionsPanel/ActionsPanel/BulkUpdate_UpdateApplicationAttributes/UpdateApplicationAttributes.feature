@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceFie
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	Then "Sticky Compliance" dropdown is not displayed
+	Then 'Sticky Compliance' dropdown is not displayed
 	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text

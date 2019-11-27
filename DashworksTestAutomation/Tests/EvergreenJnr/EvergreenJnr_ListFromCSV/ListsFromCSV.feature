@@ -13,7 +13,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage
 	When User selects 'List from CSV' in the 'Create' dropdown
 	Then "<ImportPage>" Import page is displayed to the User
 	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
-	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
+	Then 'File has headers' checkbox is unchecked
 	When User selects '<FileContains>' in the 'File Contains' dropdown
 	Then 'NEXT' button is not disabled
 
@@ -36,14 +36,14 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	When User selects "IncorrectFile.zip" file to upload on Import Lists from CSV page
 	#Check error message
 	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
-	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
-	Then "Include archived applications" checkbox is unchecked on the Base Dashboard Page
+	Then 'File has headers' checkbox is unchecked
+	Then 'Include archived applications' checkbox is unchecked
 	When User selects 'Hostname' in the 'File Contains' dropdown
 	Then 'NEXT' button is not disabled
 	When User clicks 'CANCEL' button 
 	Then Warning Pop-up is displayed to the User
-	When User clicks "NO" button in the Warning Pop-up message
+	When User clicks 'NO' button on popup
 	When User clicks 'CANCEL' button 
 	Then Warning Pop-up is displayed to the User
-	When User clicks "YES" button in the Warning Pop-up message
+	When User clicks 'YES' button on popup
 	Then 'All Devices' list should be displayed to the user

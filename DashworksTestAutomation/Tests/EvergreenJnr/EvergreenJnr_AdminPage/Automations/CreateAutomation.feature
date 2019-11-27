@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then '' content is displayed in 'Description' textbox
 	Then '' content is displayed in 'Automation Name' textbox
 	Then '' content is displayed in 'Scope' textbox
-	Then "Active" checkbox is unchecked on the Admin page
+	Then 'Active' checkbox is unchecked
 	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
 	When User selects '1803 Rollout' option from 'Scope' autocomplete
