@@ -421,7 +421,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then Create Action page is displayed to the User
 	#Add steps for running Automation (DAS-17427)
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17234 @DAS17625 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17234 @DAS17625 @DAS19117 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate
 	#Add Pre-requisites to Gold Data
 	#Pre-requisites:
@@ -474,6 +474,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects 'User Task 1' option from 'Task' autocomplete
+	Then Error message is not displayed on the Projects page
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
@@ -615,7 +616,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	Then 'Text Computer' value is displayed in the 'Task' dropdown
 	Then 'Remove' value is displayed in the 'Update Value' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @Cleanup @Not_Ready 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -634,6 +635,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Date Computer' option from 'Task' autocomplete
+	Then Error message is not displayed on the Projects page
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Aug 2019' text to 'Date' datepicker
 	#Delete After clarifications
@@ -655,7 +657,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	Then 'Update' value is displayed in the 'Update Date' dropdown
 	Then "5 Aug 2019" content is displayed in "Date" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @Not_Ready @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @DAS19117 @Not_Ready @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -668,10 +670,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Complete' in the 'Value' dropdown
-	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters '31 Aug 2019' text to 'Date' datepicker
+	Then Error message is not displayed on the Projects page
+	When User selects 'Update' in the 'Update Value' dropdown
+	When User selects 'Complete' in the 'Value' dropdown
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '31 Aug 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
 	When User selects '1803 Team' option from 'Team' autocomplete
 	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
@@ -691,7 +694,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	And 'Update Date' content is displayed in 'Update Date' dropdown
 	And 'Update Owner' content is displayed in 'Update Owner' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17744 @Not_Ready @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17744 @DAS19117 @Not_Ready @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -704,10 +707,11 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One' option from 'Stage' autocomplete
 	And User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Started' in the 'Value' dropdown
-	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters '5 Sep 2019' text to 'Date' datepicker
+	Then Error message is not displayed on the Projects page
+	When User selects 'Update' in the 'Update Value' dropdown
+	When User selects 'Started' in the 'Value' dropdown
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '5 Sep 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
 	When User selects '1803 Team' option from 'Team' autocomplete
 	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
@@ -756,23 +760,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	| Stage 2 |
 	| Stage 3 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Not_Ready @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @DAS19117 @Not_Ready @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| DA17778        | 17778       | true   | false              | All Devices | Manual |
 	And User navigates to the 'Actions' left menu item
 	#Action 1
-	And User clicks 'CREATE ACTION' button 
-	And User enters '17778 None' text to 'Action Name' textbox
-	And User selects 'Update task value' in the 'Action Type' dropdown
-	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects 'Stage 1' option from 'Stage' autocomplete
-	And User selects 'Scheduled Date' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters '15 Aug 2019' text to 'Date' datepicker
-	And User selects 'None' in the 'Capacity Slot' dropdown
-	And User clicks 'CREATE' button 
+	When User clicks 'CREATE ACTION' button 
+	When User enters '17778 None' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	When User selects 'Stage 1' option from 'Stage' autocomplete
+	When User selects 'Scheduled Date' option from 'Task' autocomplete
+	Then Error message is not displayed on the Projects page
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '15 Aug 2019' text to 'Date' datepicker
+	When User selects 'None' in the 'Capacity Slot' dropdown
+	When User clicks 'CREATE' button 
 	#Action 2
 	And User clicks 'CREATE ACTION' button 
 	And User enters '17778 Slot' text to 'Action Name' textbox

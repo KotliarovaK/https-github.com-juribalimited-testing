@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	When User selects 'DAS17691_Project' option from 'Project' autocomplete
 	Then "Stage" dropdown is not displayed on the Admin Settings screen
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -137,6 +137,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
+	Then Error message is not displayed on the Projects page
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Failed' in the 'Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
@@ -147,7 +148,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	And User selects 'Failed' in the 'Value' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoadedCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -163,8 +164,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
-	And User selects 'No change' in the 'Update Value' dropdown
-	And User selects 'No change' in the 'Update Date' dropdown
+	Then Error message is not displayed on the Projects page
+	When User selects 'No change' in the 'Update Value' dropdown
+	When User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
 	When User clicks 'Automations' header breadcrumb

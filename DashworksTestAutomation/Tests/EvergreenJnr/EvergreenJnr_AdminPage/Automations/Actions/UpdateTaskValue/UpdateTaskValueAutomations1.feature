@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @DAS19117 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
@@ -42,6 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Date Computer' option from 'Task' autocomplete
+	Then Error message is not displayed on the Projects page
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '999999' text to 'Value' textbox
 	Then '100000' content is displayed in 'Value' textbox
@@ -142,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'After current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
@@ -157,6 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Project Dates' option from 'Stage' autocomplete
 	When User selects 'Forecast Date' option from 'Task' autocomplete
+	Then Error message is not displayed on the Projects page
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options    |

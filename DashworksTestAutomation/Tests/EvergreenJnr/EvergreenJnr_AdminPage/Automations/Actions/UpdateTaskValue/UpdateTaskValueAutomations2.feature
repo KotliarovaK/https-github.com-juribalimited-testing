@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
 	Then '10 Oct 2019 00:00' content is displayed in the 'zUserAutom: Relative BU \ DT Auto App (Date)' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @DAS19117 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxesAutomation
 	When User creates new Automation via API and open it
@@ -85,6 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU' option from 'Stage' autocomplete
 	When User selects 'DT Auto Mail' option from 'Task' autocomplete
+	Then Error message is not displayed on the Projects page
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
 	When User selects 'After current value' in the 'Before or After' dropdown

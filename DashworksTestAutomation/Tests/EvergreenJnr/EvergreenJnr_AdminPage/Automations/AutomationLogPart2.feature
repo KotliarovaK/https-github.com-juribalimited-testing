@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17684 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17684 @DAS19117 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17684
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -21,8 +21,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage 1' option from 'Stage' autocomplete
 	And User selects 'Radiobutton Date App Task' option from 'Task' autocomplete
-	And User selects 'No change' in the 'Update Value' dropdown
-	And User selects 'No change' in the 'Update Date' dropdown
+	Then Error message is not displayed on the Projects page
+	When User selects 'No change' in the 'Update Value' dropdown
+	When User selects 'No change' in the 'Update Date' dropdown
 	Then 'CREATE' button is disabled
 	And 'SAVE AND CREATE ANOTHER' button is disabled
 	When User selects 'Update' in the 'Update Value' dropdown
