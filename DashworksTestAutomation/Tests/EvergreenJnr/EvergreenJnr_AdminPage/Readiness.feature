@@ -55,8 +55,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| RED              |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button 
-	Then Popup with 'Delete Readiness' title is displayed
-	When User clicks 'DELETE' button in Dialog Pop-up
+	Then popup with 'Delete Readiness' title is displayed
+	When User clicks 'DELETE' button on popup
 	Then Success message is displayed and contains "The selected readiness has been deleted" text
 	Then There are no errors in the browser console
 	When User select "Readiness" rows in the grid
@@ -64,8 +64,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	| AMBER            |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button 
-	Then Popup with 'Delete Readiness' title is displayed
-	When User clicks 'DELETE' button in Dialog Pop-up
+	Then popup with 'Delete Readiness' title is displayed
+	When User clicks 'DELETE' button on popup
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Cleanup
@@ -91,16 +91,16 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	| RED              |
 	When User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button 
-	Then Popup with 'Delete Readiness' title is displayed
-	When User clicks 'CANCEL' button in Dialog Pop-up
+	Then popup with 'Delete Readiness' title is displayed
+	When User clicks 'CANCEL' button on popup
 	And User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| GREEN            |
 	And User clicks 'DELETE' button 
-	Then Popup with 'Delete Readiness' title is displayed
+	Then popup with 'Delete Readiness' title is displayed
 	Then 'CANCEL' popup button color is 'rgba(236, 237, 239, 1)'
 	Then 'DELETE' popup button color is 'rgba(242, 88, 49, 1)'
-	When User clicks 'DELETE' button in Dialog Pop-up
+	When User clicks 'DELETE' button on popup
 	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup @Do_Not_Runt_With_Readiness
@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then "1" content is displayed for "Task Values Count" column
 	When User clicks "Change to ready" option in Cog-menu for "GREY" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
-	Then Success message is displayed and contains "click here to view the Grey readiness" link
+	Then 'click here to view the Grey readiness' link is displayed
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
@@ -272,7 +272,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User clicks Reset Filters button on the Admin page
 	When User clicks "Change to not ready" option in Cog-menu for "GREEN" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
-	Then Success message is displayed and contains "click here to view the Green readiness" link
+	Then 'click here to view the Green readiness' link is displayed
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
@@ -280,7 +280,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User clicks "Change to ready" option in Cog-menu for "GREEN" item on Admin page
 	When User clicks "Make default for applications" option in Cog-menu for "AMBER" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
-	Then Success message is displayed and contains "click here to view the Amber readiness" link
+	Then 'click here to view the Amber readiness' link is displayed
+	Then 'click here to view the Amber readiness' link is displayed
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user

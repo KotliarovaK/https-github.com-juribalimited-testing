@@ -127,7 +127,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']//button")]
         public IWebElement DetailsPanelExpandListsIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//table//tr[1]/td")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'dependants')]//table//tr[1]/td")]
         public IList<IWebElement> DetailsPanelSharedListsTableHeaders { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='Review Widget List Permissions']")]
@@ -428,10 +428,11 @@ namespace DashworksTestAutomation.Pages
         #endregion
 
         #region Card
-        public IWebElement GetWidgetPreviewText()
+        public IWebElement GetWidgetText()
         {
             try
             {
+                // .//*[text()='{WIDGET_NAME}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[contains(@class, 'widget-value')]//span[contains(@class, 'text')]
                 return Driver.FindElement(
                     By.XPath(".//div[contains(@class, 'widget-value')]//span[contains(@class, 'text')]"));
             }
@@ -445,7 +446,6 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetCardWidgetContent(string widgetTitle)
         {
             var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
-            //var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class, 'card-widget-value')]//span");
             Driver.WaitForElementToBeDisplayed(cardWidget);
             return Driver.FindElement(cardWidget);
         }

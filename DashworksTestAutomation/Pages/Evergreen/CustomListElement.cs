@@ -148,18 +148,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return GetListElementByName(listName).FindElement(SettingsIcon);
         }
 
-        public IWebElement ListInBottomSection(string listName)
-        {
-            var listSelector =
-                By.XPath($".//li[contains(@class, 'menu-show-on-hover ng-star-inserted')]//span[text()='{listName}']");
-            return Driver.FindElement(listSelector);
-        }
-
-        public bool DisplayStatusForListByName(string listName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($"//span[@class='submenu-actions-list-name'][text()='{listName}']"));
-        }
-
         public IWebElement GetListNameOnTopToolsPanel(string listName)
         {
             var allListName = $".//*[text()='{listName}']/ancestor::div[@class='top-tools']//div[@aria-controls='submenu']";

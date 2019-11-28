@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	When User enters '17691_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'DAS17691_Project' option from 'Project' autocomplete
-	Then "Stage" dropdown is not displayed on the Admin Settings screen
+	Then 'Stage' dropdown is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction

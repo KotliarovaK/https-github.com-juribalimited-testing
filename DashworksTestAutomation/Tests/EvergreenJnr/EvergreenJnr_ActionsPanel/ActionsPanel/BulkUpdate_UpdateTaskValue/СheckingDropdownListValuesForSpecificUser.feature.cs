@@ -168,7 +168,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table2.AddRow(new string[] {
-                        "<User>",
+                        string.Format("{0}", userName),
                         "m!gration"});
 #line 14
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2, "When ");
@@ -638,7 +638,7 @@ this.FeatureBackground();
                         "Password",
                         "Roles"});
             table13.AddRow(new string[] {
-                        "DAS13281",
+                        "DAS13281_2",
                         "Value",
                         "Test",
                         "m!gration",
@@ -652,7 +652,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table14.AddRow(new string[] {
-                        "DAS13281",
+                        "DAS13281_2",
                         "m!gration"});
 #line 158
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table14, "When ");
@@ -791,7 +791,7 @@ this.FeatureBackground();
 #line 222
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 223
- testRunner.And("User removes \"DAS13281\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User removes \"DAS13281_2\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
