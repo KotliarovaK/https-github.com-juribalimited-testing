@@ -62,7 +62,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then "1803: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
 	And "Any Device in list 1803 Rollout" is displayed in added filter info
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup @NotReady
+#serhii: testing purposes 11/28/2019
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks 'Applications' on the left-hand menu
 	And User clicks the Filters button
@@ -585,7 +586,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidget
 	Then 'WidgetForDAS16167' Widget is displayed to the user
 	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19015 @Cleanup @NotReady
+#serhii: remove tag on terminator
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19015 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidgetBAsedOnStickyComplianceColumn
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Columns button

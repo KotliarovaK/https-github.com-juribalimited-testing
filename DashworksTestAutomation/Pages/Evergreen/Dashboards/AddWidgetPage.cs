@@ -183,6 +183,10 @@ namespace DashworksTestAutomation.Pages
                     Thread.Sleep(500);
                     break;
                 }
+                else
+                {
+                    Thread.Sleep(500);
+                }
             }
         }
     }
