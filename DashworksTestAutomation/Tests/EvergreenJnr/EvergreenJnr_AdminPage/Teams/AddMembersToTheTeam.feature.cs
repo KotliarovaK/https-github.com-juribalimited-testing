@@ -92,6 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
         public virtual void EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam()
         {
             System.Exception lastException = null;
@@ -131,7 +132,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
                         "DAS13172",
                         "Cleanup",
                         "Teams",
-                        "Do_Not_Run_With_Teams"});
+                        "Do_Not_Run_With_Teams",
+                        "Do_Not_Run_With_Buckets"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -122,8 +122,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| 17738_Automation | 17430       | true   | false              | All Devices | Manual |
@@ -148,10 +146,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	And User selects 'Failed' in the 'Value' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @DAS19117 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoadedCorrectly
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17619_Automation | 17619       | true   | false              | All Users | Manual |
@@ -164,7 +160,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
-	Then Error message is not displayed on the Projects page
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Remove owner' in the 'Update Owner' dropdown

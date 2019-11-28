@@ -70,8 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
 	Then '10 Oct 2019 00:00' content is displayed in the 'zUserAutom: Relative BU \ DT Auto App (Date)' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @DAS19117 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxesAutomation
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope                               | Run    |
@@ -85,7 +84,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Relative BU' option from 'Stage' autocomplete
 	When User selects 'DT Auto Mail' option from 'Task' autocomplete
-	Then Error message is not displayed on the Projects page
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
 	When User selects 'After current value' in the 'Before or After' dropdown
@@ -94,8 +92,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks 'Automations' header breadcrumb
 	When User enters "182921_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "182921_Automation" item on Admin page
+	When '182921_Automation' automation run has finished
+	When '182921_Automation' automation '18292_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
 	When User enters "182921_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -121,8 +120,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks 'Automations' header breadcrumb
 	When User enters "182921_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "182921_Automation" item on Admin page
+	When '182921_Automation' automation '18292_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
 	When User enters "182921_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page

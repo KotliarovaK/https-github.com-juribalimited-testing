@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @DAS19117 @Cleanup @Not_Ready
-#Waiting for updated Validation messages on the automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterTaskChangingToTaskWithNoDueDate
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -48,7 +47,6 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User selects '18712_Project' option from 'Project' autocomplete
 	When User selects '18712_Stage' option from 'Stage' autocomplete
 	When User selects '18712_Task' option from 'Task' autocomplete
-	Then Error message is not displayed on the Projects page
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Failed' in the 'Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown

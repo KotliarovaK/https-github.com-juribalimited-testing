@@ -5,10 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17684 @DAS19117 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17684 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17684
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
 	| 17684_Automation | 17684       | true   | false              | Apps with a Vendor | Manual |
@@ -35,6 +33,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User clicks 'Automations' header breadcrumb
 	And User enters "17684_Automation" text in the Search field for "Automation" column
 	And User clicks "Run now" option in Cog-menu for "17684_Automation" item on Admin page
+	When '17684_Automation' automation run has finished
+	When '17684_Automation' automation '17682_Action' action run has finished
 	And User navigates to the 'Automation Log' left menu item
 	And User enters "17684_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
