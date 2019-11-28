@@ -736,7 +736,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
+            var getColor = page.GetWidgetText().GetCssValue("color");
             Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -889,11 +889,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCardWidgetContent(widgetTitle).Click();
         }
 
+        [When(@"User clicks text in card widget")]
+        public void WhenUserClicksTextInCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetWidgetText().Click();
+        }
+
         [Then(@"Value '(.*)' is displayed in the card '(.*)' widget")]
         public void ValueIsDisplayedInCardWidget(string value, string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
             Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
         }
 

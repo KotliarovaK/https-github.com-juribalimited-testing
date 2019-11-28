@@ -584,3 +584,36 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidget
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16167' Widget is displayed to the user
 	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19015 @Cleanup @NotReady
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidgetBAsedOnStickyComplianceColumn
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName        |
+	| Sticky Compliance |
+	Then 'All Applications' list should be displayed to the user
+	When User create dynamic list with "ApplicationListFor19015" name on "Applications" page
+	Then "ApplicationListFor19015" list is displayed to user
+	When Dashboard with 'DashboardDAS19015' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List                    | Type      | AggregateFunction | AggregateBy       |
+	| Card       | WidgetForDAS16325 | ApplicationListFor19015 | Aggregate | Severity          | Sticky Compliance |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18939 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatFilterAppliesWhenDrilledDownCardWidgetBasedOnSeverity
+	When Dashboard with 'Dashboard for DAS18939' name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	And User adds new Widget
+	| WidgetType | Title             | List         | Type      | AggregateFunction | AggregateBy                            | Drilldown |
+	| Card       | WidgetForDAS18939 | 1803 Rollout | Aggregate | Severity          | 1803: Pre-Migration \ Ready to Migrate | Yes       |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button
+	Then 'WidgetForDAS18939' Widget is displayed to the user
+	When User clicks text in card widget
+	Then table content is present

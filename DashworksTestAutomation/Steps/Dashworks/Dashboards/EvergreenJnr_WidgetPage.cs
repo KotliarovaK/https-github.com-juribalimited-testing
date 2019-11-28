@@ -78,6 +78,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
             {
+                Thread.Sleep(500);
                 baseActionItem.SelectDropdown(row["AggregateFunction"], "AggregateFunction");
             }
 
