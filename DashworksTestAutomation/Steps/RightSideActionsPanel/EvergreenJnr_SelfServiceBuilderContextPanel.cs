@@ -94,13 +94,20 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             button.ClosePanelButton.Click();
         }
 
-        [When(@"User clicks '(.*)' option in opened Cog-menu")]
+        [When(@"User clicks '(.*)' option in opened Self Service Page Builder Context Panel Cog-menu")]
         public void WhenUserClicksOptionInOpenedCogMenu(string option)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
             cogMenu.GetCogMenuOptionByName(option).Click();
             _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks on '(.*)' button on Self Service Page Builder Context Panel")]
+        public void WhenUserClicksOnCreatePageButtonOnSelfServicePageBuilderContextPanel(String buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ClickButtonByName(buttonName);
         }
     }
 }

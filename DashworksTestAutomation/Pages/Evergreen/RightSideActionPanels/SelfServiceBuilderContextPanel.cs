@@ -45,8 +45,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             return Driver.FindElement(By.XPath(selector));
         }
 
-
-
         public Boolean GetCollapseExpandSelfServiceBuilderPagesButtonState()
         {
             if (CollapseExpandAllButton.GetAttribute("aria-label").Contains("Collapse All"))
@@ -64,7 +62,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             {
                 CollapseExpandAllButton.Click();
             }
-
         }
 
         public Boolean GetCollapseExpandSelfServiceBuilderPageButtonState(String contextPanelPageName)
@@ -85,7 +82,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             {
                 ContextPanelPageArrow(contextPanelPageName).Click();
             }
-
         }
 
         public void ClickOnContextPanelPageAddItemButton(String contextPanelPageName)
@@ -101,11 +97,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         public void ClickOnContextPanelPageSubCogMenuButton(String contextPanelPageName, String componentHeading, String componentName)
         {
             ContextPanelPageSubCogMenuButton(contextPanelPageName, componentHeading, componentName).Click();
-        }
-
-        public void ClickOnCreatePageButton()
-        {
-            ContextPanelPageAddItemButton().Click();
         }
     }
 }
