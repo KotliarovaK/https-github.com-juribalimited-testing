@@ -418,7 +418,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "click here to view the 15309_Action action" link
+	Then 'click here to view the 15309_Action action' link is displayed
 	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -441,14 +441,14 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
+	Then 'click here to view the 16764_Automation automation' link is displayed
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
 	Then 'All Devices' content is displayed in 'Scope' textbox
 	Then "16764" content is displayed in "Description" field
 	Then 'Manual' content is displayed in 'Run' dropdown
-	Then "Active" checkbox is checked on the Admin page
-	Then "Stop on failed action" checkbox is checked on the Admin page
+	Then 'Active' checkbox is checked
+	Then 'Stop on failed action' checkbox is checked
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text

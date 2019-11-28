@@ -736,7 +736,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
+            var getColor = page.GetWidgetText().GetCssValue("color");
             Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -889,11 +889,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCardWidgetContent(widgetTitle).Click();
         }
 
+        [When(@"User clicks text in card widget")]
+        public void WhenUserClicksTextInCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetWidgetText().Click();
+        }
+
         [Then(@"Value '(.*)' is displayed in the card '(.*)' widget")]
         public void ValueIsDisplayedInCardWidget(string value, string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
             Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
         }
 
@@ -1001,41 +1007,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectDropdown(option, dropdown);
         }
 
-        [Then(@"Print Preview is displayed in A4 format view")]
-        public void ThenPrintPreviewIsDisplayedInA4FormatView()
+        [Then(@"Print Preview is displayed in '(.*)' format and '(.*)' layout view")]
+        public void ThenPrintPreviewIsDisplayedInFormatView(string format, string layout)
         {
             var page = _driver.NowAt<PrintDashboardsPage>();
             _driver.WaitForDataLoading();
-            //Wait for style changing
-            Thread.Sleep(1000);
-            Verify.IsTrue(page.A4PrintPreviewView.Displayed, "Print Preview is not displayed in A4 format view");
-        }
-
-        [Then(@"Print Preview is displayed in Letter format view")]
-        public void ThenPrintPreviewIsDisplayedInLetterFormatView()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.LetterPrintPreviewView.Displayed, "Print Preview is not displayed in Letter format view");
-        }
-
-        [Then(@"Print Preview is displayed in Portrait orientation")]
-        public void ThenPrintPreviewIsDisplayedInPortraitOrientation()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.PortraitPrintPreviewOrientation.Displayed, "Print Preview is not displayed in Portrait orientation");
-        }
-
-        [Then(@"Print Preview is displayed in Landscape orientation")]
-        public void ThenPrintPreviewIsDisplayedInLandscapeOrientation()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.LandscapePrintPreviewOrientation.Displayed, "Print Preview is not displayed in Landscape orientation");
+            Verify.That(page.PrintPreview(format, layout).Displayed, Is.True, $"Print preview in {format} {layout} not displayed");
         }
 
         [When(@"User clicks Cancel button on the Print Preview Settings pop-up")]

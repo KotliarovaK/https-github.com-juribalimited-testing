@@ -78,6 +78,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
             {
+                Thread.Sleep(500);
                 baseActionItem.SelectDropdown(row["AggregateFunction"], "AggregateFunction");
             }
 
@@ -190,7 +191,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             createWidgetElement.ColorScheme.Click();
             Thread.Sleep(500);
-
 
             if (Convert.ToInt32(index) <= createWidgetElement.GetDropdownOptions().Count)
             {

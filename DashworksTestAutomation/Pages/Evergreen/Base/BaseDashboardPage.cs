@@ -273,6 +273,33 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        #region Link
+
+        public IWebElement GetLinkByText(string text, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var selector = By.XPath($".//span[contains(@class, 'inline-link')]//a[text()='{text}']");
+            if (!Driver.IsElementDisplayed(selector, waitTime))
+            {
+                throw new Exception($"Link with text '{text}' was not displayed");
+            }
+
+            return Driver.FindElement(selector);
+        }
+
+        public bool IsLinkDisplayed(string text)
+        {
+            try
+            {
+                return GetLinkByText(text, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
         #region Autocomplete
 
         public List<string> GetAllAutocompleteOptions(string placeholder)

@@ -23,22 +23,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver = driver;
         }
 
-        [Then(@"Dialog Pop-up is displayed for User")]
-        public void ThenDialogPop_UpIsDisplayedForUser()
+        [Then(@"popup is displayed to User")]
+        public void ThenPopupIsDisplayedToUser()
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             Verify.IsTrue(dialogContainer.PopupElement.Displayed(), "Dialog Pop-up is not displayed");
         }
 
-        [Then(@"Popup with '(.*)' title is displayed")]
+        [Then(@"popup with '(.*)' title is displayed")]
         public void ThenPopupWithTitleIsDisplayed(string title)
         {
             var page = _driver.NowAt<BaseDialogPage>();
             _driver.WaitForElementToContainsText(page.PopupTitle, title);
         }
 
-        [Then(@"following text '(.*)' is displayed in Dialog Pop-up")]
-        public void ThenFollowingTextIsDisplayedInDialogPop_Up(string text)
+        [Then(@"'(.*)' text is displayed on popup")]
+        public void ThenTextIsDisplayedOnPopup(string text)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             var actualText = dialogContainer.PopupElement.Text.Replace("\r\n", " ");
@@ -47,8 +47,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Button
 
-        [When(@"User clicks '(.*)' button in Dialog Pop-up")]
-        public void WhenUserClicksButtonInDialogPopUp(string buttonName)
+        [When(@"User clicks '(.*)' button on popup")]
+        public void WhenUserClicksButtonOnPopup(string buttonName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             dialogContainer.GetButtonByNameOnPopup(buttonName).Click();

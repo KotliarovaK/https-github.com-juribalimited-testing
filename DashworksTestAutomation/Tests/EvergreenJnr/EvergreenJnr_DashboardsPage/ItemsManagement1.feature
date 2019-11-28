@@ -8,18 +8,17 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200 @DAS17754 @DAS16563
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	Then User sees 'Print' tooltip for 'Print' on the Dashboard
-	And User sees 'Refresh' tooltip for 'Refresh' on the Dashboard
+	Then User sees 'Refresh' tooltip for 'Refresh' on the Dashboard
 	When User clicks 'print'  button on the Dashboards page
 	Then Print Preview is displayed to the User
-	And There is no breadcrumbs displayed on Dashboard page
+	Then There is no breadcrumbs displayed on Dashboard page
 	When User selects 'A4' option in the 'Paper Size' dropdown for Print Preview Settings
-	Then Print Preview is displayed in A4 format view
+	Then Print Preview is displayed in 'A4' format and 'Portrait' layout view
 	When User selects 'Letter' option in the 'Paper Size' dropdown for Print Preview Settings
-	Then Print Preview is displayed in Letter format view
-	When User selects 'Portrait' option in the 'Paper Layout' dropdown for Print Preview Settings
-	Then Print Preview is displayed in Portrait orientation
+	Then Print Preview is displayed in 'Letter' format and 'Portrait' layout view
 	When User selects 'Landscape' option in the 'Paper Layout' dropdown for Print Preview Settings
-	Then Print Preview is displayed in Landscape orientation
+	When User selects 'A4' option in the 'Paper Size' dropdown for Print Preview Settings
+	Then Print Preview is displayed in 'A4' format and 'Landscape' layout view
 	When User clicks Cancel button on the Print Preview Settings pop-up
 
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @DAS14618

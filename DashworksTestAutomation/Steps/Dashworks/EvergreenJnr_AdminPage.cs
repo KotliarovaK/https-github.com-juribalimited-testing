@@ -277,28 +277,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [Then(@"""(.*)"" checkbox is checked on the Admin page")]
-        public void ThenCheckboxIsCheckedOnTheAdminPage(string checkbox)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetCheckedCheckboxByName(checkbox), "checkbox is unchecked");
-        }
-
-        [Then(@"""(.*)"" checkbox is unchecked on the Admin page")]
-        [Then(@"""(.*)"" checkbox is unchecked on the Base Dashboard Page")]
-        public void ThenCheckboxIsUncheckedOnTheAdminPage(string checkbox)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(page.GetCheckedCheckboxByName(checkbox), "checkbox is checked");
-        }
-
-        [Then(@"""(.*)"" checkbox is greyed out on the Admin page")]
-        public void ThenCheckboxIsGreyedOutOnTheAdminPage(string checkbox)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetGreyedOutCheckboxByName(checkbox).Displayed(), "checkbox is available");
-        }
-
         [Then(@"'(.*)' text is displayed in the filter dropdown for the '(.*)' column")]
         public void ThenTextIsDisplayedInTheFilterDropdownForTheColumn(string text, string columnName)
         {
@@ -347,13 +325,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectsPage = _driver.NowAt<ProjectsPage>();
             Utils.Verify.IsTrue(projectsPage.ApplicationScopeCheckboxes.Displayed(),
                 "Application Scope checkboxes are active");
-        }
-
-        [Then(@"""(.*)"" tab is disabled")]
-        public void ThenTabIsDisabled(string tabName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.GetDisabledTabByName(tabName).Displayed(), $"{tabName} is active");
         }
 
         [Then(@"Application Scope checkboxes are active")]
@@ -445,15 +416,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
-        [Then(@"""(.*)"" is displayed in the tab header on the Admin page")]
-        public void ThenIsDisplayedInTheTabHeaderOnTheAdminPage(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetTabHeaderInTheScopeChangesSection(text),
-                $"{text} is not displayed in the Project Scope Changes section");
-        }
-
         //TODO replace by WhenUserDeselectAllRowsOnTheGrid
         [When(@"User clicks Select All checkbox on the grid")]
         public void WhenUserSelectsAllRowsOnTheGrid()
@@ -493,13 +455,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var checkbox = _driver.NowAt<ProjectsPage>();
             Utils.Verify.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected,
                 "Checkbox state is incorrect");
-        }
-
-        [When(@"User clicks ""(.*)"" checkbox on the Project details page")]
-        public void WhenUserClicksCheckboxOnTheProjectDetailsPage(string checkboxName)
-        {
-            var checkbox = _driver.NowAt<ProjectsPage>();
-            checkbox.SelectCheckboxByName(checkboxName);
         }
 
         [When(@"User clicks following checkboxes on the Project details page:")]
@@ -1347,20 +1302,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Verify.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
                 "Text in search field is different");
-        }
-
-        [Then(@"""(.*)"" dropdown is not displayed")]
-        public void ThenDropdownIsNotDisplayed(string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(dropdown.GetMissingDropdownByName(dropdownName), $"{dropdownName} is displayed");
-        }
-
-        [Then(@"""(.*)"" dropdown is not displayed on the Admin Settings screen")]
-        public void ThenDropdownIsNotDisplayedOnTheAdminSettingsScreen(string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(dropdown.GetMissingDropdownOnSettingsScreenByName(dropdownName), $"{dropdownName} is displayed");
         }
 
         [Then(@"""(.*)"" checkbox in the ""(.*)"" field are not available to select")]

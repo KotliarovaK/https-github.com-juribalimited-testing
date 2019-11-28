@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	#Then "18MailboxCategory" Category is displayed to the user
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	And "Mailboxes to remove (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
-	And "Mailboxes 0/0" is displayed in the tab header on the Admin page
+	And 'Mailboxes 0/0' tab is displayed on Project Scope Changes page
 	When User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then Warning message with "2 mailboxes will be added" text is displayed on the Admin page
-	And "Mailboxes 2/0" is displayed in the tab header on the Admin page
+	And 'Mailboxes 2/0' tab is displayed on Project Scope Changes page
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	And "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section

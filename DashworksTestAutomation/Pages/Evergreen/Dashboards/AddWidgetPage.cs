@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
@@ -167,24 +168,24 @@ namespace DashworksTestAutomation.Pages
 
         public void SelectSplitByItem(string item)
         {
-            var splitByDdl = ".//*[@aria-label='SplitBy']";
-            var expandedItems = $".//span[@class='mat-option-text']";
-            var itemToBeSelected = $".//mat-option//span[contains(text(), '{item}')]";
+            var splitByDdl = By.XPath(".//*[@aria-label='SplitBy']");
+            var expandedItems = By.XPath(".//span[@class='mat-option-text']");
+            var itemToBeSelected = By.XPath($".//mat-option//span[contains(text(), '{item}')]");
 
             for (int i = 0; i < 3; i++)
             {
-                if (Driver.FindElements(By.XPath(expandedItems)).Count > 0)
+                Driver.FindElement(splitByDdl).Click();
+                Thread.Sleep(500);
+
+                if (Driver.IsElementDisplayed(expandedItems))
                 {
-                    //click item in expanded ddl
-                    Driver.FindElement(By.XPath(itemToBeSelected)).Click();
-                    System.Threading.Thread.Sleep(500);
+                    Driver.FindElement(itemToBeSelected).Click();
+                    Thread.Sleep(500);
                     break;
                 }
                 else
                 {
-                    //expand ddl
-                    Driver.FindElement(By.XPath(splitByDdl)).Click();
-                    System.Threading.Thread.Sleep(1000);
+                    Thread.Sleep(500);
                 }
             }
         }
