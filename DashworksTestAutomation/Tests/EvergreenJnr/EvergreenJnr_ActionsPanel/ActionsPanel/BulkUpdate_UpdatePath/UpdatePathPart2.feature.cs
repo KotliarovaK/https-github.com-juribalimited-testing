@@ -312,9 +312,9 @@ this.FeatureBackground();
 #line 70
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 71
- testRunner.And("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User collapses \'Selected Columns\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 72
- testRunner.And("User is expand \"Project Stages: Windows7Mi\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User expands \'Project Stages: Windows7Mi\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
@@ -333,7 +333,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Windows7Mi: Portal Self Service"});
 #line 73
- testRunner.And("the following Column subcategories are displayed for open category:", ((string)(null)), table5, "And ");
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

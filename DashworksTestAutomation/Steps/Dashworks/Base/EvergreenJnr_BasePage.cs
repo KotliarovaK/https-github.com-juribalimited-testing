@@ -986,5 +986,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Collapse/Expand Category
+
+        [When(@"User collapses '(.*)' category")]
+        public void WhenUserCollapsesCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.CollapseExpandCategory(categoryName, false);
+        }
+
+        [When(@"User expands '(.*)' category")]
+        public void WhenUserExpandsCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.CollapseExpandCategory(categoryName, true);
+        }
+
+        #endregion
     }
 }
