@@ -43,9 +43,9 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks "ADD ROW GROUP" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
-	When User closed "Selected Columns" columns category
-	And User closed "Suggested" columns category
-	And User is expand "Evergreen" columns category
+	When User collapses 'Selected Columns' category
+	When User collapses 'Suggested' category
+	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Bucket        |
@@ -54,9 +54,9 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD COLUMN" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
-	When User closed "Selected Columns" columns category
-	And User closed "Suggested" columns category
-	And User is expand "Evergreen" columns category
+	When User collapses 'Selected Columns' category
+	When User collapses 'Suggested' category
+	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Bucket        |
@@ -65,9 +65,9 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD VALUE" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
-	When User closed "Selected Columns" columns category
-	And User closed "Suggested" columns category
-	And User is expand "Evergreen" columns category
+	When User collapses 'Selected Columns' category
+	When User collapses 'Suggested' category
+	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Bucket        |
@@ -87,27 +87,27 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User clicks "ADD ROW GROUP" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
-	When User closed "Selected Columns" columns category
-	And User closed "Suggested" columns category
-	And User is expand "Evergreen" columns category
+	When User collapses 'Selected Columns' category
+	When User collapses 'Suggested' category
+	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD COLUMN" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
-	When User closed "Selected Columns" columns category
-	And User closed "Suggested" columns category
-	And User is expand "Evergreen" columns category
+	When User collapses 'Selected Columns' category
+	When User collapses 'Suggested' category
+	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD VALUE" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
-	When User closed "Selected Columns" columns category
-	And User closed "Suggested" columns category
-	And User is expand "Evergreen" columns category
+	When User collapses 'Selected Columns' category
+	When User collapses 'Suggested' category
+	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Capacity Unit |

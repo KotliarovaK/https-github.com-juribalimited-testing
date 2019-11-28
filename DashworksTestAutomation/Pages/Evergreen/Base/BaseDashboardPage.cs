@@ -12,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
     public class BaseDashboardPage : SeleniumBasePage
     {
+        public const string CategoryCollapseExpandSelector = ".//*[contains(@class, 'filter-category-label')][text()='{0}']//ancestor::div[contains(@class, 'category-title')]//i";
+
         public const string DatepickerSelector = ".//tbody[@class='mat-calendar-body']";
 
         public const string DatepickerCellSelector = "//td[contains(@class,'cell')]";
@@ -848,6 +850,44 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//span[contains(@class, 'chips-item')]");
             return GetTextbox(textbox).FindElements(chipsSelector);
+        }
+
+        #endregion
+
+        #region Collapse/Expand Category
+
+        public IWebElement CategoryCollapseExpandButton(string name)
+        {
+            var selector = By.XPath(string.Format(CategoryCollapseExpandSelector, name));
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+            {
+                throw new Exception($"Collapse/Expand button was not displayed for '{name}' category");
+            }
+
+            return Driver.FindElement(selector);
+        }
+
+        //true for Expanded
+        public bool IsCategoryExpanded(string name)
+        {
+            return CategoryCollapseExpandButton(name).GetAttribute("class").Contains("clear");
+        }
+
+        //true to Expand
+        public void CollapseExpandCategory(string name, bool condition)
+        {
+            if (!IsCategoryExpanded(name).Equals(condition))
+            {
+                try
+                {
+                    CategoryCollapseExpandButton(name).Click();
+                }
+                catch
+                {
+                    Driver.MouseHover(CategoryCollapseExpandButton(name));
+                    CategoryCollapseExpandButton(name).Click();
+                }
+            }
         }
 
         #endregion
