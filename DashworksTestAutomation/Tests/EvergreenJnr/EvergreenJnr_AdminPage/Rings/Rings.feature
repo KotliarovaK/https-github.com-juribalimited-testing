@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User enters 'NewDescription' text to 'Description' textbox
 	Then 'UPDATE' button is not disabled
 	Then "Default Ring" checkbox is checked and cannot be unchecked
-	Then "Maps to Evergreen Ring" dropdown is not displayed on the Admin Settings screen
+	Then 'Maps to Evergreen Ring' dropdown is not displayed
 	When User clicks 'CANCEL' button 
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User opens 'Ring' column settings

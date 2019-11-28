@@ -71,18 +71,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedList, actualList,
                 $"Incorrect submenu items for '{parent}' parent left menu");
         }
-
-        //TODO subheader should be moved to separate web element
-        #region Subheader
-
-        [Then(@"Page with '(.*)' subheader is displayed to user")]
-        public void ThenPageWithSubheaderIsDisplayedToUser(string subHeader)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(_driver.IsElementDisplayed(page.SubHeader, WebDriverExtensions.WaitTime.Short), $"Page with '{subHeader}' is not displayed");
-            Verify.AreEqual(subHeader, page.SubHeader.Text, "Incorrect page header");
-        }
-
-        #endregion
     }
 }

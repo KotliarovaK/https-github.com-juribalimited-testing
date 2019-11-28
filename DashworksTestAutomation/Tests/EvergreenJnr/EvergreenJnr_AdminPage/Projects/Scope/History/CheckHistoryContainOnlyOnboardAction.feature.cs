@@ -305,14 +305,12 @@ this.FeatureBackground();
 #line 47
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.Then("Counter shows \"60,371\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Counter shows \"60,305\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 49
  testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table3.AddRow(new string[] {
-                        "Offboard Device Object"});
             table3.AddRow(new string[] {
                         "Onboard Application Object"});
             table3.AddRow(new string[] {
@@ -321,16 +319,16 @@ this.FeatureBackground();
                         "Onboard User Object"});
 #line 50
  testRunner.Then("following String Values are displayed in the filter", ((string)(null)), table3, "Then ");
-#line 56
+#line 55
  testRunner.When("User selects \"Onboard Application Object\" checkbox from String Filter with item l" +
                     "ist on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
+#line 56
  testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 57
  testRunner.When("User selects \"Onboard Device Object\" checkbox from String Filter with item list o" +
                     "n the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
- testRunner.Then("Rows counter shows \"41,405\" of \"60,371\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 58
+ testRunner.Then("Rows counter shows \"41,339\" of \"60,305\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -68,6 +68,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(subheader, page.SubHeader.Text, "Incorrect page subheader");
         }
 
+        [Then(@"Page with '(.*)' subheader is displayed to user")]
+        public void ThenPageWithSubheaderIsDisplayedToUser(string subHeader)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(_driver.IsElementDisplayed(page.SubHeader, WebDriverExtensions.WaitTime.Short), $"Page with '{subHeader}' is not displayed");
+            Verify.AreEqual(subHeader, page.SubHeader.Text, "Incorrect page header");
+        }
+
         #endregion
 
         #region Autocomplete
@@ -919,7 +927,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenCheckboxIsDisabled(string checkbox)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.IsCheckboxEnabled("Default"),
+            Verify.IsFalse(page.IsCheckboxEnabled(checkbox),
                 $"'{checkbox}' checkbox is not disabled");
         }
 
@@ -963,6 +971,36 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Thread.Sleep(300);
             Verify.IsFalse(_driver.IsTooltipDisplayed(),
                 $"Tooltip for '{chipName}' chip is displayed");
+        }
+
+        #endregion
+
+        #region Links
+
+        [Then(@"'(.*)' link is displayed")]
+        public void ThenLinkIsDisplayed(string text)
+        {
+            var projectElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(projectElement.IsLinkDisplayed(text), 
+                $"Link with '{text}' text was not displayed");
+        }
+
+        #endregion
+
+        #region Collapse/Expand Category
+
+        [When(@"User collapses '(.*)' category")]
+        public void WhenUserCollapsesCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.CollapseExpandCategory(categoryName, false);
+        }
+
+        [When(@"User expands '(.*)' category")]
+        public void WhenUserExpandsCategory(string categoryName)
+        {
+            var columnElement = _driver.NowAt<BaseDashboardPage>();
+            columnElement.CollapseExpandCategory(categoryName, true);
         }
 
         #endregion

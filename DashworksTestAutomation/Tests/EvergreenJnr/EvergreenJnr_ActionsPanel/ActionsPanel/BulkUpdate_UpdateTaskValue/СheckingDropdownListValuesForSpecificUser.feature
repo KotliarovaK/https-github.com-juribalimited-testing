@@ -152,12 +152,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                 |
-	| DAS13281 | Value | Test     | m!gration | Project Administrator |
+	| Username   | Email | FullName | Password  | Roles                                            |
+	| DAS13281_2 | Value | Test     | m!gration | Project Administrator  |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username | Password  |
-	| DAS13281 | m!gration |
+	| Username   | Password  |
+	| DAS13281_2 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -220,7 +220,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS13281" User
+	And User removes "DAS13281_2" User
 
 Examples:
 	| RowName        | MessageText                                                   |

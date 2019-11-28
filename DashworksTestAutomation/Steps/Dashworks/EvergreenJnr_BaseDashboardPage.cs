@@ -314,12 +314,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Utils.Verify.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
         }
-
-        [When(@"User clicks ""(.*)"" button in the Warning Pop-up message")]
-        public void WhenUserClicksButtonInTheWarningPop_UpMessage(string buttonName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GetButtonInWarningPopUp(buttonName).Click();
-        }
     }
 }

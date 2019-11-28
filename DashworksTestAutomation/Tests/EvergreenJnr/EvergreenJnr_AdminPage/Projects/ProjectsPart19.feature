@@ -66,12 +66,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items           |
-	| 00HA7MKAVVFDAV  |
-	| 001PSUMZYOW581  |
-	| 00BDM1JUR8IF419 |
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
@@ -90,12 +84,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items                                                      |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
-	| 0036 - Microsoft Access 97 SR-2 English                    |
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items                                                      |
@@ -119,12 +107,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items                                                      |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
-	| 0036 - Microsoft Access 97 SR-2 English                    |
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items                                                      |
@@ -144,12 +126,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items           |
-	| 00HA7MKAVVFDAV  |
-	| 001PSUMZYOW581  |
-	| 00BDM1JUR8IF419 |
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items           |
@@ -182,12 +158,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items           |
-	| 001BAQXT6JWFPI  |
-	| 001PSUMZYOW581  |
-	| 00BDM1JUR8IF419 |
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
@@ -203,10 +173,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items                                                |
-	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) |
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items                                                |
@@ -227,12 +193,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items                    |
-	| 20040610sqlserverck      |
-	| AddressGrabber Standard  |
-	| Adobe Acrobat Reader 5.0 |
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items                    |
@@ -251,12 +211,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items           |
-	| 001BAQXT6JWFPI  |
-	| 001PSUMZYOW581  |
-	| 00BDM1JUR8IF419 |
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items           |

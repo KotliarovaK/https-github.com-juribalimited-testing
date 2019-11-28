@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 17564_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	When User clicks "Enable Capacity" checkbox on the Project details page
+	When User checks 'Enable Capacity' checkbox
 	When User clicks 'UPDATE' button
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	| ProjectName   | Scope     | ProjectTemplate | Mode               |
 	| 17565_Project | All Users | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	When User clicks "Enable Capacity" checkbox on the Project details page
+	When User checks 'Enable Capacity' checkbox
 	When User clicks 'UPDATE' button
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 17566_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	When User clicks "Enable Capacity" checkbox on the Project details page
+	When User checks 'Enable Capacity' checkbox
 	When User clicks 'UPDATE' button
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user

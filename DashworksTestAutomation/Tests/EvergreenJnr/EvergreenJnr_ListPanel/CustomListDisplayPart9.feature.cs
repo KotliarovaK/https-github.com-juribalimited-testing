@@ -321,7 +321,7 @@ this.FeatureBackground();
 #line 52
  testRunner.When("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
- testRunner.Then("\"StaticList6542\" list is displayed in the bottom section of the List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'StaticList6542\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54
  testRunner.When("User clicks Settings button for \"StaticList6542\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55

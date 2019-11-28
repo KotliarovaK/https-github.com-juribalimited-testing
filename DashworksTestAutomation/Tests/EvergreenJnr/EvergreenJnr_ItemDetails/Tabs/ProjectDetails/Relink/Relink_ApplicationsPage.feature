@@ -18,14 +18,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	| Field | Data                                                       |
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	#And 'Resync owner' checkbox is checked
 	#And 'Resync name' checkbox is checked
 	When User enters 'Microsoft SQL' in the 'Application' autocomplete field and selects 'Microsoft SQL Server 2012' value
 	When User selects state 'true' for 'Resync name' checkbox
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Application successfully relinked" text
 	#waiting for the relink process to be completed
 	When User waits for three seconds
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	| Field | Data                                                       |
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	When User clicks 'RESYNC' button
-	And User clicks 'RESYNC' button in Dialog Pop-up
+	And User clicks 'RESYNC' button on popup
 	Then Success message is displayed and contains "Application successfully resynced" text
 	#waiting for the resync process to be completed
 	When User waits for three seconds
@@ -42,10 +42,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	| Field | Data                      |
 	| Name  | Microsoft SQL Server 2012 |
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User enters 'WPF' in the 'Application' autocomplete field and selects '"WPF/E" (codename) Community Technology Preview (Feb 2007)' value
-	And User clicks 'RELINK' button in Dialog Pop-up
-	And User clicks 'RELINK' button in Dialog Pop-up
+	And User clicks 'RELINK' button on popup
+	And User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Application successfully relinked" text
 	#waiting for the relink process to be completed
 	When User waits for three seconds
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPo
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User enters 'k9 ' text to 'Application' textbox
 	Then Error message is not displayed
 

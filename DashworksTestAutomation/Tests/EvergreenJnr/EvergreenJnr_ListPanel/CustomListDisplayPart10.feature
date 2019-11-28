@@ -99,22 +99,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterForCreatedListsIsWorke
 	Then "PivotFilterList_1" list is displayed to user
 	When User navigates to the "All Devices" list
 	When User apply "Dynamic" filter to lists panel
-	Then "DynamicFilterList_1" list is displayed in the bottom section of the List Panel
-	And "PivotDynamicFilterList_1" list is displayed in the bottom section of the List Panel
-	And "PivotFilterList_1" list is displayed in the bottom section of the List Panel
-	And "StaticFilterList_1" list is not displayed in the bottom section of the List Panel
+	Then 'DynamicFilterList_1' list is displayed in the Lists panel
+	Then 'PivotDynamicFilterList_1' list is displayed in the Lists panel
+	Then 'PivotFilterList_1' list is displayed in the Lists panel
+	Then 'StaticFilterList_1' list is not displayed in the Lists panel
 	When User enters "1" text in Search field at List Panel
-	Then "DynamicFilterList_1" list is displayed in the bottom section of the List Panel
-	And "PivotDynamicFilterList_1" list is displayed in the bottom section of the List Panel
-	And "PivotFilterList_1" list is displayed in the bottom section of the List Panel
-	And "StaticFilterList_1" list is not displayed in the bottom section of the List Panel
+	Then 'DynamicFilterList_1' list is displayed in the Lists panel
+	Then 'PivotDynamicFilterList_1' list is displayed in the Lists panel
+	Then 'PivotFilterList_1' list is displayed in the Lists panel
+	Then 'StaticFilterList_1' list is not displayed in the Lists panel
 	When User apply "Static" filter to lists panel
-	Then "DynamicFilterList_1" list is not displayed in the bottom section of the List Panel
-	And "PivotDynamicFilterList_1" list is not displayed in the bottom section of the List Panel
-	And "PivotFilterList_1" list is not displayed in the bottom section of the List Panel
-	And "StaticFilterList_1" list is displayed in the bottom section of the List Panel
+	Then 'DynamicFilterList_1' list is not displayed in the Lists panel
+	Then 'PivotDynamicFilterList_1' list is not displayed in the Lists panel
+	Then 'PivotFilterList_1' list is not displayed in the Lists panel
+	Then 'StaticFilterList_1' list is displayed in the Lists panel
 	When User enters "1" text in Search field at List Panel
-	Then "DynamicFilterList_1" list is not displayed in the bottom section of the List Panel
-	And "PivotDynamicFilterList_1" list is not displayed in the bottom section of the List Panel
-	And "PivotFilterList_1" list is not displayed in the bottom section of the List Panel
-	And "StaticFilterList_1" list is displayed in the bottom section of the List Panel
+	Then 'DynamicFilterList_1' list is not displayed in the Lists panel
+	Then 'PivotDynamicFilterList_1' list is not displayed in the Lists panel
+	Then 'PivotFilterList_1' list is not displayed in the Lists panel
+	Then 'StaticFilterList_1' list is displayed in the Lists panel

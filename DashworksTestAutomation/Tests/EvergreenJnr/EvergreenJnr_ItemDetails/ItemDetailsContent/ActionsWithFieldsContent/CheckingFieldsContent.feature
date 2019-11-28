@@ -292,4 +292,4 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurity
 	| FALSE |
 	| TRUE  |
 	When User clicks on "Evergreen Capacity Unit 3" link for Evergreen Bucket field
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User

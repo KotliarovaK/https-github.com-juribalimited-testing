@@ -76,21 +76,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeNotDisplayed(button.MenuItem);
         }
 
-        [Then(@"""(.*)"" list is displayed in the bottom section of the List Panel")]
-        public void ThenListIsDisplayedInTheBottomSectionOfTheListPanel(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsTrue(listElement.ListInBottomSection(listName).Displayed(),
-                $"'{listName}' is not displayed in the bottom section");
-        }
-
-        [Then(@"""(.*)"" list is not displayed in the bottom section of the List Panel")]
-        public void ThenListIsNotDisplayedInTheBottomSectionOfTheListPanel(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsFalse(listElement.DisplayStatusForListByName(listName), $"'{listName}' is displayed in the bottom section");
-        }
-
         [When(@"User create custom list with ""(.*)"" name")]
         public void WhenUserCreateCustomListWithName(string listName)
         {
