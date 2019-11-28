@@ -295,7 +295,7 @@ this.FeatureBackground();
 #line 57
  testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
- testRunner.Then("Popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
  testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
@@ -315,7 +315,7 @@ this.FeatureBackground();
 #line 66
  testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
- testRunner.Then("Popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
  testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
@@ -429,7 +429,7 @@ this.FeatureBackground();
 #line 93
  testRunner.And("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
- testRunner.Then("Popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 95
  testRunner.When("User clicks \'CANCEL\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -442,7 +442,7 @@ this.FeatureBackground();
 #line 99
  testRunner.And("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
- testRunner.Then("Popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 101
  testRunner.Then("\'CANCEL\' popup button color is \'rgba(236, 237, 239, 1)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 102

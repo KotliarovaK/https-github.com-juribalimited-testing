@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	| Title | Value     |
 	| Name  | ZZR457072 |
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Resync apps' checkbox is checked
 	And 'Resync name' checkbox is checked
 	When User enters 'dsf' in the 'User' autocomplete field and selects 'DSF4350513' value

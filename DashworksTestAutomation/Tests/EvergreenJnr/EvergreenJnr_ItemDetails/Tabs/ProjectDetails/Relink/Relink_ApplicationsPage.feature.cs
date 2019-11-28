@@ -162,7 +162,7 @@ this.FeatureBackground();
 #line 20
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
- testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
  testRunner.When("User enters \'Microsoft SQL\' in the \'Application\' autocomplete field and selects \'" +
                     "Microsoft SQL Server 2012\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -212,7 +212,7 @@ this.FeatureBackground();
 #line 44
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
- testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 46
  testRunner.When("User enters \'WPF\' in the \'Application\' autocomplete field and selects \'\"WPF/E\" (c" +
                     "odename) Community Technology Preview (Feb 2007)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -296,7 +296,7 @@ this.FeatureBackground();
 #line 61
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
- testRunner.Then("Dialog Pop-up is displayed for User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 63
  testRunner.When("User enters \'k9 \' text to \'Application\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64

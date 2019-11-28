@@ -280,6 +280,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
+	Then table content is present
 	And User create custom list with "<listName>" name
 	Then "<listName>" list is displayed to user
 	When User clicks the List Details button

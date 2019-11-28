@@ -404,9 +404,9 @@ this.FeatureBackground();
 #line 81
  testRunner.When(string.Format("User enters \"{0}\" text in Search field at Columns Panel", additionalValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User collapses \'Selected Columns\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 83
- testRunner.When("User closed \"Suggested\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User collapses \'Suggested\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
  testRunner.Then(string.Format("\"{0}\" subcategory is displayed for \"{1}\" category", additionalValue, categoryName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

@@ -140,6 +140,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
 	| SelectedValues    | Association        |
 	| ADevicesList17551 | Entitled to device |
+	When User waits for three seconds
 	When User create dynamic list with "AApplicationsList17551" name on "Applications" page
 	Then "AApplicationsList17551" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
@@ -147,9 +148,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	When User removes custom list with "ADevicesList17551" name
 	Then list with "ADevicesList17551" name is removed
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title               | List                   | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS17551 | AApplicationsList17551 | 10      | 10         |
 	Then 'Widget_For_DAS17551' Widget is displayed to the user
@@ -259,19 +260,6 @@ Examples:
 	| DashboardName      |
 	| DAS12974DUPLICATED |
 	| DAS12974duplicated |
-
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17592 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
-	When User clicks Show Dashboards panel icon on Dashboards page
-	When User selects 'Duplicate' menu for 'Executive Summary' dashboard
-	Then Dashboard with 'Executive Summary2' title displayed in All Dashboards
-	When User language is changed to "Deutsch" via API
-	When Dashboard with 'Executive Summary2' name is opened via API
-	When User clicks Edit mode trigger on Dashboards page
-	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in '2' warning messages on Dashboards page
-	When User clicks Dashboards Details icon on Dashboards page
-	When User expands the list of shared lists
-	Then User sees table headers as 'Widget' and 'Liste'
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff

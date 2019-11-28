@@ -283,7 +283,7 @@ this.FeatureBackground();
 #line 47
  testRunner.Then("\"Default Ring\" checkbox is checked and cannot be unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 48
- testRunner.Then("\"Maps to Evergreen Ring\" dropdown is not displayed on the Admin Settings screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Maps to Evergreen Ring\' dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 49
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50

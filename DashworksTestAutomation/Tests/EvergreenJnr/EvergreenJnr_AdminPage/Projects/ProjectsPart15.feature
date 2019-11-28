@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	Then "Users to add (0 of 14629 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User clicks "Entitled to the device" checkbox on the Project details page
+	And User checks 'Entitled to the device' checkbox
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Do not include device owners" checkbox on the Project details page
 	And User navigates to the 'Scope Changes' left menu item

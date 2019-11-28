@@ -39,5 +39,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Scope
                 throw new Exception($"'{tabName}' tab was not displayed on Scope Page");
             return Driver.FindElement(selector);
         }
+
+        public bool IsTabDisplayed(string tabName)
+        {
+            try
+            {
+                return GetTabByName(tabName).Displayed();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

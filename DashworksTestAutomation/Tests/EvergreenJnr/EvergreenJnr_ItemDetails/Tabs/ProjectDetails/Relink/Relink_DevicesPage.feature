@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	| Name         | 06RIV0KXJMHJ1K |
 	| Device Owner | Tonia T. Mason |
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Resync owner' checkbox is checked
 	And 'Resync apps' checkbox is checked
 	And 'Resync name' checkbox is checked
