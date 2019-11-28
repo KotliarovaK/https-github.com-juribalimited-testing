@@ -44,21 +44,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualText = dialogContainer.PopupElement.Text.Replace("\r\n", " ");
             Verify.Contains(text, actualText, $"'{text}' in Dialog Pop-up is not displayed correctly!");
         }
-        
-        [When(@"User expands the '(.*)' field in Dialog Pop-up")]
-        public void WhenUserExpandsTheFieldInDialogPopUp(string fieldTitle)
-        {
-            var dialogPopup = _driver.NowAt<BaseDialogPage>();
-            try
-            {
-                Verify.IsTrue(dialogPopup.GetExpandedField(fieldTitle).Displayed(), $"'{fieldTitle}' field is not expanded");
-            }
-            catch (Exception)
-            {
-                _driver.WaitForElementToBeDisplayed(dialogPopup.GetCollapsedField(fieldTitle));
-                dialogPopup.ExpandFieldInDialogPopup(fieldTitle).Click();
-            }
-        }
 
         #region Button
 

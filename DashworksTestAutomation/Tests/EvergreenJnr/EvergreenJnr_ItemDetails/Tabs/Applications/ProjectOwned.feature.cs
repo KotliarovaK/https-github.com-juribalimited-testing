@@ -262,8 +262,6 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
  testRunner.Then("\"Rationalisation\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 52
- testRunner.When("User clicks String Filter button for \"Rationalisation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -273,9 +271,10 @@ this.FeatureBackground();
                         "KEEP"});
             table2.AddRow(new string[] {
                         "UNCATEGORISED"});
-#line 53
- testRunner.Then("following Boolean Values are displayed in the filter on the Details Page", ((string)(null)), table2, "Then ");
-#line 58
+#line 52
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Rationalis" +
+                    "ation\' column", ((string)(null)), table2, "Then ");
+#line 57
  testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -286,7 +285,7 @@ this.FeatureBackground();
                         "UNCATEGORISED"});
             table3.AddRow(new string[] {
                         "FORWARD PATH"});
-#line 59
+#line 58
  testRunner.Then("\'Rationalisation\' column contains following content", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();

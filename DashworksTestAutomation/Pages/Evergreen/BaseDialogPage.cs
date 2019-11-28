@@ -39,33 +39,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
         }
 
         #endregion
-        
-        public IWebElement GetCollapsedField(string fieldTitle)
-        {
-            var selector =
-                By.XPath($".//div[contains(@class,'field-category')]//span[contains(text(),'{fieldTitle}')]/..");
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
-                throw new Exception($"'{fieldTitle}' field was not found!");
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetExpandedField(string fieldTitle)
-        {
-            var selector =
-                By.XPath($"//mat-dialog-container//div[@class='field-category collapsed']//span[contains(text(),'{fieldTitle}')]/..");
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
-                throw new Exception($"'{fieldTitle}' field was not found!");
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement ExpandFieldInDialogPopup(string titleText)
-        {
-            var buttonSelector = By.XPath(".//button");
-
-            var element = GetCollapsedField(titleText);
-
-            var button = element.FindElement(buttonSelector);
-            return button;
-        }
     }
 }

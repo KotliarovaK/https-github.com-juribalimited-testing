@@ -678,36 +678,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Incorrect rows count");
         }
 
-        [When(@"User clicks on ""(.*)"" link on the Details Page")]
-        public void WhenUserClicksOnLinkOnTheDetailsPage(string link)
+        [When(@"User clicks on edit button for '(.*)' field")]
+        public void WhenUserClicksOnEditButtonForField(string fieldName)
         {
             var page = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            page.GetLinkOnTheDetailsPageByName(link).Click();
-        }
-
-        [When(@"User clicks on ""(.*)"" link for Evergreen Bucket field")]
-        public void WhenUserClicksOnLinkForEvergreenBucketField(string linkName)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            page.GetEvergreenBucketLinkByFieldName(linkName).Click();
-        }
-
-        [When(@"User clicks on ""(.*)"" link for Evergreen Ring field")]
-        public void WhenUserClicksOnLinkForEvergreenRingField(string linkName)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            page.GetEvergreenRingLinkByFieldName(linkName).Click();
-        }
-
-        [When(@"User clicks on ""(.*)"" link for Evergreen Capacity Unit field")]
-        public void WhenUserClicksOnLinkForEvergreenCapacityUnitField(string linkName)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            page.GetEvergreenCapacityUnitLinkByFieldName(linkName).Click();
+            page.ClickEditFieldButton(fieldName);
         }
 
         [Then(@"""(.*)"" link is displayed on the Details Page")]
