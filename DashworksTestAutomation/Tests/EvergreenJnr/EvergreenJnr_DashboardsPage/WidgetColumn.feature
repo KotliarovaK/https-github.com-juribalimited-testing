@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When User clicks Edit mode trigger on Dashboards page
 	When  User clicks 'ADD WIDGET' button 
 	When User adds new Widget
-	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy |
+	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy |
 	| Column     | ColumnWidget#1 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    |
 	When User enters '2' as Widget Max Values
 	When User selects the Colour Scheme by index '2'

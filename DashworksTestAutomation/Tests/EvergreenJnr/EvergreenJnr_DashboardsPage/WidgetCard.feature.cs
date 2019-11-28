@@ -374,6 +374,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16069")]
         [NUnit.Framework.CategoryAttribute("DAS15134")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("NotReady")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage()
         {
             System.Exception lastException = null;
@@ -409,7 +410,8 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS16069",
                         "DAS15134",
-                        "Cleanup"});
+                        "Cleanup",
+                        "NotReady"});
 #line 66
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

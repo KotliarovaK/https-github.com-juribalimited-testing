@@ -181,6 +181,7 @@ namespace DashworksTestAutomation.Pages
                 {
                     Driver.FindElement(itemToBeSelected).Click();
                     Thread.Sleep(500);
+                    break;
                 }
             }
         }

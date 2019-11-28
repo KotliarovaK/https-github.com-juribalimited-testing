@@ -192,7 +192,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.ColorScheme.Click();
             Thread.Sleep(500);
 
-
             if (Convert.ToInt32(index) <= createWidgetElement.GetDropdownOptions().Count)
             {
                 createWidgetElement.ClickColorSchemeByIndex(Convert.ToInt32(index));
