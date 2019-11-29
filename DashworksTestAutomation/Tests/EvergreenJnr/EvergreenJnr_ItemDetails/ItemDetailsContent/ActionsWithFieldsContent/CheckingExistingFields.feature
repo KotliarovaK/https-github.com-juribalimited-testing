@@ -271,5 +271,4 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyFor
 	| In Catalog              |
 	| Criticality             |
 	| Rationalisation         |
-	| Target App              |
 	| Hide From End User      |
