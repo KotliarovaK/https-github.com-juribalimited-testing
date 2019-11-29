@@ -240,32 +240,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
         }
 
-        public bool LinkIsDisplayed(string linkName)
+        public IWebElement LinkIsDisplayed(string linkName)
         {
             var selector = By.XPath($"//div[contains(@class, 'editText')]//span[text()='{linkName}']");
-            return Driver.IsElementDisplayed(selector);
-        }
-
-        public bool WaitingForTheLinkToBeChanged(string linkName, int seconds)
-        {
-            var attempts = 5;
-            var waitTime = (seconds * 1000) / attempts;
-
-            try
-            {
-                if (LinkIsDisplayed(linkName))
-                    return true;
-                Thread.Sleep(waitTime);
-                Driver.Navigate().Refresh();
-                Driver.WaitForDataLoading();
-                Thread.Sleep(2000);
-            }
-            catch (Exception e)
-            {
-                Logger.Write($"Error waiting for link update: {e}");
-            }
-
-            return false;
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public IWebElement GetFieldToOpenTheTableByName(string fieldName)
