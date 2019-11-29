@@ -400,3 +400,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewCurrentAndLastSeenFiltersAreAvail
 	And User add "Dashworks Last Seen" filter where type is "Equals" with added column and "25 Jul 2019" Date filter
 	And User create custom list with "TestNewColumnsAndFilters" name
 	Then "TestNewColumnsAndFilters" list is displayed to user
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18875 @Cleanup @Not_Ready
+#Waiting for "Sticky Compliance" filter on the autorelease
+Scenario: EvergreenJnr_ApplicationsList_CheckStickyComplianceFilter
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Sticky Compliance" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	When User create custom list with "DAS18875_list" name
+	Then "DAS18875_list" list is displayed to user
+	When User clicks the Filters button
+	Then "Sticky Compliance is Red" is displayed in added filter info
