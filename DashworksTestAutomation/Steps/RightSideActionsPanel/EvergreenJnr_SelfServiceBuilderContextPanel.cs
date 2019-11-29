@@ -31,54 +31,54 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             _driver.WaitForDataLoading();
-            dashboardPage.CollapseExpandSelfServiceBuilderContextPanelElements(true);
+            dashboardPage.CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(true);
 
         }
 
-        [When(@"User clicks on Collapse All button in Self Service Builder Context Panel")]
+        [When(@"User clicks on Collapse All button in Self Service Builder Context Panel ")]
         public void WhenUserClicksOnCollapseAllInSelfServiceBuilderContextPanel()
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            dashboardPage.CollapseExpandSelfServiceBuilderContextPanelElements(false);
+            dashboardPage.CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(false);
         }
         
-        [When(@"User clicks on Expand ""(.*)"" page items button in Self Service Page Builder Context Panel")]
-        public void WhenUserClicksOnExpandThePageItemsButtonInSelfServicePageBuilderContextPanel(String contextPanelPageName)
+        [When(@"User clicks on Expand page components button with page '(.*)' type and '(.*)' page name in Self Service Page Builder Context Panel")]
+        public void WhenUserСlicksOnExpandPageComponentsButtonWithPageTypeAndPageNameInSelfServicePageBuilderContextPanel(string contextPannelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             _driver.WaitForDataLoading();
-            dashboardPage.CollapseExpandSelfServiceBuilderPageOnContextPanel(contextPanelPageName, true);
+            dashboardPage.CollapseExpandSelfServiceBuilderPageOnContextPanel(true, contextPannelType, contextPanelName);
         }
 
-        [When(@"User clicks on Collapse ""(.*)"" page items button in Self Service Page Builder Context Panel")]
-        public void WhenUserClicksOnCollapseThePageItemsButtonInSelfServicePageBuilderContextPanel(String contextPanelPageName)
+        [When(@"User clicks on Collapse '(.*)' page components button in Self Service Page Builder Context Panel")]
+        public void WhenUserСlicksOnCollapsePageComponentsButtonWithPageTypeAndPageNameInSelfServicePageBuilderContextPanel(string contextPannelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            dashboardPage.CollapseExpandSelfServiceBuilderPageOnContextPanel(contextPanelPageName, false);
+            dashboardPage.CollapseExpandSelfServiceBuilderPageOnContextPanel(false, contextPannelType, contextPanelName);
         }
 
-        [When(@"User clicks on Add Item button of ""(.*)"" page on Self Service Page Builder Context Panel")]
-        public void WhenUserClicksOnAddItemButtonOfThePageOnSelfServicePageBuilderContextPanel(String contextPanelPageName)
+        [When(@"User clicks on Add Item button of '(.*)' page with '(.*)' item type on Self Service Page Builder Context Panel")]
+        public void WhenUserClicksOnAddItemButtonOfThePageWitItemTypeOnSelfServicePageBuilderContextPanel(string contextPanelName, string contextPannelType)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            dashboardPage.ClickOnContextPanelPageAddItemButton(contextPanelPageName);
+            dashboardPage.ClickOnContextPanelPageAddItemButton(contextPannelType, contextPanelName);
         }
 
-        [When(@"User clicks on Cog Menu button of ""(.*)"" page on Self Service Page Builder Context Panel")]
-        public void WhenUserClicksOnCogMenuButtonOfThePageOnSelfServicePageBuilderContextPanel(String contextPanelPageName)
+        [When(@"User clicks on Cog Menu button of '(.*)' page with '(.*)' item type on Self Service Page Builder Context Panel")]
+        public void WhenUserClicksOnCogMenuButtonOfThePageWithItemTypeOnSelfServicePageBuilderContextPanel(string contextPanelName, string contextPannelType)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            dashboardPage.ClickOnContextPanelPageCogMenuButton(contextPanelPageName);
+            dashboardPage.ClickOnContextPanelItemCogMenuButton(contextPannelType, contextPanelName);
         }
 
-        [When(@"User clicks on Cog Menu button of ""(.*)"" page with ""(.*)"" component heading and ""(.*)"" component name on Self Service Page Builder Context Panel")]
-        public void WhenUserClicksOnCogMenuButtonOfThePageWithTheComponentHeadinAndNameOnSelfServicePageBuilderContextPanel(String contextPanelPageName, String componentHeading, String componentName)
+        [When(@"User clicks on component Cog Menu button with '(.*)' type and '(.*)' name on Self Service Page Builder Context Panel")]
+        public void WhenUserClicksOnComponentCogMenuButtonWithTheTypeAndNameOnSelfServicePageBuilderContextPanel(string contextPanelName, string contextPannelType)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            dashboardPage.ClickOnContextPanelPageSubCogMenuButton(contextPanelPageName, componentHeading, componentName);
+            dashboardPage.ClickOnContextPanelItemCogMenuButton(contextPanelName, contextPannelType);
         }
 
-        [When(@"User enters ""(.*)"" text in Self Service Page Builder Context Panel Search Field")]
+        [When(@"User enters '(.*)' text in Self Service Page Builder Context Panel Search Field")]
         public void WhenUserEntersTextInSelfServicePageBuilderContextPanelSearchField(string searchedText)
         {
             var listElement = _driver.NowAt<CustomListElement>();

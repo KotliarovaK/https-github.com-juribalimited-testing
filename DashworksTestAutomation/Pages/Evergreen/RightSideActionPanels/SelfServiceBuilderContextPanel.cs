@@ -13,60 +13,46 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 {
     class SelfServiceBuilderContextPanel : BaseRightSideActionsPanel
     {
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn-expand-collapse mat-raised-button mat-button-base ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-expand-collapse')]")]
         public IWebElement CollapseExpandAllButton { get; set; }
 
-
-        public IWebElement ContextPanelPageArrow(String contextPanelPageName)
+        public override List<By> GetPageIdentitySelectors()
         {
-            var selector = $".//div[text()='{contextPanelPageName}']/../../..//button[@class='btn-open-close ng-star-inserted']//i";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            return Driver.FindElement(By.XPath(selector));
-        }
-        
-        public IWebElement ContextPanelPageAddItemButton(String contextPanelPageName)
-        {
-            var selector = $".//div[text()='{contextPanelPageName}']/../../..//i[@class='material-icons mat-item_add']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            return Driver.FindElement(By.XPath(selector));
+            return new List<By>
+            {
+                SelectorFor(this, p => p.CollapseExpandAllButton),
+            };
         }
 
-        public IWebElement ContextPanelPageCogMenuButton(String contextPanelPageName)
+        public String ContextPanelPage(string contextPanelType, string contextPanelName)
         {
-            var selector = $".//div[text()='{contextPanelPageName}']/../../..//div[@class='menu-wrapper']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            return Driver.FindElement(By.XPath(selector));
+            return $".//div[text()='{contextPanelName}']/preceding-sibling::div[text()='{contextPanelType}']/ancestor::div[contains(@class,'level-info')]";
         }
 
-        public IWebElement ContextPanelPageSubCogMenuButton(String contextPanelPageName, String componentHeading, String componentName)
+        public IWebElement ContextPanelArrow(string contextPanelType, string contextPanelName)
         {
-            var selector = $"(.//div[@class='page-level-name' and text()='{contextPanelPageName}']/parent::div/parent::div/following::div//div[@class='page-level-label' and text()='{componentHeading}']/following-sibling::div[@class='page-level-name' and text()='{componentName}']/parent::div/following::div[@class='menu-wrapper'])[1]";
+            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class,'arrow')";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
-        public Boolean GetCollapseExpandSelfServiceBuilderPagesButtonState()
+        public IWebElement ContextPanelPageAddItemButton(string contextPanelType, string contextPanelName)
+        {
+            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class, 'mat-item_add')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            return Driver.FindElement(By.XPath(selector));
+        }
+
+        public IWebElement ContextPanelPageCogMenuButton(string contextPanelType, string contextPanelName)
+        {
+            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//div[contains(@class, 'menu-wrapper')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            return Driver.FindElement(By.XPath(selector));
+        }
+
+        public Boolean GetCollapseExpandButtonState()
         {
             if (CollapseExpandAllButton.GetAttribute("aria-label").Contains("Collapse All"))
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
-        }
-
-        public void CollapseExpandSelfServiceBuilderContextPanelElements(Boolean collapseExpand)
-        {
-            if (collapseExpand != GetCollapseExpandSelfServiceBuilderPagesButtonState())
-            {
-                CollapseExpandAllButton.Click();
-            }
-        }
-
-        public Boolean GetCollapseExpandSelfServiceBuilderPageButtonState(String contextPanelPageName)
-        {
-            if (ContextPanelPageArrow(contextPanelPageName).GetAttribute("class").Contains("material-icons mat-arrow_down"))
             {
                 return true;
             }
@@ -76,27 +62,43 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             }
         }
 
-        public void CollapseExpandSelfServiceBuilderPageOnContextPanel(String contextPanelPageName, Boolean collapseExpand)
+        public void CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(Boolean collapseExpand)
         {
-            if (collapseExpand != GetCollapseExpandSelfServiceBuilderPageButtonState(contextPanelPageName))
+            if (collapseExpand != GetCollapseExpandButtonState())
             {
-                ContextPanelPageArrow(contextPanelPageName).Click();
+                CollapseExpandAllButton.Click();
             }
         }
 
-        public void ClickOnContextPanelPageAddItemButton(String contextPanelPageName)
+        public Boolean GetCollapseExpandSelfServiceBuilderPageButtonState(string contextPanelType, string contextPanelName)
         {
-            ContextPanelPageAddItemButton(contextPanelPageName).Click();
+            if (ContextPanelArrow(contextPanelType, contextPanelName).GetAttribute("class").Contains("material-icons mat-arrow_down"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public void ClickOnContextPanelPageCogMenuButton(String contextPanelPageName)
+        public void CollapseExpandSelfServiceBuilderPageOnContextPanel(Boolean collapseExpand, string contextPanelType, string contextPanelName)
         {
-            ContextPanelPageCogMenuButton(contextPanelPageName).Click();
+            if (collapseExpand != GetCollapseExpandSelfServiceBuilderPageButtonState(contextPanelType, contextPanelName))
+            {
+                ContextPanelArrow(contextPanelType, contextPanelName).Click();
+            }
         }
 
-        public void ClickOnContextPanelPageSubCogMenuButton(String contextPanelPageName, String componentHeading, String componentName)
+        public void ClickOnContextPanelPageAddItemButton(string contextPanelType, string contextPanelName)
         {
-            ContextPanelPageSubCogMenuButton(contextPanelPageName, componentHeading, componentName).Click();
+            ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
+        }
+
+        public void ClickOnContextPanelItemCogMenuButton(string contextPanelType, string contextPanelName)
+        {
+            ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
         }
     }
 }
+
