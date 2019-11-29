@@ -1023,7 +1023,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
     | ApplicationList | Entitled to device |
 	When User create dynamic list with "DevicesList" name on "Devices" page
 	And User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	Then "Everyone can edit" sharing option is selected
 	When User clicks the Logout button
