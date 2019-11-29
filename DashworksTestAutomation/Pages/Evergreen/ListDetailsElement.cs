@@ -97,6 +97,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'action-panel-inner-wrapper')]")]
         public IWebElement SharingFormContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//td[@class='userName']")]
+        public IList<IWebElement> PermissionAddedUser { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//td[@class='permission']")]
+        public IList<IWebElement> PermissionTypeOfAccess { get; set; }
+    
         [FindsBy(How = How.XPath, Using = Owner)]
         public IList<IWebElement> OwnersList { get; set; }
 
@@ -165,6 +171,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 return null;
             }
+        }
+
+        //TODO will be replaced COG MENU element
+        public IWebElement GetMenuOfSharedUser(string username)
+        {
+            var sharedUserCogMenu =
+                By.XPath($".//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]//i");
+            Driver.MouseHover(sharedUserCogMenu);
+            Driver.WaitForElementToBeDisplayed(sharedUserCogMenu);
+            return Driver.FindElement(sharedUserCogMenu);
         }
     }
 }

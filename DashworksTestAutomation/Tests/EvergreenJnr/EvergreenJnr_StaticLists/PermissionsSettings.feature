@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	|          |
 	Then "Static List TestName23" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Everyone can see" sharing option
 	And User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| CLUSTERSSAS    |
 	Then "NotOwnerSpecifiedAdmin" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	And User click Add User button
 	And User select current user in Select User dropdown
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedEdit" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	And User click Add User button
 	And User select current user in Select User dropdown
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedRead" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	And User click Add User button
 	And User select current user in Select User dropdown
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| SANOFI2-POC     |
 	Then "NotOwnerEveryoneCanEdit" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	And User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| WIN8RETAILPRO  |
 	Then "NotOwnerEveryoneCanSee" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Everyone can see" sharing option
 	And User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel

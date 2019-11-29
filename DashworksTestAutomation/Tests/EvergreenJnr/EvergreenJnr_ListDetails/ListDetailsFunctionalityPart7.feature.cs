@@ -229,7 +229,7 @@ this.FeatureBackground();
 #line 33
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
  testRunner.Then("current user is selected as a owner of a list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 36
@@ -358,7 +358,7 @@ this.FeatureBackground();
 #line 68
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
- testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 70
  testRunner.When("User select \"Specific users / teams\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
@@ -402,7 +402,7 @@ this.FeatureBackground();
 #line 90
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 91
- testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 92
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 93
@@ -485,7 +485,7 @@ this.FeatureBackground();
 #line 107
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 108
- testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 109
  testRunner.When("User clears Owner field on List Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 110

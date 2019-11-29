@@ -26,7 +26,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestListCED2D6" name on "<PageName>" page
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then "TestListCED2D6" name is displayed in list details panel
 	Then List is NOT marked as favorite
 	Then current user is selected as a owner of a list
@@ -45,7 +45,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	| ItemName |
 	|          |
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then "Static List TestName" name is displayed in list details panel
 	Then List is NOT marked as favorite
 	Then current user is selected as a owner of a list
@@ -67,7 +67,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	When User create custom list with "TestListE11493" name
 	Then "TestListE11493" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	Then List details button is disabled

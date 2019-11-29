@@ -13,7 +13,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestList12CA0D" name on "<PageName>" page
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
 	Then Edit List menu is not displayed
@@ -44,7 +44,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "Static List TestName" name
 	And User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
 	And Edit List menu is not displayed
@@ -73,14 +73,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User create dynamic list with "TestList80EA23" name on "<PageName>" page
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User mark list as favorite
 	When User navigates to the "<ListToNavigate>" list
 	Then Star icon is displayed for "TestList80EA23" list
 	When User navigates to the "TestList80EA23" list
 	Then Star icon is displayed for "TestList80EA23" list
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User mark list as unfavorite
 	Then Star icon is not displayed for "TestList80EA23" list
 	When User navigates to the "<ListToNavigate>" list
@@ -103,14 +103,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "Static List TestName36" name
 	And User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User mark list as favorite
 	When User navigates to the "<ListToNavigate>" list
 	Then Star icon is displayed for "Static List TestName36" list
 	When User navigates to the "Static List TestName36" list
 	Then Star icon is displayed for "Static List TestName36" list
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User mark list as unfavorite
 	Then Star icon is not displayed for "Static List TestName36" list
 	When User navigates to the "<ListToNavigate>" list

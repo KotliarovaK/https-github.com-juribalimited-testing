@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInList
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "1803 Rollout" list
 	And User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	And 'Archived devices included' label is displayed in List Details
 	When User clicks 'Archived devices included' checkbox in List Details
 	Then Archived devices icon enabled state is 'true' in toolbar
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_DevicesList_CheckArchivedItemsIconDisplayingAfterDeselect
 	And User create dynamic list with "List17440" name on "Devices" page
 	When User navigates to the "List17440" list
 	And User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User clicks 'Archived devices included' checkbox in List Details
 	Then Archived devices icon enabled state is 'false' in toolbar
 	And Save as a new list option is available
@@ -73,7 +73,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxINotDis
 	Then '<ListToNavigate>' list should be displayed to the user
 	When User navigates to the "<List>" list
 	And User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	And 'Archived devices included' label is not displayed in List Details
 
 Examples: 
@@ -92,7 +92,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectl
 	When User create dynamic list with "<ListName>" name on "<Lists>" page
 	When User navigates to the "<ListName>" list
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then '<ListType>' label is displayed in List Details
 	Then '<Data>' label is displayed in List Details
 
@@ -113,7 +113,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectl
 	Then "<ListName>" list is displayed to user
 	When User navigates to the "<ListName>" list
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then '<ListType>' label is displayed in List Details
 	Then '<Data>' label is displayed in List Details
 
@@ -141,7 +141,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectl
 	Then "<PivotName>" list is displayed to user
 	When User navigates to the "<PivotName>" list
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then '<ListType>' label is displayed in List Details
 	Then '<Data>' label is displayed in List Details
 
