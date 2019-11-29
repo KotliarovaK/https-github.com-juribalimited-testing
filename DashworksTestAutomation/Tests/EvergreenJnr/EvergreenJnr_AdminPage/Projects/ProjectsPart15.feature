@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	| DAS11981    | All Devices | None            | Standalone Project |
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User clicks following checkboxes on the Project details page:
+	And User checks following checkboxes:
 	| CheckboxesToBeClicked                  |
 	| Entitled to the device                 |
 	| Installed on the device                |

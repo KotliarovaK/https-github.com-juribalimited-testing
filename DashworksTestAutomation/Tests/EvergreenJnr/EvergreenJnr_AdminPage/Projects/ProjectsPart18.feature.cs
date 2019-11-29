@@ -594,7 +594,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Import Readiness"});
 #line 148
- testRunner.And("User clicks following checkboxes on the Project details page:", ((string)(null)), table4, "And ");
+ testRunner.And("User checks following checkboxes:", ((string)(null)), table4, "And ");
 #line 151
  testRunner.And("User clicks Import Project button on the Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 152

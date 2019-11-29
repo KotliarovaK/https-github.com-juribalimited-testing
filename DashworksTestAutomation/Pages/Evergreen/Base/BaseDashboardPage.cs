@@ -842,6 +842,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return enabled;
         }
 
+        public void SetCheckboxState(string ariaLabel, bool expectedCondition)
+        {
+            if (!GetCheckbox(ariaLabel).Equals(expectedCondition))
+            {
+                //We must click by text to check or uncheck element
+                Driver.ClickElementLeftCenter(GetCheckbox(ariaLabel));
+            }
+        }
+
         #endregion
 
         #region Chips

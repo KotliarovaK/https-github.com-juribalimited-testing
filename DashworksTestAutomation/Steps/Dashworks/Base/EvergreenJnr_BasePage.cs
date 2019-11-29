@@ -890,23 +890,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserChecksCheckbox(string checkboxName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            //page.GetCheckbox(checkboxName).SetCheckboxState(true);
-            if (!page.GetCheckbox(checkboxName).Selected)
-            {
-                //We must click by text to check or uncheck element
-                _driver.ClickElementLeftCenter(page.GetCheckbox(checkboxName));
-            }
+            page.SetCheckboxState(checkboxName, true);
         }
 
         [When(@"User unchecks '(.*)' checkbox")]
         public void WhenUserUnchecksCheckbox(string checkboxName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            //page.GetCheckbox(checkboxName).SetCheckboxState(false);
-            if (page.GetCheckbox(checkboxName).Selected)
+            page.SetCheckboxState(checkboxName, false);
+        }
+
+        [When(@"User checks following checkboxes:")]
+        public void WhenUserChecksFollowingCheckboxes(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            foreach (var row in table.Rows)
             {
-                //We must click by text to check or uncheck element
-                _driver.ClickElementLeftCenter(page.GetCheckbox(checkboxName));
+                page.SetCheckboxState(row.Values.FirstOrDefault(), true);
             }
         }
 
