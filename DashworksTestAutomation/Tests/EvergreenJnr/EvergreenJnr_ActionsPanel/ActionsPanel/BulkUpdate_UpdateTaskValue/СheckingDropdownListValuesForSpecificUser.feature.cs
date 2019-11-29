@@ -158,7 +158,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 10
  testRunner.When("User create new User via API", ((string)(null)), table1, "When ");
 #line 13
@@ -314,7 +314,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 59
  testRunner.When("User create new User via API", ((string)(null)), table4, "When ");
 #line 62
@@ -499,7 +499,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 119
  testRunner.When("User create new User via API", ((string)(null)), table10, "When ");
 #line 122
@@ -642,7 +642,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 154
  testRunner.When("User create new User via API", ((string)(null)), table13, "When ");
 #line 157
@@ -877,7 +877,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 233
  testRunner.When("User create new User via API", ((string)(null)), table21, "When ");
 #line 236

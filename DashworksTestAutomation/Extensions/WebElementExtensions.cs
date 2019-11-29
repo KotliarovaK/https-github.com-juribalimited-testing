@@ -164,15 +164,9 @@ namespace DashworksTestAutomation.Extensions
 
         public static void SetCheckboxState(this IWebElement checkbox, bool desiredState)
         {
-            if (desiredState)
+            if (!desiredState.Equals(checkbox.Selected()))
             {
-                if (!checkbox.Selected())
-                    checkbox.Click();
-            }
-            else
-            {
-                if (checkbox.Selected())
-                    checkbox.Click();
+                checkbox.Click();
             }
         }
 

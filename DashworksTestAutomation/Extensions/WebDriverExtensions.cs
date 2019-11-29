@@ -402,6 +402,14 @@ namespace DashworksTestAutomation.Extensions
             action.Click(element).Perform();
         }
 
+        public static void ClickElementLeftCenter(this RemoteWebDriver driver, IWebElement element)
+        {
+            var width = element.Size.Width;
+            var height = element.Size.Height;
+            Actions action = new Actions(driver);
+            action.MoveToElement(element, width / 4, height / 2).Click().Build().Perform();
+        }
+
         public static void DoubleClick(this RemoteWebDriver driver, IWebElement element)
         {
             Actions action = new Actions(driver);

@@ -1287,8 +1287,6 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Rationalisation"});
             table10.AddRow(new string[] {
-                        "Target App"});
-            table10.AddRow(new string[] {
                         "Hide From End User"});
 #line 267
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table10, "Then ");
