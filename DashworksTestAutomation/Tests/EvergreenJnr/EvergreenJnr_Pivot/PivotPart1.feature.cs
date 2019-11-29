@@ -396,15 +396,15 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Evergreen Rationalisation"});
             table7.AddRow(new string[] {
-                        "Target App"});
+                        "Evergreen Target App"});
             table7.AddRow(new string[] {
-                        "Target App Compliance"});
+                        "Evergreen Target App Compliance"});
             table7.AddRow(new string[] {
-                        "Target App Key"});
+                        "Evergreen Target App Key"});
             table7.AddRow(new string[] {
-                        "Target App Vendor"});
+                        "Evergreen Target App Vendor"});
             table7.AddRow(new string[] {
-                        "Target App Verson"});
+                        "Evergreen Target App Version"});
 #line 93
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table7, "Then ");
 #line 102
@@ -427,15 +427,15 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Evergreen Rationalisation"});
             table8.AddRow(new string[] {
-                        "Target App"});
+                        "Evergreen Target App"});
             table8.AddRow(new string[] {
-                        "Target App Compliance"});
+                        "Evergreen Target App Compliance"});
             table8.AddRow(new string[] {
-                        "Target App Key"});
+                        "Evergreen Target App Key"});
             table8.AddRow(new string[] {
-                        "Target App Vendor"});
+                        "Evergreen Target App Vendor"});
             table8.AddRow(new string[] {
-                        "Target App Verson"});
+                        "Evergreen Target App Version"});
 #line 108
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table8, "Then ");
 #line 117
@@ -458,15 +458,15 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "Evergreen Rationalisation"});
             table9.AddRow(new string[] {
-                        "Target App"});
+                        "Evergreen Target App"});
             table9.AddRow(new string[] {
-                        "Target App Compliance"});
+                        "Evergreen Target App Compliance"});
             table9.AddRow(new string[] {
-                        "Target App Key"});
+                        "Evergreen Target App Key"});
             table9.AddRow(new string[] {
-                        "Target App Vendor"});
+                        "Evergreen Target App Vendor"});
             table9.AddRow(new string[] {
-                        "Target App Verson"});
+                        "Evergreen Target App Version"});
 #line 123
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table9, "Then ");
 #line hidden
