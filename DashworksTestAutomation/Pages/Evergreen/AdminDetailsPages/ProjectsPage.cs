@@ -238,7 +238,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
         }
 
-        //TODO should be moved to BasePage
+        //TODO should be deleted
         public void SelectCheckboxByName(string checkboxName)
         {
             var tab = Driver.FindElement(
