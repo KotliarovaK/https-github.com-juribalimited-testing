@@ -491,3 +491,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppReadinessFilter
 	Then "DAS18875_list4" list is displayed to user
 	When User clicks the Filters button
 	Then "1803: Target App Readiness is not empty" is displayed in added filter info
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18896 @Cleanup @Not_Ready
+#Waiting for "Evergreen Rationalisation" filter on the autorelease
+Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenRationalisationFilter
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Evergreen Rationalisation" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| UNCATEGORISED      |
+	When User create custom list with "DAS18896_list" name
+	Then "DAS18896_list" list is displayed to user
+	When User clicks the Filters button
+	Then "Evergreen Rationalisation is Uncategorised" is displayed in added filter info

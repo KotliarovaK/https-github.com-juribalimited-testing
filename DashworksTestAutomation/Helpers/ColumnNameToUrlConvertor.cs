@@ -280,6 +280,9 @@ namespace DashworksTestAutomation.Helpers
                 case "1803: Target App Key":
                     return "project_63_targetApplicationKey";
 
+                case "Evergreen Rationalisation":
+                    return "evergreenRationalisation";
+
                 case "Model":
                     return "model";
 

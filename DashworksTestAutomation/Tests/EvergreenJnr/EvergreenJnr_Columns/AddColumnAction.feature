@@ -410,7 +410,7 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName       |
-	| 1803: Target App |
+	| 1803: Target App | + evergreen
 	When User create dynamic list with "DAS18961_List" name on "Applications" page
 	Then "DAS18961_List" list is displayed to user
 	When User clicks on '1803: Target App' column header
@@ -437,6 +437,7 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppVendorColumnDisplaying
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName              |
 	| 1803: Target App Vendor |
+	| Evergreen               |
 	When User create dynamic list with "DAS18961_List2" name on "Applications" page
 	Then "DAS18961_List2" list is displayed to user
 	When User clicks on '1803: Target App Vendor' column header
@@ -471,3 +472,16 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying
 	Then data in table is sorted by '1803: Target App Readiness' column in descending order
 	When User clicks on '1803: Target App Readiness' column header
 	Then data in table is sorted by '1803: Target App Readiness' column in ascending order
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18896 @Not_Ready
+#Waiting for 'Evergreen Rationalisation' column
+Scenario: EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying
+	When User clicks 'Applications' on the left-hand menu
+	And User add following columns using URL to the "Applications" page:
+	| ColumnName                |
+	| Evergreen Rationalisation |
+	Then ColumnName is added to the list
+	| ColumnName                |
+	| Evergreen Rationalisation |
+	When User create dynamic list with "DAS18896_List" name on "Applications" page
+	Then "DAS18896_List" list is displayed to user
