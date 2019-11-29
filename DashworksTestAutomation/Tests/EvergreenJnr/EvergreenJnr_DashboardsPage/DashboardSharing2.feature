@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	#display permission modal
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
-	When User select 'Everyone can see' sharing option on the Dashboards page
+	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget 'WidgetForDAS14841_Admin' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then User 'Automation Admin 1' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
@@ -71,12 +71,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Permission panel is displayed to the user
-	When User selects 'Specific users' dashboard sharing option
+	Then Dashboard details panel is displayed to the user
+	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
-	Then User 'automation_admin10' was added to shared list with 'Admin' permission
+	Then User 'automation_admin10' was added to shared list with 'Admin' permission of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -86,10 +86,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Permission panel is displayed to the user
-	When User clicks Settings button for 'automation_admin10' shared user
-	When User selects 'Remove' option from Settings
-	Then There is no user in shared list
+	Then Dashboard details panel is displayed to the user
+	When User clicks Settings button for 'automation_admin10' shared user in Details panel
+	When User selects 'Remove' option from shared user Settings in Details panel
+	Then There is no user in shared list of Details panel
 	Then User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15550 @Cleanup
@@ -105,12 +105,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS15550' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Permission panel is displayed to the user
-	When User selects 'Specific users' dashboard sharing option
+	Then Dashboard details panel is displayed to the user
+	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Edit       |
-	Then User 'automation_admin10' was added to shared list with 'Edit' permission
+	Then User 'automation_admin10' was added to shared list with 'Edit' permission of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -135,12 +135,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Permission panel is displayed to the user
-	When User selects 'Specific users' dashboard sharing option
+	Then Dashboard details panel is displayed to the user
+	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
-	Then User 'automation_admin10' was added to shared list with 'Admin' permission
+	Then User 'automation_admin10' was added to shared list with 'Admin' permission of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Permission panel is displayed to the user
+	Then Dashboard details panel is displayed to the user
 	When User changes dashboard name to 'DashboardUpdated'
 	Then Dashboard with 'DashboardUpdated' title displayed in All Dashboards
 
@@ -160,12 +160,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for Share' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Permission panel is displayed to the user
-	When User selects 'Specific users' dashboard sharing option
+	Then Dashboard details panel is displayed to the user
+	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
 	| Automation Admin 10 | Admin      |
-	Then User 'automation_admin10' was added to shared list with 'Admin' permission
+	Then User 'automation_admin10' was added to shared list with 'Admin' permission of Details panel
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
@@ -173,20 +173,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for Share' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Permission panel is displayed to the user
+	Then Dashboard details panel is displayed to the user
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Edit       |
-	Then User 'Admin' was added to shared list with 'Edit' permission
-	When User clicks Settings button for 'Admin' shared user
-	When User selects 'Remove' option from Settings
+	Then User 'Admin' was added to shared list with 'Edit' permission of Details panel
+	When User clicks Settings button for 'Admin' shared user in Details panel
+	When User selects 'Remove' option from shared user Settings in Details panel
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Read       |
-	Then User 'Admin' was added to shared list with 'Read Only' permission
+	Then User 'Admin' was added to shared list with 'Read Only' permission of Details panel
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17592 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetRefferedToUnavailableList
 	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -232,8 +232,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
 	| automation_admin10 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User removes custom list with "ADevicesList17592" name
-	Then list with "ADevicesList17592" name is removed
+	When User clicks Settings button for "ADevicesList17592" list
+	When User clicks 'Manage' option in opened Cog-menu
+	Then List details panel is displayed to the user
+	When User clicks Settings button for 'automation_admin1' shared user in Details panel
+	When User selects 'Remove' option from shared user Settings in Details panel
+	Then There is no user in shared list of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -241,8 +245,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
 	| automation_admin1 | m!gration |
 	When User language is changed to "Deutsch" via API
 	When Dashboard with 'Dashboard_DAS17592' name is opened via API
+	Then 'Widget_For_DAS17592' Widget is displayed to the user
+	Then There are no errors in the browser console
 	When User clicks Edit mode trigger on Dashboards page
-	Then User sees 'Dieses Widget verweist auf Liste , die Fehler enthält' text in '1' warning messages on Dashboards page
+	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in '2' warning messages on Dashboards page
 
 
 	#Sergiy: DAS14263 create test and recomment issue

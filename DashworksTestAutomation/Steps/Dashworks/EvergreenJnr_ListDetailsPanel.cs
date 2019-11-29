@@ -125,6 +125,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Star icon is not active");
         }
 
+        [Then(@"Dashboard details panel is displayed to the user")]
         [Then(@"List details panel is displayed to the user")]
         public void ThenListDetailsPanelIsDisplayedToTheUser()
         {
@@ -310,6 +311,86 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ListDetailsElement>();
             Utils.Verify.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(),
                 "Selected Sharing user is not displayed on Details panel");
+        }
+
+        [When(@"User clicks Settings button for '(.*)' shared user in Details panel")]
+        public void WhenUserClickSettingsMenuForSharedUser(string user)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            page.GetMenuOfSharedUser(user).Click();
+        }
+
+        [When(@"User selects '(.*)' option from shared user Settings in Details panel")]
+        public void WhenUserClicksOptionFromSettingsMenuForSharedUser(string option)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            page.GetMenuOption(option).Click();
+            //TODO Section reloads with delay
+            Thread.Sleep(2000);
+        }
+
+        [Then(@"Permission '(.*)' displayed in Dashboard Details")]
+        public void ThenDashboardShowsPermissionToTheUser(string permission)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Verify.That(page.SharingDropdownPermissionValue.Text, Is.EqualTo(permission), $"Permission {permission} was not the same in Dashboard Details");
+        }
+
+        [Then(@"There is no user in shared list of Details panel")]
+        public void ThenNoUserFoundInSharedList()
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            Verify.That(page.PermissionAddedUser.Count, Is.EqualTo(0), "Username found in shared list");
+        }
+
+        [Then(@"User '(.*)' was added to shared list with '(.*)' permission of Details panel")]
+        public void ThenUserWasAddedToSharedList(string username, string permission)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForElementsToBeDisplayed(page.PermissionAddedUser);
+
+            Verify.That(page.PermissionAddedUser.Select(x => x.Text).ToList(), Does.Contain(username), "Username is not one that expected");
+            Verify.That(page.PermissionTypeOfAccess.Select(x => x.Text).ToList(), Does.Contain(permission), "Permission is not one that expected");
+        }
+
+        [When(@"User adds user to list of shared person")]
+        public void WhenUserAddsNewPersonToSharingList(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ClickButtonByName("ADD USER");
+
+            foreach (var row in table.Rows)
+            {
+                if (!string.IsNullOrEmpty(row["User"]))
+                {
+                    action.AutocompleteSelect("User", row["User"], true);
+                }
+
+                if (!string.IsNullOrEmpty(row["Permission"]))
+                {
+                    action.SelectDropdown(row["Permission"], "Select access");
+                }
+                action.ClickButtonByName("ADD USER");
+
+                //TODO Section reloads with delay
+                Thread.Sleep(2000);
+            }
+        }
+
+        [When(@"User expands the list of shared lists")]
+        public void UserExpandsTheListOfSharedLists()
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            page.DetailsPanelExpandListsIcon.Click();
+            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
+        }
+
+        [Then(@"User sees table headers as '(.*)' and '(.*)'")]
+        public void UserSeesTableHeadersAs(string a, string b)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
+            Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
         }
 
         [When(@"User select ""(.*)"" as a Owner of a list")]
