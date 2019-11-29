@@ -1565,8 +1565,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedInTheWarningMessageOnProjectPage(string text)
         {
             var page = _driver.NowAt<ProjectsPage>();
-
-            Utils.Verify.IsTrue(page.WarningMessageText(text).Displayed(), $"{text} text is not displayed in the Warning message");
+            Verify.AreEqual(text, page.WarningPopupMessage.Text, $"{text} warning message pop-up is not displayed");
         }
 
         [Then(@"""(.*)"" button is displayed in the warning message")]

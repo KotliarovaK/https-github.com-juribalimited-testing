@@ -126,6 +126,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-error/span[contains(text(), 'archived devices')]")]
         public IWebElement ArchivedDevicesMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[@role='dialog']//p")]
+        public IWebElement WarningPopupMessage { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -383,12 +386,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector = By.XPath($".//div[@class='inline-tip ng-star-inserted']//button/span[text()='{name}']");
             Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement WarningMessageText(string text)
-        {
-            var selector = By.XPath($".//mat-dialog-container[@role='dialog']//p[text()='{text}']");
             return Driver.FindElement(selector);
         }
 
