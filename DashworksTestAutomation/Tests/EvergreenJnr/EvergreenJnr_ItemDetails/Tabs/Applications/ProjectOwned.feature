@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrec
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18743 @Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCorrectly
 	When User navigates to the 'User' details page for 'LYZ6880619' item
-	Then Details page for "LYZ6880619 " item is displayed to the user
+	Then Details page for "LYZ6880619" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
