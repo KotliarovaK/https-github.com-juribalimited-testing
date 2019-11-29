@@ -265,6 +265,21 @@ namespace DashworksTestAutomation.Helpers
                 case "Sticky Compliance":
                     return "stickyCompliance";
 
+                case "1803: Target App":
+                    return "project_63_targetApplication";
+
+                case "1803: Target App Vendor":
+                    return "project_63_targetApplicationVendor";
+
+                case "1803: Target App Version":
+                    return "project_63_targetApplicationVersion";
+
+                case "1803: Target App Readiness":
+                    return "project_63_targetApplicationReadiness";
+
+                case "1803: Target App Key":
+                    return "project_63_targetApplicationKey";
+
                 case "Model":
                     return "model";
 
