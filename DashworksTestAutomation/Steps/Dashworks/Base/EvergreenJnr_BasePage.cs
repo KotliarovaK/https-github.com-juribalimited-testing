@@ -223,7 +223,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             var actualOptions = page.GetAllOptionsFromOpenedAutocomplete();
 
-            Verify.That(actualOptions.All(x=>x.Contains(searchText)), Is.True,
+            Verify.That(actualOptions.All(x => x.Contains(searchText)), Is.True,
                 $"Incorrect values are present in the '{placeholder}' autocomplete after search by '{searchText}' text");
 
             page.BodyContainer.Click();
@@ -890,14 +890,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserChecksCheckbox(string checkboxName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetCheckbox(checkboxName).SetCheckboxState(true);
+            //page.GetCheckbox(checkboxName).SetCheckboxState(true);
+            if (!page.GetCheckbox(checkboxName).Selected)
+            {
+                //We must click by text to check or uncheck element
+                _driver.ClickElementLeftCenter(page.GetCheckbox(checkboxName));
+            }
         }
 
         [When(@"User unchecks '(.*)' checkbox")]
         public void WhenUserUnchecksCheckbox(string checkboxName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetCheckbox(checkboxName).SetCheckboxState(false);
+            //page.GetCheckbox(checkboxName).SetCheckboxState(false);
+            if (page.GetCheckbox(checkboxName).Selected)
+            {
+                //We must click by text to check or uncheck element
+                _driver.ClickElementLeftCenter(page.GetCheckbox(checkboxName));
+            }
         }
 
         [When(@"User selects state '(.*)' for '(.*)' checkbox")]
@@ -981,7 +991,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenLinkIsDisplayed(string text)
         {
             var projectElement = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(projectElement.IsLinkDisplayed(text), 
+            Verify.IsTrue(projectElement.IsLinkDisplayed(text),
                 $"Link with '{text}' text was not displayed");
         }
 
