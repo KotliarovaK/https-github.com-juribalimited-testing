@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	Then table content is present
 	#==>18127
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then 'List Type: Dynamic' label is displayed in List Details
 	Then 'Data: Device Applications' label is displayed in List Details
 	#==<

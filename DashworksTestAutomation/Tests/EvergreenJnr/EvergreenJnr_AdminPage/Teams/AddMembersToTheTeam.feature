@@ -5,18 +5,18 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Cleanup @Teams @Do_Not_Run_With_Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Cleanup @Teams @Do_Not_Run_With_Teams @Do_Not_Run_With_Buckets
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
 	Then Page with 'Teams' header is displayed to user
 	#Then Counter shows "2,794" found rows
-	When User clicks 'CREATE TEAM' button 
+	When User clicks 'CREATE TEAM' button
 	Then Page with 'Create Team' subheader is displayed to user
-	When User clicks 'CANCEL' button 
+	When User clicks 'CANCEL' button
 	Then Page with 'Teams' header is displayed to user
-	When User clicks 'CREATE TEAM' button 
+	When User clicks 'CREATE TEAM' button
 	Then Page with 'Create Team' subheader is displayed to user
 	When User enters 'TestTeam8' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field

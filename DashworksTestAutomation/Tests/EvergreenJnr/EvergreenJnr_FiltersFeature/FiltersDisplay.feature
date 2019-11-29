@@ -1023,7 +1023,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
     | ApplicationList | Entitled to device |
 	When User create dynamic list with "DevicesList" name on "Devices" page
 	And User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	Then "Everyone can edit" sharing option is selected
 	When User clicks the Logout button
@@ -1864,7 +1864,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCor
     | Device Owner SID                       |
     | Device Owner Surname                   |
     | Device Owner Username                  |
-	When User closed "Device Owner" columns category
+	When User collapses 'Device Owner' category
 	And User expands "Device Owner Location" filter category
 	Then the following Filters subcategories are presented for open category:
     | Subcategories              |
@@ -1876,7 +1876,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCor
     | Device Owner Location Name |
     | Device Owner Postal Code   |
     | Device Owner State/County  |
-	When User closed "Device Owner Location" columns category
+	When User collapses 'Device Owner Location' category
 	And User expands "Device Owner Organisation" filter category
 	Then the following Filters subcategories are presented for open category:
     | Subcategories                     |
@@ -1892,7 +1892,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCor
     | Device Owner Department Level 6   |
     | Device Owner Department Level 7   |
     | Device Owner Department Name      |
-	When User closed "Device Owner Organisation" columns category
+	When User collapses 'Device Owner Organisation' category
 	And User expands "Device Owner Custom Fields" filter category
 	Then the following Filters subcategories are presented for open category:
     | Subcategories                            |

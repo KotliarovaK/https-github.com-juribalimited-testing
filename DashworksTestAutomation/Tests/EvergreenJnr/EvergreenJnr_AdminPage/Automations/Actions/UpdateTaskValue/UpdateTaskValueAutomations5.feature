@@ -6,7 +6,6 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
-#Waiting for updated Validation messages on the automation
 Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterTaskChangingToTaskWithNoDueDate
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |

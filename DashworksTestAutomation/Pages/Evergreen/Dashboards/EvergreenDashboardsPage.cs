@@ -109,26 +109,12 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//span[text()='Default dashboard']")]
         public IWebElement DefaultDashboardCheckboxLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']")]
-        public IWebElement PermissionSection { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='userName']")]
-        public IList<IWebElement> PermissionAddedUser { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='permission']")]
-        public IList<IWebElement> PermissionTypeOfAccess { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
-        public IWebElement SharingDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']//span[not (contains(@class, 'mat-select'))]")]
-        public IWebElement SharingDropdownPermissionValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']//button")]
+        //TODO looks like generick element and should be moved to BaseDashboardPage
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'dependants')]//button")]
         public IWebElement DetailsPanelExpandListsIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'dependants')]//table//tr[1]/td")]
-        public IList<IWebElement> DetailsPanelSharedListsTableHeaders { get; set; }
+        public IList<IWebElement> HeadersOfSharedListTable { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
@@ -231,13 +217,6 @@ namespace DashworksTestAutomation.Pages
                 $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
         }
 
-        public void SetPermissionSharingFieldTo(string newValue)
-        {
-            var shareType = By.XPath(".//div[@class='permissions-container']//*[@aria-labelledby='sharing-label']");
-            Driver.WaitForElementToBeDisplayed(Driver.FindElement(shareType));
-            Driver.SelectCustomSelectbox(Driver.FindElement(shareType), newValue);
-        }
-
         public IWebElement DashboardMenuSelector(string dashboardName)
         {
             var dashboardSettingsSelector =
@@ -246,20 +225,6 @@ namespace DashworksTestAutomation.Pages
             Driver.MouseHover(dashboardSettingsSelector);
             Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
             return Driver.FindElement(dashboardSettingsSelector);
-        }
-
-        public IWebElement GetMenuOfSharedUser(string username)
-        {
-            var dashboardSettingsSelector =
-                By.XPath($".//div[@class='permissions-container']//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]//i");
-            Driver.MouseHover(dashboardSettingsSelector);
-            Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
-            return Driver.FindElement(dashboardSettingsSelector);
-        }
-
-        public IWebElement GetMenuOption(string option)
-        {
-            return Driver.FindElement(By.XPath($".//div[@class='permissions-container']//ul[@class='menu-settings']/li[contains(text(),'{option}')]"));
         }
 
         public IWebElement GetDisabledEllipsisItemByName(string itemName)
