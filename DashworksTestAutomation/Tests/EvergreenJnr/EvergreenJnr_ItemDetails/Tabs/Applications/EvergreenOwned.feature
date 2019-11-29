@@ -33,8 +33,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingC
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Evergreen Owned' left submenu item
 	When User clicks "DirectX 8.1 SDK for Visual Basic" link on the Details Page
-	#waiting for the switching process to new Details page to be completed
-	#When User waits for three seconds
 	Then Details page for "DirectX 8.1 SDK for Visual Basic" item is displayed to the user
 	Then User click back button in the browser
 	And Details page for "ZZP911429" item is displayed to the user

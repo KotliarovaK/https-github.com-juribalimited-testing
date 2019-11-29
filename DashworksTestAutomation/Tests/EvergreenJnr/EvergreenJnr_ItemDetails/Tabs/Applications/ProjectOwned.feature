@@ -70,8 +70,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCor
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	When User clicks "Quartus II 2.0 Web Edition Full" link on the Details Page
-	#waiting for the switching process to Senior page to be completed
-	#When User waits for three seconds
 	Then Details page for "Quartus II 2.0 Web Edition Full" item is displayed to the user
 	Then User click back button in the browser
 	And Details page for "LYZ6880619" item is displayed to the user
