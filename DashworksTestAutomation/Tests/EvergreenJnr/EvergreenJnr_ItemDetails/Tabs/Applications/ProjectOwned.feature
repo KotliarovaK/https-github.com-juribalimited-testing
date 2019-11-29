@@ -48,8 +48,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrec
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then "Rationalisation" column is displayed to the user
-	When User clicks String Filter button for "Rationalisation" column
-	Then following Boolean Values are displayed in the filter dropdown for the '{columnName}' column
+	Then following Boolean Values are displayed in the filter dropdown for the 'Rationalisation' column
 	| Values        |
 	| FORWARD PATH  |
 	| KEEP          |

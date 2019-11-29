@@ -260,8 +260,6 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
  testRunner.Then("\"Rationalisation\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 51
- testRunner.When("User clicks String Filter button for \"Rationalisation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -272,8 +270,8 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "UNCATEGORISED"});
 #line 52
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'{columnNam" +
-                    "e}\' column", ((string)(null)), table2, "Then ");
+ testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Rationalis" +
+                    "ation\' column", ((string)(null)), table2, "Then ");
 #line 57
  testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
