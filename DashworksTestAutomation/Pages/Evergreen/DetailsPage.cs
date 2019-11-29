@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
@@ -238,11 +240,32 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
         }
 
-        public IWebElement GetBucketLinkByName(string bucketName)
+        public bool LinkIsDisplayed(string linkName)
         {
-            var selector = By.XPath($"//div[@class='editText']//span[text()='{bucketName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            var selector = By.XPath($"//div[contains(@class, 'editText')]//span[text()='{linkName}']");
+            return Driver.IsElementDisplayed(selector);
+        }
+
+        public bool WaitingForTheLinkToBeChanged(string linkName, int seconds)
+        {
+            var attempts = 5;
+            var waitTime = (seconds * 1000) / attempts;
+
+            try
+            {
+                if (LinkIsDisplayed(linkName))
+                    return true;
+                Thread.Sleep(waitTime);
+                Driver.Navigate().Refresh();
+                Driver.WaitForDataLoading();
+                Thread.Sleep(2000);
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Error waiting for link update: {e}");
+            }
+
+            return false;
         }
 
         public IWebElement GetFieldToOpenTheTableByName(string fieldName)
