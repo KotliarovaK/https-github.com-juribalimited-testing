@@ -134,9 +134,10 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'IMPORT PROJECT' button 
 	#DAS11565
-	Then "Import Task to Request Type relationships" checkbox is displayed on the Admin page
-	Then "Import Mail Templates" checkbox is displayed on the Admin page
-	Then "Import Mail Template to Task Relationships" checkbox is displayed on the Admin page
+	#Then 'Import Task to Request Type relationships' checkbox is displayed
+	Then 'Import Task to Request Type relationships' checkbox is displayed
+	Then 'Import Mail Templates' checkbox is displayed
+	Then 'Import Mail Template to Task Relationships' checkbox is displayed
 	When User unchecks 'Import Request Types' checkbox
 	Then "Import Mail Template to Task Relationships" checkbox is disabled on the Admin page
 	When User clicks 'CANCEL' button 
