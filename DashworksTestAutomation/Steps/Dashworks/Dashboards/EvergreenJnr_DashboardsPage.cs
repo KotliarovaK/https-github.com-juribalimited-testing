@@ -736,7 +736,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
+            var getColor = page.GetWidgetText().GetCssValue("color");
             Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -775,78 +775,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");
         }
 
-        [Then(@"Permission panel is displayed to the user")]
-        public void ThenPermissionPanelIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.IsTrue(page.PermissionSection.Displayed(), "Actions panel was not displayed");
-        }
-
-        [When(@"User selects '(.*)' dashboard sharing option")]
-        public void WhenUserSelectsSharingType(string to)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.SetPermissionSharingFieldTo(to);
-            //TODO Section reloads with delay
-            Thread.Sleep(1000);
-        }
-
-        [When(@"User adds user to list of shared person")]
-        public void WhenUserAddsNewPersonToSharingList(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClickButtonByName("ADD USER");
-
-            foreach (var row in table.Rows)
-            {
-                if (!string.IsNullOrEmpty(row["User"]))
-                {
-                    action.AutocompleteSelect("User", row["User"], true);
-                }
-
-                if (!string.IsNullOrEmpty(row["Permission"]))
-                {
-                    action.SelectDropdown(row["Permission"], "Select access");
-                }
-                action.ClickButtonByName("ADD USER");
-
-                //TODO Section reloads with delay
-                Thread.Sleep(2000);
-            }
-        }
-
-        [Then(@"User '(.*)' was added to shared list with '(.*)' permission")]
-        public void ThenUserWasAddedToSharedList(string username, string permission)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementsToBeDisplayed(page.PermissionAddedUser);
-
-            Verify.That(page.PermissionAddedUser.Select(x => x.Text).ToList(), Does.Contain(username), "Username is not one that expected");
-            Verify.That(page.PermissionTypeOfAccess.Select(x => x.Text).ToList(), Does.Contain(permission), "Permission is not one that expected");
-        }
-
-        [Then(@"There is no user in shared list")]
-        public void ThenNoUserFoundInSharedList()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            // _driver.WaitForElementToBeNotDisplayed(page.PermissionAddedUser);
-            Verify.That(page.PermissionAddedUser.Count, Is.EqualTo(0), "Username found in shared list");
-        }
-
         [When(@"User expands the list of shared lists")]
         public void UserExpandsTheListOfSharedLists()
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.DetailsPanelExpandListsIcon.Click();
-            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
+            var dash = _driver.NowAt<EvergreenDashboardsPage>();
+            dash.DetailsPanelExpandListsIcon.Click();
+            _driver.WaitForElementsToBeDisplayed(dash.HeadersOfSharedListTable);
         }
 
         [Then(@"User sees table headers as '(.*)' and '(.*)'")]
         public void UserSeesTableHeadersAs(string a, string b)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
-            Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
+            _driver.WaitForElementsToBeDisplayed(page.HeadersOfSharedListTable);
+            Verify.That(page.HeadersOfSharedListTable.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
         }
 
         [Then(@"User sees list icon displayed for '(.*)' widget in List section of Dashboards Details")]
@@ -866,22 +808,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(toolTipText, Is.EqualTo("Shared"), "Unexpected/missing tooltip");
         }
 
-        [When(@"User clicks Settings button for '(.*)' shared user")]
-        public void WhenUserClickSettingsMenuForSharedUser(string user)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.GetMenuOfSharedUser(user).Click();
-        }
-
-        [When(@"User selects '(.*)' option from Settings")]
-        public void WhenUserClicksOptionFromSettingsMenuForSharedUser(string option)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.GetMenuOption(option).Click();
-            //TODO Section reloads with delay
-            Thread.Sleep(2000);
-        }
-
         [When(@"User clicks data in card '(.*)' widget")]
         public void WhenUserClicksDataInCardWidget(string widgetTitle)
         {
@@ -889,11 +815,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCardWidgetContent(widgetTitle).Click();
         }
 
+        [When(@"User clicks text in card widget")]
+        public void WhenUserClicksTextInCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetWidgetText().Click();
+        }
+
         [Then(@"Value '(.*)' is displayed in the card '(.*)' widget")]
         public void ValueIsDisplayedInCardWidget(string value, string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
             Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
         }
 
@@ -1118,20 +1050,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(page.DefaultDashboardCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
         }
 
-        [When(@"User select '(.*)' sharing option on the Dashboards page")]
-        public void WhenUserSelectSharingOptionOnTheDashboardsPage(string option)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            _driver.SelectCustomSelectbox(page.SharingDropdown, option);
-        }
 
-        [Then(@"Permission '(.*)' displayed in Dashboard Details")]
-        public void ThenDashboardShowsPermissionToTheUser(string permission)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.SharingDropdownPermissionValue.Text, Is.EqualTo(permission), $"Permission {permission} was not the same in Dashboard Details");
-        }
 
 
         [Then(@"Review Widget List Permissions is displayed to the User")]

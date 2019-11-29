@@ -79,8 +79,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWor
 	Then "<AdditionalValue>" chip for Value is not displayed
 	When User clicks Plus button for "Values" Pivot value
 	When User enters "<AdditionalValue>" text in Search field at Columns Panel
-	When User closed "Selected Columns" columns category
-	When User closed "Suggested" columns category
+	When User collapses 'Selected Columns' category
+	When User collapses 'Suggested' category
 	Then "<AdditionalValue>" subcategory is displayed for "<CategoryName>" category
 
 Examples:

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Providers;
@@ -100,6 +101,10 @@ namespace DashworksTestAutomation.Utils
                     request.RequestFormat = DataFormat.Json;
 
                     var response = client.Execute(request);
+
+                    Logger.Write(response.StatusCode != HttpStatusCode.OK
+                        ? $"Error during unleashing test: {response.StatusCode}"
+                        : $"Test {testName} was unleashed");
                 }
             }
             catch (Exception e)

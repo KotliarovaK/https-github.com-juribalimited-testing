@@ -136,10 +136,10 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	And table content is present
 	And "2" rows are displayed in the agGrid
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User clicks 'DELETE LIST' button
 	And User navigates to the "DynamicList2569" list
 	Then no Warning message is displayed in the lists panel
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	And no Warning message is displayed in the list details panel

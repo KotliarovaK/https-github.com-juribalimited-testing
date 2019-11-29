@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	When User create dynamic list with "DynamicListFirst" name on "Applications" page
 	Then "DynamicListFirst" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then current user is selected as a owner of a list
 	When User navigates to the "All Applications" list
 	Then 'All Applications' list should be displayed to the user
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	And User create dynamic list with "DynamicList13066" name on "Applications" page
 	Then "DynamicList13066" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users / teams" sharing option
 	Then "Specific users / teams" sharing option is selected
 	When User clicks 'ADD TEAM' button 
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	And There are no errors in the browser console
 	And "Admin" Sharing user is displayed correctly
 	And form container is not displayed to the user
@@ -105,6 +105,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOwnersIsDisplayedInAlphabeticalOrde
 	And User create dynamic list with "List13029" name on "Devices" page
 	Then "List13029" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User clears Owner field on List Details panel
 	Then Owners is displayed in alphabetical order

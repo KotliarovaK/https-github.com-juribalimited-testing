@@ -4614,7 +4614,7 @@ this.FeatureBackground();
 #line 1025
  testRunner.And("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1026
- testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1027
  testRunner.When("User select \"Everyone can edit\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1028
@@ -8264,7 +8264,7 @@ this.FeatureBackground();
 #line 1842
  testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table127, "Then ");
 #line 1867
- testRunner.When("User closed \"Device Owner\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User collapses \'Device Owner\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1868
  testRunner.And("User expands \"Device Owner Location\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -8289,7 +8289,7 @@ this.FeatureBackground();
 #line 1869
  testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table128, "Then ");
 #line 1879
- testRunner.When("User closed \"Device Owner Location\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User collapses \'Device Owner Location\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1880
  testRunner.And("User expands \"Device Owner Organisation\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -8322,7 +8322,7 @@ this.FeatureBackground();
 #line 1881
  testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table129, "Then ");
 #line 1895
- testRunner.When("User closed \"Device Owner Organisation\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User collapses \'Device Owner Organisation\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1896
  testRunner.And("User expands \"Device Owner Custom Fields\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

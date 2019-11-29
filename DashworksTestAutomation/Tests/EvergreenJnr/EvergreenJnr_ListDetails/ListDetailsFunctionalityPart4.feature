@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	When User clicks Settings button for "Application1" list
 	Then Cog menu is displayed to the user
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	And Dependants section is collapsed by default
 	When User expand Dependants section
 	Then "NewDevice" list is displayed in the Dependants section
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	When User clicks Settings button for "Adobe Apps" list
 	Then Cog menu is displayed to the user
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User closes Permissions section in the list panel
 	Then tooltip is displayed with "Open" text for Permissions section
 	When User clicks 'Devices' on the left-hand menu
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	When User clicks Settings button for "Adobe Apps" list
 	Then Cog menu is displayed to the user
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then tooltip is displayed with "Open" text for Dependants section
 	When User expand Dependants section
 	Then Dependants section is displayed to the user
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	When User clicks Settings button for "A1" list
 	Then Cog menu is displayed to the user
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User expand Dependants section
 	Then Dependants section is displayed to the user
 	When User clicks "D1" list in the Dependants section
