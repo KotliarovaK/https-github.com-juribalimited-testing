@@ -159,12 +159,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetMenuOption(string option)
-        {
-            return Driver.FindElement(By.XPath($".//ul[@class='menu-settings']/li[contains(text(),'{option}')]"));
-        }
-
-
         public IWebElement GetListDetailsLabelByText(string text)
         {
             var selector = By.XPath($".//div[@class='listPanel']//*[contains(text(),'{text}')]");
@@ -179,6 +173,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
         }
 
+        //TODO will be replaced COG MENU element
         public IWebElement GetMenuOfSharedUser(string username)
         {
             var sharedUserCogMenu =

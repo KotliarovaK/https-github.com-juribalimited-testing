@@ -87,8 +87,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
-	When User clicks Settings button for 'automation_admin10' shared user in Details panel
-	When User selects 'Remove' option from shared user Settings in Details panel
+	When User clicks 'Remove' option in Cog-menu for 'automation_admin10' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
 
@@ -178,8 +177,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	| User          | Permission |
 	| Administrator | Edit       |
 	Then User 'Admin' was added to shared list with 'Edit' permission of Details panel
-	When User clicks Settings button for 'Admin' shared user in Details panel
-	When User selects 'Remove' option from shared user Settings in Details panel
+	When User clicks 'Remove' option in Cog-menu for 'Admin' user on Details panel
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Read       |
@@ -235,8 +233,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User clicks Settings button for "ADevicesList17592" list
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
-	When User clicks Settings button for 'automation_admin1' shared user in Details panel
-	When User selects 'Remove' option from shared user Settings in Details panel
+	When User clicks 'Remove' option in Cog-menu for 'automation_admin1' user on Details panel
 	Then There is no user in shared list of Details panel
 	#login as user2
 	When User clicks the Logout button

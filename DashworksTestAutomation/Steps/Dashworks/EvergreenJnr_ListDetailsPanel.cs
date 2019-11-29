@@ -7,6 +7,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -310,22 +311,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Selected Sharing user is not displayed on Details panel");
         }
 
-        [When(@"User clicks Settings button for '(.*)' shared user in Details panel")]
-        public void WhenUserClickSettingsMenuForSharedUser(string user)
+        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' user on Details panel")]
+        public void WhenUserClickSettingsMenuForSharedUser(string option, string username)
         {
             var page = _driver.NowAt<ListDetailsElement>();
-            page.GetMenuOfSharedUser(user).Click();
-        }
+            page.GetMenuOfSharedUser(username).Click();
 
-        [When(@"User selects '(.*)' option from shared user Settings in Details panel")]
-        public void WhenUserClicksOptionFromSettingsMenuForSharedUser(string option)
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            page.GetMenuOption(option).Click();
-            //TODO Section reloads with delay
-            Thread.Sleep(2000);
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.GetCogMenuOptionByName(option).Click();
         }
-
+       
         [Then(@"There is no user in shared list of Details panel")]
         public void ThenNoUserFoundInSharedList()
         {

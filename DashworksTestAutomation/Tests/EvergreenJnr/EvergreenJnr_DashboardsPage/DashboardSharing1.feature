@@ -19,8 +19,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	| Administrator | Admin      |
 	Then User 'Admin' was added to shared list with 'Admin' permission of Details panel
 	Then There are no errors in the browser console
-	When User clicks Settings button for 'Admin' shared user in Details panel
-	When User selects 'Remove' option from shared user Settings in Details panel
+	When User clicks 'Remove' option in Cog-menu for 'Admin' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then There are no errors in the browser console
 	When User adds user to list of shared person
@@ -28,8 +27,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	| Administrator | Edit       |
 	Then User 'Admin' was added to shared list with 'Edit' permission of Details panel
 	Then There are no errors in the browser console
-	When User clicks Settings button for 'Admin' shared user in Details panel
-	When User selects 'Remove' option from shared user Settings in Details panel
+	When User clicks 'Remove' option in Cog-menu for 'Admin' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then There are no errors in the browser console
 	When User adds user to list of shared person
@@ -37,8 +35,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	| Administrator | Read       |
 	Then User 'Admin' was added to shared list with 'Read Only' permission of Details panel
 	Then There are no errors in the browser console
-	When User clicks Settings button for 'Admin' shared user in Details panel
-	When User selects 'Remove' option from shared user Settings in Details panel
+	When User clicks 'Remove' option in Cog-menu for 'Admin' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then There are no errors in the browser console
 
