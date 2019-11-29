@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	And User navigates to the "DynamicList4587" list
 	Then no Warning message is displayed in the lists panel
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	And no Warning message is displayed in the list details panel
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11498 @Cleanup
@@ -37,7 +37,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWas
 	When User clicks Settings button for "<ListName>" list
 	Then Cog menu is displayed to the user
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 
 Examples:
 	| PageName     | ListName              |
@@ -64,14 +64,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSe
 	And User clicks Settings button for "DynamicList4557" list
 	When User clicks 'Manage' option in opened Cog-menu
 	Then "DynamicList4557" list is displayed to user
-	And List details panel is displayed to the user
+	And Details panel is displayed to the user
 	When User navigates to the "StaticList2845" list
 	Then "StaticList2845" list is displayed to user
 	When User clicks Settings button for "StaticList2845" list
 	Then Cog menu is displayed to the user
 	When User clicks 'Manage' option in opened Cog-menu
 	Then "StaticList2845" list is displayed to user
-	And List details panel is displayed to the user
+	And Details panel is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12967
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAllRowsDisplayedOnGridWhenCreatingStaticListAfterSearch

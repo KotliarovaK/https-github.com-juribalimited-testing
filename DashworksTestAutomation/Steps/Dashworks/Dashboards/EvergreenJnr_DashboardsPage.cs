@@ -775,6 +775,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");
         }
 
+        [When(@"User expands the list of shared lists")]
+        public void UserExpandsTheListOfSharedLists()
+        {
+            var dash = _driver.NowAt<EvergreenDashboardsPage>();
+            dash.DetailsPanelExpandListsIcon.Click();
+            _driver.WaitForElementsToBeDisplayed(dash.HeadersOfSharedListTable);
+        }
+
+        [Then(@"User sees table headers as '(.*)' and '(.*)'")]
+        public void UserSeesTableHeadersAs(string a, string b)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementsToBeDisplayed(page.HeadersOfSharedListTable);
+            Verify.That(page.HeadersOfSharedListTable.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
+        }
+
         [Then(@"User sees list icon displayed for '(.*)' widget in List section of Dashboards Details")]
         public void ThenUserSeesListIconDisplayedForListInListSectionOfDashboardsDetails(string widgetName)
         {

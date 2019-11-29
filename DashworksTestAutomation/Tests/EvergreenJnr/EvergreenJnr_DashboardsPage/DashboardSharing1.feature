@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS14911' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Dashboard details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User          | Permission |
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on Permissions Pop-up
 	When User clicks the 'CANCEL' button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
-	Then Permission 'Private' displayed in Dashboard Details
+	Then "Private" sharing option is selected
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissionPoup
@@ -172,13 +172,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841_1' list on Permissions Pop-up
 	When User clicks the 'IGNORE & SHARE' button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
-	Then Permission 'Everyone can see' displayed in Dashboard Details
+	Then "Everyone can see" sharing option is selected
 	#teardown
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_1" list
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then "Private" sharing option is selected
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
@@ -207,13 +207,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841_2' list on Permissions Pop-up
 	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
-	Then Permission 'Everyone can see' displayed in Dashboard Details
+	Then "Everyone can see" sharing option is selected
 	#teardown
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_2" list
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then "Everyone can see" sharing option is selected
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
@@ -258,16 +258,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on Permissions Pop-up
 	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
-	Then Permission 'Everyone can see' displayed in Dashboard Details
+	Then "Everyone can see" sharing option is selected
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_3" list
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	And "Everyone can edit" sharing option is selected
 	When User clicks Settings button for "DeviceListFor14841_4" list
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then "Private" sharing option is selected
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Cleanup

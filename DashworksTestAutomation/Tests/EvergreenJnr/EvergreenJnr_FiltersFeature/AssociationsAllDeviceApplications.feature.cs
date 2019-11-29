@@ -344,7 +344,7 @@ this.FeatureBackground();
 #line 66
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
- testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
  testRunner.Then("\'List Type: Dynamic\' label is displayed in List Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69

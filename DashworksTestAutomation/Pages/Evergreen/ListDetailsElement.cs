@@ -102,16 +102,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//td[@class='permission']")]
         public IList<IWebElement> PermissionTypeOfAccess { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']//span[not (contains(@class, 'mat-select'))]")]
-        public IWebElement SharingDropdownPermissionValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'dependants')]//table//tr[1]/td")]
-        public IList<IWebElement> DetailsPanelSharedListsTableHeaders { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']//button")]
-        public IWebElement DetailsPanelExpandListsIcon { get; set; }
-
+    
         [FindsBy(How = How.XPath, Using = Owner)]
         public IList<IWebElement> OwnersList { get; set; }
 

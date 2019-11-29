@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User selects 'Everyone can see' permission for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
-	Then Permission 'Everyone can see' displayed in Dashboard Details
+	Then "Everyone can see" sharing option is selected
 	#login as user1 and check if list permission changed
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "ADeviceListFor14841_Admin" list
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then "Everyone can see" sharing option is selected
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Cleanup
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Dashboard details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Dashboard details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User clicks Settings button for 'automation_admin10' shared user in Details panel
 	When User selects 'Remove' option from shared user Settings in Details panel
 	Then There is no user in shared list of Details panel
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS15550' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Dashboard details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Dashboard details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Dashboard details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User changes dashboard name to 'DashboardUpdated'
 	Then Dashboard with 'DashboardUpdated' title displayed in All Dashboards
 
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for Share' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Dashboard details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
@@ -173,7 +173,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for Share' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
-	Then Dashboard details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Edit       |
@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "ADevicesList17592" list
 	When User clicks 'Manage' option in opened Cog-menu
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User clicks Settings button for 'automation_admin1' shared user in Details panel
 	When User selects 'Remove' option from shared user Settings in Details panel
 	Then There is no user in shared list of Details panel

@@ -125,15 +125,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Star icon is not active");
         }
 
-        [Then(@"Dashboard details panel is displayed to the user")]
-        [Then(@"List details panel is displayed to the user")]
+        [Then(@"Details panel is displayed to the user")]
         public void ThenListDetailsPanelIsDisplayedToTheUser()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(listDetailsElement.ListDetailsPanel);
             Utils.Verify.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
-            Logger.Write("List Details panel is visible");
         }
         
         [Then(@"'(.*)' label is displayed in List Details")]
@@ -141,7 +139,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             Utils.Verify.IsTrue(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel doesn't have {text} label");
-            Logger.Write("List Details has label");
         }
 
         [Then(@"'(.*)' label is not displayed in List Details")]
@@ -329,13 +326,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(2000);
         }
 
-        [Then(@"Permission '(.*)' displayed in Dashboard Details")]
-        public void ThenDashboardShowsPermissionToTheUser(string permission)
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            Verify.That(page.SharingDropdownPermissionValue.Text, Is.EqualTo(permission), $"Permission {permission} was not the same in Dashboard Details");
-        }
-
         [Then(@"There is no user in shared list of Details panel")]
         public void ThenNoUserFoundInSharedList()
         {
@@ -375,22 +365,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 //TODO Section reloads with delay
                 Thread.Sleep(2000);
             }
-        }
-
-        [When(@"User expands the list of shared lists")]
-        public void UserExpandsTheListOfSharedLists()
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            page.DetailsPanelExpandListsIcon.Click();
-            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
-        }
-
-        [Then(@"User sees table headers as '(.*)' and '(.*)'")]
-        public void UserSeesTableHeadersAs(string a, string b)
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
-            Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
         }
 
         [When(@"User select ""(.*)"" as a Owner of a list")]

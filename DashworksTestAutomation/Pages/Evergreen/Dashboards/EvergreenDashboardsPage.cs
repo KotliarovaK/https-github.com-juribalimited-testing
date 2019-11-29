@@ -109,6 +109,13 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//span[text()='Default dashboard']")]
         public IWebElement DefaultDashboardCheckboxLabel { get; set; }
 
+        //TODO looks like generick element and should be moved to BaseDashboardPage
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'dependants')]//button")]
+        public IWebElement DetailsPanelExpandListsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'dependants')]//table//tr[1]/td")]
+        public IList<IWebElement> HeadersOfSharedListTable { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
 
