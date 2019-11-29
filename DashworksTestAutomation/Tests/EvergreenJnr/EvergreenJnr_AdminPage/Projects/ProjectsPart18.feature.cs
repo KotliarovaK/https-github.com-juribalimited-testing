@@ -572,7 +572,7 @@ this.FeatureBackground();
  testRunner.Then("\"Import Mail Template to Task Relationships\" checkbox is displayed on the Admin p" +
                     "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 140
- testRunner.When("User checks \'Import Request Types\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User unchecks \'Import Request Types\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 141
  testRunner.Then("\"Import Mail Template to Task Relationships\" checkbox is disabled on the Admin pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
