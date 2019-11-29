@@ -57,15 +57,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 	When Dashboard with 'Dashboard for DAS12989' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD SECTION' button 
-	And User clicks 'ADD WIDGET' button for '1' Section on Dashboards page
+	And User clicks ADD WIDGET button for '1' Section on Dashboards page
 	And User creates new Widget
 	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | Section1_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
+	And User clicks ADD WIDGET button for '2' Section on Dashboards page
 	And User creates new Widget
 	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Bar        | Section2_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
+	And User clicks ADD WIDGET button for '2' Section on Dashboards page
 	And User creates new Widget
 	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | Section2_WidgetForDAS12989_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |

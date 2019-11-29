@@ -982,7 +982,7 @@ this.FeatureBackground();
 #line 176
  testRunner.And("User double clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 177
- testRunner.Then("User sees Widget with \'UniqeWidget\' name on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UniqeWidget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 178
  testRunner.And("User sees \'1\' widgets with \'UniqeWidget\' name on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

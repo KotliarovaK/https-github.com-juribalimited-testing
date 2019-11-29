@@ -370,7 +370,7 @@ this.FeatureBackground();
 #line 59
  testRunner.And("User clicks \'ADD SECTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.And("User clicks \'ADD WIDGET\' button for \'1\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks ADD WIDGET button for \'1\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -395,7 +395,7 @@ this.FeatureBackground();
 #line 61
  testRunner.And("User creates new Widget", ((string)(null)), table3, "And ");
 #line 64
- testRunner.And("User clicks \'ADD WIDGET\' button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks ADD WIDGET button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -420,7 +420,7 @@ this.FeatureBackground();
 #line 65
  testRunner.And("User creates new Widget", ((string)(null)), table4, "And ");
 #line 68
- testRunner.And("User clicks \'ADD WIDGET\' button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks ADD WIDGET button for \'2\' Section on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
