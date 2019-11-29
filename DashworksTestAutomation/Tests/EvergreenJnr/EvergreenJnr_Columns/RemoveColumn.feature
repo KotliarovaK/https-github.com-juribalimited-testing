@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks on 'Windows7Mi: Category' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then User is expand "Selected Columns" columns category
+	When User expands 'Selected Columns' category
 	When User removes "Windows7Mi: Category" column by Column panel
 	Then 'TestList32EDC3' list should be displayed to the user
 	Then ColumnName is removed from the list
@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User clicks on 'Windows7Mi: Category' column header
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then User is expand "Selected Columns" columns category
+	When User expands 'Selected Columns' category
 	When User removes "Windows7Mi: Category" column by Column panel
 	Then 'All Devices' list should be displayed to the user
 	Then ColumnName is removed from the list
