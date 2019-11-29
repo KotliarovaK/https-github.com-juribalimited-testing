@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         {
             return new List<By>
             {
-                SelectorFor(this, p => p.CollapseExpandAllButton),
+                SelectorFor(this, p => p.CollapseExpandAllButton)
             };
         }
 
@@ -52,14 +52,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public Boolean GetCollapseExpandButtonState()
         {
-            if (CollapseExpandAllButton.GetAttribute("aria-label").Contains("Collapse All"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return CollapseExpandAllButton.GetAttribute("aria-label").Contains("Collapse All");
         }
 
         public void CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(Boolean collapseExpand)
@@ -72,7 +65,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public Boolean GetCollapseExpandSelfServiceBuilderPageButtonState(string contextPanelType, string contextPanelName)
         {
-            if (ContextPanelArrow(contextPanelType, contextPanelName).GetAttribute("class").Contains("material-icons mat-arrow_down"))
+            if (ContextPanelArrow(contextPanelType, contextPanelName).GetAttribute("class").Contains("mat-arrow_down"))
             {
                 return true;
             }
@@ -84,20 +77,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public void CollapseExpandSelfServiceBuilderPageOnContextPanel(Boolean collapseExpand, string contextPanelType, string contextPanelName)
         {
-            if (collapseExpand != GetCollapseExpandSelfServiceBuilderPageButtonState(contextPanelType, contextPanelName))
+            if (!collapseExpand.Equals(GetCollapseExpandSelfServiceBuilderPageButtonState(contextPanelType, contextPanelName)))
             {
                 ContextPanelArrow(contextPanelType, contextPanelName).Click();
             }
-        }
-
-        public void ClickOnContextPanelPageAddItemButton(string contextPanelType, string contextPanelName)
-        {
-            ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
-        }
-
-        public void ClickOnContextPanelItemCogMenuButton(string contextPanelType, string contextPanelName)
-        {
-            ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
         }
     }
 }
