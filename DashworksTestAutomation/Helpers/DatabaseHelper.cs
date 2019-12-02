@@ -529,6 +529,11 @@ namespace DashworksTestAutomation.Helpers
             }
         }
 
+        public static string GetAutomationActiveStatus(string automation)
+        {
+            return DatabaseHelper.ExecuteReader($"select [Active] from [PM].[dbo].[Automations] WHERE [AutomationName] = '{automation}'", 0)[0];
+        }
+
         #endregion
 
         #region Readiness

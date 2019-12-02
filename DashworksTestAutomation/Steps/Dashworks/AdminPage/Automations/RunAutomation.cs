@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Helpers;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -14,11 +15,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
     [Binding]
     public class RunAutomation : SpecFlowContext
     {
-        private readonly TestInfo _testInfo;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public RunAutomation(TestInfo testInfo)
+        public RunAutomation(RunNowAutomationStartTime automationStartTime)
         {
-            _testInfo = testInfo;
+            _automationStartTime = automationStartTime;
         }
 
         [When(@"'(.*)' automation run has finished")]
@@ -28,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var waitTime = 1000;
             for (int i = 0; i < attempts; i++)
             {
-                var isFinished = DatabaseHelper.IsAutomationRunFinished(automation, _testInfo.StartTime);
+                var isFinished = DatabaseHelper.IsAutomationRunFinished(automation, _automationStartTime.Value);
                 if (isFinished)
                 {
                     return;
@@ -49,7 +50,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var waitTime = 1000;
             for (int i = 0; i < attempts; i++)
             {
-                var isFinished = DatabaseHelper.IsAutomationActionRunFinished(automation, action, _testInfo.StartTime);
+                var isFinished = DatabaseHelper.IsAutomationActionRunFinished(automation, action, _automationStartTime.Value);
                 if (isFinished)
                 {
                     return;
