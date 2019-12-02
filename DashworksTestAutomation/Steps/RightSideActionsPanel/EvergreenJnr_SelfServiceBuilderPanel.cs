@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         [When(@"User clicks Expand All Sections button on Self Service Builder Panel")]
-        public void WhenUserClicksOnExpandSectionsAllInSelfServiceBuilderContextPanel()
+        public void WhenUserClicksExpandAllSectionsButtonOnSelfServiceBuilderPanel()
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             _driver.WaitForDataLoading();
@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         [When(@"User clicks on Collapse All Sections button on Self Service Builder Panel")]
-        public void WhenUserClicksOnCollapseAllSectionsInSelfServiceBuilderContextPanel()
+        public void WhenUserClicksOnCollapseAllSectionsButtonOnSelfServiceBuilderPanel()
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(false);
