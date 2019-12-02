@@ -57,7 +57,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         [When(@"User clicks on Add Item button with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
-        public void WhenUserClicksOnAddItemButtonOfThePageWitItemTypeOnSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
+        public void WhenUserClicksOnAddItemButtonWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
@@ -77,8 +77,8 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
         }
 
-        [When(@"User clicks Close Self Service Builder Panel button")]
-        public void WhenUserClicksCloseSelfServicePageBuilderContextPanelButton()
+        [When(@"User clicks on Close Self Service Builder Panel button")]
+        public void WhenUserClicksOnCloseSelfServiceBuilderPanelButton()
         {
             var button = _driver.NowAt<BaseRightSideActionsPanel>();
             button.ClosePanelButton.Click();
