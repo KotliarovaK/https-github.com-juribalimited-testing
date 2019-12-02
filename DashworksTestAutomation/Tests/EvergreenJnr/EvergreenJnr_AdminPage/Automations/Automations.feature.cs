@@ -2413,7 +2413,7 @@ this.FeatureBackground();
                         "Scope",
                         "Run"});
             table29.AddRow(new string[] {
-                        "DAS15949_Automation",
+                        "15949_Automation",
                         "DAS15949",
                         "true",
                         "false",
@@ -2453,11 +2453,10 @@ this.FeatureBackground();
 #line 707
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 708
- testRunner.When("User enters \"DAS15949_Automation\" text in the Search field for \"Automation\" colum" +
-                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"15949_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 709
- testRunner.And("User clicks \"Run now\" option in Cog-menu for \"DAS15949_Automation\" item on Admin " +
-                    "page and wait for processing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \"Run now\" option in Cog-menu for \"15949_Automation\" item on Admin pag" +
+                    "e and wait for processing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 711
  testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 712
@@ -2465,20 +2464,20 @@ this.FeatureBackground();
 #line 713
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 714
- testRunner.And("User enters \"DAS15949_Automation\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"15949_Automation\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
             table30.AddRow(new string[] {
-                        "DAS15949_Automation \\ 15949_Action_1"});
+                        "15949_Automation \\ 15949_Action_1"});
             table30.AddRow(new string[] {
-                        "DAS15949_Automation \\ 15949_Action_2"});
+                        "15949_Automation \\ 15949_Action_2"});
 #line 715
  testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table30, "Then ");
 #line 719
  testRunner.When("User clears search textbox in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 720
- testRunner.And("user select \"DAS15949_Automation \\ 15949_Action_1\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("user select \"15949_Automation \\ 15949_Action_1\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 721
  testRunner.And("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 722
@@ -2494,8 +2493,7 @@ this.FeatureBackground();
 #line 728
  testRunner.And("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 729
- testRunner.And("User enters \"DAS15949_Automation\" text in the Search field for \"Automation\" colum" +
-                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"15949_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 730
  testRunner.And("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 731
