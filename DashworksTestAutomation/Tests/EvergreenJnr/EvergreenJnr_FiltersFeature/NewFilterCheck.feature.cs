@@ -1809,8 +1809,8 @@ this.FeatureBackground();
             table28.AddRow(new string[] {
                         "Adobe"});
 #line 456
- testRunner.When("User add \"1803: Target App Vendor\" filter where type is \"Contains\" with added col" +
-                    "umn and following value:", ((string)(null)), table28, "When ");
+ testRunner.When("User add \"Evergreen Target App Vendor\" filter where type is \"Contains\" with added" +
+                    " column and following value:", ((string)(null)), table28, "When ");
 #line 459
  testRunner.When("User create custom list with \"DAS18875_list2\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 460
@@ -1818,7 +1818,7 @@ this.FeatureBackground();
 #line 461
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 462
- testRunner.Then("\"1803: Target App Vendor contains Adobe\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Evergreen Target App Vendor contains Adobe\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 463
  testRunner.Then("\'Adobe\' content is displayed in the \'Evergreen Target App Vendor\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1890,8 +1890,8 @@ this.FeatureBackground();
             table29.AddRow(new string[] {
                         "Microsoft"});
 #line 472
- testRunner.When("User add \"1803: Target App Version\" filter where type is \"Does not contain\" with " +
-                    "added column and following value:", ((string)(null)), table29, "When ");
+ testRunner.When("User add \"Evergreen Target App Version\" filter where type is \"Does not contain\" w" +
+                    "ith added column and following value:", ((string)(null)), table29, "When ");
 #line 475
  testRunner.When("User create custom list with \"DAS18875_list3\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 476
@@ -1899,8 +1899,8 @@ this.FeatureBackground();
 #line 477
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 478
- testRunner.Then("\"1803: Target App Version does not contain Microsoft\" is displayed in added filte" +
-                    "r info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Evergreen Target App Version does not contain Microsoft\" is displayed in added f" +
+                    "ilter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

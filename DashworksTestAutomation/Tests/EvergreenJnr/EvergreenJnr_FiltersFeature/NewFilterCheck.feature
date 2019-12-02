@@ -453,13 +453,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppVendorFilter
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Target App Vendor" filter where type is "Contains" with added column and following value:
+	When User add "Evergreen Target App Vendor" filter where type is "Contains" with added column and following value:
 	| Values |
 	| Adobe  |
 	When User create custom list with "DAS18875_list2" name
 	Then "DAS18875_list2" list is displayed to user
 	When User clicks the Filters button
-	Then "1803: Target App Vendor contains Adobe" is displayed in added filter info
+	Then "Evergreen Target App Vendor contains Adobe" is displayed in added filter info
 	Then 'Adobe' content is displayed in the 'Evergreen Target App Vendor' column
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Not_Ready
@@ -469,13 +469,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppVersionFilter
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Target App Version" filter where type is "Does not contain" with added column and following value:
+	When User add "Evergreen Target App Version" filter where type is "Does not contain" with added column and following value:
 	| Values    |
 	| Microsoft |
 	When User create custom list with "DAS18875_list3" name
 	Then "DAS18875_list3" list is displayed to user
 	When User clicks the Filters button
-	Then "1803: Target App Version does not contain Microsoft" is displayed in added filter info
+	Then "Evergreen Target App Version does not contain Microsoft" is displayed in added filter info
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Not_Ready
 #Waiting for "Target App Readiness" filter on the autorelease

@@ -405,16 +405,16 @@ Scenario: EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying
 	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
-#Waiting for 'Target App' column
-Scenario: EvergreenJnr_Applications_CheckTargetAppColumnDisplaying
+#Waiting for 'Evergreen Target App' column
+Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
-	| ColumnName       |
-	| 1803: Target App | + evergreen
+	| ColumnName           |
+	| Evergreen Target App |
 	When User create dynamic list with "DAS18961_List" name on "Applications" page
 	Then "DAS18961_List" list is displayed to user
-	When User clicks on '1803: Target App' column header
-	Then data in table is sorted by '1803: Target App' column in ascending order
+	When User clicks on 'Evergreen Target App' column header
+	Then data in table is sorted by 'Evergreen Target App' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
 #Waiting for 'Target App Key' column
@@ -431,19 +431,18 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying
 	Then numeric data in table is sorted by '1803: Target App Key' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
-#Waiting for 'Target App Vendor' column
-Scenario: EvergreenJnr_Applications_CheckTargetAppVendorColumnDisplaying
+#Waiting for 'Evergreen Target App Vendor' column
+Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
-	| ColumnName              |
-	| 1803: Target App Vendor |
-	| Evergreen               |
+	| ColumnName                  |
+	| Evergreen Target App Vendor |
 	When User create dynamic list with "DAS18961_List2" name on "Applications" page
 	Then "DAS18961_List2" list is displayed to user
-	When User clicks on '1803: Target App Vendor' column header
-	Then data in table is sorted by '1803: Target App Vendor' column in ascending order
-	When User clicks on '1803: Target App Vendor' column header
-	Then data in table is sorted by '1803: Target App Vendor' column in descending order
+	When User clicks on 'Evergreen Target App Vendor' column header
+	Then data in table is sorted by 'Evergreen Target App Vendor' column in ascending order
+	When User clicks on 'Evergreen Target App Vendor' column header
+	Then data in table is sorted by 'Evergreen Target App Vendor' column in descending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
 #Waiting for 'Target App Version' column

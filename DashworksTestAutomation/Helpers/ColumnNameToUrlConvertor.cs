@@ -286,6 +286,12 @@ namespace DashworksTestAutomation.Helpers
                 case "Model":
                     return "model";
 
+                case "Evergreen Target App Vendor":
+                    return "evergreenTargetApplicationVendor";
+
+                case "Evergreen Target App":
+                    return "evergreenTargetApplication";
+
                 case "1803: In Scope":
                     return "project_63_inScope";
 
