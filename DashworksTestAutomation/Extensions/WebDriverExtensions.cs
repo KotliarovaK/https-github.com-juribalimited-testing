@@ -231,6 +231,8 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForDataLoading(this RemoteWebDriver driver, int timeoutInSeconds)
         {
+            if (timeoutInSeconds <= 0)
+                throw new Exception("timeoutInSeconds should be positive value");
             WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner') and not(contains(@class,'small'))]", TimeSpan.FromSeconds(timeoutInSeconds));
         }
 
@@ -276,17 +278,18 @@ namespace DashworksTestAutomation.Extensions
         private static void DataLoadingWaiter(RemoteWebDriver driver, By by, TimeSpan timeout)
         {
             var wasLoadingSpinnerDisplayed = driver.IsElementDisplayed(by);
+            var totalSeconds = Convert.ToInt32(timeout.TotalSeconds);
 
             if (wasLoadingSpinnerDisplayed)
             {
                 try
                 {
-                    WaitForElementsToBeNotDisplayed(driver, by, timeout.Seconds);
+                    WaitForElementsToBeNotDisplayed(driver, by, totalSeconds);
                 }
                 catch (Exception e)
                 {
                     throw new Exception(
-                        $"Loading spinner is displayed longer that {timeout.Seconds} seconds: {driver.Url}. {e}");
+                        $"Loading spinner is displayed longer that {totalSeconds} seconds: {driver.Url}. {e}");
                 }
             }
         }
