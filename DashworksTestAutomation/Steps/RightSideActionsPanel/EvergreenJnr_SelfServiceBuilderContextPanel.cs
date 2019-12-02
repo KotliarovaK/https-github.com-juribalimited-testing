@@ -41,8 +41,8 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(false);
         }
 
-        [When(@"User clicks on Expand page components button with page '(.*)' type and '(.*)' page name on Self Service Builder Panel")]
-        public void WhenUserСlicksOnExpandPageComponentsButtonWithPageTypeAndPageNameInSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
+        [When(@"User clicks on Expand button for item with '.*' type and '.*' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnExpandButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             _driver.WaitForDataLoading();
@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         [When(@"User clicks on Collapse '(.*)' page components button on Self Service Builder Panel")]
-        public void WhenUserСlicksOnCollapsePageComponentsButtonWithPageTypeAndPageNameInSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
+        public void WhenUserClicksOnCollapsePageComponentsButtonOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.CollapseExpandSelfServiceBuilderPageOnContextPanel(false, contextPanelType, contextPanelName);

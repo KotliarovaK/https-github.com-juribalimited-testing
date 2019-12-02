@@ -57,7 +57,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public void CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(Boolean collapseExpand)
         {
-            if (collapseExpand != GetCollapseExpandButtonState())
+            if (!collapseExpand.Equals(GetCollapseExpandButtonState()))
             {
                 CollapseExpandAllButton.Click();
             }
