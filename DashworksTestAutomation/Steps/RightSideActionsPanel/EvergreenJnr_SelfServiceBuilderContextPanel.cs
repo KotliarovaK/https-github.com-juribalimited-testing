@@ -64,14 +64,14 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         [When(@"User clicks on Cog Menu button with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
-        public void WhenUserClicksOnCogMenuButtonOfThePageWithItemTypeOnSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
+        public void WhenUserClicksOnCogMenuButtonWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
         }
 
         [When(@"User clicks on component Cog Menu button with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
-        public void WhenUserClicksOnComponentCogMenuButtonWithTheTypeAndNameOnSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
+        public void WhenUserClicksOnComponentCogMenuButtonWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
