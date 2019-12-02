@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.CollapseExpandAllElementsOnSelfServiceBuilderContextPanel(false);
         }
-        
+
         [When(@"User clicks on Expand page components button with page '(.*)' type and '(.*)' page name on Self Service Builder Panel")]
         public void WhenUserСlicksOnExpandPageComponentsButtonWithPageTypeAndPageNameInSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
         {
@@ -77,29 +77,11 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
         }
 
-        [When(@"User enters '(.*)' text in Self Service Builder Panel Search Field")]
-        public void WhenUserEntersTextInSelfServicePageBuilderContextPanelSearchField(string searchedText)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitForElementToBeDisplayed(listElement.ListPanelSearchTextBox);
-            listElement.ListPanelSearchTextBox.Clear();
-            listElement.ListPanelSearchTextBox.SendKeys(searchedText);
-        }
-
         [When(@"User clicks Close Self Service Builder Panel button")]
         public void WhenUserClicksCloseSelfServicePageBuilderContextPanelButton()
         {
-            var button = _driver.NowAt<BaseDashboardPage>();
+            var button = _driver.NowAt<BaseRightSideActionsPanel>();
             button.ClosePanelButton.Click();
-        }
-
-        [When(@"User clicks '(.*)' option in opened Self Service Builder Panel Cog-menu")]
-        public void WhenUserClicksOptionInOpenedCogMenu(string option)
-        {
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogMenuOptionByName(option).Click();
-            _driver.WaitForDataLoading();
         }
     }
 }

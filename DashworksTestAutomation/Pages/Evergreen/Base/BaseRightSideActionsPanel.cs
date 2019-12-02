@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//span[@class='device-label']")]
         public IWebElement PanelTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//button[contains(@class,'pull-left')]//i[contains(@class,'mat-clear')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'context-header')]//button[contains(@class,'pull-left')][last()]//i[contains(@class,'mat-clear')]")]
         public IWebElement ClosePanelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'sub-categories-item')]")]
