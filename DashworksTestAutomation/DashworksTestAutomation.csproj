@@ -172,6 +172,7 @@
     <Compile Include="DTO\RuntimeVariables\Readiness\Readiness.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\RunNowAutomationStartTime.cs" />
     <Compile Include="DTO\RuntimeVariables\SectionsAndWidgetsCount.cs" />
     <Compile Include="DTO\RuntimeVariables\SeniorCustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\Slots.cs" />
