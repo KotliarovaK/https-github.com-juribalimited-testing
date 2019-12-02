@@ -249,34 +249,46 @@ namespace DashworksTestAutomation.Extensions
             WaitForDataToBeLoaded(driver, ".//div[@id='ajaxProgressMessage']/img", WaitTimeout);
         }
 
-        private static void WaitForDataToBeLoaded(RemoteWebDriver driver, string loadingSpinnerSelector, TimeSpan timepout)
+        private static void WaitForDataToBeLoaded(RemoteWebDriver driver, string loadingSpinnerSelector, TimeSpan timeout)
         {
-            int attempts = 0;
-            bool wasLoadingSpinnerDisplayed = false;
-
             //Small sleep for Spinner waiting
             Thread.Sleep(400);
+
             var by = By.XPath(loadingSpinnerSelector);
 
-            do
+            DataLoadingWaiter(driver, by, timeout);
+
+            //Wait for second spinner
+            try
             {
-                attempts++;
-                wasLoadingSpinnerDisplayed = driver.IsElementDisplayed(by);
-                if (wasLoadingSpinnerDisplayed)
-                    try
-                    {
-                        WebDriverWait wait = new WebDriverWait(driver, timepout);
-                        wait.Until(InvisibilityOfAllElementsLocatedBy(by));
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Write(
-                            $"WARNING: Loading spinner is displayed longer that {timepout.Seconds * attempts} seconds: {driver.Url}");
-                        throw e;
-                    }
-                else
-                    break;
-            } while (wasLoadingSpinnerDisplayed && attempts < 3);
+                WebDriverWait waitForDisplay = new WebDriverWait(driver, TimeSpan.FromMilliseconds(550));
+                waitForDisplay.Until(ElementIsInDisplayedCondition(by, true));
+            }
+            catch
+            {
+                //Loading spinner is not displayed for second time
+                return;
+            }
+
+            DataLoadingWaiter(driver, by, timeout);
+        }
+
+        private static void DataLoadingWaiter(RemoteWebDriver driver, By by, TimeSpan timeout)
+        {
+            var wasLoadingSpinnerDisplayed = driver.IsElementDisplayed(by);
+
+            if (wasLoadingSpinnerDisplayed)
+            {
+                try
+                {
+                    WaitForElementsToBeNotDisplayed(driver, by, timeout.Seconds);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(
+                        $"Loading spinner is displayed longer that {timeout.Seconds} seconds: {driver.Url}. {e}");
+                }
+            }
         }
 
         public static void CheckConsoleErrors(this RemoteWebDriver driver)
@@ -801,26 +813,6 @@ namespace DashworksTestAutomation.Extensions
             {
                 throw new Exception($"Not all from {elements.Count} elements were not changed Display condition to '{condition}' after {waitSeconds} seconds", e);
             }
-        }
-
-        private static Func<IWebDriver, bool> InvisibilityOfAllElementsLocatedBy(By locator)
-        {
-            return VisibleConditionOfAllElementsLocatedBy(locator, false);
-        }
-
-        private static Func<IWebDriver, bool> InvisibilityOfAllElementsLocatedBy(IList<IWebElement> elements)
-        {
-            return VisibleConditionOfAllElementsLocatedBy(elements, false);
-        }
-
-        private static Func<IWebDriver, bool> VisibilityOfAllElementsLocatedBy(By locator)
-        {
-            return VisibleConditionOfAllElementsLocatedBy(locator, true);
-        }
-
-        private static Func<IWebDriver, bool> VisibilityOfAllElements(IList<IWebElement> elements)
-        {
-            return VisibleConditionOfAllElementsLocatedBy(elements, true);
         }
 
         private static Func<IWebDriver, bool> VisibleConditionOfAllElementsLocatedBy(By locator, bool expectedCondition)
