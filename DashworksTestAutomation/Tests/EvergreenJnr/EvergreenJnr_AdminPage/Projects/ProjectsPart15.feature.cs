@@ -520,7 +520,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "Used on the device by any user"});
 #line 126
- testRunner.And("User clicks following checkboxes on the Project details page:", ((string)(null)), table14, "And ");
+ testRunner.And("User checks following checkboxes:", ((string)(null)), table14, "And ");
 #line 133
  testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
