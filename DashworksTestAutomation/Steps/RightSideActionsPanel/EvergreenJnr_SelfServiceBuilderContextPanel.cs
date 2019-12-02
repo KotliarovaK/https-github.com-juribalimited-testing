@@ -56,22 +56,22 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.CollapseExpandSelfServiceBuilderPageOnContextPanel(false, contextPanelType, contextPanelName);
         }
 
-        [When(@"User clicks on Add Item button of '(.*)' page with '(.*)' item type on Self Service Builder Panel")]
-        public void WhenUserClicksOnAddItemButtonOfThePageWitItemTypeOnSelfServicePageBuilderContextPanel(string contextPanelName, string contextPanelType)
+        [When(@"User clicks on Add Item button with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnAddItemButtonOfThePageWitItemTypeOnSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
 
-        [When(@"User clicks on Cog Menu button of '(.*)' page with '(.*)' item type on Self Service Builder Panel")]
-        public void WhenUserClicksOnCogMenuButtonOfThePageWithItemTypeOnSelfServicePageBuilderContextPanel(string contextPanelName, string contextPanelType)
+        [When(@"User clicks on Cog Menu button with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnCogMenuButtonOfThePageWithItemTypeOnSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
         }
 
         [When(@"User clicks on component Cog Menu button with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
-        public void WhenUserClicksOnComponentCogMenuButtonWithTheTypeAndNameOnSelfServicePageBuilderContextPanel(string contextPanelName, string contextPanelType)
+        public void WhenUserClicksOnComponentCogMenuButtonWithTheTypeAndNameOnSelfServicePageBuilderContextPanel(string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
