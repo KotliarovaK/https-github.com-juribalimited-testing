@@ -112,6 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User navigates to the 'Automations' left menu item
 	When User enters "182921_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	Then Error message is not displayed on the Projects page
