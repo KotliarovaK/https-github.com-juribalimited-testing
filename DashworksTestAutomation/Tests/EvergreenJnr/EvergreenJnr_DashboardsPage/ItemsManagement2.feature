@@ -253,7 +253,6 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhen
 	When User clicks 'CREATE DASHBOARD' button 
 	When User types '<DashboardName>' as dashboard title
 	Then Warning message with "Dashboard name should be unique" is displayed
-	Then Red Dashboard should be unique error displayed to user
 	When User types 'extra' as dashboard title
 
 Examples:
