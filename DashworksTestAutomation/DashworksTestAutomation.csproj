@@ -284,6 +284,7 @@
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
     <Compile Include="Pages\Evergreen\RightSideActionPanels\ActionsPanelElement.cs" />
+    <Compile Include="Pages\Evergreen\RightSideActionPanels\SelfServiceBuilderContextPanel.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
@@ -407,6 +408,7 @@
     <Compile Include="Steps\ManagementConsole\Users\AfterScenario\RemoveUserAfterScenario.cs" />
     <Compile Include="Steps\ManagementConsole\Users\Api\CreateUserViaApi.cs" />
     <Compile Include="Steps\ManagementConsole\Users\UserUiSteps.cs" />
+    <Compile Include="Steps\RightSideActionsPanel\EvergreenJnr_SelfServiceBuilderPanel.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\CustomeFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
