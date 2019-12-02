@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -17,10 +19,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
     internal class EvergreenJnr_CogMenuActions : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_CogMenuActions(RemoteWebDriver driver)
+        public EvergreenJnr_CogMenuActions(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
+            _automationStartTime = automationStartTime;
         }
 
         [When(@"User clicks Cog-menu for '(.*)' item in the '(.*)' column")]
@@ -104,6 +108,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 {
                     Logger.Write("Automation was not found in the database");
                 }
+            }
+
+            //For automation
+            if (option.Equals("Run now"))
+            {
+                _automationStartTime.Value = DateTime.Now;
             }
         }
 
