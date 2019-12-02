@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	Then 'DAS12974SECTION1' Widget is displayed to the user
 	When User clicks 'ADD SECTION' button 
-	When User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
+	When User clicks ADD WIDGET button for '2' Section on Dashboards page
 	When User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | DAS12974SECTION2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
@@ -250,11 +250,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
 	When Dashboard with 'DAS12974DUPLICATED' name created via API and opened
 	When User clicks 'Dashboards' on the left-hand menu
-	And User clicks 'CREATE DASHBOARD' button 
-	And User types '<DashboardName>' as dashboard title
-	Then Red Dashboard should be unique error displayed to user
+	When User clicks 'CREATE DASHBOARD' button 
+	When User types '<DashboardName>' as dashboard title
+	Then Warning message with "Dashboard name should be unique" is displayed
 	When User types 'extra' as dashboard title
-	Then Red Dashboard should be unique error disappears
 
 Examples:
 	| DashboardName      |

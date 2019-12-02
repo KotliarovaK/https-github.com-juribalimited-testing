@@ -162,13 +162,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             baseActionItem.AutocompleteSelect("List", widgetList, true);
         }
 
-        [When(@"User enters '(.*)' as Widget Max Values")]
-        public void WhenUserSetsWidgetMaxValues(string value)
-        {
-            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            baseActionItem.PopulateTextbox("Max Values", value, true);
-        }
-
         [When(@"User clicks on the Colour Scheme dropdown")]
         public void WhenUserClicksOnTheColourSchemeDropdown()
         {
@@ -189,8 +182,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void SetColourSchemeByIndex(string index)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             createWidgetElement.ColorScheme.Click();
-            Thread.Sleep(500);
+            _driver.WaitForElementToBeDisplayed(createWidgetElement.GetDropdownOptions().First());
 
             if (Convert.ToInt32(index) <= createWidgetElement.GetDropdownOptions().Count)
             {
