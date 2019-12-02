@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp
 	When User click content from "Automation" column
 	When User enters 'NewName' text to 'Automation Name' textbox
 	When User clicks 'Automations' header breadcrumb
-	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
 

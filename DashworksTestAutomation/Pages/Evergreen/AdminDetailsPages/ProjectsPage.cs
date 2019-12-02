@@ -126,9 +126,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-error/span[contains(text(), 'archived devices')]")]
         public IWebElement ArchivedDevicesMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[@role='dialog']//p")]
-        public IWebElement WarningPopupMessage { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
