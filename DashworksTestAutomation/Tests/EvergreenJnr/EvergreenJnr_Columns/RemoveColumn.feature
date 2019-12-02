@@ -145,6 +145,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	| Build Date                                                                     |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
+	When User removes "Owner Display Name" column by Column panel
 	When User sort table by multiple columns
 	| ColumnName                                                                     |
 	| Boot Up Date                                                                   |
