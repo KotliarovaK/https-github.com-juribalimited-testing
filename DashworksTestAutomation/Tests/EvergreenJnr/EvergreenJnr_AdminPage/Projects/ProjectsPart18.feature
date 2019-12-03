@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	And User checks following checkboxes:
 	| CheckboxesToBeClicked |
 	| Import Readiness      |
-	And User clicks Import Project button on the Import Project page
+	And User clicks 'IMPORT PROJECT' button
 	Then Error message with "This XML file contains duplicates in project tasks" text is displayed
 	When User selects "DAS_13733_Valid_file.xml" file to upload on Import Project page
 	And User clicks 'IMPORT PROJECT' button 
