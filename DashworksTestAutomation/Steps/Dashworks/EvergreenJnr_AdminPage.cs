@@ -457,14 +457,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Checkbox state is incorrect");
         }
 
-        [When(@"User clicks following checkboxes on the Project details page:")]
-        public void WhenUserClicksFollowingCheckboxesOnTheProjectDetailsPage(Table table)
-        {
-            var checkbox = _driver.NowAt<ProjectsPage>();
-
-            foreach (var row in table.Rows) checkbox.SelectCheckboxByName(row.Values.FirstOrDefault());
-        }
-
         [When(@"User selects ""(.*)"" file to upload on Import Project page")]
         public void WhenUserSelectsFileToUploadOnImportProjectPage(string fileNameAndExtension)
         {

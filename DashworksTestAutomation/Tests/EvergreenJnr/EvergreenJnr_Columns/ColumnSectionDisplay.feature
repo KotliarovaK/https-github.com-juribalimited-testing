@@ -949,8 +949,9 @@ Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
+	When User enters "DeviceSche: Stage" text in Search field at Columns Panel
 	When User collapses 'Selected Columns' category
-	When User expands 'Project Tasks: DeviceSche' category
+	When User collapses 'Project Stages: DeviceSche' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                                        |
 	| DeviceSche: Stage 1 \ Completed Date                 |
@@ -975,8 +976,11 @@ Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
+	When User enters "DeviceSche" text in Search field at Columns Panel
 	When User collapses 'Selected Columns' category
-	When User expands 'Project Tasks: DeviceSche' category
+	When User collapses 'Project: DeviceSche' category
+	When User collapses 'Project Rings: DeviceSche' category
+	When User collapses 'Project Stages: DeviceSche' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                               |
 	| DeviceSche: Stage 2 \ user DDL task         |
@@ -988,8 +992,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Columns button
+	When User enters "MailboxEve" text in Search field at Columns Panel
 	When User collapses 'Selected Columns' category
-	When User expands 'Project Tasks: MailboxEve' category
+	When User collapses 'Project: MailboxEve' category
+	When User collapses 'Project Rings: MailboxEve' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                              |
 	| MailboxEve: 1 \ Completed                  |
@@ -1008,8 +1014,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplication
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
+	When User enters "DeviceSche" text in Search field at Columns Panel
 	When User collapses 'Selected Columns' category
-	When User expands 'Project Tasks: DeviceSche' category
+	When User collapses 'Project: DeviceSche' category
+	When User collapses 'Project Rings: DeviceSche' category
+	When User collapses 'Project Stages: DeviceSche' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                              |
 	| DeviceSche: Stage 2 \ app date task        |

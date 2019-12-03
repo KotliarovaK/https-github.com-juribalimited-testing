@@ -193,7 +193,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13602")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
-        [NUnit.Framework.CategoryAttribute("Save_Default_Team")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol()
@@ -237,7 +236,6 @@ this.FeatureBackground();
                         "DAS13602",
                         "Teams",
                         "Do_Not_Run_With_Teams",
-                        "Save_Default_Team",
                         "Set_Default_Team",
                         "Cleanup"});
 #line 32

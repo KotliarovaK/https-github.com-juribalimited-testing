@@ -1314,6 +1314,79 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("DAS19059")]
+        public virtual void EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSortedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSortedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted" +
+                    "", null, new string[] {
+                        "Evergreen",
+                        "AllDeviceApplications",
+                        "DAS19059"});
+#line 305
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 306
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 307
+ testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 308
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 309
+ testRunner.When("User selects \'Installed on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 310
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table7.AddRow(new string[] {
+                        "Empty"});
+#line 311
+ testRunner.When("User add \"Compliance\" filter where type is \"Does not equal\" with added column and" +
+                    " Lookup option", ((string)(null)), table7, "When ");
+#line 314
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 315
+ testRunner.When("User clicks on \'Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 316
+ testRunner.Then("color data is sorted by \'Compliance\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

@@ -120,6 +120,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //TODO: below code will take first cell in column, this is used instead of removed method that
             //took content from first cell, should be refactored later
             var firstColumnCell = page.GetColumnContentByColumnName(columnName).FirstOrDefault();
+            //Sometimes data is not changed immediately and we need to wait for it
+            //TODO remove this as it is not working
+            if (!textContent.Equals(firstColumnCell))
+            {
+                Thread.Sleep(2000);
+                firstColumnCell = page.GetColumnContentByColumnName(columnName).FirstOrDefault();
+            }
             Verify.AreEqual(textContent, firstColumnCell, "Content is not displayed correctly");
         }
 

@@ -172,6 +172,7 @@
     <Compile Include="DTO\RuntimeVariables\Readiness\Readiness.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\RunNowAutomationStartTime.cs" />
     <Compile Include="DTO\RuntimeVariables\SectionsAndWidgetsCount.cs" />
     <Compile Include="DTO\RuntimeVariables\SeniorCustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\Slots.cs" />
@@ -283,6 +284,7 @@
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
     <Compile Include="Pages\Evergreen\RightSideActionPanels\ActionsPanelElement.cs" />
+    <Compile Include="Pages\Evergreen\RightSideActionPanels\SelfServiceBuilderContextPanel.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\LoginPanelPage.cs" />
     <Compile Include="Pages\LogoutPage.cs" />
@@ -375,7 +377,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\RemoveTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SaveDefaultTeamBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SetDefaultTeamBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseDialog.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseErrorPage.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
@@ -406,6 +408,7 @@
     <Compile Include="Steps\ManagementConsole\Users\AfterScenario\RemoveUserAfterScenario.cs" />
     <Compile Include="Steps\ManagementConsole\Users\Api\CreateUserViaApi.cs" />
     <Compile Include="Steps\ManagementConsole\Users\UserUiSteps.cs" />
+    <Compile Include="Steps\RightSideActionsPanel\EvergreenJnr_SelfServiceBuilderPanel.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\CustomeFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />

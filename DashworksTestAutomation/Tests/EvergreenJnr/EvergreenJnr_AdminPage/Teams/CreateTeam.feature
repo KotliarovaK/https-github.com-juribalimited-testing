@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	Then 'CREATE' button has tooltip with 'Some settings are not valid' text
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Teams @Do_Not_Run_With_Teams @Save_Default_Team @Set_Default_Team @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Teams @Do_Not_Run_With_Teams @Set_Default_Team @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
 	When User creates new Team via api
 	| TeamName | Description | IsDefault |
