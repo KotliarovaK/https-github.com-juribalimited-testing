@@ -325,14 +325,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.Actions.Click(page.GetCellByTextFromKeyValueGrid(textToBeSelected)).DoubleClick().Build().Perform();
         }
 
-        [Then(@"""(.*)"" text selected from key value grid on the Details Page")]
-        public void ThenTextSelectedFromKeyValueGridOnTheDetailsPage(string textSelected)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-
-            Utils.Verify.That(page.GetSelectedText(), Is.EqualTo(textSelected));
-        }
-
         [When(@"User clicks Column button on the Column Settings panel")]
         public void WhenUserClicksColumnButtonOnTheColumnSettingsPanel()
         {

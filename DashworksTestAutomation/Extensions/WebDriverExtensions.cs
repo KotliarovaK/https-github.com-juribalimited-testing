@@ -516,6 +516,11 @@ namespace DashworksTestAutomation.Extensions
             return attributes;
         }
 
+        public static string GetSelectedText(this RemoteWebDriver driver)
+        {
+            return ((IJavaScriptExecutor)driver).ExecuteScript("return window.getSelection().toString()").ToString();
+        }
+
         #endregion Actions with Javascript
 
         #region JavaSctipt Alert

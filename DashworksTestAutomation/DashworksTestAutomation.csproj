@@ -1081,6 +1081,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PermissionsSettings.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterExpression.feature.cs">
+      <DependentUpon>FilterExpression.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature.cs">
       <DependentUpon>AssociationsAllDeviceApplications.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2157,6 +2162,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterExpression.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FilterExpression.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

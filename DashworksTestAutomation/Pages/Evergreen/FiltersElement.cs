@@ -91,6 +91,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 "//div[@class='btn-group-sm']//button//span//i[@class='material-icons mat-item_add mat-18']")]
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
+        public IWebElement FilterContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='filters']")]
+        public IWebElement FilterContainerButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'context-header')]//div[@role='group']")]
+        public IWebElement FilterOptions { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-container')]/span")]
         public IList<IWebElement> Association { get; set; }
 
@@ -131,7 +140,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> FilterValues { get; set; }
 
         [FindsBy(How = How.XPath, Using = FilterOptionsSelector)]
-        public IList<IWebElement> FilterOptions { get; set; }
+        public IList<IWebElement> FilterOperators { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
         public IList<IWebElement> FilterSubcategories { get; set; }

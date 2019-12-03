@@ -104,11 +104,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath($".//tbody/*/td//span[text()='{text}']"));
         }
 
-        public string GetSelectedText()
-        {
-            return ((IJavaScriptExecutor)Driver).ExecuteScript("return window.getSelection().toString()").ToString();
-        }
-
         public void ExpandAllSections()
         {
             Driver.WaitForElementToBeDisplayed(

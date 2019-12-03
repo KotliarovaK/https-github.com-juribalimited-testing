@@ -22,11 +22,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_FiltersPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly ListsDetails _listDetails;
         private readonly Filter _filter;
 
-        public EvergreenJnr_FiltersPanel(RemoteWebDriver driver, Filter filter)
+        public EvergreenJnr_FiltersPanel(RemoteWebDriver driver, ListsDetails listsDetails, Filter filter)
         {
             _driver = driver;
+            _listDetails = listsDetails;
             _filter = filter;
         }
 
@@ -92,6 +94,41 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<FiltersElement>();
             Utils.Verify.That(page.GetExpandedSection(), Is.EqualTo(expectedSection), "Wrong section expanded");
+        }
+
+        [When(@"User double clicks Filter Expression text")]
+        public void WhenUserDoubleClicksFilterExpressionText()
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.DoubleClick(page.FilterContainer);
+        }
+
+        [Then(@"""(.*)"" text is displayed in filter container")]
+        public void ThenTextIsDisplayedInFilterContainer(string text)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.MoveToElement(page.FilterOptions);
+            _driver.WaitForElementToBeDisplayed(page.FilterOptions);
+            if (!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
+            Utils.Verify.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+                "Filter is created incorrectly");
+        }
+
+        [When(@"User closes filter container")]
+        [When(@"User opens filter container")]
+        public void WhenUserOpensFilterContainer()
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            page.FilterContainerButton.Click();
+        }
+
+        [Then(@"""(.*)"" text is displayed in filter container for ""(.*)"" list name")]
+        public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            Utils.Verify.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
+                page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+                "Filter is created incorrectly");
         }
 
         [When(@"User closes ""(.*)"" filter category")]
@@ -1229,7 +1266,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterOptions.Select(value => value.Text);
+            var actualList = filterElement.FilterOperators.Select(value => value.Text);
             Utils.Verify.AreEqual(expectedList, actualList, "Filter settings options are different");
         }
 

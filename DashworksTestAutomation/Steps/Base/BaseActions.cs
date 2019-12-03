@@ -1,6 +1,7 @@
 ﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -52,6 +53,12 @@ namespace DashworksTestAutomation.Steps.Base
         public void ThenUserNavigatesToTheSpecificUrlViaAddressLine(string url)
         {
             _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#/{url}");
+        }
+
+        [Then(@"'(.*)' text is highlighted")]
+        public void ThenSelectedTextIsHighlighted(string textSelected)
+        {
+            Utils.Verify.That(_driver.GetSelectedText(), Is.EqualTo(textSelected));
         }
     }
 }
