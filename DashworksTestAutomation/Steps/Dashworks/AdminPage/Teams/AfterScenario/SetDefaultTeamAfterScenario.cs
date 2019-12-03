@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
         public void SetDefaultTeam()
         {
             if (string.IsNullOrEmpty(_teamDefaultId.Value))
-                throw new Exception("Default team ID was not saved. Please use @Save_Default_Team tag in you test to do this");
+                throw new Exception("Default team ID was not saved.");
 
             try
             {
