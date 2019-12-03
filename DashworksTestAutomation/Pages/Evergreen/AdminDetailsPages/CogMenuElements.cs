@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='cell-menu-settings']")]
         public IWebElement CogMenu { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@aria-label='Dialog']//div[contains(class, menu)]")]
         public IWebElement CogMenuList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div/ul[@class='menu-settings']//a")]

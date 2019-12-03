@@ -1,14 +1,8 @@
 ﻿using System.IO;
-using System.Linq;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -37,10 +31,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         [When(@"User clicks content from ""(.*)"" column")]
         public void WhenUserClicksContentFromColumn(string columnName)
         {
-            //var tableElement = _driver.NowAtWithoutWait<BaseGridPage>();
-            //tableElement.ClickContentByColumnName(columnName);
-            //_driver.WaitForDataLoading(); //TODO: remove if below code works for all lists
-
             var tableElement = _driver.NowAtWithoutWait<BaseGridPage>();
             _driver.WaitForDataLoading();
             tableElement.ClickContentByColumnName(columnName);

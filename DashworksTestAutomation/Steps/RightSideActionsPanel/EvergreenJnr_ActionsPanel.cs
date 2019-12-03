@@ -53,6 +53,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 "Action panel is opened");
         }
 
+        [When(@"User closes Actions panel")]
+        public void WhenUserClosesActionsPanel()
+        {
+            var button = _driver.NowAt<BaseRightSideActionsPanel>();
+            button.ClosePanelButton.Click();
+        }
+
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
