@@ -789,3 +789,19 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS19066 @Not_Ready @Cleanup
+#Waiting for DAS-19066 fixed
+Scenario: EvergreenJnr_AdminPage_CheckValidationForActionName
+	When User creates new Automation via API and open it
+	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| DAS19066       | 19066       | true   | false              | All Devices | Manual |
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters ' ' text to 'Action Name' textbox
+	When User selects 'Update path' in the 'Action Type' dropdown
+	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects 'Undetermined' option from 'Path' autocomplete
+	Then 'An action name must be entered' error message is displayed for 'Action Name' field
+	Then 'CREATE' button is disabled
