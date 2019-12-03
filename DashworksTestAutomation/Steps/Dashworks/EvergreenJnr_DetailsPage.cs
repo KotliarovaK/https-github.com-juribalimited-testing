@@ -689,15 +689,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinkIsDisplayedOnTheDetailsPage(string linkName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            if (detailsPage.LinkIsDisplayed(linkName).Displayed())
-                Verify.IsTrue(detailsPage.LinkIsDisplayed(linkName).Displayed(), $"'{linkName}' link name was not changed");
-            else
-            {
-                Thread.Sleep(3000);
-                _driver.Navigate().Refresh();
-                _driver.WaitForElementToBeDisplayed(detailsPage.LinkIsDisplayed(linkName));
-                Verify.IsTrue(detailsPage.LinkIsDisplayed(linkName).Displayed(), $"'{linkName}' link name was not changed");
-            }
+            _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.LinkIsDisplayed(linkName));
+            Verify.IsTrue(detailsPage.LinkIsDisplayed(linkName).Displayed(), $"'{linkName}' link name was not changed");
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
