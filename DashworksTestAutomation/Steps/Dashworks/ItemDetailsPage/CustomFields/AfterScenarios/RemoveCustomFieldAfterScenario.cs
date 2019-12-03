@@ -21,9 +21,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields.A
     class RemoveCustomFieldAfterScenario : SpecFlowContext
     {
         private readonly RestWebClient _client;
-        private readonly DTO.RuntimeVariables.CustomFields _customFields;
+        private readonly DTO.RuntimeVariables.ItemDetails.CustomFields _customFields;
 
-        private RemoveCustomFieldAfterScenario(DTO.RuntimeVariables.CustomFields customFields, RestWebClient client)
+        private RemoveCustomFieldAfterScenario(DTO.RuntimeVariables.ItemDetails.CustomFields customFields, RestWebClient client)
         {
             _customFields = customFields;
             _client = client;
