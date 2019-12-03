@@ -93,7 +93,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
         [NUnit.Framework.CategoryAttribute("Teams")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
-        [NUnit.Framework.CategoryAttribute("Save_Default_Team")]
+        [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
         public virtual void EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam()
         {
             System.Exception lastException = null;
@@ -135,7 +135,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
                         "Teams",
                         "Do_Not_Run_With_Teams",
                         "Do_Not_Run_With_Buckets",
-                        "Save_Default_Team"});
+                        "Set_Default_Team"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

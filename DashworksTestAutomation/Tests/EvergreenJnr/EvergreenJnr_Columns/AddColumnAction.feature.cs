@@ -1604,7 +1604,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS16912")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Application Compliance", "None", "Anwendungskonformität", "KEINE", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Application Compliance", "Ignore", "Anwendungskonformität", "IGNORIEREN", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Device Application Compliance", "Red", "Geräteanwendungskonformität", "ROT", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Compliance", "Green", "Konformität", "GRÜN", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Compliance", "Unknown", "Konformität des Inhabers", "UNBEKANNT", null)]

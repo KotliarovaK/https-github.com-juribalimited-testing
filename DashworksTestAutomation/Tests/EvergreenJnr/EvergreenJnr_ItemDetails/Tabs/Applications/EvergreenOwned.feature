@@ -26,8 +26,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrect
 	Then Rows counter contains "3" found row of all rows
 
 #Ann.I 11/28/19: ready only for the "terminator".
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18854 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18854 @Not_Ready @Set_Application_Owned_User
 Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingCorrectly
+	Given Link user to the Evergreen application owned
+	| UserName  | ApplicationId |
+	| ZZP911429 | 57            |
 	When User navigates to the 'User' details page for 'ZZP911429' item
 	Then Details page for "ZZP911429" item is displayed to the user
 	When User navigates to the 'Applications' left menu item

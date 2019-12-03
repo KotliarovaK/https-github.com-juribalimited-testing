@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.DTO.ItemDetails;
 
-namespace DashworksTestAutomation.DTO.RuntimeVariables
+namespace DashworksTestAutomation.DTO.RuntimeVariables.ItemDetails
 {
     public class CustomFields
     {
