@@ -689,11 +689,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinkIsDisplayedOnTheDetailsPage(string linkName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            try
-            {
+            if (detailsPage.LinkIsDisplayed(linkName).Displayed())
                 Verify.IsTrue(detailsPage.LinkIsDisplayed(linkName).Displayed(), $"'{linkName}' link name was not changed");
-            }
-            catch
+            else
             {
                 Thread.Sleep(3000);
                 _driver.Navigate().Refresh();
