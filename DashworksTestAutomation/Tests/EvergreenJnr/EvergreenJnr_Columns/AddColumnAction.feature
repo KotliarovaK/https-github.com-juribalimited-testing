@@ -358,7 +358,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
 
 Examples: 
 	| ListName     | FilterName                    | FilterValue | TranslatedColumnName        | TranslatedFilterValue |
-	| Devices      | Application Compliance        | None        | Anwendungskonformität       | KEINE                 |
+	| Devices      | Application Compliance        | Ignore      | Anwendungskonformität       | IGNORIEREN            |
 	| Users        | Device Application Compliance | Red         | Geräteanwendungskonformität | ROT                   |
 	| Applications | Compliance                    | Green       | Konformität                 | GRÜN                  |
 	| Mailboxes    | Owner Compliance              | Unknown     | Konformität des Inhabers    | UNBEKANNT             |
@@ -403,3 +403,84 @@ Scenario: EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying
 	When User clicks on 'Sticky Compliance' column header
 	When User clicks on 'Sticky Compliance' column header
 	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
+#Waiting for 'Evergreen Target App' column
+Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying
+	When User clicks 'Applications' on the left-hand menu
+	And User add following columns using URL to the "Applications" page:
+	| ColumnName           |
+	| Evergreen Target App |
+	When User create dynamic list with "DAS18961_List" name on "Applications" page
+	Then "DAS18961_List" list is displayed to user
+	When User clicks on 'Evergreen Target App' column header
+	Then data in table is sorted by 'Evergreen Target App' column in ascending order
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
+#Waiting for 'Target App Key' column
+Scenario: EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying
+	When User clicks 'Applications' on the left-hand menu
+	And User add following columns using URL to the "Applications" page:
+	| ColumnName           |
+	| 1803: Target App Key |
+	When User create dynamic list with "DAS18961_List1" name on "Applications" page
+	Then "DAS18961_List1" list is displayed to user
+	When User clicks on '1803: Target App Key' column header
+	Then numeric data in table is sorted by '1803: Target App Key' column in descending order
+	When User clicks on '1803: Target App Key' column header
+	Then numeric data in table is sorted by '1803: Target App Key' column in ascending order
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
+#Waiting for 'Evergreen Target App Vendor' column
+Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying
+	When User clicks 'Applications' on the left-hand menu
+	And User add following columns using URL to the "Applications" page:
+	| ColumnName                  |
+	| Evergreen Target App Vendor |
+	When User create dynamic list with "DAS18961_List2" name on "Applications" page
+	Then "DAS18961_List2" list is displayed to user
+	When User clicks on 'Evergreen Target App Vendor' column header
+	Then data in table is sorted by 'Evergreen Target App Vendor' column in ascending order
+	When User clicks on 'Evergreen Target App Vendor' column header
+	Then data in table is sorted by 'Evergreen Target App Vendor' column in descending order
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
+#Waiting for 'Target App Version' column
+Scenario: EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying
+	When User clicks 'Applications' on the left-hand menu
+	And User add following columns using URL to the "Applications" page:
+	| ColumnName               |
+	| 1803: Target App Version |
+	When User create dynamic list with "DAS18961_List3" name on "Applications" page
+	Then "DAS18961_List3" list is displayed to user
+	When User clicks on '1803: Target App Version' column header
+	Then data in table is sorted by '1803: Target App Version' column in ascending order
+	When User clicks on '1803: Target App Version' column header
+	Then data in table is sorted by '1803: Target App Version' column in descending order
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Not_Ready
+#Waiting for 'Target App Readiness' column
+Scenario: EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying
+	When User clicks 'Applications' on the left-hand menu
+	And User add following columns using URL to the "Applications" page:
+	| ColumnName                 |
+	| 1803: Target App Readiness |
+	When User create dynamic list with "DAS18961_List4" name on "Applications" page
+	Then "DAS18961_List4" list is displayed to user
+	When User clicks on '1803: Target App Readiness' column header
+	Then data in table is sorted by '1803: Target App Readiness' column in descending order
+	When User clicks on '1803: Target App Readiness' column header
+	Then data in table is sorted by '1803: Target App Readiness' column in ascending order
+
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18896 @Not_Ready
+#Waiting for 'Evergreen Rationalisation' column
+Scenario: EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying
+	When User clicks 'Applications' on the left-hand menu
+	And User add following columns using URL to the "Applications" page:
+	| ColumnName                |
+	| Evergreen Rationalisation |
+	Then ColumnName is added to the list
+	| ColumnName                |
+	| Evergreen Rationalisation |
+	When User create dynamic list with "DAS18896_List" name on "Applications" page
+	Then "DAS18896_List" list is displayed to user

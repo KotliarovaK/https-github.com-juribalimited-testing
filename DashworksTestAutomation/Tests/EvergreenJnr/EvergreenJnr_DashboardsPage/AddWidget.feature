@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedI
 	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | UniqeWidget       | All Devices | Hostname | Count             | Count ASC | 10        | true       |
 	And User double clicks 'CREATE' button
-	Then User sees Widget with 'UniqeWidget' name on Dashboards page
+	Then 'UniqeWidget' Widget is displayed to the user
 	And User sees '1' widgets with 'UniqeWidget' name on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18167 @Cleanup
@@ -299,7 +299,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAny
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button
 	Then only options having search term 'De' are displayed in 'List' autocomplete
-
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS18054 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPage

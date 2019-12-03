@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using OpenQA.Selenium;
@@ -35,28 +33,18 @@ namespace DashworksTestAutomation.Pages
         #region Dashboards Panel
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
-        public IWebElement DashboardsListPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@id='context']/app-dashboards-details/div[@class='context-container']")]
-        public IWebElement DashboardsContextMenu { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[text()='Dashboard name should be unique']")]
-        public IWebElement DashboardUniqueError { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
-        public IWebElement SuccessMessage { get; set; }
+        public IWebElement DashboardsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//*[starts-with(@class, 'inline-tip')]")]
-        public IWebElement DashboardsPanelAlert { get; set; }
+        public IWebElement DashboardsAlert { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[@class='submenu-actions-dashboards']//span[contains(@class,'submenu-actions-dashboards-name')]")]
-        public IList<IWebElement> ListDashboards { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//ul[@class='submenu-actions-dashboards']//span[contains(@class,'dashboards-name')]")]
+        public IList<IWebElement> DashboardsList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//app-dashboard-submenu-action//div[@class='menu']//li")]
-        public IList<IWebElement> DashboardMenuItems { get; set; }
+        public IList<IWebElement> DashboardsSettingsItems { get; set; }
 
-        public IWebElement DashboardMenuItem(string itemName) =>
-            Driver.FindElement(By.XPath($".//li[text()='{itemName}']"));
+        public IWebElement DashboardsSettingsItemByName(string itemName) =>Driver.FindElement(By.XPath($".//li[text()='{itemName}']"));
 
         #endregion
 
@@ -100,21 +88,34 @@ namespace DashworksTestAutomation.Pages
 
         #region Dashboard Details
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='context']/app-dashboards-details/div[@class='context-container']")]
+        public IWebElement DashboardDetails { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@id='DashboardName']")]
-        public IWebElement DashboardDetailsNameInput { get; set; }
+        public IWebElement DetailsNameInput { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//input[@type='checkbox']")]
-        public IWebElement DefaultDashboardCheckbox { get; set; }
+        public IWebElement DetailsDefaultCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Default dashboard']")]
-        public IWebElement DefaultDashboardCheckboxLabel { get; set; }
+        public IWebElement DetailsDefaultCheckboxLabel { get; set; }
 
-        //TODO looks like generick element and should be moved to BaseDashboardPage
+        //TODO looks like generic element and should be moved to BaseDashboardPage
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'dependants')]//button")]
-        public IWebElement DetailsPanelExpandListsIcon { get; set; }
+        public IWebElement DetailsExpandListsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'dependants')]//table//tr[1]/td")]
-        public IList<IWebElement> HeadersOfSharedListTable { get; set; }
+        public IList<IWebElement> DetailsSharedListTableHeaders { get; set; }
+
+        public IWebElement GetListIconFromListSectionOfDetailsPanel(string listName)
+        {
+            var by = By.XPath($".//td[text()='{listName}']/following-sibling::td/i");
+            return Driver.FindElement(by);
+        }
+
+        #endregion
+
+        #region Review widget permission
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
@@ -124,6 +125,7 @@ namespace DashworksTestAutomation.Pages
 
         #endregion
 
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -131,6 +133,16 @@ namespace DashworksTestAutomation.Pages
             {
                 SelectorFor(this, p => p.CreateDashboardBtn)
             };
+        }
+
+
+        #region HeaderMethods
+
+        public IWebElement GetTopBarActionButton(string buttonName)
+        {
+            var page = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName.ToLower()}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(page);
         }
 
         public string GetEditModeSlideBarColor()
@@ -148,135 +160,13 @@ namespace DashworksTestAutomation.Pages
             return EditModeOnOffTrigger.GetAttribute("class").Contains("checked");
         }
 
-        public void SelectSectionToMove(string sectionName)
-        {
-            var selector = $".//mat-option//span[text()='{sectionName}']";
-            SelectSectionDropdown.Click();
-            Driver.WaitForElementToBeDisplayed(Driver.FindElement(By.XPath(selector)));
-            Driver.FindElement(By.XPath(selector)).Click();
-        }
+        #endregion
 
-        public void ClickMoveToSectionPopUpButton(string buttonName)
-        {
-            var listNameSelector = $".//app-dialog//button/span[text()='{buttonName}']";
-            Driver.FindElement(By.XPath(listNameSelector)).Click();
-        }
-
-        public bool IsWidgetExists(string widgetName)
-        {
-            return GetWidgetsNumberByName(widgetName) > 0;
-        }
-
-        public int GetWidgetsNumberByName(string widgetName)
-        {
-            var numberOfWidgets = Driver.FindElements(By.XPath($".//div[@class='widgets']//span[contains(text(),'{widgetName}')]")).Count;
-            return numberOfWidgets;
-        }
-
-        public List<List<string>> GetWidgetsNamesInSections()
-        {
-            List<List<string>> widgetsInSections = new List<List<string>>();
-
-            foreach (var section in AllSections)
-            {
-                widgetsInSections.Add(section.FindElements(By.XPath(".//following-sibling::div[@class='widgets']//h5")).Select(x => x.Text).ToList());
-            }
-
-            return widgetsInSections;
-        }
-
-        public IList<IWebElement> GetButtonsByName(string buttonLabel)
-        {
-            var selector = By.XPath(
-                $".//span[text()='{buttonLabel}']/ancestor::button");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElements(selector);
-        }
-
-        public IWebElement GetEllipsisMenuForWidget(string widgetName)
-        {
-            try
-            {
-                return Driver.FindElement(By.XPath($".//h5/span[contains(text(),'{widgetName}')]//ancestor::div[contains(@class, 'widget-top')]//button//i"));
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        public IList<IWebElement> GetEllipsisIconsForSectionsHavingWidget(string widgetName)
-        {
-            return Driver.FindElements(By.XPath(
-                $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//button//i[contains(@class,'more')]"));
-        }
-
-        public IList<IWebElement> GetExpandCollapseIconsForSectionsHavingWidget(string widgetName)
-        {
-            return Driver.FindElements(By.XPath(
-                $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
-        }
-
-        public IWebElement DashboardMenuSelector(string dashboardName)
-        {
-            var dashboardSettingsSelector =
-                By.XPath(
-                    $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i[contains(@class,'menu')]");
-            Driver.MouseHover(dashboardSettingsSelector);
-            Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
-            return Driver.FindElement(dashboardSettingsSelector);
-        }
-
-        public IWebElement GetDisabledEllipsisItemByName(string itemName)
-        {
-            var ellipsisItem = By.XPath($".//button[@aria-disabled='true'][text()='{itemName}']");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(ellipsisItem);
-        }
-
-        public string GetDeleteWidgetAreaColor()
-        {
-            return Driver.FindElement(By.XPath(".//div[@class='widgets']//div[@class='inline-tip' and @role='alert']")).GetCssValue("background-color");
-        }
-
-        public IWebElement GetWidgetEmptyMessageByName(string widgetTitle)
-        {
-            var widg = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class,'empty-message')]");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(widg);
-        }
-
-        public IWebElement GetTopBarActionButton(string buttonName)
-        {
-            var page = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName.ToLower()}']");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(page);
-        }
-
-        public List<string> GetLegendColor(string widgetName)
-        {
-            var colors =
-                By.XPath($".//ancestor ::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]//*[contains(@class, 'highcharts-point')]");
-
-            Driver.WaitForDataLoading();
-            return GetWidget(widgetName).FindElements(colors).Select(x => x.GetAttribute("fill")).ToList();
-        }
-
-        public string GetFocusedPointHover(string widgetName)
-        {
-            var widg = By.XPath($".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-point highcharts-point-hover']");
-            Driver.WaitForDataLoading();
-
-            return string.Format("{0} {1}", Driver.FindElements(widg).First().GetAttribute("widget-name"),
-                Driver.FindElements(widg).First().GetAttribute("widget-value"));
-        }
-
-        #region Details Panel
+        #region Details Panel Methods
 
         public void ClickMenuButtonByDashboardName(string dashboardName)
         {
-            var settingsButton =
-                $".//span[@class='submenu-actions-dashboards-name' and text()='{dashboardName}']//ancestor::li//i[contains(@class,'settings')]";
+            var settingsButton = $".//span[@class='submenu-actions-dashboards-name' and text()='{dashboardName}']//ancestor::li//i[contains(@class,'settings')]";
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();
         }
@@ -365,6 +255,142 @@ namespace DashworksTestAutomation.Pages
 
         #endregion
 
+        #region Widgets Area Methods
+
+        public void SelectSectionToMove(string sectionName)
+        {
+            var selector = $".//mat-option//span[text()='{sectionName}']";
+            SelectSectionDropdown.Click();
+            Driver.WaitForElementToBeDisplayed(Driver.FindElement(By.XPath(selector)));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public void ClickMoveToSectionPopUpButton(string buttonName)
+        {
+            var listNameSelector = $".//app-dialog//button/span[text()='{buttonName}']";
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
+        public List<List<string>> GetWidgetsNamesInSections()
+        {
+            List<List<string>> widgetsInSections = new List<List<string>>();
+
+            foreach (var section in AllSections)
+            {
+                widgetsInSections.Add(section.FindElements(By.XPath(".//following-sibling::div[@class='widgets']//h5")).Select(x => x.Text).ToList());
+            }
+
+            return widgetsInSections;
+        }
+
+        public IList<IWebElement> GetAddWidgetButtons()
+        {
+            var selector = By.XPath($".//span[text()='ADD WIDGET']/ancestor::button");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElements(selector);
+        }
+
+        public IWebElement GetEllipsisMenuForWidget(string widgetName)
+        {
+            try
+            {
+                return Driver.FindElement(By.XPath($".//h5/span[contains(text(),'{widgetName}')]//ancestor::div[contains(@class, 'widget-top')]//button//i"));
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public IList<IWebElement> GetEllipsisIconsForSectionsHavingWidget(string widgetName)
+        {
+            return Driver.FindElements(By.XPath(
+                $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//button//i[contains(@class,'more')]"));
+        }
+
+        public IList<IWebElement> GetExpandCollapseIconsForSectionsHavingWidget(string widgetName)
+        {
+            return Driver.FindElements(By.XPath(
+                $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
+        }
+
+        public IWebElement GetDashboardMenuByName(string dashboardName)
+        {
+            var dashboardSettingsSelector = By.XPath($".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i[contains(@class,'menu')]");
+            Driver.MouseHover(dashboardSettingsSelector);
+            Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
+            return Driver.FindElement(dashboardSettingsSelector);
+        }
+
+        public IWebElement GetDisabledEllipsisItemByName(string itemName)
+        {
+            var ellipsisItem = By.XPath($".//button[@aria-disabled='true'][text()='{itemName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(ellipsisItem);
+        }
+
+        public string GetDeleteWidgetAreaColor()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='widgets']//div[@class='inline-tip' and @role='alert']")).GetCssValue("background-color");
+        }
+
+        public IWebElement GetWidgetEmptyMessageByName(string widgetTitle)
+        {
+            var widg = By.XPath($".//*[text()='{widgetTitle}']/ancestor :: div[@class='widget-whole']//div[contains(@class,'empty-message')]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(widg);
+        }
+
+        public List<string> GetLegendColor(string widgetName)
+        {
+            var colors =
+                By.XPath($".//ancestor ::div[@class='widget-whole']//*[contains(@class, 'highcharts-legend-item')]//*[contains(@class, 'highcharts-point')]");
+
+            Driver.WaitForDataLoading();
+            return GetWidget(widgetName).FindElements(colors).Select(x => x.GetAttribute("fill")).ToList();
+        }
+
+        public string GetFocusedPointHover(string widgetName)
+        {
+            var widg = By.XPath($".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-point highcharts-point-hover']");
+            Driver.WaitForDataLoading();
+
+            return string.Format("{0} {1}", Driver.FindElements(widg).First().GetAttribute("widget-name"),
+                Driver.FindElements(widg).First().GetAttribute("widget-value"));
+        }
+
+        public IList<IWebElement> GetWidgetLinks(string widgetName)
+        {
+            var links =
+                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//a");
+
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(links);
+        }
+
+        public string GetWidgetRowContentByColumnName(string columnName)
+        {
+            var by = By.XPath(
+                $".//td[@role='gridcell'][{GetWidgetColumnNumberByName(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
+        public int GetWidgetColumnNumberByName(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//tr[@class='mat-header-row ng-star-inserted']//th[@role]");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x => x.Text.Equals(columnName))) + 1;
+
+            return columnNumber;
+        }
+
+        #endregion
+
         #region Table
         public IWebElement GetTableWidgetContentWithoutLink(string content)
         {
@@ -449,35 +475,7 @@ namespace DashworksTestAutomation.Pages
         }
         #endregion
 
-        public IList<IWebElement> GetWidgetLinks(string widgetName)
-        {
-            var links =
-                By.XPath($".//span[text()='{widgetName}']/ancestor ::div[@class='widget-whole']//a");
-
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(links);
-        }
-
-        public string GetWidgetRowContentByColumnName(string columnName)
-        {
-            var by = By.XPath(
-                $".//td[@role='gridcell'][{GetWidgetColumnNumberByName(columnName)}]");
-            return Driver.FindElement(by).Text;
-        }
-
-        public int GetWidgetColumnNumberByName(string columnName)
-        {
-            var allHeadersSelector = By.XPath(".//tr[@class='mat-header-row ng-star-inserted']//th[@role]");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
-            var allHeaders = Driver.FindElements(allHeadersSelector);
-            if (!allHeaders.Any())
-                throw new Exception("Table does not contains any columns");
-            var columnNumber =
-                allHeaders.IndexOf(allHeaders.First(x => x.Text.Equals(columnName))) + 1;
-
-            return columnNumber;
-        }
+        #region Chart
 
         public List<string> GetChartCategoryTooltipText()
         {
@@ -525,10 +523,6 @@ namespace DashworksTestAutomation.Pages
             throw new Exception($"Chart category '{chartCategory}' wasn't found");
         }
 
-        public IWebElement GetListIconFromListSectionOfDetailsPanel(string listName)
-        {
-            var by = By.XPath($".//td[text()='{listName}']/following-sibling::td/i");
-            return Driver.FindElement(by);
-        }
+        #endregion
     }
 }

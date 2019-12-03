@@ -133,9 +133,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "Windows 7 Migration Phase 1Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill;" content is displayed in "Project Description" field
 	When User navigates to the 'Scope' left menu item
 	Then 'Scope' left menu have following submenu items:
-	| Options       |
-	| Scope Details |
-	| Scope Changes |
+	| Options              |
+	| Scope Details        |
+	| Scope Changes        |
+	| Automated Onboarding |
+	| Queue                |
+	| History              |
 	When User navigates to the 'Capacity' left menu item
 	Then 'Capacity Mode' dropdown is displayed
 	Then 'Capacity Units' dropdown is displayed

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using RestSharp;
 using TechTalk.SpecFlow;
 
@@ -23,7 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
         public void SetDefaultTeam()
         {
             if (string.IsNullOrEmpty(_teamDefaultId.Value))
-                throw new Exception("Default team ID was not saved. Please use @Save_Default_Team tag in you test to do this");
+                throw new Exception("Default team ID was not saved.");
 
             try
             {
@@ -41,7 +43,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
                 request.AddParameter("description", team.Description);
                 request.AddParameter("isDefault", team.IsDefault);
 
-                _client.Value.Put(request);
+                var response = _client.Value.Put(request);
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    Logger.Write($"Unable to make '{team.TeamName}' team as default: {response.StatusCode}, {response.ErrorMessage}");
+                }
             }
             catch { }
         }

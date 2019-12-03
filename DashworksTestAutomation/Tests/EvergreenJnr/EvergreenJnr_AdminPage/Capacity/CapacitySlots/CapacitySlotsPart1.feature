@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @DAS17271 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @DAS17271 @DAS18918 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
@@ -31,7 +31,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| ProjectForCapacity13171 | UniqueNameSlot | DAS13432    |
 	And User navigates to newly created Slot
 	And User enters 'NewSlotName' text to 'Slot Name' textbox
-	And User enters 'NewDisplayName' text to 'Display Name' textbox
+	Then There are no errors in the browser console
+	When User enters 'NewDisplayName' text to 'Display Name' textbox
 	Then tooltip is not displayed for 'UPDATE' button
 	When User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity slot details have been updated" text

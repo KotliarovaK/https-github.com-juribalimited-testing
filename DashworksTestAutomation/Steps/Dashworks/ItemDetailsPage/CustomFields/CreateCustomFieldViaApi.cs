@@ -15,9 +15,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
     class CreateCustomFieldViaApi : SpecFlowContext
     {
         private readonly RestWebClient _client;
-        private readonly DTO.RuntimeVariables.CustomFields _customFields;
+        private readonly DTO.RuntimeVariables.ItemDetails.CustomFields _customFields;
 
-        public CreateCustomFieldViaApi(RestWebClient client, DTO.RuntimeVariables.CustomFields customFields)
+        public CreateCustomFieldViaApi(RestWebClient client, DTO.RuntimeVariables.ItemDetails.CustomFields customFields)
         {
             _client = client;
             _customFields = customFields;

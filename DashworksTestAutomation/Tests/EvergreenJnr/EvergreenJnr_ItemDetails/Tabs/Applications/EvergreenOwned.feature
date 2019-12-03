@@ -24,3 +24,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrect
 	| Version     |
 	| Compliance  |
 	Then Rows counter contains "3" found row of all rows
+
+#Ann.I 11/28/19: ready only for the "terminator".
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18854 @Not_Ready @Set_Application_Owned_User
+Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingCorrectly
+	Given Link user to the Evergreen application owned
+	| UserName  | ApplicationId |
+	| ZZP911429 | 57            |
+	When User navigates to the 'User' details page for 'ZZP911429' item
+	Then Details page for "ZZP911429" item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Evergreen Owned' left submenu item
+	When User clicks "DirectX 8.1 SDK for Visual Basic" link on the Details Page
+	Then Details page for "DirectX 8.1 SDK for Visual Basic" item is displayed to the user
+	Then User click back button in the browser
+	And Details page for "ZZP911429" item is displayed to the user

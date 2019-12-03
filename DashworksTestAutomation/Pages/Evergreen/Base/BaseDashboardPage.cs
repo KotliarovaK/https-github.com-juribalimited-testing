@@ -825,11 +825,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Checkbox
 
-        public IWebElement GetCheckbox(string ariaLabel)
+        public IWebElement GetCheckbox(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
             //TODO mb first selector in the or statement should be deleted
             var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+            if (!Driver.IsElementDisplayed(selector, wait))
             {
                 throw new Exception($"'{ariaLabel}' checkbox was not displayed");
             }
@@ -837,10 +837,32 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        public void SetCheckboxState(string ariaLabel, bool expectedCondition)
+        {
+            if (!GetCheckbox(ariaLabel).Equals(expectedCondition))
+            {
+                //We must click by text to check or uncheck element
+                Driver.ClickElementLeftCenter(GetCheckbox(ariaLabel));
+            }
+        }
+
         public bool IsCheckboxEnabled(string ariaLabel)
         {
-            var enabled = GetCheckbox(ariaLabel).FindElement(By.XPath(".//input")).Enabled;
+            var enabled = GetCheckbox(ariaLabel, WebDriverExtensions.WaitTime.Medium)
+                .FindElement(By.XPath(".//input")).Enabled;
             return enabled;
+        }
+
+        public bool IsCheckboxDisplayed(string ariaLabel)
+        {
+            try
+            {
+                return GetCheckbox(ariaLabel, WebDriverExtensions.WaitTime.Medium).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         #endregion

@@ -223,7 +223,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             var actualOptions = page.GetAllOptionsFromOpenedAutocomplete();
 
-            Verify.That(actualOptions.All(x=>x.Contains(searchText)), Is.True,
+            Verify.That(actualOptions.All(x => x.Contains(searchText)), Is.True,
                 $"Incorrect values are present in the '{placeholder}' autocomplete after search by '{searchText}' text");
 
             page.BodyContainer.Click();
@@ -890,14 +890,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserChecksCheckbox(string checkboxName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetCheckbox(checkboxName).SetCheckboxState(true);
+            page.SetCheckboxState(checkboxName, true);
         }
 
         [When(@"User unchecks '(.*)' checkbox")]
         public void WhenUserUnchecksCheckbox(string checkboxName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetCheckbox(checkboxName).SetCheckboxState(false);
+            page.SetCheckboxState(checkboxName, false);
+        }
+
+        [When(@"User checks following checkboxes:")]
+        public void WhenUserChecksFollowingCheckboxes(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            foreach (var row in table.Rows)
+            {
+                page.SetCheckboxState(row.Values.FirstOrDefault(), true);
+            }
         }
 
         [When(@"User selects state '(.*)' for '(.*)' checkbox")]
@@ -937,6 +948,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.IsCheckboxEnabled(checkbox),
                 $"'{checkbox}' checkbox is disabled");
+        }
+
+        [Then(@"'(.*)' checkbox is displayed")]
+        public void ThenCheckboxIsDisplayed(string checkbox)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsCheckboxDisplayed(checkbox), $"'{checkbox}' checkbox is not displayed");
+        }
+
+        [Then(@"'(.*)' checkbox is not displayed")]
+        public void ThenCheckboxIsNotDisplayed(string checkbox)
+        {
+
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsCheckboxDisplayed(checkbox), $"'{checkbox}' checkbox is displayed");
         }
 
         #endregion
@@ -981,7 +1007,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenLinkIsDisplayed(string text)
         {
             var projectElement = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(projectElement.IsLinkDisplayed(text), 
+            Verify.IsTrue(projectElement.IsLinkDisplayed(text),
                 $"Link with '{text}' text was not displayed");
         }
 
