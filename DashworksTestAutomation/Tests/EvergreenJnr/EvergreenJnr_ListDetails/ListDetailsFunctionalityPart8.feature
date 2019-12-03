@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks
 	When User clicks '<PageName>' on the left-hand menu
-	And User performs right-click on "<TargetCell>" cell in the grid
+	When User right clicks on '<TargetCell>' cell from '<ColumnName>' column
 	Then User sees context menu with next options
 	| OptionsName        |
 	| Copy cell          |
@@ -20,10 +20,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWor
 	When User clicks refresh button in the browser
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select "<Columnname>" rows in the grid
+	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <SelectedRow>    |
-	And User performs right-click on "<TargetCell>" cell in the grid
+	When User right clicks on '<TargetCell>' cell from '<ColumnName>' column
 	Then User sees context menu with next options
 	| OptionsName        |
 	| Copy cell          |
@@ -35,7 +35,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWor
 	Then Next data '<TargetCell>' is copied
 
 Examples: 
-	| PageName     | Columnname    | TargetCell                                 | SelectedRow                             |
+	| PageName     | ColumnName    | TargetCell                                 | SelectedRow                             |
 	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          |
 	| Users        | Username      | $6BE000-SUDQ9614UVO8                       | 000F977AC8824FE39B8                     |
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English |
@@ -47,15 +47,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWork
 	When User clicks '<PageName>' on the left-hand menu
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select "<Columnname>" rows in the grid
+	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <SelectedRow>    |
-	And User performs right-click on "<TargetCell>" cell in the grid
+	When User right clicks on '<TargetCell>' cell from '<ColumnName>' column
 	And User selects 'Copy row' option in context menu
 	Then Next data '<ExpectedData>' is copied
 
 Examples: 
-	| PageName     | Columnname    | TargetCell                                 | SelectedRow                             | ExpectedData                                                                                                            |
+	| PageName     | ColumnName    | TargetCell                                 | SelectedRow                             | ExpectedData                                                                                                            |
 	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          | 00HA7MKAVVFDAV\tLaptop\tWindows 7\tKris C. Herman                                                                       |
 	| Users        | Username      | $6BE000-SUDQ9614UVO8                       | 000F977AC8824FE39B8                     | $6BE000-SUDQ9614UVO8\tBCLABS\tExchange Online-ApplicationAccount\tExchange Online-ApplicationAccount.Users.bclabs.local |
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English | 0004 - Adobe Acrobat Reader 5.0.5 Francais\tAdobe\t5.0.5                                                                |
@@ -67,16 +67,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOp
 	When User clicks '<PageName>' on the left-hand menu
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select "<Columnname>" rows in the grid
+	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <SelectedRow1>   |
 	| <SelectedRow2>   |
-	And User performs right-click on "<TargetCell>" cell in the grid
+	When User right clicks on '<TargetCell>' cell from '<ColumnName>' column
 	And User selects 'Copy selected rows' option in context menu
 	Then Next data '<ExpectedData>' is copied
 
 Examples: 
-	| PageName     | Columnname    | TargetCell                                 | SelectedRow1                            | SelectedRow2                     | ExpectedData                                                                                                                                                                                             |
+	| PageName     | ColumnName    | TargetCell                                 | SelectedRow1                            | SelectedRow2                     | ExpectedData                                                                                                                                                                                             |
 	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          | 001PSUMZYOW581                   | 001BAQXT6JWFPI\tDesktop\tWindows 7\tNicole P. Braun \t001PSUMZYOW581\tLaptop\tWindows 7\tTricia G. Huang                                                                                                 |
 	| Users        | Username      | $6BE000-SUDQ9614UVO8                       | 000F977AC8824FE39B8                     | 002B5DC7D4D34D5C895              | 000F977AC8824FE39B8\tBCLABS\tSpruill, Shea\tSpruill\\, Shea.Employees.Birmingham.UK.bclabs.local \t002B5DC7D4D34D5C895\tDWLABS\tCollor, Christopher\tCollor\\, Christopher.Users.Birmingham.dwlabs.local |
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English | 20040610sqlserverck              | 0036 - Microsoft Access 97 SR-2 English\tMicrosoft\t8.0 \t20040610sqlserverck\tMicrosoft\t1.0.0                                                                                                          |
