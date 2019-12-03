@@ -358,7 +358,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
 
 Examples: 
 	| ListName     | FilterName                    | FilterValue | TranslatedColumnName        | TranslatedFilterValue |
-	| Devices      | Application Compliance        | None        | Anwendungskonformität       | KEINE                 |
+	| Devices      | Application Compliance        | Ignore      | Anwendungskonformität       | IGNORIEREN            |
 	| Users        | Device Application Compliance | Red         | Geräteanwendungskonformität | ROT                   |
 	| Applications | Compliance                    | Green       | Konformität                 | GRÜN                  |
 	| Mailboxes    | Owner Compliance              | Unknown     | Konformität des Inhabers    | UNBEKANNT             |

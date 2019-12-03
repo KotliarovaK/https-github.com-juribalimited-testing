@@ -300,7 +300,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAny
 	When User clicks 'ADD WIDGET' button
 	Then only options having search term 'De' are displayed in 'List' autocomplete
 
-
 @Evergreen @EvergreenJnr_DashboardsPage @DAS18054 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPage
 	When Dashboard with 'Dashboard for DAS18054' name created via API and opened
