@@ -10,6 +10,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
+using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
@@ -122,14 +123,7 @@ namespace DashworksTestAutomation.Helpers
             return id;
         }
 
-        public static string GetUserDetailsIdByName(string name)
-        {
-            var id =
-                DatabaseHelper.ExecuteReader(
-                    $"SELECT [ObjectKey] FROM [DesktopBI].[dbo].[DimDirectoryObject] WHERE [Username] = '{name}'",
-                    0).LastOrDefault();
-            return id;
-        }
+        #region Application
 
         public static string GetApplicationDetailsIdByName(string name)
         {
@@ -140,6 +134,25 @@ namespace DashworksTestAutomation.Helpers
             return id;
         }
 
+        //First is [OwnerUser] and second is [OwnerUserDirectoryObjectKey]
+        public static List<string> GetApplicationOwnedUser(string applicationId)
+        {
+            List<string> result = new List<string>();
+            var query =
+                $"SELECT [OwnerUser],[OwnerUserDirectoryObjectKey] FROM [DesktopBI].[dbo].[DimPackage] WHERE [PackageKey] = {applicationId}";
+            result.Add(DatabaseHelper.ExecuteReader(query, 0)[0]);
+            result.Add(DatabaseHelper.ExecuteReader(query, 1)[0]);
+            return result;
+        }
+
+        public static void SetApplicationOwnedUser(ApplicationOwnedUserDto aou)
+        {
+            DatabaseHelper.ExecuteQuery(
+                $"UPDATE [DesktopBI].[dbo].[DimPackage] SET [OwnerUser] = '{aou.OwnerUser}' ,[OwnerUserDirectoryObjectKey] = {aou.OwnerUserDirectoryObjectKey} WHERE PackageKey = {aou.PackageKey}");
+        }
+
+        #endregion
+
         public static string GetMailboxDetailsIdByName(string name)
         {
             var id =
@@ -148,6 +161,28 @@ namespace DashworksTestAutomation.Helpers
                     0).LastOrDefault();
             return id;
         }
+
+        #region User Details
+
+        public static string GetUserDetailsIdByName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ObjectKey] FROM [DesktopBI].[dbo].[DimDirectoryObject] WHERE [Username] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        public static string GetUserDisplayName(string name)
+        {
+            var id =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [DisplayName] FROM [DesktopBI].[dbo].[DimDirectoryObject] where [Username] = '{name}'",
+                    0).LastOrDefault();
+            return id;
+        }
+
+        #endregion
 
         #endregion
 

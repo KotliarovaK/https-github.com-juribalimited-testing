@@ -21,9 +21,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
     class CreateCustomField : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly DTO.RuntimeVariables.CustomFields _customFields;
+        private readonly DTO.RuntimeVariables.ItemDetails.CustomFields _customFields;
 
-        public CreateCustomField(RemoteWebDriver driver, DTO.RuntimeVariables.CustomFields customFields)
+        public CreateCustomField(RemoteWebDriver driver, DTO.RuntimeVariables.ItemDetails.CustomFields customFields)
         {
             _driver = driver;
             _customFields = customFields;
