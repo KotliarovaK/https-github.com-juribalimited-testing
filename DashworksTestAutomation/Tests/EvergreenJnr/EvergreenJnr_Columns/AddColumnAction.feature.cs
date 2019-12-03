@@ -1906,6 +1906,451 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplayingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplayingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "AddColumnAction",
+                        "DAS18961",
+                        "Not_Ready"});
+#line 409
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 410
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table42.AddRow(new string[] {
+                        "Evergreen Target App"});
+#line 411
+ testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table42, "And ");
+#line 414
+ testRunner.When("User create dynamic list with \"DAS18961_List\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 415
+ testRunner.Then("\"DAS18961_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 416
+ testRunner.When("User clicks on \'Evergreen Target App\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 417
+ testRunner.Then("data in table is sorted by \'Evergreen Target App\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplayingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplayingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "AddColumnAction",
+                        "DAS18961",
+                        "Not_Ready"});
+#line 421
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 422
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table43.AddRow(new string[] {
+                        "1803: Target App Key"});
+#line 423
+ testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table43, "And ");
+#line 426
+ testRunner.When("User create dynamic list with \"DAS18961_List1\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 427
+ testRunner.Then("\"DAS18961_List1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 428
+ testRunner.When("User clicks on \'1803: Target App Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 429
+ testRunner.Then("numeric data in table is sorted by \'1803: Target App Key\' column in descending or" +
+                    "der", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 430
+ testRunner.When("User clicks on \'1803: Target App Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 431
+ testRunner.Then("numeric data in table is sorted by \'1803: Target App Key\' column in ascending ord" +
+                    "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplayingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplayingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "AddColumnAction",
+                        "DAS18961",
+                        "Not_Ready"});
+#line 435
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 436
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table44.AddRow(new string[] {
+                        "Evergreen Target App Vendor"});
+#line 437
+ testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table44, "And ");
+#line 440
+ testRunner.When("User create dynamic list with \"DAS18961_List2\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 441
+ testRunner.Then("\"DAS18961_List2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 442
+ testRunner.When("User clicks on \'Evergreen Target App Vendor\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 443
+ testRunner.Then("data in table is sorted by \'Evergreen Target App Vendor\' column in ascending orde" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 444
+ testRunner.When("User clicks on \'Evergreen Target App Vendor\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 445
+ testRunner.Then("data in table is sorted by \'Evergreen Target App Vendor\' column in descending ord" +
+                    "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplayingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplayingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "AddColumnAction",
+                        "DAS18961",
+                        "Not_Ready"});
+#line 449
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 450
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table45.AddRow(new string[] {
+                        "1803: Target App Version"});
+#line 451
+ testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table45, "And ");
+#line 454
+ testRunner.When("User create dynamic list with \"DAS18961_List3\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 455
+ testRunner.Then("\"DAS18961_List3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 456
+ testRunner.When("User clicks on \'1803: Target App Version\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 457
+ testRunner.Then("data in table is sorted by \'1803: Target App Version\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 458
+ testRunner.When("User clicks on \'1803: Target App Version\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 459
+ testRunner.Then("data in table is sorted by \'1803: Target App Version\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplayingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplayingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "AddColumnAction",
+                        "DAS18961",
+                        "Not_Ready"});
+#line 463
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 464
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table46.AddRow(new string[] {
+                        "1803: Target App Readiness"});
+#line 465
+ testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table46, "And ");
+#line 468
+ testRunner.When("User create dynamic list with \"DAS18961_List4\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 469
+ testRunner.Then("\"DAS18961_List4\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 470
+ testRunner.When("User clicks on \'1803: Target App Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 471
+ testRunner.Then("data in table is sorted by \'1803: Target App Readiness\' column in descending orde" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 472
+ testRunner.When("User clicks on \'1803: Target App Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 473
+ testRunner.Then("data in table is sorted by \'1803: Target App Readiness\' column in ascending order" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS18896")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplayingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplayingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "AddColumnAction",
+                        "DAS18896",
+                        "Not_Ready"});
+#line 477
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 478
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table47.AddRow(new string[] {
+                        "Evergreen Rationalisation"});
+#line 479
+ testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table47, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table48.AddRow(new string[] {
+                        "Evergreen Rationalisation"});
+#line 482
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table48, "Then ");
+#line 485
+ testRunner.When("User create dynamic list with \"DAS18896_List\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 486
+ testRunner.Then("\"DAS18896_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

@@ -265,8 +265,32 @@ namespace DashworksTestAutomation.Helpers
                 case "Sticky Compliance":
                     return "stickyCompliance";
 
+                case "1803: Target App":
+                    return "project_63_targetApplication";
+
+                case "1803: Target App Vendor":
+                    return "project_63_targetApplicationVendor";
+
+                case "1803: Target App Version":
+                    return "project_63_targetApplicationVersion";
+
+                case "1803: Target App Readiness":
+                    return "project_63_targetApplicationReadiness";
+
+                case "1803: Target App Key":
+                    return "project_63_targetApplicationKey";
+
+                case "Evergreen Rationalisation":
+                    return "evergreenRationalisation";
+
                 case "Model":
                     return "model";
+
+                case "Evergreen Target App Vendor":
+                    return "evergreenTargetApplicationVendor";
+
+                case "Evergreen Target App":
+                    return "evergreenTargetApplication";
 
                 case "1803: In Scope":
                     return "project_63_inScope";
