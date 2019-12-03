@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'Before current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
@@ -90,6 +90,9 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	When User selects 'After current value' in the 'Before or After' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
+	#Check Actions grid
+	Then Success message is displayed and contains "The automation action has been created" text
+	Then "2 days after current value" content is displayed for "Value" column
 	#Check created Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
