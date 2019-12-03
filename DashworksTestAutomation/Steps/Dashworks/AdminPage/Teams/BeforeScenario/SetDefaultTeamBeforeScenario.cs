@@ -9,17 +9,17 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
 {
     [Binding]
-    public class SaveDefaultTeamBeforeScenario : SpecFlowContext
+    public class SetDefaultTeamBeforeScenario : SpecFlowContext
     {
         private readonly TeamDefaultId _teamDefaultId;
 
-        private SaveDefaultTeamBeforeScenario(TeamDefaultId teamDefaultId)
+        private SetDefaultTeamBeforeScenario(TeamDefaultId teamDefaultId)
         {
             _teamDefaultId = teamDefaultId;
         }
 
-        [BeforeScenario("Save_Default_Team")]
-        public void SaveDefaultTeam()
+        [BeforeScenario("Set_Default_Team")]
+        public void SetDefaultTeam()
         {
             var team = new TeamDto() { TeamName = "My Team", Description = "Default Team", IsDefault = true };
 

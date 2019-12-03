@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
         [NUnit.Framework.CategoryAttribute("DAS17123")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
-        [NUnit.Framework.CategoryAttribute("Save_Default_Team")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage()
@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
                         "DAS17123",
                         "Teams",
                         "Do_Not_Run_With_Teams",
-                        "Save_Default_Team",
+                        "Do_Not_Run_With_Buckets",
                         "Set_Default_Team",
                         "Cleanup"});
 #line 9
