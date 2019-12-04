@@ -52,9 +52,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//button[@aria-label='filters']")]
-        public IWebElement FilterExpressionIcon { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']//div[@class='context-tools-filters ng-star-inserted']")]
         public IWebElement FiltersExpression { get; set; }
 
@@ -153,15 +150,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'save')]//button")]
         public IWebElement SaveCustomListButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='filters']")]
-        public IWebElement FilterContainerButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'context-header')]//div[@role='group']")]
-        public IWebElement FilterOptions { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
-        public IWebElement FilterContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IWebElement SelectOneRowsCheckboxes { get; set; }
