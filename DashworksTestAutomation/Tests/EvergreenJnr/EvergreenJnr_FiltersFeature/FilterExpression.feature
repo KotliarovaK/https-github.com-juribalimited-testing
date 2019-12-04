@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Evergreen_FiltersFeature @Cleanup @DAS17016
-Scenario: EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeCopied
+Scenario: EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button

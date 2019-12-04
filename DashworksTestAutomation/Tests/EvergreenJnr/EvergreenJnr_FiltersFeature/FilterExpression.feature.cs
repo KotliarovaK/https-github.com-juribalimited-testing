@@ -80,19 +80,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeCopied")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("DAS17016")]
-        public virtual void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeCopied()
+        public virtual void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeCopiedInternal();
+                    this.EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelectedInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -111,9 +111,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
             }
         }
 
-        private void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeCopiedInternal()
+        private void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelectedInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeCopied", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected", null, new string[] {
                         "Evergreen",
                         "Evergreen_FiltersFeature",
                         "Cleanup",
