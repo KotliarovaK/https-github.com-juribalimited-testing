@@ -117,12 +117,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools-bubble ng-star-inserted']")]
         public IWebElement SidePanelIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-tab-header/div[1]")]
-        public IWebElement ScopeChangesTabsHeader { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
-        public IWebElement ScopeChangesNotificationsPane { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-error/span[contains(text(), 'archived devices')]")]
         public IWebElement ArchivedDevicesMessage { get; set; }
 
