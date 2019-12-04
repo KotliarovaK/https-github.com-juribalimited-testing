@@ -17,14 +17,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	Then 'Sticky Compliance' dropdown is not displayed
-	Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
-	#When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
-	Then 'No сhange' content is displayed in 'Sticky Compliance' dropdown
+	#Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	Then 'No Change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'UPDATE' button is disabled
-	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	Then following Values are displayed in the 'Sticky Compliance' dropdown:
 	| Options   |
-	| No сhange |
+	| No Change |
+	| Empty     |
 	| UNKNOWN   |
 	| RED       |
 	| AMBER     |
