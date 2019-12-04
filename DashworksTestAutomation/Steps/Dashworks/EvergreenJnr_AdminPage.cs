@@ -56,15 +56,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"Import Project button is enabled")]
-        public void ThenImportProjectButtonIsEnabled()
-        {
-            var button = _driver.NowAt<ImportProjectPage>();
-            _driver.WaitForElementToBeDisplayed(button.ImportProjectButton);
-            Utils.Verify.IsFalse(Convert.ToBoolean(button.ImportProjectButton.GetAttribute("disabled")),
-                "Import button is disabled");
-        }
-
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
         {
@@ -482,16 +473,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ImportProjectPage>();
             page.ProjectNameField.SendKeys(projectName);
             _projects.Value.Add(projectName);
-        }
-
-        [When(@"User clicks Import Project button on the Import Project page")]
-        public void WhenUserClicksImportButtonOnTheImportProjectPage()
-        {
-            var page = _driver.NowAt<ImportProjectPage>();
-            _driver.WaitForElementToBeDisplayed(page.ImportProjectButton);
-            page.ImportProjectButton.Click();
-            _driver.WaitForDataLoading();
-            Logger.Write("Import Project button was clicked");
         }
 
         [When(@"User enters ""(.*)"" in the Team Description field")]

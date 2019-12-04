@@ -174,13 +174,14 @@ namespace DashworksTestAutomation.Pages
 
             for (int i = 0; i < 3; i++)
             {
-                Thread.Sleep(500);
-                Driver.FindElement(splitByDdl).Click();
-
-                if (Driver.IsElementDisplayed(expandedItems))
+                if (!Driver.IsElementDisplayed(expandedItems))
+                {
+                    Driver.FindElement(splitByDdl).Click();
+                    Thread.Sleep(500);
+                }
+                else
                 {
                     Driver.FindElement(itemToBeSelected).Click();
-                    Thread.Sleep(500);
                     break;
                 }
             }
