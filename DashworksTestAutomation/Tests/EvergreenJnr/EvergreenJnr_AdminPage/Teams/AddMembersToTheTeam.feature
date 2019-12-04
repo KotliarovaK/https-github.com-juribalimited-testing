@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Cleanup @Teams @Do_Not_Run_With_Teams @Do_Not_Run_With_Buckets @Save_Default_Team
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Cleanup @Teams @Do_Not_Run_With_Teams @Do_Not_Run_With_Buckets @Set_Default_Team
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

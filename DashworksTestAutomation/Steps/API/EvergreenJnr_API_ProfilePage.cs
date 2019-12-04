@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Steps.API
             _client.ChangeUserProfileLanguage(_user.Username, PreferenceLanguageConverter.Convert(lng));
             //Need to refresh page to apply language change
             _driver.Navigate().Refresh();
-            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading(60);
         } 
     }
 }

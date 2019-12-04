@@ -113,7 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             //For automation
             if (option.Equals("Run now"))
             {
-                _automationStartTime.Value = DateTime.Now;
+                _automationStartTime.Value = DateTime.Now.AddSeconds(-10);
             }
         }
 

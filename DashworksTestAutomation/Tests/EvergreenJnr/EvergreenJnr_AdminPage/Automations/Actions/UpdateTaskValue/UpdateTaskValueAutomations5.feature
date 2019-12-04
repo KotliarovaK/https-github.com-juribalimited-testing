@@ -309,3 +309,28 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateAfterTaskChangingToTaskWi
 	#Warning message check
 	Then Error message with "The configuration of this task has changed, this action no longer has the correct parameters, update the action to change these" text is displayed
 	Then 'UPDATE' button is disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19065 @Cleanup @Not_Ready
+#Waiting for DAS-19065 fixed
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingAction
+	When User creates new Automation via API and open it
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 19065_Automation  | 19065       | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	And User enters '18705_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects 'Pre-Migration' option from 'Stage' autocomplete
+	When User selects 'Device Priority' option from 'Task' autocomplete
+	When User selects 'Medium' in the 'Value' dropdown
+	When User clicks 'CREATE' button
+	Then "1803 Rollout" content is displayed for "Project" column
+	When User clicks content from "Action" column
+	When User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Remove all values' in the 'Update Values' dropdown
+	When User clicks 'UPDATE' button
+	Then "" content is displayed for "Project" column

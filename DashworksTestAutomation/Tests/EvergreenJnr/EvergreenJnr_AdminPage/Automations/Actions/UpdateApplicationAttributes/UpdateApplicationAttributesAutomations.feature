@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
 	Then 'GREEN' content is displayed in 'Sticky Compliance' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @DAS19033 @Cleanup @Not_Ready
 #Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Applications' on the left-hand menu
@@ -85,12 +85,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'CREATE ACTION' button
 	And User enters '18834_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
-	When User selects 'RED' in the 'Sticky Compliance' dropdown
+	When User selects 'Empty' in the 'Sticky Compliance' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18834_Automation" text in the Search field for "Automation" column
 	When User clicks "Run now" option in Cog-menu for "18834_Automation" item on Admin page
+	When '18834_Automation' automation '18834_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18834_Automation" text in the Search field for "Automation" column
@@ -103,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName        |
 	| Sticky Compliance |
-	Then 'RED' content is displayed in the 'Sticky Compliance' column
+	Then '' content is displayed in the 'Sticky Compliance' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

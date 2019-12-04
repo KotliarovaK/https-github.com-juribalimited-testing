@@ -199,15 +199,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	Then Dashboard with name 'Dashboard_DAS12974Updated' marked as favorite
 	When User sets 'false' as favorite state in dashboard details for 'Dashboard_DAS12974Updated' dashboard
 	Then Dashboard with name 'Dashboard_DAS12974Updated' not marked as favorite
-	When User selects 'Manage' menu for 'Project Status' dashboard
-	When User sets 'true' as favorite state in dashboard details for 'Project Status' dashboard
-	Then Dashboard with name 'Project Status' marked as favorite
-	When User sets 'false' as favorite state in dashboard details for 'Project Status' dashboard
-	Then Dashboard with name 'Project Status' not marked as favorite
-	When User selects 'Make favourite' menu for 'Project Summary' dashboard
-	Then Dashboard with name 'Project Summary' marked as favorite
-	When User selects 'Unfavourite' menu for 'Project Summary' dashboard
-	Then Dashboard with name 'Project Summary' not marked as favorite
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
@@ -220,9 +211,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	Then Default dashboard checkbox becomes disabled in Dashboard details
 	Then Default dashboard checkbox displayed checked in Dashboard details
 	Then Dashboard with name 'Dashboard_DAS12974Default' marked as default
-	When User selects 'Set default' menu for 'Project Status' dashboard
-	Then Dashboard with name 'Project Status' marked as default
-	Then Dashboard with name 'Dashboard_DAS12974Default' not marked as default
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
