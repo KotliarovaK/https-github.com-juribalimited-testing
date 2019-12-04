@@ -119,7 +119,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserDoubleClicksFilterExpressionText()
         {
             var page = _driver.NowAt<FiltersElement>();
-            _driver.DoubleClick(page.FilterContainer);
+            _driver.DoubleClick(page.FilterContent);
         }
 
         [Then(@"""(.*)"" text is displayed in filter container")]
@@ -130,11 +130,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(page.PanelHeaderElement);
 
             var filter = _driver.NowAt<FiltersElement>();
-            if (!_driver.IsElementDisplayed(filter.FilterContainer))
+            if (!_driver.IsElementDisplayed(filter.FilterContent))
             {
                 filter.FilterExpressionIcon.Click();
             }
-            Utils.Verify.AreEqual(text, filter.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+            Utils.Verify.AreEqual(text, filter.FilterContent.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
 
@@ -143,7 +143,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<FiltersElement>();
             Utils.Verify.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
-                page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+                page.FilterContent.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
 

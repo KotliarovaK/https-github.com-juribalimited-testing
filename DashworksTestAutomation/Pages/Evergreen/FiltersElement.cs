@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> MaximizeGroupButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
-        public IWebElement FilterContainer { get; set; }
+        public IWebElement FilterContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//button[@aria-label='filters']")]
         public IWebElement FilterExpressionIcon { get; set; }
