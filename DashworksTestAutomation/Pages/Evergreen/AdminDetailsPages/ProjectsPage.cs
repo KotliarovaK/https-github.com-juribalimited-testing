@@ -380,12 +380,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement WarningMessageText(string text)
-        {
-            var selector = By.XPath($".//mat-dialog-container[@role='dialog']//p[text()='{text}']");
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetdisabledCheckboxByName(string checkboxName)
         {
             var selector = By.XPath($".//mat-checkbox[contains(@class, 'checkbox-disabled')]//span[text()='{checkboxName}']");

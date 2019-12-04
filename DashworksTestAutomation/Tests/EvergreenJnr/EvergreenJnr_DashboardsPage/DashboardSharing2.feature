@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	| Table      | WidgetForDAS15550_Edited | All Applications | Application | Application | Count distinct    | Application ASC | 5         |
 	Then 'WidgetForDAS15550_Edited' Widget is displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardName
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS14915' name created via API and opened
@@ -151,6 +151,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	Then Details panel is displayed to the user
 	When User changes dashboard name to 'DashboardUpdated'
 	Then Dashboard with 'DashboardUpdated' title displayed in All Dashboards
+	#12974 favorite for shared
+	When User sets 'true' as favorite state in dashboard details for 'DashboardUpdated' dashboard
+	Then Dashboard with name 'DashboardUpdated' marked as favorite
+	When User sets 'false' as favorite state in dashboard details for 'DashboardUpdated' dashboard
+	Then Dashboard with name 'DashboardUpdated' not marked as favorite
+	When User selects 'Make favourite' menu for 'DashboardUpdated' dashboard
+	Then Dashboard with name 'DashboardUpdated' marked as favorite
+	When User selects 'Unfavourite' menu for 'DashboardUpdated' dashboard
+	Then Dashboard with name 'DashboardUpdated' not marked as favorite
+	#12974 default for shared
+	When Dashboard with 'NewDefaultDashboardForDAS12974' name created via API and opened
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User selects 'Set default' menu for 'NewDefaultDashboardForDAS12974' dashboard
+	Then Dashboard with name 'NewDefaultDashboardForDAS12974' marked as default
+	Then Dashboard with name 'DashboardUpdated' not marked as default
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection

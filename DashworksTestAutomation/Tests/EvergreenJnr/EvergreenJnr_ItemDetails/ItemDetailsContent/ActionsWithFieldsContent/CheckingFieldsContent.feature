@@ -143,8 +143,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	And There are no errors in the browser console
 	#============================================================================#
 		#go to Users page
-	When User navigates to the 'User' details page for 'ZZNKKYW97AL4VS' item
-	Then Details page for "ZZNKKYW97AL4VS" item is displayed to the user
+	When User navigates to the 'User' details page for '00DBB114BE1B41B0A38' item
+	Then Details page for "00DBB114BE1B41B0A38" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
 	Then popup is displayed to User

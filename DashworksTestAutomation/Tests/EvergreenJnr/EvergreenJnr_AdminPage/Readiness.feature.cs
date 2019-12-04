@@ -1616,8 +1616,8 @@ this.FeatureBackground();
 #line 361
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 362
- testRunner.Then("\"You have unsaved changes. Are you sure you want to leave the page?\" text is disp" +
-                    "layed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'You have unsaved changes. Are you sure you want to leave the page?\' text is disp" +
+                    "layed on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 363
  testRunner.Then("\"YES\" button is displayed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 364

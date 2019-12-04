@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
@@ -238,9 +240,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
         }
 
-        public IWebElement GetBucketLinkByName(string bucketName)
+        public IWebElement LinkIsDisplayed(string linkName)
         {
-            var selector = By.XPath($"//div[@class='editText']//span[text()='{bucketName}']");
+            var selector = By.XPath($"//div[contains(@class, 'editText')]//span[text()='{linkName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

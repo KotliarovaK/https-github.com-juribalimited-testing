@@ -1534,14 +1534,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
         }
 
-        [Then(@"""(.*)"" text is displayed in the warning message")]
-        public void ThenTextIsDisplayedInTheWarningMessageOnProjectPage(string text)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-
-            Utils.Verify.IsTrue(page.WarningMessageText(text).Displayed(), $"{text} text is not displayed in the Warning message");
-        }
-
         [Then(@"""(.*)"" button is displayed in the warning message")]
         public void ThenButtonIsDisplayedInTheWarningMessageOnProjectPage(string text)
         {
