@@ -94,11 +94,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='filters']")]
-        public IWebElement FilterContainerButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'context-header')]//div[@role='group']")]
-        public IWebElement FilterOptions { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//button[@aria-label='filters']")]
+        public IWebElement FilterExpressionIcon { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-container')]/span")]
         public IList<IWebElement> Association { get; set; }

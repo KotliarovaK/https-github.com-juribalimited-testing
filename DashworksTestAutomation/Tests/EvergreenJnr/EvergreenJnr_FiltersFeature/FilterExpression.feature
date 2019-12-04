@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Evergreen_FiltersFeature @Cleanup @DAS17016
+@Evergreen @Evergreen_FiltersFeature @DAS17016
 Scenario: EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

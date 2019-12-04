@@ -83,7 +83,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("DAS17016")]
         public virtual void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected()
         {
@@ -116,7 +115,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected", null, new string[] {
                         "Evergreen",
                         "Evergreen_FiltersFeature",
-                        "Cleanup",
                         "DAS17016"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);

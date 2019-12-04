@@ -125,23 +125,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" text is displayed in filter container")]
         public void ThenTextIsDisplayedInFilterContainer(string text)
         {
-            var page = _driver.NowAt<FiltersElement>();
-            _driver.MoveToElement(page.FilterOptions);
-            _driver.WaitForElementToBeDisplayed(page.FilterOptions);
-            if (!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
-            Utils.Verify.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
+            var page = _driver.NowAt<BaseRightSideActionsPanel>();
+            _driver.MoveToElement(page.PanelHeaderElement);
+            _driver.WaitForElementToBeDisplayed(page.PanelHeaderElement);
+
+            var filter = _driver.NowAt<FiltersElement>();
+            if (!_driver.IsElementDisplayed(filter.FilterContainer))
+            {
+                filter.FilterExpressionIcon.Click();
+            }
+            Utils.Verify.AreEqual(text, filter.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
 
-        [When(@"User closes filter container")]
-        [When(@"User opens filter container")]
-        public void WhenUserOpensFilterContainer()
-        {
-            var page = _driver.NowAt<FiltersElement>();
-            page.FilterContainerButton.Click();
-        }
-
-        [Then(@"""(.*)"" text is displayed in filter container for ""(.*)"" list name")]
+        [Then(@"'(.*)' text is displayed in filter container for (.*)' list name")]
         public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
         {
             var page = _driver.NowAt<FiltersElement>();
