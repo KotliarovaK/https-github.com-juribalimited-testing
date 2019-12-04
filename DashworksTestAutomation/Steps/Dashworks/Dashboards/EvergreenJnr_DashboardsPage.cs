@@ -109,8 +109,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(page.ExpandSideNavPanelIcon);
-            page.ExpandSideNavPanelIcon.Click();
+            _driver.WaitForDataLoading();
+
+            if (_driver.IsElementDisplayed(page.ExpandSideNavPanelIcon))
+            {
+                page.ExpandSideNavPanelIcon.Click();
+            }
         }
 
         [Then(@"There is no breadcrumbs displayed on Dashboard page")]
@@ -171,30 +175,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "PLEASE ADD EXCEPTION MESSAGE");
             }
             Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
-        }
-
-        [When(@"User sets '(.*)' as favorite state in dashboard details for '(.*)' dashboard")]
-        public void WhenUserSetsDashboardFavoriteState(string state, string dashboardName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            if (Convert.ToBoolean(state))
-            {
-                if (!page.GetFavoriteStateInDashboardDetailsPane())
-                {
-                    page.MarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(() => page.IsDashboardMarkedAsFavoriteInList(dashboardName));
-                }
-            }
-
-            if (!Convert.ToBoolean(state))
-            {
-                if (page.GetFavoriteStateInDashboardDetailsPane())
-                {
-                    page.UnMarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(() => !page.IsDashboardMarkedAsFavoriteInList(dashboardName));
-                }
-            }
         }
 
         [When(@"User clicks menu for '(.*)' dashboard")]
@@ -334,6 +314,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Verify.That(page.DetailsDefaultCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
+        }
+
+        [When(@"User sets '(.*)' as favorite state in dashboard details for '(.*)' dashboard")]
+        public void WhenUserSetsDashboardFavoriteState(string state, string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            if (Convert.ToBoolean(state))
+            {
+                if (!page.GetFavoriteStateInDashboardDetailsPane())
+                {
+                    page.MarkFavoriteInDashboardDetails();
+                    _driver.WaitFor(() => page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                }
+            }
+
+            if (!Convert.ToBoolean(state))
+            {
+                if (page.GetFavoriteStateInDashboardDetailsPane())
+                {
+                    page.UnMarkFavoriteInDashboardDetails();
+                    _driver.WaitFor(() => !page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                }
+            }
         }
 
         [Then(@"User sees Dashboards context menu on Dashboards page")]
