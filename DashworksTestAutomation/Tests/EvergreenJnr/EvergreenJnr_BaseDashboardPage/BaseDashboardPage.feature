@@ -90,18 +90,19 @@ Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyN
 	Then 'All Mailboxes' list should be displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS13766 @DAS14183
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS13766 @DAS14183 Not_Run
 Scenario Outline: EvergreenJnr_AllList_CheckPositionOfContextMenuInGrid
 	When User clicks '<ListName>' on the left-hand menu
-	And User performs right-click on "<CellText>" cell in the grid
+	When User right clicks on '<CellText>' cell from '<ColumnName>' column
+	#TODO update the next step in the same way as the step above.
 	Then User sees context menu placed near "<CellText>" cell in the grid
 
 Examples: 
-	| ListName     | CellText                         |
-	| Devices      | 001PSUMZYOW581                   |
-	| Users        | Spruill, Shea                    |
-	| Applications | 11.2.5388.0                      |
-	| Mailboxes    | 002B5DC7D4D34D5C895@bclabs.local |
+	| ListName     | CellText                         | ColumnName    |
+	| Devices      | 001PSUMZYOW581                   | Hostname      |
+	| Users        | Spruill, Shea                    | Username      |
+	| Applications | 11.2.5388.0                      | Application   |
+	| Mailboxes    | 002B5DC7D4D34D5C895@bclabs.local | Email Address |
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174
 Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumns

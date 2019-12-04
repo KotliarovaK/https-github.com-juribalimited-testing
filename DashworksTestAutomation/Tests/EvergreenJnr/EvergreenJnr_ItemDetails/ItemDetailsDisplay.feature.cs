@@ -178,14 +178,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("User", "svc_dashworks", "Active Directory", "Groups", "Group", "Domain Users", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "MSI", "MSI Files", "File Name", "setup_x86.msi", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox", "aaron.u.flores@dwlabs.local", "Users", "Users", "Username", "floresau", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails(string pageName, string searchTerm, string mainTabName, string subTabName, string selectedColumn, string targetCell, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails(string pageName, string searchTerm, string mainTabName, string subTabName, string columnName, string targetCell, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetailsInternal(pageName,searchTerm,mainTabName,subTabName,selectedColumn,targetCell,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetailsInternal(pageName,searchTerm,mainTabName,subTabName,columnName,targetCell,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -204,7 +204,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetailsInternal(string pageName, string searchTerm, string mainTabName, string subTabName, string selectedColumn, string targetCell, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetailsInternal(string pageName, string searchTerm, string mainTabName, string subTabName, string columnName, string targetCell, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -229,7 +229,7 @@ this.FeatureBackground();
 #line 33
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.And(string.Format("User performs right-click on \"{0}\" cell in the grid", targetCell), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
  testRunner.And("User selects \'Copy cell\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
@@ -246,16 +246,16 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Applications", "Evergreen Summary", "Access 95", "Access 95   Microsoft      Green   True   Unknown   True", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "003F5D8E1A844B1FAA5", "Active Directory", "Groups", "Domain Users", "Domain Users   BCLABS   Global Security Group   All domain users", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTab(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string expectedData, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Applications", "Evergreen Summary", "Access 95", "Application", "Access 95   Microsoft      Green   True   Unknown   True", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "003F5D8E1A844B1FAA5", "Active Directory", "Groups", "Domain Users", "Group", "Domain Users   BCLABS   Global Security Group   All domain users", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTab(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string columnName, string expectedData, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTabInternal(pageName,searchTerm,mainTabName,subTabName,targetCell,expectedData,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTabInternal(pageName,searchTerm,mainTabName,subTabName,targetCell,columnName,expectedData,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -274,7 +274,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTabInternal(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string expectedData, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTabInternal(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string columnName, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -299,7 +299,7 @@ this.FeatureBackground();
 #line 49
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
- testRunner.And(string.Format("User performs right-click on \"{0}\" cell in the grid", targetCell), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
  testRunner.And("User selects \'Copy row\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
@@ -316,16 +316,16 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Application", "ACD Display 3.4", "Details", "Programs", "Install", "Install   setup.exe /q", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "Zurong.Wu@bclabs.local", "Details", "Email Addresses", "SMTP", "SMTP   Zurong.Wu@bclabs.local   True", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string expectedData, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Application", "ACD Display 3.4", "Programs", "Install", "Program", "Install   setup.exe /q", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailbox", "Zurong.Wu@bclabs.local", "Email Addresses", "SMTP", "Type", "SMTP   Zurong.Wu@bclabs.local   True", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab(string pageName, string searchTerm, string subTabName, string targetCell, string columnName, string expectedData, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTabInternal(pageName,searchTerm,mainTabName,subTabName,targetCell,expectedData,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTabInternal(pageName,searchTerm,subTabName,targetCell,columnName,expectedData,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -344,7 +344,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTabInternal(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string expectedData, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTabInternal(string pageName, string searchTerm, string subTabName, string targetCell, string columnName, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -367,7 +367,7 @@ this.FeatureBackground();
 #line 62
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
- testRunner.And(string.Format("User performs right-click on \"{0}\" cell in the grid", targetCell), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
  testRunner.And("User selects \'Copy row\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
@@ -428,7 +428,7 @@ this.FeatureBackground();
 #line 75
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
- testRunner.When("User performs right-click on \"egcs-objc\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User right clicks on \'egcs-objc\' cell from \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
  testRunner.And("User selects \'Copy row\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
