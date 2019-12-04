@@ -114,8 +114,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	Then following Values are displayed in the 'Bulk Update Type' dropdown:
-	| Options              |
-	| Update capacity unit |
-	| Update custom field  |
-	| Update path          |
-	| Update task value    |
+	| Options                       |
+	| Update application attributes |
+	| Update capacity unit          |
+	| Update custom field           |
+	| Update path                   |
+	| Update task value             |
