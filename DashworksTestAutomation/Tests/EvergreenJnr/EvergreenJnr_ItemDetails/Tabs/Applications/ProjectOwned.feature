@@ -60,8 +60,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrec
 	| UNCATEGORISED |
 	| FORWARD PATH  |
 
-	#Ann.I 11/28/19: ready only for the "terminator".
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18743 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18743
 Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCorrectly
 	When User navigates to the 'User' details page for 'LYZ6880619' item
 	Then Details page for "LYZ6880619" item is displayed to the user

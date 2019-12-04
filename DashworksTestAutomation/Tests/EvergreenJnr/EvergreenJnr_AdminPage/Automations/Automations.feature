@@ -154,6 +154,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Make inactive" option in Cog-menu for "15431_Third_Active" item on Admin page
+	When User clicks refresh button in the browser
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
 	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column
