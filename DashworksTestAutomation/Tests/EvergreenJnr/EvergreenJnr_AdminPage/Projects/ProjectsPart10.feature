@@ -33,7 +33,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	And User selects '<ChangingToList1>' in the 'Application Scope' dropdown with wait
-	And User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "<ApplicationsToAdd1>" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item

@@ -345,22 +345,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"User closed ""(.*)"" columns category")]
-        [When(@"User closed ""(.*)"" columns category")]
-        public void ThenUserClosedColumnsCategory(string categoryName)
-        {
-            var columnElement = _driver.NowAt<BaseRightSideActionsPanel>();
-            columnElement.ClickCategoryCrossButton(categoryName);
-        }
-
-        [Then(@"User is expand ""(.*)"" columns category")]
-        [When(@"User is expand ""(.*)"" columns category")]
-        public void ThenUserIsExpandColumnsCategory(string categoryName)
-        {
-            var columnElement = _driver.NowAt<BaseRightSideActionsPanel>();
-            columnElement.ClickCategoryPlusButton(categoryName);
-        }
-
         [Then(@"Minimize buttons are displayed for all category in Columns panel")]
         public void ThenMinimizeButtonsAreDisplayedForAllCategoryInColumnsPanel()
         {

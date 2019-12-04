@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
@@ -15,9 +17,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ColumnWithImageAndLinkSelector = ".//div[@col-id='userName'][@role='gridcell']";
 
-        public const string FieldOnDetailsPageSelector = ".//td[contains(@class, 'mat-column-key')]";
+        public const string FieldOnDetailsPageSelector = ".//td[@class='fld-label' or contains(@class, 'mat-column-key')]";
 
         public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
+
+        public const string EditButton = ".//*[text()='{0}']//ancestor::tr//span[@class='editIcon']";
 
         [FindsBy(How = How.XPath, Using = "//div[@class='mat-drawer-inner-container']")]
         public IWebElement TabContainer { get; set; }
@@ -62,14 +66,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
         public IList<IWebElement> OperatorOptions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'dialogContainer ')]")]
-        public IWebElement PopupChangesPanel { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class='field-category collapsed']")]
-        public IWebElement OpenedPanelForUpdatingItems { get; set; }
 
         [FindsBy(How = How.XPath, Using = FieldOnDetailsPageSelector)]
         public IList<IWebElement> FieldListOnDetailsPage { get; set; }
@@ -90,13 +88,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.FindElement(By.XPath("//mat-dialog-container[contains(@class, 'mat-dialog-container')]"))
                 .GetCssValue("width");
-        }
-
-        public IWebElement NavigateToSectionByName(string sectionName)
-        {
-            var selector = By.XPath($"//*[text()='{sectionName}']/ancestor::div[@class='field-category']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public IWebElement GetCellByTextFromKeyValueGrid(string text)
@@ -220,51 +211,33 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
 
-        public IWebElement GetValueByName(string value)
+        public IWebElement GetEditFieldButton(string fieldName)
         {
-            var selector = By.XPath($"//mat-option[@role='option']//span[text()='{value}']");
-            Driver.WaitForElementToBeDisplayed(selector);
+            var selector = By.XPath(string.Format(EditButton, fieldName));
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+            {
+                throw new Exception($"Edit button is not displayed for '{fieldName}' field");
+            }
+
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetBucketLinkByName(string bucketName)
+        public void ClickEditFieldButton(string fieldName)
         {
-            var selector = By.XPath($"//div[@class='editText']//span[text()='{bucketName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
+            try
+            {
+                GetEditFieldButton(fieldName).Click();
+            }
+            catch
+            {
+                Driver.MouseHover(GetEditFieldButton(fieldName));
+                GetEditFieldButton(fieldName).Click();
+            }
         }
 
-        public IWebElement GetEvergreenBucketLinkByFieldName(string linkName)
+        public IWebElement LinkIsDisplayed(string linkName)
         {
-            var selector = By.XPath($"//span[text()='Evergreen Bucket']//ancestor::tr//span[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetEvergreenCapacityUnitLinkByFieldName(string linkName)
-        {
-            var selector = By.XPath($"//span[text()='Evergreen Capacity Unit']//ancestor::tr//span[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetEvergreenRingLinkByFieldName(string linkName)
-        {
-            var selector = By.XPath($"//span[text()='Evergreen Ring']//ancestor::tr//span[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetLinkOnTheDetailsPageByName(string linkName)
-        {
-            var selector = By.XPath($"//span[text()='{linkName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetChangeValueInPopUpByName(string value)
-        {
-            var selector = By.XPath($".//label[text()='{value}']/ancestor::mat-form-field");
+            var selector = By.XPath($"//div[contains(@class, 'editText')]//span[text()='{linkName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

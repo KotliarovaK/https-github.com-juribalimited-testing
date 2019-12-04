@@ -636,7 +636,7 @@ this.FeatureBackground();
  testRunner.And("\"Mailboxes to remove (0 of 0 selected)\" is displayed to the user in the Project S" +
                     "cope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 164
- testRunner.And("\"Mailboxes 0/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailboxes 0/0\' tab is displayed on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -656,7 +656,7 @@ this.FeatureBackground();
  testRunner.Then("Warning message with \"2 mailboxes will be added\" text is displayed on the Admin p" +
                     "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 173
- testRunner.And("\"Mailboxes 2/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailboxes 2/0\' tab is displayed on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 174
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 175

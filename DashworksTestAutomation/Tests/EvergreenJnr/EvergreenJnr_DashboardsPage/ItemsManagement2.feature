@@ -126,15 +126,36 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17551 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
+    | SelectedValues |
+    | Mobile         |
+	When User create dynamic list with "ADevicesList17551" name on "Devices" page
+	Then "ADevicesList17551" list is displayed to user
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
+	| SelectedValues    | Association        |
+	| ADevicesList17551 | Entitled to device |
+	When User waits for three seconds
+	When User create dynamic list with "AApplicationsList17551" name on "Applications" page
+	Then "AApplicationsList17551" list is displayed to user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User removes custom list with "ADevicesList17551" name
+	Then list with "ADevicesList17551" name is removed
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
-	| List       | Widget_For_DAS17551 | Dependant List Filter - BROKEN LIST | 10      | 10         |
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title               | List                   | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS17551 | AApplicationsList17551 | 10      | 10         |
 	Then 'Widget_For_DAS17551' Widget is displayed to the user
-	Then User sees 'This widget refers to list Dependant List Filter - BROKEN LIST which has errors' text in warning message on Dashboards page
-	Then 'Dependant List Filter - BROKEN LIST' link is displayed in warning message on Dashboards page
+	Then User sees 'This widget refers to list AApplicationsList17551 which has errors' text in warning message on Dashboards page
+	Then 'AApplicationsList17551' link is displayed in warning message on Dashboards page
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
@@ -178,15 +199,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	Then Dashboard with name 'Dashboard_DAS12974Updated' marked as favorite
 	When User sets 'false' as favorite state in dashboard details for 'Dashboard_DAS12974Updated' dashboard
 	Then Dashboard with name 'Dashboard_DAS12974Updated' not marked as favorite
-	When User selects 'Manage' menu for 'Project Status' dashboard
-	When User sets 'true' as favorite state in dashboard details for 'Project Status' dashboard
-	Then Dashboard with name 'Project Status' marked as favorite
-	When User sets 'false' as favorite state in dashboard details for 'Project Status' dashboard
-	Then Dashboard with name 'Project Status' not marked as favorite
-	When User selects 'Make favourite' menu for 'Project Summary' dashboard
-	Then Dashboard with name 'Project Summary' marked as favorite
-	When User selects 'Unfavourite' menu for 'Project Summary' dashboard
-	Then Dashboard with name 'Project Summary' not marked as favorite
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
@@ -199,9 +211,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	Then Default dashboard checkbox becomes disabled in Dashboard details
 	Then Default dashboard checkbox displayed checked in Dashboard details
 	Then Dashboard with name 'Dashboard_DAS12974Default' marked as default
-	When User selects 'Set default' menu for 'Project Status' dashboard
-	Then Dashboard with name 'Project Status' marked as default
-	Then Dashboard with name 'Dashboard_DAS12974Default' not marked as default
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
@@ -213,7 +222,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	Then 'DAS12974SECTION1' Widget is displayed to the user
 	When User clicks 'ADD SECTION' button 
-	When User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
+	When User clicks ADD WIDGET button for '2' Section on Dashboards page
 	When User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | DAS12974SECTION2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
@@ -229,29 +238,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
 	When Dashboard with 'DAS12974DUPLICATED' name created via API and opened
 	When User clicks 'Dashboards' on the left-hand menu
-	And User clicks 'CREATE DASHBOARD' button 
-	And User types '<DashboardName>' as dashboard title
-	Then Red Dashboard should be unique error displayed to user
+	When User clicks 'CREATE DASHBOARD' button 
+	When User types '<DashboardName>' as dashboard title
+	Then Warning message with "Dashboard name should be unique" is displayed
 	When User types 'extra' as dashboard title
-	Then Red Dashboard should be unique error disappears
 
 Examples:
 	| DashboardName      |
 	| DAS12974DUPLICATED |
 	| DAS12974duplicated |
-
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17592 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckDashboardTranslationsWork1
-	When User clicks Show Dashboards panel icon on Dashboards page
-	When User selects 'Duplicate' menu for 'Executive Summary' dashboard
-	Then Dashboard with 'Executive Summary2' title displayed in All Dashboards
-	When User language is changed to "Deutsch" via API
-	When Dashboard with 'Executive Summary2' name is opened via API
-	When User clicks Edit mode trigger on Dashboards page
-	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in '2' warning messages on Dashboards page
-	When User clicks Dashboards Details icon on Dashboards page
-	When User expands the list of shared lists
-	Then User sees table headers as 'Widget' and 'Liste'
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff

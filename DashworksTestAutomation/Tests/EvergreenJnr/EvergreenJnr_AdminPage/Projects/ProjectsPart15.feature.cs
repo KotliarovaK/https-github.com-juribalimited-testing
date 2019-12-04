@@ -520,7 +520,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "Used on the device by any user"});
 #line 126
- testRunner.And("User clicks following checkboxes on the Project details page:", ((string)(null)), table14, "And ");
+ testRunner.And("User checks following checkboxes:", ((string)(null)), table14, "And ");
 #line 133
  testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
@@ -538,7 +538,7 @@ this.FeatureBackground();
 #line 139
  testRunner.And("User navigates to the \'Application Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 140
- testRunner.And("User clicks \"Entitled to the device\" checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks \'Entitled to the device\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 141
  testRunner.And("User navigates to the \'User Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 142

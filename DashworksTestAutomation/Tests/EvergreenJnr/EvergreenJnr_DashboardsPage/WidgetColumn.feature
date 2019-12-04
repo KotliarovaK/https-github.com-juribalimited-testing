@@ -18,14 +18,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	When User create dynamic list with "ListForDAS16278" name on "Devices" page
-	Then "ListForDAS16278" list is displayed to user
+	When User create dynamic list with "AListForDAS16278" name on "Devices" page
+	Then "AListForDAS16278" list is displayed to user
 	When Dashboard with 'DAS16278_Dashboard' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
-	| WidgetType | Title           | List            | SplitBy            | AggregateBy         | AggregateFunction | OrderBy                | MaxValues | ShowLegend |
-	| Column     | DAS16278_Widget | ListForDAS16278 | Windows7Mi: Status | HDD Total Size (GB) | Sum               | Windows7Mi: Status ASC | 10        | true       |
+	| WidgetType | Title           | List             | SplitBy            | AggregateBy         | AggregateFunction | OrderBy                | MaxValues | ShowLegend |
+	| Column     | DAS16278_Widget | AListForDAS16278 | Windows7Mi: Status | HDD Total Size (GB) | Sum               | Windows7Mi: Status ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS16278_Widget' Widget is displayed to the user
@@ -91,9 +91,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	When User clicks Edit mode trigger on Dashboards page
 	When  User clicks 'ADD WIDGET' button 
 	When User adds new Widget
-	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy |
-	| Column     | ColumnWidget | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    |
-	When User enters '2' as Widget Max Values
+	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy | MaxValues |
+	| Column     | ColumnWidget | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    | 2         |
 	When User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
@@ -109,9 +108,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When User clicks Edit mode trigger on Dashboards page
 	When  User clicks 'ADD WIDGET' button 
 	When User adds new Widget
-	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy |
-	| Column     | ColumnWidget#1 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    |
-	When User enters '2' as Widget Max Values
+	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy | MaxValues |
+	| Column     | ColumnWidget#1 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    | 2         |
 	When User selects the Colour Scheme by index '2'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
@@ -119,9 +117,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When User clicks Ellipsis menu for 'ColumnWidget#1' Widget on Dashboards page
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User adds new Widget
-	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy |
-	| Pie        | ColumnWidget#2 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    |
-	When User enters '3' as Widget Max Values
+	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy | MaxValues |
+	| Pie        | ColumnWidget#2 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    | 3         |
 	When User selects the Colour Scheme by index '3'
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button 

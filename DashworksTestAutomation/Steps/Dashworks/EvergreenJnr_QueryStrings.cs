@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             if (!dashboardPage.ResultsOnPageCount.Displayed())
             {
-                Verify.IsTrue(dashboardPage.NoResultsFoundMessage.Displayed(),
+                Verify.IsTrue(_driver.IsElementDisplayed(dashboardPage.NoResultsFoundMessage, WebDriverExtensions.WaitTime.Long),
                     "'No Results Found' message is not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{dashboardPage.NoResultsFoundMessage.Text}' message");

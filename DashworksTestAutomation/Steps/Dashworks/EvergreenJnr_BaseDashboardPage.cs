@@ -118,6 +118,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //TODO: below code will take first cell in column, this is used instead of removed method that
             //took content from first cell, should be refactored later
             var firstColumnCell = page.GetColumnContentByColumnName(columnName).FirstOrDefault();
+            //Sometimes data is not changed immediately and we need to wait for it
+            //TODO remove this as it is not working
+            if (!textContent.Equals(firstColumnCell))
+            {
+                Thread.Sleep(2000);
+                firstColumnCell = page.GetColumnContentByColumnName(columnName).FirstOrDefault();
+            }
             Verify.AreEqual(textContent, firstColumnCell, "Content is not displayed correctly");
         }
 
@@ -173,8 +180,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Appropriate header font weight is displayed")]
         public void ThenAppropriateHeaderFontWeightIsDisplayed()
         {
-            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual("400", dashboardPage.GetHeaderFontWeight(), "Header font weight is incorrect");
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            Verify.IsTrue(dashboardPage.GetAllHeadersTextElements().Select(x => x.GetCssValue("font-weight")).All(x => x.Equals("400")), "Header font weight is incorrect");
         }
 
         [Then(@"URL is ""(.*)""")]
@@ -283,13 +290,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             Utils.Verify.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
-        }
-
-        [When(@"User clicks ""(.*)"" button in the Warning Pop-up message")]
-        public void WhenUserClicksButtonInTheWarningPop_UpMessage(string buttonName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GetButtonInWarningPopUp(buttonName).Click();
         }
     }
 }

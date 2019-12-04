@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColu
 	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then User is expand "Mailbox" columns category
+	When User expands 'Mailbox' category
 	When User add "Alias" Column from expanded category
 	Then Minimize button is displayed for "Mailbox" category
 	When User add "Created Date" Column from expanded category
@@ -623,8 +623,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategor
 	When User clicks '<ListName>' on the left-hand menu
 	And User clicks the Columns button
 	Then "Evergreen" section is displayed in the Columns panel
-	When User closed "Selected Columns" columns category
-	And User is expand "Evergreen" columns category
+	When User collapses 'Selected Columns' category
+	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Bucket        |
@@ -642,8 +642,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	When User clicks 'Applications' on the left-hand menu
 	And User clicks the Columns button
 	Then "Evergreen" section is displayed in the Columns panel
-	When User closed "Selected Columns" columns category
-	And User is expand "Evergreen" columns category
+	When User collapses 'Selected Columns' category
+	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Capacity Unit |
@@ -702,10 +702,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| Display Name       |
 	| Distinguished Name |
 	| Department Name    |
-	And User closed "Selected Columns" columns category
+	When User collapses 'Selected Columns' category
 	When User add "Department Full Path" Column from expanded category
-	Then User is expand "Selected Columns" columns category
-	And the following subcategories are displayed for Selected Columns category:
+	When User expands 'Selected Columns' category
+	Then the following subcategories are displayed for Selected Columns category:
 	| Subcategories        |
 	| Username             |
 	| Domain               |
@@ -723,7 +723,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| ColumnName           |
 	| Department Name      |
 	| Department Full Path |
-	Then User closed "Selected Columns" columns category
+	When User collapses 'Selected Columns' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories        |
 	| Department Full Path |
@@ -733,9 +733,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	When User have reset all filters
 	And User clicks the Columns button
 	Then Columns panel is displayed to the user
-	And User closed "Selected Columns" columns category
-	And User is expand "Organisation" columns category
-	And the following Column subcategories are displayed for open category:
+	When User collapses 'Selected Columns' category
+	When User expands 'Organisation' category
+	Then the following Column subcategories are displayed for open category:
 	| Subcategories        |
 	| Cost Centre          |
 	| Department Code      |
@@ -811,7 +811,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheCol
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User is expand "User" columns category
+	When User expands 'User' category
 	When User add "Primary Device" Column from expanded category
 	When User clicks on 'Primary Device' column header
 	When User clicks on 'Primary Device' column header
@@ -949,8 +949,9 @@ Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
-	When User closed "Selected Columns" columns category
-	And User is expand "Project Tasks: DeviceSche" columns category
+	When User enters "DeviceSche: Stage" text in Search field at Columns Panel
+	When User collapses 'Selected Columns' category
+	When User collapses 'Project Stages: DeviceSche' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                                        |
 	| DeviceSche: Stage 1 \ Completed Date                 |
@@ -975,8 +976,11 @@ Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Columns button
-	When User closed "Selected Columns" columns category
-	And User is expand "Project Tasks: DeviceSche" columns category
+	When User enters "DeviceSche" text in Search field at Columns Panel
+	When User collapses 'Selected Columns' category
+	When User collapses 'Project: DeviceSche' category
+	When User collapses 'Project Rings: DeviceSche' category
+	When User collapses 'Project Stages: DeviceSche' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                               |
 	| DeviceSche: Stage 2 \ user DDL task         |
@@ -988,8 +992,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Columns button
-	When User closed "Selected Columns" columns category
-	And User is expand "Project Tasks: MailboxEve" columns category
+	When User enters "MailboxEve" text in Search field at Columns Panel
+	When User collapses 'Selected Columns' category
+	When User collapses 'Project: MailboxEve' category
+	When User collapses 'Project Rings: MailboxEve' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                              |
 	| MailboxEve: 1 \ Completed                  |
@@ -1008,9 +1014,20 @@ Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplication
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
-	When User closed "Selected Columns" columns category
-	And User is expand "Project Tasks: DeviceSche" columns category
+	When User enters "DeviceSche" text in Search field at Columns Panel
+	When User collapses 'Selected Columns' category
+	When User collapses 'Project: DeviceSche' category
+	When User collapses 'Project Rings: DeviceSche' category
+	When User collapses 'Project Stages: DeviceSche' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                              |
 	| DeviceSche: Stage 2 \ app date task        |
 	| DeviceSche: Stage 2 \ app radiobutton task |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS18795
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectRingsCategoryCorrectlyPlacedInColumnsPanel
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Columns button
+	When User collapses 'Selected Columns' category
+	Then 'Project Rings' category is placed next to the corresponding project group

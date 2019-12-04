@@ -1,11 +1,14 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -16,10 +19,36 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
     internal class EvergreenJnr_CogMenuActions : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_CogMenuActions (RemoteWebDriver driver)
+        public EvergreenJnr_CogMenuActions(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
+            _automationStartTime = automationStartTime;
+        }
+
+        [When(@"User clicks Cog-menu for '(.*)' item in the '(.*)' column")]
+        public void WhenUserClicksCog_MenuForItemInTheColumn(string columnContent, string column)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.BodyContainer.Click();
+            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
+            cogMenu.GetCogMenuByItem(column, columnContent).Click();
+        }
+
+        [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]
+        public void WhenUserMovesItemFromColumnToThePosition(string columnContent, string column, string position)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.BodyContainer.Click();
+            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
+            cogMenu.GetCogMenuByItem(column, columnContent).Click();
+            _driver.WaitForDataLoading();
+            cogMenu.GetCogMenuOptionByName("Move to position").Click();
+            cogMenu.MoveToPositionField.Clear();
+            cogMenu.MoveToPositionField.SendKeys(position);
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetButtonByName("MOVE").Click();
         }
 
         [When(@"User clicks Cog-menu on the Admin page")]
@@ -27,17 +56,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             cogMenu.CogMenu.Click();
-        }
-
-        //TODO make it generic
-        [When(@"User clicks Cog-menu for ""(.*)"" item on Admin page")]
-        public void WhenUserClicksCog_MenuForItemOnAdminPage(string itemName)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            filterElement.BodyContainer.Click();
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
-            cogMenu.GetCogMenuByItem(itemName).Click();
         }
 
         [Then(@"Cog menu is displayed to the user")]
@@ -78,6 +96,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             //Thread.Sleep(500);
             //TODO decrease to standard wait time after DAS-17940 fix
             _driver.WaitForDataLoading();
+            //TODO Remove this. Just for debug
+            if (itemName.Equals("15431_Third_Active"))
+            {
+                try
+                {
+                    var test = DatabaseHelper.GetAutomationActiveStatus(itemName);
+                    Logger.Write($"Automation active status is '{test}'");
+                }
+                catch
+                {
+                    Logger.Write("Automation was not found in the database");
+                }
+            }
+
+            //For automation
+            if (option.Equals("Run now"))
+            {
+                _automationStartTime.Value = DateTime.Now.AddSeconds(-10);
+            }
         }
 
         [When(@"User clicks '(.*)' option in opened Cog-menu")]
@@ -102,22 +139,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 }
                 Thread.Sleep(5000);
             }
-        }
-
-        [When(@"User move ""(.*)"" item to ""(.*)"" position on Admin page")]
-        public void WhenUserMoveItemToPositionOnAdminPage(string itemName, string position)
-        {
-            var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            body.BodyContainer.Click();
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
-            cogMenu.GetCogMenuByItem(itemName).Click();
-            _driver.WaitForDataLoading();
-            cogMenu.GetCogMenuOptionByName("Move to position").Click();
-            cogMenu.MoveToPositionField.Clear();
-            cogMenu.MoveToPositionField.SendKeys(position);
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetButtonByName("MOVE").Click();
         }
 
         [Then(@"Cog-menu DDL is displayed in High Contrast mode")]

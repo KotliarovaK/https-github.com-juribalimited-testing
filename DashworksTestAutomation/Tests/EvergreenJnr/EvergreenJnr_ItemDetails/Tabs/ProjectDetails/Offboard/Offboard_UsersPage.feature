@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Offboard all associated devices' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
 	Then " 02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -51,14 +51,14 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Offboard all associated devices' checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Hostname     |
 	| Owned        |
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -79,5 +79,5 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then Dialog Pop-up is displayed for User
-	And following text 'Offboarding user BCLABS\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an object deletes all project related information about it.' is displayed in Dialog Pop-up
+	Then popup is displayed to User
+	And 'Offboarding user BCLABS\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an object deletes all project related information about it.' text is displayed on popup

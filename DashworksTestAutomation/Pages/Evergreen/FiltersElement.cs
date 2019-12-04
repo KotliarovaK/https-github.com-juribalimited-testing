@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         private const string SearchTextBoxSelector = ".//input[@name='search']";
 
-        private const string ShowedResultsCount = ".//div[@class='pagination-info ng-star-inserted']";
+        private const string ShowedResultsCount = ".//div[contains(@class,'pagination')]";
 
         public const string FilterValuesSelector = ".//span[contains(@class, 'filter-label-value')]";
 
@@ -127,7 +127,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'addColumn')]//span[@class='mat-checkbox-label']")]
         public IWebElement AddFiltersColumnName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filterAddPanel')]//i[contains(@class,'delete')]/ancestor::button")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filterAddPanel')]//i[contains(@class,'delete') or contains(@class,'clear')]/ancestor::button")]
         public IWebElement RemoveFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'reset')]")]
@@ -178,6 +178,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = FilterValue)]
         public IList<IWebElement> FilterValueList { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='dateDirection']")]
+        public IWebElement AheadOrAgoInput { get; set; }
+        
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -193,11 +196,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()=\"" + filterCategoryName + "\"]/ancestor::div[@class='filter-category ng-star-inserted']"));
         }
 
+        public IWebElement FilterFieldInstruction(string filterField)
+        {
+            return Driver.FindElement(By.XPath($".//input[@placeholder='{filterField}']/ancestor::div[@class='mat-form-field-wrapper']//mat-hint"));
+        }
+
         public List<string> GetFilterValuesByFilterName(string filterName)
         {
             var filterValues = new List<string>();
             filterValues.AddRange(Driver.FindElements(By.XPath(
-                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[@class='filter-label']//span[contains(@class, 'filter-label-value')]"))
+                    $".//span[@class='filter-label-name'][text()='{filterName}']/ancestor::div[contains(@class,'filter-label')]//span[contains(@class, 'filter-label-value')]"))
                 .Select(x => x.Text.TrimStart(' ').TrimEnd(' ')).ToList());
             return filterValues;
         }
@@ -590,5 +598,29 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement AssociationItem(string option) => Driver.FindElementByXPath($".//div[@class='sub-categories-associations']//div[contains(text(), '{option}')]");
 
         public IWebElement RemoveIconForAssociation(string association) => Driver.FindElementByXPath($".//span[@class='filter-label-name' and text()=' {association.ToLower()}']/ancestor::div[@class='filter-group no-border-bottom']//i[contains(@class, 'mat-item_delete')]/ancestor::button");
+
+        public List<string> GetCategoriesFromFilterPanelPageByPage()
+        {
+            List<string> categories = new List<string>();
+
+            var allCats = FilterCategoryLabels.Count;
+            var visibleCats = FilterCategoryLabels.Count(x => x.Displayed);
+            int attempts = allCats / visibleCats + 1;
+
+            for (int i = 0; i < attempts; i++)
+            {
+                IList<IWebElement> cats = FilterCategoryLabels.Where(z => !string.IsNullOrEmpty(z.Text)).ToList();
+
+                if (categories.Count > 0 && cats.Last().Text.Equals(categories.Last()))
+                {
+                    break;
+                }
+
+                categories.AddRange(cats.Select(x => x.Text));
+                Driver.MouseHoverByJavascript(cats.Last());
+            }
+            //remove duplicates which are possible when paging
+            return categories.Distinct().ToList();
+        }
     }
 }

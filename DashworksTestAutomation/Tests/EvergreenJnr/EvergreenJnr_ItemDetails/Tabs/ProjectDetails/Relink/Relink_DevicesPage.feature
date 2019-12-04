@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	| Name         | 06RIV0KXJMHJ1K |
 	| Device Owner | Tonia T. Mason |
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	And 'Resync owner' checkbox is checked
 	And 'Resync apps' checkbox is checked
 	And 'Resync name' checkbox is checked
@@ -26,9 +26,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User selects state 'true' for 'Resync owner' checkbox
 	When User selects state 'true' for 'Resync apps' checkbox
 	When User selects state 'true' for 'Resync name' checkbox
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Device successfully relinked" text
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	| Name         | 06RIV0KXJMHJ1K |
 	| Device Owner | Tonia T. Mason |
 	When User clicks 'RESYNC' button 
-	And User clicks 'RESYNC' button in Dialog Pop-up
+	And User clicks 'RESYNC' button on popup
 	Then Success message is displayed and contains "The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete" text
 	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
@@ -48,8 +48,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	| Device Owner | Gerard C. Kelly |
 	When User clicks 'RELINK' button 
 	And User enters '06RIV0KXJMHJ1K' in the 'Device' autocomplete field and selects '06RIV0KXJMHJ1K' value
-	And User clicks 'RELINK' button in Dialog Pop-up
-	And User clicks 'RELINK' button in Dialog Pop-up
+	And User clicks 'RELINK' button on popup
+	And User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Device successfully relinked" text
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
@@ -58,8 +58,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup
 
 	#Ready on the 'radiant' server
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @Not_Ready
@@ -71,22 +71,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
 	And User enters '5XW9ZW6O6HG7IP9' in the 'Device' autocomplete field and selects '5XW9ZW6O6HG7IP9' value
-	And User clicks 'RELINK' button in Dialog Pop-up
+	And User clicks 'RELINK' button on popup
 	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete" text
 	When User navigates to the 'Projects Summary' left submenu item
 	Then Success message is not displayed
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
 	And User enters 'FISC5NOXFB8Q7M' in the 'Device' autocomplete field and selects 'FISC5NOXFB8Q7M' value
-	And User clicks 'RELINK' button in Dialog Pop-up
-	And User clicks 'RELINK' button in Dialog Pop-up
+	And User clicks 'RELINK' button on popup
+	And User clicks 'RELINK' button on popup
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
 	When User clicks "Sherri R. Bautista" link on the Details Page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	When User clicks 'OFFBOARD' button in Dialog Pop-up
-	And User clicks 'OFFBOARD' button in Dialog Pop-up
+	When User clicks 'OFFBOARD' button on popup
+	And User clicks 'OFFBOARD' button on popup

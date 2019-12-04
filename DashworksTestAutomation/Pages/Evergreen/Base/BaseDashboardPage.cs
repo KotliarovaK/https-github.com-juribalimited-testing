@@ -12,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
     public class BaseDashboardPage : SeleniumBasePage
     {
+        public const string CategoryCollapseExpandSelector = ".//*[contains(@class, 'filter-category-label')][text()='{0}']//ancestor::div[contains(@class, 'category-title')]//i";
+
         public const string DatepickerSelector = ".//tbody[@class='mat-calendar-body']";
 
         public const string DatepickerCellSelector = "//td[contains(@class,'cell')]";
@@ -36,18 +38,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
-
-        #region Popup
-
-        private const string PopupSelector = ".//mat-dialog-container";
-
-        [FindsBy(How = How.XPath, Using = PopupSelector)]
-        public IWebElement PopupElement { get; set; }
-
-        [FindsBy(How = How.XPath, Using = PopupSelector + "//div[@mat-dialog-title]")]
-        public IWebElement PopupTitle { get; set; }
-
-        #endregion
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
@@ -240,7 +230,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         //For cases when more than 4 items are selected they are collapsed to '1 more'
         public string SelectedValuesForNamedTextboxSelector = ".//preceding-sibling::mat-chip/span";
 
-        private static string AutocompleteOptionsSelector = ".//mat-option";
+        private static string AutocompleteOptionsSelector = ".//mat-option[@tabindex!='-1']";
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
         public IWebElement AutocompleteDropdown { get; set; }
@@ -252,11 +242,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return new List<By> { };
         }
 
-        public string GetHeaderFontWeight()
-        {
-            return Driver.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).GetCssValue("font-weight");
-        }
-
+        //TODO NOT USE THIS METHOD! Should be removed after Kate refactoring
         public IWebElement GetGridCellByText(string cellText)
         {
             var allCellsWithExpectedText = Driver.FindElements(By.XPath(GridCell))
@@ -272,12 +258,40 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        //TODO Find out what this method is doing and remove ti from BDP, for now test is marked as Not_Run and it is not possible to execute it
         public IWebElement GetItalicContentByColumnName(string text)
         {
             var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        #region Link
+
+        public IWebElement GetLinkByText(string text, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var selector = By.XPath($".//span[contains(@class, 'inline-link')]//a[text()='{text}']");
+            if (!Driver.IsElementDisplayed(selector, waitTime))
+            {
+                throw new Exception($"Link with text '{text}' was not displayed");
+            }
+
+            return Driver.FindElement(selector);
+        }
+
+        public bool IsLinkDisplayed(string text)
+        {
+            try
+            {
+                return GetLinkByText(text, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        #endregion
 
         #region Autocomplete
 
@@ -330,6 +344,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 }
             }
 
+            Driver.WaitForElementInElementToBeDisplayed(AutocompleteDropdown, By.XPath(AutocompleteOptionsSelector));
             var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
             if (foundOptions.Any())
             {
@@ -465,11 +480,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         #endregion
 
         #region Button
-
-        public IWebElement GetButtonByNameOnPopup(string button)
-        {
-            return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
-        }
 
         public IWebElement GetButtonByName(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
@@ -806,11 +816,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Checkbox
 
-        public IWebElement GetCheckbox(string ariaLabel)
+        public IWebElement GetCheckbox(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
             //TODO mb first selector in the or statement should be deleted
             var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+            if (!Driver.IsElementDisplayed(selector, wait))
             {
                 throw new Exception($"'{ariaLabel}' checkbox was not displayed");
             }
@@ -818,10 +828,32 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        public void SetCheckboxState(string ariaLabel, bool expectedCondition)
+        {
+            if (!GetCheckbox(ariaLabel).Equals(expectedCondition))
+            {
+                //We must click by text to check or uncheck element
+                Driver.ClickElementLeftCenter(GetCheckbox(ariaLabel));
+            }
+        }
+
         public bool IsCheckboxEnabled(string ariaLabel)
         {
-            var enabled = GetCheckbox(ariaLabel).FindElement(By.XPath(".//input")).Enabled;
+            var enabled = GetCheckbox(ariaLabel, WebDriverExtensions.WaitTime.Medium)
+                .FindElement(By.XPath(".//input")).Enabled;
             return enabled;
+        }
+
+        public bool IsCheckboxDisplayed(string ariaLabel)
+        {
+            try
+            {
+                return GetCheckbox(ariaLabel, WebDriverExtensions.WaitTime.Medium).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         #endregion
@@ -832,6 +864,44 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//span[contains(@class, 'chips-item')]");
             return GetTextbox(textbox).FindElements(chipsSelector);
+        }
+
+        #endregion
+
+        #region Collapse/Expand Category
+
+        public IWebElement CategoryCollapseExpandButton(string name)
+        {
+            var selector = By.XPath(string.Format(CategoryCollapseExpandSelector, name));
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+            {
+                throw new Exception($"Collapse/Expand button was not displayed for '{name}' category");
+            }
+
+            return Driver.FindElement(selector);
+        }
+
+        //true for Expanded
+        public bool IsCategoryExpanded(string name)
+        {
+            return CategoryCollapseExpandButton(name).GetAttribute("class").Contains("clear");
+        }
+
+        //true to Expand
+        public void CollapseExpandCategory(string name, bool condition)
+        {
+            if (!IsCategoryExpanded(name).Equals(condition))
+            {
+                try
+                {
+                    CategoryCollapseExpandButton(name).Click();
+                }
+                catch
+                {
+                    Driver.MouseHover(CategoryCollapseExpandButton(name));
+                    CategoryCollapseExpandButton(name).Click();
+                }
+            }
         }
 
         #endregion

@@ -5,7 +5,9 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13000 @DAS13632 @DAS13602 @DAS17123 @Teams @Do_Not_Run_With_Teams @Save_Default_Team @Set_Default_Team @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13000 @DAS13632 @DAS13602 @DAS17123 @Teams @Do_Not_Run_With_Teams @Set_Default_Team 
+#Temporary commented this tags just to fin out the reason of fail
+#@Do_Not_Run_With_Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	When User creates new Team via api
 	| TeamName     | Description | IsDefault |

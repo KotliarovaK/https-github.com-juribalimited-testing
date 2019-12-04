@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	Then table content is present
 	#==>18127
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	Then 'List Type: Dynamic' label is displayed in List Details
 	Then 'Data: Device Applications' label is displayed in List Details
 	#==<
@@ -149,14 +149,14 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
     | SelectedValues |
     | Mobile         |
-	When User create dynamic list with "DevicesList18531" name on "Devices" page
-	Then "DevicesList18531" list is displayed to user
+	When User create dynamic list with "ADevicesList18531" name on "Devices" page
+	Then "ADevicesList18531" list is displayed to user
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Used on device' option in expanded associations list
 	When User clicks the Filters button
-	When User add "Device (Saved List)" filter where type is "In list" without added column and "DevicesList18531" Lookup option
+	When User add "Device (Saved List)" filter where type is "In list" without added column and "ADevicesList18531" Lookup option
 	When User clicks 'RUN LIST' button
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
@@ -164,13 +164,10 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	Then "AssociationList18531" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User removes custom list with "DevicesList18531" name
-	Then list with "DevicesList18531" name is removed
+	When User removes custom list with "ADevicesList18531" name
+	Then list with "ADevicesList18531" name is removed
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
-	When User navigates to the "AssociationList18531" list
-	When User clicks the Associations button
-	#link with DAS-18763 after fail
 	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
 @Evergreen @AllDeviceApplications @DAS18424
@@ -205,7 +202,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	When User creates new custom list with "AssociationList18379" name
 	Then "AssociationList18379" list is displayed to user
 	When User clicks Export button on the Admin page
-	Then User checks that file "Dashworks-Device-Applications-TestAllDeviceApplications" was downloaded
+	#TODO: need to develop step that checks file download and works on Bamboo remote machine
+	#Then User checks that file "Dashworks-Device-Applications-AssociationList18379" was downloaded
 
 @Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18426 @Cleanup
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
@@ -302,3 +300,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAf
 	Then table content is present
 	Then Associations Button is highlighted
 	Then Associations panel is displayed to the user
+
+@Evergreen @AllDeviceApplications @DAS19059
+Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Installed on device' option in expanded associations list
+	When User clicks the Filters button
+	When User add "Compliance" filter where type is "Does not equal" with added column and Lookup option
+    | SelectedValues |
+    | Empty          |
+	When User clicks 'RUN LIST' button
+	When User clicks on 'Compliance' column header
+	Then color data is sorted by 'Compliance' column in ascending order

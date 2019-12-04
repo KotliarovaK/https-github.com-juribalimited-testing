@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckBulkUpdateCustomFieldActionsForDisabledCustomField")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Automations")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18166")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckBulkUpdateCustomFieldActionsForDisabledCustomField()
@@ -119,7 +119,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckBulkUpdateCustomFieldActionsForDisabledCustomField", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
-                        "Automations",
+                        "BulkUpdate",
                         "DAS18166",
                         "Cleanup"});
 #line 10

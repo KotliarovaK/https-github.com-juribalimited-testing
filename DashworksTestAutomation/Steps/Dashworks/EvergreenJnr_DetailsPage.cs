@@ -228,20 +228,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [When(@"User opens ""(.*)"" section on the Details Page")]
-        public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(detailsPage.PopupChangesPanel);
-            if (!detailsPage.OpenedSection.Displayed())
-            {
-                _driver.MouseHover(detailsPage.NavigateToSectionByName(sectionName));
-                detailsPage.NavigateToSectionByName(sectionName).Click();
-            }
-            else
-                Verify.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
-        }
-
         [When(@"User clicks ""(.*)"" link on the Details Page")]
         public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
         {
@@ -670,6 +656,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(expectedList, columnHeaders, "Column headers names are incorrect");
         }
 
+        //TODO should be removed. All methods that check assertion methods should check errors below textbox elements or datepickers etch
         [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
         [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Slots page")]
         [Then(@"""(.*)"" rows label displays in Action panel")]
@@ -683,88 +670,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Incorrect rows count");
         }
 
-        [When(@"User clicks on ""(.*)"" link on the Details Page")]
-        public void WhenUserClicksOnLinkOnTheDetailsPage(string link)
+        [When(@"User clicks on edit button for '(.*)' field")]
+        public void WhenUserClicksOnEditButtonForField(string fieldName)
         {
             var page = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            page.GetLinkOnTheDetailsPageByName(link).Click();
-        }
-
-        [When(@"User clicks on ""(.*)"" link for Evergreen Bucket field")]
-        public void WhenUserClicksOnLinkForEvergreenBucketField(string linkName)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            page.GetEvergreenBucketLinkByFieldName(linkName).Click();
-        }
-
-        [When(@"User clicks on ""(.*)"" link for Evergreen Ring field")]
-        public void WhenUserClicksOnLinkForEvergreenRingField(string linkName)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            page.GetEvergreenRingLinkByFieldName(linkName).Click();
-        }
-
-        [When(@"User clicks on ""(.*)"" link for Evergreen Capacity Unit field")]
-        public void WhenUserClicksOnLinkForEvergreenCapacityUnitField(string linkName)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            page.GetEvergreenCapacityUnitLinkByFieldName(linkName).Click();
+            page.ClickEditFieldButton(fieldName);
         }
 
         [Then(@"""(.*)"" link is displayed on the Details Page")]
-        public void ThenLinkIsDisplayedOnTheDetailsPage(string bucketName)
+        public void ThenLinkIsDisplayedOnTheDetailsPage(string linkName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(detailsPage.GetBucketLinkByName(bucketName));
-            Utils.Verify.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
-        }
-
-        [Then(@"popup changes window opened")]
-        public void ThenPopupChangesWindowOpened()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(detailsPage.PopupChangesPanel);
-            Utils.Verify.IsTrue(detailsPage.PopupChangesPanel.Displayed(), "Popup changes panel is not loaded");
-        }
-
-        [Then(@"User clicks on ""(.*)"" dropdown")]
-        [When(@"User clicks on ""(.*)"" dropdown")]
-        public void ThenUserClicksOnDropdown(string value)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetChangeValueInPopUpByName(value).Click();
-        }
-
-        [When(@"User select ""(.*)"" value on the Details Page")]
-        public void WhenUserSelectValueOnTheDetailsPage(string bucketName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            detailsPage.GetValueByName(bucketName).Click();
-        }
-
-        [When(@"User selects all rows on the grid on the Details Page for ""(.*)""")]
-        public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPageFor(string fieldName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            if (!detailsPage.OpenedPanelForUpdatingItems.Displayed())
-            {
-                var button = detailsPage.GetFieldToOpenTheTableByName(fieldName);
-                _driver.MouseHover(button);
-                button.Click();
-                _driver.WaitForDataLoading();
-                _driver.WaitForElementToBeDisplayed(detailsPage.SelectAllCheckBox);
-                detailsPage.SelectAllCheckBox.Click();
-            }
-            else
-            {
-                _driver.WaitForElementToBeDisplayed(detailsPage.SelectAllCheckBox);
-                detailsPage.SelectAllCheckBox.Click();
-            }
+            _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.LinkIsDisplayed(linkName));
+            Verify.IsTrue(detailsPage.LinkIsDisplayed(linkName).Displayed(), $"'{linkName}' link name was not changed");
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)

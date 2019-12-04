@@ -11,28 +11,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	| ProjectName       | Scope       | ProjectTemplate | Mode               |
 	| 15266_TestProject | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
-	Then "Enable Capacity" checkbox is unchecked on the Admin page
-	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
-	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
-	When User clicks "Enable Capacity" checkbox on the Project details page
-	Then "Enable Capacity" checkbox is checked on the Admin page
-	Then "Enforce capacity on self service pages" checkbox is unchecked on the Admin page
-	Then "Enforce capacity on project object page" checkbox is unchecked on the Admin page
-	When User clicks "Enforce capacity on self service pages" checkbox on the Project details page
-	Then "Enforce capacity on self service pages" checkbox is checked on the Admin page
-	When User clicks "Enable Capacity" checkbox on the Project details page
-	Then "Enable Capacity" checkbox is unchecked on the Admin page
-	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
-	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
-	When User clicks "Enable Capacity" checkbox on the Project details page
-	When User clicks "Enforce capacity on project object page" checkbox on the Project details page
-	When User clicks "Enable Capacity" checkbox on the Project details page
-	Then "Enable Capacity" checkbox is unchecked on the Admin page
-	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
-	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
-	When User clicks "Enable Capacity" checkbox on the Project details page
-	When User clicks "Enforce capacity on project object page" checkbox on the Project details page
-	When User clicks "Enforce capacity on self service pages" checkbox on the Project details page
+	Then 'Enable Capacity' checkbox is unchecked
+	Then 'Enforce capacity on self service pages' checkbox is disabled
+	Then 'Enforce capacity on project object page' checkbox is disabled
+	When User checks 'Enable Capacity' checkbox
+	Then 'Enable Capacity' checkbox is checked
+	Then 'Enforce capacity on self service pages' checkbox is unchecked
+	Then 'Enforce capacity on project object page' checkbox is unchecked
+	When User checks 'Enforce capacity on self service pages' checkbox
+	Then 'Enforce capacity on self service pages' checkbox is checked
+	When User unchecks 'Enable Capacity' checkbox
+	Then 'Enable Capacity' checkbox is unchecked
+	Then 'Enforce capacity on self service pages' checkbox is disabled
+	Then 'Enforce capacity on project object page' checkbox is disabled
+	When User checks 'Enable Capacity' checkbox
+	When User checks 'Enforce capacity on project object page' checkbox
+	When User unchecks 'Enable Capacity' checkbox
+	Then 'Enable Capacity' checkbox is unchecked
+	Then 'Enforce capacity on self service pages' checkbox is disabled
+	Then 'Enforce capacity on project object page' checkbox is disabled
+	When User checks 'Enable Capacity' checkbox
+	When User checks 'Enforce capacity on project object page' checkbox
+	When User checks 'Enforce capacity on self service pages' checkbox
 	When User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
@@ -40,9 +40,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
 	When User navigates to "1803 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
-	And User clicks "Enable Capacity" checkbox on the Project details page
+	And User unchecks 'Enable Capacity' checkbox
 	And User navigates to the 'Units' left menu item
-	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
 

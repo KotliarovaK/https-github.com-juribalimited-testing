@@ -159,7 +159,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 10
  testRunner.When("User create new User via API", ((string)(null)), table1, "When ");
 #line 13
@@ -296,7 +296,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13287")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("DAS13280", "CQV0623434", "Complete", "Started", null)]
-        [NUnit.Framework.TestCaseAttribute("DAS13281", "BBZ877343", "Failed", "Not Applicable", null)]
+        [NUnit.Framework.TestCaseAttribute("DAS13281_1", "BBZ877343", "Failed", "Not Applicable", null)]
         [NUnit.Framework.TestCaseAttribute("DAS13282", "DLL972653", "Complete", "Not Started", null)]
         [NUnit.Framework.TestCaseAttribute("DAS13283", "LZI970280", "Not Applicable", "Failed", null)]
         [NUnit.Framework.TestCaseAttribute("DAS13284", "ZQX656408", "Not Applicable", "Complete", null)]
@@ -360,7 +360,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 78
  testRunner.When("User create new User via API", ((string)(null)), table5, "When ");
 #line 81
@@ -463,7 +463,7 @@ this.FeatureBackground();
 #line 126
  testRunner.And("User selects \'Update\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 127
- testRunner.And("User enters \'Jan 9, 2019\' text to \'Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'9 Jan 2019\' text to \'Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 128
  testRunner.And("User selects \'User Slot\' in the \'Capacity Slot\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
@@ -555,7 +555,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 149
  testRunner.When("User create new User via API", ((string)(null)), table9, "When ");
 #line 152
@@ -744,7 +744,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 209
  testRunner.When("User create new User via API", ((string)(null)), table13, "When ");
 #line 212
@@ -804,7 +804,7 @@ this.FeatureBackground();
 #line 236
  testRunner.And("User selects \'Update\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 237
- testRunner.And("User enters \'Nov 21, 2018\' text to \'Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'21 Nov 2018\' text to \'Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 238
  testRunner.And("User selects \'User Slot\' in the \'Capacity Slot\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 239
@@ -841,7 +841,7 @@ this.FeatureBackground();
 #line 254
  testRunner.And("User selects \'Update\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 255
- testRunner.And("User enters \'Dec 27, 2018\' text to \'Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'27 Dec 2018\' text to \'Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 256
  testRunner.And("User selects \'User Slot\' in the \'Capacity Slot\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 257

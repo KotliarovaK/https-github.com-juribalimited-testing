@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @DAS18267 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| <Name>   | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| <Name>   | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -76,8 +76,8 @@ Examples:
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| <Name>   | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| <Name>   | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -124,7 +124,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<DefaultValue>' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Jan 9, 2019' text to 'Date' datepicker
+	And User enters '9 Jan 2019' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
@@ -137,18 +137,18 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then '<DefaultValue>' content is displayed in the 'Windows7Mi: User Acceptance Test \ Perform User Acceptance Test' column
 
 Examples:
-	| Name     | RowName    | NewValue       | DefaultValue   |
-	| DAS13280 | CQV0623434 | Complete       | Started        |
-	| DAS13281 | BBZ877343  | Failed         | Not Applicable |
-	| DAS13282 | DLL972653  | Complete       | Not Started    |
-	| DAS13283 | LZI970280  | Not Applicable | Failed         |
-	| DAS13284 | ZQX656408  | Not Applicable | Complete       |
+	| Name       | RowName    | NewValue       | DefaultValue   |
+	| DAS13280   | CQV0623434 | Complete       | Started        |
+	| DAS13281_1 | BBZ877343  | Failed         | Not Applicable |
+	| DAS13282   | DLL972653  | Complete       | Not Started    |
+	| DAS13283   | LZI970280  | Not Applicable | Failed         |
+	| DAS13284   | ZQX656408  | Not Applicable | Complete       |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| DAS13290 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| DAS13290 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -207,8 +207,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| DAS13291 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| DAS13291 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Nov 21, 2018' text to 'Date' datepicker
+	And User enters '21 Nov 2018' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
@@ -252,7 +252,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Dec 27, 2018' text to 'Date' datepicker
+	And User enters '27 Dec 2018' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 

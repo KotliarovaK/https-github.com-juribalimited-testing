@@ -151,9 +151,9 @@ this.FeatureBackground();
  testRunner.When("User add \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added column a" +
                     "nd following checkboxes:", ((string)(null)), table2, "When ");
 #line 21
- testRunner.When("User create dynamic list with \"ListForDAS16278\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User create dynamic list with \"AListForDAS16278\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.Then("\"ListForDAS16278\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"AListForDAS16278\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
  testRunner.When("Dashboard with \'DAS16278_Dashboard\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
@@ -174,7 +174,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Column",
                         "DAS16278_Widget",
-                        "ListForDAS16278",
+                        "AListForDAS16278",
                         "Windows7Mi: Status",
                         "HDD Total Size (GB)",
                         "Sum",
@@ -425,7 +425,8 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "SplitBy",
                         "OrderBy",
-                        "AggregateBy"});
+                        "AggregateBy",
+                        "MaxValues"});
             table9.AddRow(new string[] {
                         "Column",
                         "ColumnWidget",
@@ -433,18 +434,17 @@ this.FeatureBackground();
                         "Count distinct",
                         "Operating System",
                         "Operating System ASC",
-                        "Hostname"});
+                        "Hostname",
+                        "2"});
 #line 93
  testRunner.When("User adds new Widget", ((string)(null)), table9, "When ");
 #line 96
- testRunner.When("User enters \'2\' as Widget Max Values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
  testRunner.When("User selects the Colour Scheme by index \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 98
+#line 97
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 99
+#line 98
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 100
+#line 99
  testRunner.Then("\'ColumnWidget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -453,7 +453,7 @@ this.FeatureBackground();
                         "Other"});
             table10.AddRow(new string[] {
                         "OS X 10.5"});
-#line 101
+#line 100
  testRunner.Then("Line X labels of \'ColumnWidget\' column widget is displayed in following order:", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -499,16 +499,16 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "DAS12983",
                         "Cleanup"});
-#line 107
+#line 106
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 108
+#line 107
  testRunner.When("Dashboard with \'Dashboard12983\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
+#line 108
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
+#line 109
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -518,7 +518,8 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "SplitBy",
                         "OrderBy",
-                        "AggregateBy"});
+                        "AggregateBy",
+                        "MaxValues"});
             table11.AddRow(new string[] {
                         "Column",
                         "ColumnWidget#1",
@@ -526,22 +527,21 @@ this.FeatureBackground();
                         "Count distinct",
                         "Operating System",
                         "Operating System ASC",
-                        "Hostname"});
-#line 111
+                        "Hostname",
+                        "2"});
+#line 110
  testRunner.When("User adds new Widget", ((string)(null)), table11, "When ");
-#line 114
- testRunner.When("User enters \'2\' as Widget Max Values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
+#line 113
  testRunner.When("User selects the Colour Scheme by index \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 116
+#line 114
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 117
+#line 115
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 118
+#line 116
  testRunner.Then("\'ColumnWidget#1\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 119
+#line 117
  testRunner.When("User clicks Ellipsis menu for \'ColumnWidget#1\' Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 120
+#line 118
  testRunner.When("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -551,7 +551,8 @@ this.FeatureBackground();
                         "AggregateFunction",
                         "SplitBy",
                         "OrderBy",
-                        "AggregateBy"});
+                        "AggregateBy",
+                        "MaxValues"});
             table12.AddRow(new string[] {
                         "Pie",
                         "ColumnWidget#2",
@@ -559,18 +560,17 @@ this.FeatureBackground();
                         "Count distinct",
                         "Operating System",
                         "Operating System ASC",
-                        "Hostname"});
-#line 121
+                        "Hostname",
+                        "3"});
+#line 119
  testRunner.When("User adds new Widget", ((string)(null)), table12, "When ");
-#line 124
- testRunner.When("User enters \'3\' as Widget Max Values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 125
+#line 122
  testRunner.When("User selects the Colour Scheme by index \'3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 126
+#line 123
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 127
+#line 124
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 128
+#line 125
  testRunner.Then("\'ColumnWidget#2\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

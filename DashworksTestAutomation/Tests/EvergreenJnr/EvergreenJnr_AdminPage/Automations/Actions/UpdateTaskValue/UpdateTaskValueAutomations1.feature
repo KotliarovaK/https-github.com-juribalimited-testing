@@ -27,8 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -63,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'Before current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @Cleanup @Not_Ready
 #Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
@@ -91,6 +90,9 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	When User selects 'After current value' in the 'Before or After' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
+	#Check Actions grid
+	Then Success message is displayed and contains "The automation action has been created" text
+	Then "2 days after current value" content is displayed for "Value" column
 	#Check created Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -142,8 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'After current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -157,6 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Project Dates' option from 'Stage' autocomplete
 	When User selects 'Forecast Date' option from 'Task' autocomplete
+	Then Error message is not displayed on the Projects page
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options    |

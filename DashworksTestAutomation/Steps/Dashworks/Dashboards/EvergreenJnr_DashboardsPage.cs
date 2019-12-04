@@ -14,7 +14,6 @@ using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.Dashboards;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -37,43 +36,145 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _user = user;
         }
 
+
+        #region Top row
+
+        [When(@"User clicks Edit mode trigger on Dashboards page")]
+        public void WhenUserClicksEditModeTriggerOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            page.EditModeOnOffTrigger.Click();
+        }
+
+        [When(@"User clicks Dashboards Details icon on Dashboards page")]
+        public void WhenUserClicksDashboardsDetailsIconOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForElementToBeDisplayed(page.DashboardsDetailsIcon);
+            page.DashboardsDetailsIcon.Click();
+            _driver.WaitForElementToBeDisplayed(page.DashboardDetails);
+        }
+
+        [Then(@"User sees Edit mode trigger is in the On position on Dashboards page")]
+        public void ThenUserSeesEditModeTriggerIsInTheOnPositionOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Verify.That(page.GetEditModeState(), Is.True, "Trigger is in the OFF position");
+        }
+
+        [Then(@"User sees Edit mode trigger is in the Off position on Dashboards page")]
+        public void ThenUserSeesEditModeTriggerIsInTheOffPositionOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Verify.That(page.GetEditModeState(), Is.False, "Trigger is in the ON position");
+        }
+
+        [Then(@"User sees Edit mode trigger has blue style on Dashboards page")]
+        public void ThenUserSeesEditModeTriggerHasBlueStyleOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Verify.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(49, 122, 193, 0.54)"),
+                "Edit mode slider is not blue");
+            Verify.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(49, 122, 193, 1)"),
+                "Edit mode trigger is not blue");
+        }
+
+        [Then(@"User sees Edit mode trigger has grey style on Dashboards page")]
+        public void ThenUserSeesEditModeTriggerHasGreyStyleOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Verify.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(0, 0, 0, 0.38)"),
+                "Edit mode slider is not grey");
+            Verify.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(250, 250, 250, 1)"),
+                "Edit mode trigger is not grey");
+        }
+
+        [Then(@"User sees correct tooltip for Show Dashboards panel")]
+        public void WhenUserSeesCorrectTooltipForShowDashboardsPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            _driver.MouseHover(page.ExpandSideNavPanelIcon);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.That(toolTipText, Is.EqualTo("Open menu"), $"Other tooltip is displayed to user: {toolTipText}");
+        }
+
+        [When(@"User clicks Show Dashboards panel icon on Dashboards page")]
+        public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+
+            if (_driver.IsElementDisplayed(page.ExpandSideNavPanelIcon))
+            {
+                page.ExpandSideNavPanelIcon.Click();
+            }
+        }
+
+        [Then(@"There is no breadcrumbs displayed on Dashboard page")]
+        public void ThereIsNoBreadcrumbsDisplayedOnDashboardPage()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            Verify.That(page.PrintBreadcrumbs.Displayed(), Is.False, "Print Preview displayed with breadcrumbs");
+        }
+
+        //TODO does it make sense to make this step more generic?
+        [When(@"User clicks '(.*)'  button on the Dashboards page")]
+        public void WhenUserClicksButtonOnTheDashboardsPage(string buttonName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetTopBarActionButton(buttonName).Click();
+        }
+
+        //TODO does it make sense to make this step more generic?
+        [Then(@"User sees '(.*)' tooltip for '(.*)' on the Dashboard")]
+        public void ThenUserSeesTooltipForButtons(string tooltip, string buttonName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.MouseHover(page.GetTopBarActionButton(buttonName));
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(tooltip, toolTipText, "Tooltip is incorrect");
+        }
+
+        #endregion
+
+        #region Dashboards panel
+
         //TODO should be deleted and replaced by the same step as it done for Lists - GetAllListNames
         [Then(@"Dashboard with '(.*)' title displayed in All Dashboards")]
         public void ThenFollowingDashboardDisplayedInAllDashboardList(string dashboardName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.ListDashboards.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
+            Verify.That(page.DashboardsList.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
         }
 
         [When(@"User clicks Settings button for '(.*)' dashboard")]
         public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.DashboardMenuSelector(dashboardName).Click();
+            page.GetDashboardMenuByName(dashboardName).Click();
         }
 
-        [When(@"User sets '(.*)' as favorite state in dashboard details for '(.*)' dashboard")]
-        public void WhenUserSetsDashboardFavoriteState(string state, string dashboardName)
+        [Then(@"User sees dashboard menu with next options")]
+        public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(Table table)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
 
-            if (Convert.ToBoolean(state))
-            {
-                if (!page.GetFavoriteStateInDashboardDetailsPane())
-                {
-                    page.MarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(() => page.IsDashboardMarkedAsFavoriteInList(dashboardName));
-                }
-            }
+            List<string> options = page.DashboardsSettingsItems.Select(x => x.Text).ToList();
 
-            if (!Convert.ToBoolean(state))
+            foreach (var row in table.Rows)
             {
-                if (page.GetFavoriteStateInDashboardDetailsPane())
-                {
-                    page.UnMarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(() => !page.IsDashboardMarkedAsFavoriteInList(dashboardName));
-                }
+                Verify.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1,
+                    "PLEASE ADD EXCEPTION MESSAGE");
             }
+            Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
 
         [When(@"User clicks menu for '(.*)' dashboard")]
@@ -89,15 +190,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
 
-            WhenUserClicksMenuForDashboard(dashboardName);
-            _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardMenuItem(menuItem));
-            dashboardElement.DashboardMenuItem(menuItem).Click();
-            _driver.WaitForDataLoading(60);
-
-            if (menuItem.Equals("Duplicate"))
+            try
             {
-                _driver.WaitForElementToBeDisplayed(dashboardElement.SuccessMessage, 60);
-                _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
+                WhenUserClicksMenuForDashboard(dashboardName);
+                _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardsSettingsItemByName(menuItem));
+                dashboardElement.DashboardsSettingsItemByName(menuItem).Click();
+
+                _driver.WaitForDataLoading(60);
+            }
+            catch (Exception)
+            {
+                if (menuItem.Equals("Duplicate"))
+                {
+                    var action = _driver.NowAt<BaseDashboardPage>();
+                    _driver.WaitForElementToBeDisplayed(action.SuccessMessage, 60);
+                    _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
+                }
             }
         }
 
@@ -133,30 +241,162 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(page.IsDashboardMarkedAsDefaultInList(dashboardName), Is.False);
         }
 
-        [Then(@"User sees correct tooltip for Show Dashboards panel")]
-        public void WhenUserSeesCorrectTooltipForShowDashboardsPanel()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-
-            _driver.MouseHover(page.ExpandSideNavPanelIcon);
-            var toolTipText = _driver.GetTooltipText();
-            Verify.That(toolTipText, Is.EqualTo("Open menu"), $"Other tooltip is displayed to user: {toolTipText}");
-        }
-
-        [When(@"User clicks Show Dashboards panel icon on Dashboards page")]
-        public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(page.ExpandSideNavPanelIcon);
-            page.ExpandSideNavPanelIcon.Click();
-        }
-
-        [When(@"User clicks Edit mode trigger on Dashboards page")]
-        public void WhenUserClicksEditModeTriggerOnDashboardsPage()
+        [Then(@"User sees Dashboards sub menu on Dashboards page")]
+        public void ThenUserSeesDashboardsSubMenuOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.DashboardsPanel.Displayed(), Is.True);
+        }
+
+        [Then(@"Dashboards sub menu is hidden on Dashboards page")]
+        public void ThenDashboardsSubMenuIsHiddenOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Verify.That(page.DashboardsPanel.Displayed(), Is.False);
+        }
+
+        [When(@"User creates new Dashboard with '(.*)' name")]
+        public void WhenUserCreatesNewDashboardWithName(string dashboardName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
+            Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            listElement.DashboardNameTextBox.SendKeys(dashboardName);
+            listElement.SaveButton.Click();
+            _driver.WaitForElementToBeNotDisplayed(listElement.SaveButton);
             _driver.WaitForDataLoading();
-            page.EditModeOnOffTrigger.Click();
+            _dashboard.Value.Add(new DashboardDto() { DashboardName = dashboardName, User = _user });
+        }
+
+        [When(@"User types '(.*)' as dashboard title")]
+        public void WhenEnterDashboardTitle(string dashboardName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
+            Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            listElement.DashboardNameTextBox.SendKeys(dashboardName);
+        }
+
+        #endregion
+
+        #region Details panel
+
+        [When(@"User changes dashboard name to '(.*)'")]
+        public void WhenUserChangesDashboardNameTo(string dashboardName)
+        {
+            var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
+            dashboardDetailsElement.DetailsNameInput.Clear();
+            dashboardDetailsElement.DetailsNameInput.SendkeysWithDelay(dashboardName);
+            Thread.Sleep(3000);//Wait for autosave action, no indicators available
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks Default dashboard checkbox in Dashboard details")]
+        public void WhenUserClicksDefaultDashboardCheckboxInDashboardDetails()
+        {
+            var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
+            dashboardDetailsElement.DetailsDefaultCheckboxLabel.Click();
+            _driver.WaitForDataLoading(60);
+        }
+
+        [Then(@"Default dashboard checkbox becomes disabled in Dashboard details")]
+        public void ThenDefaultDashboardCheckboxBecomesDisabled()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.DetailsDefaultCheckbox.GetAttribute("disabled"), Is.EqualTo("true"), $"Default dashboard displayed enabled");
+        }
+
+        [Then(@"Default dashboard checkbox displayed checked in Dashboard details")]
+        public void ThenDefaultDashboardCheckboxDisplayedChecked()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.DetailsDefaultCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
+        }
+
+        [When(@"User sets '(.*)' as favorite state in dashboard details for '(.*)' dashboard")]
+        public void WhenUserSetsDashboardFavoriteState(string state, string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            if (Convert.ToBoolean(state))
+            {
+                if (!page.GetFavoriteStateInDashboardDetailsPane())
+                {
+                    page.MarkFavoriteInDashboardDetails();
+                    _driver.WaitFor(() => page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                }
+            }
+
+            if (!Convert.ToBoolean(state))
+            {
+                if (page.GetFavoriteStateInDashboardDetailsPane())
+                {
+                    page.UnMarkFavoriteInDashboardDetails();
+                    _driver.WaitFor(() => !page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                }
+            }
+        }
+
+        [Then(@"User sees Dashboards context menu on Dashboards page")]
+        public void ThenUserSeesDashboardsContextMenuOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.DashboardDetails.Displayed(), Is.True);
+        }
+
+        [Then(@"Dashboards context menu is hidden on Dashboards page")]
+        public void ThenDashboardsContextMenuIsHiddenOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.DashboardDetails.Displayed(), Is.False);
+        }
+
+        [When(@"User expands the list of shared lists")]
+        public void UserExpandsTheListOfSharedLists()
+        {
+            var dash = _driver.NowAt<EvergreenDashboardsPage>();
+            dash.DetailsExpandListsButton.Click();
+            _driver.WaitForElementsToBeDisplayed(dash.DetailsSharedListTableHeaders);
+        }
+
+        [Then(@"User sees table headers as '(.*)' and '(.*)'")]
+        public void UserSeesTableHeadersAs(string a, string b)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementsToBeDisplayed(page.DetailsSharedListTableHeaders);
+            Verify.That(page.DetailsSharedListTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
+        }
+
+        [Then(@"User sees list icon displayed for '(.*)' widget in List section of Dashboards Details")]
+        public void ThenUserSeesListIconDisplayedForListInListSectionOfDashboardsDetails(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.GetListIconFromListSectionOfDetailsPanel(widgetName).Displayed, Is.True, "List icon is not displayed");
+        }
+
+        [Then(@"User sees list icon displayed with tooltip for '(.*)' widget in List section of Dashboards Details")]
+        public void ThenUserSeesListIconDisplayedWithTooltipForListInListSectionOfDashboardsDetails(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.MouseHover(page.GetListIconFromListSectionOfDetailsPanel(widgetName));
+
+            var toolTipText = _driver.GetTooltipText();
+            Verify.That(toolTipText, Is.EqualTo("Shared"), "Unexpected/missing tooltip");
+        }
+
+        #endregion
+
+        #region WidgetArea Management
+
+        [When(@"Dashboard page loaded")]
+        public void ThenUserSeesDashboardPageOpened()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementToBeDisplayed(page.EditModeOnOffTrigger);
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User clicks Ellipsis menu for '(.*)' Widget on Dashboards page")]
@@ -177,53 +417,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User clicks Dashboards Details icon on Dashboards page")]
-        public void WhenUserClicksDashboardsDetailsIconOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(page.DashboardsDetailsIcon);
-            page.DashboardsDetailsIcon.Click();
-            _driver.WaitForElementToBeDisplayed(page.DashboardsContextMenu);
-        }
-
-
-
         [Then(@"User sees Ellipsis icon enabled for '(.*)' Widget on Dashboards page")]
         public void ThenUserSeesEllipsisIconEnabledForWidgetOnDashboardsPage(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             Verify.That(page.GetEllipsisMenuForWidget(widgetName).Displayed(), Is.True);
-        }
-
-        [Then(@"User sees Dashboards context menu on Dashboards page")]
-        public void ThenUserSeesDashboardsContextMenuOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DashboardsContextMenu.Displayed(), Is.True);
-        }
-
-        [Then(@"Dashboards context menu is hidden on Dashboards page")]
-        public void ThenDashboardsContextMenuIsHiddenOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DashboardsContextMenu.Displayed(), Is.False);
-        }
-
-        [Then(@"User sees Dashboards sub menu on Dashboards page")]
-        public void ThenUserSeesDashboardsSubMenuOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DashboardsListPanel.Displayed(), Is.True);
-        }
-
-        [Then(@"Dashboards sub menu is hidden on Dashboards page")]
-        public void ThenDashboardsSubMenuIsHiddenOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            Verify.That(page.DashboardsListPanel.Displayed(), Is.False);
         }
 
         [Then(@"User sees Ellipsis icon disabled for '(.*)' Widget on Dashboards page")]
@@ -341,14 +540,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"User sees Widget square colored in amber")]
-        public void ThenWidgetDeleteSquareColoredInAmber()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.GetDeleteWidgetAreaColor(), Is.EqualTo("rgba(235, 175, 37, 1)"),
-                "Wrong widget delete message color");
-        }
-
         [When(@"User remembers number of Sections and Widgets on Dashboards page")]
         public void WhenUserRemembersNumberOfSectionsAndWidgetsOnDashboardsPage()
         {
@@ -356,15 +547,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _sectionsAndWidgets.SectionsCount = page.AllSections.Count;
             _sectionsAndWidgets.WidgetsCount = page.AllWidgetsTitles.Count;
-        }
-
-        [Then(@"User sees '(.*)' Widgets with Legend on Dashboards page")]
-        public void WhenUserRemembersNumberOfWidgetsWithLegendOnDashboardsPage(string expected)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            Verify.That(page.NumberOfWidgetLegends.Count.ToString(), Is.EqualTo(expected),
-                "Number of Widgets with Legend is different");
         }
 
         [Then(@"User sees number of Sections increased by '(.*)' on Dashboards page")]
@@ -411,12 +593,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Names of Widgets are different");
         }
 
-        [When(@"User clicks '(.*)' button for '(.*)' Section on Dashboards page")]
-        public void WhenUserClicksButtonForSectionOnDashboardsPage(string buttonLabel, int section)
+        [When(@"User clicks ADD WIDGET button for '(.*)' Section on Dashboards page")]
+        public void WhenUserClicksButtonForSectionOnDashboardsPage(int section)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            page.GetButtonsByName(buttonLabel).ElementAt(section - 1).Click();
+            page.GetAddWidgetButtons().ElementAt(section - 1).Click();
         }
 
         [Then(@"User cant see widget with the next name '(.*)' on Dashboards page")]
@@ -428,80 +610,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Widget name is missing");
         }
 
-        [Then(@"User sees Edit mode trigger is in the On position on Dashboards page")]
-        public void ThenUserSeesEditModeTriggerIsInTheOnPositionOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.That(page.GetEditModeState(), Is.True, "Trigger is in the OFF position");
-        }
-
-        [Then(@"User sees Edit mode trigger is in the Off position on Dashboards page")]
-        public void ThenUserSeesEditModeTriggerIsInTheOffPositionOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.That(page.GetEditModeState(), Is.False, "Trigger is in the ON position");
-        }
-
-        [Then(@"User sees Edit mode trigger has blue style on Dashboards page")]
-        public void ThenUserSeesEditModeTriggerHasBlueStyleOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(49, 122, 193, 0.54)"),
-                "Edit mode slider is not blue");
-            Verify.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(49, 122, 193, 1)"),
-                "Edit mode trigger is not blue");
-        }
-
-        [Then(@"User sees Edit mode trigger has grey style on Dashboards page")]
-        public void ThenUserSeesEditModeTriggerHasGreyStyleOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(0, 0, 0, 0.38)"),
-                "Edit mode slider is not grey");
-            Verify.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(250, 250, 250, 1)"),
-                "Edit mode trigger is not grey");
-        }
-
-        [Then(@"Widget name '(.*)' has word break style on Dashboards page")]
-        public void WhenUserSeesWordBreakAttributesForNameOnDashboardsPage(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            try
-            {
-                var widget = page.AllWidgetsTitles.FirstOrDefault(x => x.Text.Equals(widgetName));
-                Verify.That(widget.GetCssValue("word-break"), Is.EqualTo("break-word"),
-                    "Word break formatting is missing");
-                Verify.That(widget.GetCssValue("word-wrap"), Is.EqualTo("break-word"),
-                    "Word break formatting is missing");
-            }
-            catch (NullReferenceException)
-            {
-                Verify.IsFalse(true, "Widget not found");
-            }
-        }
-
-        [Then(@"User sees Widget with '(.*)' name on Dashboards page")]
-        public void WhenUserSeesWidgetWithNameOnDashboardsPage(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-
-            Verify.That(page.IsWidgetExists(widgetName), Is.True, $"Widget with name {widgetName} doesn't exist");
-        }
-
         [Then(@"User sees '(.*)' widgets with '(.*)' name on Dashboards page")]
         public void WhenUserSeesOnlyNumberWidgetsWithNameOnDashboardsPage(int numberOfWidgets, string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-
-            Verify.IsTrue(page.IsWidgetExists(widgetName), $"Widget with name {widgetName} doesn't exist");
-            Verify.IsTrue(page.GetWidgetsNumberByName(widgetName).Equals(numberOfWidgets), $"More than {numberOfWidgets} widgets were displayed.");
+            Verify.That(page.AllWidgetsTitles.Select(x => x.Text.Equals(widgetName)).ToList().Count, Is.EqualTo(numberOfWidgets), "More than {numberOfWidgets} widgets were displayed.");
         }
 
         [When(@"User deletes '(.*)' Widget on Dashboards page")]
@@ -549,77 +663,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.AlertButton("CANCEL").Click();
         }
 
-        [When(@"User creates new Dashboard with '(.*)' name")]
-        public void WhenUserCreatesNewDashboardWithName(string dashboardName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
-            listElement.DashboardNameTextBox.SendKeys(dashboardName);
-            listElement.SaveButton.Click();
-            _driver.WaitForElementToBeNotDisplayed(listElement.SaveButton);
-            _driver.WaitForDataLoading();
-            _dashboard.Value.Add(new DashboardDto() { DashboardName = dashboardName, User = _user });
-        }
-
-        [When(@"User types '(.*)' as dashboard title")]
-        public void WhenEnterDashboardTitle(string dashboardName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
-            listElement.DashboardNameTextBox.SendKeys(dashboardName);
-        }
-
-        [Then(@"Red Dashboard should be unique error displayed to user")]
-        public void DashboardUniqueErrorDisplayed()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementToBeDisplayed(page.DashboardUniqueError);
-            Verify.IsTrue(page.DashboardUniqueError.Displayed(), "Dashboard should be unique error is not displayed");
-            Verify.That(page.DashboardUniqueError.GetCssValue("background-color"), Is.EqualTo("rgba(242, 88, 49, 1)"), "Wrong message color");
-
-            var listElement = _driver.NowAt<CustomListElement>();
-            Verify.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
-        }
-
-        [Then(@"Red Dashboard should be unique error disappears")]
-        public void DashboardUniqueErrorDisappears()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementToBeNotDisplayed(page.DashboardUniqueError);
-            Verify.IsFalse(page.DashboardUniqueError.Displayed(), "Dashboard should be unique error is still displayed");
-
-            var listElement = _driver.NowAt<CustomListElement>();
-            Verify.IsFalse(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
-        }
-
-        [Then(@"Text Only is displayed for Card widget")]
-        public void ThenTextOnlyIsDisplayedForCardWidget()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
-        }
-
-        [Then(@"Icon and Text is displayed for Card widget")]
-        public void ThenIconAndTextIsDisplayedForCardWidget()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
-        }
-
-        [Then(@"Icon Only is displayed for Card widget")]
-        public void ThenIconOnlyIsDisplayedForCardWidget()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
-        }
-
         [Then(@"User sees '(.*)' text in warning message on Dashboards page")]
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
         {
@@ -654,7 +697,100 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesTextInWarningMessageOnSubmenuDashboardsPage(string text)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.AreEqual(text, page.DashboardsPanelAlert.Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, page.DashboardsAlert.Text, "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        [Then(@"Move to Section pop up is displayed to the User")]
+        public void ThenMoveToSectionPopUpIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.IsTrue(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is not displayed");
+        }
+
+        [Then(@"Move to Section pop up is not displayed to the User")]
+        public void ThenMoveToSectionPopUpIsNotDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.IsFalse(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is displayed");
+        }
+
+        [When(@"User selects '(.*)' section on the Move to Section pop up")]
+        public void WhenUserSelectsSectionOnTheMoveToSectionPopUp(string sectionName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.SelectSectionToMove(sectionName);
+        }
+
+        [When(@"User clicks '(.*)' button on the Move to Section Pop up")]
+        public void WhenUserClicksButtonOnTheMoveToSectionPopUp(string buttonName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.ClickMoveToSectionPopUpButton(buttonName);
+        }
+
+
+        #endregion
+
+        #region WidgetItem
+
+        [Then(@"User sees Widget square colored in amber")]
+        public void ThenWidgetDeleteSquareColoredInAmber()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.GetDeleteWidgetAreaColor(), Is.EqualTo("rgba(235, 175, 37, 1)"),
+                "Wrong widget delete message color");
+        }
+
+        [Then(@"User sees '(.*)' Widgets with Legend on Dashboards page")]
+        public void WhenUserRemembersNumberOfWidgetsWithLegendOnDashboardsPage(string expected)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Verify.That(page.NumberOfWidgetLegends.Count.ToString(), Is.EqualTo(expected),
+                "Number of Widgets with Legend is different");
+        }
+
+        [Then(@"Widget name '(.*)' has word break style on Dashboards page")]
+        public void WhenUserSeesWordBreakAttributesForNameOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            try
+            {
+                var widget = page.AllWidgetsTitles.FirstOrDefault(x => x.Text.Equals(widgetName));
+                Verify.That(widget.GetCssValue("word-break"), Is.EqualTo("break-word"),
+                    "Word break formatting is missing");
+                Verify.That(widget.GetCssValue("word-wrap"), Is.EqualTo("break-word"),
+                    "Word break formatting is missing");
+            }
+            catch (NullReferenceException)
+            {
+                Verify.IsFalse(true, "Widget not found");
+            }
+        }
+
+        [Then(@"Text Only is displayed for Card widget")]
+        public void ThenTextOnlyIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Verify.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
+        }
+
+        [Then(@"Icon and Text is displayed for Card widget")]
+        public void ThenIconAndTextIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Verify.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
+        }
+
+        [Then(@"Icon Only is displayed for Card widget")]
+        public void ThenIconOnlyIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Verify.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
         [Then(@"content in the Widget is displayed in following order:")]
@@ -680,7 +816,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(), 
+            Verify.That(page.GetWidgetLabels(widgetName).Select(x => x.Text).ToList(),
                 Does.Contain(label), $"'{label}' label is not found");
         }
 
@@ -730,7 +866,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            var getColor = page.GetWidgetPreviewText().GetCssValue("color");
+            var getColor = page.GetWidgetText().GetCssValue("color");
             Verify.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -769,113 +905,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");
         }
 
-        [Then(@"Permission panel is displayed to the user")]
-        public void ThenPermissionPanelIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.IsTrue(page.PermissionSection.Displayed(), "Actions panel was not displayed");
-        }
-
-        [When(@"User selects '(.*)' dashboard sharing option")]
-        public void WhenUserSelectsSharingType(string to)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.SetPermissionSharingFieldTo(to);
-            //TODO Section reloads with delay
-            Thread.Sleep(1000);
-        }
-
-        [When(@"User adds user to list of shared person")]
-        public void WhenUserAddsNewPersonToSharingList(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClickButtonByName("ADD USER");
-
-            foreach (var row in table.Rows)
-            {
-                if (!string.IsNullOrEmpty(row["User"]))
-                {
-                    action.AutocompleteSelect("User", row["User"], true);
-                }
-
-                if (!string.IsNullOrEmpty(row["Permission"]))
-                {
-                    action.SelectDropdown(row["Permission"], "Select access");
-                }
-                action.ClickButtonByName("ADD USER");
-
-                //TODO Section reloads with delay
-                Thread.Sleep(2000);
-            }
-        }
-
-        [Then(@"User '(.*)' was added to shared list with '(.*)' permission")]
-        public void ThenUserWasAddedToSharedList(string username, string permission)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementsToBeDisplayed(page.PermissionAddedUser);
-
-            Verify.That(page.PermissionAddedUser.Select(x => x.Text).ToList(), Does.Contain(username), "Username is not one that expected");
-            Verify.That(page.PermissionTypeOfAccess.Select(x => x.Text).ToList(), Does.Contain(permission), "Permission is not one that expected");
-        }
-
-        [Then(@"There is no user in shared list")]
-        public void ThenNoUserFoundInSharedList()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            // _driver.WaitForElementToBeNotDisplayed(page.PermissionAddedUser);
-            Verify.That(page.PermissionAddedUser.Count, Is.EqualTo(0), "Username found in shared list");
-        }
-
-        [When(@"User expands the list of shared lists")]
-        public void UserExpandsTheListOfSharedLists()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.DetailsPanelExpandListsIcon.Click();
-            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
-        }
-
-        [Then(@"User sees table headers as '(.*)' and '(.*)'")]
-        public void UserSeesTableHeadersAs(string a, string b)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementsToBeDisplayed(page.DetailsPanelSharedListsTableHeaders);
-            Verify.That(page.DetailsPanelSharedListsTableHeaders.Select(x => x.Text).ToList(), Is.EqualTo(new List<string> { a, b }), "Headers are different");
-        }
-
-        [Then(@"User sees list icon displayed for '(.*)' widget in List section of Dashboards Details")]
-        public void ThenUserSeesListIconDisplayedForListInListSectionOfDashboardsDetails(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.GetListIconFromListSectionOfDetailsPanel(widgetName).Displayed, Is.True, "List icon is not displayed");
-        }
-
-        [Then(@"User sees list icon displayed with tooltip for '(.*)' widget in List section of Dashboards Details")]
-        public void ThenUserSeesListIconDisplayedWithTooltipForListInListSectionOfDashboardsDetails(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.MouseHover(page.GetListIconFromListSectionOfDetailsPanel(widgetName));
-
-            var toolTipText = _driver.GetTooltipText();
-            Verify.That(toolTipText, Is.EqualTo("Shared"), "Unexpected/missing tooltip");
-        }
-
-        [When(@"User clicks Settings button for '(.*)' shared user")]
-        public void WhenUserClickSettingsMenuForSharedUser(string user)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.GetMenuOfSharedUser(user).Click();
-        }
-
-        [When(@"User selects '(.*)' option from Settings")]
-        public void WhenUserClicksOptionFromSettingsMenuForSharedUser(string option)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.GetMenuOption(option).Click();
-            //TODO Section reloads with delay
-            Thread.Sleep(2000);
-        }
-
         [When(@"User clicks data in card '(.*)' widget")]
         public void WhenUserClicksDataInCardWidget(string widgetTitle)
         {
@@ -883,11 +912,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCardWidgetContent(widgetTitle).Click();
         }
 
+        [When(@"User clicks text in card widget")]
+        public void WhenUserClicksTextInCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetWidgetText().Click();
+        }
+
         [Then(@"Value '(.*)' is displayed in the card '(.*)' widget")]
         public void ValueIsDisplayedInCardWidget(string value, string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
             Verify.That(page.GetCardWidgetContent(widgetName).Text, Is.EqualTo(value), "Card value is different.");
         }
 
@@ -954,92 +989,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqual(expectedList, labelList, "Label order is incorrect");
         }
 
-        //TODO does it make sense to make this step more generic?
-        [When(@"User clicks '(.*)'  button on the Dashboards page")]
-        public void WhenUserClicksButtonOnTheDashboardsPage(string buttonName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.GetTopBarActionButton(buttonName).Click();
-        }
-
-        //TODO does it make sense to make this step more generic?
-        [Then(@"User sees '(.*)' tooltip for '(.*)' on the Dashboard")]
-        public void ThenUserSeesTooltipForButtons(string tooltip, string buttonName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.MouseHover(page.GetTopBarActionButton(buttonName));
-            var toolTipText = _driver.GetTooltipText();
-            Verify.AreEqual(tooltip, toolTipText, "Tooltip is incorrect");
-        }
-
-        [Then(@"Print Preview is displayed to the User")]
-        public void ThenPrintPreviewIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            Verify.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
-            Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "Dashworks logo isn't displayed");
-            Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "Print preview widgets aren't displayed");
-        }
-
-        [Then(@"There is no breadcrumbs displayed on Dashboard page")]
-        public void ThereIsNoBreadcrumbsDisplayedOnDashboardPage()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            Verify.That(page.PrintBreadcrumbs.Displayed(), Is.False, "Print Preview displayed with breadcrumbs");
-        }
-
-        [When(@"User selects '(.*)' option in the '(.*)' dropdown for Print Preview Settings")]
-        public void WhenUserSelectsOptionInTheDropdownForPrintPreviewSettings(string option, string dropdown)
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            _driver.ClickByJavascript(page.GetPrintPreviewDropdownByName(dropdown));
-            page.SelectPrintPreviewSettings(option);
-        }
-
-        [Then(@"Print Preview is displayed in A4 format view")]
-        public void ThenPrintPreviewIsDisplayedInA4FormatView()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            _driver.WaitForDataLoading();
-            //Wait for style changing
-            Thread.Sleep(1000);
-            Verify.IsTrue(page.A4PrintPreviewView.Displayed, "Print Preview is not displayed in A4 format view");
-        }
-
-        [Then(@"Print Preview is displayed in Letter format view")]
-        public void ThenPrintPreviewIsDisplayedInLetterFormatView()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.LetterPrintPreviewView.Displayed, "Print Preview is not displayed in Letter format view");
-        }
-
-        [Then(@"Print Preview is displayed in Portrait orientation")]
-        public void ThenPrintPreviewIsDisplayedInPortraitOrientation()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.PortraitPrintPreviewOrientation.Displayed, "Print Preview is not displayed in Portrait orientation");
-        }
-
-        [Then(@"Print Preview is displayed in Landscape orientation")]
-        public void ThenPrintPreviewIsDisplayedInLandscapeOrientation()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            //Wait for style changing
-            Thread.Sleep(500);
-            Verify.IsTrue(page.LandscapePrintPreviewOrientation.Displayed, "Print Preview is not displayed in Landscape orientation");
-        }
-
-        [When(@"User clicks Cancel button on the Print Preview Settings pop-up")]
-        public void WhenUserClicksCancelButtonOnThePrintPreviewSettingsPop_Up()
-        {
-            var page = _driver.NowAt<PrintDashboardsPage>();
-            page.CancelButton.Click();
-        }
-
         [Then(@"Data Labels are displayed on the Dashboards page")]
         public void ThenDataLabelsAreDisplayedOnTheDashboardsPage()
         {
@@ -1054,34 +1003,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
             Verify.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
-        }
-
-        [Then(@"Move to Section pop up is displayed to the User")]
-        public void ThenMoveToSectionPopUpIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.IsTrue(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is not displayed");
-        }
-
-        [Then(@"Move to Section pop up is not displayed to the User")]
-        public void ThenMoveToSectionPopUpIsNotDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.IsFalse(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is displayed");
-        }
-
-        [When(@"User selects '(.*)' section on the Move to Section pop up")]
-        public void WhenUserSelectsSectionOnTheMoveToSectionPopUp(string sectionName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.SelectSectionToMove(sectionName);
-        }
-
-        [When(@"User clicks '(.*)' button on the Move to Section Pop up")]
-        public void WhenUserClicksButtonOnTheMoveToSectionPopUp(string buttonName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.ClickMoveToSectionPopUpButton(buttonName);
         }
 
         [Then(@"There are no links placed in '(.*)' Widget")]
@@ -1103,60 +1024,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
         }
 
-        public void WhenUserOpensDashboard(string p0)
-        {
-            //For dashboards navigations is used the same method as for List Navigation
-        }
+        #endregion
 
-        #region Dashboards details
-
-        [When(@"User changes dashboard name to '(.*)'")]
-        public void WhenUserChangesDashboardNameTo(string dashboardName)
-        {
-            var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
-            dashboardDetailsElement.DashboardDetailsNameInput.Clear();
-            dashboardDetailsElement.DashboardDetailsNameInput.SendkeysWithDelay(dashboardName);
-            Thread.Sleep(3000);//Wait for autosave action, no indicators available
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User clicks Default dashboard checkbox in Dashboard details")]
-        public void WhenUserClicksDefaultDashboardCheckboxInDashboardDetails()
-        {
-            var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
-            dashboardDetailsElement.DefaultDashboardCheckboxLabel.Click();
-            _driver.WaitForDataLoading(60);
-        }
-
-        [Then(@"Default dashboard checkbox becomes disabled in Dashboard details")]
-        public void ThenDefaultDashboardCheckboxBecomesDisabled()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DefaultDashboardCheckbox.GetAttribute("disabled"), Is.EqualTo("true"), $"Default dashboard displayed enabled");
-        }
-
-        [Then(@"Default dashboard checkbox displayed checked in Dashboard details")]
-        public void ThenDefaultDashboardCheckboxDisplayedChecked()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DefaultDashboardCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
-        }
-
-        [When(@"User select '(.*)' sharing option on the Dashboards page")]
-        public void WhenUserSelectSharingOptionOnTheDashboardsPage(string option)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            _driver.SelectCustomSelectbox(page.SharingDropdown, option);
-        }
-
-        [Then(@"Permission '(.*)' displayed in Dashboard Details")]
-        public void ThenDashboardShowsPermissionToTheUser(string permission)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.SharingDropdownPermissionValue.Text, Is.EqualTo(permission), $"Permission {permission} was not the same in Dashboard Details");
-        }
-
+        #region Permission popup
 
         [Then(@"Review Widget List Permissions is displayed to the User")]
         public void ThenReviewWidgetListPermissionsIsDisplayedToTheUser()
@@ -1171,7 +1041,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Verify.IsFalse(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is displayed");
         }
-
 
         [Then(@"Widget '(.*)' displayed for '(.*)' list on Permissions Pop-up")]
         public void ThenListPermissionsPopupShowsWidgetNameToTheUser(string widget, string listName)
@@ -1288,28 +1157,32 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ReviewPermissionsPopupsButton(buttonName).Click();
         }
 
-        [Then(@"User sees dashboard menu with next options")]
-        public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(Table table)
+        #endregion
+
+        #region Print
+
+        [Then(@"Print Preview is displayed to the User")]
+        public void ThenPrintPreviewIsDisplayedToTheUser()
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-
-            List<string> options = page.DashboardMenuItems.Select(x => x.Text).ToList();
-
-            foreach (var row in table.Rows)
-            {
-                Verify.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1,
-                    "PLEASE ADD EXCEPTION MESSAGE");
-            }
-            Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            Verify.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
+            Verify.IsTrue(page.DashWorksPrintLogo.Displayed(), "Dashworks logo isn't displayed");
+            Verify.IsTrue(page.PrintPreviewWidgets.Displayed, "Print preview widgets aren't displayed");
         }
 
-        [When(@"Dashboard page loaded")]
-        public void ThenUserSeesDashboardPageOpened()
+        [When(@"User selects '(.*)' option in the '(.*)' dropdown for Print Preview Settings")]
+        public void WhenUserSelectsOptionInTheDropdownForPrintPreviewSettings(string option, string dropdown)
         {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForElementToBeDisplayed(page.EditModeOnOffTrigger);
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.SelectDropdown(option, dropdown);
+        }
+
+        [Then(@"Print Preview is displayed in '(.*)' format and '(.*)' layout view")]
+        public void ThenPrintPreviewIsDisplayedInFormatView(string format, string layout)
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
             _driver.WaitForDataLoading();
+            Verify.That(page.PrintPreview(format, layout).Displayed, Is.True, $"Print preview in {format} {layout} not displayed");
         }
 
         [Then(@"User clicks on Dashworks logo")]
@@ -1325,6 +1198,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 return;
             }
             throw new Exception("Dashworks Logo on Print Preview page is clickable");
+        }
+
+        [When(@"User clicks Cancel button on the Print Preview Settings pop-up")]
+        public void WhenUserClicksCancelButtonOnThePrintPreviewSettingsPop_Up()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            page.CancelButton.Click();
         }
 
         #endregion

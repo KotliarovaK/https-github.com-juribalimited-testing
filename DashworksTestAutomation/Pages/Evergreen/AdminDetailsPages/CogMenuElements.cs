@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='cell-menu-settings']")]
         public IWebElement CogMenu { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@aria-label='Dialog']//div[contains(class, menu)]")]
         public IWebElement CogMenuList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div/ul[@class='menu-settings']//a")]
@@ -58,6 +58,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var page = Driver.NowAt<BaseDashboardPage>();
 
             var selector = page.GetGridCellByText(item).FindElement(By.XPath($".//following-sibling::div//div[@class='cell-menu-settings']"));
+            Driver.WaitForElementToBeDisplayed(selector);
+            return selector;
+        }
+
+        public IWebElement GetCogMenuByItem(string column, string item)
+        {
+            var page = Driver.NowAt<BaseGridPage>();
+
+            var cell = page.GetCellFromColumn(column, item);
+            var selector = cell
+                .FindElement(By.XPath(".//ancestor::div[@role='gridcell']//following-sibling::div//div[@class='cell-menu-settings']"));
             Driver.WaitForElementToBeDisplayed(selector);
             return selector;
         }

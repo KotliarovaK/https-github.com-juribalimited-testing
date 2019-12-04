@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User enters '13720' text to 'Description' textbox
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	And Success message is displayed and contains "Click here to view the CapacityUnit13790 capacity unit" link
+	And 'Click here to view the CapacityUnit13790 capacity unit' link is displayed
 	When User enters "13720" text in the Search field for "Description" column
 	Then Rows counter shows "1" of "2" rows
 	When User clicks newly created object link
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	And User updates the "Default Unit" checkbox state
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	And Success message is displayed and contains "Click here to view the CapacityUnit12672 capacity unit" link
+	And 'Click here to view the CapacityUnit12672 capacity unit' link is displayed
 	When User clicks newly created object link
 	Then URL contains "capacity/units/unit/"
 	And "Default Unit" checkbox is checked and cannot be unchecked

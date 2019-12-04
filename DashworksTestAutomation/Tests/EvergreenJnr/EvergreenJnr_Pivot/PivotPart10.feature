@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	When User creates Pivot list with "DAS14263_Pivot" name
 	Then "DAS14263_Pivot" list is displayed to user
 	When User clicks the List Details button
-	Then List details panel is displayed to the user
+	Then Details panel is displayed to the user
 	When User select "Specific users / teams" sharing option
 	When User clicks 'ADD USER' button 
 	When User selects the "Administrator" user for sharing
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
 	| TRUE               |
 	And User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
-	| RowGroups  |
+	| RowGroups        |
 	| Operating System |
 	And User selects the following Values on Pivot:
 	| Values      |

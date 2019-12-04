@@ -126,14 +126,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then Page with 'Projects' header is displayed to user
 	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	When User clicks content from "Project" column
-	Then "Capacity Mode" dropdown is not displayed
-	Then "Capacity Units" dropdown is not displayed
+	Then 'Capacity Mode' dropdown is not displayed
+	Then 'Capacity Units' dropdown is not displayed
 	Then "Windows 7 Migration (Computer Scheduled Project)" content is displayed in "Project Name" field
 	Then "Windows7Mi" content is displayed in "Project Short Name" field
 	Then "Windows 7 Migration Phase 1Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill;" content is displayed in "Project Description" field
 	When User navigates to the 'Scope' left menu item
-	Then "Scope Details" tab is disabled
-	Then "Scope Changes" tab is disabled
+	Then 'Scope' left menu have following submenu items:
+	| Options              |
+	| Scope Details        |
+	| Scope Changes        |
+	| Automated Onboarding |
+	| Queue                |
+	| History              |
 	When User navigates to the 'Capacity' left menu item
 	Then 'Capacity Mode' dropdown is displayed
 	Then 'Capacity Units' dropdown is displayed

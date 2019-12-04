@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Update application attributes")]
+    [NUnit.Framework.DescriptionAttribute("UpdateApplicationAttributes")]
     public partial class UpdateApplicationAttributesFeature
     {
         
@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Update application attributes", "\tRuns Update application attributes actions type related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UpdateApplicationAttributes", "\tRuns Update application attributes actions type related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,20 +80,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceFields")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18647")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceFields()
+        public virtual void EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceFieldsInternal();
+                    this.EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidationInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -112,9 +112,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
             }
         }
 
-        private void EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceFieldsInternal()
+        private void EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidationInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceFields", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
@@ -143,34 +143,155 @@ this.FeatureBackground();
 #line 18
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
- testRunner.Then("\"Sticky Compliance\" dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Sticky Compliance\' dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
- testRunner.When("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Evergreen\' content is displayed in \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 22
- testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'No сhange\' content is displayed in \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Select at least one value to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table2.AddRow(new string[] {
-                        "No Change"});
+                        "No сhange"});
             table2.AddRow(new string[] {
-                        "Ignore"});
+                        "UNKNOWN"});
             table2.AddRow(new string[] {
-                        "Amber"});
+                        "RED"});
             table2.AddRow(new string[] {
-                        "Red"});
+                        "AMBER"});
             table2.AddRow(new string[] {
-                        "Green"});
-#line 23
+                        "GREEN"});
+            table2.AddRow(new string[] {
+                        "IGNORE"});
+#line 25
  testRunner.Then("following Values are displayed in the \'Sticky Compliance\' dropdown:", ((string)(null)), table2, "Then ");
-#line 30
- testRunner.When("User selects \'Red\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 33
+ testRunner.When("User selects \'RED\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
+#line 35
  testRunner.Then("\'CANCEL\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS18715")]
+        [NUnit.Framework.CategoryAttribute("DAS19033")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_ActionsPanel",
+                        "BulkUpdate",
+                        "DAS18715",
+                        "DAS19033",
+                        "Not_Ready"});
+#line 39
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 40
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 41
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 42
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table3.AddRow(new string[] {
+                        "Sticky Compliance"});
+#line 43
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table3, "When ");
+#line 46
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table4.AddRow(new string[] {
+                        "0047 - Microsoft Access 97 SR-2 Francais"});
+#line 48
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table4, "When ");
+#line 51
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 52
+ testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.When("User selects \'Empty\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 54
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 55
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 56
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 57
+ testRunner.Then("Success message with \"1 update has been queued\" text is displayed on Action panel" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 58
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 59
+ testRunner.Then("\'\' content is displayed in the \'Sticky Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
+ testRunner.And("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.When("User selects \'UNKNOWN\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 64
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 65
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
+ testRunner.Then("Success message with \"1 update has been queued\" text is displayed on Action panel" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 68
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 69
+ testRunner.Then("\'UNKNOWN\' content is displayed in the \'Sticky Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -68,9 +68,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| zUser Sch for Automations Feature                |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	And User closed "Selected Columns" columns category
-	And User is expand "Project Stages: Windows7Mi" columns category
-	And the following Column subcategories are displayed for open category:
+	When User collapses 'Selected Columns' category
+	When User moves to the end of categories list
+	When User expands 'Project Stages: Windows7Mi' category
+	Then the following Column subcategories are displayed for open category:
 	| Subcategories                                               |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; |
 	| Windows7Mi: Pre-Migration                                   |

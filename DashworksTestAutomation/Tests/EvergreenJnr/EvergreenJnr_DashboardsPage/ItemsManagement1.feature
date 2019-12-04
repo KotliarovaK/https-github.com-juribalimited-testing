@@ -8,18 +8,17 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200 @DAS17754 @DAS16563
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	Then User sees 'Print' tooltip for 'Print' on the Dashboard
-	And User sees 'Refresh' tooltip for 'Refresh' on the Dashboard
+	Then User sees 'Refresh' tooltip for 'Refresh' on the Dashboard
 	When User clicks 'print'  button on the Dashboards page
 	Then Print Preview is displayed to the User
-	And There is no breadcrumbs displayed on Dashboard page
+	Then There is no breadcrumbs displayed on Dashboard page
 	When User selects 'A4' option in the 'Paper Size' dropdown for Print Preview Settings
-	Then Print Preview is displayed in A4 format view
+	Then Print Preview is displayed in 'A4' format and 'Portrait' layout view
 	When User selects 'Letter' option in the 'Paper Size' dropdown for Print Preview Settings
-	Then Print Preview is displayed in Letter format view
-	When User selects 'Portrait' option in the 'Paper Layout' dropdown for Print Preview Settings
-	Then Print Preview is displayed in Portrait orientation
+	Then Print Preview is displayed in 'Letter' format and 'Portrait' layout view
 	When User selects 'Landscape' option in the 'Paper Layout' dropdown for Print Preview Settings
-	Then Print Preview is displayed in Landscape orientation
+	When User selects 'A4' option in the 'Paper Size' dropdown for Print Preview Settings
+	Then Print Preview is displayed in 'A4' format and 'Landscape' layout view
 	When User clicks Cancel button on the Print Preview Settings pop-up
 
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @DAS14618
@@ -58,15 +57,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 	When Dashboard with 'Dashboard for DAS12989' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD SECTION' button 
-	And User clicks 'ADD WIDGET' button for '1' Section on Dashboards page
+	And User clicks ADD WIDGET button for '1' Section on Dashboards page
 	And User creates new Widget
 	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | Section1_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
+	And User clicks ADD WIDGET button for '2' Section on Dashboards page
 	And User creates new Widget
 	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Bar        | Section2_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks 'ADD WIDGET' button for '2' Section on Dashboards page
+	And User clicks ADD WIDGET button for '2' Section on Dashboards page
 	And User creates new Widget
 	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | Section2_WidgetForDAS12989_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
@@ -100,17 +99,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBe
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14586 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists
 	When Dashboard with '<DashboardName>' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title   | List   | SplitBy   | AggregateBy   | AggregateFunction  | OrderBy   | MaxValues | ShowLegend   |
 	| <Type>     | <Title> | <List> | <SplitBy> | <AggregateBy> | <AggregateFunctio> | <OrderBy> | 10        | <ShowLegend> |
-	And User remembers number of Sections and Widgets on Dashboards page
-	And User clicks Ellipsis menu for '<Title>' Widget on Dashboards page
-	And User clicks 'Duplicate' item from Ellipsis menu on Dashboards page
+	When User remembers number of Sections and Widgets on Dashboards page
+	When User clicks Ellipsis menu for '<Title>' Widget on Dashboards page
+	When User clicks 'Duplicate' item from Ellipsis menu on Dashboards page
 	Then User sees number of Sections increased by '0' on Dashboards page
-	And User sees number of Widgets increased by '1' on Dashboards page
-	And User sees Widget with '<TitleCloned>' name on Dashboards page
+	Then User sees number of Widgets increased by '1' on Dashboards page
+	Then '<TitleCloned>' Widget is displayed to the user
 	
 Examples:
 	| DashboardName                       | Type   | Title                                 | List             | SplitBy       | AggregateBy  | AggregateFunctio | OrderBy                        | TitleCloned                            | ShowLegend |

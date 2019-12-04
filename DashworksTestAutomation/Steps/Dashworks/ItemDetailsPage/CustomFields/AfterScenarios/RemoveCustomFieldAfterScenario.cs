@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
@@ -8,6 +9,7 @@ using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using RestSharp;
@@ -19,9 +21,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields.A
     class RemoveCustomFieldAfterScenario : SpecFlowContext
     {
         private readonly RestWebClient _client;
-        private readonly DTO.RuntimeVariables.CustomFields _customFields;
+        private readonly DTO.RuntimeVariables.ItemDetails.CustomFields _customFields;
 
-        private RemoveCustomFieldAfterScenario(DTO.RuntimeVariables.CustomFields customFields, RestWebClient client)
+        private RemoveCustomFieldAfterScenario(DTO.RuntimeVariables.ItemDetails.CustomFields customFields, RestWebClient client)
         {
             _customFields = customFields;
             _client = client;
@@ -44,6 +46,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields.A
                     request.AddParameter("fieldIndex", customField.FieldIndex);
 
                     var response = _client.Value.Delete(request);
+
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        Logger.Write($"Custom field was not deleted: {response.StatusCode}, {response.ErrorMessage}");
+                        try
+                        {
+                            var cfId = DatabaseHelper.GetCustomFieldId(customField.FieldName);
+                            Logger.Write($"Custom filed with '{customField.FieldName}' name and '{cfId}' id is still present in the database");
+                        }
+                        catch
+                        {
+                            Logger.Write($"Custom filed with '{customField.FieldName}' was removed from database");
+                        }
+                    }
                 }
                 catch (Exception e)
                 {

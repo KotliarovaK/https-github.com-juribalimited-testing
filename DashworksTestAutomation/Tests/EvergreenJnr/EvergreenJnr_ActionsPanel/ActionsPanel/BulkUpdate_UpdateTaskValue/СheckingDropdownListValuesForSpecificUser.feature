@@ -8,12 +8,12 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278 @DAS14448 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
 	When User create new User via API
-	| Username   | Email | FullName | Password  | Roles                                            |
-	| <UserName> | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username   | Email | FullName | Password  | Roles                 |
+	| <UserName> | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username | Password  |
-	| <User>   | m!gration |
+	| Username   | Password  |
+	| <UserName> | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
@@ -57,8 +57,8 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| DAS13268 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| DAS13268 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -117,8 +117,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13280 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| DAS13280 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| DAS13280 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
@@ -152,12 +152,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| DAS13281 | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username   | Email | FullName | Password  | Roles                                            |
+	| DAS13281_2 | Value | Test     | m!gration | Project Administrator  |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username | Password  |
-	| DAS13281 | m!gration |
+	| Username   | Password  |
+	| DAS13281_2 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -220,7 +220,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS13281" User
+	And User removes "DAS13281_2" User
 
 Examples:
 	| RowName        | MessageText                                                   |
@@ -231,8 +231,8 @@ Examples:
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User create new User via API
-	| Username | Email | FullName | Password  | Roles                                            |
-	| <Name>   | Value | Test     | m!gration | Project Bulk Updater, Project User Object Editor |
+	| Username | Email | FullName | Password  | Roles                 |
+	| <Name>   | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |

@@ -158,7 +158,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 10
  testRunner.When("User create new User via API", ((string)(null)), table1, "When ");
 #line 13
@@ -168,7 +168,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table2.AddRow(new string[] {
-                        "<User>",
+                        string.Format("{0}", userName),
                         "m!gration"});
 #line 14
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table2, "When ");
@@ -314,7 +314,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 59
  testRunner.When("User create new User via API", ((string)(null)), table4, "When ");
 #line 62
@@ -499,7 +499,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 119
  testRunner.When("User create new User via API", ((string)(null)), table10, "When ");
 #line 122
@@ -638,11 +638,11 @@ this.FeatureBackground();
                         "Password",
                         "Roles"});
             table13.AddRow(new string[] {
-                        "DAS13281",
+                        "DAS13281_2",
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 154
  testRunner.When("User create new User via API", ((string)(null)), table13, "When ");
 #line 157
@@ -652,7 +652,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table14.AddRow(new string[] {
-                        "DAS13281",
+                        "DAS13281_2",
                         "m!gration"});
 #line 158
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table14, "When ");
@@ -791,7 +791,7 @@ this.FeatureBackground();
 #line 222
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 223
- testRunner.And("User removes \"DAS13281\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User removes \"DAS13281_2\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -877,7 +877,7 @@ this.FeatureBackground();
                         "Value",
                         "Test",
                         "m!gration",
-                        "Project Bulk Updater, Project User Object Editor"});
+                        "Project Administrator"});
 #line 233
  testRunner.When("User create new User via API", ((string)(null)), table21, "When ");
 #line 236

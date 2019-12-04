@@ -267,13 +267,13 @@ this.FeatureBackground();
  testRunner.And("User enters \"TestProjectNameDAS12370\" in the Project Name field on Import Project" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.When("User clicks Import Project button on the Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'IMPORT PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
  testRunner.Then("Error message with \"Selected file is not in a valid format\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54
  testRunner.When("User selects \"CorrectFile_DAS12370.xml\" file to upload on Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
- testRunner.Then("Import Project button is enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'IMPORT PROJECT\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -654,7 +654,7 @@ this.FeatureBackground();
  testRunner.And("User enters \"DAS15989_TestProject\" in the Project Name field on Import Project pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 140
- testRunner.When("User clicks Import Project button on the Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'IMPORT PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 141
  testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 142
@@ -737,7 +737,7 @@ this.FeatureBackground();
  testRunner.And("User enters \"DAS16089_TestProject\" in the Project Name field on Import Project pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 156
- testRunner.When("User clicks Import Project button on the Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'IMPORT PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 157
  testRunner.Then("Error message with \"Your file doesn\'t contain Readiness values\" text is displayed" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

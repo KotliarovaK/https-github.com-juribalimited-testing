@@ -258,6 +258,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allHeaders;
         }
 
+        public List<IWebElement> GetAllHeadersTextElements()
+        {
+            var allHeaders = GetAllHeaders().Select(x => x.FindElement(By.XPath(AllHeadersTextSelector))).ToList();
+            return allHeaders;
+        }
+
         #endregion
 
         //Selector to the Action element below Column header
@@ -382,16 +388,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
         }
 
+        //TODO should be removed
         public bool TextMessage(string textMessage)
         {
             return Driver.IsElementDisplayed(By.XPath($".//*[text()='{textMessage}']"));
-        }
-
-        public bool GetTabHeaderInTheScopeChangesSection(string text)
-        {
-            By locator = By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{text}']");
-            Driver.WaitForElementToBeDisplayed(locator);
-            return Driver.IsElementDisplayed(locator);
         }
 
         public bool GetDisplayStateForStringFilterByName(string filterName)
@@ -420,19 +420,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public bool GetCheckedCheckboxByName(string checkboxName)
-        {
-            var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]//span[text()='{checkboxName}']");
-            return Driver.IsElementExists(selector);
-        }
-
-        public IWebElement GetGreyedOutCheckboxByName(string checkboxName)
-        {
-            var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]//span[text()='{checkboxName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public void GetStringFilterByColumnName(string columnName)
         {
             var byControl =
@@ -443,12 +430,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).Click();
         }
 
-        //TODO this hsould be removed
+        //TODO this should be removed
         public string GetMessageColor()
         {
             return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("background-color");
         }
 
+        //TODO remove this and replace by specific methods that verify error messages that relates to the specific webElements
         public string GetErrorMessageColor()
         {
             return Driver.FindElement(By.XPath(".//div[contains(@class,'inline-error')]")).GetCssValue("background-color");
@@ -459,36 +447,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector =
                 By.XPath(
                     $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public bool GetMissingDropdownByName(string dropdownName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//mat-select[@aria-label='{dropdownName}']"));
-        }
-
-        public bool GetMissingDropdownOnSettingsScreenByName(string dropdownName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='mat-form-field-infix']//label[text()='{dropdownName}']"));
-        }
-
-        public IWebElement GetButtonInWarningPopUp(string buttonName)
-        {
-            var selector = By.XPath($".//mat-dialog-container//button/span[text()='{buttonName}']");
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetDisabledTabByName(string tabName)
-        {
-            var selector = By.XPath($".//*[contains(@class,'mat-tree-node')][contains(@class,'disabled')]//a[text()='{tabName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetLinkByText(string text)
-        {
-            var selector = By.XPath($".//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

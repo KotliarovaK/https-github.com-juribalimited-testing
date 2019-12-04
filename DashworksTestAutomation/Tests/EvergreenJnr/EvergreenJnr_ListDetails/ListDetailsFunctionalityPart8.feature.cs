@@ -90,14 +90,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ListDetails
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks(string pageName, string columnname, string targetCell, string selectedRow, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks(string pageName, string columnName, string targetCell, string selectedRow, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorksInternal(pageName,columnname,targetCell,selectedRow,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorksInternal(pageName,columnName,targetCell,selectedRow,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -116,7 +116,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ListDetails
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorksInternal(string pageName, string columnname, string targetCell, string selectedRow, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorksInternal(string pageName, string columnName, string targetCell, string selectedRow, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -137,7 +137,7 @@ this.FeatureBackground();
 #line 10
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.And(string.Format("User performs right-click on \"{0}\" cell in the grid", targetCell), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "OptionsName"});
@@ -167,9 +167,9 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         string.Format("{0}", selectedRow)});
 #line 23
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnname), ((string)(null)), table2, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table2, "When ");
 #line 26
- testRunner.And(string.Format("User performs right-click on \"{0}\" cell in the grid", targetCell), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "OptionsName"});
@@ -207,7 +207,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", "0004 - Adobe Acrobat Reader 5.0.5 Francais\\tAdobe\\t5.0.5", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", "000F977AC8824FE39B8@bclabs.local\\tExchange 2007\\tbc-exch07\\tUserMailbox\\tSpruill," +
             " Shea", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks(string pageName, string columnname, string targetCell, string selectedRow, string expectedData, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks(string pageName, string columnName, string targetCell, string selectedRow, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -237,9 +237,9 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         string.Format("{0}", selectedRow)});
 #line 50
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnname), ((string)(null)), table4, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table4, "When ");
 #line 53
- testRunner.And(string.Format("User performs right-click on \"{0}\" cell in the grid", targetCell), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
  testRunner.And("User selects \'Copy row\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
@@ -265,7 +265,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local", "0072B088173449E3A93@bclabs.local", "002B5DC7D4D34D5C895@bclabs.local\\tExchange 2013\\tbc-exch13\\tUserMailbox\\tCollor, " +
             "Christopher \\t0072B088173449E3A93@bclabs.local\\tExchange 2007\\tbc-exch07\\tUserMa" +
             "ilbox\\tRegister, Donna", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks(string pageName, string columnname, string targetCell, string selectedRow1, string selectedRow2, string expectedData, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks(string pageName, string columnName, string targetCell, string selectedRow1, string selectedRow2, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -297,9 +297,9 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         string.Format("{0}", selectedRow2)});
 #line 70
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnname), ((string)(null)), table5, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table5, "When ");
 #line 74
- testRunner.And(string.Format("User performs right-click on \"{0}\" cell in the grid", targetCell), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 75
  testRunner.And("User selects \'Copy selected rows\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -87,6 +88,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var panel = _driver.NowAt<FiltersElement>();
             _driver.MoveToElement(panel.FilterCategories.Last());
             Logger.Write("Filter panel is scrolled down");
+        }
+
+        [Then(@"'(.*)' category is placed next to the corresponding project group")]
+        public void ThenSpecifiedCategoriesPlacedInParticularProjectGroup(string categoryName)
+        {
+            var panel = _driver.NowAt<FiltersElement>();
+
+            var allCats = panel.GetCategoriesFromFilterPanelPageByPage();
+
+            foreach (var cat in allCats)
+            {
+                if (cat.StartsWith(categoryName))
+                {
+                    string projectName = cat.Split(':').ToList().Last();
+                    int curentCategoryIndex = allCats.IndexOf(cat);
+                    Verify.That((allCats[curentCategoryIndex - 1].EndsWith(projectName) || allCats[curentCategoryIndex + 1].EndsWith(projectName)), Is.True, $"{cat} category possible appears in wrong place");
+                }
+            }
         }
 
         [Then(@"User sees ""(.*)"" section expanded by default in Filters panel")]
@@ -258,6 +277,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 filterElement.FilterSearchTextBox.Clear();
                 filterElement.FilterSearchTextBox.SendKeys(searchedText);
             }
+        }
+
+        [Then(@"User sees instruction '(.*)' below '(.*)' field")]
+        public void ThenValueIsDisplayedForSelectedLookupFilter(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Verify.That(filterElement.FilterFieldInstruction(fieldName).Text, Is.EqualTo(instruction), $"{fieldName} has no or wrong instruction");
+        }
+
+        [Then(@"Ahead or Ago dropdown is disabled")]
+        public void ThenValueIsDisplayedForSelectedLookupFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Verify.That(filterElement.AheadOrAgoInput.Disabled(), Is.True, $"Dropdown enabled");
         }
 
         [When(@"User clicks Add button for input filter value")]
@@ -668,7 +701,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndDateOptions(string filterName, string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
-            filtersNames.AddAndFilter(filterName);
+            filtersNames.AddFilter(filterName);
             var filter = new BetweenOperatorFilter(_driver, operatorValue, true, table);
             filter.Do();
         }
@@ -686,7 +719,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddFilterWhereTypeIsWithFollowingDateOptionsAndAssociations(string filterName, string operatorValue, Table table)
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
-            filtersNames.AddAndFilter(filterName);
+            filtersNames.AddFilter(filterName);
             var filter = new BetweenDataAssociationFilter(_driver, operatorValue, table);
             filter.Do();
         }
@@ -1417,6 +1450,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
+            foreach (var value in expectedList)
+                Utils.Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
+        }
+
+        [Then(@"the following subcategories are NOT displayed for Filters categories:")]
+        public void ThenTheFollowingSubcategoriesAreNotDisplayedForFiltersCategories(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
             foreach (var value in expectedList)
                 Utils.Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
         }
