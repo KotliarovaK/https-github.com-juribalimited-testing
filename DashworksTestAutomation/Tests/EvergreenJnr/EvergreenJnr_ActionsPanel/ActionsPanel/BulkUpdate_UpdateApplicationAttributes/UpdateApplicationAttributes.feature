@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	Then 'UPDATE' button is not disabled
 	Then 'CANCEL' button is not disabled
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18715 @Not_Ready
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18715 @DAS19033 @Not_Ready
 #Waiting for "Update application attributes" on the automation
 Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	When User clicks 'Applications' on the left-hand menu
@@ -50,13 +50,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	When User selects 'AMBER' in the 'Sticky Compliance' dropdown
+	When User selects 'Empty' in the 'Sticky Compliance' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
 	Then Success message with "1 update has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then 'AMBER' content is displayed in the 'Sticky Compliance' column
+	Then '' content is displayed in the 'Sticky Compliance' column
 		#Revert 'Update application attributes' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
