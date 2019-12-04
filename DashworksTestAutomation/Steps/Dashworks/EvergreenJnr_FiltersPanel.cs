@@ -138,8 +138,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Filter is created incorrectly");
         }
 
-        [Then(@"'(.*)' text is displayed in filter container for (.*)' list name")]
-        public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
+        [Then(@"'(.*)' text is displayed in filter container for (.*)' list")]
+        public void ThenTextIsDisplayedInFilterContainerForList(string text, string listName)
         {
             var page = _driver.NowAt<FiltersElement>();
             Utils.Verify.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
