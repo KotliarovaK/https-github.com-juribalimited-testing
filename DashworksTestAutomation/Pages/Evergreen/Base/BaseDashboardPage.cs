@@ -870,9 +870,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement CategoryCollapseExpandButton(string name)
         {
             var selector = By.XPath(string.Format(CategoryCollapseExpandSelector, name));
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+            try
             {
-                throw new Exception($"Collapse/Expand button was not displayed for '{name}' category");
+                Driver.MouseHover(selector);
+                if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+                {
+                    throw new Exception($"Collapse/Expand button was not displayed for '{name}' category");
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
 
             return Driver.FindElement(selector);
