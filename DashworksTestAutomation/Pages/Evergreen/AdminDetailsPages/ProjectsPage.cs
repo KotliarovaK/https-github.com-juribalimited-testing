@@ -139,29 +139,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
         }
 
-        public string GetDllPanelHeight()
-        {
-            return Driver.FindElement(By.XPath(".//div[@class='cdk-overlay-pane']")).GetCssValue("height");
-        }
-
         public string GetDllPanelWidth()
         {
             return Driver.FindElement(By.XPath(".//div[@role='listbox']")).GetCssValue("width");
-        }
-
-        //TODO should be removed
-        public void NavigateToProjectTabByName(string tabName)
-        {
-            var tab = Driver.FindElement(
-                By.XPath($".//mat-tree//a[text()='{tabName}']"));
-            tab.Click();
-        }
-
-        public IWebElement GetSubMenuByName(string menuName)
-        {
-            var button = By.XPath($".//button[contains(@class, 'subMenu-title')]//span[text()='{menuName}']");
-            Driver.WaitForElementToBeDisplayed(button);
-            return Driver.FindElement(button);
         }
 
         public IWebElement GetsSelectedTabByName(string tabName)
