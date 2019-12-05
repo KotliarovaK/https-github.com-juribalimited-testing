@@ -1003,75 +1003,74 @@ this.FeatureBackground();
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 284
  testRunner.When("User select \"Specific users / teams\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 285
- testRunner.When("User clicks \'ADD USER\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 286
- testRunner.When("User selects the \"Automation Admin 10\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 287
- testRunner.When(string.Format("User select \"{0}\" in Select Access dropdown", shareType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 288
- testRunner.When("User clicks \'ADD USER\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 289
- testRunner.When("User clicks \'ADD USER\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 290
- testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Username",
-                        "Password"});
+                        "User",
+                        "Permission"});
             table18.AddRow(new string[] {
-                        "automation_admin10",
-                        "m!gration"});
-#line 291
- testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table18, "When ");
-#line 294
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 296
- testRunner.When(string.Format("Dashboard with \'{0}\' name created via API and opened", dashboardName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 297
- testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 298
- testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "Automation Admin 10",
+                        string.Format("{0}", shareType)});
+#line 285
+ testRunner.When("User adds user to list of shared person", ((string)(null)), table18, "When ");
+#line 288
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Password"});
+            table19.AddRow(new string[] {
+                        "automation_admin10",
+                        "m!gration"});
+#line 289
+ testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table19, "When ");
+#line 292
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 294
+ testRunner.When(string.Format("Dashboard with \'{0}\' name created via API and opened", dashboardName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 295
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 296
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
                         "SplitBy",
                         "AggregateFunction",
                         "OrderBy"});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Table",
                         string.Format("{0}", widgetName),
                         string.Format("{0}", listName),
                         "Hostname",
                         "Count",
                         "Count DESC"});
-#line 299
- testRunner.When("User creates new Widget", ((string)(null)), table19, "When ");
-#line 302
+#line 297
+ testRunner.When("User creates new Widget", ((string)(null)), table20, "When ");
+#line 300
  testRunner.Then(string.Format("\'{0}\' Widget is displayed to the user", widgetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 304
+#line 302
  testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 305
+#line 303
  testRunner.Then("User sees Dashboards context menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 306
+#line 304
  testRunner.When("User select \"Everyone can edit\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 307
+#line 305
  testRunner.Then("Review Widget List Permissions is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 308
+#line 306
  testRunner.Then(string.Format("Widget \'{0}\' displayed for \'{1}\' list on Permissions Pop-up", widgetName, listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 309
+#line 307
  testRunner.Then(string.Format("User \'Automation Admin 1\' displayed for \'{0}\' list on Permissions Pop-up", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 310
+#line 308
  testRunner.Then(string.Format("Current permission \'Specific users / teams\' displayed for \'{0}\' list on Permissio" +
                         "ns Pop-up", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 311
+#line 309
  testRunner.Then(string.Format("New Permission \'Do not change\' displayed for \'{0}\' list on Permissions Pop-up", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 312
+#line 310
  testRunner.Then(string.Format("New Permission dropdown has disabled property \'true\' for \'{0}\' list on Permission" +
                         "s Pop-up", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 313
+#line 311
  testRunner.Then(string.Format("New Permission dropdown has \'You cannot change the permission for this list\' tool" +
                         "tip for \'{0}\' list on Permissions Pop-up", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
