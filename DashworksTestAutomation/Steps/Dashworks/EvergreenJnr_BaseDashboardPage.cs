@@ -26,13 +26,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_BaseDashboardPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly ListsDetails _listDetails;
         private readonly ColumnValue _columnValue;
 
-        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ListsDetails listsDetails, ColumnValue columnValue)
+        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ColumnValue columnValue)
         {
             _driver = driver;
-            _listDetails = listsDetails;
             _columnValue = columnValue;
         }
 
@@ -214,35 +212,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
         }
-
-        [Then(@"""(.*)"" text is displayed in filter container")]
-        public void ThenTextIsDisplayedInFilterContainer(string text)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.MoveToElement(page.FilterOptions);
-            _driver.WaitForElementToBeDisplayed(page.FilterOptions);
-            if (!_driver.IsElementDisplayed(page.FilterContainer)) page.FilterContainerButton.Click();
-            Utils.Verify.AreEqual(text, page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
-                "Filter is created incorrectly");
-        }
-
-        [When(@"User closes filter container")]
-        [When(@"User opens filter container")]
-        public void WhenUserOpensFilterContainer()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.FilterContainerButton.Click();
-        }
-
-        [Then(@"""(.*)"" text is displayed in filter container for ""(.*)"" list name")]
-        public void ThenTextIsDisplayedInFilterContainerForListName(string text, string listName)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
-                page.FilterContainer.Text.TrimStart(' ').TrimEnd(' '),
-                "Filter is created incorrectly");
-        }
-
+        
         [Then(@"String filter values are not duplicated")]
         public void ThenStringFilterValuesAreNotDuplicated()
         {

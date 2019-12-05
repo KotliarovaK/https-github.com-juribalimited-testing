@@ -95,12 +95,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| Move to position |
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
-	When User type "14705_Ring" Name in the "Ring name" field on the 'Email Migration' Project details page
+	When User enters '14705_Ring' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
-	When User type "Ring_Test" Name in the "Ring name" field on the 'Email Migration' Project details page
+	When User enters 'Ring_Test' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
 	When User clicks on 'Ring' column header
 	Then data in table is sorted by "Ring" column in ascending order on the Admin page

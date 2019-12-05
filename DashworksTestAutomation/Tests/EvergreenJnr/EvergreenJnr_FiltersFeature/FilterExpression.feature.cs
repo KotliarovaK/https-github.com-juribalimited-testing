@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Tabs.Applications
+namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ta
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("EvergreenSummary")]
-    public partial class EvergreenSummaryFeature
+    [NUnit.Framework.DescriptionAttribute("FilterExpression")]
+    public partial class FilterExpressionFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "EvergreenSummary.feature"
+#line 1 "FilterExpression.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EvergreenSummary", "\tRuns Evergreen Summary related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FilterExpression", "\tRuns Filter Expression related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,22 +80,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ta
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsE" +
-            "vergreenDetailsForUser")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18618")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
-        public virtual void EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsEvergreenDetailsForUser()
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("DAS17016")]
+        public virtual void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsEvergreenDetailsForUserInternal();
+                    this.EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelectedInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -114,42 +110,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ta
             }
         }
 
-        private void EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsEvergreenDetailsForUserInternal()
+        private void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelectedInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatApplicationsWhichAreOwnedAreAppearInApplicationsE" +
-                    "vergreenDetailsForUser", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected", null, new string[] {
                         "Evergreen",
-                        "Users",
-                        "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
-                        "DAS18618",
-                        "Not_Ready"});
-#line 10
+                        "Evergreen_FiltersFeature",
+                        "DAS17016"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
+#line 10
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.When("User navigates to the \'User\' details page for \'AAQ9911340\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.Then("Details page for \"AAQ9911340\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table1.AddRow(new string[] {
+                        "00I0COBFWHOF27"});
 #line 14
- testRunner.And("User navigates to the \'Evergreen Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
- testRunner.Then("\'Infragistics Expense Reference Site 2004 Vol. 1\' content is not displayed in the" +
-                    " \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 16
- testRunner.When("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User add \"Hostname\" filter where type is \"Equals\" with added column and following" +
+                    " value:", ((string)(null)), table1, "When ");
 #line 17
- testRunner.Then("\'Infragistics Expense Reference Site 2004 Vol. 1\' content is not displayed in the" +
-                    " \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks Filter Expression icon in Filter Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
- testRunner.When("User navigates to the \'Evergreen Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Filter Expression displayed within Filter Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
- testRunner.Then("\'Infragistics Expense Reference Site 2004 Vol. 1\' content is displayed in the \'Ap" +
-                    "plication\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User double clicks Filter Expression text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Then("\'00I0COBFWHOF27\' text is highlighted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -83,8 +83,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Fields              |
 	| Object ID           |
 	| Name                |
-	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
-	#| App Owner           |
+	| App Owner           |
 	| Readiness           |
 	| App Readiness       |
 	| App Rationalisation |

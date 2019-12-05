@@ -1088,6 +1088,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PermissionsSettings.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterExpression.feature.cs">
+      <DependentUpon>FilterExpression.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature.cs">
       <DependentUpon>AssociationsAllDeviceApplications.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1137,11 +1142,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckingFieldsContent.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenSummary.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EvergreenSummary.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\Applications\ProjectOwned.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2165,6 +2165,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterExpression.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FilterExpression.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AssociationsAllDeviceApplications.feature.cs</LastGenOutput>
@@ -2204,10 +2208,6 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithFieldsContent\CheckingFieldsContent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckingFieldsContent.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\Applications\EvergreenSummary.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EvergreenSummary.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\Applications\ProjectOwned.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

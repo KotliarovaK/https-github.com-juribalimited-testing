@@ -568,6 +568,8 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table11.AddRow(new string[] {
+                        "Update application attributes"});
+            table11.AddRow(new string[] {
                         "Update capacity unit"});
             table11.AddRow(new string[] {
                         "Update custom field"});

@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	| CapacityUnit14240 |
 	When User enters "CapacityUnit14240" text in the Search field for "Capacity Unit" column
 	And User click content from "Capacity Unit" column
-	And User type "CapacityUnit14240NameUpdated" Name in the "Capacity Unit Name" field on the 'Email Migration' Project details page
+	When User enters 'CapacityUnit14240NameUpdated' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	And User sees next Units on the Capacity Units page:

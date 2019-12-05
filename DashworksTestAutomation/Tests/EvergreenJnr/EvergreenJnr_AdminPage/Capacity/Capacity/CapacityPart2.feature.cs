@@ -509,8 +509,7 @@ this.FeatureBackground();
 #line 120
  testRunner.And("User click content from \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 121
- testRunner.And("User type \"CapacityUnit14240NameUpdated\" Name in the \"Capacity Unit Name\" field o" +
-                    "n the \'Email Migration\' Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \'CapacityUnit14240NameUpdated\' text to \'Capacity Unit Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 122
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
