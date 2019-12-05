@@ -95,6 +95,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.GetCogMenuOptionByName(option).Click();
             _driver.WaitForDataLoading();
 
+            //TODO Remove this. Just for debug
+            if (itemName.Equals("15431_Third_Active"))
+            {
+                try
+                {
+                    var test = DatabaseHelper.GetAutomationActiveStatus(itemName);
+                    Logger.Write($"Automation active status is '{test}'");
+                }
+                catch
+                {
+                    Logger.Write("Automation was not found in the database");
+                }
+            }
+
             //For automation
             if (option.Equals("Run now"))
             {
