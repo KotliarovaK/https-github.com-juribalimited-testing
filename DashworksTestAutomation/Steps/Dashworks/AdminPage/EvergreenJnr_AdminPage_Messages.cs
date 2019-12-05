@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
@@ -16,10 +17,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
     internal class EvergreenJnr_AdminPage_Messages : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_AdminPage_Messages(RemoteWebDriver driver)
+        public EvergreenJnr_AdminPage_Messages(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
+            _automationStartTime = automationStartTime;
         }
 
         [Then(@"User clicks ""(.*)"" button in warning container on the Admin page")]
@@ -118,7 +121,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var button = _driver.NowAt<ProjectsPage>();
             _driver.WaitForElementToBeDisplayed(button.WarningMessage);
             button.GetButtonInWarningMessage(buttonName).Click();
-            Logger.Write($"{buttonName} button was clicked");
+
+            //For automation
+            if (buttonName.Equals("RUN"))
+            {
+                _automationStartTime.Value = DateTime.Now.AddSeconds(-10);
+            }
         }
 
         [When(@"User close message on the Admin page")]
