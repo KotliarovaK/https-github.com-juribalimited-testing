@@ -97,6 +97,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Evergreen Target App            |
 	| Evergreen Target App Compliance |
 	| Evergreen Target App Key        |
+	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
 	When User clicks Close Add Item icon in Pivot panel
@@ -112,6 +113,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Evergreen Target App            |
 	| Evergreen Target App Compliance |
 	| Evergreen Target App Key        |
+	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
 	When User clicks Close Add Item icon in Pivot panel
@@ -127,6 +129,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Evergreen Target App            |
 	| Evergreen Target App Compliance |
 	| Evergreen Target App Key        |
+	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
 
