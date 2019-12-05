@@ -22,10 +22,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| CapacitySlot1 | DAS13432    | Capacity Units |
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	Then 'All Capacity Units' content is displayed in the 'Capacity Units' column
-	When User creates new Slot
-	| SlotName      | DisplayName | CapacityType   |
-	| CapacitySlot1 | DAS13432    | Capacity Units |
-	Then Error message with "A capacity slot already exists with this name" text is displayed
+	When User clicks 'CREATE SLOT' button
+	And User enters 'CapacitySlot1' text to 'Slot Name' textbox
+	Then 'A slot already exists with this name' error message is displayed for 'Slot Name' field
 	When User creates new Slot via Api
 	| Project                 | SlotName       | DisplayName |
 	| ProjectForCapacity13171 | UniqueNameSlot | DAS13432    |

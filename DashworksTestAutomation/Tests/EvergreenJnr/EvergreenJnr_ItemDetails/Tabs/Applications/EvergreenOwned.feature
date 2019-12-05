@@ -22,7 +22,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrect
 	Then following columns are displayed on the Item details page:
 	| ColumnName         |
 	| Application        |
-	#Ann.I 12/04/19: question about column order (Vendor <-> Version)
 	| Vendor             |
 	| Version            |
 	| Compliance         |
@@ -31,7 +30,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrect
 	| In Catalog         |
 	| Criticality        |
 	| Hide From End User |
-	Then Rows counter contains "1" found row of all rows
+	Then Counter shows "1" found rows
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18854 @Set_Application_Owned_User
 Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingCorrectly
