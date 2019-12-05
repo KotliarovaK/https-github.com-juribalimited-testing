@@ -177,7 +177,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-        public void GetCheckboxByName(string checkboxName)
+        public void GetColumnCheckbox(string checkboxName)
         {
             var checkboxSettingsSelector = By.XPath($".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']");
             Driver.MouseHover(checkboxSettingsSelector);
