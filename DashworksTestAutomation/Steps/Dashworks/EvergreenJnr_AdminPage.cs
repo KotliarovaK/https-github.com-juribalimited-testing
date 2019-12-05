@@ -1,26 +1,18 @@
 ﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
-using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
-using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
-using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
-using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.DTO.Projects.Tasks;
-using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
@@ -38,30 +30,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly RemoteWebDriver _driver;
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly LastUsedBucket _lastUsedBucket;
-        private readonly Rings _rings;
-        private readonly CapacityUnits _capacityUnits;
         private readonly Tasks _tasks;
         private readonly ElementCoordinates _elementCoordinates;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects,
-            LastUsedBucket lastUsedBucket, Rings rings, CapacityUnits capacityUnits,
-            Tasks tasks, ElementCoordinates elementCoordinates)
+            LastUsedBucket lastUsedBucket, Tasks tasks, ElementCoordinates elementCoordinates)
         {
             _driver = driver;
             _projects = projects;
             _lastUsedBucket = lastUsedBucket;
-            _rings = rings;
-            _capacityUnits = capacityUnits;
             _tasks = tasks;
             _elementCoordinates = elementCoordinates;
-        }
-
-        [Then(@"Scope field is automatically populated")]
-        public void ThenScopeFieldIsAutomaticallyPopulated()
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
         }
 
         [Then(@"""(.*)"" content is not displayed in the grid on the Project details page")]

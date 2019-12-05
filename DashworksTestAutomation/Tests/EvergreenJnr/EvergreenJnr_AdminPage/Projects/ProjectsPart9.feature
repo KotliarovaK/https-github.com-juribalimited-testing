@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters 'DevicesProject34' text to 'Project Name' textbox
-	Then Scope field is automatically populated
+	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button 
 	Then Success message is displayed and contains "The project has been created" text
