@@ -93,22 +93,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.GetCogMenuByItem(itemName).Click();
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
             cogMenu.GetCogMenuOptionByName(option).Click();
-            //Thread.Sleep(500);
-            //TODO decrease to standard wait time after DAS-17940 fix
             _driver.WaitForDataLoading();
-            //TODO Remove this. Just for debug
-            if (itemName.Equals("15431_Third_Active"))
-            {
-                try
-                {
-                    var test = DatabaseHelper.GetAutomationActiveStatus(itemName);
-                    Logger.Write($"Automation active status is '{test}'");
-                }
-                catch
-                {
-                    Logger.Write("Automation was not found in the database");
-                }
-            }
 
             //For automation
             if (option.Equals("Run now"))
