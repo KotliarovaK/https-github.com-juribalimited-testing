@@ -298,25 +298,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then Table columns of 'DAS-15852' widget placed in the next order:
-	| headers   |
-	| Empty     |
+	| headers |
+	| Empty   |
+	| Unknown |
 	| Not Ready |
 	| On Target |
 	| Ready     |
-	| Unknown   |
 
 	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	When User selects '1803: Pre-Migration \ Ready to Migrate ASC' in the 'OrderBy' dropdown
+	When User selects '1803: Pre-Migration \ Ready to Migrate DESC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
-	| Empty     |
-	| Not Ready |
-	| On Target |
 	| Ready     |
+	| On Target |
+	| Not Ready |
 	| Unknown   |
+	| Empty     |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessValuesAreShownWithTheCorrectColours

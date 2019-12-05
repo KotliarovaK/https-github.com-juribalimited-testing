@@ -21,11 +21,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then "ADeviceListFor14841_Admin" list is displayed to user
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
-	When User clicks 'ADD USER' button 
-	When User selects the "Automation Admin 10" user for sharing
-	When User select "Admin" in Select Access dropdown
-	When User clicks 'ADD USER' button 
-	When User clicks 'ADD USER' button 
+	When User adds user to list of shared person
+	| User                | Permission |
+	| Automation Admin 10 | Admin      |
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -217,11 +215,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	Then "ADevicesList17592" list is displayed to user
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
-	When User clicks 'ADD USER' button 
-	When User selects the "Automation Admin 1" user for sharing
-	When User select "Read" in Select Access dropdown
-	When User clicks 'ADD USER' button 
-	When User clicks 'ADD USER' button 
+	When User adds user to list of shared person
+	| User               | Permission |
+	| Automation Admin 1 | Read       |
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -260,7 +256,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	Then 'Widget_For_DAS17592' Widget is displayed to the user
 	Then There are no errors in the browser console
 	When User clicks Edit mode trigger on Dashboards page
-	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in '2' warning messages on Dashboards page
+	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in '1' warning messages on Dashboards page
 
 
 	#Sergiy: DAS14263 create test and recomment issue

@@ -1484,13 +1484,13 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "Empty"});
             table27.AddRow(new string[] {
+                        "Unknown"});
+            table27.AddRow(new string[] {
                         "Not Ready"});
             table27.AddRow(new string[] {
                         "On Target"});
             table27.AddRow(new string[] {
                         "Ready"});
-            table27.AddRow(new string[] {
-                        "Unknown"});
 #line 300
  testRunner.Then("Table columns of \'DAS-15852\' widget placed in the next order:", ((string)(null)), table27, "Then ");
 #line 308
@@ -1498,8 +1498,8 @@ this.FeatureBackground();
 #line 309
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 310
- testRunner.When("User selects \'1803: Pre-Migration \\ Ready to Migrate ASC\' in the \'OrderBy\' dropdo" +
-                    "wn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'1803: Pre-Migration \\ Ready to Migrate DESC\' in the \'OrderBy\' dropd" +
+                    "own", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 311
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 312
@@ -1508,15 +1508,15 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "headers"});
             table28.AddRow(new string[] {
-                        "Empty"});
-            table28.AddRow(new string[] {
-                        "Not Ready"});
+                        "Ready"});
             table28.AddRow(new string[] {
                         "On Target"});
             table28.AddRow(new string[] {
-                        "Ready"});
+                        "Not Ready"});
             table28.AddRow(new string[] {
                         "Unknown"});
+            table28.AddRow(new string[] {
+                        "Empty"});
 #line 313
  testRunner.Then("Table columns of \'DAS-15852\' widget placed in the next order:", ((string)(null)), table28, "Then ");
 #line hidden
