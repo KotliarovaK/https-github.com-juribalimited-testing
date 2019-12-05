@@ -9,6 +9,6 @@ Scenario: EvergreenJnr_DevicesList_CheckAllColumnsAndFilters
 	Then All filters with correct data are returned from the API for 'Devices' list
 	Then All columns with correct data are returned from the API for 'Devices' list
 
-@Evergreen @Devices @API @FiltersAndColumns
+@Evergreen @Devices @API @FiltersAndColumns @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData
 	Then Positive number of results returned for 'DevicesQueryUrls' requests

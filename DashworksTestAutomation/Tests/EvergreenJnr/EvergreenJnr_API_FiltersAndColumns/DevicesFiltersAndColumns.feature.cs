@@ -136,6 +136,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData()
         {
             System.Exception lastException = null;
@@ -168,7 +169,8 @@ this.FeatureBackground();
                         "Evergreen",
                         "Devices",
                         "API",
-                        "FiltersAndColumns"});
+                        "FiltersAndColumns",
+                        "Not_Run"});
 #line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
