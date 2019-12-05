@@ -1062,25 +1062,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Convert to Evergreen button is displayed");
         }
 
-        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the '(.*)' Project details page")]
-        public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName, string project)
-        {
-            SendKeysToTheNamedTextbox(name, fieldName);
-
-            if (fieldName.Equals("Ring name"))
-                _rings.Value.Add(new RingDto() { Name = name, Project = project });
-
-            if (fieldName.Equals("Capacity Unit Name"))
-                _capacityUnits.Value.Add(new CapacityUnitDto() { Name = name, Project = project });
-        }
-
-        //TODO DELETE THIS
-        private void SendKeysToTheNamedTextbox(string text, string fieldName)
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.SendKeysToTheNamedTextbox(text, fieldName);
-        }
-
         [When(@"User selects ""(.*)"" checkbox in the ""(.*)"" field on the Project details page")]
         public void WhenUserSelectsCheckboxInTheFieldOnTheProjectDetailsPage(string checkbox, string fieldName)
         {
