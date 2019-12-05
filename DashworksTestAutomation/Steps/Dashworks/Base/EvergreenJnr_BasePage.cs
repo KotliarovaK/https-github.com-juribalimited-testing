@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
@@ -16,6 +17,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
@@ -321,10 +323,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 _automations.Value.Add(new AutomationsDto() { automationName = text });
 
             if (placeholder.Equals("Ring name"))
-                _rings.Value.Add(new RingDto() { Name = text });
+            {
+                //Get project ID if Ring is inside project
+                if (_driver.Url.Contains("/project/"))
+                {
+                    //TODO wrap this in separate method
+                    Regex regex = new Regex(@"\/project\/(\d+)");
+                    Match m = regex.Match(_driver.Url);
+                    var projId = m.Groups[1].ToString();
+                    _rings.Value.Add(new RingDto() { Name = text, Project = DatabaseHelper.GetProjectName(projId) });
+                }
+                else
+                {
+                    _rings.Value.Add(new RingDto() { Name = text });
+                }
+            }
 
             if (placeholder.Equals("Capacity Unit Name"))
-                _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text });
+            {
+                //Get project ID if Capacity Unit is inside project
+                if (_driver.Url.Contains("/project/"))
+                {
+                    //TODO wrap this in separate method
+                    Regex regex = new Regex(@"\/project\/(\d+)");
+                    Match m = regex.Match(_driver.Url);
+                    var projId = m.Groups[1].ToString();
+                    _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text, Project = DatabaseHelper.GetProjectName(projId) });
+                }
+                else
+                {
+                    _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text });
+                }
+            }
 
             _driver.WaitForDataLoading();
         }

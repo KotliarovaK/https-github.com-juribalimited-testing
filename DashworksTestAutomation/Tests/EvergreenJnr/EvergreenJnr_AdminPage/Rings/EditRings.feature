@@ -18,8 +18,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 	And User selects 'Use project rings' in the 'Rings' dropdown
 	And User navigates to the 'Rings' left menu item
 	And User clicks content from "Ring" column
-	And User type "OneRing" Name in the "Ring name" field on the 'ProjectForDAS14839' Project details page
-	And User type "TwoRing" Name in the "Description" field on the 'ProjectForDAS14839' Project details page
+	And User enters 'OneRing' text to 'Ring name' textbox
+	And User enters 'TwoRing' text to 'Description' textbox
 	And User clicks 'UPDATE' button 
 	Then User sees "1" rows in grid
 	When User clicks content from "Ring" column
