@@ -20,7 +20,7 @@ Examples:
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11982 @DAS12773 @Cleanup @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11982 @DAS12773 @DAS19205 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInTheProjectApplicationsScope
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -28,6 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
+	Then There are no errors in the browser console
 	Then All items in the 'Scope' autocomplete have icons
 	Then All icon items in the 'Scope' autocomplete have any of tooltip
 	| tooltip |

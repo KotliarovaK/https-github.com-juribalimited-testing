@@ -307,10 +307,12 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumn
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Installed on device' option in expanded associations list
-	When User clicks the Filters button
-	When User add "Compliance" filter where type is "Does not equal" with added column and Lookup option
-    | SelectedValues |
-    | Empty          |
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
 	When User clicks 'RUN LIST' button
 	When User clicks on 'Compliance' column header
 	Then color data is sorted by 'Compliance' column in ascending order
+	When User clicks on 'Compliance' column header
+	Then color data is sorted by 'Compliance' column in descending order
