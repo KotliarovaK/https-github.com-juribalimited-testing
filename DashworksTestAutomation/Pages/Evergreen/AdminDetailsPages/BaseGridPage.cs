@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@col-id='onboardAction']/span[contains(text(), 'Re-Onboard')]")]
         public IWebElement ReonboardedItem { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter ng-star-inserted']/span")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'box-counter')]/span")]
         public IWebElement RowsCounter { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount ng-star-inserted']")]
