@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks 'RUN' button on inline tip banner
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks 'RUN' button on inline tip banner
 	Then Success message is displayed and contains "1 automation started," text
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks Group By button on the Admin page and selects "Automation" value
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks 'RUN' button on inline tip banner
 	Then Success message is displayed and contains "1 automation started," text
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks 'RUN' button on inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17011_Automation" text in the Search field for "Automation" column
@@ -231,7 +231,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks 'RUN' button on inline tip banner
 	Then Success message is displayed and contains "1 automation started," text
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "<AutomationName>" text in the Search field for "Automation" column

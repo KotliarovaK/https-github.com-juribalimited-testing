@@ -47,29 +47,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
-        [When(@"User clicks Cancel button in the warning message on the Admin page")]
-        public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(page.CancelButtonInWarningMessage);
-            page.CancelButtonInWarningMessage.Click();
-            Verify.IsFalse(page.WarningMessage.Displayed(), "Warning message was not disappears after Cancel button click.");
-        }
-
-        [When(@"User clicks ""(.*)"" button in the warning message on Admin page")]
-        public void WhenUserClicksButtonInTheWarningMessageOnAdminPage(string buttonName)
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
-            button.GetButtonInWarningMessage(buttonName).Click();
-
-            //For automation
-            if (buttonName.Equals("RUN"))
-            {
-                _automationStartTime.Value = DateTime.Now.AddSeconds(-10);
-            }
-        }
-
         [When(@"User close message on the Admin page")]
         public void WhenUserCloseMessageOnTheAdminPage()
         {

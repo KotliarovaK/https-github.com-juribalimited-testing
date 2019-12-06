@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
@@ -17,10 +18,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
     class EvergreenJnr_BaseInlineTipBannerElement : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_BaseInlineTipBannerElement(RemoteWebDriver driver)
+        public EvergreenJnr_BaseInlineTipBannerElement(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
+            _automationStartTime = automationStartTime;
         }
 
         #region Button
@@ -30,11 +33,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseInlineTipBannerElement>();
             page.GetButton(button).Click();
+
+            //For automation
+            if (button.Equals("RUN"))
+            {
+                _automationStartTime.Value = DateTime.Now.AddSeconds(-10);
+            }
         }
 
         #endregion
 
-        #region Banner types with text
+        #region Banner types display + text
+
+        [Then(@"inline tip banner is not displayed")]
+        public void ThenInlineTipBannerIsNotDisplayed()
+        {
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            Verify.IsFalse(page.InlineTipElement.Displayed(), "Inline tip banner is displayed");
+        }
 
         [Then(@"'(.*)' text is displayed on warning inline tip banner")]
         public void ThenTextIsDisplayedOnWarningInlineTipBanner(string text)
@@ -43,7 +59,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual("rgba(235, 175, 37, 1)", page.GetColor(), 
+            Verify.AreEqual("rgba(235, 175, 37, 1)", page.GetColor(),
                 "Warning inline tip banner is not Amber");
 
             Verify.IsTrue(page.IsTextPresent(text),

@@ -33,7 +33,8 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button 
 	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is displayed on warning inline tip banner
-	When User clicks Cancel button in the warning message on the Admin page
+	When User clicks 'CANCEL' button on inline tip banner
+	Then inline tip banner is not displayed
 	Then Warning message is not displayed on the Admin page
 	When User clicks 'DELETE' button 
 	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is displayed on warning inline tip banner

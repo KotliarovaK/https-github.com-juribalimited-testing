@@ -197,10 +197,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'btn-close-wrap')]//button")]
         public IWebElement CloseMessageButton { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'messageAction')]/span[contains(text(), 'CANCEL')]")]
-        public IWebElement CancelButtonInWarningMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-error/span/i[@class='material-icons mat-warning']")]
         public IWebElement UnderFieldWarningIcon { get; set; }
 

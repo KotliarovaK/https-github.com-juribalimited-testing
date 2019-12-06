@@ -21,7 +21,8 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	#Cancel
 	And User clicks "Delete" option in Cog-menu for "FlDAS16489_1" item on Admin page
 	Then Warning message with "The selected custom field will be permanently deleted" text is displayed on the Project Details Page
-	When User clicks Cancel button in the warning message on the Admin page
+	When User clicks 'CANCEL' button on inline tip banner
+	Then inline tip banner is not displayed
 	Then Warning message is not displayed on the Admin page
 	And 'ValueDAS16489_1' content is displayed in the 'Value' column
 	#Delete
