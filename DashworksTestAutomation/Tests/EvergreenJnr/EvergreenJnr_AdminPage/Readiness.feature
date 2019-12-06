@@ -310,7 +310,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
-	Then Warning message with "created objects which are not displayed in Evergreen" text is displayed on the Project Details Page
+	Then 'created objects which are not displayed in Evergreen' text is displayed on warning inline tip banner
 	When User navigates to the 'Readiness' left menu item
 	Then inline tip banner is not displayed
 

@@ -965,24 +965,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectPage.Click(() => projectPage.LanguageMenu);
         }
 
-        //TODO move to baseGrid
-        [Then(@"Warning message with ""(.*)"" text is displayed on the Project Details Page")]
-        public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            //Warning message should have Orange color
-            var bgColor = message.WarningMessage.GetCssValue("background-color");
-            Verify.AreEqual("rgba(235, 175, 37, 1)", bgColor, $"Waring message is not Orange: {bgColor}");
-            Verify.IsTrue(message.WarningMessage.Text.Contains(text), $"'{text}' is not displayed in Warning message");
-        }
-
-        [Then(@"No warning message displayed on the Project Details Page")]
-        public void ThenNoWarningMessageIsDisplayedOnTheProjectDetailsPage()
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            Verify.That(_driver.IsElementDisplayed(message.WarningMessage), Is.False, $"Warning message is displayed");
-        }
-
         [Then(@"User selects ""(.*)"" option for selected language")]
         public void ThenUserSelectsOptionForSelectedLanguage(string optionName)
         {

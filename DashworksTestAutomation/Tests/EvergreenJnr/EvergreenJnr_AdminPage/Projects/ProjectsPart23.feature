@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectCo
 	When User enters "DAS14819Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks Converts to Evergreen button
-	Then Warning message with "Are you sure you want to convert this project to Evergreen? This cannot be undone" text is displayed on the Project Details Page
+	Then 'Are you sure you want to convert this project to Evergreen? This cannot be undone' text is displayed on warning inline tip banner
 	And Cancel button is displayed in warning message
 	When User confirms converting to Evergreen process
 	Then Success converting message appears with the next "This legacy project has successfully been converted to Evergreen" text

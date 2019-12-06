@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User enters 'Microsoft SQL' in the 'Application' autocomplete field and selects 'Microsoft SQL Server 2012' value
 	When User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button on popup
-	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
+	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on warning inline tip banner
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on success inline tip banner
 	#waiting for the relink process to be completed

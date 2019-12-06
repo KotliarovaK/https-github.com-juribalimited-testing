@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User selects state 'true' for 'Resync apps' checkbox
 	When User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button on popup
-	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
+	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on warning inline tip banner
 	When User clicks 'RELINK' button on popup
 	Then 'Device successfully relinked' text is displayed on success inline tip banner
 	#waiting for the RELINK process to be completed
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	When User clicks 'RELINK' button 
 	And User enters '5XW9ZW6O6HG7IP9' in the 'Device' autocomplete field and selects '5XW9ZW6O6HG7IP9' value
 	And User clicks 'RELINK' button on popup
-	Then Warning message with "This object will be relinked to the selected Evergreen object in this project" text is displayed on the Project Details Page
+	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on warning inline tip banner
 	When User clicks 'RELINK' button on popup
 	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on success inline tip banner
 	When User navigates to the 'Projects Summary' left submenu item
