@@ -112,8 +112,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
         public void ThenSuccessMessageTheBucketHasBeenUpdatedIsDisplayedOnTheBucketsPage(string bucketName)
         {
-            var pageBase = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(pageBase.SuccessMessage);
             var pageBuckets = _driver.NowAt<BucketsPage>();
             Verify.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
                 $"Success Message is not displayed for {bucketName}");

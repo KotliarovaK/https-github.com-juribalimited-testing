@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -20,9 +21,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly RemoteWebDriver _driver;
         private readonly RunNowAutomationStartTime _automationStartTime;
 
-        private string AmberColor => "rgba(235, 175, 37, 1)";
-        private string RedColor => "rgba(242, 88, 49, 1)";
-        private string GreenColor => "rgba(126, 189, 56, 1)";
+        enum MessageColors
+        {
+            [Description("rgba(235, 175, 37, 1)")]
+            Amber,
+            [Description("rgba(242, 88, 49, 1)")]
+            Red,
+            [Description("rgba(126, 189, 56, 1)")]
+            Green
+        }
 
         public EvergreenJnr_BaseInlineTipBannerElement(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
@@ -69,7 +76,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual(AmberColor, page.GetColor(),
+            Verify.AreEqual(MessageColors.Amber.GetValueAndDescription().Value, page.GetColor(),
                 "Warning inline tip banner is not Amber");
         }
 
@@ -78,20 +85,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual(GreenColor, page.GetColor(),
+            Verify.AreEqual(MessageColors.Green.GetValueAndDescription().Value, page.GetColor(),
                 "Success inline tip banner is not Green");
         }
 
         [Then(@"'(.*)' text is displayed on success inline tip banner")]
         public void ThenTextIsDisplayedOnSuccessInlineTipBanner(string text)
         {
-            BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
+            VerifyMessageTextAndColor(MessageColors.Green, text);
+        }
 
-            Verify.AreEqual(GreenColor, page.GetColor(),
-                "Success inline tip banner is not Green");
-
-            Verify.IsTrue(page.IsTextPresent(text),
-                $"Success inline tip banner with '{text}' text is not displayed");
+        [Then(@"'(.*)' text in '(.*)' content is displayed on success inline tip banner")]
+        public void ThenTextInContentIsDisplayedOnSuccessInlineTipBanner(string text, string message)
+        {
+            var finalMessage = string.Format(message, text);
         }
 
         [Then(@"'(.*)' text is displayed on warning inline tip banner")]
@@ -99,13 +106,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading(80);
 
-            BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
-
-            Verify.AreEqual(AmberColor, page.GetColor(),
-                "Warning inline tip banner is not Amber");
-
-            Verify.IsTrue(page.IsTextPresent(text),
-                $"Warning inline tip banner with '{text}' text is not displayed");
+            VerifyMessageTextAndColor(MessageColors.Amber, text);
         }
 
         [Then(@"'(.*)' text is not displayed on warning inline tip banner")]
@@ -127,13 +128,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading(80);
 
+            VerifyMessageTextAndColor(MessageColors.Red, text);
+        }
+
+        private void VerifyMessageTextAndColor(MessageColors messageColor, string expectedText)
+        {
             BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual(RedColor, page.GetColor(),
-                "Error inline tip banner is not Red");
+            Verify.AreEqual(messageColor.GetValueAndDescription().Value, page.GetColor(),
+                $"Inline tip banner is not {messageColor.ToString()}");
 
-            Verify.IsTrue(page.IsTextPresent(text),
-                $"Error inline tip banner with '{text}' text is not displayed");
+            Verify.IsTrue(page.IsTextPresent(expectedText),
+                $"{messageColor.ToString()} inline tip banner with '{expectedText}' text is not displayed");
         }
 
         #endregion

@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	When User clicks 'Delete' option in opened Cog-menu
 	Then "TestList0A78U9 list will be permanently deleted" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
-	And no Warning message is displayed in the lists panel
+	Then inline tip banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @DAS13930 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
