@@ -117,15 +117,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"Error message is not displayed on the Capacity Units page")]
-        [Then(@"Error message is not displayed on the Capacity Slots page")]
-        [Then(@"Error message is not displayed on the Projects page")]
-        public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
-        }
-
         [Then(@"Warning message is not displayed on the Admin page")]
         public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
         {

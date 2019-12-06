@@ -89,6 +89,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 "Success inline tip banner is not Green");
         }
 
+        [Then(@"error inline tip banner is displayed")]
+        public void ThenErrorInlineTipBannerIsDisplayed()
+        {
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+
+            Verify.AreEqual(MessageColors.Red.GetValueAndDescription().Value, page.GetColor(),
+                "Error inline tip banner is not Red");
+        }
+
         [Then(@"'(.*)' text is displayed on success inline tip banner")]
         public void ThenTextIsDisplayedOnSuccessInlineTipBanner(string text)
         {

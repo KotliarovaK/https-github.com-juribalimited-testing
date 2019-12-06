@@ -101,13 +101,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Queue' left menu item
 	Then There are no errors in the browser console
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
 	When User navigates to the 'History' left menu item
 	Then There are no errors in the browser console
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then following Items are displayed in the History table
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And 'Applications 0/0' tab is displayed on Project Scope Changes page
 	When User navigates to the 'Queue' left menu item
 	Then There are no errors in the browser console
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then following Items are displayed in the Queue table
 	| Items                          |
 	| 0IJB93JZPG72PX                 |
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User waits until Queue disappears
 	And User navigates to the 'History' left menu item
 	Then There are no errors in the browser console
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then Following items displayed in the History table
 	| Items                          |
 	| 0IJB93JZPG72PX                 |

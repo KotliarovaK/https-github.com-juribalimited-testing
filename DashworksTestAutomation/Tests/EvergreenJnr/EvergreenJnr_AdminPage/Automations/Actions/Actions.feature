@@ -472,7 +472,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects 'Devices Task 1' option from 'Task' autocomplete
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
@@ -658,7 +658,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Complete' in the 'Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
