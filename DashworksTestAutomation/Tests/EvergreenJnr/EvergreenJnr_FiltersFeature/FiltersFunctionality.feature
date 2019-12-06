@@ -466,7 +466,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| CapacityUnit13201 |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
+	And User clicks 'DELETE' button on inline tip banner
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11559
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardFilters

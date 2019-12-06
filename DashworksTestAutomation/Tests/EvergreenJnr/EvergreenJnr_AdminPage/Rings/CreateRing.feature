@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	| OneRing          |
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
+	And User clicks 'DELETE' button on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently

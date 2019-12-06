@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDisplayOrderIsResetAfterSlotDeletion
 	| Slot 3           |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
+	And User clicks 'DELETE' button on inline tip banner
 	Then Success message is displayed and contains "The selected slot has been deleted" text
 	When User opens 'Capacity Slot' column settings
 	And User clicks Column button on the Column Settings panel

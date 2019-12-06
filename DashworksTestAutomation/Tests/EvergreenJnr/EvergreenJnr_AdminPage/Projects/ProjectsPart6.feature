@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	When User clicks 'DELETE' button
 	Then User sees Cancel button in banner
 	And Cancel button is displayed with correctly color
-	When User clicks Delete button in the warning message
+	When User clicks 'DELETE' button on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11701 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive

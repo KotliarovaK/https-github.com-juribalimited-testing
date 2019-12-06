@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| Slot 13979 (copy) (copy) |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
+	And User clicks 'DELETE' button on inline tip banner
 	Then Success message is displayed and contains "The selected slots have been deleted" text
 	When User clicks refresh button in the browser
 	Then Counter shows "1" found rows

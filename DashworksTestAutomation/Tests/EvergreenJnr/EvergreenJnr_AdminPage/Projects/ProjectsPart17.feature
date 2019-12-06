@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User enters "TestProject1" text in the Search field for "Project" column
 	When User clicks on 'TestProject1' cell from 'Project' column
 	Then Page with 'TestProject1' header is displayed to user
-	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
+	Then 'The scope for this project refers to a deleted list, this must be updated before proceeding' text is displayed on warning inline tip banner
 	Then 'UPDATE ALL CHANGES' button is disabled
 	When User navigates to the 'Scope Details' left menu item
 	And User selects 'All Users' in the 'Scope' dropdown with wait

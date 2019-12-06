@@ -132,5 +132,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User enters "TestName11729" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Page with 'TestName11729' header is displayed to user
-	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
+	Then 'The scope for this project refers to a deleted list, this must be updated before proceeding' text is displayed on warning inline tip banner
 	And There are no errors in the browser console

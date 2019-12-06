@@ -22,6 +22,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRin
 	| TestRing         |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
+	And User clicks 'DELETE' button on inline tip banner
 	Then Success message is displayed and contains "The selected ring has been deleted" text
 	And There are no errors in the browser console

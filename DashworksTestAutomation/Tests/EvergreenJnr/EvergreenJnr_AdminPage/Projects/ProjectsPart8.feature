@@ -71,7 +71,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	| Objects        |
 	| <ObjectsToAdd> |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then Warning message with "<WarningMessageText>" text is displayed on the Admin page
+	Then '<WarningMessageText>' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	Then Success message is displayed and contains "<SuccessMessageText>" text
 

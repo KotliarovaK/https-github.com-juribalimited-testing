@@ -342,7 +342,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddsNewPersonToSharingList(Table table)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClickButtonByName("ADD USER");
+            action.ClickButton("ADD USER");
 
             foreach (var row in table.Rows)
             {
@@ -355,7 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     action.SelectDropdown(row["Permission"], "Select access");
                 }
-                action.ClickButtonByName("ADD USER");
+                action.ClickButton("ADD USER");
 
                 //TODO Section reloads with delay
                 Thread.Sleep(2000);

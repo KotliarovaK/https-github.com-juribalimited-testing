@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	#Delete
 	When User clicks "Delete" option in Cog-menu for "FlDAS16489_1" item on Admin page
 	Then Warning message with "The selected custom field will be permanently deleted" text is displayed on the Project Details Page
-	When User clicks Delete button in the warning message
+	When User clicks 'DELETE' button on inline tip banner
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	Then 'No custom fields found for this device' message is displayed on empty greed
 	And 'ValueDAS16489_1' content is not displayed in the 'Value' column
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	When User expands 'ValueDAS17695_1A' row in the groped grid
 	And User clicks "Delete" option in Cog-menu for "FlDAS17695_1" item on Admin page
 	Then Warning message with "The selected custom field will be permanently deleted" text is displayed on the Project Details Page
-	When User clicks Delete button in the warning message
+	When User clicks 'DELETE' button on inline tip banner
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	And Grid is grouped
 	And '1' options are selected in the Group By menu

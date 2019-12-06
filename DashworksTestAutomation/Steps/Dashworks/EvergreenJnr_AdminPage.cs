@@ -513,7 +513,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.SelectDropdown("Remove Members", "Actions");
-            page.ClickButtonByName("REMOVE");
+            page.ClickButton("REMOVE");
 
             var teamElement = _driver.NowAt<TeamsPage>();
             _driver.WaitForElementToBeDisplayed(teamElement.WarningMessage);
@@ -1388,7 +1388,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.SelectDropdown("Delete", "Actions");
-            page.ClickButtonByName("DELETE");
+            page.ClickButton("DELETE");
 
             var projectElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);

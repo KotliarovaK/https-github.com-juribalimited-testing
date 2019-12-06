@@ -50,6 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
+	Then 'TEST' text is not displayed on warning inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
@@ -80,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Delete        |
 	When User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
+	Then 'Are you sure you wish to run 1 automation?' text is displayed on warning inline tip banner
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User enters "DELAY_2" text in the Search field for "Automation" column
@@ -97,8 +98,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	When User clicks Delete button in the warning message
-	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
+	When User clicks 'DELETE' button on inline tip banner
+	Then 'Cannot delete a running automation' text is displayed on warning inline tip banner
 	When User moves "Applications_Scope" automation to "DELAY_8" automation
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
@@ -358,8 +359,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	When User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	When User clicks Delete button in the warning message
-	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
+	When User clicks 'DELETE' button on inline tip banner
+	Then 'Cannot delete a running automation' text is displayed on warning inline tip banner
 	When User clicks Cog-menu for 'DELAY - do not delete3' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
@@ -458,10 +459,10 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks 'Automations' header breadcrumb
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
-	Then Warning message with "This automation will be permanently deleted" text is displayed on the Admin page
+	Then 'This automation will be permanently deleted' text is displayed on warning inline tip banner
 	When User clicks Cancel button in the warning message on the Admin page
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
-	When User clicks Delete button in the warning message
+	When User clicks 'DELETE' button on inline tip banner
 	Then Success message is displayed and contains "1 automation deleted" text
 	When User navigates to the 'Automation Log' left menu item
 	When User navigates to the 'Automations' left menu item
@@ -542,7 +543,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	Then Warning message with "Are you sure you wish to run 2 automations?" text is displayed on the Admin page
+	Then 'Are you sure you wish to run 2 automations?' text is displayed on warning inline tip banner
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "2 automations started," text
 	When User navigates to the 'Automation Log' left menu item

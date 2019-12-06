@@ -1256,7 +1256,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
     | Bucket_DAS12940_to_be_deleted |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
+	And User clicks 'DELETE' button on inline tip banner
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -1286,7 +1286,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEver
     | Capacity_Unit_DAS13201_to_be_deleted |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
+	And User clicks 'DELETE' button on inline tip banner
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user

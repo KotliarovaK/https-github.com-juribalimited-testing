@@ -33,9 +33,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #region Button
 
-        public IWebElement GetButtonByNameOnPopup(string button)
+        public IWebElement GetButton(string button)
         {
-            return GetButtonByName(button, this.GetStringByFor(() => this.PopupElement));
+            return GetButton(button, this.GetStringByFor(() => this.PopupElement));
         }
 
         #endregion

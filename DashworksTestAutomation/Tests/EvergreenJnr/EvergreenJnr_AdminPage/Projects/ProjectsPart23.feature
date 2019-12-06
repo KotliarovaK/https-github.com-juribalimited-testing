@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	| Objects                                            |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5) |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
+	Then '1 device will be added, 1 user will be added, 1 application will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	And User navigates to the 'Queue' left menu item
 	And User waits until Queue disappears

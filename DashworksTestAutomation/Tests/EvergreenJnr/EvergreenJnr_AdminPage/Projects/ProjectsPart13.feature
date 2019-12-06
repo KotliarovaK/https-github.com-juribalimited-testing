@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| Objects                          |
 	| ACD252468 (Nicolas O. Mc Millan) |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then Warning message with "1 device will be added, 1 user will be added" text is displayed on the Admin page
+	Then '1 device will be added, 1 user will be added' text is displayed on warning inline tip banner
 	Then multiselect is disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then multiselect is disabled
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
 	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then Warning message with "2 users will be added" text is displayed on the Admin page
+	Then '2 users will be added' text is displayed on warning inline tip banner
 	Then multiselect is disabled
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then multiselect is disabled

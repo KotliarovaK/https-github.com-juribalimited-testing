@@ -194,16 +194,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
         public IWebElement ErrorMessage { get; set; }
 
-        //TODO all baners should be moved to separate element
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-tip')]")]
-        public IWebElement WarningMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'btn-close-wrap')]//button")]
         public IWebElement CloseMessageButton { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'messageAction')]/span[contains(text(), 'DELETE')]")]
-        public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'messageAction')]/span[contains(text(), 'CANCEL')]")]
@@ -388,12 +380,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 By.XPath($".//div[@role='presentation']/div/div[@title='{objectsNumber}']"));
         }
 
-        //TODO should be removed
-        public bool TextMessage(string textMessage)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//*[text()='{textMessage}']"));
-        }
-
         public bool GetDisplayStateForStringFilterByName(string filterName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
@@ -428,18 +414,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
-        }
-
-        //TODO this should be removed
-        public string GetMessageColor()
-        {
-            return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("background-color");
-        }
-
-        //TODO remove this and replace by specific methods that verify error messages that relates to the specific webElements
-        public string GetErrorMessageColor()
-        {
-            return Driver.FindElement(By.XPath(".//div[contains(@class,'inline-error')]")).GetCssValue("background-color");
         }
 
         public IWebElement GetTextInSearchFieldByColumnName(string columnName)

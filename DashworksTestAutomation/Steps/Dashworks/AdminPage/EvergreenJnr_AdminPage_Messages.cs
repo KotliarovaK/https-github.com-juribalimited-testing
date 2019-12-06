@@ -47,55 +47,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
-        //TODO this method should be removed
-        [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
-        public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
-        {
-            BaseGridPage message;
-            try
-            {
-                message = _driver.NowAt<BaseGridPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    message = _driver.NowAt<BaseGridPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    message = _driver.NowAt<BaseGridPage>();
-                }
-            }
-
-            _driver.WaitForElementToContainsText(message.WarningMessage, text);
-            Utils.Verify.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Amber color
-            //Waiting for message text change
-            Thread.Sleep(1000);
-            Utils.Verify.IsTrue(message.TextMessage(text),
-                $"{text} is NOT displayed on the Project page");
-        }
-
-        [Then(@"Warning message with ""(.*)"" text is not displayed on the Admin page")]
-        public void ThenWarningMessageWithTextIsNotDisplayedOnTheAdminPage(string text)
-        {
-            BaseGridPage message;
-            try
-            {
-                message = _driver.NowAt<BaseGridPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                message = _driver.NowAt<BaseGridPage>();
-            }
-
-            //If there is no banner on page then there are no message at all. All good
-            if (!_driver.IsElementDisplayed(message.Banner, WebDriverExtensions.WaitTime.Short))
-                return;
-
-            _driver.WaitForElementToNotContainsText(message.WarningMessage, text);
-        }
-
         [When(@"User clicks Cancel button in the warning message on the Admin page")]
         public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
         {
@@ -103,16 +54,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForElementToBeDisplayed(page.CancelButtonInWarningMessage);
             page.CancelButtonInWarningMessage.Click();
             Verify.IsFalse(page.WarningMessage.Displayed(), "Warning message was not disappears after Cancel button click.");
-        }
-
-        //TODO move to the Generic class
-        [When(@"User clicks Delete button in the warning message")]
-        public void WhenUserClicksDeleteButtonInTheWarningMessage()
-        {
-            var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
-            button.DeleteButtonInWarningMessage.Click();
-            Logger.Write("Delete button was clicked");
         }
 
         [When(@"User clicks ""(.*)"" button in the warning message on Admin page")]

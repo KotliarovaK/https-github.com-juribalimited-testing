@@ -205,7 +205,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         public void WhenUserCreateStaticListWithName(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var createButton = page.GetButtonByName("CREATE");
+            var createButton = page.GetButton("CREATE");
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);
@@ -223,7 +223,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         {
             //Just to wait Create button
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetButtonByName("CREATE");
+            page.GetButton("CREATE");
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);

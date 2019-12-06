@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then 'Actions' dropdown is displayed
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
+	Then 'You cannot delete the default team' text is displayed on warning inline tip banner
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
 	When User enters 'TestTeam88' text to 'Team Name' textbox
