@@ -80,6 +80,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForElementToNotContainsText(page.InlineTipElement, text);
         }
 
+        [Then(@"'(.*)' text is displayed on error inline tip banner")]
+        public void ThenTextIsDisplayedOnErrorInlineTipBanner(string text)
+        {
+            _driver.WaitForDataLoading(80);
+
+            BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
+
+            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetColor(),
+                "Error inline tip banner is not Red");
+
+            Verify.IsTrue(page.IsTextPresent(text),
+                $"Error inline tip banner with '{text}' text is not displayed");
+        }
+
         #endregion
     }
 }

@@ -82,17 +82,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Verify.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
         }
 
-        //TODO remove this method. All error messages should be linked to appropriate controls like textboxes or dropdowns
-        [Then(@"Error message with ""(.*)"" text is displayed")]
-        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToContainsText(page.ErrorMessage, text);
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetErrorMessageColor(), "Colors do not match!"); //Red color
-            Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
-        }
-
         [Then(@"""(.*)"" error in the Scope Changes displayed to the User")]
         public void ThenErrorInTheScopeChangesDisplayedToTheUser(string text)
         {

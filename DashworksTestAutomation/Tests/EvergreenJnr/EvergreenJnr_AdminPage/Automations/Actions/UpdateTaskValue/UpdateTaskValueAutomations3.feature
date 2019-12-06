@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Warning message check
-	Then Error message with "This action has parameters which are not shown and no longer applicable to the task type, update the action to remove these" text is displayed
+	Then 'This action has parameters which are not shown and no longer applicable to the task type, update the action to remove these' text is displayed on error inline tip banner
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17481 @Cleanup @Not_Ready
 #Waiting for updated Validation messages on the automation
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasDueDate
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Warning message check
-	Then Error message with "This action has parameters which are not shown and no longer applicable to the task type, update the action to remove these" text is displayed
+	Then 'This action has parameters which are not shown and no longer applicable to the task type, update the action to remove these' text is displayed on error inline tip banner
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17481 @Cleanup @Not_Ready
 #Waiting for updated Validation messages on the automation
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasNotDueDate
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Warning message check
-	Then Error message with "This action has parameters which are now available for the task type, update the action to add these" text is displayed
+	Then 'This action has parameters which are now available for the task type, update the action to add these' text is displayed on error inline tip banner
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17481 @Cleanup @Not_Ready
 #Waiting for updated Validation messages on the automation
@@ -273,4 +273,4 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasNotOwner
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Warning message check
-	Then Error message with "This action has parameters which are now available for the task type, update the action to add these" text is displayed
+	Then 'This action has parameters which are now available for the task type, update the action to add these' text is displayed on error inline tip banner

@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	Then "Failed, 1803 Team, Akhila Varghese" content is displayed for "Value" column
 	When User clicks content from "Action" column
 	#Warning message check
-	Then Error message with "The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these" text is displayed
+	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on error inline tip banner
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	Then "Failed, 2019-11-01" content is displayed for "Value" column
 	When User clicks content from "Action" column
 	#Warning message check
-	Then Error message with "The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these" text is displayed
+	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on error inline tip banner
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
@@ -235,7 +235,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	Then "Failed" content is displayed for "Value" column
 	When User clicks content from "Action" column
 	#Warning message check
-	Then Error message with "The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these" text is displayed
+	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on error inline tip banner
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
@@ -307,7 +307,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateAfterTaskChangingToTaskWi
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Warning message check
-	Then Error message with "The configuration of this task has changed, this action no longer has the correct parameters, update the action to change these" text is displayed
+	Then 'The configuration of this task has changed, this action no longer has the correct parameters, update the action to change these' text is displayed on error inline tip banner
 	Then 'UPDATE' button is disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19065 @Cleanup @Not_Ready

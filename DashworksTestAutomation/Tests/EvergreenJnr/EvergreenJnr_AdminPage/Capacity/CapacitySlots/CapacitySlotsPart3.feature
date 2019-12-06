@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 
-	Then Error message with "An override already exists for this date" text is displayed
+	Then 'An override already exists for this date' text is displayed on error inline tip banner
 	And "1" rows label displays in Action panel
 	And There are no errors in the browser console
 
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User enters '10 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks 'CREATE' button 
-	Then Error message with "An override already exists for this date" text is displayed
+	Then 'An override already exists for this date' text is displayed on error inline tip banner
 	And There are no errors in the browser console
 	When User navigates to the 'Slots' left menu item
 	When User select "Capacity Slot" rows in the grid
