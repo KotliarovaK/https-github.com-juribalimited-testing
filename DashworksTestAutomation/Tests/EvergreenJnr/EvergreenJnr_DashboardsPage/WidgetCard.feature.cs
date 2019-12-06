@@ -2359,7 +2359,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS19015")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidgetBAsedOnStickyComplianceColumn()
         {
             System.Exception lastException = null;
@@ -2394,8 +2393,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS19015",
-                        "Cleanup",
-                        "Not_Run"});
+                        "Cleanup"});
 #line 591
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
