@@ -507,20 +507,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        //TODO move to class
-        [When(@"User removes selected members")]
-        public void WhenUserRemovesSelectedMembers()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.SelectDropdown("Remove Members", "Actions");
-            page.ClickButton("REMOVE");
-
-            var teamElement = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(teamElement.WarningMessage);
-            _driver.WaitForDataLoading();
-            teamElement.RemoveButtonInWarningMessage.Click();
-        }
-
         #region Column Settings
 
         [When(@"User clicks Filter button in the Column Settings panel on the Teams Page")]

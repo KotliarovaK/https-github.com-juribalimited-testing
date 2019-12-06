@@ -74,6 +74,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"warning inline tip banner is displayed")]
         public void ThenWarningInlineTipBannerIsDisplayed()
         {
+            _driver.WaitForDataLoading();
+
             BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
 
             Verify.AreEqual(MessageColors.Amber.GetValueAndDescription().Value, page.GetColor(),

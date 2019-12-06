@@ -88,7 +88,10 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then Rows counter shows "1" of "4" rows
 	When User selects all rows on the grid
 	Then 'Actions' dropdown is displayed
-	When User removes selected members
+	When User selects 'Remove Members' in the 'Actions' dropdown
+	When User clicks 'REMOVE' button
+	Then warning inline tip banner is displayed
+	When User clicks 'REMOVE' button on inline tip banner
 	Then 'The selected user has been removed' text is displayed on success inline tip banner
 	When User enters "automation_admin2" text in the Search field for "Username" column
 	And User selects all rows on the grid
