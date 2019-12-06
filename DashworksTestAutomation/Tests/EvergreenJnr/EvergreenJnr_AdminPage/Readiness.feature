@@ -312,7 +312,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 	And User navigates to the 'Details' left menu item
 	Then Warning message with "created objects which are not displayed in Evergreen" text is displayed on the Project Details Page
 	When User navigates to the 'Readiness' left menu item
-	Then No warning message displayed on the Project Details Page
+	Then inline tip banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
