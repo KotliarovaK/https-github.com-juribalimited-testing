@@ -17,7 +17,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	And User selects '<ScopeValue>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	And User navigates to the 'Details' left menu item
 	#Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 3806 selected)" is displayed to the user in the Project Scope Changes section
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	When User enters 'DevicesProject2' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	And User navigates to the 'Scope Changes' left menu item
 	Then "Devices to add (0 of 17279 selected)" is displayed to the user in the Project Scope Changes section

@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	When User enters '11770' text to 'Bucket Name' textbox
 	When User selects 'Admin IT' option from 'Team' autocomplete
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The bucket has been created" text
+	Then 'The bucket has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE EVERGREEN BUCKET' button 
 	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters ' 11770' text to 'Bucket Name' textbox
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User enters 'NewBucket5' text to 'Bucket Name' textbox
 	When User selects 'I-Team' option from 'Team' autocomplete
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The NewBucket5 bucket has been updated" text
+	Then 'The NewBucket5 bucket has been updated' text is displayed on success inline tip banner
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then 'FALSE' content is displayed in the 'Default' column
 

@@ -165,7 +165,7 @@ this.FeatureBackground();
 #line 32
  testRunner.And("User clicks Create button on the Create Ring page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.Then("Success message is displayed and contains \"The ring has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The ring has been created\' text is displayed on success inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 34
  testRunner.When("User clicks \'CREATE PROJECT RING\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
@@ -328,7 +328,7 @@ this.FeatureBackground();
 #line 99
  testRunner.And("User clicks Create button on the Create Ring page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
- testRunner.Then("Success message is displayed and contains \"The ring has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The ring has been created\' text is displayed on success inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 101
  testRunner.When("User clicks \'CREATE PROJECT RING\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 102

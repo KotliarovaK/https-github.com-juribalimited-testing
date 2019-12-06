@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	| 0RGBQGA7XOOPJSW |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	Then There are no errors in the browser console
 	Then Error message is not displayed
 	When User navigates to the 'Scope Details' left menu item
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item

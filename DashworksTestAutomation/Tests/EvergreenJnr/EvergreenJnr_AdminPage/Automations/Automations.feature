@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'RUN' button 
 	Then 'Are you sure you wish to run 1 automation?' text is displayed on warning inline tip banner
 	When User clicks 'RUN' button on inline tip banner
-	Then Success message is displayed and contains "1 automation started," text
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then 'TRUE' content is displayed in the 'Running' column
 	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column
@@ -341,7 +341,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	Then Page with 'Automations' header is displayed to user
 #change item name when state status will be fixed
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete3" item on Admin page
-	Then Success message is displayed and contains "1 automation started," text
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -463,7 +463,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then inline tip banner is not displayed
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks 'DELETE' button on inline tip banner
-	Then Success message is displayed and contains "1 automation deleted" text
+	Then '1 automation deleted' text is displayed on success inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User navigates to the 'Automations' left menu item
 	Then Success message is not displayed on the Admin page
@@ -545,7 +545,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	When User clicks 'RUN' button 
 	Then 'Are you sure you wish to run 2 automations?' text is displayed on warning inline tip banner
 	When User clicks 'RUN' button on inline tip banner
-	Then Success message is displayed and contains "2 automations started," text
+	Then '2 automations started,' text is displayed on success inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "Test_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -563,13 +563,13 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then Success message is displayed and contains "1 automation started," text
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then Success message is displayed and contains "1 automation started," text
+	Then '1 automation started,' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17171 @DAS17003 @DAS17260 @Not_Ready
 #Use specific Automation (Delay) that run longer

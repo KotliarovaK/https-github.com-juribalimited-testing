@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User enters '13510TestProject' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CREATE PROJECT' button 
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then Page with '13510TestProject' header is displayed to user
 	When User navigates to the 'Capacity' left menu item

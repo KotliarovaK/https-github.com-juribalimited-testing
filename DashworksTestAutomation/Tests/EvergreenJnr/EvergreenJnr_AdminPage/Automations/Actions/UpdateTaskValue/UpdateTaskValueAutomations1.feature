@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
 	#Check Actions grid
-	Then Success message is displayed and contains "The automation action has been created" text
+	Then 'The automation action has been created' text is displayed on success inline tip banner
 	Then "2 days after current value" content is displayed for "Value" column
 	#Check created Action
 	When User clicks content from "Action" column

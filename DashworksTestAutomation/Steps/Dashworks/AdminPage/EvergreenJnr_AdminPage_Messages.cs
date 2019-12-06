@@ -65,15 +65,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Verify.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
         }
 
-        [Then(@"Success message is displayed and contains ""(.*)"" text")]
-        public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToContainsText(page.SuccessMessage, text);
-            Verify.AreEqual("rgba(126, 189, 56, 1)", page.SuccessMessage.GetCssValue("background-color"), "Success message is not Green"); //Green color
-            Verify.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
-        }
-
         [Then(@"Green banner contains following text ""(.*)""")]
         public void ThenGreenBannerContainsFollowingText(string text)
         {
@@ -116,17 +107,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.Banner);
             Utils.Verify.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
-        }
-
-        [Then(@"Success message is displayed correctly")]
-        public void ThenSuccessMessageIsDisplayedCorrectly()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Utils.Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Green color
-            //TODO update web element or move this assertion to separate step after Olga replay in https://juriba.atlassian.net/browse/DAS-14037
-            //Utils.Verify.False(_driver.IsElementHaveHorizontalScrollbar(
-            //        _driver.FindElement(By.XPath(".//admin-project-units-list/.."))), "Table has scrollbar");
         }
 
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]

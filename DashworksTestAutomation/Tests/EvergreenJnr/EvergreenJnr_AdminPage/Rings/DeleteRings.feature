@@ -16,12 +16,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRin
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'TestRing' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
+	Then 'The ring has been created' text is displayed on success inline tip banner
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| TestRing         |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	And User clicks 'DELETE' button on inline tip banner
-	Then Success message is displayed and contains "The selected ring has been deleted" text
+	Then 'The selected ring has been deleted' text is displayed on success inline tip banner
 	And There are no errors in the browser console

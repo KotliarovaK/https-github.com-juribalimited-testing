@@ -58,7 +58,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -72,7 +72,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -87,7 +87,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 
 Examples:
 	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList  |
@@ -106,13 +106,13 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User enters "MailboxesProject25" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	Then Success message is displayed and contains "The selected project has been deleted" text
+	Then 'The selected project has been deleted' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 	When User create static list with "StaticList5846" name on "Mailboxes" page with following items
 	| ItemName                         |
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	And User selects 'StaticList5846' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User enters "MailboxesProject26" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	And User selects 'DynamicList9513' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User enters "MailboxesProject27" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -162,7 +162,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -178,7 +178,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -193,7 +193,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 
 Examples:
 	| ProjectName     | StaticList     | PageName | Item                | ColumnName | DynamicList     |

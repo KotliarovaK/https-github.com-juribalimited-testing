@@ -612,8 +612,8 @@ this.FeatureBackground();
 #line 224
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 225
- testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
-                    "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'3 objects queued for onboarding, 0 objects offboarded\' text is displayed on succ" +
+                    "ess inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
@@ -742,8 +742,8 @@ this.FeatureBackground();
 #line 265
  testRunner.When("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 266
- testRunner.Then("Success message is displayed and contains \"The selected projects have been delete" +
-                    "d\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected projects have been deleted\' text is displayed on success inline tip" +
+                    " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 267
  testRunner.Then("Select All checkbox have unchecked state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

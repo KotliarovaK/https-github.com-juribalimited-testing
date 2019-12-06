@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then '3 users will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
 	| Objects              |
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then '3 applications will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then following objects were not found
 	| Objects                      |
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items                                                        |
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then '4 devices will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
+	Then '4 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'Device Scope' tab on Project Scope Changes page
 	When User selects "Do not include owned devices" checkbox on the Project details page

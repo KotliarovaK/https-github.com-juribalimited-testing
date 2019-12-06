@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then multiselect is disabled
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	Then 'UPDATE ALL CHANGES' button is disabled
 	And "Devices to add (0 of 17278 selected)" is displayed to the user in the Project Scope Changes section
 	Then multiselect is not disabled
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then multiselect is disabled
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	Then 'UPDATE ALL CHANGES' button is disabled
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	Then "Users to add (0 of 41337 selected)" is displayed to the user in the Project Scope Changes section

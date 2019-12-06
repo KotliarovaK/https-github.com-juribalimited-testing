@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 	And User enters 'Manchester' text to 'Capacity Unit Name' textbox 
 	And User enters 'Manchester Operations' text to 'Description' textbox
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	Then 'The capacity unit has been created' text is displayed on success inline tip banner
 	And Counter shows "2" found rows
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @DAS12672 @Cleanup

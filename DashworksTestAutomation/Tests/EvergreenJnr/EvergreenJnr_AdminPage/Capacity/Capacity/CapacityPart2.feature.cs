@@ -165,7 +165,7 @@ this.FeatureBackground();
  testRunner.Then("Success message is displayed and contains \"The capacity unit details have been up" +
                     "dated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
- testRunner.Then("Success message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("success inline tip banner is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
  testRunner.When("User enters \"13720\" text in the Search field for \"Description\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
@@ -200,7 +200,7 @@ this.FeatureBackground();
 #line 39
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.Then("Success message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("success inline tip banner is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 41
  testRunner.Then("Success message is displayed and contains \"The project capacity details have been" +
                     " updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

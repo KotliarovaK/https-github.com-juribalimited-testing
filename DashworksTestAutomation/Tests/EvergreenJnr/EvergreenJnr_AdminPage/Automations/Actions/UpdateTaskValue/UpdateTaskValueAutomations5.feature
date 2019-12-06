@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button
 	#Check Actions grid
-	Then Success message is displayed and contains "The automation action has been created" text
+	Then 'The automation action has been created' text is displayed on success inline tip banner
 	Then "Failed, 2019-11-01, 1803 Team, Akhila Varghese" content is displayed for "Value" column
 	#Change Task
 	When User clicks 'Projects' on the left-hand menu
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button
 	#Check Actions grid
-	Then Success message is displayed and contains "The automation action has been created" text
+	Then 'The automation action has been created' text is displayed on success inline tip banner
 	Then "Failed, 2019-11-01, 1803 Team, Akhila Varghese" content is displayed for "Value" column
 	#Change Task
 	When User clicks 'Projects' on the left-hand menu
@@ -212,7 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button
 	#Check Actions grid
-	Then Success message is displayed and contains "The automation action has been created" text
+	Then 'The automation action has been created' text is displayed on success inline tip banner
 	Then "Failed, 2019-11-01, 1803 Team, Akhila Varghese" content is displayed for "Value" column
 	#Change Task
 	When User clicks 'Projects' on the left-hand menu

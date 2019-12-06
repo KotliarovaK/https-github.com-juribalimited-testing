@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	And User navigates to the 'Add from buckets' left menu item
 	And User adds "Unassigned" objects to bucket
 	And User clicks 'ADD DEVICES' button 
-	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	Then 'The selected devices have been added to the selected bucket' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
 	Then Counter shows "17,225" found rows
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	And User clicks 'CONTINUE' button 
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
-	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	Then 'The selected devices have been added to the selected bucket' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @DAS13837 @Buckets @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And User navigates to the 'Add from buckets' left menu item
 	And User adds "Unassigned" objects to bucket
 	And User clicks 'ADD MAILBOXES' button 
-	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
+	Then 'The selected mailboxes have been added to the selected bucket' text is displayed on success inline tip banner
 	And data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
 	And Counter shows "14,784" found rows
 	When User click on "Email Address (Primary)" column header on the Admin page
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And User clicks 'CONTINUE' button 
 	Then Move To Another Bucket Page is displayed to the user
 	When User moves selected objects to "Unassigned" bucket
-	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
+	Then 'The selected mailboxes have been added to the selected bucket' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00CWZRC4UK6W20  |
 	| 00HA7MKAVVFDAV  |
 	When User clicks "ADD BUCKETS" button
-	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	Then 'The selected devices have been added to the selected bucket' text is displayed on success inline tip banner
 	Then following Objects are displayed in Buckets table:
 	| Objects         |
 	| 001BAQXT6JWFPI  |
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00KWQ4J3WKQM0G  |
 	| 00OMQQXWA1DRI6  |
 	When User clicks "ADD BUCKETS" button
-	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
+	Then 'The selected devices have been added to the selected bucket' text is displayed on success inline tip banner
 	Then following Objects are displayed in Buckets table:
 	| Objects         |
 	| 00I0COBFWHOF27  |
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	| 00OMQQXWA1DRI6  |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
+	Then '10 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User click on Back button
 	When User navigates to the 'Evergreen' left menu item
 	Then Page with 'Buckets' header is displayed to user

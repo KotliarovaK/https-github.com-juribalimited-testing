@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User enters 'TestTeam' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The team has been created" text
+	Then 'The team has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
 	When User enters 'TestTeam' text to 'Team Name' textbox
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The team was successfully updated" text
+	Then 'The team was successfully updated' text is displayed on success inline tip banner
 	When User clicks 'Teams' header breadcrumb
 	When User enters "99770" text in the Search field for "Team" column
 	When User clicks content from "Team" column
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The team was successfully updated" text
+	Then 'The team was successfully updated' text is displayed on success inline tip banner
 	When User clicks 'Teams' header breadcrumb
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column

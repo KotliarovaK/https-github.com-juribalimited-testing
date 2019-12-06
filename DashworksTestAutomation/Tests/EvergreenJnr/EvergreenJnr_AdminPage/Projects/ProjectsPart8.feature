@@ -14,7 +14,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -29,7 +29,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -43,7 +43,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User enters '<ProjectName>' text to 'Project Name' textbox
 	Then 'All Devices' content is displayed in 'Scope' autocomplete
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 
 Examples:
 	| ProjectName     | StaticList     | PageName  | Item                             | ColumnName    | DynamicList     |
@@ -61,7 +61,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User enters 'TestProject9753' text to 'Project Name' textbox
 	And User selects '<AllListName>' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then Page with 'TestProject9753' header is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
@@ -73,7 +73,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then '<WarningMessageText>' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "<SuccessMessageText>" text
+	Then '<SuccessMessageText>' text is displayed on success inline tip banner
 
 Examples:
 	| AllListName   | TabName   | ObjectsToAdd                                       | WarningMessageText      | SuccessMessageText                                   |
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	#And User selects "Evergreen" in the Mode Project dropdown
 	When User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item
 	When User clicks Reset Filters button on the Admin page
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User enters '13530Project' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item
 	And User clicks String Filter button for "Project" column on the Admin page
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User navigates to the 'Capacity' left menu item
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The project capacity details have been updated" text
+	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
 	When User clicks 'Administration' header breadcrumb
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Capacity Units' left menu item

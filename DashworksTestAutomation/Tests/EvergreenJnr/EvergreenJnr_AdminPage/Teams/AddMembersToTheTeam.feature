@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	| Migration Phase 3 Team |
 	| Retail Team            |
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The team has been created" text
+	Then 'The team has been created' text is displayed on success inline tip banner
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User selects all rows on the grid
@@ -44,14 +44,14 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	| Objects           |
 	| automation_admin1 |
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The team has been created" text
+	Then 'The team has been created' text is displayed on success inline tip banner
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Team" column
 	And User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The team was successfully updated" text
+	Then 'The team was successfully updated' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13254 @DAS13421 @Teams @Cleanup
 Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	| automation_admin3 |
 	| eugene            |
 	And User clicks 'ADD USERS' button 
-	Then Success message is displayed and contains "The selected users have been added" text
+	Then 'The selected users have been added' text is displayed on success inline tip banner
 	When User click on "Username" column header on the Admin page
 	Then data in table is sorted by "Username" column in ascending order on the Admin page
 	When User click on "Username" column header on the Admin page
@@ -89,14 +89,14 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User selects all rows on the grid
 	Then 'Actions' dropdown is displayed
 	When User removes selected members
-	Then Success message is displayed and contains "The selected user has been removed" text
+	Then 'The selected user has been removed' text is displayed on success inline tip banner
 	When User enters "automation_admin2" text in the Search field for "Username" column
 	And User selects all rows on the grid
 	And User selects 'Add to another team' in the 'Actions' dropdown
 	And User clicks 'CONTINUE' button 
 	When User selects 'Team 1' option from 'Select a new team' autocomplete without search
 	And User clicks 'ADD USERS' button 
-	Then Success message is displayed and contains "The selected user was added to team Team 1" text
+	Then 'The selected user was added to team Team 1' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @DAS16130 @Teams @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	| automation_admin2 |
 	| automation_admin3 |
 	And User clicks 'ADD USERS' button 
-	Then Success message is displayed and contains "The selected users have been added" text
+	Then 'The selected users have been added' text is displayed on success inline tip banner
 	When User enters "admin1" text in the Search field for "Username" column
 	And User selects all rows on the grid
 	And User selects 'Add to another team' in the 'Actions' dropdown
@@ -148,4 +148,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorAppearsAfterCreatingTeamHavingC
 	Then Chips for 'Search' field are not displayed
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
-	Then Success message is displayed and contains "The team has been created" text
+	Then 'The team has been created' text is displayed on success inline tip banner

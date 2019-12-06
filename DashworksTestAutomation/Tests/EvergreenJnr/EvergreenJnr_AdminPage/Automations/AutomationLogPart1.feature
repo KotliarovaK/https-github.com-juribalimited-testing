@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then Success message is displayed and contains "1 automation started," text
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks Group By button on the Admin page and selects "Automation" value
 	Then Cog menu is not displayed on the Admin page
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then Success message is displayed and contains "1 automation started," text
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -232,7 +232,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then Success message is displayed and contains "1 automation started," text
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "<AutomationName>" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column

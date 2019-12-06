@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	Then "Devices to add (2 of 17279 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Scope Details' left menu item
 	Then Warning message is not displayed on the Admin page
 
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User enters 'DevicesProject' text to 'Project Name' textbox
 	And User selects 'StaticList6527' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then Page with 'DevicesProject' header is displayed to user
 	When User navigates to the 'Scope Changes' left menu item

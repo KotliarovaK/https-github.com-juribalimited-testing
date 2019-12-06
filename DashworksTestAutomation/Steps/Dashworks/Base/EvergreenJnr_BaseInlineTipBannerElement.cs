@@ -22,6 +22,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         private string AmberColor => "rgba(235, 175, 37, 1)";
         private string RedColor => "rgba(242, 88, 49, 1)";
+        private string GreenColor => "rgba(126, 189, 56, 1)";
 
         public EvergreenJnr_BaseInlineTipBannerElement(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
@@ -70,6 +71,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             Verify.AreEqual(AmberColor, page.GetColor(),
                 "Warning inline tip banner is not Amber");
+        }
+
+        [Then(@"success inline tip banner is displayed")]
+        public void ThenSuccessInlineTipBannerIsDisplayed()
+        {
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+
+            Verify.AreEqual(GreenColor, page.GetColor(),
+                "Success inline tip banner is not Green");
+        }
+
+        [Then(@"'(.*)' text is displayed on success inline tip banner")]
+        public void ThenTextIsDisplayedOnSuccessInlineTipBanner(string text)
+        {
+            BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
+
+            Verify.AreEqual(GreenColor, page.GetColor(),
+                "Success inline tip banner is not Green");
+
+            Verify.IsTrue(page.IsTextPresent(text),
+                $"Success inline tip banner with '{text}' text is not displayed");
         }
 
         [Then(@"'(.*)' text is displayed on warning inline tip banner")]

@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User enters '7 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "Your override date has been created" text
+	Then 'Your override date has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '5 Sep 2018' text to 'Override Start Date' datepicker
 	And User enters '10 Sep 2018' text to 'Override End Date' datepicker
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "0" for "Monday" column
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The capacity slot details have been updated" text
+	Then 'The capacity slot details have been updated' text is displayed on success inline tip banner
 	And '0' content is displayed in the 'Monday' column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "40" for "Monday" column

@@ -182,9 +182,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//admin-header/div[@id='messageAdmin' and @role='alert']")]
         public IWebElement Banner { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
-        public IWebElement SuccessMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]//span[@class='ng-star-inserted']")]
         public IWebElement SuccessMessageThirdPart { get; set; }
 

@@ -31,4 +31,4 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	When User clicks 'DELETE' button on inline tip banner
-	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
+	Then 'The selected team has been deleted, and their buckets reassigned' text is displayed on success inline tip banner

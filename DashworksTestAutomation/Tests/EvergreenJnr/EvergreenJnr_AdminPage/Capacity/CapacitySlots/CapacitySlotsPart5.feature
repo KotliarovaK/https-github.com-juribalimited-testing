@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User clicks "Duplicate" option in Cog-menu for "Slot 13979" item on Admin page
-	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) slot" text
+	Then 'Your capacity slot has been created, click here to view the Slot 13979 (copy) slot' text is displayed on success inline tip banner
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue | duplicateCount |
 	| Monday         | 0               | 2              |
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| Teams          | All Teams       | 2              |
 	| Capacity Units |                 | 2              |
 	When User clicks "Duplicate" option in Cog-menu for "Slot 13979 (copy)" item on Admin page
-	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) (copy) slot" text
+	Then 'Your capacity slot has been created, click here to view the Slot 13979 (copy) (copy) slot' text is displayed on success inline tip banner
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue | duplicateCount |
 	| Monday         | 0               | 3              |
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	And User clicks 'DELETE' button on inline tip banner
-	Then Success message is displayed and contains "The selected slots have been deleted" text
+	Then 'The selected slots have been deleted' text is displayed on success inline tip banner
 	When User clicks refresh button in the browser
 	Then Counter shows "1" found rows
 
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User clicks "Duplicate" option in Cog-menu for "Slot 14478" item on Admin page
-	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 14478 (copy) slot" text
+	Then 'Your capacity slot has been created, click here to view the Slot 14478 (copy) slot' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then "Slot 14478 (copy)" content is displayed in "Slot Name" field
 	And "14478" content is displayed in "Display Name" field

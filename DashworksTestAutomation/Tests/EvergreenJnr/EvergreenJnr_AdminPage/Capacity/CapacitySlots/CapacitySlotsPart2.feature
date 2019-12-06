@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	And User clicks 'DELETE' button on inline tip banner
-	Then Success message is displayed and contains "The selected slot has been deleted" text
+	Then 'The selected slot has been deleted' text is displayed on success inline tip banner
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS12921

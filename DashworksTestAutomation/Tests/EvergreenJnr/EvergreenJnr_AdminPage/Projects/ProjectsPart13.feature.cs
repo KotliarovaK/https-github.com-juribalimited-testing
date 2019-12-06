@@ -340,8 +340,8 @@ this.FeatureBackground();
 #line 86
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
- testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
-                    "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on succ" +
+                    "ess inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 88
  testRunner.Then("\'UPDATE ALL CHANGES\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 89
@@ -479,8 +479,8 @@ this.FeatureBackground();
 #line 134
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 135
- testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
-                    "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on succ" +
+                    "ess inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 136
  testRunner.Then("\'UPDATE ALL CHANGES\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 137

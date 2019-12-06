@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters '14695_Ring' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
+	Then 'The ring has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'Ring_Test' text to 'Ring name' textbox
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters '14705_Ring' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
+	Then 'The ring has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'Ring_Test' text to 'Ring name' textbox

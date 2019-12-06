@@ -2353,7 +2353,7 @@ Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreat
 	Then Page with 'Projects' header is displayed to user
 	When User enters 'TestProjectFor17715' text to 'Project Name' textbox
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 
 @Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17715 @Cleanup

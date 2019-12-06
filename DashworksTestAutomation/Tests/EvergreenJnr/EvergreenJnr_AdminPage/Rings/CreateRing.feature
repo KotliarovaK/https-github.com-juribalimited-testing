@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User clicks 'CREATE EVERGREEN RING' button 
 	And User enters 'OneRing' text to 'Ring name' textbox
 	And User doubleclicks Create button on Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
+	Then 'The ring has been created' text is displayed on success inline tip banner
 	And 'OneRing' content is displayed in the 'Ring' column
 	When User enters "OneRing" text in the Search field for "Ring" column
 	Then Rows counter contains "1" found row of all rows
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'TestRing15397_1' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
+	Then 'The ring has been created' text is displayed on success inline tip banner
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
 	And User enters "NewProject15397" text in the Search field for "Project" column
@@ -46,4 +46,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	When User enters 'TestRing15397_2' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
 	Then There are no errors in the browser console
-	And Success message is displayed and contains "The ring has been created" text
+	And 'The ring has been created' text is displayed on success inline tip banner

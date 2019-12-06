@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then '3 applications will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User enters 'Rainbow' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then Page with 'Rainbow' header is displayed to user
 	When User navigates to the 'Scope Details' left menu item
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| 00I0COBFWHOF27 |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands multiselect and selects following Objects
 	| Objects                       |
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| AAH0343264 (Luc Gauthier)     |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User click on Back button
 	And Project created via API and opened
 	| ProjectName  | Scope     | ProjectTemplate | Mode               |
