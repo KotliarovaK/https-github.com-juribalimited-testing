@@ -320,9 +320,9 @@ this.FeatureBackground();
 #line 73
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 75
- testRunner.Then("Error message with \"This action has parameters which are not shown and no longer " +
-                    "applicable to the task type, update the action to remove these\" text is displaye" +
-                    "d", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This action has parameters which are not shown and no longer applicable to the t" +
+                    "ask type, update the action to remove these\' text is displayed on error inline t" +
+                    "ip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -567,9 +567,9 @@ this.FeatureBackground();
 #line 142
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
- testRunner.Then("Error message with \"This action has parameters which are not shown and no longer " +
-                    "applicable to the task type, update the action to remove these\" text is displaye" +
-                    "d", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This action has parameters which are not shown and no longer applicable to the t" +
+                    "ask type, update the action to remove these\' text is displayed on error inline t" +
+                    "ip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -808,8 +808,8 @@ this.FeatureBackground();
 #line 208
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 210
- testRunner.Then("Error message with \"This action has parameters which are now available for the ta" +
-                    "sk type, update the action to add these\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This action has parameters which are now available for the task type, update the" +
+                    " action to add these\' text is displayed on error inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1048,8 +1048,8 @@ this.FeatureBackground();
 #line 274
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 276
- testRunner.Then("Error message with \"This action has parameters which are now available for the ta" +
-                    "sk type, update the action to add these\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This action has parameters which are now available for the task type, update the" +
+                    " action to add these\' text is displayed on error inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

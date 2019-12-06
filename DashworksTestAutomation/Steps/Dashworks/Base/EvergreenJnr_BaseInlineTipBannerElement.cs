@@ -21,16 +21,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly RemoteWebDriver _driver;
         private readonly RunNowAutomationStartTime _automationStartTime;
 
-        enum MessageColors
-        {
-            [Description("rgba(235, 175, 37, 1)")]
-            Amber,
-            [Description("rgba(242, 88, 49, 1)")]
-            Red,
-            [Description("rgba(126, 189, 56, 1)")]
-            Green
-        }
-
         public EvergreenJnr_BaseInlineTipBannerElement(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
@@ -103,7 +93,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' text is displayed on success inline tip banner")]
         public void ThenTextIsDisplayedOnSuccessInlineTipBanner(string text)
         {
-            VerifyMessageTextAndColor(MessageColors.Green, text);
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+
+            page.VerifyMessageTextAndColor(MessageColors.Green, text);
         }
 
         [Then(@"'(.*)' text in '(.*)' message is displayed on success inline tip banner")]
@@ -111,7 +103,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var finalMessage = string.Format(message, text);
 
-            VerifyMessageTextAndColor(MessageColors.Green, finalMessage);
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+
+            page.VerifyMessageTextAndColor(MessageColors.Green, finalMessage);
         }
 
         [Then(@"'(.*)' text is displayed on warning inline tip banner")]
@@ -119,7 +113,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading(80);
 
-            VerifyMessageTextAndColor(MessageColors.Amber, text);
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+
+            page.VerifyMessageTextAndColor(MessageColors.Amber, text);
         }
 
         [Then(@"'(.*)' text is not displayed on warning inline tip banner")]
@@ -141,18 +137,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading(80);
 
-            VerifyMessageTextAndColor(MessageColors.Red, text);
-        }
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
 
-        private void VerifyMessageTextAndColor(MessageColors messageColor, string expectedText)
-        {
-            BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
-
-            Verify.AreEqual(messageColor.GetValueAndDescription().Value, page.GetColor(),
-                $"Inline tip banner is not {messageColor.ToString()}");
-
-            Verify.IsTrue(page.IsTextPresent(expectedText),
-                $"{messageColor.ToString()} inline tip banner with '{expectedText}' text is not displayed");
+            page.VerifyMessageTextAndColor(MessageColors.Red, text);
         }
 
         #endregion

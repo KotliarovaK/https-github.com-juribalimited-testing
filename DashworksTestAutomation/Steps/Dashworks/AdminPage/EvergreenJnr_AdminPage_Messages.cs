@@ -117,13 +117,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"inline tip banner is not displayed")]
-        public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(page.WarningMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"Success message is not displayed on the Admin page")]
         public void ThenSuccessMessageIsNotDisplayedOnTheAdminPage()
         {
@@ -142,7 +135,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var message = _driver.NowAt<BaseGridPage>();
             Verify.IsFalse(message.SuccessMessage.Displayed(), "Success message is displayed!");
         }
-
 
         [Then(@"Filling field error is not displayed")]
         public void ThenFillingFieldErrorIsNotDisplayed()

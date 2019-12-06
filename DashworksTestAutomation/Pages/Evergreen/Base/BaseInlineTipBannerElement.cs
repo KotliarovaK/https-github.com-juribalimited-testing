@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
@@ -23,6 +25,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 SelectorFor(this, p => p.InlineTipElement)
             };
         }
+
+        #region Verify
+
+        public void VerifyMessageTextAndColor(MessageColors messageColor, string expectedText)
+        {
+            Verify.AreEqual(messageColor.GetValueAndDescription().Value, GetColor(),
+                $"Inline tip banner is not {messageColor.ToString()}");
+
+            Verify.IsTrue(IsTextPresent(expectedText),
+                $"{messageColor.ToString()} inline tip banner with '{expectedText}' text is not displayed");
+        }
+
+        #endregion
 
         #region Text
 
@@ -65,5 +80,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         #endregion
+    }
+
+    public enum MessageColors
+    {
+        [Description("rgba(235, 175, 37, 1)")]
+        Amber,
+        [Description("rgba(242, 88, 49, 1)")]
+        Red,
+        [Description("rgba(126, 189, 56, 1)")]
+        Green
     }
 }
