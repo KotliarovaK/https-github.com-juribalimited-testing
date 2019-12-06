@@ -117,13 +117,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"Success message is not displayed")]
-        public void ThenSuccessMessageIsNotDisplayed()
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(message.SuccessMessage.Displayed(), "Success message is displayed!");
-        }
-
         [Then(@"Filling field error is not displayed")]
         public void ThenFillingFieldErrorIsNotDisplayed()
         {

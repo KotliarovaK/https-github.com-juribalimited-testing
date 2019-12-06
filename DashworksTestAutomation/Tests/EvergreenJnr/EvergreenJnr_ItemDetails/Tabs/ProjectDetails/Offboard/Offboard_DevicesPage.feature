@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	And User clicks 'OFFBOARD' button on popup 
 	Then 'The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)' text is displayed on success inline tip banner
 	When User navigates to the 'Projects Summary' left submenu item
-	Then Success message is not displayed
+	Then inline tip banner is not displayed
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18036
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly

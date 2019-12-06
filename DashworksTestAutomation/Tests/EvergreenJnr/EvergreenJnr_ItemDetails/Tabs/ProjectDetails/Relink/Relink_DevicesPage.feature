@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	When User clicks 'RELINK' button on popup
 	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on success inline tip banner
 	When User navigates to the 'Projects Summary' left submenu item
-	Then Success message is not displayed
+	Then inline tip banner is not displayed
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
 	And User enters 'FISC5NOXFB8Q7M' in the 'Device' autocomplete field and selects 'FISC5NOXFB8Q7M' value
