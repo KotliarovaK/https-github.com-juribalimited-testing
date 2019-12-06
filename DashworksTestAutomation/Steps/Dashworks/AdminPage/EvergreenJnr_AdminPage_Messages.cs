@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"Warning message is not displayed on the Admin page")]
+        [Then(@"inline tip banner is not displayed")]
         public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();

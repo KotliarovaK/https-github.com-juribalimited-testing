@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	Then Scope List dropdown is disabled
 	Then All Associations are disabled
 	When User navigates to the 'Scope Changes' left menu item
-	Then Warning message is not displayed on the Admin page
+	Then inline tip banner is not displayed
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
