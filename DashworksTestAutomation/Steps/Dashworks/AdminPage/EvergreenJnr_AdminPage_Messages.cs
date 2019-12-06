@@ -17,12 +17,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
     internal class EvergreenJnr_AdminPage_Messages : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_AdminPage_Messages(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
+        public EvergreenJnr_AdminPage_Messages(RemoteWebDriver driver)
         {
             _driver = driver;
-            _automationStartTime = automationStartTime;
         }
 
         [Then(@"User clicks ""(.*)"" button in warning container on the Admin page")]
@@ -107,32 +105,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.Banner);
             Utils.Verify.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
-        }
-
-        [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
-        public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
-        {
-            BaseGridPage projectElement;
-            try
-            {
-                projectElement = _driver.NowAt<BaseGridPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    projectElement = _driver.NowAt<BaseGridPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    projectElement = _driver.NowAt<BaseGridPage>();
-                }
-            }
-
-            _driver.WaitForElementToBeDisplayed(projectElement.SuccessMessage);
-            Thread.Sleep(10000);
-            Verify.IsTrue(projectElement.TextMessage(textMessage),
-                $"{textMessage} is not displayed on the Project page");
         }
 
         [When(@"User clicks newly created object link")]

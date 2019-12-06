@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then '25 devices will be added, 25 users will be added, 25 applications will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message with "75 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then '75 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
 	When User navigates to the 'Scope Changes' left menu item

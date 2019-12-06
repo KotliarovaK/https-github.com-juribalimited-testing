@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	And User clicks 'UPDATE ALL CHANGES' button 
 	Then '2 devices will be removed' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message with "0 objects queued for onboarding, 2 objects offboarded" text is displayed on the Projects page
+	Then '0 objects queued for onboarding, 2 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
