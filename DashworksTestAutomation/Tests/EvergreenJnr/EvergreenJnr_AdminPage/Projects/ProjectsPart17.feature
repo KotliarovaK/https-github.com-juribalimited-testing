@@ -132,7 +132,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then 'Actions' dropdown is not disabled
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then Delete buttons are displayed to the User in Actions and Banner on the Projects page
+	Then 'DELETE' button is displayed
+	Then 'DELETE' button is displayed on inline tip banner
 	When User cancels the selection of all rows on the Projects page
 	Then 'Actions' dropdown is disabled
 	Then 'DELETE' button is not displayed

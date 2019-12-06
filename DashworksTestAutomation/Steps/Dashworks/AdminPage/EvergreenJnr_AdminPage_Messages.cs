@@ -63,14 +63,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Verify.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
         }
 
-        [Then(@"Green banner contains following text ""(.*)""")]
-        public void ThenGreenBannerContainsFollowingText(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Verify.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
-        }
-
         [Then(@"""(.*)"" error in the Scope Changes displayed to the User")]
         public void ThenErrorInTheScopeChangesDisplayedToTheUser(string text)
         {

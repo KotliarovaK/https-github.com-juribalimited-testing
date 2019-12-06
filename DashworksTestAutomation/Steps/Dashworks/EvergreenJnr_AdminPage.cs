@@ -15,6 +15,7 @@ using System.Threading;
 using DashworksTestAutomation.DTO.Projects.Tasks;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
@@ -1358,10 +1359,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectDropdown("Delete", "Actions");
             page.ClickButton("DELETE");
 
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
+            var inlineTipBanner = _driver.NowAt<BaseInlineTipBannerElement>();
+            inlineTipBanner.VerifyColor(MessageColors.Amber);
             _driver.WaitForDataLoading();
-            projectElement.DeleteButtonInWarningMessage.Click();
+            inlineTipBanner.GetButton("DELETE").Click();
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]
@@ -1369,17 +1370,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
             checkbox.SelectAllCheckBox.Click();
-        }
-
-        //TODO should be moved to ActionPanel
-        [Then(@"Delete buttons are displayed to the User in Actions and Banner on the Projects page")]
-        public void ThenDeleteButtonsAreDisplayedToTheUserInActionsAndBannerOnTheProjectsPage()
-        {
-            var actionElement = _driver.NowAt<ActionPanelPage>();
-            Verify.IsTrue(actionElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed in Actions panel");
-
-            var bannerElement = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(bannerElement.DeleteButtonInWarningMessage.Displayed(), "Delete button is not displayed in banner");
         }
 
         [Then(@"Counter shows ""(.*)"" found rows")]

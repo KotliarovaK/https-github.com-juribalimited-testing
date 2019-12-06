@@ -13,10 +13,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
     public class BaseInlineTipBannerElement : BaseDashboardPage
     {
-        private const string InlineTipSelector = ".//div[contains(@class, 'inline-tip')]";
+        private const string InlineTipSelector = ".//div[contains(@class,'inline')][@role='alert']";
 
         [FindsBy(How = How.XPath, Using = InlineTipSelector)]
         public IWebElement InlineTipElement { get; set; }
+
+        [FindsBy(How = How.XPath, Using = InlineTipSelector + "//span[@class='ng-star-inserted']")]
+        public IWebElement SecondPartOfText { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -32,14 +35,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             VerifyColor(messageColor);
 
-            Verify.IsTrue(IsTextPresent(expectedText),
-                $"{messageColor.ToString()} inline tip banner with '{expectedText}' text is not displayed");
+            VerifyText(messageColor, expectedText);
         }
 
         public void VerifyColor(MessageColors messageColor)
         {
             Verify.AreEqual(messageColor.GetValueAndDescription().Value, GetColor(),
                 $"Inline tip banner is not {messageColor.ToString()}");
+        }
+
+        public void VerifyText(MessageColors messageColor, string expectedText)
+        {
+            Verify.IsTrue(IsTextPresent(expectedText),
+                $"{messageColor.ToString()} inline tip banner with '{expectedText}' text is not displayed");
+        }
+
+        public void VerifySecondPartOfText(MessageColors messageColor, string expectedText)
+        {
+            Verify.IsTrue(IsSecondPartOfTextPresent(expectedText),
+                $"{messageColor.ToString()} inline tip banner with '{expectedText}' text in the second part of banner is not displayed");
         }
 
         #endregion
@@ -52,6 +66,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForElementToContainsText(InlineTipElement, expectedText);
             //Check that exact text is displayed in the banner
             return Driver.IsElementExists(By.XPath($"{InlineTipSelector}[text()='{expectedText}']"));
+        }
+
+        public bool IsSecondPartOfTextPresent(string expectedText)
+        {
+            return SecondPartOfText.Text.Equals(expectedText);
         }
 
         #endregion
@@ -82,6 +101,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             {
                 return false;
             }
+        }
+
+        public new void ClickButton(string buttonName)
+        {
+            throw new Exception("Not implemented in this page");
         }
 
         #endregion

@@ -95,6 +95,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.VerifyMessageTextAndColor(MessageColors.Green, text);
         }
 
+        [Then(@"'(.*)' and '(.*)' texts are displayed on success inline tip banner")]
+        public void ThenAndTextsAreDisplayedOnSuccessInlineTipBanner(string firstPart, string secondPart)
+        {
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+
+            page.VerifyMessageTextAndColor(MessageColors.Green, firstPart);
+            page.VerifySecondPartOfText(MessageColors.Green, secondPart);
+        }
+
         [Then(@"'(.*)' text in '(.*)' message is displayed on success inline tip banner")]
         public void ThenTextInMessageIsDisplayedOnSuccessInlineTipBanner(string text, string message)
         {
