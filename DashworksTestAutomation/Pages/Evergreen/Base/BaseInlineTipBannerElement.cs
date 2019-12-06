@@ -30,11 +30,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void VerifyMessageTextAndColor(MessageColors messageColor, string expectedText)
         {
-            Verify.AreEqual(messageColor.GetValueAndDescription().Value, GetColor(),
-                $"Inline tip banner is not {messageColor.ToString()}");
+            VerifyColor(messageColor);
 
             Verify.IsTrue(IsTextPresent(expectedText),
                 $"{messageColor.ToString()} inline tip banner with '{expectedText}' text is not displayed");
+        }
+
+        public void VerifyColor(MessageColors messageColor)
+        {
+            Verify.AreEqual(messageColor.GetValueAndDescription().Value, GetColor(),
+                $"Inline tip banner is not {messageColor.ToString()}");
         }
 
         #endregion

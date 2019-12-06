@@ -68,8 +68,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual(MessageColors.Amber.GetValueAndDescription().Value, page.GetColor(),
-                "Warning inline tip banner is not Amber");
+            page.VerifyColor(MessageColors.Amber);
         }
 
         [Then(@"success inline tip banner is displayed")]
@@ -77,8 +76,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual(MessageColors.Green.GetValueAndDescription().Value, page.GetColor(),
-                "Success inline tip banner is not Green");
+            page.VerifyColor(MessageColors.Green);
         }
 
         [Then(@"error inline tip banner is displayed")]
@@ -86,8 +84,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual(MessageColors.Red.GetValueAndDescription().Value, page.GetColor(),
-                "Error inline tip banner is not Red");
+            page.VerifyColor(MessageColors.Red);
         }
 
         [Then(@"'(.*)' text is displayed on success inline tip banner")]

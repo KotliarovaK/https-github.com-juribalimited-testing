@@ -117,18 +117,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"Success message is not displayed on the Admin page")]
-        public void ThenSuccessMessageIsNotDisplayedOnTheAdminPage()
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            //TODO Remove wait for message after fixing for Automation (5.07.19)
-            if (message.SuccessMessage.Displayed())
-            {
-                Thread.Sleep(3000);
-            }
-            Utils.Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"Success message is not displayed")]
         public void ThenSuccessMessageIsNotDisplayed()
         {

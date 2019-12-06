@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| ProjectName  | Scope     | ProjectTemplate | Mode               |
 	| NewProject15 | All Users | None            | Standalone Project |
 	Then Page with 'NewProject15' header is displayed to user
-	And Success message is not displayed on the Admin page
+	And inline tip banner is not displayed
 	When User click on Back button
 	Then data in table is sorted by "Project" column in ascending order by default on the Admin page
 	When User enters "NewProject15" text in the Search field for "Project" column

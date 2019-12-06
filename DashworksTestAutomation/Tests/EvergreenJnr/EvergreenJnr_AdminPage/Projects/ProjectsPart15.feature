@@ -171,4 +171,4 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	| Items           |
 	| 0623U41CZ73RV2Q |
 	When User navigates to the 'Scope Changes' left menu item
-	Then Success message is not displayed on the Admin page
+	Then inline tip banner is not displayed
