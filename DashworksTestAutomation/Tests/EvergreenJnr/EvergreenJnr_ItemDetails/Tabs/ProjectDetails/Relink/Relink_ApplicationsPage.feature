@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPo
 	Then popup is displayed to User
 	When User enters 'k9 ' text to 'Application' textbox
 	Then Error message is not displayed
-	When User enters '#' text to 'Application' textbox
+	When User enters 'gh#' text to 'Application' textbox
 	Then Error message is not displayed
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @DAS18980
