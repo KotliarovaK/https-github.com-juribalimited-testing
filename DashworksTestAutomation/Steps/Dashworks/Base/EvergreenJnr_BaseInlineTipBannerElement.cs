@@ -20,6 +20,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly RemoteWebDriver _driver;
         private readonly RunNowAutomationStartTime _automationStartTime;
 
+        private string AmberColor => "rgba(235, 175, 37, 1)";
+        private string RedColor => "rgba(242, 88, 49, 1)";
+
         public EvergreenJnr_BaseInlineTipBannerElement(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
@@ -41,6 +44,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        [Then(@"'(.*)' button is displayed on inline tip banner")]
+        public void ThenButtonIsDisplayedOnInlineTipBanner(string button)
+        {
+            var page = _driver.NowAt<BaseInlineTipBannerElement>();
+            Verify.IsTrue(page.IsButtonDisplayed(button),
+                $"'{button}' button is displayed on inline tip banner");
+        }
+
         #endregion
 
         #region Banner types display + text
@@ -52,6 +63,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.InlineTipElement.Displayed(), "Inline tip banner is displayed");
         }
 
+        [Then(@"warning inline tip banner is displayed")]
+        public void ThenWarningInlineTipBannerIsDisplayed()
+        {
+            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+
+            Verify.AreEqual(AmberColor, page.GetColor(),
+                "Warning inline tip banner is not Amber");
+        }
+
         [Then(@"'(.*)' text is displayed on warning inline tip banner")]
         public void ThenTextIsDisplayedOnWarningInlineTipBanner(string text)
         {
@@ -59,7 +79,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual("rgba(235, 175, 37, 1)", page.GetColor(),
+            Verify.AreEqual(AmberColor, page.GetColor(),
                 "Warning inline tip banner is not Amber");
 
             Verify.IsTrue(page.IsTextPresent(text),
@@ -87,7 +107,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             BaseInlineTipBannerElement page = _driver.NowAt<BaseInlineTipBannerElement>();
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetColor(),
+            Verify.AreEqual(RedColor, page.GetColor(),
                 "Error inline tip banner is not Red");
 
             Verify.IsTrue(page.IsTextPresent(text),

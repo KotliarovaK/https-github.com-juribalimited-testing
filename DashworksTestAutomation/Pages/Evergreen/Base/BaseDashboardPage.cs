@@ -81,16 +81,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using = "//div[contains(@class, 'notification')]//span[text()='UPDATE']/ancestor::button")]
-        public IWebElement UpdateButtonOnAmberMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = "//div[contains(@class, 'notification')]//button[contains(@class, 'transparent')]//span[text()='CANCEL']/ancestor::button")]
-        public IWebElement CancelButtonOnAmberMessage { get; set; }
 
         #region All Lists dropdown
 
@@ -492,11 +484,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForDataLoading(50);
         }
 
-        public bool IsButtonDisplayed(string dropdownName)
+        public bool IsButtonDisplayed(string name)
         {
             try
             {
-                return GetButton(dropdownName, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
+                return GetButton(name, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {

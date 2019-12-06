@@ -69,16 +69,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         //TODO this method should be replaced by more generic
-        [Then(@"the amber message is displayed correctly")]
-        public void ThenTheAmberMessageIsDisplayedCorrectly()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(action.WarningMessage.Displayed(), "Amber message is not displayed");
-            Verify.IsTrue(action.UpdateButtonOnAmberMessage.Displayed(), "Update Button is not displayed");
-            Verify.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
-        }
-
-        //TODO this method should be replaced by more generic
         [Then(@"the amber message is not displayed")]
         public void ThenTheAmberMessageIsNotDisplayed()
         {

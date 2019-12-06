@@ -52,6 +52,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return GetButton(button, this.GetStringByFor(() => this.InlineTipElement));
         }
 
+        public new bool IsButtonDisplayed(string name)
+        {
+            try
+            {
+                return this.GetButton(name).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #endregion
     }
 }
