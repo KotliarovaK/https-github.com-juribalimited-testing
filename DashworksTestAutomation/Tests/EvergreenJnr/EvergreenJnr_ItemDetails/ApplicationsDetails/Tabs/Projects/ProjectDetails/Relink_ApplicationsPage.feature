@@ -71,20 +71,20 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User enters '4016' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Exchange Client Language Pack - Vietnamese 15.0.1178.4 (4016)' value
-	When User clicks 'RELINK' button in Dialog Pop-up
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
+	When User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Application successfully relinked" text
 	Then User verifies data in the fields on details page
 	| Field     | Data |
 	| App Owner |      |
 	#return values ​​back
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User enters '4017' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Exchange Client Language Pack - Lithuanian 15.0.847.32 (4017)' value
-	When User clicks 'RELINK' button in Dialog Pop-up
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
+	When User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Application successfully relinked" text
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196
@@ -95,15 +95,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User enters '4019' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft .NET Framework 4.5 4.5.50709 (4019)' value
-	When User clicks 'RELINK' button in Dialog Pop-up
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
+	When User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Application successfully relinked" text
 	#return values ​​back
 	When User clicks 'RELINK' button 
-	Then Dialog Pop-up is displayed for User
+	Then popup is displayed to User
 	When User enters '4018' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030 11.0.61030 (4018)' value
-	When User clicks 'RELINK' button in Dialog Pop-up
-	When User clicks 'RELINK' button in Dialog Pop-up
+	When User clicks 'RELINK' button on popup
+	When User clicks 'RELINK' button on popup
 	Then Success message is displayed and contains "Application successfully relinked" text
