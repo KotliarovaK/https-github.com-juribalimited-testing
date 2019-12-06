@@ -306,8 +306,8 @@ this.FeatureBackground();
 #line 65
  testRunner.And("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.Then("Success message is displayed and contains \"The selected objects were successfully" +
-                    " queued for offboarding from USE ME FOR AUTOMATION(MAIL SCHDLD)\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected objects were successfully queued for offboarding from USE ME FOR AU" +
+                    "TOMATION(MAIL SCHDLD)\' text is displayed on success inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69

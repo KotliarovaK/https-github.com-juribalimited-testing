@@ -799,14 +799,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserClicksButton(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClickButtonByName(buttonName);
+            action.ClickButton(buttonName);
         }
 
         [When(@"User double clicks '(.*)' button")]
         public void WhenUserDoubleClicksButton(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.DoubleClick(action.GetButtonByName(buttonName));
+            _driver.DoubleClick(action.GetButton(buttonName));
         }
 
         [Then(@"'(.*)' button is displayed")]
@@ -829,7 +829,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsDisabled(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
+            Verify.IsTrue(page.GetButton(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
                 $"'{buttonName}' button is displayed");
         }
 
@@ -837,7 +837,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsNotDisabled(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var button = page.GetButtonByName(buttonName, "", WebDriverExtensions.WaitTime.Short);
+            var button = page.GetButton(buttonName, "", WebDriverExtensions.WaitTime.Short);
             Verify.IsTrue(button.Displayed(),
                 $"'{buttonName}' button is not displayed");
             Verify.IsFalse(button.Disabled(),
@@ -848,7 +848,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenTooltipIsNotDisplayedForButton(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var button = page.GetButtonByName(buttonName);
+            var button = page.GetButton(buttonName);
 
             _driver.MouseHover(button);
             //For tooltip display
@@ -861,7 +861,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonHasTooltipWithText(string buttonName, string text)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var button = page.GetButtonByName(buttonName);
+            var button = page.GetButton(buttonName);
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
             Verify.AreEqual(text, toolTipText,
@@ -876,7 +876,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserClicksButtonAndSelectMenuButton(string buttonName, string menuButtonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.ClickButtonByName(buttonName);
+            page.ClickButton(buttonName);
 
             page.GetMenuButtonByName(menuButtonName).Click();
         }

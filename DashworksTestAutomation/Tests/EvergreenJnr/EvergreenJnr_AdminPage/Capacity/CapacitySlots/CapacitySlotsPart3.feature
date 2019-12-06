@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 
-	Then Error message with "An override already exists for this date" text is displayed
+	Then 'An override already exists for this date' text is displayed on error inline tip banner
 	And "1" rows label displays in Action panel
 	And There are no errors in the browser console
 
@@ -55,13 +55,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User enters '7 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "Your override date has been created" text
+	Then 'Your override date has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '5 Sep 2018' text to 'Override Start Date' datepicker
 	And User enters '10 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks 'CREATE' button 
-	Then Error message with "An override already exists for this date" text is displayed
+	Then 'An override already exists for this date' text is displayed on error inline tip banner
 	And There are no errors in the browser console
 	When User navigates to the 'Slots' left menu item
 	When User select "Capacity Slot" rows in the grid
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	| Slot13442        |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then Warning message with "1 slot and 1 related override date will be deleted, do you wish to proceed?" text is displayed on the Admin page
+	Then '1 slot and 1 related override date will be deleted, do you wish to proceed?' text is displayed on warning inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13490
 Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "0" for "Monday" column
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The capacity slot details have been updated" text
+	Then 'The capacity slot details have been updated' text is displayed on success inline tip banner
 	And '0' content is displayed in the 'Monday' column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "40" for "Monday" column

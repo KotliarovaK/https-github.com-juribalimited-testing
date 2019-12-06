@@ -31,9 +31,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
+	Then '1 device will be added, 1 user will be added, 1 application will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @DAS13401 @DAS-14877 @Cleanup @Cleanup @Project_Creation_and_Scope @Projects
@@ -48,7 +48,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then Page with '<ProjectName>' header is displayed to user
 	When User navigates to the 'Scope Changes' left menu item
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 	When User clicks newly created object link
 	Then Page with 'TestProject19' header is displayed to user
@@ -98,16 +98,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	| 01BQIYGGUW5PRP6 |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Queue' left menu item
 	Then There are no errors in the browser console
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then following Items are displayed in the Queue table
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
 	When User navigates to the 'History' left menu item
 	Then There are no errors in the browser console
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then following Items are displayed in the History table
 	| Items           |
 	| 01BQIYGGUW5PRP6 |
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And 'Applications 0/0' tab is displayed on Project Scope Changes page
 	When User navigates to the 'Queue' left menu item
 	Then There are no errors in the browser console
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then following Items are displayed in the Queue table
 	| Items                          |
 	| 0IJB93JZPG72PX                 |
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User waits until Queue disappears
 	And User navigates to the 'History' left menu item
 	Then There are no errors in the browser console
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then Following items displayed in the History table
 	| Items                          |
 	| 0IJB93JZPG72PX                 |

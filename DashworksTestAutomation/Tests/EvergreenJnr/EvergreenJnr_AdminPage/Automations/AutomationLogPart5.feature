@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionValueIDInTheAutomationLog
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks 'RUN' button on inline tip banner
 	When 'Applications_Scope' automation run has finished
 	When 'Applications_Scope' automation 'Action_3' action run has finished
 	When User navigates to the 'Automation Log' left menu item

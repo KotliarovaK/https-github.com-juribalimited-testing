@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User navigates to the 'Capacity' left menu item	
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The project capacity details have been updated" text
+	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
 	When User navigates to the 'Units' left submenu item
 	Then Counter shows "1" found rows
 	And "Unassigned" content is displayed for "Capacity Unit" column
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User clicks 'UPDATE ALL CHANGES' button 
 	When User clicks 'UPDATE PROJECT' button 
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
 	When User clicks 'Admin' on the left-hand menu

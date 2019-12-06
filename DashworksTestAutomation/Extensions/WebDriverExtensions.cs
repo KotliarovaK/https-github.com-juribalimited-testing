@@ -1529,7 +1529,7 @@ namespace DashworksTestAutomation.Extensions
             }
             catch (Exception)
             {
-                throw new Exception($"Text '{expectedText}' is not appears/disappears in the element after {waitSec} seconds");
+                throw new Exception($"Text '{expectedText}' contains condition was not changed to '{condition}' in the element after {waitSec} seconds");
             }
         }
 

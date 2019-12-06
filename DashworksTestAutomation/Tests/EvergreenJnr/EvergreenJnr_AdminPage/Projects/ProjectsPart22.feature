@@ -17,7 +17,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	And User selects '<ScopeList>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	And User navigates to the 'Scope Changes' left menu item
 	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplaye
 	When User enters 'TestNegativeProject15262' text to 'Project Name' textbox
 	When User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	And User navigates to the 'Details' left menu item
 	Then Convert to Evergreen button is not displayed

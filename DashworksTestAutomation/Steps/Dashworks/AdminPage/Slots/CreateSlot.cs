@@ -37,7 +37,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
             foreach (SlotDto slot in slots)
             {
                 var action = _driver.NowAt<BaseDashboardPage>();
-                action.GetButtonByName("CREATE SLOT").Click();
+                action.GetButton("CREATE SLOT").Click();
 
                 var projectElement = _driver.NowAt<ProjectsPage>();
 
@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                     }
                 }
 
-                action.GetButtonByName("CREATE").Click();
+                action.GetButton("CREATE").Click();
                 _driver.WaitForDataLoading();
                 _driver.CheckConsoleErrors();
             }
