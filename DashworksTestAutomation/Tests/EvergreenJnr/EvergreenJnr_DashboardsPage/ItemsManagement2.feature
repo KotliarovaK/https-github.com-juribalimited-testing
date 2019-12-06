@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	| WidgetType | Title               | List                                 | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16326 | Mailbox List (Complex) - BROKEN LIST | 10      | 10         |
 	Then 'Widget_For_DAS16326' Widget is displayed to the user
-	Then User sees 'This widget refers to list Mailbox List (Complex) - BROKEN LIST which has errors' text in warning message on Dashboards page
+	Then User sees 'This widget refers to list Mailbox List (Complex) - BROKEN LIST which has errors' text in warning message of 'Widget_For_DAS16326' widget on Dashboards page
 	Then 'Mailbox List (Complex) - BROKEN LIST' link is displayed in warning message on Dashboards page
 	Then There are no errors in the browser console
 
@@ -154,23 +154,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	| WidgetType | Title               | List                   | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS17551 | AApplicationsList17551 | 10      | 10         |
 	Then 'Widget_For_DAS17551' Widget is displayed to the user
-	Then User sees 'This widget refers to list AApplicationsList17551 which has errors' text in warning message on Dashboards page
+	Then User sees 'This widget refers to list AApplicationsList17551 which has errors' text in warning message of 'Widget_For_DAS17551' widget on Dashboards page
 	Then 'AApplicationsList17551' link is displayed in warning message on Dashboards page
-	Then There are no errors in the browser console
-
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
-Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenLists
-	When User clicks the Logout button
-	And User clicks the Switch to Evergreen link
-	And User clicks on the Login link
-	And User login with following credentials:
-	| Username | Password  |
-	| admin    | m!gration |
-	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
-	When User tries to open same page with '109' item id
-	Then User sees 'This widget refers to list Device List (Complex) - BROKEN LIST which has errors' text in '1' warning messages on Dashboards page
-	And User sees 'This widget refers to list Application List (Complex) - BROKEN LIST which has errors' text in '2' warning messages on Dashboards page
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15877 @Cleanup
@@ -251,16 +236,14 @@ Examples:
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff
 	When Dashboard with 'Dashboard for DAS17985' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS17985 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
-	And User clicks Ellipsis menu for 'WidgetForDAS17985' Widget on Dashboards page
-	And User clicks 'Delete' item from Ellipsis menu on Dashboards page
-	Then User sees 'WidgetForDAS17985 will be permanently deleted' text in warning message on Dashboards page
-	When User clicks Edit mode trigger on Dashboards page
-	Then Delete widget warning message is displayed on Dashboards page
+	When User clicks Ellipsis menu for 'WidgetForDAS17985' Widget on Dashboards page
+	When User clicks 'Delete' item from Ellipsis menu on Dashboards page
+	Then User sees 'WidgetForDAS17985 will be permanently deleted' text in warning message of 'WidgetForDAS17985' widget on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18152 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget
