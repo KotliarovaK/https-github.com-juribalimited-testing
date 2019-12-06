@@ -467,14 +467,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"'{warningText}' message is not displayed in the list details panel");
         }
 
-        [Then(@"no Warning message is displayed in the lists panel")]
-        public void ThenNoWarningMessageIsDisplayedInTheLissPanel()
-        {
-            var listElement = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(listElement.WarningMessage.Displayed(),
-                "Warning message is displayed in the list details panel");
-        }
-
         [Then(@"""(.*)"" message is not displayed in the lists panel")]
         public void ThenMessageIsNotDisplayedInTheListsPanel(string warningText)
         {

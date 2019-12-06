@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then Page with 'Unassigned' header is displayed to user
 	When User updates the "Default Bucket" checkbox state
 	When User clicks 'UPDATE' button
-	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
+	Then 'Unassigned' text in 'The {0} bucket has been updated' message is displayed on success inline tip banner
 	Then '(.*)' text in '(.*)' content is displayed on success inline tip banner
 	And Delete "Bucket12948" Bucket in the Administration
 	When User navigates to the 'Projects' left menu item

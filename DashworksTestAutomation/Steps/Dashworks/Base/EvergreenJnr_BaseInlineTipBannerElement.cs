@@ -95,10 +95,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             VerifyMessageTextAndColor(MessageColors.Green, text);
         }
 
-        [Then(@"'(.*)' text in '(.*)' content is displayed on success inline tip banner")]
-        public void ThenTextInContentIsDisplayedOnSuccessInlineTipBanner(string text, string message)
+        [Then(@"'(.*)' text in '(.*)' message is displayed on success inline tip banner")]
+        public void ThenTextInMessageIsDisplayedOnSuccessInlineTipBanner(string text, string message)
         {
             var finalMessage = string.Format(message, text);
+
+            VerifyMessageTextAndColor(MessageColors.Green, finalMessage);
         }
 
         [Then(@"'(.*)' text is displayed on warning inline tip banner")]

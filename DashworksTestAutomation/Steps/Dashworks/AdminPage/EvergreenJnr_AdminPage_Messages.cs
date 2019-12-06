@@ -109,14 +109,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
         }
 
-        [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
-        public void ThenSuccessMessageTheBucketHasBeenUpdatedIsDisplayedOnTheBucketsPage(string bucketName)
-        {
-            var pageBuckets = _driver.NowAt<BucketsPage>();
-            Verify.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
-                $"Success Message is not displayed for {bucketName}");
-        }
-
         [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
         {
