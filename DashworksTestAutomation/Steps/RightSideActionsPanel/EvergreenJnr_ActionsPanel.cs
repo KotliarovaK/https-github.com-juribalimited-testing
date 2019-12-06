@@ -68,14 +68,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             Verify.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
         }
 
-        //TODO this method should be replaced by more generic
-        [Then(@"the amber message is not displayed")]
-        public void ThenTheAmberMessageIsNotDisplayed()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(action.WarningMessage.Displayed(), "Amber message is displayed");
-        }
-
         [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {

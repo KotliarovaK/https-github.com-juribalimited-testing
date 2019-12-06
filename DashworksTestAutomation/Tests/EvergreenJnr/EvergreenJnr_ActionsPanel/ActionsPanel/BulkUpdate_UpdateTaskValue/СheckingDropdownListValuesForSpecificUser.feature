@@ -35,7 +35,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'CANCEL' button
-	Then the amber message is not displayed
+	Then inline tip banner is not displayed
 	And 'UPDATE' button is not disabled
 	And 'CANCEL' button is not disabled
 	When User clicks the Logout button
@@ -210,7 +210,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'CANCEL' button
-	Then the amber message is not displayed
+	Then inline tip banner is not displayed
 	When User clicks 'UPDATE' button 
 	Then warning inline tip banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
