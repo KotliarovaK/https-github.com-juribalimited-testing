@@ -82,6 +82,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                     "Items are not the same");
         }
 
+        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item from '(.*)' column")]
+        public void WhenUserClicksOptionInCog_MenuForItemFromColumn(string option, string columnContent, string column)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.BodyContainer.Click();
+            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
+            cogMenu.GetCogMenuByItem(column, columnContent).Click();
+            cogMenu.GetCogMenuOptionByName(option).Click();
+        }
+
         //TODO make it generic
         [When(@"User clicks ""(.*)"" option in Cog-menu for ""(.*)"" item on Admin page")]
         public void WhenUserClicksOptionInCog_MenuForItemOnAdminPage(string option, string itemName)
