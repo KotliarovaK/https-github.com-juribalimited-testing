@@ -55,17 +55,23 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectsInTheTopBarOnItemDetailsPageAr
 	Then Project Switcher in the Top bar on Item details page is closed
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857
-Scenario: EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
-	When User navigates to the 'User' details page for 'ACG370114' item
-	Then Details page for "ACG370114" item is displayed to the user
-	When User navigates to the 'User' left submenu item
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS19241
+Scenario Outline: EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
+	When User navigates to the '<PageName>' details page for '<ItemName>' item
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User navigates to the '<SubMenu>' left submenu item
 	Then following content is displayed on the Details Page
-	| Title      | Value |
-	| Compliance | RED   |
+	| Title      | Value   |
+	| Compliance | <Value> |
 	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
 	| ComplianceItems    | ColorName |
-	| Overall Compliance | RED       |
+	| Overall Compliance | <Value>   |
+
+	Examples:
+	| PageName    | ItemName       | SubMenu      | Value   |
+	| User        | ACG370114      | User         | RED     |
+	#DAS19241
+	| User        | allanj         | User         | UNKNOWN |
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928 @DAS18405
 Scenario: EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode

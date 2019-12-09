@@ -377,11 +377,7 @@ this.FeatureBackground();
 #line 73
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 74
-<<<<<<< HEAD:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/ApplicationsDetails/Tabs/Projects/ProjectDetails/Relink_ApplicationsPage.feature.cs
- testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-=======
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
->>>>>>> master:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/Tabs/ProjectDetails/Relink/Relink_ApplicationsPage.feature.cs
 #line 75
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
@@ -390,18 +386,13 @@ this.FeatureBackground();
  testRunner.When("User enters \'4016\' in the \'Application\' autocomplete field and selects \'Microsoft" +
                     " Corporation Microsoft Exchange Client Language Pack - Vietnamese 15.0.1178.4 (4" +
                     "016)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-<<<<<<< HEAD:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/ApplicationsDetails/Tabs/Projects/ProjectDetails/Relink_ApplicationsPage.feature.cs
-#line 76
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 77
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-=======
->>>>>>> master:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/Tabs/ProjectDetails/Relink/Relink_ApplicationsPage.feature.cs
 #line 78
- testRunner.Then("\'Application successfully relinked\' text is displayed on success inline tip banne" +
-                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 79
  testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
+ testRunner.Then("\'Application successfully relinked\' text is displayed on success inline tip banne" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -411,13 +402,6 @@ this.FeatureBackground();
                         ""});
 #line 81
  testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table4, "Then ");
-<<<<<<< HEAD:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/ApplicationsDetails/Tabs/Projects/ProjectDetails/Relink_ApplicationsPage.feature.cs
-#line 83
- testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
- testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-=======
->>>>>>> master:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/Tabs/ProjectDetails/Relink/Relink_ApplicationsPage.feature.cs
 #line 85
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
@@ -426,18 +410,13 @@ this.FeatureBackground();
  testRunner.When("User enters \'4017\' in the \'Application\' autocomplete field and selects \'Microsoft" +
                     " Corporation Microsoft Exchange Client Language Pack - Lithuanian 15.0.847.32 (4" +
                     "017)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-<<<<<<< HEAD:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/ApplicationsDetails/Tabs/Projects/ProjectDetails/Relink_ApplicationsPage.feature.cs
-#line 86
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-=======
->>>>>>> master:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/Tabs/ProjectDetails/Relink/Relink_ApplicationsPage.feature.cs
 #line 88
- testRunner.Then("\'Application successfully relinked\' text is displayed on success inline tip banne" +
-                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 89
  testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 90
+ testRunner.Then("\'Application successfully relinked\' text is displayed on success inline tip banne" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -508,35 +487,21 @@ this.FeatureBackground();
 #line 97
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 98
-<<<<<<< HEAD:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/ApplicationsDetails/Tabs/Projects/ProjectDetails/Relink_ApplicationsPage.feature.cs
- testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-=======
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
->>>>>>> master:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/Tabs/ProjectDetails/Relink/Relink_ApplicationsPage.feature.cs
 #line 99
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 100
-<<<<<<< HEAD:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/ApplicationsDetails/Tabs/Projects/ProjectDetails/Relink_ApplicationsPage.feature.cs
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-=======
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 101
  testRunner.When("User enters \'4019\' in the \'Application\' autocomplete field and selects \'Microsoft" +
                     " Corporation Microsoft .NET Framework 4.5 4.5.50709 (4019)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
->>>>>>> master:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/Tabs/ProjectDetails/Relink/Relink_ApplicationsPage.feature.cs
 #line 102
- testRunner.Then("\'Application successfully relinked\' text is displayed on success inline tip banne" +
-                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 103
  testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 104
-<<<<<<< HEAD:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/ApplicationsDetails/Tabs/Projects/ProjectDetails/Relink_ApplicationsPage.feature.cs
- testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 105
- testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-=======
->>>>>>> master:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/Tabs/ProjectDetails/Relink/Relink_ApplicationsPage.feature.cs
+ testRunner.Then("\'Application successfully relinked\' text is displayed on success inline tip banne" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
@@ -545,18 +510,13 @@ this.FeatureBackground();
  testRunner.When("User enters \'4018\' in the \'Application\' autocomplete field and selects \'Microsoft" +
                     " Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030 11.0." +
                     "61030 (4018)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-<<<<<<< HEAD:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/ApplicationsDetails/Tabs/Projects/ProjectDetails/Relink_ApplicationsPage.feature.cs
-#line 107
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-=======
->>>>>>> master:DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_ItemDetails/Tabs/ProjectDetails/Relink/Relink_ApplicationsPage.feature.cs
 #line 109
- testRunner.Then("\'Application successfully relinked\' text is displayed on success inline tip banne" +
-                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 110
  testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 111
+ testRunner.Then("\'Application successfully relinked\' text is displayed on success inline tip banne" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
