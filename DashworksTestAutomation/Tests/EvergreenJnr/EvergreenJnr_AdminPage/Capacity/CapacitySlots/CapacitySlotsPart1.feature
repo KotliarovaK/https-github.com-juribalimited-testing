@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User creates new Slot
 	| SlotName      | DisplayName | CapacityType   |
 	| CapacitySlot1 | DAS13432    | Capacity Units |
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	Then 'Your capacity slot has been created' text is displayed on success inline tip banner
 	Then 'All Capacity Units' content is displayed in the 'Capacity Units' column
 	When User clicks 'CREATE SLOT' button
 	And User enters 'CapacitySlot1' text to 'Slot Name' textbox
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User enters 'NewDisplayName' text to 'Display Name' textbox
 	Then tooltip is not displayed for 'UPDATE' button
 	When User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The capacity slot details have been updated" text
+	Then 'The capacity slot details have been updated' text is displayed on success inline tip banner
 	And 'NewSlotName' content is displayed in the 'Capacity Slot' column
 	When User clicks on 'Capacity Slot' column header
 	Then data in table is sorted by "Capacity Slot" column in ascending order on the Admin page
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User creates new Slot
 	| SlotName      | DisplayName | CapacityType    |
 	| CapacitySlot2 | DAS13432    | Teams and Paths |
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	Then 'Your capacity slot has been created' text is displayed on success inline tip banner
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
 	Then 'No units' text is displayed in the filter dropdown for the 'Capacity Units' column
@@ -94,8 +94,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	And User enters 'CAPACITYSLOTdas13789' text to 'Slot Name' textbox
 	And User enters 'das13779SLOT' text to 'Display Name' textbox
 	And User clicks 'UPDATE' button 
-	Then Error message is not displayed on the Capacity Slots page
-	And Success message is displayed and contains "The capacity slot details have been updated" text
+	Then error inline tip banner is displayed
+	And 'The capacity slot details have been updated' text is displayed on success inline tip banner
 	When User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters 'capacityunitDAS13789' text to 'Capacity Unit Name' textbox
@@ -104,8 +104,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	And User clicks newly created object link
 	And User enters 'CAPACITYUINTdas13789' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
-	Then Error message is not displayed on the Capacity Slots page
-	And Success message is displayed and contains "The capacity unit details have been updated" text
+	Then error inline tip banner is displayed
+	And 'The capacity unit details have been updated' text is displayed on success inline tip banner
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13824 @DAS14250 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage

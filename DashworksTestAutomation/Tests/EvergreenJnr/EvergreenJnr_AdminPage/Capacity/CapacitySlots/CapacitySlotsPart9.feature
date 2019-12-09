@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForS
 	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
 	And User selects "Stage 1 \ WO Task13671" checkbox in the "Tasks" field on the Project details page
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	Then 'Your capacity slot has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then 'Stage 1 \ WO Task13671' value is displayed in the 'Tasks' dropdown
 
@@ -118,8 +118,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDisplayOrderIsResetAfterSlotDeletion
 	| Slot 3           |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
-	Then Success message is displayed and contains "The selected slot has been deleted" text
+	And User clicks 'DELETE' button on inline tip banner
+	Then 'The selected slot has been deleted' text is displayed on success inline tip banner
 	When User opens 'Capacity Slot' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened

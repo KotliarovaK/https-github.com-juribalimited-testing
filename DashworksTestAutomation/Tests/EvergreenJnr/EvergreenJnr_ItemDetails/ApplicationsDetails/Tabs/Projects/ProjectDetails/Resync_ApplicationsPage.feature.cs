@@ -149,8 +149,8 @@ this.FeatureBackground();
 #line 18
  testRunner.When("User clicks \'RESYNC\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
- testRunner.Then("Success message is displayed and contains \"Application successfully resynced\" tex" +
-                    "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Application successfully resynced\' text is displayed on success inline tip banne" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

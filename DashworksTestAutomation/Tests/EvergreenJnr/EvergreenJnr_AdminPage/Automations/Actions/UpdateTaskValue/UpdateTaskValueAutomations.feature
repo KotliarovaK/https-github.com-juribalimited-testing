@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Actions content check
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then "17429_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '17429Project1' content is displayed in 'Project' textbox
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17429Project2' option from 'Project' autocomplete
 	When User selects '17429_Stage2' option from 'Stage' autocomplete
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	When User selects '17429_Task2' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
@@ -195,11 +195,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	#DAS18491
 	When User clicks content from "Action" column
 	#Actions content check
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	Then "17429_Action2" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '17429Project2' content is displayed in 'Project' textbox
 	Then '17429_Stage2' content is displayed in 'Stage' textbox
 	Then '[Task not found]' content is displayed in 'Task' textbox
 	Then 'The selected task cannot be found' error message is displayed for 'Task' field
-	Then Success message is not displayed on the Admin page
+	Then inline tip banner is not displayed

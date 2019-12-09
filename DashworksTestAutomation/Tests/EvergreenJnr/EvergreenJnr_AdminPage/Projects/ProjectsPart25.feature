@@ -94,6 +94,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingNotEmptyOperat
 	When User selects 'ListForDAS18100_3' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	Then There are no errors in the browser console
 	When User enters "18100Project" text in the Search field for "Project" column

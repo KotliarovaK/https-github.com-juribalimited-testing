@@ -97,9 +97,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	And User clicks 'OFFBOARD' button 
 	And User clicks 'OFFBOARD' button on popup 
 	And User clicks 'OFFBOARD' button on popup 
-	Then Success message is displayed and contains "The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)" text
+	Then 'The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)' text is displayed on success inline tip banner
 	When User navigates to the 'Projects Summary' left submenu item
-	Then Success message is not displayed
+	Then inline tip banner is not displayed
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18036
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly
@@ -174,5 +174,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObje
 	When User clicks 'OFFBOARD' button on popup 
 	When User switches to previous tab
 	When User clicks 'OFFBOARD' button
-	Then Warning message with "This device has already been offboarded from User Evergreen Capacity Project" text is displayed on the Project Details Page
+	Then 'This device has already been offboarded from User Evergreen Capacity Project' text is displayed on warning inline tip banner
 	Then 'OFFBOARD' button is disabled

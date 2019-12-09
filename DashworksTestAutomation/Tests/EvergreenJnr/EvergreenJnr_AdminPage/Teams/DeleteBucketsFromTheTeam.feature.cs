@@ -185,8 +185,8 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
- testRunner.Then("Warning message with \"You cannot delete the default bucket\" text is displayed on " +
-                    "the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'You cannot delete the default bucket\' text is displayed on warning inline tip ba" +
+                    "nner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 34
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

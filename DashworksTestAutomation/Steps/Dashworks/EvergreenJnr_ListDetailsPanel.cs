@@ -342,7 +342,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddsNewPersonToSharingList(Table table)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClickButtonByName("ADD USER");
+            action.ClickButton("ADD USER");
 
             foreach (var row in table.Rows)
             {
@@ -355,7 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     action.SelectDropdown(row["Permission"], "Select access");
                 }
-                action.ClickButtonByName("ADD USER");
+                action.ClickButton("ADD USER");
 
                 //TODO Section reloads with delay
                 Thread.Sleep(2000);
@@ -465,14 +465,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             Utils.Verify.IsTrue(listElement.RemovingDependencyListMessage(warningText),
                 $"'{warningText}' message is not displayed in the list details panel");
-        }
-
-        [Then(@"no Warning message is displayed in the lists panel")]
-        public void ThenNoWarningMessageIsDisplayedInTheLissPanel()
-        {
-            var listElement = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(listElement.WarningMessage.Displayed(),
-                "Warning message is displayed in the list details panel");
         }
 
         [Then(@"""(.*)"" message is not displayed in the lists panel")]
