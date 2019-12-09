@@ -71,9 +71,20 @@ namespace DashworksTestAutomation.Pages
         public IWebElement AlertButton(string buttonName) =>
             Driver.FindElement(By.XPath($".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='{buttonName}']"));
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
-        public IList<IWebElement> TextInDeleteAlert { get; set; }
-
+        public IWebElement TextInDeleteAlert(string widgetName)
+        {
+            try
+            {
+                return Driver.FindElement(By.XPath(
+                    $".//div[starts-with(text(), '{widgetName}')]/ancestor::div[contains(@class,'widget-delete-alert')]/preceding::div[contains(@class,'widget-delete-alert')][1]//div[@class='inline-box-text']"));
+            }
+            catch
+            {
+                return Driver.FindElement(By.XPath(
+                    $".//div[starts-with(text(), '{widgetName}')]/ancestor::div[contains(@class,'widget-delete-alert')]//div[@class='inline-box-text']"));
+            }
+        }
+      
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert')]//a[@href]")]
         public IWebElement LinkInWarningMessage { get; set; }
 

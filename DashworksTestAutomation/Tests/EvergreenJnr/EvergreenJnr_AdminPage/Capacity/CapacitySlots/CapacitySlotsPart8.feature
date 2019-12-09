@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The capacity slot details have been updated" text
+	Then 'The capacity slot details have been updated' text is displayed on success inline tip banner
 	When User clicks content from "Capacity Slot" column
 	Then "" content is displayed in "Tasks" field
 	Then "All Capacity Units" content is displayed in "Capacity Units" field
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
 	When User selects 'Device' in the 'Object Type' dropdown
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	Then 'Your capacity slot has been created' text is displayed on success inline tip banner
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
 	Then 'Teams and Paths' value is displayed in the 'Capacity Type' dropdown
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User selects "1803 Team" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Application)]" checkbox in the "Paths" field on the Project details page
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The capacity slot details have been updated" text
+	Then 'The capacity slot details have been updated' text is displayed on success inline tip banner
 	#Check updated data in the slot and change Capacity Type
 	When User clicks content from "Capacity Slot" column
 	Then 'Teams and Paths' content is displayed in 'Capacity Type' dropdown

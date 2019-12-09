@@ -30,5 +30,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
+	Then 'You cannot delete the default bucket' text is displayed on warning inline tip banner
 	And There are no errors in the browser console

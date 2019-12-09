@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then 'Devices 2/0' tab is displayed on Project Scope Changes page
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	Then 'Devices 0/0' tab is displayed on Project Scope Changes page
 	When User click on Back button
 	And User navigates to the 'Teams' left menu item

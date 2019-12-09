@@ -104,9 +104,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| BDE 5.01 Upgrade                                                     |
 	| Brava! Reader 2.5 (2.5)                                              |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then Warning message with "25 devices will be added, 25 users will be added, 25 applications will be added" text is displayed on the Admin page
+	Then '25 devices will be added, 25 users will be added, 25 applications will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
-	Then Success message with "75 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	Then '75 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Queue' left menu item
 	When User waits until Queue disappears
 	When User navigates to the 'Scope Changes' left menu item
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Scope Changes' left menu item
-	Then Success message is not displayed on the Admin page
+	Then inline tip banner is not displayed
 	And "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects         |
@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)     |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	Then following objects were not found
 	| Objects                                                |
 	| 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)       |
@@ -263,7 +263,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	When User selects all rows on the grid
 	Then Select All checkbox have indeterminate checked state
 	When User removes selected item
-	Then Success message is displayed and contains "The selected projects have been deleted" text
+	Then 'The selected projects have been deleted' text is displayed on success inline tip banner
 	Then Select All checkbox have unchecked state
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12578 @DAS12999 @DAS13429 @Cleanup

@@ -254,31 +254,31 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreate
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18091 @DAS18090 @DAS16516 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashboardPageForTheListWithoutArchivedItem
 	When Dashboard with 'Dashboard for DAS18091' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy          | AggregateFunction | AggregateBy                            | OrderBy              |
 	| Table      | WidgetForDAS18091 | 1803 Rollout | Operating System | Severity          | 1803: Pre-Migration \ Ready to Migrate | Operating System ASC |
 	Then 'WidgetForDAS18091' Widget is displayed to the user
-	And There is no 'Empty' column for 'WidgetForDAS18091' widget
+	Then There is no 'Empty' column for 'WidgetForDAS18091' widget
 	#DAS18090 
 	When User clicks 'NOT READY' value for 'Windows 7' column
-	And User clicks the Filters button
+	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Operating System is Windows 7" is displayed in added filter info
-	And "Any Device in list 1803 Rollout" is displayed in added filter info
-	And "1803: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
+	Then "Operating System is Windows 7" is displayed in added filter info
+	Then "Any Device in list 1803 Rollout" is displayed in added filter info
+	Then "1803: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
 	#DAS16516
 	When User clicks 'Dashboards' on the left-hand menu
-	And User clicks Show Dashboards panel icon on Dashboards page
+	When User clicks Show Dashboards panel icon on Dashboards page
 	Then User sees Dashboards sub menu on Dashboards page
 	When User navigates to the "Dashboard for DAS18091" list
-	And User clicks 'READY' value for 'Windows Vista' column
-	And User clicks the Filters button
+	When User clicks 'READY' value for 'Windows Vista' column
+	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "Operating System is Windows Vista" is displayed in added filter info
-	And "Any Device in list 1803 Rollout" is displayed in added filter info
-	And "1803: Pre-Migration \ Ready to Migrate is Ready" is displayed in added filter info
+	Then "Operating System is Windows Vista" is displayed in added filter info
+	Then "Any Device in list 1803 Rollout" is displayed in added filter info
+	Then "1803: Pre-Migration \ Ready to Migrate is Ready" is displayed in added filter info
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidget
@@ -298,13 +298,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then Table columns of 'DAS-15852' widget placed in the next order:
-	| headers |
-	| Empty   |
-	| Unknown |
+	| headers   |
+	| Empty     |
+	| Unknown   |
 	| Not Ready |
 	| On Target |
 	| Ready     |
-
 	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects '1803: Pre-Migration \ Ready to Migrate DESC' in the 'OrderBy' dropdown
@@ -312,10 +311,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	When User clicks 'UPDATE' button
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
+	| Unknown   |
 	| Ready     |
 	| On Target |
 	| Not Ready |
-	| Unknown   |
 	| Empty     |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup

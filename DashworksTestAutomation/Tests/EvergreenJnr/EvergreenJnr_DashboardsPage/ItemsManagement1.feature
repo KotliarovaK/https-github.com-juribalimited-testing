@@ -226,17 +226,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14855 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingWidget
 	When Dashboard with 'Dashboard for DAS14855' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
-	And User clicks Ellipsis menu for 'WidgetForDAS14855' Widget on Dashboards page
-	And User clicks 'Delete' item from Ellipsis menu on Dashboards page
-	Then User sees 'WidgetForDAS14855 will be permanently deleted' text in warning message on Dashboards page
-	And User sees Widget square colored in amber
+	When User clicks Ellipsis menu for 'WidgetForDAS14855' Widget on Dashboards page
+	When User clicks 'Delete' item from Ellipsis menu on Dashboards page
+	Then User sees 'WidgetForDAS14855 will be permanently deleted' text in warning message of 'WidgetForDAS14855' widget on Dashboards page
+	Then User sees Widget square colored in amber
 	When User clicks Cancel button in Delete Widget warning on Dashboards page
-	And User deletes 'WidgetForDAS14855' Widget on Dashboards page
+	When User deletes 'WidgetForDAS14855' Widget on Dashboards page
 	Then User cant see widget with the next name 'WidgetForDAS14855' on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14610

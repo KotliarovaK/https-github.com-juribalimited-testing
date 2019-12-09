@@ -466,7 +466,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| CapacityUnit13201 |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
+	And User clicks 'DELETE' button on inline tip banner
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11559
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardFilters
@@ -2353,7 +2353,7 @@ Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreat
 	Then Page with 'Projects' header is displayed to user
 	When User enters 'TestProjectFor17715' text to 'Project Name' textbox
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 
 @Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17715 @Cleanup

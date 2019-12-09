@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	Then "DynamicList4781" list is displayed to user
 	When User removes custom list with "DynamicList4781" name
 	And User navigates to the "DynamicList4587" list
-	Then no Warning message is displayed in the lists panel
+	Then inline tip banner is not displayed
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	And no Warning message is displayed in the list details panel

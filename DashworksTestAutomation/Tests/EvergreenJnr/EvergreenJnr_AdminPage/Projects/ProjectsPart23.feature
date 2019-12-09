@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectCo
 	When User enters "DAS14819Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks Converts to Evergreen button
-	Then Warning message with "Are you sure you want to convert this project to Evergreen? This cannot be undone" text is displayed on the Project Details Page
+	Then 'Are you sure you want to convert this project to Evergreen? This cannot be undone' text is displayed on warning inline tip banner
 	And Cancel button is displayed in warning message
 	When User confirms converting to Evergreen process
 	Then Success converting message appears with the next "This legacy project has successfully been converted to Evergreen" text
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	| Objects                                            |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5) |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
+	Then '1 device will be added, 1 user will be added, 1 application will be added' text is displayed on warning inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	And User navigates to the 'Queue' left menu item
 	And User waits until Queue disappears

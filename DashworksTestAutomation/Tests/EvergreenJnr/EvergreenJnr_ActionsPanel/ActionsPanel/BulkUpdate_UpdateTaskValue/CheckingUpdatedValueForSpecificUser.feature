@@ -40,7 +40,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User selects '<NewTeam>' option from 'Team' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
@@ -109,7 +111,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
@@ -178,7 +182,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	Then Success message is hidden after five seconds
@@ -198,7 +204,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -238,7 +246,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
@@ -256,7 +266,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
