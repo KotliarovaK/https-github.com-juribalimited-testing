@@ -20,7 +20,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
 	When User clicks 'OFFBOARD' button on popup
-	Then Warning message with "The selected objects will be offboarded, this cannot be undone" text is displayed on the Project Details Page
+	Then 'The selected objects will be offboarded, this cannot be undone' text is displayed on warning inline tip banner
 	When User clicks 'OFFBOARD' button on popup
 	#going to check the object state
 	When User clicks 'Admin' on the left-hand menu
@@ -55,7 +55,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
 	When User clicks 'OFFBOARD' button on popup
-	Then Warning message with "<Message>" text is displayed on the Project Details Page
+	Then '<Message>' text is displayed on warning inline tip banner
 	When User clicks 'OFFBOARD' button on popup
 	#going to check the object state
 	And User clicks 'Admin' on the left-hand menu

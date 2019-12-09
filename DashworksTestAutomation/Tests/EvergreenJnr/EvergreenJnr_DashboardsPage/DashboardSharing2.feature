@@ -256,8 +256,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	Then 'Widget_For_DAS17592' Widget is displayed to the user
 	Then There are no errors in the browser console
 	When User clicks Edit mode trigger on Dashboards page
-	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in '1' warning messages on Dashboards page
-
+	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in warning message of 'Widget_For_DAS17592' widget on Dashboards page
 
 	#Sergiy: DAS14263 create test and recomment issue
 	#When User clicks Dashboards Details icon on Dashboards page

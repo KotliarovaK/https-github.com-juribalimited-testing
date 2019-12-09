@@ -142,7 +142,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessag
 	When User clicks 'Delete' option in opened Cog-menu
 	Then Delete and Cancel buttons are available in the warning message
 	When User clicks Cancel button in the warning message
-	Then no Warning message is displayed in the lists panel
+	Then inline tip banner is not displayed
 	And "<ListName1>" list is displayed to user
 	When User clicks Settings button for "<ListName1>" list
 	Then Cog menu is displayed to the user

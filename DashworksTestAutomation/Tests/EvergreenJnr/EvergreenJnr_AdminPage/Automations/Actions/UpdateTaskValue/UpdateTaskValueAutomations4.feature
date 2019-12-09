@@ -158,8 +158,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	When User clicks "Delete" option in Cog-menu for "CapacitySlot1" item on Admin page
-	Then Warning message with "The selected slot will be deleted, do you want to proceed?" text is displayed on the Project Details Page
-	When User clicks Delete button in the warning message
+	Then 'The selected slot will be deleted, do you want to proceed?' text is displayed on warning inline tip banner
+	When User clicks 'DELETE' button on inline tip banner
 	#Check Action content
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Automations' left menu item
@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	Then Error message with "This action has parameters which are now available for the task type, update the action to add these" text is displayed
+	Then 'This action has parameters which are now available for the task type, update the action to add these' text is displayed on error inline tip banner
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17566_Automation" text in the Search field for "Automation" column

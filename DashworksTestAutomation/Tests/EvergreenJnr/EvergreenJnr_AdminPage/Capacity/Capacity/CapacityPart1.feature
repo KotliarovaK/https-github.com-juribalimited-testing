@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	When User clicks content from "Capacity Unit" column
 	And User enters 'Default Capacity Unit' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The capacity unit details have been updated" text
+	Then 'The capacity unit details have been updated' text is displayed on success inline tip banner
 	And grid headers are displayed in the following order
 	| ColumnName    |
 	|               |
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User enters '4 Oct 2018' text to 'Override Start Date' datepicker
 	When User enters '7 Oct 2018' text to 'Override End Date' datepicker
 	When User clicks 'CREATE' button 
-	Then Success message is displayed and contains "Your override date has been created" text
+	Then 'Your override date has been created' text is displayed on success inline tip banner
 	Then 'Unlimited' content is displayed in the 'Capacity' column
 	When User enters ">1" text in the Search field for "Capacity" column
 	Then Rows counter shows "1" of "1" rows
@@ -101,4 +101,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User enters '5 Oct 2019' text to 'Override Start Date' datepicker
 	When User enters '5 Oct 2019' text to 'Override End Date' datepicker
 	When User clicks 'UPDATE' button
-	Then Success message is displayed and contains "The override date details have been updated" text
+	Then 'The override date details have been updated' text is displayed on success inline tip banner

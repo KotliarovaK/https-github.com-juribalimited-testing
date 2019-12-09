@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User navigates to the 'Details' left menu item
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
-	When User clicks "REMOVE" button in the warning message on Admin page
+	When User clicks 'REMOVE' button on inline tip banner
 	And User clicks 'ADD LANGUAGE' button 
 	And User selects "German" language on the Project details page
 	And User navigates to the 'Capacity' left menu item
@@ -64,11 +64,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User navigates to the 'Details' left menu item
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
-	Then Warning message with "Removing German will delete all translations for this language in this project" text is displayed on the Project Details Page
-	When User clicks "CANCEL" button in the warning message on Admin page
+	Then 'Removing German will delete all translations for this language in this project' text is displayed on warning inline tip banner
+	When User clicks 'CANCEL' button on inline tip banner
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
-	When User clicks "REMOVE" button in the warning message on Admin page
+	When User clicks 'REMOVE' button on inline tip banner
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	And User creates new Slot via Api

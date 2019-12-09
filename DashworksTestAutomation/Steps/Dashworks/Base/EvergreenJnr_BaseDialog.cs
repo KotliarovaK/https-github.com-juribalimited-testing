@@ -51,14 +51,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserClicksButtonOnPopup(string buttonName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
-            dialogContainer.GetButtonByNameOnPopup(buttonName).Click();
+            dialogContainer.GetButton(buttonName).Click();
         }
 
         [Then(@"'(.*)' popup button color is '(.*)'")]
         public void ThenPopupButtonColorIs(string button, string color)
         {
             var page = _driver.NowAt<BaseDialogPage>();
-            var getColor = page.GetButtonByNameOnPopup(button).GetCssValue("background-color");
+            var getColor = page.GetButton(button).GetCssValue("background-color");
             Verify.AreEqual(color, getColor,
                 $"'{button}' sah incorrect color");
         }

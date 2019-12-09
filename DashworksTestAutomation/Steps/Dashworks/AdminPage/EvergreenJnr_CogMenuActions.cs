@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.MoveToPositionField.Clear();
             cogMenu.MoveToPositionField.SendKeys(position);
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetButtonByName("MOVE").Click();
+            action.GetButton("MOVE").Click();
         }
 
         [When(@"User clicks Cog-menu on the Admin page")]

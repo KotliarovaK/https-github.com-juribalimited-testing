@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	| TestBucket6 |
 	| TestBucket7 |
 	When User clicks 'ADD BUCKETS' button
-	Then Success message is displayed and contains "The selected buckets have been added" text
+	Then 'The selected buckets have been added' text is displayed on success inline tip banner
 	When User enters "TestBucket" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User selects 'Change Team' in the 'Actions' dropdown
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then 'Change Team' page subheader is displayed to user
 	When User selects 'Team 10' option from 'Team' autocomplete without search
 	And User clicks 'CHANGE' button 
-	Then Success message is displayed and contains "The selected buckets have been reassigned to the selected team" text
+	Then 'The selected buckets have been reassigned to the selected team' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 	When User click on Back button
 

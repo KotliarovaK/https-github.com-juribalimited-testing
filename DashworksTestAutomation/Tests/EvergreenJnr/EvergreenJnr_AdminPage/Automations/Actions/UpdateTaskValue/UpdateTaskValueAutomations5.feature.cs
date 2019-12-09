@@ -277,8 +277,8 @@ this.FeatureBackground();
 #line 57
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
- testRunner.Then("Success message is displayed and contains \"The automation action has been created" +
-                    "\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The automation action has been created\' text is displayed on success inline tip " +
+                    "banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 60
  testRunner.Then("\"Failed, 2019-11-01, 1803 Team, Akhila Varghese\" content is displayed for \"Value\"" +
                     " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -336,9 +336,9 @@ this.FeatureBackground();
 #line 80
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.Then("Error message with \"The configuration of this task has changed, this action has p" +
-                    "arameters that are not shown and no longer valid, update the action to remove th" +
-                    "ese\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The configuration of this task has changed, this action has parameters that are " +
+                    "not shown and no longer valid, update the action to remove these\' text is displa" +
+                    "yed on error inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -544,8 +544,8 @@ this.FeatureBackground();
 #line 135
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 137
- testRunner.Then("Success message is displayed and contains \"The automation action has been created" +
-                    "\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The automation action has been created\' text is displayed on success inline tip " +
+                    "banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 138
  testRunner.Then("\"Failed, 2019-11-01, 1803 Team, Akhila Varghese\" content is displayed for \"Value\"" +
                     " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -603,9 +603,9 @@ this.FeatureBackground();
 #line 158
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 160
- testRunner.Then("Error message with \"The configuration of this task has changed, this action has p" +
-                    "arameters that are not shown and no longer valid, update the action to remove th" +
-                    "ese\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The configuration of this task has changed, this action has parameters that are " +
+                    "not shown and no longer valid, update the action to remove these\' text is displa" +
+                    "yed on error inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 161
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -811,8 +811,8 @@ this.FeatureBackground();
 #line 213
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 215
- testRunner.Then("Success message is displayed and contains \"The automation action has been created" +
-                    "\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The automation action has been created\' text is displayed on success inline tip " +
+                    "banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 216
  testRunner.Then("\"Failed, 2019-11-01, 1803 Team, Akhila Varghese\" content is displayed for \"Value\"" +
                     " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -870,9 +870,9 @@ this.FeatureBackground();
 #line 236
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 238
- testRunner.Then("Error message with \"The configuration of this task has changed, this action has p" +
-                    "arameters that are not shown and no longer valid, update the action to remove th" +
-                    "ese\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The configuration of this task has changed, this action has parameters that are " +
+                    "not shown and no longer valid, update the action to remove these\' text is displa" +
+                    "yed on error inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 239
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1127,9 +1127,9 @@ this.FeatureBackground();
 #line 308
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 310
- testRunner.Then("Error message with \"The configuration of this task has changed, this action no lo" +
-                    "nger has the correct parameters, update the action to change these\" text is disp" +
-                    "layed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The configuration of this task has changed, this action no longer has the correc" +
+                    "t parameters, update the action to change these\' text is displayed on error inli" +
+                    "ne tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 311
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

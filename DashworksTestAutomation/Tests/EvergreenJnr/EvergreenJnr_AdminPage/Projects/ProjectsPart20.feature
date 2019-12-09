@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
-	Then Success message is displayed and contains "13 objects queued for onboarding, 0 objects offboarded" text
+	Then '13 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	#waiting for the process to be completed
 	When User waits for three seconds
 	When User navigates to the 'Scope Details' left menu item
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
-	Then Success message is displayed and contains "0 objects queued for onboarding, 3 objects offboarded" text
+	Then '0 objects queued for onboarding, 3 objects offboarded' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12756 @DAS13586 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
@@ -71,19 +71,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	When User enters 'DeviceProject56' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters 'UserProject56' text to 'Project Name' textbox
 	And User selects 'All Users' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters 'MailboxProject56' text to 'Project Name' textbox
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks String Filter button for "Type" column on the Admin page
 	Then Type of Projects in filter dropdown are displayed in alphabetical order
 
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	When User enters 'Project12183' text to 'Project Name' textbox
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page

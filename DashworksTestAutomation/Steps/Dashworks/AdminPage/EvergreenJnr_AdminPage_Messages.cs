@@ -17,12 +17,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
     internal class EvergreenJnr_AdminPage_Messages : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_AdminPage_Messages(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
+        public EvergreenJnr_AdminPage_Messages(RemoteWebDriver driver)
         {
             _driver = driver;
-            _automationStartTime = automationStartTime;
         }
 
         [Then(@"User clicks ""(.*)"" button in warning container on the Admin page")]
@@ -47,88 +45,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
-        //TODO this method should be removed
-        [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
-        public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
-        {
-            BaseGridPage message;
-            try
-            {
-                message = _driver.NowAt<BaseGridPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    message = _driver.NowAt<BaseGridPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    message = _driver.NowAt<BaseGridPage>();
-                }
-            }
-
-            _driver.WaitForElementToContainsText(message.WarningMessage, text);
-            Utils.Verify.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Amber color
-            //Waiting for message text change
-            Thread.Sleep(1000);
-            Utils.Verify.IsTrue(message.TextMessage(text),
-                $"{text} is NOT displayed on the Project page");
-        }
-
-        [Then(@"Warning message with ""(.*)"" text is not displayed on the Admin page")]
-        public void ThenWarningMessageWithTextIsNotDisplayedOnTheAdminPage(string text)
-        {
-            BaseGridPage message;
-            try
-            {
-                message = _driver.NowAt<BaseGridPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                message = _driver.NowAt<BaseGridPage>();
-            }
-
-            //If there is no banner on page then there are no message at all. All good
-            if (!_driver.IsElementDisplayed(message.Banner, WebDriverExtensions.WaitTime.Short))
-                return;
-
-            _driver.WaitForElementToNotContainsText(message.WarningMessage, text);
-        }
-
-        [When(@"User clicks Cancel button in the warning message on the Admin page")]
-        public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(page.CancelButtonInWarningMessage);
-            page.CancelButtonInWarningMessage.Click();
-            Verify.IsFalse(page.WarningMessage.Displayed(), "Warning message was not disappears after Cancel button click.");
-        }
-
-        //TODO move to the Generic class
-        [When(@"User clicks Delete button in the warning message")]
-        public void WhenUserClicksDeleteButtonInTheWarningMessage()
-        {
-            var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
-            button.DeleteButtonInWarningMessage.Click();
-            Logger.Write("Delete button was clicked");
-        }
-
-        [When(@"User clicks ""(.*)"" button in the warning message on Admin page")]
-        public void WhenUserClicksButtonInTheWarningMessageOnAdminPage(string buttonName)
-        {
-            var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
-            button.GetButtonInWarningMessage(buttonName).Click();
-
-            //For automation
-            if (buttonName.Equals("RUN"))
-            {
-                _automationStartTime.Value = DateTime.Now.AddSeconds(-10);
-            }
-        }
-
         [When(@"User close message on the Admin page")]
         public void WhenUserCloseMessageOnTheAdminPage()
         {
@@ -145,34 +61,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Verify.AreEqual("rgba(49, 122, 193, 1)", page.BlueBanner.GetCssValue("background-color"), "Info message is not Blue"); //Blue color
             //Verify.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
             Verify.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
-        }
-
-        [Then(@"Success message is displayed and contains ""(.*)"" text")]
-        public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToContainsText(page.SuccessMessage, text);
-            Verify.AreEqual("rgba(126, 189, 56, 1)", page.SuccessMessage.GetCssValue("background-color"), "Success message is not Green"); //Green color
-            Verify.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
-        }
-
-        [Then(@"Green banner contains following text ""(.*)""")]
-        public void ThenGreenBannerContainsFollowingText(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Verify.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
-        }
-
-        //TODO remove this method. All error messages should be linked to appropriate controls like textboxes or dropdowns
-        [Then(@"Error message with ""(.*)"" text is displayed")]
-        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToContainsText(page.ErrorMessage, text);
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetErrorMessageColor(), "Colors do not match!"); //Red color
-            Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
         [Then(@"""(.*)"" error in the Scope Changes displayed to the User")]
@@ -211,53 +99,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
         }
 
-        [Then(@"Success message is displayed correctly")]
-        public void ThenSuccessMessageIsDisplayedCorrectly()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Utils.Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Green color
-            //TODO update web element or move this assertion to separate step after Olga replay in https://juriba.atlassian.net/browse/DAS-14037
-            //Utils.Verify.False(_driver.IsElementHaveHorizontalScrollbar(
-            //        _driver.FindElement(By.XPath(".//admin-project-units-list/.."))), "Table has scrollbar");
-        }
-
-        [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
-        public void ThenSuccessMessageTheBucketHasBeenUpdatedIsDisplayedOnTheBucketsPage(string bucketName)
-        {
-            var pageBase = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(pageBase.SuccessMessage);
-            var pageBuckets = _driver.NowAt<BucketsPage>();
-            Verify.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
-                $"Success Message is not displayed for {bucketName}");
-        }
-
-        [Then(@"Success message with ""(.*)"" text is displayed on the Projects page")]
-        public void ThenSuccessMessageWithTextIsDisplayedOnTheProjectsPage(string textMessage)
-        {
-            BaseGridPage projectElement;
-            try
-            {
-                projectElement = _driver.NowAt<BaseGridPage>();
-            }
-            catch (WebDriverTimeoutException)
-            {
-                try
-                {
-                    projectElement = _driver.NowAt<BaseGridPage>();
-                }
-                catch (WebDriverTimeoutException)
-                {
-                    projectElement = _driver.NowAt<BaseGridPage>();
-                }
-            }
-
-            _driver.WaitForElementToBeDisplayed(projectElement.SuccessMessage);
-            Thread.Sleep(10000);
-            Verify.IsTrue(projectElement.TextMessage(textMessage),
-                $"{textMessage} is not displayed on the Project page");
-        }
-
         [When(@"User clicks newly created object link")]
         public void WhenUserClicksNewlyCreatedObjectLink()
         {
@@ -267,42 +108,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             projectElement.NewProjectLink.Click();
             _driver.WaitForDataLoading();
         }
-
-        [Then(@"Error message is not displayed on the Capacity Units page")]
-        [Then(@"Error message is not displayed on the Capacity Slots page")]
-        [Then(@"Error message is not displayed on the Projects page")]
-        public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
-        }
-
-        [Then(@"Warning message is not displayed on the Admin page")]
-        public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(page.WarningMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"Success message is not displayed on the Admin page")]
-        public void ThenSuccessMessageIsNotDisplayedOnTheAdminPage()
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            //TODO Remove wait for message after fixing for Automation (5.07.19)
-            if (message.SuccessMessage.Displayed())
-            {
-                Thread.Sleep(3000);
-            }
-            Utils.Verify.IsFalse(message.SuccessMessage.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"Success message is not displayed")]
-        public void ThenSuccessMessageIsNotDisplayed()
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            Verify.IsFalse(message.SuccessMessage.Displayed(), "Success message is displayed!");
-        }
-
 
         [Then(@"Filling field error is not displayed")]
         public void ThenFillingFieldErrorIsNotDisplayed()
