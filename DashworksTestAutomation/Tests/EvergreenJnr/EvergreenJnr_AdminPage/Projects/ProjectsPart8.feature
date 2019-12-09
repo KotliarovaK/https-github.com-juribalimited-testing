@@ -12,7 +12,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then 'All <PageName>' content is displayed in 'Scope' autocomplete
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User navigates to the 'Projects' left menu item
@@ -27,7 +27,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then '<StaticList>' content is displayed in 'Scope' autocomplete
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -41,7 +41,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then '<DynamicList>' content is displayed in 'Scope' autocomplete
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
 

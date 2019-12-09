@@ -54,8 +54,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	#Then 'All Devices' content is displayed in 'Scope' autocomplete
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then 'All <ListName>' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -69,7 +68,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then 'All <ListName>' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	When User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -84,7 +83,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then 'All <ListName>' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -159,7 +158,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then 'All Users' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -175,7 +174,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then 'All Users' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
@@ -190,7 +189,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters '<ProjectName>' text to 'Project Name' textbox
-	Then 'All Devices' content is displayed in 'Scope' autocomplete
+	Then 'All Users' content is displayed in 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
 	Then Success message is displayed and contains "The project has been created" text
