@@ -297,6 +297,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	When User selects '1803: Pre-Migration \ Ready to Migrate Severity ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
+	Then 'DAS-15852' Widget is displayed to the user
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
 	| Empty     |
@@ -309,6 +310,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	When User selects '1803: Pre-Migration \ Ready to Migrate DESC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button
+	Then 'DAS-15852' Widget is displayed to the user
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
 	| Unknown   |
