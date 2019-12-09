@@ -156,7 +156,7 @@ Examples:
 	| Application | 7zip                             | Computer Scheduled Test (Jo)       |
 	| Mailbox     | 000F977AC8824FE39B8@bclabs.local | Mailbox Evergreen Capacity Project |
 	
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS19241
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
 	When User navigates to the '<PageName>' details page for '<ItemName>' item
 	Then Details page for "<ItemName>" item is displayed to the user
