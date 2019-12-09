@@ -33,9 +33,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void VerifyMessageTextAndColor(MessageColors messageColor, string expectedText)
         {
-            VerifyColor(messageColor);
-
             VerifyText(messageColor, expectedText);
+            VerifyColor(messageColor);
         }
 
         public void VerifyColor(MessageColors messageColor)
