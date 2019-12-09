@@ -13,7 +13,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
     public class BaseInlineTipBannerElement : BaseDashboardPage
     {
-        private const string InlineTipSelector = ".//div[contains(@class,'inline')][@role='alert']";
+        //First selector for side tip banners and second for top
+        private const string InlineTipSelector = "(.//span/div[contains(@class,'inline')][not(@role)] | .//div[contains(@class,'inline')][@role='alert'])";
 
         [FindsBy(How = How.XPath, Using = InlineTipSelector)]
         public IWebElement InlineTipElement { get; set; }
@@ -33,9 +34,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void VerifyMessageTextAndColor(MessageColors messageColor, string expectedText)
         {
-            VerifyColor(messageColor);
-
             VerifyText(messageColor, expectedText);
+            VerifyColor(messageColor);
         }
 
         public void VerifyColor(MessageColors messageColor)

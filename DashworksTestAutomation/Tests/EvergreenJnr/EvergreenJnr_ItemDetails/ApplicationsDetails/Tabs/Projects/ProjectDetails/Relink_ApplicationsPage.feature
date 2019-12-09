@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User waits for three seconds
 
 	#ready only on 'terminator'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18769 @Not_Run
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18769 @DAS19124
 Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnteringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
@@ -61,6 +61,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPo
 	When User clicks 'RELINK' button 
 	Then popup is displayed to User
 	When User enters 'k9 ' text to 'Application' textbox
+	Then Error message is not displayed
+	When User enters 'gh#' text to 'Application' textbox
 	Then Error message is not displayed
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @DAS18980

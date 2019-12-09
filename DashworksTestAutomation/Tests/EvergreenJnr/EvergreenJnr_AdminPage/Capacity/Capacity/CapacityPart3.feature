@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User enters ' test1' text to 'Capacity Unit Name' textbox
 	And User enters '13945' text to 'Description' textbox
 	And User clicks 'CREATE' button 
-	Then error inline tip banner is displayed
+	Then success inline tip banner is displayed
 	And User sees next Units on the Capacity Units page:
 	| units      |
 	| Unassigned |

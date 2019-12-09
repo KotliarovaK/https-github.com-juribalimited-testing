@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @DAS18894 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
@@ -34,12 +34,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User enters '29 Oct 2018' text to 'Override End Date' datepicker
 	And User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters '0' text to 'Capacity' textbox
-	And User clicks 'CREATE' button 
-	Then 'An override already exists for this date' text is displayed on error inline tip banner
-	And "1" rows label displays in Action panel
+	Then 'CREATE' button is disabled
+	Then 'An override date already exists with this date range' error message is displayed for 'Override Start Date' field
+	Then 'An override date already exists with this date range' error message is displayed for 'Override End Date' field
+	And There are no errors in the browser console
+	When User clicks 'CANCEL' button
+	Then User sees "1" rows in grid
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @DAS13442 @DAS13440 @DAS17418 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @DAS13442 @DAS13440 @DAS17418 @DAS18894 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
@@ -60,9 +63,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User enters '5 Sep 2018' text to 'Override Start Date' datepicker
 	And User enters '10 Sep 2018' text to 'Override End Date' datepicker
 	And User selects 'Slot13442' in the 'Slot' dropdown
-	And User clicks 'CREATE' button 
-	Then 'An override already exists for this date' text is displayed on error inline tip banner
+	Then 'CREATE' button is disabled
+	Then 'An override date already exists with this date range' error message is displayed for 'Override Start Date' field
+	Then 'An override date already exists with this date range' error message is displayed for 'Override End Date' field
 	And There are no errors in the browser console
+	When User clicks 'CANCEL' button
+	Then There are no errors in the browser console
 	When User navigates to the 'Slots' left menu item
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
