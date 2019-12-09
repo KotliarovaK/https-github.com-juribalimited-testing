@@ -1359,7 +1359,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectDropdown("Delete", "Actions");
             page.ClickButton("DELETE");
 
-            var inlineTipBanner = _driver.NowAt<BaseInlineTipBannerElement>();
+            var inlineTipBanner = _driver.NowAt<TopInlineTipBannerElement>();
             inlineTipBanner.VerifyColor(MessageColors.Amber);
             _driver.WaitForDataLoading();
             inlineTipBanner.GetButton("DELETE").Click();

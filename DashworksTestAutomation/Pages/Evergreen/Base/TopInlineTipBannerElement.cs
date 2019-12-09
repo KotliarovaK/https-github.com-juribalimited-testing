@@ -11,7 +11,7 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
-    public class BaseInlineTipBannerElement : BaseDashboardPage
+    public class TopInlineTipBannerElement : BaseDashboardPage
     {
         private const string InlineTipSelector = ".//div[contains(@class,'inline')][@role='alert']";
 
