@@ -81,6 +81,7 @@ Examples:
 	| Mailboxes    |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14325
+
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

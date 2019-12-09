@@ -36,6 +36,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.GetCogMenuByItem(column, columnContent).Click();
         }
 
+        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item from '(.*)' column")]
+        public void WhenUserClicksOptionInCog_MenuForItemFromColumn(string option, string columnContent, string column)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.BodyContainer.Click();
+            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
+            cogMenu.GetCogMenuByItem(column, columnContent).Click();
+            cogMenu.GetCogMenuOptionByName(option).Click();
+        }
+
         [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]
         public void WhenUserMovesItemFromColumnToThePosition(string columnContent, string column, string position)
         {
@@ -80,16 +90,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             for (var i = 0; i < items.RowCount; i++)
                 Utils.Verify.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
                     "Items are not the same");
-        }
-
-        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item from '(.*)' column")]
-        public void WhenUserClicksOptionInCog_MenuForItemFromColumn(string option, string columnContent, string column)
-        {
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            cogMenu.BodyContainer.Click();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
-            cogMenu.GetCogMenuByItem(column, columnContent).Click();
-            cogMenu.GetCogMenuOptionByName(option).Click();
         }
 
         //TODO make it generic

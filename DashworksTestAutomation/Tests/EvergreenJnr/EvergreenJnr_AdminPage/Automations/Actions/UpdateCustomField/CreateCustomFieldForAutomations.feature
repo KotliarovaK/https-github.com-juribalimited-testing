@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsColumnContainsNullOfObjectsForF
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18464_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "18464_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '18464_Automation' item from 'Automation' column
 	#Check Automation Log
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
