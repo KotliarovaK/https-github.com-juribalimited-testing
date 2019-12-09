@@ -283,9 +283,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidget
 	When Dashboard with 'Dashboard for DAS15852' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title     | List         | SplitBy                                | AggregateFunction | AggregateBy                            |
 	| Table      | DAS-15852 | 1803 Rollout | 1803: Pre-Migration \ Ready to Migrate | Severity          | 1803: Pre-Migration \ Ready to Migrate |
 	Then User sees following options for Order By selector on Create Widget page:
@@ -305,7 +305,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	| On Target |
 	| Ready     |
 	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects '1803: Pre-Migration \ Ready to Migrate DESC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button
