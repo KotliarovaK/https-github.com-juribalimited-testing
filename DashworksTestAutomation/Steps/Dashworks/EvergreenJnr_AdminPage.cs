@@ -15,6 +15,7 @@ using System.Threading;
 using DashworksTestAutomation.DTO.Projects.Tasks;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
@@ -507,20 +508,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        //TODO move to class
-        [When(@"User removes selected members")]
-        public void WhenUserRemovesSelectedMembers()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.SelectDropdown("Remove Members", "Actions");
-            page.ClickButtonByName("REMOVE");
-
-            var teamElement = _driver.NowAt<TeamsPage>();
-            _driver.WaitForElementToBeDisplayed(teamElement.WarningMessage);
-            _driver.WaitForDataLoading();
-            teamElement.RemoveButtonInWarningMessage.Click();
-        }
-
         #region Column Settings
 
         [When(@"User clicks Filter button in the Column Settings panel on the Teams Page")]
@@ -965,24 +952,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectPage.Click(() => projectPage.LanguageMenu);
         }
 
-        //TODO move to baseGrid
-        [Then(@"Warning message with ""(.*)"" text is displayed on the Project Details Page")]
-        public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            //Warning message should have Orange color
-            var bgColor = message.WarningMessage.GetCssValue("background-color");
-            Verify.AreEqual("rgba(235, 175, 37, 1)", bgColor, $"Waring message is not Orange: {bgColor}");
-            Verify.IsTrue(message.WarningMessage.Text.Contains(text), $"'{text}' is not displayed in Warning message");
-        }
-
-        [Then(@"No warning message displayed on the Project Details Page")]
-        public void ThenNoWarningMessageIsDisplayedOnTheProjectDetailsPage()
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            Verify.That(_driver.IsElementDisplayed(message.WarningMessage), Is.False, $"Warning message is displayed");
-        }
-
         [Then(@"User selects ""(.*)"" option for selected language")]
         public void ThenUserSelectsOptionForSelectedLanguage(string optionName)
         {
@@ -1388,12 +1357,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.SelectDropdown("Delete", "Actions");
-            page.ClickButtonByName("DELETE");
+            page.ClickButton("DELETE");
 
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(projectElement.WarningMessage);
+            var inlineTipBanner = _driver.NowAt<BaseInlineTipBannerElement>();
+            inlineTipBanner.VerifyColor(MessageColors.Amber);
             _driver.WaitForDataLoading();
-            projectElement.DeleteButtonInWarningMessage.Click();
+            inlineTipBanner.GetButton("DELETE").Click();
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]
@@ -1401,17 +1370,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
             checkbox.SelectAllCheckBox.Click();
-        }
-
-        //TODO should be moved to ActionPanel
-        [Then(@"Delete buttons are displayed to the User in Actions and Banner on the Projects page")]
-        public void ThenDeleteButtonsAreDisplayedToTheUserInActionsAndBannerOnTheProjectsPage()
-        {
-            var actionElement = _driver.NowAt<ActionPanelPage>();
-            Verify.IsTrue(actionElement.DeleteButtonOnPage.Displayed(), "Delete button is not displayed in Actions panel");
-
-            var bannerElement = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(bannerElement.DeleteButtonInWarningMessage.Displayed(), "Delete button is not displayed in banner");
         }
 
         [Then(@"Counter shows ""(.*)"" found rows")]

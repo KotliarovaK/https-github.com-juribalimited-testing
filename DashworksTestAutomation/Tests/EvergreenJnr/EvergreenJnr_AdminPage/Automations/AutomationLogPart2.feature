@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
 	And User selects 'Stage 1' option from 'Stage' autocomplete
 	And User selects 'Radiobutton Date App Task' option from 'Task' autocomplete
-	Then Error message is not displayed on the Projects page
+	Then error inline tip banner is displayed
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then 'CREATE' button is disabled

@@ -68,24 +68,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             Verify.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
         }
 
-        //TODO this method should be replaced by more generic
-        [Then(@"the amber message is displayed correctly")]
-        public void ThenTheAmberMessageIsDisplayedCorrectly()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(action.WarningMessage.Displayed(), "Amber message is not displayed");
-            Verify.IsTrue(action.UpdateButtonOnAmberMessage.Displayed(), "Update Button is not displayed");
-            Verify.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
-        }
-
-        //TODO this method should be replaced by more generic
-        [Then(@"the amber message is not displayed")]
-        public void ThenTheAmberMessageIsNotDisplayed()
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(action.WarningMessage.Displayed(), "Amber message is displayed");
-        }
-
         [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
@@ -205,7 +187,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         public void WhenUserCreateStaticListWithName(string listName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            var createButton = page.GetButtonByName("CREATE");
+            var createButton = page.GetButton("CREATE");
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);
@@ -223,7 +205,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         {
             //Just to wait Create button
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetButtonByName("CREATE");
+            page.GetButton("CREATE");
 
             var listElement = _driver.NowAt<ActionsElement>();
             listElement.ListNameTextBox.SendKeys(listName);

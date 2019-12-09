@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 PopulateWidgetData(row);
                 var page = _driver.NowAt<BaseDashboardPage>();
-                page.ClickButtonByName(create ? "CREATE" : "UPDATE");
+                page.ClickButton(create ? "CREATE" : "UPDATE");
                 _driver.WaitForDataLoading();
             }
         }

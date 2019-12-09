@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	And User selects 'DAS16816_List' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	#For Mailboxes filter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType    | QueryStringURL                                                                                                                                                                                        |
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	And User selects 'DAS16816_MailboxesList' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	#For Devices filter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType  | QueryStringURL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	And User selects 'DAS16816_DevicesList' option from 'Scope' autocomplete
 	Then Filling field error is not displayed
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS15666 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenProject
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User enters "15666Project" text in the Search field for "Project" column
 	Then 'TRUE' content is displayed in the 'Evergreen' column 
 

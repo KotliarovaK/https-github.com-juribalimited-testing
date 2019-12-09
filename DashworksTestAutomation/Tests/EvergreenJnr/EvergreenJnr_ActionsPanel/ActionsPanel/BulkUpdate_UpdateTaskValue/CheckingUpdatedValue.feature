@@ -32,7 +32,12 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	When User enters '1' text to 'Value' textbox
 	When User selects 'Before current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -46,7 +51,9 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '1' text to 'Value' textbox
 	And User clicks 'UPDATE' button
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -81,7 +88,9 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	When User selects 'Hours' in the 'Units' dropdown
 	When User selects 'After current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	When User refreshes agGrid
 	#Then '16 Oct 2019' content is displayed in the 'zUserAutom: Relative BU \ DT BU Us (Date)' column
@@ -97,7 +106,9 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	When User selects 'Hours' in the 'Units' dropdown
 	When User selects 'Before current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	#Then '16 Oct 2019' content is displayed in the 'zUserAutom: Relative BU \ DT BU Us (Date)' column
 
@@ -129,7 +140,9 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithAfterCurrentValueUpdate
 	When User enters '2' text to 'Value' textbox
 	When User selects 'After current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
@@ -217,7 +230,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User selects 'Task DAS12864_0' option from 'Task' autocomplete
 	And User selects 'Started' in the 'Value' dropdown
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
 	#wait for the process to complete
@@ -252,7 +267,9 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	When User enters '5' text to 'Value' textbox
 	When User selects 'After now' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with " " text is displayed on Action panel
 	When User refreshes agGrid

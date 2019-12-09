@@ -19,4 +19,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatResyncOptionIsWorkedCorrectlyForProj
 	Then 'Resync name' checkbox is checked
 	When User selects state 'false' for 'Resync owner' checkbox
 	When User clicks 'RESYNC' button on popup
-	Then Success message is displayed and contains "Device successfully resynced" text
+	Then 'Device successfully resynced' text is displayed on success inline tip banner

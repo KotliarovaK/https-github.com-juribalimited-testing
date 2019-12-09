@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	| Remove specific values |
 	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks 'CREATE' button
-	Then Success message is displayed and contains "The automation action has been created" text
+	Then 'The automation action has been created' text is displayed on success inline tip banner
 	#Create Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleV
 	When User enters 'first value' text to 'Find Value' textbox
 	When User enters 'second' text to 'Replace Value' textbox
 	When User clicks 'SAVE AND CREATE ANOTHER' button
-	Then Success message is displayed and contains "The automation action has been created" text
+	Then 'The automation action has been created' text is displayed on success inline tip banner
 	#Create Action
 	Then Create Action page is displayed to the User
 	When User clicks 'CANCEL' button
