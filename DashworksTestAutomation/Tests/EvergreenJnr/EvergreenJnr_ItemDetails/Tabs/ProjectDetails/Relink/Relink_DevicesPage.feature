@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'RELINK' button on popup
 	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on warning inline tip banner
 	When User clicks 'RELINK' button on popup
-	Then 'Device successfully relinked' text is displayed on success inline tip banner
+	Then 'Device successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
 	Then Details page for "QSFCLB19N5524S" item is displayed to the user
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	| Device Owner | Tonia T. Mason |
 	When User clicks 'RESYNC' button 
 	And User clicks 'RESYNC' button on popup
-	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on success inline tip banner
+	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on inline success banner
 	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
 	Then User verifies data in the fields on details page
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User enters '06RIV0KXJMHJ1K' in the 'Device' autocomplete field and selects '06RIV0KXJMHJ1K' value
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
-	Then 'Device successfully relinked' text is displayed on success inline tip banner
+	Then 'Device successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
 	When User navigates to the 'User' details page for 'ZHC394580' item
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	And User clicks 'RELINK' button on popup
 	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on warning inline tip banner
 	When User clicks 'RELINK' button on popup
-	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on success inline tip banner
+	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on inline success banner
 	When User navigates to the 'Projects Summary' left submenu item
 	Then inline success banner is not displayed
 	Then inline info banner is not displayed

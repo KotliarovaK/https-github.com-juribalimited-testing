@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	Then '2 mailboxes will be added' text is displayed on warning inline tip banner
 	And 'Mailboxes 2/0' tab is displayed on Project Scope Changes page
 	When User clicks 'UPDATE PROJECT' button 
-	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	And "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
 	And "[Default (Mailbox)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user

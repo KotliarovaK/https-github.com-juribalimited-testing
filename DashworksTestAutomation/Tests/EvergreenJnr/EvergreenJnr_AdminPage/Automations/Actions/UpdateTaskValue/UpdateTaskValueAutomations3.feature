@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner
 	When User selects '17481_Project' option from 'Project' autocomplete
 	When User selects '17481_Stage' option from 'Stage' autocomplete
 	When User selects '17481_Task' option from 'Task' autocomplete
-	Then error inline tip banner is displayed
+	Then inline error banner is displayed
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Not Started' in the 'Value' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasDueDate
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Not Started' in the 'Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
-	Then error inline tip banner is displayed
+	Then inline error banner is displayed
 	When User clicks 'CREATE' button
 	#Change Task
 	When User clicks 'Projects' on the left-hand menu

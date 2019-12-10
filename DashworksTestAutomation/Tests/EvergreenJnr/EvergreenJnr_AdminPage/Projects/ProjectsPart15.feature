@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items               |
@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	| 0623U41CZ73RV2Q |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items           |

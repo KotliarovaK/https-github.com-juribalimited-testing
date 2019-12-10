@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks 'DELETE' button 
 	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is displayed on warning inline tip banner
 	When User clicks 'DELETE' button on inline tip banner
-	Then 'The selected bucket has been deleted' text is displayed on success inline tip banner
+	Then 'The selected bucket has been deleted' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12921 @Buckets
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMessages

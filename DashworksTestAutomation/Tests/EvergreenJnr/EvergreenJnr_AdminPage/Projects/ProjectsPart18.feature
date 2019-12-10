@@ -28,7 +28,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-	Then 'The selected project has been deleted' text is displayed on success inline tip banner
+	Then 'The selected project has been deleted' text is displayed on inline success banner
 	And There are no errors in the browser console
 	Then '<ProjectName>' content is not displayed in the 'Project' column
 	When User create static list with "<StaticList>" name on "<PageName>" page with following items
@@ -45,7 +45,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	And User selects '<StaticList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button 
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -64,7 +64,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	And User selects '<DynamicList>' option from 'Scope' autocomplete
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button 
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 
 Examples:
 	| ProjectName  | ScopeList     | StaticList     | PageName  | Item                   | ColumnName    | DynamicList     |
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User enters 'TestProject84' text to 'Project Name' textbox
 	And User selects 'StaticList4581' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	When User enters "TestProject84" text in the Search field for "Project" column
 	Then "TestProject84" text in search field is displayed correctly for "Project" column
 	When User selects all rows on the grid
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	When User selects "DAS_13733_Valid_file.xml" file to upload on Import Project page
 	And User clicks 'IMPORT PROJECT' button 
 	Then Page with 'Projects' header is displayed to user
-	And 'The project has been imported, click here to view the TestProjectDAS13733 project' text is displayed on success inline tip banner
+	And 'The project has been imported, click here to view the TestProjectDAS13733 project' text is displayed on inline success banner
 	When User enters "TestProjectDAS13733" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item

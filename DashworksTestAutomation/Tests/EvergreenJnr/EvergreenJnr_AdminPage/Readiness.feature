@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User clicks 'DELETE' button 
 	Then popup with 'Delete Readiness' title is displayed
 	When User clicks 'DELETE' button on popup
-	Then 'The selected readiness has been deleted' text is displayed on success inline tip banner
+	Then 'The selected readiness has been deleted' text is displayed on inline success banner
 	Then There are no errors in the browser console
 	When User select "Readiness" rows in the grid
 	| SelectedRowsName |
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	Then 'CANCEL' popup button color is 'rgba(236, 237, 239, 1)'
 	Then 'DELETE' popup button color is 'rgba(242, 88, 49, 1)'
 	When User clicks 'DELETE' button on popup
-	Then 'The selected readinesses have been deleted, changes might not take effect immediately' text is displayed on success inline tip banner
+	Then 'The selected readinesses have been deleted, changes might not take effect immediately' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup @Do_Not_Runt_With_Readiness
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnore
 	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
 	| DAS14937_1 | tooltipForDas14937_1 | TRUE  | TRUE                   | RED            | Windows 7 Migration (Computer Scheduled Project) |
 	And User clicks 'CREATE' button 
-	Then 'The readiness has been created' text is displayed on success inline tip banner
+	Then 'The readiness has been created' text is displayed on inline success banner
 	And Readiness "DAS14937_1" displayed before Ignore
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName           |
 	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            | ReadinessDAS14938_4A2 |
 	And User clicks 'CREATE' button 
-	Then 'The readiness has been created' text is displayed on success inline tip banner
+	Then 'The readiness has been created' text is displayed on inline success banner
 	When User enters stored readiness name in Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User checks that opened readiness name is the same as stored one

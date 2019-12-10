@@ -32,10 +32,10 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	When User enters '1' text to 'Value' textbox
 	When User selects 'Before current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '1' text to 'Value' textbox
 	And User clicks 'UPDATE' button
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	When User selects 'Hours' in the 'Units' dropdown
 	When User selects 'After current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithNoChangeUpdateValue
 	When User selects 'Hours' in the 'Units' dropdown
 	When User selects 'Before current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithAfterCurrentValueUpdate
 	When User enters '2' text to 'Value' textbox
 	When User selects 'After current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User selects 'Task DAS12864_0' option from 'Task' autocomplete
 	And User selects 'Started' in the 'Value' dropdown
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -267,7 +267,7 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	When User enters '5' text to 'Value' textbox
 	When User selects 'After now' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button

@@ -84,38 +84,38 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.GetInlineBanner(messageType).Displayed(), "Inline tip banner is displayed");
         }
 
-        [Then(@"warning inline tip banner is displayed")]
-        public void ThenWarningInlineTipBannerIsDisplayed()
+        [Then(@"inline warning banner is displayed")]
+        public void ThenInlineWarningBannerIsDisplayed()
         {
             _driver.WaitForDataLoading();
 
             BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
-            page.VerifyColor(MessageColors.Amber);
+            page.VerifyColor(MessageType.Tip);
         }
 
-        [Then(@"success inline tip banner is displayed")]
-        public void ThenSuccessInlineTipBannerIsDisplayed()
+        [Then(@"inline success banner is displayed")]
+        public void ThenInlineSuccessBannerIsDisplayed()
         {
             BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
-            page.VerifyColor(MessageColors.Green);
+            page.VerifyColor(MessageType.Success);
         }
 
-        [Then(@"error inline tip banner is displayed")]
-        public void ThenErrorInlineTipBannerIsDisplayed()
+        [Then(@"inline error banner is displayed")]
+        public void ThenInlineErrorBannerIsDisplayed()
         {
             BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
-            page.VerifyColor(MessageColors.Red);
+            page.VerifyColor(MessageType.Error);
         }
 
-        [Then(@"'(.*)' text is displayed on success inline tip banner")]
-        public void ThenTextIsDisplayedOnSuccessInlineTipBanner(string text)
+        [Then(@"'(.*)' text is displayed on inline success banner")]
+        public void ThenTextIsDisplayedOnInlineSuccessBanner(string text)
         {
             BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
-            page.VerifyMessageTextAndColor(MessageColors.Green, text);
+            page.VerifyMessageTextAndColor(MessageType.Success, text);
         }
 
         [Then(@"'(.*)' and '(.*)' texts are displayed on inline success banner")]

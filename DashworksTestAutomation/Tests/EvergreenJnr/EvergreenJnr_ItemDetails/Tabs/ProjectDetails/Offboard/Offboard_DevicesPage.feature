@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	And User clicks 'OFFBOARD' button 
 	And User clicks 'OFFBOARD' button on popup 
 	And User clicks 'OFFBOARD' button on popup 
-	Then 'The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)' text is displayed on success inline tip banner
+	Then 'The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)' text is displayed on inline success banner
 	When User navigates to the 'Projects Summary' left submenu item
 	Then inline info banner is not displayed
 	Then inline success banner is not displayed
