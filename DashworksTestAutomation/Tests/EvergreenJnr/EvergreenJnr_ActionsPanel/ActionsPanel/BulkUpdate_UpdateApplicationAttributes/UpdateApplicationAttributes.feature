@@ -111,3 +111,42 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateRationalisationDDLD
 	| KEEP          |
 	| RETIRE        |
 	| UNCATEGORISED |
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19213
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForDevicesScopedProject
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName                         |
+	|0047 - Microsoft Access 97 SR-2 Francais  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19213
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUserScopedProject
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName                         |
+	|0047 - Microsoft Access 97 SR-2 Francais  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
+	When User selects 'RETIRE' in the 'Rationalisation' dropdown
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19213
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForMailboxesScopedProject
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName                         |
+	|0047 - Microsoft Access 97 SR-2 Francais  |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
+	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
