@@ -118,26 +118,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.VerifyMessageTextAndColor(MessageColors.Green, text);
         }
 
-        [Then(@"'(.*)' and '(.*)' texts are displayed on success inline tip banner")]
-        public void ThenAndTextsAreDisplayedOnSuccessInlineTipBanner(string firstPart, string secondPart)
+        [Then(@"'(.*)' and '(.*)' texts are displayed on inline success banner")]
+        public void ThenAndTextsAreDisplayedOnInlineSuccessBanner(string firstPart, string secondPart)
         {
             BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
-            page.VerifyMessageTextAndColor(MessageColors.Green, firstPart);
-            page.VerifySecondPartOfText(MessageColors.Green, secondPart);
+            page.VerifyMessageTextAndColor(MessageType.Success, firstPart);
+            page.VerifySecondPartOfText(MessageType.Success, secondPart);
         }
 
-        [Then(@"'(.*)' text in '(.*)' message is displayed on success inline tip banner")]
-        public void ThenTextInMessageIsDisplayedOnSuccessInlineTipBanner(string text, string message)
+        [Then(@"'(.*)' text in '(.*)' message is displayed on inline success banner")]
+        public void ThenTextInMessageIsDisplayedOnInlineSuccessBanner(string text, string message)
         {
             var finalMessage = string.Format(message, text);
 
             BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
-            page.VerifyMessageTextAndColor(MessageColors.Green, finalMessage);
+            page.VerifyMessageTextAndColor(MessageType.Success, finalMessage);
         }
 
-        [Then(@"'(.*)' text is displayed on warning inline tip banner")]
+        [Then(@"'(.*)' text is displayed on inline warning banner")]
         public void ThenTextIsDisplayedOnWarningInlineTipBanner(string text)
         {
             _driver.WaitForDataLoading(80);
