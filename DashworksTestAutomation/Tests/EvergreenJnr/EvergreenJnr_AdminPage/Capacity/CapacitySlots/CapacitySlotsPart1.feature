@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	And User clicks newly created object link
 	And User enters 'CAPACITYUINTdas13789' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button
-	And 'The capacity unit details have been updated' text is displayed on inline success banner
+	Then 'The capacity unit details have been updated' text is displayed on inline success banner
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13824 @DAS14250 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage
