@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button
 	#Check Actions grid
-	Then 'The automation action has been created' text is displayed on success inline tip banner
+	Then 'The automation action has been created' text is displayed on inline success banner
 	Then "Failed, 2019-11-01, 1803 Team, Akhila Varghese" content is displayed for "Value" column
 	#Change Task
 	When User clicks 'Projects' on the left-hand menu
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	Then "Failed, 1803 Team, Akhila Varghese" content is displayed for "Value" column
 	When User clicks content from "Action" column
 	#Warning message check
-	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on error inline tip banner
+	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on inline error banner
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button
 	#Check Actions grid
-	Then 'The automation action has been created' text is displayed on success inline tip banner
+	Then 'The automation action has been created' text is displayed on inline success banner
 	Then "Failed, 2019-11-01, 1803 Team, Akhila Varghese" content is displayed for "Value" column
 	#Change Task
 	When User clicks 'Projects' on the left-hand menu
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	Then "Failed, 2019-11-01" content is displayed for "Value" column
 	When User clicks content from "Action" column
 	#Warning message check
-	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on error inline tip banner
+	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on inline error banner
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
@@ -212,7 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button
 	#Check Actions grid
-	Then 'The automation action has been created' text is displayed on success inline tip banner
+	Then 'The automation action has been created' text is displayed on inline success banner
 	Then "Failed, 2019-11-01, 1803 Team, Akhila Varghese" content is displayed for "Value" column
 	#Change Task
 	When User clicks 'Projects' on the left-hand menu
@@ -235,7 +235,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 	Then "Failed" content is displayed for "Value" column
 	When User clicks content from "Action" column
 	#Warning message check
-	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on error inline tip banner
+	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on inline error banner
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18712 @DAS18677 @Cleanup @Not_Ready
@@ -307,7 +307,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateAfterTaskChangingToTaskWi
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Warning message check
-	Then 'The configuration of this task has changed, this action no longer has the correct parameters, update the action to change these' text is displayed on error inline tip banner
+	Then 'The configuration of this task has changed, this action no longer has the correct parameters, update the action to change these' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19065 @Cleanup @Not_Ready

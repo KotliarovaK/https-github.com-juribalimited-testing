@@ -24,9 +24,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	When User selects state 'true' for 'Resync apps' checkbox
 	When User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button on popup
-	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on warning inline tip banner
+	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
-	Then 'User successfully relinked' text is displayed on success inline tip banner
+	Then 'User successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds
 	Then Details page for "DSF4350513" item is displayed to the user
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	| Name  | ZZR457072 |
 	When User clicks 'RESYNC' button
 	And User clicks 'RESYNC' button on popup
-	Then 'User successfully resynced' text is displayed on success inline tip banner
+	Then 'User successfully resynced' text is displayed on inline success banner
 	#waiting for the RESYNC process to be completed
 	When User waits for three seconds
 	Then following content is displayed on the Details Page
@@ -50,6 +50,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	And User enters 'ZZR457072' in the 'User' autocomplete field and selects 'ZZR457072' value
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
-	Then 'User successfully relinked' text is displayed on success inline tip banner
+	Then 'User successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
 	When User waits for three seconds

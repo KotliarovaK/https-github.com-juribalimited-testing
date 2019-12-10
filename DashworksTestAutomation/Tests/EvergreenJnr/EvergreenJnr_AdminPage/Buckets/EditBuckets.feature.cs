@@ -165,8 +165,8 @@ this.FeatureBackground();
 #line 21
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.Then("\'TestBucket2\' text in \'The {0} bucket has been updated\' message is displayed on s" +
-                    "uccess inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'TestBucket2\' text in \'The {0} bucket has been updated\' message is displayed on i" +
+                    "nline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
  testRunner.When("User enters \"TestBucket2\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
@@ -188,8 +188,8 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
- testRunner.Then("\'Unassigned\' text in \'The {0} bucket has been updated\' message is displayed on su" +
-                    "ccess inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Unassigned\' text in \'The {0} bucket has been updated\' message is displayed on in" +
+                    "line success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

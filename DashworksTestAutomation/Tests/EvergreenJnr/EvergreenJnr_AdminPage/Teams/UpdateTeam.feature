@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	Then 'UPDATE' button is disabled
 	When User enters "testTeamtest" in the Team Description field
 	When User clicks 'UPDATE' button
-	Then 'The team was successfully updated' text is displayed on success inline tip banner
+	Then 'The team was successfully updated' text is displayed on inline success banner
 	And There are no errors in the browser console
 	When User clicks refresh button in the browser
 	When User enters '' text to 'Team Name' textbox
@@ -32,5 +32,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	Then 'UPDATE' button is disabled
 	When User enters 'NewTeamName' text to 'Team Name' textbox
 	When User clicks 'UPDATE' button
-	Then 'The team was successfully updated' text is displayed on success inline tip banner
+	Then 'The team was successfully updated' text is displayed on inline success banner
 	And There are no errors in the browser console

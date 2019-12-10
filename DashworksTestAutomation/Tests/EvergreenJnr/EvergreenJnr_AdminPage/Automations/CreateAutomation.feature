@@ -96,4 +96,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingAr
 	And User selects 'Manual' in the 'Run' dropdown
 	And User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
-	Then 'The automation has been created' text is displayed on success inline tip banner
+	Then 'The automation has been created' text is displayed on inline success banner

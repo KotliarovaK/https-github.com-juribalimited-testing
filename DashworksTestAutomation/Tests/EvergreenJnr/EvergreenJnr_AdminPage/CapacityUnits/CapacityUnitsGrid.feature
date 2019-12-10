@@ -34,12 +34,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDelet
 	| Evergreen Capacity Unit 1 |
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	Then 'This unit will be permanently deleted and any objects within it reassigned to the default unit' text is displayed on warning inline tip banner
+	Then 'This unit will be permanently deleted and any objects within it reassigned to the default unit' text is displayed on inline tip banner
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName          |
 	| Evergreen Capacity Unit 2 |
 	And User clicks 'DELETE' button
-	Then 'These units will be permanently deleted and any objects within them reassigned to the default unit' text is displayed on warning inline tip banner
+	Then 'These units will be permanently deleted and any objects within them reassigned to the default unit' text is displayed on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS14070
 Scenario: EvergreenJnr_AdminPage_ChecksThatSumOfObjectsInApplicationsListIsCorrect

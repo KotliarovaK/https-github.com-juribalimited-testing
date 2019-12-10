@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	Then error inline tip banner is displayed
+	Then inline error banner is displayed
 	When User selects 'Before current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb

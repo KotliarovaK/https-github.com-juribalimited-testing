@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
-	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
+	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| N7GXB25TPJY73EH |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	When User clicks 'UPDATE PROJECT' button 
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	#Test
 	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
-	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
+	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| B569F47FE6B1491CAEC |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	When User clicks 'UPDATE PROJECT' button 
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	#Test
 	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
-	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
+	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Windows Live Messenger (8.1.0178.00) |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	When User clicks 'UPDATE PROJECT' button 
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	#Test
 	#Ann.I. 11/15/19: Objects go to the history tab too quickly. We are waiting for Lisa's response.
 	#When User navigates to the 'Queue' left menu item
