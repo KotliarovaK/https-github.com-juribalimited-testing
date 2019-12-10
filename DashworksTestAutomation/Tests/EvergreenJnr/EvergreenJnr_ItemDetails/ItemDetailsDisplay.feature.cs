@@ -900,7 +900,8 @@ this.FeatureBackground();
 #line 162
  testRunner.Then("\'FullAccess\' content is displayed in the \'Permission\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 163
- testRunner.And("\"FullAccess\" tooltip displayed in \"Permission\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'FullAccess\' tooltip is displayed for \'FullAccess\' content in the \'Permission\' co" +
+                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

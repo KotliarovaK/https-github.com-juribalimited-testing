@@ -168,6 +168,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	When User clicks "Make active" option in Cog-menu for "15431_Third_Active" item on Admin page
+	When User clicks refresh button in the browser
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Edit" option in Cog-menu for "15431_Third_Active" item on Admin page
