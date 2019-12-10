@@ -202,4 +202,4 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	Then '17429_Stage2' content is displayed in 'Stage' textbox
 	Then '[Task not found]' content is displayed in 'Task' textbox
 	Then 'The selected task cannot be found' error message is displayed for 'Task' field
-	Then inline tip banner is not displayed
+	Then inline error banner is not displayed

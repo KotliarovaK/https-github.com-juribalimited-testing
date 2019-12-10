@@ -233,7 +233,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDialogPage.cs" />
-    <Compile Include="Pages\Evergreen\Base\BaseInlineTipBannerElement.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseInlineBannerElement.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseRightSideActionsPanel.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />

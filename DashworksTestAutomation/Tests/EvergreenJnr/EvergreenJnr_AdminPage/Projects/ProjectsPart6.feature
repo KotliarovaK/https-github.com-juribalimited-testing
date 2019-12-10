@@ -30,7 +30,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	And User clicks 'UPDATE PROJECT' button 
 	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Scope Details' left menu item
-	Then inline tip banner is not displayed
+	Then inline info banner is not displayed
+	Then inline success banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12891 @DAS12894 @DAS13254 @Projects @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColourOnAdminPage

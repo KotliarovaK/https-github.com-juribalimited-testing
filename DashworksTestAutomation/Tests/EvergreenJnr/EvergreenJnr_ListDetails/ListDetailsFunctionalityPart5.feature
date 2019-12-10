@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	Then Details panel is displayed to the user
 	When User clicks 'DELETE LIST' button
 	And User navigates to the "DynamicList2569" list
-	Then inline tip banner is not displayed
+	Then inline success banner is not displayed
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	And no Warning message is displayed in the list details panel

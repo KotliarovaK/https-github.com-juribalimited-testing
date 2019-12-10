@@ -151,6 +151,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Scope Changes' left menu item
+	#Maybe info banner should be instead of tip
 	Then inline tip banner is not displayed
 	And "Devices to add (0 of 17254 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found

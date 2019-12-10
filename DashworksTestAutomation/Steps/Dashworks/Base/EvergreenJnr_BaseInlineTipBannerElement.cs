@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [When(@"User clicks '(.*)' button on inline tip banner")]
         public void WhenUserClicksButtonOnInlineTipBanner(string button)
         {
-            var page = _driver.NowAt<BaseInlineTipBannerElement>();
+            var page = _driver.NowAt<BaseInlineBannerElement>();
             page.GetButton(button).Click();
 
             //For automation
@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' button is displayed on inline tip banner")]
         public void ThenButtonIsDisplayedOnInlineTipBanner(string button)
         {
-            var page = _driver.NowAt<BaseInlineTipBannerElement>();
+            var page = _driver.NowAt<BaseInlineBannerElement>();
             Verify.IsTrue(page.IsButtonDisplayed(button),
                 $"'{button}' button is displayed on inline tip banner");
         }
@@ -57,8 +57,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"inline tip banner is not displayed")]
         public void ThenInlineTipBannerIsNotDisplayed()
         {
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
-            Verify.IsFalse(page.InlineTipElement.Displayed(), "Inline tip banner is displayed");
+            ThenInlineBannerIsNotDisplayed(MessageType.Tip);
+        }
+
+        [Then(@"inline error banner is not displayed")]
+        public void ThenInlineErrorBannerIsNotDisplayed()
+        {
+            ThenInlineBannerIsNotDisplayed(MessageType.Error);
+        }
+
+        [Then(@"inline success banner is not displayed")]
+        public void ThenInlineSuccessBannerIsNotDisplayed()
+        {
+            ThenInlineBannerIsNotDisplayed(MessageType.Success);
+        }
+
+        [Then(@"inline info banner is not displayed")]
+        public void ThenInlineInfoBannerIsNotDisplayed()
+        {
+            ThenInlineBannerIsNotDisplayed(MessageType.Info);
+        }
+
+        public void ThenInlineBannerIsNotDisplayed(MessageType messageType)
+        {
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
+            Verify.IsFalse(page.GetInlineBanner(messageType).Displayed(), "Inline tip banner is displayed");
         }
 
         [Then(@"warning inline tip banner is displayed")]
@@ -66,7 +89,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading();
 
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
             page.VerifyColor(MessageColors.Amber);
         }
@@ -74,7 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"success inline tip banner is displayed")]
         public void ThenSuccessInlineTipBannerIsDisplayed()
         {
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
             page.VerifyColor(MessageColors.Green);
         }
@@ -82,7 +105,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"error inline tip banner is displayed")]
         public void ThenErrorInlineTipBannerIsDisplayed()
         {
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
             page.VerifyColor(MessageColors.Red);
         }
@@ -90,7 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' text is displayed on success inline tip banner")]
         public void ThenTextIsDisplayedOnSuccessInlineTipBanner(string text)
         {
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
             page.VerifyMessageTextAndColor(MessageColors.Green, text);
         }
@@ -98,7 +121,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' and '(.*)' texts are displayed on success inline tip banner")]
         public void ThenAndTextsAreDisplayedOnSuccessInlineTipBanner(string firstPart, string secondPart)
         {
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
             page.VerifyMessageTextAndColor(MessageColors.Green, firstPart);
             page.VerifySecondPartOfText(MessageColors.Green, secondPart);
@@ -109,7 +132,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var finalMessage = string.Format(message, text);
 
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
             page.VerifyMessageTextAndColor(MessageColors.Green, finalMessage);
         }
@@ -119,7 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading(80);
 
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAt<BaseInlineBannerElement>();
 
             page.VerifyMessageTextAndColor(MessageColors.Amber, text);
         }
@@ -129,13 +152,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading(80);
 
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
             //If there is no banner on page then there are no message at all. All good
-            if (!_driver.IsElementDisplayed(page.InlineTipElement, WebDriverExtensions.WaitTime.Short))
+            if (!_driver.IsElementDisplayed(page.GetInlineBanner(MessageType.Info), WebDriverExtensions.WaitTime.Short))
                 return;
 
-            _driver.WaitForElementToNotContainsText(page.InlineTipElement, text);
+            _driver.WaitForElementToNotContainsText(page.GetInlineBanner(MessageType.Info), text);
         }
 
         [Then(@"'(.*)' text is displayed on error inline tip banner")]
@@ -143,9 +166,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading(80);
 
-            BaseInlineTipBannerElement page = _driver.NowAtWithoutWait<BaseInlineTipBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
-            page.VerifyMessageTextAndColor(MessageColors.Red, text);
+            page.VerifyMessageTextAndColor(MessageType.Error, text);
         }
 
         #endregion

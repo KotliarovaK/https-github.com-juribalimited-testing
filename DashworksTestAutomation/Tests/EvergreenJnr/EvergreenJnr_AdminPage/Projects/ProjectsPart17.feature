@@ -108,7 +108,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User navigates to the 'Scope Details' left menu item
 	And User selects 'All Users' in the 'Scope' dropdown with wait
 	And User navigates to the 'Scope Changes' left menu item
-	Then inline tip banner is not displayed
+	Then inline success banner is not displayed
+	Then inline info banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @DAS13973 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab

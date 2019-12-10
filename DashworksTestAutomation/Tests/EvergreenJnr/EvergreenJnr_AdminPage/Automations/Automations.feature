@@ -466,7 +466,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then '1 automation deleted' text is displayed on success inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User navigates to the 'Automations' left menu item
-	Then inline tip banner is not displayed
+	Then inline success banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @DAS18328
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCorrectLists
