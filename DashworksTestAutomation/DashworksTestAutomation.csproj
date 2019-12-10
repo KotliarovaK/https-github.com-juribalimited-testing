@@ -250,7 +250,6 @@
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseGridPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_CapacityUnitsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_DetailsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_OverrideDatesPage.cs" />
@@ -482,11 +481,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdatePathPart2.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\UpdateRing.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateRing.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\CheckingUpdatedValue.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1711,10 +1705,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdatePathPart2.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\UpdateRing.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateRing.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\CheckingUpdatedValue.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckingUpdatedValue.feature.cs</LastGenOutput>
@@ -2671,6 +2661,7 @@
   <ItemGroup>
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
+    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Details\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\ActiveDirectory\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\" />
