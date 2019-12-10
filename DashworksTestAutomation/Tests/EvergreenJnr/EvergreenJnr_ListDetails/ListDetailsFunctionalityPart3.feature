@@ -9,8 +9,8 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForDefaultListsAfterChangingALanguage
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
-	When User navigates to the "Preferences" page on Account details
-	And User changes language to "English US"
+	When User navigates to the 'Preferences' left menu item
+	When User selects 'English US' in the 'Language' dropdown
 	And User clicks 'UPDATE' button 
 	And User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user

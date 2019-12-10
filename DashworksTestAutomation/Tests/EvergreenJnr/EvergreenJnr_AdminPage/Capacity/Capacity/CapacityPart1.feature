@@ -85,7 +85,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	Then 'An override start date must be entered' error message is displayed for 'Override Start Date' field
 	When User enters '4 Oct 2018' text to 'Override Start Date' datepicker
 	When User enters '7 Oct 2018' text to 'Override End Date' datepicker
-	When User clicks 'CREATE' button 
+	When User selects 'All' in the 'Slot' dropdown
+	When User clicks 'CREATE' button
 	Then 'Your override date has been created' text is displayed on success inline tip banner
 	Then 'Unlimited' content is displayed in the 'Capacity' column
 	When User enters ">1" text in the Search field for "Capacity" column
