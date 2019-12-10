@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters '14695_Ring' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
+	Then 'The ring has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'Ring_Test' text to 'Ring name' textbox
@@ -70,8 +70,8 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| Unassigned       |
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then Warning message with "This ring will be permanently deleted and any objects within it reassigned to the default ring" text is displayed on the Admin page
-	When User clicks Delete button in the warning message
+	Then 'This ring will be permanently deleted and any objects within it reassigned to the default ring' text is displayed on warning inline tip banner
+	When User clicks 'DELETE' button on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14705 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
@@ -95,12 +95,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| Move to position |
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
-	When User type "14705_Ring" Name in the "Ring name" field on the 'Email Migration' Project details page
+	When User enters '14705_Ring' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
+	Then 'The ring has been created' text is displayed on success inline tip banner
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
-	When User type "Ring_Test" Name in the "Ring name" field on the 'Email Migration' Project details page
+	When User enters 'Ring_Test' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
 	When User clicks on 'Ring' column header
 	Then data in table is sorted by "Ring" column in ascending order on the Admin page
@@ -122,5 +122,5 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| 14705_Ring       |
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then Warning message with "These rings will be permanently deleted and any objects within them reassigned to the default ring" text is displayed on the Admin page
-	When User clicks Delete button in the warning message
+	Then 'These rings will be permanently deleted and any objects within them reassigned to the default ring' text is displayed on warning inline tip banner
+	When User clicks 'DELETE' button on inline tip banner

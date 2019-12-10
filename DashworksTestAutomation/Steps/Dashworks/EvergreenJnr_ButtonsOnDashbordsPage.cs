@@ -201,7 +201,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterPane = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
 
-            var panel = _driver.NowAt<BaseDashboardPage>();
+            var panel = _driver.NowAt<FiltersElement>();
             Verify.That(panel.FilterExpressionIcon.Displayed(), "Filter expression icon placed in wrong block");
         }
 
@@ -210,7 +210,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterPane = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(filterPane.FilterButton);
-            var panel = _driver.NowAt<BaseDashboardPage>();
+            var panel = _driver.NowAt<FiltersElement>();
             panel.FilterExpressionIcon.Click();
         }
 

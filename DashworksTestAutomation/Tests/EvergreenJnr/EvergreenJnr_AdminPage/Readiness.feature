@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User clicks 'DELETE' button 
 	Then popup with 'Delete Readiness' title is displayed
 	When User clicks 'DELETE' button on popup
-	Then Success message is displayed and contains "The selected readiness has been deleted" text
+	Then 'The selected readiness has been deleted' text is displayed on success inline tip banner
 	Then There are no errors in the browser console
 	When User select "Readiness" rows in the grid
 	| SelectedRowsName |
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	Then 'CANCEL' popup button color is 'rgba(236, 237, 239, 1)'
 	Then 'DELETE' popup button color is 'rgba(242, 88, 49, 1)'
 	When User clicks 'DELETE' button on popup
-	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
+	Then 'The selected readinesses have been deleted, changes might not take effect immediately' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup @Do_Not_Runt_With_Readiness
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeIgnore
 	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName                                      |
 	| DAS14937_1 | tooltipForDas14937_1 | TRUE  | TRUE                   | RED            | Windows 7 Migration (Computer Scheduled Project) |
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The readiness has been created" text
+	Then 'The readiness has been created' text is displayed on success inline tip banner
 	And Readiness "DAS14937_1" displayed before Ignore
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate | ProjectName           |
 	| DAS14938_1 | tooltipForDas14938_1 | TRUE  | TRUE                   | RED            | ReadinessDAS14938_4A2 |
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The readiness has been created" text
+	Then 'The readiness has been created' text is displayed on success inline tip banner
 	When User enters stored readiness name in Search field for "Readiness" column
 	And User click content from "Readiness" column
 	Then User checks that opened readiness name is the same as stored one
@@ -257,9 +257,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
 	When User clicks "Change to ready" option in Cog-menu for "GREY" item on Admin page
-	Then Success message is displayed and contains "The readiness has been updated" text
 	Then 'click here to view the Grey readiness' link is displayed
-	Then Green banner contains following text "changes might not take effect immediately"
+	Then 'The readiness has been updated' and ', changes might not take effect immediately' texts are displayed on success inline tip banner
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 
@@ -271,18 +270,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then "1" content is displayed for "Task Values Count" column
 	When User clicks Reset Filters button on the Admin page
 	When User clicks "Change to not ready" option in Cog-menu for "GREEN" item on Admin page
-	Then Success message is displayed and contains "The readiness has been updated" text
 	Then 'click here to view the Green readiness' link is displayed
-	Then Green banner contains following text "changes might not take effect immediately"
+	Then 'The readiness has been updated' and ', changes might not take effect immediately' texts are displayed on success inline tip banner
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 
 	When User clicks "Change to ready" option in Cog-menu for "GREEN" item on Admin page
 	When User clicks "Make default for applications" option in Cog-menu for "AMBER" item on Admin page
-	Then Success message is displayed and contains "The readiness has been updated" text
 	Then 'click here to view the Amber readiness' link is displayed
-	Then 'click here to view the Amber readiness' link is displayed
-	Then Green banner contains following text "changes might not take effect immediately"
+	Then 'The readiness has been updated' and ', changes might not take effect immediately' texts are displayed on success inline tip banner
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 
@@ -310,9 +306,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
-	Then Warning message with "created objects which are not displayed in Evergreen" text is displayed on the Project Details Page
+	Then 'created objects which are not displayed in Evergreen' text is displayed on warning inline tip banner
 	When User navigates to the 'Readiness' left menu item
-	Then No warning message displayed on the Project Details Page
+	Then inline tip banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
@@ -359,7 +355,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 	And User click content from "Readiness" column
 	When User selects state 'true' for 'Default' checkbox
 	And User navigates to the 'Capacity' left menu item
-	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
 

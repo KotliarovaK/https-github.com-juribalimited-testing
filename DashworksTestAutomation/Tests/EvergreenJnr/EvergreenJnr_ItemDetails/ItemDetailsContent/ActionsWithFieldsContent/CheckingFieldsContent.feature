@@ -143,8 +143,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	And There are no errors in the browser console
 	#============================================================================#
 		#go to Users page
-	When User navigates to the 'User' details page for 'ZZNKKYW97AL4VS' item
-	Then Details page for "ZZNKKYW97AL4VS" item is displayed to the user
+	When User navigates to the 'User' details page for '00DBB114BE1B41B0A38' item
+	Then Details page for "00DBB114BE1B41B0A38" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
 	Then popup is displayed to User
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogFieldsAreDisplayedAndW
 	| Title       | Value         |
 	| In Catalog  | FALSE         |
 	When User selects 'TRUE' in the dropdown for the 'In Catalog' field
-	Then Success message is displayed and contains "In catalog successfully changed" text
+	Then 'In catalog successfully changed' text is displayed on success inline tip banner
 	When User clicks refresh button in the browser
 	Then following content is displayed on the Details Page
 	| Title      | Value |
@@ -221,7 +221,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAn
 	| Not Important |
 	| Uncategorised |
 	When User selects 'Important' in the dropdown for the 'Criticality' field
-	Then Success message is displayed and contains "Criticality successfully changed" text
+	Then 'Criticality successfully changed' text is displayed on success inline tip banner
 	When User clicks refresh button in the browser
 	Then following content is displayed on the Details Page
 	| Title       | Value     |
@@ -255,13 +255,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplay
 	| Title              | Value |
 	| Hide From End User | FALSE |
 	When User selects 'TRUE' in the dropdown for the 'Hide From End User' field
-	Then Success message is displayed and contains "Hide from end user successfully changed" text
+	Then 'Hide from end user successfully changed' text is displayed on success inline tip banner
 	When User clicks refresh button in the browser
 	Then following content is displayed on the Details Page
 	| Title              | Value |
 	| Hide From End User | TRUE  |
 	When User selects 'FALSE' in the dropdown for the 'Hide From End User' field
-	Then Success message is displayed and contains "Hide from end user successfully changed" text
+	Then 'Hide from end user successfully changed' text is displayed on success inline tip banner
 	Then following content is displayed on the Details Page
 	| Title              | Value |
 	| Hide From End User | FALSE |

@@ -69,6 +69,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User collapses 'Selected Columns' category
+	When User moves to the end of categories list
 	When User expands 'Project Stages: Windows7Mi' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                                               |

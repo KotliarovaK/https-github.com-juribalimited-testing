@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items                                                      |
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items                                                      |
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items           |
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) (7.1.0) |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items                                                |
@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| Adobe Acrobat Reader 5.0 (1.0) |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items                    |
@@ -210,7 +210,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
+	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items           |
@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| DK1LF3X47N7PWX7 |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
+	Then '10 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items           |
@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| NJStar Chinese Word Processor                                 |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "5 objects queued for onboarding, 0 objects offboarded" text
+	Then '5 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	When User navigates to the 'Queue' left menu item
 	Then following Items are displayed in the Queue table
 	| Items                                           |

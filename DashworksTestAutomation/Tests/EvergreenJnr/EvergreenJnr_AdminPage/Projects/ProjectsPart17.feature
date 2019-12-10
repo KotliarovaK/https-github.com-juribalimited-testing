@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Page with 'Projects' header is displayed to user
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	When User clicks 'Delete' option in opened Cog-menu
 	Then "TestList0A78U9 list will be permanently deleted" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
-	And no Warning message is displayed in the lists panel
+	Then inline tip banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @DAS13930 @Cleanup @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
@@ -103,12 +103,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User enters "TestProject1" text in the Search field for "Project" column
 	When User clicks on 'TestProject1' cell from 'Project' column
 	Then Page with 'TestProject1' header is displayed to user
-	Then Warning message with "The scope for this project refers to a deleted list, this must be updated before proceeding" text is displayed on the Admin page
+	Then 'The scope for this project refers to a deleted list, this must be updated before proceeding' text is displayed on warning inline tip banner
 	Then 'UPDATE ALL CHANGES' button is disabled
 	When User navigates to the 'Scope Details' left menu item
 	And User selects 'All Users' in the 'Scope' dropdown with wait
 	And User navigates to the 'Scope Changes' left menu item
-	Then Warning message is not displayed on the Admin page
+	Then inline tip banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @DAS13973 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
@@ -132,7 +132,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	Then 'Actions' dropdown is not disabled
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then Delete buttons are displayed to the User in Actions and Banner on the Projects page
+	Then 'DELETE' button is displayed
+	Then 'DELETE' button is displayed on inline tip banner
 	When User cancels the selection of all rows on the Projects page
 	Then 'Actions' dropdown is disabled
 	Then 'DELETE' button is not displayed
@@ -172,7 +173,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User changes Project Short Name to "NewShort4875"
 #"UPDATE" Action button has been removed
 	#And User clicks 'UPDATE' button 
-	#Then Success message is displayed and contains "The project details have been updated" text
+	#Then 'The project details have been updated' text is displayed on success inline tip banner
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid

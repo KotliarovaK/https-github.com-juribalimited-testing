@@ -124,14 +124,14 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "TestApplicationsList12208" list
 	Then "TestApplicationsList12208" list is displayed to user
-	And no Warning message is displayed in the lists panel
+	Then inline tip banner is not displayed
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	And User open the Dependents component
 	And dependent "TestDevicesList12208" list is displayed
 	When User navigates to the dependent "TestDevicesList12208" list
 	Then "TestDevicesList12208" list is displayed to user
-	And no Warning message is displayed in the lists panel
+	Then inline tip banner is not displayed
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

@@ -189,8 +189,8 @@ this.FeatureBackground();
 #line 30
  testRunner.When("User clicks \'ADD BUCKETS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
- testRunner.Then("Success message is displayed and contains \"The selected buckets have been added\" " +
-                    "text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected buckets have been added\' text is displayed on success inline tip ba" +
+                    "nner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 32
  testRunner.When("User enters \"TestBucket\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
@@ -206,8 +206,8 @@ this.FeatureBackground();
 #line 38
  testRunner.And("User clicks \'CHANGE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
- testRunner.Then("Success message is displayed and contains \"The selected buckets have been reassig" +
-                    "ned to the selected team\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected buckets have been reassigned to the selected team\' text is displaye" +
+                    "d on success inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41

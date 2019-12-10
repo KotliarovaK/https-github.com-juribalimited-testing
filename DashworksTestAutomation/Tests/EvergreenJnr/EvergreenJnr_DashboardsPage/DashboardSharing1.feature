@@ -282,11 +282,9 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	Then "<listName>" list is displayed to user
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
-	When User clicks 'ADD USER' button 
-	When User selects the "Automation Admin 10" user for sharing
-	When User select "<shareType>" in Select Access dropdown
-	When User clicks 'ADD USER' button 
-	When User clicks 'ADD USER' button 
+	When User adds user to list of shared person
+	| User                | Permission  |
+	| Automation Admin 10 | <shareType> |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |

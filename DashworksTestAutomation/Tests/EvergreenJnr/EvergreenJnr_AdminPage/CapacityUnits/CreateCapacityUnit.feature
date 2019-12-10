@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And User enters 'NotDefaultCapacityUnit13720' text to 'Capacity Unit Name' textbox
 	And User enters '13720' text to 'Description' textbox
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	Then 'The capacity unit has been created' text is displayed on success inline tip banner
 	And 'Click here to view the NotDefaultCapacityUnit13720 capacity unit' link is displayed
 	And There are no errors in the browser console
 	And 'NotDefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
@@ -31,10 +31,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	| NotDefaultCapacityUnit13720 |
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	Then Warning message with "This unit will be permanently deleted and any objects within it reassigned to the default unit" text is displayed on the Admin page
+	Then 'This unit will be permanently deleted and any objects within it reassigned to the default unit' text is displayed on warning inline tip banner
 	And Delete and Cancel buttons are available in the warning message
-	When User clicks Delete button in the warning message
-	Then Success message is displayed and contains "The selected unit has been deleted" text
+	When User clicks 'DELETE' button on inline tip banner
+	Then 'The selected unit has been deleted' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @Cleanup @Set_Default_Capacity_Unit @Do_Not_Run_With_CapacityUnits
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	| DefaultCapacityUnit13720 |
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
+	Then 'You cannot delete the default unit' text is displayed on warning inline tip banner
 	When User close message on the Admin page
 	Then 'DefaultCapacityUnit13720' content is displayed in the 'Capacity Unit' column
 	When User clicks content from "Capacity Unit" column

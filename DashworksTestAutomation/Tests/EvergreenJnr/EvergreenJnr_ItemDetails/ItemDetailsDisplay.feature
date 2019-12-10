@@ -31,49 +31,49 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	When User navigates to the '<MainTabName>' left menu item
 	When User navigates to the '<SubTabName>' left submenu item
-	And User performs right-click on "<TargetCell>" cell in the grid
+	When User right clicks on '<TargetCell>' cell from '<ColumnName>' column
 	And User selects 'Copy cell' option in context menu
 	Then Next data '<TargetCell>' is copied
 
 Examples:
-	| PageName    | SearchTerm                                              | MainTabName      | SubTabName        | SelectedColumn | TargetCell    |
-	| Device      | 30BGMTLBM9PTW5                                          | Applications     | Evergreen Summary | Application    | Access 95     |
-	| User        | svc_dashworks                                           | Active Directory | Groups            | Group          | Domain Users  |
-	| Application | Microsoft Office Visio 2000 Solutions - Custom Patterns | MSI              | MSI Files         | File Name      | setup_x86.msi |
-	| Mailbox     | aaron.u.flores@dwlabs.local                             | Users            | Users             | Username       | floresau      |
+	| PageName    | SearchTerm                                              | MainTabName      | SubTabName        | ColumnName  | TargetCell    |
+	| Device      | 30BGMTLBM9PTW5                                          | Applications     | Evergreen Summary | Application | Access 95     |
+	| User        | svc_dashworks                                           | Active Directory | Groups            | Group       | Domain Users  |
+	| Application | Microsoft Office Visio 2000 Solutions - Custom Patterns | MSI              | MSI Files         | File Name   | setup_x86.msi |
+	| Mailbox     | aaron.u.flores@dwlabs.local                             | Users            | Users             | Username    | floresau      |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTab
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	When User navigates to the '<MainTabName>' left menu item
 	When User navigates to the '<SubTabName>' left submenu item
-	And User performs right-click on "<TargetCell>" cell in the grid
+	When User right clicks on '<TargetCell>' cell from '<ColumnName>' column
 	And User selects 'Copy row' option in context menu
 	Then Next data '<ExpectedData>' is copied
 	
 Examples:
-	| PageName | SearchTerm          | MainTabName      | SubTabName        | TargetCell   | ExpectedData                                                     |
-	| Device   | 30BGMTLBM9PTW5      | Applications     | Evergreen Summary | Access 95    | Access 95   Microsoft      Green   True   Unknown   True         |
-	| User     | 003F5D8E1A844B1FAA5 | Active Directory | Groups            | Domain Users | Domain Users   BCLABS   Global Security Group   All domain users |
+	| PageName | SearchTerm          | MainTabName      | SubTabName        | TargetCell   | ColumnName  | ExpectedData                                                     |
+	| Device   | 30BGMTLBM9PTW5      | Applications     | Evergreen Summary | Access 95    | Application | Access 95   Microsoft      Green   True   Unknown   True         |
+	| User     | 003F5D8E1A844B1FAA5 | Active Directory | Groups            | Domain Users | Group       | Domain Users   BCLABS   Global Security Group   All domain users |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	When User navigates to the '<SubTabName>' left submenu item
-	And User performs right-click on "<TargetCell>" cell in the grid
+	When User right clicks on '<TargetCell>' cell from '<ColumnName>' column
 	And User selects 'Copy row' option in context menu
 	Then Next data '<ExpectedData>' is copied
 	
 Examples:
-	| PageName    | SearchTerm             | MainTabName | SubTabName      | TargetCell | ExpectedData                         |
-	| Application | ACD Display 3.4        | Details     | Programs        | Install    | Install   setup.exe /q               |
-	| Mailbox     | Zurong.Wu@bclabs.local | Details     | Email Addresses | SMTP       | SMTP   Zurong.Wu@bclabs.local   True |
+	| PageName    | SearchTerm             | SubTabName      | TargetCell | ColumnName | ExpectedData                         |
+	| Application | ACD Display 3.4        | Programs        | Install    | Program    | Install   setup.exe /q               |
+	| Mailbox     | Zurong.Wu@bclabs.local | Email Addresses | SMTP       | Type       | SMTP   Zurong.Wu@bclabs.local   True |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	When User navigates to the 'Device' details page for '00BDM1JUR8IF419' item
 	When User navigates to the 'Applications' left menu item
-	When User performs right-click on "egcs-objc" cell in the grid
+	When User right clicks on 'egcs-objc' cell from 'Application' column
 	And User selects 'Copy row' option in context menu
 	Then Next data 'egcs-objc   Red Hat   1.1.2   Red   Unknown   True   False' is copied
 
@@ -160,4 +160,4 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPe
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	When User enters "Exchange 2007" text in the Search field for "Mailbox Platform" column
 	Then 'FullAccess' content is displayed in the 'Permission' column
-	And "FullAccess" tooltip displayed in "Permission" column
+	Then 'FullAccess' tooltip is displayed for 'FullAccess' content in the 'Permission' column

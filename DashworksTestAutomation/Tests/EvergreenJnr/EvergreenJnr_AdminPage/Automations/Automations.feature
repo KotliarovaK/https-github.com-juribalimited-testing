@@ -80,9 +80,9 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Delete        |
 	When User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
-	When User clicks "RUN" button in the warning message on Admin page
-	Then Success message is displayed and contains "1 automation started," text
+	Then 'Are you sure you wish to run 1 automation?' text is displayed on warning inline tip banner
+	When User clicks 'RUN' button on inline tip banner
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then 'TRUE' content is displayed in the 'Running' column
 	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column
@@ -97,8 +97,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	When User clicks Delete button in the warning message
-	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
+	When User clicks 'DELETE' button on inline tip banner
+	Then 'Cannot delete a running automation' text is displayed on warning inline tip banner
 	When User moves "Applications_Scope" automation to "DELAY_8" automation
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
@@ -154,6 +154,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Make inactive" option in Cog-menu for "15431_Third_Active" item on Admin page
+	Then There are no errors in the browser console
+	When User clicks refresh button in the browser
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
 	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column
@@ -167,6 +169,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	When User clicks "Make active" option in Cog-menu for "15431_Third_Active" item on Admin page
+	Then There are no errors in the browser console
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Edit" option in Cog-menu for "15431_Third_Active" item on Admin page
@@ -340,7 +343,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	Then Page with 'Automations' header is displayed to user
 #change item name when state status will be fixed
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete3" item on Admin page
-	Then Success message is displayed and contains "1 automation started," text
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -357,8 +360,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	When User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	When User clicks Delete button in the warning message
-	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
+	When User clicks 'DELETE' button on inline tip banner
+	Then 'Cannot delete a running automation' text is displayed on warning inline tip banner
 	When User clicks Cog-menu for 'DELAY - do not delete3' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
@@ -457,14 +460,15 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks 'Automations' header breadcrumb
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
-	Then Warning message with "This automation will be permanently deleted" text is displayed on the Admin page
-	When User clicks Cancel button in the warning message on the Admin page
+	Then 'This automation will be permanently deleted' text is displayed on warning inline tip banner
+	When User clicks 'CANCEL' button on inline tip banner
+	Then inline tip banner is not displayed
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
-	When User clicks Delete button in the warning message
-	Then Success message is displayed and contains "1 automation deleted" text
+	When User clicks 'DELETE' button on inline tip banner
+	Then '1 automation deleted' text is displayed on success inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User navigates to the 'Automations' left menu item
-	Then Success message is not displayed on the Admin page
+	Then inline tip banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @DAS18328
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCorrectLists
@@ -541,9 +545,9 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	Then Warning message with "Are you sure you wish to run 2 automations?" text is displayed on the Admin page
-	When User clicks "RUN" button in the warning message on Admin page
-	Then Success message is displayed and contains "2 automations started," text
+	Then 'Are you sure you wish to run 2 automations?' text is displayed on warning inline tip banner
+	When User clicks 'RUN' button on inline tip banner
+	Then '2 automations started,' text is displayed on success inline tip banner
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "Test_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -560,14 +564,14 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	When User clicks "RUN" button in the warning message on Admin page
-	Then Success message is displayed and contains "1 automation started," text
+	When User clicks 'RUN' button on inline tip banner
+	Then '1 automation started,' text is displayed on success inline tip banner
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	When User clicks "RUN" button in the warning message on Admin page
-	Then Success message is displayed and contains "1 automation started," text
+	When User clicks 'RUN' button on inline tip banner
+	Then '1 automation started,' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17171 @DAS17003 @DAS17260 @Not_Ready
 #Use specific Automation (Delay) that run longer
@@ -580,7 +584,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete" item on Admin page
 	When User enters "DELAY - do not delete" text in the Search field for "Automation" column
 	When User clicks "Make inactive" option in Cog-menu for "DELAY - do not delete" item on Admin page
-	Then Error message with "This automation is currently running" text is displayed
+	Then 'This automation is currently running' text is displayed on error inline tip banner
 	When User enters "DELAY - do not delete" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -591,12 +595,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
 	When User selects '[Default (User)]' option from 'Path' autocomplete
 	When User clicks 'CREATE' button 
-	Then Error message with "This automation is currently running" text is displayed
+	Then 'This automation is currently running' text is displayed on error inline tip banner
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User enters 'NewAction' text to 'Action Name' textbox
 	When User clicks 'UPDATE' button 
-	Then Error message with "This automation is currently running" text is displayed
+	Then 'This automation is currently running' text is displayed on error inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
@@ -685,8 +689,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User create dynamic list with "Das15949_list" name on "Devices" page
 	#create automation
 	And User creates new Automation via API and open it
-	| AutomationName      | Description | Active | StopOnFailedAction | Scope         | Run    |
-	| DAS15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope         | Run    |
+	| 15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#create action #1
@@ -705,19 +709,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User clicks 'CREATE' button
 	#run automation
 	When User clicks 'Automations' header breadcrumb
-	When User enters "DAS15949_Automation" text in the Search field for "Automation" column
-	And User clicks "Run now" option in Cog-menu for "DAS15949_Automation" item on Admin page and wait for processing
+	When User enters "15949_Automation" text in the Search field for "Automation" column
+	And User clicks "Run now" option in Cog-menu for "15949_Automation" item on Admin page and wait for processing
 	#check filters
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	And User enters "DAS15949_Automation" text in Search field at Filters Panel
+	And User enters "15949_Automation" text in Search field at Filters Panel
 	Then the following Filters subcategories are presented for open category:
 	| Subcategories                        |
-	| DAS15949_Automation \ 15949_Action_1 |
-	| DAS15949_Automation \ 15949_Action_2 |
+	| 15949_Automation \ 15949_Action_1 |
+	| 15949_Automation \ 15949_Action_2 |
 	When User clears search textbox in Filters panel
-	And user select "DAS15949_Automation \ 15949_Action_1" filter
+	And user select "15949_Automation \ 15949_Action_1" filter
 	And User select "Equals" Operator value
 	When User selects current date checkbox from Filter panel
 	And User clicks Save filter button
@@ -726,7 +730,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Automations' left menu item
 	And User navigates to the 'Automation Log' left menu item
-	And User enters "DAS15949_Automation" text in the Search field for "Automation" column
+	And User enters "15949_Automation" text in the Search field for "Automation" column
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Action" column on the Admin page

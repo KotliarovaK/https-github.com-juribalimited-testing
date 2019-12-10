@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User enters 'CapacityUnit13790' text to 'Capacity Unit Name' textbox
 	And User enters '13720' text to 'Description' textbox
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	Then 'The capacity unit has been created' text is displayed on success inline tip banner
 	And 'Click here to view the CapacityUnit13790 capacity unit' link is displayed
 	When User enters "13720" text in the Search field for "Description" column
 	Then Rows counter shows "1" of "2" rows
@@ -24,8 +24,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then URL contains "evergreen/#/admin/project/"
 	When User updates the "Default Unit" checkbox state
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The capacity unit details have been updated" text
-	Then Success message is displayed correctly
+	Then 'The capacity unit details have been updated' text is displayed on success inline tip banner
+	Then success inline tip banner is displayed
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
 	Then "Default Unit" checkbox is checked and cannot be unchecked
@@ -37,8 +37,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	When User navigates to the 'Capacity Details' left menu item
 	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed correctly
-	Then Success message is displayed and contains "The project capacity details have been updated" text
+	Then success inline tip banner is displayed
+	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS12672 @Cleanup
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	| Unassigned       |
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
+	Then 'You cannot delete the default unit' text is displayed on warning inline tip banner
 	When User close message on the Admin page
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
 	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	And User enters '12672' text to 'Description' textbox
 	And User updates the "Default Unit" checkbox state
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	Then 'The capacity unit has been created' text is displayed on success inline tip banner
 	And 'Click here to view the CapacityUnit12672 capacity unit' link is displayed
 	When User clicks newly created object link
 	Then URL contains "capacity/units/unit/"
@@ -118,9 +118,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	| CapacityUnit14240 |
 	When User enters "CapacityUnit14240" text in the Search field for "Capacity Unit" column
 	And User click content from "Capacity Unit" column
-	And User type "CapacityUnit14240NameUpdated" Name in the "Capacity Unit Name" field on the 'Email Migration' Project details page
+	When User enters 'CapacityUnit14240NameUpdated' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The capacity unit details have been updated" text
+	Then 'The capacity unit details have been updated' text is displayed on success inline tip banner
 	And User sees next Units on the Capacity Units page:
 	| units                        |
 	| Unassigned                   |
@@ -130,8 +130,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	| CapacityUnit14240NameUpdated |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	And User clicks Delete button in the warning message
-	Then Success message is displayed and contains "The selected unit has been deleted" text
+	And User clicks 'DELETE' button on inline tip banner
+	Then 'The selected unit has been deleted' text is displayed on success inline tip banner
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @Cleanup

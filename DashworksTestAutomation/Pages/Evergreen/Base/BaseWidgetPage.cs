@@ -56,12 +56,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             if (string.IsNullOrEmpty(widgetName))
             {
+                //For preview
                 if (!Driver.IsElementDisplayed(WidgetPreview, WebDriverExtensions.WaitTime.Long))
                     throw new Exception($"Widget preview is not displayed");
                 return WidgetPreview;
             }
             else
             {
+                //For overview
                 var selector = By.XPath($".//h5//span[text()='{widgetName}']/ancestor::div[@class='widget-whole']");
                 if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
                     throw new Exception($"Widget with '{widgetName}' is not displayed");

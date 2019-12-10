@@ -6,6 +6,6 @@
         RED = 2,
         AMBER = 3,
         GREEN = 4,
-        NONE = 5
+        IGNORE = 5
     }
 }

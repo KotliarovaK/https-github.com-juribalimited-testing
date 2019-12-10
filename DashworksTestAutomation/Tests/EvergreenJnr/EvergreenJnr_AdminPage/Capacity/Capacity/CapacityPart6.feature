@@ -20,13 +20,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	Then 'Enforce capacity on project object page' checkbox is unchecked
 	When User checks 'Enforce capacity on self service pages' checkbox
 	Then 'Enforce capacity on self service pages' checkbox is checked
-	When User checks 'Enable Capacity' checkbox
+	When User unchecks 'Enable Capacity' checkbox
 	Then 'Enable Capacity' checkbox is unchecked
 	Then 'Enforce capacity on self service pages' checkbox is disabled
 	Then 'Enforce capacity on project object page' checkbox is disabled
 	When User checks 'Enable Capacity' checkbox
 	When User checks 'Enforce capacity on project object page' checkbox
-	When User checks 'Enable Capacity' checkbox
+	When User unchecks 'Enable Capacity' checkbox
 	Then 'Enable Capacity' checkbox is unchecked
 	Then 'Enforce capacity on self service pages' checkbox is disabled
 	Then 'Enforce capacity on project object page' checkbox is disabled
@@ -34,15 +34,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	When User checks 'Enforce capacity on project object page' checkbox
 	When User checks 'Enforce capacity on self service pages' checkbox
 	When User clicks 'UPDATE' button 
-	Then Success message is displayed and contains "The project capacity details have been updated" text
+	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15585
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
 	When User navigates to "1803 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
-	And User checks 'Enable Capacity' checkbox
+	And User unchecks 'Enable Capacity' checkbox
 	And User navigates to the 'Units' left menu item
-	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
 	Then "YES" button is displayed in the warning message
 	Then "NO" button is displayed in the warning message
 

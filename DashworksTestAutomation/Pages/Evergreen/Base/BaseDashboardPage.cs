@@ -52,9 +52,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-header']//button[@aria-label='filters']")]
-        public IWebElement FilterExpressionIcon { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']//div[@class='context-tools-filters ng-star-inserted']")]
         public IWebElement FiltersExpression { get; set; }
 
@@ -84,16 +81,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using = "//div[contains(@class, 'notification')]//span[text()='UPDATE']/ancestor::button")]
-        public IWebElement UpdateButtonOnAmberMessage { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = "//div[contains(@class, 'notification')]//button[contains(@class, 'transparent')]//span[text()='CANCEL']/ancestor::button")]
-        public IWebElement CancelButtonOnAmberMessage { get; set; }
 
         #region All Lists dropdown
 
@@ -154,24 +143,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'save')]//button")]
         public IWebElement SaveCustomListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='filters']")]
-        public IWebElement FilterContainerButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'context-header')]//div[@role='group']")]
-        public IWebElement FilterOptions { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
-        public IWebElement FilterContainer { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IWebElement SelectOneRowsCheckboxes { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
         public IWebElement ErrorMessage { get; set; }
-
-        //TODO should be removed. The same webElement on BaseGridPage
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
-        public IWebElement WarningMessage { get; set; }
 
         //TODO more to the BaseGrid
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]//div[@class='inline-box-text']")]
@@ -490,7 +466,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Button
 
-        public IWebElement GetButtonByName(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetButton(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var time = int.Parse(waitTime.GetValue());
             var selector = By.XPath(
@@ -500,19 +476,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElements(selector).First(x => x.Displayed());
         }
 
-        public void ClickButtonByName(string buttonName)
+        public void ClickButton(string buttonName)
         {
-            var button = GetButtonByName(buttonName);
+            var button = GetButton(buttonName);
             Driver.WaitForElementToBeEnabled(button);
             button.Click();
             Driver.WaitForDataLoading(50);
         }
 
-        public bool IsButtonDisplayed(string dropdownName)
+        public bool IsButtonDisplayed(string name)
         {
             try
             {
-                return GetButtonByName(dropdownName, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
+                return GetButton(name, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {
@@ -882,9 +858,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement CategoryCollapseExpandButton(string name)
         {
             var selector = By.XPath(string.Format(CategoryCollapseExpandSelector, name));
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+            try
             {
-                throw new Exception($"Collapse/Expand button was not displayed for '{name}' category");
+                Driver.MouseHover(selector);
+                if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+                {
+                    throw new Exception($"Collapse/Expand button was not displayed for '{name}' category");
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
 
             return Driver.FindElement(selector);

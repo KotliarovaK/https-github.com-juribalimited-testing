@@ -31,9 +31,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	Then 'UPDATE' button is not disabled
 	And 'CANCEL' button is not disabled
 	When User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'CANCEL' button
-	Then the amber message is not displayed
+	Then inline tip banner is not displayed
 	And 'UPDATE' button is not disabled
 	And 'CANCEL' button is not disabled
 	When User clicks the Logout button
@@ -204,11 +206,15 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'CANCEL' button
-	Then the amber message is not displayed
+	Then inline tip banner is not displayed
 	When User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "<MessageText>" text is displayed on Action panel
 	And Success message is hidden after five seconds
@@ -264,7 +270,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User selects '<NewTeam>' option from 'Team' autocomplete
 	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
-	Then the amber message is displayed correctly
+	Then warning inline tip banner is displayed
+	Then 'UPDATE' button is displayed on inline tip banner
+	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds

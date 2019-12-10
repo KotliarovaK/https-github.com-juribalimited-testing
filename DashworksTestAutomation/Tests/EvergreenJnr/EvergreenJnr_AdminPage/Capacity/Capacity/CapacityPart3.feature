@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 	And User enters 'Manchester' text to 'Capacity Unit Name' textbox 
 	And User enters 'Manchester Operations' text to 'Description' textbox
 	And User clicks 'CREATE' button 
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	Then 'The capacity unit has been created' text is displayed on success inline tip banner
 	And Counter shows "2" found rows
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @DAS12672 @Cleanup
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User enters ' test1' text to 'Capacity Unit Name' textbox
 	And User enters '13945' text to 'Description' textbox
 	And User clicks 'CREATE' button 
-	Then Error message is not displayed on the Capacity Units page
+	Then success inline tip banner is displayed
 	And User sees next Units on the Capacity Units page:
 	| units      |
 	| Unassigned |
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User enters ' test1' text to 'Capacity Unit Name' textbox
 	And User enters '13945_2' text to 'Description' textbox
 	And User clicks 'CREATE' button 
-	Then Error message with "A capacity unit already exists with this name" text is displayed
+	Then 'A capacity unit already exists with this name' text is displayed on error inline tip banner
 	And User sees next Units on the Capacity Units page:
 	| units      |
 	| Unassigned |

@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
     {
         public const string FilterCheckboxBooleanValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
 
-        public const string FilterCheckboxStringValuesSelector = ".//span[@class='mat-option-text']//div[@class='ng-star-inserted']";
+        public const string FilterCheckboxStringValuesSelector = ".//span[@class='mat-option-text']//div[contains(@class,'text-container')]";
 
         public const string FilterTypeOnTheColumnPanel = ".//div[@class='ag-filter']//select[not(contains(@class,'hidden'))]//option";
 
@@ -177,7 +177,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-        public void GetCheckboxByName(string checkboxName)
+        public void GetColumnCheckbox(string checkboxName)
         {
             var checkboxSettingsSelector = By.XPath($".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']");
             Driver.MouseHover(checkboxSettingsSelector);

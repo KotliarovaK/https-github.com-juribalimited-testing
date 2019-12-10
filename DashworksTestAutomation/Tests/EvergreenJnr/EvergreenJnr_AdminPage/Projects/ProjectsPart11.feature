@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	When User enters 'TestProject65' text to 'Project Name' textbox
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then Success message is displayed and contains "The project has been created" text
+	Then 'The project has been created' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	Then Page with 'TestProject65' header is displayed to user
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	#| Backburner (2.1.2.0)                             |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
+	Then '4 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
 	#Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Mailboxes' tab on Project Scope Changes page
 	Then "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section

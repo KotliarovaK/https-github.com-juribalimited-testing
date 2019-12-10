@@ -127,6 +127,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [When(@"User clicks following checkboxes from Column Settings panel for the '(.*)' column:")]
+        public void WhenUserClicksFollowingCheckboxesFromColumnSettingsPanelForTheColumn(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+            page.OpenColumnSettings(columnName);
+
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            menu.ColumnButton.Click();
+
+            foreach (var row in table.Rows)
+            {
+                menu.GetColumnCheckbox(row["checkboxes"]);
+            }
+        }
+
         [Then(@"'(.*)' checkbox is checked in the filter dropdown for the '(.*)' column")]
         public void ThenCheckboxIsCheckedInTheFilterDropdownForTheColumn(string checkboxName, string columnName)
         {
@@ -311,14 +328,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.Actions.Click(page.GetCellByTextFromKeyValueGrid(textToBeSelected)).DoubleClick().Build().Perform();
         }
 
-        [Then(@"""(.*)"" text selected from key value grid on the Details Page")]
-        public void ThenTextSelectedFromKeyValueGridOnTheDetailsPage(string textSelected)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-
-            Utils.Verify.That(page.GetSelectedText(), Is.EqualTo(textSelected));
-        }
-
         [When(@"User clicks Column button on the Column Settings panel")]
         public void WhenUserClicksColumnButtonOnTheColumnSettingsPanel()
         {
@@ -474,7 +483,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectCheckboxOnTheColumnSettingsPanel(string checkboxName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.GetCheckboxByName(checkboxName);
+            page.GetColumnCheckbox(checkboxName);
         }
 
         //TODO change check logic for checkboxes
@@ -686,11 +695,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" link is displayed on the Details Page")]
-        public void ThenLinkIsDisplayedOnTheDetailsPage(string bucketName)
+        public void ThenLinkIsDisplayedOnTheDetailsPage(string linkName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(detailsPage.GetBucketLinkByName(bucketName));
-            Utils.Verify.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
+            _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.LinkIsDisplayed(linkName));
+            Verify.IsTrue(detailsPage.LinkIsDisplayed(linkName).Displayed(), $"'{linkName}' link name was not changed");
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)

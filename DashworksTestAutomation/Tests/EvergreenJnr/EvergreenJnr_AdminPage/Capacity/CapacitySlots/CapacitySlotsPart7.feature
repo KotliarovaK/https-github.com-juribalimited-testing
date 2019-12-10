@@ -198,7 +198,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAdding
 	And User navigates to newly created Slot
 	Then CapacityEnabled flag is equal to "True"
 	When User removes "Computer Information ---- Text fill; Text fill; \ Task13502" on the Project details page
-	And User clicks 'UPDATE' button 
+	Then "Computer Information ---- Text fill; Text fill; \ Task13502" checkbox in the "Tasks" field are available to select
+	When User clicks 'UPDATE' button 
 	Then CapacityEnabled flag is equal to "False"
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Cleanup
@@ -255,24 +256,3 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	| Computer Information ---- Text fill; Text fill; \ 1Task13500 |
 	| Computer Information ---- Text fill; Text fill; \ 2Task13500 |
 	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS17507 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Cleanup
-Scenario: EvergreenJnr_AdminPage_ChecksThatTaskCanBeReselectedInTaskDropdownRightAfterDeletion
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
-	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
-	When User navigate to "Tasks" tab
-	And User clicks "Create Task" button
-	And User creates Task
-	| Name      | Help  | StagesNameString                                | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
-	| Task17507 | 17507 | Computer Information ---- Text fill; Text fill; | Normal         | Date            | Computer         |                          |
-	Then Success message is displayed with "Task successfully created" text
-	When User publishes the task
-	Then selected task was published
-	When User creates new Slot via Api
-	| Project                                          | SlotName      | DisplayName    | CapacityType   | Tasks                                                       |
-	| Windows 7 Migration (Computer Scheduled Project) | SlotTask17507 | Slot Task17507 | Capacity Units | Computer Information ---- Text fill; Text fill; \ Task17507 |
-	And User navigates to newly created Slot
-	When User removes "Computer Information ---- Text fill; Text fill; \ Task17507" on the Project details page
-	Then "Computer Information ---- Text fill; Text fill; \ Task17507" checkbox in the "Tasks" field are available to select

@@ -91,8 +91,15 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	When User collapses 'Suggested' category
 	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
-	| Subcategories           |
-	| Evergreen Capacity Unit |
+	| Subcategories                   |
+	| Evergreen Capacity Unit         |
+	| Evergreen Rationalisation       |
+	| Evergreen Target App            |
+	| Evergreen Target App Compliance |
+	| Evergreen Target App Key        |
+	| Evergreen Target App Name       |
+	| Evergreen Target App Vendor     |
+	| Evergreen Target App Version    |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD COLUMN" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -100,8 +107,15 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	When User collapses 'Suggested' category
 	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
-	| Subcategories           |
-	| Evergreen Capacity Unit |
+	| Subcategories                   |
+	| Evergreen Capacity Unit         |
+	| Evergreen Rationalisation       |
+	| Evergreen Target App            |
+	| Evergreen Target App Compliance |
+	| Evergreen Target App Key        |
+	| Evergreen Target App Name       |
+	| Evergreen Target App Vendor     |
+	| Evergreen Target App Version    |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD VALUE" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -109,8 +123,15 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	When User collapses 'Suggested' category
 	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
-	| Subcategories           |
-	| Evergreen Capacity Unit |
+	| Subcategories                   |
+	| Evergreen Capacity Unit         |
+	| Evergreen Rationalisation       |
+	| Evergreen Target App            |
+	| Evergreen Target App Compliance |
+	| Evergreen Target App Key        |
+	| Evergreen Target App Name       |
+	| Evergreen Target App Vendor     |
+	| Evergreen Target App Version    |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot

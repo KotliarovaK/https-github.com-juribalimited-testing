@@ -109,8 +109,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(page.ExpandSideNavPanelIcon);
-            page.ExpandSideNavPanelIcon.Click();
+            _driver.WaitForDataLoading();
+
+            if (_driver.IsElementDisplayed(page.ExpandSideNavPanelIcon))
+            {
+                page.ExpandSideNavPanelIcon.Click();
+            }
         }
 
         [Then(@"There is no breadcrumbs displayed on Dashboard page")]
@@ -171,30 +175,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "PLEASE ADD EXCEPTION MESSAGE");
             }
             Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
-        }
-
-        [When(@"User sets '(.*)' as favorite state in dashboard details for '(.*)' dashboard")]
-        public void WhenUserSetsDashboardFavoriteState(string state, string dashboardName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            if (Convert.ToBoolean(state))
-            {
-                if (!page.GetFavoriteStateInDashboardDetailsPane())
-                {
-                    page.MarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(() => page.IsDashboardMarkedAsFavoriteInList(dashboardName));
-                }
-            }
-
-            if (!Convert.ToBoolean(state))
-            {
-                if (page.GetFavoriteStateInDashboardDetailsPane())
-                {
-                    page.UnMarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(() => !page.IsDashboardMarkedAsFavoriteInList(dashboardName));
-                }
-            }
         }
 
         [When(@"User clicks menu for '(.*)' dashboard")]
@@ -334,6 +314,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Verify.That(page.DetailsDefaultCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
+        }
+
+        [When(@"User sets '(.*)' as favorite state in dashboard details for '(.*)' dashboard")]
+        public void WhenUserSetsDashboardFavoriteState(string state, string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            if (Convert.ToBoolean(state))
+            {
+                if (!page.GetFavoriteStateInDashboardDetailsPane())
+                {
+                    page.MarkFavoriteInDashboardDetails();
+                    _driver.WaitFor(() => page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                }
+            }
+
+            if (!Convert.ToBoolean(state))
+            {
+                if (page.GetFavoriteStateInDashboardDetailsPane())
+                {
+                    page.UnMarkFavoriteInDashboardDetails();
+                    _driver.WaitFor(() => !page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                }
+            }
         }
 
         [Then(@"User sees Dashboards context menu on Dashboards page")]
@@ -659,29 +663,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.AlertButton("CANCEL").Click();
         }
 
-        [Then(@"User sees '(.*)' text in warning message on Dashboards page")]
-        public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
+        [Then(@"User sees '(.*)' text in warning message of '(.*)' widget on Dashboards page")]
+        public void ThenUserSeesTextInWarningMessageOfWidgetOnDashboardsPage(string message, string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Verify.AreEqual(text, page.TextInDeleteAlert.First().Text, "Delete confirmation text is different");
+            Verify.AreEqual(message, page.TextInDeleteAlert(widgetName).Text, "Delete confirmation text is different");
         }
-
-        [Then(@"Delete widget warning message is displayed on Dashboards page")]
-        public void ThenUserCantSeeWarningMessageOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            Verify.That(page.TextInDeleteAlert.Count, Is.EqualTo(0), "Delete confirmation is still displayed");
-        }
-
-        [Then(@"User sees '(.*)' text in '(.*)' warning messages on Dashboards page")]
-        public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text, string number)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.AreEqual(text, page.TextInDeleteAlert[Convert.ToInt32(number) - 1].Text, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
+      
         [Then(@"'(.*)' link is displayed in warning message on Dashboards page")]
         public void ThenLinkIsDisplayedInWarningMessageOnDashboardsPage(string text)
         {

@@ -72,7 +72,7 @@ namespace DashworksTestAutomation.Steps.API
 
             foreach (ColumnDto columnDto in expectedList)
             {
-                Utils.Verify.IsTrue(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.Label}' name");
+                Verify.IsTrue(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.Label}' name");
             }
         }
 
@@ -87,33 +87,40 @@ namespace DashworksTestAutomation.Steps.API
 
             foreach (FilterDto filterDto in expectedList)
             {
-                Utils.Verify.IsTrue(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.ColumnName}' name");
+                Verify.IsTrue(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.ColumnName}' name");
             }
         }
 
         [Then(@"Positive number of results returned for '(.*)' requests")]
         public void ThenPositiveNumberOfResultsReturnedForRequests(string fileName)
         {
-            #region Ckeck that Filters and Columns count is correct to proceed wit queries
+           
+        }
 
-            var list = fileName.Replace("QueryUrls", string.Empty).ToLower();
-
-            CheckFiltersCount(list);
-            CheckColumnsCount(list);
-
-            #endregion
-
-            var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource($"QueryUrls\\{fileName}.txt");
-            var reader = new StreamReader(fullPath);
-            string content = reader.ReadToEnd();
-
-            foreach (string query in content.SplitByLinebraeak())
+        [Then(@"Positive number of results returned for requests:")]
+        public void ThenPositiveNumberOfResultsReturnedForRequests(Table table)
+        {
+            foreach (TableRow row in table.Rows)
             {
-                var url = $"{UrlProvider.RestClientBaseUrl}/{query.Replace($"{list}?", $"{list}?$top=100&$skip=0&")}";
+                var list = row.Values.Last().Split('?').First();
+
+                #region Ckeck that Filters and Columns count is correct to proceed with queries
+
+                //Commented this to save time. Anyway we doing exactly the same in general test
+                //CheckFiltersCount(list);
+                //CheckColumnsCount(list);
+
+                #endregion
+
+                //var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource($"QueryUrls\\{fileName}.txt");
+                //var reader = new StreamReader(fullPath);
+                //string content = reader.ReadToEnd();
+
+                var url = $"{UrlProvider.RestClientBaseUrl}/{row.Values.Last().Replace($"{list}?", $"{list}?$top=100&$skip=0&")}";
                 var response = _client.Value.Get(url.GenerateRequest());
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
-                    throw new Exception($"{response.StatusCode} status code for query: {query}");
+                    throw new Exception($"{response.StatusCode} status code for query: {row.Values.Last()}");
 
                 var responseData = JsonConvert.DeserializeObject<JObject>(response.Content);
                 var metadata = responseData["metadata"] as JObject;
@@ -122,8 +129,8 @@ namespace DashworksTestAutomation.Steps.API
                 var results = responseData["results"] as JArray;
                 var resultsCount = results.Count;
 
-                Verify.IsTrue(metadataCount > 0, "Metadata count is zero");
-                Verify.IsTrue(resultsCount > 0, "Results Count is zero");
+                Verify.IsTrue(metadataCount > 0, $"Metadata count is zero for '{row.Values.ToArray()[1]}/{row.Values.ToArray()[0]}' filter");
+                Verify.IsTrue(resultsCount > 0, $"Results Count is zero fo '{row.Values.ToArray()[1]}/{row.Values.ToArray()[0]}' filter");
             }
         }
     }

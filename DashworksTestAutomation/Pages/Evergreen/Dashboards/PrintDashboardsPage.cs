@@ -33,20 +33,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             };
         }
 
-        public IWebElement PrintPreview(string size, string layout) => Driver.FindElementByXPath($".//body[@class='dashboardPrintPreview {size} {layout}']");
-
-        public IWebElement GetPrintPreviewDropdownByName(string dropdown)
-        {
-            var selector = $".//div[@class='styleSelectDropdown']//*[@aria-label='{dropdown}']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            return Driver.FindElement(By.XPath(selector));
-        }
-
-        public void SelectPrintPreviewSettings(string option)
-        {
-            var optionSelector = $".//mat-option[@role='option']//span[text()='{option}']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(optionSelector));
-            Driver.FindElement(By.XPath(optionSelector)).Click();
-        }
+        public IWebElement PrintPreview(string size, string layout) => Driver.FindElementByXPath($".//body[contains(@class, 'dashboardPrintPreview {size} {layout}')]");
     }
 }

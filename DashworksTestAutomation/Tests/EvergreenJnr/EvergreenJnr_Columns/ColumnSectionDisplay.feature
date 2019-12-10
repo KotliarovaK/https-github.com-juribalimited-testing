@@ -645,8 +645,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	When User collapses 'Selected Columns' category
 	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
-	| Subcategories           |
-	| Evergreen Capacity Unit |
+	| Subcategories                   |
+	| Evergreen Capacity Unit         |
+	| Evergreen Rationalisation       |
+	| Evergreen Target App            |
+	| Evergreen Target App Compliance |
+	| Evergreen Target App Key        |
+	| Evergreen Target App Name       |
+	| Evergreen Target App Vendor     |
+	| Evergreen Target App Version    |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
@@ -1017,6 +1024,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplication
 	When User enters "DeviceSche" text in Search field at Columns Panel
 	When User collapses 'Selected Columns' category
 	When User collapses 'Project: DeviceSche' category
+	When User collapses 'Project Owner: DeviceSche' category
 	When User collapses 'Project Rings: DeviceSche' category
 	When User collapses 'Project Stages: DeviceSche' category
 	Then the following Column subcategories are displayed for open category:

@@ -143,25 +143,25 @@ Scenario: EvergreenJnr_UserProfile_ChangingPassword
 	And User enters "m!gration" in the New Password field
 	And User enters "m!gration" in the Confirm Password field
 	And User clicks 'UPDATE' button 
-	Then Error message with "Current password is incorrect" text is displayed on the Change Password page
+	Then 'Current password is incorrect' text is displayed on error inline tip banner on the Change Password page
 	And There are no errors in the browser console
 	When User enters "IncorrectCurrentPassword" in the Current Password field
 	And User enters "m!gration" in the New Password field
 	And User enters "test5846" in the Confirm Password field
 	And User clicks 'UPDATE' button 
-	Then Error message with "New password doesn't match" text is displayed on the Change Password page
+	Then 'New password doesn't match' text is displayed on error inline tip banner on the Change Password page
 	And There are no errors in the browser console
 	When User enters "m!gration" in the Current Password field
 	And User enters "m!gration" in the New Password field
 	And User enters "test5846pass" in the Confirm Password field
 	And User clicks 'UPDATE' button 
-	Then Error message with "Your new password must be different to your current password" text is displayed on the Change Password page
+	Then 'Your new password must be different to your current password' text is displayed on error inline tip banner on the Change Password page
 	And There are no errors in the browser console
 	When User enters "m!gration" in the Current Password field
 	And User enters "54891" in the New Password field
 	And User enters "54891" in the Confirm Password field
 	And User clicks 'UPDATE' button 
-	Then Error message with "New password must be at least 6 characters long" text is displayed on the Change Password page
+	Then 'New password must be at least 6 characters long' text is displayed on error inline tip banner on the Change Password page
 	And There are no errors in the browser console
 	When User enters "m!gration" in the Current Password field
 	And User enters "test5846" in the New Password field

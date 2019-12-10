@@ -30,9 +30,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectable
 	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
-	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
+	Then '<KeyToBeSelected>' text is highlighted
 	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
-	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
+	Then '<ValueToBeSelected>' text is highlighted
 
 Examples:
 	| PageName    | SearchTerm               | MainTabName   | KeyToBeSelected | ValueToBeSelected |
@@ -47,9 +47,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectable
 	Then Details page for "<SearchTerm>" item is displayed to the user
 	When User navigates to the '<SubTabName>' left submenu item
 	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
-	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
+	Then '<KeyToBeSelected>' text is highlighted
 	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
-	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
+	Then '<ValueToBeSelected>' text is highlighted
 
 Examples:
 	| PageName | SearchTerm                       | SubTabName | KeyToBeSelected | ValueToBeSelected   |
@@ -62,9 +62,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupD
 	When User type "NL00G001" in Global Search Field
 	Then User clicks on "NL00G001" search result
 	When User selects "Description" text from key value grid on the Details Page
-	Then "Description" text selected from key value grid on the Details Page
+	Then 'Description' text is highlighted
 	When User selects "Unknown" text from key value grid on the Details Page
-	Then "Unknown" text selected from key value grid on the Details Page
+	Then 'Unknown' text is highlighted
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321 @DAS14923
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage

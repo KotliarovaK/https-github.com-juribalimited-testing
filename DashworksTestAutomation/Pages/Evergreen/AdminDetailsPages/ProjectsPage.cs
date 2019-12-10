@@ -29,9 +29,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']")]
         public IWebElement ApplicationScopeCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//label[contains(@class, 'mat-form-field-empty')]")]
-        public IWebElement EmptyScopeField { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='mode']")]
         public IWebElement ModeProjectField { get; set; }
 
@@ -117,12 +114,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools-bubble ng-star-inserted']")]
         public IWebElement SidePanelIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-tab-header/div[1]")]
-        public IWebElement ScopeChangesTabsHeader { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
-        public IWebElement ScopeChangesNotificationsPane { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-error/span[contains(text(), 'archived devices')]")]
         public IWebElement ArchivedDevicesMessage { get; set; }
 
@@ -145,29 +136,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             }
         }
 
-        public string GetDllPanelHeight()
-        {
-            return Driver.FindElement(By.XPath(".//div[@class='cdk-overlay-pane']")).GetCssValue("height");
-        }
-
         public string GetDllPanelWidth()
         {
             return Driver.FindElement(By.XPath(".//div[@role='listbox']")).GetCssValue("width");
-        }
-
-        //TODO should be removed
-        public void NavigateToProjectTabByName(string tabName)
-        {
-            var tab = Driver.FindElement(
-                By.XPath($".//mat-tree//a[text()='{tabName}']"));
-            tab.Click();
-        }
-
-        public IWebElement GetSubMenuByName(string menuName)
-        {
-            var button = By.XPath($".//button[contains(@class, 'subMenu-title')]//span[text()='{menuName}']");
-            Driver.WaitForElementToBeDisplayed(button);
-            return Driver.FindElement(button);
         }
 
         public IWebElement GetsSelectedTabByName(string tabName)
@@ -383,12 +354,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector = By.XPath($".//div[@class='inline-tip ng-star-inserted']//button/span[text()='{name}']");
             Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement WarningMessageText(string text)
-        {
-            var selector = By.XPath($".//mat-dialog-container[@role='dialog']//p[text()='{text}']");
             return Driver.FindElement(selector);
         }
 
