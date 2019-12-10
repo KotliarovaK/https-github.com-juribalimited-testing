@@ -150,8 +150,7 @@ this.FeatureBackground();
 #line 18
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.Then("\'The capacity unit has been created\' text is displayed on success inline tip bann" +
-                    "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The capacity unit has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
  testRunner.And("\'Click here to view the NotDefaultCapacityUnit13720 capacity unit\' link is displa" +
                     "yed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -191,8 +190,7 @@ this.FeatureBackground();
 #line 36
  testRunner.When("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
- testRunner.Then("\'The selected unit has been deleted\' text is displayed on success inline tip bann" +
-                    "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected unit has been deleted\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

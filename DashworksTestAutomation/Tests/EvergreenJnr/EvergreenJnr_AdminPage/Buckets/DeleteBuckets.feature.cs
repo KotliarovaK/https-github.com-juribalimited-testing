@@ -203,8 +203,8 @@ this.FeatureBackground();
 #line 40
  testRunner.When("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
- testRunner.Then("\'The selected bucket has been deleted\' text is displayed on success inline tip ba" +
-                    "nner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected bucket has been deleted\' text is displayed on inline success banner" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -382,8 +382,8 @@ this.FeatureBackground();
 #line 77
  testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 78
- testRunner.Then("\'You can not delete the default bucket\' text is not displayed on warning inline t" +
-                    "ip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'You can not delete the default bucket\' text is not displayed on inline tip banne" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 79
  testRunner.Then("\'This bucket will be permanently deleted and any objects within it reassigned to " +
                     "the default bucket\' text is displayed on warning inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -490,7 +490,7 @@ this.FeatureBackground();
  testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table6, "When ");
 #line 101
  testRunner.Then("\'This bucket will be permanently deleted and any objects within it reassigned to " +
-                    "the default bucket\' text is not displayed on warning inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "the default bucket\' text is not displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
@@ -500,7 +500,7 @@ this.FeatureBackground();
  testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table7, "When ");
 #line 105
  testRunner.Then("\'This bucket will be permanently deleted and any objects within it reassigned to " +
-                    "the default bucket\' text is not displayed on warning inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "the default bucket\' text is not displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
