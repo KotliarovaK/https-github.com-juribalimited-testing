@@ -571,8 +571,8 @@ this.FeatureBackground();
 #line 155
  testRunner.Then("\"TRUE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 156
- testRunner.When("User clicks \'Make inactive\' option in Cog-menu for \'15431_Third_Active\' item from" +
-                    " \'Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Make inactive\" option in Cog-menu for \"15431_Third_Active\" item on A" +
+                    "dmin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 157
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 158
@@ -604,8 +604,8 @@ this.FeatureBackground();
 #line 162
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table10, "Then ");
 #line 171
- testRunner.When("User clicks \'Make active\' option in Cog-menu for \'15431_Third_Active\' item from \'" +
-                    "Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Make active\" option in Cog-menu for \"15431_Third_Active\" item on Adm" +
+                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 172
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 173
@@ -614,8 +614,8 @@ this.FeatureBackground();
 #line 174
  testRunner.Then("\"TRUE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 175
- testRunner.When("User clicks \'Edit\' option in Cog-menu for \'15431_Third_Active\' item from \'Automat" +
-                    "ion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Edit\" option in Cog-menu for \"15431_Third_Active\" item on Admin page" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 176
  testRunner.Then("\'Edit Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 177
@@ -722,8 +722,7 @@ this.FeatureBackground();
  testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
                     " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 204
- testRunner.When("User clicks \'Move to top\' option in Cog-menu for \'Add data\' item from \'Automation" +
-                    "\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Move to top\" option in Cog-menu for \"Add data\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 205
  testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 206
@@ -891,8 +890,8 @@ this.FeatureBackground();
 #line 251
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table15, "Then ");
 #line 261
- testRunner.When("User clicks \'Move to bottom\' option in Cog-menu for \'AM 150419 II\' item from \'Aut" +
-                    "omation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Move to bottom\" option in Cog-menu for \"AM 150419 II\" item on Admin " +
+                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 262
  testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 263
@@ -1173,8 +1172,8 @@ this.FeatureBackground();
 #line 343
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 345
- testRunner.When("User clicks \'Run now\' option in Cog-menu for \'DELAY - do not delete3\' item from \'" +
-                    "Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Run now\" option in Cog-menu for \"DELAY - do not delete3\" item on Adm" +
+                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 346
  testRunner.Then("\'1 automation started,\' text is displayed on success inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 347
@@ -1530,8 +1529,8 @@ this.FeatureBackground();
 #line 461
  testRunner.When("User enters \"16764_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 462
- testRunner.When("User clicks \'Delete\' option in Cog-menu for \'16764_Automation\' item from \'Automat" +
-                    "ion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Delete\" option in Cog-menu for \"16764_Automation\" item on Admin page" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 463
  testRunner.Then("\'This automation will be permanently deleted\' text is displayed on warning inline" +
                     " tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1540,8 +1539,8 @@ this.FeatureBackground();
 #line 465
  testRunner.Then("inline tip banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 466
- testRunner.When("User clicks \'Delete\' option in Cog-menu for \'16764_Automation\' item from \'Automat" +
-                    "ion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Delete\" option in Cog-menu for \"16764_Automation\" item on Admin page" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 467
  testRunner.When("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 468
@@ -1767,8 +1766,8 @@ this.FeatureBackground();
  testRunner.When("User enters \"DAS15423_Automation\" text in the Search field for \"Automation\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 530
- testRunner.When("User clicks \'Run now\' option in Cog-menu for \'DAS15423_Automation\' item from \'Aut" +
-                    "omation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Run now\" option in Cog-menu for \"DAS15423_Automation\" item on Admin " +
+                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 531
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 532
@@ -2024,14 +2023,14 @@ this.FeatureBackground();
 #line 583
  testRunner.When("User enters \"Delay\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 584
- testRunner.When("User clicks \'Run now\' option in Cog-menu for \'DELAY - do not delete\' item from \'A" +
-                    "utomation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Run now\" option in Cog-menu for \"DELAY - do not delete\" item on Admi" +
+                    "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 585
  testRunner.When("User enters \"DELAY - do not delete\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 586
- testRunner.When("User clicks \'Make inactive\' option in Cog-menu for \'DELAY - do not delete\' item f" +
-                    "rom \'Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \"Make inactive\" option in Cog-menu for \"DELAY - do not delete\" item o" +
+                    "n Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 587
  testRunner.Then("\'This automation is currently running\' text is displayed on error inline tip bann" +
                     "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2467,8 +2466,8 @@ this.FeatureBackground();
 #line 712
  testRunner.When("User enters \"15949_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 713
- testRunner.When("User clicks \'Run now\' option in Cog-menu for \'15949_Automation\' item from \'Automa" +
-                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User clicks \"Run now\" option in Cog-menu for \"15949_Automation\" item on Admin pag" +
+                    "e and wait for processing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 715
  testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 716
