@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17564_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17564_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17564_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17564_Automation" text in the Search field for "Automation" column
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	When User clicks content from "Project" column
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
-	When User clicks "Delete" option in Cog-menu for "CapacitySlot1" item on Admin page
+	When User clicks 'Delete' option in Cog-menu for 'CapacitySlot1' item from 'Capacity Slot' column
 	Then 'The selected slot will be deleted, do you want to proceed?' text is displayed on warning inline tip banner
 	When User clicks 'DELETE' button on inline tip banner
 	#Check Action content
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17565_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17565_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17565_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17565_Automation" text in the Search field for "Automation" column
@@ -260,7 +260,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17566_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17566_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17566_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17566_Automation" text in the Search field for "Automation" column

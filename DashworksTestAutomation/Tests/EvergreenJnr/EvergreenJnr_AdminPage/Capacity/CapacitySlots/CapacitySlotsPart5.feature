@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| ProjectForDAS13979 | Slot 13979 | 13979       |       | Teams and Paths | 0      | 1       | 2         | 3        | 4      | 5        | 6      |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	When User clicks "Duplicate" option in Cog-menu for "Slot 13979" item on Admin page
+	When User clicks 'Duplicate' option in Cog-menu for 'Slot 13979' item from 'Capacity Slot' column
 	Then 'Your capacity slot has been created, click here to view the Slot 13979 (copy) slot' text is displayed on success inline tip banner
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue | duplicateCount |
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| Paths          | All Paths       | 2              |
 	| Teams          | All Teams       | 2              |
 	| Capacity Units |                 | 2              |
-	When User clicks "Duplicate" option in Cog-menu for "Slot 13979 (copy)" item on Admin page
+	When User clicks 'Duplicate' option in Cog-menu for 'Slot 13979 (copy)' item from 'Capacity Slot' column
 	Then 'Your capacity slot has been created, click here to view the Slot 13979 (copy) (copy) slot' text is displayed on success inline tip banner
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue | duplicateCount |
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	| ProjectForDAS14478 | Slot 14478 | 14478       | Teams and Paths |
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	When User clicks "Duplicate" option in Cog-menu for "Slot 14478" item on Admin page
+	When User clicks 'Duplicate' option in Cog-menu for 'Slot 14478' item from 'Capacity Slot' column
 	Then 'Your capacity slot has been created, click here to view the Slot 14478 (copy) slot' text is displayed on success inline tip banner
 	When User clicks newly created object link
 	Then "Slot 14478 (copy)" content is displayed in "Slot Name" field
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 	And User clicks String Filter button for "Paths" column on the Admin page
 	When User selects "No Paths" checkbox from String Filter on the Admin page
 	When User clicks Reset Filters button on the Admin page
-	When User clicks "Move to position" option in Cog-menu for "User Slot" item on Admin page
+	When User clicks 'Move to position' option in Cog-menu for 'User Slot' item from 'Capacity Slot' column
 	And User remembers the Move to position dialog size
 	And User enters "1.2" value in Move to position dialog
 	Then User checks that Move to position dialog has the same size

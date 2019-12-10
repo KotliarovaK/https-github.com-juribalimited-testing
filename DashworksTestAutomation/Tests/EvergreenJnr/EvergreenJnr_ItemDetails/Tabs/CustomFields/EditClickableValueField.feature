@@ -53,12 +53,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 	Then Details page for "PCFriendly" item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	#Save changes
-	When User clicks "Edit" option in Cog-menu for "FlDAS17584_1" item on Admin page
+	When User clicks 'Edit' option in Cog-menu for 'FlDAS17584_1' item from 'Custom Field' column
 	And User save 'UPDATED_UPD' text in clickable value
 	Then Save and Cancel buttons are NOT displayed for clickable value
 	And 'UPDATED_UPD' content is displayed in the 'Value' column
 	#Cancel changes
-	When User clicks "Edit" option in Cog-menu for "FlDAS17584_1" item on Admin page
+	When User clicks 'Edit' option in Cog-menu for 'FlDAS17584_1' item from 'Custom Field' column
 	And User clicks Cancel button for clickable value
 	Then Save and Cancel buttons are NOT displayed for clickable value
 	And 'UPDATED_UPD' content is displayed in the 'Value' column

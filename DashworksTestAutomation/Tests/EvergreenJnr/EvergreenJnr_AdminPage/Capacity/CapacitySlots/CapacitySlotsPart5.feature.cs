@@ -184,7 +184,8 @@ this.FeatureBackground();
 #line 17
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.When("User clicks \"Duplicate\" option in Cog-menu for \"Slot 13979\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' option in Cog-menu for \'Slot 13979\' item from \'Capacity S" +
+                    "lot\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
  testRunner.Then("\'Your capacity slot has been created, click here to view the Slot 13979 (copy) sl" +
                     "ot\' text is displayed on success inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -236,8 +237,8 @@ this.FeatureBackground();
 #line 20
  testRunner.And("User sees following duplicates counts for columns:", ((string)(null)), table3, "And ");
 #line 32
- testRunner.When("User clicks \"Duplicate\" option in Cog-menu for \"Slot 13979 (copy)\" item on Admin " +
-                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' option in Cog-menu for \'Slot 13979 (copy)\' item from \'Cap" +
+                    "acity Slot\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
  testRunner.Then("\'Your capacity slot has been created, click here to view the Slot 13979 (copy) (c" +
                     "opy) slot\' text is displayed on success inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -407,7 +408,8 @@ this.FeatureBackground();
 #line 71
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
- testRunner.When("User clicks \"Duplicate\" option in Cog-menu for \"Slot 14478\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' option in Cog-menu for \'Slot 14478\' item from \'Capacity S" +
+                    "lot\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73
  testRunner.Then("\'Your capacity slot has been created, click here to view the Slot 14478 (copy) sl" +
                     "ot\' text is displayed on success inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -490,8 +492,8 @@ this.FeatureBackground();
 #line 85
  testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
- testRunner.When("User clicks \"Move to position\" option in Cog-menu for \"User Slot\" item on Admin p" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Move to position\' option in Cog-menu for \'User Slot\' item from \'Capa" +
+                    "city Slot\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
  testRunner.And("User remembers the Move to position dialog size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88

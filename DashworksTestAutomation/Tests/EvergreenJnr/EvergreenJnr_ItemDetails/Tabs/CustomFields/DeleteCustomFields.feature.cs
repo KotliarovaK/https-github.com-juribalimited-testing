@@ -164,7 +164,8 @@ this.FeatureBackground();
 #line 20
  testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.And("User clicks \"Delete\" option in Cog-menu for \"FlDAS16489_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'Delete\' option in Cog-menu for \'FlDAS16489_1\' item from \'Custom Fiel" +
+                    "d\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
  testRunner.Then("\'The selected custom field will be permanently deleted\' text is displayed on warn" +
                     "ing inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -177,7 +178,8 @@ this.FeatureBackground();
 #line 27
  testRunner.And("\'ValueDAS16489_1\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.When("User clicks \"Delete\" option in Cog-menu for \"FlDAS16489_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Delete\' option in Cog-menu for \'FlDAS16489_1\' item from \'Custom Fiel" +
+                    "d\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
  testRunner.Then("\'The selected custom field will be permanently deleted\' text is displayed on warn" +
                     "ing inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -296,7 +298,8 @@ this.FeatureBackground();
 #line 52
  testRunner.When("User expands \'ValueDAS17695_1A\' row in the groped grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
- testRunner.And("User clicks \"Delete\" option in Cog-menu for \"FlDAS17695_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'Delete\' option in Cog-menu for \'FlDAS16489_1\' item from \'Custom Fiel" +
+                    "d\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
  testRunner.Then("\'The selected custom field will be permanently deleted\' text is displayed on warn" +
                     "ing inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

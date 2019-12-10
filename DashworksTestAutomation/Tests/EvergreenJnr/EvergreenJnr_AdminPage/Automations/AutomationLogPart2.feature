@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	And User enters "17684_Automation" text in the Search field for "Automation" column
-	And User clicks "Run now" option in Cog-menu for "17684_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17684_Automation' item from 'Automation' column
 	When '17684_Automation' automation run has finished
 	When '17684_Automation' automation '17682_Action' action run has finished
 	And User navigates to the 'Automation Log' left menu item
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17636_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17636_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17636_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17636_Automation" text in the Search field for "Automation" column
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17642_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17642_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17642_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17642_Automation" text in the Search field for "Automation" column
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17643_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17643_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17643_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17643_Automation" text in the Search field for "Automation" column
@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17799_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17799_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17643_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17799_Automation" text in the Search field for "Automation" column
@@ -253,7 +253,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17678_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation" text in the Search field for "Automation" column
@@ -288,7 +288,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	#Check updated Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17678_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17678_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation" text in the Search field for "Automation" column
@@ -341,7 +341,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17682_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17682_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17682_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17682_Automation" text in the Search field for "Automation" column
@@ -392,7 +392,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	#Create Action
 	And User clicks 'Automations' header breadcrumb
 	And User enters "17682_Automation_2" text in the Search field for "Automation" column
-	And User clicks "Run now" option in Cog-menu for "17682_Automation_2" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17682_Automation_2' item from 'Automation' column
 	And User navigates to the 'Automation Log' left menu item
 	And User clicks refresh button in the browser
 	And User enters "17682_Automation_2" text in the Search field for "Automation" column
@@ -446,7 +446,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17678_Automation_1" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17678_Automation_1' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
@@ -502,7 +502,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17430_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17430_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17430_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17430_Automation" text in the Search field for "Automation" column
