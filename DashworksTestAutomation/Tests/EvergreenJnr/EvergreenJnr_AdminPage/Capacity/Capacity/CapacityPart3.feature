@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User enters ' test1' text to 'Capacity Unit Name' textbox
 	And User enters '13945_2' text to 'Description' textbox
 	And User clicks 'CREATE' button 
-	Then 'A capacity unit already exists with this name' text is displayed on error inline tip banner
+	Then 'A capacity unit already exists with this name' text is displayed on inline error banner
 	And User sees next Units on the Capacity Units page:
 	| units      |
 	| Unassigned |

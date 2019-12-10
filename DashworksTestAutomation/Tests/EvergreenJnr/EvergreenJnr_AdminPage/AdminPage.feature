@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
 	When User clicks 'IMPORT PROJECT' button
-	Then 'Selected file is not in a valid format' text is displayed on error inline tip banner
+	Then 'Selected file is not in a valid format' text is displayed on inline error banner
 	When User selects "CorrectFile_DAS12370.xml" file to upload on Import Project page
 	Then 'IMPORT PROJECT' button is not disabled
 
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWit
 	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters "DAS16089_TestProject" in the Project Name field on Import Project page
 	When User clicks 'IMPORT PROJECT' button
-	Then 'Your file doesn't contain Readiness values' text is displayed on error inline tip banner
+	Then 'Your file doesn't contain Readiness values' text is displayed on inline error banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16417
 Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues

@@ -582,7 +582,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete" item on Admin page
 	When User enters "DELAY - do not delete" text in the Search field for "Automation" column
 	When User clicks "Make inactive" option in Cog-menu for "DELAY - do not delete" item on Admin page
-	Then 'This automation is currently running' text is displayed on error inline tip banner
+	Then 'This automation is currently running' text is displayed on inline error banner
 	When User enters "DELAY - do not delete" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
@@ -593,12 +593,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
 	When User selects '[Default (User)]' option from 'Path' autocomplete
 	When User clicks 'CREATE' button 
-	Then 'This automation is currently running' text is displayed on error inline tip banner
+	Then 'This automation is currently running' text is displayed on inline error banner
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User enters 'NewAction' text to 'Action Name' textbox
 	When User clicks 'UPDATE' button 
-	Then 'This automation is currently running' text is displayed on error inline tip banner
+	Then 'This automation is currently running' text is displayed on inline error banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions

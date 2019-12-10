@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'You can not delete the default bucket' text is not displayed on warning inline tip banner
+	Then 'You can not delete the default bucket' text is not displayed on inline tip banner
 	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is displayed on warning inline tip banner
 
 
@@ -98,8 +98,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |
 	| 1Bucket12331     |
-	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is not displayed on warning inline tip banner
+	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is not displayed on inline tip banner
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName |
 	| 2Bucket12331     |
-	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is not displayed on warning inline tip banner
+	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is not displayed on inline tip banner

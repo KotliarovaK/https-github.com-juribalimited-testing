@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User enters ' alldevices project' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then 'A project already exists with this name' text is displayed on error inline tip banner
+	Then 'A project already exists with this name' text is displayed on inline error banner
 	When User create static list with "StaticList4581" name on "Devices" page with following items
 	| ItemName       |
 	| 0AN6PG99INA7R2 |
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	| CheckboxesToBeClicked |
 	| Import Readiness      |
 	And User clicks 'IMPORT PROJECT' button
-	Then 'This XML file contains duplicates in project tasks' text is displayed on error inline tip banner
+	Then 'This XML file contains duplicates in project tasks' text is displayed on inline error banner
 	When User selects "DAS_13733_Valid_file.xml" file to upload on Import Project page
 	And User clicks 'IMPORT PROJECT' button 
 	Then Page with 'Projects' header is displayed to user

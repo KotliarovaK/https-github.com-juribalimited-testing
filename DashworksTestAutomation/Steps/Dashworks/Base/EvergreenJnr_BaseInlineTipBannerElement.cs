@@ -144,11 +144,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             BaseInlineBannerElement page = _driver.NowAt<BaseInlineBannerElement>();
 
-            page.VerifyMessageTextAndColor(MessageColors.Amber, text);
+            page.VerifyMessageTextAndColor(MessageType.Tip, text);
         }
 
         [Then(@"'(.*)' text is not displayed on warning inline tip banner")]
-        public void ThenTextIsNotDisplayedOnWarningInlineTipBanner(string text)
+        public void ThenTextIsNotDisplayedOnInlineTipBanner(string text)
         {
             _driver.WaitForDataLoading(80);
 
@@ -161,8 +161,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForElementToNotContainsText(page.GetInlineBanner(MessageType.Info), text);
         }
 
-        [Then(@"'(.*)' text is displayed on error inline tip banner")]
-        public void ThenTextIsDisplayedOnErrorInlineTipBanner(string text)
+        [Then(@"'(.*)' text is displayed on inline error banner")]
+        public void ThenTextIsDisplayedOnInlineErrorBanner(string text)
         {
             _driver.WaitForDataLoading(80);
 

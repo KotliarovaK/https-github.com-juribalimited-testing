@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User enters ' 99770' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
-	Then 'A team already exists with this name' text is displayed on error inline tip banner
+	Then 'A team already exists with this name' text is displayed on inline error banner
 	When User enters "99770" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown

@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	When User enters ' 11770' text to 'Bucket Name' textbox
 	When User selects 'Admin IT' option from 'Team' autocomplete
 	And User clicks 'CREATE' button 
-	Then 'A bucket already exists with this name' text is displayed on error inline tip banner
+	Then 'A bucket already exists with this name' text is displayed on inline error banner
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS16636 @Buckets @Set_Default_Bucket @Cleanup @Do_Not_Run_With_Buckets
