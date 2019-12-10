@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then '1 device will be added, 1 user will be added, 1 application will be added' text is displayed on warning inline tip banner
+	Then '1 device will be added, 1 user will be added, 1 application will be added' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	And There are no errors in the browser console

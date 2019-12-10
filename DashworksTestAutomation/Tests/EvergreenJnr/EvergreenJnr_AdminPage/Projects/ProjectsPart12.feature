@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
 	| 0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie) |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then '2 mailboxes will be added' text is displayed on warning inline tip banner
+	Then '2 mailboxes will be added' text is displayed on inline tip banner
 	And 'Mailboxes 2/0' tab is displayed on Project Scope Changes page
 	When User clicks 'UPDATE PROJECT' button 
 	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner

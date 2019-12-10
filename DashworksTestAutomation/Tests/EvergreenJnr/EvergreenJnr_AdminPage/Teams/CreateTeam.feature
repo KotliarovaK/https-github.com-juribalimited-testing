@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'You cannot delete the default team' text is displayed on warning inline tip banner
+	Then 'You cannot delete the default team' text is displayed on inline tip banner
 	When User clicks Reset Filters button on the Admin page
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'FALSE' content is displayed in the 'Default' column

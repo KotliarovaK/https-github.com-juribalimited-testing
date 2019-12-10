@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForU
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	When User clicks "Delete" option in Cog-menu for "CapacitySlot1" item on Admin page
-	Then 'The selected slot will be deleted, do you want to proceed?' text is displayed on warning inline tip banner
+	Then 'The selected slot will be deleted, do you want to proceed?' text is displayed on inline tip banner
 	When User clicks 'DELETE' button on inline tip banner
 	#Check Action content
 	When User clicks 'Admin' on the left-hand menu

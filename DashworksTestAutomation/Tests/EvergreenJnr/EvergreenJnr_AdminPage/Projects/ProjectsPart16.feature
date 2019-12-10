@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| BDE 5.01 Upgrade                                                     |
 	| Brava! Reader 2.5 (2.5)                                              |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then '25 devices will be added, 25 users will be added, 25 applications will be added' text is displayed on warning inline tip banner
+	Then '25 devices will be added, 25 users will be added, 25 applications will be added' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	Then '75 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'Queue' left menu item

@@ -1370,8 +1370,8 @@ this.FeatureBackground();
 #line 308
  testRunner.And("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 309
- testRunner.Then("\'created objects which are not displayed in Evergreen\' text is displayed on warni" +
-                    "ng inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'created objects which are not displayed in Evergreen\' text is displayed on inlin" +
+                    "e tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 310
  testRunner.When("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 311

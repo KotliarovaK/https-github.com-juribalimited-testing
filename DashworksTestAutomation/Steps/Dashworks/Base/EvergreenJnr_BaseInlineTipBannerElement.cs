@@ -33,7 +33,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserClicksButtonOnInlineTipBanner(string button)
         {
             var page = _driver.NowAt<BaseInlineBannerElement>();
-            page.GetButton(button).Click();
+            page.GetButton(MessageType.Tip, button).Click();
 
             //For automation
             if (button.Equals("RUN"))
@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonIsDisplayedOnInlineTipBanner(string button)
         {
             var page = _driver.NowAt<BaseInlineBannerElement>();
-            Verify.IsTrue(page.IsButtonDisplayed(button),
+            Verify.IsTrue(page.IsButtonDisplayed(MessageType.Tip, button),
                 $"'{button}' button is displayed on inline tip banner");
         }
 
@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.VerifyMessageTextAndColor(MessageType.Success, finalMessage);
         }
 
-        [Then(@"'(.*)' text is displayed on inline warning banner")]
+        [Then(@"'(.*)' text is displayed on inline tip banner")]
         public void ThenTextIsDisplayedOnWarningInlineTipBanner(string text)
         {
             _driver.WaitForDataLoading(80);

@@ -19,6 +19,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOffboardOptionIsWorkedCorrectly
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
-	Then 'This application will be offboarded, this cannot be undone' text is displayed on warning inline tip banner
+	Then 'This application will be offboarded, this cannot be undone' text is displayed on inline tip banner
 	When User clicks 'OFFBOARD' button 
 	Then 'The application was successfully queued for offboarding from Project17919' text is displayed on inline success banner

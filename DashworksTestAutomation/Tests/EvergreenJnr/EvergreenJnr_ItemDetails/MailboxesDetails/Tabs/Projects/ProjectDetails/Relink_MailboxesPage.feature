@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	When User selects state 'true' for 'Resync owner and users' checkbox
 	When User selects state 'true' for 'Resync name' checkbox
 	When User clicks 'RELINK' button on popup
-	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on warning inline tip banner
+	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
 	Then 'Mailbox successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed

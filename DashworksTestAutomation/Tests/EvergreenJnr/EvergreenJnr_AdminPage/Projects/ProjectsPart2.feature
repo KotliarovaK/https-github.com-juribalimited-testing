@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then '3 applications will be added' text is displayed on warning inline tip banner
+	Then '3 applications will be added' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	And "Applications to add (0 of 2126 selected)" is displayed to the user in the Project Scope Changes section
