@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	Then 'CANCEL' button is not disabled
 	Then 'SAVE AND CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @DAS19135 @Cleanup @Not_Ready
 #Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestoringValues
 	When User creates new Automation via API and open it
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	#Actions grid check
 	Then "Sticky Compliance" content is displayed for "Task or Field" column
 	Then "Update application attributes" content is displayed for "Type" column
-	Then "GREEN" content is displayed for "Value" column
+	Then "Green" content is displayed for "Value" column
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
