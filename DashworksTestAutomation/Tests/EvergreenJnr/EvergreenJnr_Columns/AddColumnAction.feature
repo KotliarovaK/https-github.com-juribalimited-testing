@@ -391,7 +391,7 @@ Scenario: EvergreenJnr_Devices_CheckOrderByStatusColumnSorting
 	When User clicks on '1803: Status' column header
 	Then 'Offboarded' content is displayed in the '1803: Status' column
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18762
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18762 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
@@ -403,7 +403,7 @@ Scenario: EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying
 	When User clicks on 'Sticky Compliance' column header
 	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
@@ -414,7 +414,7 @@ Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying
 	When User clicks on 'Evergreen Target App' column header
 	Then data in table is sorted by 'Evergreen Target App' column in ascending order
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
@@ -427,7 +427,7 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying
 	When User clicks on '1803: Target App Key' column header
 	Then numeric data in table is sorted by '1803: Target App Key' column in descending order
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
@@ -440,7 +440,7 @@ Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplayin
 	When User clicks on 'Evergreen Target App Vendor' column header
 	Then data in table is sorted by 'Evergreen Target App Vendor' column in descending order
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
@@ -453,7 +453,7 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying
 	When User clicks on '1803: Target App Version' column header
 	Then data in table is sorted by '1803: Target App Version' column in descending order
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
@@ -466,7 +466,7 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying
 	When User clicks on '1803: Target App Readiness' column header
 	Then data in table is sorted by '1803: Target App Readiness' column in ascending order
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18896
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18896 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
@@ -478,7 +478,7 @@ Scenario: EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplayin
 	When User create dynamic list with "DAS18896_List" name on "Applications" page
 	Then "DAS18896_List" list is displayed to user
 
-@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS19239
+@Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS19239 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppNameColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	When User add following columns using URL to the "Applications" page:

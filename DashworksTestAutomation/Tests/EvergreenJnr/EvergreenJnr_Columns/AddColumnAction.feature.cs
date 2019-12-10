@@ -1842,6 +1842,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS18762")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying()
         {
             System.Exception lastException = null;
@@ -1875,7 +1876,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS18762"});
+                        "DAS18762",
+                        "Cleanup"});
 #line 395
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1912,6 +1914,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying()
         {
             System.Exception lastException = null;
@@ -1945,7 +1948,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS18961"});
+                        "DAS18961",
+                        "Cleanup"});
 #line 407
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1980,6 +1984,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying()
         {
             System.Exception lastException = null;
@@ -2013,7 +2018,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS18961"});
+                        "DAS18961",
+                        "Cleanup"});
 #line 418
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2054,6 +2060,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying()
         {
             System.Exception lastException = null;
@@ -2087,7 +2094,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS18961"});
+                        "DAS18961",
+                        "Cleanup"});
 #line 431
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2128,6 +2136,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying()
         {
             System.Exception lastException = null;
@@ -2161,7 +2170,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS18961"});
+                        "DAS18961",
+                        "Cleanup"});
 #line 444
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2200,6 +2210,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS18961")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying()
         {
             System.Exception lastException = null;
@@ -2233,7 +2244,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS18961"});
+                        "DAS18961",
+                        "Cleanup"});
 #line 457
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2274,6 +2286,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS18896")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying()
         {
             System.Exception lastException = null;
@@ -2307,7 +2320,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS18896"});
+                        "DAS18896",
+                        "Cleanup"});
 #line 470
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2345,6 +2359,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS19239")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Applications_CheckEvergreenTargetAppNameColumnDisplaying()
         {
             System.Exception lastException = null;
@@ -2378,7 +2393,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
-                        "DAS19239"});
+                        "DAS19239",
+                        "Cleanup"});
 #line 482
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
