@@ -60,6 +60,9 @@ namespace DashworksTestAutomation.Helpers
                 case "ComputerSc: In Scope":
                     return "project_40_inScope";
 
+                case "Evergreen Target App Name":
+                    return "evergreenTargetApplicationName";
+
                 case "Floor":
                     return "floor";
 
