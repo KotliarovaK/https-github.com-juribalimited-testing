@@ -450,8 +450,8 @@ this.FeatureBackground();
 #line 103
  testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 104
- testRunner.Then("\'The selected readinesses have been deleted, changes might not take effect immedi" +
-                    "ately\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected readinesses have been deleted\' and \', changes might not take effect" +
+                    " immediately\' texts are displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
