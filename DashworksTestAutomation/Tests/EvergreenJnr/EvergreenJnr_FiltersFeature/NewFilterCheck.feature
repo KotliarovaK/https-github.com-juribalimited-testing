@@ -519,3 +519,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppNameFilter
 	Then "DAS19262_list" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Target App Name is not empty" is displayed in added filter info
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS19262 @Cleanup @Not_Ready
+#Waiting for No Target Application
+Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppFilterWithNoTargetApplication
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Evergreen Target App" filter where type is "Equals" with added column and "No Target Application" Lookup option
+	When User create custom list with "DAS192621_list" name
+	Then "DAS192621_list" list is displayed to user
+	When User clicks the Filters button
+	Then "Evergreen Target App is No Target Application" is displayed in added filter info
