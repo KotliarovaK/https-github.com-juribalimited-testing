@@ -1358,7 +1358,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var inlineTipBanner = _driver.NowAt<BaseInlineBannerElement>();
             inlineTipBanner.VerifyColor(MessageType.Tip);
             _driver.WaitForDataLoading();
-            inlineTipBanner.GetButton("DELETE").Click();
+            inlineTipBanner.GetButton(MessageType.Tip,"DELETE").Click();
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]
