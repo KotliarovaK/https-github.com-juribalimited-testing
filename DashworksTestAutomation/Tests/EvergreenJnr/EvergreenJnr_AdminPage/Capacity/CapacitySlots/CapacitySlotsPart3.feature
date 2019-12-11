@@ -14,7 +14,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	| Project         | SlotName     | DisplayName | SlotAvailableFrom | SlotAvailableTo |
 	| ProjectDAS13779 | SlotDAS13779 | 13779       | 29 Oct 2018       | 29 Oct 2018     |
 	And User navigates to the 'Capacity' left menu item
-	And User navigates to the 'Slots' left menu item
 	And User navigates to the 'Override Dates' left menu item
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	Then Create Override Date is displayed correctly

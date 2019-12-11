@@ -646,6 +646,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	When User expands 'Evergreen' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                   |
+	| Criticality                     |
 	| Evergreen Capacity Unit         |
 	| Evergreen Rationalisation       |
 	| Evergreen Target App            |
@@ -654,6 +655,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
+	| Hide From End User              |
+	| In Catalog                      |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
