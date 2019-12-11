@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
 	| SelectedValues    | Association        |
 	| ADevicesList17551 | Entitled to device |
-	When User waits for three seconds
+	When User waits for '3' seconds
 	When User create dynamic list with "AApplicationsList17551" name on "Applications" page
 	Then "AApplicationsList17551" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu

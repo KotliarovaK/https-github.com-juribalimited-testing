@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'RELINK' button on popup
 	Then 'Device successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then Details page for "QSFCLB19N5524S" item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field        | Data           |
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User clicks 'RESYNC' button on popup
 	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on inline success banner
 	#waiting for the RESYNC process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then User verifies data in the fields on details page
 	| Field        | Data            |
 	| Name         | QSFCLB19N5524S  |
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User clicks 'RELINK' button on popup
 	Then 'Device successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	When User navigates to the 'User' details page for 'ZHC394580' item
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
 	#waiting for the RELINK process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	When User clicks "Sherri R. Bautista" link on the Details Page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item

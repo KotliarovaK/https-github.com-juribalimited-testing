@@ -23,7 +23,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	And User selects "Brazilian" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language
-	And 'You cannot update the default language to Brazilian because there are items in the project which have not been translated into this language.' text is displayed on inline error banner
+	#DAS-19339 - message should not disappear. let's wait for 6 second to check this
+	When User waits for '6' seconds
+	Then 'You cannot update the default language to Brazilian because there are items in the project which have not been translated into this language.' text is displayed on inline error banner
 	When User navigates to the 'Scope' left menu item
 	#And User navigates to the 'Queue' left menu item
 	#Then Counter shows "1" found rows

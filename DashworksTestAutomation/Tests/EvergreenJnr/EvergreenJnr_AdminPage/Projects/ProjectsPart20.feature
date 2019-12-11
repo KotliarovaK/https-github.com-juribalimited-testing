@@ -40,14 +40,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
 	Then '13 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	#waiting for the process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
 	And User navigates to the 'Application Scope' tab on Project Scope Changes page
 	When User selects "Do not include applications" checkbox on the Project details page
 	#wait until the settings are applied
-	When User waits for three seconds
+	When User waits for '3' seconds
 	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page
 	And User expands 'Users to remove' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
