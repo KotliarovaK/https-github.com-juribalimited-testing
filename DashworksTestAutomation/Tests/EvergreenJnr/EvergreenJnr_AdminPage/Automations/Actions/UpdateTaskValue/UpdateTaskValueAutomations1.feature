@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Project Dates' option from 'Stage' autocomplete
 	When User selects 'Forecast Date' option from 'Task' autocomplete
-	Then inline error banner is displayed
+	Then inline error banner is not displayed
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options    |
