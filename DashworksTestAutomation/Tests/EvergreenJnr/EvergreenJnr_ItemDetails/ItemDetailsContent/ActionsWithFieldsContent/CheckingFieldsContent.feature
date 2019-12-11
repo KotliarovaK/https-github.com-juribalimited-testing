@@ -231,8 +231,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAn
 	| Title       | Value         |
 	| Criticality | Uncategorised |
 
-#Ann.I. 11/14/19: ready only for the 'terminator'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18865 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18865
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab 
 	When User navigates to the 'Application' details page for 'Axosoft OnTime 2005 Enterprise Server' item
 	Then Details page for "Axosoft OnTime 2005 Enterprise Server" item is displayed to the user
@@ -245,8 +244,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 	| Field             | Data   |
 	| Sticky Compliance | IGNORE |
 
-#Ann.I. 11/21/19: ready only for the 'terminator'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849
 Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
 	Then Details page for "ACDSee for Windows 95" item is displayed to the user
@@ -266,8 +264,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplay
 	| Title              | Value |
 	| Hide From End User | FALSE |
 
-#Ann.I. 11/26/19: ready only for the 'terminator'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18852 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18852
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirementsForAnalysisEditorRole
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
@@ -292,7 +289,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurity
 	| Value |
 	| TRUE  |
 	| FALSE |
-	#When User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
 	Then popup is displayed to User
 	When User clicks 'CANCEL' button

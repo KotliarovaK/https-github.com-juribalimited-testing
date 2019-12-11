@@ -5,9 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#ready only on 'Spectrum'
-	#need to add cleanup
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @Cleanup @Not_Run
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
@@ -19,38 +17,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	When User clicks 'RELINK' button 
 	Then popup is displayed to User
-	#And 'Resync owner' checkbox is checked
-	#And 'Resync name' checkbox is checked
 	When User enters 'Microsoft SQL' in the 'Application' autocomplete field and selects 'Microsoft SQL Server 2012' value
-	When User selects state 'true' for 'Resync name' checkbox
+	When User selects state 'false' for 'Resync owner' checkbox
 	When User clicks 'RELINK' button on popup
 	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
-	#waiting for the relink process to be completed
-	When User waits for three seconds
 	Then Details page for "Microsoft SQL Server 2012" item is displayed to the user
 	And User verifies data in the fields on details page
-	| Field | Data                                                       |
-	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	When User clicks 'RESYNC' button
-	And User clicks 'RESYNC' button on popup
-	Then 'Application successfully resynced' text is displayed on inline success banner
-	#waiting for the resync process to be completed
-	When User waits for three seconds
-	Then User verifies data in the fields on details page
 	| Field | Data                      |
 	| Name  | Microsoft SQL Server 2012 |
 	When User clicks 'RELINK' button 
-	Then popup is displayed to User
 	When User enters 'WPF' in the 'Application' autocomplete field and selects '"WPF/E" (codename) Community Technology Preview (Feb 2007)' value
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
-	#waiting for the relink process to be completed
-	When User waits for three seconds
 
-	#ready only on 'terminator'
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18769 @DAS19124
 Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnteringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
