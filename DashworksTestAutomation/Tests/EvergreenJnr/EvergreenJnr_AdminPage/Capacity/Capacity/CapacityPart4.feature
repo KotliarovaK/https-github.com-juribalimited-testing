@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	And User clicks 'UPDATE PROJECT' button 
 	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'Details' left menu item
-	And User clicks 'ADD LANGUAGE' button 
+	And User clicks 'ADD LANGUAGE' button
 	And User selects "Brazilian" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language

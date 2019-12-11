@@ -72,45 +72,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.CurrentPasswordField.Displayed(), "Change Password page is not displayed");
         }
 
-        [When(@"User enters ""(.*)"" in the Current Password field")]
-        public void WhenUserEntersInTheCurrentPasswordField(string currentPassword)
-        {
-            var page = _driver.NowAt<ChangePasswordPage>();
-            page.CurrentPasswordField.Clear();
-            page.CurrentPasswordField.SendKeys(currentPassword);
-        }
-
-        [When(@"User enters ""(.*)"" in the New Password field")]
-        public void WhenUserEntersInTheNewPasswordField(string newPassword)
-        {
-            var page = _driver.NowAt<ChangePasswordPage>();
-            page.NewPassword.Clear();
-            page.NewPassword.SendKeys(newPassword);
-        }
-
-        [When(@"User enters ""(.*)"" in the Confirm Password field")]
-        public void WhenUserEntersInTheConfirmPasswordField(string confirmPassword)
-        {
-            var page = _driver.NowAt<ChangePasswordPage>();
-            page.ConfirmPasswordField.Clear();
-            page.ConfirmPasswordField.SendKeys(confirmPassword);
-        }
-
-        [When(@"User navigates to the ""(.*)"" page on Account details")]
-        public void WhenUserNavigatesToThePageOnAccountDetails(string pageToNavigate)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            page.NavigateToPage(pageToNavigate);
-        }
-
-        [When(@"User changes language to ""(.*)""")]
-        public void WhenUserChangesLanguageTo(string language)
-        {
-            var page = _driver.NowAt<PreferencesPage>();
-            _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
-            _driver.WaitForDataLoading();
-        }
-
         [When(@"User changes List Page Size to ""(.*)""")]
         public void WhenUserChangesListPageSizeTo(string size)
         {
@@ -143,28 +104,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(size, page.ListPagesToCache.GetAttribute("value"), "List Page Size is not changed");
         }
 
-        [When(@"User changes Display Mode to ""(.*)""")]
-        public void WhenUserChangesDisplayModeTo(string displayMode)
-        {
-            var page = _driver.NowAt<PreferencesPage>();
-            page.ChangeDisplayMode(displayMode);
-        }
-
-        [When(@"User clicks Update button on Preferences page")]
-        public void WhenUserClicksUpdateButtonOnPreferencesPage()
-        {
-            var page = _driver.NowAt<PreferencesPage>();
-            page.UpdateButton.Click();
-        }
-
-        [When(@"User clicks Update button on the Change Password page")]
-        public void WhenUserClicksUpdateButtonOnTheChangePasswordPage()
-        {
-            var page = _driver.NowAt<ChangePasswordPage>();
-            _driver.WaitForDataLoading();
-            page.UpdateButton.Click();
-        }
-
         [Then(@"page elements are translated into French")]
         public void ThenPageElementsAreTranslatedIntoFrench()
         {
@@ -180,48 +119,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [When(@"User changes Full Name to ""(.*)""")]
-        public void WhenUserChangesFullNameTo(string fullName)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            page.FullNameField.Clear();
-            page.FullNameField.SendKeys(fullName);
-        }
-
-        [Then(@"Error message is not displayed on Profile page")]
-        public void ThenErrorMessageIsNotDisplayedOnProfilePage()
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            Utils.Verify.IsFalse(page.ErrorMessage.Displayed(),
-                $"Error message is displayed on Account Page");
-        }
-
-        [Then(@"""(.*)"" is displayed in Full Name field")]
-        public void ThenIsDisplayedInFullNameField(string fullName)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            Utils.Verify.AreEqual(fullName, page.FullNameField.GetAttribute("value"),
-                $"{fullName} is not displayed in Full Name field");
-        }
-
-        [When(@"User changes Email to ""(.*)""")]
-        public void WhenUserChangesEmailTo(string email)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitForDataLoading();
-            page.EmailField.Clear();
-            page.EmailField.SendKeys(email);
-        }
-
-        [Then(@"""(.*)"" is displayed in Email field")]
-        public void ThenIsDisplayedInEmailField(string email)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            Utils.Verify.AreEqual(email, page.EmailField.GetAttribute("value"), $"{email} is not displayed in Email field");
+            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor(), "'Update Button' is not changed to High Contrast");
+            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor(), "Link Menu is not changed to High Contrast");
         }
 
         [When(@"User clears Full name field")]
@@ -259,68 +158,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                        ResourceFilesNamesProvider.CorrectFile;
             page.UploadButton.SendKeys(file);
             _driver.WaitForDataLoading();
-        }
-
-        [Then(@"Success message with ""(.*)"" text is displayed on Account Details page")]
-        public void ThenSuccessMessageWithTextIsDisplayedOnAccountDetailsPage(string text)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Utils.Verify.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
-            try
-            {
-                page.CloseMessageButton.Click();
-            }
-            catch { }
-            _driver.WaitForElementToBeNotDisplayed(page.SuccessMessage);
-        }
-
-        [Then(@"Success message with ""(.*)"" text is displayed on the Change Password page")]
-        public void ThenSuccessMessageWithTextIsDisplayedOnTheChangePasswordPage(string text)
-        {
-            var page = _driver.NowAt<ChangePasswordPage>();
-            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Utils.Verify.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
-            //Waiting for success green banner is displayed
-            Thread.Sleep(4000);
-        }
-
-        [Then(@"Error message with ""(.*)"" text is displayed on the Change Password page")]
-        public void ThenErrorMessageWithTextIsDisplayedOnTheChangePasswordPage(string text)
-        {
-            var page = _driver.NowAt<ChangePasswordPage>();
-            _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
-            Utils.Verify.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
-            try
-            {
-                page.CloseMessageButton.Click();
-            }
-            catch { }
-            _driver.WaitForElementToBeNotDisplayed(page.ErrorMessage);
-        }
-
-        [Then(@"""(.*)"" error message is displayed")]
-        public void ThenErrorMessageIsDisplayed(string errorMessage)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
-            Utils.Verify.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
-            try
-            {
-                page.CloseMessageButton.Click();
-            }
-            catch { }
-            _driver.WaitForElementToBeNotDisplayed(page.ErrorMessage);
-        }
-
-        [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]
-        public void ThenSuccessMessageWithTextIsDisplayedOnTheAdvancedPage(string text)
-        {
-            var page = _driver.NowAt<AdvancedPage>();
-            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            Utils.Verify.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
-            page.CloseMessageButton.Click();
-            _driver.WaitForElementToBeNotDisplayed(page.SuccessMessage);
         }
 
         [Then(@"User picture is changed to uploaded photo")]
