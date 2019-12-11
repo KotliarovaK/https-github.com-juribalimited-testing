@@ -136,8 +136,7 @@ this.FeatureBackground();
 #line 13
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.And("User clicks content of Evergreen Ring in Project Summary section on the Details P" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks on edit button for \'Evergreen Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
  testRunner.And("User clicks New Ring ddl in popup of Project Summary section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
