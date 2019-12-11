@@ -450,8 +450,8 @@ this.FeatureBackground();
 #line 103
  testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 104
- testRunner.Then("\'The selected readinesses have been deleted, changes might not take effect immedi" +
-                    "ately\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected readinesses have been deleted\' and \', changes might not take effect" +
+                    " immediately\' texts are displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1370,8 +1370,8 @@ this.FeatureBackground();
 #line 308
  testRunner.And("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 309
- testRunner.Then("\'created objects which are not displayed in Evergreen\' text is displayed on inlin" +
-                    "e tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This project contains 10870 created objects which are not displayed in Evergreen" +
+                    "\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 310
  testRunner.When("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 311

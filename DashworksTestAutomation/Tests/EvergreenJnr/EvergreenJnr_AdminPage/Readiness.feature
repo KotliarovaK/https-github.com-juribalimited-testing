@@ -75,11 +75,11 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	| DAS16131_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
 	Then grid headers are displayed in the following order
-	| ColumnName |
-	| Readiness  |
-	|            |
-	| Tooltip    |
-	| Ready      |
+	| ColumnName                  |
+	| Readiness                   |
+	|                             |
+	| Tooltip                     |
+	| Ready                       |
 	| Default for Applications    |
 	| Task Values Count           |
 	| Applications Count          |
@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	Then 'CANCEL' popup button color is 'rgba(236, 237, 239, 1)'
 	Then 'DELETE' popup button color is 'rgba(242, 88, 49, 1)'
 	When User clicks 'DELETE' button on popup
-	Then 'The selected readinesses have been deleted, changes might not take effect immediately' text is displayed on inline success banner
+	Then 'The selected readinesses have been deleted' and ', changes might not take effect immediately' texts are displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup @Do_Not_Runt_With_Readiness
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
@@ -306,7 +306,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
-	Then 'created objects which are not displayed in Evergreen' text is displayed on inline tip banner
+	Then 'This project contains 10870 created objects which are not displayed in Evergreen' text is displayed on inline tip banner
 	When User navigates to the 'Readiness' left menu item
 	Then inline tip banner is not displayed
 
