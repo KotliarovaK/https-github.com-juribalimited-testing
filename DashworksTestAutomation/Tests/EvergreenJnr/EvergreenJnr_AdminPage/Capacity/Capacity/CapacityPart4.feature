@@ -25,12 +25,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	Then User selects "Set as default" option for selected language
 	And 'You cannot update the default language to Brazilian because there are items in the project which have not been translated into this language.' text is displayed on inline error banner
 	When User navigates to the 'Scope' left menu item
-	And User navigates to the 'Queue' left menu item
-	Then Counter shows "1" found rows
-	#When User navigates to the 'History' left menu item
-	#And User enters "1A701E05916148A6A3F" text in the Search field for "Item" column
-	#Then User clicks on "1A701E05916148A6A3F" search result
-	#When User navigates to the "Projects" tab
+	#And User navigates to the 'Queue' left menu item
+	#Then Counter shows "1" found rows
+	When User navigates to the 'History' left menu item
+	Then Following items displayed in the History table
+	| Items               |
+	| 1A701E05916148A6A3F |
+	When User enters "1A701E05916148A6A3F" text in the Search field for "Item" column
+	When User clicks on '1A701E05916148A6A3F' cell from 'Item' column
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13422 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField
