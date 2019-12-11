@@ -92,7 +92,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks 'Automations' header breadcrumb
 	When User enters "182921_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '182921_Automation' item from 'Automation' column
-	When '182921_Automation' automation run has finished
 	When '182921_Automation' automation '18292_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "182921_Automation" text in the Search field for "Automation" column
@@ -115,7 +114,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	Then inline error banner is displayed
 	When User selects 'Before current value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
