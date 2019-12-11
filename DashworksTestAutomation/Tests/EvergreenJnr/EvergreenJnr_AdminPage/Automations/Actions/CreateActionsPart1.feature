@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
-	Then inline error banner is displayed
+	Then inline error banner is not displayed
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Failed' in the 'Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
