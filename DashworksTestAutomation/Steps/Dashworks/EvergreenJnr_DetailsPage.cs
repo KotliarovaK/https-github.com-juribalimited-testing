@@ -592,14 +592,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
         }
 
-        [When(@"User clicks content of Evergreen Ring in Project Summary section on the Details Page")]
-        public void WhenUserClicksEvergreenRingInProjectSummarySectionOnTheDetailsPage()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(detailsPage.ProjectSummaryRingValue);
-            detailsPage.ProjectSummaryRingValue.Click();
-        }
-
         [When(@"User clicks New Ring ddl in popup of Project Summary section on the Details Page")]
         public void WhenUserClicksNewRingDdlOfInProjectSummarySectionOnTheDetailsPage()
         {
