@@ -153,6 +153,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         #endregion
+
+        #region Link
+
+        public IWebElement GetLinkByText(MessageType messageType, string text)
+        {
+            return GetLinkByText(text, GetInlineBannerSelector(messageType));
+        }
+
+        public bool IsLinkDisplayed(MessageType messageType, string text)
+        {
+            return IsLinkDisplayed(text, GetInlineBannerSelector(messageType));
+        }
+
+        #endregion
     }
 
     public enum MessageType
