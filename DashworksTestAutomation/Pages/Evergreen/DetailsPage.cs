@@ -55,11 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 ".//table[@class='table projectDetails']/*//span[text()='Evergreen Bucket']/ancestor::tr/td[@class='fld-value']")]
         public IWebElement ProjectSummaryBucketValue { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//table[@class='table projectDetails']/*//span[text()='Evergreen Ring']/ancestor::tr/td[@class='fld-value']//div[@class='editText']")]
-        public IWebElement ProjectSummaryRingValue { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='New Ring']")]
         public IWebElement ProjectSummaryRingPopupDDL { get; set; }
 
