@@ -175,5 +175,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObje
 	When User clicks 'OFFBOARD' button on popup 
 	When User switches to previous tab
 	When User clicks 'OFFBOARD' button
-	Then 'This device has already been offboarded from User Evergreen Capacity Project' text is displayed on warning inline tip banner
+	Then 'This device has already been offboarded from User Evergreen Capacity Project' text is displayed on inline tip banner
 	Then 'OFFBOARD' button is disabled

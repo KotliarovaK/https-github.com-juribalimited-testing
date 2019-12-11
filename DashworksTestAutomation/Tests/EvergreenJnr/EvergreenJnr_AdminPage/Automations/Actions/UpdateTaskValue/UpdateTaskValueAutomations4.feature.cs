@@ -583,7 +583,7 @@ this.FeatureBackground();
  testRunner.When("User clicks \"Delete\" option in Cog-menu for \"CapacitySlot1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 161
  testRunner.Then("\'The selected slot will be deleted, do you want to proceed?\' text is displayed on" +
-                    " warning inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    " inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 162
  testRunner.When("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 164

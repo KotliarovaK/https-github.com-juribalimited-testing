@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| CKB423934 (Tracie N. Bright) |
 	| CKB423934 (Tracie N. Bright) |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then '3 users will be added' text is displayed on warning inline tip banner
+	Then '3 users will be added' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'Applications' tab on Project Scope Changes page
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| allCLEAR 6.0 Viewer  |
 	| AnalogX TrackSeek    |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then '3 applications will be added' text is displayed on warning inline tip banner
+	Then '3 applications will be added' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	Then '3 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'Users' tab on Project Scope Changes page
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	| 2QP6MWKI0BM87U  |
 	| 2QP6MWKI0BM87U  |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then '4 devices will be added' text is displayed on warning inline tip banner
+	Then '4 devices will be added' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	Then '4 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'Scope Details' left menu item
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	| 01HMZTRG6OQAOF  |
 	| 02C80G8RFTPA9E  |
 	And User clicks 'UPDATE ALL CHANGES' button 
-	Then '2 devices will be removed' text is displayed on warning inline tip banner
+	Then '2 devices will be removed' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button 
 	Then '0 objects queued for onboarding, 2 objects offboarded' text is displayed on inline success banner
 	When User navigates to the 'History' left menu item

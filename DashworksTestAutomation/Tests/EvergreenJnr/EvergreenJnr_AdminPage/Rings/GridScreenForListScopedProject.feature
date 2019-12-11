@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| Unassigned       |
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'This ring will be permanently deleted and any objects within it reassigned to the default ring' text is displayed on warning inline tip banner
+	Then 'This ring will be permanently deleted and any objects within it reassigned to the default ring' text is displayed on inline tip banner
 	When User clicks 'DELETE' button on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14705 @Cleanup
@@ -122,5 +122,5 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| 14705_Ring       |
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'These rings will be permanently deleted and any objects within them reassigned to the default ring' text is displayed on warning inline tip banner
+	Then 'These rings will be permanently deleted and any objects within them reassigned to the default ring' text is displayed on inline tip banner
 	When User clicks 'DELETE' button on inline tip banner

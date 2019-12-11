@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Delete        |
 	When User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	Then 'Are you sure you wish to run 1 automation?' text is displayed on warning inline tip banner
+	Then 'Are you sure you wish to run 1 automation?' text is displayed on inline tip banner
 	When User clicks 'RUN' button on inline tip banner
 	Then '1 automation started,' text is displayed on inline success banner
 	When User enters "DELAY_2" text in the Search field for "Automation" column
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
 	When User clicks 'DELETE' button on inline tip banner
-	Then 'Cannot delete a running automation' text is displayed on warning inline tip banner
+	Then 'Cannot delete a running automation' text is displayed on inline tip banner
 	When User moves "Applications_Scope" automation to "DELAY_8" automation
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
@@ -360,7 +360,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
 	When User clicks 'DELETE' button on inline tip banner
-	Then 'Cannot delete a running automation' text is displayed on warning inline tip banner
+	Then 'Cannot delete a running automation' text is displayed on inline tip banner
 	When User clicks Cog-menu for 'DELAY - do not delete3' item in the 'Automation' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
@@ -459,7 +459,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks 'Automations' header breadcrumb
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
-	Then 'This automation will be permanently deleted' text is displayed on warning inline tip banner
+	Then 'This automation will be permanently deleted' text is displayed on inline tip banner
 	When User clicks 'CANCEL' button on inline tip banner
 	Then inline tip banner is not displayed
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
@@ -544,7 +544,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	Then 'Are you sure you wish to run 2 automations?' text is displayed on warning inline tip banner
+	Then 'Are you sure you wish to run 2 automations?' text is displayed on inline tip banner
 	When User clicks 'RUN' button on inline tip banner
 	Then '2 automations started,' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item

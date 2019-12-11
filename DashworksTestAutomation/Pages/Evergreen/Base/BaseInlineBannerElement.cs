@@ -128,7 +128,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IWebElement GetButton(MessageType messageType, string button)
         {
-            return GetButton(button, this.GetStringByFor(() => this.GetInlineBanner(messageType)));
+            return GetButton(button, GetInlineBannerSelector(messageType));
         }
 
         public bool IsButtonDisplayed(MessageType messageType, string name)

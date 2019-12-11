@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	| Unassigned       |
 	And User selects 'Delete' in the 'Actions' dropdown
 	And User clicks 'DELETE' button
-	Then 'You cannot delete the default unit' text is displayed on warning inline tip banner
+	Then 'You cannot delete the default unit' text is displayed on inline tip banner
 	When User close message on the Admin page
 	Then 'Unassigned' content is displayed in the 'Capacity Unit' column
 	When User clicks 'CREATE PROJECT CAPACITY UNIT' button 

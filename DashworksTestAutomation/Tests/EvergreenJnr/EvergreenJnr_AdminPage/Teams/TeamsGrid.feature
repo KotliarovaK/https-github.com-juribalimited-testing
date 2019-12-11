@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'You cannot delete the default team' text is displayed on warning inline tip banner
+	Then 'You cannot delete the default team' text is displayed on inline tip banner
 	When User close message on the Admin page
 	When User creates new Team via api
 	| TeamName      | Description | IsDefault |

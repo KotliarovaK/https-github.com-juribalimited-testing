@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	| Slot13442        |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then '1 slot and 1 related override date will be deleted, do you wish to proceed?' text is displayed on warning inline tip banner
+	Then '1 slot and 1 related override date will be deleted, do you wish to proceed?' text is displayed on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13490
 Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen
