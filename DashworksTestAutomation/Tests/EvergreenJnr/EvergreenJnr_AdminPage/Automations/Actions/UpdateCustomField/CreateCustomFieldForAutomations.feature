@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds 'TEST' value from 'Value' textbox
 	When User clicks 'CREATE' button
-	Then 'The automation action has been created' text is displayed on success inline tip banner
+	Then 'The automation action has been created' text is displayed on inline success banner
 	#Create Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user

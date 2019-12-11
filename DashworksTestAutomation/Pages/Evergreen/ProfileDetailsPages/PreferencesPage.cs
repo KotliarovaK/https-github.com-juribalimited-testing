@@ -50,14 +50,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
             };
         }
 
-        public void ChangeDisplayMode(string displayMode)
-        {
-            DisplayModeDropdown.Click();
-            var displayModeSelector = $".//mat-option/span[text()='{displayMode}']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(displayModeSelector));
-            Driver.FindElement(By.XPath(displayModeSelector)).Click();
-        }
-
         public string GetSuccessMessageColor()
         {
             return SuccessMessage.GetCssValue("background-color");

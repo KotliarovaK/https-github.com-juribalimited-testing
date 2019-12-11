@@ -120,7 +120,9 @@ namespace DashworksTestAutomation.Steps.API
                 var response = _client.Value.Get(url.GenerateRequest());
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
                     throw new Exception($"{response.StatusCode} status code for query: {row.Values.Last()}");
+                }
 
                 var responseData = JsonConvert.DeserializeObject<JObject>(response.Content);
                 var metadata = responseData["metadata"] as JObject;

@@ -209,10 +209,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplaye
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Evergreen Details' left submenu item
-	Then field with "Project Count" text is displayed in expanded tab on the Details Page
-	And field with "Evergreen Bucket" text is displayed in expanded tab on the Details Page
-	And field with "Evergreen Capacity Unit" text is displayed in expanded tab on the Details Page
-	And field with "Evergreen Ring" text is displayed in expanded tab on the Details Page
+	Then following fields are displayed in the open section:
+	| Fields                  |
+	| Project Count           |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
 	And There are no errors in the browser console
 
 Examples:

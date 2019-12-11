@@ -268,7 +268,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	When User enters 'Project_DAS15444' text to 'Project Name' textbox
 	When User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User click Delete button for custom list with "DynamicList15444" name

@@ -27,15 +27,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//ul[@class='roles']/li")]
         public IList<IWebElement> RolesList { get; set; }
-  
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
-        public IWebElement ErrorMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//li//span[text()='Account Details']")]
         public IWebElement AccountDetails { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
-        public IWebElement SuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button/i[@class='material-icons mat-clear']")]
         public IWebElement CloseMessageButton { get; set; }
@@ -60,7 +54,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         public void NavigateToPage(string pageName)
         {
-            Driver.FindElement(By.XPath($".//mat-sidenav//a[text()='{pageName}']")).Click();
+            Driver.FindElement(By.XPath($".//mat-tree-node//a[text()='{pageName}']")).Click();
         }
     }
 }

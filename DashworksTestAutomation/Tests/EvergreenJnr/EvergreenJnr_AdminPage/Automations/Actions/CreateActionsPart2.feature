@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
-	Then error inline tip banner is displayed
+	Then inline error banner is not displayed
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	#DAS18491
 	When User clicks content from "Action" column
 	#Actions content check
-	Then error inline tip banner is displayed
+	Then inline error banner is displayed
 	Then '18432_Action' content is displayed in 'Action Name' textbox
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '[Project not found]' content is displayed in 'Project' textbox

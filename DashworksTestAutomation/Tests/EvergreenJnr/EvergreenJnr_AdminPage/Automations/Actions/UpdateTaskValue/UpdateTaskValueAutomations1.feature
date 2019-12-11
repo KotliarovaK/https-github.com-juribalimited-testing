@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
 	#Check Actions grid
-	Then 'The automation action has been created' text is displayed on success inline tip banner
+	Then 'The automation action has been created' text is displayed on inline success banner
 	Then "2 days after current value" content is displayed for "Value" column
 	#Check created Action
 	When User clicks content from "Action" column
@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
 	When User selects 'Project Dates' option from 'Stage' autocomplete
 	When User selects 'Forecast Date' option from 'Task' autocomplete
-	Then error inline tip banner is displayed
+	Then inline error banner is not displayed
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options    |

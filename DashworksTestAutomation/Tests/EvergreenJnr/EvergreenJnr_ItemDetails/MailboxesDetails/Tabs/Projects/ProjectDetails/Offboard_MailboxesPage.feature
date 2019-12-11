@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	| Owner        |
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
-	Then 'The selected objects were successfully queued for offboarding from USE ME FOR AUTOMATION(MAIL SCHDLD)' text is displayed on success inline tip banner
+	Then 'The selected objects were successfully queued for offboarding from USE ME FOR AUTOMATION(MAIL SCHDLD)' text is displayed on inline success banner
 	#going to check the object state
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

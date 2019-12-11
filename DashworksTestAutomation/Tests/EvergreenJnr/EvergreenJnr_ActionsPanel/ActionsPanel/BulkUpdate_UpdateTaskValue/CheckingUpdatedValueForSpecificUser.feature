@@ -40,7 +40,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User selects '<NewTeam>' option from 'Team' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -106,12 +106,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<NewValue>' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Nov 28, 2018' text to 'Date' datepicker
+	And User enters '28 Nov 2018' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -246,7 +246,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -266,7 +266,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button

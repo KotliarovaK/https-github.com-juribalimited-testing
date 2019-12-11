@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'You cannot delete the default team' text is displayed on warning inline tip banner
+	Then 'You cannot delete the default team' text is displayed on inline tip banner
 	When User close message on the Admin page
 	When User creates new Team via api
 	| TeamName      | Description | IsDefault |
@@ -31,4 +31,4 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	When User clicks 'DELETE' button on inline tip banner
-	Then 'The selected team has been deleted, and their buckets reassigned' text is displayed on success inline tip banner
+	Then 'The selected team has been deleted, and their buckets reassigned' text is displayed on inline success banner

@@ -18,7 +18,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	Then Scope List dropdown is disabled
 	Then All Associations are disabled
 	When User navigates to the 'Scope Changes' left menu item
-	Then inline tip banner is not displayed
+	Then inline info banner is not displayed
+	Then inline success banner is not displayed
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
@@ -85,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	| 0RGBQGA7XOOPJSW |
 	And User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	Then There are no errors in the browser console
 	Then Error message is not displayed
 	When User navigates to the 'Scope Details' left menu item
@@ -104,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks 'CREATE' button
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	And There are no errors in the browser console
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Buckets' left menu item

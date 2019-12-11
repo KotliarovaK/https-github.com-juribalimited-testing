@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     internal class TabContent : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//mat-sidenav-content[@id='content']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-drawer-content[@id='content']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//table[@aria-label='Elements']")]
@@ -22,10 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             Driver.WaitForDataLoading();
 
-            return new List<By>
-            {
-                SelectorFor(this, p => p.PageIdentitySelectors)
-            };
+            return new List<By> { };
         }
 
         public IList<IWebElement> GetColumnSettings()
