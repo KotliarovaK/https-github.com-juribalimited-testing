@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	And User navigates to the 'Slots' left menu item
 	When User clicks "Duplicate" option in Cog-menu for "Slot 14478" item on Admin page
 	Then 'Your capacity slot has been created' text is displayed on inline success banner
-	Then ', click here to view the Slot 14478 (copy) slot' link is displayed on inline success banner
+	Then 'click here to view the  Slot 14478 (copy) slot' link is displayed on inline success banner
 	When User clicks newly created object link
 	Then "Slot 14478 (copy)" content is displayed in "Slot Name" field
 	And "14478" content is displayed in "Display Name" field

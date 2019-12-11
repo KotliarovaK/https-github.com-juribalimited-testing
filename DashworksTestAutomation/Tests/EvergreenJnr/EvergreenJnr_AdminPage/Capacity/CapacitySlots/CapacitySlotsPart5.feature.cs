@@ -411,8 +411,8 @@ this.FeatureBackground();
 #line 73
  testRunner.Then("\'Your capacity slot has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 74
- testRunner.Then("\', click here to view the Slot 14478 (copy) slot\' link is displayed on inline suc" +
-                    "cess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'click here to view the  Slot 14478 (copy) slot\' link is displayed on inline succ" +
+                    "ess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 75
  testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
