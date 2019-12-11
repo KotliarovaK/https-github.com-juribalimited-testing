@@ -45,6 +45,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                     return InlineErrorElement;
                 case MessageType.Success:
                     return InlineSuccessElement;
+                case MessageType.Info:
+                    return InlineInfoElement;
                 default:
                     throw new Exception($"Unknown message type: {messageType.ToString()}");
             }
@@ -60,6 +62,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                     return InlineErrorSelector;
                 case MessageType.Success:
                     return InlineSuccessSelector;
+                case MessageType.Info:
+                    return InlineInfoSelector;
                 default:
                     throw new Exception($"Unknown message type: {messageType.ToString()}");
             }
