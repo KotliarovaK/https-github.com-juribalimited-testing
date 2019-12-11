@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             //Wait for banner with text
             Driver.WaitForElementToContainsText(GetInlineBanner(messageType), expectedText);
             //Check that exact text is displayed in the banner
-            return Driver.IsElementExists(By.XPath($"{GetInlineBannerSelector(messageType)}[text()='{expectedText}']"));
+            return Driver.IsElementExists(By.XPath($"{GetInlineBannerSelector(messageType)}/descendant-or-self::div[text()='{expectedText}']"));
         }
 
         public bool IsSecondPartOfTextPresent(MessageType messageType, string expectedText)
