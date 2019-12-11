@@ -177,8 +177,8 @@ this.FeatureBackground();
 #line 20
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.Then("\'The project capacity details have been updated\' text is displayed on success inl" +
-                    "ine tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The project capacity details have been updated\' text is displayed on inline succ" +
+                    "ess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 22
  testRunner.When("User navigates to the \'Units\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
@@ -396,8 +396,8 @@ this.FeatureBackground();
 #line 68
  testRunner.Then("Blue banner with \"Object updates being queued, please wait\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
- testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on succ" +
-                    "ess inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
+                    "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 70
  testRunner.When("User navigates to the \'Queue\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71

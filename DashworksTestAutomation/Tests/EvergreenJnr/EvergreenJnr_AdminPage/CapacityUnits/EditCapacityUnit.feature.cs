@@ -174,8 +174,8 @@ this.FeatureBackground();
 #line 23
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
- testRunner.Then("\'The capacity unit details have been updated\' text is displayed on success inline" +
-                    " tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The capacity unit details have been updated\' text is displayed on inline success" +
+                    " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
  testRunner.Then("\'Capacity Unit Settings upd\' content is displayed in the \'Capacity Unit\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
@@ -192,8 +192,8 @@ this.FeatureBackground();
 #line 31
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.Then("\'The capacity unit details have been updated\' text is displayed on success inline" +
-                    " tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The capacity unit details have been updated\' text is displayed on inline success" +
+                    " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 33
  testRunner.When("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34

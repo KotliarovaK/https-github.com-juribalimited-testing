@@ -127,6 +127,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [When(@"User clicks following checkboxes from Column Settings panel for the '(.*)' column:")]
+        public void WhenUserClicksFollowingCheckboxesFromColumnSettingsPanelForTheColumn(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+            page.OpenColumnSettings(columnName);
+
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            menu.ColumnButton.Click();
+
+            foreach (var row in table.Rows)
+            {
+                menu.GetColumnCheckbox(row["checkboxes"]);
+            }
+        }
+
         [Then(@"'(.*)' checkbox is checked in the filter dropdown for the '(.*)' column")]
         public void ThenCheckboxIsCheckedInTheFilterDropdownForTheColumn(string checkboxName, string columnName)
         {
@@ -466,7 +483,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectCheckboxOnTheColumnSettingsPanel(string checkboxName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.GetCheckboxByName(checkboxName);
+            page.GetColumnCheckbox(checkboxName);
         }
 
         //TODO change check logic for checkboxes

@@ -409,8 +409,8 @@ this.FeatureBackground();
 #line 81
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
- testRunner.Then("\'1 device will be added, 1 user will be added\' text is displayed on warning inlin" +
-                    "e tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'1 device will be added, 1 user will be added\' text is displayed on inline tip ba" +
+                    "nner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83
  testRunner.Then("multiselect is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 84
@@ -420,8 +420,8 @@ this.FeatureBackground();
 #line 86
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
- testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on succ" +
-                    "ess inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
+                    "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 88
  testRunner.Then("\'UPDATE ALL CHANGES\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 89
@@ -576,7 +576,7 @@ this.FeatureBackground();
 #line 129
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 130
- testRunner.Then("\'2 users will be added\' text is displayed on warning inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2 users will be added\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 131
  testRunner.Then("multiselect is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 132
@@ -586,8 +586,8 @@ this.FeatureBackground();
 #line 134
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 135
- testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on succ" +
-                    "ess inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
+                    "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 136
  testRunner.Then("\'UPDATE ALL CHANGES\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 137

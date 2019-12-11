@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User selects 'TestList0A78U9' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then Page with 'Projects' header is displayed to user
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -103,12 +103,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User enters "TestProject1" text in the Search field for "Project" column
 	When User clicks on 'TestProject1' cell from 'Project' column
 	Then Page with 'TestProject1' header is displayed to user
-	Then 'The scope for this project refers to a deleted list, this must be updated before proceeding' text is displayed on warning inline tip banner
+	Then 'The scope for this project refers to a deleted list, this must be updated before proceeding' text is displayed on inline tip banner
 	Then 'UPDATE ALL CHANGES' button is disabled
 	When User navigates to the 'Scope Details' left menu item
 	And User selects 'All Users' in the 'Scope' dropdown with wait
 	And User navigates to the 'Scope Changes' left menu item
-	Then inline tip banner is not displayed
+	Then inline success banner is not displayed
+	Then inline info banner is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @DAS13973 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
@@ -173,7 +174,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User changes Project Short Name to "NewShort4875"
 #"UPDATE" Action button has been removed
 	#And User clicks 'UPDATE' button 
-	#Then 'The project details have been updated' text is displayed on success inline tip banner
+	#Then 'The project details have been updated' text is displayed on inline success banner
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid

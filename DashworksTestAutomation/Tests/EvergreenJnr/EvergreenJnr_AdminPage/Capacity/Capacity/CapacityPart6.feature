@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	When User checks 'Enforce capacity on project object page' checkbox
 	When User checks 'Enforce capacity on self service pages' checkbox
 	When User clicks 'UPDATE' button 
-	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
+	Then 'The project capacity details have been updated' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15585
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears

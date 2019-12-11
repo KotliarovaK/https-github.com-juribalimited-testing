@@ -972,8 +972,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{checkbox}' checkbox is not disabled");
         }
 
-        [Then(@"'(.*)' checkbox is not disabled")]
-        public void ThenCheckboxIsNotDisabled(string checkbox)
+        [Then(@"'(.*)' checkbox is enabled")]
+        public void ThenCheckboxIsEnabled(string checkbox)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.IsCheckboxEnabled(checkbox),

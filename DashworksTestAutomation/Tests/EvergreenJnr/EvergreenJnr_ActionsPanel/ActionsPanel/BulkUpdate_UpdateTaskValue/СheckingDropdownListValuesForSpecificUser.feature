@@ -31,7 +31,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	Then 'UPDATE' button is not disabled
 	And 'CANCEL' button is not disabled
 	When User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'CANCEL' button
@@ -206,13 +206,13 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'CANCEL' button
 	Then inline tip banner is not displayed
 	When User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
@@ -270,7 +270,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User selects '<NewTeam>' option from 'Team' autocomplete
 	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button

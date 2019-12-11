@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User enters 'TestProject7' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks newly created object link
 	Then Page with 'TestProject7' header is displayed to user
 	When User navigates to the 'Scope Changes' left menu item
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	And User enters 'TestProject14283' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks newly created object link
 	Then Page with 'TestProject14283' header is displayed to user
 	When User selects 'Dependant List Filter - BROKEN LIST' in the 'Scope' dropdown
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	Then Page with 'Create Project' subheader is displayed to user
 	When User enters 'TestProject9' text to 'Project Name' textbox
 	And User clicks 'CREATE' button
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks newly created object link
 	Then Page with 'TestProject9' header is displayed to user
 	When User navigates to the 'Scope Changes' left menu item
