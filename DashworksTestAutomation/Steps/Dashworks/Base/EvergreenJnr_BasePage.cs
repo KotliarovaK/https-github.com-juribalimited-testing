@@ -422,6 +422,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
         }
 
+        [Then(@"validation message '(.*)' is displayed  below '(.*)' filed")]
+        public void ThenValidationMessageIsDisplayedBelowFiled(string validationMessage, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(fieldName).Click();
+            Verify.AreEqual(validationMessage, page.ValidationFieldMessage.GetText(),
+                $"Incorrect error message is displayed in the '{validationMessage}' field");
+        }
+
         [Then(@"Add button for '(.*)' textbox is disabled")]
         public void ThenAddButtonForTextboxIsDisabled(string fieldName)
         {

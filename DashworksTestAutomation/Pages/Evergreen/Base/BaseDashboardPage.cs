@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
-        //TODO revisit this 
+        //TODO revisit this
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
@@ -83,6 +83,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-option/span[@class='mat-option-text']")]
+        public IWebElement ValidationFieldMessage { get; set; }
 
         #region All Lists dropdown
 

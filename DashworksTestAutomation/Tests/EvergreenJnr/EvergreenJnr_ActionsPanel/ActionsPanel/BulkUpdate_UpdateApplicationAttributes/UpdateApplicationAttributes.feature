@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	When User refreshes agGrid
 	Then 'UNKNOWN' content is displayed in the 'Sticky Compliance' column
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19252 @Not_Ready
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19252 @DAS18463 @Not_Ready
 #Waiting for "Update application attributes" on the automation
 Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateRationalisationDDLDisplay
 	When User clicks 'Applications' on the left-hand menu
@@ -96,6 +96,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateRationalisationDDLD
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
+	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 	Then following Values are displayed in the 'Rationalisation' dropdown:
 	| Options       |
 	| No change     |
@@ -151,8 +152,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForMailb
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19236
-Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardPath
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19236 @Not_Ready
+#Waiting for 'Target Application'
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardPathEvergreen
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -164,6 +166,40 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelec
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
 	When User enters '2' text to 'Target Application' textbox
-	Then 'Enter at least 3 characters' error message is displayed for 'Target Application' field
-	Then ' ' validation message is displayed for ' ' field
-	Then "Enter at least 3 characters" message is displayed below Global Search field
+	Then validation message 'Enter at least 3 characters' is displayed  below 'Target Application' filed
+	When User selects 'Starbase CodeWright 6.0BETA (107)' option from 'Target Application' autocomplete
+	When User enters 'xine-devel' text to 'Target Application' textbox
+	Then validation message 'No results found' is displayed  below 'Target Application' filed
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19236 @Not_Ready
+#Waiting for 'Target Application'
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardPath
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName   |
+	| CodeWright 6.0BETA |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Wise for Windows Installer 4.02 Evaluation' in the 'Target Application' autocomplete field and selects 'Wise for Windows Installer 4.02 Evaluation (162997)' value
+	When User enters 'xine-devel' text to 'Target Application' textbox
+	Then validation message 'No results found' is displayed  below 'Target Application' filed
+	When User enters 'Zune (03.01.0620.00)' text to 'Target Application' textbox
+	Then validation message 'No results found' is displayed  below 'Target Application' filed
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18463 @Not_Ready
+#Waiting for 'Target Application'
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdateRationalisationValidations
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName   |
+	| CodeWright 6.0BETA |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
