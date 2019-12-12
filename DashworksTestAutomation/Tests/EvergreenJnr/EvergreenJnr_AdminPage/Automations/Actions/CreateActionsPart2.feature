@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	#DAS18491
 	When User clicks content from "Action" column
 	#Actions content check
-	Then inline error banner is displayed
+	Then inline error banner is not displayed
 	Then '18432_Action' content is displayed in 'Action Name' textbox
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '[Project not found]' content is displayed in 'Project' textbox

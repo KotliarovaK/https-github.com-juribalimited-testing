@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsValueForDuplacatedAutomation
 	#Duplicate Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18705_Automation" text in the Search field for "Automation" column
-	When User clicks "Duplicate" option in Cog-menu for "18705_Automation" item on Admin page
+	When User clicks 'Duplicate' option in Cog-menu for '18705_Automation' item from 'Automation' column
 	When User enters "18705_Automation2" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
