@@ -124,33 +124,32 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User selects state 'true' for 'Offboard all associated users' checkbox
+	When User selects state 'false' for 'Offboard all associated users' checkbox
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User opens 'Owner' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Username" checkbox on the Column Settings panel
-	And User select "Display Name" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
+	| checkboxes   |
+	| Username     |
+	| Display Name |
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Domain       |
 	| Owner        |
-	When User opens 'Owner' column settings
-	And User select "Display Name" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
+	| checkboxes   |
+	| Display Name |
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User opens 'Owner' column settings
-	And User select "Username" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
+	| checkboxes |
+	| Username   |
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |

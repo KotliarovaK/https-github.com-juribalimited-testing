@@ -29,4 +29,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfter
 	When User selects 'ApplicationsDynamicList18376' in the 'Application Scope' dropdown with wait
 	When User navigates to the 'Scope Changes' left submenu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
-	Then inline error banner is displayed
+	Then inline error banner is not displayed

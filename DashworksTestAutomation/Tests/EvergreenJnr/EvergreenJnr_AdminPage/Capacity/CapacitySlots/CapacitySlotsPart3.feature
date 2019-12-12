@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some settings are not valid' text
 	When User enters '29 Oct 2018' text to 'Override End Date' datepicker
-	Then 'CREATE' button is not disabled
+	Then 'CREATE' button is disabled
 	When User selects 'SlotDAS13779' in the 'Slot' dropdown
 	And User enters '0' text to 'Capacity' textbox
 	And User clicks 'CREATE' button 

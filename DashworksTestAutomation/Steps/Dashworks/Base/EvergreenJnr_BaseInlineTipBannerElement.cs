@@ -52,6 +52,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Link
+
+        [Then(@"'(.*)' link is displayed on inline success banner")]
+        public void ThenLinkIsDisplayedOnInlineSuccessBanner(string link)
+        {
+            var page = _driver.NowAt<BaseInlineBannerElement>();
+            Verify.IsTrue(page.IsLinkDisplayed(MessageType.Success, link),
+                $"'{link}' link is not displayed on inline success banner");
+        }
+
+        #endregion
+
         #region Banner types display + text
 
         [Then(@"inline tip banner is not displayed")]
