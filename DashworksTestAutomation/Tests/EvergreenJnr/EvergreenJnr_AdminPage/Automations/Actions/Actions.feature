@@ -744,7 +744,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| DA17778        | 17778       | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
-	And User navigates to the 'Actions' left menu item
+	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks 'CREATE ACTION' button 
 	When User enters '17778 None' text to 'Action Name' textbox
