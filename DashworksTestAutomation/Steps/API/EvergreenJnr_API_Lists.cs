@@ -74,7 +74,6 @@ namespace DashworksTestAutomation.Steps.API
                 if (_driver.IsElementExists(activeList))
                 {
                     _driver.MoveToElement(activeList);
-
                 }
                 _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(activeList));
             }
