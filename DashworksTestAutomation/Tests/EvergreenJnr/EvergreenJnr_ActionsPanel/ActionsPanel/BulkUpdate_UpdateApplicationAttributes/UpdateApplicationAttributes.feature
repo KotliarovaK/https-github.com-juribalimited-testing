@@ -150,3 +150,20 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForMailb
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19236
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardPath
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName   |
+	| CodeWright 6.0BETA |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters '2' text to 'Target Application' textbox
+	Then 'Enter at least 3 characters' error message is displayed for 'Target Application' field
+	Then ' ' validation message is displayed for ' ' field
+	Then "Enter at least 3 characters" message is displayed below Global Search field

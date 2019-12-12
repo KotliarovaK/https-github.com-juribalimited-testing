@@ -651,6 +651,87 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardP" +
+            "ath")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS19236")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardPath()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardPathInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardPathInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelectedForwardP" +
+                    "ath", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_ActionsPanel",
+                        "BulkUpdate",
+                        "DAS19236"});
+#line 155
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 156
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 157
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 158
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table13.AddRow(new string[] {
+                        "CodeWright 6.0BETA"});
+#line 159
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table13, "When ");
+#line 162
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 163
+ testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 164
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 165
+ testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 166
+ testRunner.When("User enters \'2\' text to \'Target Application\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 167
+ testRunner.Then("\'Enter at least 3 characters\' error message is displayed for \'Target Application\'" +
+                    " field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 168
+ testRunner.Then("\' \' validation message is displayed for \' \' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 169
+ testRunner.Then("\"Enter at least 3 characters\" message is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
