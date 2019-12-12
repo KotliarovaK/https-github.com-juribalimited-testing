@@ -355,8 +355,8 @@ this.FeatureBackground();
 #line 66
  testRunner.When("User enters \"18705_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
- testRunner.When("User clicks \"Duplicate\" option in Cog-menu for \"18705_Automation\" item on Admin p" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' option in Cog-menu for \'18705_Automation\' item from \'Auto" +
+                    "mation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 68
  testRunner.When("User enters \"18705_Automation2\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69

@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17974_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17974_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17974_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17974_Automation" text in the Search field for "Automation" column
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17829_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17829_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17829_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User refreshes agGrid
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOpIdColumnInTheAutomationLog
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Mailboxes_Scope" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "Mailboxes_Scope" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for 'Mailboxes_Scope' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User opens 'Type' column settings
@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGri
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18265_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "18265_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '18265_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "59" text in the Search field for "Objects" column
