@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     internal class TabContent : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//mat-sidenav-content[@id='content']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-drawer-content[@id='content']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//table[@aria-label='Elements']")]

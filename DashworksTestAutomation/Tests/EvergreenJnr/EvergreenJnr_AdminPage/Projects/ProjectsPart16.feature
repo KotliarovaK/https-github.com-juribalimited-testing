@@ -238,13 +238,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
 	# added zeros to Project names to male sure they always on top of grid
 	When Project created via API and opened
-	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| 001Checkbox11758 | All Users | None            | Standalone Project |
 	And Project created via API and opened
-	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| 002Checkbox11758 | All Users | None            | Standalone Project |
 	And Project created via API and opened
-	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| 003Checkbox11758 | All Users | None            | Standalone Project |
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

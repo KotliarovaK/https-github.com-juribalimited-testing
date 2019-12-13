@@ -45,6 +45,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                     return InlineErrorElement;
                 case MessageType.Success:
                     return InlineSuccessElement;
+                case MessageType.Info:
+                    return InlineInfoElement;
                 default:
                     throw new Exception($"Unknown message type: {messageType.ToString()}");
             }
@@ -60,6 +62,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                     return InlineErrorSelector;
                 case MessageType.Success:
                     return InlineSuccessSelector;
+                case MessageType.Info:
+                    return InlineInfoSelector;
                 default:
                     throw new Exception($"Unknown message type: {messageType.ToString()}");
             }
@@ -104,8 +108,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             //Wait for banner with text
             Driver.WaitForElementToContainsText(GetInlineBanner(messageType), expectedText);
+
             //Check that exact text is displayed in the banner
-            return Driver.IsElementExists(By.XPath($"{GetInlineBannerSelector(messageType)}[text()='{expectedText}']"));
+            var condition =
+                Driver.IsElementExists(By.XPath($"{GetInlineBannerSelector(messageType)}//descendant-or-self::div[text()='{expectedText}']"));
+            return condition;
         }
 
         public bool IsSecondPartOfTextPresent(MessageType messageType, string expectedText)
@@ -146,6 +153,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public new void ClickButton(string buttonName)
         {
             throw new Exception("Not implemented in this page");
+        }
+
+        #endregion
+
+        #region Link
+
+        public IWebElement GetLinkByText(MessageType messageType, string text)
+        {
+            return GetLinkByText(text, GetInlineBannerSelector(messageType));
+        }
+
+        public bool IsLinkDisplayed(MessageType messageType, string text)
+        {
+            return IsLinkDisplayed(text, GetInlineBannerSelector(messageType));
         }
 
         #endregion

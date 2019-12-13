@@ -93,9 +93,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	And User navigates to newly created Slot
 	And User enters 'CAPACITYSLOTdas13789' text to 'Slot Name' textbox
 	And User enters 'das13779SLOT' text to 'Display Name' textbox
-	And User clicks 'UPDATE' button 
-	Then inline error banner is displayed
-	And 'The capacity slot details have been updated' text is displayed on inline success banner
+	And User clicks 'UPDATE' button
+	Then 'The capacity slot details have been updated' text is displayed on inline success banner
 	When User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
 	And User enters 'capacityunitDAS13789' text to 'Capacity Unit Name' textbox
@@ -103,9 +102,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	And User clicks 'CREATE' button 
 	And User clicks newly created object link
 	And User enters 'CAPACITYUINTdas13789' text to 'Capacity Unit Name' textbox
-	And User clicks 'UPDATE' button 
-	Then inline error banner is displayed
-	And 'The capacity unit details have been updated' text is displayed on inline success banner
+	And User clicks 'UPDATE' button
+	Then 'The capacity unit details have been updated' text is displayed on inline success banner
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13824 @DAS14250 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage

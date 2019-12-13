@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
-	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
+	When User clicks 'Edit' option in Cog-menu for '15427_Action1' item from 'Action' column
 	#Then Edit Action page is displayed to the User
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
@@ -102,14 +102,14 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	#When User clicks Export button on the Admin page
 	#Then User checks that file "Dashworks export" was downloaded
 	#Create Action
-	When User clicks "Move to top" option in Cog-menu for "Secont_Action" item on Admin page
+	When User clicks 'Move to top' option in Cog-menu for 'Secont_Action' item from 'Action' column
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Secont_Action   |
 	| First_Action    |
 	| Third_Action    |
 	| DAS15427_Action |
-	When User clicks "Move to bottom" option in Cog-menu for "First_Action" item on Admin page
+	When User clicks 'Move to bottom' option in Cog-menu for 'First_Action' item from 'Action' column
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Secont_Action   |
@@ -472,7 +472,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects 'Devices Task 1' option from 'Task' autocomplete
-	Then inline error banner is displayed
+	Then inline error banner is not displayed
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
@@ -658,7 +658,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
-	Then inline error banner is displayed
+	Then inline error banner is not displayed
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Complete' in the 'Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown

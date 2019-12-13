@@ -265,7 +265,8 @@ this.FeatureBackground();
 #line 63
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table4, "Then ");
 #line 70
- testRunner.When("User clicks \"Edit\" option in Cog-menu for \"15427_Action1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Edit\' option in Cog-menu for \'15427_Action1\' item from \'Action\' colu" +
+                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 72
  testRunner.Then("\'Edit Action\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 73
@@ -385,8 +386,8 @@ this.FeatureBackground();
  testRunner.Then("\'The automation action has been created\' text is displayed on inline success bann" +
                     "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 105
- testRunner.When("User clicks \"Move to top\" option in Cog-menu for \"Secont_Action\" item on Admin pa" +
-                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Move to top\' option in Cog-menu for \'Secont_Action\' item from \'Actio" +
+                    "n\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -401,8 +402,8 @@ this.FeatureBackground();
 #line 106
  testRunner.Then("Content in the \'Action\' column is equal to", ((string)(null)), table5, "Then ");
 #line 112
- testRunner.When("User clicks \"Move to bottom\" option in Cog-menu for \"First_Action\" item on Admin " +
-                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Move to bottom\' option in Cog-menu for \'First_Action\' item from \'Act" +
+                    "ion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -1514,7 +1515,7 @@ this.FeatureBackground();
 #line 474
  testRunner.When("User selects \'Devices Task 1\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 475
- testRunner.Then("inline error banner is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("inline error banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -2207,7 +2208,7 @@ this.FeatureBackground();
 #line 660
  testRunner.When("User selects \'Radio Rag Date Owner\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 661
- testRunner.Then("inline error banner is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("inline error banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 662
  testRunner.When("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 663

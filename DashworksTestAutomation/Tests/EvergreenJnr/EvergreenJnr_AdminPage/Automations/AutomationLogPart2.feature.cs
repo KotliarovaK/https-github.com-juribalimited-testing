@@ -164,7 +164,7 @@ this.FeatureBackground();
 #line 21
  testRunner.And("User selects \'Radiobutton Date App Task\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.Then("inline error banner is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("inline error banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
  testRunner.When("User selects \'No change\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
@@ -188,8 +188,8 @@ this.FeatureBackground();
 #line 34
  testRunner.And("User enters \"17684_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And("User clicks \"Run now\" option in Cog-menu for \"17684_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17684_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36
  testRunner.When("\'17684_Automation\' automation run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
@@ -338,8 +338,8 @@ this.FeatureBackground();
 #line 78
  testRunner.When("User enters \"17636_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17636_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17636_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 81
@@ -484,8 +484,8 @@ this.FeatureBackground();
 #line 120
  testRunner.When("User enters \"17642_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 121
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17642_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17642_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 122
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
@@ -629,8 +629,8 @@ this.FeatureBackground();
 #line 161
  testRunner.When("User enters \"17643_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 162
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17643_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17643_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 163
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 164
@@ -776,8 +776,8 @@ this.FeatureBackground();
 #line 203
  testRunner.When("User enters \"17799_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 204
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17799_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17643_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 205
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 206
@@ -947,8 +947,8 @@ this.FeatureBackground();
 #line 255
  testRunner.When("User enters \"17678_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 256
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17678_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17678_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 257
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 258
@@ -1019,8 +1019,8 @@ this.FeatureBackground();
 #line 290
  testRunner.When("User enters \"17678_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 291
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17678_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17678_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 292
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 293
@@ -1190,8 +1190,8 @@ this.FeatureBackground();
 #line 343
  testRunner.When("User enters \"17682_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 344
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17682_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17682_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 345
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 346
@@ -1359,8 +1359,8 @@ this.FeatureBackground();
  testRunner.And("User enters \"17682_Automation_2\" text in the Search field for \"Automation\" column" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 395
- testRunner.And("User clicks \"Run now\" option in Cog-menu for \"17682_Automation_2\" item on Admin p" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17682_Automation_2\' item from \'Auto" +
+                    "mation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 396
  testRunner.And("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 397
@@ -1537,8 +1537,8 @@ this.FeatureBackground();
  testRunner.When("User enters \"17678_Automation_1\" text in the Search field for \"Automation\" column" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 449
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17678_Automation_1\" item on Admin p" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17678_Automation_1\' item from \'Auto" +
+                    "mation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 450
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 451
@@ -1766,8 +1766,8 @@ this.FeatureBackground();
 #line 504
  testRunner.When("User enters \"17430_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 505
- testRunner.When("User clicks \"Run now\" option in Cog-menu for \"17430_Automation\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'17430_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 506
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 507

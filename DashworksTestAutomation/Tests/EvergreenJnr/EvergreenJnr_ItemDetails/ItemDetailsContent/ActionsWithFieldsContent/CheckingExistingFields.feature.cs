@@ -1079,18 +1079,20 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 211
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Fields"});
+            table9.AddRow(new string[] {
+                        "Project Count"});
+            table9.AddRow(new string[] {
+                        "Evergreen Bucket"});
+            table9.AddRow(new string[] {
+                        "Evergreen Capacity Unit"});
+            table9.AddRow(new string[] {
+                        "Evergreen Ring"});
 #line 212
- testRunner.Then("field with \"Project Count\" text is displayed in expanded tab on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 213
- testRunner.And("field with \"Evergreen Bucket\" text is displayed in expanded tab on the Details Pa" +
-                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 214
- testRunner.And("field with \"Evergreen Capacity Unit\" text is displayed in expanded tab on the Det" +
-                    "ails Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 215
- testRunner.And("field with \"Evergreen Ring\" text is displayed in expanded tab on the Details Page" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 216
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table9, "Then ");
+#line 218
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1140,77 +1142,77 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS18423"});
-#line 225
+#line 227
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 226
- testRunner.When("User navigates to the \'Device\' details page for \'2B35YERQEMAYHYUE\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 227
- testRunner.Then("Details page for \"2B35YERQEMAYHYUE\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 228
+ testRunner.When("User navigates to the \'Device\' details page for \'2B35YERQEMAYHYUE\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 229
+ testRunner.Then("Details page for \"2B35YERQEMAYHYUE\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 230
  testRunner.When("User navigates to the \'Specification\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Fields"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Manufacturer"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Model"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Device Type"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Device Format"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "OS Full Name"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Operating System"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "OS Version Number"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "OS Architecture"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Service Pack or Build"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "OS Branch"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "OS Servicing State"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Serial Number"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "First Seen Date"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Last Seen Date"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Build Date"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Boot Up Date"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Warranty Date"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Memory (GB)"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "HDD Count"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Target Drive Free Space (GB)"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "BIOS Manufacturer"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "BIOS Name"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "BIOS Version"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Secure Boot Enabled"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "TPM Enabled"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "TPM Version"});
-#line 229
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table9, "Then ");
-#line 258
+#line 231
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table10, "Then ");
+#line 260
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1262,36 +1264,36 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS18850",
                         "Not_Run"});
-#line 262
+#line 264
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 263
+#line 265
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                     "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 264
+#line 266
  testRunner.Then("Details page for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 265
+#line 267
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Fields"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Project Count"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Evergreen Capacity Unit"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "In Catalog"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Criticality"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Rationalisation"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Hide From End User"});
-#line 266
- testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table10, "Then ");
+#line 268
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

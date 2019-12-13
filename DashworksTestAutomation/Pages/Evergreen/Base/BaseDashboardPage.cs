@@ -256,9 +256,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Link
 
-        public IWebElement GetLinkByText(string text, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
-            var selector = By.XPath($".//span[contains(@class, 'inline-link')]//a[text()='{text}']");
+            var selector = By.XPath($"{parentElementSelector}//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             if (!Driver.IsElementDisplayed(selector, waitTime))
             {
                 throw new Exception($"Link with text '{text}' was not displayed");
@@ -267,11 +267,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        public bool IsLinkDisplayed(string text)
+        public bool IsLinkDisplayed(string text, string parentElementSelector = "")
         {
             try
             {
-                return GetLinkByText(text, WebDriverExtensions.WaitTime.Short).Displayed();
+                return GetLinkByText(text, parentElementSelector, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch (Exception)
             {

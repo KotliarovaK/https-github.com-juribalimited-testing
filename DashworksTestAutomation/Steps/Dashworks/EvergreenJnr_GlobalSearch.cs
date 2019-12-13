@@ -80,6 +80,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        //TODO Remove this
         [Then(@"User clicks on ""(.*)"" search result")]
         public void ThenUserClicksOnSearchResult(string searchText)
         {
