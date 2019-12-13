@@ -829,7 +829,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Device Type\" filter where type is \"Equals\" with added column and Lookup" +
                     " option", ((string)(null)), table19, "When ");
 #line 213
- testRunner.When("User waits for three seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 214
  testRunner.When("User create dynamic list with \"ADevicesList17592\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 215

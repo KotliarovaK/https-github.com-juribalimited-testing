@@ -194,12 +194,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User waits for three seconds")]
-        public void UserWaitsForThreeSeconds()
-        {
-            Thread.Sleep(3000);
-        }
-
         [Then(@"Delete and Cancel buttons are available in the warning message")]
         public void ThenDeleteAndCancelButtonsAreAvailableInTheWarningMessage()
         {
