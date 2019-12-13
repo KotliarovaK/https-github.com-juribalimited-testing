@@ -203,3 +203,78 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdat
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18516 @Not_Ready
+#Waiting for 'Rationalisation' dropdown
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesWhenUpdateButtonIsClicked
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                |
+	| Evergreen Rationalisation |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName   |
+	| CodeWright 6.0BETA |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
+	And User clicks 'UPDATE' button 
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 update has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	#And User perform search by "Z11REX196H34MG"
+	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column
+		#Revert Changes
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
+	And User clicks 'UPDATE' button 
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 update has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then 'UNCATEGORISED' content is displayed in the 'Evergreen Rationalisation' column
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18516 @Not_Ready
+#Waiting for 'Rationalisation' dropdown
+Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdateButtonIsClicked
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                |
+	| Evergreen Rationalisation |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName          |
+	| Image Express Utility 2.0 |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'PlexTools Professional V2.21' in the 'Target Application' autocomplete field and selects 'PlexTools Professional V2.21' value
+	And User clicks 'UPDATE' button 
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 update has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	#And User perform search by "Z11REX196H34MG"
+	Then 'FORWARD PATH' content is displayed in the 'Evergreen Rationalisation' column
+		#Revert Changes
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
+	And User clicks 'UPDATE' button 
+	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
+	When User clicks 'UPDATE' button
+	Then Success message with "1 update has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then 'UNCATEGORISED' content is displayed in the 'Evergreen Rationalisation' column
