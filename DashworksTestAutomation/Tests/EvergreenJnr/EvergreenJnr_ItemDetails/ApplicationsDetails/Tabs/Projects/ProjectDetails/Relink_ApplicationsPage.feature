@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 	#waiting for the relink process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then Details page for "Microsoft SQL Server 2012" item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field | Data                                                       |
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	And User clicks 'RESYNC' button on popup
 	Then 'Application successfully resynced' text is displayed on inline success banner
 	#waiting for the resync process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then User verifies data in the fields on details page
 	| Field | Data                      |
 	| Name  | Microsoft SQL Server 2012 |
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	And User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 	#waiting for the relink process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 
 	#ready only on 'terminator'
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18769 @DAS19124

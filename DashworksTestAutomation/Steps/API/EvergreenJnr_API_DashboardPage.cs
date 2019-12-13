@@ -24,16 +24,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
     public class EvergreenJnr_API_DashboardPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly UsedUsers _usedUsers;
-        private readonly Dashboards _dashboard;
+        private readonly DTO.RuntimeVariables.Dashboards _dashboard;
         private readonly RestWebClient _client;
         private readonly UserDto _user;
 
-        private EvergreenJnr_API_DashboardPage(RemoteWebDriver driver, UsedUsers usedUsers, Dashboards dashboard,
+        private EvergreenJnr_API_DashboardPage(RemoteWebDriver driver, DTO.RuntimeVariables.Dashboards dashboard,
             RestWebClient client, UserDto user)
         {
             _driver = driver;
-            _usedUsers = usedUsers;
             _dashboard = dashboard;
             _client = client;
             _user = user;
@@ -82,49 +80,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             _driver.Navigate()
                 .GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{id}");
             _driver.WaitForDataLoading(60);
-        }
-
-        [AfterScenario("Cleanup", Order = 10)]
-        public void DeleteNewlyCreatedDashboard()
-        {
-            if (!_dashboard.Value.Any())
-                return;
-
-            List<UserDto> noDupes = _usedUsers.Value.GroupBy(x => x.Username).Select(y => y.FirstOrDefault()).ToList();
-
-            foreach (UserDto user in noDupes)
-            {
-                var restClient = new RestClient(UrlProvider.Url);
-
-                //Get cookies
-                var client = new HttpClientHelper(user, restClient);
-
-                // Add cookies to the RestClient to authorize it
-                _client.Value.AddCookies(client.CookiesJar);
-
-                foreach (DashboardDto dashboardDto in _dashboard.Value)
-                {
-                    try
-                    {
-                        var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{dashboardDto.DashboardId}";
-
-                        var request = new RestRequest(requestUri);
-                        request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                        request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                        request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                        var response = _client.Value.Delete(request);
-
-                        if (response.StatusCode != HttpStatusCode.OK)
-                        {
-                            Console.WriteLine($"Unable to delete dashboard with '{dashboardDto.DashboardName}' name: {response.StatusCode}");
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine($"Unable to delete dashboard with '{dashboardDto.DashboardName}' name: {e}");
-                    }
-                }
-            }
         }
     }
 }

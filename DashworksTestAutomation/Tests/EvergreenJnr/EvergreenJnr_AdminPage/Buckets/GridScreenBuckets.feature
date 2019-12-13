@@ -23,8 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then Content is present in the table on the Admin page
 	Then There are no errors in the browser console
-	When User opens 'Default' column settings
-	When User clicks "True" checkbox from boolean filter on the Admin page
+	When User clicks 'True' checkbox from String Filter in the filter dropdown for the 'Default' column
 	Then There are no errors in the browser console
 	When User opens 'Project' column settings
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page

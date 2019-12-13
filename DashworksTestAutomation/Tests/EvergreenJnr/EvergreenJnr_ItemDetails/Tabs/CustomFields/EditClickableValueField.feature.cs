@@ -357,7 +357,8 @@ this.FeatureBackground();
 #line 54
  testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
- testRunner.When("User clicks \"Edit\" option in Cog-menu for \"FlDAS17584_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Edit\' option in Cog-menu for \'FlDAS17584_1\' item from \'Custom Field\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
  testRunner.And("User save \'UPDATED_UPD\' text in clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
@@ -365,7 +366,8 @@ this.FeatureBackground();
 #line 59
  testRunner.And("\'UPDATED_UPD\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.When("User clicks \"Edit\" option in Cog-menu for \"FlDAS17584_1\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Edit\' option in Cog-menu for \'FlDAS17584_1\' item from \'Custom Field\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
  testRunner.And("User clicks Cancel button for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63

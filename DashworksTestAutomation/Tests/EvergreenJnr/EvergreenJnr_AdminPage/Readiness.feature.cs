@@ -1216,7 +1216,8 @@ this.FeatureBackground();
 #line 258
  testRunner.Then("\"1\" content is displayed for \"Task Values Count\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 259
- testRunner.When("User clicks \"Change to ready\" option in Cog-menu for \"GREY\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Change to ready\' option in Cog-menu for \'GREY\' item from \'Readiness\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 260
  testRunner.Then("\'click here to view the Grey readiness\' link is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 261
@@ -1235,8 +1236,8 @@ this.FeatureBackground();
 #line 267
  testRunner.Then("\"1\" content is displayed for \"Task Values Count\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 268
- testRunner.When("User clicks \"Change to not ready\" option in Cog-menu for \"GREY\" item on Admin pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Change to not ready\' option in Cog-menu for \'GREY\' item from \'Readin" +
+                    "ess\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 269
  testRunner.Then("\"FALSE\" content is displayed for \"Ready\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 270
@@ -1244,8 +1245,8 @@ this.FeatureBackground();
 #line 271
  testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 272
- testRunner.When("User clicks \"Change to not ready\" option in Cog-menu for \"GREEN\" item on Admin pa" +
-                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Change to not ready\' option in Cog-menu for \'GREY\' item from \'Readin" +
+                    "ess\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 273
  testRunner.Then("\'click here to view the Green readiness\' link is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 274
@@ -1258,10 +1259,11 @@ this.FeatureBackground();
 #line 277
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 278
- testRunner.When("User clicks \"Change to ready\" option in Cog-menu for \"GREEN\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Change to ready\' option in Cog-menu for \'GREY\' item from \'Readiness\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 279
- testRunner.When("User clicks \"Make default for applications\" option in Cog-menu for \"AMBER\" item o" +
-                    "n Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Make default for applications\' option in Cog-menu for \'AMBER\' item f" +
+                    "rom \'Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 280
  testRunner.Then("\'click here to view the Amber readiness\' link is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 281
@@ -1274,8 +1276,8 @@ this.FeatureBackground();
 #line 284
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 285
- testRunner.When("User clicks \"Make default for applications\" option in Cog-menu for \"BLOCKED\" item" +
-                    " on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Make default for applications\' option in Cog-menu for \'BLOCKED\' item" +
+                    " from \'Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 286
  testRunner.When("User opens \'Readiness\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 287
@@ -1432,7 +1434,7 @@ this.FeatureBackground();
 #line 316
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 317
- testRunner.And("User enters \"Havoc (Big Data)\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"E.Project Device\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 318
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 319
@@ -1444,7 +1446,7 @@ this.FeatureBackground();
 #line 322
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 323
- testRunner.And("Next data \'Red\\t\\tRed\\tFalse\\tFalse\\t50\\t1\\t0\\t0\\t4\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Next data \'RED\\t\\tRed\\tFalse\\tFalse\\t1\\t0\\t0\\t0\\t4\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 324
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 325
@@ -1454,7 +1456,7 @@ this.FeatureBackground();
 #line 327
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 328
- testRunner.And("Next data \'Amber\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Next data \'AMBER\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

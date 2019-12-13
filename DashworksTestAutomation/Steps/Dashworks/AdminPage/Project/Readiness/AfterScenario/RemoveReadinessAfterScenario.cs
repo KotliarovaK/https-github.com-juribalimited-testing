@@ -66,7 +66,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness.Af
                     var response = _client.Value.Put(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
+                    {
                         Logger.Write($"Unable to delete '{readiness.ReadinessName}' Readiness via API");
+                    }
                 }
                 catch (Exception e)
                 {
