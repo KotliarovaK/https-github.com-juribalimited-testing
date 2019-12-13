@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
-	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
+	When User clicks 'Edit' option in Cog-menu for '15427_Action1' item from 'Action' column
 	#Then Edit Action page is displayed to the User
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
@@ -102,14 +102,14 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	#When User clicks Export button on the Admin page
 	#Then User checks that file "Dashworks export" was downloaded
 	#Create Action
-	When User clicks "Move to top" option in Cog-menu for "Secont_Action" item on Admin page
+	When User clicks 'Move to top' option in Cog-menu for 'Secont_Action' item from 'Action' column
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Secont_Action   |
 	| First_Action    |
 	| Third_Action    |
 	| DAS15427_Action |
-	When User clicks "Move to bottom" option in Cog-menu for "First_Action" item on Admin page
+	When User clicks 'Move to bottom' option in Cog-menu for 'First_Action' item from 'Action' column
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Secont_Action   |
