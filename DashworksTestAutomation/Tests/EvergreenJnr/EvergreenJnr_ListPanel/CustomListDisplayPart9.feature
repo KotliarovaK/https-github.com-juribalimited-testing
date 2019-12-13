@@ -91,5 +91,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatConfirmationDeletionMessageDoesntDis
 	Then Cog menu is displayed to the user
 	When User clicks 'Delete' option in opened Cog-menu
 	Then "list will be permanently deleted" message is displayed in the lists panel
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then "list will be permanently deleted" message is displayed in the lists panel

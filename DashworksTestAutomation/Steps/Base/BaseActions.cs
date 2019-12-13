@@ -1,4 +1,6 @@
-﻿using DashworksTestAutomation.Base;
+﻿using System;
+using System.Threading;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
@@ -59,6 +61,17 @@ namespace DashworksTestAutomation.Steps.Base
         public void ThenSelectedTextIsHighlighted(string textSelected)
         {
             Utils.Verify.That(_driver.GetSelectedText(), Is.EqualTo(textSelected));
+        }
+
+        [When(@"User waits for '(.*)' seconds")]
+        public void WhenUserWaitsForSeconds(int seconds)
+        {
+            if (seconds > 10)
+            {
+                throw new Exception("Unable to wait longer than 10 seconds");
+            }
+
+            Thread.Sleep(seconds * 1000);
         }
     }
 }

@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	When User clicks 'UPDATE' button
 	Then Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
 	#wait for the process to complete
-	When User waits for three seconds
+	When User waits for '3' seconds
 	When User refreshes agGrid
 	Then 'Havoc(BigD: Stage DAS12864_0 \ Task DAS12864_0' column contains following content
 	| Content |
