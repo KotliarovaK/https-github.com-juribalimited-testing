@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 var content = response.Content;
                 var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(content);
 
-                SelfService.Id = selfServiceObjResponse.Id;
+                SelfService.ServiceId = selfServiceObjResponse.ServiceId;
                 SelfService.ScopeId = selfServiceObjResponse.ScopeId;
                 SelfService.StartDate = selfServiceObjResponse.StartDate;
                 SelfService.EndDate = selfServiceObjResponse.EndDate;
@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         {
             foreach (SelfServiceDto SelfService in _selfServices.Value)
             {
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{SelfService.Id}";
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{SelfService.ServiceId}";
                 var response = _client.Value.Get(requestUri.GenerateRequest());
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))

@@ -9,8 +9,8 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 {
     class SelfServiceDto
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
+        [JsonProperty("serviceId")]
+        public int ServiceId { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
             SelfServiceDto obj = value as SelfServiceDto;
 
             return !Object.ReferenceEquals(null, obj)
-                && int.Equals(Id, obj.Id)
+                && int.Equals(ServiceId, obj.ServiceId)
                 && String.Equals(Name, obj.Name)
                 && String.Equals(ServiceIdentifier, obj.ServiceIdentifier)
                 && String.Equals(Enabled, obj.Enabled)
