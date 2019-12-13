@@ -469,7 +469,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetGroupedRowByContent(string groupedValue)
         {
-            var selector = By.XPath($"{GroupedValue}[text()='{groupedValue}']/..");
+            var selector = By.XPath($"{GroupedValue}//div[text()='{groupedValue}']/ancestor::span[contains(@class,'ag-cell-wrapper')]");
             if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
                 return Driver.FindElement(selector);
             else

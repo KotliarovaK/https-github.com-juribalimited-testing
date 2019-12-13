@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	Then Page with 'Import Project' subheader is displayed to user
 	When User selects "IncorrectFile.zip" file to upload on Import Project page
 	And User selects 'Import to new project' in the 'Import' dropdown
-	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
+	And User enters 'TestProjectNameDAS12370' text to 'Project Name' textbox
 	When User clicks 'IMPORT PROJECT' button
 	Then 'Selected file is not in a valid format' text is displayed on inline error banner
 	When User selects "CorrectFile_DAS12370.xml" file to upload on Import Project page
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	Then Page with 'Import Project' header is displayed to user
 	When User selects "1803_Rollout.xml" file to upload on Import Project page
 	And User selects 'Import to new project' in the 'Import' dropdown
-	And User enters "DAS15989_TestProject" in the Project Name field on Import Project page
+	And User enters 'DAS15989_TestProject' text to 'Project Name' textbox
 	When User clicks 'IMPORT PROJECT' button
 	When User clicks newly created object link
 	Then Page with 'DAS15989_TestProject' header is displayed to user
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWit
 	Then Page with 'Import Project' header is displayed to user
 	When User selects "Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml" file to upload on Import Project page
 	And User selects 'Import to new project' in the 'Import' dropdown
-	And User enters "DAS16089_TestProject" in the Project Name field on Import Project page
+	And User enters 'DAS16089_TestProject' text to 'Project Name' textbox
 	When User clicks 'IMPORT PROJECT' button
 	Then 'Your file doesn't contain Readiness values' text is displayed on inline error banner
 

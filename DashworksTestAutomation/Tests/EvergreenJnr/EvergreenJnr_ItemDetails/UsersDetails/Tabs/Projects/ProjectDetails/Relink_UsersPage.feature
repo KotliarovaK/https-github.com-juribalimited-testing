@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	When User clicks 'RELINK' button on popup
 	Then 'User successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then Details page for "DSF4350513" item is displayed to the user
 	And following content is displayed on the Details Page
 	| Title | Value     |
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	And User clicks 'RESYNC' button on popup
 	Then 'User successfully resynced' text is displayed on inline success banner
 	#waiting for the RESYNC process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then following content is displayed on the Details Page
 	| Title | Value      |
 	| Name  | DSF4350513 |
@@ -52,4 +52,4 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	And User clicks 'RELINK' button on popup
 	Then 'User successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds

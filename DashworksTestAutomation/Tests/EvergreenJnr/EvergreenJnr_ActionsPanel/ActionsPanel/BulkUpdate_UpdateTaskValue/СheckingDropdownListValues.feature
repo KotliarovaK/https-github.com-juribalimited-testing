@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	And User clicks datepicker icon 
 	And User selects '6' day in the Datepicker
 	#Added wait as we need some time fo datepicker to be updated
-	And User waits for three seconds
+	And User waits for '3' seconds
 	And User clicks datepicker icon 
 	Then '5' day is displayed green in the Datepicker
 	And Datepicker has tooltip with '8' rows for '5' day

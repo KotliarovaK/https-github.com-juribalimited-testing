@@ -638,7 +638,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Device (Saved List)\" filter where type is \"In list\" with following Look" +
                     "up Value and Association:", ((string)(null)), table15, "When ");
 #line 143
- testRunner.When("User waits for three seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
  testRunner.When("User create dynamic list with \"AApplicationsList17551\" name on \"Applications\" pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
