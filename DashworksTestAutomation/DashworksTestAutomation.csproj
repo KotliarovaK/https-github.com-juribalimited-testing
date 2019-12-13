@@ -388,6 +388,7 @@
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_LeftMenuNavigation.cs" />
+    <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\AfterScenario\RemoveDashboardAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_WidgetPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\ProjectsApi.cs" />
@@ -450,7 +451,7 @@
     <Compile Include="Steps\Dashworks\Login\EvergreenJnr_Login.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Logout.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_LeftHandMenuNavigation.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
+    <Compile Include="Steps\Dashworks\CustomList\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
     <Compile Include="Steps\Senior\Senior_PMObject.cs" />
