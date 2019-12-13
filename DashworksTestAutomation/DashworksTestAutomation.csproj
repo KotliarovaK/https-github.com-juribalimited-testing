@@ -1150,6 +1150,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataInTable.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvergreenDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\TopBar.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2250,6 +2255,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_GridActions\DataInTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
