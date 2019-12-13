@@ -440,6 +440,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12863")]
         [NUnit.Framework.CategoryAttribute("DAS13266")]
         [NUnit.Framework.CategoryAttribute("DAS13284")]
@@ -476,6 +477,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ActionsPanel",
+                        "BulkUpdate",
                         "DAS12863",
                         "DAS13266",
                         "DAS13284",

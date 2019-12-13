@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -99,6 +100,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
         }
 
+        //TODO remove this and replace by something from BaseInlineBannerElement
         [When(@"User clicks newly created object link")]
         public void WhenUserClicksNewlyCreatedObjectLink()
         {

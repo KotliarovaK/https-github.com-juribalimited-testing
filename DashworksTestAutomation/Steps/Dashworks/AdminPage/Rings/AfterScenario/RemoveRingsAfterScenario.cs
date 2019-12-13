@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -39,7 +40,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                     var request = requestUri.GenerateRequest();
                     request.AddParameter("selectedObjectsList", ring.GetId());
 
-                    _client.Value.Put(request);
+                    var response = _client.Value.Put(request);
+
+                    if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                    {
+                        Logger.Write($"Some error occurs during Rings deleting: {response.StatusCode}, {response.ErrorMessage}");
+                    }
                 }
                 catch (Exception e)
                 {

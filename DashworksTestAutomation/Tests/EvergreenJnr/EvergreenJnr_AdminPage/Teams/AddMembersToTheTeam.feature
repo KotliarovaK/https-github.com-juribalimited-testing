@@ -26,14 +26,14 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	| Migration Phase 3 Team |
 	| Retail Team            |
 	And User clicks 'CREATE' button 
-	Then 'The team has been created' text is displayed on success inline tip banner
+	Then 'The team has been created' text is displayed on inline success banner
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column
 	When User selects all rows on the grid
 	Then 'Actions' dropdown is displayed
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'You cannot delete the default team' text is displayed on warning inline tip banner
+	Then 'You cannot delete the default team' text is displayed on inline tip banner
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
 	When User enters 'TestTeam88' text to 'Team Name' textbox
@@ -44,14 +44,14 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	| Objects           |
 	| automation_admin1 |
 	And User clicks 'CREATE' button 
-	Then 'The team has been created' text is displayed on success inline tip banner
+	Then 'The team has been created' text is displayed on inline success banner
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'FALSE' content is displayed in the 'Default' column
 	When User clicks content from "Team" column
 	And User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 
-	Then 'The team was successfully updated' text is displayed on success inline tip banner
+	Then 'The team was successfully updated' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13254 @DAS13421 @Teams @Cleanup
 Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	| automation_admin3 |
 	| eugene            |
 	And User clicks 'ADD USERS' button 
-	Then 'The selected users have been added' text is displayed on success inline tip banner
+	Then 'The selected users have been added' text is displayed on inline success banner
 	When User click on "Username" column header on the Admin page
 	Then data in table is sorted by "Username" column in ascending order on the Admin page
 	When User click on "Username" column header on the Admin page
@@ -90,16 +90,16 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then 'Actions' dropdown is displayed
 	When User selects 'Remove Members' in the 'Actions' dropdown
 	When User clicks 'REMOVE' button
-	Then warning inline tip banner is displayed
+	Then inline warning banner is displayed
 	When User clicks 'REMOVE' button on inline tip banner
-	Then 'The selected user has been removed' text is displayed on success inline tip banner
+	Then 'The selected user has been removed' text is displayed on inline success banner
 	When User enters "automation_admin2" text in the Search field for "Username" column
 	And User selects all rows on the grid
 	And User selects 'Add to another team' in the 'Actions' dropdown
 	And User clicks 'CONTINUE' button 
 	When User selects 'Team 1' option from 'Select a new team' autocomplete without search
 	And User clicks 'ADD USERS' button 
-	Then 'The selected user was added to team Team 1' text is displayed on success inline tip banner
+	Then 'The selected user was added to team Team 1' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @DAS16130 @Teams @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	| automation_admin2 |
 	| automation_admin3 |
 	And User clicks 'ADD USERS' button 
-	Then 'The selected users have been added' text is displayed on success inline tip banner
+	Then 'The selected users have been added' text is displayed on inline success banner
 	When User enters "admin1" text in the Search field for "Username" column
 	And User selects all rows on the grid
 	And User selects 'Add to another team' in the 'Actions' dropdown
@@ -151,4 +151,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorAppearsAfterCreatingTeamHavingC
 	Then Chips for 'Search' field are not displayed
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
-	Then 'The team has been created' text is displayed on success inline tip banner
+	Then 'The team has been created' text is displayed on inline success banner

@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
 	And User clicks 'DELETE' button on inline tip banner
-	Then 'The selected slot has been deleted' text is displayed on success inline tip banner
+	Then 'The selected slot has been deleted' text is displayed on inline success banner
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS12921
@@ -46,12 +46,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDelet
 	| User Slot 1      |
 	When User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'The selected slot will be deleted, do you want to proceed?' text is displayed on warning inline tip banner
+	Then 'The selected slot will be deleted, do you want to proceed?' text is displayed on inline tip banner
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
 	| User Slot 2      |
 	And User clicks 'DELETE' button 
-	Then 'The selected slots will be deleted, do you want to proceed?' text is displayed on warning inline tip banner
+	Then 'The selected slots will be deleted, do you want to proceed?' text is displayed on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage

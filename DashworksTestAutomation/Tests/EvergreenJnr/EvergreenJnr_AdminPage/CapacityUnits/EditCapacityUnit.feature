@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User enters 'upd' text to 'Description' textbox
 	And User updates the "Default Unit" checkbox state
 	And User clicks 'UPDATE' button 
-	Then 'The capacity unit details have been updated' text is displayed on success inline tip banner
+	Then 'The capacity unit details have been updated' text is displayed on inline success banner
 	Then 'Capacity Unit Settings upd' content is displayed in the 'Capacity Unit' column
 	When User enters "Capacity Unit Settings upd" text in the Search field for "Capacity Unit" column
 	Then 'TRUE' content is displayed in the 'Default' column
@@ -29,6 +29,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User clicks content from "Capacity Unit" column
 	And User updates the "Default Unit" checkbox state
 	And User clicks 'UPDATE' button 
-	Then 'The capacity unit details have been updated' text is displayed on success inline tip banner
+	Then 'The capacity unit details have been updated' text is displayed on inline success banner
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then 'TRUE' content is displayed in the 'Default' column

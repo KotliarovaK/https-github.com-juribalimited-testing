@@ -41,8 +41,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
                 var response = _client.Value.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
+                {
                     throw new Exception(
                         $"Unable to create '{customField.FieldName}' Custom Field via API : {response.ErrorMessage}");
+                }
             }
         }
     }

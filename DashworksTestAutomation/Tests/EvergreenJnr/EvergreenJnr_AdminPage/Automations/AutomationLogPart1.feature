@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then '1 automation started,' text is displayed on success inline tip banner
+	Then '1 automation started,' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks Group By button on the Admin page and selects "Automation" value
 	Then Cog menu is not displayed on the Admin page
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then '1 automation started,' text is displayed on success inline tip banner
+	Then '1 automation started,' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "D16974_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -154,9 +154,9 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete2" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for 'DELAY - do not delete2' item from 'Automation' column
 	When User clicks refresh button in the browser
-	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete2" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for 'DELAY - do not delete2' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "DELAY - do not delete2" text in the Search field for "Automation" column
 	Then "AUTOMATION IS ALREADY RUNNING" content is displayed for "Outcome" column
@@ -232,7 +232,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then '1 automation started,' text is displayed on success inline tip banner
+	Then '1 automation started,' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "<AutomationName>" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column

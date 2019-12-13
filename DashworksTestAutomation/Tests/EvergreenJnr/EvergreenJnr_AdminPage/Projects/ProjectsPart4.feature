@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	| Backburner (2.1.2.0)                             |
 	When User clicks 'UPDATE ALL CHANGES' button 
 	And User clicks 'UPDATE PROJECT' button 
-	Then '6 objects queued for onboarding, 0 objects offboarded' text is displayed on success inline tip banner
+	Then '6 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 16817 selected)" is displayed to the user in the Project Scope Changes section
@@ -132,5 +132,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemove
 	When User enters "TestName11729" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Page with 'TestName11729' header is displayed to user
-	Then 'The scope for this project refers to a deleted list, this must be updated before proceeding' text is displayed on warning inline tip banner
+	Then 'The scope for this project refers to a deleted list, this must be updated before proceeding' text is displayed on inline tip banner
 	And There are no errors in the browser console

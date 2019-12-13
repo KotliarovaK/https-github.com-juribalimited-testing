@@ -106,11 +106,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
-            Driver.WaitForElementsToBeDisplayed(SubMenuTopItems);
+            Driver.WhatForElementToBeExists(SubMenuTopItems.First());
 
             if (SubMenuTopItems.Any(x => x.GetAttribute("class").Contains("selected")))
             {
-                return SubMenuTopItems.FirstOrDefault(x => x.IsElementSelected());
+                var element = SubMenuTopItems.FirstOrDefault(x => x.IsElementSelected());
+
+                if (!element.Displayed())
+                {
+                    return element;
+                }
+                else
+                {
+                    Driver.MoveToElement(element);
+                    Driver.WaitForElementToBeDisplayed(element);
+                    return element;
+                }
+
             }
 
             Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)),

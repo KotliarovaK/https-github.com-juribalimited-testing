@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	Then 'CANCEL' button is not disabled
 	Then 'SAVE AND CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @DAS19135 @Cleanup @Not_Ready
 #Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestoringValues
 	When User creates new Automation via API and open it
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	#Actions grid check
 	Then "Sticky Compliance" content is displayed for "Task or Field" column
 	Then "Update application attributes" content is displayed for "Type" column
-	Then "GREEN" content is displayed for "Value" column
+	Then "Green" content is displayed for "Value" column
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -83,16 +83,17 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
-	And User enters '18834_Action' text to 'Action Name' textbox
-	And User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User enters '18834_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Empty' in the 'Sticky Compliance' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18834_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "18834_Automation" item on Admin page
-	When '18834_Automation' automation '18834_Action' action run has finished
+	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
+	When '18834_Automation' automation '18834_Action' action run has finished
 	When User clicks refresh button in the browser
 	When User enters "18834_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -117,8 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User selects 'IGNORE' in the 'Sticky Compliance' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
-	When User enters "18834_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "18834_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "18834_Automation" text in the Search field for "Automation" column

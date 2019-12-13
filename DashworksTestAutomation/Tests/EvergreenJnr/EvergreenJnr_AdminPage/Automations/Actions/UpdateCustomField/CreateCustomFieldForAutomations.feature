@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldForDisabledCus
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
 	When User adds 'TEST' value from 'Value' textbox
 	When User clicks 'CREATE' button
-	Then 'The automation action has been created' text is displayed on success inline tip banner
+	Then 'The automation action has been created' text is displayed on inline success banner
 	#Create Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsColumnContainsNullOfObjectsForF
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18464_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "18464_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '18464_Automation' item from 'Automation' column
 	#Check Automation Log
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser

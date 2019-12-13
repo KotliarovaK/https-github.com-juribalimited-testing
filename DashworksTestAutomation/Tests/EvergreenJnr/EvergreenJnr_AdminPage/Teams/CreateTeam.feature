@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	When User enters 'TestTeam' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
-	Then 'The team has been created' text is displayed on success inline tip banner
+	Then 'The team has been created' text is displayed on inline success banner
 	When User clicks 'CREATE TEAM' button 
 	Then Page with 'Create Team' subheader is displayed to user
 	When User enters 'TestTeam' text to 'Team Name' textbox
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 
-	Then 'The team was successfully updated' text is displayed on success inline tip banner
+	Then 'The team was successfully updated' text is displayed on inline success banner
 	When User clicks 'Teams' header breadcrumb
 	When User enters "99770" text in the Search field for "Team" column
 	When User clicks content from "Team" column
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown
 	When User clicks 'DELETE' button
-	Then 'You cannot delete the default team' text is displayed on warning inline tip banner
+	Then 'You cannot delete the default team' text is displayed on inline tip banner
 	When User clicks Reset Filters button on the Admin page
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'FALSE' content is displayed in the 'Default' column
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User navigates to the 'Team Settings' left menu item
 	And User clicks Default Team checkbox
 	And User clicks 'UPDATE' button 
-	Then 'The team was successfully updated' text is displayed on success inline tip banner
+	Then 'The team was successfully updated' text is displayed on inline success banner
 	When User clicks 'Teams' header breadcrumb
 	When User enters "My Team" text in the Search field for "Team" column
 	Then 'TRUE' content is displayed in the 'Default' column
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User enters ' 99770' text to 'Team Name' textbox
 	And User enters "test" in the Team Description field
 	And User clicks 'CREATE' button 
-	Then 'A team already exists with this name' text is displayed on error inline tip banner
+	Then 'A team already exists with this name' text is displayed on inline error banner
 	When User enters "99770" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User selects 'Delete' in the 'Actions' dropdown

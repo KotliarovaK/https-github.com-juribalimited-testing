@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User navigates to the 'Details' left menu item
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
-	Then 'Removing German will delete all translations for this language in this project' text is displayed on warning inline tip banner
+	Then 'Removing German will delete all translations for this language in this project' text is displayed on inline tip banner
 	When User clicks 'CANCEL' button on inline tip banner
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language

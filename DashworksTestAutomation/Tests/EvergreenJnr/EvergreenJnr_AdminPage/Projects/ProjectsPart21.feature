@@ -89,13 +89,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User enters '13510TestProject' text to 'Project Name' textbox
 	And User selects 'All Devices' option from 'Scope' autocomplete
 	When User clicks 'CREATE PROJECT' button 
-	Then 'The project has been created' text is displayed on success inline tip banner
+	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks newly created object link
 	Then Page with '13510TestProject' header is displayed to user
 	When User navigates to the 'Capacity' left menu item
 	And User selects 'Use project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
-	Then 'The project capacity details have been updated' text is displayed on success inline tip banner
+	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	When User navigates to the 'Units' left menu item
 	Then Blue banner with "This project uses evergreen capacity units" text is displayed
 	Then 'CREATE PROJECT CAPACITY UNIT' button is not displayed
