@@ -387,6 +387,7 @@
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_LeftMenuNavigation.cs" />
+    <Compile Include="Steps\Dashworks\Dashboards\AfterScenario\RemoveDashboardAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_WidgetPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\ProjectsApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\EvergreenJnr_BucketsPage.cs" />
