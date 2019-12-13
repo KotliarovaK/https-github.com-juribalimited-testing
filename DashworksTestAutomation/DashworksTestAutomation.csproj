@@ -121,6 +121,7 @@
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Readiness\ReadinessDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
     <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\RunNowAutomationStartTime.cs" />
     <Compile Include="DTO\RuntimeVariables\SectionsAndWidgetsCount.cs" />
+    <Compile Include="DTO\RuntimeVariables\SelfService\SelfServices.cs" />
     <Compile Include="DTO\RuntimeVariables\SeniorCustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\Slots.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\TeamDefaultId.cs" />
@@ -372,6 +374,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\RemoveRingsAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\SetDefaultRingAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\AfterScenario\RemoveSlotAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\Api\CreateSlotViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\CreateSlot.cs" />
