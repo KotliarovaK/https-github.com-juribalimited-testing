@@ -132,3 +132,22 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	| ColumnName        |
 	| Sticky Compliance |
 	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesNotShownForNoApplicationScopedAutomation
+	When User creates new Automation via API and open it
+	| AutomationName        | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 18966_User_Automation | 18966       | true   | false              | All Users | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	And User enters '18966_Action' text to 'Action Name' textbox
+	Then following Values are displayed in the 'Action Type' dropdown:
+	| Value               |
+	| Update path         |
+	| Update task value   |
+	| Update custom field |
+	Then following Values are not displayed in the 'Action Type' dropdown:
+	| Options                       |
+	| Update application attributes |
