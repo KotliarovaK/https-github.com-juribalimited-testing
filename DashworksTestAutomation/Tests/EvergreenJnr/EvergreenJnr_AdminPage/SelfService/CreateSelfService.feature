@@ -20,10 +20,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 	Then 'Enable self service portal' checkbox is enabled
 	Then 'Enable self service portal' checkbox is unchecked
 	When User clicks 'CREATE' button
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @API
-Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateAndGetSelfServiceViaApi
-	When User creates Self Service via API
-	| Id | Name                   | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId |
-	| 1  | TestSelfService_name99 | id191879          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       |
-	Then User checks the created Self Service via API
