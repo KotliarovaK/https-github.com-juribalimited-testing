@@ -19,14 +19,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
     public class RemoveAutomationActionAfterScenario : SpecFlowContext
     {
         private readonly AutomationActions _automationActions;
-        private readonly DTO.RuntimeVariables.Automations _automations;
         private readonly RestWebClient _client;
 
-        private RemoveAutomationActionAfterScenario(DTO.RuntimeVariables.Automations automations, AutomationActions automationActions, RestWebClient client)
+        private RemoveAutomationActionAfterScenario(AutomationActions automationActions, RestWebClient client)
         {
             _automationActions = automationActions;
             _client = client;
-            _automations = automations;
         }
 
         [AfterScenario("Cleanup", Order = 10)]

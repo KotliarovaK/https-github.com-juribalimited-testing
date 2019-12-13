@@ -23,11 +23,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_DashboardsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly Dashboards _dashboard;
+        private readonly DTO.RuntimeVariables.Dashboards _dashboard;
         private readonly SectionsAndWidgetsCount _sectionsAndWidgets;
         private readonly UserDto _user;
 
-        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, Dashboards dashboard, SectionsAndWidgetsCount sectionsAndWidgets,
+        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, DTO.RuntimeVariables.Dashboards dashboard, SectionsAndWidgetsCount sectionsAndWidgets,
             UserDto user)
         {
             _driver = driver;
