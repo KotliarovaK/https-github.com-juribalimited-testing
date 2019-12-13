@@ -127,7 +127,7 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Id",
+                        "ServiceId",
                         "Name",
                         "ServiceIdentifier",
                         "Enabled",

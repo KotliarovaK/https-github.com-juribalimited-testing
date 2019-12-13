@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             _client = client;
         }
 
-        //| ScopeId | Name | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate | EndDate | SelfServiceURL | AllowAnonymousUsers | ScopeId |
+        //| ServiceId | Name | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate | EndDate | SelfServiceURL | AllowAnonymousUsers | ScopeId |
         [When(@"User creates Self Service via API")]
         public void WhenUserCreatesSelfServiceViaApi(Table table)
         {
