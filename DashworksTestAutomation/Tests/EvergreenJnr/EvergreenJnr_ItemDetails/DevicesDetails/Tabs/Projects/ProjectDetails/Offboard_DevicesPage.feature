@@ -117,14 +117,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User selects state 'true' for 'Offboard all associated users' checkbox
+	When User selects state 'false' for 'Offboard all associated users' checkbox
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User selects state 'false' for 'Offboard all associated users' checkbox
+	When User selects state 'true' for 'Offboard all associated users' checkbox
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |

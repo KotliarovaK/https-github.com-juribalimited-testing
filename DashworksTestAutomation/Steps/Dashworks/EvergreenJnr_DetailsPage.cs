@@ -136,7 +136,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
 
-            menu.ColumnButton.Click();
+            if (!menu.ColumnPanelInColumnSettings.Displayed())
+                menu.ColumnButton.Click();
 
             foreach (var row in table.Rows)
             {
