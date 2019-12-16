@@ -153,7 +153,7 @@ this.FeatureBackground();
 #line 9
  testRunner.When("User creates Self Service via API", ((string)(null)), table1, "When ");
 #line 12
- testRunner.Then("User checks the created Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User checks the created Self Service via APIs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
