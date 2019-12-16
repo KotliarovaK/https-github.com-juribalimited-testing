@@ -861,7 +861,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18865")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab()
         {
             System.Exception lastException = null;
@@ -896,17 +895,16 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18865",
-                        "Not_Ready"});
-#line 236
+                        "DAS18865"});
+#line 235
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 237
+#line 236
  testRunner.When("User navigates to the \'Application\' details page for \'Axosoft OnTime 2005 Enterpr" +
                     "ise Server\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 238
+#line 237
  testRunner.Then("Details page for \"Axosoft OnTime 2005 Enterprise Server\" item is displayed to the" +
                     " user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -916,12 +914,12 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "Sticky Compliance",
                         ""});
-#line 239
+#line 238
  testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table13, "Then ");
-#line 242
+#line 241
  testRunner.When("User navigates to the \'Application\' details page for \'Standard SDK for Windows CE" +
                     " .NET 4.2\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 243
+#line 242
  testRunner.Then("Details page for \"Standard SDK for Windows CE .NET 4.2\" item is displayed to the " +
                     "user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -931,7 +929,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "Sticky Compliance",
                         "IGNORE"});
-#line 244
+#line 243
  testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -946,7 +944,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18849")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -981,19 +978,18 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18849",
-                        "Not_Ready"});
-#line 250
+                        "DAS18849"});
+#line 248
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 251
+#line 249
  testRunner.When("User navigates to the \'Application\' details page for \'ACDSee for Windows 95\' item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 252
+#line 250
  testRunner.Then("Details page for \"ACDSee for Windows 95\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 253
+#line 251
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1002,14 +998,14 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "Hide From End User",
                         "FALSE"});
-#line 254
+#line 252
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table15, "Then ");
-#line 257
+#line 255
  testRunner.When("User selects \'TRUE\' in the dropdown for the \'Hide From End User\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 258
+#line 256
  testRunner.Then("\'Hide from end user successfully changed\' text is displayed on inline success ban" +
                     "ner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 259
+#line 257
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1018,11 +1014,11 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Hide From End User",
                         "TRUE"});
-#line 260
+#line 258
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table16, "Then ");
-#line 263
+#line 261
  testRunner.When("User selects \'FALSE\' in the dropdown for the \'Hide From End User\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 264
+#line 262
  testRunner.Then("\'Hide from end user successfully changed\' text is displayed on inline success ban" +
                     "ner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1032,7 +1028,7 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "Hide From End User",
                         "FALSE"});
-#line 265
+#line 263
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table17, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1047,7 +1043,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18852")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirementsForAnalysisEditorRole()
         {
             System.Exception lastException = null;
@@ -1082,14 +1077,13 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18852",
-                        "Not_Ready"});
-#line 271
+                        "DAS18852"});
+#line 268
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 272
+#line 269
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1098,16 +1092,16 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "TestBucketAuto",
                         "123456"});
-#line 273
+#line 270
   testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table18, "When ");
-#line 276
+#line 273
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 277
+#line 274
  testRunner.When("User navigates to the \'Application\' details page for \'ACDSee for Windows 95\' item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 278
+#line 275
  testRunner.Then("Details page for \"ACDSee for Windows 95\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 279
+#line 276
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1116,7 +1110,7 @@ this.FeatureBackground();
                         "TRUE"});
             table19.AddRow(new string[] {
                         "FALSE"});
-#line 280
+#line 277
  testRunner.Then("following Values are displayed in the dropdown for the \'In Catalog\' field:", ((string)(null)), table19, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1131,7 +1125,7 @@ this.FeatureBackground();
                         "Not Important"});
             table20.AddRow(new string[] {
                         "Uncategorised"});
-#line 284
+#line 281
  testRunner.Then("following Values are displayed in the dropdown for the \'Criticality\' field:", ((string)(null)), table20, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1140,20 +1134,20 @@ this.FeatureBackground();
                         "TRUE"});
             table21.AddRow(new string[] {
                         "FALSE"});
-#line 291
+#line 288
  testRunner.Then("following Values are displayed in the dropdown for the \'Hide From End User\' field" +
                     ":", ((string)(null)), table21, "Then ");
-#line 296
+#line 292
  testRunner.When("User clicks on edit button for \'Evergreen Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 297
+#line 293
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 298
+#line 294
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 299
+#line 295
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 300
+#line 296
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 301
+#line 297
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
