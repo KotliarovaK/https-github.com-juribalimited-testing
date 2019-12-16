@@ -311,6 +311,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavi
 	When User clicks Profile in Account Dropdown
 	Then User sees 'You have unsaved changes. Are you sure you want to leave the page?' text in alert on Edit Widget page
 	When User clicks 'YES' button in Unsaved Changes alert
-	When User waits for three seconds
-	When User waits for three seconds
+	When User waits for '3' seconds
+	When User waits for '3' seconds
 	Then Profile page is displayed to user

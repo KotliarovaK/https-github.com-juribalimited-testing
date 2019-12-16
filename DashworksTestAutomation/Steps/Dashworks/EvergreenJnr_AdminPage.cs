@@ -443,14 +443,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User enters ""(.*)"" in the Project Name field on Import Project page")]
-        public void ThenUserEntersInTheProjectNameFieldOnImportProjectPage(string projectName)
-        {
-            var page = _driver.NowAt<ImportProjectPage>();
-            page.ProjectNameField.SendKeys(projectName);
-            _projects.Value.Add(projectName);
-        }
-
         [When(@"User enters ""(.*)"" in the Team Description field")]
         public void WhenUserEntersInTheTeamDescriptionField(string descriptionText)
         {

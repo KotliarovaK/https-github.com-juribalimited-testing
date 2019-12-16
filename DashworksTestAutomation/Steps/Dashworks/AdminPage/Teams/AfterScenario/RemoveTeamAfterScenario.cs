@@ -49,7 +49,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
                     var response = _client.Value.Put(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
+                    {
                         Logger.Write($"Unable to Delete '{team.TeamName}' Team via API");
+                    }
                 }
                 catch (Exception e)
                 {

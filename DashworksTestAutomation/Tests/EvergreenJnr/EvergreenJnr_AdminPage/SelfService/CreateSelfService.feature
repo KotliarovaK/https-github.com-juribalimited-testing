@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Service' left menu item
-	Then Page with 'Self Service' header is displayed to user
+	Then Page with 'Create Self Service' header is displayed to user
 	When User clicks 'CREATE SELF SERVICE' button
 	Then Page with 'Create Self Service' header is displayed to user
 	Then There are no errors in the browser console

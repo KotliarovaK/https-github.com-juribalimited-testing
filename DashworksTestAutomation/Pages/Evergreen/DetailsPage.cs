@@ -23,6 +23,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string EditButton = ".//*[text()='{0}']//ancestor::tr//span[@class='editIcon']";
 
+        private string FieldContent = ".//td//span[text()='{0}']//ancestor::tr//td//*[contains(text(),'{0}')]";
+
         [FindsBy(How = How.XPath, Using = "//div[@class='mat-drawer-inner-container']")]
         public IWebElement TabContainer { get; set; }
 
@@ -236,18 +238,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
-
-        public IWebElement GetFieldToOpenTheTableByName(string fieldName)
+        public IWebElement GetCompareContentOnTheDetailsPage(string title, string value, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Short)
         {
-            var selector = By.XPath($"//div[@class='application-category-title']//span[contains(text(), '{fieldName}')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetCompareContentOnTheDetailsPage(string title, string value)
-        {
-            var selector = By.XPath($".//td//span[text()='{title}']//ancestor::tr/td//span[text()='{value}']");
-            Driver.WaitForElementToBeDisplayed(selector);
+            var selector = By.XPath(string.Format(FieldContent, title, value));
+            if (!Driver.IsElementDisplayed(selector, wait))
+                throw new Exception($"'{value}' value is not displayed for '{title}' title");
+            Driver.WaitForElementToBeEnabled(selector);
             return Driver.FindElement(selector);
         }
 
