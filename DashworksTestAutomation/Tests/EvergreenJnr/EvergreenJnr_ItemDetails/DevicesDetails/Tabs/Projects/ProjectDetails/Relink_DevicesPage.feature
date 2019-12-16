@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
 	#waiting for the RELINK process to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	When User clicks "Sherri R. Bautista" link on the Details Page
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 

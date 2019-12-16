@@ -128,13 +128,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13733 @DAS14682 @DAS11565 @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13733 @DAS14682 @DAS11565 @Projects @Cleanup
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicatesInProjectTasksError
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User clicks 'IMPORT PROJECT' button 
-	#DAS11565
-	#Then 'Import Task to Request Type relationships' checkbox is displayed
 	Then 'Import Task to Request Type relationships' checkbox is displayed
 	Then 'Import Mail Templates' checkbox is displayed
 	Then 'Import Mail Template to Task Relationships' checkbox is displayed
@@ -145,7 +143,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	#DAS11565
 	When User selects "DAS_13733_Duplicates_in_project_tasks.xml" file to upload on Import Project page
 	And User selects 'Import to new project' in the 'Import' dropdown
-	And User enters "TestProjectDAS13733" in the Project Name field on Import Project page
+	When User enters 'TestProjectDAS13733' text to 'Project Name' textbox
 	And User checks following checkboxes:
 	| CheckboxesToBeClicked |
 	| Import Readiness      |
@@ -154,7 +152,5 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	When User selects "DAS_13733_Valid_file.xml" file to upload on Import Project page
 	And User clicks 'IMPORT PROJECT' button 
 	Then Page with 'Projects' header is displayed to user
-	And 'The project has been imported, click here to view the TestProjectDAS13733 project' text is displayed on inline success banner
-	When User enters "TestProjectDAS13733" text in the Search field for "Project" column
-	And User selects all rows on the grid
-	And User removes selected item
+	Then 'The project has been imported' text is displayed on inline success banner
+	Then 'click here to view the  TestProjectDAS13733 project' link is displayed on inline success banner

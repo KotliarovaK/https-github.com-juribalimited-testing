@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
-	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
+	When User clicks 'Edit' option in Cog-menu for '15427_Action1' item from 'Action' column
 	#Then Edit Action page is displayed to the User
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
@@ -102,14 +102,14 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	#When User clicks Export button on the Admin page
 	#Then User checks that file "Dashworks export" was downloaded
 	#Create Action
-	When User clicks "Move to top" option in Cog-menu for "Secont_Action" item on Admin page
+	When User clicks 'Move to top' option in Cog-menu for 'Secont_Action' item from 'Action' column
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Secont_Action   |
 	| First_Action    |
 	| Third_Action    |
 	| DAS15427_Action |
-	When User clicks "Move to bottom" option in Cog-menu for "First_Action" item on Admin page
+	When User clicks 'Move to bottom' option in Cog-menu for 'First_Action' item from 'Action' column
 	Then Content in the 'Action' column is equal to
 	| Content         |
 	| Secont_Action   |
@@ -744,7 +744,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| DA17778        | 17778       | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
-	And User navigates to the 'Actions' left menu item
+	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks 'CREATE ACTION' button 
 	When User enters '17778 None' text to 'Action Name' textbox

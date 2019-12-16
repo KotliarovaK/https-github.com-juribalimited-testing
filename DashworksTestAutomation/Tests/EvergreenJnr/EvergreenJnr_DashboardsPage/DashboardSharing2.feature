@@ -210,7 +210,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
     | SelectedValues |
     | Mobile         |
-	When User waits for three seconds
+	When User waits for '3' seconds
 	When User create dynamic list with "ADevicesList17592" name on "Devices" page
 	Then "ADevicesList17592" list is displayed to user
 	When User clicks the List Details button

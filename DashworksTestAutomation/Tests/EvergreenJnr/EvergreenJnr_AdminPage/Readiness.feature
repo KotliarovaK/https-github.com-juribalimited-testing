@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to ready" option in Cog-menu for "GREY" item on Admin page
+	When User clicks 'Change to ready' option in Cog-menu for 'GREY' item from 'Readiness' column
 	Then 'click here to view the Grey readiness' link is displayed
 	Then 'The readiness has been updated' and ', changes might not take effect immediately' texts are displayed on inline success banner
 	When User clicks newly created object link
@@ -265,24 +265,24 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "TRUE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to not ready" option in Cog-menu for "GREY" item on Admin page
+	When User clicks 'Change to not ready' option in Cog-menu for 'GREY' item from 'Readiness' column
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
 	When User clicks Reset Filters button on the Admin page
-	When User clicks "Change to not ready" option in Cog-menu for "GREEN" item on Admin page
+	When User clicks 'Change to not ready' option in Cog-menu for 'GREY' item from 'Readiness' column
 	Then 'click here to view the Green readiness' link is displayed
 	Then 'The readiness has been updated' and ', changes might not take effect immediately' texts are displayed on inline success banner
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 
-	When User clicks "Change to ready" option in Cog-menu for "GREEN" item on Admin page
-	When User clicks "Make default for applications" option in Cog-menu for "AMBER" item on Admin page
+	When User clicks 'Change to ready' option in Cog-menu for 'GREY' item from 'Readiness' column
+	When User clicks 'Make default for applications' option in Cog-menu for 'AMBER' item from 'Readiness' column
 	Then 'click here to view the Amber readiness' link is displayed
 	Then 'The readiness has been updated' and ', changes might not take effect immediately' texts are displayed on inline success banner
 	When User clicks newly created object link
 	Then 'Update Readiness' page subheader is displayed to user
 	When User clicks 'CANCEL' button 
-	When User clicks "Make default for applications" option in Cog-menu for "BLOCKED" item on Admin page
+	When User clicks 'Make default for applications' option in Cog-menu for 'BLOCKED' item from 'Readiness' column
 	When User opens 'Readiness' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Ready" checkbox on the Column Settings panel
@@ -314,18 +314,18 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
-	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
+	And User enters "E.Project Device" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	When User right clicks on 'RED' cell from 'Readiness' column
 	And User selects 'Copy row' option in context menu
 	Then There are no errors in the browser console
-	And Next data 'Red\t\tRed\tFalse\tFalse\t50\t1\t0\t0\t4' is copied
+	And Next data 'RED\t\tRed\tFalse\tFalse\t1\t0\t0\t0\t4' is copied
 	When User clicks refresh button in the browser
 	When User right clicks on 'AMBER' cell from 'Readiness' column
 	And User selects 'Copy cell' option in context menu
 	Then There are no errors in the browser console
-	And Next data 'Amber' is copied
+	And Next data 'AMBER' is copied
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720 @DAS15720 @DAS16653 @DAS16617
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader

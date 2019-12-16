@@ -13,9 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'action-container')]/h2")]
         public IWebElement ImportProjectFormTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder=\"Project Name\"]")]
-        public IWebElement ProjectNameField { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-option ng-star-inserted')]/span")]
         public IList<IWebElement> DropdownOptions { get; set; }
 

@@ -68,9 +68,14 @@ namespace DashworksTestAutomation.Steps.API
             //Add created list to context
             _listsDetails.AddList(listName, listId);
             var list = _driver.NowAt<CustomListElement>();
+            var activeList = list.GetActiveList();
             try
             {
-                _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(list.GetActiveList()));
+                if (_driver.IsElementExists(activeList))
+                {
+                    _driver.MoveToElement(activeList);
+                }
+                _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(activeList));
             }
             catch (Exception e)
             {
@@ -231,9 +236,14 @@ namespace DashworksTestAutomation.Steps.API
             //Add created list to context
             _listsDetails.AddList(listName, listId);
             var list = _driver.NowAt<CustomListElement>();
+            var activeList = list.GetActiveList();
             try
             {
-                _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(list.GetActiveList()));
+                if (!_driver.IsElementDisplayed(activeList))
+                {
+                    _driver.MoveToElement(activeList);
+                }
+                _driver.ExecuteAction(() => _driver.WaitForElementToBeDisplayed(activeList));
             }
             catch (Exception e)
             {

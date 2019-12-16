@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| Object ID  |
 	When User clicks "61097" link on the Details Page
 	#waiting for the switching process to Senior page to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	When User navigates to the 'Mailbox Project Summary' left submenu item
 	And User clicks "Mailbox Evergreen Capacity Project" link on the Details Page
 	#waiting for the switching process to Senior page to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| Object ID  |
 	When User clicks "66461" link on the Details Page
 	#waiting for the switching process to Senior page to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
 	And User click back button in the browser
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And User navigates to the 'Device Project Summary' left submenu item
 	And User clicks "Windows 7 Migration (Computer Scheduled Project)" link on the Details Page
 	#waiting for the switching process to Senior page to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 	And User click back button in the browser
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| Object ID  |
 	When User clicks "11176" link on the Details Page
 	#waiting for the switching process to Senior page to be completed
-	When User waits for three seconds
+	When User waits for '3' seconds
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 

@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17683_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17683_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17683_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17683_Automation" text in the Search field for "Automation" column
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	#Check updated Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17683_Automation" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "17683_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for '17683_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17683_Automation" text in the Search field for "Automation" column
@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	And User enters "DAS17859_Automation" text in the Search field for "Automation" column
-	And User clicks "Run now" option in Cog-menu for "DAS17859_Automation" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for 'DAS17859_Automation' item from 'Automation' column
 	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "DAS17859_Automation" text in the Search field for "Automation" column
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	And User enters "DAS17859_Aut_Test" text in the Search field for "Automation" column
-	And User clicks "Run now" option in Cog-menu for "DAS17859_Aut_Test" item on Admin page
+	When User clicks 'Run now' option in Cog-menu for 'DAS17859_Aut_Test' item from 'Automation' column
 	And User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	And User enters "DAS17859_Aut_Test" text in the Search field for "Automation" column

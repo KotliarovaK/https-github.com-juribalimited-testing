@@ -12,6 +12,7 @@ using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.AfterScenario;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TechTalk.SpecFlow;
@@ -19,17 +20,13 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
 {
     [Binding]
-    internal class ProjectsApi : SpecFlowContext
+    internal class ProjectsApi : RemoveProjectAfterScenario
     {
         private readonly RemoteWebDriver _driver;
-        private readonly DTO.RuntimeVariables.Projects _projects;
-        private readonly RestWebClient _client;
 
-        public ProjectsApi(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects, RestWebClient client)
+        public ProjectsApi(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects, RestWebClient client) : base(client, projects)
         {
             _driver = driver;
-            _projects = projects;
-            _client = client;
         }
 
         // table example
@@ -89,42 +86,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
         public void WhenUserRemovesNewProjectsViaApi()
         {
             DeleteNewlyCreatedProject();
-        }
-
-        [AfterScenario("Cleanup")]
-        public void DeleteNewlyCreatedProject()
-        {
-            if (!_projects.Value.Any())
-                return;
-
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
-
-            foreach (var projectName in _projects.Value)
-            {
-                try
-                {
-                    if (string.IsNullOrEmpty(projectName))
-                        continue;
-
-                    var projectId = DatabaseHelper.GetProjectId(projectName);
-
-                    var request = new RestRequest(requestUri);
-
-                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                    request.AddParameter("selectedObjectsList", projectId);
-
-                    var response = _client.Value.Post(request);
-
-                    if (response.StatusCode != HttpStatusCode.OK)
-                        Logger.Write($"Unable to execute request. \r\nStatus code: {response.StatusCode}URI: {requestUri}\r\nError message: {response.ErrorMessage}");
-                }
-                catch (Exception e)
-                {
-                    Logger.Write($"Error during removing '{projectName}' Project: {e}");
-                }
-            }
         }
 
         private string GetCreateProjectRequestScopeProperty(string scope)
