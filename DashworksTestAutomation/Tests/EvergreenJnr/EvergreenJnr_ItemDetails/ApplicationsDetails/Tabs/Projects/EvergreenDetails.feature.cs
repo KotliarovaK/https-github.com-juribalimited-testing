@@ -379,12 +379,13 @@ this.FeatureBackground();
 #line 75
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
- testRunner.Then("\'675, 676\' content is not displayed in \'Application\' autocomplete after search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 77
+ testRunner.Then("\'Music Visualizer Library 1.0\' content is not displayed in \'Application\' autocomp" +
+                    "lete after search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 79
  testRunner.When("User enters \'Microsoft Office Simplified Chinese Support\' in the \'Application\' au" +
                     "tocomplete field and selects \'Microsoft Office Simplified Chinese Support\' value" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
+#line 80
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -393,8 +394,23 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Rationalisation",
                         "FORWARD PATH"});
-#line 79
+#line 81
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table6, "Then ");
+#line 84
+ testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 85
+ testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 86
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table7.AddRow(new string[] {
+                        "Rationalisation",
+                        "KEEP"});
+#line 87
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
