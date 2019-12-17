@@ -8,9 +8,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 {
     internal class CreateCapacitySlotPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//h2[contains(text(),'Capacity Slot')]")]
-        public IWebElement CreateSlotsTitle { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Unlimited']")]
         public IWebElement UnlimitedField { get; set; }
 
@@ -20,10 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.CreateSlotsTitle)
-            };
+            return new List<By> { };
         }
 
         public void EnterValueToTheDateByPlaceholder(string value, string placeholder)
