@@ -1,4 +1,4 @@
-﻿﻿Feature: CreateSelfServiceViaApi
+﻿Feature: CreateSelfServiceViaApi
 	Self Service
 
 Background: Pre-Conditions
