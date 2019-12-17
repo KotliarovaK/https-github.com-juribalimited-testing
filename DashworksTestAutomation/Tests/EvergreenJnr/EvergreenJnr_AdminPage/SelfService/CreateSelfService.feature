@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 	When User clicks 'CREATE' button
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
+Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfServic
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Service' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
@@ -35,6 +35,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 	When User navigates to the 'Self Service' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_5' text to 'Self Service Name' textbox
-	Then
 
 
