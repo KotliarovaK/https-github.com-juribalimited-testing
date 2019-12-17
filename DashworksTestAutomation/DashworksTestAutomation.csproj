@@ -948,10 +948,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateSelfService.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfServiceViaApi.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfServiceViaApi1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateSelfServiceViaApi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EditSelfService1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditSelfService.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature.cs">
       <DependentUpon>DeleteBucketsFromTheTeam.feature</DependentUpon>
@@ -2096,7 +2101,11 @@
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfServiceViaApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateSelfServiceViaApi.feature.cs</LastGenOutput>
+      <LastGenOutput>CreateSelfServiceViaApi1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EditSelfService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditSelfService1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

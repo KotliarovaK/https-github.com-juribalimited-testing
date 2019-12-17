@@ -13,9 +13,6 @@ namespace DashworksTestAutomation.Pages
     {
         #region Header
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE DASHBOARD' or text()='DASHBOARD ERSTELLEN']")]
-        public IWebElement CreateDashboardBtn { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
@@ -44,7 +41,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//app-dashboard-submenu-action//div[@class='menu']//li")]
         public IList<IWebElement> DashboardsSettingsItems { get; set; }
 
-        public IWebElement DashboardsSettingsItemByName(string itemName) =>Driver.FindElement(By.XPath($".//li[text()='{itemName}']"));
+        public IWebElement DashboardsSettingsItemByName(string itemName) => Driver.FindElement(By.XPath($".//li[text()='{itemName}']"));
 
         #endregion
 
@@ -84,7 +81,7 @@ namespace DashworksTestAutomation.Pages
                     $".//div[starts-with(text(), '{widgetName}')]/ancestor::div[contains(@class,'widget-delete-alert')]//div[@class='inline-box-text']"));
             }
         }
-      
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert')]//a[@href]")]
         public IWebElement LinkInWarningMessage { get; set; }
 
@@ -140,10 +137,7 @@ namespace DashworksTestAutomation.Pages
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.CreateDashboardBtn)
-            };
+            return new List<By> { };
         }
 
 
@@ -465,7 +459,7 @@ namespace DashworksTestAutomation.Pages
         {
             var totalLabelsCount = By.XPath($".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class,'highcharts-point')]");
             Driver.WaitForDataLoading();
-            return Driver.FindElements(totalLabelsCount).Select(x=>x.GetAttribute("widget-name")).ToList();
+            return Driver.FindElements(totalLabelsCount).Select(x => x.GetAttribute("widget-name")).ToList();
         }
 
         public bool IsLineWidgetPointsAreDisplayed(string widgetName)
