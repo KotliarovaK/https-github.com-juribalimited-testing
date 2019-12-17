@@ -10,9 +10,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
     internal class ApplicationsDetailsTabsMenu : SeleniumBasePage
     {
-        public const string FilterCheckboxBooleanValuesSelector = ".//div[@class='boolean-icon ng-star-inserted']";
-
-        public const string FilterCheckboxStringValuesSelector = ".//span[@class='mat-option-text']//div[contains(@class,'text-container')]";
+        public const string FilterCheckboxValuesSelector = ".//mat-option[contains(@class, 'mat-option-multiple')]";
 
         public const string FilterTypeOnTheColumnPanel = ".//div[@class='ag-filter']//select[not(contains(@class,'hidden'))]//option";
 
@@ -57,11 +55,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = FilterTypeOnTheColumnPanel)]
         public IList<IWebElement> FilterTypeValues { get; set; }
 
-        [FindsBy(How = How.XPath, Using = FilterCheckboxBooleanValuesSelector)]
-        public IList<IWebElement> FilterCheckboxBooleanValues { get; set; }
-
-        [FindsBy(How = How.XPath, Using = FilterCheckboxStringValuesSelector)]
-        public IList<IWebElement> FilterCheckboxStringValues { get; set; }
+        [FindsBy(How = How.XPath, Using = FilterCheckboxValuesSelector)]
+        public IList<IWebElement> FilterCheckboxValuesForColumn { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
         public IWebElement ColumnButton { get; set; }
@@ -172,20 +167,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             return allFilters[GetColumnNumberByName(columnName) - 1];
         }
 
-        public List<string> GetCheckedElementsText()
-        {
-            var by = By.XPath(
-                ".//span[@class='ag-checkbox-checked']/parent::*/parent::*");
-
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
-        }
-
-        public void GetColumnCheckbox(string checkboxName)
+        public IWebElement GetColumnCheckbox(string checkboxName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
             var checkboxSettingsSelector = By.XPath($".//div[contains(@class,'list-panel')]//span[text()='{checkboxName}']");
-            Driver.MouseHover(checkboxSettingsSelector);
-            Driver.WaitForElementToBeDisplayed(checkboxSettingsSelector);
-            Driver.FindElement(checkboxSettingsSelector).Click();
+            if (!Driver.IsElementDisplayed(checkboxSettingsSelector, wait))
+            {
+                throw new Exception($"'{checkboxName}' checkbox was not displayed");
+            }
+
+            return Driver.FindElement(checkboxSettingsSelector);
         }
 
         public IList<IWebElement> GetAllColumnHeadersOnTheDetailsPage()

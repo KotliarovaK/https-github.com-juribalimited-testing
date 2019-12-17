@@ -228,19 +228,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        //TODO: AnnI 12/17/19 Replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step
         [When(@"User selects ""(.*)"" checkbox from String Filter with item list on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterWithItemListOnTheAdminPage(string filterName)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterWithItemListByName(filterName);
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User clicks ""(.*)"" checkbox from boolean filter on the Admin page")]
-        public void WhenUserClicksCheckboxFromBooleanFilterOnTheAdminPage(string filterName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GetBooleanStringFilterByName(filterName);
             page.BodyContainer.Click();
         }
 

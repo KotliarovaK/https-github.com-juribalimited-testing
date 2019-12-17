@@ -166,8 +166,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	| ReadinessDAS14938_4A2 | All Devices | None            | Standalone Project |
 	When User remembers default Readiness for 'ReadinessDAS14938_4A2' project
 	And User navigates to the 'Readiness' left menu item
-	When User clicks String Filter button for "Default for Applications" column on the Admin page
-	And User clicks "False" checkbox from boolean filter on the Admin page
+	When User selects following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
+	| checkboxes |
+	| False      |
 	Then 'TRUE' content is displayed in the 'Default for Applications' column
 	When User click content from "Readiness" column
 	And User remembers opened Readiness data on Edit Readiness
@@ -187,8 +188,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	Then User checks that opened readiness name is the same as stored one
 	Then 'Default' checkbox is unchecked
 	When User navigates to the 'Readiness' left menu item
-	And User clicks String Filter button for "Default for Applications" column on the Admin page
-	And User clicks "False" checkbox from boolean filter on the Admin page
+	When User selects following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
+	| checkboxes |
+	| False      |
 	And User click content from "Readiness" column
 	Then 'Default' checkbox is disabled
 	Then 'Default' checkbox is checked
@@ -237,13 +239,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
 	| DAS14938_Project | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
-	When User clicks String Filter button for "Default for Applications" column on the Admin page
-	And User clicks "False" checkbox from boolean filter on the Admin page
+	When User selects following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
+	| checkboxes |
+	| False      |
 	When User click content from "Readiness" column
 	And User remembers opened Readiness data on Edit Readiness
 	When User clicks 'CANCEL' button 
-	And User clicks String Filter button for "Default for Applications" column on the Admin page
-	And User clicks "False" checkbox from boolean filter on the Admin page
+	When User selects following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
+	| checkboxes |
+	| False      |
 	Then Filtered readiness item equals to stored one
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16148 @DAS16226 @DAS16163

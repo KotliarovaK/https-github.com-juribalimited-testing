@@ -417,7 +417,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("Offboard")]
         [NUnit.Framework.CategoryAttribute("DAS18785")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssociatedUserRedirectsCorrectly()
         {
             System.Exception lastException = null;
@@ -452,33 +451,32 @@ this.FeatureBackground();
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "Offboard",
-                        "DAS18785",
-                        "Not_Ready"});
-#line 92
+                        "DAS18785"});
+#line 91
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 93
+#line 92
  testRunner.When("User navigates to the \'Mailbox\' details page for \'0286449FB2C34A12809@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 94
+#line 93
  testRunner.Then("Details page for \"0286449FB2C34A12809@bclabs.local\" item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 95
+#line 94
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 96
+#line 95
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
+#line 96
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 97
  testRunner.And("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 98
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 100
+#line 99
  testRunner.When("User clicks \"0286449FB2C34A12809\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 100
  testRunner.Then("Details page for \"0286449FB2C34A12809 (McFadden, Susan)\" item is displayed to the" +
                     " user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
