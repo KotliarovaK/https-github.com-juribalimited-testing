@@ -330,11 +330,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
 
-        public bool CheckContentDisplay(string text)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{text}']"));
-        }
-
         //TODO this method should be removed. We already have GetTextbox on BaseDashboardPage
         public IWebElement GetFieldByName(string name)
         {

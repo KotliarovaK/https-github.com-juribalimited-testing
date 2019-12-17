@@ -40,13 +40,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"""(.*)"" content is not displayed in the grid on the Project details page")]
-        public void ThenContentIsNotDisplayedInTheGridOnTheProjectDetailsPage(string text)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(projectTabs.CheckContentDisplay(text), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"Unlimited text disappears from column")]
         public void ThenUnlimitedTextDisappearsFromColumn()
         {
