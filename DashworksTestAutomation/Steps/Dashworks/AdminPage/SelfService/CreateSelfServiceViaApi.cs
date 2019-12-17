@@ -68,8 +68,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             }
         }
 
-        [Then(@"User checks the created Self Service via API")]
-        public void WhenUserChecksTheCreatedSelfServiceViaApi()
+        [Then(@"User checks the Self Service via API")]
+        public void WhenUserChecksTheSelfServiceViaApi()
         {
             foreach (SelfServiceDto SelfService in _selfServices.Value)
             {
@@ -82,9 +82,41 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 }
 
                 var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(response.Content);
-                if (!SelfService.Equals(selfServiceObjResponse)) 
+                if (!SelfService.Equals(selfServiceObjResponse))
                 {
                     throw new Exception("The created Self Service doesn't match to the received Self Service");
+                }
+            }
+        }
+
+        //| OldName | Name | ServiceIdentifier | Enabled | ScopeId |
+        [When(@"User updates Self Service via API")]
+        public void WhenUserUpdatesSelfServiceViaApi(Table table)
+        {
+            var oldNames = table.GetDataByKey("OldName");
+            var updatedSelfServices = table.CreateSet<SelfServiceDto>().ToArray();
+
+            for (int i = 0; i < oldNames.Count; i++)
+            {
+                var selfService = _selfServices.Value.First(x => x.Name.Equals(oldNames[i]));
+                var newSelfService = updatedSelfServices[i];
+
+                selfService.Name = string.IsNullOrEmpty(newSelfService.Name) ? selfService.Name : newSelfService.Name;
+                selfService.ScopeId = newSelfService.ScopeId.Equals(selfService.ScopeId) ? selfService.ScopeId : newSelfService.ScopeId;
+                selfService.Enabled = newSelfService.Enabled.Equals(selfService.Enabled) ? selfService.Enabled : newSelfService.Enabled;
+                selfService.ServiceIdentifier = newSelfService.ServiceIdentifier.Equals(selfService.ServiceIdentifier) ? selfService.ServiceIdentifier : newSelfService.ServiceIdentifier;
+            }
+
+            foreach (SelfServiceDto SelfService in _selfServices.Value)
+            {
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{SelfService.ServiceId}";
+                var request = requestUri.GenerateRequest();
+                request.AddObject(SelfService);
+                var response = _client.Value.Put(request);
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
                 }
             }
         }
