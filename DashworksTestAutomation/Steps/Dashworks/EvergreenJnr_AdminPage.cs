@@ -40,13 +40,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"Unlimited text disappears from column")]
-        public void ThenUnlimitedTextDisappearsFromColumn()
-        {
-            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
-            Verify.IsTrue(projectElement.EmptyUnlimitedField.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"Evergreen Unit is displayed to the user")]
         public void ThenEvergreenUnitIsDisplayedToTheUser()
         {

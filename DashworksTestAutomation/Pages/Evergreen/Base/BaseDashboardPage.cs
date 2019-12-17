@@ -462,6 +462,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Disabled();
         }
 
+        public bool IsTextboxFocused(string placeholder)
+        {
+            return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short)
+                .FindElement(By.XPath(".//ancestor::mat-form-field")).IsElementFocused();
+        }
+
         #endregion
 
         #region Button

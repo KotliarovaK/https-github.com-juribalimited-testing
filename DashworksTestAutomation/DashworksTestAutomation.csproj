@@ -257,7 +257,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_OverrideDatesPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_SlotsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_UnitsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\CreateCapacitySlotPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\BaseFormPagePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateCapacityUnitPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectDetailsPage.cs" />
