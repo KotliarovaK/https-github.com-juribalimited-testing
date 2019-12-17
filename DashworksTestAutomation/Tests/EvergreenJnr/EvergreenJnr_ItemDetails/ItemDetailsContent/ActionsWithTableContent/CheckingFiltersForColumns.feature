@@ -79,8 +79,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 
 Examples:
 	| PageName | SearchTerm                                      | MainTabName | SubTabName              | CountRows |
-	| Device   | 001BAQXT6JWFPI                                  | Projects    | Projects Summary        | 10        |
-	| Device   | 001BAQXT6JWFPI                                  | Projects    | Owner Projects Summary  | 7         |
+	| Device   | 001BAQXT6JWFPI                                  | Projects    | Projects Summary        | 11        |
+	| Device   | 001BAQXT6JWFPI                                  | Projects    | Owner Projects Summary  | 8         |
 	
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections

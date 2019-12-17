@@ -66,6 +66,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
         public IWebElement ColumnButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-header-menu')]//div[@class='ag-column-select-panel']")]
+        public IWebElement ColumnPanelInColumnSettings { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'icon-checkbox')]/ancestor::div[@ref='eSelect']")]
         public IWebElement SelectAllCheckboxOnColumnSettingsPanel { get; set; }
 
@@ -179,7 +182,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void GetColumnCheckbox(string checkboxName)
         {
-            var checkboxSettingsSelector = By.XPath($".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']");
+            var checkboxSettingsSelector = By.XPath($".//div[contains(@class,'list-panel')]//span[text()='{checkboxName}']");
             Driver.MouseHover(checkboxSettingsSelector);
             Driver.WaitForElementToBeDisplayed(checkboxSettingsSelector);
             Driver.FindElement(checkboxSettingsSelector).Click();

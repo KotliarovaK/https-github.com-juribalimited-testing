@@ -1006,6 +1006,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
 	When User collapses 'Selected Columns' category
 	When User collapses 'Project: MailboxEve' category
 	When User collapses 'Project Rings: MailboxEve' category
+	When User collapses 'Project Owner: MailboxEve' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                              |
 	| MailboxEve: 1 \ Completed                  |

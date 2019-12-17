@@ -281,8 +281,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12738")]
         [NUnit.Framework.CategoryAttribute("DAS12371")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
-        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Projects", "Projects Summary", "10", null)]
-        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Projects", "Owner Projects Summary", "7", null)]
+        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Projects", "Projects Summary", "11", null)]
+        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Projects", "Owner Projects Summary", "8", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections(string pageName, string searchTerm, string mainTabName, string subTabName, string countRows, string[] exampleTags)
         {
             System.Exception lastException = null;
