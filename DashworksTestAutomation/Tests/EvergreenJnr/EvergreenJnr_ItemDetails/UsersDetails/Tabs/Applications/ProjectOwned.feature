@@ -69,3 +69,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCor
 	Then Details page for "Quartus II 2.0 Web Edition Full" item is displayed to the user
 	Then User click back button in the browser
 	And Details page for "LYZ6880619" item is displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19321
+Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject
+	When User navigates to the 'User' details page for 'LYZ6880619' item
+	Then Details page for "LYZ6880619" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Project Owned' left submenu item
