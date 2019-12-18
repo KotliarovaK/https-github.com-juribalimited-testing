@@ -383,6 +383,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SetDefaultTeamBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGridHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseInlineTipBannerElement.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseDialog.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseErrorPage.cs" />
