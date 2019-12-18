@@ -855,9 +855,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        public void SetCheckboxState(string ariaLabel, bool expectedCondition)
+        public void SetCheckboxState(string ariaLabel, bool expectedCondition, string parentElementSelector = "")
         {
-            if (!GetCheckbox(ariaLabel).Equals(expectedCondition))
+            if (!GetCheckbox(ariaLabel, parentElementSelector).Equals(expectedCondition))
             {
                 //We must click by text to check or uncheck element
                 Driver.ClickElementLeftCenter(GetCheckbox(ariaLabel));
@@ -963,7 +963,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IWebElement GetCheckboxFromMenuPanel(string checkbox)
         {
-            return GetCheckbox(MenuPanelSelector, checkbox);
+            return GetCheckbox(checkbox, MenuPanelSelector);
+        }
+
+        public void SetCheckboxStateFromMenuPanel(string ariaLabel, bool expectedCondition)
+        {
+            SetCheckboxState(ariaLabel, expectedCondition, MenuPanelSelector);
         }
 
         #endregion

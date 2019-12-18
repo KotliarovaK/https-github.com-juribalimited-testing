@@ -37,10 +37,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	And User selects '1803 Rollout' option from 'Project' autocomplete
 	And User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	And User clicks Group By button on the Admin page and selects "Type" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Type       | true  |
 	Then Cog menu is not displayed on the Admin page
 	And Grid is grouped
-	When User clicks Group By button on the Admin page and selects "Type" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Type       | false |
 	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |

@@ -46,7 +46,9 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	And User navigates to the 'Mailbox' details page for 'gregoja@bclabs.local' item
 	Then Details page for "gregoja@bclabs.local" item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
-	When User clicks Group By button on the Admin page and selects "Value" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Value      | true  |
 	Then Cog menu is not displayed on the Admin page
 	When User expands 'ValueDAS17695_1A' row in the groped grid
 	When User clicks 'Delete' option in Cog-menu for 'FlDAS17695_1' item from 'Custom Field' column

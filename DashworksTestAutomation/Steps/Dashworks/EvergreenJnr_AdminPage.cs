@@ -1287,20 +1287,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ExportButton.Click();
         }
 
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
-        public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GroupByButton.Click();
-            var bdp = _driver.NowAt<BaseDashboardPage>();
-            _driver.MouseHover(bdp.GetCheckboxFromMenuPanel(value));
-            bdp.GetCheckboxFromMenuPanel(value).Click();
-            //Wait for option to be applied
-            Thread.Sleep(400);
-            page.BodyContainer.Click();
-        }
-
         //TODO probably should be separate control or moved to GridHeaderElement
         [Then(@"'(.*)' options are selected in the Group By menu")]
         public void ThenOptionsAreSelectedInTheGroupByMenu(int expectedCount)
