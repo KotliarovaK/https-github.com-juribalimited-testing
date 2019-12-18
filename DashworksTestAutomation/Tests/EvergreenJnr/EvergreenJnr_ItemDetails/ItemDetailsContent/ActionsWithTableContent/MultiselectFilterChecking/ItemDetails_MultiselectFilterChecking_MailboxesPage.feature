@@ -12,10 +12,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	When User navigates to the 'Email Addresses' left submenu item
 	Then 'SMTP' content is displayed in the 'Type' column
 	Then 'TRUE' content is displayed in the 'Reply To' column
-	Then following String Values are displayed in the filter dropdown for the 'Type' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Type' column:
 	| Values |
 	| SMTP   |
-	Then following Boolean Values are displayed in the filter dropdown for the 'Reply To' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Reply To' column:
 	| Values |
 	| True   |
 
@@ -28,25 +28,25 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	When User navigates to the 'Users' left submenu item
 	Then 'TRUE' content is displayed in the 'Owner' column
 	Then '' content is displayed in the 'Domain' column
-	Then following Boolean Values are displayed in the filter dropdown for the 'Owner' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Owner' column:
 	| Values |
 	| True   |
-	Then following String Values are displayed in the filter dropdown for the 'Domain' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Domain' column:
 	| Values |
 	| Empty  |
 	When User navigates to the 'Groups' left submenu item
 	Then 'BCLABS' content is displayed in the 'Domain' column
-	Then following String Values are displayed in the filter dropdown for the 'Domain' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Domain' column:
 	| Values |
 	| BCLABS |
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	Then 'BCLABS' content is displayed in the 'Domain' column
 	Then 'FullAccess' content is displayed in the 'Permission' column
-	Then following String Values are displayed in the filter dropdown for the 'Domain' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Domain' column:
 	| Values |
 	| BCLABS |
 	#Order of the options in the 'Permission' dropdown is the same as on Senior
-	Then following String Values are displayed in the filter dropdown for the 'Permission' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Permission' column:
 	| Values           |
 	| ReadPermission   |
 	| FullAccess       |

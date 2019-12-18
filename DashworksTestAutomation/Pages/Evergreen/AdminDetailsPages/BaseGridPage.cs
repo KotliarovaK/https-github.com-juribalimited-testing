@@ -373,16 +373,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
-        public void GetStringFilterByName(string filterName)
+        public void GetFilterCheckboxValuesForColumn(string filterName)
         {
-            var filterSelector = $".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
-            Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
-            Driver.FindElement(By.XPath(filterSelector)).Click();
-        }
-
-        public void GetBooleanStringFilterByName(string filterName)
-        {
-            var filterSelector = $".//mat-option//span[contains(@class,'text')][text()='{filterName}']";
+            var filterSelector = $".//mat-option[contains(@class, 'mat-option-multiple')]//span[text()='{filterName}']";
             Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }
