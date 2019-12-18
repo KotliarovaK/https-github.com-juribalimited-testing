@@ -11,16 +11,16 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollo
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
 	Then Counter shows "409" found rows
-	When User clicks String Filter button for "Action" column on the Admin page
-	Then following String Values are displayed in the filter
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Action' column:
 	| Values                     |
 	| Offboard Device Object     |
 	| Onboard Application Object |
 	| Onboard Device Object      |
 	| Onboard User Object        |
-	When User selects "Onboard Application Object" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard User Object" checkbox from String Filter with item list on the Admin page
+	When User selects following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes                 |
+	| Onboard Application Object |
+	| Onboard User Object        |
 	Then Rows counter shows "64" of "409" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
@@ -29,15 +29,16 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigr
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
 	Then Counter shows "1,527" found rows
-	When User clicks String Filter button for "Action" column on the Admin page
-	Then following String Values are displayed in the filter
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Action' column:
 	| Values                     |
 	| Onboard Application Object |
 	| Onboard Mailbox Object     |
 	| Onboard User Object        |
 	| Re-onboard Mailbox Object  |
 	| Re-onboard User Object     |
-	When User selects "Onboard User Object" checkbox from String Filter with item list on the Admin page
+	When User selects following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes                 |
+	| Onboard User Object        |
 	Then Rows counter shows "807" of "1,527" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
@@ -46,13 +47,13 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEverg
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
 	Then Counter shows "60,305" found rows
-	When User clicks String Filter button for "Action" column on the Admin page
-	Then following String Values are displayed in the filter
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Action' column:
 	| Values                     |
 	| Onboard Application Object |
 	| Onboard Device Object      |
 	| Onboard User Object        |
-	When User selects "Onboard Application Object" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard Device Object" checkbox from String Filter with item list on the Admin page
+	When User selects following checkboxes in the filter dropdown menu for the 'Action' column:
+	| checkboxes                 |
+	| Onboard Application Object |
+	| Onboard Device Object      |
 	Then Rows counter shows "41,339" of "60,305" rows

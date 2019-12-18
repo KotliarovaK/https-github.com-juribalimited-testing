@@ -264,32 +264,32 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Unknown"});
 #line 47
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Installed\'" +
-                    " column", ((string)(null)), table6, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Installed\' " +
+                    "column", ((string)(null)), table6, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table7.AddRow(new string[] {
                         "Unknown"});
 #line 50
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Used\' colu" +
-                    "mn", ((string)(null)), table7, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Used\' colum" +
+                    "n", ((string)(null)), table7, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table8.AddRow(new string[] {
                         "True"});
 #line 53
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Entitled\' " +
-                    "column", ((string)(null)), table8, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Entitled\' c" +
+                    "olumn", ((string)(null)), table8, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table9.AddRow(new string[] {
                         "False"});
 #line 56
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Entitled T" +
-                    "o Device\' column", ((string)(null)), table9, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Entitled To" +
+                    " Device\' column", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -616,8 +616,8 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "True"});
 #line 117
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Owner\' col" +
-                    "umn", ((string)(null)), table17, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Owner\' colu" +
+                    "mn", ((string)(null)), table17, "Then ");
 #line 120
  testRunner.When("User navigates to the \'Mailbox Permissions\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 121
@@ -733,8 +733,8 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "True"});
 #line 148
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Installed\'" +
-                    " column", ((string)(null)), table21, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Installed\' " +
+                    "column", ((string)(null)), table21, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});

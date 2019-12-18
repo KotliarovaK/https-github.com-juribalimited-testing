@@ -40,20 +40,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"""(.*)"" content is not displayed in the grid on the Project details page")]
-        public void ThenContentIsNotDisplayedInTheGridOnTheProjectDetailsPage(string text)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(projectTabs.CheckContentDisplay(text), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"Unlimited text disappears from column")]
-        public void ThenUnlimitedTextDisappearsFromColumn()
-        {
-            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
-            Verify.IsTrue(projectElement.EmptyUnlimitedField.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"Evergreen Unit is displayed to the user")]
         public void ThenEvergreenUnitIsDisplayedToTheUser()
         {
@@ -228,19 +214,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        //TODO: AnnI 12/17/19 Replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step
         [When(@"User selects ""(.*)"" checkbox from String Filter with item list on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterWithItemListOnTheAdminPage(string filterName)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterWithItemListByName(filterName);
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User clicks ""(.*)"" checkbox from boolean filter on the Admin page")]
-        public void WhenUserClicksCheckboxFromBooleanFilterOnTheAdminPage(string filterName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GetBooleanStringFilterByName(filterName);
             page.BodyContainer.Click();
         }
 

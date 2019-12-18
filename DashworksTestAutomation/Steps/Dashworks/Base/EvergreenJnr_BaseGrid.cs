@@ -341,7 +341,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
-            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, $"Values in table for '{columnName}' column in not sorted in descending order");
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
@@ -352,7 +352,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, $"Values in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"date in table is sorted by '(.*)' column in descending order")]
@@ -363,7 +363,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, $"Date in table for '{columnName}' column in not sorted in descending order");
         }
 
         [Then(@"date in table is sorted by '(.*)' column in ascending order")]
@@ -373,7 +373,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList);
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, $"Date in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]

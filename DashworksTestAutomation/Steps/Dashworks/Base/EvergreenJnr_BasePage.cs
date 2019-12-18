@@ -383,6 +383,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClearTextbox(placeholder);
         }
 
+        [When(@"User clicks on '(.*)' textbox")]
+        public void WhenUserClicksOnTextbox(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(placeholder).Click();
+        }
+
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
         public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
         {
@@ -467,6 +474,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsTextboxDisabled(placeholder),
                 $"'{placeholder}' textbox is disabled");
         }
+
+        [Then(@"'(.*)' textbox is focused")]
+        public void ThenTextboxIsFocused(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsTextboxFocused(placeholder), $"'{placeholder}' is not focused");
+        }
+
         #endregion
 
         #region Dropdown

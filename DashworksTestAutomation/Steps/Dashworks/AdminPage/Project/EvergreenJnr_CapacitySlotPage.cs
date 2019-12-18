@@ -6,8 +6,10 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
 
@@ -23,33 +25,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
-        public void WhenUserClicksOnTheUnlimitedFieldOnTheOnTheCapacitySlotsPage()
-        {
-            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
-            projectElement.UnlimitedField.Click();
-        }
-
         [When(@"User clicks on ""(.*)"" dropdown on the Capacity Slots page")]
         public void WhenUserClicksOnDropdownOnTheCapacitySlotsPage(string dropdownName)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             page.ClickDropdownByName(dropdownName);
-        }
-
-        [When(@"User enters ""(.*)"" value to ""(.*)"" date field on Capacity Slot form page")]
-        public void WhenUserEntersValueToDateFieldOnCapacitySlotFormPage(string value, string field)
-        {
-            var page = _driver.NowAt<CreateCapacitySlotPage>();
-            page.EnterValueToTheDateByPlaceholder(value, field);
-        }
-
-        [Then(@"User sees ""(.*)"" value in the ""(.*)"" date field on Capacity Slot form page")]
-        public void ThenUserSeesValueInTheDateFieldOnCapacitySlotFormPage(string valueExpected, string field)
-        {
-            var page = _driver.NowAt<CreateCapacitySlotPage>();
-
-            Utils.Verify.That(page.GetValueFromDateByPlaceholder(field), Is.EqualTo(valueExpected));
         }
 
         [When(@"User clicks ""(.*)"" link on the Capacity Slot page")]

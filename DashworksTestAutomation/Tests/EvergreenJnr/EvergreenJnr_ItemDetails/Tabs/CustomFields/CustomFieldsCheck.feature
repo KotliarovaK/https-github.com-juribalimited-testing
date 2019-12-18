@@ -121,3 +121,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
 	| Computer Warranty |
 	When User perform search by "Z75ievru6r751l"
 	Then '001, 002, aaa, bbb' content is displayed in the 'Computer Warranty' column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228 @DAS17229 @DAS17265
+Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
+	When User navigates to the 'Device' details page for '04R5RM0R0MVFCM' item
+	Then Details page for "04R5RM0R0MVFCM" item is displayed to the user
+	When User navigates to the 'Details' left menu item
+	And User navigates to the 'Custom Fields' left submenu item
+	When User clicks on 'Custom Field' column header
+	Then data in table is sorted by 'Custom Field' column in ascending order
+	When User clicks on 'Custom Field' column header
+	Then data in table is sorted by 'Custom Field' column in descending order
+	Then ColumnName is displayed in following order on the Details page:
+	| ColumnName   |
+	| Custom Field |
+	|              |
+	| Value        |
+	Then User sees "2" rows in grid
+	Then Reset Filters button is displayed on the Item Details page
+	Then Refresh button is displayed on the Item Details page
+	Then Export button is displayed on the Item Details page
+	Then Group By button is displayed on the Item Details page
+	Then Reset Filters button on the Item Details page is disable
+	When User enters "com" text in the Search field for "Custom Field" column
+	Then Reset Filters button on the Item Details page is enabled
+	Then Rows counter shows "1" of "2" rows
+	When User clicks Reset Filters button on the Item Details page
+	Then Reset Filters button on the Item Details page is disable
+	When User clicks Group By button on the Details page and selects "Value" value
+	Then Grid is grouped
