@@ -1293,8 +1293,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GroupByButton.Click();
-            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPage(value));
-            page.GetValueInGroupByFilterOnAdminPage(value).Click();
+            var bdp = _driver.NowAt<BaseDashboardPage>();
+            _driver.MouseHover(bdp.GetCheckboxFromMenuPanel(value));
+            bdp.GetCheckboxFromMenuPanel(value).Click();
             //Wait for option to be applied
             Thread.Sleep(400);
             page.BodyContainer.Click();
@@ -1306,9 +1307,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GroupByButton.Click();
-            var selectedCount = page.GetAllOptionsInGroupByFilter().Select(x => x.Value).Count(x => x.Equals(true));
+            var bdp = _driver.NowAt<BaseDashboardPage>();
+            var selectedCount = bdp.GetAllOptionsFromMenuPanel().Select(x => x.Value).Count(x => x.Equals(true));
             Verify.AreEqual(expectedCount, selectedCount, "Incorrect number of selected values in the Group By menu");
-            page.BodyContainer.Click();
+            bdp.BodyContainer.Click();
         }
 
         [When(@"User clicks Refresh button on the Admin page")]

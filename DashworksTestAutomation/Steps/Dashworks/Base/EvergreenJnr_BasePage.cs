@@ -885,6 +885,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Button with aria label
+
+        [When(@"User clicks button with '(.*)' aria label")]
+        public void WhenUserClicksButtonWithAriaLabel(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ClickButtonWithAriaLabel(buttonName);
+        }
+
+        #endregion
+
         #region Menu button
 
         [When(@"User clicks '(.*)' button and select '(.*)' menu button")]

@@ -413,30 +413,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        public IWebElement GetValueInGroupByFilterOnAdminPage(string value)
-        {
-            var selector = By.XPath($".//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        public List<KeyValuePair<string, bool>> GetAllOptionsInGroupByFilter()
-        {
-            var selector = By.XPath($".//div[@class='mat-menu-content']/mat-checkbox");
-            Driver.WaitForElementToBeDisplayed(selector);
-            var allOptions = Driver.FindElements(selector);
-            List<KeyValuePair<string, bool>> result = new List<KeyValuePair<string, bool>>();
-            foreach (IWebElement option in allOptions)
-            {
-                var text = option.FindElement(By.XPath(".//span[@class='mat-checkbox-label']")).Text.TrimStart(' ');
-                var selected = option.FindElement(By.XPath(".//input[@type='checkbox']")).Selected;
-                result.Add(new KeyValuePair<string, bool>(text, selected));
-            }
-            return result;
-        }
-
         #region Column Settings
 
         public void OpenColumnSettings(string columnName)

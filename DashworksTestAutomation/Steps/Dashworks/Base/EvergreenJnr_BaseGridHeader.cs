@@ -9,6 +9,7 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
     [Binding]
+    //TODO mb we do not need this. Or just check rows count in the grid
     public class EvergreenJnr_BaseGridHeader : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
