@@ -257,7 +257,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_OverrideDatesPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_SlotsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_UnitsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\CreateCapacitySlotPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\BaseFormPagePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateCapacityUnitPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectDetailsPage.cs" />
@@ -384,6 +383,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SetDefaultTeamBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGridHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseInlineTipBannerElement.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseDialog.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseErrorPage.cs" />
