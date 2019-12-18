@@ -153,8 +153,8 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "True"});
 #line 18
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Reply To\' " +
-                    "column", ((string)(null)), table2, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Reply To\' c" +
+                    "olumn", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -231,8 +231,8 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "True"});
 #line 31
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Owner\' col" +
-                    "umn", ((string)(null)), table3, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Owner\' colu" +
+                    "mn", ((string)(null)), table3, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});

@@ -19,22 +19,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	#Column should not be displayed if no content to display
 	And "Email Controls" column is not displayed to the user
 	And 'GREY' content is displayed in the 'Communication' column
-	Then following String Values are displayed in the filter dropdown for the 'Stage for User Tasks' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Stage for User Tasks' column:
 	| Values       |
 	| OUT OF SCOPE |
-	Then following Boolean Values are displayed in the filter dropdown for the 'Owner' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Owner' column:
 	| Values |
 	| True   |
-	Then following String Values are displayed in the filter dropdown for the 'Application Readiness' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Application Readiness' column:
 	| Values |
 	| IGNORE |
-	Then following String Values are displayed in the filter dropdown for the 'Pre-Migration' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Pre-Migration' column:
 	| Values |
 	| GREY   |
-	Then following String Values are displayed in the filter dropdown for the 'Migration' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Migration' column:
 	| Values |
 	| GREY   |
-	Then following String Values are displayed in the filter dropdown for the 'Communication' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Communication' column:
 	| Values |
 	| GREY   |
 
@@ -50,16 +50,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'UNKNOWN' content is displayed in the 'Used' column
 	Then 'TRUE' content is displayed in the 'Entitled' column
-	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Compliance' column:
 	| Values |
 	| GREEN  |
-	Then following Boolean Values are displayed in the filter dropdown for the 'Installed' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Installed' column:
 	| Values |
 	| True   |
-	Then following Boolean Values are displayed in the filter dropdown for the 'Used' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Used' column:
 	| Values  |
 	| Unknown |
-	Then following Boolean Values are displayed in the filter dropdown for the 'Entitled' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Entitled' column:
 	| Values |
 	| True   |
 
@@ -84,28 +84,28 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Content |
 	| Install |
 	| Install |
-	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Compliance' column:
 	| Values |
 	| GREEN  |
-	Then following String Values are displayed in the filter dropdown for the 'Association' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Association' column:
 	| Values    |
 	| Installed |
 	| Entitled  |
-	Then following String Values are displayed in the filter dropdown for the 'Advertisement' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Advertisement' column:
 	| Values            |
 	| Advert - A0123493 |
 	| Advert - A0123BFF |
 	| Advert - A01267E3 |
 	| Advert - A0126E99 |
 	| Advert - A012A5EB |
-	Then following String Values are displayed in the filter dropdown for the 'Collection' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Collection' column:
 	| Values              |
 	| Collection A011166A |
 	| Collection A0114711 |
 	| Collection A011618A |
 	| Collection A011A360 |
 	| Collection A011EB46 |
-	Then following String Values are displayed in the filter dropdown for the 'Program' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Program' column:
 	| Values  |
 	| Install |
 
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'TierA Site01' content is displayed in the 'Site' column
-	Then following String Values are displayed in the filter dropdown for the 'Site' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Site' column:
 	| Values       |
 	| TierA Site01 |
 
@@ -133,13 +133,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
 	Then 'A01 SMS (Spoof)' content is displayed in the 'Source' column
 	Then 'TierA Site01' content is displayed in the 'Site' column
-	Then following String Values are displayed in the filter dropdown for the 'Source Type' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Source Type' column:
 	| Values        |
 	| SMS/SCCM 2007 |
-	Then following String Values are displayed in the filter dropdown for the 'Source' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Source' column:
 	| Values          |
 	| A01 SMS (Spoof) |
-	Then following String Values are displayed in the filter dropdown for the 'Site' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Site' column:
 	| Values       |
 	| TierA Site01 |
 
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	And User navigates to the 'Hardware Rules' left submenu item
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then 'AMBER' content is displayed in the 'Compliance' column
-	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Compliance' column:
 	| Values |
 	| AMBER  |
 
@@ -166,13 +166,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then 'TierA Site01' content is displayed in the 'Site' column
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'RED' content is displayed in the 'Compliance' column
-	Then following String Values are displayed in the filter dropdown for the 'Site' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Site' column:
 	| Values       |
 	| TierA Site01 |
-	Then following Boolean Values are displayed in the filter dropdown for the 'Installed' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Installed' column:
 	| Values |
 	| True   |
-	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Compliance' column:
 	| Values |
 	| RED    |
 
@@ -182,6 +182,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Projects Summary' left submenu item
-	When User clicks 'Empty' checkbox from String Filter in the filter dropdown for the 'Workflow' column
-	When User clicks 'Empty' checkbox from String Filter in the filter dropdown for the 'Workflow' column
+	When User selects following checkboxes in the filter dropdown menu for the 'Workflow' column:
+	| checkboxes |
+	| Empty      |
+	When User selects following checkboxes in the filter dropdown menu for the 'Workflow' column:
+	| checkboxes |
+	| Empty      |
 	Then 'Empty' checkbox is checked in the filter dropdown for the 'Workflow' column

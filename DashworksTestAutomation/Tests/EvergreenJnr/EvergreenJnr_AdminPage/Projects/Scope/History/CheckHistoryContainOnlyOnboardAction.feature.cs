@@ -135,8 +135,6 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.Then("Counter shows \"409\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
- testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -148,16 +146,19 @@ this.FeatureBackground();
                         "Onboard Device Object"});
             table1.AddRow(new string[] {
                         "Onboard User Object"});
-#line 15
- testRunner.Then("following String Values are displayed in the filter", ((string)(null)), table1, "Then ");
-#line 21
- testRunner.When("User selects \"Onboard Application Object\" checkbox from String Filter with item l" +
-                    "ist on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
- testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
- testRunner.When("User selects \"Onboard User Object\" checkbox from String Filter with item list on " +
-                    "the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Action\' c" +
+                    "olumn:", ((string)(null)), table1, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "checkboxes"});
+            table2.AddRow(new string[] {
+                        "Onboard Application Object"});
+            table2.AddRow(new string[] {
+                        "Onboard User Object"});
+#line 20
+ testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Action\' co" +
+                    "lumn:", ((string)(null)), table2, "When ");
 #line 24
  testRunner.Then("Rows counter shows \"64\" of \"409\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -221,27 +222,31 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
  testRunner.Then("Counter shows \"1,527\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
- testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Onboard Application Object"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Onboard Mailbox Object"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Onboard User Object"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Re-onboard Mailbox Object"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Re-onboard User Object"});
-#line 33
- testRunner.Then("following String Values are displayed in the filter", ((string)(null)), table2, "Then ");
-#line 40
- testRunner.When("User selects \"Onboard User Object\" checkbox from String Filter with item list on " +
-                    "the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
+#line 32
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Action\' c" +
+                    "olumn:", ((string)(null)), table3, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "checkboxes"});
+            table4.AddRow(new string[] {
+                        "Onboard User Object"});
+#line 39
+ testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Action\' co" +
+                    "lumn:", ((string)(null)), table4, "When ");
+#line 42
  testRunner.Then("Rows counter shows \"807\" of \"1,527\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -293,41 +298,42 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS13959",
                         "Projects"});
-#line 44
+#line 45
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 45
- testRunner.When("User navigates to \"User Evergreen Capacity Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to \"User Evergreen Capacity Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
- testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.Then("Counter shows \"60,305\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Counter shows \"60,305\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Onboard Application Object"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Onboard Device Object"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Onboard User Object"});
 #line 50
- testRunner.Then("following String Values are displayed in the filter", ((string)(null)), table3, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Action\' c" +
+                    "olumn:", ((string)(null)), table5, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "checkboxes"});
+            table6.AddRow(new string[] {
+                        "Onboard Application Object"});
+            table6.AddRow(new string[] {
+                        "Onboard Device Object"});
 #line 55
- testRunner.When("User selects \"Onboard Application Object\" checkbox from String Filter with item l" +
-                    "ist on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 56
- testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
- testRunner.When("User selects \"Onboard Device Object\" checkbox from String Filter with item list o" +
-                    "n the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+ testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Action\' co" +
+                    "lumn:", ((string)(null)), table6, "When ");
+#line 59
  testRunner.Then("Rows counter shows \"41,339\" of \"60,305\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
