@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpened
 	When User enters '' text to 'Self Service Name' textbox
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutName
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Service' left menu item
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 	Then 'This list has errors' error message is displayed for 'Self Service Scope' dropdown
 	Then 'UPDATE' button is disabled
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Service' left menu item
