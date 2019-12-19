@@ -40,13 +40,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"Evergreen Unit is displayed to the user")]
-        public void ThenEvergreenUnitIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
-        }
-
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
         public void WhenUserSelectsColorInTheApplicationScopeTabOnTheProjectDetailsPage(string colorName)
         {
