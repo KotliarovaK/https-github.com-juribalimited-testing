@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	When User clicks 'DELETE' button on inline tip banner
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	And Grid is grouped
-	And '1' options are selected in the Group By menu
+	Then '1' options are checked in the 'GroupBy' menu panel
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '1' count of items
 	When User expands 'ValueDAS17695_1B' row in the groped grid
 	Then 'ValueDAS17695_1A' content is not displayed in the 'Value' column

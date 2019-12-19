@@ -197,24 +197,24 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
 	When Dashboard with 'Dashboard for DAS14583' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14583_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Bar        | WidgetForDAS14583_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | false      |
-	And User clicks Ellipsis menu for 'WidgetForDAS14583_3' Widget on Dashboards page
-	And User clicks 'Move to start' item from Ellipsis menu on Dashboards page
-	And User clicks Ellipsis menu for 'WidgetForDAS14583_3' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User updates Widget with following info:
+	When User clicks Ellipsis menu for 'WidgetForDAS14583_3' Widget on Dashboards page
+	When User clicks 'Move to start' item from Ellipsis menu on Dashboards page
+	When User clicks Ellipsis menu for 'WidgetForDAS14583_3' Widget on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User updates Widget with following info:
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Vendor      | Count distinct    | Vendor ASC | 10        | false      |
 	Then User sees following Widgets on Dashboards page:
