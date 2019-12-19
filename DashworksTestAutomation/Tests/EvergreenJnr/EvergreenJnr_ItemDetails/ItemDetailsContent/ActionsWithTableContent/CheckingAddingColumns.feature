@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| ColumnName |
 	| Key        |
 	| Object ID  |
-	And ColumnName is displayed in following order on the Details page:
+	Then following columns are displayed on the Item details page:
 	| ColumnName |
 	| Key        |
 	| Object ID  |
@@ -179,6 +179,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Date       |
 	| Slot       |
 	| Readiness  |
+	Then '{checkbox}' checkbox is checked
 	And Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
 	| Checkbox  |
 	| Key       |

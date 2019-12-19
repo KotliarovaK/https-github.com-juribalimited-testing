@@ -40,20 +40,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"""(.*)"" content is not displayed in the grid on the Project details page")]
-        public void ThenContentIsNotDisplayedInTheGridOnTheProjectDetailsPage(string text)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            Verify.IsFalse(projectTabs.CheckContentDisplay(text), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"Unlimited text disappears from column")]
-        public void ThenUnlimitedTextDisappearsFromColumn()
-        {
-            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
-            Verify.IsTrue(projectElement.EmptyUnlimitedField.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"Evergreen Unit is displayed to the user")]
         public void ThenEvergreenUnitIsDisplayedToTheUser()
         {
@@ -228,19 +214,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        //TODO: AnnI 12/17/19 Replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step
         [When(@"User selects ""(.*)"" checkbox from String Filter with item list on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterWithItemListOnTheAdminPage(string filterName)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterWithItemListByName(filterName);
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User clicks ""(.*)"" checkbox from boolean filter on the Admin page")]
-        public void WhenUserClicksCheckboxFromBooleanFilterOnTheAdminPage(string filterName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GetBooleanStringFilterByName(filterName);
             page.BodyContainer.Click();
         }
 
@@ -1301,28 +1280,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ExportButton.Click();
         }
 
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
-        public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GroupByButton.Click();
-            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPage(value));
-            page.GetValueInGroupByFilterOnAdminPage(value).Click();
-            //Wait for option to be applied
-            Thread.Sleep(400);
-            page.BodyContainer.Click();
-        }
-
         //TODO probably should be separate control or moved to GridHeaderElement
         [Then(@"'(.*)' options are selected in the Group By menu")]
         public void ThenOptionsAreSelectedInTheGroupByMenu(int expectedCount)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GroupByButton.Click();
-            var selectedCount = page.GetAllOptionsInGroupByFilter().Select(x => x.Value).Count(x => x.Equals(true));
+            var bdp = _driver.NowAt<BaseDashboardPage>();
+            var selectedCount = bdp.GetAllOptionsFromMenuPanel().Select(x => x.Value).Count(x => x.Equals(true));
             Verify.AreEqual(expectedCount, selectedCount, "Incorrect number of selected values in the Group By menu");
-            page.BodyContainer.Click();
+            bdp.BodyContainer.Click();
         }
 
         [When(@"User clicks Refresh button on the Admin page")]

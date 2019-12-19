@@ -704,54 +704,61 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'User\' details page for \'TAI6096068\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 119
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
- testRunner.And("User clicks Group By button on the Admin page and selects \"Custom Field\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
- testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkboxes",
+                        "State"});
+            table15.AddRow(new string[] {
+                        "Custom Field",
+                        "true"});
+#line 120
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table15, "When ");
+#line 123
+ testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "ObjectType",
                         "ObjectId",
                         "FieldName",
                         "Value"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "user",
                         "3532",
                         "FlDAS17695_2",
                         "ValueDAS17695_2C"});
-#line 122
- testRunner.When("User creates Custom Field", ((string)(null)), table15, "When ");
-#line 125
+#line 124
+ testRunner.When("User creates Custom Field", ((string)(null)), table16, "When ");
+#line 127
  testRunner.Then("Success message with \"New custom field value added successfully\" text is displaye" +
                     "d on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 126
+#line 128
  testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'3" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Content"});
-            table16.AddRow(new string[] {
-                        "FlDAS17695_2"});
-            table16.AddRow(new string[] {
-                        "FlDAS17695_2"});
-            table16.AddRow(new string[] {
-                        "FlDAS17695_2"});
-#line 127
- testRunner.And("Content in the \'Custom Field\' column is equal to", ((string)(null)), table16, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
             table17.AddRow(new string[] {
+                        "FlDAS17695_2"});
+            table17.AddRow(new string[] {
+                        "FlDAS17695_2"});
+            table17.AddRow(new string[] {
+                        "FlDAS17695_2"});
+#line 129
+ testRunner.And("Content in the \'Custom Field\' column is equal to", ((string)(null)), table17, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table18.AddRow(new string[] {
                         "ValueDAS17695_2A"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "ValueDAS17695_2B"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "ValueDAS17695_2C"});
-#line 132
- testRunner.And("Content in the \'Value\' column is equal to", ((string)(null)), table17, "And ");
-#line 137
+#line 134
+ testRunner.And("Content in the \'Value\' column is equal to", ((string)(null)), table18, "And ");
+#line 139
  testRunner.And("Grid is not grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
+#line 140
  testRunner.And("\'0\' options are selected in the Group By menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

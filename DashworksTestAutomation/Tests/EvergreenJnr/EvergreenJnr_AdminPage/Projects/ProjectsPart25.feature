@@ -49,7 +49,9 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17967
 Scenario: EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter
 	When User clicks 'Admin' on the left-hand menu
-	When User clicks Group By button on the Admin page and selects "Project" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Project    | true  |
 	And User selects all rows on the grid
 	Then There are no errors in the browser console
 	When User selects all rows on the grid

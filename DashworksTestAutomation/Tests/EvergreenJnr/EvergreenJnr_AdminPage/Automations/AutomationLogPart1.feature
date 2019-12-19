@@ -92,10 +92,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	When User clicks 'RUN' button on inline tip banner
 	Then '1 automation started,' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks Group By button on the Admin page and selects "Automation" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Automation | true  |
 	Then Cog menu is not displayed on the Admin page
 	Then Grid is grouped
-	When User clicks Group By button on the Admin page and selects "Automation" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Automation | false |
 	Then Date column shows Date and Time values
 	When User enters "17104_Automation" text in the Search field for "Automation" column
 	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column

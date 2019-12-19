@@ -557,7 +557,7 @@ this.FeatureBackground();
 #line 114
  testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table4, "And ");
 #line 120
- testRunner.When("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects state \'false\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -572,7 +572,7 @@ this.FeatureBackground();
 #line 121
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table5, "Then ");
 #line 127
- testRunner.When("User selects state \'false\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects state \'true\' for \'Offboard all associated users\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});

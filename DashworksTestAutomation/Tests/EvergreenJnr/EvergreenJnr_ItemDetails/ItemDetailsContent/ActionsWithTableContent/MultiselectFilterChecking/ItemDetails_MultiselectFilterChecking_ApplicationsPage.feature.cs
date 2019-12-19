@@ -142,8 +142,8 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "True"});
 #line 14
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Active\' co" +
-                    "lumn", ((string)(null)), table1, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Active\' col" +
+                    "umn", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -350,24 +350,24 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "True"});
 #line 63
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Installed\'" +
-                    " column", ((string)(null)), table8, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Installed\' " +
+                    "column", ((string)(null)), table8, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table9.AddRow(new string[] {
                         "Unknown"});
 #line 66
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Used\' colu" +
-                    "mn", ((string)(null)), table9, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Used\' colum" +
+                    "n", ((string)(null)), table9, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table10.AddRow(new string[] {
                         "True"});
 #line 69
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Entitled\' " +
-                    "column", ((string)(null)), table10, "Then ");
+ testRunner.Then("following String Values are displayed in the filter dropdown for the \'Entitled\' c" +
+                    "olumn", ((string)(null)), table10, "Then ");
 #line 72
  testRunner.When("User navigates to the \'AD\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73

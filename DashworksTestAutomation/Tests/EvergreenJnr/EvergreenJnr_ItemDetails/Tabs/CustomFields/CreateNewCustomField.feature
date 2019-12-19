@@ -117,7 +117,9 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2B |
 	And User navigates to the 'User' details page for 'TAI6096068' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User clicks Group By button on the Admin page and selects "Custom Field" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes   | State |
+	| Custom Field | true  |
 	Then Cog menu is not displayed on the Admin page
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value            |

@@ -184,9 +184,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToTheNumberOfFieldsInTheTable
 	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for "ACG370114" item is displayed to the user
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '2' count of items
+	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '3' count of items
 	When User navigates to the 'Custom Fields' left submenu item
-	Then "2" rows found label displays on Details Page
+	Then "3" rows found label displays on Details Page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'User Projects' left submenu item
 	Then 'User Projects' tab is displayed on left menu on the Details page and contains '8' count of items

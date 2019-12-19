@@ -33,8 +33,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then There are no errors in the browser console
 	When User click on Back button
-	When User clicks String Filter button for "Default" column on the Admin page
-	When User clicks "True" checkbox from boolean filter on the Admin page
+	When User selects following checkboxes in the filter dropdown menu for the 'Default' column:
+	| checkboxes |
+	| True       |
 	Then Rows counter shows more than "2793" found rows of all rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page

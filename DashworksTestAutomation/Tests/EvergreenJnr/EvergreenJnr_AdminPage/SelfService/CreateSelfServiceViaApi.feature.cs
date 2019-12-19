@@ -85,7 +85,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19187")]
         [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateAndGetSelfServiceViaApi()
         {
             System.Exception lastException = null;
@@ -120,8 +119,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS19187",
-                        "API",
-                        "Cleanup"});
+                        "API"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -142,8 +140,8 @@ this.FeatureBackground();
                         "ScopeId"});
             table1.AddRow(new string[] {
                         "1",
-                        "TestSelfService_name33",
-                        "id191839",
+                        "TestSelfService_name11_test",
+                        "id193816",
                         "false",
                         "Devimdmdmm",
                         "3",
@@ -151,109 +149,10 @@ this.FeatureBackground();
                         "2019-12-31T21:34:47.24",
                         "URL",
                         "true",
-                        "0"});
+                        "2"});
 #line 9
  testRunner.When("User creates Self Service via API", ((string)(null)), table1, "When ");
 #line 12
- testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateSelfServiceViaApiAndGet")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19187")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateSelfServiceViaApiAndGet()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateSelfServiceViaApiAndGetInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateSelfServiceViaApiAndGetInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateSelfServiceViaApiAndGet", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "SelfService",
-                        "DAS19187",
-                        "API",
-                        "Cleanup"});
-#line 15
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ServiceId",
-                        "Name",
-                        "ServiceIdentifier",
-                        "Enabled",
-                        "ObjectType",
-                        "ObjectTypeId",
-                        "StartDate",
-                        "EndDate",
-                        "SelfServiceURL",
-                        "AllowAnonymousUsers",
-                        "ScopeId"});
-            table2.AddRow(new string[] {
-                        "1",
-                        "TestSelfService_name28",
-                        "id191828",
-                        "false",
-                        "Devimdmdmm",
-                        "3",
-                        "2019-12-10T21:34:47.24",
-                        "2019-12-31T21:34:47.24",
-                        "URL",
-                        "true",
-                        "0"});
-#line 16
-    testRunner.When("User creates Self Service via API", ((string)(null)), table2, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "OldName",
-                        "Name",
-                        "ServiceIdentifier",
-                        "Enabled",
-                        "ScopeId"});
-            table3.AddRow(new string[] {
-                        "TestSelfService_name28",
-                        "Updated_name1",
-                        "id19187",
-                        "true",
-                        "1"});
-#line 19
- testRunner.When("User updates Self Service via API", ((string)(null)), table3, "When ");
-#line 22
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
