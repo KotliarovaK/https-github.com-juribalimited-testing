@@ -101,14 +101,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyViewport']//div//span[text()='Evergreen']")]
-        public IWebElement EvergreenUnit { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]//button[@aria-label='GroupBy']")]
-        public IWebElement GroupByButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='action-container']//button[@automation = 'grid bar export']")]
         public IWebElement ExportButton { get; set; }

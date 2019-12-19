@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
@@ -18,11 +15,8 @@ using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -1025,6 +1019,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Chips
 
+        [When(@"User removes following chips of '(.*)' button")]
+        public void WhenUserRemovesFollowingChipsOfButton(string button, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
+
+        [When(@"User removes following chips of '(.*)' button with '(.*)' index")]
+        public void WhenUserRemovesFollowingChipsOfButtonWithIndex(string button, int index, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button, index).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
+
         [Then(@"Chips for '(.*)' field are not displayed")]
         public void ThenChipBoxIsNotDisplayedOnThePage(string field)
         {
@@ -1083,6 +1097,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var columnElement = _driver.NowAt<BaseDashboardPage>();
             columnElement.CollapseExpandCategory(categoryName, true);
+        }
+
+        #endregion
+
+        #region Menu panel
+
+        [Then(@"'(.*)' options are checked in the '(.*)' menu panel")]
+        public void ThenOptionsAreCheckedInTheMenuPanel(int expectedCount, string buttonAriaLabel)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButtonWithAriaLabel(buttonAriaLabel);
+            var selectedCount = page.GetAllOptionsFromMenuPanel().Select(x => x.Value).Count(x => x.Equals(true));
+            Verify.AreEqual(expectedCount, selectedCount,
+                $"Incorrect number of checked values in the '{buttonAriaLabel}' menu");
+            page.BodyContainer.Click();
         }
 
         #endregion

@@ -9,8 +9,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ProjectsPage : BaseGridPage
     {
-        public const string ExpandedScopeDropdownSection = ".//div[@role='listbox']";
-
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdminPageTitle { get; set; }
 
@@ -65,24 +63,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Default Language']")]
         public IWebElement DefaultLanguage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Select Permission']")]
-        public IWebElement PermissionsDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateFilterValue { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Application Scope']")]
         public IWebElement ApplicationScopeTab { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions']/admin-mailbox-permission/ul/li/button/span")]
-        public IWebElement AddMailboxPermissionsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form-container']/div/button/span[text()='ADD PERMISSION']")]
-        public IWebElement AddPermissionsButtonInTab { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button/span")]
-        public IWebElement AddMailboxFolderPermissionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Path']")]
         public IWebElement PathDropdown { get; set; }
@@ -101,9 +86,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
         public IWebElement WarningPopUp { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-optgroup/label")]
-        public IList<IWebElement> ScopeDropdownSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-optgroup//span")]
         public IList<IWebElement> ScopeDropdownSectionList { get; set; }
@@ -172,13 +154,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
-        public void ClickAssociatedCheckbox(string checkboxName)
-        {
-            var tab = Driver.FindElement(
-                By.XPath($".//span[@class='mat-checkbox-label'][contains(text(), '{checkboxName}')]"));
-            tab.Click();
-        }
-
         public IWebElement SelectRadioButtonByName(string radioButtonName)
         {
             var button = By.XPath($".//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
@@ -198,32 +173,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var button = By.XPath($".//span[text()='{associatedCheckbox}']/../div/input[@type='checkbox']");
             Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
-        }
-
-        public void RemovePermissionsByName(string permissions)
-        {
-            var element = Driver.FindElement(
-                By.XPath($".//li//span[text()='{permissions}']//following-sibling::button"));
-            Driver.WhatForElementToBeExists(element);
-            element.Click();
-            Driver.WaitForDataLoading();
-        }
-
-        //TODO should be deleted
-        public void SelectCheckboxByName(string checkboxName)
-        {
-            var tab = Driver.FindElement(
-                By.XPath($".//span[@class='mat-checkbox-label'][text()='{checkboxName}']"));
-            tab.Click();
-        }
-
-        public void SelectPermissionsByName(string permissions)
-        {
-            var element = Driver.FindElement(
-                By.XPath($".//mat-option/span[text()='{permissions}']"));
-            Driver.WhatForElementToBeExists(element);
-            Driver.MouseHover(element);
-            element.Click();
         }
 
         public bool PermissionsDisplay(string permissions)

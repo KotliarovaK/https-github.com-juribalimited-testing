@@ -476,14 +476,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Button
 
-        public IWebElement GetButton(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        public List<IWebElement> GetButtons(string button, string parentElementSelector = "",
+            WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var time = int.Parse(waitTime.GetValue());
             var selector = By.XPath(
                 $"{parentElementSelector}//span[text()='{button}']/ancestor::button");
             Driver.WaitForDataLoading();
             Driver.WaitForElementsToBeDisplayed(selector, time, false);
-            return Driver.FindElements(selector).First(x => x.Displayed());
+            return Driver.FindElements(selector).ToList();
+        }
+
+        public IWebElement GetButton(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            return GetButtons(button, parentElementSelector, waitTime).First(x => x.Displayed());
         }
 
         public void ClickButton(string buttonName)
@@ -492,6 +498,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForElementToBeEnabled(button);
             button.Click();
             Driver.WaitForDataLoading(50);
+        }
+
+        //index starts from zero
+        public void ClickButton(string buttonName, int index)
+        {
+            var buttons = GetButtons(buttonName);
+            Driver.WaitForElementsToBeDisplayed(buttons);
+            if (buttons.Count < index + 1)
+            {
+                throw new Exception($"Unable to click '{buttonName}' button with {index} index");
+            }
+            buttons[index].Click();
         }
 
         public bool IsButtonDisplayed(string name)
@@ -891,6 +909,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//span[contains(@class, 'chips-item')]");
             return GetTextbox(textbox).FindElements(chipsSelector);
+        }
+
+        public IList<IWebElement> GetChipsForButton(string button, int index = 0)
+        {
+            var chipsSelector = By.XPath(".//ancestor::li[contains(@class,'chips-btn')]//preceding-sibling::li");
+            var buttonElement = GetButtons(button)[index];
+            return buttonElement.FindElements(chipsSelector);
         }
 
         #endregion
