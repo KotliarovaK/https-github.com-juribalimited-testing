@@ -312,8 +312,7 @@ this.FeatureBackground();
 #line 65
  testRunner.And("User navigates to the \'User Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.And("User clicks \"Other mailbox permissions\" associated checkbox on the Project detail" +
-                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks \'Other mailbox permissions\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
@@ -324,8 +323,7 @@ this.FeatureBackground();
 #line 67
  testRunner.And("User selects following Mailbox permissions", ((string)(null)), table5, "And ");
 #line 71
- testRunner.And("User clicks \"Mailbox folder permissions\" associated checkbox on the Project detai" +
-                    "ls page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks \'Mailbox folder permissions\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
@@ -349,10 +347,9 @@ this.FeatureBackground();
 #line 76
  testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table7, "Then ");
 #line 82
- testRunner.When("User clicks \"Delegated mailboxes\" associated checkbox on the Project details page" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Delegated mailboxes\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 83
- testRunner.And("User clicks \"Owned mailboxes\" associated checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks \'Owned mailboxes\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
  testRunner.And("User navigates to the \'Scope Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
