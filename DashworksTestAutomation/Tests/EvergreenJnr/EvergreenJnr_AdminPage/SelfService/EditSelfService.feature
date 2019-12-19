@@ -108,7 +108,8 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCan
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
 	Then 'The allowable characters are letters, numbers, underscore and hyphen' error message is displayed for 'Self Service Identifier' field
 	Then 'UPDATE' button is disabled
-	Examples:
+
+Examples:
 	| Self Service Identifier |
 	| 123QWE78!@              |
 	| 123 QWE789              |
@@ -129,7 +130,8 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCan
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
-	Examples:
+
+Examples:
 	| Self Service Identifier                          |
 	| 123qweTJ911                                      |
 	| 123456789012                                     |

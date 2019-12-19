@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 	Then 'A self service with this identifier already exists' error message is displayed for 'Self Service Identifier' field
 	Then 'CREATE' button is disabled
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Service' left menu item
@@ -99,7 +99,8 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCan
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
 	Then 'The allowable characters are letters, numbers, underscore and hyphen' error message is displayed for 'Self Service Identifier' field
 	Then 'CREATE' button is disabled
-	Examples:
+
+Examples:
 	| Self Service Identifier |
 	| 123QWE78!@              |
 	| 123 QWE789              |
@@ -115,7 +116,8 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCan
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	Examples:
+	
+Examples:
 	| Self Service Identifier                          |
 	| 123qweTJ911                                      |
 	| 123456789012                                     |
