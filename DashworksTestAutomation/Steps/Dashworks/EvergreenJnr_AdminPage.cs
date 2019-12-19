@@ -1266,30 +1266,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ResetFiltersButton.Click();
         }
 
-        [When(@"User clicks Group By button on the Admin page")]
-        public void WhenUserClicksGroupByButtonOnTheAdminPage()
-        {
-            var button = _driver.NowAt<BaseGridPage>();
-            button.GroupByButton.Click();
-        }
-
         [When(@"User clicks Export button on the Admin page")]
         public void WhenUserClicksExportButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
             button.ExportButton.Click();
-        }
-
-        //TODO probably should be separate control or moved to GridHeaderElement
-        [Then(@"'(.*)' options are selected in the Group By menu")]
-        public void ThenOptionsAreSelectedInTheGroupByMenu(int expectedCount)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GroupByButton.Click();
-            var bdp = _driver.NowAt<BaseDashboardPage>();
-            var selectedCount = bdp.GetAllOptionsFromMenuPanel().Select(x => x.Value).Count(x => x.Equals(true));
-            Verify.AreEqual(expectedCount, selectedCount, "Incorrect number of selected values in the Group By menu");
-            bdp.BodyContainer.Click();
         }
 
         [When(@"User clicks Refresh button on the Admin page")]
