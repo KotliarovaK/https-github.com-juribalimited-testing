@@ -48,53 +48,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             applicationTab.GetReadinessOptionByName(colorName).Click();
         }
 
-        [When(@"User clicks ""(.*)"" associated checkbox on the Project details page")]
-        public void WhenUserClicksAssociatedCheckboxOnTheProjectDetailsPage(string checkboxName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.ClickAssociatedCheckbox(checkboxName);
-        }
-
-        [When(@"User selects following Mailbox permissions")]
-        public void WhenUserSelectsFollowingMailboxPermissions(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            foreach (var row in table.Rows)
-            {
-                projectsPage.AddMailboxPermissionsButton.Click();
-                _driver.WaitForDataLoading();
-                projectsPage.PermissionsDropdown.Click();
-                _driver.WaitForDataLoading();
-                projectsPage.SelectPermissionsByName(row["Permissions"]);
-                projectsPage.AddPermissionsButtonInTab.Click();
-            }
-        }
-
-        [When(@"User selects following Mailbox folder permissions")]
-        public void WhenUserSelectsFollowingMailboxFolderPermissions(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            foreach (var row in table.Rows)
-            {
-                _driver.WaitForElementToBeDisplayed(projectsPage.AddMailboxFolderPermissionsButton);
-                projectsPage.AddMailboxFolderPermissionsButton.Click();
-                _driver.WaitForElementToBeDisplayed(projectsPage.PermissionsDropdown);
-                projectsPage.PermissionsDropdown.Click();
-                projectsPage.SelectPermissionsByName(row["Permissions"]);
-                projectsPage.AddPermissionsButtonInTab.Click();
-                _driver.WaitForDataLoading();
-            }
-        }
-
-        [When(@"User removes following Mailbox permissions")]
-        public void WhenUserRemovesFollowingMailboxPermissions(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(projectsPage.AddMailboxPermissionsButton);
-            foreach (var row in table.Rows) projectsPage.RemovePermissionsByName(row["Permissions"]);
-        }
-
         [Then(@"following Mailbox permissions are displayed to the user")]
         public void ThenFollowingMailboxPermissionsAreDisplayedToTheUser(Table table)
         {
@@ -1291,7 +1244,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var inlineTipBanner = _driver.NowAt<BaseInlineBannerElement>();
             inlineTipBanner.VerifyColor(MessageType.Tip);
             _driver.WaitForDataLoading();
-            inlineTipBanner.GetButton(MessageType.Tip,"DELETE").Click();
+            inlineTipBanner.GetButton(MessageType.Tip, "DELETE").Click();
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]

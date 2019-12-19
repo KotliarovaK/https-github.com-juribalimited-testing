@@ -1019,6 +1019,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Chips
 
+        [When(@"User removes following chips of '(.*)' button")]
+        public void WhenUserRemovesFollowingChipsOfButton(string button, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
+
+        [When(@"User removes following chips of '(.*)' button with '(.*)' index")]
+        public void WhenUserRemovesFollowingChipsOfButtonWithIndex(string button, int index, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button, index).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
+
         [Then(@"Chips for '(.*)' field are not displayed")]
         public void ThenChipBoxIsNotDisplayedOnThePage(string field)
         {
@@ -1089,7 +1109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var page = _driver.NowAt<BaseDashboardPage>();
             page.ClickButtonWithAriaLabel(buttonAriaLabel);
             var selectedCount = page.GetAllOptionsFromMenuPanel().Select(x => x.Value).Count(x => x.Equals(true));
-            Verify.AreEqual(expectedCount, selectedCount, 
+            Verify.AreEqual(expectedCount, selectedCount,
                 $"Incorrect number of checked values in the '{buttonAriaLabel}' menu");
             page.BodyContainer.Click();
         }

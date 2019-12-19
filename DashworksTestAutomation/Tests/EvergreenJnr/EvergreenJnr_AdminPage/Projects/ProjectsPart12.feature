@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| ChangeOwner      |
 	| Author           |
 	| AvailabilityOnly |
-	When User checks 'Delegated mailboxes' checkbox
+	When User checks 'Delegated mailboxes ' checkbox
 	And User checks 'Owned mailboxes' checkbox
 	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
@@ -98,10 +98,12 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	Then "Users to add (0 of 14753 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
-	And User removes following Mailbox permissions
-	| Permissions |
-	| FullAccess  |
-	| Author      |
+	When User removes following chips of 'ADD PERMISSION' button
+	| Chips      |
+	| FullAccess |
+	When User removes following chips of 'ADD PERMISSION' button with '1' index
+	| Chips      |
+	| Author     |
 	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
