@@ -23,16 +23,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
-        [When(@"User clicks Group By button on the Details page and selects ""(.*)"" value")]
-        public void WhenUserClicksGroupByButtonOnTheDetailsPageAndSelectsValue(string value)
-        {
-            var page = _driver.NowAt<AggridHeaderCounterElement>();
-            page.GroupByButton.Click();
-            _driver.MouseHover(page.GetValueInGroupByFilterOnDetailsPage(value));
-            page.GetValueInGroupByFilterOnDetailsPage(value).Click();
-            page.BodyContainer.Click();
-        }
-
         [When(@"User clicks Group By button on grid action bar")]
         public void WhenUserClicksGroupByButtonOnGridActionBar()
         {

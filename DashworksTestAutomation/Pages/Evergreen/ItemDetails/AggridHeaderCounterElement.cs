@@ -49,12 +49,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             return Driver.FindElements(By.XPath(".//span[@class='mat-checkbox-label']"));
         }
-
-        public IWebElement GetValueInGroupByFilterOnDetailsPage(string value)
-        {
-            var selector = By.XPath($"//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
     }
 }

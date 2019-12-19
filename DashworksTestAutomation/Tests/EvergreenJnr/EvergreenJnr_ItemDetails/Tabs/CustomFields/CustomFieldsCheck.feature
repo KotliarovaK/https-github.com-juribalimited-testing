@@ -100,7 +100,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedFo
 	When User opens 'Custom Field' column settings
 	When User selects 'Pin left' option from column settings
 	Then 'Custom Field' column is 'Left' Pinned
-	When User clicks Group By button on the Details page and selects "Custom Field" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes   | State |
+	| Custom Field | true  |
 	Then Grid is grouped
 	#Ann.Ilchenko 8/10/19: This is a TEMPORARY step. 
 	When User clicks Refresh button on grid action bar
@@ -148,5 +150,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	Then Rows counter shows "1" of "2" rows
 	When User clicks Reset Filters button on the Item Details page
 	Then Reset Filters button on the Item Details page is disable
-	When User clicks Group By button on the Details page and selects "Value" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Value      | true  |
 	Then Grid is grouped
