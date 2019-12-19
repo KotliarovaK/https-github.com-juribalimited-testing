@@ -42,6 +42,13 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
         [JsonProperty("scopeId")]
         public int ScopeId { get; set; }
 
+        [JsonProperty("scopeName")]
+        public string ScopeName { get; set; }
+
+        [JsonProperty("createdByUser")]
+        public string CreatedByUser { get; set; }
+
+
         public bool Equals(SelfServiceDto value)
         {
             SelfServiceDto obj = value as SelfServiceDto;
@@ -57,7 +64,9 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
                 && String.Equals(EndDate, obj.EndDate)
                 && String.Equals(SelfServiceURL, obj.SelfServiceURL)
                 && String.Equals(AllowAnonymousUsers, obj.AllowAnonymousUsers)
-                && int.Equals(ScopeId, obj.ScopeId);
+                && int.Equals(ScopeId, obj.ScopeId)
+                && String.Equals(ScopeName, obj.ScopeName)
+                && String.Equals(CreatedByUser, obj.CreatedByUser);
         }
     }
 }

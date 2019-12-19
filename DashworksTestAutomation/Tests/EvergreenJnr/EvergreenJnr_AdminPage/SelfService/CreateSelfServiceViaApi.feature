@@ -7,6 +7,13 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @API
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateAndGetSelfServiceViaApi
 	When User creates Self Service via API
-	| ServiceId | Name                        | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId |
-	| 1         | TestSelfService_name11_test | id193816          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       |
+	| ServiceId | Name                        | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
+	| 1         | TestSelfService_name25_test | id193830          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
 	Then User checks the Self Service via API
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18948 @API
+Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceExistInTheGrid
+	When User creates Self Service via API
+	| ServiceId | Name                        | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
+	| 1         | TestSelfService_name30_test | id193835          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	Then User checks the Self Services Grid via API
