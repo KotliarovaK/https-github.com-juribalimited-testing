@@ -885,6 +885,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Radio Button
+
+        public IWebElement GetRadioButton(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        {
+            var selector = By.XPath($".//div[contains(@class, 'radio-label') and text()='{ariaLabel}']/ancestor::mat-radio-button");
+            if (!Driver.IsElementDisplayed(selector, wait))
+            {
+                throw new Exception($"'{ariaLabel}' radio button was not displayed");
+            }
+            return Driver.FindElement(selector);
+        }
+
+        #endregion
+
         #region Chips
 
         public IList<IWebElement> GetChipsOfTextbox(string textbox)

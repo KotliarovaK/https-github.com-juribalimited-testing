@@ -1023,6 +1023,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Radio button
+
+        [When(@"User clicks '(.*)' radio button")]
+        public void WhenUserClicksRadioButton(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetRadioButton(radioButtonName).Click();
+        }
+
+        #endregion
+
         #region Chips
 
         [Then(@"Chips for '(.*)' field are not displayed")]

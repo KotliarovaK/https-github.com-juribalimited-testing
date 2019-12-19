@@ -88,8 +88,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Proj
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS17699")]
-        [NUnit.Framework.TestCaseAttribute("1803 Rollout", "User Scope", "Users Readiness Columns & Filters", "Application Scope", "App Readiness Columns & Filters", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox Evergreen Capacity Project", "User Scope", "Users Readiness Columns & Filters", "Application Scope", "App Readiness Columns & Filters", null)]
+        [NUnit.Framework.TestCaseAttribute("1803 Rollout", "User Scope", "Users with Device Count", "Application Scope", "Apps with a Vendor", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailbox Evergreen Capacity Project", "User Scope", "Users with Device Count", "Application Scope", "Apps with a Vendor", null)]
         public virtual void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForDeviceAndMailboxProjects(string projectName, string tab1, string list1, string tab2, string list2, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -176,7 +176,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS17699")]
         [NUnit.Framework.CategoryAttribute("DAS18943")]
-        [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "Device Scope", "1803 Rollout", "Application Scope", "1803 Apps", null)]
+        [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "Device Scope", "1803 Rollout", "Application Scope", "Apps with a Vendor", null)]
         public virtual void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject(string projectName, string tab1, string list1, string tab2, string list2, string[] exampleTags)
         {
             System.Exception lastException = null;
