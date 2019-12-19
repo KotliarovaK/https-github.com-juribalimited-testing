@@ -1,16 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Net;
+﻿using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
-using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -41,34 +34,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
                 var page = _driver.NowAt<BaseDashboardPage>();
 
                 page.ClickButton("ADD CUSTOM FIELD");
-                page.AutocompleteSelect(CustomFieldPopup.TextBoxes.CustomField.GetValue(), customField.FieldName, true);
-                page.PopulateTextbox(CustomFieldPopup.TextBoxes.Value.GetValue(), customField.Value);
+                page.AutocompleteSelect("Custom Field", customField.FieldName, true);
+                page.PopulateTextbox("Value", customField.Value);
 
-                var popup = _driver.NowAt<CustomFieldPopup>();
-                popup.AddCustomFieldButton.Click();
-                _driver.WaitForElementToBeNotDisplayed(popup.AddCustomFieldButton);
+                var dialogContainer = _driver.NowAt<BaseDialogPage>();
+                dialogContainer.GetButton("ADD").Click();
                 //Sleep to wait for counter to be updated by JS
-                Thread.Sleep(2000);
+                Thread.Sleep(1500);
                 _driver.WaitForDataLoading();
             }
-        }
-
-        [When(@"User clicks Cancel button on Add Custom Field popup")]
-        public void WhenUserClicksCancelButtonOnAddCustomFieldPopup()
-        {
-            var popup = _driver.NowAt<CustomFieldPopup>();
-
-            popup.CancelCustomFieldButton.Click();
-            _driver.WaitForElementToBeNotDisplayed(popup.CancelCustomFieldButton);
-        }
-
-        [When(@"User clicks Add button on Add Custom Field popup")]
-        public void WhenUserClicksAddButtonOnAddCustomFieldPopup()
-        {
-            var popup = _driver.NowAt<CustomFieldPopup>();
-
-            popup.AddCustomFieldButton.Click();
-            _driver.WaitForElementToBeNotDisplayed(popup.AddCustomFieldButton);
         }
     }
 }

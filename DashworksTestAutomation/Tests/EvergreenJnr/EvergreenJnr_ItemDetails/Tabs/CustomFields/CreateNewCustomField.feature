@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	And User clicks 'ADD CUSTOM FIELD' button 
 	When User selects 'FlDAS16487_3' option from 'Custom Field' autocomplete
 	And User enters 'Somve_Value' text to 'Value' textbox
-	And User clicks Cancel button on Add Custom Field popup
+	When User clicks 'CANCEL' button on popup
 	Then 'Custom Fields' tab is displayed on left menu on the Details page and contains '0' count of items
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup

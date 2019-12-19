@@ -471,7 +471,7 @@ this.FeatureBackground();
 #line 74
  testRunner.And("User enters \'Somve_Value\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
- testRunner.And("User clicks Cancel button on Add Custom Field popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CANCEL\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
  testRunner.Then("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'0" +
                     "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
