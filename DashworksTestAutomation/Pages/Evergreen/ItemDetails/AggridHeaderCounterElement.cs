@@ -17,20 +17,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         //But if greed is empty than those controls will not appears
         //[FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'aggrid-container wrapper-flexbox')]")]
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='aggrid-container']")]
-        public IWebElement PageIdentitySelectors { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[@automation='create custom-field']")]
         public IWebElement CreateCustomFieldsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='ResetFilters']")]
-        public IWebElement ResetFiltersButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='reload']")]
-        public IWebElement RefreshButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='Export']")]
-        public IWebElement ExportButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

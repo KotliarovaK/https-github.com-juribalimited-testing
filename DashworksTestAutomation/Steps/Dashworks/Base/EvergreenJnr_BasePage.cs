@@ -896,6 +896,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Button with '{buttonName}' aria label is not displayed");
         }
 
+        [Then(@"'(.*)' button with aria label is disabled")]
+        public void ThenButtonWithAriaLabelIsDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+                $"'{buttonName}' button is not disabled");
+        }
+
+        [Then(@"'(.*)' button with aria label is not disabled")]
+        public void ThenButtonWithAriaLabelIsNotDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+                $"'{buttonName}' button is disabled");
+        }
+
         #endregion
 
         #region Menu button
