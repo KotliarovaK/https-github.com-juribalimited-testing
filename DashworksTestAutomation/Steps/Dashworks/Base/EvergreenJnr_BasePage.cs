@@ -823,7 +823,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.IsButtonDisplayed(buttonName),
-                $"'{buttonName}' button is displayed");
+                $"'{buttonName}' button is not displayed");
         }
 
         [Then(@"'(.*)' button is not displayed")]
@@ -886,6 +886,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ClickButtonWithAriaLabel(buttonName);
+        }
+
+        [Then(@"'(.*)' button with aria label is displayed")]
+        public void ThenButtonWithAriaLabelIsDisplayed(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsButtonDisplayedWithAriaLabel(buttonName),
+                $"Button with '{buttonName}' aria label is not displayed");
         }
 
         #endregion

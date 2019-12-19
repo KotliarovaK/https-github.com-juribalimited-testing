@@ -23,22 +23,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
-        [When(@"User clicks Group By button on grid action bar")]
-        public void WhenUserClicksGroupByButtonOnGridActionBar()
-        {
-            var page = _driver.NowAt<AggridHeaderCounterElement>();
-            page.GroupByButton.Click();
-        }
-
-        [Then(@"following Group By values ​​are displayed for User on grid action bar")]
-        public void ThenFollowingGroupByValuesAreDisplayedForUserOnGridActionBar(Table table)
-        {
-            var page = _driver.NowAt<AggridHeaderCounterElement>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = page.GetGroupByValues().Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Group By values are not displayed correctly!");
-        }
-
         [When(@"User clicks Reset Filters button on the Item Details page")]
         public void WhenUserClicksResetFiltersButtonOnTheDetailsPage()
         {
@@ -91,13 +75,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var page = _driver.NowAt<AggridHeaderCounterElement>();
             page.CheckElementDisplayedState(page.ExportButton, true, "'Export' button is not displayed on the Item Details page!");
-        }
-
-        [Then(@"Group By button is displayed on the Item Details page")]
-        public void ThenGroupByButtonIsDisplayedOnTheItemDetailsPage()
-        {
-            var page = _driver.NowAt<AggridHeaderCounterElement>();
-            page.CheckElementDisplayedState(page.GroupByButton, true, "'Group By' button is not displayed on the Item Details page!");
         }
     }
 }

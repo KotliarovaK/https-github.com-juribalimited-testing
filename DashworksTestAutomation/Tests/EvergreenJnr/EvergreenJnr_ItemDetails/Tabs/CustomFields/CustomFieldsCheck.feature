@@ -71,8 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 	And User clicks Column button on the Column Settings panel
 	And User select "Value" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	When User clicks Group By button on grid action bar
-	Then following Group By values ​​are displayed for User on grid action bar
+	Then following Group By values ​​are displayed for User on menu panel
 	| Values       |
 	| Custom Field |
 
@@ -94,7 +93,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedFo
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
 	Then Refresh button is displayed on the Item Details page
-	And Group By button is displayed on the Item Details page
+	Then 'GroupBy' button with aria label is displayed
 	And Reset Filters button is displayed on the Item Details page
 	And Reset Filters button on the Item Details page is disable
 	When User opens 'Custom Field' column settings
@@ -143,7 +142,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	Then Reset Filters button is displayed on the Item Details page
 	Then Refresh button is displayed on the Item Details page
 	Then Export button is displayed on the Item Details page
-	Then Group By button is displayed on the Item Details page
+	Then 'GroupBy' button with aria label is displayed
 	Then Reset Filters button on the Item Details page is disable
 	When User enters "com" text in the Search field for "Custom Field" column
 	Then Reset Filters button on the Item Details page is enabled

@@ -26,28 +26,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='GroupBy']")]
-        public IWebElement GroupByButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='reload']")]
         public IWebElement RefreshButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='Export']")]
         public IWebElement ExportButton { get; set; }
 
-       
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                //SelectorFor(this, p => p.PageIdentitySelectors)
-            };
-        }
-
-        public IList<IWebElement> GetGroupByValues()
-        {
-            return Driver.FindElements(By.XPath(".//span[@class='mat-checkbox-label']"));
+            return new List<By> { };
         }
     }
 }
