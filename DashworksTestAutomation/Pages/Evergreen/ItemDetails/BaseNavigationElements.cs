@@ -19,13 +19,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-drawer-inner-container']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
-        [FindsBy(How = How.XPath, Using = MainTabsOnDetailsPage)]
-        public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
-
-        //TODO probably should be replaced by LeftMenuSelector
-        private static string MenuSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
         private static string LeftSubMenuSelector = ".//li[contains(@class,'das-mat-tree-node')]//a";
-        private static string LeftParentMenuSelector = MainTabsOnDetailsPage;//".//li[contains(@class,'das-mat-tree-parent')]//a[contains(@class,'parent')]";
+        private static string LeftParentMenuSelector = MainTabsOnDetailsPage;
         private static string LeftMenuSelector = ".//li[contains(@class, 'das-mat-tree')]//a[text()='{0}']";
 
         public override List<By> GetPageIdentitySelectors()
@@ -40,16 +35,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         #region Get Parent/Sub menu
 
-        //TODO Please do not use this method and try to switch to some other more specific
-        public IWebElement GetLeftMenuByName(string name)
+        public IEnumerable<IWebElement> GetParentMenuByName()
         {
-            var selector = By.XPath(string.Format(LeftMenuSelector, name));
-            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
-            {
-                Logger.Write(Driver.PageSource);
-                throw new Exception($"'{name}' left menu was not displayed");
-            }
-            return Driver.FindElement(selector);
+            Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
+            return Driver.FindElements(By.XPath(LeftParentMenuSelector))
+                .Where(x => x.Displayed());
+        }
+
+        public IWebElement GetParentMenuByName(string name)
+        {
+            Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
+            return GetParentMenuByName().First(x => x.Text.Equals(name));
         }
 
         public IWebElement GetSubMenuByName(string name)
@@ -64,19 +60,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
                 .First(x => x.Text.RemoveBracketsText().Equals(name) && x.Displayed());
         }
 
-        public IEnumerable<IWebElement> GetParentMenuByName()
-        {
-            Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
-            return Driver.FindElements(By.XPath(LeftParentMenuSelector))
-                .Where(x => x.Displayed());
-        }
-
-        public IWebElement GetParentMenuByName(string name)
-        {
-            Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
-            return GetParentMenuByName().First(x => x.Text.Equals(name));
-        }
-
         public List<IWebElement> GetSubMenuItems(string parentName)
         {
             var parentMenu = GetParentMenuByName(parentName);
@@ -87,58 +70,55 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         #endregion
 
-        public IWebElement GetNavigationLinkByName(string linkName)
+        #region Sub menu count
+
+        //Count of items in the particular submenu
+        private IWebElement GetSubmenuItemsItemsCount(string subMenu)
         {
-            var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            if (!Driver.IsElementDisplayed(link, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"'{linkName}' Navigation link was not displayed");
-            return Driver.FindElement(link);
+            var subMenuElement = GetSubMenuByName(subMenu);
+            if (Driver.IsElementInElementDisplayed(subMenuElement, By.XPath(".//span[contains(text(),'(') and contains(text(),')')]")
+                , WebDriverExtensions.WaitTime.Medium))
+            {
+                return subMenuElement.FindElement(By.XPath(".//span[contains(text(),'(') and contains(text(),')')]"));
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public bool GetExpandedTabByName(string tabName)
+        public bool IsSubmenuCountIsDisplayed(string subMenu)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//li[@class='das-mat-tree-parent']/div[contains(@class, 'collapsed')]/a[text()='{tabName}']"));
+            var submenuCount = GetSubmenuItemsItemsCount(subMenu);
+            return submenuCount != null && submenuCount.Displayed();
         }
 
-        public bool GetTabByName(string tabName)
+        public int SubmenuItemsCount(string subMenu)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//a[@class='ng-star-inserted'][text()='{tabName}']"));
+            var submenuCount = GetSubmenuItemsItemsCount(subMenu).Text;
+            submenuCount = submenuCount.TrimStart().TrimStart('(').TrimEnd(')');
+            return int.Parse(submenuCount);
         }
 
-        public bool GetDisplayStatusSubTabByName(string tabName)
+        #endregion
+
+        #region Disabled/Enabeld state
+
+        public bool IsSubmenuDisabled(string subMenu)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//ul[@class='das-mat-tree-submenu']//a[text()='{tabName}']"));
+            var submenuCount = GetSubMenuByName(subMenu).FindElement(By.XPath(".//ancestor::mat-tree-node")).GetAttribute("class");
+            return submenuCount.Contains("disabled");
         }
 
-        public bool GetDisplayStatusOfTabWithCountOfItemsByName(string name, string countOfItems)
+        public bool IsParentMenuDisabled(string menu)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']//span[contains(text(),'{countOfItems}')]"));
+            var submenuCount = GetParentMenuByName(menu).FindElement(By.XPath(".//ancestor::mat-nested-tree-node")).GetAttribute("class");
+            return submenuCount.Contains("disabled");
         }
 
-        public int GetCountOfItemsByTabName(string tabName)
-        {
-            if (!GetCountOfItemsDisplayStatusByTabName(tabName))
-                throw new Exception($"Count is not displayed for '{tabName}' tab");
+        #endregion
 
-            var text = Driver.FindElement(By.XPath(string.Format(string.Format(MenuSelector, tabName)))).Text;
-            text = text.TrimStart().TrimStart('(').TrimEnd(')');
-            return int.Parse(text);
-        }
-
-        public bool GetCountOfItemsDisplayStatusByTabName(string tabName)
-        {
-            return Driver.IsElementDisplayed(By.XPath(string.Format(MenuSelector, tabName)), WebDriverExtensions.WaitTime.Short);
-        }
-
-        public bool GetDisplayStatusForDisabledSubTabByName(string tabName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-tree-node[contains(@class, 'disabled')]"));
-        }
-
-        public bool GetDisplayStatusForDisabledMainTabByName(string tabName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-nested-tree-node[contains(@class, 'disabled')]"));
-        }
+        #region Expanded/Collapsed state
 
         public bool IsMenuExpanded(string tabName)
         {
@@ -146,6 +126,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
                 .FindElement(By.XPath(".//ancestor::*[contains(@class,'mat-nested-tree-node')]"))
                 .GetAttribute("aria-expanded")));
             return result;
+        }
+
+        #endregion
+
+        //TODO Please do not use this method and try to switch to some other more specific
+        public IWebElement GetLeftMenuByName(string name)
+        {
+            var selector = By.XPath(string.Format(LeftMenuSelector, name));
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
+            {
+                Logger.Write(Driver.PageSource);
+                throw new Exception($"'{name}' left menu was not displayed");
+            }
+            return Driver.FindElement(selector);
         }
     }
 }

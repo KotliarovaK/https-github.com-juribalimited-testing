@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErr
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGroupsCountIsCorrectOnEvergreenApplicationDetailsPage
 	When User navigates to the 'Application' details page for 'Folder Size for Windows (2.3)' item
 	When User navigates to the 'Distribution' left menu item
-	Then 'Groups' tab is displayed on left menu on the Details page and contains '1' count of items
+	Then 'Groups' left submenu item with '1' count is displayed
 	When User navigates to the 'Groups' left submenu item
 	Then 'GSMS-FolderSize-2.3' content is displayed in the 'Group' column
 	And "1" rows found label displays on Details Page
