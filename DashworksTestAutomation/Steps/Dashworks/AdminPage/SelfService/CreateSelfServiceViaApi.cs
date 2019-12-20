@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         [Then(@"User checks the Self Services Grid via API")]
         public void WhenUserChecksTheSelfServicesGridViaApi()
         {
-            if (!_selfServices.Value.Any())
+            if (_selfServices.Value.Equals(null))
             {
                 throw new Exception("The List of Self Services is empty");
             }
