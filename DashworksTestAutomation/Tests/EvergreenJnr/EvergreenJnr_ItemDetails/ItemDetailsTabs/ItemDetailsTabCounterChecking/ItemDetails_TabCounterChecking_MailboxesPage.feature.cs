@@ -170,22 +170,17 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Custom Fields"});
 #line 22
- testRunner.And("\"Details\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table2, "And ");
+ testRunner.And("\'Details\' left menu have following submenu items:", ((string)(null)), table2, "And ");
 #line 30
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains co" +
-                    "unt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Custom Fields\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And("\"Email Addresses\" tab is displayed on left menu on the Details page and contains " +
-                    "count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Email Addresses\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And("\"Mailbox\" tab is displayed on left menu on the Details page and NOT contains coun" +
-                    "t of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.And("\"Mailbox Owner\" tab is displayed on left menu on the Details page and NOT contain" +
-                    "s count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Owner\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.And("\"Department and Location\" tab is displayed on left menu on the Details page and N" +
-                    "OT contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Department and Location\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -198,22 +193,17 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Mailbox User Projects"});
 #line 37
- testRunner.Then("\"Projects\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table3, "Then ");
+ testRunner.Then("\'Projects\' left menu have following submenu items:", ((string)(null)), table3, "Then ");
 #line 42
- testRunner.And("\"Project Details\" sub-tab is displayed with disabled state on left menu on the De" +
-                    "tails page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Project Details\' left submenu item is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.And("\"Mailbox Projects\" tab is displayed on left menu on the Details page and contains" +
-                    " count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Projects\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And("\"Mailbox User Projects\" tab is displayed on left menu on the Details page and con" +
-                    "tains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox User Projects\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And("\"Evergreen Details\" tab is displayed on left menu on the Details page and NOT con" +
-                    "tains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Evergreen Details\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.And("\"Project Details\" tab is displayed on left menu on the Details page and NOT conta" +
-                    "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Project Details\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -230,22 +220,17 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Folder Permissions"});
 #line 50
- testRunner.Then("\"Users\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table4, "Then ");
+ testRunner.Then("\'Users\' left menu have following submenu items:", ((string)(null)), table4, "Then ");
 #line 58
- testRunner.And("\"Users\" tab is displayed on left menu on the Details page and contains count of i" +
-                    "tems", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Users\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And("\"Groups\" tab is displayed on left menu on the Details page and contains count of " +
-                    "items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Groups\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.And("\"Unresolved Users\" tab is displayed on left menu on the Details page and contains" +
-                    " count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Unresolved Users\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.And("\"Mailbox Permissions\" tab is displayed on left menu on the Details page and NOT c" +
-                    "ontains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Permissions\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
- testRunner.And("\"Folder Permissions\" tab is displayed on left menu on the Details page and NOT co" +
-                    "ntains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Folder Permissions\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
  testRunner.When("User navigates to the \'Trend\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -262,22 +247,17 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Deleted Item Size (MB)"});
 #line 65
- testRunner.Then("\"Trend\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table5, "Then ");
+ testRunner.Then("\'Trend\' left menu have following submenu items:", ((string)(null)), table5, "Then ");
 #line 73
- testRunner.And("\"Email Count\" tab is displayed on left menu on the Details page and NOT contains " +
-                    "count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Email Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.And("\"Mailbox Size (MB)\" tab is displayed on left menu on the Details page and NOT con" +
-                    "tains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Size (MB)\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
- testRunner.And("\"Associated Item Count\" tab is displayed on left menu on the Details page and NOT" +
-                    " contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Associated Item Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
- testRunner.And("\"Deleted Item Count\" tab is displayed on left menu on the Details page and NOT co" +
-                    "ntains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Deleted Item Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77
- testRunner.And("\"Deleted Item Size (MB)\" tab is displayed on left menu on the Details page and NO" +
-                    "T contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Deleted Item Size (MB)\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -375,22 +355,17 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Custom Fields"});
 #line 91
- testRunner.And("\"Details\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table7, "And ");
+ testRunner.And("\'Details\' left menu have following submenu items:", ((string)(null)), table7, "And ");
 #line 99
- testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains co" +
-                    "unt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Custom Fields\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
- testRunner.And("\"Email Addresses\" tab is displayed on left menu on the Details page and contains " +
-                    "count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Email Addresses\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
- testRunner.And("\"Mailbox\" tab is displayed on left menu on the Details page and NOT contains coun" +
-                    "t of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 102
- testRunner.And("\"Mailbox Owner\" tab is displayed on left menu on the Details page and NOT contain" +
-                    "s count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Owner\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 103
- testRunner.And("\"Department and Location\" tab is displayed on left menu on the Details page and N" +
-                    "OT contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Department and Location\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -405,19 +380,15 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Mailbox User Projects"});
 #line 106
- testRunner.Then("\"Projects\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table8, "Then ");
+ testRunner.Then("\'Projects\' left menu have following submenu items:", ((string)(null)), table8, "Then ");
 #line 113
- testRunner.And("\"Mailbox Projects\" tab is displayed on left menu on the Details page and contains" +
-                    " count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Projects\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
- testRunner.And("\"Mailbox User Projects\" tab is displayed on left menu on the Details page and con" +
-                    "tains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox User Projects\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 115
- testRunner.And("\"Evergreen Details\" tab is displayed on left menu on the Details page and NOT con" +
-                    "tains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Evergreen Details\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
- testRunner.And("\"Project Details\" tab is displayed on left menu on the Details page and NOT conta" +
-                    "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Project Details\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 118
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -434,22 +405,17 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "Folder Permissions"});
 #line 119
- testRunner.Then("\"Users\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table9, "Then ");
+ testRunner.Then("\'Users\' left menu have following submenu items:", ((string)(null)), table9, "Then ");
 #line 127
- testRunner.And("\"Users\" tab is displayed on left menu on the Details page and contains count of i" +
-                    "tems", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Users\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 128
- testRunner.And("\"Groups\" tab is displayed on left menu on the Details page and contains count of " +
-                    "items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Groups\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.And("\"Unresolved Users\" tab is displayed on left menu on the Details page and contains" +
-                    " count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Unresolved Users\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 130
- testRunner.And("\"Mailbox Permissions\" tab is displayed on left menu on the Details page and NOT c" +
-                    "ontains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Permissions\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 131
- testRunner.And("\"Folder Permissions\" tab is displayed on left menu on the Details page and NOT co" +
-                    "ntains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Folder Permissions\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
  testRunner.When("User navigates to the \'Trend\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -466,22 +432,17 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Deleted Item Size (MB)"});
 #line 134
- testRunner.Then("\"Trend\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table10, "Then ");
+ testRunner.Then("\'Trend\' left menu have following submenu items:", ((string)(null)), table10, "Then ");
 #line 142
- testRunner.And("\"Email Count\" tab is displayed on left menu on the Details page and NOT contains " +
-                    "count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Email Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 143
- testRunner.And("\"Mailbox Size (MB)\" tab is displayed on left menu on the Details page and NOT con" +
-                    "tains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Size (MB)\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
- testRunner.And("\"Associated Item Count\" tab is displayed on left menu on the Details page and NOT" +
-                    " contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Associated Item Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 145
- testRunner.And("\"Deleted Item Count\" tab is displayed on left menu on the Details page and NOT co" +
-                    "ntains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Deleted Item Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
- testRunner.And("\"Deleted Item Size (MB)\" tab is displayed on left menu on the Details page and NO" +
-                    "T contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Deleted Item Size (MB)\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

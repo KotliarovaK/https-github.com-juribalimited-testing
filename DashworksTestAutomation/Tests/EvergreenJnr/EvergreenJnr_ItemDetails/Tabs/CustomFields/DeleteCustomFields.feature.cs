@@ -191,8 +191,7 @@ this.FeatureBackground();
 #line 33
  testRunner.And("\'ValueDAS16489_1\' content is not displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'0" +
-                    "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Custom Fields\' left submenu item with \'0\' count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -318,8 +317,7 @@ this.FeatureBackground();
 #line 59
  testRunner.Then("\'1\' options are checked in the \'GroupBy\' menu panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 60
- testRunner.And("\'Custom Fields\' tab is displayed on left menu on the Details page and contains \'1" +
-                    "\' count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Custom Fields\' left submenu item with \'1\' count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
  testRunner.When("User expands \'ValueDAS17695_1B\' row in the groped grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
