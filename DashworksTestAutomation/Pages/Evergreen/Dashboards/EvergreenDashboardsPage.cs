@@ -212,7 +212,7 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement ReviewPermissionsPopupsButton(string buttonCaption)
         {
-            return Driver.FindElement(By.XPath($".//mat-dialog-container/permission-popup//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
+            return Driver.FindElement(By.XPath($".//mat-dialog-container//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
         }
 
         public string GetButtonStateOfReviewWidgetPermissionsPopup(string buttonCaption)
