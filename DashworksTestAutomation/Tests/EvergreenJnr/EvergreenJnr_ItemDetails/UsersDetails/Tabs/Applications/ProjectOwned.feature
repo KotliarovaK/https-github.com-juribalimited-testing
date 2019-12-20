@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCor
 	Then User click back button in the browser
 	And Details page for "LYZ6880619" item is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19321 @Terminator
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19321
 Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject
 	When User navigates to the 'User' details page for 'SNL594136' item
 	Then Details page for "SNL594136" item is displayed to the user

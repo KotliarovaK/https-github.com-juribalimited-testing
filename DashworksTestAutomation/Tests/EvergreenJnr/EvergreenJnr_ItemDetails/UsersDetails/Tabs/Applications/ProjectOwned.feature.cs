@@ -356,7 +356,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19321")]
-        [NUnit.Framework.CategoryAttribute("Terminator")]
         public virtual void EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject()
         {
             System.Exception lastException = null;
@@ -391,8 +390,7 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS19321",
-                        "Terminator"});
+                        "DAS19321"});
 #line 69
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
