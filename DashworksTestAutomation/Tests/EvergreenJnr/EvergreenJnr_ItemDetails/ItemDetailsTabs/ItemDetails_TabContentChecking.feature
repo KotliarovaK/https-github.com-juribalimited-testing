@@ -14,19 +14,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnT
 	And 'Advert - A0129C4E' content is displayed in the 'Advertisement' column
 	And "14" rows found label displays on Details Page
 	And table content is present
-	Then User sees loaded tab "Evergreen Detail" on the Details page
+	Then 'Evergreen Detail' left submenu item is displayed
 	When User navigates to the 'Advertisements' left submenu item
 	Then 'Advert - A0121431' content is displayed in the 'Advertisement' column
 	And 'Hewlett-Packard' content is displayed in the 'Vendor' column
 	And "7" rows found label displays on Details Page
 	And table content is present
-	Then User sees loaded tab "Advertisements" on the Details page
+	Then 'Advertisements' left submenu item is displayed
 	When User navigates to the 'Collections' left submenu item
 	Then 'Collection A01131CA' content is displayed in the 'Collection' column
 	And 'A01 SMS (Spoof)' content is displayed in the 'Source' column
 	And "7" rows found label displays on Details Page
 	And table content is present
-	And User sees loaded tab "Collections" on the Details page
+	Then 'Collections' left submenu item is displayed
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed

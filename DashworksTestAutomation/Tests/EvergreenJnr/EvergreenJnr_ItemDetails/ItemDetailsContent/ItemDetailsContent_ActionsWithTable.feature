@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxD
 	When User clicks on 'Email Address' column header
 	And User clicks on 'Email Address' column header
 	And User click content from "Email Address" column
-	Then User sees loaded tab "Mailbox" on the Details page
+	Then 'Mailbox' left submenu item is displayed
 	Then Item content is displayed to the User
 	And There are no errors in the browser console
 

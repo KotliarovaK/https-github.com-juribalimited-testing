@@ -72,16 +72,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        [Then(@"'(.*)' left menu have following submenu items:")]
-        public void ThenLeftMenuHaveFollowingSubmenuItems(string parent, Table table)
-        {
-            var element = _driver.NowAt<BaseNavigationElements>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = element.GetSubMenuItems(parent).Select(value => value.Text).ToList();
-            Verify.AreEqual(expectedList, actualList,
-                $"Incorrect submenu items for '{parent}' parent left menu");
-        }
-
         #region Display
 
         [Then(@"User sees following parent left menu items")]
@@ -101,6 +91,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 actualList = detailsPage.GetParentMenuByName().Select(value => value.Text).ToList();
             }
             Verify.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
+        }
+
+        [Then(@"'(.*)' left menu have following submenu items:")]
+        public void ThenLeftMenuHaveFollowingSubmenuItems(string parent, Table table)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = element.GetSubMenuItems(parent).Select(value => value.Text).ToList();
+            Verify.AreEqual(expectedList, actualList,
+                $"Incorrect submenu items for '{parent}' parent left menu");
+        }
+
+        [Then(@"'(.*)' left submenu item is displayed")]
+        public void ThenLeftSubmenuItemIsDisplayed(string submenu)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsTrue(element.IsSubmenuDisplayed(submenu), $"'{submenu}' submenu was not displayed");
         }
 
         [Then(@"'(.*)' left submenu item with some count is displayed")]
