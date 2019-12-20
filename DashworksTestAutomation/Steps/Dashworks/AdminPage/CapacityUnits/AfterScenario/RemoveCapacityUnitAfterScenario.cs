@@ -26,35 +26,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
         [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedCapacityUnit()
         {
-            try
+            if (!_capacityUnits.Value.Any())
+                return;
+
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/capacityUnits/deleteCapacityUnits";
+
+            foreach (CapacityUnitDto capacityUnit in _capacityUnits.Value)
             {
-                if (!_capacityUnits.Value.Any())
-                    return;
-
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/capacityUnits/deleteCapacityUnits";
-
-                foreach (CapacityUnitDto capacityUnit in _capacityUnits.Value)
+                try
                 {
-                    try
-                    {
-                        var request = requestUri.GenerateRequest();
-                        request.AddParameter("objectId", null);
-                        request.AddParameter("selectedObjectsList", capacityUnit.GetId());
+                    var request = requestUri.GenerateRequest();
+                    request.AddParameter("objectId", null);
+                    request.AddParameter("selectedObjectsList", capacityUnit.GetId());
 
-                        var resp = _client.Value.Put(request);
+                    var resp = _client.Value.Put(request);
 
-                        if (resp.StatusCode != HttpStatusCode.OK)
-                        {
-                            Logger.Write($"Unable to delete Capacity Unit via API: {resp.StatusCode}");
-                        }
-                    }
-                    catch (Exception e)
+                    if (resp.StatusCode != HttpStatusCode.OK)
                     {
-                        Logger.Write($"Unable to delete Capacity Unit via API: {e}");
+                        Logger.Write($"Unable to delete Capacity Unit via API: {resp.StatusCode}");
                     }
                 }
+                catch (Exception e)
+                {
+                    Logger.Write($"Unable to delete Capacity Unit via API: {e}");
+                }
             }
-            catch { }
         }
     }
 }
