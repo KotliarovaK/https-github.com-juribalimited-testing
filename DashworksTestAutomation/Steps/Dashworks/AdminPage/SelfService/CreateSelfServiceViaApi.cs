@@ -10,6 +10,8 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using RestSharp;
 using Newtonsoft.Json;
+using DashworksTestAutomation.Utils;
+using Newtonsoft.Json.Linq;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 {
@@ -47,7 +49,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(content);
 
                 SelfService.ServiceId = selfServiceObjResponse.ServiceId;
+                SelfService.CreatedByUser = selfServiceObjResponse.CreatedByUser;
                 SelfService.ScopeId = selfServiceObjResponse.ScopeId;
+                SelfService.ScopeName = selfServiceObjResponse.ScopeName;
                 SelfService.StartDate = selfServiceObjResponse.StartDate;
                 SelfService.EndDate = selfServiceObjResponse.EndDate;
                 SelfService.ObjectType = selfServiceObjResponse.ObjectType;
@@ -108,6 +112,30 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 {
                     throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
                 }
+            }
+        }
+
+        [Then(@"User checks the Self Services Grid via API")]
+        public void WhenUserChecksTheSelfServicesGridViaApi()
+        {
+            if (_selfServices.Value.Equals(null))
+            {
+                throw new Exception("The List of Self Services is empty");
+            }
+
+            foreach (SelfServiceDto SelfService in _selfServices.Value)
+            {
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
+                var response = _client.Value.Get(requestUri.GenerateRequest());
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    throw new Exception($"Unable to get the Self Services Grid: {response.StatusCode}, {response.ErrorMessage}");
+                }
+
+                var selfServicesGrid = JsonConvert.DeserializeObject<JObject>(response.Content);
+                var listOfReturnedSelfServices = selfServicesGrid["results"].ToObject<SelfServiceDto[]>().ToList();
+                Verify.IsTrue(listOfReturnedSelfServices.Any(ss => ss.Equals(SelfService)), "The created Self Service doesn't match to the existing Self Service in the Grid");
             }
         }
     }
