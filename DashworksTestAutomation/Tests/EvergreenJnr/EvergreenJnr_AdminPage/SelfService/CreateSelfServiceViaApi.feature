@@ -15,5 +15,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateAndGetSelfServiceVia
 Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceExistInTheGrid
 	When User creates Self Service via API
 	| ServiceId | Name                        | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
-	| 1         | TestSelfService_name36_test | id193841          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	| 1         | TestSelfService_name50_test | id193850          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
 	Then User checks the Self Services Grid via API
