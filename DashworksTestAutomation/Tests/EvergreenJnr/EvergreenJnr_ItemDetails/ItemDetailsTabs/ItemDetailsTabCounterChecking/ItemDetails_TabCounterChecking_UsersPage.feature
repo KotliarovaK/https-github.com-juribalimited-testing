@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInEvergreenMode
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item 
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
-	And User sees following main-tabs on left menu on the Details page:
+	And User sees following parent left menu items
 	| TabName          |
 	| Details          |
 	| Projects         |
@@ -17,46 +17,46 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Applications     |
 	| Mailboxes        |
 	| Compliance       |
-	And "Devices" tab is displayed on left menu on the Details page and contains count of items
+	And 'Devices' left submenu item with some count is displayed
 	#================ checks sub-menu for main Details tab ================#
-	And "Details" main-menu on the Details page contains following sub-menu:
+	And 'Details' left menu have following submenu items:
 	| SubTabName              |
 	| User                    |
 	| Department and Location |
 	| Custom Fields           |
 	#================ checks counters ================#
-	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
-	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "User" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Custom Fields' left submenu item with some count is displayed
+	And 'Department and Location' left submenu item is displayed without count
+	And 'User' left submenu item is displayed without count
 	#================ checks sub-menu for main Projects tab ================#
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" main-menu on the Details page contains following sub-menu:
+	Then 'Projects' left menu have following submenu items:
 	| SubTabName              |
 	| Evergreen Details       |
 	| User Projects           |
 	| Device Project Summary  |
 	| Mailbox Project Summary |
-	And "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
+	And 'Project Details' left submenu item is disabled
 	#================ checks counters ================#
-	And "User Projects" tab is displayed on left menu on the Details page and contains count of items
-	And "Device Project Summary" tab is displayed on left menu on the Details page and contains count of items
-	And "Mailbox Project Summary" tab is displayed on left menu on the Details page and contains count of items
-	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'User Projects' left submenu item with some count is displayed
+	And 'Device Project Summary' left submenu item with some count is displayed
+	And 'Mailbox Project Summary' left submenu item with some count is displayed
+	And 'Evergreen Details' left submenu item is displayed without count
+	And 'Project Details' left submenu item is displayed without count
 	#================ checks sub-menu for main Active Directory tab ================#
 	When User navigates to the 'Active Directory' left menu item
-	Then "Active Directory" main-menu on the Details page contains following sub-menu:
+	Then 'Active Directory' left menu have following submenu items:
 	| SubTabName       |
 	#| Active Directory |
 	| Groups           |
 	| LDAP             |
 	#================ checks counters ================#
-	And "Groups" tab is displayed on left menu on the Details page and contains count of items
-	And "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Groups' left submenu item with some count is displayed
+	And 'Active Directory' left submenu item is displayed without count
+	And 'LDAP' left submenu item is displayed without count
 	#================ checks sub-menu for main Applications tab ================#
 	When User navigates to the 'Applications' left menu item
-	Then "Applications" main-menu on the Details page contains following sub-menu:
+	Then 'Applications' left menu have following submenu items:
 	| SubTabName        |
 	| Evergreen Summary |
 	| Evergreen Detail  |
@@ -64,23 +64,23 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Advertisements    |
 	| Collections       |
 	#================ checks counters ================#
-	And "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
-	And "Evergreen Detail" tab is displayed on left menu on the Details page and contains count of items
-	And "Evergreen Owned" tab is displayed on left menu on the Details page and contains count of items
-	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
-	And "Collections" tab is displayed on left menu on the Details page and contains count of items
+	And 'Evergreen Summary' left submenu item with some count is displayed
+	And 'Evergreen Detail' left submenu item with some count is displayed
+	And 'Evergreen Owned' left submenu item with some count is displayed
+	And 'Advertisements' left submenu item with some count is displayed
+	And 'Collections' left submenu item with some count is displayed
 	#================ checks sub-menu for main Mailboxes tab ================#
 	When User navigates to the 'Mailboxes' left menu item
-	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
+	Then 'Mailboxes' left menu have following submenu items:
 	| SubTabName          |
 	| Mailboxes           |
 	| Mailbox Permissions |
 	#================ checks counters ================#
-	And "Mailboxes" tab is displayed on left menu on the Details page and contains count of items
-	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Mailboxes' left submenu item with some count is displayed
+	And 'Mailbox Permissions' left submenu item is displayed without count
 	#================ checks sub-menu for main Compliance tab ================#
 	When User navigates to the 'Compliance' left menu item
-	Then "Compliance" main-menu on the Details page contains following sub-menu:
+	Then 'Compliance' left menu have following submenu items:
 	| SubTabName          |
 	| Overview            |
 	| Hardware Summary    |
@@ -88,18 +88,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Application Summary |
 	| Application Issues  |
 	#================ checks counters ================#
-	And "Application Issues" tab is displayed on left menu on the Details page and contains count of items
-	And "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "Hardware Rules" tab is displayed on left menu on the Details page and contains count of items
-	And "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Application Issues' left submenu item with some count is displayed
+	And 'Overview' left submenu item is displayed without count
+	And 'Hardware Summary' left submenu item is displayed without count
+	And 'Hardware Rules' left submenu item with some count is displayed
+	And 'Application Summary' left submenu item is displayed without count
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16884
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInProjectMode
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
-	Then User sees following main-tabs on left menu on the Details page:
+	Then User sees following parent left menu items
 	| TabName          |
 	| Details          |
 	| Projects         |
@@ -107,20 +107,20 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Applications     |
 	| Mailboxes        |
 	| Compliance       |
-	And "Devices" tab is displayed on left menu on the Details page and contains count of items
+	And 'Devices' left submenu item with some count is displayed
 	#================ checks sub-menu for main Details tab ================#
-	And "Details" main-menu on the Details page contains following sub-menu:
+	And 'Details' left menu have following submenu items:
 	| SubTabName              |
 	| User                    |
 	| Department and Location |
 	| Custom Fields           |
 	#================ checks counters ================#
-	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
-	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "User" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Custom Fields' left submenu item with some count is displayed
+	And 'Department and Location' left submenu item is displayed without count
+	And 'User' left submenu item is displayed without count
 	#================ checks sub-menu for main Projects tab ================#
 	When User navigates to the 'Projects' left menu item
-	Then "Projects" main-menu on the Details page contains following sub-menu:
+	Then 'Projects' left menu have following submenu items:
 	| SubTabName              |
 	| Evergreen Details       |
 	| Project Details         |
@@ -128,45 +128,45 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Device Project Summary  |
 	| Mailbox Project Summary |
 	#================ checks counters ================#
-	And "User Projects" tab is displayed on left menu on the Details page and contains count of items
-	And "Device Project Summary" tab is displayed on left menu on the Details page and contains count of items
-	And "Mailbox Project Summary" tab is displayed on left menu on the Details page and contains count of items
-	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'User Projects' left submenu item with some count is displayed
+	And 'Device Project Summary' left submenu item with some count is displayed
+	And 'Mailbox Project Summary' left submenu item with some count is displayed
+	And 'Evergreen Details' left submenu item is displayed without count
+	And 'Project Details' left submenu item is displayed without count
 	#================ checks sub-menu for main Active Directory tab ================#
 	When User navigates to the 'Active Directory' left menu item
-	Then "Active Directory" main-menu on the Details page contains following sub-menu:
+	Then 'Active Directory' left menu have following submenu items:
 	| SubTabName       |
 	| Groups           |
 	| LDAP             |
 	#================ checks counters ================#
-	And "Groups" tab is displayed on left menu on the Details page and contains count of items
-	And "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Groups' left submenu item with some count is displayed
+	And 'LDAP' left submenu item is displayed without count
 	#================ checks sub-menu for main Applications tab ================#
 	When User navigates to the 'Applications' left menu item
-	Then "Applications" main-menu on the Details page contains following sub-menu:
+	Then 'Applications' left menu have following submenu items:
 	| SubTabName        |
 	| Evergreen Summary |
 	| Evergreen Detail  |
 	| Advertisements    |
 	| Collections       |
 	#================ checks counters ================#
-	And "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
-	And "Evergreen Detail" tab is displayed on left menu on the Details page and contains count of items
-	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
-	And "Collections" tab is displayed on left menu on the Details page and contains count of items
+	And 'Evergreen Summary' left submenu item with some count is displayed
+	And 'Evergreen Detail' left submenu item with some count is displayed
+	And 'Advertisements' left submenu item with some count is displayed
+	And 'Collections' left submenu item with some count is displayed
 	#================ checks sub-menu for main Mailboxes tab ================#
 	When User navigates to the 'Mailboxes' left menu item
-	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
+	Then 'Mailboxes' left menu have following submenu items:
 	| SubTabName          |
 	| Mailboxes           |
 	| Mailbox Permissions |
 	#================ checks counters ================#
-	And "Mailboxes" tab is displayed on left menu on the Details page and contains count of items
-	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Mailboxes' left submenu item with some count is displayed
+	And 'Mailbox Permissions' left submenu item is displayed without count
 	#================ checks sub-menu for main Compliance tab ================#
 	When User navigates to the 'Compliance' left menu item
-	Then "Compliance" main-menu on the Details page contains following sub-menu:
+	Then 'Compliance' left menu have following submenu items:
 	| SubTabName          |
 	| Overview            |
 	| Hardware Summary    |
@@ -174,65 +174,65 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Application Summary |
 	| Application Issues  |
 	#================ checks counters ================#
-	And "Application Issues" tab is displayed on left menu on the Details page and contains count of items
-	And "Hardware Rules" tab is displayed on left menu on the Details page and contains count of items
-	And "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Application Issues' left submenu item with some count is displayed
+	And 'Hardware Rules' left submenu item with some count is displayed
+	And 'Overview' left submenu item is displayed without count
+	And 'Hardware Summary' left submenu item is displayed without count
+	And 'Application Summary' left submenu item is displayed without count
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16830 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToTheNumberOfFieldsInTheTable
 	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for "ACG370114" item is displayed to the user
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '3' count of items
+	And 'Custom Fields' left submenu item with '3' count is displayed
 	When User navigates to the 'Custom Fields' left submenu item
 	Then "3" rows found label displays on Details Page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'User Projects' left submenu item
-	Then 'User Projects' tab is displayed on left menu on the Details page and contains '8' count of items
+	Then 'User Projects' left submenu item with '8' count is displayed
 	And "8" rows found label displays on Details Page
 	When User navigates to the 'Device Project Summary' left submenu item
-	Then 'Device Project Summary' tab is displayed on left menu on the Details page and contains '15' count of items
+	Then 'Device Project Summary' left submenu item with '15' count is displayed
 	And "15" rows found label displays on Details Page
 	When User navigates to the 'Devices' left menu item
-	Then 'Devices' tab is displayed on left menu on the Details page and contains '2' count of items
+	Then 'Devices' left submenu item with '2' count is displayed
 	And "2" rows found label displays on Details Page
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Summary' left submenu item
-	Then 'Evergreen Summary' tab is displayed on left menu on the Details page and contains '7' count of items
+	Then 'Evergreen Summary' left submenu item with '7' count is displayed
 	And "7" rows found label displays on Details Page
 	When User navigates to the 'Evergreen Detail' left submenu item
-	Then 'Evergreen Detail' tab is displayed on left menu on the Details page and contains '16' count of items
+	Then 'Evergreen Detail' left submenu item with '16' count is displayed
 	And "16" rows found label displays on Details Page
 	When User navigates to the 'Compliance' left menu item
 	And User navigates to the 'Hardware Rules' left submenu item
-	Then 'Hardware Rules' tab is displayed on left menu on the Details page and contains '2' count of items
+	Then 'Hardware Rules' left submenu item with '2' count is displayed
 	And "2" rows found label displays on Details Page
 	When User navigates to the 'Application Issues' left submenu item
-	Then 'Application Issues' tab is displayed on left menu on the Details page and contains '2' count of items
+	Then 'Application Issues' left submenu item with '2' count is displayed
 	And "2" rows found label displays on Details Page
 	When User navigates to the 'User' details page for '0137C8E69921432992B' item
 	Then Details page for "0137C8E69921432992B" item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Mailbox Project Summary' left submenu item
-	Then 'Mailbox Project Summary' tab is displayed on left menu on the Details page and contains '3' count of items
+	Then 'Mailbox Project Summary' left submenu item with '3' count is displayed
 	And "3" rows found label displays on Details Page
 	When User navigates to the 'Active Directory' left menu item
 	And User navigates to the 'Groups' left submenu item
-	Then 'Groups' tab is displayed on left menu on the Details page and contains '1' count of items
+	Then 'Groups' left submenu item with '1' count is displayed
 	And "1" rows found label displays on Details Page
 	When User navigates to the 'Mailboxes' left menu item
 	And User navigates to the 'Mailboxes' left submenu item
-	Then 'Mailboxes' tab is displayed on left menu on the Details page and contains '1' count of items
+	Then 'Mailboxes' left submenu item with '1' count is displayed
 	And "1" rows found label displays on Details Page
 	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for "allanj" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Advertisements' left submenu item
-	Then 'Advertisements' tab is displayed on left menu on the Details page and contains '5' count of items
+	Then 'Advertisements' left submenu item with '5' count is displayed
 	And "5" rows found label displays on Details Page
 	When User navigates to the 'Collections' left submenu item
-	Then 'Collections' tab is displayed on left menu on the Details page and contains '9' count of items
+	Then 'Collections' left submenu item with '9' count is displayed
 	And "9" rows found label displays on Details Page
 	
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17769
@@ -242,4 +242,4 @@ Scenario: EvergreenJnr_UsersList_CheckThatCollectionsSubMenuCounterMatchTheNumbe
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Collections' left submenu item
 	Then "9" rows found label displays on Details Page
-	And 'Collections' tab is displayed on left menu on the Details page and contains '9' count of items
+	And 'Collections' left submenu item with '9' count is displayed

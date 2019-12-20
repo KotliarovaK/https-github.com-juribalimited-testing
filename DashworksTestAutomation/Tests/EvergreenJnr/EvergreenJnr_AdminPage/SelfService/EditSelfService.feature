@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18214 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18214 @DAS19364 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpenedOneAndUserIsAbleToEditIt
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Service' left menu item
@@ -14,6 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpened
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters 'TestP_ID_5' text to 'Self Service Identifier' textbox
 	When User clicks 'CREATE' button
+	Then Page with 'Create Self Service' header is displayed to user
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
 	Then Page with 'TestProj_5' header is displayed to user
 	Then 'TestProj_5' content is displayed in 'Self Service Name' textbox
@@ -28,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpened
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User enters 'NEW_TestProj_5' text to 'Self Service Name' textbox
 	Then 'UPDATE' button is not disabled
-	When User enters '' text to 'Self Service Name' textbox
+	When User clears 'Self Service Name' textbox
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup

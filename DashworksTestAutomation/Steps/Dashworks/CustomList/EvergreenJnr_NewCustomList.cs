@@ -16,15 +16,17 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.CustomList
 {
     [Binding]
-    internal class EvergreenJnr_NewCustomList : RemoveCustomListAfterScenario
+    internal class EvergreenJnr_NewCustomList : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
         private readonly ListsDetails _listsDetails;
+        private readonly RemoveCustomListMethods _customListMethods;
 
-        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, ListsDetails listsDetails, UsedUsers usedUsers, UsersWithSharedLists usersWithSharedLists) : base(usedUsers, usersWithSharedLists)
+        public EvergreenJnr_NewCustomList(RemoteWebDriver driver, ListsDetails listsDetails, UsedUsers usedUsers, UsersWithSharedLists usersWithSharedLists)
         {
             _driver = driver;
             _listsDetails = listsDetails;
+            _customListMethods = new RemoveCustomListMethods(usedUsers, usersWithSharedLists);
         }
 
         [Then(@"Save to New Custom List element is NOT displayed")]
@@ -500,7 +502,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
         [When(@"User lists were removed by API")]
         public void WhenUserListsRemovedByApi()
         {
-            DeleteAllCustomListsAfterScenarioRun();
+            _customListMethods.RemoveUserLists();
+            _customListMethods.RemoveSharedLists();
         }
     }
 }
