@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
-using System.Threading;
-using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
@@ -19,8 +10,6 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using RestSharp;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using NUnit.Framework;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 {

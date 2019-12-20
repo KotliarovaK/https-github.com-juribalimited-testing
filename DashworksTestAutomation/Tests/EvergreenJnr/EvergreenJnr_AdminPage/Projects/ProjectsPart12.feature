@@ -73,20 +73,16 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| Permissions      |
 	| Author           |
 	| AvailabilityOnly |
-	Then following Mailbox permissions are displayed to the user
-	| Permissions      |
-	| FullAccess       |
-	| ChangeOwner      |
-	| Author           |
-	| AvailabilityOnly |
 	When User checks 'Delegated mailboxes ' checkbox
 	And User checks 'Owned mailboxes' checkbox
 	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
-	Then following Mailbox permissions are displayed to the user
-	| Permissions      |
-	| FullAccess       |
-	| ChangeOwner      |
+	Then following chips of 'ADD PERMISSION' button are displayed
+	| Chips       |
+	| FullAccess  |
+	| ChangeOwner |
+	Then following chips of 'ADD PERMISSION' button with '1' index are displayed
+	| Chips            |
 	| Author           |
 	| AvailabilityOnly |
 	And following checkboxes are checked in the Scope section
@@ -107,9 +103,11 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	And User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
-	Then following Mailbox permissions are displayed to the user
-	| Permissions      |
-	| ChangeOwner      |
+	Then following chips of 'ADD PERMISSION' button are displayed
+	| Chips       |
+	| ChangeOwner |
+	Then following chips of 'ADD PERMISSION' button with '1' index are displayed
+	| Chips            |
 	| AvailabilityOnly |
 	And There are no errors in the browser console
 

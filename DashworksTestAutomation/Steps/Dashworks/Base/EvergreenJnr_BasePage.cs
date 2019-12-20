@@ -823,7 +823,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.IsButtonDisplayed(buttonName),
-                $"'{buttonName}' button is displayed");
+                $"'{buttonName}' button is not displayed");
         }
 
         [Then(@"'(.*)' button is not displayed")]
@@ -886,6 +886,30 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ClickButtonWithAriaLabel(buttonName);
+        }
+
+        [Then(@"'(.*)' button with aria label is displayed")]
+        public void ThenButtonWithAriaLabelIsDisplayed(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsButtonDisplayedWithAriaLabel(buttonName),
+                $"Button with '{buttonName}' aria label is not displayed");
+        }
+
+        [Then(@"'(.*)' button with aria label is disabled")]
+        public void ThenButtonWithAriaLabelIsDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+                $"'{buttonName}' button is not disabled");
+        }
+
+        [Then(@"'(.*)' button with aria label is not disabled")]
+        public void ThenButtonWithAriaLabelIsNotDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+                $"'{buttonName}' button is disabled");
         }
 
         #endregion
@@ -1017,17 +1041,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
-        #region Chips
+        #region Radio button
 
-        [When(@"User removes following chips of '(.*)' button")]
-        public void WhenUserRemovesFollowingChipsOfButton(string button, Table table)
+        [When(@"User clicks '(.*)' radio button")]
+        public void WhenUserClicksRadioButton(string radioButtonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            foreach (var row in table.Rows)
-            {
-                page.GetChipsForButton(button).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
-            }
+            page.GetRadioButton(radioButtonName).Click();
         }
+
+        #endregion
+
+        #region Chips
 
         [When(@"User removes following chips of '(.*)' button with '(.*)' index")]
         public void WhenUserRemovesFollowingChipsOfButtonWithIndex(string button, int index, Table table)
@@ -1067,6 +1092,42 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Thread.Sleep(300);
             Verify.IsFalse(_driver.IsTooltipDisplayed(),
                 $"Tooltip for '{chipName}' chip is displayed");
+        }
+
+        #endregion
+
+        #region Chips related to the button
+
+        [When(@"User removes following chips of '(.*)' button")]
+        public void WhenUserRemovesFollowingChipsOfButton(string button, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
+
+        [Then(@"following chips of '(.*)' button are displayed")]
+        public void ThenFollowingChipsOfButtonAreDisplayed(string button, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                Verify.IsTrue(page.GetChipsForButton(button).Any(x => x.Text.Equals(row["Chips"])),
+                    $"There is no '{row["Chips"]}' chips for '{button}' button");
+            }
+        }
+
+        [Then(@"following chips of '(.*)' button with '(.*)' index are displayed")]
+        public void ThenFollowingChipsOfButtonWithIndexAreDisplayed(string button, int index, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                Verify.IsTrue(page.GetChipsForButton(button, index).Any(x => x.Text.Equals(row["Chips"])),
+                    $"There is no '{row["Chips"]}' chips for '{button}' button with '{index}' index");
+            }
         }
 
         #endregion

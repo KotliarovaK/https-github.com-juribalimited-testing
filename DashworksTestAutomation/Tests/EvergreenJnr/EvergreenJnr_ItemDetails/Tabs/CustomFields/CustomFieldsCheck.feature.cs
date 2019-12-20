@@ -444,15 +444,13 @@ this.FeatureBackground();
  testRunner.And("User select \"Value\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
- testRunner.When("User clicks Group By button on grid action bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
                         "Custom Field"});
-#line 75
- testRunner.Then("following Group By values ​​are displayed for User on grid action bar", ((string)(null)), table3, "Then ");
+#line 74
+ testRunner.Then("following Group By values ​​are displayed for User on menu panel", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -505,22 +503,22 @@ this.FeatureBackground();
                         "DAS17776",
                         "DAS18363",
                         "DAS18502"});
-#line 80
+#line 79
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 81
+#line 80
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 81
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 82
  testRunner.And("User opens \'Custom Field\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 83
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 84
  testRunner.And("User clicks Select All checkbox on Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 85
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -529,7 +527,7 @@ this.FeatureBackground();
                         "Custom Field"});
             table4.AddRow(new string[] {
                         ""});
-#line 87
+#line 86
  testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -579,35 +577,42 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "CustomFields",
                         "DAS18155"});
-#line 93
+#line 92
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 94
+#line 93
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
+#line 94
  testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.Then("\'reload\' button with aria label is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 96
- testRunner.Then("Refresh button is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'GroupBy\' button with aria label is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 97
- testRunner.And("Group By button is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'ResetFilters\' button with aria label is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 98
- testRunner.And("Reset Filters button is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'ResetFilters\' button with aria label is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
- testRunner.And("Reset Filters button on the Item Details page is disable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
  testRunner.When("User opens \'Custom Field\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 100
  testRunner.When("User selects \'Pin left\' option from column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 102
+#line 101
  testRunner.Then("\'Custom Field\' column is \'Left\' Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 103
- testRunner.When("User clicks Group By button on the Details page and selects \"Custom Field\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 104
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkboxes",
+                        "State"});
+            table5.AddRow(new string[] {
+                        "Custom Field",
+                        "true"});
+#line 102
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table5, "When ");
+#line 105
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
- testRunner.When("User clicks Refresh button on grid action bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks button with \'reload\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
  testRunner.Then("\'Custom Field\' column is \'Left\' Pinned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 108
@@ -666,47 +671,47 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ObjectType",
                         "ObjectId",
                         "FieldName",
                         "Value",
                         "FieldIndex"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "device",
                         "5539",
                         "ComputerWarranty",
                         "bbb",
                         "0"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "device",
                         "5539",
                         "ComputerWarranty",
                         "001",
                         "0"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "device",
                         "5539",
                         "ComputerWarranty",
                         "aaa",
                         "0"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "device",
                         "5539",
                         "ComputerWarranty",
                         "002",
                         "0"});
 #line 112
- testRunner.When("User creates Custom Field via API", ((string)(null)), table5, "When ");
+ testRunner.When("User creates Custom Field via API", ((string)(null)), table6, "When ");
 #line 118
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Computer Warranty"});
 #line 119
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table6, "When ");
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table7, "When ");
 #line 122
  testRunner.When("User perform search by \"Z75ievru6r751l\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
@@ -789,41 +794,48 @@ this.FeatureBackground();
 #line 134
  testRunner.Then("data in table is sorted by \'Custom Field\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Custom Field"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         ""});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Value"});
 #line 135
- testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table7, "Then ");
+ testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table8, "Then ");
 #line 140
  testRunner.Then("User sees \"2\" rows in grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 141
- testRunner.Then("Reset Filters button is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'ResetFilters\' button with aria label is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 142
- testRunner.Then("Refresh button is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'reload\' button with aria label is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 143
- testRunner.Then("Export button is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Export\' button with aria label is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 144
- testRunner.Then("Group By button is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'GroupBy\' button with aria label is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 145
- testRunner.Then("Reset Filters button on the Item Details page is disable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'ResetFilters\' button with aria label is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 146
  testRunner.When("User enters \"com\" text in the Search field for \"Custom Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
- testRunner.Then("Reset Filters button on the Item Details page is enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'ResetFilters\' button with aria label is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 148
  testRunner.Then("Rows counter shows \"1\" of \"2\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 149
- testRunner.When("User clicks Reset Filters button on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks button with \'ResetFilters\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 150
- testRunner.Then("Reset Filters button on the Item Details page is disable", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'ResetFilters\' button with aria label is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkboxes",
+                        "State"});
+            table9.AddRow(new string[] {
+                        "Value",
+                        "true"});
 #line 151
- testRunner.When("User clicks Group By button on the Details page and selects \"Value\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 152
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table9, "When ");
+#line 154
  testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

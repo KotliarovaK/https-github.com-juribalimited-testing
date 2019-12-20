@@ -175,11 +175,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(button);
         }
 
-        public bool PermissionsDisplay(string permissions)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//li/span[text()='{permissions}']"));
-        }
-
         public bool CheckboxesDisplay(string checkboxes)
         {
             return Driver.IsElementDisplayed(By.XPath(

@@ -48,16 +48,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             applicationTab.GetReadinessOptionByName(colorName).Click();
         }
 
-        [Then(@"following Mailbox permissions are displayed to the user")]
-        public void ThenFollowingMailboxPermissionsAreDisplayedToTheUser(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-                Utils.Verify.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]),
-                    $"'{row["Permissions"]}' are not displayed");
-        }
-
         [Then(@"following checkboxes are checked in the Scope section")]
         public void ThenFollowingCheckboxesAreCheckedInTheScopeSection(Table table)
         {

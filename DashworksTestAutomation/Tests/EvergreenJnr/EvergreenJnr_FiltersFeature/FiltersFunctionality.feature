@@ -2593,3 +2593,30 @@ Examples:
 	| Applications | Device Owner Last Logon Date | Before (relative)       |
 	| Users        | Last Logon Date              | After (relative)        |
 	| Mailboxes    | Created Date                 | On or before (relative) |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersFunctionality @DAS19384
+Scenario: EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWork
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| zMailboxAu: Owner In Scope |
+	Then Content is present in the newly added column
+	| ColumnName                 |
+	| zMailboxAu: Owner In Scope |
+	Then "14,784" rows are displayed in the agGrid
+	When User clicks on 'zMailboxAu: Owner In Scope' column header
+	Then data in table is sorted by 'zMailboxAu: Owner In Scope' column in descending order
+	When User clicks on 'zMailboxAu: Owner In Scope' column header
+	Then data in table is sorted by 'zMailboxAu: Owner In Scope' column in ascending order
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "zMailboxAu: Owner In Scope" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	| FALSE              |
+	| Empty              |
+	Then "zMailboxAu: Owner In Scope" filter is added to the list
+	Then "14,784" rows are displayed in the agGrid
