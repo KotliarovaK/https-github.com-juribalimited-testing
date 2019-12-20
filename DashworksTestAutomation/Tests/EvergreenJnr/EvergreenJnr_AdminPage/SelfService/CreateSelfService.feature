@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 DAS19364 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Service' left menu item
