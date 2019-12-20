@@ -161,7 +161,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Compliance"});
 #line 12
- testRunner.And("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table1, "And ");
+ testRunner.And("User sees following parent left menu items", ((string)(null)), table1, "And ");
 #line 20
  testRunner.And("\"Devices\" tab is displayed on left menu on the Details page and contains count of" +
                     " items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -397,7 +397,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Compliance"});
 #line 102
- testRunner.Then("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table8, "Then ");
+ testRunner.Then("User sees following parent left menu items", ((string)(null)), table8, "Then ");
 #line 110
  testRunner.And("\"Devices\" tab is displayed on left menu on the Details page and contains count of" +
                     " items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -79,5 +81,73 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedList, actualList,
                 $"Incorrect submenu items for '{parent}' parent left menu");
         }
+
+        #region Display
+
+        [Then(@"User sees following parent left menu items")]
+        public void ThenUserSeesFollowingParentLeftMenuItems(Table table)
+        {
+            var detailsPage = _driver.NowAt<BaseNavigationElements>();
+
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            List<string> actualList = new List<string>();
+            try
+            {
+                actualList = detailsPage.GetParentMenuByName().Select(value => value.Text).ToList();
+            }
+            catch (StaleElementReferenceException e)
+            {
+                Logger.Write($"StaleElementReferenceException during retrieving of parent menu items: {e}");
+                actualList = detailsPage.GetParentMenuByName().Select(value => value.Text).ToList();
+            }
+            Verify.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
+        }
+
+        [Then(@"'(.*)' left submenu item with some count is displayed")]
+        public void ThenLeftSubmenuItemWithSomeCountIsDisplayed(string submenu)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsTrue(element.IsSubmenuCountIsDisplayed(submenu),$"'{submenu}' submenu doesn't contains items count");
+        }
+
+        [Then(@"'(.*)' left submenu item is displayed without count")]
+        public void ThenLeftSubmenuItemIsDisplayedWithoutCount(string submenu)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsFalse(element.IsSubmenuCountIsDisplayed(submenu), $"'{submenu}' submenu contains items count");
+        }
+
+        [Then(@"'(.*)' left submenu item with '(.*)' count is displayed")]
+        public void ThenLeftSubmenuItemWithCountIsDisplayed(string submenu, int count)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            //Try to check content several times because it is updating not immediately
+            if (!count.Equals(element.SubmenuItemsCount(submenu)))
+            {
+                //JS update count every 3 seconds
+                Thread.Sleep(3000);
+            }
+            Verify.AreEqual(count, element.SubmenuItemsCount(submenu), $"'{submenu}' submenu items count is incorrect");
+        }
+
+        #endregion
+
+        #region Disabled/Enabled
+
+        [Then(@"'(.*)' left submenu item is disabled")]
+        public void ThenLeftSubmenuItemIsDisabled(string submenu)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsTrue(element.IsSubmenuDisabled(submenu), $"'{submenu}' submenu is not disabled");
+        }
+
+        [Then(@"'(.*)' left menu item is disabled")]
+        public void ThenLeftMenuItemIsDisabled(string submenu)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsTrue(element.IsParentMenuDisabled(submenu), $"'{submenu}' menu is not disabled");
+        }
+
+        #endregion
     }
 }

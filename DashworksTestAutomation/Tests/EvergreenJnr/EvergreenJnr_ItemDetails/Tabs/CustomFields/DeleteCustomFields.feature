@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	Then 'No custom fields found for this device' message is displayed on empty greed
 	And 'ValueDAS16489_1' content is not displayed in the 'Value' column
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '0' count of items
+	And 'Custom Fields' left submenu item with '0' count is displayed
 	And There are no errors in the browser console
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @DAS18362 @Cleanup
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	And Grid is grouped
 	Then '1' options are checked in the 'GroupBy' menu panel
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '1' count of items
+	And 'Custom Fields' left submenu item with '1' count is displayed
 	When User expands 'ValueDAS17695_1B' row in the groped grid
 	Then 'ValueDAS17695_1A' content is not displayed in the 'Value' column
 	And 'ValueDAS17695_1B' content is displayed in the 'Value' column

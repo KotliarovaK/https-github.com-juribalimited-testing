@@ -155,7 +155,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Trend"});
 #line 12
- testRunner.And("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table1, "And ");
+ testRunner.And("User sees following parent left menu items", ((string)(null)), table1, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});
@@ -360,7 +360,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Trend"});
 #line 84
- testRunner.Then("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table6, "Then ");
+ testRunner.Then("User sees following parent left menu items", ((string)(null)), table6, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "SubTabName"});

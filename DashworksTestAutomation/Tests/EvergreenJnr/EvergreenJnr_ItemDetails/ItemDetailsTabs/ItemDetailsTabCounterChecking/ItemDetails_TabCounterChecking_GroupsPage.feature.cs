@@ -144,7 +144,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Members"});
 #line 13
- testRunner.And("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table1, "And ");
+ testRunner.And("User sees following parent left menu items", ((string)(null)), table1, "And ");
 #line 17
  testRunner.And("\"Group\" tab is displayed on left menu on the Details page and NOT contains count " +
                     "of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
