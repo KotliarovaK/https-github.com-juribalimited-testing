@@ -281,7 +281,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "ChangeOwner"});
 #line 49
- testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Permissio" +
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Permissio" +
                     "n\' column:", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
