@@ -48,6 +48,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
+        private const string MenuPanelSelector = ".//div[@class='mat-menu-content']";
+        [FindsBy(How = How.XPath, Using = MenuPanelSelector)]
+        public IWebElement MenuPanelElement { get; set; }
+
         //TODO revisit this 
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
@@ -472,14 +476,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Button
 
-        public IWebElement GetButton(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        public List<IWebElement> GetButtons(string button, string parentElementSelector = "",
+            WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var time = int.Parse(waitTime.GetValue());
             var selector = By.XPath(
                 $"{parentElementSelector}//span[text()='{button}']/ancestor::button");
             Driver.WaitForDataLoading();
             Driver.WaitForElementsToBeDisplayed(selector, time, false);
-            return Driver.FindElements(selector).First(x => x.Displayed());
+            return Driver.FindElements(selector).ToList();
+        }
+
+        public IWebElement GetButton(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            return GetButtons(button, parentElementSelector, waitTime).First(x => x.Displayed());
         }
 
         public void ClickButton(string buttonName)
@@ -490,11 +500,55 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForDataLoading(50);
         }
 
+        //index starts from zero
+        public void ClickButton(string buttonName, int index)
+        {
+            var buttons = GetButtons(buttonName);
+            Driver.WaitForElementsToBeDisplayed(buttons);
+            if (buttons.Count < index + 1)
+            {
+                throw new Exception($"Unable to click '{buttonName}' button with {index} index");
+            }
+            buttons[index].Click();
+        }
+
         public bool IsButtonDisplayed(string name)
         {
             try
             {
                 return GetButton(name, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Button with aria-label
+
+        public IWebElement GetButtonWithAriaLabel(string ariaLabel, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var time = int.Parse(waitTime.GetValue());
+            var selector = By.XPath(
+                $"{parentElementSelector}//button[contains(@aria-label,'{ariaLabel}')]");
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
+            return Driver.FindElements(selector).First(x => x.Displayed());
+        }
+
+        public void ClickButtonWithAriaLabel(string buttonName)
+        {
+            var button = GetButtonWithAriaLabel(buttonName);
+            Driver.WaitForElementToBeEnabled(button);
+            button.Click();
+        }
+
+        public bool IsButtonDisplayedWithAriaLabel(string name)
+        {
+            try
+            {
+                return GetButtonWithAriaLabel(name, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {
@@ -807,10 +861,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Checkbox
 
-        public IWebElement GetCheckbox(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetCheckbox(string ariaLabel, string parentElementSelector = "", WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
             //TODO mb first selector in the or statement should be deleted
-            var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
+            var selector = By.XPath($"{parentElementSelector}//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
             if (!Driver.IsElementDisplayed(selector, wait))
             {
                 throw new Exception($"'{ariaLabel}' checkbox was not displayed");
@@ -819,9 +873,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        public void SetCheckboxState(string ariaLabel, bool expectedCondition)
+        public void SetCheckboxState(string ariaLabel, bool expectedCondition, string parentElementSelector = "")
         {
-            if (!GetCheckbox(ariaLabel).Equals(expectedCondition))
+            if (!GetCheckbox(ariaLabel, parentElementSelector).Equals(expectedCondition))
             {
                 //We must click by text to check or uncheck element
                 Driver.ClickElementLeftCenter(GetCheckbox(ariaLabel));
@@ -830,7 +884,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public bool IsCheckboxEnabled(string ariaLabel)
         {
-            var enabled = GetCheckbox(ariaLabel, WebDriverExtensions.WaitTime.Medium)
+            var enabled = GetCheckbox(ariaLabel, string.Empty, WebDriverExtensions.WaitTime.Medium)
                 .FindElement(By.XPath(".//input")).Enabled;
             return enabled;
         }
@@ -839,12 +893,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             try
             {
-                return GetCheckbox(ariaLabel, WebDriverExtensions.WaitTime.Medium).Displayed();
+                return GetCheckbox(ariaLabel, string.Empty, WebDriverExtensions.WaitTime.Medium).Displayed();
             }
             catch
             {
                 return false;
             }
+        }
+
+        #endregion
+
+        #region Radio Button
+
+        public IWebElement GetRadioButton(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        {
+            var selector = By.XPath($".//div[contains(@class, 'radio-label') and text()='{ariaLabel}']/ancestor::mat-radio-button");
+            if (!Driver.IsElementDisplayed(selector, wait))
+            {
+                throw new Exception($"'{ariaLabel}' radio button was not displayed");
+            }
+            return Driver.FindElement(selector);
         }
 
         #endregion
@@ -855,6 +923,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//span[contains(@class, 'chips-item')]");
             return GetTextbox(textbox).FindElements(chipsSelector);
+        }
+
+        public IList<IWebElement> GetChipsForButton(string button, int index = 0)
+        {
+            var chipsSelector = By.XPath(".//ancestor::li[contains(@class,'chips-btn')]//preceding-sibling::li");
+            var buttonElement = GetButtons(button)[index];
+            return buttonElement.FindElements(chipsSelector);
         }
 
         #endregion
@@ -901,6 +976,38 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                     CategoryCollapseExpandButton(name).Click();
                 }
             }
+        }
+
+        #endregion
+
+        #region Menu Panel
+
+        //This menu appears for example by click on Group By on agGrid
+        //mat-menu-panel > mat-menu-content
+
+        public List<KeyValuePair<string, bool>> GetAllOptionsFromMenuPanel()
+        {
+            Driver.WaitForElementToBeDisplayed(MenuPanelElement);
+            var allOptions = MenuPanelElement.FindElements(By.XPath("./mat-checkbox"));
+            List<KeyValuePair<string, bool>> result = new List<KeyValuePair<string, bool>>();
+            foreach (IWebElement option in allOptions)
+            {
+                //TODO rework to use Checkbox methods
+                var text = option.FindElement(By.XPath(".//span[@class='mat-checkbox-label']")).Text.TrimStart(' ');
+                var selected = option.FindElement(By.XPath(".//input[@type='checkbox']")).Selected;
+                result.Add(new KeyValuePair<string, bool>(text, selected));
+            }
+            return result;
+        }
+
+        public IWebElement GetCheckboxFromMenuPanel(string checkbox)
+        {
+            return GetCheckbox(checkbox, MenuPanelSelector);
+        }
+
+        public void SetCheckboxStateFromMenuPanel(string ariaLabel, bool expectedCondition)
+        {
+            SetCheckboxState(ariaLabel, expectedCondition, MenuPanelSelector);
         }
 
         #endregion

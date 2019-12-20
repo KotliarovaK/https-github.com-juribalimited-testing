@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	And User clicks 'ADD CUSTOM FIELD' button 
 	When User selects 'FlDAS16487_3' option from 'Custom Field' autocomplete
 	And User enters 'Somve_Value' text to 'Value' textbox
-	And User clicks Cancel button on Add Custom Field popup
+	When User clicks 'CANCEL' button on popup
 	Then 'Custom Fields' tab is displayed on left menu on the Details page and contains '0' count of items
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
@@ -117,7 +117,9 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	| user       | 3532     | CfDAS17695_2 | ValueDAS17695_2B |
 	And User navigates to the 'User' details page for 'TAI6096068' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User clicks Group By button on the Admin page and selects "Custom Field" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes   | State |
+	| Custom Field | true  |
 	Then Cog menu is not displayed on the Admin page
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value            |
@@ -135,4 +137,4 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	| ValueDAS17695_2B |
 	| ValueDAS17695_2C |
 	And Grid is not grouped
-	And '0' options are selected in the Group By menu
+	Then '0' options are checked in the 'GroupBy' menu panel

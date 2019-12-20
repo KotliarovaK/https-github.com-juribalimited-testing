@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.DTO.Projects.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
@@ -66,6 +67,32 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             _taskPropertiesEmailsDto = taskPropertiesEmailsDto;
             _tasks = tasks;
             _stages = stages;
+        }
+
+        [When(@"User selects following Mailbox permissions")]
+        public void WhenUserSelectsFollowingMailboxPermissions(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.ClickButton("ADD PERMISSION");
+                _driver.WaitForElementToBeDisplayed(page.GetDropdown("Select Permission"));
+                page.SelectDropdown(row["Permissions"], "Select Permission");
+                page.ClickButton("ADD PERMISSION");
+            }
+        }
+
+        [When(@"User selects following Mailbox folder permissions")]
+        public void WhenUserSelectsFollowingMailboxFolderPermissions(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.ClickButton("ADD PERMISSION", 1);
+                _driver.WaitForElementToBeDisplayed(page.GetDropdown("Select Permission"));
+                page.SelectDropdown(row["Permissions"], "Select Permission");
+                page.ClickButton("ADD PERMISSION", 1);
+            }
         }
 
         [When(@"User clicks create Project button")]

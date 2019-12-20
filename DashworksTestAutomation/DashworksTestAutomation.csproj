@@ -241,8 +241,6 @@
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterElement.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\CustomFields\CustomFieldPopup.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetailsTopBarPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\BaseNavigationElements.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
@@ -409,7 +407,6 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\AfterScenarios\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomField.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomFieldViaApi.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_AggridHeaderCounter.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />

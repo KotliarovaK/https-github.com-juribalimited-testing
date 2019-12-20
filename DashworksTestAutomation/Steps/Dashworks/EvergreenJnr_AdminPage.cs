@@ -40,76 +40,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [Then(@"Evergreen Unit is displayed to the user")]
-        public void ThenEvergreenUnitIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Verify.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
-        }
-
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
         public void WhenUserSelectsColorInTheApplicationScopeTabOnTheProjectDetailsPage(string colorName)
         {
             var applicationTab = _driver.NowAt<ProjectsPage>();
             applicationTab.DefaultReadinessDropdown.Click();
             applicationTab.GetReadinessOptionByName(colorName).Click();
-        }
-
-        [When(@"User clicks ""(.*)"" associated checkbox on the Project details page")]
-        public void WhenUserClicksAssociatedCheckboxOnTheProjectDetailsPage(string checkboxName)
-        {
-            var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.ClickAssociatedCheckbox(checkboxName);
-        }
-
-        [When(@"User selects following Mailbox permissions")]
-        public void WhenUserSelectsFollowingMailboxPermissions(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            foreach (var row in table.Rows)
-            {
-                projectsPage.AddMailboxPermissionsButton.Click();
-                _driver.WaitForDataLoading();
-                projectsPage.PermissionsDropdown.Click();
-                _driver.WaitForDataLoading();
-                projectsPage.SelectPermissionsByName(row["Permissions"]);
-                projectsPage.AddPermissionsButtonInTab.Click();
-            }
-        }
-
-        [When(@"User selects following Mailbox folder permissions")]
-        public void WhenUserSelectsFollowingMailboxFolderPermissions(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            foreach (var row in table.Rows)
-            {
-                _driver.WaitForElementToBeDisplayed(projectsPage.AddMailboxFolderPermissionsButton);
-                projectsPage.AddMailboxFolderPermissionsButton.Click();
-                _driver.WaitForElementToBeDisplayed(projectsPage.PermissionsDropdown);
-                projectsPage.PermissionsDropdown.Click();
-                projectsPage.SelectPermissionsByName(row["Permissions"]);
-                projectsPage.AddPermissionsButtonInTab.Click();
-                _driver.WaitForDataLoading();
-            }
-        }
-
-        [When(@"User removes following Mailbox permissions")]
-        public void WhenUserRemovesFollowingMailboxPermissions(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(projectsPage.AddMailboxPermissionsButton);
-            foreach (var row in table.Rows) projectsPage.RemovePermissionsByName(row["Permissions"]);
-        }
-
-        [Then(@"following Mailbox permissions are displayed to the user")]
-        public void ThenFollowingMailboxPermissionsAreDisplayedToTheUser(Table table)
-        {
-            var projectsPage = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-                Utils.Verify.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]),
-                    $"'{row["Permissions"]}' are not displayed");
         }
 
         [Then(@"following checkboxes are checked in the Scope section")]
@@ -1266,42 +1202,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ResetFiltersButton.Click();
         }
 
-        [When(@"User clicks Group By button on the Admin page")]
-        public void WhenUserClicksGroupByButtonOnTheAdminPage()
-        {
-            var button = _driver.NowAt<BaseGridPage>();
-            button.GroupByButton.Click();
-        }
-
         [When(@"User clicks Export button on the Admin page")]
         public void WhenUserClicksExportButtonOnTheAdminPage()
         {
             var button = _driver.NowAt<BaseGridPage>();
             button.ExportButton.Click();
-        }
-
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
-        public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GroupByButton.Click();
-            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPage(value));
-            page.GetValueInGroupByFilterOnAdminPage(value).Click();
-            //Wait for option to be applied
-            Thread.Sleep(400);
-            page.BodyContainer.Click();
-        }
-
-        //TODO probably should be separate control or moved to GridHeaderElement
-        [Then(@"'(.*)' options are selected in the Group By menu")]
-        public void ThenOptionsAreSelectedInTheGroupByMenu(int expectedCount)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GroupByButton.Click();
-            var selectedCount = page.GetAllOptionsInGroupByFilter().Select(x => x.Value).Count(x => x.Equals(true));
-            Verify.AreEqual(expectedCount, selectedCount, "Incorrect number of selected values in the Group By menu");
-            page.BodyContainer.Click();
         }
 
         [When(@"User clicks Refresh button on the Admin page")]
@@ -1329,7 +1234,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var inlineTipBanner = _driver.NowAt<BaseInlineBannerElement>();
             inlineTipBanner.VerifyColor(MessageType.Tip);
             _driver.WaitForDataLoading();
-            inlineTipBanner.GetButton(MessageType.Tip,"DELETE").Click();
+            inlineTipBanner.GetButton(MessageType.Tip, "DELETE").Click();
         }
 
         [When(@"User cancels the selection of all rows on the Projects page")]

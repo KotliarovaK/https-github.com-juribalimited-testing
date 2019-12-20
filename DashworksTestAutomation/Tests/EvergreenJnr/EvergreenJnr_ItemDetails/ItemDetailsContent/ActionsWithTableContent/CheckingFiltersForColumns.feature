@@ -20,13 +20,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| checkboxes |
 	| True       |
 	Then Content is present in the table on the Details Page
-	When User clicks Reset Filters button on the Item Details page
+	When User clicks button with 'ResetFilters' aria label
 	And User enters "wheelern" text in the Search field for "Username" column
 	Then Rows counter shows "1" of "7" rows
-	When User clicks Reset Filters button on the Item Details page
+	When User clicks button with 'ResetFilters' aria label
 	And User enters "Administrator" text in the Search field for "Display Name" column
 	Then Rows counter shows "1" of "7" rows
-	When User clicks Reset Filters button on the Item Details page
+	When User clicks button with 'ResetFilters' aria label
 	When User selects following checkboxes in the filter dropdown menu for the 'Domain' column:
 	| checkboxes |
 	| DWLABS     |
@@ -43,24 +43,24 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	| Red        |
 	#TODO upd!!!
 	Then All text is not displayed for "Compliance" column in the String Filter
-	When User clicks Reset Filters button on the Item Details page
+	When User clicks button with 'ResetFilters' aria label
 	Then 'All' text is displayed in the filter dropdown for the 'Compliance' column
 	When User enters "ea" text in the Search field for "Application" column
 	Then Rows counter contains "3" found row of all rows
-	When User clicks Reset Filters button on the Item Details page
+	When User clicks button with 'ResetFilters' aria label
 	And User enters "3.0.0" text in the Search field for "Version" column
 	Then Rows counter contains "1" found row of all rows
-	When User clicks Reset Filters button on the Item Details page
+	When User clicks button with 'ResetFilters' aria label
 	When User selects following checkboxes in the filter dropdown menu for the 'Used' column:
 	| checkboxes |
 	| Unknown    |
 	Then Rows counter contains "0" found row of all rows
-	When User clicks Reset Filters button on the Item Details page
+	When User clicks button with 'ResetFilters' aria label
 	When User selects following checkboxes in the filter dropdown menu for the 'Entitled' column:
 	| checkboxes |
 	| True       |
 	Then Rows counter contains "0" found row of all rows
-	When User clicks Reset Filters button on the Item Details page
+	When User clicks button with 'ResetFilters' aria label
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections

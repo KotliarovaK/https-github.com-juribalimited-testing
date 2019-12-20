@@ -101,14 +101,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyViewport']//div//span[text()='Evergreen']")]
-        public IWebElement EvergreenUnit { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]//button[@aria-label='GroupBy']")]
-        public IWebElement GroupByButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='action-container']//button[@automation = 'grid bar export']")]
         public IWebElement ExportButton { get; set; }
@@ -404,30 +398,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
-        }
-
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        public IWebElement GetValueInGroupByFilterOnAdminPage(string value)
-        {
-            var selector = By.XPath($".//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        public List<KeyValuePair<string, bool>> GetAllOptionsInGroupByFilter()
-        {
-            var selector = By.XPath($".//div[@class='mat-menu-content']/mat-checkbox");
-            Driver.WaitForElementToBeDisplayed(selector);
-            var allOptions = Driver.FindElements(selector);
-            List<KeyValuePair<string, bool>> result = new List<KeyValuePair<string, bool>>();
-            foreach (IWebElement option in allOptions)
-            {
-                var text = option.FindElement(By.XPath(".//span[@class='mat-checkbox-label']")).Text.TrimStart(' ');
-                var selected = option.FindElement(By.XPath(".//input[@type='checkbox']")).Selected;
-                result.Add(new KeyValuePair<string, bool>(text, selected));
-            }
-            return result;
         }
 
         #region Column Settings

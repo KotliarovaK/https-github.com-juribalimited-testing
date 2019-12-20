@@ -183,5 +183,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Summary' left submenu item
-	And User clicks Group By button on the Details page and selects "Vendor" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Vendor     | true  |
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page

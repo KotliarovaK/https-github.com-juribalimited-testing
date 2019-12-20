@@ -47,9 +47,6 @@ namespace DashworksTestAutomation.Pages
 
         #region Dashboard Area
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-menu-content']")]
-        public IWebElement EllipsisMenu { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-menu-item')]")]
         public IList<IWebElement> EllipsisMenuItems { get; set; }
 

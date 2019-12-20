@@ -46,7 +46,9 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	And User navigates to the 'Mailbox' details page for 'gregoja@bclabs.local' item
 	Then Details page for "gregoja@bclabs.local" item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
-	When User clicks Group By button on the Admin page and selects "Value" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Value      | true  |
 	Then Cog menu is not displayed on the Admin page
 	When User expands 'ValueDAS17695_1A' row in the groped grid
 	When User clicks 'Delete' option in Cog-menu for 'FlDAS17695_1' item from 'Custom Field' column
@@ -54,7 +56,7 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	When User clicks 'DELETE' button on inline tip banner
 	Then Success message with "Custom field value deleted successfully" text is displayed on Action panel
 	And Grid is grouped
-	And '1' options are selected in the Group By menu
+	Then '1' options are checked in the 'GroupBy' menu panel
 	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '1' count of items
 	When User expands 'ValueDAS17695_1B' row in the groped grid
 	Then 'ValueDAS17695_1A' content is not displayed in the 'Value' column

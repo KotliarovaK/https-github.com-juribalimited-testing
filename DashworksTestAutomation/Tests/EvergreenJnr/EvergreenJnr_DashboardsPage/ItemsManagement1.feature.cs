@@ -1100,9 +1100,9 @@ this.FeatureBackground();
 #line 199
  testRunner.When("Dashboard with \'Dashboard for DAS14583\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 200
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 201
- testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -1125,9 +1125,9 @@ this.FeatureBackground();
                         "10",
                         "true"});
 #line 202
- testRunner.And("User creates new Widget", ((string)(null)), table17, "And ");
+ testRunner.When("User creates new Widget", ((string)(null)), table17, "When ");
 #line 205
- testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -1150,9 +1150,9 @@ this.FeatureBackground();
                         "10",
                         "true"});
 #line 206
- testRunner.And("User creates new Widget", ((string)(null)), table18, "And ");
+ testRunner.When("User creates new Widget", ((string)(null)), table18, "When ");
 #line 209
- testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -1175,15 +1175,15 @@ this.FeatureBackground();
                         "10",
                         "false"});
 #line 210
- testRunner.And("User creates new Widget", ((string)(null)), table19, "And ");
+ testRunner.When("User creates new Widget", ((string)(null)), table19, "When ");
 #line 213
- testRunner.And("User clicks Ellipsis menu for \'WidgetForDAS14583_3\' Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks Ellipsis menu for \'WidgetForDAS14583_3\' Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 214
- testRunner.And("User clicks \'Move to start\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'Move to start\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 215
- testRunner.And("User clicks Ellipsis menu for \'WidgetForDAS14583_3\' Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks Ellipsis menu for \'WidgetForDAS14583_3\' Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 216
- testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -1206,7 +1206,7 @@ this.FeatureBackground();
                         "10",
                         "false"});
 #line 217
- testRunner.And("User updates Widget with following info:", ((string)(null)), table20, "And ");
+ testRunner.When("User updates Widget with following info:", ((string)(null)), table20, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetTitles"});
