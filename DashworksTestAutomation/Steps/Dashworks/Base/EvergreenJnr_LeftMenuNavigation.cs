@@ -60,6 +60,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{section}' section is collapsed");
         }
 
+        [Then(@"'(.*)' left menu item is collapsed")]
+        public void ThenLeftMenuItemIsCollapsed(string section)
+        {
+            var page = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsFalse(page.IsMenuExpanded(section),
+                $"'{section}' section is expanded");
+        }
+
         #endregion
 
         [Then(@"'(.*)' left menu have following submenu items:")]

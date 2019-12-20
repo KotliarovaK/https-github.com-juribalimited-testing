@@ -19,9 +19,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-drawer-inner-container']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
-        [FindsBy(How = How.XPath, Using = MainTabsOnDetailsPage)]
-        public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
-
         //TODO probably should be replaced by LeftMenuSelector
         private static string MenuSelector = ".//a[text()='{0}']//span[@class='ng-star-inserted']";
         private static string LeftSubMenuSelector = ".//li[contains(@class,'das-mat-tree-node')]//a";
@@ -86,24 +83,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         }
 
         #endregion
-
-        public IWebElement GetNavigationLinkByName(string linkName)
-        {
-            var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            if (!Driver.IsElementDisplayed(link, WebDriverExtensions.WaitTime.Long))
-                throw new Exception($"'{linkName}' Navigation link was not displayed");
-            return Driver.FindElement(link);
-        }
-
-        public bool GetExpandedTabByName(string tabName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($"//li[@class='das-mat-tree-parent']/div[contains(@class, 'collapsed')]/a[text()='{tabName}']"));
-        }
-
-        public bool GetTabByName(string tabName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($"//a[@class='ng-star-inserted'][text()='{tabName}']"));
-        }
 
         public bool GetDisplayStatusSubTabByName(string tabName)
         {
