@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	| Values |
 	| BCLABS |
 	#Order of the options in the 'Permission' dropdown is the same as on Senior
-	Then following checkboxes are displayed in the filter dropdown menu for the 'Permission' column:
+	Then following checkboxes are contained in the filter dropdown menu for the 'Permission' column:
 	| Values           |
 	| ReadPermission   |
 	| FullAccess       |
