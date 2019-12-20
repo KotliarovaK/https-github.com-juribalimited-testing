@@ -364,6 +364,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\AfterScenario\RemoveProjectAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\AfterScenario\RemoveProjectMethods.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\BeforeScenario\SetDefaultReadinessBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\ReadinessSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\AfterScenario\RemoveReadinessAfterScenario.cs" />
@@ -390,6 +391,7 @@
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_LeftMenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListMethods.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\AfterScenario\RemoveDashboardAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_WidgetPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\ProjectsApi.cs" />

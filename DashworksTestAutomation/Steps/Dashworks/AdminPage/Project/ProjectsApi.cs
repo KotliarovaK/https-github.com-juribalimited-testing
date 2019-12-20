@@ -20,13 +20,19 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
 {
     [Binding]
-    internal class ProjectsApi : RemoveProjectAfterScenario
+    internal class ProjectsApi : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly RestWebClient _client;
+        private readonly RemoveProjectMethods _removeProjectMethods;
+        private readonly DTO.RuntimeVariables.Projects _projects;
 
-        public ProjectsApi(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects, RestWebClient client) : base(client, projects)
+        public ProjectsApi(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects, RestWebClient client)
         {
             _driver = driver;
+            _client = client;
+            _removeProjectMethods = new RemoveProjectMethods(client, projects);
+            _projects = projects;
         }
 
         // table example
@@ -85,7 +91,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
         [When(@"Projects created by User are removed via API")]
         public void WhenUserRemovesNewProjectsViaApi()
         {
-            DeleteNewlyCreatedProject();
+            _removeProjectMethods.DeleteProject();
         }
 
         private string GetCreateProjectRequestScopeProperty(string scope)
