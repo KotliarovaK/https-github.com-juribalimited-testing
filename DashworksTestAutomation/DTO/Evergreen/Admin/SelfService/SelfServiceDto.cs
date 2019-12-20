@@ -48,7 +48,6 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
         [JsonProperty("createdByUser")]
         public string CreatedByUser { get; set; }
 
-
         public bool Equals(SelfServiceDto value)
         {
             SelfServiceDto obj = value as SelfServiceDto;

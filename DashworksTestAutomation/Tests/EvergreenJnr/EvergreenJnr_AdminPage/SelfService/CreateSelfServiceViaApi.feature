@@ -4,7 +4,7 @@
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen via API
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @API
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @API @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateAndGetSelfServiceViaApi
 	When User creates Self Service via API
 	| ServiceId | Name                        | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
@@ -15,5 +15,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateAndGetSelfServiceVia
 Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceExistInTheGrid
 	When User creates Self Service via API
 	| ServiceId | Name                        | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
-	| 1         | TestSelfService_name30_test | id193835          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	| 1         | TestSelfService_name36_test | id193841          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
 	Then User checks the Self Services Grid via API

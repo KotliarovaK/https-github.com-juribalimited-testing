@@ -127,6 +127,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         [Then(@"User checks the Self Services Grid via API")]
         public void WhenUserChecksTheSelfServicesGridViaApi()
         {
+            if (!_selfServices.Value.Any())
+            {
+                throw new Exception("The List of Self Services is empty");
+            }
+
             foreach (SelfServiceDto SelfService in _selfServices.Value)
             {
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
@@ -138,7 +143,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 }
 
                 var selfServicesGrid = JsonConvert.DeserializeObject<JObject>(response.Content);
-                Verify.IsTrue(selfServicesGrid["results"].ToObject<SelfServiceDto[]>().ToList().Any(ss => ss.Equals(SelfService)), "The created Self Service doesn't match to the existing Self Service in the Grid");
+                var listOfReturnedSelfServices = selfServicesGrid["results"].ToObject<SelfServiceDto[]>().ToList();
+                Verify.IsTrue(listOfReturnedSelfServices.Any(ss => ss.Equals(SelfService)), "The created Self Service doesn't match to the existing Self Service in the Grid");
             }
         }
     }
