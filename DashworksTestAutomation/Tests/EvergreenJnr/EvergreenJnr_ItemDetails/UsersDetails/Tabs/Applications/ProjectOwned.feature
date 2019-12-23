@@ -64,3 +64,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCor
 	Then Details page for "Quartus II 2.0 Web Edition Full" item is displayed to the user
 	Then User click back button in the browser
 	And Details page for "LYZ6880619" item is displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19321
+Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject
+	When User navigates to the 'User' details page for 'SNL594136' item
+	Then Details page for "SNL594136" item is displayed to the user
+	When User switches to the "Windows 10 Migration - Depot" project in the Top bar on Item details page
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Project Owned' left submenu item
+	Then 'Visio Professional 5.0b' content is displayed in the 'Current App' column
+	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	Then 'EarthLink Digital Music Player (A01)' content is displayed in the 'Current App' column

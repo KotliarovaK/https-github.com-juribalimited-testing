@@ -327,7 +327,7 @@ this.FeatureBackground();
                         "Scope",
                         "Run"});
             table4.AddRow(new string[] {
-                        "182921_Automation",
+                        "Test18292Automation",
                         "18292",
                         "true",
                         "false",
@@ -363,16 +363,18 @@ this.FeatureBackground();
 #line 92
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
- testRunner.When("User enters \"182921_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"Test18292Automation\" text in the Search field for \"Automation\" colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94
- testRunner.When("User clicks \'Run now\' option in Cog-menu for \'182921_Automation\' item from \'Autom" +
-                    "ation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'Test18292Automation\' item from \'Aut" +
+                    "omation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
- testRunner.When("\'182921_Automation\' automation \'18292_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'Test18292Automation\' automation \'18292_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
- testRunner.When("User enters \"182921_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"Test18292Automation\" text in the Search field for \"Automation\" colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 98
  testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
@@ -403,7 +405,8 @@ this.FeatureBackground();
 #line 111
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 112
- testRunner.When("User enters \"182921_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"Test18292Automation\" text in the Search field for \"Automation\" colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 113
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 114
@@ -421,16 +424,18 @@ this.FeatureBackground();
 #line 120
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 121
- testRunner.When("User enters \"182921_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"Test18292Automation\" text in the Search field for \"Automation\" colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 122
- testRunner.When("User clicks \'Run now\' option in Cog-menu for \'182921_Automation\' item from \'Autom" +
-                    "ation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'Test18292Automation\' item from \'Aut" +
+                    "omation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
- testRunner.When("\'182921_Automation\' automation \'18292_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'Test18292Automation\' automation \'18292_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 124
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 125
- testRunner.When("User enters \"182921_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"Test18292Automation\" text in the Search field for \"Automation\" colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 126
  testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 127
