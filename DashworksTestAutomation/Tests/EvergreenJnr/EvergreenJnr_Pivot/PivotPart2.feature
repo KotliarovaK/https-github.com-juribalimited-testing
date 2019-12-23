@@ -35,10 +35,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Auto: X-Proj Paths Scope              |
 	| Dependant List Filter - BROKEN LIST   |
 	| Depot Capacity                        |
-	#DAS-19157 lists without "In Scope" filter
-	#| Device List (Complex)                 |
-	#| Device List (Complex) - BROKEN LIST   |
-	#| Device Readiness Columns & Filters    |
 	| Migration Type Capacity               |
 	| New York - Devices                    |
 	| Using App Saved List Readiness Filter |
@@ -46,20 +42,11 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	Then User sees that 'User Scope' dropdown contains following options:
 	| Values                             |
 	| All Users                          |
-	#DAS-19157 lists without "In Scope" filter
-	#| Users List (Complex)               |
-	#| Users List (Complex) - BROKEN LIST |
-	#| Users Readiness Columns & Filters  |
 	| Users with Device Count            |
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then User sees that 'Application Scope' dropdown contains following options:
 	| Values                                   |
 	| All Applications                         |
-	#DAS-19157 lists without "In Scope" filter
-	#| 1803 Apps                                |
-	#| App Readiness Columns & Filters          |
-	#| Application List (Complex)               |
-	#| Application List (Complex) - BROKEN LIST |
 	| Apps with a Vendor                       |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855
