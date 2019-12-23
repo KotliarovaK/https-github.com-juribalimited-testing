@@ -82,4 +82,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTooltipForDisabledRelinkButtonIsDisp
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button
 	Then popup is displayed to User
-	Then Button 'RELINK' has 'Select a device for the disabled 'Relink' button' tooltip on popup
+	Then Button 'RELINK' has 'Select a device' tooltip on popup

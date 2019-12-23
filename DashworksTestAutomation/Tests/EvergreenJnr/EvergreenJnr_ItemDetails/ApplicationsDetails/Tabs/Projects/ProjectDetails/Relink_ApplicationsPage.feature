@@ -101,4 +101,4 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTooltipForDisabledRelinkButtonI
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button
 	Then popup is displayed to User
-	Then Button 'RELINK' has 'Select an application for the disabled 'Relink' button' tooltip on popup
+	Then Button 'RELINK' has 'Select an application' tooltip on popup

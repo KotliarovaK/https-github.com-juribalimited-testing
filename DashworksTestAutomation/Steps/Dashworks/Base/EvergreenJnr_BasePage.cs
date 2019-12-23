@@ -877,6 +877,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{buttonName}' button tooltip is incorrect");
         }
 
+        [Then(@"Button '(.*)' has '(.*)' tooltip on popup")]
+        public void ButtonHasTooltipOnPopup(string button, string tooltip)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.MouseHover(page.GetPopupButton(button));
+            _driver.WaitForDataLoading();
+            var toolTipText = _driver.GetTooltipText();
+            Verify.That(tooltip, Is.EqualTo(toolTipText), $"Popup does not contain the '{tooltip}' tooltip");
+        }
+
         #endregion
 
         #region Button with aria label

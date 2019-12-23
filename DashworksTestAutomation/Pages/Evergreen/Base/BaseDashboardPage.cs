@@ -492,6 +492,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return GetButtons(button, parentElementSelector, waitTime).First(x => x.Displayed());
         }
 
+        public IWebElement GetPopupButton(string buttonCaption)
+        {
+            return Driver.FindElement(By.XPath($".//mat-dialog-container//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
+        }
+
         public void ClickButton(string buttonName)
         {
             var button = GetButton(buttonName);

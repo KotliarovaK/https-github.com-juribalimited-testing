@@ -320,8 +320,7 @@ this.FeatureBackground();
 #line 70
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 71
- testRunner.Then("Button \'RELINK\' has \'Select a mailbox for the disabled \'Relink\' button\' tooltip o" +
-                    "n popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Button \'RELINK\' has \'Select a mailbox\' tooltip on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -1126,17 +1126,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Is.EqualTo(buttonState.ToUpper()), $"Button {buttonCapture} states is different");
         }
 
-        [Then(@"Button '(.*)' has '(.*)' tooltip on popup")]
-        [Then(@"Button '(.*)' has '(.*)' tooltip on Permissions Pop-up")]
-        public void ThenTooltipIsDisplayedWithTextForForButtonOnListPermissionsPopup(string buttonCapture, string tooltip)
-        {
-            var button = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.MouseHover(button.ReviewPermissionsPopupsButton(buttonCapture));
-            _driver.WaitForDataLoading();
-            var toolTipText = _driver.GetTooltipText();
-            Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
-        }
-
         [When(@"User clicks the '(.*)' button on Permissions Pop-up")]
         public void WhenUserClicksTheActionButtonOnListPermissionsPopup(string buttonName)
         {
