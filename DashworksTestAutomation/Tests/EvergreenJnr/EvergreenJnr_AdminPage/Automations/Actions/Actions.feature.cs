@@ -1579,6 +1579,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS17544")]
+        [NUnit.Framework.CategoryAttribute("DAS19317")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("17544_Automation", "All Devices", "User Scheduled Test (Jo)", "1803 Rollout", "Barry\'s User Project", null)]
         [NUnit.Framework.TestCaseAttribute("17544_Automation_1", "All Users", "User Scheduled Test (Jo)", "1803 Rollout", "Email Migration", null)]
@@ -1618,6 +1619,7 @@ this.FeatureBackground();
                     "EvergreenJnr_AdminPage",
                     "Actions",
                     "DAS17544",
+                    "DAS19317",
                     "Cleanup"};
             if ((exampleTags != null))
             {
