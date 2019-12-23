@@ -243,9 +243,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInSearchFieldAtSelectedLookupFilter(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            _driver.WaitForElementToBeDisplayed(filterElement.LookupFilterSearchTextBox);
-            filterElement.LookupFilterSearchTextBox.Clear();
-            filterElement.LookupFilterSearchTextBox.SendKeys(searchedText);
+            if (_driver.IsElementDisplayed(filterElement.LookupFilterSearchTextBox, WebDriverExtensions.WaitTime.Short))
+            {
+                filterElement.LookupFilterSearchTextBox.Clear();
+                filterElement.LookupFilterSearchTextBox.SendKeys(searchedText);
+            }
         }
 
         [Then(@"""(.*)"" value is displayed for selected Lookup Filter")]

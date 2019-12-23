@@ -87,6 +87,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             }
         }
 
+        public bool IsSubmenuDisplayed(string subMenu)
+        {
+            try
+            {
+                return GetSubMenuByName(subMenu).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool IsSubmenuCountIsDisplayed(string subMenu)
         {
             var submenuCount = GetSubmenuItemsItemsCount(subMenu);

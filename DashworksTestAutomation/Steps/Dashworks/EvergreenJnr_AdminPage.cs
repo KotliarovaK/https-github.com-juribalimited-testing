@@ -720,7 +720,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
         }
 
-        [Then(@"User sees blue message ""(.*)"" on Create Project page")]
+        [Then(@"User sees blue message '(.*)' on Create Project page")]
         public void ThenUserSeesMessageInformingAboutArchivedDevicesInList(string message)
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();

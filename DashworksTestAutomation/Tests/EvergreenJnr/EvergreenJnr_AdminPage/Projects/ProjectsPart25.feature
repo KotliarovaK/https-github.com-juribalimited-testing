@@ -99,3 +99,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingNotEmptyOperat
 	Then 'The project has been created' text is displayed on inline success banner
 	Then There are no errors in the browser console
 	When User enters "18100Project" text in the Search field for "Project" column
+
+@Evergreen @EvergreenJnr_DashboardsPage @Projects @DAS16844 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncluded
+	When User clicks 'Devices' on the left-hand menu
+	When User sets includes archived devices in 'true'
+	When User create dynamic list with "ProjectListForDas16844" name on "Devices" page
+	When User selects 'Project' in the 'Create' dropdown
+	Then User sees blue message 'This list may contain archived devices which will not be onboarded' on Create Project page

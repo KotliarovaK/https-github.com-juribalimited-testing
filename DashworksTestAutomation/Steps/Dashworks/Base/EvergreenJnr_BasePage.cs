@@ -908,7 +908,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonWithAriaLabelIsNotDisabled(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+            Verify.IsFalse(page.GetButtonWithAriaLabel(buttonName).Disabled(),
                 $"'{buttonName}' button is disabled");
         }
 

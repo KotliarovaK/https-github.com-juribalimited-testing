@@ -482,17 +482,42 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18072 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilter
 	When Dashboard with 'DAS18072_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title       | List        | SplitBy     | AggregateFunction | OrderBy          |
-	| Pie        | Widget18072 | All Devices | Device Type | Count             | Device Type DESC |
+	| Pie        | Widget18072 | All Devices | Device Type | Count             | Device Type ASC  |
 	Then Widget Preview is displayed to the user
-	And There are no errors in the browser console
-	And 'Device Type DESC' option displayed for Widget OrderBy
+	Then There are no errors in the browser console
+	Then 'Device Type ASC' option displayed for Widget OrderBy
+	When User selects 'Device Type DESC' in the 'Order By' dropdown
+	Then 'Device Type DESC' option displayed for Widget OrderBy
 	When User selects 'Hostname' in the 'SplitBy' dropdown
-	Then '' option displayed for Widget OrderBy
-	And Widget Preview is not displayed to the user
+	Then 'Hostname DESC' option displayed for Widget OrderBy
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
 	When User selects 'Hostname ASC' in the 'Order By' dropdown
 	Then Widget Preview is displayed to the user
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
+	When User selects 'Device Type' in the 'SplitBy' dropdown
+	Then 'Device Type ASC' option displayed for Widget OrderBy
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18635 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatPreviewDisplayedForWidgetWhenReadinessSelectedAsSplitBy
+	When Dashboard with 'Dashboard for DAS18635' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List                               | SplitBy               | AggregateFunction | OrderBy                   |
+	| Pie        | WidgetForDAS18635 | Device Readiness Columns & Filters | UserEvergr: Readiness | Count             | UserEvergr: Readiness ASC |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button 
+	Then 'WidgetForDAS18635' Widget is displayed to the user
+	When User clicks Ellipsis menu for 'WidgetForDAS18635' Widget on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User adds new Widget
+	| WidgetType | Title             | List                               | SplitBy               | AggregateFunction | AggregateBy | OrderBy                   |
+	| Pie        | WidgetForDAS18635 | Device Readiness Columns & Filters | UserEvergr: Readiness | Count distinct    | Device Type | UserEvergr: Readiness ASC |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console

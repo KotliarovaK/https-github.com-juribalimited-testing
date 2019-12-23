@@ -138,11 +138,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	|              |
 	| Value        |
 	Then User sees "2" rows in grid
-	Then 'ResetFilters' button with aria label is displayed
+	Then 'ResetFilters' button with aria label is disabled
 	Then 'reload' button with aria label is displayed
 	Then 'Export' button with aria label is displayed
 	Then 'GroupBy' button with aria label is displayed
-	Then 'ResetFilters' button with aria label is disabled
 	When User enters "com" text in the Search field for "Custom Field" column
 	Then 'ResetFilters' button with aria label is not disabled
 	Then Rows counter shows "1" of "2" rows
