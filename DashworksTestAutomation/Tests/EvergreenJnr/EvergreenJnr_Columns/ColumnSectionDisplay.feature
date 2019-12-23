@@ -649,13 +649,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Criticality                     |
 	| Evergreen Capacity Unit         |
 	| Evergreen Rationalisation       |
-	| Evergreen Target App            |
 	| Evergreen Target App Compliance |
 	| Evergreen Target App Key        |
 	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
-	| Hide From End User              |
+	| Hide from End Users             |
 	| In Catalog                      |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
@@ -1006,6 +1005,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
 	When User collapses 'Selected Columns' category
 	When User collapses 'Project: MailboxEve' category
 	When User collapses 'Project Rings: MailboxEve' category
+	When User collapses 'Project Owner: MailboxEve' category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                              |
 	| MailboxEve: 1 \ Completed                  |

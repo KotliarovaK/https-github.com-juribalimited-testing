@@ -594,6 +594,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS15989")]
+        [NUnit.Framework.CategoryAttribute("DAS19416")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCreatedWhileImportingToANewProject()
         {
@@ -630,6 +631,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS15989",
+                        "DAS19416",
                         "Cleanup"});
 #line 131
 this.ScenarioInitialize(scenarioInfo);
@@ -645,7 +647,7 @@ this.FeatureBackground();
 #line 135
  testRunner.When("User clicks \'IMPORT PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 136
- testRunner.Then("Page with \'Import Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Import Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 137
  testRunner.When("User selects \"1803_Rollout.xml\" file to upload on Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
@@ -661,7 +663,7 @@ this.FeatureBackground();
 #line 143
  testRunner.When("User navigates to the \'Readiness\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
- testRunner.Then("\"UNKNOWN\" content is not displayed in the grid on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'IGNORE\' content is not displayed in the \'Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1270,7 +1272,7 @@ this.FeatureBackground();
 #line 301
  testRunner.When("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 302
- testRunner.When("User clicks on \"Buckets\" navigation link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Buckets\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 303
  testRunner.Then("Page with \'Buckets\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 304
@@ -1280,7 +1282,7 @@ this.FeatureBackground();
 #line 306
  testRunner.When("User clicks content from \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 307
- testRunner.When("User clicks on \"Capacity Units\" navigation link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Capacity Units\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 308
  testRunner.Then("Page with \'Capacity Units\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 309
@@ -1290,7 +1292,7 @@ this.FeatureBackground();
 #line 311
  testRunner.When("User clicks content from \"Ring\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 312
- testRunner.When("User clicks on \"Rings\" navigation link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Rings\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 313
  testRunner.Then("Page with \'Rings\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 314
@@ -1302,11 +1304,11 @@ this.FeatureBackground();
 #line 317
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 318
- testRunner.When("User clicks on \"Automations\" navigation link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 319
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 320
- testRunner.Then("\"Automations\" tab-menu on the Admin page is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Automations\' left menu item is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

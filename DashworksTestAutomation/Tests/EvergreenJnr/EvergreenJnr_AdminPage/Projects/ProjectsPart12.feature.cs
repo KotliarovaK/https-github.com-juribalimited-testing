@@ -312,8 +312,7 @@ this.FeatureBackground();
 #line 65
  testRunner.And("User navigates to the \'User Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.And("User clicks \"Other mailbox permissions\" associated checkbox on the Project detail" +
-                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks \'Other mailbox permissions\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
@@ -324,8 +323,7 @@ this.FeatureBackground();
 #line 67
  testRunner.And("User selects following Mailbox permissions", ((string)(null)), table5, "And ");
 #line 71
- testRunner.And("User clicks \"Mailbox folder permissions\" associated checkbox on the Project detai" +
-                    "ls page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks \'Mailbox folder permissions\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
@@ -335,41 +333,32 @@ this.FeatureBackground();
                         "AvailabilityOnly"});
 #line 72
  testRunner.And("User selects following Mailbox folder permissions", ((string)(null)), table6, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Permissions"});
-            table7.AddRow(new string[] {
-                        "FullAccess"});
-            table7.AddRow(new string[] {
-                        "ChangeOwner"});
-            table7.AddRow(new string[] {
-                        "Author"});
-            table7.AddRow(new string[] {
-                        "AvailabilityOnly"});
 #line 76
- testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table7, "Then ");
-#line 82
- testRunner.When("User clicks \"Delegated mailboxes\" associated checkbox on the Project details page" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 83
- testRunner.And("User clicks \"Owned mailboxes\" associated checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+ testRunner.When("User checks \'Delegated mailboxes \' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 77
+ testRunner.And("User checks \'Owned mailboxes\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
  testRunner.And("User navigates to the \'Scope Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 79
  testRunner.And("User navigates to the \'User Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Permissions"});
-            table8.AddRow(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Chips"});
+            table7.AddRow(new string[] {
                         "FullAccess"});
-            table8.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "ChangeOwner"});
+#line 80
+ testRunner.Then("following chips of \'ADD PERMISSION\' button are displayed", ((string)(null)), table7, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Chips"});
             table8.AddRow(new string[] {
                         "Author"});
             table8.AddRow(new string[] {
                         "AvailabilityOnly"});
-#line 86
- testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table8, "Then ");
+#line 84
+ testRunner.Then("following chips of \'ADD PERMISSION\' button with \'1\' index are displayed", ((string)(null)), table8, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Checkboxes"});
@@ -377,43 +366,53 @@ this.FeatureBackground();
                         "Owned mailboxes"});
             table9.AddRow(new string[] {
                         "Delegated mailboxes"});
-#line 92
+#line 88
  testRunner.And("following checkboxes are checked in the Scope section", ((string)(null)), table9, "And ");
-#line 96
+#line 92
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
+#line 93
  testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 94
  testRunner.Then("\"Users to add (0 of 14753 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 99
+#line 95
  testRunner.When("User navigates to the \'Scope Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 100
+#line 96
  testRunner.And("User navigates to the \'User Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Permissions"});
+                        "Chips"});
             table10.AddRow(new string[] {
                         "FullAccess"});
-            table10.AddRow(new string[] {
-                        "Author"});
-#line 101
- testRunner.And("User removes following Mailbox permissions", ((string)(null)), table10, "And ");
-#line 105
- testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
- testRunner.And("User navigates to the \'Scope Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
- testRunner.And("User navigates to the \'User Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.When("User removes following chips of \'ADD PERMISSION\' button", ((string)(null)), table10, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Permissions"});
+                        "Chips"});
             table11.AddRow(new string[] {
+                        "Author"});
+#line 100
+ testRunner.When("User removes following chips of \'ADD PERMISSION\' button with \'1\' index", ((string)(null)), table11, "When ");
+#line 103
+ testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And("User navigates to the \'Scope Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And("User navigates to the \'User Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Chips"});
+            table12.AddRow(new string[] {
                         "ChangeOwner"});
-            table11.AddRow(new string[] {
+#line 106
+ testRunner.Then("following chips of \'ADD PERMISSION\' button are displayed", ((string)(null)), table12, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Chips"});
+            table13.AddRow(new string[] {
                         "AvailabilityOnly"});
-#line 108
- testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table11, "Then ");
+#line 109
+ testRunner.Then("following chips of \'ADD PERMISSION\' button with \'1\' index are displayed", ((string)(null)), table13, "Then ");
 #line 112
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -547,18 +546,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "Scope",
                         "ProjectTemplate",
                         "Mode"});
-            table12.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "TestName18",
                         "All Mailboxes",
                         "None",
                         "Standalone Project"});
 #line 127
- testRunner.When("Project created via API and opened", ((string)(null)), table12, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table14, "When ");
 #line 130
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 131
@@ -576,16 +575,16 @@ this.FeatureBackground();
 #line 137
  testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description",
                         "ObjectTypeString"});
-            table13.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "18RequestTypeName",
                         "MailboxScheduledProject",
                         "Mailbox"});
 #line 138
- testRunner.And("User create Request Type", ((string)(null)), table13, "And ");
+ testRunner.And("User create Request Type", ((string)(null)), table15, "And ");
 #line 141
  testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 142
@@ -593,16 +592,16 @@ this.FeatureBackground();
 #line 143
  testRunner.When("User clicks \"Create Category\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description",
                         "ObjectTypeString"});
-            table14.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "18MailboxCategory",
                         "UserScheduledProject",
                         "Mailbox"});
 #line 144
- testRunner.And("User create Category", ((string)(null)), table14, "And ");
+ testRunner.And("User create Category", ((string)(null)), table16, "And ");
 #line 147
  testRunner.Then("Success message is displayed with \"Category successfully created.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 148
@@ -638,18 +637,18 @@ this.FeatureBackground();
 #line 164
  testRunner.And("\'Mailboxes 0/0\' tab is displayed on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table15.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
-            table15.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "00DB4000EDD84951993@bclabs.local (CSC, SS)"});
-            table15.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
-            table15.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
 #line 165
- testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table15, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table17, "When ");
 #line 171
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 172

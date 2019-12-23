@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
@@ -18,11 +15,8 @@ using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -383,6 +377,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClearTextbox(placeholder);
         }
 
+        [When(@"User clicks on '(.*)' textbox")]
+        public void WhenUserClicksOnTextbox(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetTextbox(placeholder).Click();
+        }
+
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
         public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
         {
@@ -467,6 +468,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsTextboxDisabled(placeholder),
                 $"'{placeholder}' textbox is disabled");
         }
+
+        [Then(@"'(.*)' textbox is focused")]
+        public void ThenTextboxIsFocused(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsTextboxFocused(placeholder), $"'{placeholder}' is not focused");
+        }
+
         #endregion
 
         #region Dropdown
@@ -814,7 +823,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.IsButtonDisplayed(buttonName),
-                $"'{buttonName}' button is displayed");
+                $"'{buttonName}' button is not displayed");
         }
 
         [Then(@"'(.*)' button is not displayed")]
@@ -866,6 +875,41 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var toolTipText = _driver.GetTooltipText();
             Verify.AreEqual(text, toolTipText,
                 $"'{buttonName}' button tooltip is incorrect");
+        }
+
+        #endregion
+
+        #region Button with aria label
+
+        [When(@"User clicks button with '(.*)' aria label")]
+        public void WhenUserClicksButtonWithAriaLabel(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ClickButtonWithAriaLabel(buttonName);
+        }
+
+        [Then(@"'(.*)' button with aria label is displayed")]
+        public void ThenButtonWithAriaLabelIsDisplayed(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsButtonDisplayedWithAriaLabel(buttonName),
+                $"Button with '{buttonName}' aria label is not displayed");
+        }
+
+        [Then(@"'(.*)' button with aria label is disabled")]
+        public void ThenButtonWithAriaLabelIsDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+                $"'{buttonName}' button is not disabled");
+        }
+
+        [Then(@"'(.*)' button with aria label is not disabled")]
+        public void ThenButtonWithAriaLabelIsNotDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+                $"'{buttonName}' button is disabled");
         }
 
         #endregion
@@ -997,7 +1041,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Radio button
+
+        [When(@"User clicks '(.*)' radio button")]
+        public void WhenUserClicksRadioButton(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetRadioButton(radioButtonName).Click();
+        }
+
+        #endregion
+
         #region Chips
+
+        [When(@"User removes following chips of '(.*)' button with '(.*)' index")]
+        public void WhenUserRemovesFollowingChipsOfButtonWithIndex(string button, int index, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button, index).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
 
         [Then(@"Chips for '(.*)' field are not displayed")]
         public void ThenChipBoxIsNotDisplayedOnThePage(string field)
@@ -1031,6 +1096,42 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Chips related to the button
+
+        [When(@"User removes following chips of '(.*)' button")]
+        public void WhenUserRemovesFollowingChipsOfButton(string button, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
+
+        [Then(@"following chips of '(.*)' button are displayed")]
+        public void ThenFollowingChipsOfButtonAreDisplayed(string button, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                Verify.IsTrue(page.GetChipsForButton(button).Any(x => x.Text.Equals(row["Chips"])),
+                    $"There is no '{row["Chips"]}' chips for '{button}' button");
+            }
+        }
+
+        [Then(@"following chips of '(.*)' button with '(.*)' index are displayed")]
+        public void ThenFollowingChipsOfButtonWithIndexAreDisplayed(string button, int index, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                Verify.IsTrue(page.GetChipsForButton(button, index).Any(x => x.Text.Equals(row["Chips"])),
+                    $"There is no '{row["Chips"]}' chips for '{button}' button with '{index}' index");
+            }
+        }
+
+        #endregion
+
         #region Links
 
         [Then(@"'(.*)' link is displayed")]
@@ -1057,6 +1158,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var columnElement = _driver.NowAt<BaseDashboardPage>();
             columnElement.CollapseExpandCategory(categoryName, true);
+        }
+
+        #endregion
+
+        #region Menu panel
+
+        [Then(@"'(.*)' options are checked in the '(.*)' menu panel")]
+        public void ThenOptionsAreCheckedInTheMenuPanel(int expectedCount, string buttonAriaLabel)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButtonWithAriaLabel(buttonAriaLabel);
+            var selectedCount = page.GetAllOptionsFromMenuPanel().Select(x => x.Value).Count(x => x.Equals(true));
+            Verify.AreEqual(expectedCount, selectedCount,
+                $"Incorrect number of checked values in the '{buttonAriaLabel}' menu");
+            page.BodyContainer.Click();
         }
 
         #endregion

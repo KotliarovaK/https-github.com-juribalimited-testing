@@ -1961,7 +1961,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table42.AddRow(new string[] {
-                        "Evergreen Target App"});
+                        "Evergreen Target App Name"});
 #line 409
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table42, "And ");
 #line 412
@@ -1969,9 +1969,9 @@ this.FeatureBackground();
 #line 413
  testRunner.Then("\"DAS18961_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 414
- testRunner.When("User clicks on \'Evergreen Target App\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Evergreen Target App Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 415
- testRunner.Then("data in table is sorted by \'Evergreen Target App\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Evergreen Target App Name\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

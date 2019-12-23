@@ -47,8 +47,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")), $"String filter is not displayed for {columnName} column!");
         }
 
-        [Then(@"following String Values are displayed in the filter dropdown for the '(.*)' column")]
-        public void ThenFollowingStringValuesAreDisplayedInTheFilterDropdownForTheColumn(string columnName, Table table)
+        //	| Values |
+        [Then(@"following checkboxes are displayed in the filter dropdown menu for the '(.*)' column:")]
+        public void ThenFollowingSCheckboxesAreDisplayedInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
@@ -56,13 +57,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text);
+            var actualList = filterElement.FilterCheckboxValuesForColumn.Select(value => value.Text);
             Verify.AreEqual(expectedList, actualList, $"String Values in the filter dropdown for the '{columnName}' column are different!");
 
             page.BodyContainer.Click();
         }
 
-        [Then(@"following String Values are contained in the filter dropdown for the '(.*)' column")]
+        //	| Values |
+        [Then(@"following checkboxes are contained in the filter dropdown menu for the '(.*)' column:")]
         public void ThenFollowingStringValuesAreContainedInTheFilterDropdownForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
@@ -70,35 +72,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetStringFilterByColumnName(columnName);
 
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text).ToList();
+            var actualList = filterElement.FilterCheckboxValuesForColumn.Select(value => value.Text).ToList();
             foreach (var row in table.Rows)
             {
                 Verify.Contains(row["Values"], actualList, $"{row["Values"]} String values are not contained in the filter!");
             }
-
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"following String Values are displayed in the filter")]
-        public void ThenFollowingValuesAreDisplayedInTheFilterOnTheDetailsPage(Table table)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterCheckboxStringValues.Select(value => value.Text);
-            Verify.AreEqual(expectedList, actualList, "Filter checkbox String values are different!");
-        }
-
-        [Then(@"following Boolean Values are displayed in the filter dropdown for the '(.*)' column")]
-        public void ThenFollowingBooleanValuesAreDisplayedInTheFilterDropdownForTheColumn(string columnName, Table table)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.Click();
-            page.GetStringFilterByColumnName(columnName);
-
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterCheckboxBooleanValues.Select(value => value.Text);
-            Verify.AreEqual(expectedList, actualList, "Boolean Values in the filter dropdown for the '{columnName}' column are different!");
 
             page.BodyContainer.Click();
         }
@@ -111,18 +89,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"All text is displayed for {columnName} column");
         }
 
-        [When(@"User clicks '(.*)' checkbox from String Filter in the filter dropdown for the '(.*)' column")]
-        public void WhenUserClicksCheckboxFromStringFilterInTheFilterDropdownForTheColumn(string filterName, string columnName)
+        //  | checkboxes |
+        [When(@"User selects following checkboxes in the filter dropdown menu for the '(.*)' column:")]
+        public void WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
             page.GetStringFilterByColumnName(columnName);
 
-            var filter = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            if (filter.CheckboxesStringFilter.Displayed())
-                page.GetStringFilterByName(filterName);
-            else
-                page.GetBooleanStringFilterByName(filterName);
+            foreach (var row in table.Rows)
+            {
+                page.GetFilterCheckboxValuesForColumn(row["checkboxes"]);
+            }
 
             page.BodyContainer.Click();
         }
@@ -136,11 +114,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
 
-            menu.ColumnButton.Click();
+            if (!menu.ColumnPanelInColumnSettings.Displayed())
+                menu.ColumnButton.Click();
 
             foreach (var row in table.Rows)
             {
-                menu.GetColumnCheckbox(row["checkboxes"]);
+                menu.GetColumnCheckbox(row["checkboxes"]).Click();
             }
         }
 
@@ -483,19 +462,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectCheckboxOnTheColumnSettingsPanel(string checkboxName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.GetColumnCheckbox(checkboxName);
+            page.GetColumnCheckbox(checkboxName).Click();
         }
 
-        //TODO change check logic for checkboxes
+        //TODO:  change check logic for checkboxes
         [Then(@"Checkboxes are checked on the Column Settings panel for ""(.*)"" Column Settings panel:")]
         public void ThenCheckboxesAreCheckedOnTheColumnSettingsPanelForColumnSettingsPanel(string columnName,
             Table table)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var column = _driver.NowAt<BaseGridPage>();
             column.OpenColumnSettings(columnName);
-            Verify.AreEqual(expectedList, page.GetCheckedElementsText(), "Checkbox is not selected");
+
+            foreach (var row in table.Rows)
+            {
+                Verify.IsTrue(page.GetColumnCheckbox(row["Checkbox"]).Selected(), $"'{row["Checkbox"]}' checkboxes are not checked on the Column Settings panel for '{columnName}' column");
+            }
         }
 
         [Then(@"following columns added to the table:")]
@@ -690,7 +672,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinkIsDisplayedOnTheDetailsPage(string linkName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.LinkIsDisplayed(linkName));
             Verify.IsTrue(detailsPage.LinkIsDisplayed(linkName).Displayed(), $"'{linkName}' link name was not changed");
         }
 

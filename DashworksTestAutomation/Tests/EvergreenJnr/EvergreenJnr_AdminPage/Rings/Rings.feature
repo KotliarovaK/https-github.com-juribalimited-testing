@@ -82,5 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCogIconIsNotDisplayedOnLevelOfGroupedR
 	When User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Rings' left menu item
 	Then Page with 'Rings' header is displayed to user
-	When User clicks Group By button on the Admin page and selects "Ring" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Ring       | true  |
 	Then Cog menu is not displayed on the Admin page

@@ -157,24 +157,24 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "DEV50"});
 #line 22
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Domain\' col" +
-                    "umn", ((string)(null)), table1, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
+                    "olumn:", ((string)(null)), table1, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table2.AddRow(new string[] {
                         "True"});
 #line 25
- testRunner.Then("following Boolean Values are displayed in the filter dropdown for the \'Enabled\' c" +
-                    "olumn", ((string)(null)), table2, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Enabled\' " +
+                    "column:", ((string)(null)), table2, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
                         "Active Directory"});
 #line 28
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Directory T" +
-                    "ype\' column", ((string)(null)), table3, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Directory" +
+                    " Type\' column:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

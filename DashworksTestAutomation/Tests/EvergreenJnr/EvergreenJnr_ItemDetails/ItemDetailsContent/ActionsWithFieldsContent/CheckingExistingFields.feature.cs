@@ -1227,7 +1227,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18850")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTab()
         {
             System.Exception lastException = null;
@@ -1262,20 +1261,19 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18850",
-                        "Not_Run"});
-#line 264
+                        "DAS18850"});
+#line 263
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 265
+#line 264
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                     "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 266
+#line 265
  testRunner.Then("Details page for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 267
+#line 266
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1292,7 +1290,7 @@ this.FeatureBackground();
                         "Rationalisation"});
             table11.AddRow(new string[] {
                         "Hide From End User"});
-#line 268
+#line 267
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();

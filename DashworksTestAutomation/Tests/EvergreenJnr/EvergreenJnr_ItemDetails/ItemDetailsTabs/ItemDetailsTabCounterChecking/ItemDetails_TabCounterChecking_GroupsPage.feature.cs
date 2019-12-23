@@ -144,13 +144,11 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Members"});
 #line 13
- testRunner.And("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table1, "And ");
+ testRunner.And("User sees following parent left menu items", ((string)(null)), table1, "And ");
 #line 17
- testRunner.And("\"Group\" tab is displayed on left menu on the Details page and NOT contains count " +
-                    "of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Group\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("\"LDAP\" tab is displayed on left menu on the Details page and NOT contains count o" +
-                    "f items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'LDAP\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -161,13 +159,11 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Collections"});
 #line 21
- testRunner.Then("\"Applications\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table2, "Then ");
+ testRunner.Then("\'Applications\' left menu have following submenu items:", ((string)(null)), table2, "Then ");
 #line 26
- testRunner.And("\"Applications\" tab is displayed on left menu on the Details page and contains cou" +
-                    "nt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Applications\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And("\"Collections\" tab is displayed on left menu on the Details page and contains coun" +
-                    "t of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Collections\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
  testRunner.When("User navigates to the \'Members\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -180,16 +176,13 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Member Of"});
 #line 30
- testRunner.Then("\"Members\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table3, "Then ");
+ testRunner.Then("\'Members\' left menu have following submenu items:", ((string)(null)), table3, "Then ");
 #line 36
- testRunner.And("\"User Members\" tab is displayed on left menu on the Details page and contains cou" +
-                    "nt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'User Members\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
- testRunner.And("\"Device Members\" tab is displayed on left menu on the Details page and contains c" +
-                    "ount of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Device Members\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And("\"Member Of\" tab is displayed on left menu on the Details page and contains count " +
-                    "of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Member Of\' left submenu item with some count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

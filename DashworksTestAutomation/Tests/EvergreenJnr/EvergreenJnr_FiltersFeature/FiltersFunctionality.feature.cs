@@ -11559,6 +11559,111 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWork")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS19384")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWork()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWorkInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWorkInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWork", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "Evergreen_FiltersFeature",
+                        "FiltersFunctionality",
+                        "DAS19384"});
+#line 2598
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2599
+ testRunner.When("User clicks \'Mailboxes\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2600
+ testRunner.Then("\'All Mailboxes\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2601
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2602
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table240 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table240.AddRow(new string[] {
+                        "zMailboxAu: Owner In Scope"});
+#line 2603
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table240, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table241 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table241.AddRow(new string[] {
+                        "zMailboxAu: Owner In Scope"});
+#line 2606
+ testRunner.Then("Content is present in the newly added column", ((string)(null)), table241, "Then ");
+#line 2609
+ testRunner.Then("\"14,784\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2610
+ testRunner.When("User clicks on \'zMailboxAu: Owner In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2611
+ testRunner.Then("data in table is sorted by \'zMailboxAu: Owner In Scope\' column in descending orde" +
+                    "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2612
+ testRunner.When("User clicks on \'zMailboxAu: Owner In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2613
+ testRunner.Then("data in table is sorted by \'zMailboxAu: Owner In Scope\' column in ascending order" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2614
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2615
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table242 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table242.AddRow(new string[] {
+                        "TRUE"});
+            table242.AddRow(new string[] {
+                        "FALSE"});
+            table242.AddRow(new string[] {
+                        "Empty"});
+#line 2616
+ testRunner.When("User add \"zMailboxAu: Owner In Scope\" filter where type is \"Equals\" without added" +
+                    " column and following checkboxes:", ((string)(null)), table242, "When ");
+#line 2621
+ testRunner.Then("\"zMailboxAu: Owner In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2622
+ testRunner.Then("\"14,784\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

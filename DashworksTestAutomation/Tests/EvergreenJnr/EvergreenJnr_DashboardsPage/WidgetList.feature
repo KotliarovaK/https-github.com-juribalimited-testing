@@ -40,6 +40,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	When User add "Vendor" filter where type is "Equals" with added column and following value:
 	| Values    |
 	| Microsoft |
+	When User waits for '3' seconds
 	When User create dynamic list with "TestList_DAS15413" name on "Applications" page
 	Then "TestList_DAS15413" list is displayed to user
 	When Dashboard with 'Dashboard for DAS15413' name created via API and opened
@@ -50,8 +51,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	| List       | Widget_For_DAS15413 | TestList_DAS15413 | 500     | 10         |
 	Then 'Widget_For_DAS15413' Widget is displayed to the user
 	Then following content is displayed in the 'Vendor' column for Widget
-	| Values                |
-	| Microsoft Corporation |
+	| Values    |
+	| Microsoft |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17814 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThahtArchivedObjectsShouldNotBeLinkedToObjectDetailsFromListWidgetsClickThrough

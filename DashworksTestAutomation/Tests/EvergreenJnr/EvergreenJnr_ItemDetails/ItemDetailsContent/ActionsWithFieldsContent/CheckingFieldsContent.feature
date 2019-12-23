@@ -40,8 +40,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	| Title    | Value   |
 	| Language | English |
 
-	#Ann.I. 11/28/19: some updatedes are ready only for the 'terminator'
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Cleanup @Not_Ready
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Cleanup
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User creates new Bucket via api
 	| Name        | TeamName | IsDefault |
@@ -112,9 +111,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	And User clicks 'UPDATE' button 
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
-	
-	#Ann.Ilchenko 8/30/19: Question about link change speed (for "Capacity Unit")
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Cleanup @Not_Run
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Cleanup
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
 	When User creates new Capacity Unit via api
 	| Name              | Description | IsDefault |
@@ -231,8 +229,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAn
 	| Title       | Value         |
 	| Criticality | Uncategorised |
 
-#Ann.I. 11/14/19: ready only for the 'terminator'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18865 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18865
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab 
 	When User navigates to the 'Application' details page for 'Axosoft OnTime 2005 Enterprise Server' item
 	Then Details page for "Axosoft OnTime 2005 Enterprise Server" item is displayed to the user
@@ -245,8 +242,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 	| Field             | Data   |
 	| Sticky Compliance | IGNORE |
 
-#Ann.I. 11/21/19: ready only for the 'terminator'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849
 Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
 	Then Details page for "ACDSee for Windows 95" item is displayed to the user
@@ -266,8 +262,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplay
 	| Title              | Value |
 	| Hide From End User | FALSE |
 
-#Ann.I. 11/26/19: ready only for the 'terminator'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18852 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18852
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirementsForAnalysisEditorRole
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
@@ -292,7 +287,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurity
 	| Value |
 	| TRUE  |
 	| FALSE |
-	#When User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
 	Then popup is displayed to User
 	When User clicks 'CANCEL' button

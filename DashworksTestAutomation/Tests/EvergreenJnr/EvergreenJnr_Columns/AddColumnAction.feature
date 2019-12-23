@@ -407,12 +407,12 @@ Scenario: EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying
 Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
-	| ColumnName           |
-	| Evergreen Target App |
+	| ColumnName                |
+	| Evergreen Target App Name |
 	When User create dynamic list with "DAS18961_List" name on "Applications" page
 	Then "DAS18961_List" list is displayed to user
-	When User clicks on 'Evergreen Target App' column header
-	Then data in table is sorted by 'Evergreen Target App' column in ascending order
+	When User clicks on 'Evergreen Target App Name' column header
+	Then data in table is sorted by 'Evergreen Target App Name' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying

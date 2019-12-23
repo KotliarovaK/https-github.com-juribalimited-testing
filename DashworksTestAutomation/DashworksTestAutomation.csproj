@@ -241,8 +241,6 @@
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterElement.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\CustomFields\CustomFieldPopup.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetailsTopBarPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\BaseNavigationElements.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
@@ -257,7 +255,6 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_OverrideDatesPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_SlotsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_UnitsPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\CreateCapacitySlotPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\BaseFormPagePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateCapacityUnitPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectDetailsPage.cs" />
@@ -367,6 +364,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\AfterScenario\RemoveProjectAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\AfterScenario\RemoveProjectMethods.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\BeforeScenario\SetDefaultReadinessBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\ReadinessSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\AfterScenario\RemoveReadinessAfterScenario.cs" />
@@ -384,6 +382,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SetDefaultTeamBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGridHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseInlineTipBannerElement.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseDialog.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseErrorPage.cs" />
@@ -392,6 +391,7 @@
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_LeftMenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListMethods.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\AfterScenario\RemoveDashboardAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_WidgetPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\ProjectsApi.cs" />
@@ -409,7 +409,6 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\AfterScenarios\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomField.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomFieldViaApi.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_AggridHeaderCounter.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />
@@ -953,6 +952,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateSelfServiceViaApi.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EditSelfService1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditSelfService.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature.cs">
       <DependentUpon>DeleteBucketsFromTheTeam.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1149,6 +1153,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataInTable.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvergreenDetails.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\TopBar.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2093,6 +2102,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateSelfServiceViaApi.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EditSelfService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditSelfService1.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteBucketsFromTheTeam.feature.cs</LastGenOutput>
@@ -2250,6 +2263,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_GridActions\DataInTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

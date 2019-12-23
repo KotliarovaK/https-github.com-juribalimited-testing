@@ -406,9 +406,16 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'Rings\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
  testRunner.Then("Page with \'Rings\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkboxes",
+                        "State"});
+            table5.AddRow(new string[] {
+                        "Ring",
+                        "true"});
 #line 85
- testRunner.When("User clicks Group By button on the Admin page and selects \"Ring\" value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table5, "When ");
+#line 88
  testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

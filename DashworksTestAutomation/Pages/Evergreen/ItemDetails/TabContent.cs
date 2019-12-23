@@ -35,11 +35,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='table-responsive ng-star-inserted']//span[text()='{name}']"));
         }
 
-        public bool CheckThatSelectedTabHasOpened(string name)
-        {
-            return Driver.IsElementDisplayed(By.XPath($"//*[text()='{name}']"));
-        }
-
         public IWebElement GetColorIconsForColorFilters(string color)
         {
             var selector = By.XPath($"//span[@class='status-text'][text()='{color}']/../div");

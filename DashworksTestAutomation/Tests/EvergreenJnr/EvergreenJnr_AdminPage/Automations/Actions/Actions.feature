@@ -37,10 +37,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	And User selects '1803 Rollout' option from 'Project' autocomplete
 	And User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	And User clicks Group By button on the Admin page and selects "Type" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Type       | true  |
 	Then Cog menu is not displayed on the Admin page
 	And Grid is grouped
-	When User clicks Group By button on the Admin page and selects "Type" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Type       | false |
 	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
@@ -744,7 +748,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| DA17778        | 17778       | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
-	And User navigates to the 'Actions' left menu item
+	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks 'CREATE ACTION' button 
 	When User enters '17778 None' text to 'Action Name' textbox

@@ -172,7 +172,7 @@ namespace DashworksTestAutomation.Pages
             var expandedItems = By.XPath(".//span[@class='mat-option-text']");
             var itemToBeSelected = By.XPath($".//mat-option//span[contains(text(), '{item}')]");
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 if (!Driver.IsElementDisplayed(expandedItems))
                 {
