@@ -119,7 +119,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
                 messages.Add($"Self Service CreatedByUser is '{obj.CreatedByUser}', but it should be '{CreatedByUser}'");
             }
 
-            if (!messages.Any())
+            if (messages.Any())
             {
                 
                 var result = messages.Aggregate((a, b) => a + "\r\n " + b);
