@@ -146,7 +146,7 @@ this.FeatureBackground();
 #line 10
  testRunner.When(string.Format("User navigates to the \'{0}\' details page for \'{1}\' item", pageName, objectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then(string.Format("Details page for \"{0}\" item is displayed to the user", objectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("Details page for \'{0}\' item is displayed to the user", objectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", tabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
@@ -212,7 +212,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'ACT Data Collection Package" +
                     "s\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.Then("Details page for \"ACT Data Collection Packages\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'ACT Data Collection Packages\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 27
  testRunner.When("User navigates to the \'Distribution\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
@@ -275,7 +275,7 @@ this.FeatureBackground();
 #line 33
  testRunner.When("User navigates to the \'Device\' details page for \'06Y8HSNCPVHENV\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.Then("Details page for \"06Y8HSNCPVHENV\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'06Y8HSNCPVHENV\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36

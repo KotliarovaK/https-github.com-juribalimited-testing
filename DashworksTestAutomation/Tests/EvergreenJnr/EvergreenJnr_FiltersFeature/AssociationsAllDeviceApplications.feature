@@ -217,7 +217,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDispl
 	When User selects '<operator3>' option in expanded associations list
 	When User clicks 'RUN LIST' button
 	When User clicks content from "Hostname" column
-	Then Details page for "<hostname>" item is displayed to the user
+	Then Details page for '<hostname>' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	When User enters "<application>" text in the Search field for "Application" column
 	Then '<installed>' content is displayed in the 'Installed' column

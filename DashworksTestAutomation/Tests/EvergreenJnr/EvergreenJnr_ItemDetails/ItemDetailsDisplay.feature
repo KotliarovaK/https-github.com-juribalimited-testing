@@ -16,7 +16,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	| <Column>   |
 	When User perform search by "<ItemName>"
 	When User click content from "<Column>" column
-	Then Details page for "<ItemName>" item is displayed to the user
+	Then Details page for '<ItemName>' item is displayed to the user
 	And URL is "<URLpart>"
 
 Examples:
@@ -85,13 +85,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	Then table content is present
 	When User enters "Microsoft Internet Explorer" text in the Search field for "Application" column
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
-	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed to the user
+	Then Details page for 'Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs' item is displayed to the user
 
 #upd Ann.Ilchenko 10/25/19: will be ready in the future
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16322 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPage
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	Then 'ADD USERS' button is displayed
 	Then 'Actions' dropdown is displayed
@@ -101,35 +101,35 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetails
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16338
 Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayed
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User clicks on "Devices" navigation link
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
-	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	Then Details page for '0072B088173449E3A93' item is displayed to the user
 	When User clicks on "Users" navigation link
 	Then 'All Users' list should be displayed to the user
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
-	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
+	Then Details page for 'ABBYY FineReader 8.0 Professional Edition' item is displayed to the user
 	When User clicks on "Applications" navigation link
 	Then 'All Applications' list should be displayed to the user
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
-	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	Then Details page for '00B5CCB89AD0404B965@bclabs.local' item is displayed to the user
 	When User clicks on "Mailboxes" navigation link
 	Then 'All Mailboxes' list should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17086
 Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsOpenedCorrectlyWithSameKeyAndUserValues
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	And User clicks "Nicole P. Braun" link on the Details Page
-	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	Then Details page for 'QLL295118 (Nicole P. Braun)' item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field | Data  |
 	| Key   | 23726 |
@@ -137,14 +137,14 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsOpenedCorrectlyWithSam
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17300
 Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetailsPage
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Users' left menu item
 	Then 'QLL295118' content is displayed in the 'Username' column
 	And 'US-E' content is displayed in the 'Domain' column
 	And 'Nicole P. Braun' content is displayed in the 'Display Name' column
 	And 'QLL295118.Users.Jersey City.US-E.local' content is displayed in the 'Distinguished Name' column
 	When User clicks "QLL295118" link on the Details Page
-	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	Then Details page for 'QLL295118 (Nicole P. Braun)' item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field              | Data                                   |
 	| Username           | QLL295118                              |
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsSimilarOnGridAndDetail
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17813
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPermissionsTabOnUserObjectPageIsDisplayedCorrectly
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
-	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	Then Details page for '0072B088173449E3A93' item is displayed to the user
 	When User navigates to the 'Mailboxes' left menu item
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	When User enters "Exchange 2007" text in the Search field for "Mailbox Platform" column

@@ -9,6 +9,7 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -26,14 +27,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
-        [Then(@"Details page for ""(.*)"" item is displayed to the user")]
+        [Then(@"Details page for '(.*)' item is displayed to the user")]
         public void ThenDetailsPageForItemIsDisplayedToTheUser(string pageName)
         {
             var page = _driver.NowAt<BaseHeaderElement>();
             page.CheckPageHeaderContainsText(pageName);
 
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Item details icon is not displayed");
+            Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Item details icon is not displayed");
         }
 
         [Then(@"field with ""(.*)"" text is displayed in expanded tab on the Details Page")]
