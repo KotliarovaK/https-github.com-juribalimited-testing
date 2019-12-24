@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then Current permission 'Specific users / teams' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then New Permission 'Do not change' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	When User selects 'Everyone can see' permission for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
-	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
+	When User clicks 'UPDATE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	#login as user1 and check if list permission changed

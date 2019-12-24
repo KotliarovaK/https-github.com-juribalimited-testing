@@ -225,7 +225,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'Everyone can see\' permission for \'ADeviceListFor14841_Admin\' list o" +
                     "n Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
- testRunner.When("User clicks the \'UPDATE & SHARE\' button on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'UPDATE & SHARE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
  testRunner.Then("Review Widget List Permissions is not displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54

@@ -1136,14 +1136,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
         }
 
-        [When(@"User clicks the '(.*)' button on Permissions Pop-up")]
-        public void WhenUserClicksTheActionButtonOnListPermissionsPopup(string buttonName)
-        {
-            var action = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            action.ReviewPermissionsPopupsButton(buttonName).Click();
-        }
-
         #endregion
 
         #region Print

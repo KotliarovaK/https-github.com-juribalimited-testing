@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841' list on Permissions Pop-up
 	Then Button 'UPDATE & SHARE' has enabled property 'true' on Permissions Pop-up
 	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on Permissions Pop-up
-	When User clicks the 'CANCEL' button on Permissions Pop-up
+	When User clicks 'CANCEL' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Private" sharing option is selected
 	
@@ -167,7 +167,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	Then Review Widget List Permissions is displayed to the User
 	#act	
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841_1' list on Permissions Pop-up
-	When User clicks the 'IGNORE & SHARE' button on Permissions Pop-up
+	When User clicks 'IGNORE & SHARE' button on popup
+	#When User clicks the 'IGNORE & SHARE' button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	#teardown
@@ -202,7 +203,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	Then Review Widget List Permissions is displayed to the User
 	#act
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841_2' list on Permissions Pop-up
-	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
+	When User clicks 'IGNORE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	#teardown
@@ -253,7 +254,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	When User selects 'Everyone can edit' permission for 'DeviceListFor14841_3' list on Permissions Pop-up
 	Then Button 'UPDATE & SHARE' has enabled property 'true' on Permissions Pop-up
 	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on Permissions Pop-up
-	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
+	When User clicks 'UPDATE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	When User clicks 'Devices' on the left-hand menu
