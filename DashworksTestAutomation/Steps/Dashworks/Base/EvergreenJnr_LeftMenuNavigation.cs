@@ -98,7 +98,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var element = _driver.NowAt<BaseNavigationElements>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = element.GetSubMenuItems(parent).Select(value => value.Text).ToList();
+            var actualList = element.GetSubMenuItems(parent).Select(value => value.Text.Split(" (").First()).ToList();
             Verify.AreEqual(expectedList, actualList,
                 $"Incorrect submenu items for '{parent}' parent left menu");
         }
