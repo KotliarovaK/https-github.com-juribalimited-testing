@@ -8,6 +8,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -61,6 +62,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var getColor = page.GetButton(button).GetCssValue("background-color");
             Verify.AreEqual(color, getColor,
                 $"'{button}' sah incorrect color");
+        }
+
+        #endregion
+
+        #region ToolTip
+
+        [Then(@"Button '(.*)' has '(.*)' tooltip on popup")]
+        public void ButtonHasTooltipOnPopup(string button, string tooltip)
+        {
+            var page = _driver.NowAt<BaseDialogPage>();
+            _driver.MouseHover(page.GetButton(button));
+            _driver.WaitForDataLoading();
+            var toolTipText = _driver.GetTooltipText();
+            Verify.That(tooltip, Is.EqualTo(toolTipText), $"Popup '{button}' button has incorrect tooltip");
         }
 
         #endregion
