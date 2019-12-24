@@ -2415,12 +2415,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOperatingSystemFilterWork
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17757
 Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProjectProperties
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
-	And User Add And "1803: Status" filter where type is "Equals" with added column and Lookup option
+	When User clicks the Filters button
+	When User add "1803: Status" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Offboarded     |
 	Then "4" rows are displayed in the agGrid
-	And Content in the '1803: Status' column is equal to
+	Then Content in the '1803: Status' column is equal to
 	| Content    |
 	| Offboarded |
 	| Offboarded |
