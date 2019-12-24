@@ -33,6 +33,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	Then 'Projects' left menu have following submenu items:
 	| SubTabName              |
 	| Evergreen Details       |
+	| Project Details         |
 	| User Projects           |
 	| Device Project Summary  |
 	| Mailbox Project Summary |
