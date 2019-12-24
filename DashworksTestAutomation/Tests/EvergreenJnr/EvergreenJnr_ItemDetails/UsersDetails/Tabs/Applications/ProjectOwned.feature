@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCor
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19321
 Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject
-	When User navigates to the 'User' details page for 'SNL594136' item
+	When User navigates to the 'User' details page for the item with '29342' ID
 	Then Details page for "SNL594136" item is displayed to the user
 	When User switches to the "Windows 10 Migration - Depot" project in the Top bar on Item details page
 	When User navigates to the 'Applications' left menu item
