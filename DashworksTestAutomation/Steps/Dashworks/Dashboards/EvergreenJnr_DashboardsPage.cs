@@ -1117,15 +1117,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
         }
 
-        [Then(@"Button '(.*)' has enabled property '(.*)' on Permissions Pop-up")]
-        public void ThenUserSeesButtonInTheNextStateForListOnListPermissionsPopup(string buttonCapture, string buttonState)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            Verify.That(page.GetButtonStateOfReviewWidgetPermissionsPopup(buttonCapture),
-                Is.EqualTo(buttonState.ToUpper()), $"Button {buttonCapture} states is different");
-        }
-
         #endregion
 
         #region Print

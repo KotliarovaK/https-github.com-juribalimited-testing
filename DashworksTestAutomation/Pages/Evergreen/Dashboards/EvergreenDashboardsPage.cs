@@ -130,13 +130,11 @@ namespace DashworksTestAutomation.Pages
 
         #endregion
 
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By> { };
         }
-
 
         #region HeaderMethods
 
@@ -208,16 +206,6 @@ namespace DashworksTestAutomation.Pages
                 $".//span[text()='{dashboardName}']/preceding-sibling::span//i[@class='material-icons mat-home']";
 
             return Driver.FindElements(By.XPath(starIcon)).Count == 1;
-        }
-
-        public IWebElement ReviewPermissionsPopupsButton(string buttonCaption)
-        {
-            return Driver.FindElement(By.XPath($".//mat-dialog-container//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
-        }
-
-        public string GetButtonStateOfReviewWidgetPermissionsPopup(string buttonCaption)
-        {
-            return ReviewPermissionsPopupsButton(buttonCaption).Enabled.ToString().ToUpper();
         }
 
         public void SelectDoNotChangeReviewPermission()

@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_BaseDialog (RemoteWebDriver driver)
+        public EvergreenJnr_BaseDialog(RemoteWebDriver driver)
         {
             _driver = driver;
         }
@@ -62,6 +62,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var getColor = page.GetButton(button).GetCssValue("background-color");
             Verify.AreEqual(color, getColor,
                 $"'{button}' sah incorrect color");
+        }
+
+        [Then(@"'(.*)' button is disabled on popup")]
+        public void ThenButtonIsDisabledOnPopup(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDialogPage>();
+            Verify.IsTrue(page.GetButton(buttonName).Disabled(),
+                $"'{buttonName}' button is displayed on popup");
+        }
+
+        [Then(@"'(.*)' button is not disabled on popup")]
+        public void ThenButtonIsNotDisabledOnPopup(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDialogPage>();
+            var button = page.GetButton(buttonName);
+            Verify.IsTrue(button.Displayed(),
+                $"'{buttonName}' button is not displayed on popup");
+            Verify.IsFalse(button.Disabled(),
+                $"'{buttonName}' button is displayed  on popup");
         }
 
         #endregion

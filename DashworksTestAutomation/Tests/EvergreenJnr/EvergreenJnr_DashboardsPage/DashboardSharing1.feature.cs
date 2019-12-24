@@ -483,28 +483,27 @@ this.FeatureBackground();
  testRunner.Then("User sees next options of New Permission field for \'DeviceListFor14841\' list on P" +
                     "ermissions Pop-up", ((string)(null)), table8, "Then ");
 #line 131
- testRunner.Then("Button \'UPDATE & SHARE\' has enabled property \'false\' on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE & SHARE\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 132
- testRunner.Then("Button \'IGNORE & SHARE\' has enabled property \'true\' on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'IGNORE & SHARE\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 133
- testRunner.Then("Button \'CANCEL\' has enabled property \'true\' on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'CANCEL\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 135
- testRunner.Then("Button \'UPDATE & SHARE\' has \'Amend widget permissions above\' tooltip on Permissio" +
-                    "ns Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Button \'UPDATE & SHARE\' has \'Amend widget permissions above\' tooltip on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 136
  testRunner.Then("Button \'IGNORE & SHARE\' has \'Do not change widget list permissions and share dash" +
-                    "board\' tooltip on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "board\' tooltip on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 137
  testRunner.Then("Button \'CANCEL\' has \'Do not change widget list permissions and do not share dashb" +
-                    "oard\' tooltip on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "oard\' tooltip on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 139
  testRunner.When("User selects \'Everyone can see\' permission for \'DeviceListFor14841\' list on Permi" +
                     "ssions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 140
- testRunner.Then("Button \'UPDATE & SHARE\' has enabled property \'true\' on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE & SHARE\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 141
  testRunner.Then("Button \'UPDATE & SHARE\' has \'Change widget list permissions and share dashboard\' " +
-                    "tooltip on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "tooltip on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 142
  testRunner.When("User clicks \'CANCEL\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 143
@@ -882,10 +881,10 @@ this.FeatureBackground();
  testRunner.When("User selects \'Everyone can edit\' permission for \'DeviceListFor14841_3\' list on Pe" +
                     "rmissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 255
- testRunner.Then("Button \'UPDATE & SHARE\' has enabled property \'true\' on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE & SHARE\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 256
  testRunner.Then("Button \'UPDATE & SHARE\' has \'Change widget list permissions and share dashboard\' " +
-                    "tooltip on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "tooltip on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 257
  testRunner.When("User clicks \'UPDATE & SHARE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 258

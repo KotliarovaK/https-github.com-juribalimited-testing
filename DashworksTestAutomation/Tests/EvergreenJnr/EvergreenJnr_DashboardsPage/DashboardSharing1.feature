@@ -128,16 +128,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	| Everyone can see  |
 	| Everyone can edit |
 	#state
-	Then Button 'UPDATE & SHARE' has enabled property 'false' on Permissions Pop-up
-	Then Button 'IGNORE & SHARE' has enabled property 'true' on Permissions Pop-up
-	Then Button 'CANCEL' has enabled property 'true' on Permissions Pop-up
+	Then 'UPDATE & SHARE' button is disabled on popup
+	Then 'IGNORE & SHARE' button is not disabled on popup
+	Then 'CANCEL' button is not disabled on popup
 	#tooltips
 	Then Button 'UPDATE & SHARE' has 'Amend widget permissions above' tooltip on popup
 	Then Button 'IGNORE & SHARE' has 'Do not change widget list permissions and share dashboard' tooltip on popup
 	Then Button 'CANCEL' has 'Do not change widget list permissions and do not share dashboard' tooltip on popup
 	#mix
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841' list on Permissions Pop-up
-	Then Button 'UPDATE & SHARE' has enabled property 'true' on Permissions Pop-up
+	Then 'UPDATE & SHARE' button is not disabled on popup
 	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on popup
 	When User clicks 'CANCEL' button on popup
 	Then Review Widget List Permissions is not displayed to the User
@@ -252,7 +252,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then Review Widget List Permissions is displayed to the User
 	#act
 	When User selects 'Everyone can edit' permission for 'DeviceListFor14841_3' list on Permissions Pop-up
-	Then Button 'UPDATE & SHARE' has enabled property 'true' on Permissions Pop-up
+	Then 'UPDATE & SHARE' button is not disabled on popup
 	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on popup
 	When User clicks 'UPDATE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
