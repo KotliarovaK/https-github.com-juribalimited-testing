@@ -166,10 +166,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelec
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
 	When User enters '2' text to 'Target Application' textbox
-	Then validation message 'Enter at least 3 characters' is displayed  below 'Target Application' filed
+	Then validation message 'Enter at least 3 characters' is displayed  below 'Target Application' field
 	When User selects 'Starbase CodeWright 6.0BETA (107)' option from 'Target Application' autocomplete
 	When User enters 'xine-devel' text to 'Target Application' textbox
-	Then validation message 'No results found' is displayed  below 'Target Application' filed
+	Then validation message 'No results found' is displayed  below 'Target Application' field
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19236 @Not_Ready
 #Waiting for 'Target Application'
@@ -186,9 +186,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelec
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
 	When User enters 'Wise for Windows Installer 4.02 Evaluation' in the 'Target Application' autocomplete field and selects 'Wise for Windows Installer 4.02 Evaluation (162997)' value
 	When User enters 'xine-devel' text to 'Target Application' textbox
-	Then validation message 'No results found' is displayed  below 'Target Application' filed
+	Then validation message 'No results found' is displayed  below 'Target Application' field
 	When User enters 'Zune (03.01.0620.00)' text to 'Target Application' textbox
-	Then validation message 'No results found' is displayed  below 'Target Application' filed
+	Then validation message 'No results found' is displayed  below 'Target Application' field
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18463 @Not_Ready
 #Waiting for 'Target Application'

@@ -729,7 +729,7 @@ this.FeatureBackground();
  testRunner.When("User enters \'2\' text to \'Target Application\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 169
  testRunner.Then("validation message \'Enter at least 3 characters\' is displayed  below \'Target Appl" +
-                    "ication\' filed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "ication\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 170
  testRunner.When("User selects \'Starbase CodeWright 6.0BETA (107)\' option from \'Target Application\'" +
                     " autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -737,7 +737,7 @@ this.FeatureBackground();
  testRunner.When("User enters \'xine-devel\' text to \'Target Application\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 172
  testRunner.Then("validation message \'No results found\' is displayed  below \'Target Application\' fi" +
-                    "led", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "eld", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -821,12 +821,12 @@ this.FeatureBackground();
  testRunner.When("User enters \'xine-devel\' text to \'Target Application\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 189
  testRunner.Then("validation message \'No results found\' is displayed  below \'Target Application\' fi" +
-                    "led", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "eld", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 190
  testRunner.When("User enters \'Zune (03.01.0620.00)\' text to \'Target Application\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 191
  testRunner.Then("validation message \'No results found\' is displayed  below \'Target Application\' fi" +
-                    "led", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "eld", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
