@@ -10722,15 +10722,15 @@ this.FeatureBackground();
 #line 2417
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 2418
- testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table225 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
             table225.AddRow(new string[] {
                         "Offboarded"});
 #line 2419
- testRunner.And("User Add And \"1803: Status\" filter where type is \"Equals\" with added column and L" +
-                    "ookup option", ((string)(null)), table225, "And ");
+ testRunner.When("User add \"1803: Status\" filter where type is \"Equals\" with added column and Looku" +
+                    "p option", ((string)(null)), table225, "When ");
 #line 2422
  testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -10745,7 +10745,7 @@ this.FeatureBackground();
             table226.AddRow(new string[] {
                         "Offboarded"});
 #line 2423
- testRunner.And("Content in the \'1803: Status\' column is equal to", ((string)(null)), table226, "And ");
+ testRunner.Then("Content in the \'1803: Status\' column is equal to", ((string)(null)), table226, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

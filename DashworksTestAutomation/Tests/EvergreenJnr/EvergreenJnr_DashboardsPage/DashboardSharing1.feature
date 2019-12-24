@@ -278,7 +278,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then table content is present
-	When User create custom list with "<listName>" name
+	When User create dynamic list with "<listName>" name on "Devices" page
 	Then "<listName>" list is displayed to user
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
