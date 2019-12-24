@@ -116,7 +116,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Compliance       |
 	And 'Users' left submenu item with some count is displayed
 	And 'Related' left submenu item is displayed without count
-	And 'Tasks Disabled in Evergreen' left submenu item is displayed without count
 	#================ checks sub-menu for main Details tab ================#
 	And 'Details' left menu have following submenu items:
 	| SubTabName              |
