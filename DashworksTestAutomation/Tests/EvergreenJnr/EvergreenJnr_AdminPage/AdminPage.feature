@@ -127,13 +127,13 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User navigates to the 'Scope Changes' left menu item
 	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15989 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15989 @DAS19416 @Cleanup 
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCreatedWhileImportingToANewProject
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	And Page with 'Projects' header is displayed to user
 	When User clicks 'IMPORT PROJECT' button 
-	Then Page with 'Import Project' header is displayed to user
+	Then Page with 'Import Project' subheader is displayed to user
 	When User selects "1803_Rollout.xml" file to upload on Import Project page
 	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters 'DAS15989_TestProject' text to 'Project Name' textbox
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	When User clicks newly created object link
 	Then Page with 'DAS15989_TestProject' header is displayed to user
 	When User navigates to the 'Readiness' left menu item
-	Then "UNKNOWN" content is not displayed in the grid on the Project details page
+	Then 'IGNORE' content is not displayed in the 'Readiness' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16089 @Cleanup
 Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWithoutReadiness 
@@ -299,22 +299,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickin
 	When User navigates to the 'Buckets' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks content from "Bucket" column
-	When User clicks on "Buckets" navigation link
+	When User clicks 'Buckets' header breadcrumb
 	Then Page with 'Buckets' header is displayed to user
 	When User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks content from "Capacity Unit" column
-	When User clicks on "Capacity Units" navigation link
+	When User clicks 'Capacity Units' header breadcrumb
 	Then Page with 'Capacity Units' header is displayed to user
 	When User navigates to the 'Rings' left menu item
 	Then Page with 'Rings' header is displayed to user
 	When User clicks content from "Ring" column
-	When User clicks on "Rings" navigation link
+	When User clicks 'Rings' header breadcrumb
 	Then Page with 'Rings' header is displayed to user
 	When User navigates to the 'Automations' left menu item
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks content from "Automation" column
-	When User clicks on "Automations" navigation link
+	When User clicks 'Automations' header breadcrumb
 	Then Page with 'Automations' header is displayed to user
-	Then "Automations" tab-menu on the Admin page is expanded
+	Then 'Automations' left menu item is expanded

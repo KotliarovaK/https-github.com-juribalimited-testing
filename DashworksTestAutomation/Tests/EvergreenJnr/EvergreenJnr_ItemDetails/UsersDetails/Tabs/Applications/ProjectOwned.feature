@@ -37,8 +37,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	| App Readiness        |
 	| Stage 3              |
 
-#Ann.I. 11/07/19: waiting for gold data
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18700 @Not_Ready
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18700
 Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrectlyOnProjectOwnedTab 
 	When User navigates to the 'User' details page for 'LYZ6880619' item
 	Then Details page for "LYZ6880619" item is displayed to the user
@@ -46,17 +45,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrec
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then "Rationalisation" column is displayed to the user
-	Then following Boolean Values are displayed in the filter dropdown for the 'Rationalisation' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Rationalisation' column:
 	| Values        |
-	| FORWARD PATH  |
-	| KEEP          |
 	| UNCATEGORISED |
 	When User closes Checkbox filter
 	Then 'Rationalisation' column contains following content
 	| Content       |
-	| KEEP          |
 	| UNCATEGORISED |
-	| FORWARD PATH  |
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18743
 Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCorrectly
@@ -69,3 +64,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCor
 	Then Details page for "Quartus II 2.0 Web Edition Full" item is displayed to the user
 	Then User click back button in the browser
 	And Details page for "LYZ6880619" item is displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19321
+Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject
+	When User navigates to the 'User' details page for 'SNL594136' item
+	Then Details page for "SNL594136" item is displayed to the user
+	When User switches to the "Windows 10 Migration - Depot" project in the Top bar on Item details page
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Project Owned' left submenu item
+	Then 'Visio Professional 5.0b' content is displayed in the 'Current App' column
+	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	Then 'EarthLink Digital Music Player (A01)' content is displayed in the 'Current App' column

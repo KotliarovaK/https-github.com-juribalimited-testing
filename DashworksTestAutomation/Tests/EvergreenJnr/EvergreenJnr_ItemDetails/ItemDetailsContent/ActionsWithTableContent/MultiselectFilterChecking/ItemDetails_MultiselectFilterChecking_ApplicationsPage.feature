@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
 	When User navigates to the 'Advertisements' left submenu item
 	Then 'TRUE' content is displayed in the 'Active' column
-	Then following Boolean Values are displayed in the filter dropdown for the 'Active' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Active' column:
 	| Values |
 	| True   |
 
@@ -28,26 +28,26 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then 'AOK Import' content is displayed in the 'Source' column
 	Then 'ChangeBASE AOK' content is displayed in the 'Source Type' column
 	Then 'GREEN' content is displayed in the 'Compliance' column
-	Then following String Values are displayed in the filter dropdown for the 'Source' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Source' column:
 	| Values     |
 	| AOK Import |
-	Then following String Values are displayed in the filter dropdown for the 'Source Type' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Source Type' column:
 	| Values         |
 	| ChangeBASE AOK |
-	Then following String Values are displayed in the filter dropdown for the 'Compliance' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Compliance' column:
 	| Values |
 	| GREEN  |
 	When User navigates to the 'AOK' left submenu item
 	Then 'AOK Import' content is displayed in the 'Source' column
 	Then 'Windows 7' content is displayed in the 'AOK Report' column
 	Then 'GREEN' content is displayed in the 'Compatibility' column
-	Then following String Values are displayed in the filter dropdown for the 'Source' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Source' column:
 	| Values     |
 	| AOK Import |
-	Then following String Values are displayed in the filter dropdown for the 'AOK Report' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'AOK Report' column:
 	| Values    |
 	| Windows 7 |
-	Then following String Values are displayed in the filter dropdown for the 'Compatibility' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Compatibility' column:
 	| Values |
 	| GREEN  |
 
@@ -60,18 +60,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	Then 'TRUE' content is displayed in the 'Installed' column
 	Then 'UNKNOWN' content is displayed in the 'Used' column
 	Then 'TRUE' content is displayed in the 'Entitled' column
-	Then following Boolean Values are displayed in the filter dropdown for the 'Installed' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Installed' column:
 	| Values |
 	| True   |
-	Then following Boolean Values are displayed in the filter dropdown for the 'Used' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Used' column:
 	| Values  |
 	| Unknown |
-	Then following Boolean Values are displayed in the filter dropdown for the 'Entitled' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Entitled' column:
 	| Values |
 	| True   |
 	When User navigates to the 'AD' left submenu item
 	Then 'UK' content is displayed in the 'Domain' column
-	Then following String Values are displayed in the filter dropdown for the 'Domain' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Domain' column:
 	| Values |
 	| AU     |
 	| CA     |

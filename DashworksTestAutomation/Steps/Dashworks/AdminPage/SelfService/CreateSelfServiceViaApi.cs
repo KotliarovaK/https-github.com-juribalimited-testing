@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
-using System.Threading;
-using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
@@ -19,6 +10,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using RestSharp;
 using Newtonsoft.Json;
+using DashworksTestAutomation.Utils;
 using Newtonsoft.Json.Linq;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
@@ -57,7 +49,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(content);
 
                 SelfService.ServiceId = selfServiceObjResponse.ServiceId;
+                SelfService.CreatedByUser = selfServiceObjResponse.CreatedByUser;
                 SelfService.ScopeId = selfServiceObjResponse.ScopeId;
+                SelfService.ScopeName = selfServiceObjResponse.ScopeName;
                 SelfService.StartDate = selfServiceObjResponse.StartDate;
                 SelfService.EndDate = selfServiceObjResponse.EndDate;
                 SelfService.ObjectType = selfServiceObjResponse.ObjectType;
@@ -68,8 +62,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             }
         }
 
-        [Then(@"User checks the created Self Service via API")]
-        public void WhenUserChecksTheCreatedSelfServiceViaApi()
+        [Then(@"User checks the Self Service via API")]
+        public void WhenUserChecksTheSelfServiceViaApi()
         {
             foreach (SelfServiceDto SelfService in _selfServices.Value)
             {
@@ -82,10 +76,66 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 }
 
                 var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(response.Content);
-                if (!SelfService.Equals(selfServiceObjResponse)) 
+                if (!SelfService.Equals(selfServiceObjResponse))
                 {
                     throw new Exception("The created Self Service doesn't match to the received Self Service");
                 }
+            }
+        }
+
+        //| OldName | Name | ServiceIdentifier | Enabled | ScopeId |
+        [When(@"User updates Self Service via API")]
+        public void WhenUserUpdatesSelfServiceViaApi(Table table)
+        {
+            var oldNames = table.GetDataByKey("OldName");
+            var updatedSelfServices = table.CreateSet<SelfServiceDto>().ToArray();
+
+            for (int i = 0; i < oldNames.Count; i++)
+            {
+                var selfService = _selfServices.Value.First(x => x.Name.Equals(oldNames[i]));
+                var newSelfService = updatedSelfServices[i];
+
+                selfService.Name = string.IsNullOrEmpty(newSelfService.Name) ? selfService.Name : newSelfService.Name;
+                selfService.ScopeId = newSelfService.ScopeId.Equals(selfService.ScopeId) ? selfService.ScopeId : newSelfService.ScopeId;
+                selfService.Enabled = newSelfService.Enabled.Equals(selfService.Enabled) ? selfService.Enabled : newSelfService.Enabled;
+                selfService.ServiceIdentifier = newSelfService.ServiceIdentifier.Equals(selfService.ServiceIdentifier) ? selfService.ServiceIdentifier : newSelfService.ServiceIdentifier;
+            }
+
+            foreach (SelfServiceDto SelfService in _selfServices.Value)
+            {
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{SelfService.ServiceId}";
+                var request = requestUri.GenerateRequest();
+                request.AddObject(SelfService);
+                var response = _client.Value.Put(request);
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
+                }
+            }
+        }
+
+        [Then(@"User checks the Self Services Grid via API")]
+        public void WhenUserChecksTheSelfServicesGridViaApi()
+        {
+            if (_selfServices.Value.Equals(null))
+            {
+                throw new Exception("The List of Self Services is empty");
+            }
+
+            foreach (SelfServiceDto SelfService in _selfServices.Value)
+            {
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
+                var response = _client.Value.Get(requestUri.GenerateRequest());
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    throw new Exception($"Unable to get the Self Services Grid: {response.StatusCode}, {response.ErrorMessage}");
+                }
+
+                var selfServicesGrid = JsonConvert.DeserializeObject<JObject>(response.Content);
+                var listOfReturnedSelfServices = selfServicesGrid["results"].ToObject<SelfServiceDto[]>().ToList();
+                Verify.IsTrue(listOfReturnedSelfServices.Any(ss => ss.Equals(SelfService)), "The created Self Service doesn't match to the existing Self Service in the Grid");
             }
         }
     }

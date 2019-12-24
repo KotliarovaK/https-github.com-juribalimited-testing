@@ -13,8 +13,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
-	And User clicks on the Unlimited field on the Capacity Slots page
-	Then Unlimited text disappears from column
+	When User clicks on 'Unlimited' textbox
+	Then 'Unlimited' textbox is focused
+	Then '' content is displayed in 'Unlimited' textbox
 	Then "All Capacity Units" content is displayed in "Capacity Units" field
 	When User clicks 'CANCEL' button 
 	And User creates new Slot
@@ -110,13 +111,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	When Project created via API and opened
 	| ProjectName                | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacityDAS13824 | All Devices | None            | Standalone Project |
-	And User creates new Slot via Api
+	When User creates new Slot via Api
 	| Project                    | SlotName             | DisplayName | SlotAvailableFrom | SlotAvailableTo |
 	| ProjectForCapacityDAS13824 | CapacitySlotDAS13824 | DAS13824    | 29 Oct 2018       | 30 Oct 2018     |
 	And User navigates to newly created Slot
-	And User enters "" value to "Slot Available From" date field on Capacity Slot form page
-	And User enters "" value to "Slot Available To" date field on Capacity Slot form page
-	And User clicks 'UPDATE' button 
-	And User clicks content from "Capacity Slot" column
-	Then User sees "" value in the "Slot Available From" date field on Capacity Slot form page
-	And User sees "" value in the "Slot Available To" date field on Capacity Slot form page
+	When User enters '' text to 'Slot Available From' datepicker
+	When User enters '' text to 'Slot Available To' datepicker
+	When User clicks 'UPDATE' button 
+	When User clicks content from "Capacity Slot" column
+	Then '' content is displayed in 'Slot Available From' textbox
+	Then '' content is displayed in 'Slot Available To' textbox

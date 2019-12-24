@@ -71,8 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 	And User clicks Column button on the Column Settings panel
 	And User select "Value" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	When User clicks Group By button on grid action bar
-	Then following Group By values ​​are displayed for User on grid action bar
+	Then following Group By values ​​are displayed for User on menu panel
 	| Values       |
 	| Custom Field |
 
@@ -93,17 +92,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColum
 Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedForCustomFields
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
-	Then Refresh button is displayed on the Item Details page
-	And Group By button is displayed on the Item Details page
-	And Reset Filters button is displayed on the Item Details page
-	And Reset Filters button on the Item Details page is disable
+	Then 'reload' button with aria label is displayed
+	Then 'GroupBy' button with aria label is displayed
+	Then 'ResetFilters' button with aria label is displayed
+	Then 'ResetFilters' button with aria label is disabled
 	When User opens 'Custom Field' column settings
 	When User selects 'Pin left' option from column settings
 	Then 'Custom Field' column is 'Left' Pinned
-	When User clicks Group By button on the Details page and selects "Custom Field" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes   | State |
+	| Custom Field | true  |
 	Then Grid is grouped
-	#Ann.Ilchenko 8/10/19: This is a TEMPORARY step. 
-	When User clicks Refresh button on grid action bar
+	When User clicks button with 'reload' aria label
 	Then 'Custom Field' column is 'Left' Pinned
 	Then Grid is grouped
 
@@ -121,3 +121,33 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
 	| Computer Warranty |
 	When User perform search by "Z75ievru6r751l"
 	Then '001, 002, aaa, bbb' content is displayed in the 'Computer Warranty' column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228 @DAS17229 @DAS17265
+Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
+	When User navigates to the 'Device' details page for '04R5RM0R0MVFCM' item
+	Then Details page for "04R5RM0R0MVFCM" item is displayed to the user
+	When User navigates to the 'Details' left menu item
+	And User navigates to the 'Custom Fields' left submenu item
+	When User clicks on 'Custom Field' column header
+	Then data in table is sorted by 'Custom Field' column in ascending order
+	When User clicks on 'Custom Field' column header
+	Then data in table is sorted by 'Custom Field' column in descending order
+	Then ColumnName is displayed in following order on the Details page:
+	| ColumnName   |
+	| Custom Field |
+	|              |
+	| Value        |
+	Then User sees "2" rows in grid
+	Then 'ResetFilters' button with aria label is disabled
+	Then 'reload' button with aria label is displayed
+	Then 'Export' button with aria label is displayed
+	Then 'GroupBy' button with aria label is displayed
+	When User enters "com" text in the Search field for "Custom Field" column
+	Then 'ResetFilters' button with aria label is not disabled
+	Then Rows counter shows "1" of "2" rows
+	When User clicks button with 'ResetFilters' aria label
+	Then 'ResetFilters' button with aria label is disabled
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Value      | true  |
+	Then Grid is grouped

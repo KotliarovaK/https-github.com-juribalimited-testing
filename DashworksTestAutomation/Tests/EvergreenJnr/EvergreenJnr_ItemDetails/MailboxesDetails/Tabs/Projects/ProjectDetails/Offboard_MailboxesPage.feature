@@ -87,8 +87,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	Then popup is displayed to User
 	Then 'Offboarding mailbox alex.cristea@juriba.com (Alex Cristea). Offboarding an object deletes all project related information about it.' text is displayed on popup
 
-	#Ann.I. 11/06/19: ready only for the 'spectrum'
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS18785 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS18785
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssociatedUserRedirectsCorrectly
 	When User navigates to the 'Mailbox' details page for '0286449FB2C34A12809@bclabs.local' item
 	Then Details page for "0286449FB2C34A12809@bclabs.local" item is displayed to the user

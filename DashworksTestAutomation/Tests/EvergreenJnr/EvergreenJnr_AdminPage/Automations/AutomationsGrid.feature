@@ -29,7 +29,9 @@ Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 	When User enters "Delay" text in the Search field for "Automation" column
 	Then Rows counter contains "8" found row of all rows
 	When User clicks Reset Filters button on the Admin page
-	When User clicks Group By button on the Admin page and selects "Active" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Active     | true  |
 	Then Cog menu is not displayed on the Admin page
 	Then Grid is grouped
 

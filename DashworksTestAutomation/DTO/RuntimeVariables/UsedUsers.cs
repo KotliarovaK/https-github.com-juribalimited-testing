@@ -3,7 +3,7 @@
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
     //User credentials that used during test execution
-    internal class UsedUsers
+    public class UsedUsers
     {
         public UsedUsers()
         {

@@ -586,8 +586,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidget
 	Then 'WidgetForDAS16167' Widget is displayed to the user
 	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
 
-#serhii: remove tag on terminator
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19015 @Cleanup @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19015 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidgetBAsedOnStickyComplianceColumn
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Columns button

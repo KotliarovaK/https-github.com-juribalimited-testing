@@ -148,6 +148,18 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static bool IsElementFocused(this IWebElement element)
+        {
+            try
+            {
+                return element.GetAttribute("class").Contains("mat-focused");
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #region Checkboxes
 
         public static void CheckCheckBox(this IWebElement checkbox)

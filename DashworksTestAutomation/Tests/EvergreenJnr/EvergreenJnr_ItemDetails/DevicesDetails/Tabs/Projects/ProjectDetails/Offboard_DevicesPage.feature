@@ -117,14 +117,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User selects state 'true' for 'Offboard all associated users' checkbox
+	When User selects state 'false' for 'Offboard all associated users' checkbox
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User selects state 'false' for 'Offboard all associated users' checkbox
+	When User selects state 'true' for 'Offboard all associated users' checkbox
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
@@ -157,7 +157,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Domain       |
 	| Owner        |
 
-#tag 'not_rady' added because this bug is fixed only for Spectrum
 #tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18026 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObjectsOnOffboardingPopUpWhenMainObjectWasAlreadyOffboardedWithAssociatedObjectsFromAnotherTabOrByAnotherUser
@@ -174,5 +173,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObje
 	When User clicks 'OFFBOARD' button on popup 
 	When User switches to previous tab
 	When User clicks 'OFFBOARD' button
-	Then 'This device has already been offboarded from User Evergreen Capacity Project' text is displayed on inline tip banner
+	Then 'This device has been offboarded from User Evergreen Capacity Project' text is displayed on inline tip banner
 	Then 'OFFBOARD' button is disabled

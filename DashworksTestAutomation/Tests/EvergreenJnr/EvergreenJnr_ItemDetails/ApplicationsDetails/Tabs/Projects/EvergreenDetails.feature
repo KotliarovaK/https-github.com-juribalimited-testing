@@ -56,6 +56,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppl
 	Then following content is displayed on the Details Page
 	| Title           | Value  |
 	| Rationalisation | RETIRE |
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button on popup
 	When User navigates to the 'Application' details page for the item with '676' ID
 	Then Details page for "Microsoft Internet Explorer 5.5 SP2 MUI Pack" item is displayed to the user
 	When User navigates to the 'Projects' parent left menu item
@@ -67,15 +70,29 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppl
 	Then following content is displayed on the Details Page
 	| Title           | Value        |
 	| Rationalisation | FORWARD PATH |
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button on popup
 	When User navigates to the 'Application' details page for the item with '983' ID
 	Then Details page for "Mozilla Sunbird (0.2a.)" item is displayed to the user
 	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Evergreen Details' left submenu item
 	When User clicks on edit button for 'Rationalisation' field
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	Then '675, 676' content is not displayed in 'Application' autocomplete after search
+	Then 'Music Visualizer Library 1.0' content is not displayed in 'Application' autocomplete after search
+	#When User clears 'Application' autocomplete
+	#Then 'Microsoft Internet Explorer 5.5 SP2 MUI Pack (Czech) - Menus and Dialogs' content is not displayed in 'Application' autocomplete after search
 	When User enters 'Microsoft Office Simplified Chinese Support' in the 'Application' autocomplete field and selects 'Microsoft Office Simplified Chinese Support' value
 	When User clicks 'UPDATE' button on popup
 	Then following content is displayed on the Details Page
 	| Title           | Value        |
 	| Rationalisation | FORWARD PATH |
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button on popup
+	Then following content is displayed on the Details Page
+	| Title           | Value |
+	| Rationalisation | KEEP  |
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button on popup

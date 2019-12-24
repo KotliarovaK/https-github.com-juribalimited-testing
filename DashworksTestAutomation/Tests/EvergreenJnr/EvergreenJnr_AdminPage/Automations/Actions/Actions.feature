@@ -37,10 +37,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	And User selects '1803 Rollout' option from 'Project' autocomplete
 	And User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	And User clicks Group By button on the Admin page and selects "Type" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Type       | true  |
 	Then Cog menu is not displayed on the Admin page
 	And Grid is grouped
-	When User clicks Group By button on the Admin page and selects "Type" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Type       | false |
 	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column
 	Then User sees following cog-menu items on Admin page:
 	| items            |
@@ -491,13 +495,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	| Remove owner and team |
 	| No change             |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @DAS19317 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User clicks 'CREATE AUTOMATION' button 
+	When User clicks 'CREATE AUTOMATION' button
+	Then Page with 'Automations' header is displayed to user
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17544' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete
@@ -513,7 +518,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPa
 
 Examples:
 	| AutomationName     | Scope            | Project1                 | Project2                           | Project3                           |
-	| 17544_Automation   | All Devices      | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
+	| 17544_Automation   | All Devices      | User Scheduled Test (Jo) | 1803 Rollout                       | Barry's User Project               |
 	| 17544_Automation_1 | All Users        | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
 	| 17544_Automation_2 | All Applications | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
 	| 17544_Automation-3 | All Mailboxes    | Email Migration          | Mailbox Evergreen Capacity Project | USE ME FOR AUTOMATION(MAIL SCHDLD) |

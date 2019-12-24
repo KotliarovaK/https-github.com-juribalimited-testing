@@ -409,7 +409,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (ellipsisMenu != null)
             {
                 page.GetEllipsisMenuForWidget(widgetName).Click();
-                _driver.WaitForElementToBeDisplayed(page.EllipsisMenu);
+                var bdp = _driver.NowAt<BaseDashboardPage>();
+                _driver.WaitForElementToBeDisplayed(bdp.MenuPanelElement);
             }
             else
             {
@@ -438,7 +439,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Click();
-            _driver.WaitForElementToBeDisplayed(page.EllipsisMenu);
+            var bdp = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(bdp.MenuPanelElement);
         }
 
         [Then(@"User sees Ellipsis icon enabled for Section having '(.*)' Widget on Dashboards page")]
@@ -842,7 +844,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
-                Verify.AreEqual(originalList, tableContent, "Unexpected column");
+                Verify.AreEqual(tableContent, originalList, "Unexpected column");
             }
         }
 

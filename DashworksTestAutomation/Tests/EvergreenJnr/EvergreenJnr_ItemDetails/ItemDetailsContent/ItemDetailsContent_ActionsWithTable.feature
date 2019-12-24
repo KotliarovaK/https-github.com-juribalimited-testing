@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxD
 	When User clicks on 'Email Address' column header
 	And User clicks on 'Email Address' column header
 	And User click content from "Email Address" column
-	Then User sees loaded tab "Mailbox" on the Details page
+	Then 'Mailbox' left submenu item is displayed
 	Then Item content is displayed to the User
 	And There are no errors in the browser console
 
@@ -94,13 +94,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Details page for "Microsoft DirectX 5 DDK" item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item
-	When User clicks 'False' checkbox from String Filter in the filter dropdown for the 'Used' column
+	When User selects following checkboxes in the filter dropdown menu for the 'Used' column:
+	| checkboxes |
+	| False      |
 	And User opens 'User' column settings
 	And User selects 'Sort descending' option from column settings
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 	When User navigates to the 'Devices' left submenu item
-	When User clicks 'False' checkbox from String Filter in the filter dropdown for the 'Used' column
+	When User selects following checkboxes in the filter dropdown menu for the 'Used' column:
+	| checkboxes |
+	| False      |
 	And User opens 'Device' column settings
 	And User selects 'Sort descending' option from column settings
 	Then Content is present in the table on the Details Page
@@ -179,41 +183,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Summary' left submenu item
-	And User clicks Group By button on the Details page and selects "Vendor" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Vendor     | true  |
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
-
-	#Ann.Ilchenko 7/19/19: will be fully available for the "pulsar" release.
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228 @DAS17229 @DAS17265 @Not_Ready
-Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
-	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User navigates to the 'Details' left menu item
-	And User navigates to the 'Custom Fields' left submenu item
-		#cannot be checked because there is only one item in the table (need to wait for new data in GD?)
-	#When User clicks on 'Custom Field' column header
-	#Then date in table is sorted by 'Custom Field' column in ascending order
-	#When User clicks on 'Custom Field' column header
-	#Then date in table is sorted by 'Custom Field' column in descending order
-	Then ColumnName is displayed in following order on the Details page:
-	| ColumnName   |
-	| Custom Field |
-	| Value        |
-		#need to ask Lana about the number of columns for 'pulsar'
-	#When User move 'Value' column to 'Custom Field' column
-	#Then ColumnName is displayed in following order on the Details page:
-	#| ColumnName   |
-	#| Value        |
-	#| Custom Field |
-	Then Reset Filters button is displayed on the Item Details page
-	Then Refresh button is displayed on the Item Details page
-	Then Export button is displayed on the Item Details page
-	Then Group By button is displayed on the Item Details page
-	Then Reset Filters button on the Item Details page is disable
-	When User enters "com" text in the Search field for "Custom Field" column
-	Then Reset Filters button on the Item Details page is enabled
-	Then Rows counter shows "1" of "1" rows
-	When User clicks Reset Filters button on the Item Details page
-	Then Reset Filters button on the Item Details page is disable
-		#need to add static data for gold data to enable this check.
-	#When User clicks Group By button on the Details page and selects "Value" value
-	#Then "" content is not displayed in the grid on the Item details page
