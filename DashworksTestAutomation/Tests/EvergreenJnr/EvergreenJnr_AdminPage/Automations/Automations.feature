@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup @TEST
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

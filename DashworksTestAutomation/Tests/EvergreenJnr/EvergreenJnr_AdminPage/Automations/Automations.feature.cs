@@ -415,6 +415,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16764")]
         [NUnit.Framework.CategoryAttribute("DAS17222")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("TEST")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly()
         {
             System.Exception lastException = null;
@@ -454,7 +455,8 @@ this.FeatureBackground();
                         "DAS15741",
                         "DAS16764",
                         "DAS17222",
-                        "Cleanup"});
+                        "Cleanup",
+                        "TEST"});
 #line 110
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
