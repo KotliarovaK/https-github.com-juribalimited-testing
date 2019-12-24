@@ -44,22 +44,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             //Close cog-menu if it is still opened from previous step
             if (cogMenu.CogMenuItems.Any(x => x.Displayed()))
             {
-                Logger.Write("Cog-menu was opened. Click body to close it");
                 cogMenu.BodyContainer.Click();
             }
-            Logger.Write("Get gear ico");
             var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
-            Logger.Write("Mouse hover on gear ico");
             _driver.MouseHover(cogMenuElement);
-            Logger.Write("Click on gear ico");
             cogMenuElement.Click();
-            Logger.Write($"Select '{option}' cog-menu option");
             cogMenu.GetCogMenuOptionByName(option).Click();
 
             //Grid should be refreshed after making active/inactive
             if (option.Equals("Make active") || option.Equals("Make inactive"))
             {
-                Logger.Write($"Gear ico display condition is '{cogMenuElement.Displayed()}'");
                 _driver.WaitForElementToBeNotDisplayed(cogMenuElement);
             }
         }
