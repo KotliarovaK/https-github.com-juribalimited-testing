@@ -428,8 +428,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetTextbox(fieldName).Click();
-            Verify.AreEqual(validationMessage, page.ValidationFieldMessage.GetText(),
-                $"Incorrect error message is displayed in the '{validationMessage}' field");
+            var expectedValidationMessage = page.GetDropdownValues().First();
+
+            Verify.AreEqual(validationMessage, expectedValidationMessage,
+                $"Incorrect error message is displayed in the '{fieldName}' field");
         }
 
         [Then(@"Add button for '(.*)' textbox is disabled")]
