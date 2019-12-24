@@ -391,13 +391,10 @@ this.FeatureBackground();
 #line 81
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.Then("\'Music Visualizer Library 1.0\' content is not displayed in \'Application\' autocomp" +
-                    "lete after search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 85
  testRunner.When("User enters \'Microsoft Office Simplified Chinese Support\' in the \'Application\' au" +
                     "tocomplete field and selects \'Microsoft Office Simplified Chinese Support\' value" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 83
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -406,13 +403,13 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Rationalisation",
                         "FORWARD PATH"});
-#line 87
+#line 84
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table6, "Then ");
-#line 90
+#line 87
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 91
+#line 88
  testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 92
+#line 89
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -421,13 +418,13 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Rationalisation",
                         "KEEP"});
-#line 93
+#line 90
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table7, "Then ");
-#line 96
+#line 93
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
+#line 94
  testRunner.When("User selects \'UNCATEGORISED\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 98
+#line 95
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
