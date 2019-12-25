@@ -316,3 +316,24 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumn
 	Then color data is sorted by 'Compliance' column in ascending order
 	When User clicks on 'Compliance' column header
 	Then color data is sorted by 'Compliance' column in descending order
+
+@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18958 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedCorrectlyAfterRefreshing
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Entitled to device' option in expanded associations list
+	When User clicks the Filters button
+	When User add "Network Card Count" filter where type is "Greater than" with added column and following value:
+	| Values |
+	| 0      |
+	When User clicks 'RUN LIST' button
+	When User clicks Save button on the list panel
+	When User selects Save as dynamic list option
+	When User creates new custom list with "AssociationList18958" name
+	Then "AssociationList18958" list is displayed to user
+	Then table content is present
+	When User clicks refresh button in the browser
+	Then "AssociationList18958" list is displayed to user
+	Then table content is present

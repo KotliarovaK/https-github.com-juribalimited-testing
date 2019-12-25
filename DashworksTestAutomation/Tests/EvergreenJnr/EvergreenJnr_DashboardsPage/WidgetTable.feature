@@ -466,3 +466,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	Then 'WidgetForDAS18232' Widget is displayed to the user
 	Then Icon Only is displayed for Card widget
 	Then 'Red' color is displayed for Card Widget
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19369 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedInTableWidgetBasedOnSeverityAfterSelectingProjectStageTaskReadinessTask
+	When User clicks 'Devices' on the left-hand menu
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName                             |
+	| 1803: Pre-Migration \ Ready to Migrate |
+	When User create dynamic list with "19369_List" name on "Devices" page
+	When Dashboard with 'Dashboard for DAS19369' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title     | List       | SplitBy     | AggregateFunction | AggregateBy                            | OrderBy         | MaxValues |
+	| Table      | DAS-19369 | 19369_List | Device Type | Severity          | 1803: Pre-Migration \ Ready to Migrate | Device Type ASC | 30        |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button 
+	Then 'DAS-19369' Widget is displayed to the user
+	Then Table columns of 'DAS-19369' widget placed in the next order:
+	| headers     |
+	| Data Centre |
+	| Desktop     |
+	| Laptop      |
+	| Mobile      |
+	| Other       |
+	| Virtual     |
