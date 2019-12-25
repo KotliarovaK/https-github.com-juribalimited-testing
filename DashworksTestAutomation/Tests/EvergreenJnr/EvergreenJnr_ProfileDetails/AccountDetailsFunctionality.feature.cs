@@ -809,6 +809,87 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
+        [NUnit.Framework.CategoryAttribute("UserProfile")]
+        [NUnit.Framework.CategoryAttribute("DAS18672")]
+        public virtual void EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdatedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdatedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated", null, new string[] {
+                        "Evergreen",
+                        "ProfileDetails",
+                        "EvergreenJnr_ProfileDetails",
+                        "UserProfile",
+                        "DAS18672"});
+#line 178
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 179
+ testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 180
+ testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 181
+ testRunner.When("User navigates to the \'Preferences\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 182
+ testRunner.Then("\'(UTC+00:00) Dublin, Edinburgh, Lisbon, London\' content is displayed in \'Time Zon" +
+                    "e\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 183
+ testRunner.Then("\'(UTC+01:00) Dublin, Edinburgh, Lisbon, London\' content is not displayed in \'Time" +
+                    " Zone\' autocomplete after search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 184
+ testRunner.Then("\'A time zone must be selected\' error message is displayed for \'Time Zone\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 185
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 186
+ testRunner.When("User selects \'(UTC) Coordinated Universal Time\' option after search from \'Time Zo" +
+                    "ne\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 187
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 188
+ testRunner.Then("\'User preferences have been changed\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 189
+ testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 190
+ testRunner.When("User navigates to the \'Preferences\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 191
+ testRunner.Then("\'(UTC) Coordinated Universal Time\' content is displayed in \'Time Zone\' autocomple" +
+                    "te", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
