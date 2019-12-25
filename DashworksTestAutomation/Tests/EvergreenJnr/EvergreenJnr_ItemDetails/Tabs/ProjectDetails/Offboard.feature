@@ -13,7 +13,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	Then '<LoadedPage>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
-	Then Details page for "<ItemName>" item is displayed to the user
+	Then Details page for '<ItemName>' item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
@@ -48,7 +48,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOffboardOptionIsWorkedCorrectly
 	Then '<LoadedPage>' list should be displayed to the user
 	When User perform search by "<ItemName>"
 	And User click content from "<ColumnName>" column
-	Then Details page for "<ItemName>" item is displayed to the user
+	Then Details page for '<ItemName>' item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item

@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Resync @DAS18035
 Scenario: EvergreenJnr_DevicesList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnDevicesPage
 	When User navigates to the 'Device' details page for '011PLA470S0B9DJ' item
-	Then Details page for "011PLA470S0B9DJ" item is displayed to the user
+	Then Details page for '011PLA470S0B9DJ' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item

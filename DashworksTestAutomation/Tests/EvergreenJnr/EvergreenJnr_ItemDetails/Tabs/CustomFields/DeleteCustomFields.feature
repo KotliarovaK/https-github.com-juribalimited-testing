@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 	| device     | 17266    | CfDAS16489_1 | ValueDAS16489_1 |
 	# 17152_-------->| original ObjId 17152
 	And User navigates to the 'Device' details page for 'WIN-KTJC6PMV2P5' item
-	Then Details page for "WIN-KTJC6PMV2P5" item is displayed to the user
+	Then Details page for 'WIN-KTJC6PMV2P5' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	#Cancel
 	When User clicks 'Delete' option in Cog-menu for 'FlDAS16489_1' item from 'Custom Field' column
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
 	| mailbox    | 48731    | CfDAS17695_1 | ValueDAS17695_1A |
 	| mailbox    | 48731    | CfDAS17695_1 | ValueDAS17695_1B |
 	And User navigates to the 'Mailbox' details page for 'gregoja@bclabs.local' item
-	Then Details page for "gregoja@bclabs.local" item is displayed to the user
+	Then Details page for 'gregoja@bclabs.local' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	When User clicks Group By button and set checkboxes state
 	| Checkboxes | State |

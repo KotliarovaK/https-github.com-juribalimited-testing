@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	| CfDAS16487_1c | FlDAS16487_1c | true                | true    | false    |
 	And User navigate to Evergreen URL
 	And User navigates to the 'Device' details page for 'QFI94WAUX17N4I' item
-	Then Details page for "QFI94WAUX17N4I" item is displayed to the user
+	Then Details page for 'QFI94WAUX17N4I' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User clicks 'ADD CUSTOM FIELD' button 
 	Then 'ADD' button is disabled
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox | Computer | User | Application |
 	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     | true | true        |
 	And User navigates to the 'Mailbox' details page for '03F0CCD0F3384DE5A9F@bclabs.local' item
-	Then Details page for "03F0CCD0F3384DE5A9F@bclabs.local" item is displayed to the user
+	Then Details page for '03F0CCD0F3384DE5A9F@bclabs.local' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User creates Custom Field
 	| ObjectType | ObjectId | FieldName    |
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_2 | FlDAS16487_2 | true                | true    | true |
 	And User navigates to the 'User' details page for 'BrissonTa' item
-	Then Details page for "BrissonTa (Ta Brisson)" item is displayed to the user
+	Then Details page for 'BrissonTa (Ta Brisson)' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value                |
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_3 | FlDAS16487_3 | true                | true    | true |
 	And User navigates to the 'User' details page for 'VriezeGi' item
-	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
+	Then Details page for 'VriezeGi (Ginette Vrieze)' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User clicks 'ADD CUSTOM FIELD' button 
 	When User selects 'FlDAS16487_3' option from 'Custom Field' autocomplete
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS17614_4 | FlDAS17614_4 | true                | true    | true |
 	And User navigates to the 'User' details page for 'OBM473400' item
-	Then Details page for "OBM473400 (Jeannie L. Moreno)" item is displayed to the user
+	Then Details page for 'OBM473400 (Jeannie L. Moreno)' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	Then 'No custom fields found for this user' message is displayed on empty greed
 	When User creates Custom Field
