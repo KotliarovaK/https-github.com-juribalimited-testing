@@ -24,11 +24,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return new List<By> { };
         }
 
-        public IList<IWebElement> GetColumnSettings()
-        {
-            return Driver.FindElements(By.XPath(".//div[contains(@class, 'menu-option')]//span[@ref='eName']"));
-        }
-
         //TODO not clear what this step check. Delete or refactor it
         public bool GetTheDisplayStateOfContentOnOpenTab(string name)
         {

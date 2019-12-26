@@ -807,6 +807,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetColumnSettingButton(setting).Click();
         }
 
+        [Then(@"User sees following options for '(.*)' column settings")]
+        public void ThenUserSeesFollowingOptionsForColumnSettings(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.OpenColumnSettings(columnName);
+            var expectedList = table.Rows.Select(x => x.Values.First());
+            var actualList = page.ColumnSettingsList();
+            Verify.AreEqual(expectedList, actualList,
+                $"Incorrect column settings for '{columnName}' column are displayed");
+        }
+
         #endregion
 
         #region Column content tooltip
