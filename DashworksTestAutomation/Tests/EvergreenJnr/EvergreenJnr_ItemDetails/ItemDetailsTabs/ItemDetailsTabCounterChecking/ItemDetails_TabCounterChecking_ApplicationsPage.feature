@@ -9,7 +9,6 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInEvergreenMode
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
-	And User sees following parent left menu items
 	Then User sees following parent left menu items
 	| TabName      |
 	| Details      |
@@ -18,21 +17,24 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| Distribution |
 	#================ checks sub-menu for main Details tab ================#
 	And 'Details' left menu have following submenu items:
-	| SubTabName     |
-	| Application    |
-	| Advertisements |
-	| Programs       |
-	| Custom Fields  |
+	| SubTabName        |
+	| Application       |
+	| Application Owner |
+	| Advertisements    |
+	| Programs          |
+	| Custom Fields     |
 	#================ checks counters ================#
 	And 'Advertisements' left submenu item with some count is displayed
 	And 'Programs' left submenu item with some count is displayed
 	And 'Custom Fields' left submenu item with some count is displayed
 	And 'Application' left submenu item is displayed without count
+	And 'Application Owner' left submenu item is displayed without count
 	#================ checks sub-menu for main Projects tab ================#
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' left menu have following submenu items:
 	| SubTabName        |
 	| Evergreen Details |
+	| Project Details   |
 	| Projects          |
 	And 'Project Details' left submenu item is disabled
 	#================ checks counters ================#

@@ -36,6 +36,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	Then 'Projects' left menu have following submenu items:
 	| SubTabName             |
 	| Evergreen Details      |
+	| Project Details        |
 	| Projects Summary       |
 	| Owner Projects Summary |
 	And 'Project Details' left submenu item is disabled
