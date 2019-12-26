@@ -337,6 +337,7 @@
     <Compile Include="Providers\JuribaAutomationApiProvider.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_CheckAllFiltersAndColumns.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
+    <Compile Include="Steps\Dashworks\AccountDetails\ResetUserDataAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationActionAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
