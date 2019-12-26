@@ -34,17 +34,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[@class='table-responsive ng-star-inserted']//span[text()='{name}']"));
         }
-
-        public IWebElement GetColorIconsForColorFilters(string color)
-        {
-            var selector = By.XPath($"//span[@class='status-text'][text()='{color}']/../div");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public bool GetContentDisplayState(string text)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{text}']"));
-        }
     }
 }

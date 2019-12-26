@@ -673,6 +673,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsGridGrouped(), "Grid is grouped");
         }
 
+        [Then(@"'(.*)' row in the groped grid does not contains '(.*)' text")]
+        public void ThenRowInTheGropedGridDoesNotContainsText(string groupedBy, string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(page.GetGroupedRowByContent(groupedBy).Text.Contains(text),
+                $"'{text}' is displayed in the '{groupedBy}' groped row");
+        }
+
         #endregion
 
         #region MoveItem

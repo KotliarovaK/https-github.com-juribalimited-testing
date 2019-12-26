@@ -58,25 +58,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Utils.Verify.IsTrue(content.ElementsTable.Displayed, "Element table is not displayed!");
         }
 
-        [Then(@"appropriate colored filter icons are displayed for following colors:")]
-        public void ThenAppropriateColoredFilterIconsAreDisplayedForFollowingColors(Table table)
-        {
-            var page = _driver.NowAt<TabContent>();
-            foreach (var row in table.Rows)
-            {
-                var getColor = page.GetColorIconsForColorFilters(row["Color"]).GetAttribute("style").Split(';')
-                    .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
-                Utils.Verify.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different or not displayed!");
-            }
-        }
-
-        [Then(@"""(.*)"" content is not displayed in the grid on the Item details page")]
-        public void ThenContentIsNotDisplayedInTheGridOnTheItemDetailsPage(string textContent)
-        {
-            var projectTabs = _driver.NowAt<TabContent>();
-            Utils.Verify.IsFalse(projectTabs.GetContentDisplayState(textContent), $"{textContent} content should not be displayed in the grid on the Item details page!");
-        }
-
         [Then(@"User sees the following Column Settings")]
         public void ThenUserSeesTheFollowingColumnSettings(Table table)
         {
