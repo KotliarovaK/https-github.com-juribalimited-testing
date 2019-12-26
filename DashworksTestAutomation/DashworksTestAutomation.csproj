@@ -374,6 +374,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\SetDefaultRingAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\SelfService.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\AfterScenario\RemoveSlotAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\Api\CreateSlotViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\CreateSlot.cs" />
@@ -956,6 +957,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EditSelfService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfService.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelfService.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature.cs">
       <DependentUpon>DeleteBucketsFromTheTeam.feature</DependentUpon>
@@ -2105,6 +2111,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EditSelfService.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditSelfService1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfService.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SelfService.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
