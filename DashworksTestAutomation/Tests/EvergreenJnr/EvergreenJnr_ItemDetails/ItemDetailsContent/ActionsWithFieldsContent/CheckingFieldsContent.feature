@@ -293,3 +293,39 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurity
 	When User clicks on edit button for 'Rationalisation' field
 	Then popup is displayed to User
 	When User clicks 'CANCEL' button
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538
+Scenario: EvergreenJnr_ApplicationsList_CheckThatThePenButtonIsNotDisplayedForCapacityFieldForUserWithSpecificAccess
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username       | Password |
+ 	| TestBucketAuto | 123456   |
+	Then Evergreen Dashboards page should be displayed to the user
+		#--Devices--#
+	When User navigates to the 'Device' details page for '011PLA470S0B9DJ' item
+	Then Details page for "011PLA470S0B9DJ" item is displayed to the user
+	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Capacity Unit' field is not displayed
+		#--Users--#
+	When User navigates to the 'User' details page for '0088FC8A50DD4344B92' item
+	Then Details page for "0088FC8A50DD4344B92" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Capacity Unit' field is not displayed
+		#--Applications--#
+	When User navigates to the 'Application' details page for '20040610sqlserverck' item
+	Then Details page for "20040610sqlserverck" item is displayed to the user
+	When User switches to the "I-Computer Scheduled Project" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Capacity Unit' field is not displayed
+		#--Mailboxes--#
+	When User navigates to the 'Mailbox' details page for '013DA2178AB4444CAF2@bclabs.local' item
+	Then Details page for "013DA2178AB4444CAF2@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Capacity Unit' field is not displayed
