@@ -53,3 +53,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 	Then 'User successfully relinked' text is displayed on inline success banner
 	#waiting for the RELINK process to be completed
 	When User waits for '3' seconds
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19335
+Scenario: EvergreenJnr_UsersList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed
+	When User navigates to the 'User' details page for 'SNL594136' item
+	Then Details page for "SNL594136" item is displayed to the user
+	When User switches to the "Windows 10 Migration - Depot" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button
+	Then popup is displayed to User
+	Then Button 'RELINK' has 'Select a user' tooltip on popup
