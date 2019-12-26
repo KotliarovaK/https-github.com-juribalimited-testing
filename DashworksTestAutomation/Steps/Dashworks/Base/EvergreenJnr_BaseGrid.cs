@@ -673,6 +673,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsGridGrouped(), "Grid is grouped");
         }
 
+        [Then(@"'(.*)' row in the groped grid does not contains '(.*)' text")]
+        public void ThenRowInTheGropedGridDoesNotContainsText(string groupedBy, string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(page.GetGroupedRowByContent(groupedBy).Text.Contains(text),
+                $"'{text}' is displayed in the '{groupedBy}' groped row");
+        }
+
         #endregion
 
         #region MoveItem
@@ -797,6 +805,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GetColumnSettingButton(setting).Click();
+        }
+
+        [Then(@"User sees following options for '(.*)' column settings")]
+        public void ThenUserSeesFollowingOptionsForColumnSettings(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.OpenColumnSettings(columnName);
+            var expectedList = table.Rows.Select(x => x.Values.First());
+            var actualList = page.ColumnSettingsList();
+            Verify.AreEqual(expectedList, actualList,
+                $"Incorrect column settings for '{columnName}' column are displayed");
         }
 
         #endregion

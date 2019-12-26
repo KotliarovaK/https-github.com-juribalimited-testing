@@ -416,8 +416,32 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetColumnSettingButton(string settingName)
         {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
-            return Driver.FindElement(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
+            var settings = ColumnSettingsElements();
+            if (settings.Any(x => GetColumnSettingText(x).Equals(settingName)))
+            {
+                return settings.First(x => GetColumnSettingText(x).Equals(settingName));
+            }
+            else
+            {
+                throw new Exception($"There are no '{settingName}' column setting");
+            }
+        }
+
+        public List<IWebElement> ColumnSettingsElements()
+        {
+            var settingsListSelector = By.XPath(".//span[@ref='eName']/..");
+            Driver.WaitForElementsToBeDisplayed(settingsListSelector);
+            return Driver.FindElements(settingsListSelector).ToList();
+        }
+
+        private string GetColumnSettingText(IWebElement columnSetting)
+        {
+            return columnSetting.FindElement(By.XPath(".//span[@ref='eName']")).Text;
+        }
+
+        public List<string> ColumnSettingsList()
+        {
+            return ColumnSettingsElements().Select(GetColumnSettingText).ToList();
         }
 
         #endregion

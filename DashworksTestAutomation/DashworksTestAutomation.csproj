@@ -240,9 +240,8 @@
     <Compile Include="Pages\Evergreen\Base\BaseWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetailsTopBarPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\BaseNavigationElements.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseNavigationElements.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
