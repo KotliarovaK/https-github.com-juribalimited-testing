@@ -194,8 +194,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup @Not_Ready
-#Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsForDevicesScopedProject
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -209,3 +208,21 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	Then 'CREATE' button is not disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalisation
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 19240_Automation | 19240       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters 'Unknown' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
+	When User clicks 'CREATE' button
+	#Check Action grid
+	Then 'Unknown' content is displayed in the 'Value' column
+	Then 'Unknown' content is displayed in the 'Action' column
