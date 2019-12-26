@@ -307,7 +307,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public string GetAutocompleteValidationMessage(string placeholder)
         {
             GetTextbox(placeholder).Click();
-            Driver.WaitForElementToBeDisplayed(AutocompleteDropdown);
+            Driver.WaitForElementInElementToBeDisplayed(AutocompleteDropdown, By.XPath(".//mat-option[@tabindex='-1']//span"));
             var validationMessage =
                 AutocompleteDropdown.FindElements(By.XPath(".//mat-option[@tabindex='-1']//span")).First().Text;
             return validationMessage;
