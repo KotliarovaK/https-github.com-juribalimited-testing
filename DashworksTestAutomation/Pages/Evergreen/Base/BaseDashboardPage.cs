@@ -307,6 +307,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public string GetAutocompleteValidationMessage(string placeholder)
         {
             GetTextbox(placeholder).Click();
+            Driver.WaitForElementToBeDisplayed(AutocompleteDropdown);
             var validationMessage =
                 AutocompleteDropdown.FindElements(By.XPath(".//mat-option[@tabindex='-1']//span")).First().Text;
             return validationMessage;
@@ -340,7 +341,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                     throw new Exception($"Options are not displayed for '{placeholder}' autocomplete");
                 }
             }
-
 
             Driver.WaitForElementInElementToBeDisplayed(AutocompleteDropdown, By.XPath(AutocompleteOptionsSelector));
             var foundOptions = AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector));
