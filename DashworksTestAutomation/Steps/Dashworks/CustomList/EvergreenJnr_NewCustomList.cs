@@ -124,6 +124,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             listElement.SaveAsNewListButton.Click();
         }
 
+        [When(@"User selects Save as dynamic list option")]
+        public void WhenUserSelectsSaveAsDynamicListOption()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.SaveAsDynamicListButton.Click();
+        }
+
         [When(@"User clicks Cancel button on the list panel")]
         public void WhenUserClicksCancelButtonOnTheListPanel()
         {

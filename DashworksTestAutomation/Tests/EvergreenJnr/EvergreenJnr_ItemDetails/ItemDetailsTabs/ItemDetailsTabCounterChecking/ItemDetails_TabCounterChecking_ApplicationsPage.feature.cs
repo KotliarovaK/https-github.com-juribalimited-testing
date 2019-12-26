@@ -141,7 +141,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'ABBYY FineReader 8.0 Profes" +
                     "sional Edition\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \"ABBYY FineReader 8.0 Professional Edition\" item is displayed to" +
+ testRunner.Then("Details page for \'ABBYY FineReader 8.0 Professional Edition\' item is displayed to" +
                     " the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.And("User sees following parent left menu items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -303,7 +303,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'ABBYY FineReader 8.0 Profes" +
                     "sional Edition\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 68
- testRunner.Then("Details page for \"ABBYY FineReader 8.0 Professional Edition\" item is displayed to" +
+ testRunner.Then("Details page for \'ABBYY FineReader 8.0 Professional Edition\' item is displayed to" +
                     " the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
  testRunner.When("User switches to the \"*Project K-Computer Scheduled Project\" project in the Top b" +

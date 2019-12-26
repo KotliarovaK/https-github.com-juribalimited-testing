@@ -139,7 +139,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'01DEAC5F18B34084B04@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.Then("Details page for \"01DEAC5F18B34084B04@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'01DEAC5F18B34084B04@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
@@ -273,7 +273,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'01DEAC5F18B34084B04@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
- testRunner.Then("Details page for \"01DEAC5F18B34084B04@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'01DEAC5F18B34084B04@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 52
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
@@ -389,7 +389,7 @@ this.FeatureBackground();
 #line 81
  testRunner.When("User navigates to the \'Mailbox\' details page for \'alex.cristea@juriba.com\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.Then("Details page for \"alex.cristea@juriba.com\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'alex.cristea@juriba.com\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83
  testRunner.When("User switches to the \"Email Migration\" project in the Top bar on Item details pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -461,7 +461,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'0286449FB2C34A12809@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
- testRunner.Then("Details page for \"0286449FB2C34A12809@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'0286449FB2C34A12809@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 94
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
@@ -477,7 +477,7 @@ this.FeatureBackground();
 #line 99
  testRunner.When("User clicks \"0286449FB2C34A12809\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 100
- testRunner.Then("Details page for \"0286449FB2C34A12809 (McFadden, Susan)\" item is displayed to the" +
+ testRunner.Then("Details page for \'0286449FB2C34A12809 (McFadden, Susan)\' item is displayed to the" +
                     " user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

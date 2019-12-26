@@ -25,13 +25,13 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007 @DAS17768 @DAS17768
 Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
-	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	Then Details page for '0072B088173449E3A93' item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	#============================================================================#
 		#go to Devices page
 	When User navigates to the 'Device' details page for '01ERDGD48UDQKE' item
-	Then Details page for "01ERDGD48UDQKE" item is displayed to the user
+	Then Details page for '01ERDGD48UDQKE' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then Error message is not displayed
 	When User clicks on edit button for 'Evergreen Bucket' field
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	#============================================================================#
 		#go to Users page
 	When User navigates to the 'User' details page for '00DBB114BE1B41B0A38' item
-	Then Details page for "00DBB114BE1B41B0A38" item is displayed to the user
+	Then Details page for '00DBB114BE1B41B0A38' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then popup is displayed to User
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	#============================================================================#
 		#go to Mailboxes page
 	When User navigates to the 'Mailbox' details page for '0845467C65E5438D83E@bclabs.local' item
-	Then Details page for "0845467C65E5438D83E@bclabs.local" item is displayed to the user
+	Then Details page for '0845467C65E5438D83E@bclabs.local' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then popup is displayed to User
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	#============================================================================#
 		#go to Devices page
 	When User navigates to the 'Device' details page for 'ZZNKKYW97AL4VS' item
-	Then Details page for "ZZNKKYW97AL4VS" item is displayed to the user
+	Then Details page for 'ZZNKKYW97AL4VS' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
 	Then popup is displayed to User
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	#============================================================================#
 		#go to Users page
 	When User navigates to the 'User' details page for '00DBB114BE1B41B0A38' item
-	Then Details page for "00DBB114BE1B41B0A38" item is displayed to the user
+	Then Details page for '00DBB114BE1B41B0A38' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
 	Then popup is displayed to User
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	#============================================================================#
 		#go to Mailboxes page
 	When User navigates to the 'Mailbox' details page for '0845467C65E5438D83E@bclabs.local' item
-	Then Details page for "0845467C65E5438D83E@bclabs.local" item is displayed to the user
+	Then Details page for '0845467C65E5438D83E@bclabs.local' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
 	Then popup is displayed to User
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18607
 Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'GogoTools version 2.1.0.9' item
-	Then Details page for "GogoTools version 2.1.0.9" item is displayed to the user
+	Then Details page for 'GogoTools version 2.1.0.9' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then following content is displayed on the Details Page
 	| Title       | Value         |
@@ -206,7 +206,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogFieldsAreDisplayedAndW
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18607
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'GogoTools version 2.1.0.9' item
-	Then Details page for "GogoTools version 2.1.0.9" item is displayed to the user
+	Then Details page for 'GogoTools version 2.1.0.9' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then following content is displayed on the Details Page
 	| Title       | Value         |
@@ -232,12 +232,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAn
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18865
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab 
 	When User navigates to the 'Application' details page for 'Axosoft OnTime 2005 Enterprise Server' item
-	Then Details page for "Axosoft OnTime 2005 Enterprise Server" item is displayed to the user
+	Then Details page for 'Axosoft OnTime 2005 Enterprise Server' item is displayed to the user
 	Then User verifies data in the fields on details page
 	| Field             | Data |
 	| Sticky Compliance |      |
 	When User navigates to the 'Application' details page for 'Standard SDK for Windows CE .NET 4.2' item
-	Then Details page for "Standard SDK for Windows CE .NET 4.2" item is displayed to the user
+	Then Details page for 'Standard SDK for Windows CE .NET 4.2' item is displayed to the user
 	Then User verifies data in the fields on details page
 	| Field             | Data   |
 	| Sticky Compliance | IGNORE |
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849
 Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
-	Then Details page for "ACDSee for Windows 95" item is displayed to the user
+	Then Details page for 'ACDSee for Windows 95' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then following content is displayed on the Details Page
 	| Title              | Value |
@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurity
  	| TestBucketAuto | 123456   |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
-	Then Details page for "ACDSee for Windows 95" item is displayed to the user
+	Then Details page for 'ACDSee for Windows 95' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then following Values are displayed in the dropdown for the 'In Catalog' field:
 	| Value |

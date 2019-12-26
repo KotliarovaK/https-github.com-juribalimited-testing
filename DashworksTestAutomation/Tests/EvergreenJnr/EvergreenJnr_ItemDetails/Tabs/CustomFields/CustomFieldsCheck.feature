@@ -50,8 +50,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnSettingsOnCustomFieldsAreTrans
 	When User language is changed to "Deutsch" via API
 	And User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Benutzerdefinierte Felder' left submenu item
-	And User opens 'Benutzerdefiniertes Feld' column settings
-	Then User sees the following Column Settings
+	Then User sees following options for 'Benutzerdefiniertes Feld' column settings
 	| ColumnSettings                            |
 	| Links fixieren                            |
 	| Rechts fixieren                           |
@@ -125,7 +124,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228 @DAS17229 @DAS17265
 Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
 	When User navigates to the 'Device' details page for '04R5RM0R0MVFCM' item
-	Then Details page for "04R5RM0R0MVFCM" item is displayed to the user
+	Then Details page for '04R5RM0R0MVFCM' item is displayed to the user
 	When User navigates to the 'Details' left menu item
 	And User navigates to the 'Custom Fields' left submenu item
 	When User clicks on 'Custom Field' column header

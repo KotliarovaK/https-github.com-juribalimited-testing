@@ -134,7 +134,7 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("User clicks on \"Allowed RODC Password Replication Group\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("Details page for \"Allowed RODC Password Replication Group\" item is displayed to t" +
+ testRunner.And("Details page for \'Allowed RODC Password Replication Group\' item is displayed to t" +
                     "he user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {

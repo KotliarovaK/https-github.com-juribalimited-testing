@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 	| ObjectType | ObjectId | FieldName    | Value                |
 	| device     | 6648     | CfDAS15473_1 | ValueDAS15473_#$‡!_1 |
 	And User navigates to the 'Device' details page for '00YWR8TJU4ZF8V' item
-	Then Details page for "00YWR8TJU4ZF8V" item is displayed to the user
+	Then Details page for '00YWR8TJU4ZF8V' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	When User doubleclicks on 'ValueDAS15473_#$‡!_1' cell from 'Value' column
 	Then Save and Cancel buttons with tooltips are displayed for clickable value
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 	| ObjectType  | ObjectId | FieldName    | Value           |
 	| application | 507      | CfDAS15473_2 | ValueDAS15473_2 |
 	And User navigates to the 'Application' details page for 'ACDSee 8' item
-	Then Details page for "ACDSee 8" item is displayed to the user
+	Then Details page for 'ACDSee 8' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	#Save changes
 	When User change text in 'ValueDAS15473_2' cell from 'Value' column to 'UPDATED_V' text
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 	| ObjectType  | ObjectId | FieldName    | Value        |
 	| application | 750      | CfDAS17584_1 | Value17584_1 |
 	And User navigates to the 'Application' details page for 'PCFriendly' item
-	Then Details page for "PCFriendly" item is displayed to the user
+	Then Details page for 'PCFriendly' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	#Save changes
 	When User clicks 'Edit' option in Cog-menu for 'FlDAS17584_1' item from 'Custom Field' column
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	| ObjectType | ObjectId | FieldName    | Value           |
 	| mailbox    | 46384    | CfDAS15473_3 | ValueDAS15473_3 |
 	And User navigates to the 'Mailbox' details page for '0072B088173449E3A93@bclabs.local' item
-	Then Details page for "0072B088173449E3A93@bclabs.local" item is displayed to the user
+	Then Details page for '0072B088173449E3A93@bclabs.local' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	#Save changes
 	When User change text in 'ValueDAS15473_3' cell from 'Value' column to 'UPDATED_Focus_Lost' text without saving

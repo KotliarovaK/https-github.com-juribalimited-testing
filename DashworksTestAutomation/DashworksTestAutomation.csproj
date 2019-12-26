@@ -240,9 +240,8 @@
     <Compile Include="Pages\Evergreen\Base\BaseWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetailsTopBarPage.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\BaseNavigationElements.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseNavigationElements.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
@@ -337,6 +336,7 @@
     <Compile Include="Providers\JuribaAutomationApiProvider.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_CheckAllFiltersAndColumns.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
+    <Compile Include="Steps\Dashworks\AccountDetails\ResetUserDataAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationActionAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />

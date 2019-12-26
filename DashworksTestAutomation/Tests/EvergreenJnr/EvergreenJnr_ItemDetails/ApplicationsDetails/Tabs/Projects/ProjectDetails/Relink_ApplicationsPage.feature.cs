@@ -139,7 +139,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                     "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" ite" +
+ testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(USR SCHDLD)\" project in the Top bar o" +
@@ -176,7 +176,7 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("\'Application successfully relinked\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
- testRunner.Then("Details page for \"Microsoft SQL Server 2012\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'Microsoft SQL Server 2012\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -256,7 +256,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                     "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
- testRunner.Then("Details page for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" ite" +
+ testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(USR SCHDLD)\" project in the Top bar o" +
@@ -341,7 +341,7 @@ this.FeatureBackground();
 #line 52
  testRunner.When("User navigates to the \'Application\' details page for the item with \'4017\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
- testRunner.Then("Details page for \"Microsoft Exchange Client Language Pack - Lithuanian\" item is d" +
+ testRunner.Then("Details page for \'Microsoft Exchange Client Language Pack - Lithuanian\' item is d" +
                     "isplayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
@@ -449,7 +449,7 @@ this.FeatureBackground();
 #line 76
  testRunner.When("User navigates to the \'Application\' details page for the item with \'4018\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
- testRunner.Then("Details page for \"Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030\" " +
+ testRunner.Then("Details page for \'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030\' " +
                     "item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 78
  testRunner.When("User switches to the \"Project 00 M Computer Scheduled\" project in the Top bar on " +
@@ -540,7 +540,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Adobe Acrobat Reader 3.01 O" +
                     "riginal\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 98
- testRunner.Then("Details page for \"Adobe Acrobat Reader 3.01 Original\" item is displayed to the us" +
+ testRunner.Then("Details page for \'Adobe Acrobat Reader 3.01 Original\' item is displayed to the us" +
                     "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +

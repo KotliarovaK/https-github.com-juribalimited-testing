@@ -13,9 +13,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@id='fileUploader']")]
         public IWebElement UploadButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()= 'REMOVE']/ancestor::button")]
-        public IWebElement RemoveButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
@@ -27,12 +24,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//ul[@class='roles']/li")]
         public IList<IWebElement> RolesList { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//li//span[text()='Account Details']")]
-        public IWebElement AccountDetails { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button/i[@class='material-icons mat-clear']")]
-        public IWebElement CloseMessageButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//userprofile-account-details//div[@class='img-bg']")]
         public IWebElement UserPicture { get; set; }
@@ -50,11 +41,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
                 SelectorFor(this, p => p.EmailField),
                 SelectorFor(this, p => p.RolesList)
             };
-        }
-
-        public void NavigateToPage(string pageName)
-        {
-            Driver.FindElement(By.XPath($".//mat-tree-node//a[text()='{pageName}']")).Click();
         }
     }
 }
