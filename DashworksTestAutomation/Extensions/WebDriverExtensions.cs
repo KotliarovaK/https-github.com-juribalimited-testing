@@ -467,7 +467,7 @@ namespace DashworksTestAutomation.Extensions
 
             action.KeyUp(Keys.Shift).Build().Perform();
         }
-
+      
         public static void SearchOnPage(this RemoteWebDriver driver)
         {
             Actions action = new Actions(driver);

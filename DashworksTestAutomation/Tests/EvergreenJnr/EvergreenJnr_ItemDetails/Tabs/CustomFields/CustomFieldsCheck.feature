@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228 @DAS17229 @DAS17265
 Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
 	When User navigates to the 'Device' details page for '04R5RM0R0MVFCM' item
-	Then Details page for "04R5RM0R0MVFCM" item is displayed to the user
+	Then Details page for '04R5RM0R0MVFCM' item is displayed to the user
 	When User navigates to the 'Details' left menu item
 	And User navigates to the 'Custom Fields' left submenu item
 	When User clicks on 'Custom Field' column header
@@ -138,11 +138,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	|              |
 	| Value        |
 	Then User sees "2" rows in grid
-	Then 'ResetFilters' button with aria label is displayed
+	Then 'ResetFilters' button with aria label is disabled
 	Then 'reload' button with aria label is displayed
 	Then 'Export' button with aria label is displayed
 	Then 'GroupBy' button with aria label is displayed
-	Then 'ResetFilters' button with aria label is disabled
 	When User enters "com" text in the Search field for "Custom Field" column
 	Then 'ResetFilters' button with aria label is not disabled
 	Then Rows counter shows "1" of "2" rows

@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 	| CfDAS16487_1c | FlDAS16487_1c | true                | true    | false    |
 	And User navigate to Evergreen URL
 	And User navigates to the 'Device' details page for 'QFI94WAUX17N4I' item
-	Then Details page for "QFI94WAUX17N4I" item is displayed to the user
+	Then Details page for 'QFI94WAUX17N4I' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User clicks 'ADD CUSTOM FIELD' button 
 	Then 'ADD' button is disabled
@@ -36,14 +36,14 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox | Computer | User | Application |
 	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     | true | true        |
 	And User navigates to the 'Mailbox' details page for '03F0CCD0F3384DE5A9F@bclabs.local' item
-	Then Details page for "03F0CCD0F3384DE5A9F@bclabs.local" item is displayed to the user
+	Then Details page for '03F0CCD0F3384DE5A9F@bclabs.local' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User creates Custom Field
 	| ObjectType | ObjectId | FieldName    |
 	| mailbox    | 43801    | FlDAS16487_1 |
 	Then Success message with "New custom field value added successfully" text is displayed on Action panel
 	And '' content is displayed in the 'Value' column
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '1' count of items
+	And 'Custom Fields' left submenu item with '1' count is displayed
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CreateCustomField
@@ -51,14 +51,14 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_2 | FlDAS16487_2 | true                | true    | true |
 	And User navigates to the 'User' details page for 'BrissonTa' item
-	Then Details page for "BrissonTa (Ta Brisson)" item is displayed to the user
+	Then Details page for 'BrissonTa (Ta Brisson)' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value                |
 	| user       | 98968    | FlDAS16487_2 | Value_@#†_DAS16487_2 |
 	Then Success message with "New custom field value added successfully" text is displayed on Action panel
 	And 'Value_@#†_DAS16487_2' content is displayed in the 'Value' column
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '1' count of items
+	And 'Custom Fields' left submenu item with '1' count is displayed
 	Then "1" rows found label displays on Details Page
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
@@ -67,13 +67,13 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_3 | FlDAS16487_3 | true                | true    | true |
 	And User navigates to the 'User' details page for 'VriezeGi' item
-	Then Details page for "VriezeGi (Ginette Vrieze)" item is displayed to the user
+	Then Details page for 'VriezeGi (Ginette Vrieze)' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User clicks 'ADD CUSTOM FIELD' button 
 	When User selects 'FlDAS16487_3' option from 'Custom Field' autocomplete
 	And User enters 'Somve_Value' text to 'Value' textbox
 	When User clicks 'CANCEL' button on popup
-	Then 'Custom Fields' tab is displayed on left menu on the Details page and contains '0' count of items
+	Then 'Custom Fields' left submenu item with '0' count is displayed
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS17614_4 | FlDAS17614_4 | true                | true    | true |
 	And User navigates to the 'User' details page for 'OBM473400' item
-	Then Details page for "OBM473400 (Jeannie L. Moreno)" item is displayed to the user
+	Then Details page for 'OBM473400 (Jeannie L. Moreno)' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	Then 'No custom fields found for this user' message is displayed on empty greed
 	When User creates Custom Field
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| user       | 17884    | FlDAS17614_4 | Value_17614 |
 	Then 'FlDAS17614_4' content is displayed in the 'Custom Field' column
 	And 'Value_17614' content is displayed in the 'Value' column
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '1' count of items
+	And 'Custom Fields' left submenu item with '1' count is displayed
 	Then "1" rows found label displays on Details Page
 	When User creates Custom Field
 	| ObjectType | ObjectId | FieldName    | Value       |
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 	| Content     |
 	| Value_17614 |
 	| Value_17614 |
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '2' count of items
+	And 'Custom Fields' left submenu item with '2' count is displayed
 	Then "2" rows found label displays on Details Page
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @DAS17960 @Cleanup
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
 	| ObjectType | ObjectId | FieldName    | Value            |
 	| user       | 3532     | FlDAS17695_2 | ValueDAS17695_2C |
 	Then Success message with "New custom field value added successfully" text is displayed on Action panel
-	And 'Custom Fields' tab is displayed on left menu on the Details page and contains '3' count of items
+	And 'Custom Fields' left submenu item with '3' count is displayed
 	And Content in the 'Custom Field' column is equal to
 	| Content      |
 	| FlDAS17695_2 |

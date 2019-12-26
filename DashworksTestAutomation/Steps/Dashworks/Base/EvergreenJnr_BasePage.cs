@@ -423,6 +423,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
         }
 
+        [Then(@"validation message '(.*)' is displayed below '(.*)' field")]
+        public void ThenValidationMessageIsDisplayedBelowFiled(string validationMessage, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedValidationMessage = page.GetAutocompleteValidationMessage(fieldName);
+            Verify.AreEqual(validationMessage, expectedValidationMessage,
+                $"Incorrect error message is displayed in the '{fieldName}' field");
+        }
+
         [Then(@"Add button for '(.*)' textbox is disabled")]
         public void ThenAddButtonForTextboxIsDisabled(string fieldName)
         {
@@ -908,7 +917,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenButtonWithAriaLabelIsNotDisabled(string buttonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+            Verify.IsFalse(page.GetButtonWithAriaLabel(buttonName).Disabled(),
                 $"'{buttonName}' button is disabled");
         }
 

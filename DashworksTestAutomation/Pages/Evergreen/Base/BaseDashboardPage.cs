@@ -221,6 +221,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private static string AutocompleteOptionsSelector = ".//mat-option[@tabindex!='-1']";
 
+        private static string AutocompleteValidationMessageSelector = ".//mat-option[@tabindex='-1']//span";
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
         public IWebElement AutocompleteDropdown { get; set; }
 
@@ -302,6 +304,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector)).Select(x => x.Text).ToList();
 
             return foundOptions;
+        }
+
+        public string GetAutocompleteValidationMessage(string placeholder)
+        {
+            GetTextbox(placeholder).Click();
+            Driver.WaitForElementInElementToBeDisplayed(AutocompleteDropdown, By.XPath(AutocompleteValidationMessageSelector));
+            var validationMessage =
+                AutocompleteDropdown.FindElements(By.XPath(AutocompleteValidationMessageSelector)).First().Text;
+            return validationMessage;
         }
 
         public void AutocompleteSelect(string placeholder, string searchText, bool withSearch = false, bool containsOption = false, params string[] optionsToSelect)
@@ -404,7 +415,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             button.SendKeys(option);
             GetTextboxAddButton(placeholder).Click();
         }
-
+        
         public IWebElement GetTextboxAddButton(string placeholder)
         {
             var selector = GetTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
@@ -921,7 +932,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IList<IWebElement> GetChipsOfTextbox(string textbox)
         {
-            var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//span[contains(@class, 'chips-item')]");
+            var chipsSelector = By.XPath("./ancestor::div//span[contains(@class, 'chips-item')]");
             return GetTextbox(textbox).FindElements(chipsSelector);
         }
 

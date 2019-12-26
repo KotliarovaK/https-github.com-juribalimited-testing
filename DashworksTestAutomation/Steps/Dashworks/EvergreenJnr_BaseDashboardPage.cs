@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   ").Trim(),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
-
+       
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
         public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
         {

@@ -9,30 +9,30 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_GroupsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForGroupsPage
 	When User type "Allowed RODC Password Replication Group" in Global Search Field
 	Then User clicks on "Allowed RODC Password Replication Group" search result
-	And Details page for "Allowed RODC Password Replication Group" item is displayed to the user
-	And User sees following main-tabs on left menu on the Details page:
+	And Details page for 'Allowed RODC Password Replication Group' item is displayed to the user
+	And User sees following parent left menu items
 	| TabName      |
 	| Applications |
 	| Members      |
-	And "Group" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
+	And 'Group' left submenu item is displayed without count
+	And 'LDAP' left submenu item is displayed without count
 	#================ checks sub-menu for main Applications tab ================#
 	When User navigates to the 'Applications' left menu item
-	Then "Applications" main-menu on the Details page contains following sub-menu:
+	Then 'Applications' left menu have following submenu items:
 	| SubTabName   |
 	| Applications |
 	| Collections  |
 	#================ checks counters ================#
-	And "Applications" tab is displayed on left menu on the Details page and contains count of items
-	And "Collections" tab is displayed on left menu on the Details page and contains count of items
+	And 'Applications' left submenu item with some count is displayed
+	And 'Collections' left submenu item with some count is displayed
 	#================ checks sub-menu for main Members tab ================#
 	When User navigates to the 'Members' left menu item
-	Then "Members" main-menu on the Details page contains following sub-menu:
+	Then 'Members' left menu have following submenu items:
 	| SubTabName     |
 	| User Members   |
 	| Device Members |
 	| Member Of      |
 	#================ checks counters ================#
-	And "User Members" tab is displayed on left menu on the Details page and contains count of items
-	And "Device Members" tab is displayed on left menu on the Details page and contains count of items
-	And "Member Of" tab is displayed on left menu on the Details page and contains count of items
+	And 'User Members' left submenu item with some count is displayed
+	And 'Device Members' left submenu item with some count is displayed
+	And 'Member Of' left submenu item with some count is displayed

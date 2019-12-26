@@ -17,8 +17,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then table content is present
+	
 	When User create custom list with "ADeviceListFor14841_Admin" name
 	Then "ADeviceListFor14841_Admin" list is displayed to user
+	
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person
@@ -47,7 +49,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then Current permission 'Specific users / teams' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then New Permission 'Do not change' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	When User selects 'Everyone can see' permission for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
-	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
+	When User clicks 'UPDATE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	#login as user1 and check if list permission changed
@@ -210,7 +212,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
     | SelectedValues |
     | Mobile         |
-	When User waits for '3' seconds
+	Then table content is present
 	When User create dynamic list with "ADevicesList17592" name on "Devices" page
 	Then "ADevicesList17592" list is displayed to user
 	When User clicks the List Details button

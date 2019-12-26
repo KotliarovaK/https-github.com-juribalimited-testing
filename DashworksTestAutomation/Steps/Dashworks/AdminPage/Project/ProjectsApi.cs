@@ -1,16 +1,12 @@
 ﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using System;
 using System.Linq;
 using System.Net;
-using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.AfterScenario;
 using Newtonsoft.Json;

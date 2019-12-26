@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @DAS14413 @Cleanup
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @DAS14413 @DAS19157 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -35,9 +35,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Auto: X-Proj Paths Scope              |
 	| Dependant List Filter - BROKEN LIST   |
 	| Depot Capacity                        |
-	| Device List (Complex)                 |
-	| Device List (Complex) - BROKEN LIST   |
-	| Device Readiness Columns & Filters    |
 	| Migration Type Capacity               |
 	| New York - Devices                    |
 	| Using App Saved List Readiness Filter |
@@ -45,18 +42,11 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	Then User sees that 'User Scope' dropdown contains following options:
 	| Values                             |
 	| All Users                          |
-	| Users List (Complex)               |
-	| Users List (Complex) - BROKEN LIST |
-	| Users Readiness Columns & Filters  |
 	| Users with Device Count            |
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then User sees that 'Application Scope' dropdown contains following options:
 	| Values                                   |
 	| All Applications                         |
-	| 1803 Apps                                |
-	| App Readiness Columns & Filters          |
-	| Application List (Complex)               |
-	| Application List (Complex) - BROKEN LIST |
 	| Apps with a Vendor                       |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855

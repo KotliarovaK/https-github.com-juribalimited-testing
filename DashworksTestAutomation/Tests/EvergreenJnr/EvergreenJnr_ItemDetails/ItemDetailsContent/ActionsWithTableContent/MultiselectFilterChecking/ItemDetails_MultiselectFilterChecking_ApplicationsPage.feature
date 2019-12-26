@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDetailsTabAdvertisementsOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
-	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
+	Then Details page for 'Accessible FormNet Fill 2.2' item is displayed to the user
 	When User navigates to the 'Advertisements' left submenu item
 	Then 'TRUE' content is displayed in the 'Active' column
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Active' column:
@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMsiTabOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
-	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
+	Then Details page for 'Accessible FormNet Fill 2.2' item is displayed to the user
 	When User navigates to the 'MSI' left menu item
 	When User navigates to the 'MSI Files' left submenu item
 	And User opens 'File Name' column settings
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDistributionTabOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
-	Then Details page for "Accessible FormNet Fill 2.2" item is displayed to the user
+	Then Details page for 'Accessible FormNet Fill 2.2' item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Devices' left submenu item
 	Then 'TRUE' content is displayed in the 'Installed' column

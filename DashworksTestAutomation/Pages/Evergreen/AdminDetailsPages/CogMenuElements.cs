@@ -75,6 +75,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetCogMenuOptionByName(string option)
         {
+            Driver.WaitForElementsToBeDisplayed(CogMenuItems);
+
             if (CogMenuItems.Any(x => x.Text.Equals(option)))
             {
                 return CogMenuItems.FirstOrDefault(x => x.Text.Equals(option));

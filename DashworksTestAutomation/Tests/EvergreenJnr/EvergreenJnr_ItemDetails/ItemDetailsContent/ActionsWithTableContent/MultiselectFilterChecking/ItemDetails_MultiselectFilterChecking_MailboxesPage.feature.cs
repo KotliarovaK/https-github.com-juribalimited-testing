@@ -131,7 +131,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'002B5DC7D4D34D5C895@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \"002B5DC7D4D34D5C895@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'002B5DC7D4D34D5C895@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When("User navigates to the \'Email Addresses\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -212,7 +212,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'002B5DC7D4D34D5C895@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.Then("Details page for \"002B5DC7D4D34D5C895@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'002B5DC7D4D34D5C895@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
@@ -281,7 +281,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "ChangeOwner"});
 #line 49
- testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Permissio" +
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Permissio" +
                     "n\' column:", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();

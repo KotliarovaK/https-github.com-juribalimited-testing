@@ -128,18 +128,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	| Everyone can see  |
 	| Everyone can edit |
 	#state
-	Then Button 'UPDATE & SHARE' has enabled property 'false' on Permissions Pop-up
-	Then Button 'IGNORE & SHARE' has enabled property 'true' on Permissions Pop-up
-	Then Button 'CANCEL' has enabled property 'true' on Permissions Pop-up
+	Then 'UPDATE & SHARE' button is disabled on popup
+	Then 'IGNORE & SHARE' button is not disabled on popup
+	Then 'CANCEL' button is not disabled on popup
 	#tooltips
-	Then Button 'UPDATE & SHARE' has 'Amend widget permissions above' tooltip on Permissions Pop-up
-	Then Button 'IGNORE & SHARE' has 'Do not change widget list permissions and share dashboard' tooltip on Permissions Pop-up
-	Then Button 'CANCEL' has 'Do not change widget list permissions and do not share dashboard' tooltip on Permissions Pop-up
+	Then Button 'UPDATE & SHARE' has 'Amend widget permissions above' tooltip on popup
+	Then Button 'IGNORE & SHARE' has 'Do not change widget list permissions and share dashboard' tooltip on popup
+	Then Button 'CANCEL' has 'Do not change widget list permissions and do not share dashboard' tooltip on popup
 	#mix
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841' list on Permissions Pop-up
-	Then Button 'UPDATE & SHARE' has enabled property 'true' on Permissions Pop-up
-	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on Permissions Pop-up
-	When User clicks the 'CANCEL' button on Permissions Pop-up
+	Then 'UPDATE & SHARE' button is not disabled on popup
+	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on popup
+	When User clicks 'CANCEL' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Private" sharing option is selected
 	
@@ -167,7 +167,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	Then Review Widget List Permissions is displayed to the User
 	#act	
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841_1' list on Permissions Pop-up
-	When User clicks the 'IGNORE & SHARE' button on Permissions Pop-up
+	When User clicks 'IGNORE & SHARE' button on popup
+	#When User clicks the 'IGNORE & SHARE' button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	#teardown
@@ -202,7 +203,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	Then Review Widget List Permissions is displayed to the User
 	#act
 	When User selects 'Everyone can see' permission for 'DeviceListFor14841_2' list on Permissions Pop-up
-	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
+	When User clicks 'IGNORE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	#teardown
@@ -251,9 +252,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then Review Widget List Permissions is displayed to the User
 	#act
 	When User selects 'Everyone can edit' permission for 'DeviceListFor14841_3' list on Permissions Pop-up
-	Then Button 'UPDATE & SHARE' has enabled property 'true' on Permissions Pop-up
-	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on Permissions Pop-up
-	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
+	Then 'UPDATE & SHARE' button is not disabled on popup
+	Then Button 'UPDATE & SHARE' has 'Change widget list permissions and share dashboard' tooltip on popup
+	When User clicks 'UPDATE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	When User clicks 'Devices' on the left-hand menu
@@ -278,7 +279,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then table content is present
-	When User create custom list with "<listName>" name
+	When User create dynamic list with "<listName>" name on "Devices" page
 	Then "<listName>" list is displayed to user
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
