@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             }
             var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
             _driver.MouseHover(cogMenuElement);
-            cogMenu.GetCogMenuByItem(column, columnContent).Click();
+            cogMenuElement.Click();
             cogMenu.GetCogMenuOptionByName(option).Click();
 
             //Grid should be refreshed after making active/inactive

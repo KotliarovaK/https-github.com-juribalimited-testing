@@ -58,3 +58,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	And User clicks 'OFFBOARD' button 
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19335
+Scenario: EvergreenJnr_MailboxesList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed
+	When User navigates to the 'Mailbox' details page for '00DB4000EDD84951993@bclabs.local' item
+	Then Details page for "00DB4000EDD84951993@bclabs.local" item is displayed to the user
+	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button
+	Then popup is displayed to User
+	Then Button 'RELINK' has 'Select a mailbox' tooltip on popup
