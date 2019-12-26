@@ -1214,7 +1214,7 @@ this.FeatureBackground();
 #line 305
  testRunner.When("User navigates to the \'Device\' details page for \'011PLA470S0B9DJ\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 306
- testRunner.Then("Details page for \"011PLA470S0B9DJ\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'011PLA470S0B9DJ\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 307
  testRunner.When("User switches to the \"Havoc (Big Data)\" project in the Top bar on Item details pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1227,7 +1227,7 @@ this.FeatureBackground();
 #line 312
  testRunner.When("User navigates to the \'User\' details page for \'0088FC8A50DD4344B92\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 313
- testRunner.Then("Details page for \"0088FC8A50DD4344B92\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'0088FC8A50DD4344B92\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 314
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
                     "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1240,7 +1240,7 @@ this.FeatureBackground();
 #line 319
  testRunner.When("User navigates to the \'Application\' details page for \'20040610sqlserverck\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 320
- testRunner.Then("Details page for \"20040610sqlserverck\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'20040610sqlserverck\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 321
  testRunner.When("User switches to the \"I-Computer Scheduled Project\" project in the Top bar on Ite" +
                     "m details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1254,7 +1254,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'013DA2178AB4444CAF2@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 327
- testRunner.Then("Details page for \"013DA2178AB4444CAF2@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'013DA2178AB4444CAF2@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 328
  testRunner.When("User switches to the \"Mailbox Evergreen Capacity Project\" project in the Top bar " +

@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForCapacityUnitIsChangingSucces
 	| Name          | Description | IsDefault | Project          |
 	| cu_DAS19538_1 | DAS19538    | false     | Havoc (Big Data) |
 	When User navigates to the 'Device' details page for '011PLA470S0B9DJ' item
-	Then Details page for "011PLA470S0B9DJ" item is displayed to the user
+	Then Details page for '011PLA470S0B9DJ' item is displayed to the user
 	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item

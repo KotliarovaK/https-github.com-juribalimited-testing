@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatValueForCapacityUnitIsChangingS
 	| Name          | Description | IsDefault | Project                      |
 	| cu_DAS19538_3 | DAS19538    | false     | I-Computer Scheduled Project |
 	When User navigates to the 'Application' details page for '20040610sqlserverck' item
-	Then Details page for "20040610sqlserverck" item is displayed to the user
+	Then Details page for '20040610sqlserverck' item is displayed to the user
 	When User switches to the "I-Computer Scheduled Project" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item

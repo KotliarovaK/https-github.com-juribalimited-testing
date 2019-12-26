@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatValueForCapacityUnitIsChangingSuccessf
 	| Name          | Description | IsDefault | Project                         |
 	| cu_DAS19538_2 | DAS19538    | false     | User Evergreen Capacity Project |
 	When User navigates to the 'User' details page for '0088FC8A50DD4344B92' item
-	Then Details page for "0088FC8A50DD4344B92" item is displayed to the user
+	Then Details page for '0088FC8A50DD4344B92' item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item

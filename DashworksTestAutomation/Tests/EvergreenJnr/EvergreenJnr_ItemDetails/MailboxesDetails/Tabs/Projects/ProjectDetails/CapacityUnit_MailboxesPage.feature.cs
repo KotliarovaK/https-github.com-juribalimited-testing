@@ -148,7 +148,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'013DA2178AB4444CAF2@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.Then("Details page for \"013DA2178AB4444CAF2@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'013DA2178AB4444CAF2@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
  testRunner.When("User switches to the \"Mailbox Evergreen Capacity Project\" project in the Top bar " +

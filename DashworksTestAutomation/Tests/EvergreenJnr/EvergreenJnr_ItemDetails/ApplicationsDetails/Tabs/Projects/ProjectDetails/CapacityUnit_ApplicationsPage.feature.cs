@@ -149,7 +149,7 @@ this.FeatureBackground();
 #line 13
  testRunner.When("User navigates to the \'Application\' details page for \'20040610sqlserverck\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.Then("Details page for \"20040610sqlserverck\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'20040610sqlserverck\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
  testRunner.When("User switches to the \"I-Computer Scheduled Project\" project in the Top bar on Ite" +
                     "m details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
