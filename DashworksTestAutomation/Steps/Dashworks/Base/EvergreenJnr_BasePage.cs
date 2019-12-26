@@ -427,9 +427,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenValidationMessageIsDisplayedBelowFiled(string validationMessage, string fieldName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetTextbox(fieldName).Click();
-            var expectedValidationMessage = page.GetDropdownValues().First();
-
+            var expectedValidationMessage = page.GetAutocompleteValidationMessage(fieldName);
             Verify.AreEqual(validationMessage, expectedValidationMessage,
                 $"Incorrect error message is displayed in the '{fieldName}' field");
         }
