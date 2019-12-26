@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Resync @DAS18035
 Scenario: EvergreenJnr_ApplicationsList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Borland Together Edition for Microsoft Visual Studio .NET' item
-	Then Details page for "Borland Together Edition for Microsoft Visual Studio .NET" item is displayed to the user
+	Then Details page for 'Borland Together Edition for Microsoft Visual Studio .NET' item is displayed to the user
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item

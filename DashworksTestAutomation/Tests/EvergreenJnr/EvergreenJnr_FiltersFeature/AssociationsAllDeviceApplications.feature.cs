@@ -977,7 +977,7 @@ this.FeatureBackground();
 #line 219
  testRunner.When("User clicks content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 220
- testRunner.Then(string.Format("Details page for \"{0}\" item is displayed to the user", hostname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("Details page for \'{0}\' item is displayed to the user", hostname), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 221
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 222

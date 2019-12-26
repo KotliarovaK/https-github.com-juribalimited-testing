@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905 @DAS16832 @DAS17143 @DAS17521
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInEvergreenMode
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
-	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	Then Details page for '00B5CCB89AD0404B965@bclabs.local' item is displayed to the user
 	And User sees following parent left menu items
 	| TabName  |
 	| Details  |
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906 @DAS16832 @DAS17143 @DAS17521
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
-	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	Then Details page for '00B5CCB89AD0404B965@bclabs.local' item is displayed to the user
 	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
 	Then User sees following parent left menu items
 	| TabName  |

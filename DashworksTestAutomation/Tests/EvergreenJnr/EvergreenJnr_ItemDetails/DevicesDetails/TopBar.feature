@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorr
 	Then 'All Devices' list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	And following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems     |
 	| Overall Compliance  |
@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrec
 	Then 'All Devices' list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 	Then 'All Devices' list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
 	| ComplianceItems   | ColorName |
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16959
 Scenario: EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem
 	When User navigates to the 'Device' details page for '00BDM1JUR8IF419' item
-	Then Details page for "00BDM1JUR8IF419" item is displayed to the user
+	Then Details page for '00BDM1JUR8IF419' item is displayed to the user
 	Then Project Switcher in the Top bar on Item details page is closed
 	When User clicks by Project Switcher in the Top bar on Item details page
 	Then '*Project K-Computer Scheduled Project' project is displayed first in Project Switcher
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907 @DAS16857 @DAS17005
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	Then Project Switcher in the Top bar on Item details page is closed
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPage
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857
 Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Device Owner' left submenu item
 	Then following content is displayed on the Details Page
 	| Title      | Value |
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheO
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928 @DAS18405
 Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Project Details' left submenu item 

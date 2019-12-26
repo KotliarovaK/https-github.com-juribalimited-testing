@@ -780,7 +780,7 @@ this.FeatureBackground();
 #line 127
  testRunner.When("User navigates to the \'Device\' details page for \'04R5RM0R0MVFCM\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 128
- testRunner.Then("Details page for \"04R5RM0R0MVFCM\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'04R5RM0R0MVFCM\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 129
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 130

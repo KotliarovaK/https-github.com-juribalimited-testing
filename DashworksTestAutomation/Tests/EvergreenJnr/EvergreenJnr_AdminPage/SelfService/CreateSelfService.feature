@@ -1,4 +1,4 @@
-﻿﻿Feature: CreateSelfService
+﻿Feature: CreateSelfService
 	Self Service
 
 Background: Pre-Conditions

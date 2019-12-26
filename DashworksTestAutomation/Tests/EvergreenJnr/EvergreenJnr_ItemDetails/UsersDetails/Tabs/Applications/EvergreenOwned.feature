@@ -11,12 +11,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrect
 	| UserName  | ApplicationId |
 	| ZZP911429 | 57            |
 	When User navigates to the 'User' details page for the item with '1100' ID
-	Then Details page for "FWU5490440" item is displayed to the user
+	Then Details page for 'FWU5490440' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Owned' left submenu item
 	Then 'No applications owned by this user' message is displayed on empty greed
 	When User navigates to the 'User' details page for the item with '5431' ID
-	Then Details page for "ZZP911429 (Jason R. Dominguez)" item is displayed to the user
+	Then Details page for 'ZZP911429 (Jason R. Dominguez)' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Owned' left submenu item
 	Then following columns are displayed on the Item details page:
@@ -38,10 +38,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingC
 	| UserName  | ApplicationId |
 	| ZZP911429 | 57            |
 	When User navigates to the 'User' details page for 'ZZP911429' item
-	Then Details page for "ZZP911429" item is displayed to the user
+	Then Details page for 'ZZP911429' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Evergreen Owned' left submenu item
 	When User clicks "DirectX 8.1 SDK for Visual Basic" link on the Details Page
-	Then Details page for "DirectX 8.1 SDK for Visual Basic" item is displayed to the user
+	Then Details page for 'DirectX 8.1 SDK for Visual Basic' item is displayed to the user
 	Then User click back button in the browser
-	And Details page for "ZZP911429" item is displayed to the user
+	And Details page for 'ZZP911429' item is displayed to the user

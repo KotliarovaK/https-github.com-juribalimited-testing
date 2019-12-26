@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	#Action 1
 	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
-	Then following Values are displayed in the ' ' dropdown:
+	Then following Values are displayed in the 'Actions' dropdown:
 	| Values            |
 	| Update path       |
 	| Update task value |

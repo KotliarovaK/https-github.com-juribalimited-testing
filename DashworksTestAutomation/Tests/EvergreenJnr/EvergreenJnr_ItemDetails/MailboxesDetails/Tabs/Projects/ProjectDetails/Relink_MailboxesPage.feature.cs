@@ -139,7 +139,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'01A921EFD05545818AA@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.Then("Details page for \"01A921EFD05545818AA@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'01A921EFD05545818AA@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
@@ -187,7 +187,7 @@ this.FeatureBackground();
 #line 32
  testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
- testRunner.Then("Details page for \"04D158C83A0142F3B79@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'04D158C83A0142F3B79@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -306,7 +306,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'00DB4000EDD84951993@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
- testRunner.Then("Details page for \"00DB4000EDD84951993@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'00DB4000EDD84951993@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 66
  testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +

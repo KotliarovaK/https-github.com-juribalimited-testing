@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDisabledDistributionSectionCan
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16366 @DAS16246
 Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMenuSubItems
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	Then 'Details' left menu item is expanded
 	Then 'Projects' left menu item is collapsed
 	Then 'Specification' left menu item is collapsed

@@ -223,7 +223,7 @@ this.FeatureBackground();
 #line 27
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
- testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
  testRunner.When("User switches to the \"Devices Evergreen Capacity Project\" project in the Top bar " +
                     "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -237,7 +237,7 @@ this.FeatureBackground();
 #line 33
  testRunner.When("User navigates to the \'User\' details page for \'0072B088173449E3A93\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.Then("Details page for \"0072B088173449E3A93\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'0072B088173449E3A93\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
  testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
                     "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -338,7 +338,7 @@ this.FeatureBackground();
 #line 50
  testRunner.When("User navigates to the \'Device\' details page for \'01ERDGD48UDQKE\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
- testRunner.Then("Details page for \"01ERDGD48UDQKE\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'01ERDGD48UDQKE\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 52
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
@@ -378,7 +378,7 @@ this.FeatureBackground();
 #line 73
  testRunner.When("User navigates to the \'User\' details page for \'00DBB114BE1B41B0A38\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 74
- testRunner.Then("Details page for \"00DBB114BE1B41B0A38\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'00DBB114BE1B41B0A38\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 75
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
@@ -415,7 +415,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'0845467C65E5438D83E@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
- testRunner.Then("Details page for \"0845467C65E5438D83E@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'0845467C65E5438D83E@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 96
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -526,7 +526,7 @@ this.FeatureBackground();
 #line 122
  testRunner.When("User navigates to the \'Device\' details page for \'ZZNKKYW97AL4VS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
- testRunner.Then("Details page for \"ZZNKKYW97AL4VS\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'ZZNKKYW97AL4VS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 124
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 125
@@ -564,7 +564,7 @@ this.FeatureBackground();
 #line 144
  testRunner.When("User navigates to the \'User\' details page for \'00DBB114BE1B41B0A38\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 145
- testRunner.Then("Details page for \"00DBB114BE1B41B0A38\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'00DBB114BE1B41B0A38\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 146
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
@@ -603,7 +603,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'0845467C65E5438D83E@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 167
- testRunner.Then("Details page for \"0845467C65E5438D83E@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'0845467C65E5438D83E@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 168
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -696,7 +696,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'GogoTools version 2.1.0.9\' " +
                     "item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 190
- testRunner.Then("Details page for \"GogoTools version 2.1.0.9\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'GogoTools version 2.1.0.9\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 191
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -791,7 +791,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'GogoTools version 2.1.0.9\' " +
                     "item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 209
- testRunner.Then("Details page for \"GogoTools version 2.1.0.9\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'GogoTools version 2.1.0.9\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 210
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -901,7 +901,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Axosoft OnTime 2005 Enterpr" +
                     "ise Server\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 235
- testRunner.Then("Details page for \"Axosoft OnTime 2005 Enterprise Server\" item is displayed to the" +
+ testRunner.Then("Details page for \'Axosoft OnTime 2005 Enterprise Server\' item is displayed to the" +
                     " user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -916,7 +916,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Standard SDK for Windows CE" +
                     " .NET 4.2\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 240
- testRunner.Then("Details page for \"Standard SDK for Windows CE .NET 4.2\" item is displayed to the " +
+ testRunner.Then("Details page for \'Standard SDK for Windows CE .NET 4.2\' item is displayed to the " +
                     "user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -984,7 +984,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'ACDSee for Windows 95\' item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 248
- testRunner.Then("Details page for \"ACDSee for Windows 95\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'ACDSee for Windows 95\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 249
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1096,7 +1096,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'ACDSee for Windows 95\' item" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 273
- testRunner.Then("Details page for \"ACDSee for Windows 95\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'ACDSee for Windows 95\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 274
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

@@ -131,7 +131,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Accessible FormNet Fill 2.2" +
                     "\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \"Accessible FormNet Fill 2.2\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'Accessible FormNet Fill 2.2\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When("User navigates to the \'Advertisements\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
@@ -201,7 +201,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Accessible FormNet Fill 2.2" +
                     "\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
- testRunner.Then("Details page for \"Accessible FormNet Fill 2.2\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'Accessible FormNet Fill 2.2\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 22
  testRunner.When("User navigates to the \'MSI\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
@@ -333,7 +333,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Accessible FormNet Fill 2.2" +
                     "\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
- testRunner.Then("Details page for \"Accessible FormNet Fill 2.2\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'Accessible FormNet Fill 2.2\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
  testRunner.When("User navigates to the \'Distribution\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59

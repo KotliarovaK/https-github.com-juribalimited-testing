@@ -136,7 +136,7 @@ this.FeatureBackground();
 #line 11
  testRunner.When("User navigates to the \'User\' details page for \'ZZR457072\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.Then("Details page for \"ZZR457072\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'ZZR457072\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
  testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
                     "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -180,7 +180,7 @@ this.FeatureBackground();
 #line 31
  testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
- testRunner.Then("Details page for \"DSF4350513\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'DSF4350513\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
@@ -284,7 +284,7 @@ this.FeatureBackground();
 #line 59
  testRunner.When("User navigates to the \'User\' details page for \'SNL594136\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
- testRunner.Then("Details page for \"SNL594136\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'SNL594136\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 61
  testRunner.When("User switches to the \"Windows 10 Migration - Depot\" project in the Top bar on Ite" +
                     "m details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

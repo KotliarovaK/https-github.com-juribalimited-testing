@@ -133,7 +133,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                     "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" ite" +
+ testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -237,7 +237,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Mozilla Sunbird (0.2a.)\' it" +
                     "em", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.Then("Details page for \"Mozilla Sunbird (0.2a.)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'Mozilla Sunbird (0.2a.)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36
@@ -319,7 +319,7 @@ this.FeatureBackground();
 #line 49
  testRunner.When("User navigates to the \'Application\' details page for the item with \'675\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
- testRunner.Then("Details page for \"Music Visualizer Library 1.0\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'Music Visualizer Library 1.0\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 51
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
@@ -348,7 +348,7 @@ this.FeatureBackground();
 #line 62
  testRunner.When("User navigates to the \'Application\' details page for the item with \'676\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
- testRunner.Then("Details page for \"Microsoft Internet Explorer 5.5 SP2 MUI Pack\" item is displayed" +
+ testRunner.Then("Details page for \'Microsoft Internet Explorer 5.5 SP2 MUI Pack\' item is displayed" +
                     " to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 64
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -381,7 +381,7 @@ this.FeatureBackground();
 #line 76
  testRunner.When("User navigates to the \'Application\' details page for the item with \'983\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
- testRunner.Then("Details page for \"Mozilla Sunbird (0.2a.)\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'Mozilla Sunbird (0.2a.)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 78
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
