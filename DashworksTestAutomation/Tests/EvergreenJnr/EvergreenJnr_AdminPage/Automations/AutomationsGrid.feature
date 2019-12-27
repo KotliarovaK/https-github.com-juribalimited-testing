@@ -93,23 +93,24 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Created By" checkbox on the Column Settings panel
-	When User select "Created Date" checkbox on the Column Settings panel
 	When User clicks on 'Created By' column header
 	Then data in table is sorted by 'Created By' column in ascending order
 	When User clicks on 'Created By' column header
 	Then data in table is sorted by 'Created By' column in descending order
+	When User enters "[User not found]" text in the Search field for "Created By" column
+	Then Rows counter contains "7" found row of all rows
+	When User clicks Reset Filters button on the Admin page
+	When User opens 'Automation' column settings
+	When User select "Created By" checkbox on the Column Settings panel
+	When User select "Created Date" checkbox on the Column Settings panel
 	When User clicks on 'Created Date' column header
 	Then date in table is sorted by 'Created Date' column in descending order
 	When User clicks on 'Created Date' column header
 	Then date in table is sorted by 'Created Date' column in ascending order
-	When User enters "[User not found]" text in the Search field for "Created By" column
-	Then Rows counter contains "7" found row of all rows
-	When User clicks Reset Filters button on the Admin page
 	When User enters '9 Aug 2019' text in the Search field for 'Created Date' datepicker
 	Then Rows counter contains "6" found row of all rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18346 @Cleanup
-#Waiting for "Object Type" column
 Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
