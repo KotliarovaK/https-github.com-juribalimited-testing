@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         public void ThenUserSeesAgGrid()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.IsElementDisplayed(page.AgGrid);
+            _driver.WaitForElementToBeDisplayed(page.AgGrid);
             Verify.IsTrue(_driver.IsElementDisplayed(page.AgGrid),
                 "AgGrid doesn't displayed to the user");
         }
