@@ -427,7 +427,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	| Amber              |
 	| Green              |
 	| Grey               |
-	| None               |
 	When User clicks Save button on the list panel
 	When User create dynamic list with "ListForDAS17467_1" name on "Devices" page
 	Then "ListForDAS17467_1" list is displayed to user
@@ -439,7 +438,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
 	When User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
-	Then Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder 
+	Then Color Scheme dropdown displayed with 'Readiness' placeholder 
 	Then Color Scheme dropdown is disabled
 	Then There are no errors in the browser console
 

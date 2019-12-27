@@ -382,6 +382,7 @@ namespace DashworksTestAutomation.Pages
         #endregion
 
         #region Table
+
         public IWebElement GetTableWidgetContentWithoutLink(string content)
         {
             var columnContent = By.XPath($".//td[not(contains(@class, 'link'))]/span[text()='{content}']");
@@ -406,9 +407,11 @@ namespace DashworksTestAutomation.Pages
             var columnHeaders = By.XPath($".//*[text()='{widgetName}']/ancestor :: div//table//tbody//td//span");
             return Driver.FindElements(columnHeaders);
         }
+
         #endregion
 
         #region Card
+
         public IWebElement GetWidgetText()
         {
             try
@@ -430,9 +433,11 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForElementToBeDisplayed(cardWidget);
             return Driver.FindElement(cardWidget);
         }
+
         #endregion
 
         #region Line
+
         public IWebElement GetPointOfLineWidgetByName(string widgetName, string pointNumber)
         {
             var lineWidget = By.XPath($".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty'][{pointNumber}]");
@@ -455,6 +460,7 @@ namespace DashworksTestAutomation.Pages
             //greater than 1 because line must have at least two points
             return Driver.FindElements(widg).Count > 1;
         }
+
         #endregion
 
         #region Column

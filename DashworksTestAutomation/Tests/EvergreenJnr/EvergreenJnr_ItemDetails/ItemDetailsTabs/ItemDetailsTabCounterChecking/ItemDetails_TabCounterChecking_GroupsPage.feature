@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_GroupsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForGroupsPage
 	When User type "Allowed RODC Password Replication Group" in Global Search Field
 	Then User clicks on "Allowed RODC Password Replication Group" search result
-	And Details page for "Allowed RODC Password Replication Group" item is displayed to the user
+	And Details page for 'Allowed RODC Password Replication Group' item is displayed to the user
 	And User sees following parent left menu items
 	| TabName      |
 	| Applications |

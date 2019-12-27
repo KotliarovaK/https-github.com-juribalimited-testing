@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	#Action 1
 	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
-	Then following Values are displayed in the ' ' dropdown:
+	Then following Values are displayed in the 'Actions' dropdown:
 	| Values            |
 	| Update path       |
 	| Update task value |
@@ -637,6 +637,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17606_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User selects 'Update task value' in the 'Action Type' dropdown

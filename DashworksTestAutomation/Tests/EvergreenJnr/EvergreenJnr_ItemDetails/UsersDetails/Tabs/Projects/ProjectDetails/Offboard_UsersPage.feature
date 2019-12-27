@@ -10,7 +10,7 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnUsersPage
 	When User navigates to the 'User' details page for '01F6D54271D74F1BB8D' item
-	Then Details page for "01F6D54271D74F1BB8D" item is displayed to the user
+	Then Details page for '01F6D54271D74F1BB8D' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 @Evergreen @Users @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnUsersPage
 	When User navigates to the 'User' details page for '01F6D54271D74F1BB8D' item
-	Then Details page for "01F6D54271D74F1BB8D" item is displayed to the user
+	Then Details page for '01F6D54271D74F1BB8D' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 @Evergreen @Users @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnUsersPage
 	When User navigates to the 'User' details page for '0088FC8A50DD4344B92' item
-	Then Details page for "0088FC8A50DD4344B92" item is displayed to the user
+	Then Details page for '0088FC8A50DD4344B92' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item

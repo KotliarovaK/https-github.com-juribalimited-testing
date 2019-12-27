@@ -8,13 +8,13 @@ Background: Pre-Conditions
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17808 @DAS18408
 Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User navigates to the 'User' details page for 'ZZP911429' item
-	Then Details page for "ZZP911429" item is displayed to the user
+	Then Details page for 'ZZP911429' item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then 'No applications owned by this user' message is displayed on empty greed
 	When User navigates to the 'User' details page for 'LYZ6880619' item
-	Then Details page for "LYZ6880619" item is displayed to the user
+	Then Details page for 'LYZ6880619' item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18700
 Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrectlyOnProjectOwnedTab 
 	When User navigates to the 'User' details page for 'LYZ6880619' item
-	Then Details page for "LYZ6880619" item is displayed to the user
+	Then Details page for 'LYZ6880619' item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
@@ -56,19 +56,19 @@ Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrec
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18743
 Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCorrectly
 	When User navigates to the 'User' details page for 'LYZ6880619' item
-	Then Details page for "LYZ6880619" item is displayed to the user
+	Then Details page for 'LYZ6880619' item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	When User clicks "Quartus II 2.0 Web Edition Full" link on the Details Page
-	Then Details page for "Quartus II 2.0 Web Edition Full" item is displayed to the user
+	Then Details page for 'Quartus II 2.0 Web Edition Full' item is displayed to the user
 	Then User click back button in the browser
-	And Details page for "LYZ6880619" item is displayed to the user
+	And Details page for 'LYZ6880619' item is displayed to the user
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19321
 Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject
 	When User navigates to the 'User' details page for the item with '29342' ID
-	Then Details page for "SNL594136" item is displayed to the user
+	Then Details page for 'SNL594136' item is displayed to the user
 	When User switches to the "Windows 10 Migration - Depot" project in the Top bar on Item details page
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item

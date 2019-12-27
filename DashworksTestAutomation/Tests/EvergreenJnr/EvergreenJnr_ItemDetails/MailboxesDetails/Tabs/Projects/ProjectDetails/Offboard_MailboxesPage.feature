@@ -10,7 +10,7 @@ Background: Pre-Conditions
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '01DEAC5F18B34084B04@bclabs.local' item
-	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
+	Then Details page for '01DEAC5F18B34084B04@bclabs.local' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000 @DAS18067 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnPageMailboxes
 	When User navigates to the 'Mailbox' details page for '01DEAC5F18B34084B04@bclabs.local' item
-	Then Details page for "01DEAC5F18B34084B04@bclabs.local" item is displayed to the user
+	Then Details page for '01DEAC5F18B34084B04@bclabs.local' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS17964 @DAS17990 @DAS17000
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for 'alex.cristea@juriba.com' item
-	Then Details page for "alex.cristea@juriba.com" item is displayed to the user
+	Then Details page for 'alex.cristea@juriba.com' item is displayed to the user
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
@@ -90,11 +90,11 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS18785
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssociatedUserRedirectsCorrectly
 	When User navigates to the 'Mailbox' details page for '0286449FB2C34A12809@bclabs.local' item
-	Then Details page for "0286449FB2C34A12809@bclabs.local" item is displayed to the user
+	Then Details page for '0286449FB2C34A12809@bclabs.local' item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
 	When User clicks "0286449FB2C34A12809" link on the Details Page
-	Then Details page for "0286449FB2C34A12809 (McFadden, Susan)" item is displayed to the user
+	Then Details page for '0286449FB2C34A12809 (McFadden, Susan)' item is displayed to the user

@@ -367,6 +367,8 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
+                case "1803: Pre-Migration \\ Ready to Migrate":
+                    return "project_task_63_13266_1_Task";
 
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
