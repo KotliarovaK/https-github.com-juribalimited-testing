@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckThatb
+Scenario: EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEmpty
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	Then Page with 'Create Self Service' header is displayed to user
@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatb
 	Then 'No self services found' message is displayed on empty greed
 
 		@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckThatGredWorksProperly
+Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceGridWorksProperly
     When User creates Self Service via API
 	| ServiceId | Name                       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
 	| 1         | ATestSelfService_name1 | id193851          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
@@ -54,7 +54,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatGredWorksProperly
 	| Edit             |
 	| Disable          | 
 	| Delete           |
-#	Then following Values are displayed in the 'Actions' dropdown:
-#	| Values |
-#	| Enable |
-#	| Delete |
