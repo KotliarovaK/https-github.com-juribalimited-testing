@@ -45,6 +45,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        public bool IsRowWithKeyExists(string key)
+        {
+            try
+            {
+                return GetRowByKey(key).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         //column = 1 is a first column after keys
         public string GetRowContent(string key, int column = 1)
         {

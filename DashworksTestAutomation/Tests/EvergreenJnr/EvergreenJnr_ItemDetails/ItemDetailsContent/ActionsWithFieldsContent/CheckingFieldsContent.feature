@@ -29,13 +29,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
-	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
+	Then 'Self Service URL' field is not displayed in the table
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
-	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
+	Then 'Self Service URL' field is displayed in the table
 	Then following content is displayed on the Details Page
 	| Title    | Value   |
 	| Language | English |

@@ -26,7 +26,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseTable>();
             Verify.IsTrue(page.Table.Displayed(), "Table is not displayed");
+        }
 
+        [Then(@"'(.*)' field is displayed in the table")]
+        public void ThenFieldIsDisplayedInTheTable(string key)
+        {
+            var page = _driver.NowAt<BaseTable>();
+            Verify.IsTrue(page.IsRowWithKeyExists(key), $"'{key}' field was not displayed in the table");
+        }
+
+        [Then(@"'(.*)' field is not displayed in the table")]
+        public void ThenFieldIsNotDisplayedInTheTable(string key)
+        {
+            var page = _driver.NowAt<BaseTable>();
+            Verify.IsFalse(page.IsRowWithKeyExists(key), $"'{key}' field is displayed in the table");
         }
     }
 }
