@@ -36,26 +36,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var detailsPage = _driver.NowAt<DetailsPage>();
             Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Item details icon is not displayed");
         }
-
-        [Then(@"field with ""(.*)"" text is displayed in expanded tab on the Details Page")]
-        public void ThenFieldWithTextIsDisplayedInExpandedTabOnTheDetailsPage(string text)
-        {
-            var content = _driver.NowAt<TabContent>();
-            Utils.Verify.IsTrue(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
-        }
-
-        [Then(@"field with ""(.*)"" text is not displayed in expanded tab on the Details Page")]
-        public void ThenFieldWithTextIsNotDisplayedInExpandedTabOnTheDetailsPage(string text)
-        {
-            var content = _driver.NowAt<TabContent>();
-            Utils.Verify.IsFalse(content.GetTheDisplayStateOfContentOnOpenTab(text), $"'{text}' content should not be displayed!");
-        }
-
-        [Then(@"element table is displayed on the Details page")]
-        public void ThenElementTableIsDisplayedOnTheDetailsPage()
-        {
-            var content = _driver.NowAt<TabContent>();
-            Utils.Verify.IsTrue(content.ElementsTable.Displayed, "Element table is not displayed!");
-        }
     }
 }
