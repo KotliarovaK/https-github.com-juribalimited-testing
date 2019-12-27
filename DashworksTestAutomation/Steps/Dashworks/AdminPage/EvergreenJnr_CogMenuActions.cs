@@ -32,7 +32,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             cogMenu.BodyContainer.Click();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
+            var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
+            _driver.MouseHover(cogMenuElement);
             cogMenu.GetCogMenuByItem(column, columnContent).Click();
         }
 
@@ -40,10 +41,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void WhenUserClicksOptionInCog_MenuForItemFromColumn(string option, string columnContent, string column)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
-            cogMenu.BodyContainer.Click();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
-            cogMenu.GetCogMenuByItem(column, columnContent).Click();
+            //Close cog-menu if it is still opened from previous step
+            if (cogMenu.CogMenuItems.Any(x => x.Displayed()))
+            {
+                cogMenu.BodyContainer.Click();
+            }
+            var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
+            _driver.MouseHover(cogMenuElement);
+            cogMenuElement.Click();
             cogMenu.GetCogMenuOptionByName(option).Click();
+
+            //Grid should be refreshed after making active/inactive
+            if (option.Equals("Make active") || option.Equals("Make inactive"))
+            {
+                _driver.WaitForElementToBeNotDisplayed(cogMenuElement);
+            }
         }
 
         [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]

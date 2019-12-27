@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMembersTabOnGroupsPage
 	When User type "Schema Admins" in Global Search Field
 	Then User clicks on "Schema Admins" search result
-	And Details page for "Schema Admins" item is displayed to the user
+	And Details page for 'Schema Admins' item is displayed to the user
 	When User navigates to the 'Members' left menu item
 	When User navigates to the 'User Members' left submenu item
 	Then 'DEV50' content is displayed in the 'Domain' column

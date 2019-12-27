@@ -173,3 +173,32 @@ Scenario: EvergreenJnr_UserProfile_ChangingPassword
 	#Then Success message is displayed with "Password has been changed" text
 	#Then Success message with "Password has been changed" text is displayed on the Change Password page
 	And There are no errors in the browser console
+
+ @Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS18672
+Scenario: EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the 'Preferences' left menu item
+	Then '(UTC+00:00) Dublin, Edinburgh, Lisbon, London' content is displayed in 'Time Zone' autocomplete
+	Then '(UTC+01:00) Dublin, Edinburgh, Lisbon, London' content is not displayed in 'Time Zone' autocomplete after search
+	Then 'A time zone must be selected' error message is displayed for 'Time Zone' field 
+	Then 'UPDATE' button is disabled
+	When User selects '(UTC) Coordinated Universal Time' option after search from 'Time Zone' autocomplete
+	When User clicks 'UPDATE' button
+	Then 'User preferences have been changed' text is displayed on inline success banner
+	When User clicks refresh button in the browser
+	When User navigates to the 'Preferences' left menu item
+	Then '(UTC) Coordinated Universal Time' content is displayed in 'Time Zone' autocomplete
+
+ @Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS19054
+Scenario: EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTabsWithoutAnyChanges
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the 'Preferences' left menu item
+	Then 'UPDATE' button is disabled
+	When User navigates to the 'Advanced' left menu item
+	Then 'UPDATE' button is disabled
+	When User navigates to the 'Change Password' left menu item
+	Then 'UPDATE' button is disabled
+	When User navigates to the 'Account Details' left menu item
+	Then 'UPDATE' button is disabled

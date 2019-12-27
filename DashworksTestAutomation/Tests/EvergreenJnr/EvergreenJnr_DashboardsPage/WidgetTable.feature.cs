@@ -2207,6 +2207,120 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedInTableWidge" +
+            "tBasedOnSeverityAfterSelectingProjectStageTaskReadinessTask")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS19369")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedInTableWidgetBasedOnSeverityAfterSelectingProjectStageTaskReadinessTask()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedInTableWidgetBasedOnSeverityAfterSelectingProjectStageTaskReadinessTaskInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedInTableWidgetBasedOnSeverityAfterSelectingProjectStageTaskReadinessTaskInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedInTableWidge" +
+                    "tBasedOnSeverityAfterSelectingProjectStageTaskReadinessTask", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS19369",
+                        "Cleanup"});
+#line 471
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 472
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table43.AddRow(new string[] {
+                        "1803: Pre-Migration \\ Ready to Migrate"});
+#line 473
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table43, "When ");
+#line 476
+ testRunner.When("User create dynamic list with \"19369_List\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 477
+ testRunner.When("Dashboard with \'Dashboard for DAS19369\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 478
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 479
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "AggregateBy",
+                        "OrderBy",
+                        "MaxValues"});
+            table44.AddRow(new string[] {
+                        "Table",
+                        "DAS-19369",
+                        "19369_List",
+                        "Device Type",
+                        "Severity",
+                        "1803: Pre-Migration \\ Ready to Migrate",
+                        "Device Type ASC",
+                        "30"});
+#line 480
+ testRunner.When("User adds new Widget", ((string)(null)), table44, "When ");
+#line 483
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 484
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 485
+ testRunner.Then("\'DAS-19369\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+                        "headers"});
+            table45.AddRow(new string[] {
+                        "Data Centre"});
+            table45.AddRow(new string[] {
+                        "Desktop"});
+            table45.AddRow(new string[] {
+                        "Laptop"});
+            table45.AddRow(new string[] {
+                        "Mobile"});
+            table45.AddRow(new string[] {
+                        "Other"});
+            table45.AddRow(new string[] {
+                        "Virtual"});
+#line 486
+ testRunner.Then("Table columns of \'DAS-19369\' widget placed in the next order:", ((string)(null)), table45, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

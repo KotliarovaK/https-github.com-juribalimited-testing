@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOffboardOptionIsWorkedCorrectly
 	| Project17919 | All Devices | None            | Standalone Project |
 	#TODO add API ONBOARDING step;
 	When User navigates to the 'Application' details page for 'Technical Information Sampler: January 2003' item
-	Then Details page for "Technical Information Sampler: January 2003" item is displayed to the user
+	Then Details page for 'Technical Information Sampler: January 2003' item is displayed to the user
 	When User switches to the "Project17919" project in the Top bar on Item details page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item

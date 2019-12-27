@@ -9,7 +9,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Rings
 {
     class RingDto
     {
-        private string Id;
+        private string _id;
 
         public string Name { get; set; }
         public string Description { get; set; }
@@ -19,28 +19,28 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Rings
 
         public RingDto(string id)
         {
-            Id = id;
+            _id = id;
         }
 
         public RingDto() { }
 
         public string GetId()
         {
-            if (string.IsNullOrEmpty(Id))
+            if (string.IsNullOrEmpty(_id))
             {
-                Id = string.IsNullOrEmpty(this.Project) ?
-                    DatabaseHelper.GetRing(this.Name).Id : GetId(this.Project);
+                _id = string.IsNullOrEmpty(this.Project) ?
+                    DatabaseHelper.GetRing(this.Name)._id : GetId(this.Project);
             }
-            return Id;
+            return _id;
         }
 
         public string GetId(string projectName)
         {
-            if (string.IsNullOrEmpty(Id))
+            if (string.IsNullOrEmpty(_id))
             {
-                Id = DatabaseHelper.GetRing(this.Name, projectName).Id;
+                _id = DatabaseHelper.GetRing(this.Name, projectName)._id;
             }
-            return Id;
+            return _id;
         }
     }
 }

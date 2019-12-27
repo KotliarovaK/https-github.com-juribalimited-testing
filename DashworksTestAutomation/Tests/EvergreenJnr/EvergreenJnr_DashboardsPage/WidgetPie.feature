@@ -419,7 +419,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
+	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "1803: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
@@ -427,21 +427,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	| Amber              |
 	| Green              |
 	| Grey               |
-	| None               |
-	And User clicks Save button on the list panel
-	And User create dynamic list with "ListForDAS17467_1" name on "Devices" page
+	When User clicks Save button on the list panel
+	When User create dynamic list with "ListForDAS17467_1" name on "Devices" page
 	Then "ListForDAS17467_1" list is displayed to user
 	When Dashboard with 'Dashboard for DAS17467_1' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title               | List              | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
 	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
-	And User selects 'Show data labels' checkbox on the Create Widget page
+	When User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder 
-	And Color Scheme dropdown is disabled
-	And There are no errors in the browser console
+	Then Color Scheme dropdown displayed with 'Readiness' placeholder 
+	Then Color Scheme dropdown is disabled
+	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @DAS17987 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFields	
@@ -521,3 +520,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatPreviewDisplayedForWidgetWhenRead
 	| Pie        | WidgetForDAS18635 | Device Readiness Columns & Filters | UserEvergr: Readiness | Count distinct    | Device Type | UserEvergr: Readiness ASC |
 	Then Widget Preview is displayed to the user
 	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18574 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWidget
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Blocked            |
+	| Amber              |
+	| Green              |
+	| Grey               |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "ListForDAS18574" name on "Devices" page
+	Then "ListForDAS18574" list is displayed to user
+	When Dashboard with 'Dashboard for DAS18574' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List            | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
+	| Pie        | WidgetForDAS18574 | ListForDAS18574 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
+	When User clicks 'CREATE' button 
+	Then 'WidgetForDAS18574' Widget is displayed to the user
+	When User clicks on 'Green' category of 'WidgetForDAS18574' widget
+	Then table content is present
