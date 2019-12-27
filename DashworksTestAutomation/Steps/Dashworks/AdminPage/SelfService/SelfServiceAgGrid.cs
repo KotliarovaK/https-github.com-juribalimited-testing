@@ -15,22 +15,22 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 {
     [Binding]
-    class SelfService : SpecFlowContext
+    class SelfServiceAgGrid : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public SelfService(RemoteWebDriver driver)
+        public SelfServiceAgGrid(RemoteWebDriver driver)
         {
             _driver = driver;
         }
 
-        [Then(@"User sees Ag-Grid")]
+        [Then(@"User sees AgGrid")]
         public void ThenUserSeesAgGrid()
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.IsElementDisplayed(page.AgGrid);
             Verify.IsTrue(_driver.IsElementDisplayed(page.AgGrid),
-                "Ag-Grid doesn't displayed to the user");
+                "AgGrid doesn't displayed to the user");
         }
     }
 }

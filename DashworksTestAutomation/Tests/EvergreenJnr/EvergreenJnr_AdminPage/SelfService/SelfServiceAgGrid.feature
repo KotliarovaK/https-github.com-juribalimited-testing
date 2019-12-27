@@ -1,4 +1,4 @@
-﻿Feature: SelfService
+﻿Feature: SelfServiceGrid
 	Self Service
 
 Background: Pre-Conditions
@@ -9,15 +9,15 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEmpty
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
-	Then Page with 'Create Self Service' header is displayed to user
+	Then Page with 'Self Services' header is displayed to user
 	Then 'Self Services' left menu item is expanded
-	Then User sees Ag-Grid
+	Then User sees AgGrid
 	Then 'No self services found' message is displayed on empty greed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceGridWorksProperly
     When User creates Self Service via API
-	| ServiceId | Name                       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
+	| ServiceId | Name                   | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
 	| 1         | ATestSelfService_name1 | id193851          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
 	| 2         | BTestSelfService_name2 | id193852          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
 	| 3         | CTestSelfService_name3 | id193853          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
