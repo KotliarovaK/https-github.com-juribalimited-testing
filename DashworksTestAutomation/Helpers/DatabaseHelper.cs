@@ -624,5 +624,16 @@ namespace DashworksTestAutomation.Helpers
         }
 
         #endregion
+
+        #region Self Service
+
+        public static string GetSelfServiceId(string selfServiceName, string createdBy)
+        {
+            string query = $"SELECT [SelfServiceId] FROM [PM].[SS].[SelfService] WHERE [Name] = {selfServiceName} AND [CreatedBy] = {createdBy}";
+            var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return selfServiceId;
+        }
+
+        #endregion
     }
 }

@@ -373,6 +373,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\RemoveRingsAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\SetDefaultRingAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\AfterScenario\RemoveSlotAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\Api\CreateSlotViaApi.cs" />

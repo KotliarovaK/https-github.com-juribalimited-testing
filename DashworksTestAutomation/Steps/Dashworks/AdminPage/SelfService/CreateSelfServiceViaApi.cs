@@ -138,5 +138,29 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 Verify.IsTrue(listOfReturnedSelfServices.Any(ss => ss.Equals(SelfService)), "The created Self Service doesn't match to the existing Self Service in the Grid");
             }
         }
+
+        [Then(@"User deletes the Self Services via API")]
+        public void ThenUserDeletesSelfServicesViaApi(Array SelfServiceIdsToDelete)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
+
+            foreach (SelfServiceDto SelfService in _selfServices.Value)
+            {
+
+                var response = _client.Value.Delete(requestUri.GenerateRequest());
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    throw new Exception($"Unable to get the Self Service: {response.StatusCode}, {response.ErrorMessage}");
+                }
+
+                var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(response.Content);
+                if (!SelfService.Equals(selfServiceObjResponse))
+                {
+                    throw new Exception("The created Self Service doesn't match to the received Self Service");
+                }
+            }
+
+        }
     }
 }
