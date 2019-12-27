@@ -186,4 +186,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User clicks Group By button and set checkboxes state
 	| Checkboxes | State |
 	| Vendor     | true  |
-	Then "UNKNOWN" content is not displayed in the grid on the Item details page
+	Then 'Adobe' row in the groped grid does not contains 'UNKNOWN' text
