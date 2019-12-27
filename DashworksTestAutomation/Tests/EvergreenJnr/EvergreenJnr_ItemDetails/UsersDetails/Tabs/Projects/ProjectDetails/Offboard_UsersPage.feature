@@ -16,16 +16,16 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
-	And 'Offboard all associated devices' checkbox is checked
+	Then select all rows checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Hostname     |
 	| Owned        |
-	When User selects state 'true' for 'Offboard all associated devices' checkbox
+	When User deselect all rows on the grid
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
-	Then " 02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
+	Then "02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
-	And 'Offboard all associated devices' checkbox is checked
+	Then select all rows checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Hostname     |
