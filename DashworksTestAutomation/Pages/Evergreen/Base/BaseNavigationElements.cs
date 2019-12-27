@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
+namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
     //Left menu
     internal class BaseNavigationElements : SeleniumBasePage
@@ -39,7 +37,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
             return Driver.FindElements(By.XPath(LeftParentMenuSelector))
-                .Where(x => x.Displayed());
+                .Where(x => WebElementExtensions.Displayed(x));
         }
 
         public IWebElement GetParentMenuByName(string name)

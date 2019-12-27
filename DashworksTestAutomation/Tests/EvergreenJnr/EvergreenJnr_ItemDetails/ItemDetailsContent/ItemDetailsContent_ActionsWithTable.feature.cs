@@ -973,7 +973,7 @@ this.FeatureBackground();
 #line 186
  testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table7, "When ");
 #line 189
- testRunner.Then("\"UNKNOWN\" content is not displayed in the grid on the Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Adobe\' row in the groped grid does not contains \'UNKNOWN\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

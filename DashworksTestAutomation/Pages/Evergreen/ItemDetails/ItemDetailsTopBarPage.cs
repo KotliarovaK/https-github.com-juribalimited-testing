@@ -34,7 +34,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-
             return new List<By>
             {
                 SelectorFor(this, p => p.PageIdentitySelectors)
