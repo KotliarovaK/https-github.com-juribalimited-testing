@@ -295,7 +295,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurity
 	When User clicks 'CANCEL' button
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538
-Scenario: EvergreenJnr_ApplicationsList_CheckThatThePenButtonIsNotDisplayedForCapacityFieldForUserWithSpecificAccess
+Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFieldForUserWithSpecificAccess
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
  	| Username       | Password |
@@ -329,3 +329,52 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatThePenButtonIsNotDisplayedForCa
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538 @Cleanup
+Scenario: EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccess
+	When User creates new Capacity Unit via api
+	| Name              | Description | IsDefault | Project                      |
+	| cu_DAS19538_4645s | DAS19538    | false     | I-Computer Scheduled Project |
+	When User create new User via API
+	| Username         | Email | FullName | Password  | Roles                                                                                                                                                                    |
+	| UserDAS195381654 | Value | DAS19538 | m!gration | Project Application Object Editor, Project Computer Object Editor, Project Mailbox Object Editor, Project User Object Editor |
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username         | Password  |
+ 	| UserDAS195381654 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+		#--Devices--#
+	When User navigates to the 'Device' details page for the item with '13292' ID
+	Then Details page for 'CHAXTB7OLNX1W2' item is displayed to the user
+	When User switches to the "1803 Rollout" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Capacity Unit' field is not displayed
+		#--Users--#
+	When User navigates to the 'User' details page for the item with '27418' ID
+	Then Details page for 'REM635708' item is displayed to the user
+	When User switches to the "1803 Rollout" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Capacity Unit' field is not displayed
+		#--Mailboxes--#
+	When User navigates to the 'Mailbox' details page for the item with '46886' ID
+	Then Details page for '01DE1433D11E44E6A4A@bclabs.local' item is displayed to the user
+	When User switches to the "TSTPROJ" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Capacity Unit' field is not displayed
+		#--Applications--#
+	When User navigates to the 'Application' details page for the item with '93' ID
+	Then Details page for '20040610sqlserverck' item is displayed to the user
+	When User switches to the "I-Computer Scheduled Project" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	Then 'MOVE' button is disabled on popup
+	When User selects 'cu_DAS19538_4645s' option from 'Capacity Unit' autocomplete
+	When User clicks 'MOVE' button on popup
+	When User clicks 'MOVE' button on popup
+	Then following content is displayed on the Details Page
+	| Title         | Value             |
+	| Capacity Unit | cu_DAS19538_4645s |

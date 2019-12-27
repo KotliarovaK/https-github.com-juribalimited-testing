@@ -20,7 +20,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatValueForCapacityUnitIsChangingSucc
 	When User selects 'cu_DAS19538_4' option from 'Capacity Unit' autocomplete
 	When User clicks 'MOVE' button on popup
 	When User clicks 'MOVE' button on popup
-	Then 'Mailbox successfully moved to cu_DAS19538_4' text is displayed on inline success banner
+	Then 'The selected objects successfully moved to cu_DAS19538_4' text is displayed on inline success banner
+	Then following content is displayed on the Details Page
+	| Title         | Value         |
+	| Capacity Unit | cu_DAS19538_4 |
+	When User navigates to the 'User' details page for the item with '93160' ID
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page
 	| Title         | Value         |
 	| Capacity Unit | cu_DAS19538_4 |

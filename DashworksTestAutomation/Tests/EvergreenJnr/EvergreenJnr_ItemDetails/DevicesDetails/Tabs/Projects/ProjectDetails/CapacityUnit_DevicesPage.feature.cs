@@ -166,8 +166,8 @@ this.FeatureBackground();
 #line 22
  testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
- testRunner.Then("\'Device successfully moved to cu_DAS19538_1\' text is displayed on inline success " +
-                    "banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected objects successfully moved to cu_DAS19538_1\' text is displayed on i" +
+                    "nline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
@@ -177,6 +177,24 @@ this.FeatureBackground();
                         "cu_DAS19538_1"});
 #line 24
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2, "Then ");
+#line 27
+ testRunner.When("User navigates to the \'User\' details page for the item with \'2169\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+ testRunner.When("User switches to the \"Havoc (Big Data)\" project in the Top bar on Item details pa" +
+                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table3.AddRow(new string[] {
+                        "Capacity Unit",
+                        "cu_DAS19538_1"});
+#line 31
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
