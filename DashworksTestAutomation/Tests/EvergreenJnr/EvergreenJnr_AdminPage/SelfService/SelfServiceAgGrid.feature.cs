@@ -372,7 +372,7 @@ this.FeatureBackground();
                         "scopeName"});
             table3.AddRow(new string[] {
                         "1",
-                        "ATestSelfService_name1",
+                        "TestSelection_name1",
                         "id193851",
                         "false",
                         "Devimdmdmm",
@@ -385,7 +385,7 @@ this.FeatureBackground();
                         "bob"});
             table3.AddRow(new string[] {
                         "2",
-                        "BTestSelfService_name2",
+                        "TestSelection_name2",
                         "id193852",
                         "false",
                         "Devimdmdmm",
@@ -398,7 +398,7 @@ this.FeatureBackground();
                         "bob"});
             table3.AddRow(new string[] {
                         "3",
-                        "CTestSelfService_name3",
+                        "TestSelection_name3",
                         "id193853",
                         "false",
                         "Devimdmdmm",
@@ -411,7 +411,7 @@ this.FeatureBackground();
                         "bob"});
             table3.AddRow(new string[] {
                         "4",
-                        "DTestSelfService_name4",
+                        "TestSelection_name4",
                         "id193854",
                         "false",
                         "Devimdmdmm",
@@ -424,7 +424,7 @@ this.FeatureBackground();
                         "bob"});
             table3.AddRow(new string[] {
                         "5",
-                        "FTestSelfService_name5",
+                        "TestSelection_name5",
                         "id193855",
                         "true",
                         "Devimdmdmm",
@@ -527,7 +527,7 @@ this.FeatureBackground();
                         "scopeName"});
             table4.AddRow(new string[] {
                         "1",
-                        "ATestSelfService_name1",
+                        "TestSelfServiceCogMenu_name1",
                         "id193851",
                         "false",
                         "Devimdmdmm",
@@ -538,65 +538,13 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
-            table4.AddRow(new string[] {
-                        "2",
-                        "BTestSelfService_name2",
-                        "id193852",
-                        "false",
-                        "Devimdmdmm",
-                        "3",
-                        "2019-12-10T21:34:47.24",
-                        "2019-12-31T21:34:47.24",
-                        "URL",
-                        "true",
-                        "2",
-                        "bob"});
-            table4.AddRow(new string[] {
-                        "3",
-                        "CTestSelfService_name3",
-                        "id193853",
-                        "false",
-                        "Devimdmdmm",
-                        "3",
-                        "2019-12-10T21:34:47.24",
-                        "2019-12-31T21:34:47.24",
-                        "URL",
-                        "true",
-                        "2",
-                        "bob"});
-            table4.AddRow(new string[] {
-                        "4",
-                        "DTestSelfService_name4",
-                        "id193854",
-                        "false",
-                        "Devimdmdmm",
-                        "3",
-                        "2019-12-10T21:34:47.24",
-                        "2019-12-31T21:34:47.24",
-                        "URL",
-                        "true",
-                        "2",
-                        "bob"});
-            table4.AddRow(new string[] {
-                        "5",
-                        "FTestSelfService_name5",
-                        "id193855",
-                        "true",
-                        "Devimdmdmm",
-                        "3",
-                        "2019-12-10T21:34:47.24",
-                        "2019-12-31T21:34:47.24",
-                        "URL",
-                        "true",
-                        "2",
-                        "bob"});
 #line 63
     testRunner.When("User creates Self Service via API", ((string)(null)), table4, "When ");
-#line 70
+#line 66
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 71
+#line 67
  testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 72
+#line 68
  testRunner.When("User clicks Cog-menu for \'TestSelfService_name1\' item in the \'Self Service Name\' " +
                     "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -608,9 +556,9 @@ this.FeatureBackground();
                         "Enable"});
             table5.AddRow(new string[] {
                         "Delete"});
-#line 73
+#line 69
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table5, "Then ");
-#line 78
+#line 74
  testRunner.When("User clicks Cog-menu for \'TestSelfService_name5\' item in the \'Self Service Name\' " +
                     "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -622,7 +570,7 @@ this.FeatureBackground();
                         "Disable"});
             table6.AddRow(new string[] {
                         "Delete"});
-#line 79
+#line 75
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();

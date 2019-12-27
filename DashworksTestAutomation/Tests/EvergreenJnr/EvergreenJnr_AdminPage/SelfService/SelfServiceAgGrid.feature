@@ -42,11 +42,11 @@ Scenario: EvergreenJnr_AdminPage_CheckGeneralViewOfSelfServiceAgGrid
 Scenario: EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetion
     When User creates Self Service via API
 	| ServiceId | Name                   | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
-	| 1         | ATestSelfService_name1 | id193851          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
-	| 2         | BTestSelfService_name2 | id193852          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
-	| 3         | CTestSelfService_name3 | id193853          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
-	| 4         | DTestSelfService_name4 | id193854          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
-	| 5         | FTestSelfService_name5 | id193855          | true    | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	| 1         | TestSelection_name1 | id193851          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	| 2         | TestSelection_name2 | id193852          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	| 3         | TestSelection_name3 | id193853          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	| 4         | TestSelection_name4 | id193854          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	| 5         | TestSelection_name5 | id193855          | true    | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	Then select all rows checkbox is unchecked
@@ -62,11 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetion
 Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceCogMenuDisplaysProperly
     When User creates Self Service via API
 	| ServiceId | Name                   | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
-	| 1         | ATestSelfService_name1 | id193851          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
-	| 2         | BTestSelfService_name2 | id193852          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
-	| 3         | CTestSelfService_name3 | id193853          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
-	| 4         | DTestSelfService_name4 | id193854          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
-	| 5         | FTestSelfService_name5 | id193855          | true    | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
+	| 1         | TestSelfServiceCogMenu_name1 | id193851          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks Cog-menu for 'TestSelfService_name1' item in the 'Self Service Name' column
