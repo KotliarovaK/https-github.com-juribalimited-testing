@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @DAS19364 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	Then Page with 'Create Self Service' header is displayed to user
 	When User clicks 'CREATE SELF SERVICE' button
 	Then Page with 'Create Self Service' header is displayed to user
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutName
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters 'TestP_ID_1' text to 'Self Service Identifier' textbox
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedName
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutSelectedScope
 	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProject1' text to 'Self Service Name' textbox
 	When User enters 'TestP_ID_1' text to 'Self Service Identifier' textbox
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutSelect
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithBrokenScopeList
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_4' text to 'Self Service Name' textbox
 	When User selects 'Alex M List' option from 'Self Service Scope' autocomplete
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedIdentifier
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -109,7 +109,7 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -126,7 +126,7 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserWillBeReturnedToTheGridPageIfNoDataWasEnteredAndCancelButtonWasClicked
 	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User clicks 'CANCEL' button
 	Then 'CREATE SELF SERVICE' button is displayed
