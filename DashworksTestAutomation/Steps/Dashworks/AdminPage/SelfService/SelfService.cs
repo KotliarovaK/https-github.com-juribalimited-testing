@@ -34,6 +34,3 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         }
     }
 }
-
-        
-    

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEmpty
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEm
 	Then User sees Ag-Grid
 	Then 'No self services found' message is displayed on empty greed
 
-		@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceGridWorksProperly
     When User creates Self Service via API
 	| ServiceId | Name                       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
