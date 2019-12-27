@@ -208,6 +208,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
 
+        #region  Edit/Pen button for field
+
         public IWebElement GetEditFieldButton(string fieldName)
         {
             var selector = By.XPath(string.Format(EditButton, fieldName));
@@ -231,6 +233,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 GetEditFieldButton(fieldName).Click();
             }
         }
+
+        public bool EditFieldButtonDisplaying(string fieldName)
+        {
+            return Driver.IsElementDisplayed(By.XPath(string.Format(EditButton, fieldName)));
+        }
+
+        #endregion
 
         public IWebElement LinkIsDisplayed(string linkName)
         {

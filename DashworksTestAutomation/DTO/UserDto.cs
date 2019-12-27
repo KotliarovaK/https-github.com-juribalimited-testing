@@ -41,8 +41,8 @@ namespace DashworksTestAutomation.DTO
                 {
                     switch (role)
                     {
-                        case "Self Service User":
-                            resultList.Add("Self Service Users");
+                        case "Analysis Editor":
+                            resultList.Add("Analysis Editor");
                             break;
                         case "API User":
                             resultList.Add("API Users");
@@ -50,11 +50,29 @@ namespace DashworksTestAutomation.DTO
                         case "Project Administrator":
                             resultList.Add("Project Administrators");
                             break;
+                        case "Project Application Object Editor":
+                            resultList.Add("Project Application Object Editor");
+                            break;
                         case "Project Bulk Updater":
                             resultList.Add("Project Bulk Updaters");
                             break;
+                        case "Project Computer Object Editor":
+                            resultList.Add("Project Computer Object Editor");
+                            break;
+                        case "Project Group Editor":
+                            resultList.Add("Project Group Editor");
+                            break;
+                        case "Project Mailbox Object Editor":
+                            resultList.Add("Project Mailbox Object Editor");
+                            break;
                         case "Project Onboarder":
                             resultList.Add("Project Onboarders");
+                            break;
+                        case "Project User Object Editor":
+                            resultList.Add("Project User Object Editor");
+                            break;
+                        case "Self Service User":
+                            resultList.Add("Self Service User");
                             break;
                         case "System Administrator":
                             resultList.Add("System Administrators");
