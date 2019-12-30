@@ -562,6 +562,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{dropdownName}' dropdown' is not displayed");
         }
 
+        [Then(@"dropdown is not opened")]
+        public void ThenDropdownIsNotOpened()
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(dropdown.IsDropdownOpened(), "Dropdown is opened");
+        }
+
         //Exact match
         [Then(@"following Values are displayed in the '(.*)' dropdown:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdown(string dropDownName, Table table)

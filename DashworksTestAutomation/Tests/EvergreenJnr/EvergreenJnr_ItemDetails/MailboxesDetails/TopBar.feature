@@ -26,10 +26,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorr
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
-	Then Project Switcher in the Top bar on Item details page is closed
+	Then dropdown is not opened
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
-	Then Project Switcher in the Top bar on Item details page is closed
+	Then dropdown is not opened
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928 @DAS18405
