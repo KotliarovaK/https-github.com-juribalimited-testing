@@ -111,7 +111,6 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	Then Rows counter contains "6" found row of all rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18346 @Cleanup
-#Waiting for "Object Type" column
 Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
