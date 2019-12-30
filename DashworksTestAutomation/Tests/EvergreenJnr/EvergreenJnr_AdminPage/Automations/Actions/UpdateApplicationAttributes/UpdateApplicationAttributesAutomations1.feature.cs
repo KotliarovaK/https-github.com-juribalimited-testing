@@ -1199,6 +1199,115 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForwardPathIsSelec" +
+            "ted")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
+        [NUnit.Framework.CategoryAttribute("DAS18988")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForwardPathIsSelected()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForwardPathIsSelectedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForwardPathIsSelectedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForwardPathIsSelec" +
+                    "ted", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_AdminPage",
+                        "Automations",
+                        "DAS18988",
+                        "Cleanup"});
+#line 293
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "AutomationName",
+                        "Description",
+                        "Active",
+                        "StopOnFailedAction",
+                        "Scope",
+                        "Run"});
+            table18.AddRow(new string[] {
+                        "18988_Automation",
+                        "18988",
+                        "true",
+                        "false",
+                        "All Applications",
+                        "Manual"});
+#line 294
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table18, "When ");
+#line 297
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 298
+ testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 300
+ testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 301
+ testRunner.When("User enters \'18988_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 302
+ testRunner.When("User selects \'Update application attributes\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 303
+ testRunner.When("User selects \'Computer Scheduled Test (Jo)\' option from \'Project or Evergreen\' au" +
+                    "tocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 304
+ testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 305
+ testRunner.When("User enters \'2\' text to \'Target Application\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 306
+ testRunner.Then("validation message \'Enter at least 3 characters\' is displayed below \'Target Appli" +
+                    "cation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 307
+ testRunner.When("User enters \'Autotest\' text to \'Target Application\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 308
+ testRunner.Then("validation message \'No results found\' is displayed below \'Target Application\' fie" +
+                    "ld", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 309
+ testRunner.When("User enters \'Creative MediaSource\' in the \'Target Application\' autocomplete field" +
+                    " and selects \'Creative MediaSource (A01) (35073)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 310
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 312
+ testRunner.Then("\'18988_Action\' content is displayed in the \'Action\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 313
+ testRunner.Then("\'Rationalisation\' content is displayed in the \'Task or Field\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 314
+ testRunner.Then("\'Computer Scheduled Test (Jo)\' content is displayed in the \'Project\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 315
+ testRunner.Then("\'Forward Path, Creative MediaSource (A01)\' content is displayed in the \'Value\' co" +
+                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

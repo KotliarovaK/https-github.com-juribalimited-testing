@@ -288,3 +288,28 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicati
 	Then 'Forward Path, Intel(R) Processor Graphics' content is displayed in the 'Value' column
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
 	Then 'Email Migration' content is displayed in the 'Project' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18988 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForwardPathIsSelected
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 18988_Automation | 18988       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '18988_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters '2' text to 'Target Application' textbox
+	Then validation message 'Enter at least 3 characters' is displayed below 'Target Application' field
+	When User enters 'Autotest' text to 'Target Application' textbox
+	Then validation message 'No results found' is displayed below 'Target Application' field
+	When User enters 'Creative MediaSource' in the 'Target Application' autocomplete field and selects 'Creative MediaSource (A01) (35073)' value
+	When User clicks 'CREATE' button
+	#Check Action grid
+	Then '18988_Action' content is displayed in the 'Action' column
+	Then 'Rationalisation' content is displayed in the 'Task or Field' column
+	Then 'Computer Scheduled Test (Jo)' content is displayed in the 'Project' column
+	Then 'Forward Path, Creative MediaSource (A01)' content is displayed in the 'Value' column
