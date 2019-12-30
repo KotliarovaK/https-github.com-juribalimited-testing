@@ -51,10 +51,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
 	When User navigates to the 'Application' details page for '7zip' item
 	Then Details page for '7zip' item is displayed to the user
-	Then Project Switcher in the Top bar on Item details page is closed
+	Then dropdown is not opened
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 	When User switches to the "Computer Scheduled Test (Jo)" project in the Top bar on Item details page
-	Then Project Switcher in the Top bar on Item details page is closed
+	Then dropdown is not opened
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857

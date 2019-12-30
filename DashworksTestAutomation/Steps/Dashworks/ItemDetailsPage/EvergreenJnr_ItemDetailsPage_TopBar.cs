@@ -35,20 +35,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             topBar.ProjectSwitcherDropdownTopBar.Click();
         }
 
-        [Then(@"Project Switcher in the Top bar on Item details page is open")]
-        public void ThenProjectSwitcherInTheTopBarOnItemDetailsPageIsOpen()
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
-            Utils.Verify.IsTrue(topBar.GetProjectSwitcherDisplayedState(), "Project Switcher panel should be displayed for User!");
-        }
-
-        [Then(@"Project Switcher in the Top bar on Item details page is closed")]
-        public void ThenProjectSwitcherInTheTopBarOnItemDetailsPageIsClosed()
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
-            Utils.Verify.IsFalse(topBar.GetProjectSwitcherDisplayedState(), "Project Switcher panel should not be displayed for User!");
-        }
-
         [When(@"User switches to the ""(.*)"" project in the Top bar on Item details page")]
         public void WhenUserSwitchesToTheProjectInTheTopBarOnItemDetailsPage(string projectName)
         {
