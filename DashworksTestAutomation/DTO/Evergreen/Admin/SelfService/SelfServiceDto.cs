@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DashworksTestAutomation.Helpers;
 using Newtonsoft.Json;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 {
     class SelfServiceDto
     {
+        private string _id;
+
         [JsonProperty("serviceId")]
         public int ServiceId { get; set; }
 
@@ -47,6 +50,16 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 
         [JsonProperty("createdByUser")]
         public string CreatedByUser { get; set; }
+
+        public int GetId()
+        {
+            if (string.IsNullOrEmpty(_id))
+            {
+                _id = this.ServiceId > 0 ?
+                    this.ServiceId.ToString() : DatabaseHelper.GetSelfServiceId(this.Name, this.CreatedByUser);
+            }
+            return int.Parse(_id);
+        }
 
         public bool Equals(SelfServiceDto value)
         {
@@ -121,7 +134,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 
             if (messages.Any())
             {
-                
+
                 var result = messages.Aggregate((a, b) => a + "\r\n " + b);
                 throw new Exception(result);
             }

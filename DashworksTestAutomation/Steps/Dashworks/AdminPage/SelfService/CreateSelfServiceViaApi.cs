@@ -12,6 +12,7 @@ using RestSharp;
 using Newtonsoft.Json;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 {
@@ -140,27 +141,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         }
 
         [Then(@"User deletes the Self Services via API")]
-        public void ThenUserDeletesSelfServicesViaApi(Array SelfServiceIdsToDelete)
+        public void ThenUserDeletesSelfServicesViaApi()
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
+            List<int> selfServicesIDs = new List<int>();
 
             foreach (SelfServiceDto SelfService in _selfServices.Value)
             {
-
-                var response = _client.Value.Delete(requestUri.GenerateRequest());
-
-                if (!response.StatusCode.Equals(HttpStatusCode.OK))
-                {
-                    throw new Exception($"Unable to get the Self Service: {response.StatusCode}, {response.ErrorMessage}");
-                }
-
-                var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(response.Content);
-                if (!SelfService.Equals(selfServiceObjResponse))
-                {
-                    throw new Exception("The created Self Service doesn't match to the received Self Service");
-                }
+                selfServicesIDs.Add(SelfService.ServiceId);
             }
 
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
+            var request = requestUri.GenerateRequest();
+            request.AddParameter("ServiceIds", selfServicesIDs.ToArray());
+            var response = _client.Value.Delete(request);
+
+            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            {
+                throw new Exception($"Unable to get the Self Service: {response.StatusCode}, {response.ErrorMessage}");
+            }
         }
     }
 }

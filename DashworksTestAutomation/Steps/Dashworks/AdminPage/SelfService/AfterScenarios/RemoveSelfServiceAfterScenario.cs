@@ -35,7 +35,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
             {
                 List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
 
-
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
 
                 var request = requestUri.GenerateRequest();
