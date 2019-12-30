@@ -17,6 +17,7 @@ using HeaderElement = System.Web.Caching.HeaderElement;
 
 namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
+    //TODO Rename this class
     [Binding]
     internal class EvergreenJnr_ItemDetailsPage_TabContent : SpecFlowContext
     {

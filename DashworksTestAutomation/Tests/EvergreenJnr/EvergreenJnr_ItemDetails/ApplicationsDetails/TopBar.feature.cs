@@ -404,14 +404,14 @@ this.FeatureBackground();
 #line 53
  testRunner.Then("Details page for \'7zip\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54
- testRunner.Then("Project Switcher in the Top bar on Item details page is closed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("dropdown is not opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 55
  testRunner.Then("projects on the Project Switcher panel are displayed in alphabetical order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 56
  testRunner.When("User switches to the \"Computer Scheduled Test (Jo)\" project in the Top bar on Ite" +
                     "m details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
- testRunner.Then("Project Switcher in the Top bar on Item details page is closed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("dropdown is not opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
  testRunner.Then("projects on the Project Switcher panel are displayed in alphabetical order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

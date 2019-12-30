@@ -687,6 +687,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
             return Driver.FindElements(By.XPath($"{_dropdownOptions}/preceding-sibling::i[contains(@class, 'material-icons')]"));
         }
+
+        public bool IsDropdownOpened()
+        {
+            return Driver.FindElements(By.XPath(_dropdownOptions)).Any();
+        }
+
         #endregion
 
         #region Dropdown for field
