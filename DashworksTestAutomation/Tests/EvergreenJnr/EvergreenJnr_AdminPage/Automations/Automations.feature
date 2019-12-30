@@ -531,26 +531,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @DAS17216 @Not_Ready
-#Change value after gold data complete added
-#Run at least two automations
-#Add to Gold data Test_Automation1 and Test_Automation2 automations
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @DAS17216
 Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName         | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_First  | test        | true   | false              | All Devices | Manual |
+	| Test_Automation_Second | test        | true   | false              | All Users   | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Test_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
-	Then 'Are you sure you wish to run 2 automations?' text is displayed on inline tip banner
+	#Then 'Are you sure you wish to run 2 automations?' text is displayed on inline tip banner
 	When User clicks 'RUN' button on inline tip banner
-	Then '2 automations started,' text is displayed on inline success banner
+	#Then '2 automations started,' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
-	When User enters "Test_Automation1" text in the Search field for "Automation" column
+	When User enters "Test_Automation_First" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User enters "Test_Automation2" text in the Search field for "Automation" column
+	When User enters "Test_Automation_Second" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17172 @Not_Ready
