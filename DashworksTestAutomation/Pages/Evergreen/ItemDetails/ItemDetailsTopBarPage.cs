@@ -72,11 +72,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             return Driver.FindElements(selector).Select(x => x.Text).ToList();
         }
 
-        public bool GetProjectSwitcherDisplayedState()
-        {
-            return Driver.IsElementDisplayed(By.XPath(".//div[contains(@class, 'transformPanel')]"));
-        }
-
         public IWebElement GetSelectedProjectOnTopBarByName(string projectName)
         {
             var selector = By.XPath($".//span[text()='{projectName}']/ancestor::div[@class='details-project-selector']");

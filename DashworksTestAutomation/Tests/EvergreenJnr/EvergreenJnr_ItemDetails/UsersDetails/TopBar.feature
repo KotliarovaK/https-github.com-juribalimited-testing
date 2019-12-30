@@ -49,10 +49,10 @@ Scenario: EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAll
 Scenario: EvergreenJnr_UsersList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
 	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for 'ACG370114' item is displayed to the user
-	Then Project Switcher in the Top bar on Item details page is closed
+	Then dropdown is not opened
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
-	Then Project Switcher in the Top bar on Item details page is closed
+	Then dropdown is not opened
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS19241
