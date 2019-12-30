@@ -13,7 +13,22 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
         private string _id;
 
         [JsonProperty("serviceId")]
-        public int ServiceId { get; set; }
+        public int ServiceId
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_id))
+                {
+                    _id = string.IsNullOrEmpty(_id) ?
+                        DatabaseHelper.GetSelfServiceIdByIdentifier(this.ServiceIdentifier) : _id;
+                }
+                return int.Parse(_id);
+            }
+            set
+            {
+                _id = value.ToString();
+            }
+        }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -50,16 +65,6 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 
         [JsonProperty("createdByUser")]
         public string CreatedByUser { get; set; }
-
-        public int GetId()
-        {
-            if (string.IsNullOrEmpty(_id))
-            {
-                _id = this.ServiceId > 0 ?
-                    this.ServiceId.ToString() : DatabaseHelper.GetSelfServiceId(this.Name, DatabaseHelper.getuser);
-            }
-            return int.Parse(_id);
-        }
 
         public bool Equals(SelfServiceDto value)
         {

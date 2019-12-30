@@ -43,6 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
+                    _selfServices.Value.Add(new SelfServiceDto() { ServiceIdentifier = SelfService.ServiceIdentifier });
                     throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
                 }
 

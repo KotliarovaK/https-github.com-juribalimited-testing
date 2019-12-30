@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
 
                 var request = requestUri.GenerateRequest();
 
-                request.AddParameter("ServiceIds", Ids.ToArray());
+                request.AddObject(new { ServiceIds = Ids.ToArray() });
 
                 var response = _client.Value.Delete(request);
 

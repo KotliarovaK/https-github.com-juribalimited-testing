@@ -651,6 +651,20 @@ namespace DashworksTestAutomation.Helpers
             return selfServiceId;
         }
 
+        public static string GetSelfServiceId(string selfServiceName)
+        {
+            string query = $"SELECT [SelfServiceId] FROM [PM].[SS].[SelfService] WHERE [Name] = {selfServiceName}";
+            var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return selfServiceId;
+        }
+
+        public static string GetSelfServiceIdByIdentifier(string identifier)
+        {
+            string query = $"SELECT [SelfServiceId] from [PM].[SS].[SelfService] where [SelfServiceIdentifier] = '{identifier}'";
+            var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return selfServiceId;
+        }
+
         #endregion
     }
 }
