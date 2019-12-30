@@ -436,6 +436,14 @@ namespace DashworksTestAutomation.Helpers
             return userId;
         }
 
+        public static string GetFullNameByUserName(string userName)
+        {
+            var fullName = DatabaseHelper.ExecuteReader(
+                $"select up.FullName from [DesktopBI].[dbo].[UserProfiles] up join [aspnetdb].[dbo].[aspnet_Users] u on up.UserId = u.UserId where u.LoweredUserName = '{userName}'",
+                0)[0];
+            return fullName;
+        }
+
         public static void DeleteUser(UserDto user)
         {
             DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_UsersInRoles] where [UserId] = '{user.Id}'");
