@@ -405,7 +405,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	| Pie        | WidgetForDAS17467 | ListForDAS17467 | Owner Compliance | Count             | Owner Compliance ASC | true       |
 	And User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
+	And Color Scheme dropdown displayed with 'Compliance' placeholder 
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS17467' Widget is displayed to the user

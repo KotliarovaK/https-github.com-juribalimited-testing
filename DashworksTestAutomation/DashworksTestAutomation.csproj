@@ -237,12 +237,12 @@
     <Compile Include="Pages\Evergreen\BaseDialogPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseInlineBannerElement.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseRightSideActionsPanel.cs" />
+    <Compile Include="Pages\Evergreen\Base\BaseTable.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetailsTopBarPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseNavigationElements.cs" />
-    <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\EvergreenDashboardsPage.cs" />
@@ -375,6 +375,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\SelfServiceAgGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\AfterScenario\RemoveSlotAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\Api\CreateSlotViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\CreateSlot.cs" />
@@ -390,6 +391,7 @@
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
+    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseTable.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_LeftMenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListMethods.cs" />
@@ -958,6 +960,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EditSelfService.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfServiceAgGrid.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelfServiceAgGrid.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature.cs">
       <DependentUpon>DeleteBucketsFromTheTeam.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1160,6 +1167,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EvergreenDetails.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\CapacityUnit_ApplicationsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapacityUnit_ApplicationsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\CapacityUnit_DevicesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapacityUnit_DevicesPage.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\TopBar.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1189,6 +1206,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CheckingFieldsContent.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\CapacityUnit_MailboxesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapacityUnit_MailboxesPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\TopBar.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1344,6 +1366,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Offboard_MailboxesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\CapacityUnit_UsersPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapacityUnit_UsersPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Offboard_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2107,6 +2134,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditSelfService1.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfServiceAgGrid.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SelfServiceAgGrid.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteBucketsFromTheTeam.feature.cs</LastGenOutput>
@@ -2269,6 +2300,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EvergreenDetails.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\CapacityUnit_ApplicationsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityUnit_ApplicationsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\CapacityUnit_DevicesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityUnit_DevicesPage.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TopBar.feature.cs</LastGenOutput>
@@ -2288,6 +2327,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithFieldsContent\CheckingFieldsContent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckingFieldsContent.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\CapacityUnit_MailboxesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityUnit_MailboxesPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2412,6 +2455,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Offboard_MailboxesPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Offboard_MailboxesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\CapacityUnit_UsersPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityUnit_UsersPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Offboard_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

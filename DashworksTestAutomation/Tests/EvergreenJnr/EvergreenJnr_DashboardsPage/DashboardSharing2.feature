@@ -17,10 +17,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then table content is present
-	
-	When User create custom list with "ADeviceListFor14841_Admin" name
+	When User create dynamic list with "ADeviceListFor14841_Admin" name on "Devices" page
 	Then "ADeviceListFor14841_Admin" list is displayed to user
-	
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person

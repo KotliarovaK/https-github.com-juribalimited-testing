@@ -708,8 +708,6 @@ this.FeatureBackground();
                         "Readiness"});
 #line 170
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table12, "Then ");
-#line 182
- testRunner.Then("\'{checkbox}\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Checkbox"});
@@ -733,7 +731,7 @@ this.FeatureBackground();
                         "Slot"});
             table13.AddRow(new string[] {
                         "Readiness"});
-#line 183
+#line 182
  testRunner.And("Checkboxes are checked on the Column Settings panel for \"Key\" Column Settings pan" +
                     "el:", ((string)(null)), table13, "And ");
 #line hidden

@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabFor
 	Then Details page for 'AAD1011948' item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
 	When User navigates to the 'Hardware Summary' left submenu item
-	Then element table is displayed on the Details page
+	Then table is displayed
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15913
 Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelOfGroupedRows

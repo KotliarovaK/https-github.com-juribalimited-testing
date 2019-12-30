@@ -668,8 +668,7 @@ this.FeatureBackground();
 #line 128
  testRunner.When("User navigates to the \'Device Owner\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 129
- testRunner.Then("field with \"Last Logoff Date\" text is not displayed in expanded tab on the Detail" +
-                    "s Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Last Logoff Date\' field is not displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -731,8 +730,7 @@ this.FeatureBackground();
 #line 135
  testRunner.When("User navigates to the \'Mailbox Owner\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 136
- testRunner.Then("field with \"Last Logoff Date\" text is not displayed in expanded tab on the Detail" +
-                    "s Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Last Logoff Date\' field is not displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

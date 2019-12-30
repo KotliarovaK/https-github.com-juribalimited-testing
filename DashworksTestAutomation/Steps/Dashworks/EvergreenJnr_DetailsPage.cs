@@ -661,12 +661,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Incorrect rows count");
         }
 
+        #region Edit/Pen button for field
+
         [When(@"User clicks on edit button for '(.*)' field")]
         public void WhenUserClicksOnEditButtonForField(string fieldName)
         {
             var page = _driver.NowAt<DetailsPage>();
             page.ClickEditFieldButton(fieldName);
         }
+
+        [Then(@"button for editing the '(.*)' field is displayed")]
+        public void ThenButtonForEditingTheFieldIsDisplayed(string fieldName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            Verify.IsTrue(page.EditFieldButtonDisplaying(fieldName), $"Edit button for '{fieldName}' field is not displayed");
+        }
+
+        [Then(@"button for editing the '(.*)' field is not displayed")]
+        public void ThenButtonForEditingTheFieldIsNotDisplayed(string fieldName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            var t = page.EditFieldButtonDisplaying(fieldName);
+            Verify.IsFalse(t, $"Edit button for '{fieldName}' field is displayed");
+        }
+
+        #endregion
 
         [Then(@"""(.*)"" link is displayed on the Details Page")]
         public void ThenLinkIsDisplayedOnTheDetailsPage(string linkName)
