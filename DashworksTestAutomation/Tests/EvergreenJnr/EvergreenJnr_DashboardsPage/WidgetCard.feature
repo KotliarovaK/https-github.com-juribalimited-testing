@@ -45,17 +45,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
 	When Dashboard with 'Dashboard for DAS16138' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title             | List         | Type      | AggregateBy                          | AggregateFunction | Drilldown |
 	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16138' Widget is displayed to the user
 	When User clicks Edit mode trigger on Dashboards page
-	And User clicks data in card 'WidgetForDAS16138' widget
-	Then Save as a new list option is available
+	When User clicks data in card 'WidgetForDAS16138' widget
+	#Then Save as a new list option is available
 	Then "8" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "1803: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
@@ -98,61 +98,60 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInWidget
 	When User clicks 'Applications' on the left-hand menu
-	And User clicks the Filters button
-	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| TRUE               | 
-	And User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	When User clicks the Filters button
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
 	| Compliance |
-	And User move 'Compliance' column to 'Application' column
-	And User move 'Application' column to 'Vendor' column
-	And User clicks on 'Compliance' column header
-	And User create custom list with "1803 App Compliance" name
+	When User move 'Compliance' column to 'Application' column
+	When User move 'Application' column to 'Vendor' column
+	When User clicks on 'Compliance' column header
+	When User create dynamic list with "1803 App Compliance" name on "Applications" page
 	Then "1803 App Compliance" list is displayed to user
 	
 	When Dashboard with 'Dashboard for DAS15355' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks Edit mode trigger on Dashboards page
 
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title             | List                | Type       |
 	| Card       | WidgetForDAS15355 | 1803 App Compliance | First Cell |
+	Then Widget Preview is displayed to the user
 	Then Colour Scheme dropdown is not displayed to the user
+	
 	When User selects 'Text Only' in the 'Layout' dropdown
 	Then Text Only is displayed for Card widget on Preview
-	And 'Red' color is displayed for Card Widget on Preview
+	Then 'Red' color is displayed for Card Widget on Preview
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS15355' Widget is displayed to the user
 	
 	Then Text Only is displayed for Card widget
-	And 'Red' color is displayed for Card Widget
+	Then 'Red' color is displayed for Card Widget
 	
 	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
-	And 'Red' color is displayed for Card Widget on Preview
+	Then 'Red' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button
 	Then 'WidgetForDAS15355' Widget is displayed to the user
 	
 	Then 'Red' color is displayed for Card Widget
-	And Icon and Text is displayed for Card widget
+	Then Icon and Text is displayed for Card widget
 	
 	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
-	And 'Red' color is displayed for Card Widget on Preview
+	Then 'Red' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button 
 	Then 'WidgetForDAS15355' Widget is displayed to the user
 
 	Then 'Red' color is displayed for Card Widget
-	And Icon Only is displayed for Card widget
+	Then Icon Only is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15134 @DAS16263 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
@@ -536,8 +535,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	When User clicks Edit mode trigger on Dashboards page
 	Then Value '17,427' is displayed in the card 'WidgetForDAS16844' widget
 	When User clicks data in card 'WidgetForDAS16844' widget
-	Then Save as a new list option is available
-	And "17,427" rows are displayed in the agGrid
+	#Then Save as a new list option is available
+	Then "17,427" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16844 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItems
