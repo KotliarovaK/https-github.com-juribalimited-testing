@@ -436,6 +436,15 @@ namespace DashworksTestAutomation.Helpers
             return userId;
         }
 
+        public static string GetUserIdByFullName(string fullName)
+        {
+            var userId =
+                DatabaseHelper.ExecuteReader(
+                    $"select [UserId] from [DesktopBI].[dbo].[UserProfiles] where [FullName] = '{fullName}'",
+                    0)[0];
+            return userId;
+        }
+
         public static string GetFullNameByUserName(string userName)
         {
             var fullName = DatabaseHelper.ExecuteReader(
