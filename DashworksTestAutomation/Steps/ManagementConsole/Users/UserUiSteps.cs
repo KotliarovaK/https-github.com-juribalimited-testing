@@ -35,6 +35,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
             _users = users;
         }
 
+        //| Username | FullName | Password | ConfirmPassword | Roles |
         [When(@"User creates new clear User")]
         public void WhenUserCreatesNewClearUser(Table table)
         {
@@ -43,6 +44,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
             CreateUser(user);
         }
 
+        //| Username | FullName | Password | ConfirmPassword | Roles |
         [When(@"User create new User")]
         public void WhenUserCreateNewUser(Table table)
         {

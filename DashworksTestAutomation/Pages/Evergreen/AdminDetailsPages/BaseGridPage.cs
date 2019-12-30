@@ -59,6 +59,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #endregion
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='agGridTable']")]
+        public IWebElement AgGrid { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//li//label//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> DropdownTaskItemsList { get; set; }
 
