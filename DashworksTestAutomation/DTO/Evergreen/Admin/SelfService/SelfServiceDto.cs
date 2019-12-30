@@ -56,7 +56,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
             if (string.IsNullOrEmpty(_id))
             {
                 _id = this.ServiceId > 0 ?
-                    this.ServiceId.ToString() : DatabaseHelper.GetSelfServiceId(this.Name, this.CreatedByUser);
+                    this.ServiceId.ToString() : DatabaseHelper.GetSelfServiceId(this.Name, DatabaseHelper.getuser);
             }
             return int.Parse(_id);
         }
