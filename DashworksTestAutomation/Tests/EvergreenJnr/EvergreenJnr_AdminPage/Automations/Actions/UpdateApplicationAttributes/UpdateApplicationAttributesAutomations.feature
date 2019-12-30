@@ -276,8 +276,14 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicati
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
 	Then 'Barry's User Project' content is displayed in the 'Project' column
 	Then 'Forward Path, Hilfe zu Verzeichnisdiensten (A01)' content is displayed in the 'Value' column
-	#Update Action
+	#Check Action value
 	When User clicks content from "Action" column
+	Then "18978_Action" content is displayed in "Action Name" field
+	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
+	Then 'Barry's User Project' content is displayed in 'Project or Evergreen' autocomplete
+	Then 'FORWARD PATH' content is displayed in 'Rationalisation' dropdown
+	Then 'Hilfe zu Verzeichnisdiensten (32123)' content is displayed in 'Target Application' textbox
+	#Update Action
 	When User enters 'New_Action' text to 'Action Name' textbox
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
