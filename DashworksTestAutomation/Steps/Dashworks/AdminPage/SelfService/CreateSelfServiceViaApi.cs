@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 {
@@ -78,10 +79,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 }
 
                 var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(response.Content);
-                if (!SelfService.Equals(selfServiceObjResponse))
-                {
-                    throw new Exception("The created Self Service doesn't match to the received Self Service");
-                }
+                Verify.IsTrue(SelfService.CompareTo(selfServiceObjResponse),"Self Service ");
             }
         }
 
@@ -144,21 +142,103 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         [Then(@"User deletes the Self Services via API")]
         public void ThenUserDeletesSelfServicesViaApi()
         {
-            List<int> selfServicesIDs = new List<int>();
+            if (!_selfServices.Value.Any())
+                return;
 
-            foreach (SelfServiceDto SelfService in _selfServices.Value)
+            try
             {
-                selfServicesIDs.Add(SelfService.ServiceId);
+                List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
+
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
+
+                var request = requestUri.GenerateRequest();
+
+                request.AddObject(new { ServiceIds = Ids.ToArray() });
+
+                var response = _client.Value.Delete(request);
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    Logger.Write($"Self Service was not deleted: {response.StatusCode}, {response.ErrorMessage}");
+                }
             }
-
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
-            var request = requestUri.GenerateRequest();
-            request.AddParameter("ServiceIds", selfServicesIDs.ToArray());
-            var response = _client.Value.Delete(request);
-
-            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            catch (Exception e)
             {
-                throw new Exception($"Unable to get the Self Service: {response.StatusCode}, {response.ErrorMessage}");
+                Logger.Write($"Unable to delete Self Service via API: {e}");
+            }
+        }
+
+        [Then(@"User Enables the Self Service via API")]
+        public void ThenUserEnablesTheSelfServiceViaApi()
+        {
+            if (!_selfServices.Value.Any())
+                return;
+
+            try
+            {
+                List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
+
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
+
+                var request = requestUri.GenerateRequest();
+
+                request.AddObject(new { ServiceIds = Ids.ToArray() });
+                request.AddObject(new { ActionRequestType = "enable" });
+
+                var response = _client.Value.Put(request);
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    Logger.Write($"Self Service was not enabled: {response.StatusCode}, {response.ErrorMessage}");
+                }
+
+                _selfServices.Value.Select(x => x.Enabled = true);
+
+                foreach (SelfServiceDto selfService in _selfServices.Value)
+                {
+                    selfService.Enabled = true;
+                }
+
+                var a = _selfServices;
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Unable to enable Self Service via API: {e}");
+            }
+        }
+
+        [Then(@"User Disables the Self Service via API")]
+        public void ThenUserDisablesTheSelfServiceViaApi()
+        {
+            if (!_selfServices.Value.Any())
+                return;
+
+            try
+            {
+                List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
+
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
+
+                var request = requestUri.GenerateRequest();
+
+                request.AddObject(new { ServiceIds = Ids.ToArray() });
+                request.AddObject(new { ActionRequestType = "disable" });
+
+                var response = _client.Value.Put(request);
+
+                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    Logger.Write($"Self Service was not disabled: {response.StatusCode}, {response.ErrorMessage}");
+                }
+
+                foreach (SelfServiceDto selfService in _selfServices.Value)
+                {
+                    selfService.Enabled = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Unable to disable Self Service via API: {e}");
             }
         }
     }

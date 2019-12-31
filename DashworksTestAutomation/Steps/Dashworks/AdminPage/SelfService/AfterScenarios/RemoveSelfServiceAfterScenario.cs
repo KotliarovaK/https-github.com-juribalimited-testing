@@ -46,15 +46,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
                     Logger.Write($"Self Service was not deleted: {response.StatusCode}, {response.ErrorMessage}");
-                    //try
-                    //{
-                    //    var cfId = DatabaseHelper.GetCustomFieldId(SelfService.FieldName);
-                    //    Logger.Write($"Custom filed with '{SelfService.FieldName}' name and '{cfId}' id is still present in the database");
-                    //}
-                    //catch
-                    //{
-                    //    Logger.Write($"Custom filed with '{SelfService.FieldName}' was removed from database");
-                    //}
                 }
             }
             catch (Exception e)
