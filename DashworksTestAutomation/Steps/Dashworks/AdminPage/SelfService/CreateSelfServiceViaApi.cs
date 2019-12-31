@@ -150,7 +150,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
 
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
-
                 var request = requestUri.GenerateRequest();
 
                 request.AddObject(new { ServiceIds = Ids.ToArray() });
@@ -179,7 +178,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
 
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
-
                 var request = requestUri.GenerateRequest();
 
                 request.AddObject(new { ServiceIds = Ids.ToArray() });
@@ -218,7 +216,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
 
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
-
                 var request = requestUri.GenerateRequest();
 
                 request.AddObject(new { ServiceIds = Ids.ToArray() });
