@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User navigates to the 'Advanced' left menu item
-	And User changes List Page Size to "2500"
+	When User enters '2500' text to 'List Page Size' textbox
 	And User clicks 'UPDATE' button
 	Then 'User preferences have been changed' text is displayed on inline success banner
 	When User clicks 'Devices' on the left-hand menu
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User navigates to the 'Advanced' left menu item
-	And User changes List Page Size to "1000"
+	When User enters '1000' text to 'List Page Size' textbox
 	And User clicks 'UPDATE' button
 	Then 'User preferences have been changed' text is displayed on inline success banner
 
@@ -117,21 +117,21 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	When User selects 'Normal' in the 'Display Mode' dropdown
 	When User clicks 'UPDATE' button
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS13026
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS13026 @Remove_Profile_Changes
 Scenario: EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User navigates to the 'Advanced' left menu item
-	When User changes List Page Size to "99"
-	Then List Page Size is changed to "100"
-	When User changes List Page Size to "5001"
-	Then List Page Size is changed to "5000"
-	When User changes List Pages to Cache to "2"
-	Then List Pages to Cache is changed to "3"
-	When User changes List Pages to Cache to "16"
-	Then List Pages to Cache is changed to "15"
-	When User changes List Pages to Cache to "10"
-	And User changes List Page Size to "1000"
+	When User enters '99' text to 'List Page Size' textbox
+	Then '100' content is displayed in 'List Page Size' textbox
+	When User enters '5001' text to 'List Page Size' textbox
+	Then '5000' content is displayed in 'List Page Size' textbox
+	When User enters '2' text to 'List Pages to Cache' textbox
+	Then '3' content is displayed in 'List Pages to Cache' textbox
+	When User enters '16' text to 'List Pages to Cache' textbox
+	Then '15' content is displayed in 'List Pages to Cache' textbox
+	When User enters random number between '100' and '5000' to 'List Page Size' textbox
+	When User enters random number between '3' and '15' to 'List Pages to Cache' textbox
 	And User clicks 'UPDATE' button
 	Then 'User preferences have been changed' text is displayed on inline success banner
 
