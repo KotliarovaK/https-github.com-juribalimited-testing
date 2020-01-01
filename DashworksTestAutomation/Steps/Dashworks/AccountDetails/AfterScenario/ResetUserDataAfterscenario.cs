@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -13,7 +9,7 @@ using DashworksTestAutomation.Utils;
 using RestSharp;
 using TechTalk.SpecFlow;
 
-namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails
+namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails.AfterScenario
 {
     [Binding]
     class ResetUserDataAfterScenario : SpecFlowContext
@@ -30,10 +26,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails
         [AfterScenario("Remove_Profile_Changes")]
         public void RemoveProfileChangesAfterScenario()
         {
+            //Update Account details
             try
             {
-                //Update Account details
-
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}/userProfile/updateAccountDetails";
 
                 var request = requestUri.GenerateRequest();
@@ -48,9 +43,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails
                 {
                     Logger.Write($"Unable to drop Account details: {response.StatusCode}, {response.ErrorMessage}");
                 }
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Unable to drop account details: {e}");
+            }
 
-                //Update Preferences
-
+            //Update Preferences
+            try
+            {
                 var prefRequestUri = $"{UrlProvider.RestClientBaseUrl}/userProfile/updatePreferences";
 
                 var prefRequest = prefRequestUri.GenerateRequest();
@@ -69,7 +70,30 @@ namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails
             }
             catch (Exception e)
             {
-                Logger.Write($"Unable to drop User profile changes: {e}");
+                Logger.Write($"Unable to drop Preferences: {e}");
+            }
+
+            //Updated Advanced settings
+            try
+            {
+                var prefRequestUri = $"{UrlProvider.RestClientBaseUrl}/userProfile/updatePreferences";
+
+                var prefRequest = prefRequestUri.GenerateRequest();
+                prefRequest.AddParameter("gridPageCache", "10");
+                prefRequest.AddParameter("gridPageSize", 1000);
+                prefRequest.AddParameter("userId", DatabaseHelper.GetUserId(_userDto.Username));
+
+                var prefResponse = _client.Value.Put(prefRequest);
+
+                if (!prefResponse.StatusCode.Equals(HttpStatusCode.OK))
+                {
+                    Logger.Write(
+                        $"Unable to drop Advanced settings: {prefResponse.StatusCode}, {prefResponse.ErrorMessage}");
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Unable to drop Advanced settings: {e}");
             }
         }
 
