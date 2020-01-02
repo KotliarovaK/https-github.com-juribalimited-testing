@@ -93,3 +93,56 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppl
 	When User clicks on edit button for 'Rationalisation' field
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button on popup
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19448 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationFromKeepToForwardPathIsConsistentWithProjectRationalisationBehaviour
+		#--app 1 to app 2--#
+	When User navigates to the 'Application' details page for the item with '251' ID
+	Then Details page for 'AnalogX TrackSeek' item is displayed to the user
+	When User navigates to the 'Projects' parent left menu item
+	And User navigates to the 'Evergreen Details' left submenu item
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'PID Control Toolset 6.0' in the 'Application' autocomplete field and selects 'National Instruments NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) 7.1.0' value
+	When User clicks 'UPDATE' button on popup
+	Then following content is displayed on the Details Page
+	| Title           | Value                                                                           |
+	| Rationalisation | FORWARD PATH                                                                    |
+	| Target App      | National Instruments NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) 7.1.0 |
+		#--app 2--#
+	When User navigates to the 'Application' details page for the item with '151' ID
+	Then Details page for 'NI LabVIEW PID Control Toolset 6.0' item is displayed to the user
+	When User navigates to the 'Projects' parent left menu item
+	And User navigates to the 'Evergreen Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title           | Value |
+	| Rationalisation | KEEP  |
+		#--app 2 to app 3--#
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Carbon Copy Agent Package' in the 'Application' autocomplete field and selects 'Altiris Carbon Copy Agent Package 6.2.1144' value
+	When User clicks 'UPDATE' button on popup
+	When User clicks 'UPDATE' button on popup
+	Then following content is displayed on the Details Page
+	| Title           | Value                                      |
+	| Rationalisation | FORWARD PATH                               |
+	| Target App      | Altiris Carbon Copy Agent Package 6.2.1144 |
+		#--app 1 with app 3--#
+	When User navigates to the 'Application' details page for the item with '251' ID
+	Then Details page for 'AnalogX TrackSeek' item is displayed to the user
+	When User navigates to the 'Projects' parent left menu item
+	And User navigates to the 'Evergreen Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title           | Value                                      |
+	| Rationalisation | FORWARD PATH                               |
+	| Target App      | Altiris Carbon Copy Agent Package 6.2.1144 |
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button on popup
+	When User navigates to the 'Application' details page for the item with '151' ID
+	Then Details page for 'NI LabVIEW PID Control Toolset 6.0' item is displayed to the user
+	When User navigates to the 'Projects' parent left menu item
+	And User navigates to the 'Evergreen Details' left submenu item
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button on popup

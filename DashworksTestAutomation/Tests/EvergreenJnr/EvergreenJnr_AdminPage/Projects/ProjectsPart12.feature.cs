@@ -334,7 +334,7 @@ this.FeatureBackground();
 #line 72
  testRunner.And("User selects following Mailbox folder permissions", ((string)(null)), table6, "And ");
 #line 76
- testRunner.When("User checks \'Delegated mailboxes \' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Delegated mailboxes\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
  testRunner.And("User checks \'Owned mailboxes\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
