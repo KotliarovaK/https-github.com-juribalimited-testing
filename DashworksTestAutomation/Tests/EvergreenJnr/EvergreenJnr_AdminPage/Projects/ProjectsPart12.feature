@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| Permissions      |
 	| Author           |
 	| AvailabilityOnly |
-	When User checks 'Delegated mailboxes ' checkbox
+	When User checks 'Delegated mailboxes' checkbox
 	And User checks 'Owned mailboxes' checkbox
 	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
