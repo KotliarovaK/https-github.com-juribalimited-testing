@@ -12,8 +12,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     internal class ItemDetailsTopBarPage : SeleniumBasePage
     {
-        public const string ProjectOnSwitcherPanel = ".//mat-option[@class='mat-option ng-star-inserted']";
-
         public const string TopBarTitleSelector = ".//div[contains(@class,'topbar-item-label')]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle']")]
@@ -21,12 +19,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='topbar']")]
         public IWebElement TopBarOnItemDetailsPage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Evergreen']/ancestor::mat-select")]
-        public IWebElement DefaultProjectStatusInProjectSwitcherDropDown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ProjectOnSwitcherPanel)]
-        public IList<IWebElement> ProjectsOnSwitcherPanel { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

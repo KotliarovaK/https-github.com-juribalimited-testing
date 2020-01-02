@@ -59,24 +59,24 @@ Scenario: EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem
 	When User navigates to the 'Device' details page for '00BDM1JUR8IF419' item
 	Then Details page for '00BDM1JUR8IF419' item is displayed to the user
 	Then dropdown is not opened
-	When User clicks by Project Switcher in the Top bar on Item details page
-	Then '*Project K-Computer Scheduled Project' project is displayed first in Project Switcher
-	And 'Evergreen' project is not displayed in proposal list of in Project Switcher
+	Then '*Project K-Computer Scheduled Project' option is first in the 'Item Details Project' dropdown
+	Then following Values are not displayed in the 'Item Details Project' dropdown:
+	| Options   |
+	| Evergreen |
 	When User clicks refresh button in the browser
 	And User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	When User clicks by Project Switcher in the Top bar on Item details page
-	Then 'Evergreen' project is displayed first in Project Switcher
+	Then 'Evergreen' option is first in the 'Item Details Project' dropdown
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907 @DAS16857 @DAS17005
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857
 Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode

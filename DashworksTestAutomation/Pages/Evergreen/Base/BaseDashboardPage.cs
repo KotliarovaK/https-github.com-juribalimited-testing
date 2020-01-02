@@ -635,7 +635,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         //Get all span with text
-        private string _dropdownOptions = ".//mat-option//span[string-length(text())>0]";
+        private string _dropdownOptions = ".//mat-option[not(@aria-selected)]//span[string-length(text())>0]";
 
         public IWebElement GetDropdownValueByName(string dropdownName)
         {

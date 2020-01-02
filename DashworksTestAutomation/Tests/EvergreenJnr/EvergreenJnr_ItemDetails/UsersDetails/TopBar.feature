@@ -50,10 +50,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectsInTheTopBarOnItemDetailsPageAr
 	When User navigates to the 'User' details page for 'ACG370114' item
 	Then Details page for 'ACG370114' item is displayed to the user
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS19241
 Scenario Outline: EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode

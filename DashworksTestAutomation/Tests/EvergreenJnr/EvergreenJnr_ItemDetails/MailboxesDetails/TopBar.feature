@@ -27,10 +27,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectsInTheTopBarOnItemDetailsPa
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928 @DAS18405
 Scenario: EvergreenJnr_MailboxesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode

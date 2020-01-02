@@ -28,53 +28,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
-        [When(@"User clicks by Project Switcher in the Top bar on Item details page")]
-        public void WhenUserClicksByProjectSwitcherInTheTopBarOnItemDetailsPage()
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
-            topBar.ProjectSwitcherDropdownTopBar.Click();
-        }
-
-        [Then(@"projects on the Project Switcher panel are displayed in alphabetical order")]
-        public void ThenProjectsOnTheProjectSwitcherPanelAreDisplayedInAlphabeticalOrder()
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
-
-            topBar.ProjectSwitcherDropdownTopBar.Click();
-
-            if (topBar.DefaultProjectStatusInProjectSwitcherDropDown.Displayed())
-            {
-                var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).ToList();
-                Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Projects on the Project Switcher panel are not in alphabetical order!");
-            }
-            else
-            {
-                var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).Where(x => !x.Contains("Evergreen")).ToList();
-                Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Projects on the Project Switcher panel are not in alphabetical order!");
-            }
-
-            var filterElement = _driver.NowAt<BaseGridPage>();
-            filterElement.BodyContainer.Click();
-        }
-
-        [Then(@"'(.*)' project is displayed first in Project Switcher")]
-        public void ThenProjectIsDisplayedFirstInProjectSwitcher(string project)
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
-            var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).ToList();
-
-            Utils.Verify.That(list[0], Is.EqualTo(project), "Wrong first project displayed");
-        }
-
-        [Then(@"'(.*)' project is not displayed in proposal list of in Project Switcher")]
-        public void ThenProjectIsNotDuplicatedInProjectSwitcher(string project)
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
-            var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).ToList();
-
-            Utils.Verify.That(list.FindAll(x => x.Equals(project)).Count, Is.EqualTo(0), "Project name is duplicated");
-        }
-
         [Then(@"following Compliance items are displayed in Top bar on the Item details page:")]
         public void ThenFollowingComplianceItemsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
         {
