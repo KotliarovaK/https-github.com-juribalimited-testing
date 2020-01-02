@@ -10,10 +10,10 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDisabledDistributionSectionCan
 	When User navigates to the 'Application' details page for 'ACD Display 3.4' item
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Devices' left submenu item
-	When User switches to the "Email Migration" project in the Top bar on Item details page
+	When User selects 'Email Migration' in the 'Item Details Project' dropdown with wait
 	Then User click back button in the browser
 	Then 'Distribution' left menu item is expanded
-	Then "Evergreen" project is selected in the Top bar on Item details page
+	Then 'Evergreen' content is displayed in 'Item Details Project' dropdown
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16366 @DAS16246
 Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMenuSubItems

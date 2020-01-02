@@ -9,13 +9,13 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User navigates to the 'User' details page for 'ZZP911429' item
 	Then Details page for 'ZZP911429' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then 'No applications owned by this user' message is displayed on empty greed
 	When User navigates to the 'User' details page for 'LYZ6880619' item
 	Then Details page for 'LYZ6880619' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then "1" rows found label displays on Details Page
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrectlyOnProjectOwnedTab 
 	When User navigates to the 'User' details page for 'LYZ6880619' item
 	Then Details page for 'LYZ6880619' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then "Rationalisation" column is displayed to the user
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrec
 Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCorrectly
 	When User navigates to the 'User' details page for 'LYZ6880619' item
 	Then Details page for 'LYZ6880619' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	When User clicks "Quartus II 2.0 Web Edition Full" link on the Details Page
@@ -69,9 +69,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCor
 Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject
 	When User navigates to the 'User' details page for the item with '29342' ID
 	Then Details page for 'SNL594136' item is displayed to the user
-	When User switches to the "Windows 10 Migration - Depot" project in the Top bar on Item details page
+	When User selects 'Windows 10 Migration - Depot' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the 'Project Owned' left submenu item
 	Then 'Visio Professional 5.0b' content is displayed in the 'Current App' column
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	Then 'EarthLink Digital Music Player (A01)' content is displayed in the 'Current App' column

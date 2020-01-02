@@ -10,7 +10,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '01A921EFD05545818AA@bclabs.local' item
 	Then Details page for '01A921EFD05545818AA@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then User verifies data in the fields on details page
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 	#waiting for the RELINK process to be completed
 	When User waits for '3' seconds
 	When User navigates to the 'User' details page for '04D158C83A0142F3B79' item
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelinkOptionIsWorkedCorrectlyForPr
 Scenario: EvergreenJnr_MailboxesList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed
 	When User navigates to the 'Mailbox' details page for '00DB4000EDD84951993@bclabs.local' item
 	Then Details page for '00DB4000EDD84951993@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button

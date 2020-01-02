@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatValueForCapacityUnitIsChangingSucc
 	| cu_DAS19538_4 | DAS19538    | false     | Mailbox Evergreen Capacity Project |
 	When User navigates to the 'Mailbox' details page for '013DA2178AB4444CAF2@bclabs.local' item
 	Then Details page for '013DA2178AB4444CAF2@bclabs.local' item is displayed to the user
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatValueForCapacityUnitIsChangingSucc
 	| Title         | Value         |
 	| Capacity Unit | cu_DAS19538_4 |
 	When User navigates to the 'User' details page for the item with '93160' ID
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page

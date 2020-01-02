@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
-using HeaderElement = System.Web.Caching.HeaderElement;
 
 namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
-    //TODO Rename this class
     [Binding]
     internal class EvergreenJnr_ItemDetailsPage_TabContent : SpecFlowContext
     {
@@ -35,7 +24,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             page.CheckPageHeaderContainsText(pageName);
 
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Verify.IsTrue(detailsPage.GroupIcon.Displayed(), "Item details icon is not displayed");
+            Verify.IsTrue(detailsPage.GroupIcon.Displayed(), 
+                "Item details icon is not displayed on Item details page");
         }
     }
 }
