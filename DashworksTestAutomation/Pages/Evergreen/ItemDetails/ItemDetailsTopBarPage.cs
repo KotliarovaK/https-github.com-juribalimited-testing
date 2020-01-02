@@ -25,9 +25,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = ".//span[text()='Evergreen']/ancestor::mat-select")]
         public IWebElement DefaultProjectStatusInProjectSwitcherDropDown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='topbar-select']")]
-        public IWebElement ProjectSwitcherDropdownTopBar { get; set; }
-
         [FindsBy(How = How.XPath, Using = ProjectOnSwitcherPanel)]
         public IList<IWebElement> ProjectsOnSwitcherPanel { get; set; }
 
@@ -70,13 +67,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             var selector = By.XPath(".//div[@class='topbar-item-label']");
             return Driver.FindElements(selector).Select(x => x.Text).ToList();
-        }
-
-        public IWebElement GetSelectedProjectOnTopBarByName(string projectName)
-        {
-            var selector = By.XPath($".//span[text()='{projectName}']/ancestor::div[@class='details-project-selector']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
         }
 
         public IList<IWebElement> GetValuesColumnDataOfItemDetails()

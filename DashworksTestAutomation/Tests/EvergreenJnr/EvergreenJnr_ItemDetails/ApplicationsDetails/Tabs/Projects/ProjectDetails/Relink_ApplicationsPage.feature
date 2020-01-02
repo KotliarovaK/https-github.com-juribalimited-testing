@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then User verifies data in the fields on details page
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnteringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPo
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithOwnerToWithoutOwner
 	When User navigates to the 'Application' details page for the item with '4017' ID
 	Then Details page for 'Microsoft Exchange Client Language Pack - Lithuanian' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithoutOwnerToWithoutOwner
 	When User navigates to the 'Application' details page for the item with '4018' ID
 	Then Details page for 'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030' item is displayed to the user
-	When User switches to the "Project 00 M Computer Scheduled" project in the Top bar on Item details page
+	When User selects 'Project 00 M Computer Scheduled' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed
 	When User navigates to the 'Application' details page for 'Adobe Acrobat Reader 3.01 Original' item
 	Then Details page for 'Adobe Acrobat Reader 3.01 Original' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button

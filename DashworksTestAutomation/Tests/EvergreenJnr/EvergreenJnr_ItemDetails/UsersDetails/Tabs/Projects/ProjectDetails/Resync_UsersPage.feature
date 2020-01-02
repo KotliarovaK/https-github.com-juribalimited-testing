@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_CheckThatResyncOptionIsWorkedCorrectlyForProjectDetailsOnUsersPage
 	When User navigates to the 'User' details page for 'ZUF3029607' item
 	Then Details page for 'ZUF3029607' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RESYNC' button 

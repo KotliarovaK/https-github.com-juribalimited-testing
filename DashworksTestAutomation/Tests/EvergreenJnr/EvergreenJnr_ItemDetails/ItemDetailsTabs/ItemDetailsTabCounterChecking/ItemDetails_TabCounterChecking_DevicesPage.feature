@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPageInProjectMode
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	Then User sees following parent left menu items
 	| TabName          |
 	| Details          |

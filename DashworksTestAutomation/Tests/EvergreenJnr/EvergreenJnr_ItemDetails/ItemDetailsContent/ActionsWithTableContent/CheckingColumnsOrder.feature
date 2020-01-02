@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumn
 	| Owner Display Name |
 	| Operating System   |
 	| Compliance         |
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
 	| Hostname              |

@@ -522,7 +522,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdown(value, dropdownName);
             //Used for Projects Scope to wait for changes to be applied
             //TODO: 21.11.2019 Oleksandr - increased sleep from 3 to 7 seconds to make sure that change list operation is applied
-            Thread.Sleep(7000);
+            //Vitalii: decreased to 5 seconds. Contact me if you need to increase this number or tests start failing again
+            Thread.Sleep(5000);
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]

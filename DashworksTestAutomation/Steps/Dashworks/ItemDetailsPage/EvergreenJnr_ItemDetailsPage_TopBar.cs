@@ -35,31 +35,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             topBar.ProjectSwitcherDropdownTopBar.Click();
         }
 
-        [When(@"User switches to the ""(.*)"" project in the Top bar on Item details page")]
-        public void WhenUserSwitchesToTheProjectInTheTopBarOnItemDetailsPage(string projectName)
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
-            topBar.ProjectSwitcherDropdownTopBar.Click();
-
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetDropdownValueByName(projectName).Click();
-
-            _driver.WaitFor(() => topBar.ProjectsOnSwitcherPanel.Count == 0);
-
-            _driver.WaitForDataLoadingInActionsPanel();
-            _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
-
-            //waiting for menu to finish loading
-            Thread.Sleep(1500);
-        }
-
-        [Then(@"""(.*)"" project is selected in the Top bar on Item details page")]
-        public void ThenProjectIsSelectedInTheTopBarOnItemDetailsPage(string projectName)
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
-            Utils.Verify.IsTrue(topBar.GetSelectedProjectOnTopBarByName(projectName).Displayed(), $"{projectName} project is not displayed in Top Bar");
-        }
-
         [Then(@"projects on the Project Switcher panel are displayed in alphabetical order")]
         public void ThenProjectsOnTheProjectSwitcherPanelAreDisplayedInAlphabeticalOrder()
         {

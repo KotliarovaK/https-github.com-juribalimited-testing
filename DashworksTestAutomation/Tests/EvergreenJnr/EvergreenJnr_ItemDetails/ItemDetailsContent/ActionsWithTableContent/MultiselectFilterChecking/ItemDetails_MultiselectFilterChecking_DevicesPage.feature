@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	And User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	Then 'OUT OF SCOPE' content is displayed in the 'Stage for User Tasks' column
 	And 'TRUE' content is displayed in the 'Owner' column
 	And 'IGNORE' content is displayed in the 'Application Readiness' column
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Summary' left submenu item
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'GREEN' content is displayed in the 'Compliance' column
 	Then 'TRUE' content is displayed in the 'Installed' column
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Detail' left submenu item
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'GREEN' content is displayed in the 'Compliance' column
 	And Content in the 'Advertisement' column is equal to
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Advertisements' left submenu item
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	And User enters "Microsoft Office PowerPoint 2002 (XP)" text in the Search field for "Application" column
 	Then 'TierA Site01' content is displayed in the 'Site' column
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Site' column:
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Collections' left submenu item
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	And User enters "Collection A011166A" text in the Search field for "Collection" column
 	Then 'SMS/SCCM 2007' content is displayed in the 'Source Type' column
 	Then 'A01 SMS (Spoof)' content is displayed in the 'Source' column
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
 	And User navigates to the 'Hardware Rules' left submenu item
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	Then 'AMBER' content is displayed in the 'Compliance' column
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Compliance' column:
 	| Values |
@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
 	And User navigates to the 'Application Issues' left submenu item
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	And User enters "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" text in the Search field for "Application" column
 	Then 'TierA Site01' content is displayed in the 'Site' column
 	Then 'TRUE' content is displayed in the 'Installed' column

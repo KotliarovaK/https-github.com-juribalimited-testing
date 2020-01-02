@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
 	Then Details page for '00B5CCB89AD0404B965@bclabs.local' item is displayed to the user
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then User sees following parent left menu items
 	| TabName  |
 	| Details  |

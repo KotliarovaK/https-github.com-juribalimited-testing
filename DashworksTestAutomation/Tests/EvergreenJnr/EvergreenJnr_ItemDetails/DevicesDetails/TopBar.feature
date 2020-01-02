@@ -25,13 +25,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrec
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
-	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
 	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | RED       |
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem
 	Then '*Project K-Computer Scheduled Project' project is displayed first in Project Switcher
 	And 'Evergreen' project is not displayed in proposal list of in Project Switcher
 	When User clicks refresh button in the browser
-	And User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	And User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
 	When User clicks by Project Switcher in the Top bar on Item details page
 	Then 'Evergreen' project is displayed first in Project Switcher
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPage
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	Then dropdown is not opened
 	Then projects on the Project Switcher panel are displayed in alphabetical order
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheO
 Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Project Details' left submenu item 
 	Then following content is displayed on the Details Page
