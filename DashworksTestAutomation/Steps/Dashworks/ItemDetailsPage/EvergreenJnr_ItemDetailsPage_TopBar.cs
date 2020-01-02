@@ -52,23 +52,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Utils.Verify.IsEmpty(actualList, "Compliance items in Top bar on the Item details page is incorrect!");
         }
 
-        [Then(@"Top bar on the Item details page is not displayed")]
-        public void ThenTopBarOnTheItemDetailsPageIsNotDisplayed()
+        [Then(@"top bar is not displayed")]
+        public void ThenTopBarIsNotDisplayed()
         {
             var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
-            Verify.IsFalse(topBar.TopBarOnItemDetailsPage.Displayed(), "Top bar should not be displayed!");
-        }
-
-        //TODO move to baseTable
-        [Then(@"Value column of Item Details has no Unknown item")]
-        public void ThenValueColumnOfItemDetailsHasNoUnknownItem()
-        {
-            var page = _driver.NowAt<BaseTable>();
-
-            var listOfValues = page.GetRowsContent();
-            Verify.That(listOfValues, Does.Not.Contain("Unknown"),
-                "Unknown item displayed in column");
+            Verify.IsFalse(topBar.TopBarElement.Displayed(), "Top bar should not be displayed");
         }
     }
 }

@@ -16,4 +16,4 @@ Scenario: EvergreenJnr_GroupsList_CheckThatTopBarInEvergreenModeIsDisplayedCorre
 	When User type "Allowed RODC Password Replication Group" in Global Search Field
 	Then User clicks on "Allowed RODC Password Replication Group" search result
 	Then Details page for 'Allowed RODC Password Replication Group' item is displayed to the user
-	And Top bar on the Item details page is not displayed
+	Then top bar is not displayed
