@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -25,7 +26,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = topBar.GetComplianceItemsOnTopBar();
+            var actualList = topBar.GetTopBarItemsText();
             Verify.AreEqual(expectedList, actualList, "Compliance items in Top bar on the Item details page is incorrect!");
         }
 
@@ -37,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             foreach (var row in table.Rows)
             {
                 _driver.WaitForElementToHaveText(topBar.GetTobBarItemTextElement(row["ComplianceItems"]), row["ColorName"]);
-                Verify.AreEqual(row["ColorName"],topBar.GetTobBarItemTextElement(row["ComplianceItems"]).Text,
+                Verify.AreEqual(row["ColorName"], topBar.GetTobBarItemTextElement(row["ComplianceItems"]).Text,
                     $"Incorrect text is displayed in the '{row["ComplianceItems"]}' tob bar");
             }
         }
@@ -47,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
-            var actualList = topBar.GetComplianceItemsOnTopBar();
+            var actualList = topBar.GetTopBarItemsText();
             Utils.Verify.IsEmpty(actualList, "Compliance items in Top bar on the Item details page is incorrect!");
         }
 
@@ -56,16 +57,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
-            Utils.Verify.IsFalse(topBar.TopBarOnItemDetailsPage.Displayed(), "Top bar should not be displayed!");
+            Verify.IsFalse(topBar.TopBarOnItemDetailsPage.Displayed(), "Top bar should not be displayed!");
         }
-        
+
+        //TODO move to baseTable
         [Then(@"Value column of Item Details has no Unknown item")]
         public void ThenValueColumnOfItemDetailsHasNoUnknownItem()
         {
-            var page = _driver.NowAt<ItemDetailsTopBarPage>();
+            var page = _driver.NowAt<BaseTable>();
 
-            var listOfValues = page.GetValuesColumnDataOfItemDetails().Select(x => x.Text).ToList();
-            Utils.Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");
+            var listOfValues = page.GetRowsContent();
+            Verify.That(listOfValues, Does.Not.Contain("Unknown"),
+                "Unknown item displayed in column");
         }
     }
 }
