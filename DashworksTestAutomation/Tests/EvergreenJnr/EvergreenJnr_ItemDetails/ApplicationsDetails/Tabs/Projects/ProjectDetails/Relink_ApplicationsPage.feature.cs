@@ -142,8 +142,8 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.When("User switches to the \"USE ME FOR AUTOMATION(USR SCHDLD)\" project in the Top bar o" +
-                    "n Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' in the \'Item Details Project\' dr" +
+                    "opdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
@@ -259,8 +259,8 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
- testRunner.When("User switches to the \"USE ME FOR AUTOMATION(USR SCHDLD)\" project in the Top bar o" +
-                    "n Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' in the \'Item Details Project\' dr" +
+                    "opdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
@@ -344,8 +344,8 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Microsoft Exchange Client Language Pack - Lithuanian\' item is d" +
                     "isplayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54
- testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
-                    "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
@@ -452,8 +452,8 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030\' " +
                     "item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 78
- testRunner.When("User switches to the \"Project 00 M Computer Scheduled\" project in the Top bar on " +
-                    "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Project 00 M Computer Scheduled\' in the \'Item Details Project\' drop" +
+                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
@@ -543,8 +543,8 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Adobe Acrobat Reader 3.01 Original\' item is displayed to the us" +
                     "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
- testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
-                    "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 100
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 101
