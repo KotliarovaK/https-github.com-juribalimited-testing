@@ -660,7 +660,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropDownName).Click();
             List<string> actualOptions = page.GetDropdownValues();
             page.BodyContainer.Click();
-            Verify.AreEqual(actualOptions.OrderBy(s => s), actualOptions,
+            Verify.AreEqual(actualOptions.Where(x => !string.IsNullOrEmpty(x)).OrderBy(s => s),
+                actualOptions.Where(x => !string.IsNullOrEmpty(x)),
                 $"Options are displayed in not in alphabetical order in the '{dropDownName}' dropdown");
         }
 
