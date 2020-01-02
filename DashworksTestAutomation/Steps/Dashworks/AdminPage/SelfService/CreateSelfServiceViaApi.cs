@@ -12,6 +12,8 @@ using RestSharp;
 using Newtonsoft.Json;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 {
@@ -20,11 +22,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
     {
         private readonly SelfServices _selfServices;
         private readonly RestWebClient _client;
+        private readonly RemoveSelfServiceMethods _removeSelfServiceMethods;
 
         public CreateSelfServiceViaApi(SelfServices selfServices, RestWebClient client)
         {
             _selfServices = selfServices;
             _client = client;
+            _removeSelfServiceMethods = new RemoveSelfServiceMethods(selfServices, client);
         }
 
         //| ServiceId | Name | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate | EndDate | SelfServiceURL | AllowAnonymousUsers | ScopeId |
@@ -42,6 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
+                    _selfServices.Value.Add(new SelfServiceDto() { ServiceIdentifier = SelfService.ServiceIdentifier });
                     throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
                 }
 
@@ -76,10 +81,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 }
 
                 var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(response.Content);
-                if (!SelfService.Equals(selfServiceObjResponse))
-                {
-                    throw new Exception("The created Self Service doesn't match to the received Self Service");
-                }
+                Verify.IsTrue(SelfService.CompareTo(selfServiceObjResponse), "Self Service ");
             }
         }
 
@@ -137,6 +139,45 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 var listOfReturnedSelfServices = selfServicesGrid["results"].ToObject<SelfServiceDto[]>().ToList();
                 Verify.IsTrue(listOfReturnedSelfServices.Any(ss => ss.Equals(SelfService)), "The created Self Service doesn't match to the existing Self Service in the Grid");
             }
+        }
+
+        [Then(@"User deletes the Self Services via API")]
+        public void ThenUserDeletesSelfServicesViaApi()
+        {
+            _removeSelfServiceMethods.DeleteSelfService();
+        }
+
+        [Then(@"User enables Self Service with '(.*)' identifier via API")]
+        public void ThenUserEnablesSelfServiceWithIdentifierViaApi(string identifier)
+        {
+            ThenUserEnablesDisablesSelfServiceViaApi(identifier, true);
+        }
+
+        [Then(@"User disables Self Service with '(.*)' identifier via API")]
+        public void ThenUserDisablesSelfServiceWithIdentifierViaApi(string identifier)
+        {
+            ThenUserEnablesDisablesSelfServiceViaApi(identifier, false);
+        }
+
+        public void ThenUserEnablesDisablesSelfServiceViaApi(string selfServiceIdentifier, bool state)
+        {
+            var selfService = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(selfServiceIdentifier));
+
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
+            var request = requestUri.GenerateRequest();
+
+            request.AddObject(new { ServiceIds = new int[selfService.ServiceId] });
+            request.AddObject(new { ActionRequestType = state ? "enable" : "disable" });
+
+            var response = _client.Value.Put(request);
+
+            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            {
+                Logger.Write($"Self Service enabled state was not set to '{state}': {response.StatusCode}, {response.ErrorMessage}");
+            }
+
+            //Update state in the original SelfServiceDTO
+            selfService.Enabled = state;
         }
     }
 }
