@@ -16,14 +16,14 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
-	And 'Offboard all associated users' checkbox is checked
+	Then select all rows checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User selects state 'true' for 'Offboard all associated users' checkbox
+	When User deselect all rows on the grid
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
-	And 'Offboard all associated users' checkbox is checked
+	Then select all rows checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
