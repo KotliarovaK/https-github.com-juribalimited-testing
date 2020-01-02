@@ -14,7 +14,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios
 {
     [Binding]
-    class RemoveSelfServiceAfterScenario
+    class RemoveSelfServiceAfterScenario : SpecFlowContext
     {
         private readonly RemoveSelfServiceMethods _removeSelfServiceMethods;
 

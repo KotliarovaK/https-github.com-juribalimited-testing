@@ -8,13 +8,10 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using RestSharp;
-using TechTalk.SpecFlow;
-using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios
 {
-    [Binding]
-    public class RemoveSelfServiceMethods : SpecFlowContext
+    public class RemoveSelfServiceMethods
     {
         private readonly RestWebClient _client;
         private readonly SelfServices _selfServices;
