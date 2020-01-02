@@ -134,12 +134,10 @@ this.FeatureBackground();
 #line 12
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("Counter shows \"409\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Counter shows \"405\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table1.AddRow(new string[] {
-                        "Offboard Device Object"});
             table1.AddRow(new string[] {
                         "Onboard Application Object"});
             table1.AddRow(new string[] {
@@ -156,11 +154,11 @@ this.FeatureBackground();
                         "Onboard Application Object"});
             table2.AddRow(new string[] {
                         "Onboard User Object"});
-#line 20
+#line 19
  testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Action\' co" +
                     "lumn:", ((string)(null)), table2, "When ");
-#line 24
- testRunner.Then("Rows counter shows \"64\" of \"409\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+ testRunner.Then("Rows counter shows \"60\" of \"405\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -209,18 +207,18 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS13959",
                         "Projects"});
-#line 27
+#line 26
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 28
+#line 27
  testRunner.When("User navigates to \"Email Migration\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
+#line 28
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
+#line 29
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line 30
  testRunner.Then("Counter shows \"1,527\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -235,7 +233,7 @@ this.FeatureBackground();
                         "Re-onboard Mailbox Object"});
             table3.AddRow(new string[] {
                         "Re-onboard User Object"});
-#line 32
+#line 31
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Action\' c" +
                     "olumn:", ((string)(null)), table3, "Then ");
 #line hidden
@@ -243,10 +241,10 @@ this.FeatureBackground();
                         "checkboxes"});
             table4.AddRow(new string[] {
                         "Onboard User Object"});
-#line 39
+#line 38
  testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Action\' co" +
                     "lumn:", ((string)(null)), table4, "When ");
-#line 42
+#line 41
  testRunner.Then("Rows counter shows \"807\" of \"1,527\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -298,18 +296,18 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS13959",
                         "Projects"});
-#line 45
+#line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 46
+#line 45
  testRunner.When("User navigates to \"User Evergreen Capacity Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 47
+#line 46
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 47
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
+#line 48
  testRunner.Then("Counter shows \"60,305\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -320,7 +318,7 @@ this.FeatureBackground();
                         "Onboard Device Object"});
             table5.AddRow(new string[] {
                         "Onboard User Object"});
-#line 50
+#line 49
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Action\' c" +
                     "olumn:", ((string)(null)), table5, "Then ");
 #line hidden
@@ -330,10 +328,10 @@ this.FeatureBackground();
                         "Onboard Application Object"});
             table6.AddRow(new string[] {
                         "Onboard Device Object"});
-#line 55
+#line 54
  testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Action\' co" +
                     "lumn:", ((string)(null)), table6, "When ");
-#line 59
+#line 58
  testRunner.Then("Rows counter shows \"41,339\" of \"60,305\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
