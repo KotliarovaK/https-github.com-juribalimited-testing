@@ -14,44 +14,19 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios
 {
     [Binding]
-    class RemoveSelfServiceAfterScenario : SpecFlowContext
+    class RemoveSelfServiceAfterScenario
     {
-        private readonly RestWebClient _client;
-        private readonly SelfServices _selfServices;
+        private readonly RemoveSelfServiceMethods _removeSelfServiceMethods;
 
-        private RemoveSelfServiceAfterScenario(SelfServices selfServices, RestWebClient client)
+        public RemoveSelfServiceAfterScenario(SelfServices selfServices, RestWebClient client)
         {
-            _selfServices = selfServices;
-            _client = client;
+            _removeSelfServiceMethods = new RemoveSelfServiceMethods(selfServices, client);
         }
 
         [AfterScenario("Cleanup", Order = 10)]
-        public void DeleteNewlyCreatedSelfService()
+        public void deleteNewlyCreatedSelfService()
         {
-            if (!_selfServices.Value.Any())
-                return;
-
-            try
-            {
-                List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
-
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
-
-                var request = requestUri.GenerateRequest();
-
-                request.AddObject(new { ServiceIds = Ids.ToArray() });
-
-                var response = _client.Value.Delete(request);
-
-                if (!response.StatusCode.Equals(HttpStatusCode.OK))
-                {
-                    Logger.Write($"Self Service was not deleted: {response.StatusCode}, {response.ErrorMessage}");
-                }
-            }
-            catch (Exception e)
-            {
-                Logger.Write($"Unable to delete Self Service via API: {e}");
-            }
+            _removeSelfServiceMethods.DeleteSelfService();
         }
     }
 }

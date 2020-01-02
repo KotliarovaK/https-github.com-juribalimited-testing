@@ -22,11 +22,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
     {
         private readonly SelfServices _selfServices;
         private readonly RestWebClient _client;
+        private readonly RemoveSelfServiceMethods _removeSelfServiceMethods;
 
         public CreateSelfServiceViaApi(SelfServices selfServices, RestWebClient client)
         {
             _selfServices = selfServices;
             _client = client;
+            _removeSelfServiceMethods = new RemoveSelfServiceMethods(selfServices, client);
         }
 
         //| ServiceId | Name | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate | EndDate | SelfServiceURL | AllowAnonymousUsers | ScopeId |
@@ -142,36 +144,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         [Then(@"User deletes the Self Services via API")]
         public void ThenUserDeletesSelfServicesViaApi()
         {
-            if (!_selfServices.Value.Any())
-                return;
-
-            try
-            {
-                List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
-
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
-                var request = requestUri.GenerateRequest();
-
-                request.AddObject(new { ServiceIds = Ids.ToArray() });
-
-                var response = _client.Value.Delete(request);
-
-                if (!response.StatusCode.Equals(HttpStatusCode.OK))
-                {
-                    Logger.Write($"Self Service was not deleted: {response.StatusCode}, {response.ErrorMessage}");
-                }
-            }
-            catch (Exception e)
-            {
-                Logger.Write($"Unable to delete Self Service via API: {e}");
-            }
+            _removeSelfServiceMethods.DeleteSelfService();
         }
 
-        [Then(@"User Enables the Self Service via API")]
-        public void ThenUserEnablesTheSelfServiceViaApi()
+        [Then(@"User '(.*)' Self Service via API")]
+        public void ThenUserEnablesDisablesSelfServiceViaApi(string checkboxState)
         {
             if (!_selfServices.Value.Any())
                 return;
+
+            bool checkboxBoolState;
+
+            if (checkboxState.Equals("enable"))
+            {
+                checkboxBoolState = true;
+            } else
+            {
+                checkboxBoolState = false;
+            }
 
             try
             {
@@ -181,61 +171,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 var request = requestUri.GenerateRequest();
 
                 request.AddObject(new { ServiceIds = Ids.ToArray() });
-                request.AddObject(new { ActionRequestType = "enable" });
+                request.AddObject(new { ActionRequestType = checkboxState });
 
                 var response = _client.Value.Put(request);
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
-                    Logger.Write($"Self Service was not enabled: {response.StatusCode}, {response.ErrorMessage}");
-                }
-
-                _selfServices.Value.Select(x => x.Enabled = true);
-
-                foreach (SelfServiceDto selfService in _selfServices.Value)
-                {
-                    selfService.Enabled = true;
-                }
-
-                var a = _selfServices;
-            }
-            catch (Exception e)
-            {
-                Logger.Write($"Unable to enable Self Service via API: {e}");
-            }
-        }
-
-        [Then(@"User Disables the Self Service via API")]
-        public void ThenUserDisablesTheSelfServiceViaApi()
-        {
-            if (!_selfServices.Value.Any())
-                return;
-
-            try
-            {
-                List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
-
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
-                var request = requestUri.GenerateRequest();
-
-                request.AddObject(new { ServiceIds = Ids.ToArray() });
-                request.AddObject(new { ActionRequestType = "disable" });
-
-                var response = _client.Value.Put(request);
-
-                if (!response.StatusCode.Equals(HttpStatusCode.OK))
-                {
-                    Logger.Write($"Self Service was not disabled: {response.StatusCode}, {response.ErrorMessage}");
+                    Logger.Write($"Self Service was not {checkboxState}d: {response.StatusCode}, {response.ErrorMessage}");
                 }
 
                 foreach (SelfServiceDto selfService in _selfServices.Value)
                 {
-                    selfService.Enabled = false;
+                    selfService.Enabled = checkboxBoolState;
                 }
+
             }
             catch (Exception e)
             {
-                Logger.Write($"Unable to disable Self Service via API: {e}");
+                Logger.Write($"Unable to {checkboxState} Self Service via API: {e}");
             }
         }
     }

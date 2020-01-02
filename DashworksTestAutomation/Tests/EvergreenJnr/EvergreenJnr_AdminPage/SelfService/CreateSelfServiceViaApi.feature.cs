@@ -159,14 +159,6 @@ this.FeatureBackground();
 #line 12
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
- testRunner.Then("User Enables the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
- testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 15
- testRunner.Then("User Disables the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 16
- testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 17
  testRunner.Then("User deletes the Self Services via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -218,7 +210,7 @@ this.FeatureBackground();
                         "DAS18948",
                         "API",
                         "Cleanup"});
-#line 20
+#line 16
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -250,9 +242,9 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
-#line 21
+#line 17
  testRunner.When("User creates Self Service via API", ((string)(null)), table2, "When ");
-#line 24
+#line 20
  testRunner.Then("User checks the Self Services Grid via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -304,7 +296,7 @@ this.FeatureBackground();
                         "DAS19478",
                         "API",
                         "Cleanup"});
-#line 27
+#line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -336,15 +328,15 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
-#line 28
+#line 24
  testRunner.When("User creates Self Service via API", ((string)(null)), table3, "When ");
-#line 31
+#line 27
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
- testRunner.Then("User Enables the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 33
+#line 28
+ testRunner.Then("User \'enable\' Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 29
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
+#line 30
  testRunner.Then("User deletes the Self Services via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -396,7 +388,7 @@ this.FeatureBackground();
                         "DAS19478",
                         "API",
                         "Cleanup"});
-#line 37
+#line 33
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -428,15 +420,15 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
-#line 38
+#line 34
  testRunner.When("User creates Self Service via API", ((string)(null)), table4, "When ");
-#line 41
+#line 37
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 42
- testRunner.Then("User Disables the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
+#line 38
+ testRunner.Then("User \'disable\' Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 44
+#line 40
  testRunner.Then("User deletes the Self Services via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -488,7 +480,7 @@ this.FeatureBackground();
                         "DAS19478",
                         "API",
                         "Cleanup"});
-#line 47
+#line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -520,11 +512,11 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
-#line 48
+#line 44
  testRunner.When("User creates Self Service via API", ((string)(null)), table5, "When ");
-#line 51
+#line 47
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 52
+#line 48
  testRunner.Then("User deletes the Self Services via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 {
-    class SelfServiceDto
+    public class SelfServiceDto
     {
         private string _id;
 
