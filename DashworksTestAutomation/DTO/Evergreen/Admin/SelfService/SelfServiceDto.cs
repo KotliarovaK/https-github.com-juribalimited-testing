@@ -148,76 +148,14 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 
         public bool Equals(SelfServiceDto value)
         {
-            SelfServiceDto obj = value as SelfServiceDto;
-
-            List<string> messages = new List<string>();
-
-            if (!int.Equals(ServiceId, obj.ServiceId))
+            try
+            {
+                return this.CompareTo(value);
+            }
+            catch
             {
                 return false;
             }
-
-            if (!int.Equals(Name, obj.Name))
-            {
-                return false;
-            }
-
-            if (!int.Equals(ServiceIdentifier, obj.ServiceIdentifier))
-            {
-                return false;
-            }
-
-            if (!int.Equals(Enabled, obj.Enabled))
-            {
-                return false;
-            }
-
-            if (!int.Equals(ObjectType, obj.ObjectType))
-            {
-                return false;
-            }
-
-            if (!int.Equals(ObjectTypeId, obj.ObjectTypeId))
-            {
-                return false;
-            }
-
-            if (!int.Equals(StartDate, obj.StartDate))
-            {
-                return false;
-            }
-
-            if (!int.Equals(EndDate, obj.EndDate))
-            {
-                return false;
-            }
-
-            if (!int.Equals(SelfServiceURL, obj.SelfServiceURL))
-            {
-                return false;
-            }
-
-            if (!int.Equals(AllowAnonymousUsers, obj.AllowAnonymousUsers))
-            {
-                return false;
-            }
-
-            if (!int.Equals(ScopeId, obj.ScopeId))
-            {
-                return false;
-            }
-
-            if (!int.Equals(ScopeName, obj.ScopeName))
-            {
-                return false;
-            }
-
-            if (!int.Equals(CreatedByUser, obj.CreatedByUser))
-            {
-                return false;
-            }
-
-            return true;
         }
     }
 }
