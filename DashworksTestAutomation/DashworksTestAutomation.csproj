@@ -279,7 +279,6 @@
     <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
     <Compile Include="Pages\Evergreen\PivotElementPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AccountDetailsPage.cs" />
-    <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\PreferencesPage.cs" />
     <Compile Include="Pages\DashworksHeaderMenuElement.cs" />
@@ -336,7 +335,7 @@
     <Compile Include="Providers\JuribaAutomationApiProvider.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_CheckAllFiltersAndColumns.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
-    <Compile Include="Steps\Dashworks\AccountDetails\ResetUserDataAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AccountDetails\AfterScenario\ResetUserDataAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationActionAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AfterScenario\RemoveAutomationAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />

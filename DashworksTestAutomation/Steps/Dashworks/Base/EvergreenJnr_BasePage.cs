@@ -289,8 +289,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersTextToTextbox(string text, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetTextbox(placeholder).ClearWithBackspaces();
-            page.GetTextbox(placeholder).SendKeys(text);
+            var textbox = page.GetTextbox(placeholder);
+            textbox.ClearWithBackspaces();
+            textbox.SendKeys(text);
             page.BodyContainer.Click();
 
             //TODO rework to use switch
@@ -357,9 +358,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersNextDayToTextbox(string dayOfWeek, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetTextbox(placeholder).Clear();
-            page.GetTextbox(placeholder).
-                SendKeys(dayOfWeek.GetNextWeekday().ToString("dd MMM yyyy"));
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Clear();
+            textbox.SendKeys(dayOfWeek.GetNextWeekday().ToString("dd MMM yyyy"));
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User enters random number between '(.*)' and '(.*)' to '(.*)' textbox")]
+        public void WhenUserEntersRandomNumberBetweenAndToTextbox(int fromNum, int toNumb, string placeholder)
+        {
+            var number = new Random().Next(fromNum, toNumb).ToString();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetTextbox(placeholder);
+            _driver.ClearByJavascript(textbox);
+            textbox.SendKeys(number);
             page.BodyContainer.Click();
         }
 
