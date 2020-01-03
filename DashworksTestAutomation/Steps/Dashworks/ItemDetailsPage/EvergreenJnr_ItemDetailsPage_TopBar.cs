@@ -19,19 +19,31 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
-        [Then(@"following Compliance items are displayed in Top bar on the Item details page:")]
-        public void ThenFollowingComplianceItemsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
+        [Then(@"top bar is not displayed")]
+        public void ThenTopBarIsNotDisplayed()
+        {
+            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
+
+            Verify.IsFalse(topBar.TopBarElement.Displayed(), 
+                "Top bar should not be displayed");
+        }
+
+        #region Items/Colors check
+
+        [Then(@"following items are displayed in the top bar:")]
+        public void ThenFollowingItemsAreDisplayedInTheTopBar(Table table)
         {
             var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
             _driver.WaitForDataLoadingInTopBarOnItemDetailsPage();
 
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = topBar.GetTopBarItemsText();
-            Verify.AreEqual(expectedList, actualList, "Compliance items in Top bar on the Item details page is incorrect!");
+            Verify.AreEqual(expectedList, actualList, 
+                "Incorrect items are displayed in the top bar");
         }
 
-        [Then(@"following Compliance items with appropriate colors are displayed in Top bar on the Item details page:")]
-        public void ThenFollowingComplianceItemsWithAppropriateColorsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
+        [Then(@"following items and colors are displayed in the top bar:")]
+        public void ThenFollowingItemsAndColorsAreDisplayedInTheTopBar(Table table)
         {
             var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
@@ -43,21 +55,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             }
         }
 
-        [Then(@"No one Compliance items are displayed for the User in Top bar on the Item details page")]
-        public void ThenNoOneComplianceItemsAreDisplayedForTheUserInTopBarOnTheItemDetailsPage()
+        [Then(@"there are no displayed items in the top bar")]
+        public void ThenThereAreNoDisplayedItemsInTheTopBar()
         {
             var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
 
             var actualList = topBar.GetTopBarItemsText();
-            Utils.Verify.IsEmpty(actualList, "Compliance items in Top bar on the Item details page is incorrect!");
+            Verify.IsEmpty(actualList, "Compliance items in Top bar on the Item details page is incorrect!");
         }
 
-        [Then(@"top bar is not displayed")]
-        public void ThenTopBarIsNotDisplayed()
-        {
-            var topBar = _driver.NowAt<ItemDetailsTopBarPage>();
+        #endregion
 
-            Verify.IsFalse(topBar.TopBarElement.Displayed(), "Top bar should not be displayed");
+        //TODO move to baseTable
+        [Then(@"Value column of Item Details has no Unknown item")]
+        public void ThenValueColumnOfItemDetailsHasNoUnknownItem()
+        {
+            var page = _driver.NowAt<BaseTable>();
+
+            var listOfValues = page.GetRowsContent();
+            Verify.That(listOfValues, Does.Not.Contain("Unknown"),
+                "Unknown item displayed in column");
         }
     }
 }

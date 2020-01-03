@@ -393,9 +393,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(by);
         }
 
-        public void ClearTextbox(string placeholder)
+        public void ClearTextbox(string placeholder, bool withBackspaces = false)
         {
-            GetTextbox(placeholder).Clear();
+            var element = GetTextbox(placeholder);
+            if (withBackspaces)
+            {
+                element.ClearWithBackspaces();
+            }
+            else
+            {
+                element.Clear();
+            }
         }
 
         public void PopulateTextbox(string placeholder, string value, bool clear = true)
@@ -659,8 +667,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector = DropdownOptionsSelector(withoutSelected);
             Driver.WhatForElementToBeExists(By.XPath(selector));
             var optionsList = Driver.FindElements(By.XPath(selector));
+            Driver.WaitForElementsToHaveText(optionsList, false);
             if (!optionsList.Any())
+            {
                 throw new Exception($"Unable to get dropdown values");
+            }
             var values = optionsList.Select(x => x.Text).ToList();
             return values;
         }

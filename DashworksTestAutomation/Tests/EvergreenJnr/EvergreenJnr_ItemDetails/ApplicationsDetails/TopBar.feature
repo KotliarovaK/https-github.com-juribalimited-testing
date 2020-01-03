@@ -9,8 +9,8 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnApplicationsPage
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for 'ABBYY FineReader 8.0 Professional Edition' item is displayed to the user
-	And following Compliance items are displayed in Top bar on the Item details page:
-	| ComplianceItems    |
+	Then following items are displayed in the top bar:
+	| items              |
 	| Overall Compliance |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075 @DAS17355
@@ -18,14 +18,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedC
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for 'ABBYY FineReader 8.0 Professional Edition' item is displayed to the user
 	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
 	| Workflow          |
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 	| Title         | Value |
 	| Readiness     | RED   |
 	| App Readiness | RED   |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | RED       |
 	| App Readiness     | RED       |
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatComplianceInKeyValueTableMatche
 	Then following content is displayed on the Details Page
 	| Title      | Value   |
 	| Compliance | UNKNOWN |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems    | ColorName |
 	| Overall Compliance | UNKNOWN   |
 
@@ -79,6 +79,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatComplianceInKeyValueTableMatche
 	Then following content is displayed on the Details Page
 	| Title     | Value |
 	| Readiness | GREY  |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | GREY      |

@@ -117,6 +117,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClearTextbox(placeholder);
         }
 
+        [When(@"User clears '(.*)' autocomplete with backspaces")]
+        public void WhenUserClearsAutocompleteWithBackspaces(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClearTextbox(placeholder, true);
+        }
+
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
         public void ThenAutocompleteLastOptionIs(string placeholder, string option)
         {
