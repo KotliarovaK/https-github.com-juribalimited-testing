@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public const string TopBarTextSelector = ".//div[contains(@class,'topbar-item-value')]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='topbar']")]
-        public IWebElement TopBarOnItemDetailsPage { get; set; }
+        public IWebElement TopBarElement { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

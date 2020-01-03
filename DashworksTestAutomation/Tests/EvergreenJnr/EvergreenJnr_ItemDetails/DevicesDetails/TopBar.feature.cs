@@ -151,7 +151,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Hardware Compliance"});
 #line 15
- testRunner.And("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table1, "And ");
+ testRunner.And("following items are displayed in the top bar:", ((string)(null)), table1, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -236,7 +236,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Task Readiness"});
 #line 29
- testRunner.Then("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table2, "Then ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table2, "Then ");
 #line 34
  testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' in the \'Item Details Project\'" +
                     " dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -252,7 +252,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Workflow"});
 #line 35
- testRunner.Then("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table3, "Then ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
