@@ -139,11 +139,11 @@ this.FeatureBackground();
                     " the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ComplianceItems"});
+                        "items"});
             table1.AddRow(new string[] {
                         "Overall Compliance"});
 #line 12
- testRunner.And("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table1, "And ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -228,7 +228,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Workflow"});
 #line 21
- testRunner.Then("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table2, "Then ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table2, "Then ");
 #line 27
  testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' in the \'Item Details Project\' dr" +
                     "opdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -242,7 +242,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Task Readiness"});
 #line 28
- testRunner.Then("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table3, "Then ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -329,8 +329,7 @@ this.FeatureBackground();
                         "App Readiness",
                         "RED"});
 #line 45
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table5, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -489,8 +488,7 @@ this.FeatureBackground();
                         "Overall Compliance",
                         "UNKNOWN"});
 #line 68
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table7, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -576,8 +574,7 @@ this.FeatureBackground();
                         "Overall Readiness",
                         "GREY"});
 #line 82
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table9, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

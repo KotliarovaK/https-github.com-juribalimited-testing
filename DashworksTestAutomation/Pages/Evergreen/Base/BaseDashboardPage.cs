@@ -393,9 +393,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(by);
         }
 
-        public void ClearTextbox(string placeholder)
+        public void ClearTextbox(string placeholder, bool withBackspaces = false)
         {
-            GetTextbox(placeholder).Clear();
+            var element = GetTextbox(placeholder);
+            if (withBackspaces)
+            {
+                element.ClearWithBackspaces();
+            }
+            else
+            {
+                element.Clear();
+            }
         }
 
         public void PopulateTextbox(string placeholder, string value, bool clear = true)

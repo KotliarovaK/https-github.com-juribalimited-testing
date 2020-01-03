@@ -138,8 +138,7 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'00B5CCB89AD0404B965@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("No one Compliance items are displayed for the User in Top bar on the Item details" +
-                    " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("there are no displayed items in the top bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -222,7 +221,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Workflow"});
 #line 19
- testRunner.Then("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table1, "Then ");
+ testRunner.Then("following items are displayed in the top bar:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -394,8 +393,7 @@ this.FeatureBackground();
                         "Overall Readiness",
                         "IGNORE"});
 #line 45
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table3, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
