@@ -106,4 +106,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreatePr
 	When User sets includes archived devices in 'true'
 	When User create dynamic list with "ProjectListForDas16844" name on "Devices" page
 	When User selects 'Project' in the 'Create' dropdown
-	Then User sees blue message 'This list may contain archived devices which will not be onboarded' on Create Project page
+	Then 'This list may contain archived devices which will not be onboarded' information message is displayed for 'Scope' field

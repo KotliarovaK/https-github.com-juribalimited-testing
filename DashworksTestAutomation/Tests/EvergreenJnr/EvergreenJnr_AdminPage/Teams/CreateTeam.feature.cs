@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
         [NUnit.Framework.CategoryAttribute("DAS11726")]
         [NUnit.Framework.CategoryAttribute("DAS11747")]
         [NUnit.Framework.CategoryAttribute("DAS13471")]
+        [NUnit.Framework.CategoryAttribute("DAS18351")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName()
@@ -126,6 +127,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
                         "DAS11726",
                         "DAS11747",
                         "DAS13471",
+                        "DAS18351",
                         "Cleanup",
                         "Teams"});
 #line 9
