@@ -64,21 +64,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
-	And User enters 'TestProject14283' text to 'Project Name' textbox
-	And User selects 'All Devices' option from 'Scope' autocomplete
-	And User clicks 'CREATE' button
+	When User enters 'TestProject14283' text to 'Project Name' textbox
+	When User selects 'All Devices' option from 'Scope' autocomplete
+	When User clicks 'CREATE' button
 	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks newly created object link
 	Then Page with 'TestProject14283' header is displayed to user
 	When User selects 'Dependant List Filter - BROKEN LIST' in the 'Scope' dropdown
 	Then 'This list has errors' error message is displayed for 'Scope' dropdown
 	When User navigates to the 'Details' left menu item
-	And User enters '' text to 'Project Name' textbox
-	And User clicks 'Admin' on the left-hand menu
+	When User enters '' text to 'Project Name' textbox
+	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User enters "TestProject14283" text in the Search field for "Project" column
 	Then 'TestProject14283' content is displayed in the 'Project' column
+	When User clicks 'CREATE PROJECT' button 
+	When User enters 'TestProject14283' text to 'Project Name' textbox
+	When User selects 'All Devices' option from 'Scope' autocomplete
+	Then 'A project already exists with this name' error message is displayed for 'Project Name' field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @DAS12744 @DAS12162 @DAS12532 @Cleanup @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList

@@ -424,6 +424,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
+        [Then(@"'(.*)' information message is displayed for '(.*)' field")]
+        public void ThenInformationMessageIsDisplayedForField(string errorMessage, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.BodyContainer.Click();
+
+            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
+                $"Incorrect error message is displayed in the '{placeholder}' field");
+
+            Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field");
+
+            Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        }
+
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
         public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
         {
