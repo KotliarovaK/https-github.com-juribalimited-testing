@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	Then Details page for '02BE025D56CF4899889 (Wegemer, Susan)' item is displayed to the user
 	When User navigates to the 'Mailboxes' left menu item
 	And User navigates to the 'Mailboxes' left submenu item
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	Then 'TRUE' content is displayed in the 'Owner' column
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Owner' column:
 	| Values |

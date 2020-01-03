@@ -96,9 +96,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools-bubble ng-star-inserted']")]
         public IWebElement SidePanelIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='scope']/ancestor:: mat-form-field/following-sibling::mat-error")]
-        public IWebElement ArchivedDevicesMessage { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

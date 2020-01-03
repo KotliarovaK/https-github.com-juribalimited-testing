@@ -237,7 +237,7 @@
     <Compile Include="Pages\Evergreen\BaseDialogPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseInlineBannerElement.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseRightSideActionsPanel.cs" />
-    <Compile Include="Pages\Evergreen\Base\BaseTable.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\BaseTable.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
@@ -1122,8 +1122,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature.cs">
-      <DependentUpon>AssociationsAllDeviceApplications.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFunctionality\AssociationsFunctionality.feature.cs">
+      <DependentUpon>AssociationsFunctionality.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -2264,9 +2264,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FilterExpression.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\AssociationsAllDeviceApplications.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFunctionality\AssociationsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AssociationsAllDeviceApplications.feature.cs</LastGenOutput>
+      <LastGenOutput>AssociationsFunctionality.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

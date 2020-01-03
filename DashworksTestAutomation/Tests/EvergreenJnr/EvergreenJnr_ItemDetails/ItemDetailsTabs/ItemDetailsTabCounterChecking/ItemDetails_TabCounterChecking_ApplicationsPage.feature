@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInProjectMode
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for 'ABBYY FineReader 8.0 Professional Edition' item is displayed to the user
-	When User switches to the "*Project K-Computer Scheduled Project" project in the Top bar on Item details page
+	When User selects '*Project K-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
 	Then User sees following parent left menu items
 	| TabName      |
 	| Details      |

@@ -13,6 +13,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
+using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -22,6 +23,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -38,10 +40,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Teams _teams;
         private readonly Buckets _buckets;
+        private readonly SelfServices _selfServices;
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
-            Teams teams, Buckets buckets)
+            Teams teams, Buckets buckets, SelfServices selfServices)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -52,6 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _projects = projects;
             _teams = teams;
             _buckets = buckets;
+            _selfServices = selfServices;
         }
 
         #region Page Header/SubHeader
@@ -115,6 +119,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.ClearTextbox(placeholder);
+        }
+
+        [When(@"User clears '(.*)' autocomplete with backspaces")]
+        public void WhenUserClearsAutocompleteWithBackspaces(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClearTextbox(placeholder, true);
         }
 
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
@@ -295,6 +306,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
 
             //TODO rework to use switch
+            if (placeholder.Equals("Self Service Identifier"))
+            {
+                SelfServiceDto ss = new SelfServiceDto();
+                ss.ServiceIdentifier = text;
+                _selfServices.Value.Add(ss);
+            }
+
             if (placeholder.Equals("Action Name"))
             {
                 _automationActions.Value.Add(text);
@@ -432,6 +450,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
+        [Then(@"'(.*)' information message is displayed for '(.*)' field")]
+        public void ThenInformationMessageIsDisplayedForField(string errorMessage, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.BodyContainer.Click();
+
+            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
+                $"Incorrect error message is displayed in the '{placeholder}' field");
+
+            Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field");
+
+            Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        }
+
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
         public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
         {
@@ -530,7 +564,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdown(value, dropdownName);
             //Used for Projects Scope to wait for changes to be applied
             //TODO: 21.11.2019 Oleksandr - increased sleep from 3 to 7 seconds to make sure that change list operation is applied
-            Thread.Sleep(7000);
+            //Vitalii: decreased to 5 seconds. Contact me if you need to increase this number or tests start failing again
+            Thread.Sleep(5000);
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]
@@ -647,6 +682,29 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropdown).Click();
             VerifyTooltipOfDropdownIcons(page, expectedTooltips);
             page.BodyContainer.Click();
+        }
+
+        [Then(@"'(.*)' option is first in the '(.*)' dropdown")]
+        public void ThenOptionIsFirstInTheDropdown(string option, string dropDownName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropDownName).Click();
+            List<string> actualOptions = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(option, actualOptions.First(),
+                $"First option in the '{dropDownName}' dropdown should be '{option}'");
+        }
+
+        [Then(@"options are sorted in alphabetical order in the '(.*)' dropdown")]
+        public void ThenOptionsAreSortedInAlphabeticalOrderInTheDropdown(string dropDownName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropDownName).Click();
+            List<string> actualOptions = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(actualOptions.Where(x => !string.IsNullOrEmpty(x)).OrderBy(s => s),
+                actualOptions.Where(x => !string.IsNullOrEmpty(x)),
+                $"Options are displayed in not in alphabetical order in the '{dropDownName}' dropdown");
         }
 
         [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]

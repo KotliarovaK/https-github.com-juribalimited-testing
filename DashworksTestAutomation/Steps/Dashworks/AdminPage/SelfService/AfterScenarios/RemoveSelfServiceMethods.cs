@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -29,13 +30,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
 
             try
             {
-                List<int> Ids = _selfServices.Value.Select(x => x.ServiceId).ToList();
+                List<int> ids = new List<int>();
+                foreach (SelfServiceDto dto in _selfServices.Value)
+                {
+                    try
+                    {
+                        ids.Add(dto.ServiceId);
+                    }
+                    catch { }
+                }
 
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
 
                 var request = requestUri.GenerateRequest();
 
-                request.AddObject(new { ServiceIds = Ids.ToArray() });
+                request.AddObject(new { ServiceIds = ids.ToArray() });
 
                 var response = _client.Value.Delete(request);
 

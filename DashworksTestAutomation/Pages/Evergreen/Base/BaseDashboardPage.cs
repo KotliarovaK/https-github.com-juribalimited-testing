@@ -393,9 +393,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(by);
         }
 
-        public void ClearTextbox(string placeholder)
+        public void ClearTextbox(string placeholder, bool withBackspaces = false)
         {
-            GetTextbox(placeholder).Clear();
+            var element = GetTextbox(placeholder);
+            if (withBackspaces)
+            {
+                element.ClearWithBackspaces();
+            }
+            else
+            {
+                element.Clear();
+            }
         }
 
         public void PopulateTextbox(string placeholder, string value, bool clear = true)
@@ -415,7 +423,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             button.SendKeys(option);
             GetTextboxAddButton(placeholder).Click();
         }
-        
+
         public IWebElement GetTextboxAddButton(string placeholder)
         {
             var selector = GetTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));
@@ -635,22 +643,30 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         //Get all span with text
-        private string _dropdownOptions = ".//mat-option//span[string-length(text())>0]";
+        private static string _dropdownOptionsBase = ".//mat-option{0}//span[string-length(text())>0]";
 
-        public IWebElement GetDropdownValueByName(string dropdownName)
+        private string DropdownOptionsSelector(bool withoutSelected)
+        {
+            return withoutSelected
+                ? string.Format(_dropdownOptionsBase, "[not(@aria-selected)]")
+                : string.Format(_dropdownOptionsBase, string.Empty);
+        }
+
+        public IWebElement GetDropdownValueByName(string dropdownName, bool withoutSelected = false)
         {
             var text = dropdownName.Contains('\'') ?
                 dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]") :
                 $"[text()='{dropdownName}']";
-            var selector = By.XPath($"{_dropdownOptions}{text}");
+            var selector = By.XPath($"{DropdownOptionsSelector(withoutSelected)}{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
-        public List<string> GetDropdownValues()
+        public List<string> GetDropdownValues(bool withoutSelected = false)
         {
-            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
-            var optionsList = Driver.FindElements(By.XPath(_dropdownOptions));
+            var selector = DropdownOptionsSelector(withoutSelected);
+            Driver.WhatForElementToBeExists(By.XPath(selector));
+            var optionsList = Driver.FindElements(By.XPath(selector));
             if (!optionsList.Any())
                 throw new Exception($"Unable to get dropdown values");
             var values = optionsList.Select(x => x.Text).ToList();
@@ -682,15 +698,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return exclamationIcon;
         }
 
-        public IList<IWebElement> GetIconsOfDropdownOptions()
+        public IList<IWebElement> GetIconsOfDropdownOptions(bool withoutSelected = false)
         {
-            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
-            return Driver.FindElements(By.XPath($"{_dropdownOptions}/preceding-sibling::i[contains(@class, 'material-icons')]"));
+            Driver.WaitForElementsToBeDisplayed(By.XPath(DropdownOptionsSelector(withoutSelected)));
+            return Driver.FindElements(By.XPath($"{DropdownOptionsSelector(withoutSelected)}/preceding-sibling::i[contains(@class, 'material-icons')]"));
         }
 
-        public bool IsDropdownOpened()
+        public bool IsDropdownOpened(bool withoutSelected = false)
         {
-            return Driver.FindElements(By.XPath(_dropdownOptions)).Any();
+            return Driver.FindElements(By.XPath(DropdownOptionsSelector(withoutSelected))).Any();
         }
 
         #endregion

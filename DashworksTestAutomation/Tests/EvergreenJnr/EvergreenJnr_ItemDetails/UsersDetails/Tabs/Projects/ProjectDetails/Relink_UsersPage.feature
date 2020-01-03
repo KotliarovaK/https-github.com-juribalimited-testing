@@ -10,7 +10,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnUsersPage
 	When User navigates to the 'User' details page for 'ZZR457072' item
 	Then Details page for 'ZZR457072' item is displayed to the user
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRelinkOptionIsWorkedCorrectlyForProjec
 Scenario: EvergreenJnr_UsersList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed
 	When User navigates to the 'User' details page for 'SNL594136' item
 	Then Details page for 'SNL594136' item is displayed to the user
-	When User switches to the "Windows 10 Migration - Depot" project in the Top bar on Item details page
+	When User selects 'Windows 10 Migration - Depot' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button

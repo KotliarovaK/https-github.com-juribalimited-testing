@@ -11,19 +11,19 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '01DEAC5F18B34084B04@bclabs.local' item
 	Then Details page for '01DEAC5F18B34084B04@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
-	And 'Offboard all associated users' checkbox is checked
+	Then select all rows checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
 	| Display Name |
 	| Domain       |
 	| Owner        |
-	When User selects state 'true' for 'Offboard all associated users' checkbox
+	When User deselect all rows on the grid
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
@@ -49,12 +49,12 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnPageMailboxes
 	When User navigates to the 'Mailbox' details page for '01DEAC5F18B34084B04@bclabs.local' item
 	Then Details page for '01DEAC5F18B34084B04@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
-	And 'Offboard all associated users' checkbox is checked
+	Then select all rows checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Username     |
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for 'alex.cristea@juriba.com' item
 	Then Details page for 'alex.cristea@juriba.com' item is displayed to the user
-	When User switches to the "Email Migration" project in the Top bar on Item details page
+	When User selects 'Email Migration' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssociatedUserRedirectsCorrectly
 	When User navigates to the 'Mailbox' details page for '0286449FB2C34A12809@bclabs.local' item
 	Then Details page for '0286449FB2C34A12809@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 

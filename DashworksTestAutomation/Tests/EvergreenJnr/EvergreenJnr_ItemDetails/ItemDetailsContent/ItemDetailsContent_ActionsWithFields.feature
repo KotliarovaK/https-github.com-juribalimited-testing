@@ -84,20 +84,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	And URL contains "user/23726/details/user"
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Details' left menu item
 	And User navigates to the 'Device Owner' left submenu item
 	And User clicks "QLL295118" link on the Details Page
 	Then Details page for 'QLL295118 (Nicole P. Braun)' item is displayed to the user
-	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
 	And URL contains "user/23726/details/user?$projectId=43"
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
 	When User navigates to the 'Applications' left menu item
 	And User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for 'Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs' item is displayed to the user
-	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
 	And URL contains "application/373/details/application?$projectId=43"
 
 #Ann.Ilchenko 10/25/19: will be ready in the future (contact Lana for details)
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheL
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Email Address" column
 	Then Details page for '06BB714696274AC895A@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page

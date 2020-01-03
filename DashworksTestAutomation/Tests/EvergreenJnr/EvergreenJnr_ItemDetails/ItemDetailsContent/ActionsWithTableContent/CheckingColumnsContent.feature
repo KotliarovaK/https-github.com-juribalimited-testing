@@ -20,13 +20,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInThe
 Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObjectsWithSnrMatch
 	When User navigates to the 'User' details page for 'AAD1011948' item
 	Then Details page for 'AAD1011948' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Devices' left menu item
 	Then '001BAQXT6JWFPI' content is displayed in the 'Hostname' column
 	#=====================================================================================#
 	When User navigates to the 'Mailbox' details page for '00A5B910A1004CF5AC4@bclabs.local' item
 	Then Details page for '00A5B910A1004CF5AC4@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Users' left menu item
 	Then '00A5B910A1004CF5AC4' content is displayed in the 'Username' column
 
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	| Domain             |
 	| Display Name       |
 	| Distinguished Name |
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
 	| Username              |
@@ -271,7 +271,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Related' left menu item
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
@@ -318,7 +318,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Related' left menu item
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
 	Then '31 May 2019' content is displayed in the 'Date' column
@@ -330,7 +330,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	When User navigates to the 'Users' left menu item
 	Then "7" rows found label displays on Details Page
 	And 'Administrator' content is displayed in the 'Username' column
-	When User switches to the "Email Migration" project in the Top bar on Item details page
+	When User selects 'Email Migration' in the 'Item Details Project' dropdown with wait
 	Then "1" rows found label displays on Details Page
 	And 'hansonay' content is displayed in the 'Username' column
 
@@ -339,7 +339,7 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Users' left menu item
-	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
 	Then following columns are displayed on the Item details page:
 	| ColumnName                  |
 	| User                        |

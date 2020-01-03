@@ -1418,7 +1418,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
-
+                                                                                                                                                   
             foreach (var item in expectedList)
             {
                 Utils.Verify.That(actualList, Does.Contain(item), $"{item} value is missing");
@@ -1430,7 +1430,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).Where(x=>!string.IsNullOrEmpty(x)).ToList();
             Utils.Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 

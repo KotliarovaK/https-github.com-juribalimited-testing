@@ -1,11 +1,11 @@
-﻿Feature: AssociationsAllDeviceApplications
+﻿Feature: AssociationsFunctionality
 	Runs Associations Functionality related tests
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425 @DAS18458 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18425 @DAS18458 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFr
 	When User click content from "Application Name" column
 	Then There are no errors in the browser console
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18425
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18425
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedI
 	Then Remove icon displayed in 'true' state for 'Not installed on device' association
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18456 @DAS18530 @DAS18562 @DAS18127 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18456 @DAS18530 @DAS18562 @DAS18127 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	When User navigates to the "All Device Applications" list
 	Then There are no errors in the browser console
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18489 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18489 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	Then 'RUN PIVOT' button is disabled
 	Then 'RUN PIVOT' button has tooltip with 'Use association panel to create a list' text
 
-@Evergreen @AllDeviceApplications @DAS18445 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18445 @Cleanup
 Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemoveIcon
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterC
 	When User removes 'Used on device' association in Association panel
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @DAS18531 @DAS18763
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18531 @DAS18763
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAsso
 	When User have reset all filters
 	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
-@Evergreen @AllDeviceApplications @DAS18531 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18531 @Cleanup
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User navigates to the "All Device Applications" list
 	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
-@Evergreen @AllDeviceApplications @DAS18424
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18424
 Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdde
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -188,7 +188,7 @@ Examples:
 	| Used on device     | Not entitled to device | Not installed on device |
 	| Entitled to device | Not used on device     | Installed on device     |
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18379 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18379 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	#TODO: need to develop step that checks file download and works on Bamboo remote machine
 	#Then User checks that file "Dashworks-Device-Applications-AssociationList18379" was downloaded
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18426 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18426 @Cleanup
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -231,7 +231,7 @@ Examples:
 	| Entitled to device  | Not installed on device | Not used on device      | 00BDM1JUR8IF419 | cdparanoia-libs               | UNKNOWN   | FALSE   | TRUE     |
 	| Installed on device | Not entitled to device  | Not used on device      | 00KWQ4J3WKQM0G  | Adobe Reader 6.0.1 - Fran?ais | TRUE      | UNKNOWN | FALSE    |
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18804
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18804
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -261,7 +261,7 @@ Examples:
 	| Target Drive Free Space (GB) |
 	| Video Card Count             |
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18454 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18454 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAfterSortingAndRunninList
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAft
 	When User clicks 'RUN LIST' button
 	Then table content is present
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18897 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18897 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfterRunningList
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfte
 	Then table content is present
 	Then All column headers are unique
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18447 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18447 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAfterGoingToAllDeviceApplicationsPageFromSavedList
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -301,7 +301,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAf
 	Then Associations Button is highlighted
 	Then Associations panel is displayed to the user
 
-@Evergreen @AllDeviceApplications @DAS19059
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS19059
 Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -317,7 +317,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumn
 	When User clicks on 'Compliance' column header
 	Then color data is sorted by 'Compliance' column in descending order
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18958 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18958 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedCorrectlyAfterRefreshing
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -338,7 +338,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedC
 	Then "AssociationList18958" list is displayed to user
 	Then table content is present
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18969 @Cleanup
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18969 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperationBlockInFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -353,7 +353,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperat
 	Then There are no errors in the browser console
 	Then table content is present
 
-@Evergreen @AllDeviceApplications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18889
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18889
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorWhenSomeNotEmptyFiltersApplied
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -372,3 +372,65 @@ Examples:
 	| filter           |
 	| Manufacturer     |
 	| CPU Architecture |
+
+@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18470 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAssociations
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Used on device' option in expanded associations list
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	Then the following Filters subcategories are displayed for open category:
+    | Subcategories    |
+    | App Vendor       |
+    | App Version      |
+    | Application Name |
+    | Device Type      |
+    | Hostname         |
+	When User closes "Suggested" filter category
+	When User expands "Application" filter category
+	Then the following Filters subcategories are presented for open category:
+    | Subcategories            |
+    | Application (Saved List) |
+    | Application Key          |
+    | Compliance               |
+    | Dashworks First Seen     |
+    | Device Count (Entitled)  |
+    | Device Count (Installed) |
+    | Device Count (Used)      |
+    | Import                   |
+    | Import Type              |
+    | Inventory Site           |
+    | User Count (Entitled)    |
+    | User Count (Used)        |
+	When User clicks the Columns button
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories    |
+	| Hostname         |
+	| Device Type      |
+	| Application Name |
+	| App Vendor       |
+	| App Version      |
+	When User collapses 'Selected Columns' category
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName               |
+	| Application Key          |
+	| Compliance               |
+	| Dashworks First Seen     |
+	| Device Count (Entitled)  |
+	| Device Count (Installed) |
+	| Device Count (Used)      |
+	| Import                   |
+	| Import Type              |
+	| Inventory Site           |
+	| User Count (Entitled)    |
+	| User Count (Used)        |
+	When User clicks 'RUN LIST' button
+	Then There are no errors in the browser console
+	Then table content is present
+	When User clicks Save button on the list panel
+	When User selects Save as dynamic list option
+	When User creates new custom list with "AssociationList18470" name
+	Then "AssociationList18470" list is displayed to user

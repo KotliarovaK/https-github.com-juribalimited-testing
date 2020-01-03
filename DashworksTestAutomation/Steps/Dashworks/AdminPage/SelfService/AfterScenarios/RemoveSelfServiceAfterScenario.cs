@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
         }
 
         [AfterScenario("Cleanup", Order = 10)]
-        public void deleteNewlyCreatedSelfService()
+        public void DeleteNewlyCreatedSelfService()
         {
             _removeSelfServiceMethods.DeleteSelfService();
         }

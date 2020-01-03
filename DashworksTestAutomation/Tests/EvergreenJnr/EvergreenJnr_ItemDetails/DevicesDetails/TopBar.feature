@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorr
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	And following Compliance items are displayed in Top bar on the Item details page:
+	And following items are displayed in the top bar:
 	| ComplianceItems     |
 	| Overall Compliance  |
 	| App Compliance      |
@@ -25,14 +25,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrec
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
-	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
@@ -46,8 +46,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | RED       |
 	| App Readiness     | BLUE      |
@@ -59,24 +59,24 @@ Scenario: EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem
 	When User navigates to the 'Device' details page for '00BDM1JUR8IF419' item
 	Then Details page for '00BDM1JUR8IF419' item is displayed to the user
 	Then dropdown is not opened
-	When User clicks by Project Switcher in the Top bar on Item details page
-	Then '*Project K-Computer Scheduled Project' project is displayed first in Project Switcher
-	And 'Evergreen' project is not displayed in proposal list of in Project Switcher
+	Then '*Project K-Computer Scheduled Project' option is first in the 'Item Details Project' dropdown
+	Then following Values are not displayed in the 'Item Details Project' dropdown:
+	| Options   |
+	| Evergreen |
 	When User clicks refresh button in the browser
-	And User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	And User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	When User clicks by Project Switcher in the Top bar on Item details page
-	Then 'Evergreen' project is displayed first in Project Switcher
+	Then 'Evergreen' option is first in the 'Item Details Project' dropdown
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907 @DAS16857 @DAS17005
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857
 Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheO
 	Then following content is displayed on the Details Page
 	| Title      | Value |
 	| Compliance | RED   |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems    | ColorName |
 	| Overall Compliance | RED       |
 
@@ -94,12 +94,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheO
 Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Project Details' left submenu item 
 	Then following content is displayed on the Details Page
 	| Title     | Value |
 	| Readiness | GREY  |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | GREY      |
