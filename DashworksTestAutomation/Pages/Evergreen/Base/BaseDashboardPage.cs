@@ -395,7 +395,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void ClearTextbox(string placeholder)
         {
-            GetTextbox(placeholder).Clear();
+            Driver.ClearByJavascript(GetTextbox(placeholder));
         }
 
         public void PopulateTextbox(string placeholder, string value, bool clear = true)

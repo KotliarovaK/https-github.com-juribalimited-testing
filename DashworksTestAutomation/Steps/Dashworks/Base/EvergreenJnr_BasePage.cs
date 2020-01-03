@@ -13,6 +13,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
+using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -22,6 +23,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -38,10 +40,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Teams _teams;
         private readonly Buckets _buckets;
+        private readonly SelfServices _selfServices;
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
-            Teams teams, Buckets buckets)
+            Teams teams, Buckets buckets, SelfServices selfServices)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -52,6 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _projects = projects;
             _teams = teams;
             _buckets = buckets;
+            _selfServices = selfServices;
         }
 
         #region Page Header/SubHeader
@@ -295,6 +299,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
 
             //TODO rework to use switch
+            if (placeholder.Equals("Self Service Identifier"))
+            {
+                SelfServiceDto ss = new SelfServiceDto();
+                ss.ServiceIdentifier = text;
+                _selfServices.Value.Add(ss);
+            }
+
             if (placeholder.Equals("Action Name"))
                 _automationActions.Value.Add(text);
 

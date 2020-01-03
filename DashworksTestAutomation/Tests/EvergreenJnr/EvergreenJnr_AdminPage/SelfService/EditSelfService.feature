@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpened
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutName
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_7' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -50,30 +50,30 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutChanges
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
-	When User enters 'TestProj_3' text to 'Self Service Name' textbox
+	When User enters 'TestProj_4' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
+	When User enters 'TestP_ID_3' text to 'Self Service Identifier' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_3' item from 'Self Service Name' column
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
-	When User enters 'TestProj_3' text to 'Self Service Name' textbox
+	When User enters 'TestP_ID_3' text to 'Self Service Identifier' textbox
+	When User enters 'TestProj_4' text to 'Self Service Name' textbox
 	Then 'A self service with this name already exists' error message is displayed for 'Self Service Name' field
 	Then 'UPDATE' button is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelectedScope
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
-	When User enters 'TestProj_5' text to 'Self Service Name' textbox
+	When User enters 'TestProj_1' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_4' text to 'Self Service Identifier' textbox
+	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
-	When User enters 'TestProject6' text to 'Self Service Name' textbox
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_1' item from 'Self Service Name' column
+	When User enters 'TestProjectx' text to 'Self Service Name' textbox
 	When User clears 'Self Service Scope' autocomplete
 	When User enters 'SS_ID_9' text to 'Self Service Identifier' textbox
 	Then 'UPDATE' button is disabled
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelect
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithBrokenScopeList
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_5' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_5' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -119,7 +119,7 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_5' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
