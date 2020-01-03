@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -143,7 +140,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var actualList = adminTable.GetColumnContentByColumnName(columnName).Distinct().ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
 
-            Utils.Verify.That(expectedList, Is.EqualTo(actualList));
+            Verify.That(expectedList, Is.EqualTo(actualList));
         }
     }
 }
