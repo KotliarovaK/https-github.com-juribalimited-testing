@@ -166,8 +166,7 @@ this.FeatureBackground();
 #line 27
  testRunner.When("User clicks on \'Default\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
- testRunner.Then("Boolean data in table is sorted by \"Default\" column in ascending order on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("boolean data in grid is sorted by \'Default\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
  testRunner.When("User clicks on \'Default\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30

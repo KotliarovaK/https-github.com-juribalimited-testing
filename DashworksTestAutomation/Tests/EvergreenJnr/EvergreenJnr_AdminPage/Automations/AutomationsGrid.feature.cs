@@ -259,8 +259,7 @@ this.FeatureBackground();
 #line 53
  testRunner.When("User clicks on \'Running\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
- testRunner.Then("Boolean data in table is sorted by \"Running\" column in ascending order on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("boolean data in grid is sorted by \'Running\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 55
  testRunner.When("User clicks on \'Running\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56

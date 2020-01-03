@@ -109,16 +109,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-
-        [Then(@"Boolean data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
-        public void ThenBooleanDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
+        [Then(@"boolean data in grid is sorted by '(.*)' column in ascending order")]
+        public void ThenBooleanDataInGridIsSortedByColumnInAscendingOrder(string columnName)
         {
             var adminTable = _driver.NowAt<BaseGridPage>();
 
             var expectedList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+
+            Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, "Ascending Sorting icon is not displayed");
         }
 
         [Then(@"boolean data in grid is sorted by '(.*)' column in descending order")]

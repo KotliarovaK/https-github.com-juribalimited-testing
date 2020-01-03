@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	#When User clicks on 'Active' column header
 	#Then Boolean data in table is sorted by "Active" column in descending order on the Admin page
 	When User clicks on 'Running' column header
-	Then Boolean data in table is sorted by "Running" column in ascending order on the Admin page
+	Then boolean data in grid is sorted by 'Running' column in ascending order
 	When User clicks on 'Running' column header
 	Then boolean data in grid is sorted by 'Running' column in descending order
 	When User clicks on 'Scope' column header
