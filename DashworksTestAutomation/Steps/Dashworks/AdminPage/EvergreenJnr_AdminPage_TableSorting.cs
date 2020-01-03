@@ -99,27 +99,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             SortingHelper.IsListSortedByDate(originalList, false);
             Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
-
-        [Then(@"boolean data in grid is sorted by '(.*)' column in ascending order")]
-        public void ThenBooleanDataInGridIsSortedByColumnInAscendingOrder(string columnName)
-        {
-            var adminTable = _driver.NowAt<BaseGridPage>();
-
-            var expectedList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(expectedList, false);
-
-            Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, "Ascending Sorting icon is not displayed");
-        }
-
-        [Then(@"boolean data in grid is sorted by '(.*)' column in descending order")]
-        public void ThenBooleanDataInGridIsSortedByColumnInDescendingOrder(string columnName)
-        {
-            var adminTable = _driver.NowAt<BaseGridPage>();
-
-            var expectedList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(expectedList);
-
-            Verify.IsTrue(adminTable.DescendingSortingIcon.Displayed, "Descending Sorting icon is not displayed");
-        }
     }
 }

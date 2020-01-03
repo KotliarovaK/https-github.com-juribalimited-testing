@@ -449,7 +449,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
-            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "Ascending Sorting icon is not displayed");
         }
 
         [Then(@"boolean data is sorted by '(.*)' column in descending order")]
@@ -458,7 +459,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList), false);
-            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "Descending Sorting icon is not displayed");
         }
 
         [Then(@"The first cell of the table matches to default sorting ""(.*)"" list")]
