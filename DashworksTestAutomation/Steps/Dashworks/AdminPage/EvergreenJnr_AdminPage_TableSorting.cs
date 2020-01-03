@@ -7,7 +7,6 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -24,15 +23,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver = driver;
         }
 
-        [Then(@"data in table is sorted by '(.*)' column in ascending order")]
-        public void ThenDataInTableIsSortedByColumnInAscendingOrder(string columnName)
+        [Then(@"data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
+        public void ThenDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
             var adminTable = _driver.NowAt<BaseGridPage>();
 
             var actualList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
-            Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, $"Data in '{columnName}' column is not ascending sorted");
+            Utils.Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
@@ -75,7 +74,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             SortingHelper.IsNumericListSorted(actualList);
         }
 
-        [Then(@"numeric data in table is sorted by '"(.*)"' column in ascending order")]
+        [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
@@ -114,7 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         }
 
 
-        [Then(@"Boolean data in table is sorted by '"(.*)"' column in ascending order")]
+        [Then(@"Boolean data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenBooleanDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
             var adminTable = _driver.NowAt<BaseGridPage>();

@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then 'The capacity slot details have been updated' text is displayed on inline success banner
 	And 'NewSlotName' content is displayed in the 'Capacity Slot' column
 	When User clicks on 'Capacity Slot' column header
-	Then data in table is sorted by 'Capacity Slot' column in ascending order
+	Then data in table is sorted by "Capacity Slot" column in ascending order on the Admin page
 	When User clicks on 'Capacity Slot' column header
 	Then data in table is sorted by "Capacity Slot" column in descending order on the Admin page
 	And There are no errors in the browser console

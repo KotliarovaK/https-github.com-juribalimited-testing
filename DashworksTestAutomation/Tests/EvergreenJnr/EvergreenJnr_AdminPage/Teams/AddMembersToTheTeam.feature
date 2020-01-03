@@ -75,11 +75,11 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	And User clicks 'ADD USERS' button 
 	Then 'The selected users have been added' text is displayed on inline success banner
 	When User click on "Username" column header on the Admin page
-	Then data in table is sorted by 'Username' column in ascending order
+	Then data in table is sorted by "Username" column in ascending order on the Admin page
 	When User click on "Username" column header on the Admin page
 	Then data in table is sorted by "Username" column in descending order on the Admin page
 	When User click on "Full Name" column header on the Admin page
-	Then data in table is sorted by 'Full Name' column in ascending order
+	Then data in table is sorted by "Full Name" column in ascending order on the Admin page
 	When User click on "Full Name" column header on the Admin page
 	Then data in table is sorted by "Full Name" column in descending order on the Admin page
 	When User enters "Admin" text in the Search field for "Full Name" column

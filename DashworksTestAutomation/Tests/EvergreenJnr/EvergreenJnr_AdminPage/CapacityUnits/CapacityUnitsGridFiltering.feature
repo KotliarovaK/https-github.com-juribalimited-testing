@@ -25,6 +25,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumn
 	When User clicks Refresh button on the Admin page
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks on 'Default' column header
-	Then Boolean data in table is sorted by 'Default' column in ascending order
+	Then Boolean data in table is sorted by "Default" column in ascending order on the Admin page
 	When User clicks on 'Default' column header
 	Then Boolean data in table is sorted by "Default" column in descending order on the Admin page
