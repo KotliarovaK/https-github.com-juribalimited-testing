@@ -483,8 +483,7 @@ this.FeatureBackground();
                         "Overall Compliance",
                         string.Format("{0}", value)});
 #line 66
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table6, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -570,8 +569,7 @@ this.FeatureBackground();
                         "Overall Readiness",
                         "GREY"});
 #line 86
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table8, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

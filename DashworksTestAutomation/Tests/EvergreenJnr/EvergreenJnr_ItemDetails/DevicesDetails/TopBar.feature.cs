@@ -338,8 +338,7 @@ this.FeatureBackground();
                         "Workflow",
                         "Failed"});
 #line 50
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table4, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -573,8 +572,7 @@ this.FeatureBackground();
                         "Overall Compliance",
                         "RED"});
 #line 89
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table7, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -660,8 +658,7 @@ this.FeatureBackground();
                         "Overall Readiness",
                         "GREY"});
 #line 103
- testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
-                    "e Item details page:", ((string)(null)), table9, "Then ");
+ testRunner.Then("following items and colors are displayed in the top bar:", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
