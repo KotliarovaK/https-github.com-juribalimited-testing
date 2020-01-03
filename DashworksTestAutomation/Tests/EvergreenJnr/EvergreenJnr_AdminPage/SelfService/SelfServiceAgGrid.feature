@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGeneralViewOfSelfServiceAgGrid
 	| Created By          |
 	| Created Date        |
 	When User clicks on 'Self Service Name' column header
-    Then data in table is sorted by "Self Service Name" column in ascending order on the Admin page
+    Then data in table is sorted by 'Self Service Name' column in ascending order
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetion
