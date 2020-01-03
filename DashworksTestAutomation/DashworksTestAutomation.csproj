@@ -229,7 +229,7 @@
     <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
+    <Compile Include="Pages\Evergreen\Base\CogMenuElements.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Scope\ScopeChangePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
