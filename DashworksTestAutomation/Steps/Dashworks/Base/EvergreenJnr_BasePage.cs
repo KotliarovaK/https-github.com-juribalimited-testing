@@ -308,9 +308,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             //TODO rework to use switch
             if (placeholder.Equals("Self Service Identifier"))
             {
-                SelfServiceDto ss = new SelfServiceDto();
-                ss.ServiceIdentifier = text;
-                _selfServices.Value.Add(ss);
+                _selfServices.Value.Add(new SelfServiceDto() { ServiceIdentifier = text });
             }
 
             if (placeholder.Equals("Action Name"))
@@ -325,22 +323,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             if (placeholder.Equals("Team Name"))
             {
-                _teams.Value.Add(new TeamDto(){TeamName = text});
+                _teams.Value.Add(new TeamDto() { TeamName = text });
             }
 
             if (placeholder.Equals("Bucket Name"))
             {
-                _buckets.Value.Add(new BucketDto() {Name = text});
+                _buckets.Value.Add(new BucketDto() { Name = text });
             }
 
             if (placeholder.Equals("Slot Name"))
             {
-                _slots.Value.Add(new SlotDto() {SlotName = text});
+                _slots.Value.Add(new SlotDto() { SlotName = text });
             }
 
             if (placeholder.Equals("Automation Name"))
             {
-                _automations.Value.Add(new AutomationsDto() {automationName = text});
+                _automations.Value.Add(new AutomationsDto() { automationName = text });
             }
 
             if (placeholder.Equals("Ring name"))
