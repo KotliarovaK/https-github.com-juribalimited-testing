@@ -30,11 +30,11 @@ Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsLi
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903 @DAS15180
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetails
-	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User navigates to the 'Rings' left menu item
-	And User enters "Unassigned" text in the Search field for "Ring" column
-	And User clicks content from "Ring" column
+	When User navigates to "1803 Rollout" project details
+	When User navigates to the 'Rings' left menu item
+	When User enters "Unassigned" text in the Search field for "Ring" column
+	When User clicks content from "Ring" column
 	Then "Default Ring" checkbox is checked and cannot be unchecked
 	When User tries to open same page with '88888888' item id
 	Then Page not found displayed for the user
-	And There are only 'Page not found' errors in console
+	Then There are only 'Page not found' errors in console
