@@ -372,7 +372,7 @@ this.FeatureBackground();
                         "scopeName"});
             table3.AddRow(new string[] {
                         "1",
-                        "TestSelection_name1",
+                        "A_TestSelection_name1",
                         "id193851",
                         "false",
                         "Devimdmdmm",
@@ -385,7 +385,7 @@ this.FeatureBackground();
                         "bob"});
             table3.AddRow(new string[] {
                         "2",
-                        "TestSelection_name2",
+                        "B_TestSelection_name2",
                         "id193852",
                         "false",
                         "Devimdmdmm",
@@ -398,7 +398,7 @@ this.FeatureBackground();
                         "bob"});
             table3.AddRow(new string[] {
                         "3",
-                        "TestSelection_name3",
+                        "C_TestSelection_name3",
                         "id193853",
                         "false",
                         "Devimdmdmm",
@@ -411,7 +411,7 @@ this.FeatureBackground();
                         "bob"});
             table3.AddRow(new string[] {
                         "4",
-                        "TestSelection_name4",
+                        "D_TestSelection_name4",
                         "id193854",
                         "false",
                         "Devimdmdmm",
@@ -424,7 +424,7 @@ this.FeatureBackground();
                         "bob"});
             table3.AddRow(new string[] {
                         "5",
-                        "TestSelection_name5",
+                        "F_TestSelection_name5",
                         "id193855",
                         "true",
                         "Devimdmdmm",
@@ -452,8 +452,8 @@ this.FeatureBackground();
 #line 56
  testRunner.Then("select all rows checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 57
- testRunner.When("User enters \"ATestSelfService_name1\" text in the Search field for \"Self Service N" +
-                    "ame\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"A_TestSelection_name1\" text in the Search field for \"Self Service Na" +
+                    "me\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
@@ -538,15 +538,28 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
+            table4.AddRow(new string[] {
+                        "5",
+                        "TestSelfServiceCogMenu_name5",
+                        "id193855",
+                        "true",
+                        "Devimdmdmm",
+                        "3",
+                        "2019-12-10T21:34:47.24",
+                        "2019-12-31T21:34:47.24",
+                        "URL",
+                        "true",
+                        "2",
+                        "bob"});
 #line 63
     testRunner.When("User creates Self Service via API", ((string)(null)), table4, "When ");
-#line 66
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 68
- testRunner.When("User clicks Cog-menu for \'TestSelfService_name1\' item in the \'Self Service Name\' " +
-                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 69
+ testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name1\' item in the \'Self Service" +
+                    " Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
@@ -556,11 +569,11 @@ this.FeatureBackground();
                         "Enable"});
             table5.AddRow(new string[] {
                         "Delete"});
-#line 69
+#line 70
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table5, "Then ");
-#line 74
- testRunner.When("User clicks Cog-menu for \'TestSelfService_name5\' item in the \'Self Service Name\' " +
-                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 75
+ testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name5\' item in the \'Self Service" +
+                    " Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
@@ -570,7 +583,7 @@ this.FeatureBackground();
                         "Disable"});
             table6.AddRow(new string[] {
                         "Delete"});
-#line 75
+#line 76
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();

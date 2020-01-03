@@ -9,9 +9,9 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
-	Then Page with 'Create Self Service' header is displayed to user
+	Then Page with 'Self Services' header is displayed to user
 	When User clicks 'CREATE SELF SERVICE' button
-	Then Page with 'Create Self Service' header is displayed to user
+	Then Page with 'Self Services' header is displayed to user
 	Then There are no errors in the browser console
 	When User enters 'TestProject1' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete

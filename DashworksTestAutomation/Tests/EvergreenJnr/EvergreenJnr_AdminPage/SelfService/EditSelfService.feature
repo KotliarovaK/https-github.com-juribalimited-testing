@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelect
 	When User clicks 'CREATE' button
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_1' item from 'Self Service Name' column
 	When User enters 'TestProjectx' text to 'Self Service Name' textbox
-	When User clears 'Self Service Scope' autocomplete
+	When User clears 'Self Service Scope' autocomplete with backspaces
 	When User enters 'SS_ID_9' text to 'Self Service Identifier' textbox
 	Then 'UPDATE' button is disabled
 
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 	When User clicks 'CREATE' button
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
 	When User enters 'TestProj_4' text to 'Self Service Name' textbox
-	When User selects 'Alex M List' option from 'Self Service Scope' autocomplete
+	When User selects 'Application List (Complex) - BROKEN LIST' option from 'Self Service Scope' autocomplete
 	When User enters 'TestP_ID_4' text to 'Self Service Identifier' textbox
 	Then 'This list has errors' error message is displayed for 'Self Service Scope' dropdown
 	Then 'UPDATE' button is disabled
@@ -129,11 +129,11 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCan
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
-	Then 'UPDATE' button is disabled
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button is not disabled
+	Then '<Self Service Identifier after cut>' content is displayed in 'Self Service Identifier' textbox
 
 Examples:
-	| Self Service Identifier                          |
-	| 123qweTJ911                                      |
-	| 123456789012                                     |
-	| 1234567890WIEOEOEPEP1111212123424334324234234    |
+	| Self Service Identifier                       | Self Service Identifier after cut |
+	| 123qweTJ911                                   | 123qweTJ91                        |
+	| 123456789012                                  | 1234567890                        |
+	| 1234567890WIEOEOEPEP1111212123424334324234234 | 1234567890                        |
