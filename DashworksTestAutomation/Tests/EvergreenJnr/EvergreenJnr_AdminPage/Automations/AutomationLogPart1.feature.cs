@@ -1007,7 +1007,7 @@ this.FeatureBackground();
 #line 259
  testRunner.When("User clicks on \'Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 260
- testRunner.Then("date in table is sorted by \"Date\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("date in table is sorted by \'Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 261
  testRunner.When("User clicks on \'Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 262
@@ -1077,13 +1077,11 @@ this.FeatureBackground();
 #line 291
  testRunner.When("User clicks on \'Outcome\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 292
- testRunner.Then("Boolean data in table is sorted by \"Outcome\" column in ascending order on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("boolean data is sorted by \'Outcome\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 293
  testRunner.When("User clicks on \'Outcome\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 294
- testRunner.Then("Boolean data in table is sorted by \"Outcome\" column in descending order on the Ad" +
-                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("boolean data is sorted by \'Outcome\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

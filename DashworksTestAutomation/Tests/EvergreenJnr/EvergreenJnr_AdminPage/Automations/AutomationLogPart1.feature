@@ -257,7 +257,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	Then Page with 'Automations' header is displayed to user
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks on 'Date' column header
-	Then date in table is sorted by "Date" column in descending order on the Admin page
+	Then date in table is sorted by 'Date' column in descending order
 	When User clicks on 'Date' column header
 	Then date in table is sorted by "Date" column in ascending order on the Admin page
 	When User clicks on 'Type' column header
@@ -289,6 +289,6 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	When User clicks on 'User' column header
 	Then data in table is sorted by "User" column in descending order on the Admin page
 	When User clicks on 'Outcome' column header
-	Then Boolean data in table is sorted by "Outcome" column in ascending order on the Admin page
+	Then boolean data is sorted by 'Outcome' column in ascending order
 	When User clicks on 'Outcome' column header
-	Then Boolean data in table is sorted by "Outcome" column in descending order on the Admin page
+	Then boolean data is sorted by 'Outcome' column in descending order

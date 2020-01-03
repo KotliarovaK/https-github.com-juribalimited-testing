@@ -390,7 +390,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDi
 	| Unassigned         |
 	| Ring 1             |
 	And User clicks on 'Windows7Mi: Ring' column header
-	Then Data in table is sorted by "Windows7Mi: Ring" column in the next way
+	Then Content in the 'Windows7Mi: Ring' column is equal to
 	| values     |
 	| Ring 2     |
 	| Ring 1     |
