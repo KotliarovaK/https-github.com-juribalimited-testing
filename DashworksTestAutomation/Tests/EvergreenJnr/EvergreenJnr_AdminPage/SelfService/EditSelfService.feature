@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18214 @DAS19364 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpenedOneAndUserIsAbleToEditIt
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_5' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -56,11 +56,11 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters 'TestP_ID_3' text to 'Self Service Identifier' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'Edit' option in Cog-menu for 'TestProj_3' item from 'Self Service Name' column
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_4' item from 'Self Service Name' column
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters 'TestP_ID_3' text to 'Self Service Identifier' textbox
 	When User enters 'TestProj_4' text to 'Self Service Name' textbox
-	Then 'A self service with this name already exists' error message is displayed for 'Self Service Name' field
+	When User clicks Body container
 	Then 'UPDATE' button is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
