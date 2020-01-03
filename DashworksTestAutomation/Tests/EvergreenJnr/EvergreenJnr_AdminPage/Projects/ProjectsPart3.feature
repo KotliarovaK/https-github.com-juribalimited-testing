@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| ACDSee 8                       |
 	Then Counter shows "6" found rows
 	When User click on "Date" column header on the Admin page
-	Then date in table is sorted by "Date" column in descending order on the Admin page
+	Then date in table is sorted by 'Date' column in descending order
 	When User click on "Date" column header on the Admin page
 	Then date in table is sorted by "Date" column in ascending order on the Admin page
 	When User click on "Item" column header on the Admin page
@@ -221,7 +221,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User click on "Date" column header on the Admin page
-	Then date in table is sorted by "Date" column in descending order on the Admin page
+	Then date in table is sorted by 'Date' column in descending order
 	When User click on "Date" column header on the Admin page
 	Then date in table is sorted by "Date" column in ascending order on the Admin page
 	When User click on "Item" column header on the Admin page

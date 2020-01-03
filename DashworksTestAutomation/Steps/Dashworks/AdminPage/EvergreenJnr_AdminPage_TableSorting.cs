@@ -100,15 +100,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [Then(@"date in table is sorted by ""(.*)"" column in descending order on the Admin page")]
-        public void ThenDateInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
-        {
-            var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByDate(originalList, false);
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"boolean data in grid is sorted by '(.*)' column in ascending order")]
         public void ThenBooleanDataInGridIsSortedByColumnInAscendingOrder(string columnName)
         {
