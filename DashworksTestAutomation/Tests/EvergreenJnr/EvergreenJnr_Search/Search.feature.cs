@@ -2168,7 +2168,7 @@ this.FeatureBackground();
             table41.AddRow(new string[] {
                         "Unassigned"});
 #line 393
- testRunner.Then("Data in table is sorted by \"Windows7Mi: Ring\" column in the next way", ((string)(null)), table41, "Then ");
+ testRunner.Then("Content in the \'Windows7Mi: Ring\' column is equal to", ((string)(null)), table41, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

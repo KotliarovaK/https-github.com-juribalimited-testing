@@ -132,15 +132,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
             Utils.Verify.IsTrue(adminTable.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
         }
-
-        [Then(@"Data in table is sorted by ""(.*)"" column in the next way")]
-        public void ThenDataInTableIsSortedInTheNextWay(string columnName, Table table)
-        {
-            var adminTable = _driver.NowAt<BaseGridPage>();
-            var actualList = adminTable.GetColumnContentByColumnName(columnName).Distinct().ToList();
-            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
-
-            Verify.That(expectedList, Is.EqualTo(actualList));
-        }
     }
 }
