@@ -26,13 +26,13 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then 'Self Service URL' field is not displayed in the table
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then 'Self Service URL' field is displayed in the table
@@ -304,28 +304,28 @@ Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFi
 		#--Devices--#
 	When User navigates to the 'Device' details page for '011PLA470S0B9DJ' item
 	Then Details page for '011PLA470S0B9DJ' item is displayed to the user
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Users--#
 	When User navigates to the 'User' details page for '0088FC8A50DD4344B92' item
 	Then Details page for '0088FC8A50DD4344B92' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Applications--#
 	When User navigates to the 'Application' details page for '20040610sqlserverck' item
 	Then Details page for '20040610sqlserverck' item is displayed to the user
-	When User switches to the "I-Computer Scheduled Project" project in the Top bar on Item details page
+	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Mailboxes--#
 	When User navigates to the 'Mailbox' details page for '013DA2178AB4444CAF2@bclabs.local' item
 	Then Details page for '013DA2178AB4444CAF2@bclabs.local' item is displayed to the user
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
@@ -346,28 +346,28 @@ Scenario: EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessf
 		#--Devices--#
 	When User navigates to the 'Device' details page for the item with '13292' ID
 	Then Details page for 'CHAXTB7OLNX1W2' item is displayed to the user
-	When User switches to the "1803 Rollout" project in the Top bar on Item details page
+	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Users--#
 	When User navigates to the 'User' details page for the item with '27418' ID
 	Then Details page for 'REM635708' item is displayed to the user
-	When User switches to the "1803 Rollout" project in the Top bar on Item details page
+	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Mailboxes--#
 	When User navigates to the 'Mailbox' details page for the item with '46886' ID
 	Then Details page for '01DE1433D11E44E6A4A@bclabs.local' item is displayed to the user
-	When User switches to the "TSTPROJ" project in the Top bar on Item details page
+	When User selects 'TSTPROJ' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Applications--#
 	When User navigates to the 'Application' details page for the item with '93' ID
 	Then Details page for '20040610sqlserverck' item is displayed to the user
-	When User switches to the "I-Computer Scheduled Project" project in the Top bar on Item details page
+	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field

@@ -17,14 +17,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInEvergreenModeIsDisplaye
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnApplicationsPage
 	When User navigates to the 'Application' details page for 'ABBYY FineReader 8.0 Professional Edition' item
 	Then Details page for 'ABBYY FineReader 8.0 Professional Edition' item is displayed to the user
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
 	| Workflow          |
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedC
 Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject
 	When User navigates to the 'Application' details page for 'ACD Display 3.4' item
 	Then Details page for 'ACD Display 3.4' item is displayed to the user
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page
@@ -52,10 +52,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectsInTheTopBarOnItemDetail
 	When User navigates to the 'Application' details page for '7zip' item
 	Then Details page for '7zip' item is displayed to the user
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
-	When User switches to the "Computer Scheduled Test (Jo)" project in the Top bar on Item details page
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857
 Scenario: EvergreenJnr_ApplicationsList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatComplianceInKeyValueTableMatche
 Scenario: EvergreenJnr_ApplicationsList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
 	When User navigates to the 'Application' details page for '7zip' item
 	Then Details page for '7zip' item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Project Details' left submenu item 
 	Then following content is displayed on the Details Page

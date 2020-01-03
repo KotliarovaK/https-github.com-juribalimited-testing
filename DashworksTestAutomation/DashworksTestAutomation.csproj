@@ -237,7 +237,7 @@
     <Compile Include="Pages\Evergreen\BaseDialogPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseInlineBannerElement.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseRightSideActionsPanel.cs" />
-    <Compile Include="Pages\Evergreen\Base\BaseTable.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\BaseTable.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\ImportListsFromCSVPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
@@ -372,6 +372,8 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\RemoveRingsAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\SetDefaultRingAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceMethods.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\SelfServiceAgGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\AfterScenario\RemoveSlotAfterScenario.cs" />

@@ -132,8 +132,8 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("Details page for \'ZZP911429\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
-                    "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
@@ -145,8 +145,8 @@ this.FeatureBackground();
 #line 17
  testRunner.Then("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
- testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
-                    "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
@@ -248,8 +248,8 @@ this.FeatureBackground();
 #line 43
  testRunner.Then("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 44
- testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
-                    "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
@@ -329,8 +329,8 @@ this.FeatureBackground();
 #line 59
  testRunner.Then("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 60
- testRunner.When("User switches to the \"User Evergreen Capacity Project\" project in the Top bar on " +
-                    "Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 61
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
@@ -401,8 +401,8 @@ this.FeatureBackground();
 #line 71
  testRunner.Then("Details page for \'SNL594136\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 72
- testRunner.When("User switches to the \"Windows 10 Migration - Depot\" project in the Top bar on Ite" +
-                    "m details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Windows 10 Migration - Depot\' in the \'Item Details Project\' dropdow" +
+                    "n with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 74
@@ -410,8 +410,7 @@ this.FeatureBackground();
 #line 75
  testRunner.Then("\'Visio Professional 5.0b\' content is displayed in the \'Current App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 76
- testRunner.When("User switches to the \"Havoc (Big Data)\" project in the Top bar on Item details pa" +
-                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Havoc (Big Data)\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
  testRunner.Then("\'EarthLink Digital Music Player (A01)\' content is displayed in the \'Current App\' " +
                     "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

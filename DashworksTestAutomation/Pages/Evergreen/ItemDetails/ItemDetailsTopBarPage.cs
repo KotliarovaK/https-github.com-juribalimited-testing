@@ -10,34 +10,20 @@ using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
+    //Can be generic element but for now used only on ItemDetails
     internal class ItemDetailsTopBarPage : SeleniumBasePage
     {
-        public const string ProjectOnSwitcherPanel = ".//mat-option[@class='mat-option ng-star-inserted']";
-
         public const string TopBarTitleSelector = ".//div[contains(@class,'topbar-item-label')]";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle']")]
-        public IWebElement PageIdentitySelectors { get; set; }
+        public const string TopBarTextSelector = ".//div[contains(@class,'topbar-item-value')]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='topbar']")]
-        public IWebElement TopBarOnItemDetailsPage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Evergreen']/ancestor::mat-select")]
-        public IWebElement DefaultProjectStatusInProjectSwitcherDropDown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='topbar-select']")]
-        public IWebElement ProjectSwitcherDropdownTopBar { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ProjectOnSwitcherPanel)]
-        public IList<IWebElement> ProjectsOnSwitcherPanel { get; set; }
+        public IWebElement TopBarElement { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.PageIdentitySelectors)
-            };
+            return new List<By> { };
         }
 
         public IList<IWebElement> GetTopBarItems()
@@ -63,27 +49,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetTobBarItemTextElement(string tobBarTitle)
         {
             return GetTopBarElementWithTitle(tobBarTitle)
-                .FindElement(By.XPath(".//div[contains(@class,'topbar-item-value')]"));
+                .FindElement(By.XPath(TopBarTextSelector));
         }
 
-        public List<string> GetComplianceItemsOnTopBar()
+        public List<string> GetTopBarItemsText()
         {
-            var selector = By.XPath(".//div[@class='topbar-item-label']");
-            return Driver.FindElements(selector).Select(x => x.Text).ToList();
-        }
-
-        public IWebElement GetSelectedProjectOnTopBarByName(string projectName)
-        {
-            var selector = By.XPath($".//span[text()='{projectName}']/ancestor::div[@class='details-project-selector']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IList<IWebElement> GetValuesColumnDataOfItemDetails()
-        {
-            var selector = By.XPath(".//td[contains(@class, 'mat-column-value')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElements(selector);
+            var list = GetTopBarItems()
+                .Select(x => x.FindElement(By.XPath(TopBarTextSelector)))
+                .Select(x => x.Text).ToList();
+            return list;
         }
     }
 }

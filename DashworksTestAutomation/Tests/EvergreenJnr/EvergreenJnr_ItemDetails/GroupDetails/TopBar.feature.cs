@@ -192,7 +192,7 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Allowed RODC Password Replication Group\' item is displayed to t" +
                     "he user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
- testRunner.And("Top bar on the Item details page is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("top bar is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInEvergreenModeIsDisplayedCo
 Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
 	Then Details page for '00B5CCB89AD0404B965@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -27,16 +27,16 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectsInTheTopBarOnItemDetailsPa
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	Then projects on the Project Switcher panel are displayed in alphabetical order
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @DAS16928 @DAS18405
 Scenario: EvergreenJnr_MailboxesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' parent left menu item
 	And User navigates to the 'Project Details' left submenu item 
 	Then following content is displayed on the Details Page

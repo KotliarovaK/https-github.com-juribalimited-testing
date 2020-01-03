@@ -522,7 +522,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdown(value, dropdownName);
             //Used for Projects Scope to wait for changes to be applied
             //TODO: 21.11.2019 Oleksandr - increased sleep from 3 to 7 seconds to make sure that change list operation is applied
-            Thread.Sleep(7000);
+            //Vitalii: decreased to 5 seconds. Contact me if you need to increase this number or tests start failing again
+            Thread.Sleep(5000);
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]
@@ -639,6 +640,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropdown).Click();
             VerifyTooltipOfDropdownIcons(page, expectedTooltips);
             page.BodyContainer.Click();
+        }
+
+        [Then(@"'(.*)' option is first in the '(.*)' dropdown")]
+        public void ThenOptionIsFirstInTheDropdown(string option, string dropDownName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropDownName).Click();
+            List<string> actualOptions = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(option, actualOptions.First(),
+                $"First option in the '{dropDownName}' dropdown should be '{option}'");
+        }
+
+        [Then(@"options are sorted in alphabetical order in the '(.*)' dropdown")]
+        public void ThenOptionsAreSortedInAlphabeticalOrderInTheDropdown(string dropDownName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropDownName).Click();
+            List<string> actualOptions = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(actualOptions.OrderBy(s => s), actualOptions,
+                $"Options are displayed in not in alphabetical order in the '{dropDownName}' dropdown");
         }
 
         [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]

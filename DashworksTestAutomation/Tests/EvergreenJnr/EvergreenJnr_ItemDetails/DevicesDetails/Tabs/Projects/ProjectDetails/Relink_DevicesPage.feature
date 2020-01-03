@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnDevicesPage
 	When User navigates to the 'Device' details page for '06RIV0KXJMHJ1K' item
 	Then Details page for '06RIV0KXJMHJ1K' item is displayed to the user
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then User verifies data in the fields on details page
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User clicks 'RELINK' button on popup
 	Then 'Device successfully relinked' text is displayed on inline success banner
 	When User navigates to the 'User' details page for 'ZHC394580' item
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyRelinked
 	When User navigates to the 'Device' details page for 'FISC5NOXFB8Q7M' item
 	Then Details page for 'FISC5NOXFB8Q7M' item is displayed to the user
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 Scenario: EvergreenJnr_DevicesList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed
 	When User navigates to the 'Device' details page for '011PLA470S0B9DJ' item
 	Then Details page for '011PLA470S0B9DJ' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button

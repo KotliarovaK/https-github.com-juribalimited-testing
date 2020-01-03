@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForUsersTabOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '002B5DC7D4D34D5C895@bclabs.local' item
 	Then Details page for '002B5DC7D4D34D5C895@bclabs.local' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Users' left menu item
 	When User navigates to the 'Users' left submenu item
 	Then 'TRUE' content is displayed in the 'Owner' column

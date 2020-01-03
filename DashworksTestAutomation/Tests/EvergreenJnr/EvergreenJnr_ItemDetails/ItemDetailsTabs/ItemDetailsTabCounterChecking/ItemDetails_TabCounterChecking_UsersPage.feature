@@ -99,7 +99,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInProjectMode
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	Then User sees following parent left menu items
 	| TabName          |
 	| Details          |

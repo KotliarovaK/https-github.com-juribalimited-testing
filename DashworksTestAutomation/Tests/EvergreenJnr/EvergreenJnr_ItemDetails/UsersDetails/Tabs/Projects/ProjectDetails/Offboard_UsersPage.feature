@@ -11,21 +11,21 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithNoAssotiatedDevicesOnUsersPage
 	When User navigates to the 'User' details page for '01F6D54271D74F1BB8D' item
 	Then Details page for '01F6D54271D74F1BB8D' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
-	And 'Offboard all associated devices' checkbox is checked
+	Then select all rows checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Hostname     |
 	| Owned        |
-	When User selects state 'true' for 'Offboard all associated devices' checkbox
+	When User deselect all rows on the grid
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
-	Then " 02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
+	Then "02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
@@ -47,12 +47,12 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithAssotiatedDevicesOnUsersPage
 	When User navigates to the 'User' details page for '01F6D54271D74F1BB8D' item
 	Then Details page for '01F6D54271D74F1BB8D' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
-	And 'Offboard all associated devices' checkbox is checked
+	Then select all rows checkbox is checked
 	And following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Hostname     |
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboardPopUpWindowWithoutUserOnUsersPage
 	When User navigates to the 'User' details page for '0088FC8A50DD4344B92' item
 	Then Details page for '0088FC8A50DD4344B92' item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
