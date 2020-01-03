@@ -291,4 +291,4 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	When User clicks on 'Outcome' column header
 	Then Boolean data in table is sorted by "Outcome" column in ascending order on the Admin page
 	When User clicks on 'Outcome' column header
-	Then Boolean data in table is sorted by "Outcome" column in descending order on the Admin page
+	Then boolean data in grid is sorted by 'Outcome' column in descending order
