@@ -476,7 +476,7 @@ this.FeatureBackground();
 #line 83
  testRunner.When("User clicks on \'ACDSee 4.0 SendPix & Email Update\' cell from \'[9999999]\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
- testRunner.Then("Value column of Item Details has no Unknown item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Unknown\' text is not present in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

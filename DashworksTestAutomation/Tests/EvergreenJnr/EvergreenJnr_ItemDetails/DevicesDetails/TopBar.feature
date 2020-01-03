@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorr
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
-	And following Compliance items are displayed in Top bar on the Item details page:
+	And following items are displayed in the top bar:
 	| ComplianceItems     |
 	| Overall Compliance  |
 	| App Compliance      |
@@ -26,13 +26,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTopBarInProjectModeIsDisplayedCorrec
 	And User click content from "Hostname" column
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 	And User click content from "Hostname" column
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | RED       |
 	| App Readiness     | BLUE      |
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheO
 	Then following content is displayed on the Details Page
 	| Title      | Value |
 	| Compliance | RED   |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems    | ColorName |
 	| Overall Compliance | RED       |
 
@@ -100,6 +100,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheO
 	Then following content is displayed on the Details Page
 	| Title     | Value |
 	| Readiness | GREY  |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | GREY      |

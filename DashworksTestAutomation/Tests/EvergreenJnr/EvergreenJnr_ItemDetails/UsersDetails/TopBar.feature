@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_UsersList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnUsersPage
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
-	And following Compliance items are displayed in Top bar on the Item details page:
+	And following items are displayed in the top bar:
 	| ComplianceItems       |
 	| Overall Compliance    |
 	| User App Compliance   |
@@ -21,14 +21,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectl
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
 	| Workflow          |
 	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAll
 	When User navigates to the 'User' details page for 'AAC860150' item
 	Then Details page for 'AAC860150' item is displayed to the user
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
@@ -63,7 +63,7 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatch
 	Then following content is displayed on the Details Page
 	| Title      | Value   |
 	| Compliance | <Value> |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems    | ColorName |
 	| Overall Compliance | <Value>   |
 
@@ -83,6 +83,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatComplianceInKeyValueTableMatchesTheOve
 	Then following content is displayed on the Details Page
 	| Title     | Value |
 	| Readiness | GREY  |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | GREY      |

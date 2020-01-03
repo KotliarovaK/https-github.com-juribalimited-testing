@@ -566,8 +566,8 @@ this.FeatureBackground();
 #line 108
  testRunner.When("User selects \'Project\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 109
- testRunner.Then("User sees blue message \'This list may contain archived devices which will not be " +
-                    "onboarded\' on Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This list may contain archived devices which will not be onboarded\' information " +
+                    "message is displayed for \'Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

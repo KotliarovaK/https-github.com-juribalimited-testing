@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @Buckets @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS18351 @Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsingTheSpaceAsAFirstSymbol
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -15,15 +15,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters '11770' text to 'Bucket Name' textbox
 	When User selects 'Admin IT' option from 'Team' autocomplete
-	And User clicks 'CREATE' button 
+	When User clicks 'CREATE' button 
 	Then 'The bucket has been created' text is displayed on inline success banner
 	When User clicks 'CREATE EVERGREEN BUCKET' button 
 	Then Page with 'Create Evergreen Bucket' subheader is displayed to user
 	When User enters ' 11770' text to 'Bucket Name' textbox
 	When User selects 'Admin IT' option from 'Team' autocomplete
-	And User clicks 'CREATE' button 
+	When User clicks 'CREATE' button 
 	Then 'A bucket already exists with this name' text is displayed on inline error banner
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
+	When User clicks 'CREATE EVERGREEN BUCKET' button 
+	When User enters '11770' text to 'Bucket Name' textbox
+	Then 'A bucket already exists with this name' error message is displayed for 'Bucket Name' field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS16636 @Buckets @Set_Default_Bucket @Cleanup @Do_Not_Run_With_Buckets
 Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket

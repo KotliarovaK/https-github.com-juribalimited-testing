@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_Search_CheckThatThereIsSameAppearanceOfTheUnknownVersionI
 	And User navigates to second tab of Search Results
 	Then Version column of Search Results has no Unknown item
 	When User clicks on 'ACDSee 4.0 SendPix & Email Update' cell from '[9999999]' column
-	Then Value column of Item Details has no Unknown item
+	Then 'Unknown' text is not present in the table
 
 @Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS17368
 Scenario: EvergreenJnr_Search_CheckThatPressToSeeAllResultsWorksInGlobalSearch

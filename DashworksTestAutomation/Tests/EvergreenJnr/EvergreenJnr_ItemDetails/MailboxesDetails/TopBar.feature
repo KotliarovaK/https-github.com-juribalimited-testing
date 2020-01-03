@@ -9,14 +9,14 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
 	Then Details page for '00B5CCB89AD0404B965@bclabs.local' item is displayed to the user
-	And No one Compliance items are displayed for the User in Top bar on the Item details page
+	Then there are no displayed items in the top bar
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075 @DAS17355
 Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '00B5CCB89AD0404B965@bclabs.local' item
 	Then Details page for '00B5CCB89AD0404B965@bclabs.local' item is displayed to the user
 	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	Then following items are displayed in the top bar:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| Task Readiness    |
@@ -42,6 +42,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatComplianceInKeyValueTableMatchesTh
 	Then following content is displayed on the Details Page
 	| Title     | Value  |
 	| Readiness | IGNORE |
-	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	Then following items and colors are displayed in the top bar:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | IGNORE    |

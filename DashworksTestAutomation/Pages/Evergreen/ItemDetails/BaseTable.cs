@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.Base
+namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
+    //For now this element is used only on ItemDetails page
+    //Move it to Base if it will be used in some other place
     class BaseTable : SeleniumBasePage
     {
         private const string TableSelector = ".//div[contains(@class,'table-responsive')]";
@@ -61,7 +61,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public string GetRowContent(string key, int column = 1)
         {
             var row = GetRowByKey(key);
-            var content = row.FindElement(By.XPath($".//td[{column + 1}]//span"));
+            var content = GetContentFromRow(row);
+            return content;
+        }
+
+        //column = 1 is a first column after keys
+        public List<string> GetRowsContent(int column = 1)
+        {
+            var content = Rows.Select(x => GetContentFromRow(x)).ToList();
+            return content;
+        }
+
+        //column = 1 is a first column after keys
+        private string GetContentFromRow(IWebElement element, int column = 1)
+        {
+            var content = element.FindElement(By.XPath($".//td[{column + 1}]//span"));
             return content.Text;
         }
     }

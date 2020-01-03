@@ -720,16 +720,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
         }
 
-        [Then(@"User sees blue message '(.*)' on Create Project page")]
-        public void ThenUserSeesMessageInformingAboutArchivedDevicesInList(string message)
-        {
-            var createProjectElement = _driver.NowAt<ProjectsPage>();
-            Verify.That(createProjectElement.ArchivedDevicesMessage.Text, Is.EqualTo(message), "Archived message text is not displayed");
-
-            var bgColor = createProjectElement.ArchivedDevicesMessage.GetCssValue("color");
-            Verify.That(bgColor, Is.EqualTo("rgba(49, 122, 193, 1)"), "Archived message text is in different color");
-        }
-
         [Then(@"Main lists are displayed correctly in the Scope dropdown")]
         public void ThenMainListsAreDisplayedCorrectlyInTheScopeDropdown(Table table)
         {
