@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User clicks on 'Capacity Slot' column header
 	Then data in table is sorted by 'Capacity Slot' column in ascending order
 	When User clicks on 'Capacity Slot' column header
-	Then data in table is sorted by "Capacity Slot" column in descending order on the Admin page
+	Then data in table is sorted by 'Capacity Slot' column in descending order
 	And There are no errors in the browser console
 	When User creates new Slot
 	| SlotName      | DisplayName | CapacityType    |

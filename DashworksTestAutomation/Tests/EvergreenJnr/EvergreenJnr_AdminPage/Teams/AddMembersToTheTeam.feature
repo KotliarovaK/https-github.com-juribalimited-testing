@@ -77,11 +77,11 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User click on "Username" column header on the Admin page
 	Then data in table is sorted by 'Username' column in ascending order
 	When User click on "Username" column header on the Admin page
-	Then data in table is sorted by "Username" column in descending order on the Admin page
+	Then data in table is sorted by 'Username' column in descending order
 	When User click on "Full Name" column header on the Admin page
 	Then data in table is sorted by 'Full Name' column in ascending order
 	When User click on "Full Name" column header on the Admin page
-	Then data in table is sorted by "Full Name" column in descending order on the Admin page
+	Then data in table is sorted by 'Full Name' column in descending order
 	When User enters "Admin" text in the Search field for "Full Name" column
 	Then Rows counter shows "3" of "4" rows
 	When User enters "automation_admin1" text in the Search field for "Username" column

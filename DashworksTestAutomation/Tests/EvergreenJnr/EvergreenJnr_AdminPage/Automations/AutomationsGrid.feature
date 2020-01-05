@@ -44,12 +44,12 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User clicks on 'Automation' column header
 	Then data in table is sorted by 'Automation' column in ascending order
 	When User clicks on 'Automation' column header
-	Then data in table is sorted by "Automation" column in descending order on the Admin page
+	Then data in table is sorted by 'Automation' column in descending order
 	#Run steps after fixing Boolean sorting
 	#When User clicks on 'Active' column header
 	#Then Boolean data in table is sorted by 'Active' column in ascending order
 	#When User clicks on 'Active' column header
-	#Then Boolean data in table is sorted by "Active" column in descending order on the Admin page
+	#Then Boolean data in table is sorted by 'Active' column in descending order
 	When User clicks on 'Running' column header
 	Then boolean data is sorted by 'Running' column in ascending order
 	When User clicks on 'Running' column header
@@ -57,11 +57,11 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User clicks on 'Scope' column header
 	Then data in table is sorted by 'Scope' column in ascending order
 	When User clicks on 'Scope' column header
-	Then data in table is sorted by "Scope" column in descending order on the Admin page
+	Then data in table is sorted by 'Scope' column in descending order
 	When User clicks on 'Run' column header
 	Then data in table is sorted by 'Run' column in ascending order
 	When User clicks on 'Run' column header
-	Then data in table is sorted by "Run" column in descending order on the Admin page
+	Then data in table is sorted by 'Run' column in descending order
 	When User clicks on 'Actions' column header
 	Then numeric data in table is sorted by 'Actions' column in descending order
 	When User clicks on 'Actions' column header
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User clicks on 'Description' column header
 	Then data in table is sorted by 'Description' column in ascending order
 	When User clicks on 'Description' column header
-	Then data in table is sorted by "Description" column in descending order on the Admin page
+	Then data in table is sorted by 'Description' column in descending order
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774
 Scenario: EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp

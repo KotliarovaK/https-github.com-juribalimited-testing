@@ -52,11 +52,11 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by 'Bucket' column in ascending order
 	When User click on "Bucket" column header on the Admin page
-	Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	Then data in table is sorted by 'Bucket' column in descending order
 	When User click on "Project" column header on the Admin page
 	Then data in table is sorted by 'Project' column in ascending order
 	When User click on "Project" column header on the Admin page
-	Then data in table is sorted by "Project" column in descending order on the Admin page
+	Then data in table is sorted by 'Project' column in descending order
 	When User click on "Default" column header on the Admin page
 	Then boolean data is sorted by 'Default' column in ascending order
 	When User click on "Default" column header on the Admin page

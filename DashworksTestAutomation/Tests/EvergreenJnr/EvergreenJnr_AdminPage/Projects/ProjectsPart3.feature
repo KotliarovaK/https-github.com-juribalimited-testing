@@ -173,19 +173,19 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User click on "Item" column header on the Admin page
 	Then data in table is sorted by 'Item' column in ascending order
 	When User click on "Item" column header on the Admin page
-	Then data in table is sorted by "Item" column in descending order on the Admin page
+	Then data in table is sorted by 'Item' column in descending order
 	When User click on "Object Type" column header on the Admin page
 	Then data in table is sorted by 'Object Type' column in ascending order
 	When User click on "Object Type" column header on the Admin page
-	Then data in table is sorted by "Object Type" column in descending order on the Admin page
+	Then data in table is sorted by 'Object Type' column in descending order
 	When User click on "Action" column header on the Admin page
 	Then data in table is sorted by 'Action' column in ascending order
 	When User click on "Action" column header on the Admin page
-	Then data in table is sorted by "Action" column in descending order on the Admin page
+	Then data in table is sorted by 'Action' column in descending order
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by 'Bucket' column in ascending order
 	When User click on "Bucket" column header on the Admin page
-	Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	Then data in table is sorted by 'Bucket' column in descending order
 	When User selects following date filter on the Projects page
 	| FilterData  |
 	| 30 Jul 2017 |
@@ -227,19 +227,19 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User click on "Item" column header on the Admin page
 	Then data in table is sorted by 'Item' column in ascending order
 	When User click on "Item" column header on the Admin page
-	Then data in table is sorted by "Item" column in descending order on the Admin page
+	Then data in table is sorted by 'Item' column in descending order
 	When User click on "Object Type" column header on the Admin page
 	Then data in table is sorted by 'Object Type' column in ascending order
 	When User click on "Object Type" column header on the Admin page
-	Then data in table is sorted by "Object Type" column in descending order on the Admin page
+	Then data in table is sorted by 'Object Type' column in descending order
 	When User click on "Action" column header on the Admin page
 	Then data in table is sorted by 'Action' column in ascending order
 	When User click on "Action" column header on the Admin page
-	Then data in table is sorted by "Action" column in descending order on the Admin page
+	Then data in table is sorted by 'Action' column in descending order
 	When User click on "Status" column header on the Admin page
 	Then data in table is sorted by 'Status' column in ascending order
 	When User click on "Status" column header on the Admin page
-	Then data in table is sorted by "Status" column in descending order on the Admin page
+	Then data in table is sorted by 'Status' column in descending order
 	When User selects following date filter on the Projects page
 	| FilterData  |
 	| 30 Jul 2017 |

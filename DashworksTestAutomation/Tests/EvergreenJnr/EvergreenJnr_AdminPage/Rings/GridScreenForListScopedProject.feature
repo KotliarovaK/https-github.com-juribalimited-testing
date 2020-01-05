@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User clicks on 'Ring' column header
 	Then data in table is sorted by 'Ring' column in ascending order
 	When User clicks on 'Ring' column header
-	Then data in table is sorted by "Ring" column in descending order on the Admin page
+	Then data in table is sorted by 'Ring' column in descending order
 	When User clicks Cog-menu on the Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	| Set default      |
 	| Delete           |
 	When User clicks on 'Ring' column header
-	Then data in table is sorted by "Ring" column in descending order on the Admin page
+	Then data in table is sorted by 'Ring' column in descending order
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| Ring_Test        |
