@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	When User clicks on 'Date' column header
 	Then date in table is sorted by 'Date' column in descending order
 	When User clicks on 'Date' column header
-	Then date in table is sorted by "Date" column in ascending order on the Admin page
+	Then date in table is sorted by 'Date' column in ascending order
 	When User clicks on 'Type' column header
 	Then data in table is sorted by "Type" column in ascending order on the Admin page
 	When User clicks on 'Type' column header
