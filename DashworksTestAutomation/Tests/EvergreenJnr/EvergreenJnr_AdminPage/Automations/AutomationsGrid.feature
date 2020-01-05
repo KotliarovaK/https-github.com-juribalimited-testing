@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User clicks on 'Run' column header
 	Then data in table is sorted by "Run" column in descending order on the Admin page
 	When User clicks on 'Actions' column header
-	Then numeric data in table is sorted by "Actions" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Actions' column in descending order
 	When User clicks on 'Actions' column header
 	Then numeric data in table is sorted by 'Actions' column in ascending order
 	When User clicks on 'Description' column header

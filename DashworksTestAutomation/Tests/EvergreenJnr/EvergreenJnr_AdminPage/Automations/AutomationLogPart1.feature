@@ -277,9 +277,9 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	When User clicks on 'Run' column header
 	Then data in table is sorted by "Run" column in descending order on the Admin page
 	When User clicks on 'Objects' column header
-	Then numeric data in table is sorted by "Objects" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Objects' column in descending order
 	When User clicks on 'Objects' column header
-	Then numeric data in table is sorted by "Objects" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Objects' column in ascending order
 	When User clicks on 'Duration (hh:mm:ss)' column header
 	Then data in table is sorted by "Duration (hh:mm:ss)" column in ascending order on the Admin page
 	When User clicks on 'Duration (hh:mm:ss)' column header
