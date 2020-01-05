@@ -288,8 +288,7 @@ this.FeatureBackground();
 #line 67
  testRunner.When("User clicks on \'Actions\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 68
- testRunner.Then("numeric data in table is sorted by \"Actions\" column in ascending order on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Actions\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
  testRunner.When("User clicks on \'Description\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70

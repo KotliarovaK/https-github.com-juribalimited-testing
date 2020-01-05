@@ -71,16 +71,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             SortingHelper.IsNumericListSorted(actualList);
         }
 
-        [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
-        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
-        {
-            var listPageMenu = _driver.NowAt<BaseGridPage>();
-
-            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsNumericListSorted(actualList);
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
         {

@@ -64,15 +64,15 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	When User click on "Devices" column header on the Admin page
 	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
 	When User click on "Devices" column header on the Admin page
-	Then numeric data in table is sorted by "Devices" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Devices' column in ascending order
 	When User click on "Users" column header on the Admin page
 	Then numeric data in table is sorted by "Users" column in descending order on the Admin page
 	When User click on "Users" column header on the Admin page
-	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Mailboxes' column in ascending order
 	When User click on "Mailboxes" column header on the Admin page
 	Then numeric data in table is sorted by "Mailboxes" column in descending order on the Admin page
 	When User click on "Mailboxes" column header on the Admin page
-	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Mailboxes' column in ascending order
 	#Filters
 	When User selects following checkboxes in the filter dropdown menu for the 'Default' column:
 	| checkboxes |
