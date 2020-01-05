@@ -18,19 +18,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User clicks on 'Capacity Units' column header
-	Then data in table is sorted by "Capacity Units" column in ascending order on the Admin page
+	Then data in table is sorted by 'Capacity Units' column in ascending order
 	When User clicks on 'Capacity Units' column header
-	Then data in table is sorted by "Capacity Units" column in descending order on the Admin page
+	Then data in table is sorted by 'Capacity Units' column in descending order
 	And There are no errors in the browser console
 	When User clicks on 'Teams' column header
-	Then data in table is sorted by "Teams" column in ascending order on the Admin page
+	Then data in table is sorted by 'Teams' column in ascending order
 	When User clicks on 'Teams' column header
-	Then data in table is sorted by "Teams" column in descending order on the Admin page
+	Then data in table is sorted by 'Teams' column in descending order
 	And There are no errors in the browser console
 	When User clicks on 'Paths' column header
-	Then data in table is sorted by "Paths" column in ascending order on the Admin page
+	Then data in table is sorted by 'Paths' column in ascending order
 	When User clicks on 'Paths' column header
-	Then data in table is sorted by "Paths" column in descending order on the Admin page
+	Then data in table is sorted by 'Paths' column in descending order
 	And There are no errors in the browser console
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page

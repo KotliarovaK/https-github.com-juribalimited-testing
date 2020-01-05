@@ -373,7 +373,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList);
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, $"Date in table for '{columnName}' column in not sorted in ascending order");
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Date in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
@@ -382,17 +382,34 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Numbers in table for '{columnName}' column in not sorted in ascending order");
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in ascending order by default")]
+        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(actualList);
+            Verify.IsFalse(listPageMenu.AscendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in descending order")]
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed(), $"Numbers in table for '{columnName}' column in not sorted in descending order");
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in descending order by default")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(expectedList, false);
+            Verify.IsFalse(listPageMenu.DescendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"color data is sorted by '(.*)' column in ascending order")]
