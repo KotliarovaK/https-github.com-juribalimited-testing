@@ -20,17 +20,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver = driver;
         }
 
-        [Then(@"data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
-        public void ThenDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
-        {
-            var adminTable = _driver.NowAt<BaseGridPage>();
-
-            var actualList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(actualList);
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
         [Then(@"data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
         public void ThenDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
         {
@@ -59,7 +48,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             var expectedList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
-            _driver.WaitForDataLoading();
         }
     }
 }

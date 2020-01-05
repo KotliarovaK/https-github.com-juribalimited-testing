@@ -55,11 +55,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks Reset Filters button on the Admin page
 	And User click on "Team" column header on the Admin page
 	#Remove hash after fix sort order
-	#Then data in table is sorted by "Team" column in ascending order on the Admin page
+	#Then data in table is sorted by 'Team' column in ascending order
 	When User click on "Team" column header on the Admin page
 	Then data in table is sorted by "Team" column in descending order on the Admin page
 	When User click on "Description" column header on the Admin page
-	Then data in table is sorted by "Description" column in ascending order on the Admin page
+	Then data in table is sorted by 'Description' column in ascending order
 	When User click on "Description" column header on the Admin page
 	Then data in table is sorted by "Description" column in descending order on the Admin page
 	When User click on "Members" column header on the Admin page

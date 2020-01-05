@@ -100,7 +100,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<CogMenuElements>();
             for (var i = 0; i < items.RowCount; i++)
-                Utils.Verify.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
+                Verify.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
                     "Items are not the same");
         }
 
@@ -178,7 +178,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
 
-            Utils.Verify.IsFalse(cogMenu.CheckItemDisplay(itenName), "Status display is incorrect");
+            Verify.IsFalse(cogMenu.CheckItemDisplay(itenName), "Status display is incorrect");
         }
     }
 }

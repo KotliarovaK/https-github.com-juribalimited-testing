@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| 14695_Ring |
 	| Ring_Test  |
 	When User clicks on 'Ring' column header
-	Then data in table is sorted by "Ring" column in ascending order on the Admin page
+	Then data in table is sorted by 'Ring' column in ascending order
 	When User clicks on 'Ring' column header
 	Then data in table is sorted by "Ring" column in descending order on the Admin page
 	When User clicks Cog-menu on the Admin page
@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	When User enters 'Ring_Test' text to 'Ring name' textbox
 	And User clicks Create button on the Create Ring page
 	When User clicks on 'Ring' column header
-	Then data in table is sorted by "Ring" column in ascending order on the Admin page
+	Then data in table is sorted by 'Ring' column in ascending order
 	When User clicks Cog-menu on the Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
