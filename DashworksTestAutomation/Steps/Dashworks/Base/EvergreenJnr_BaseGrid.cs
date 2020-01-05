@@ -403,6 +403,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed(), $"Numbers in table for '{columnName}' column in not sorted in descending order");
         }
 
+        [Then(@"numeric data in table is sorted by '(.*)' column in descending order by default")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(expectedList, false);
+            Verify.IsFalse(listPageMenu.DescendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
+        }
+
         [Then(@"color data is sorted by '(.*)' column in ascending order")]
         public void ThenColorDataIsSortedByColumnInAscendingOrder(string columnName)
         {

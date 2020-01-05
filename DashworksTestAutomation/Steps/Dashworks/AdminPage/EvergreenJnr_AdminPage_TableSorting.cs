@@ -62,15 +62,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"numeric data in ""(.*)"" column is sorted in ascending order by default on the Admin page")]
-        public void ThenNumericDataInColumnIsSortedInAscendingOrderByDefaultOnTheAdminPage(string columnName)
-        {
-            var listPageMenu = _driver.NowAt<BaseGridPage>();
-
-            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsNumericListSorted(actualList);
-        }
-
         [Then(@"date in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenDateInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
