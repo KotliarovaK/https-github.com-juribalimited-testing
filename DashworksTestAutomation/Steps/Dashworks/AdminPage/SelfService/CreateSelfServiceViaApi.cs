@@ -168,7 +168,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 
             request.AddObject(new { ServiceIds = new int[selfService.ServiceId] });
             request.AddObject(new { ActionRequestType = state ? "enable" : "disable" });
-
             var response = _client.Value.Put(request);
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
