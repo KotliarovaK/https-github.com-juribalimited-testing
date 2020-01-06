@@ -41,9 +41,9 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	When User selects 'Hostname' in the 'File Contains' dropdown
 	Then 'NEXT' button is not disabled
 	When User clicks 'CANCEL' button 
-	Then Warning Pop-up is displayed to the User
+	Then popup is displayed to User
 	When User clicks 'NO' button on popup
 	When User clicks 'CANCEL' button 
-	Then Warning Pop-up is displayed to the User
+	Then popup is displayed to User
 	When User clicks 'YES' button on popup
 	Then 'All Devices' list should be displayed to the user

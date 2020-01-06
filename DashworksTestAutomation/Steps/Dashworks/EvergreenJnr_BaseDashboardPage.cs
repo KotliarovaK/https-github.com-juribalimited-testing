@@ -264,32 +264,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
         }
-
-        [Then(@"Error is displayed to the User")]
-        public void ThenErrorIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.ErrorBox.Displayed(), "Error is displayed");
-        }
-
-        [When(@"User navigates to ""(.*)"" URL in a new tab")]
-        public void WhenUserNavigatesToURLInANewTab(string urlParameters)
-        {
-            _driver.OpenInNewTab($"{UrlProvider.Url}{urlParameters}");
-            _driver.SwitchTo().Window(_driver.WindowHandles.Last());
-        }
-
-        [When(@"User switches to previous tab")]
-        public void WhenUserSwitchesToPreviousTab()
-        {
-            _driver.SwitchTo().Window(_driver.WindowHandles.First());
-        }
-
-        [Then(@"Warning Pop-up is displayed to the User")]
-        public void ThenWarningPop_UpIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
-        }
     }
 }

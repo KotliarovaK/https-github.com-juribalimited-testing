@@ -71,12 +71,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='aggrid-container']//div[@col-id='dragColumn']")]
         public IList<IWebElement> DragRowElements { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//div[@class='dialog-warning-title']")]
-        public IWebElement WarningPopUpPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
-        public IWebElement ErrorBox { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div[@row-index]")]
         public IWebElement TableString { get; set; }
 
