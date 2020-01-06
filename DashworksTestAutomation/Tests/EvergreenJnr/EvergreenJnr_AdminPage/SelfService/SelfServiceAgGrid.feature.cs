@@ -80,71 +80,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEmpty")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19392")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEmpty()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEmptyInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEmptyInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUserSeesProperNotificationWhenGridIsEmpty", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "SelfService",
-                        "DAS19392",
-                        "Cleanup"});
-#line 9
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 10
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.Then("Page with \'Self Services\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 13
- testRunner.Then("\'Self Services\' left menu item is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
- testRunner.Then("User sees AgGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 15
- testRunner.Then("\'No self services found\' message is displayed on empty greed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckGeneralViewOfSelfServiceAgGrid")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
@@ -187,7 +122,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19392",
                         "Cleanup"});
-#line 18
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -271,11 +206,11 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
-#line 19
+#line 10
     testRunner.When("User creates Self Service via API", ((string)(null)), table1, "When ");
-#line 26
+#line 17
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
+#line 18
  testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -296,11 +231,11 @@ this.FeatureBackground();
                         "Created By"});
             table2.AddRow(new string[] {
                         "Created Date"});
-#line 28
+#line 19
  testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table2, "Then ");
-#line 38
+#line 29
  testRunner.When("User clicks on \'Self Service Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
+#line 30
     testRunner.Then("data in table is sorted by \"Self Service Name\" column in ascending order on the A" +
                     "dmin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -351,7 +286,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19392",
                         "Cleanup"});
-#line 42
+#line 33
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -435,28 +370,28 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
-#line 43
+#line 34
     testRunner.When("User creates Self Service via API", ((string)(null)), table3, "When ");
-#line 50
+#line 41
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 51
+#line 42
  testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 52
+#line 43
  testRunner.Then("select all rows checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 53
+#line 44
     testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
+#line 45
     testRunner.Then("all checkboxes are checked in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 55
+#line 46
  testRunner.When("User deselect all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 56
+#line 47
  testRunner.Then("select all rows checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
+#line 48
  testRunner.When("User enters \"A_TestSelection_name1\" text in the Search field for \"Self Service Na" +
                     "me\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 49
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
+#line 50
  testRunner.Then("Select All checkbox have indeterminate checked state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -506,7 +441,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19392",
                         "Cleanup"});
-#line 62
+#line 53
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -551,13 +486,13 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob"});
-#line 63
+#line 54
     testRunner.When("User creates Self Service via API", ((string)(null)), table4, "When ");
-#line 67
+#line 58
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
+#line 59
  testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 69
+#line 60
  testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name1\' item in the \'Self Service" +
                     " Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -569,9 +504,9 @@ this.FeatureBackground();
                         "Enable"});
             table5.AddRow(new string[] {
                         "Delete"});
-#line 70
+#line 61
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table5, "Then ");
-#line 75
+#line 66
  testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name5\' item in the \'Self Service" +
                     " Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -583,7 +518,7 @@ this.FeatureBackground();
                         "Disable"});
             table6.AddRow(new string[] {
                         "Delete"});
-#line 76
+#line 67
  testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();

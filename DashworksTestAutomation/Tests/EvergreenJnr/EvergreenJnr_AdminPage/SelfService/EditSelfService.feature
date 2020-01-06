@@ -78,7 +78,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelect
 	When User enters 'SS_ID_9' text to 'Self Service Identifier' textbox
 	Then 'UPDATE' button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @Not_Ready
+#Need to add REALY broken list to the step or make the existing as broken
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithBrokenScopeList
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
