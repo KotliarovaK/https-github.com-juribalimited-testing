@@ -168,8 +168,7 @@ this.FeatureBackground();
 #line 21
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.Then("data in table is sorted by \"Hostname\" column in ascending order by default on the" +
-                    " Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Hostname\' column in ascending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
  testRunner.Then("Counter shows \"17,225\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
@@ -327,8 +326,8 @@ this.FeatureBackground();
  testRunner.Then("\'The selected mailboxes have been added to the selected bucket\' text is displayed" +
                     " on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 73
- testRunner.And("data in table is sorted by \"Email Address (Primary)\" column in ascending order by" +
-                    " default on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("data in table is sorted by \'Email Address (Primary)\' column in ascending order by" +
+                    " default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
  testRunner.And("Counter shows \"14,784\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75

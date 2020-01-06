@@ -341,7 +341,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
-            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, $"Values in table for '{columnName}' column in not sorted in descending order");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed(), $"Values in table for '{columnName}' column in not sorted in descending order");
+        }
+
+        [Then(@"data in table is sorted by '(.*)' column in descending order by default")]
+        public void ThenDataInTableIsSortedByColumnInDescendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
+            Verify.IsFalse(listPageMenu.DescendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
@@ -352,7 +363,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, $"Values in table for '{columnName}' column in not sorted in ascending order");
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Values in table for '{columnName}' column in not sorted in ascending order");
+        }
+
+        [Then(@"data in table is sorted by '(.*)' column in ascending order by default")]
+        public void ThenDataInTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+
+            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            _driver.WaitForDataLoading();
+            Verify.IsFalse(listPageMenu.AscendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"date in table is sorted by '(.*)' column in descending order")]

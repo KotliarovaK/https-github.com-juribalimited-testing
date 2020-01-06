@@ -782,11 +782,9 @@ this.FeatureBackground();
 #line 220
  testRunner.Then("Counter shows \"6\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 221
- testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Item\' column in ascending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 222
- testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
-                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Date\' column in descending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 223
  testRunner.When("User click on \"Date\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 224

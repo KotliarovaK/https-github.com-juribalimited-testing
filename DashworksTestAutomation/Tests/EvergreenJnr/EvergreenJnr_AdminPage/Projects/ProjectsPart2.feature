@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	Then inline success banner is not displayed
 	Then inline success banner is not displayed
 	When User click on Back button
-	Then data in table is sorted by "Project" column in ascending order by default on the Admin page
+	Then data in table is sorted by 'Project' column in ascending order by default
 	When User enters "NewProject15" text in the Search field for "Project" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Admin page
