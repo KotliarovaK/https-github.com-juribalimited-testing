@@ -301,8 +301,7 @@ this.FeatureBackground();
 #line 38
  testRunner.When("User clicks on \'Self Service Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
-    testRunner.Then("data in table is sorted by \"Self Service Name\" column in ascending order on the A" +
-                    "dmin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("data in table is sorted by \'Self Service Name\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
