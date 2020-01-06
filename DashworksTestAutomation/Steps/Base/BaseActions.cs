@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
@@ -72,6 +73,19 @@ namespace DashworksTestAutomation.Steps.Base
             }
 
             Thread.Sleep(seconds * 1000);
+        }
+
+        [When(@"User switches to previous tab")]
+        public void WhenUserSwitchesToPreviousTab()
+        {
+            _driver.SwitchTo().Window(_driver.WindowHandles.First());
+        }
+
+        [When(@"User navigates to '(.*)' URL in a new tab")]
+        public void WhenUserNavigatesToURLInANewTab(string urlParameters)
+        {
+            _driver.OpenInNewTab($"{UrlProvider.Url}{urlParameters}");
+            _driver.SwitchTo().Window(_driver.WindowHandles.Last());
         }
     }
 }

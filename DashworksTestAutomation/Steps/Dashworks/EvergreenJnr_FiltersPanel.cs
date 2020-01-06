@@ -1618,11 +1618,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqual(expectedPlaceholderName, actualPlaceholderName, "Incorrect Placeholder in the search field");
         }
 
-        [When(@"User selects '(.*)' option in expanded associations list")]
-        public void WhenUserSelectsOptionInExpandedAssociationsList(string option)
+        [When(@"User selects '(.*)' option in '(.*)' autocomplete of Associations panel")]
+        public void WhenUserSelectsOptionInExpandedAutocomplete(string option, string placeholder)
         {
             var page = _driver.NowAt<FiltersElement>();
-            page.AssociationItem(option).Click();
+            page.SelectAssociation(placeholder, option);
         }
 
         [Then(@"Remove icon displayed in '(.*)' state for '(.*)' association")]

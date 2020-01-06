@@ -361,7 +361,6 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_CogMenuActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\AfterScenario\RemoveProjectAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\AfterScenario\RemoveProjectMethods.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\BeforeScenario\SetDefaultReadinessBeforeScenario.cs" />
@@ -1122,7 +1121,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFunctionality\AssociationsFunctionality.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality.feature.cs">
       <DependentUpon>AssociationsFunctionality.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2264,7 +2263,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FilterExpression.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFunctionality\AssociationsFunctionality.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AssociationsFunctionality.feature.cs</LastGenOutput>
     </None>

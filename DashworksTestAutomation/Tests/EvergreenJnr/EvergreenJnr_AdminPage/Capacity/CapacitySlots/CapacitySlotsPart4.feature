@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	Then Column Settings was opened
 	When User select "Display Order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Display Order' column in ascending order by default
 	Then Content in the 'Capacity Slot' column is equal to
 	| Content   |
 	| Slot13147 |
