@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             var actualList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
-            _driver.WaitForDataLoading();
+            Verify.IsFalse(adminTable.AscendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"data in table is sorted by ""(.*)"" column in descending order by default on the Admin page")]
@@ -37,6 +37,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             var expectedList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
+            Verify.IsFalse(adminTable.DescendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
     }
 }

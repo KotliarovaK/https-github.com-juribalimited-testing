@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	#Add sorting check for "Bucket" column
-	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
+	Then data in table is sorted by 'Bucket' column in ascending order by default
 	When User click on "Project" column header on the Admin page
 	Then data in table is sorted by 'Project' column in ascending order
 	When User click on "Project" column header on the Admin page
@@ -98,12 +98,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	| waa  | IB Team  |
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Evergreen' left menu item
-	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
+	Then data in table is sorted by 'Bucket' column in ascending order by default
 	When User enters "1ba" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User enters 'a1ba' text to 'Bucket Name' textbox
 	And User clicks 'UPDATE' button 
-	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
+	Then data in table is sorted by 'Bucket' column in ascending order by default
 	When User deletes "aab" Bucket in the Administration
 	And User clicks refresh button in the browser
-	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
+	Then data in table is sorted by 'Bucket' column in ascending order by default

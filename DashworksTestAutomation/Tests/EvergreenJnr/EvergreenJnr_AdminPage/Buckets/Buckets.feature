@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	And User clicks 'ADD DEVICES' button 
 	Then 'The selected devices have been added to the selected bucket' text is displayed on inline success banner
 	And There are no errors in the browser console
-	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
+	Then data in table is sorted by 'Hostname' column in ascending order by default
 	Then Counter shows "17,225" found rows
 	When User click on "Hostname" column header on the Admin page
 	Then data in table is sorted by 'Hostname' column in ascending order
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And User adds "Unassigned" objects to bucket
 	And User clicks 'ADD MAILBOXES' button 
 	Then 'The selected mailboxes have been added to the selected bucket' text is displayed on inline success banner
-	And data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
+	And data in table is sorted by 'Email Address (Primary)' column in ascending order by default
 	And Counter shows "14,784" found rows
 	When User click on "Email Address (Primary)" column header on the Admin page
 	Then data in table is sorted by 'Email Address (Primary)' column in ascending order
