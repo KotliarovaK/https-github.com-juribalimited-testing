@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         }
 
         [When(@"User clicks Cog-menu for '(.*)' item in the '(.*)' column and sees following cog-menu options")]
-        public void WhenUserClicksCog_MenuForItemInTheColumnAndWaitCogOptions(string columnContent, string column, Table options)
+        public void WhenUserClicksCog_MenuForItemInTheColumnAndSeesFollowingCogMenuOptions(string columnContent, string column, Table options)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             cogMenu.BodyContainer.Click();
