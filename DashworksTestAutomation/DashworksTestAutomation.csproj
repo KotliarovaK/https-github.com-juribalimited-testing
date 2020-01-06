@@ -229,7 +229,7 @@
     <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
+    <Compile Include="Pages\Evergreen\Base\CogMenuElements.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Scope\ScopeChangePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
@@ -391,7 +391,7 @@
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
-    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseTable.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_BaseTable.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_LeftMenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListMethods.cs" />
@@ -413,8 +413,8 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomField.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomFieldViaApi.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_PageContent.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_TopBar.cs" />
     <Compile Include="Steps\Dashworks\Login\BaseLoginActions.cs" />
     <Compile Include="Steps\Dashworks\Login\EvergreenJnr_LoginApi.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />

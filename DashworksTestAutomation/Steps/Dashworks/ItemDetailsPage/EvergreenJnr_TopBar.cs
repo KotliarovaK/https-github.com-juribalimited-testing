@@ -10,11 +10,11 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
     [Binding]
-    internal class EvergreenJnr_ItemDetailsPage_TopBar : SpecFlowContext
+    internal class EvergreenJnr_TopBar : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_ItemDetailsPage_TopBar(RemoteWebDriver driver)
+        public EvergreenJnr_TopBar(RemoteWebDriver driver)
         {
             _driver = driver;
         }
@@ -65,16 +65,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         }
 
         #endregion
-
-        //TODO move to baseTable
-        [Then(@"Value column of Item Details has no Unknown item")]
-        public void ThenValueColumnOfItemDetailsHasNoUnknownItem()
-        {
-            var page = _driver.NowAt<BaseTable>();
-
-            var listOfValues = page.GetRowsContent();
-            Verify.That(listOfValues, Does.Not.Contain("Unknown"),
-                "Unknown item displayed in column");
-        }
     }
 }

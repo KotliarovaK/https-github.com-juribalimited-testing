@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen.Base;
+﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
-namespace DashworksTestAutomation.Steps.Dashworks.Base
+namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
     [Binding]
     class EvergreenJnr_BaseTable : SpecFlowContext

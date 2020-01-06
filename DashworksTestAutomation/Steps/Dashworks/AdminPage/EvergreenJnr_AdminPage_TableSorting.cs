@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -101,49 +98,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
             Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"date in table is sorted by ""(.*)"" column in descending order on the Admin page")]
-        public void ThenDateInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
-        {
-            var listPageMenu = _driver.NowAt<BaseGridPage>();
-            var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByDate(originalList, false);
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-
-        [Then(@"Boolean data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
-        public void ThenBooleanDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
-        {
-            var adminTable = _driver.NowAt<BaseGridPage>();
-
-            var expectedList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(expectedList, false);
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(adminTable.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-
-        [Then(@"Boolean data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
-        public void ThenBooleanDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
-        {
-            var adminTable = _driver.NowAt<BaseGridPage>();
-
-            var expectedList = adminTable.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(expectedList);
-            _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(adminTable.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"Data in table is sorted by ""(.*)"" column in the next way")]
-        public void ThenDataInTableIsSortedInTheNextWay(string columnName, Table table)
-        {
-            var adminTable = _driver.NowAt<BaseGridPage>();
-            var actualList = adminTable.GetColumnContentByColumnName(columnName).Distinct().ToList();
-            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
-
-            Utils.Verify.That(expectedList, Is.EqualTo(actualList));
         }
     }
 }

@@ -8,11 +8,11 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 {
     [Binding]
-    internal class EvergreenJnr_ItemDetailsPage_TabContent : SpecFlowContext
+    internal class EvergreenJnr_ItemDetailsPage_PageContent : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_ItemDetailsPage_TabContent(RemoteWebDriver driver)
+        public EvergreenJnr_ItemDetailsPage_PageContent(RemoteWebDriver driver)
         {
             _driver = driver;
         }

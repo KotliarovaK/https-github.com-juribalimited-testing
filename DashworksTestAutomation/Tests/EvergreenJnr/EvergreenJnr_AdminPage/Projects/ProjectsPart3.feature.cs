@@ -677,7 +677,7 @@ this.FeatureBackground();
 #line 169
  testRunner.When("User click on \"Date\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 170
- testRunner.Then("date in table is sorted by \"Date\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("date in table is sorted by \'Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 171
  testRunner.When("User click on \"Date\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 172
@@ -792,7 +792,7 @@ this.FeatureBackground();
 #line 223
  testRunner.When("User click on \"Date\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 224
- testRunner.Then("date in table is sorted by \"Date\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("date in table is sorted by \'Date\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 225
  testRunner.When("User click on \"Date\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 226
