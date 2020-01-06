@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	#create private list
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
-	| ColumnName |
+	| ColumnName            |
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841_2" name on "Devices" page
 	#create dashboard
@@ -212,7 +212,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	When User clicks Settings button for "DeviceListFor14841_2" list
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
-	Then "Everyone can see" sharing option is selected
+	Then "Private" sharing option is selected
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow

@@ -10986,7 +10986,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToD" +
             "eletedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("DAS18560")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToDeletedList()
@@ -11020,7 +11020,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToD" +
                     "eletedList", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
+                        "Applications",
                         "DAS18560",
                         "Cleanup"});
 #line 2473
@@ -11099,7 +11099,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("DAS18100")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters()
@@ -11132,7 +11132,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
+                        "Devices",
                         "DAS18100",
                         "Cleanup"});
 #line 2504
@@ -11188,7 +11188,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreated" +
             "ViaAddressRow")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("DAS18100")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreatedViaAddressRow()
@@ -11222,7 +11222,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreated" +
                     "ViaAddressRow", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
+                        "Devices",
                         "DAS18100",
                         "Cleanup"});
 #line 2524
@@ -11248,7 +11248,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("DAS18560")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated()
@@ -11281,7 +11281,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
+                        "Applications",
                         "DAS18560",
                         "Cleanup"});
 #line 2531
@@ -11660,6 +11660,75 @@ this.FeatureBackground();
  testRunner.Then("\"zMailboxAu: Owner In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2622
  testRunner.Then("\"14,784\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringListBySavedLi" +
+            "st")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS19550")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringListBySavedList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringListBySavedListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringListBySavedListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringListBySavedLi" +
+                    "st", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_FiltersFeature",
+                        "FilterFunctionality",
+                        "DAS19550"});
+#line 2625
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2626
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2627
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table243 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes",
+                        "Association"});
+            table243.AddRow(new string[] {
+                        "Users with Device Count",
+                        "Used on device"});
+#line 2628
+ testRunner.When("User add \"Device Owner (Saved List)\" filter where type is \"In list\" with selected" +
+                    " Checkboxes and following Association:", ((string)(null)), table243, "When ");
+#line 2631
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

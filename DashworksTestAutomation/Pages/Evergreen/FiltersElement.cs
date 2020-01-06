@@ -584,7 +584,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(selector).Count == 1;
         }
 
-
         public int GetSubcategoriesCountByCategoryName(string categoryName)
         {
             var filterCategory = FilterCategory(categoryName);
@@ -592,7 +591,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Convert.ToInt32(filterCategory.FindElement(By.XPath(".//strong")).Text);
         }
 
-        public IWebElement AssociationItem(string option) => Driver.FindElementByXPath($".//div[@class='sub-categories-associations']//div[contains(text(), '{option}')]");
+        public void SelectAssociation(string placeholder, string option)
+        {
+            Driver.FindElement(By.XPath(SearchTextBoxSelector)).Click();
+            Driver.FindElement(By.XPath(SearchTextBoxSelector)).Clear();
+            Driver.FindElement(By.XPath(SearchTextBoxSelector)).SendKeys(option);
+            Driver.WaitForDataLoading();
+
+            var optionSelector =
+                $".//input[@placeholder='{placeholder}']/ancestor::div[@class='searchPanel input-wrapper']/following-sibling::div//div[contains(text(), '{option}')]";
+            Driver.FindElementByXPath(optionSelector).Click();
+        }
 
         public IWebElement RemoveIconForAssociation(string association) => Driver.FindElementByXPath($".//span[@class='filter-label-name' and text()=' {association.ToLower()}']/ancestor::div[@class='filter-group no-border-bottom']//i[contains(@class, 'mat-item_delete')]/ancestor::button");
 

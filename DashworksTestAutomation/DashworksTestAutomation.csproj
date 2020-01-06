@@ -1122,7 +1122,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFunctionality\AssociationsFunctionality.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality.feature.cs">
       <DependentUpon>AssociationsFunctionality.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2264,7 +2264,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FilterExpression.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFunctionality\AssociationsFunctionality.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AssociationsFunctionality.feature.cs</LastGenOutput>
     </None>
