@@ -229,7 +229,7 @@
     <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
+    <Compile Include="Pages\Evergreen\Base\CogMenuElements.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Scope\ScopeChangePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
@@ -361,7 +361,6 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_CogMenuActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\AfterScenario\RemoveProjectAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\AfterScenario\RemoveProjectMethods.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\Readiness\BeforeScenario\SetDefaultReadinessBeforeScenario.cs" />
@@ -391,7 +390,7 @@
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
-    <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseTable.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_BaseTable.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_LeftMenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListMethods.cs" />
@@ -413,8 +412,8 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomField.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\CustomFields\CreateCustomFieldViaApi.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
-    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_PageContent.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_TopBar.cs" />
     <Compile Include="Steps\Dashworks\Login\BaseLoginActions.cs" />
     <Compile Include="Steps\Dashworks\Login\EvergreenJnr_LoginApi.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
@@ -1122,7 +1121,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFunctionality\AssociationsFunctionality.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality.feature.cs">
       <DependentUpon>AssociationsFunctionality.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2264,7 +2263,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FilterExpression.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFunctionality\AssociationsFunctionality.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AssociationsFunctionality.feature.cs</LastGenOutput>
     </None>

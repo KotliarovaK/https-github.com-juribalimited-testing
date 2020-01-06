@@ -162,13 +162,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         public void ThenUserEnablesDisablesSelfServiceViaApi(string selfServiceIdentifier, bool state)
         {
             var selfService = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(selfServiceIdentifier));
-
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
             var request = requestUri.GenerateRequest();
-
-            request.AddObject(new { ServiceIds = new int[selfService.ServiceId] });
-            request.AddObject(new { ActionRequestType = state ? "enable" : "disable" });
-
+            request.AddObject( new { ServiceIds = new List<int>() { selfService.ServiceId }.ToArray(), ActionRequestType = state ? "enable" : "disable" });
             var response = _client.Value.Put(request);
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))

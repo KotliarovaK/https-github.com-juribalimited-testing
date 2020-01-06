@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Processing order" checkbox on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
@@ -194,13 +194,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
     | Run              |
     | Actions          |
     | Description      |
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	When User clicks 'Move to top' option in Cog-menu for 'Add data' item from 'Automation' column
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	Then Content in the 'Automation' column is equal to
 	| Content      |
 	| AM 150419 II |
@@ -212,7 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	Then Content in the 'Automation' column is equal to
 	| Content      |
 	| AM 150419 II |
@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	#Update after gold data was complete
 	When User clicks Cog-menu for 'AM Test 1' item in the 'Automation' column and sees following cog-menu options
 	| options          |
@@ -255,7 +255,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	Then Content in the 'Automation' column is equal to
 	| Content       |
 	| AM 150419 I   |
@@ -269,7 +269,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	Then Content in the 'Automation' column is equal to
 	| Content       |
 	| AM 150419 I   |
@@ -288,13 +288,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	When User moves 'AM 150419 II' item from 'Automation' column to the '2' position
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	Then Content in the 'Automation' column is equal to
 	| Content       |
 	| AM 150419 I   |
@@ -306,7 +306,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	Then Content in the 'Automation' column is equal to
 	| Content       |
 	| AM 150419 II  |
@@ -318,7 +318,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	Then Content in the 'Automation' column is equal to
 	| Content       |
 	| AM 150419 II  |
@@ -417,7 +417,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Processing order" checkbox on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @DAS16475 @DAS17290 @DAS17277 @DAS17336 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality

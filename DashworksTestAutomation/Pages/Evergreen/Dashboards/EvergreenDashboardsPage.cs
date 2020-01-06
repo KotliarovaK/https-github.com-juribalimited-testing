@@ -7,7 +7,7 @@ using DashworksTestAutomation.Pages.Evergreen.Base;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages
+namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 {
     internal class EvergreenDashboardsPage : BaseWidgetPage
     {

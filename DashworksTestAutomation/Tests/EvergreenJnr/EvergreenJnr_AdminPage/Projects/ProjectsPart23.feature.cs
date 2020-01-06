@@ -534,7 +534,8 @@ this.FeatureBackground();
 #line 116
  testRunner.Then("\'Admin\' left-hand menu item is hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 117
- testRunner.And("Error is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("error page with \'403\' status code and \'You are not authorized to view this page, " +
+                    "speak to your Dashworks administrator\' error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

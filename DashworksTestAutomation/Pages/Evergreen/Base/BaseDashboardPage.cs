@@ -667,8 +667,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             var selector = DropdownOptionsSelector(withoutSelected);
             Driver.WhatForElementToBeExists(By.XPath(selector));
             var optionsList = Driver.FindElements(By.XPath(selector));
+            Driver.WaitForElementsToHaveText(optionsList, false);
             if (!optionsList.Any())
+            {
                 throw new Exception($"Unable to get dropdown values");
+            }
             var values = optionsList.Select(x => x.Text).ToList();
             return values;
         }

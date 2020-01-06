@@ -318,7 +318,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "1",
                         "TestSelfService_name3_test",
-                        "id193803",
+                        "id193806",
                         "false",
                         "Devimdmdmm",
                         "3",
@@ -333,7 +333,7 @@ this.FeatureBackground();
 #line 27
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
- testRunner.Then("User \'enable\' Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User enables Self Service with \'id193806\' identifier via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 30
@@ -410,7 +410,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "1",
                         "TestSelfService_name3_test",
-                        "id193803",
+                        "id193808",
                         "true",
                         "Devimdmdmm",
                         "3",
@@ -425,7 +425,7 @@ this.FeatureBackground();
 #line 37
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 38
- testRunner.Then("User \'disable\' Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User disables Self Service with \'id193808\' identifier via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 39
  testRunner.Then("User checks the Self Service via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40

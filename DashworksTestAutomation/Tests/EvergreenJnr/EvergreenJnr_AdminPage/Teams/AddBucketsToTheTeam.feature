@@ -50,29 +50,29 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item
 	When User click on "Bucket" column header on the Admin page
-	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
+	Then data in table is sorted by 'Bucket' column in ascending order
 	When User click on "Bucket" column header on the Admin page
-	Then data in table is sorted by "Bucket" column in descending order on the Admin page
+	Then data in table is sorted by 'Bucket' column in descending order
 	When User click on "Project" column header on the Admin page
-	Then data in table is sorted by "Project" column in ascending order on the Admin page
+	Then data in table is sorted by 'Project' column in ascending order
 	When User click on "Project" column header on the Admin page
-	Then data in table is sorted by "Project" column in descending order on the Admin page
+	Then data in table is sorted by 'Project' column in descending order
 	When User click on "Default" column header on the Admin page
 	Then boolean data is sorted by 'Default' column in ascending order
 	When User click on "Default" column header on the Admin page
 	Then boolean data is sorted by 'Default' column in descending order
 	When User click on "Devices" column header on the Admin page
-	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Devices' column in descending order
 	When User click on "Devices" column header on the Admin page
-	Then numeric data in table is sorted by "Devices" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Devices' column in ascending order
 	When User click on "Users" column header on the Admin page
-	Then numeric data in table is sorted by "Users" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Users' column in descending order
 	When User click on "Users" column header on the Admin page
-	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Mailboxes' column in ascending order
 	When User click on "Mailboxes" column header on the Admin page
-	Then numeric data in table is sorted by "Mailboxes" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Mailboxes' column in descending order
 	When User click on "Mailboxes" column header on the Admin page
-	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Mailboxes' column in ascending order
 	#Filters
 	When User selects following checkboxes in the filter dropdown menu for the 'Default' column:
 	| checkboxes |

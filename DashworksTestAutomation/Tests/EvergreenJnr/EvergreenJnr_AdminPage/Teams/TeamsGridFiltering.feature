@@ -55,27 +55,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks Reset Filters button on the Admin page
 	And User click on "Team" column header on the Admin page
 	#Remove hash after fix sort order
-	#Then data in table is sorted by "Team" column in ascending order on the Admin page
+	#Then data in table is sorted by 'Team' column in ascending order
 	When User click on "Team" column header on the Admin page
-	Then data in table is sorted by "Team" column in descending order on the Admin page
+	Then data in table is sorted by 'Team' column in descending order
 	When User click on "Description" column header on the Admin page
-	Then data in table is sorted by "Description" column in ascending order on the Admin page
+	Then data in table is sorted by 'Description' column in ascending order
 	When User click on "Description" column header on the Admin page
-	Then data in table is sorted by "Description" column in descending order on the Admin page
+	Then data in table is sorted by 'Description' column in descending order
 	When User click on "Members" column header on the Admin page
-	Then numeric data in table is sorted by "Members" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Members' column in descending order
 	When User click on "Members" column header on the Admin page
-	Then numeric data in table is sorted by "Members" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Members' column in ascending order
 	When User click on "Default" column header on the Admin page
 	Then boolean data is sorted by 'Default' column in ascending order
 	When User click on "Default" column header on the Admin page
 	Then boolean data is sorted by 'Default' column in descending order
 	When User click on "Evergreen Buckets" column header on the Admin page
-	Then numeric data in table is sorted by "Evergreen Buckets" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Evergreen Buckets' column in descending order
 	When User click on "Evergreen Buckets" column header on the Admin page
-	Then numeric data in table is sorted by "Evergreen Buckets" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Evergreen Buckets' column in ascending order
 	When User click on "Project Buckets" column header on the Admin page
-	Then numeric data in table is sorted by "Project Buckets" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Project Buckets' column in descending order
 	When User click on "Project Buckets" column header on the Admin page
-	Then numeric data in table is sorted by "Project Buckets" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Project Buckets' column in ascending order
 	And There are no errors in the browser console

@@ -168,7 +168,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
 
-            Utils.Verify.IsFalse(cogMenu.CheckItemDisplay(itenName), "Status display is incorrect");
+            Verify.IsFalse(cogMenu.CheckItemDisplay(itenName), "Status display is incorrect");
         }
     }
 }

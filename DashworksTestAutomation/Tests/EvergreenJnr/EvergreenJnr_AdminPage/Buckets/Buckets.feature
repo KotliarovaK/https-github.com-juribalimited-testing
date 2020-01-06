@@ -19,24 +19,24 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	And User clicks 'ADD DEVICES' button 
 	Then 'The selected devices have been added to the selected bucket' text is displayed on inline success banner
 	And There are no errors in the browser console
-	Then data in table is sorted by "Hostname" column in ascending order by default on the Admin page
+	Then data in table is sorted by 'Hostname' column in ascending order by default
 	Then Counter shows "17,225" found rows
 	When User click on "Hostname" column header on the Admin page
-	Then data in table is sorted by "Hostname" column in ascending order on the Admin page
+	Then data in table is sorted by 'Hostname' column in ascending order
 	When User click on "Hostname" column header on the Admin page
-	Then data in table is sorted by "Hostname" column in descending order on the Admin page
+	Then data in table is sorted by 'Hostname' column in descending order
 	When User click on "Type" column header on the Admin page
-	Then data in table is sorted by "Type" column in ascending order on the Admin page
+	Then data in table is sorted by 'Type' column in ascending order
 	When User click on "Type" column header on the Admin page
-	Then data in table is sorted by "Type" column in descending order on the Admin page
+	Then data in table is sorted by 'Type' column in descending order
 	When User click on "Operating System" column header on the Admin page
-	Then data in table is sorted by "Operating System" column in ascending order on the Admin page
+	Then data in table is sorted by 'Operating System' column in ascending order
 	When User click on "Operating System" column header on the Admin page
-	Then data in table is sorted by "Operating System" column in descending order on the Admin page
+	Then data in table is sorted by 'Operating System' column in descending order
 	#When User click on "Owner Display Name" column header on the Admin page
-	#Then data in table is sorted by "Owner Display Name" column in ascending order on the Admin page
+	#Then data in table is sorted by 'Owner Display Name' column in ascending order
 	#When User click on "Owner Display Name" column header on the Admin page
-	#Then data in table is sorted by "Owner Display Name" column in descending order on the Admin page
+	#Then data in table is sorted by 'Owner Display Name' column in descending order
 	When User enters "00KWQ4J3WKQM0G" text in the Search field for "Hostname" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
@@ -70,28 +70,28 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And User adds "Unassigned" objects to bucket
 	And User clicks 'ADD MAILBOXES' button 
 	Then 'The selected mailboxes have been added to the selected bucket' text is displayed on inline success banner
-	And data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
+	And data in table is sorted by 'Email Address (Primary)' column in ascending order by default
 	And Counter shows "14,784" found rows
 	When User click on "Email Address (Primary)" column header on the Admin page
-	Then data in table is sorted by "Email Address (Primary)" column in ascending order on the Admin page
+	Then data in table is sorted by 'Email Address (Primary)' column in ascending order
 	When User click on "Email Address (Primary)" column header on the Admin page
-	Then data in table is sorted by "Email Address (Primary)" column in descending order on the Admin page
+	Then data in table is sorted by 'Email Address (Primary)' column in descending order
 	When User click on "Mailbox Platform" column header on the Admin page
-	Then data in table is sorted by "Mailbox Platform" column in ascending order on the Admin page
+	Then data in table is sorted by 'Mailbox Platform' column in ascending order
 	When User click on "Mailbox Platform" column header on the Admin page
-	Then data in table is sorted by "Mailbox Platform" column in descending order on the Admin page
+	Then data in table is sorted by 'Mailbox Platform' column in descending order
 	When User click on "Server Name" column header on the Admin page
-	Then data in table is sorted by "Server Name" column in ascending order on the Admin page
+	Then data in table is sorted by 'Server Name' column in ascending order
 	When User click on "Server Name" column header on the Admin page
-	Then data in table is sorted by "Server Name" column in descending order on the Admin page
+	Then data in table is sorted by 'Server Name' column in descending order
 	When User click on "Mailbox Type" column header on the Admin page
-	Then data in table is sorted by "Mailbox Type" column in ascending order on the Admin page
+	Then data in table is sorted by 'Mailbox Type' column in ascending order
 	When User click on "Mailbox Type" column header on the Admin page
-	Then data in table is sorted by "Mailbox Type" column in descending order on the Admin page
+	Then data in table is sorted by 'Mailbox Type' column in descending order
 	When User click on "Owner Display Name" column header on the Admin page
-	Then data in table is sorted by "Owner Display Name" column in ascending order on the Admin page
+	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	When User click on "Owner Display Name" column header on the Admin page
-	Then data in table is sorted by "Owner Display Name" column in descending order on the Admin page
+	Then data in table is sorted by 'Owner Display Name' column in descending order
 	When User enters "zoumasu" text in the Search field for "Email Address (Primary)" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
