@@ -716,7 +716,7 @@ this.FeatureBackground();
 #line 167
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 168
- testRunner.When("User navigates to \"evergreen/#/device/3105/projects/project?$projectId=56\" URL in" +
+ testRunner.When("User navigates to \'evergreen/#/device/3105/projects/project?$projectId=56\' URL in" +
                     " a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 169
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

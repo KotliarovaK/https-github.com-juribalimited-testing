@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObje
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
-	When User navigates to "evergreen/#/device/3105/projects/project?$projectId=56" URL in a new tab
+	When User navigates to 'evergreen/#/device/3105/projects/project?$projectId=56' URL in a new tab
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'OFFBOARD' button
