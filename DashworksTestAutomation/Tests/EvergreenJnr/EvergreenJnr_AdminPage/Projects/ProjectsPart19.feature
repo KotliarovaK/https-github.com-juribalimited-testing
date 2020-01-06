@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| 0GLO1UYQ5AKCZEA |
 	| DK1LF3X47N7PWX7 |
 	Then data in table is sorted by 'Item' column in ascending order by default
-	Then data in table is sorted by "Date" column in descending order by default on the Admin page
+	Then data in table is sorted by 'Date' column in descending order by default
 	When User navigates to the 'History' left menu item
 	Then following Items are displayed in the History table
 	| Items           |
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| 0GLO1UYQ5AKCZEA |
 	| DK1LF3X47N7PWX7 |
 	Then data in table is sorted by 'Item' column in ascending order by default
-	Then data in table is sorted by "Date" column in descending order by default on the Admin page
+	Then data in table is sorted by 'Date' column in descending order by default
 	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	When User expands multiselect and selects following Objects
@@ -302,7 +302,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| Microsoft Exchange Client Language Pack - Hindi |
 	| NJStar Chinese Word Processor                   |
 	Then data in table is sorted by 'Item' column in ascending order by default
-	Then data in table is sorted by "Date" column in descending order by default on the Admin page
+	Then data in table is sorted by 'Date' column in descending order by default
 	When User navigates to the 'History' left menu item
 	Then additional onboarded Items are displayed in the History table
 	| Items                                           |
@@ -320,4 +320,4 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	#| NJStar Chinese Word Processor                   |
 	#When User clicks String Filter button for "Object Type" column on the Admin page
 	#When User clicks "Device" checkbox from boolean filter on the Admin page
-	#Then data in table is sorted by 'Item' column in ascending order by default	#Then data in table is sorted by "Date" column in descending order by default on the Admin page
+	#Then data in table is sorted by 'Item' column in ascending order by default	#Then data in table is sorted by 'Date' column in descending order by default
