@@ -85,9 +85,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	Then '1 automation started,' text is displayed on inline success banner
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then 'TRUE' content is displayed in the 'Running' column
-	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -118,9 +117,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	#First inactive automation
-	When User clicks Cog-menu for '15431_First_Inactive' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15431_First_Inactive' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -129,9 +127,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	#Second inactive automation
-	When User clicks Cog-menu for '15431_Second_Inactive' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15431_Second_Inactive' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -140,9 +137,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	#Third active automation
-	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Run now          |
 	| Duplicate        |
@@ -157,8 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks refresh button in the browser
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
-	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
+	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column and sees following cog-menu options
 	| items            |
 	| Edit             |
 	| Duplicate        |
@@ -236,9 +231,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	#Update after gold data was complete
-	When User clicks Cog-menu for 'AM Test 1' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'AM Test 1' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Run now          |
 	| Duplicate        |
@@ -246,9 +240,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| Move to position |
 	| Make inactive    |
 	| Delete           |
-	When User clicks Cog-menu for 'AM 150419 II' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'AM 150419 II' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Run now          |
 	| Duplicate        |
@@ -361,9 +354,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	And User clicks 'DELETE' button
 	When User clicks 'DELETE' button on inline tip banner
 	Then 'Cannot delete a running automation' text is displayed on inline tip banner
-	When User clicks Cog-menu for 'DELAY - do not delete3' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'DELAY - do not delete3' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |

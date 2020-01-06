@@ -45,27 +45,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User clicks Group By button and set checkboxes state
 	| Checkboxes | State |
 	| Type       | false |
-	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the second Action
-	When User clicks Cog-menu for '15427_Action2' item in the 'Action' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15427_Action2' item in the 'Action' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the last Action
-	When User clicks Cog-menu for '15427_Action3' item in the 'Action' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15427_Action3' item in the 'Action' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Move to top      |
 	| Move to bottom   |
