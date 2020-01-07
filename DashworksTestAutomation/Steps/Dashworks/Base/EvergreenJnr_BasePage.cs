@@ -80,6 +80,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Autocomplete
 
+        //TODO it is better to no use it and delete at all
         [When(@"User expands '(.*)' autocomplete")]
         public void WhenUserExpandsAutocomplete(string placeholder)
         {
@@ -112,6 +113,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.AutocompleteSelect(placeholder, option, true);
+        }
+
+        [When(@"User checks '(.*)' option after search from '(.*)' autocomplete")]
+        public void WhenUserChecksOptionAfterSearchFromAutocomplete(string checkbox, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.AutocompleteSelectCheckboxes(placeholder, checkbox, true, true);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User unchecks '(.*)' option after search from '(.*)' autocomplete")]
+        public void WhenUserUnchecksOptionAfterSearchFromAutocomplete(string checkbox, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.AutocompleteSelectCheckboxes(placeholder, checkbox, false, true);
+            page.BodyContainer.Click();
         }
 
         [When(@"User clears '(.*)' autocomplete")]
