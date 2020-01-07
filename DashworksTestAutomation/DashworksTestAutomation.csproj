@@ -1019,6 +1019,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersFiltersAndColumns.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality5.feature.cs">
+      <DependentUpon>AssociationsFunctionality5.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality4.feature.cs">
+      <DependentUpon>AssociationsFunctionality4.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality3.feature.cs">
+      <DependentUpon>AssociationsFunctionality3.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality2.feature.cs">
+      <DependentUpon>AssociationsFunctionality2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1121,8 +1141,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality.feature.cs">
-      <DependentUpon>AssociationsFunctionality.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1.feature.cs">
+      <DependentUpon>AssociationsFunctionality1.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -2181,6 +2201,22 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UsersFiltersAndColumns.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality5.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsFunctionality5.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsFunctionality4.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsFunctionality3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsFunctionality2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BaseDashboardPage.feature.cs</LastGenOutput>
@@ -2263,9 +2299,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FilterExpression.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AssociationsFunctionality.feature.cs</LastGenOutput>
+      <LastGenOutput>AssociationsFunctionality1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FiltersFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
