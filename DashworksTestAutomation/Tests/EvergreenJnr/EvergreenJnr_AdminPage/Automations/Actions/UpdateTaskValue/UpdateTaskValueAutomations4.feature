@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidationsForD
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	When User selects "17564_Stage \ 17564_Task" checkbox in the "Tasks" field on the Project details page
+	When User checks '17564_Stage \ 17564_Task' option after search from 'Tasks' autocomplete
 	When User clicks 'UPDATE' button
 	#Check Action content
 	When User clicks 'Admin' on the left-hand menu
@@ -246,7 +246,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	When User clicks content from "Capacity Slot" column
-	When User selects "17566_Stage \ 17566_Task" checkbox in the "Tasks" field on the Project details page
+	When User checks '17566_Stage \ 17566_Task' option after search from 'Tasks' autocomplete
 	When User clicks 'UPDATE' button
 	#Check Action content
 	When User clicks 'Admin' on the left-hand menu

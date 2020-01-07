@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	| Unassigned |
 	And 'Device' content is displayed in 'Object Type' dropdown
 	When User selects 'Application' in the 'Object Type' dropdown
-	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
+	And User checks 'Unassigned' option after search from 'Capacity Units' autocomplete
 	And User clicks 'UPDATE' button 
 	Then 'The capacity slot details have been updated' text is displayed on inline success banner
 	When User clicks content from "Capacity Slot" column
@@ -91,9 +91,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User enters 'Slot13152' text to 'Slot Name' textbox
 	And User enters '13152' text to 'Display Name' textbox
 	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
-	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
-	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
-	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
+	When User checks 'Stage13152 \ Task13152' option after search from 'Tasks' autocomplete
+	And User checks 'Admin IT' option after search from 'Teams' autocomplete
+	And User checks '[Default (Computer)]' option after search from 'Paths' autocomplete
 	When User selects 'Device' in the 'Object Type' dropdown
 	And User clicks 'CREATE' button 
 	Then 'Your capacity slot has been created' text is displayed on inline success banner
@@ -112,9 +112,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	| Admin IT |
 	#Change data in the slot
 	When User selects 'Application' in the 'Object Type' dropdown
-	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
-	And User selects "1803 Team" checkbox in the "Teams" field on the Project details page
-	And User selects "[Default (Application)]" checkbox in the "Paths" field on the Project details page
+	And User checks 'Admin IT' option after search from 'Teams' autocomplete
+	And User checks '1803 Team' option after search from 'Teams' autocomplete
+	And User checks '[Default (Application)]' option after search from 'Paths' autocomplete
 	And User clicks 'UPDATE' button 
 	Then 'The capacity slot details have been updated' text is displayed on inline success banner
 	#Check updated data in the slot and change Capacity Type
