@@ -174,8 +174,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	#teardown
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks Settings button for "DeviceListFor14841_1" list
-	When User clicks 'Manage' option in opened Cog-menu
+	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_1' list
 	Then Details panel is displayed to the user
 	Then "Private" sharing option is selected
 
@@ -209,8 +208,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	#teardown
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks Settings button for "DeviceListFor14841_2" list
-	When User clicks 'Manage' option in opened Cog-menu
+	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_2' list
 	Then Details panel is displayed to the user
 	Then "Private" sharing option is selected
 
@@ -259,12 +257,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then "Everyone can see" sharing option is selected
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks Settings button for "DeviceListFor14841_3" list
-	When User clicks 'Manage' option in opened Cog-menu
+	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_3' list
 	Then Details panel is displayed to the user
 	And "Everyone can edit" sharing option is selected
-	When User clicks Settings button for "DeviceListFor14841_4" list
-	When User clicks 'Manage' option in opened Cog-menu
+	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_4' list
 	Then Details panel is displayed to the user
 	Then "Private" sharing option is selected
 

@@ -57,8 +57,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| automation_admin1 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks Settings button for "ADeviceListFor14841_Admin" list
-	When User clicks 'Manage' option in opened Cog-menu
+	When User clicks 'Manage' option in Cog-menu for 'ADeviceListFor14841_Admin' list
 	Then Details panel is displayed to the user
 	Then "Everyone can see" sharing option is selected
 
@@ -241,8 +240,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	| automation_admin10 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks Settings button for "ADevicesList17592" list
-	When User clicks 'Manage' option in opened Cog-menu
+	When User clicks 'Manage' option in Cog-menu for 'ADevicesList17592' list
 	Then Details panel is displayed to the user
 	When User clicks 'Remove' option in Cog-menu for 'automation_admin1' user on Details panel
 	Then There is no user in shared list of Details panel

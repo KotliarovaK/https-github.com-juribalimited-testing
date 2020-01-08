@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -6,6 +7,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Steps.Dashworks.CustomList.AfterScenario;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -50,25 +52,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
 
-        [When(@"User clicks Settings button for ""(.*)"" list")]
-        public void WhenUserClicksSettingsButtonForList(string listName)
+        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' list")]
+        public void WhenUserClicksOptionInCogMenuForList(string option, string listName)
         {
             var page = _driver.NowAt<CustomListElement>();
             var icon = page.GetSettingsIconForList(listName);
             _driver.MouseHover(icon);
             _driver.WaitForElementToBeDisplayed(icon);
             icon.Click();
-        }
 
-        [When(@"User clicks Delete button for custom list")]
-        public void WhenUserClicksDeleteButtonForCustomList()
-        {
-            var button = _driver.NowAt<CustomListElement>();
-            _driver.WaitForElementToBeDisplayed(button.MenuItem);
-            _driver.WaitForElementToBeDisplayed(button.DeleteButton);
-            Thread.Sleep(1000);
-            button.DeleteButton.Click();
-            _driver.WaitForElementToBeNotDisplayed(button.MenuItem);
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            cogMenu.GetCogMenuOptionByName(option).Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User create custom list with ""(.*)"" name")]
@@ -277,22 +273,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
         public void WhenUserRemovesCustomListWithName(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-
-            WhenUserClicksSettingsButtonForList(listName);
-            _driver.WaitForElementToBeDisplayed(listElement.DeleteButton);
-            listElement.DeleteButton.Click();
+            WhenUserClicksOptionInCogMenuForList(listName, "Delete");
             _driver.WaitForElementToBeDisplayed(listElement.DeleteConfirmationMessage);
             listElement.ConfirmDeleteButton.Click();
-        }
-
-        [When(@"User click Delete button for custom list with ""(.*)"" name")]
-        public void WhenUserClickDeleteButtonForCustomListWithName(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            WhenUserClicksSettingsButtonForList(listName);
-            _driver.WaitForElementToBeDisplayed(listElement.DeleteButton);
-            listElement.DeleteButton.Click();
         }
 
         [Then(@"User confirm removed list")]
@@ -315,16 +298,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
         {
             var button = _driver.NowAt<CustomListElement>();
             Utils.Verify.IsTrue(button.CancelDeletingButton.Displayed(), "Cancel button is not displayed in banner");
-        }
-
-        [When(@"User clicks '(.*)' Settings menu item for '(.*)' list")]
-        public void WhenUserClicksSettingsMenuItemForList(string menuItem, string listName)
-        {
-            WhenUserClicksSettingsButtonForList(listName);
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogMenuOptionByName(menuItem).Click();
-            _driver.WaitForDataLoading();
         }
 
         [Then(@"list with ""(.*)"" name is not displayed")]
