@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDispl
 	And '2' content is displayed in the 'Slots' column
 	Then '2' tooltip is displayed for '2' content in the 'Slots' column
 	When User clicks content from "Slots" column
-	Then URL contains "/capacity/slots/:Birmingham"
+	Then URL contains '/capacity/slots/:Birmingham'
 	When User clicks on 'Capacity Slot' column header
 	Then Content in the 'Capacity Slot' column is equal to
 	| Content              |

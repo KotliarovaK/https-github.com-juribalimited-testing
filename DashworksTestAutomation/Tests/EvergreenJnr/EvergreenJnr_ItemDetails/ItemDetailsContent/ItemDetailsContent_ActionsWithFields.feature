@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	When User navigates to the 'Device Owner' left submenu item
 	And User clicks "QLL295118" link on the Details Page
 	Then Details page for 'QLL295118 (Nicole P. Braun)' item is displayed to the user
-	And URL contains "user/23726/details/user"
+	And URL contains 'user/23726/details/user'
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	And User clicks "QLL295118" link on the Details Page
 	Then Details page for 'QLL295118 (Nicole P. Braun)' item is displayed to the user
 	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
-	And URL contains "user/23726/details/user?$projectId=43"
+	And URL contains 'user/23726/details/user?$projectId=43'
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
 	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	And User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for 'Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs' item is displayed to the user
 	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
-	And URL contains "application/373/details/application?$projectId=43"
+	And URL contains 'application/373/details/application?$projectId=43'
 
 #Ann.Ilchenko 10/25/19: will be ready in the future (contact Lana for details)
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17768 @Not_Ready

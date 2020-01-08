@@ -903,17 +903,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Convert to Evergreen button is displayed");
         }
 
-        [When(@"User selects ""(.*)"" checkbox in the ""(.*)"" field on the Project details page")]
-        public void WhenUserSelectsCheckboxInTheFieldOnTheProjectDetailsPage(string checkbox, string fieldName)
-        {
-            var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.GetFieldByName(fieldName).SendKeys(checkbox);
-            var slot = _driver.NowAt<Capacity_SlotsPage>();
-            slot.GetCheckboxByName(checkbox).Click();
-            var filterElement = _driver.NowAt<BaseGridPage>();
-            filterElement.BodyContainer.Click();
-        }
-
         [When(@"User removes ""(.*)"" on the Project details page")]
         public void WhenUserRemovesTaskFromCapacityEditPage(string taskName)
         {
