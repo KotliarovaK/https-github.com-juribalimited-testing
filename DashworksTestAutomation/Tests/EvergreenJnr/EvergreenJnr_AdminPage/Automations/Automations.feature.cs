@@ -395,8 +395,8 @@ this.FeatureBackground();
 #line 106
  testRunner.When("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -716,8 +716,8 @@ this.FeatureBackground();
 #line 190
  testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table11, "Then ");
 #line 202
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 203
  testRunner.When("User clicks \'Move to top\' option in Cog-menu for \'Add data\' item from \'Automation" +
                     "\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -730,8 +730,8 @@ this.FeatureBackground();
 #line 207
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 208
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -756,8 +756,8 @@ this.FeatureBackground();
 #line 219
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 220
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -841,8 +841,8 @@ this.FeatureBackground();
 #line 236
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 237
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 239
  testRunner.When("User clicks Cog-menu for \'AM Test 1\' item in the \'Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -899,8 +899,8 @@ this.FeatureBackground();
 #line 264
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 265
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -929,8 +929,8 @@ this.FeatureBackground();
 #line 278
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 279
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -1020,8 +1020,8 @@ this.FeatureBackground();
 #line 297
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 298
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 299
  testRunner.When("User moves \'AM 150419 II\' item from \'Automation\' column to the \'2\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 300
@@ -1033,8 +1033,8 @@ this.FeatureBackground();
 #line 303
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 304
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -1059,8 +1059,8 @@ this.FeatureBackground();
 #line 315
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 316
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -1085,8 +1085,8 @@ this.FeatureBackground();
 #line 327
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 328
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
@@ -1396,8 +1396,8 @@ this.FeatureBackground();
 #line 427
  testRunner.When("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 428
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 	Then 'A self service with this name already exists' error message is displayed for 'Self Service Name' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	Then Page with 'Create Self Service' header is displayed to user
+	Then Page with 'Self Services' header is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutSelectedScope
@@ -60,13 +60,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutSelect
 	When User enters 'TestP_ID_1' text to 'Self Service Identifier' textbox
 	Then 'CREATE' button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @Not_Ready
+#Need to add REALY broken list to the step or make the existing as broken
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithBrokenScopeList
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_4' text to 'Self Service Name' textbox
-	When User selects 'Alex M List' option from 'Self Service Scope' autocomplete
+	When User selects 'Application List (Complex) - BROKEN LIST' option from 'Self Service Scope' autocomplete 
 	When User enters 'TestP_ID_4' text to 'Self Service Identifier' textbox
 	Then 'This list has errors' error message is displayed for 'Self Service Scope' dropdown
 	Then 'CREATE' button is disabled
@@ -81,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Service' left menu item
+	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
@@ -114,14 +115,14 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCan
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters '<Self Service Identifier>' text to 'Self Service Identifier' textbox
-	Then 'CREATE' button is disabled
-	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button is not disabled
+	Then '<Self Service Identifier after cut>' content is displayed in 'Self Service Identifier' textbox
 	
 Examples:
-	| Self Service Identifier                          |
-	| 123qweTJ911                                      |
-	| 123456789012                                     |
-	| 1234567890WIEOEOEPEP1111212123424334324234234    |
+	| Self Service Identifier                       | Self Service Identifier after cut |
+	| 123qweTJ911                                   | 123qweTJ91                        |
+	| 123ttt789012                                  | 123ttt7890                        |
+	| xxx4567890WIEOEOEPEP1111212123424334324234234 | xxx4567890                        |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserWillBeReturnedToTheGridPageIfNoDataWasEnteredAndCancelButtonWasClicked

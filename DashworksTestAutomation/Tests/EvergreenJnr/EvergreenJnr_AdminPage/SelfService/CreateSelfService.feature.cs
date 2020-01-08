@@ -296,7 +296,7 @@ this.FeatureBackground();
 #line 43
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44
- testRunner.When("User navigates to the \'Self Service\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
  testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
@@ -313,7 +313,7 @@ this.FeatureBackground();
 #line 51
  testRunner.Then("\'CREATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 52
- testRunner.Then("Page with \'Create Self Service\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Self Services\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -393,6 +393,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19082")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithBrokenScopeList()
         {
             System.Exception lastException = null;
@@ -428,28 +429,30 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS19082",
-                        "Cleanup"});
-#line 64
+                        "Cleanup",
+                        "Not_Ready"});
+#line 65
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 65
-    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 66
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
- testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 68
- testRunner.When("User enters \'TestProj_4\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
- testRunner.When("User selects \'Alex M List\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'TestProj_4\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
- testRunner.When("User enters \'TestP_ID_4\' text to \'Self Service Identifier\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Application List (Complex) - BROKEN LIST\' option from \'Self Service" +
+                    " Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
+ testRunner.When("User enters \'TestP_ID_4\' text to \'Self Service Identifier\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 72
  testRunner.Then("\'This list has errors\' error message is displayed for \'Self Service Scope\' dropdo" +
                     "wn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 72
+#line 73
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -501,41 +504,41 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19082",
                         "Cleanup"});
-#line 75
+#line 76
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 76
-    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 78
- testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
- testRunner.When("User enters \'TestProj_3\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
- testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 81
- testRunner.When("User enters \'TestP_ID_2\' text to \'Self Service Identifier\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
- testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 83
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
- testRunner.When("User navigates to the \'Self Service\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
  testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 80
+ testRunner.When("User enters \'TestProj_3\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 81
  testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
+#line 82
  testRunner.When("User enters \'TestP_ID_2\' text to \'Self Service Identifier\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 83
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 84
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 85
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 86
+ testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 87
+ testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
- testRunner.When("User enters \'TestProj_4\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'TestP_ID_2\' text to \'Self Service Identifier\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 89
+ testRunner.When("User enters \'TestProj_4\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 90
  testRunner.Then("\'A self service with this identifier already exists\' error message is displayed f" +
                     "or \'Self Service Identifier\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 90
+#line 91
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -595,27 +598,27 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceW" +
                     "ithNotAllowableCharactersInSelfServiceIdentifierTextField", null, @__tags);
-#line 93
+#line 94
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 94
-    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
- testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
- testRunner.When("User enters \'TestProj_3\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 98
- testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'TestProj_3\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99
- testRunner.When(string.Format("User enters \'{0}\' text to \'Self Service Identifier\' textbox", selfServiceIdentifier), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 100
+ testRunner.When(string.Format("User enters \'{0}\' text to \'Self Service Identifier\' textbox", selfServiceIdentifier), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
  testRunner.Then("\'The allowable characters are letters, numbers, underscore and hyphen\' error mess" +
                     "age is displayed for \'Self Service Identifier\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 101
+#line 102
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -631,17 +634,17 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19082")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("123qweTJ911", null)]
-        [NUnit.Framework.TestCaseAttribute("123456789012", null)]
-        [NUnit.Framework.TestCaseAttribute("1234567890WIEOEOEPEP1111212123424334324234234", null)]
-        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField(string selfServiceIdentifier, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("123qweTJ911", "123qweTJ91", null)]
+        [NUnit.Framework.TestCaseAttribute("123ttt789012", "123ttt7890", null)]
+        [NUnit.Framework.TestCaseAttribute("xxx4567890WIEOEOEPEP1111212123424334324234234", "xxx4567890", null)]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField(string selfServiceIdentifier, string selfServiceIdentifierAfterCut, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextFieldInternal(selfServiceIdentifier,exampleTags);
+                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextFieldInternal(selfServiceIdentifier,selfServiceIdentifierAfterCut,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -660,7 +663,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextFieldInternal(string selfServiceIdentifier, string[] exampleTags)
+        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextFieldInternal(string selfServiceIdentifier, string selfServiceIdentifierAfterCut, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -675,27 +678,27 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceW" +
                     "ithMoreThanTenCharactersInSelfServiceIdentifierTextField", null, @__tags);
-#line 110
+#line 111
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 111
-    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 112
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 113
- testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 114
- testRunner.When("User enters \'TestProj_3\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 115
- testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'TestProj_3\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 116
- testRunner.When(string.Format("User enters \'{0}\' text to \'Self Service Identifier\' textbox", selfServiceIdentifier), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 117
- testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When(string.Format("User enters \'{0}\' text to \'Self Service Identifier\' textbox", selfServiceIdentifier), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 118
- testRunner.Then("\'CREATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'CREATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 119
+ testRunner.Then(string.Format("\'{0}\' content is displayed in \'Self Service Identifier\' textbox", selfServiceIdentifierAfterCut), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -746,20 +749,20 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19082",
                         "Cleanup"});
-#line 127
+#line 128
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 128
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 129
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 130
- testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 131
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 133
  testRunner.Then("\'CREATE SELF SERVICE\' button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

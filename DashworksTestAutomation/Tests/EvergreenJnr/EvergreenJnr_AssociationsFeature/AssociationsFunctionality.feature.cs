@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFunctionality
+namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFeature
 {
     using TechTalk.SpecFlow;
     
@@ -142,7 +142,8 @@ this.FeatureBackground();
 #line 15
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
@@ -209,15 +210,18 @@ this.FeatureBackground();
 #line 26
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
- testRunner.When("User selects \'Not installed on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Not installed on device\' option in \'Search associations\' autocomple" +
+                    "te of Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
- testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
+                    " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
  testRunner.Then("Remove icon displayed in \'false\' state for \'Used on device\' association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 33
@@ -292,7 +296,8 @@ this.FeatureBackground();
 #line 41
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 44
@@ -415,7 +420,8 @@ this.FeatureBackground();
 #line 83
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 85
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
@@ -526,11 +532,13 @@ this.FeatureBackground();
 #line 113
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 114
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 115
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 116
- testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
+                    " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 117
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 118
@@ -609,7 +617,8 @@ this.FeatureBackground();
 #line 132
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 133
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 134
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -707,7 +716,8 @@ this.FeatureBackground();
 #line 156
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 157
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 158
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 159
@@ -873,11 +883,13 @@ this.FeatureBackground();
 #line 195
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 196
- testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
+                    " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 197
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 198
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 199
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 200
@@ -1060,7 +1072,8 @@ this.FeatureBackground();
 #line 238
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 239
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 240
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1137,7 +1150,8 @@ this.FeatureBackground();
 #line 268
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 269
- testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
+                    " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 270
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 271
@@ -1212,7 +1226,8 @@ this.FeatureBackground();
 #line 282
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 283
- testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
+                    " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 284
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 285
@@ -1279,7 +1294,8 @@ this.FeatureBackground();
 #line 292
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 293
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 294
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 295
@@ -1356,7 +1372,8 @@ this.FeatureBackground();
 #line 308
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 309
- testRunner.When("User selects \'Installed on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Installed on device\' option in \'Search associations\' autocomplete o" +
+                    "f Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 310
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1438,7 +1455,8 @@ this.FeatureBackground();
 #line 325
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 326
- testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
+                    " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 327
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1529,7 +1547,8 @@ this.FeatureBackground();
 #line 346
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 347
- testRunner.When("User selects \'Entitled to device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
+                    " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 348
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1613,7 +1632,8 @@ this.FeatureBackground();
 #line 361
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 362
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 363
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 364
@@ -1690,7 +1710,8 @@ this.FeatureBackground();
 #line 381
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 382
- testRunner.When("User selects \'Used on device\' option in expanded associations list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
+                    "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 383
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 384
@@ -1803,6 +1824,88 @@ this.FeatureBackground();
  testRunner.When("User creates new custom list with \"AssociationList18470\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 436
  testRunner.Then("\"AssociationList18470\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociation" +
+            "sDropdown")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("DAS18092")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociationsDropdown()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociationsDropdownInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociationsDropdownInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociation" +
+                    "sDropdown", null, new string[] {
+                        "Evergreen",
+                        "AllDeviceApplications",
+                        "DAS18092"});
+#line 439
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 440
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 441
+ testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 442
+ testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 443
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 444
+ testRunner.Then("\"Entitled to device owner\" filter is presented in the filters list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 445
+ testRunner.Then("\"Used by device owner\" filter is presented in the filters list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 446
+ testRunner.When("User selects \'Entitled to device owner\' option in \'Search associations\' autocompl" +
+                    "ete of Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 447
+ testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 448
+ testRunner.Then("\"Used by device owner\" filter is presented in the filters list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 449
+ testRunner.Then("\"Not used by device owner\" filter is presented in the filters list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 450
+ testRunner.When("User selects \'Not used by device owner\' option in \'Search associations\' autocompl" +
+                    "ete of Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 451
+ testRunner.Then("Remove icon displayed in \'false\' state for \'Entitled to device owner\' association" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 452
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 453
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 454
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

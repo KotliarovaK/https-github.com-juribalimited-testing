@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFr
 	Then Associations panel is displayed to the user
 	Then Export button is displayed disabled
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User click content from "Application Name" column
 	Then There are no errors in the browser console
@@ -24,11 +24,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedI
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
-	When User selects 'Not installed on device' option in expanded associations list
+	When User selects 'Not installed on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	Then Remove icon displayed in 'false' state for 'Used on device' association
 	Then Remove icon displayed in 'true' state for 'Not installed on device' association
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User selects 'Pivot' in the 'Create' dropdown
 	Then No pivot generated message is displayed
@@ -111,9 +111,9 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterC
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add New button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
 	When User clicks Save button on the list panel
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAsso
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "App Version" filter where type is "Equals" with added column and following value:
 	| Values |
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "Device (Saved List)" filter where type is "In list" without added column and "ADevicesList18531" Lookup option
 	When User clicks 'RUN LIST' button
@@ -193,9 +193,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
@@ -236,7 +236,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayed
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "<filter>" filter where type is "Equals" with added column and following value:
 	| Values |
@@ -266,7 +266,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAft
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
 	When User clicks on 'Hostname' column header
@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfte
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
 	Then All column headers are unique
@@ -290,7 +290,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAf
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
@@ -306,7 +306,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumn
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Installed on device' option in expanded associations list
+	When User selects 'Installed on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Columns button
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
@@ -323,7 +323,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedC
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "Network Card Count" filter where type is "Greater than" with added column and following value:
 	| Values |
@@ -344,7 +344,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperat
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Entitled to device' option in expanded associations list
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "Device Operating System" filter where type is "Does not equal" with added column and Lookup option
     | SelectedValues |
@@ -359,7 +359,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorWhenSomeN
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "<filter>" filter where type is "Not empty" with added column and Lookup option
@@ -379,7 +379,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAss
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Used on device' option in expanded associations list
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User clicks Add New button on the Filter panel
 	Then the following Filters subcategories are displayed for open category:
@@ -434,3 +434,21 @@ Scenario: EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAss
 	When User selects Save as dynamic list option
 	When User creates new custom list with "AssociationList18470" name
 	Then "AssociationList18470" list is displayed to user
+
+@Evergreen @AllDeviceApplications @DAS18092
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociationsDropdown
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	Then "Entitled to device owner" filter is presented in the filters list
+	Then "Used by device owner" filter is presented in the filters list
+	When User selects 'Entitled to device owner' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	Then "Used by device owner" filter is presented in the filters list
+	Then "Not used by device owner" filter is presented in the filters list
+	When User selects 'Not used by device owner' option in 'Search associations' autocomplete of Associations panel
+	Then Remove icon displayed in 'false' state for 'Entitled to device owner' association
+	When User clicks 'RUN LIST' button
+	Then There are no errors in the browser console
+	Then table content is present

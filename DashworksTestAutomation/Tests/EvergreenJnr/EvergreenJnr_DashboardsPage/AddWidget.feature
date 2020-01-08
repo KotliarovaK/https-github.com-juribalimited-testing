@@ -253,18 +253,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	Then User sees list icon displayed for 'WidgetForDAS16842' widget in List section of Dashboards Details
 	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details
 
-	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18168 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18168 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabelAreDisplayed
     When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When User adds columns to the list
-    | ColumnName |
-    | CPU Count  |
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "DAS18168_List" name
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| CPU Count  |
+	When User create dynamic list with "DAS18168_List" name on "Devices" page
+	Then "DAS18168_List" list is displayed to user
 	When Dashboard with 'DAS18168_Dashboard' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button

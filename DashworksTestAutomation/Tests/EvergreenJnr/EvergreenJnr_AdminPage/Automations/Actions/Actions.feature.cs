@@ -440,8 +440,8 @@ this.FeatureBackground();
 #line 126
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 127
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 128
  testRunner.When("User moves \'Secont_Action\' item from \'Action\' column to the \'4\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -496,8 +496,8 @@ this.FeatureBackground();
 #line 152
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 153
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -671,8 +671,8 @@ this.FeatureBackground();
 #line 209
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 210
- testRunner.Then("numeric data in \"Processing order\" column is sorted in ascending order by default" +
-                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});

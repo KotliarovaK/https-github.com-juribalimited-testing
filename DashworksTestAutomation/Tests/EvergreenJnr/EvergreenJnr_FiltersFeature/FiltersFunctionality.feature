@@ -2469,7 +2469,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork
 	| SelectedValues |
 	Then "16,819" rows are displayed in the agGrid
 
-@Evergreen @AllDeviceApplications @DAS18560 @Cleanup
+@Evergreen @Applications @DAS18560 @Cleanup
 Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToDeletedList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2500,7 +2500,7 @@ Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilte
 	When User clicks the Filters button
 	Then message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
 
-@Evergreen @AllDeviceApplications @DAS18100 @Cleanup
+@Evergreen @Devices @DAS18100 @Cleanup
 Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2520,14 +2520,14 @@ Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	Then "NewFilter_18100_1" list is displayed to user
 	Then There are no errors in the browser console
 
-@Evergreen @AllDeviceApplications @DAS18100 @Cleanup
+@Evergreen @Devices @DAS18100 @Cleanup
 Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreatedViaAddressRow
 	When User navigates to 'devices?$filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType' url via address line
 	Then "17,279" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "Import Type is not empty" is displayed in added filter info
 
-@Evergreen @AllDeviceApplications @DAS18560 @Cleanup
+@Evergreen @Applications @DAS18560 @Cleanup
 Scenario: EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2620,3 +2620,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWork
 	| Empty              |
 	Then "zMailboxAu: Owner In Scope" filter is added to the list
 	Then "14,784" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS19550
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringListBySavedList
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Device Owner (Saved List)" filter where type is "In list" with selected Checkboxes and following Association:
+	| SelectedCheckboxes      | Association    |
+	| Users with Device Count | Used on device |
+	Then There are no errors in the browser console
