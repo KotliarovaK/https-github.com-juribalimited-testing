@@ -980,7 +980,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table17.AddRow(new string[] {
-                        "automation_admin1",
+                        "automation_admin11",
                         "m!gration"});
 #line 274
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table17, "When ");
@@ -1007,7 +1007,7 @@ this.FeatureBackground();
                         "User",
                         "Permission"});
             table18.AddRow(new string[] {
-                        "Automation Admin 10",
+                        "Automation Admin 12",
                         string.Format("{0}", shareType)});
 #line 286
  testRunner.When("User adds user to list of shared person", ((string)(null)), table18, "When ");
@@ -1018,7 +1018,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table19.AddRow(new string[] {
-                        "automation_admin10",
+                        "automation_admin12",
                         "m!gration"});
 #line 290
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table19, "When ");
@@ -1060,7 +1060,7 @@ this.FeatureBackground();
 #line 307
  testRunner.Then(string.Format("Widget \'{0}\' displayed for \'{1}\' list on Permissions Pop-up", widgetName, listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 308
- testRunner.Then(string.Format("User \'Automation Admin 1\' displayed for \'{0}\' list on Permissions Pop-up", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("User \'Automation Admin 11\' displayed for \'{0}\' list on Permissions Pop-up", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 309
  testRunner.Then(string.Format("Current permission \'Specific users / teams\' displayed for \'{0}\' list on Permissio" +
                         "ns Pop-up", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

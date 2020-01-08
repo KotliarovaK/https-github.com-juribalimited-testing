@@ -269,10 +269,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	Then "Any Device in list 1803 Rollout" is displayed in added filter info
 	Then "1803: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
 	#DAS16516
-	When User clicks 'Dashboards' on the left-hand menu
-	When User clicks Show Dashboards panel icon on Dashboards page
-	Then User sees Dashboards sub menu on Dashboards page
-	When User navigates to the "Dashboard for DAS18091" list
+	When Dashboard with 'Dashboard for DAS18091' name is opened via API
 	When User clicks 'READY' value for 'Windows Vista' column
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user

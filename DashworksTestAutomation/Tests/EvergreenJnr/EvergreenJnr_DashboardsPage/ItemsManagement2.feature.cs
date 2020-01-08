@@ -87,6 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15721")]
         [NUnit.Framework.CategoryAttribute("DAS15937")]
+        [NUnit.Framework.CategoryAttribute("DAS18911")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating()
         {
@@ -123,6 +124,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_DashboardsPage
                         "Widgets",
                         "DAS15721",
                         "DAS15937",
+                        "DAS18911",
                         "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
