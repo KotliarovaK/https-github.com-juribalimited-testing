@@ -99,13 +99,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetCheckboxByName(string checkboxName)
-        {
-            var selector = By.XPath($".//div[@role='presentation']//span[text()='{checkboxName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetMoveButtonBySlotName(string slot)
         {
             var indexRow = GetSlotContent().IndexOf(slot);
