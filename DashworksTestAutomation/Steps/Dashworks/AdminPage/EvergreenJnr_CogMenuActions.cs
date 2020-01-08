@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -36,11 +37,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.MouseHover(cogMenuElement);
             cogMenu.GetCogMenuByItem(column, columnContent).Click();
 
-            for (var i = 0; i < options.RowCount; i++)
-            {
-                Verify.That(cogMenu.CogMenuItems[i].Text, Is.EqualTo(options.Rows[i].Values.FirstOrDefault()),
-                    "Items are not the same");
-            }
+            List<String> expectedCogMenuOptions = options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()).ToList();
+            List<String> cogMenuOptions = cogMenu.CogMenuItems.Select(x => x.GetText()).ToList();
+
+            Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
+                            "Items are not the same");
         }
 
         [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item from '(.*)' column")]
