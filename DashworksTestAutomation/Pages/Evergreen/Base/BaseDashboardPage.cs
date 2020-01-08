@@ -221,10 +221,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private static string AutocompleteOptionsSelector = ".//mat-option[@tabindex!='-1']";
 
+        private static string AutocompleteSelectOptionsSelector = ".//ul//mat-checkbox";
+
         private static string AutocompleteValidationMessageSelector = ".//mat-option[@tabindex='-1']//span";
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
         public IWebElement AutocompleteDropdown { get; set; }
+
+        //For dropdown with checkboxes
+        private const string AutocompleteSelectDropdownSelector = ".//div[contains(@class,'dropdown-select')]";
+        [FindsBy(How = How.XPath, Using = AutocompleteSelectDropdownSelector)]
+        public IWebElement AutocompleteSelectDropdown { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -286,6 +293,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Autocomplete
 
+        //For dropdown with checkboxes
+        public List<string> GetAllAutocompleteSelectOptions(string placeholder)
+        {
+            GetTextbox(placeholder).Click();
+
+            var foundOptions = GetAllSelectOptionsFromOpenedAutocomplete();
+
+            return foundOptions;
+        }
+
         public List<string> GetAllAutocompleteOptions(string placeholder)
         {
             GetTextbox(placeholder).Click();
@@ -297,11 +314,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public List<string> GetAllOptionsFromOpenedAutocomplete()
         {
-            if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
+            if (!Driver.IsElementInElementDisplayed(AutocompleteDropdown, By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
                 throw new Exception($"Options are not displayed for autocomplete");
 
             var foundOptions =
                 AutocompleteDropdown.FindElements(By.XPath(AutocompleteOptionsSelector)).Select(x => x.Text).ToList();
+
+            return foundOptions;
+        }
+
+        public List<string> GetAllSelectOptionsFromOpenedAutocomplete()
+        {
+            if (!Driver.IsElementInElementDisplayed(AutocompleteSelectDropdown, By.XPath(AutocompleteSelectOptionsSelector), WebDriverExtensions.WaitTime.Short))
+                throw new Exception($"Select options are not displayed for autocomplete");
+
+            var foundOptions =
+                AutocompleteSelectDropdown.FindElements(By.XPath(AutocompleteSelectOptionsSelector)).Select(x => x.Text).ToList();
 
             return foundOptions;
         }
@@ -317,8 +345,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public void AutocompleteSelect(string placeholder, string searchText, bool withSearch = false, bool containsOption = false, params string[] optionsToSelect)
         {
-            GetTextbox(placeholder).ClearWithBackspaces();
-            GetTextbox(placeholder).Click();
+            var textbox = GetTextbox(placeholder);
+            textbox.ClearWithBackspaces();
+            textbox.Click();
 
             //Options to select
             //If we do not provide options to select
@@ -335,8 +364,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             if (withSearch)
             {
-                GetTextbox(placeholder).ClearWithBackspaces();
-                GetTextbox(placeholder).SendKeys(searchText);
+                textbox.ClearWithBackspaces();
+                textbox.SendKeys(searchText);
                 if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
                     WebDriverExtensions.WaitTime.Short))
                 {
@@ -375,6 +404,43 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                     else
                         throw new Exception(
                             $"There are no option that equals '{searchText}' text in the '{placeholder}' autocomplete");
+                }
+            }
+            else
+                throw new Exception($"'{searchText}' was not found in the '{placeholder}' autocomplete");
+        }
+
+        public void AutocompleteSelectCheckboxes(string placeholder, string searchText, bool state, bool withSearch = false, params string[] optionsToSelect)
+        {
+            var textbox = GetTextbox(placeholder);
+            textbox.Click();
+
+            //Options to select
+            //If we do not provide options to select
+            //Then just add option equals to the search text
+            List<string> options = new List<string>();
+            if (optionsToSelect.Any())
+            {
+                options.AddRange(optionsToSelect);
+            }
+            else
+            {
+                options.Add(searchText);
+            }
+
+            if (withSearch)
+            {
+                textbox.ClearWithBackspaces();
+                textbox.SendKeys(searchText);
+            }
+
+            Driver.WaitForElementInElementToBeDisplayed(AutocompleteSelectDropdown, By.XPath(AutocompleteSelectOptionsSelector));
+            var foundOptions = AutocompleteSelectDropdown.FindElements(By.XPath(AutocompleteSelectOptionsSelector));
+            if (foundOptions.Any())
+            {
+                foreach (string option in options)
+                {
+                    SetCheckboxState(option, state, AutocompleteSelectDropdownSelector);
                 }
             }
             else
@@ -473,6 +539,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             try
             {
                 return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsTextboxDisplayedWithError(string name)
+        {
+            try
+            {
+                return GetTextboxErrorMessageElement(name).Displayed();
             }
             catch
             {

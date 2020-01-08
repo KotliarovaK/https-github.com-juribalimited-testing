@@ -4,6 +4,7 @@ using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -81,11 +82,28 @@ namespace DashworksTestAutomation.Steps.Base
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
         }
 
+        #region Check/Navigate to URL
+
         [When(@"User navigates to '(.*)' URL in a new tab")]
         public void WhenUserNavigatesToURLInANewTab(string urlParameters)
         {
             _driver.OpenInNewTab($"{UrlProvider.Url}{urlParameters}");
             _driver.SwitchTo().Window(_driver.WindowHandles.Last());
         }
+
+        [Then(@"URL is '(.*)'")]
+        public void ThenURLIs(string urlPart)
+        {
+            var expectedUrl = $"{UrlProvider.Url}{urlPart}";
+            Verify.AreEqual(expectedUrl, _driver.Url, $"URL is not equals to '{expectedUrl}'");
+        }
+
+        [Then(@"URL contains '(.*)'")]
+        public void ThenURLContains(string url)
+        {
+            Verify.Contains(url, _driver.Url, $"URL is not contains '{url}'");
+        }
+
+        #endregion
     }
 }

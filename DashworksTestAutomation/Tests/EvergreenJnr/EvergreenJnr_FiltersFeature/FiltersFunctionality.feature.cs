@@ -5063,7 +5063,7 @@ this.FeatureBackground();
 #line 1177
  testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1178
- testRunner.And("URL contains \"evergreen/#/users?$listid=\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("URL contains \'evergreen/#/users?$listid=\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -5243,7 +5243,7 @@ this.FeatureBackground();
 #line 1213
  testRunner.Then("\"DAS13414\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1214
- testRunner.And("URL contains \"evergreen/#/applications?$listid=\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("URL contains \'evergreen/#/applications?$listid=\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1215
  testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1216
@@ -5251,7 +5251,7 @@ this.FeatureBackground();
 #line 1217
  testRunner.And("User navigates to the \"DAS13414\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1218
- testRunner.Then("URL contains \"evergreen/#/applications?$listid=\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("URL contains \'evergreen/#/applications?$listid=\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1219
  testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -5756,7 +5756,7 @@ this.FeatureBackground();
 #line 1319
  testRunner.And("\"113\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1320
- testRunner.And("URL contains \"evergreen/#/applications?$listid=\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("URL contains \'evergreen/#/applications?$listid=\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1321
  testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1322
@@ -5766,7 +5766,7 @@ this.FeatureBackground();
 #line 1324
  testRunner.Then("\"113\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1325
- testRunner.Then("URL contains \"evergreen/#/applications?$listid=\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("URL contains \'evergreen/#/applications?$listid=\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1326
  testRunner.And("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -7510,7 +7510,7 @@ this.FeatureBackground();
 #line 1729
  testRunner.Then("\"TestList15246\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1730
- testRunner.And("URL contains \"evergreen/#/users?$listid=\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("URL contains \'evergreen/#/users?$listid=\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1731
  testRunner.And("URL contains only \"listid\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -11155,8 +11155,8 @@ this.FeatureBackground();
 #line 2510
  testRunner.Then("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2511
- testRunner.Then("URL contains \"filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname," +
-                    "chassisCategory,oSCategory,ownerDisplayName,distributionType\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("URL contains \'filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname," +
+                    "chassisCategory,oSCategory,ownerDisplayName,distributionType\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2512
  testRunner.When("User have removed \"Import Type\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

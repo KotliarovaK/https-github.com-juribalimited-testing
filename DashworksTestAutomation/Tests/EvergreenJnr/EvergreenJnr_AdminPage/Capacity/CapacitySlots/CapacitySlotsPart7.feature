@@ -129,9 +129,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	#And User clicks 'CREATE NEW SLOT' button 
 	#And User enters 'Slot 1' text to 'Slot Name' textbox
 	#And User enters 'Slot 1' text to 'Display Name' textbox
-	#And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
-	#And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
-	#And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
+	#And User checks 'Pre-Migration \ Scheduled Date' option after search from 'Tasks' autocomplete
+	#And User checks 'Pre-Migration \ Forecast Date' option after search from 'Tasks' autocomplete
+	#And User checks 'Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner' option after search from 'Tasks' autocomplete
 	#And User clicks 'CREATE' button 
 	And User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user

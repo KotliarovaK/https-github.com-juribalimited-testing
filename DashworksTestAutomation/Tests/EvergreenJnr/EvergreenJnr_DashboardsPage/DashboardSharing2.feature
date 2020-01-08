@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
-	| automation_admin1 | m!gration |
+	| automation_admin8 | m!gration |
 	#create and share list
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -23,12 +23,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
-	| Automation Admin 10 | Admin      |
+	| Automation Admin 17 | Admin      |
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| automation_admin17 | m!gration |
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841_Admin' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget 'WidgetForDAS14841_Admin' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
-	Then User 'Automation Admin 1' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
+	Then User 'Automation Admin 8' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then Current permission 'Specific users / teams' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then New Permission 'Do not change' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	When User selects 'Everyone can see' permission for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
-	| automation_admin1 | m!gration |
+	| automation_admin8 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'ADeviceListFor14841_Admin' list

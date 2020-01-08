@@ -63,6 +63,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             {
                 _driver.WaitForElementToBeNotDisplayed(cogMenuElement);
             }
+
+            //For automation
+            if (option.Equals("Run now"))
+            {
+                _automationStartTime.Value = DateTime.Now.AddSeconds(-10);
+            }
         }
 
         [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]
