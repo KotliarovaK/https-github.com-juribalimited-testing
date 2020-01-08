@@ -11,9 +11,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| ProjectName          | Scope       | ProjectTemplate | Mode               |
 	| Project for DAS15665 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Readiness' left menu item
-	When User clicks Cog-menu for 'RED' item in the 'Readiness' column
-	Then User sees following cog-menu items on Admin page:
-	| items                         |
+	When User clicks Cog-menu for 'RED' item in the 'Readiness' column and sees following cog-menu options
+	| options                       |
 	| Edit                          |
 	| Move to top                   |
 	| Move to bottom                |
@@ -21,9 +20,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| Change to ready               |
 	| Make default for applications |
 	| Delete                        |
-	When User clicks Cog-menu for 'GREEN' item in the 'Readiness' column
-	Then User sees following cog-menu items on Admin page:
-	| items                         |
+	When User clicks Cog-menu for 'GREEN' item in the 'Readiness' column and sees following cog-menu options
+	| options                       |
 	| Edit                          |
 	| Move to top                   |
 	| Move to bottom                |

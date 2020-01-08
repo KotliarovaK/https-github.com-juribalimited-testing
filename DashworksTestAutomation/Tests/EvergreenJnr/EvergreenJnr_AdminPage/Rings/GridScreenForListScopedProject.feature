@@ -18,9 +18,8 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	|            |
 	| Default    |
 	| Devices    |
-	When User clicks Cog-menu on the Admin page
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'Unassigned' item in the 'Ring' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -55,9 +54,8 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	Then data in table is sorted by 'Ring' column in ascending order
 	When User clicks on 'Ring' column header
 	Then data in table is sorted by 'Ring' column in descending order
-	When User clicks Cog-menu on the Admin page
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'Unassigned' item in the 'Ring' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -85,9 +83,8 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	|            |
 	| Default    |
 	| Mailboxes  |
-	When User clicks Cog-menu on the Admin page
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'Unassigned' item in the 'Ring' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -104,9 +101,8 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	And User clicks Create button on the Create Ring page
 	When User clicks on 'Ring' column header
 	Then data in table is sorted by 'Ring' column in ascending order
-	When User clicks Cog-menu on the Admin page
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '14705_Ring' item in the 'Ring' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |

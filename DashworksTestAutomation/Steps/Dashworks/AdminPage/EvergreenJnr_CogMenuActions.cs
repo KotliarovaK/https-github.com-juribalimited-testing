@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -27,14 +28,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _automationStartTime = automationStartTime;
         }
 
-        [When(@"User clicks Cog-menu for '(.*)' item in the '(.*)' column")]
-        public void WhenUserClicksCog_MenuForItemInTheColumn(string columnContent, string column)
+        [When(@"User clicks Cog-menu for '(.*)' item in the '(.*)' column and sees following cog-menu options")]
+        public void WhenUserClicksCog_MenuForItemInTheColumnAndSeesFollowingCogMenuOptions(string columnContent, string column, Table options)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             cogMenu.BodyContainer.Click();
             var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
             _driver.MouseHover(cogMenuElement);
             cogMenu.GetCogMenuByItem(column, columnContent).Click();
+
+            List<String> expectedCogMenuOptions = options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()).ToList();
+            List<String> cogMenuOptions = cogMenu.CogMenuItems.Select(x => x.GetText()).ToList();
+
+            Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
+                            "Items are not the same");
         }
 
         [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item from '(.*)' column")]
@@ -73,13 +80,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             action.GetButton("MOVE").Click();
         }
 
-        [When(@"User clicks Cog-menu on the Admin page")]
-        public void WhenUserClicksCog_MenuOnTheAdminPage()
-        {
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            cogMenu.CogMenu.Click();
-        }
-
         [Then(@"Cog menu is displayed to the user")]
         public void ThenCogMenuIsDisplayedToTheUser()
         {
@@ -93,15 +93,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             Utils.Verify.IsFalse(cogMenu.CogMenu.Displayed(), "Cog menu is displayed");
-        }
-
-        [Then(@"User sees following cog-menu items on Admin page:")]
-        public void ThenUserSeesFollowingCog_MenuItemsOnAdminPage(Table items)
-        {
-            var page = _driver.NowAt<CogMenuElements>();
-            for (var i = 0; i < items.RowCount; i++)
-                Verify.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
-                    "Items are not the same");
         }
 
         //TODO make it generic
