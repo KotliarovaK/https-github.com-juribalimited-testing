@@ -620,14 +620,14 @@ this.FeatureBackground();
  testRunner.And("User enters \'Slot 2\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Value"});
+                        "options"});
             table17.AddRow(new string[] {
                         "Pre-Migration \\ Forecast Date"});
             table17.AddRow(new string[] {
                         "Computer Information ---- Text fill; Text fill; \\ Group Computer Rag Radio Date O" +
                             "wner"});
 #line 161
- testRunner.Then("Next checkboxes in the \"Tasks\" dropdown are not available to select:", ((string)(null)), table17, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete does not have following checkbox options", ((string)(null)), table17, "Then ");
 #line 165
  testRunner.And("\"Pre-Migration \\ Scheduled Date\" checkbox in the \"Tasks\" field are available to s" +
                     "elect", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -989,13 +989,13 @@ this.FeatureBackground();
  testRunner.And("User selects \'Capacity Units\' in the \'Capacity Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Value"});
+                        "options"});
             table25.AddRow(new string[] {
                         "Computer Information ---- Text fill; Text fill; \\ 1Task13500"});
             table25.AddRow(new string[] {
                         "Computer Information ---- Text fill; Text fill; \\ 2Task13500"});
 #line 254
- testRunner.Then("Next checkboxes in the \"Tasks\" dropdown are not available to select:", ((string)(null)), table25, "Then ");
+ testRunner.Then("\'Tasks\' autocomplete does not have following checkbox options", ((string)(null)), table25, "Then ");
 #line 258
  testRunner.And("\"Pre-Migration \\ Scheduled Date\" checkbox in the \"Tasks\" field are available to s" +
                     "elect", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

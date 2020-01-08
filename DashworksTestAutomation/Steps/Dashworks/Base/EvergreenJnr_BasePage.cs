@@ -166,6 +166,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        [Then(@"'(.*)' autocomplete does not have following checkbox options")]
+        public void ThenAutocompleteDoesNotHaveFollowingCheckboxOptions(string placeholder, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            foreach (string value in table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()))
+            {
+                var textbox = page.GetTextbox(placeholder);
+                textbox.Clear();
+                textbox.SendKeys(value);
+                Verify.IsTrue(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some autocomplete checkboxes found for '{value}' text");
+                Verify.IsFalse(page.IsAutocompleteCheckboxDisplayed(value), $"Some autocomplete checkboxes found for '{value}' text");
+                page.BodyContainer.Click();
+            }
+        }
+
         [Then(@"'(.*)' autocomplete options are sorted in the alphabetical order")]
         public void ThenAutocompleteOptionsAreSortedInTheAlphabeticalOrder(string field)
         {
@@ -450,7 +466,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         [Then(@"No error message is displayed for '(.*)' field")]
-        public void ThenNoErrorMessageIsDisplayedForField( string placeholder)
+        public void ThenNoErrorMessageIsDisplayedForField(string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.BodyContainer.Click();

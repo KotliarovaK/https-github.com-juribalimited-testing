@@ -158,8 +158,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User clicks 'CREATE NEW SLOT' button 
 	And User enters 'Slot 2' text to 'Slot Name' textbox
 	And User enters 'Slot 2' text to 'Display Name' textbox
-	Then Next checkboxes in the "Tasks" dropdown are not available to select:
-	| Value                                                                                 |
+	Then 'Tasks' autocomplete does not have following checkbox options
+	| options                                                                               |
 	| Pre-Migration \ Forecast Date                                                         |
 	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
 	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
@@ -251,8 +251,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User enters 'Slot 2' text to 'Slot Name' textbox
 	And User enters 'Slot 2' text to 'Display Name' textbox
 	And User selects 'Capacity Units' in the 'Capacity Type' dropdown
-	Then Next checkboxes in the "Tasks" dropdown are not available to select:
-	| Value                                                        |
+	Then 'Tasks' autocomplete does not have following checkbox options
+	| options                                                      |
 	| Computer Information ---- Text fill; Text fill; \ 1Task13500 |
 	| Computer Information ---- Text fill; Text fill; \ 2Task13500 |
 	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select

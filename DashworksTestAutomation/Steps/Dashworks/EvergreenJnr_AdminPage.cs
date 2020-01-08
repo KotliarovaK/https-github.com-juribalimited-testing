@@ -1108,20 +1108,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.GetCheckboxByName(checkbox).Displayed(), $"'{checkbox}' is available for '{fieldName}' field");
         }
 
-        [Then(@"Next checkboxes in the ""(.*)"" dropdown are not available to select:")]
-        public void ThenNextCheckboxesInTheDropdownAreNotAvailableToSelect(string dropdownName, Table table)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-            {
-                var projectElement = _driver.NowAt<ProjectsPage>();
-                projectElement.GetFieldByName(dropdownName).Clear();
-                projectElement.GetFieldByName(dropdownName).SendKeys(row["Value"]);
-                Utils.Verify.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"{row["Value"]} is not displayed in {dropdownName} dropdown");
-            }
-        }
-
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
         public void WhenUserClicksStringFilterButtonForColumnOnTheAdminPage(string columnName)
         {
