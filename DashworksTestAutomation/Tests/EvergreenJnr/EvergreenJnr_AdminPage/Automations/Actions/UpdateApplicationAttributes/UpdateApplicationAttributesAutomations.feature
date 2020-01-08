@@ -269,7 +269,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicati
 	When User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Hilfe zu Verzeichnisdiensten' in the 'Target Application' autocomplete field and selects 'Hilfe zu Verzeichnisdiensten (A01) (32123)' value
+	When User enters 'Hilfe zu Verzeichnisdiensten' in the 'Target Application' autocomplete field and selects 'Hilfe zu Verzeichnisdiensten (A01) (606)' value
 	When User clicks 'CREATE' button
 	#Check Action grid
 	Then '18978_Action' content is displayed in the 'Action' column
@@ -287,7 +287,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicati
 	When User enters 'New_Action' text to 'Action Name' textbox
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Intel(R) Processor Graphics' in the 'Target Application' autocomplete field and selects 'Intel(R) Processor Graphics (61174)' value
+	When User enters 'Intel(R) Processor Graphics' in the 'Target Application' autocomplete field and selects 'Intel(R) Processor Graphics (4349)' value
 	When User clicks 'UPDATE' button
 	#Check Action grid
 	Then 'New_Action' content is displayed in the 'Action' column
@@ -312,7 +312,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForward
 	Then validation message 'Enter at least 3 characters' is displayed below 'Target Application' field
 	When User enters 'Autotest' text to 'Target Application' textbox
 	Then validation message 'No results found' is displayed below 'Target Application' field
-	When User enters 'Creative MediaSource' in the 'Target Application' autocomplete field and selects 'Creative MediaSource (A01) (35073)' value
+	When User enters 'Creative MediaSource' in the 'Target Application' autocomplete field and selects 'Creative MediaSource (A01) (1047)' value
 	When User clicks 'CREATE' button
 	#Check Action grid
 	Then '18988_Action' content is displayed in the 'Action' column

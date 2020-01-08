@@ -1161,7 +1161,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 272
  testRunner.When("User enters \'Hilfe zu Verzeichnisdiensten\' in the \'Target Application\' autocomple" +
-                    "te field and selects \'Hilfe zu Verzeichnisdiensten (A01) (32123)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "te field and selects \'Hilfe zu Verzeichnisdiensten (A01) (606)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 273
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 275
@@ -1195,7 +1195,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 290
  testRunner.When("User enters \'Intel(R) Processor Graphics\' in the \'Target Application\' autocomplet" +
-                    "e field and selects \'Intel(R) Processor Graphics (61174)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "e field and selects \'Intel(R) Processor Graphics (4349)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 291
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 293
@@ -1304,7 +1304,7 @@ this.FeatureBackground();
                     "ld", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 315
  testRunner.When("User enters \'Creative MediaSource\' in the \'Target Application\' autocomplete field" +
-                    " and selects \'Creative MediaSource (A01) (35073)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    " and selects \'Creative MediaSource (A01) (1047)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 316
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 318

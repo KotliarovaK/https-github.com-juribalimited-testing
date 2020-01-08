@@ -60,13 +60,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutSelect
 	When User enters 'TestP_ID_1' text to 'Self Service Identifier' textbox
 	Then 'CREATE' button is disabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @Not_Ready
+#Need to add REALY broken list to the step or make the existing as broken
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithBrokenScopeList
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_4' text to 'Self Service Name' textbox
-	When User selects 'Alex M List' option from 'Self Service Scope' autocomplete
+	When User selects 'Application List (Complex) - BROKEN LIST' option from 'Self Service Scope' autocomplete 
 	When User enters 'TestP_ID_4' text to 'Self Service Identifier' textbox
 	Then 'This list has errors' error message is displayed for 'Self Service Scope' dropdown
 	Then 'CREATE' button is disabled
