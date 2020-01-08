@@ -273,7 +273,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
         public void WhenUserRemovesCustomListWithName(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            WhenUserClicksOptionInCogMenuForList(listName, "Delete");
+            WhenUserClicksOptionInCogMenuForList("Delete", listName);
             _driver.WaitForElementToBeDisplayed(listElement.DeleteConfirmationMessage);
             listElement.ConfirmDeleteButton.Click();
         }
