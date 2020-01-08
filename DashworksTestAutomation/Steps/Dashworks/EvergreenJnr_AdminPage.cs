@@ -1097,31 +1097,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is available for select");
         }
 
-        [Then(@"""(.*)"" checkbox in the ""(.*)"" field are available to select")]
-        public void ThenCheckboxInTheFieldAreAvailableToSelect(string checkbox, string fieldName)
-        {
-            var field = _driver.NowAt<ProjectsPage>();
-            field.GetFieldByName(fieldName).Clear();
-            field.GetFieldByName(fieldName).SendKeys(checkbox);
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            Utils.Verify.IsFalse(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is not available for select");
-            Utils.Verify.IsTrue(page.GetCheckboxByName(checkbox).Displayed(), $"'{checkbox}' is available for '{fieldName}' field");
-        }
-
-        [Then(@"Next checkboxes in the ""(.*)"" dropdown are not available to select:")]
-        public void ThenNextCheckboxesInTheDropdownAreNotAvailableToSelect(string dropdownName, Table table)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-            {
-                var projectElement = _driver.NowAt<ProjectsPage>();
-                projectElement.GetFieldByName(dropdownName).Clear();
-                projectElement.GetFieldByName(dropdownName).SendKeys(row["Value"]);
-                Utils.Verify.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"{row["Value"]} is not displayed in {dropdownName} dropdown");
-            }
-        }
-
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
         public void WhenUserClicksStringFilterButtonForColumnOnTheAdminPage(string columnName)
         {
