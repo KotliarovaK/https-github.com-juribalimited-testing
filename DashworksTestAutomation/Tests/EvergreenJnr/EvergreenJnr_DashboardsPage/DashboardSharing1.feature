@@ -272,8 +272,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username          | Password  |
-	| automation_admin1 | m!gration |
+	| Username           | Password  |
+	| automation_admin11 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -285,11 +285,11 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person
 	| User                | Permission  |
-	| Automation Admin 10 | <shareType> |
+	| Automation Admin 12 | <shareType> |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| automation_admin12 | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
 	When Dashboard with '<dashboardName>' name created via API and opened
@@ -305,7 +305,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	When User select "Everyone can edit" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget '<widgetName>' displayed for '<listName>' list on Permissions Pop-up
-	Then User 'Automation Admin 1' displayed for '<listName>' list on Permissions Pop-up
+	Then User 'Automation Admin 11' displayed for '<listName>' list on Permissions Pop-up
 	Then Current permission 'Specific users / teams' displayed for '<listName>' list on Permissions Pop-up
 	Then New Permission 'Do not change' displayed for '<listName>' list on Permissions Pop-up
 	Then New Permission dropdown has disabled property 'true' for '<listName>' list on Permissions Pop-up
