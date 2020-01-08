@@ -541,18 +541,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16844 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenReferencingStaticListContainsArchivedItems
 	When User clicks 'Devices' on the left-hand menu
-	And User sets includes archived devices in 'true'
-	And User clicks the Actions button
+	When User sets includes archived devices in 'true'
+	When User click on "Hostname" column header on the Admin page
+	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| Empty            |
-	And User selects 'Create static list' in the 'Action' dropdown
-	And User create static list with "StaticList16844" name
-	And Dashboard with 'Dashboard for DAS16844' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User selects 'Create static list' in the 'Action' dropdown
+	When User create static list with "StaticList16844" name
+	When Dashboard with 'Dashboard for DAS16844' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title             | List            | Type      | AggregateFunction |
 	| Card       | WidgetForDAS16844 | StaticList16844 | Aggregate | Count             |
 	Then 'WidgetForDAS16844' Widget is displayed to the user

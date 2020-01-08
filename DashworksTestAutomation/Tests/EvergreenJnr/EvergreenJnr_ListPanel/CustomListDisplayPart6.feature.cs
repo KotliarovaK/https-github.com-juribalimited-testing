@@ -338,7 +338,7 @@ this.FeatureBackground();
 #line 61
  testRunner.Then("\"1234567890123456789012345678901234567890\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 62
- testRunner.When("User clicks \'Duplicate\' Settings menu item for \'123456789012345678901234567890123" +
+ testRunner.When("User clicks \'Duplicate\' option in Cog-menu for \'123456789012345678901234567890123" +
                     "4567890\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
  testRunner.Then("\"123456789012345678901234567890123456782\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
