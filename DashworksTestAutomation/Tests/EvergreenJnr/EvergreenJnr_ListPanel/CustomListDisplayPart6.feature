@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "1234567890123456789012345678901234567890" name on "Devices" page
 	Then "1234567890123456789012345678901234567890" list is displayed to user
-	When User clicks 'Duplicate' Settings menu item for '1234567890123456789012345678901234567890' list
+	When User clicks 'Duplicate' option in Cog-menu for '1234567890123456789012345678901234567890' list
 	Then "123456789012345678901234567890123456782" list is displayed to user
 	When User removes custom list with "123456789012345678901234567890123456782" name
 	Then list with "123456789012345678901234567890123456782" name is removed

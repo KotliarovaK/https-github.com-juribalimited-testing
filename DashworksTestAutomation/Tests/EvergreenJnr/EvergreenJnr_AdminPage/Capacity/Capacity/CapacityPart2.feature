@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	When User enters "13720" text in the Search field for "Description" column
 	Then Rows counter shows "1" of "2" rows
 	When User clicks newly created object link
-	Then URL contains "evergreen/#/admin/project/"
+	Then URL contains 'evergreen/#/admin/project/'
 	When User updates the "Default Unit" checkbox state
 	And User clicks 'UPDATE' button 
 	Then 'The capacity unit details have been updated' text is displayed on inline success banner
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	Then 'The capacity unit has been created' text is displayed on inline success banner
 	And 'Click here to view the CapacityUnit12672 capacity unit' link is displayed
 	When User clicks newly created object link
-	Then URL contains "capacity/units/unit/"
+	Then URL contains 'capacity/units/unit/'
 	And "Default Unit" checkbox is checked and cannot be unchecked
 	#DAS-13151
 	And 'UPDATE' button is disabled

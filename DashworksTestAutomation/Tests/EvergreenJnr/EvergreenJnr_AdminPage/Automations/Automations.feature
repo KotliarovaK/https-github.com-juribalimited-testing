@@ -85,9 +85,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	Then '1 automation started,' text is displayed on inline success banner
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then 'TRUE' content is displayed in the 'Running' column
-	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -118,9 +117,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	#First inactive automation
-	When User clicks Cog-menu for '15431_First_Inactive' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15431_First_Inactive' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -129,9 +127,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	#Second inactive automation
-	When User clicks Cog-menu for '15431_Second_Inactive' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15431_Second_Inactive' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -140,9 +137,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Make active      |
 	| Delete           |
 	#Third active automation
-	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Run now          |
 	| Duplicate        |
@@ -157,8 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks refresh button in the browser
 	When User enters "15431_Third_Active" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
-	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
+	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column and sees following cog-menu options
 	| items            |
 	| Edit             |
 	| Duplicate        |
@@ -236,9 +231,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	#Update after gold data was complete
-	When User clicks Cog-menu for 'AM Test 1' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'AM Test 1' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Run now          |
 	| Duplicate        |
@@ -246,9 +240,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| Move to position |
 	| Make inactive    |
 	| Delete           |
-	When User clicks Cog-menu for 'AM 150419 II' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'AM 150419 II' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Run now          |
 	| Duplicate        |
@@ -361,9 +354,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	And User clicks 'DELETE' button
 	When User clicks 'DELETE' button on inline tip banner
 	Then 'Cannot delete a running automation' text is displayed on inline tip banner
-	When User clicks Cog-menu for 'DELAY - do not delete3' item in the 'Automation' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for 'DELAY - do not delete3' item in the 'Automation' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Duplicate        |
 	| Move to top      |
@@ -495,7 +487,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
-	When User enters 'DAS15423_Automation' text to 'Automation Name' textbox
+	When User enters '15423_Automation' text to 'Automation Name' textbox
 	When User enters 'DAS15423' text to 'Description' textbox
 	When User selects 'DAS15423_List' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
@@ -512,23 +504,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
+	When User enters "15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	Then '[List not found]' content is displayed in 'Scope' textbox
-	#Waiting for 'The selected list cannot be found' error message is displayed for 'Scope' field on the automation
-	#DAS17275
-	#Then 'The selected list cannot be found' error message is displayed for 'Scope' field
-	#DAS17275
-	#Update after DAS-17336 fixed
-	#When User navigates to the 'Actions' left menu item
-	#Then Edit Action page is displayed to the User
-	#When User navigates to the 'Details' left menu item
-	When User clicks 'CANCEL' button 
-	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for 'DAS15423_Automation' item from 'Automation' column
+	Then 'The selected list cannot be found' error message is displayed for 'Scope' field
+	When User navigates to the 'Actions' left menu item
+	When User navigates to the 'Details' left menu item
+	When User clicks 'CANCEL' button
+	When User enters "15423_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '15423_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
-	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
+	When User enters "15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @DAS17216

@@ -1175,7 +1175,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
 	And User create static list with "StaticList8543" name
 	Then "StaticList8543" list is displayed to user
 	And Edit List menu is not displayed
-	And URL contains "evergreen/#/users?$listid="
+	And URL contains 'evergreen/#/users?$listid='
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13104 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTwoOrMoreFiltersUsingTheSameFieldAndClearingOneOfTheFilters
@@ -1211,11 +1211,11 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADa
 	Then "User whose Last Logon Date" filter is added to the list
 	When User create dynamic list with "DAS13414" name on "Applications" page
 	Then "DAS13414" list is displayed to user
-	And URL contains "evergreen/#/applications?$listid="
+	And URL contains 'evergreen/#/applications?$listid='
 	And Edit List menu is not displayed
 	When User navigates to the "All Applications" list
 	And User navigates to the "DAS13414" list
-	Then URL contains "evergreen/#/applications?$listid="
+	Then URL contains 'evergreen/#/applications?$listid='
 	And Edit List menu is not displayed
 
 @Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13384 @Cleanup
@@ -1317,12 +1317,12 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescri
 	When User create custom list with "DAS13473" name
 	Then "DAS13473" list is displayed to user
 	And "113" rows are displayed in the agGrid
-	And URL contains "evergreen/#/applications?$listid="
+	And URL contains 'evergreen/#/applications?$listid='
 	And Edit List menu is not displayed
 	When User navigates to the "All Applications" list
 	And User navigates to the "DAS13473" list
 	Then "113" rows are displayed in the agGrid
-	Then URL contains "evergreen/#/applications?$listid="
+	Then URL contains 'evergreen/#/applications?$listid='
 	And Edit List menu is not displayed
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13377
@@ -1727,7 +1727,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameter
 	Then 'All Users' list should be displayed to the user
 	When User navigates to the "TestList15246" list
 	Then "TestList15246" list is displayed to user
-	And URL contains "evergreen/#/users?$listid="
+	And URL contains 'evergreen/#/users?$listid='
 	And URL contains only "listid" filter
 
 @Evergreen @Users @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
@@ -2508,7 +2508,7 @@ Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	When User add "Import Type" filter where type is "Not empty" with added column and Lookup option
     | SelectedValues |
 	Then "17,279" rows are displayed in the agGrid
-	Then URL contains "filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType"
+	Then URL contains 'filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType'
 	When User have removed "Import Type" filter
 	When User add "Import Type" filter where type is "Does not equal" with added column and Lookup option
     | SelectedValues |

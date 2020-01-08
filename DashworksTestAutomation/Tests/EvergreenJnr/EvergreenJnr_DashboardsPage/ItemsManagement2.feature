@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @DAS18911 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
 	When Dashboard with 'Dashboard for DAS15721' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
