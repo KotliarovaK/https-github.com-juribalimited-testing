@@ -24,8 +24,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19003_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '19003_Automation' item from 'Automation' column
-	When User navigates to the 'Automation Log' left menu item
 	When '19003_Automation' automation '19003_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
 	When User enters "19003_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -70,26 +70,31 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForwardPath
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values             |
+	| CodeWright 6.0BETA |
+	When User create dynamic list with "19003_List" name on "Devices" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 19003_Automation | 19003       | true   | false              | 1803 Apps | Manual |
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope      | Run    |
+	| 19003_Automation1 | 19003       | true   | false              | 19003_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
 	And User enters '19003_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
-	When User selects 'zDevice Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
-	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'yEnc32 (remove only)' in the 'Target Application' autocomplete field and selects 'yEnc32 (remove only) (1055)' value
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
-	When User enters "19003_Automation" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for '19003_Automation' item from 'Automation' column
+	When User enters "19003_Automation1" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19003_Automation1' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
-	When '19003_Automation' automation '19003_Action' action run has finished
-	When User enters "19003_Automation" text in the Search field for "Automation" column
+	When '19003_Automation1' automation '19003_Action' action run has finished
+	When User enters "19003_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
@@ -100,7 +105,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	| ColumnName                              |
 	| zDeviceAut: Application Rationalisation |
 	| zDeviceAut: Target App                  |
-	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
+	Then 'KEEP' content is displayed in the 'zDeviceAut: Application Rationalisation' column
 	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
