@@ -290,9 +290,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurity
 	When User clicks on edit button for 'Evergreen Capacity Unit' field
 	Then popup is displayed to User
 	When User clicks 'CANCEL' button
-	When User clicks on edit button for 'Rationalisation' field
-	Then popup is displayed to User
-	When User clicks 'CANCEL' button
+	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
+	#When User clicks on edit button for 'Rationalisation' field
+	#Then popup is displayed to User
+	#When User clicks 'CANCEL' button
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538
 Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFieldForUserWithSpecificAccess
