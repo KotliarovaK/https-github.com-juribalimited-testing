@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	Then User sees "1" rows in grid
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @DAS13442 @DAS13440 @DAS17418 @DAS18894 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @DAS13442 @DAS13440 @DAS17418 @DAS18894 @DAS19265 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
@@ -55,7 +55,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User clicks 'CREATE OVERRIDE DATE' button 
 	And User enters '1 Sep 2018' text to 'Override Start Date' datepicker
 	And User enters '7 Sep 2018' text to 'Override End Date' datepicker
-	And User selects 'Slot13442' in the 'Slot' dropdown
+	Then 'CREATE' button is disabled
+	When User selects 'Slot13442' in the 'Slot' dropdown
 	And User clicks 'CREATE' button 
 	Then 'Your override date has been created' text is displayed on inline success banner
 	When User clicks 'CREATE OVERRIDE DATE' button 

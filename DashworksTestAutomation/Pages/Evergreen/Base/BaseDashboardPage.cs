@@ -480,6 +480,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        public bool IsTextboxDisplayedWithError(string name)
+        {
+            try
+            {
+                return GetTextboxErrorMessageElement(name).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool IsTextboxDisabled(string placeholder)
         {
             return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Disabled();

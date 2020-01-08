@@ -432,6 +432,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             CheckAutocompletAndTextboxText(placeholder, expectedText, false);
         }
 
+        [Then(@"No error message is displayed for '(.*)' field")]
+        public void ThenNoErrorMessageIsDisplayedForField( string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.BodyContainer.Click();
+
+            Verify.That(page.IsTextboxDisplayedWithError(placeholder), Is.False, $"Error message was displayed for '{placeholder}' textbox");
+        }
+
         [Then(@"'(.*)' error message is displayed for '(.*)' field")]
         public void ThenErrorMessageIsDisplayedForField(string errorMessage, string placeholder)
         {

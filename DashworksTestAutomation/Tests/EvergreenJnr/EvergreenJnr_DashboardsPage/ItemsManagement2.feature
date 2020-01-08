@@ -269,9 +269,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWi
 	| 1_Widget    |
 	| 1_Widget2   |
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @DAS18080
+@Evergreen @EvergreenJnr_DashboardsPage @DAS18080
 Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
 	When User clicks 'print'  button on the Dashboards page
 	Then Print Preview is displayed to the User
 	And User clicks on Dashworks logo
 	Then Print Preview is displayed to the User
+
+@Evergreen @EvergreenJnr_DashboardsPage	@DAS18483 @Cleanup
+Scenario: EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmallLetters
+	When Dashboard with 'NEW dashboard' name created via API and opened
+	When Dashboard with 'DashboardTest' name created via API and opened
+	When User clicks Show Dashboards panel icon on Dashboards page
+	When User enters "new" text in Search field at List Panel
+	Then 'NEW dashboard' list is displayed in the Lists panel
+	When User enters "New" text in Search field at List Panel
+	Then 'NEW dashboard' list is displayed in the Lists panel
