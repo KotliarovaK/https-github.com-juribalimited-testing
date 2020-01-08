@@ -182,6 +182,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             }
         }
 
+        [Then(@"'(.*)' autocomplete have following checkbox options")]
+        public void ThenAutocompleteHaveFollowingCheckboxOptions(string placeholder, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            foreach (string value in table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()))
+            {
+                var textbox = page.GetTextbox(placeholder);
+                textbox.Clear();
+                textbox.SendKeys(value);
+                Verify.IsFalse(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some autocomplete checkboxes found for '{value}' text");
+                Verify.IsTrue(page.IsAutocompleteCheckboxDisplayed(value), $"Some autocomplete checkboxes found for '{value}' text");
+                page.BodyContainer.Click();
+            }
+        }
+
         [Then(@"'(.*)' autocomplete options are sorted in the alphabetical order")]
         public void ThenAutocompleteOptionsAreSortedInTheAlphabeticalOrder(string field)
         {

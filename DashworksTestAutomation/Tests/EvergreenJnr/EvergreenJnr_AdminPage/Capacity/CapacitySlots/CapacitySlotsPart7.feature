@@ -162,7 +162,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	| options                                                                               |
 	| Pre-Migration \ Forecast Date                                                         |
 	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
-	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
+	Then 'Tasks' autocomplete have following checkbox options
+	| options                        |
+	| Pre-Migration \ Scheduled Date |
 	When User clicks 'CANCEL' button 
 	And User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
@@ -198,7 +200,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAdding
 	And User navigates to newly created Slot
 	Then CapacityEnabled flag is equal to "True"
 	When User removes "Computer Information ---- Text fill; Text fill; \ Task13502" on the Project details page
-	Then "Computer Information ---- Text fill; Text fill; \ Task13502" checkbox in the "Tasks" field are available to select
+	Then 'Tasks' autocomplete have following checkbox options
+	| options                                                     |
+	| Computer Information ---- Text fill; Text fill; \ Task13502 |
 	When User clicks 'UPDATE' button 
 	Then CapacityEnabled flag is equal to "False"
 
@@ -255,4 +259,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	| options                                                      |
 	| Computer Information ---- Text fill; Text fill; \ 1Task13500 |
 	| Computer Information ---- Text fill; Text fill; \ 2Task13500 |
-	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
+	Then 'Tasks' autocomplete have following checkbox options
+	| options                        |
+	| Pre-Migration \ Scheduled Date |

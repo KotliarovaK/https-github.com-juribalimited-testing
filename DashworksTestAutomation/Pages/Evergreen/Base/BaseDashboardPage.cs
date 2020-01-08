@@ -362,10 +362,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
-        public string GetAutocompleteResultsCountMessage(string placeholder)
+        public string GetAutocompleteResultsCountMessage()
         {
             var message =
-                GetAutocompleteResultsCountElement(placeholder).Text;
+                GetAutocompleteResultsCountElement().Text;
             return message;
         }
 
