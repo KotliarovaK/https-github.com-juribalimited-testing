@@ -26,9 +26,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application12075" list
 	Then "Application12075" list is displayed to user
-	When User clicks Settings button for "Application12075" list
-	Then Cog menu is displayed to the user
-	When User clicks 'Delete' option in opened Cog-menu
+	When User clicks 'Delete' option in Cog-menu for 'Application12075' list
 	Then "Application12075" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
 	When User removes custom list with "Application12075" name
 	And User clicks 'Devices' on the left-hand menu
@@ -71,9 +69,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application3_12075" list
 	Then "Application3_12075" list is displayed to user
-	When User clicks Settings button for "Application3_12075" list
-	Then Cog menu is displayed to the user
-	When User clicks 'Delete' option in opened Cog-menu
+	When User clicks 'Delete' option in Cog-menu for 'Application3_12075' list
 	Then "Application3_12075" list "list is used by 2 lists, do you wish to proceed?" message is displayed in the list panel
 	When User removes custom list with "Application3_12075" name
 	And User clicks 'Devices' on the left-hand menu
@@ -107,9 +103,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application4" list
 	Then "Application4" list is displayed to user
-	When User clicks Settings button for "Application4" list
-	Then Cog menu is displayed to the user
-	When User clicks 'Delete' option in opened Cog-menu
+	When User clicks 'Delete' option in Cog-menu for 'Application4' list
 	Then "Application4" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
 	When User removes custom list with "Application4" name
 	And User clicks 'Devices' on the left-hand menu
