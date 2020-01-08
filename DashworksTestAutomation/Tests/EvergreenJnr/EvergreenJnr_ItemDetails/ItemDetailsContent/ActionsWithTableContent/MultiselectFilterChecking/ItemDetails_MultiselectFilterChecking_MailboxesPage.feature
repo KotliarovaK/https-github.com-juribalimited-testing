@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDetailsTabOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '002B5DC7D4D34D5C895@bclabs.local' item
-	Then Details page for "002B5DC7D4D34D5C895@bclabs.local" item is displayed to the user
+	Then Details page for '002B5DC7D4D34D5C895@bclabs.local' item is displayed to the user
 	When User navigates to the 'Email Addresses' left submenu item
 	Then 'SMTP' content is displayed in the 'Type' column
 	Then 'TRUE' content is displayed in the 'Reply To' column
@@ -22,8 +22,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
 Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForUsersTabOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '002B5DC7D4D34D5C895@bclabs.local' item
-	Then Details page for "002B5DC7D4D34D5C895@bclabs.local" item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	Then Details page for '002B5DC7D4D34D5C895@bclabs.local' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Users' left menu item
 	When User navigates to the 'Users' left submenu item
 	Then 'TRUE' content is displayed in the 'Owner' column
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnlyValueIncludedInTheColumnIsDisp
 	| Values |
 	| BCLABS |
 	#Order of the options in the 'Permission' dropdown is the same as on Senior
-	Then following checkboxes are displayed in the filter dropdown menu for the 'Permission' column:
+	Then following checkboxes are contained in the filter dropdown menu for the 'Permission' column:
 	| Values           |
 	| ReadPermission   |
 	| FullAccess       |

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
@@ -16,18 +13,17 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
+using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails.CustomFields;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -44,10 +40,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Teams _teams;
         private readonly Buckets _buckets;
+        private readonly SelfServices _selfServices;
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
-            Teams teams, Buckets buckets)
+            Teams teams, Buckets buckets, SelfServices selfServices)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -58,6 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _projects = projects;
             _teams = teams;
             _buckets = buckets;
+            _selfServices = selfServices;
         }
 
         #region Page Header/SubHeader
@@ -82,6 +80,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Autocomplete
 
+        //TODO it is better to no use it and delete at all
         [When(@"User expands '(.*)' autocomplete")]
         public void WhenUserExpandsAutocomplete(string placeholder)
         {
@@ -116,11 +115,34 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.AutocompleteSelect(placeholder, option, true);
         }
 
+        [When(@"User checks '(.*)' option after search from '(.*)' autocomplete")]
+        public void WhenUserChecksOptionAfterSearchFromAutocomplete(string checkbox, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.AutocompleteSelectCheckboxes(placeholder, checkbox, true, true);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User unchecks '(.*)' option after search from '(.*)' autocomplete")]
+        public void WhenUserUnchecksOptionAfterSearchFromAutocomplete(string checkbox, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.AutocompleteSelectCheckboxes(placeholder, checkbox, false, true);
+            page.BodyContainer.Click();
+        }
+
         [When(@"User clears '(.*)' autocomplete")]
         public void WhenUserClearsAutocomplete(string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.ClearTextbox(placeholder);
+        }
+
+        [When(@"User clears '(.*)' autocomplete with backspaces")]
+        public void WhenUserClearsAutocompleteWithBackspaces(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClearTextbox(placeholder, true);
         }
 
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
@@ -295,32 +317,46 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersTextToTextbox(string text, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetTextbox(placeholder).ClearWithBackspaces();
-            page.GetTextbox(placeholder).SendKeys(text);
+            var textbox = page.GetTextbox(placeholder);
+            textbox.ClearWithBackspaces();
+            textbox.SendKeys(text);
             page.BodyContainer.Click();
 
             //TODO rework to use switch
+            if (placeholder.Equals("Self Service Identifier"))
+            {
+                _selfServices.Value.Add(new SelfServiceDto() { ServiceIdentifier = text });
+            }
+
             if (placeholder.Equals("Action Name"))
+            {
                 _automationActions.Value.Add(text);
+            }
 
             if (placeholder.Equals("Project Name"))
+            {
                 _projects.Value.Add(text);
+            }
 
             if (placeholder.Equals("Team Name"))
             {
-                TeamDto teamDto = new TeamDto();
-                teamDto.TeamName = text;
-                _teams.Value.Add(teamDto);
+                _teams.Value.Add(new TeamDto() { TeamName = text });
             }
 
             if (placeholder.Equals("Bucket Name"))
+            {
                 _buckets.Value.Add(new BucketDto() { Name = text });
+            }
 
             if (placeholder.Equals("Slot Name"))
+            {
                 _slots.Value.Add(new SlotDto() { SlotName = text });
+            }
 
             if (placeholder.Equals("Automation Name"))
+            {
                 _automations.Value.Add(new AutomationsDto() { automationName = text });
+            }
 
             if (placeholder.Equals("Ring name"))
             {
@@ -363,9 +399,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserEntersNextDayToTextbox(string dayOfWeek, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetTextbox(placeholder).Clear();
-            page.GetTextbox(placeholder).
-                SendKeys(dayOfWeek.GetNextWeekday().ToString("dd MMM yyyy"));
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Clear();
+            textbox.SendKeys(dayOfWeek.GetNextWeekday().ToString("dd MMM yyyy"));
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User enters random number between '(.*)' and '(.*)' to '(.*)' textbox")]
+        public void WhenUserEntersRandomNumberBetweenAndToTextbox(int fromNum, int toNumb, string placeholder)
+        {
+            var number = new Random().Next(fromNum, toNumb).ToString();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetTextbox(placeholder);
+            _driver.ClearByJavascript(textbox);
+            textbox.SendKeys(number);
             page.BodyContainer.Click();
         }
 
@@ -402,6 +449,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             CheckAutocompletAndTextboxText(placeholder, expectedText, false);
         }
 
+        [Then(@"No error message is displayed for '(.*)' field")]
+        public void ThenNoErrorMessageIsDisplayedForField( string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.BodyContainer.Click();
+
+            Verify.That(page.IsTextboxDisplayedWithError(placeholder), Is.False, $"Error message was displayed for '{placeholder}' textbox");
+        }
+
         [Then(@"'(.*)' error message is displayed for '(.*)' field")]
         public void ThenErrorMessageIsDisplayedForField(string errorMessage, string placeholder)
         {
@@ -418,6 +474,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
+        [Then(@"'(.*)' information message is displayed for '(.*)' field")]
+        public void ThenInformationMessageIsDisplayedForField(string errorMessage, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.BodyContainer.Click();
+
+            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
+                $"Incorrect error message is displayed in the '{placeholder}' field");
+
+            Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field");
+
+            Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        }
+
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
         public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
         {
@@ -427,6 +499,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.MouseHover(button);
             var toolTipText = _driver.GetTooltipText();
             Verify.AreEqual(text, toolTipText, $"Incorrect tooltip for Add button in the {fieldName} textbox");
+        }
+
+        [Then(@"validation message '(.*)' is displayed below '(.*)' field")]
+        public void ThenValidationMessageIsDisplayedBelowFiled(string validationMessage, string fieldName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedValidationMessage = page.GetAutocompleteValidationMessage(fieldName);
+            Verify.AreEqual(validationMessage, expectedValidationMessage,
+                $"Incorrect error message is displayed in the '{fieldName}' field");
         }
 
         [Then(@"Add button for '(.*)' textbox is disabled")]
@@ -507,7 +588,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdown(value, dropdownName);
             //Used for Projects Scope to wait for changes to be applied
             //TODO: 21.11.2019 Oleksandr - increased sleep from 3 to 7 seconds to make sure that change list operation is applied
-            Thread.Sleep(7000);
+            //Vitalii: decreased to 5 seconds. Contact me if you need to increase this number or tests start failing again
+            Thread.Sleep(5000);
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]
@@ -557,6 +639,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(dropdown.IsDropdownDisabled(dropdownName),
                 $"'{dropdownName}' dropdown' is not displayed");
+        }
+
+        [Then(@"dropdown is not opened")]
+        public void ThenDropdownIsNotOpened()
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(dropdown.IsDropdownOpened(), "Dropdown is opened");
         }
 
         //Exact match
@@ -617,6 +706,29 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropdown).Click();
             VerifyTooltipOfDropdownIcons(page, expectedTooltips);
             page.BodyContainer.Click();
+        }
+
+        [Then(@"'(.*)' option is first in the '(.*)' dropdown")]
+        public void ThenOptionIsFirstInTheDropdown(string option, string dropDownName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropDownName).Click();
+            List<string> actualOptions = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(option, actualOptions.First(),
+                $"First option in the '{dropDownName}' dropdown should be '{option}'");
+        }
+
+        [Then(@"options are sorted in alphabetical order in the '(.*)' dropdown")]
+        public void ThenOptionsAreSortedInAlphabeticalOrderInTheDropdown(string dropDownName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetDropdown(dropDownName).Click();
+            List<string> actualOptions = page.GetDropdownValues();
+            page.BodyContainer.Click();
+            Verify.AreEqual(actualOptions.Where(x => !string.IsNullOrEmpty(x)).OrderBy(s => s),
+                actualOptions.Where(x => !string.IsNullOrEmpty(x)),
+                $"Options are displayed in not in alphabetical order in the '{dropDownName}' dropdown");
         }
 
         [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
@@ -829,7 +941,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.IsButtonDisplayed(buttonName),
-                $"'{buttonName}' button is displayed");
+                $"'{buttonName}' button is not displayed");
         }
 
         [Then(@"'(.*)' button is not displayed")]
@@ -881,6 +993,41 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var toolTipText = _driver.GetTooltipText();
             Verify.AreEqual(text, toolTipText,
                 $"'{buttonName}' button tooltip is incorrect");
+        }
+
+        #endregion
+
+        #region Button with aria label
+
+        [When(@"User clicks button with '(.*)' aria label")]
+        public void WhenUserClicksButtonWithAriaLabel(string buttonName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ClickButtonWithAriaLabel(buttonName);
+        }
+
+        [Then(@"'(.*)' button with aria label is displayed")]
+        public void ThenButtonWithAriaLabelIsDisplayed(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsButtonDisplayedWithAriaLabel(buttonName),
+                $"Button with '{buttonName}' aria label is not displayed");
+        }
+
+        [Then(@"'(.*)' button with aria label is disabled")]
+        public void ThenButtonWithAriaLabelIsDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+                $"'{buttonName}' button is not disabled");
+        }
+
+        [Then(@"'(.*)' button with aria label is not disabled")]
+        public void ThenButtonWithAriaLabelIsNotDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.GetButtonWithAriaLabel(buttonName).Disabled(),
+                $"'{buttonName}' button is disabled");
         }
 
         #endregion
@@ -1012,7 +1159,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Radio button
+
+        [When(@"User clicks '(.*)' radio button")]
+        public void WhenUserClicksRadioButton(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetRadioButton(radioButtonName).Click();
+        }
+
+        #endregion
+
         #region Chips
+
+        [When(@"User removes following chips of '(.*)' button with '(.*)' index")]
+        public void WhenUserRemovesFollowingChipsOfButtonWithIndex(string button, int index, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button, index).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
 
         [Then(@"Chips for '(.*)' field are not displayed")]
         public void ThenChipBoxIsNotDisplayedOnThePage(string field)
@@ -1046,6 +1214,42 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Chips related to the button
+
+        [When(@"User removes following chips of '(.*)' button")]
+        public void WhenUserRemovesFollowingChipsOfButton(string button, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                page.GetChipsForButton(button).First(x => x.Text.Equals(row["Chips"])).FindElement(By.XPath(".//button")).Click();
+            }
+        }
+
+        [Then(@"following chips of '(.*)' button are displayed")]
+        public void ThenFollowingChipsOfButtonAreDisplayed(string button, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                Verify.IsTrue(page.GetChipsForButton(button).Any(x => x.Text.Equals(row["Chips"])),
+                    $"There is no '{row["Chips"]}' chips for '{button}' button");
+            }
+        }
+
+        [Then(@"following chips of '(.*)' button with '(.*)' index are displayed")]
+        public void ThenFollowingChipsOfButtonWithIndexAreDisplayed(string button, int index, Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            foreach (var row in table.Rows)
+            {
+                Verify.IsTrue(page.GetChipsForButton(button, index).Any(x => x.Text.Equals(row["Chips"])),
+                    $"There is no '{row["Chips"]}' chips for '{button}' button with '{index}' index");
+            }
+        }
+
+        #endregion
+
         #region Links
 
         [Then(@"'(.*)' link is displayed")]
@@ -1072,6 +1276,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var columnElement = _driver.NowAt<BaseDashboardPage>();
             columnElement.CollapseExpandCategory(categoryName, true);
+        }
+
+        #endregion
+
+        #region Menu panel
+
+        [Then(@"'(.*)' options are checked in the '(.*)' menu panel")]
+        public void ThenOptionsAreCheckedInTheMenuPanel(int expectedCount, string buttonAriaLabel)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButtonWithAriaLabel(buttonAriaLabel);
+            var selectedCount = page.GetAllOptionsFromMenuPanel().Select(x => x.Value).Count(x => x.Equals(true));
+            Verify.AreEqual(expectedCount, selectedCount,
+                $"Incorrect number of checked values in the '{buttonAriaLabel}' menu");
+            page.BodyContainer.Click();
         }
 
         #endregion

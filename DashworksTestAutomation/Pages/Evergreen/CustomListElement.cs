@@ -92,9 +92,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
                 default:
                     var listElement = ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
-                        .FirstOrDefault(c => c.Text.Equals(listName));
+                        .FirstOrDefault(c => c.GetAttribute("text").Equals(listName));
                     if (listElement.Displayed())
                     {
+                        return listElement;
+                    }
+                    else if (!listElement.Displayed())
+                    {
+                        Driver.MoveToElement(listElement);
+                        Driver.WaitForElementToBeDisplayed(listElement);
                         return listElement;
                     }
                     else
@@ -232,6 +238,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='SAVE AS NEW LIST']")]
         public IWebElement SaveAsNewListButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='SAVE AS DYNAMIC LIST']")]
+        public IWebElement SaveAsDynamicListButton { get; set; }
 
         #endregion UpdateList
     }

@@ -243,9 +243,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInSearchFieldAtSelectedLookupFilter(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            _driver.WaitForElementToBeDisplayed(filterElement.LookupFilterSearchTextBox);
-            filterElement.LookupFilterSearchTextBox.Clear();
-            filterElement.LookupFilterSearchTextBox.SendKeys(searchedText);
+            if (_driver.IsElementDisplayed(filterElement.LookupFilterSearchTextBox, WebDriverExtensions.WaitTime.Short))
+            {
+                filterElement.LookupFilterSearchTextBox.Clear();
+                filterElement.LookupFilterSearchTextBox.SendKeys(searchedText);
+            }
         }
 
         [Then(@"""(.*)"" value is displayed for selected Lookup Filter")]
@@ -1416,7 +1418,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
-
+                                                                                                                                                   
             foreach (var item in expectedList)
             {
                 Utils.Verify.That(actualList, Does.Contain(item), $"{item} value is missing");
@@ -1428,7 +1430,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).Where(x=>!string.IsNullOrEmpty(x)).ToList();
             Utils.Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
@@ -1616,11 +1618,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqual(expectedPlaceholderName, actualPlaceholderName, "Incorrect Placeholder in the search field");
         }
 
-        [When(@"User selects '(.*)' option in expanded associations list")]
-        public void WhenUserSelectsOptionInExpandedAssociationsList(string option)
+        [When(@"User selects '(.*)' option in '(.*)' autocomplete of Associations panel")]
+        public void WhenUserSelectsOptionInExpandedAutocomplete(string option, string placeholder)
         {
             var page = _driver.NowAt<FiltersElement>();
-            page.AssociationItem(option).Click();
+            page.SelectAssociation(placeholder, option);
         }
 
         [Then(@"Remove icon displayed in '(.*)' state for '(.*)' association")]

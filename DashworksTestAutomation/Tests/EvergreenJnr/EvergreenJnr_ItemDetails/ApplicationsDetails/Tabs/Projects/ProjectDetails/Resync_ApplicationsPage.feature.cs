@@ -131,11 +131,11 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Borland Together Edition fo" +
                     "r Microsoft Visual Studio .NET\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \"Borland Together Edition for Microsoft Visual Studio .NET\" item" +
+ testRunner.Then("Details page for \'Borland Together Edition for Microsoft Visual Studio .NET\' item" +
                     " is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.When("User switches to the \"Windows 7 Migration (Computer Scheduled Project)\" project i" +
-                    "n the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Windows 7 Migration (Computer Scheduled Project)\' in the \'Item Deta" +
+                    "ils Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14

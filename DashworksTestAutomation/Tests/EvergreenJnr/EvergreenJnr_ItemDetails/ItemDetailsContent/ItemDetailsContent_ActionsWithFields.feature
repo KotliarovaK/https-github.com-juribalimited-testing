@@ -19,15 +19,15 @@ Scenario: EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS14923
 Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
-	Then Details page for "001PSUMZYOW581" item is displayed to the user
+	Then Details page for '001PSUMZYOW581' item is displayed to the user
 	When User navigates to the 'Device Owner' left submenu item
 	And User clicks "Tricia G. Huang" link on the Details Page
-	Then Details page for "LFA418191 (Tricia G. Huang)" item is displayed to the user
+	Then Details page for 'LFA418191 (Tricia G. Huang)' item is displayed to the user
 
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedMainMenu
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
-	Then Details page for "<SearchTerm>" item is displayed to the user
+	Then Details page for '<SearchTerm>' item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
 	Then '<KeyToBeSelected>' text is highlighted
@@ -44,7 +44,7 @@ Examples:
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenu
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
-	Then Details page for "<SearchTerm>" item is displayed to the user
+	Then Details page for '<SearchTerm>' item is displayed to the user
 	When User navigates to the '<SubTabName>' left submenu item
 	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
 	Then '<KeyToBeSelected>' text is highlighted
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupD
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321 @DAS14923
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User navigates to the 'Mailbox' details page for 'hartmajt@bclabs.local' item
-	Then Details page for "hartmajt@bclabs.local" item is displayed to the user
+	Then Details page for 'hartmajt@bclabs.local' item is displayed to the user
 	When User navigates to the 'Mailbox Owner' left submenu item
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
@@ -77,28 +77,28 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17180
 Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARightFormatWithAProjectIdAtTheEnd
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Device Owner' left submenu item
 	And User clicks "QLL295118" link on the Details Page
-	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
-	And URL contains "user/23726/details/user"
+	Then Details page for 'QLL295118 (Nicole P. Braun)' item is displayed to the user
+	And URL contains 'user/23726/details/user'
 	And User click back button in the browser
-	And Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	And Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Details' left menu item
 	And User navigates to the 'Device Owner' left submenu item
 	And User clicks "QLL295118" link on the Details Page
-	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
-	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
-	And URL contains "user/23726/details/user?$projectId=43"
+	Then Details page for 'QLL295118 (Nicole P. Braun)' item is displayed to the user
+	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
+	And URL contains 'user/23726/details/user?$projectId=43'
 	And User click back button in the browser
-	And Details page for "001BAQXT6JWFPI" item is displayed to the user
-	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	And Details page for '001BAQXT6JWFPI' item is displayed to the user
+	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
 	When User navigates to the 'Applications' left menu item
 	And User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
-	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed to the user
-	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
-	And URL contains "application/373/details/application?$projectId=43"
+	Then Details page for 'Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs' item is displayed to the user
+	Then 'Havoc (Big Data)' content is displayed in 'Item Details Project' dropdown
+	And URL contains 'application/373/details/application?$projectId=43'
 
 #Ann.Ilchenko 10/25/19: will be ready in the future (contact Lana for details)
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17768 @Not_Ready
@@ -118,8 +118,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnTheProjectDetailsTabDisplaysTheL
 	Then 'All Mailboxes' list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Email Address" column
-	Then Details page for "06BB714696274AC895A@bclabs.local" item is displayed to the user
-	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	Then Details page for '06BB714696274AC895A@bclabs.local' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then following content is displayed on the Details Page

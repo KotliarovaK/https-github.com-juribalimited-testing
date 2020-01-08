@@ -136,7 +136,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table1.AddRow(new string[] {
-                        "automation_admin1",
+                        "automation_admin8",
                         "m!gration"});
 #line 12
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table1, "When ");
@@ -149,7 +149,7 @@ this.FeatureBackground();
 #line 19
  testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
- testRunner.When("User create custom list with \"ADeviceListFor14841_Admin\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User create dynamic list with \"ADeviceListFor14841_Admin\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
  testRunner.Then("\"ADeviceListFor14841_Admin\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 22
@@ -161,7 +161,7 @@ this.FeatureBackground();
                         "User",
                         "Permission"});
             table2.AddRow(new string[] {
-                        "Automation Admin 10",
+                        "Automation Admin 17",
                         "Admin"});
 #line 24
  testRunner.When("User adds user to list of shared person", ((string)(null)), table2, "When ");
@@ -172,7 +172,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table3.AddRow(new string[] {
-                        "automation_admin10",
+                        "automation_admin17",
                         "m!gration"});
 #line 29
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table3, "When ");
@@ -213,7 +213,7 @@ this.FeatureBackground();
  testRunner.Then("Widget \'WidgetForDAS14841_Admin\' displayed for \'ADeviceListFor14841_Admin\' list o" +
                     "n Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 46
- testRunner.Then("User \'Automation Admin 1\' displayed for \'ADeviceListFor14841_Admin\' list on Permi" +
+ testRunner.Then("User \'Automation Admin 8\' displayed for \'ADeviceListFor14841_Admin\' list on Permi" +
                     "ssions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 47
  testRunner.Then("Current permission \'Specific users / teams\' displayed for \'ADeviceListFor14841_Ad" +
@@ -225,7 +225,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'Everyone can see\' permission for \'ADeviceListFor14841_Admin\' list o" +
                     "n Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
- testRunner.When("User clicks the \'UPDATE & SHARE\' button on Permissions Pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'UPDATE & SHARE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51
  testRunner.Then("Review Widget List Permissions is not displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 52
@@ -237,7 +237,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table5.AddRow(new string[] {
-                        "automation_admin1",
+                        "automation_admin8",
                         "m!gration"});
 #line 55
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table5, "When ");
@@ -829,7 +829,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Device Type\" filter where type is \"Equals\" with added column and Lookup" +
                     " option", ((string)(null)), table19, "When ");
 #line 213
- testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 214
  testRunner.When("User create dynamic list with \"ADevicesList17592\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 215

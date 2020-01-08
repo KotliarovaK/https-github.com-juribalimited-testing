@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London Depot 13:00 - 15:00   |
 	| London Depot 15:00 - 17:00   |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @DAS13671
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13671
 Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen
 	When User navigates to "I-Computer Scheduled Project" project details
 	And User navigates to the 'Capacity' left menu item
@@ -60,9 +60,10 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
-	And User selects following items in "Paths" dropdown:
-	| items                             |
-	| req type comp              |
+	#And User selects following items in "Paths" dropdown:
+	#| items         |
+	#| req type comp |
+	When User selects 'req type comp' option from 'Paths' autocomplete
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
 	Then Tasks are displayed in the following order on Action panel:
 	| Items                   |
@@ -73,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| i-stage A \ i-Schedule  |
 	| i-stage A \ i-Targeted  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @DAS13671 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13671 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForSelection
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -93,8 +94,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForS
 	And User enters 'Slot13671' text to 'Slot Name' textbox
 	And User enters '13671' text to 'Display Name' textbox
 	And User selects 'Teams and Paths' in the 'Capacity Type' dropdown
-	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
-	And User selects "Stage 1 \ WO Task13671" checkbox in the "Tasks" field on the Project details page
+	And User checks '[Default (Computer)]' option after search from 'Paths' autocomplete
+	And User checks 'Stage 1 \ WO Task13671' option after search from 'Tasks' autocomplete
 	And User clicks 'CREATE' button 
 	Then 'Your capacity slot has been created' text is displayed on inline success banner
 	When User clicks newly created object link

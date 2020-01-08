@@ -11,24 +11,24 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
-	| automation_admin1 | m!gration |
+	| automation_admin8 | m!gration |
 	#create and share list
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
 	Then table content is present
-	When User create custom list with "ADeviceListFor14841_Admin" name
+	When User create dynamic list with "ADeviceListFor14841_Admin" name on "Devices" page
 	Then "ADeviceListFor14841_Admin" list is displayed to user
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person
 	| User                | Permission |
-	| Automation Admin 10 | Admin      |
+	| Automation Admin 17 | Admin      |
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| automation_admin17 | m!gration |
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841_Admin' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
@@ -43,18 +43,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget 'WidgetForDAS14841_Admin' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
-	Then User 'Automation Admin 1' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
+	Then User 'Automation Admin 8' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then Current permission 'Specific users / teams' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then New Permission 'Do not change' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	When User selects 'Everyone can see' permission for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
-	When User clicks the 'UPDATE & SHARE' button on Permissions Pop-up
+	When User clicks 'UPDATE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
 	Then "Everyone can see" sharing option is selected
 	#login as user1 and check if list permission changed
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username          | Password  |
-	| automation_admin1 | m!gration |
+	| automation_admin8 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks Settings button for "ADeviceListFor14841_Admin" list
@@ -210,7 +210,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
     | SelectedValues |
     | Mobile         |
-	When User waits for '3' seconds
+	Then table content is present
 	When User create dynamic list with "ADevicesList17592" name on "Devices" page
 	Then "ADevicesList17592" list is displayed to user
 	When User clicks the List Details button

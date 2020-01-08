@@ -649,13 +649,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Criticality                     |
 	| Evergreen Capacity Unit         |
 	| Evergreen Rationalisation       |
-	| Evergreen Target App            |
 	| Evergreen Target App Compliance |
 	| Evergreen Target App Key        |
 	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
-	| Hide From End User              |
+	| Hide from End Users             |
 	| In Catalog                      |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299

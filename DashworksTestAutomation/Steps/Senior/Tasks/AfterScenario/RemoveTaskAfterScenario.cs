@@ -24,18 +24,20 @@ namespace DashworksTestAutomation.Steps.Senior.Tasks.AfterScenario
         [AfterScenario("Cleanup")]
         public void DeleteNewlyCreatedTask()
         {
-            if (_tasks.Value.Any())
-                foreach (TaskPropertiesDto task in _tasks.Value)
+            if (!_tasks.Value.Any())
+                return;
+
+            foreach (TaskPropertiesDto task in _tasks.Value)
+            {
+                try
                 {
-                    try
-                    {
-                        DatabaseHelper.DeleteTask(task);
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Write($"Unable to delete '{task.Name}' task: {e}");
-                    }
+                    DatabaseHelper.DeleteTask(task);
                 }
+                catch (Exception e)
+                {
+                    Logger.Write($"Unable to delete '{task.Name}' task: {e}");
+                }
+            }
         }
     }
 }

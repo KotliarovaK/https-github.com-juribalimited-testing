@@ -299,22 +299,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickin
 	When User navigates to the 'Buckets' left menu item
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks content from "Bucket" column
-	When User clicks on "Buckets" navigation link
+	When User clicks 'Buckets' header breadcrumb
 	Then Page with 'Buckets' header is displayed to user
 	When User navigates to the 'Capacity Units' left menu item
 	Then Page with 'Capacity Units' header is displayed to user
 	When User clicks content from "Capacity Unit" column
-	When User clicks on "Capacity Units" navigation link
+	When User clicks 'Capacity Units' header breadcrumb
 	Then Page with 'Capacity Units' header is displayed to user
 	When User navigates to the 'Rings' left menu item
 	Then Page with 'Rings' header is displayed to user
 	When User clicks content from "Ring" column
-	When User clicks on "Rings" navigation link
+	When User clicks 'Rings' header breadcrumb
 	Then Page with 'Rings' header is displayed to user
 	When User navigates to the 'Automations' left menu item
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks content from "Automation" column
-	When User clicks on "Automations" navigation link
+	When User clicks 'Automations' header breadcrumb
 	Then Page with 'Automations' header is displayed to user
-	Then "Automations" tab-menu on the Admin page is expanded
+	Then 'Automations' left menu item is expanded

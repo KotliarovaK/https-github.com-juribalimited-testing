@@ -92,10 +92,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	When User clicks 'RUN' button on inline tip banner
 	Then '1 automation started,' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks Group By button on the Admin page and selects "Automation" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Automation | true  |
 	Then Cog menu is not displayed on the Admin page
 	Then Grid is grouped
-	When User clicks Group By button on the Admin page and selects "Automation" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Automation | false |
 	Then Date column shows Date and Time values
 	When User enters "17104_Automation" text in the Search field for "Automation" column
 	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column
@@ -253,38 +257,38 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsLogGrid
 	Then Page with 'Automations' header is displayed to user
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks on 'Date' column header
-	Then date in table is sorted by "Date" column in descending order on the Admin page
+	Then date in table is sorted by 'Date' column in descending order
 	When User clicks on 'Date' column header
-	Then date in table is sorted by "Date" column in ascending order on the Admin page
+	Then date in table is sorted by 'Date' column in ascending order
 	When User clicks on 'Type' column header
-	Then data in table is sorted by "Type" column in ascending order on the Admin page
+	Then data in table is sorted by 'Type' column in ascending order
 	When User clicks on 'Type' column header
-	Then data in table is sorted by "Type" column in descending order on the Admin page
+	Then data in table is sorted by 'Type' column in descending order
 	When User clicks on 'Automation' column header
-	Then data in table is sorted by "Automation" column in ascending order on the Admin page
+	Then data in table is sorted by 'Automation' column in ascending order
 	When User clicks on 'Automation' column header
-	Then data in table is sorted by "Automation" column in descending order on the Admin page
+	Then data in table is sorted by 'Automation' column in descending order
 	When User clicks on 'Action' column header
-	Then data in table is sorted by "Action" column in ascending order on the Admin page
+	Then data in table is sorted by 'Action' column in ascending order
 	When User clicks on 'Action' column header
-	Then data in table is sorted by "Action" column in descending order on the Admin page
+	Then data in table is sorted by 'Action' column in descending order
 	When User clicks on 'Run' column header
-	Then data in table is sorted by "Run" column in ascending order on the Admin page
+	Then data in table is sorted by 'Run' column in ascending order
 	When User clicks on 'Run' column header
-	Then data in table is sorted by "Run" column in descending order on the Admin page
+	Then data in table is sorted by 'Run' column in descending order
 	When User clicks on 'Objects' column header
-	Then numeric data in table is sorted by "Objects" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Objects' column in descending order
 	When User clicks on 'Objects' column header
-	Then numeric data in table is sorted by "Objects" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Objects' column in ascending order
 	When User clicks on 'Duration (hh:mm:ss)' column header
-	Then data in table is sorted by "Duration (hh:mm:ss)" column in ascending order on the Admin page
+	Then data in table is sorted by 'Duration (hh:mm:ss)' column in ascending order
 	When User clicks on 'Duration (hh:mm:ss)' column header
-	Then data in table is sorted by "Duration (hh:mm:ss)" column in descending order on the Admin page
+	Then data in table is sorted by 'Duration (hh:mm:ss)' column in descending order
 	When User clicks on 'User' column header
-	Then data in table is sorted by "User" column in ascending order on the Admin page
+	Then data in table is sorted by 'User' column in ascending order
 	When User clicks on 'User' column header
-	Then data in table is sorted by "User" column in descending order on the Admin page
+	Then data in table is sorted by 'User' column in descending order
 	When User clicks on 'Outcome' column header
-	Then Boolean data in table is sorted by "Outcome" column in ascending order on the Admin page
+	Then boolean data is sorted by 'Outcome' column in ascending order
 	When User clicks on 'Outcome' column header
-	Then Boolean data in table is sorted by "Outcome" column in descending order on the Admin page
+	Then boolean data is sorted by 'Outcome' column in descending order

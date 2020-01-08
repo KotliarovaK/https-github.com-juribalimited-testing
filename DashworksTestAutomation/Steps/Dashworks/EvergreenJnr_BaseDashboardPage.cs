@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Threading;
-using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
-using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
-using RestSharp.Extensions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -109,7 +102,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   ").Trim(),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
-
+       
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
         public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
         {
@@ -184,19 +177,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsTrue(dashboardPage.GetAllHeadersTextElements().Select(x => x.GetCssValue("font-weight")).All(x => x.Equals("400")), "Header font weight is incorrect");
         }
 
-        [Then(@"URL is ""(.*)""")]
-        public void ThenURLIs(string urlPart)
-        {
-            var expectedUrl = $"{UrlProvider.Url}{urlPart}";
-            Utils.Verify.AreEqual(expectedUrl, _driver.Url, $"URL is not {expectedUrl}");
-        }
-
-        [Then(@"URL contains ""(.*)""")]
-        public void ThenURLContains(string url)
-        {
-            Utils.Verify.Contains(url, _driver.Url, $"URL is not contains {url}");
-        }
-
         [Then(@"URL contains only ""(.*)"" filter")]
         public void ThenURLContainsOnly(string urlFilterExpected)
         {
@@ -208,7 +188,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 if (!string.IsNullOrEmpty(filter))
                 {
-                    Utils.Verify.Contains(urlFilterExpected, filter, $"URL is not contains {filter}");
+                    Verify.Contains(urlFilterExpected, filter, $"URL is not contains {filter}");
                 }
             }
         }
@@ -263,33 +243,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
-        }
-
-        [Then(@"Error is displayed to the User")]
-        public void ThenErrorIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.ErrorBox.Displayed(), "Error is displayed");
-        }
-
-        [When(@"User navigates to ""(.*)"" URL in a new tab")]
-        public void WhenUserNavigatesToURLInANewTab(string urlParameters)
-        {
-            _driver.OpenInNewTab($"{UrlProvider.Url}{urlParameters}");
-            _driver.SwitchTo().Window(_driver.WindowHandles.Last());
-        }
-
-        [When(@"User switches to previous tab")]
-        public void WhenUserSwitchesToPreviousTab()
-        {
-            _driver.SwitchTo().Window(_driver.WindowHandles.First());
-        }
-
-        [Then(@"Warning Pop-up is displayed to the User")]
-        public void ThenWarningPop_UpIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
         }
     }
 }

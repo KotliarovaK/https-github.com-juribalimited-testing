@@ -7,7 +7,7 @@ using DashworksTestAutomation.Pages.Evergreen.Base;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages
+namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 {
     internal class EvergreenDashboardsPage : BaseWidgetPage
     {
@@ -46,9 +46,6 @@ namespace DashworksTestAutomation.Pages
         #endregion
 
         #region Dashboard Area
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-menu-content']")]
-        public IWebElement EllipsisMenu { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-menu-item')]")]
         public IList<IWebElement> EllipsisMenuItems { get; set; }
@@ -133,13 +130,11 @@ namespace DashworksTestAutomation.Pages
 
         #endregion
 
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By> { };
         }
-
 
         #region HeaderMethods
 
@@ -211,16 +206,6 @@ namespace DashworksTestAutomation.Pages
                 $".//span[text()='{dashboardName}']/preceding-sibling::span//i[@class='material-icons mat-home']";
 
             return Driver.FindElements(By.XPath(starIcon)).Count == 1;
-        }
-
-        public IWebElement ReviewPermissionsPopupsButton(string buttonCaption)
-        {
-            return Driver.FindElement(By.XPath($".//mat-dialog-container/permission-popup//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
-        }
-
-        public string GetButtonStateOfReviewWidgetPermissionsPopup(string buttonCaption)
-        {
-            return ReviewPermissionsPopupsButton(buttonCaption).Enabled.ToString().ToUpper();
         }
 
         public void SelectDoNotChangeReviewPermission()
@@ -397,6 +382,7 @@ namespace DashworksTestAutomation.Pages
         #endregion
 
         #region Table
+
         public IWebElement GetTableWidgetContentWithoutLink(string content)
         {
             var columnContent = By.XPath($".//td[not(contains(@class, 'link'))]/span[text()='{content}']");
@@ -421,9 +407,11 @@ namespace DashworksTestAutomation.Pages
             var columnHeaders = By.XPath($".//*[text()='{widgetName}']/ancestor :: div//table//tbody//td//span");
             return Driver.FindElements(columnHeaders);
         }
+
         #endregion
 
         #region Card
+
         public IWebElement GetWidgetText()
         {
             try
@@ -445,9 +433,11 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForElementToBeDisplayed(cardWidget);
             return Driver.FindElement(cardWidget);
         }
+
         #endregion
 
         #region Line
+
         public IWebElement GetPointOfLineWidgetByName(string widgetName, string pointNumber)
         {
             var lineWidget = By.XPath($".//span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty'][{pointNumber}]");
@@ -470,6 +460,7 @@ namespace DashworksTestAutomation.Pages
             //greater than 1 because line must have at least two points
             return Driver.FindElements(widg).Count > 1;
         }
+
         #endregion
 
         #region Column

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18727 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18727 @DAS18966 @Cleanup @Not_Ready
 #Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	When User creates new Automation via API and open it
@@ -17,16 +17,25 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	When User clicks 'CREATE ACTION' button
 	And User enters '18727_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
-	Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
+	Then 'No change' content is displayed in 'Rationalisation' dropdown
 	Then following Values are displayed in the 'Sticky Compliance' dropdown:
 	| Options   |
 	| No change |
+	| Empty     |
 	| UNKNOWN   |
 	| RED       |
 	| AMBER     |
 	| GREEN     |
 	| IGNORE    |
+	Then following Values are displayed in the 'Rationalisation' dropdown:
+	| Options       |
+	| No change     |
+	| FORWARD PATH  |
+	| KEEP          |
+	| RETIRE        |
+	| UNCATEGORISED |
 	Then 'CREATE' button is disabled
 	Then 'SAVE AND CREATE ANOTHER' button is disabled
 	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
@@ -49,6 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	When User clicks 'CREATE ACTION' button
 	And User enters '18830_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'GREEN' in the 'Sticky Compliance' dropdown
 	When User clicks 'CREATE' button
 	#Actions grid check
@@ -132,3 +142,180 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	| ColumnName        |
 	| Sticky Compliance |
 	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesNotShownForNoApplicationScopedAutomation
+	When User creates new Automation via API and open it
+	| AutomationName        | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 18966_User_Automation | 18966       | true   | false              | All Users | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	And User enters '18966_Action' text to 'Action Name' textbox
+	Then following Values are displayed in the 'Action Type' dropdown:
+	| Value               |
+	| Update path         |
+	| Update task value   |
+	| Update custom field |
+	Then following Values are not displayed in the 'Action Type' dropdown:
+	| Options                       |
+	| Update application attributes |
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsForMailboxesScopedProject
+	When User creates new Automation via API and open it
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 18966_Automation1 | 18966       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '18966_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
+	When User selects 'RETIRE' in the 'Rationalisation' dropdown
+	Then 'CREATE' button is not disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsForUserScopedProject
+	When User creates new Automation via API and open it
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 18966_Automation2 | 18966       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '18966_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
+	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
+	Then 'CREATE' button is not disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsForDevicesScopedProject
+	When User creates new Automation via API and open it
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 18966_Automation3 | 18966       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '18966_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
+	Then 'CREATE' button is not disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalisation
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 19240_Automation | 19240       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters 'Unknown' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
+	When User clicks 'CREATE' button
+	#Check Action grid
+	Then 'Unknown' content is displayed in the 'Value' column
+	Then 'Unknown' content is displayed in the 'Action' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 19094_Automation | 19094       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '19094_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'No change' in the 'Sticky Compliance' dropdown
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
+	When User clicks 'CREATE' button
+	#Check Action grid
+	Then '19094_Action' content is displayed in the 'Action' column
+	Then 'Keep' content is displayed in the 'Value' column
+	Then 'Rationalisation' content is displayed in the 'Task or Field' column
+	#Update Action
+	When User clicks content from "Action" column
+	When User enters '19094_New_Action' text to 'Action Name' textbox
+	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects 'RETIRE' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button
+	#Check Action grid
+	Then '19094_New_Action' content is displayed in the 'Action' column
+	Then 'Retire' content is displayed in the 'Value' column
+	Then 'Rationalisation' content is displayed in the 'Task or Field' column
+	Then '1803 Rollout' content is displayed in the 'Project' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicationAttributes
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 18978_Automation | 18978       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '18978_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Hilfe zu Verzeichnisdiensten' in the 'Target Application' autocomplete field and selects 'Hilfe zu Verzeichnisdiensten (A01) (606)' value
+	When User clicks 'CREATE' button
+	#Check Action grid
+	Then '18978_Action' content is displayed in the 'Action' column
+	Then 'Rationalisation' content is displayed in the 'Task or Field' column
+	Then 'Barry's User Project' content is displayed in the 'Project' column
+	Then 'Forward Path, Hilfe zu Verzeichnisdiensten (A01)' content is displayed in the 'Value' column
+	#Check Action value
+	When User clicks content from "Action" column
+	Then "18978_Action" content is displayed in "Action Name" field
+	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
+	Then 'Barry's User Project' content is displayed in 'Project or Evergreen' autocomplete
+	Then 'FORWARD PATH' content is displayed in 'Rationalisation' dropdown
+	Then 'Hilfe zu Verzeichnisdiensten (32123)' content is displayed in 'Target Application' textbox
+	#Update Action
+	When User enters 'New_Action' text to 'Action Name' textbox
+	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Intel(R) Processor Graphics' in the 'Target Application' autocomplete field and selects 'Intel(R) Processor Graphics (4349)' value
+	When User clicks 'UPDATE' button
+	#Check Action grid
+	Then 'New_Action' content is displayed in the 'Action' column
+	Then 'Forward Path, Intel(R) Processor Graphics' content is displayed in the 'Value' column
+	Then 'Rationalisation' content is displayed in the 'Task or Field' column
+	Then 'Email Migration' content is displayed in the 'Project' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18988 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForwardPathIsSelected
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 18988_Automation | 18988       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '18988_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters '2' text to 'Target Application' textbox
+	Then validation message 'Enter at least 3 characters' is displayed below 'Target Application' field
+	When User enters 'Autotest' text to 'Target Application' textbox
+	Then validation message 'No results found' is displayed below 'Target Application' field
+	When User enters 'Creative MediaSource' in the 'Target Application' autocomplete field and selects 'Creative MediaSource (A01) (1047)' value
+	When User clicks 'CREATE' button
+	#Check Action grid
+	Then '18988_Action' content is displayed in the 'Action' column
+	Then 'Rationalisation' content is displayed in the 'Task or Field' column
+	Then 'Computer Scheduled Test (Jo)' content is displayed in the 'Project' column
+	Then 'Forward Path, Creative MediaSource (A01)' content is displayed in the 'Value' column

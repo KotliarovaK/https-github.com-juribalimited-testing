@@ -91,20 +91,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| Secure Boot Enabled |
-	And User create dynamic list with "List16958" name on "Devices" page
-	And Dashboard with 'Dashboard for DAS16958' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User create dynamic list with "List16958" name on "Devices" page
+	When Dashboard with 'Dashboard for DAS16958' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | MaxValues | ShowLegend |
 	| Bar        | WidgetForDAS16958 | List16958 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC | 10        | true       |
-	And User clicks 'CREATE' button 
-	And Dashboard page loaded
-	And User lists were removed by API
-	And User clicks refresh button in the browser
-	And Dashboard page loaded
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks edit option for broken widget on Dashboards page
+	When User clicks 'CREATE' button 
+	Then 'WidgetForDAS16958' Widget is displayed to the user
+	When User lists were removed by API
+	When User clicks refresh button in the browser
+	When Dashboard page loaded
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks edit option for broken widget on Dashboards page
 	Then Message saying that list is unavailable appears in Edit Widget page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16853 @Cleanup
@@ -253,18 +253,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	Then User sees list icon displayed for 'WidgetForDAS16842' widget in List section of Dashboards Details
 	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details
 
-	@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18168 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18168 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabelAreDisplayed
     When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When User adds columns to the list
-    | ColumnName |
-    | CPU Count  |
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "DAS18168_List" name
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| CPU Count  |
+	When User create dynamic list with "DAS18168_List" name on "Devices" page
+	Then "DAS18168_List" list is displayed to user
 	When Dashboard with 'DAS18168_Dashboard' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button

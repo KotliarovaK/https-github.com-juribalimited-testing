@@ -48,6 +48,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
+        private const string MenuPanelSelector = ".//div[@class='mat-menu-content']";
+        [FindsBy(How = How.XPath, Using = MenuPanelSelector)]
+        public IWebElement MenuPanelElement { get; set; }
+
         //TODO revisit this 
         [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
@@ -217,8 +221,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         private static string AutocompleteOptionsSelector = ".//mat-option[@tabindex!='-1']";
 
+        private static string AutocompleteSelectOptionsSelector = ".//ul//mat-checkbox";
+
+        private static string AutocompleteValidationMessageSelector = ".//mat-option[@tabindex='-1']//span";
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
         public IWebElement AutocompleteDropdown { get; set; }
+
+        //For dropdown with checkboxes
+        private const string AutocompleteSelectDropdownSelector = ".//div[contains(@class,'dropdown-select')]";
+        [FindsBy(How = How.XPath, Using = AutocompleteSelectDropdownSelector)]
+        public IWebElement AutocompleteSelectDropdown { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -280,6 +293,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Autocomplete
 
+        //For dropdown with checkboxes
+        public List<string> GetAllAutocompleteSelectOptions(string placeholder)
+        {
+            GetTextbox(placeholder).Click();
+
+            var foundOptions = GetAllSelectOptionsFromOpenedAutocomplete();
+
+            return foundOptions;
+        }
+
         public List<string> GetAllAutocompleteOptions(string placeholder)
         {
             GetTextbox(placeholder).Click();
@@ -291,7 +314,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public List<string> GetAllOptionsFromOpenedAutocomplete()
         {
-            if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
+            if (!Driver.IsElementInElementDisplayed(AutocompleteDropdown, By.XPath(AutocompleteOptionsSelector), WebDriverExtensions.WaitTime.Short))
                 throw new Exception($"Options are not displayed for autocomplete");
 
             var foundOptions =
@@ -300,10 +323,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return foundOptions;
         }
 
+        public List<string> GetAllSelectOptionsFromOpenedAutocomplete()
+        {
+            if (!Driver.IsElementInElementDisplayed(AutocompleteSelectDropdown, By.XPath(AutocompleteSelectOptionsSelector), WebDriverExtensions.WaitTime.Short))
+                throw new Exception($"Select options are not displayed for autocomplete");
+
+            var foundOptions =
+                AutocompleteSelectDropdown.FindElements(By.XPath(AutocompleteSelectOptionsSelector)).Select(x => x.Text).ToList();
+
+            return foundOptions;
+        }
+
+        public string GetAutocompleteValidationMessage(string placeholder)
+        {
+            GetTextbox(placeholder).Click();
+            Driver.WaitForElementInElementToBeDisplayed(AutocompleteDropdown, By.XPath(AutocompleteValidationMessageSelector));
+            var validationMessage =
+                AutocompleteDropdown.FindElements(By.XPath(AutocompleteValidationMessageSelector)).First().Text;
+            return validationMessage;
+        }
+
         public void AutocompleteSelect(string placeholder, string searchText, bool withSearch = false, bool containsOption = false, params string[] optionsToSelect)
         {
-            GetTextbox(placeholder).ClearWithBackspaces();
-            GetTextbox(placeholder).Click();
+            var textbox = GetTextbox(placeholder);
+            textbox.ClearWithBackspaces();
+            textbox.Click();
 
             //Options to select
             //If we do not provide options to select
@@ -320,8 +364,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             if (withSearch)
             {
-                GetTextbox(placeholder).ClearWithBackspaces();
-                GetTextbox(placeholder).SendKeys(searchText);
+                textbox.ClearWithBackspaces();
+                textbox.SendKeys(searchText);
                 if (!Driver.IsElementDisplayed(By.XPath(AutocompleteOptionsSelector),
                     WebDriverExtensions.WaitTime.Short))
                 {
@@ -366,6 +410,43 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 throw new Exception($"'{searchText}' was not found in the '{placeholder}' autocomplete");
         }
 
+        public void AutocompleteSelectCheckboxes(string placeholder, string searchText, bool state, bool withSearch = false, params string[] optionsToSelect)
+        {
+            var textbox = GetTextbox(placeholder);
+            textbox.Click();
+
+            //Options to select
+            //If we do not provide options to select
+            //Then just add option equals to the search text
+            List<string> options = new List<string>();
+            if (optionsToSelect.Any())
+            {
+                options.AddRange(optionsToSelect);
+            }
+            else
+            {
+                options.Add(searchText);
+            }
+
+            if (withSearch)
+            {
+                textbox.ClearWithBackspaces();
+                textbox.SendKeys(searchText);
+            }
+
+            Driver.WaitForElementInElementToBeDisplayed(AutocompleteSelectDropdown, By.XPath(AutocompleteSelectOptionsSelector));
+            var foundOptions = AutocompleteSelectDropdown.FindElements(By.XPath(AutocompleteSelectOptionsSelector));
+            if (foundOptions.Any())
+            {
+                foreach (string option in options)
+                {
+                    SetCheckboxState(option, state, AutocompleteSelectDropdownSelector);
+                }
+            }
+            else
+                throw new Exception($"'{searchText}' was not found in the '{placeholder}' autocomplete");
+        }
+
         #endregion
 
         #region Textbox
@@ -378,9 +459,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(by);
         }
 
-        public void ClearTextbox(string placeholder)
+        public void ClearTextbox(string placeholder, bool withBackspaces = false)
         {
-            GetTextbox(placeholder).Clear();
+            var element = GetTextbox(placeholder);
+            if (withBackspaces)
+            {
+                element.ClearWithBackspaces();
+            }
+            else
+            {
+                element.Clear();
+            }
         }
 
         public void PopulateTextbox(string placeholder, string value, bool clear = true)
@@ -457,6 +546,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        public bool IsTextboxDisplayedWithError(string name)
+        {
+            try
+            {
+                return GetTextboxErrorMessageElement(name).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool IsTextboxDisabled(string placeholder)
         {
             return GetTextbox(placeholder, WebDriverExtensions.WaitTime.Short).Disabled();
@@ -472,14 +573,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Button
 
-        public IWebElement GetButton(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        public List<IWebElement> GetButtons(string button, string parentElementSelector = "",
+            WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var time = int.Parse(waitTime.GetValue());
             var selector = By.XPath(
                 $"{parentElementSelector}//span[text()='{button}']/ancestor::button");
             Driver.WaitForDataLoading();
             Driver.WaitForElementsToBeDisplayed(selector, time, false);
-            return Driver.FindElements(selector).First(x => x.Displayed());
+            return Driver.FindElements(selector).ToList();
+        }
+
+        public IWebElement GetButton(string button, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            return GetButtons(button, parentElementSelector, waitTime).First(x => x.Displayed());
         }
 
         public void ClickButton(string buttonName)
@@ -490,11 +597,55 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForDataLoading(50);
         }
 
+        //index starts from zero
+        public void ClickButton(string buttonName, int index)
+        {
+            var buttons = GetButtons(buttonName);
+            Driver.WaitForElementsToBeDisplayed(buttons);
+            if (buttons.Count < index + 1)
+            {
+                throw new Exception($"Unable to click '{buttonName}' button with {index} index");
+            }
+            buttons[index].Click();
+        }
+
         public bool IsButtonDisplayed(string name)
         {
             try
             {
                 return GetButton(name, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Button with aria-label
+
+        public IWebElement GetButtonWithAriaLabel(string ariaLabel, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var time = int.Parse(waitTime.GetValue());
+            var selector = By.XPath(
+                $"{parentElementSelector}//button[contains(@aria-label,'{ariaLabel}')]");
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
+            return Driver.FindElements(selector).First(x => x.Displayed());
+        }
+
+        public void ClickButtonWithAriaLabel(string buttonName)
+        {
+            var button = GetButtonWithAriaLabel(buttonName);
+            Driver.WaitForElementToBeEnabled(button);
+            button.Click();
+        }
+
+        public bool IsButtonDisplayedWithAriaLabel(string name)
+        {
+            try
+            {
+                return GetButtonWithAriaLabel(name, string.Empty, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {
@@ -570,24 +721,35 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         //Get all span with text
-        private string _dropdownOptions = ".//mat-option//span[string-length(text())>0]";
+        private static string _dropdownOptionsBase = ".//mat-option{0}//span[string-length(text())>0]";
 
-        public IWebElement GetDropdownValueByName(string dropdownName)
+        private string DropdownOptionsSelector(bool withoutSelected)
+        {
+            return withoutSelected
+                ? string.Format(_dropdownOptionsBase, "[not(@aria-selected)]")
+                : string.Format(_dropdownOptionsBase, string.Empty);
+        }
+
+        public IWebElement GetDropdownValueByName(string dropdownName, bool withoutSelected = false)
         {
             var text = dropdownName.Contains('\'') ?
                 dropdownName.Split('\'').Aggregate(string.Empty, (current, s) => current + $"[contains(text(),'{s}')]") :
                 $"[text()='{dropdownName}']";
-            var selector = By.XPath($"{_dropdownOptions}{text}");
+            var selector = By.XPath($"{DropdownOptionsSelector(withoutSelected)}{text}");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
-        public List<string> GetDropdownValues()
+        public List<string> GetDropdownValues(bool withoutSelected = false)
         {
-            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
-            var optionsList = Driver.FindElements(By.XPath(_dropdownOptions));
+            var selector = DropdownOptionsSelector(withoutSelected);
+            Driver.WhatForElementToBeExists(By.XPath(selector));
+            var optionsList = Driver.FindElements(By.XPath(selector));
+            Driver.WaitForElementsToHaveText(optionsList, false);
             if (!optionsList.Any())
+            {
                 throw new Exception($"Unable to get dropdown values");
+            }
             var values = optionsList.Select(x => x.Text).ToList();
             return values;
         }
@@ -617,11 +779,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return exclamationIcon;
         }
 
-        public IList<IWebElement> GetIconsOfDropdownOptions()
+        public IList<IWebElement> GetIconsOfDropdownOptions(bool withoutSelected = false)
         {
-            Driver.WaitForElementsToBeDisplayed(By.XPath(_dropdownOptions));
-            return Driver.FindElements(By.XPath($"{_dropdownOptions}/preceding-sibling::i[contains(@class, 'material-icons')]"));
+            Driver.WaitForElementsToBeDisplayed(By.XPath(DropdownOptionsSelector(withoutSelected)));
+            return Driver.FindElements(By.XPath($"{DropdownOptionsSelector(withoutSelected)}/preceding-sibling::i[contains(@class, 'material-icons')]"));
         }
+
+        public bool IsDropdownOpened(bool withoutSelected = false)
+        {
+            return Driver.FindElements(By.XPath(DropdownOptionsSelector(withoutSelected))).Any();
+        }
+
         #endregion
 
         #region Dropdown for field
@@ -807,10 +975,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Checkbox
 
-        public IWebElement GetCheckbox(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetCheckbox(string ariaLabel, string parentElementSelector = "", WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
             //TODO mb first selector in the or statement should be deleted
-            var selector = By.XPath($".//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
+            var selector = By.XPath($"{parentElementSelector}//mat-checkbox[@aria-label='{ariaLabel}']|.//input[@aria-label='{ariaLabel}']//ancestor::mat-checkbox|.//span[text()='{ariaLabel}']//ancestor::mat-checkbox");
             if (!Driver.IsElementDisplayed(selector, wait))
             {
                 throw new Exception($"'{ariaLabel}' checkbox was not displayed");
@@ -819,9 +987,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        public void SetCheckboxState(string ariaLabel, bool expectedCondition)
+        public void SetCheckboxState(string ariaLabel, bool expectedCondition, string parentElementSelector = "")
         {
-            if (!GetCheckbox(ariaLabel).Equals(expectedCondition))
+            if (!GetCheckbox(ariaLabel, parentElementSelector).Equals(expectedCondition))
             {
                 //We must click by text to check or uncheck element
                 Driver.ClickElementLeftCenter(GetCheckbox(ariaLabel));
@@ -830,7 +998,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public bool IsCheckboxEnabled(string ariaLabel)
         {
-            var enabled = GetCheckbox(ariaLabel, WebDriverExtensions.WaitTime.Medium)
+            var enabled = GetCheckbox(ariaLabel, string.Empty, WebDriverExtensions.WaitTime.Medium)
                 .FindElement(By.XPath(".//input")).Enabled;
             return enabled;
         }
@@ -839,7 +1007,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             try
             {
-                return GetCheckbox(ariaLabel, WebDriverExtensions.WaitTime.Medium).Displayed();
+                return GetCheckbox(ariaLabel, string.Empty, WebDriverExtensions.WaitTime.Medium).Displayed();
             }
             catch
             {
@@ -849,12 +1017,33 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Radio Button
+
+        public IWebElement GetRadioButton(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        {
+            var selector = By.XPath($".//div[contains(@class, 'radio-label') and text()='{ariaLabel}']/ancestor::mat-radio-button");
+            if (!Driver.IsElementDisplayed(selector, wait))
+            {
+                throw new Exception($"'{ariaLabel}' radio button was not displayed");
+            }
+            return Driver.FindElement(selector);
+        }
+
+        #endregion
+
         #region Chips
 
         public IList<IWebElement> GetChipsOfTextbox(string textbox)
         {
-            var chipsSelector = By.XPath("./ancestor::div[contains(@class, 'multiselect')]//span[contains(@class, 'chips-item')]");
+            var chipsSelector = By.XPath("./ancestor::div//span[contains(@class, 'chips-item')]");
             return GetTextbox(textbox).FindElements(chipsSelector);
+        }
+
+        public IList<IWebElement> GetChipsForButton(string button, int index = 0)
+        {
+            var chipsSelector = By.XPath(".//ancestor::li[contains(@class,'chips-btn')]//preceding-sibling::li");
+            var buttonElement = GetButtons(button)[index];
+            return buttonElement.FindElements(chipsSelector);
         }
 
         #endregion
@@ -901,6 +1090,38 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                     CategoryCollapseExpandButton(name).Click();
                 }
             }
+        }
+
+        #endregion
+
+        #region Menu Panel
+
+        //This menu appears for example by click on Group By on agGrid
+        //mat-menu-panel > mat-menu-content
+
+        public List<KeyValuePair<string, bool>> GetAllOptionsFromMenuPanel()
+        {
+            Driver.WaitForElementToBeDisplayed(MenuPanelElement);
+            var allOptions = MenuPanelElement.FindElements(By.XPath("./mat-checkbox"));
+            List<KeyValuePair<string, bool>> result = new List<KeyValuePair<string, bool>>();
+            foreach (IWebElement option in allOptions)
+            {
+                //TODO rework to use Checkbox methods
+                var text = option.FindElement(By.XPath(".//span[@class='mat-checkbox-label']")).Text.TrimStart(' ');
+                var selected = option.FindElement(By.XPath(".//input[@type='checkbox']")).Selected;
+                result.Add(new KeyValuePair<string, bool>(text, selected));
+            }
+            return result;
+        }
+
+        public IWebElement GetCheckboxFromMenuPanel(string checkbox)
+        {
+            return GetCheckbox(checkbox, MenuPanelSelector);
+        }
+
+        public void SetCheckboxStateFromMenuPanel(string ariaLabel, bool expectedCondition)
+        {
+            SetCheckboxState(ariaLabel, expectedCondition, MenuPanelSelector);
         }
 
         #endregion

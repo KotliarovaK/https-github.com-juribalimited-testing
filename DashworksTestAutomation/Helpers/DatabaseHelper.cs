@@ -436,6 +436,23 @@ namespace DashworksTestAutomation.Helpers
             return userId;
         }
 
+        public static string GetUserIdByFullName(string fullName)
+        {
+            var userId =
+                DatabaseHelper.ExecuteReader(
+                    $"select [UserId] from [DesktopBI].[dbo].[UserProfiles] where [FullName] = '{fullName}'",
+                    0)[0];
+            return userId;
+        }
+
+        public static string GetFullNameByUserName(string userName)
+        {
+            var fullName = DatabaseHelper.ExecuteReader(
+                $"select up.FullName from [DesktopBI].[dbo].[UserProfiles] up join [aspnetdb].[dbo].[aspnet_Users] u on up.UserId = u.UserId where u.LoweredUserName = '{userName}'",
+                0)[0];
+            return fullName;
+        }
+
         public static void DeleteUser(UserDto user)
         {
             DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_UsersInRoles] where [UserId] = '{user.Id}'");
@@ -621,6 +638,31 @@ namespace DashworksTestAutomation.Helpers
             {
                 throw new Exception($"Unable to get '{dashboardName}' Dashboard name for '{userId}' user", e);
             }
+        }
+
+        #endregion
+
+        #region Self Service
+
+        public static string GetSelfServiceId(string selfServiceName, string createdBy)
+        {
+            string query = $"SELECT [SelfServiceId] FROM [PM].[SS].[SelfService] WHERE [Name] = {selfServiceName} AND [CreatedBy] = {createdBy}";
+            var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return selfServiceId;
+        }
+
+        public static string GetSelfServiceId(string selfServiceName)
+        {
+            string query = $"SELECT [SelfServiceId] FROM [PM].[SS].[SelfService] WHERE [Name] = {selfServiceName}";
+            var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return selfServiceId;
+        }
+
+        public static string GetSelfServiceIdByIdentifier(string identifier)
+        {
+            string query = $"SELECT [SelfServiceId] from [PM].[SS].[SelfService] where [SelfServiceIdentifier] = '{identifier}'";
+            var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return selfServiceId;
         }
 
         #endregion

@@ -524,13 +524,13 @@ this.FeatureBackground();
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table10, "And ");
 #line 90
- testRunner.Then("URL is \"evergreen/#/devices\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("URL is \'evergreen/#/devices\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
  testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
  testRunner.Then("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 93
- testRunner.Then("URL is \"evergreen/#/devices\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("URL is \'evergreen/#/devices\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -599,13 +599,13 @@ this.FeatureBackground();
  testRunner.And("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +
                     "s are returned", ((string)(null)), table11, "And ");
 #line 102
- testRunner.Then("URL is \"evergreen/#/users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("URL is \'evergreen/#/users\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 103
  testRunner.And("Clearing the agGrid Search Box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
  testRunner.Then("\"41,339\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 105
- testRunner.Then("URL is \"evergreen/#/users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("URL is \'evergreen/#/users\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2168,7 +2168,7 @@ this.FeatureBackground();
             table41.AddRow(new string[] {
                         "Unassigned"});
 #line 393
- testRunner.Then("Data in table is sorted by \"Windows7Mi: Ring\" column in the next way", ((string)(null)), table41, "Then ");
+ testRunner.Then("Content in the \'Windows7Mi: Ring\' column is equal to", ((string)(null)), table41, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

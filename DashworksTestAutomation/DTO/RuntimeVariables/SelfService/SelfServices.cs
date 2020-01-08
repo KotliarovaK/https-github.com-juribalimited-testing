@@ -7,7 +7,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables.SelfService
 {
-    class SelfServices
+    public class SelfServices
     {
         public List<SelfServiceDto> Value { get; set; }
 

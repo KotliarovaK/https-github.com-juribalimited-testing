@@ -409,7 +409,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (ellipsisMenu != null)
             {
                 page.GetEllipsisMenuForWidget(widgetName).Click();
-                _driver.WaitForElementToBeDisplayed(page.EllipsisMenu);
+                var bdp = _driver.NowAt<BaseDashboardPage>();
+                _driver.WaitForElementToBeDisplayed(bdp.MenuPanelElement);
             }
             else
             {
@@ -438,7 +439,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Click();
-            _driver.WaitForElementToBeDisplayed(page.EllipsisMenu);
+            var bdp = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForElementToBeDisplayed(bdp.MenuPanelElement);
         }
 
         [Then(@"User sees Ellipsis icon enabled for Section having '(.*)' Widget on Dashboards page")]
@@ -842,7 +844,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
-                Verify.AreEqual(originalList, tableContent, "Unexpected column");
+                Verify.AreEqual(tableContent, originalList, "Unexpected column");
             }
         }
 
@@ -1113,33 +1115,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(page.NewPermissionsDropdownForList(listName));
             var toolTipText = _driver.GetTooltipText();
             Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
-        }
-
-        [Then(@"Button '(.*)' has enabled property '(.*)' on Permissions Pop-up")]
-        public void ThenUserSeesButtonInTheNextStateForListOnListPermissionsPopup(string buttonCapture, string buttonState)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            Verify.That(page.GetButtonStateOfReviewWidgetPermissionsPopup(buttonCapture),
-                Is.EqualTo(buttonState.ToUpper()), $"Button {buttonCapture} states is different");
-        }
-
-        [Then(@"Button '(.*)' has '(.*)' tooltip on Permissions Pop-up")]
-        public void ThenTooltipIsDisplayedWithTextForForButtonOnListPermissionsPopup(string buttonCapture, string tooltip)
-        {
-            var button = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.MouseHover(button.ReviewPermissionsPopupsButton(buttonCapture));
-            _driver.WaitForDataLoading();
-            var toolTipText = _driver.GetTooltipText();
-            Verify.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
-        }
-
-        [When(@"User clicks the '(.*)' button on Permissions Pop-up")]
-        public void WhenUserClicksTheActionButtonOnListPermissionsPopup(string buttonName)
-        {
-            var action = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            action.ReviewPermissionsPopupsButton(buttonName).Click();
         }
 
         #endregion

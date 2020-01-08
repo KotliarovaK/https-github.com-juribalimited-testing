@@ -103,18 +103,18 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	And User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User selects "Include users associated to mailboxes" checkbox on the Project details page
-	And User clicks "Owned mailboxes" associated checkbox on the Project details page
-	And User clicks "Delegated mailboxes" associated checkbox on the Project details page
-	And User clicks "Other mailbox permissions" associated checkbox on the Project details page
-	And User clicks "Mailbox folder permissions" associated checkbox on the Project details page
+	And User checks 'Owned mailboxes' checkbox
+	And User checks 'Delegated mailboxes' checkbox
+	And User checks 'Other mailbox permissions' checkbox
+	And User checks 'Mailbox folder permissions' checkbox
 	And User selects "Do not include users" checkbox on the Project details page
 	Then "Owned mailboxes" associated checkbox is checked and cannot be unchecked
-	And "Delegated mailboxes " associated checkbox is checked and cannot be unchecked
+	And "Delegated mailboxes" associated checkbox is checked and cannot be unchecked
 	And "Other mailbox permissions" associated checkbox is checked and cannot be unchecked
 	And "Mailbox folder permissions" associated checkbox is checked and cannot be unchecked
 	When User selects "Include users associated to mailboxes" checkbox on the Project details page
 	Then "Owned mailboxes" associated checkbox is checked
-	And "Delegated mailboxes " associated checkbox is checked
+	And "Delegated mailboxes" associated checkbox is checked
 	And "Other mailbox permissions" associated checkbox is checked
 	And "Mailbox folder permissions" associated checkbox is checked
 

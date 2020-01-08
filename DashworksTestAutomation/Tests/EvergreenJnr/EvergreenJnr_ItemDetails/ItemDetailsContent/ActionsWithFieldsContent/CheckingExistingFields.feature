@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15889 @DAS16378
 Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObjectSection
 	When User navigates to the 'Device' details page for '00OMQQXWA1DRI6' item
-	Then Details page for "00OMQQXWA1DRI6" item is displayed to the user
+	Then Details page for '00OMQQXWA1DRI6' item is displayed to the user
 	When User navigates to the 'Active Directory' left menu item
 	Then following fields are displayed in the open section:
 	| Fields                          |
@@ -25,9 +25,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	Then "Windows 7 Migration (Computer Scheduled Project)" project is selected in the Top bar on Item details page
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
+	Then 'Windows 7 Migration (Computer Scheduled Project)' content is displayed in 'Item Details Project' dropdown
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	Then following fields are displayed in the open section:
@@ -50,8 +50,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
-	Then Details page for "0072B088173449E3A93" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	Then Details page for '0072B088173449E3A93' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then following fields are displayed in the open section:
@@ -75,8 +75,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
-	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then following fields are displayed in the open section:
@@ -99,8 +99,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User navigates to the 'Mailbox' details page for '00A5B910A1004CF5AC4@bclabs.local' item
-	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	Then Details page for '00A5B910A1004CF5AC4@bclabs.local' item is displayed to the user
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then following fields are displayed in the open section:
@@ -124,22 +124,22 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11510
 Scenario: EvergreenJnr_DevicesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheDeviceOwnerBlockOfDeviceDetails
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Device Owner' left submenu item
-	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
+	Then 'Last Logoff Date' field is not displayed in the table
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17775
 Scenario: EvergreenJnr_MailboxesList_CheckThatLastLogoffDateFieldIsNotDisplayedAtTheMailboxOwnerBlockOfDeviceDetails
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
-	Then Details page for "000F977AC8824FE39B8@bclabs.loca" item is displayed to the user
+	Then Details page for '000F977AC8824FE39B8@bclabs.loca' item is displayed to the user
 	When User navigates to the 'Mailbox Owner' left submenu item
-	Then field with "Last Logoff Date" text is not displayed in expanded tab on the Details Page
+	Then 'Last Logoff Date' field is not displayed in the table
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17735
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigatingToTheMaterialTableOnObjectDetails
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Details' left menu item
 	And User navigates to the 'Device' left submenu item
 	Then following fields are displayed in the open section:
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsANotAppearInConsoleWhenNavigat
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18162 @DAS17394
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages
 	When User navigates to the '<PageName>' details page for '<ItemName>' item
-	Then Details page for "<ItemName>" item is displayed to the user
+	Then Details page for '<ItemName>' item is displayed to the user
 	When User navigates to the '<SubTabName>' left submenu item
 	Then following fields are displayed in the open section:
 	| Fields                    |
@@ -206,7 +206,7 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093 @DAS17236
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
 	When User navigates to the '<ListName>' details page for '<ItemName>' item
-	Then Details page for "<ItemName>" item is displayed to the user
+	Then Details page for '<ItemName>' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Evergreen Details' left submenu item
 	Then following fields are displayed in the open section:
@@ -226,7 +226,7 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18423
 Scenario: EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDeviceTypeOtherIsDisplayedCorrectly
 	When User navigates to the 'Device' details page for '2B35YERQEMAYHYUE' item
-	Then Details page for "2B35YERQEMAYHYUE" item is displayed to the user
+	Then Details page for '2B35YERQEMAYHYUE' item is displayed to the user
 	When User navigates to the 'Specification' left menu item
 	Then following fields are displayed in the open section:
 	| Fields                       |
@@ -262,7 +262,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDevice
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18850
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTab
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
-	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then following fields are displayed in the open section:
 	| Fields                  |

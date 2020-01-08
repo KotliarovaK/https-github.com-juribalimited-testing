@@ -114,4 +114,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithou
 	| QueryType | QueryStringURL                                  |
 	| Devices   | evergreen/#/admin/project/63/scope/scopeChanges |
 	Then 'Admin' left-hand menu item is hidden
-	And Error is displayed to the User
+	Then error page with '403' status code and 'You are not authorized to view this page, speak to your Dashworks administrator' error message is displayed

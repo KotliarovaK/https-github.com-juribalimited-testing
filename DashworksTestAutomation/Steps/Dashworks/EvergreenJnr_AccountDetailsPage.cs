@@ -72,38 +72,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.CurrentPasswordField.Displayed(), "Change Password page is not displayed");
         }
 
-        [When(@"User changes List Page Size to ""(.*)""")]
-        public void WhenUserChangesListPageSizeTo(string size)
-        {
-            var page = _driver.NowAt<AdvancedPage>();
-            page.ListPageSizeField.ClearWithBackspaces();
-            page.ListPageSizeField.SendKeys(size);
-            page.BodyContainer.Click();
-        }
-
-        [When(@"User changes List Pages to Cache to ""(.*)""")]
-        public void WhenUserChangesListPagesToCacheTo(string size)
-        {
-            var page = _driver.NowAt<AdvancedPage>();
-            page.ListPagesToCache.ClearWithBackspaces();
-            page.ListPagesToCache.SendKeys(size);
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"List Page Size is changed to ""(.*)""")]
-        public void ThenListPageSizeIsChangedTo(string size)
-        {
-            var page = _driver.NowAt<AdvancedPage>();
-            Utils.Verify.AreEqual(size, page.ListPageSizeField.GetAttribute("value"), "List Page Size is not changed");
-        }
-
-        [Then(@"List Pages to Cache is changed to ""(.*)""")]
-        public void ThenListPagesToCacheIsChangedTo(string size)
-        {
-            var page = _driver.NowAt<AdvancedPage>();
-            Utils.Verify.AreEqual(size, page.ListPagesToCache.GetAttribute("value"), "List Page Size is not changed");
-        }
-
         [Then(@"page elements are translated into French")]
         public void ThenPageElementsAreTranslatedIntoFrench()
         {
@@ -192,55 +160,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = page.AvailableRoles.Select(value => value.Text);
             Utils.Verify.AreEqual(expectedList, actualList, "Available Roles are different");
-        }
-
-        [AfterScenario("Remove_Profile_Changes")]
-        public void RemoveProfileChangesAfterScenario()
-        {
-            try
-            {
-                _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#//admin");
-                WhenUserClicksProfileInAccountDropdown();
-                var page = _driver.NowAt<AccountDetailsPage>();
-                page.AccountDetails.Click();
-                page.FullNameField.Clear();
-                page.FullNameField.SendKeys(_userDto.FullName);
-                page.EmailField.Clear();
-                page.EmailField.SendKeys(string.IsNullOrEmpty(_userDto.Email)
-                    ? "automation@juriba.com"
-                    : _userDto.Email);
-                page.RemoveButton.Click();
-                page.UpdateButton.Click();
-                page.NavigateToPage("Preferences");
-                var preferencesPage = _driver.NowAt<PreferencesPage>();
-                preferencesPage.PreferencesLink.Click();
-                preferencesPage.DisplayModeDropdown.Click();
-                preferencesPage.DisplayModeNormal.Click();
-                page.UpdateButton.Click();
-                page.NavigateToPage("Advanced");
-            }
-            catch
-            {
-            }
-        }
-
-        [AfterScenario("Remove_Password_Changes")]
-        public void RemovePasswordChangesAfterScenario()
-        {
-            try
-            {
-                var page = _driver.NowAt<ChangePasswordPage>();
-                page.CurrentPasswordField.Clear();
-                page.CurrentPasswordField.SendKeys("test5846");
-                page.NewPassword.Clear();
-                page.NewPassword.SendKeys("m!gration");
-                page.ConfirmPasswordField.Clear();
-                page.ConfirmPasswordField.SendKeys("m!gration");
-                page.UpdateButton.Click();
-            }
-            catch
-            {
-            }
         }
     }
 }

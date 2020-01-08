@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
+namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
     internal class CogMenuElements : SeleniumBasePage
     {
@@ -75,6 +73,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetCogMenuOptionByName(string option)
         {
+            Driver.WaitForElementsToBeDisplayed(CogMenuItems);
+
             if (CogMenuItems.Any(x => x.Text.Equals(option)))
             {
                 return CogMenuItems.FirstOrDefault(x => x.Text.Equals(option));

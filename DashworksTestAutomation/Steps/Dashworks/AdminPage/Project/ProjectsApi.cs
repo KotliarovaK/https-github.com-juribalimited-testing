@@ -1,16 +1,12 @@
 ﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using System;
 using System.Linq;
 using System.Net;
-using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.AfterScenario;
 using Newtonsoft.Json;
@@ -20,13 +16,19 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
 {
     [Binding]
-    internal class ProjectsApi : RemoveProjectAfterScenario
+    internal class ProjectsApi : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly RestWebClient _client;
+        private readonly RemoveProjectMethods _removeProjectMethods;
+        private readonly DTO.RuntimeVariables.Projects _projects;
 
-        public ProjectsApi(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects, RestWebClient client) : base(client, projects)
+        public ProjectsApi(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects, RestWebClient client)
         {
             _driver = driver;
+            _client = client;
+            _removeProjectMethods = new RemoveProjectMethods(client, projects);
+            _projects = projects;
         }
 
         // table example
@@ -85,7 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
         [When(@"Projects created by User are removed via API")]
         public void WhenUserRemovesNewProjectsViaApi()
         {
-            DeleteNewlyCreatedProject();
+            _removeProjectMethods.DeleteProject();
         }
 
         private string GetCreateProjectRequestScopeProperty(string scope)

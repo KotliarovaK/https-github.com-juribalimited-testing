@@ -152,10 +152,10 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application\' details page for \'Technical Information Sampl" +
                     "er: January 2003\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
- testRunner.Then("Details page for \"Technical Information Sampler: January 2003\" item is displayed " +
+ testRunner.Then("Details page for \'Technical Information Sampler: January 2003\' item is displayed " +
                     "to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
- testRunner.When("User switches to the \"Project17919\" project in the Top bar on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Project17919\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20

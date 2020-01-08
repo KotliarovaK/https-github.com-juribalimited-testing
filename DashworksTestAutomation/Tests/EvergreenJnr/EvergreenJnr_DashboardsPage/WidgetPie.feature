@@ -405,7 +405,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	| Pie        | WidgetForDAS17467 | ListForDAS17467 | Owner Compliance | Count             | Owner Compliance ASC | true       |
 	And User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
+	And Color Scheme dropdown displayed with 'Compliance' placeholder 
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS17467' Widget is displayed to the user
@@ -419,7 +419,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17467 @DAS17515 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
+	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "1803: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
@@ -427,72 +427,121 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	| Amber              |
 	| Green              |
 	| Grey               |
-	| None               |
-	And User clicks Save button on the list panel
-	And User create dynamic list with "ListForDAS17467_1" name on "Devices" page
+	When User clicks Save button on the list panel
+	When User create dynamic list with "ListForDAS17467_1" name on "Devices" page
 	Then "ListForDAS17467_1" list is displayed to user
 	When Dashboard with 'Dashboard for DAS17467_1' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title               | List              | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
 	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
-	And User selects 'Show data labels' checkbox on the Create Widget page
+	When User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder 
-	And Color Scheme dropdown is disabled
-	And There are no errors in the browser console
+	Then Color Scheme dropdown displayed with 'Readiness' placeholder 
+	Then Color Scheme dropdown is disabled
+	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @DAS17987 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidgetIsSplitByReadinessAndComplianceFields	
     When User clicks 'Devices' on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                        |
 	| Windows7Mi: Application Readiness |
 	| Application Compliance            |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User Add And "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	When User add "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	And User create dynamic list with "ListForDAS17515" name on "Devices" page
+	When User create dynamic list with "ListForDAS17515" name on "Devices" page
 	Then "ListForDAS17515" list is displayed to user
 	When Dashboard with 'DAS17515_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User adds new Widget
 	| WidgetType | Title             | List            | SplitBy                           | AggregateFunction | OrderBy                               | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS17515 | ListForDAS17515 | Windows7Mi: Application Readiness | Count             | Windows7Mi: Application Readiness ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
-	And There are no errors in the browser console
-	And Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder
-	And Color Scheme dropdown is disabled
+	Then There are no errors in the browser console
+	Then Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder
+	Then Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 	When User clicks Ellipsis menu for 'WidgetForDAS17515' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Application Compliance' in the 'SplitBy' dropdown
 	Then User sees 'Application Compliance ASC' option for Order By selector on Create Widget page
-	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
-	And Color Scheme dropdown is disabled
+	Then Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
+	Then Color Scheme dropdown is disabled
 	When User clicks 'UPDATE' button 
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18072 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilter
 	When Dashboard with 'DAS18072_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title       | List        | SplitBy     | AggregateFunction | OrderBy          |
-	| Pie        | Widget18072 | All Devices | Device Type | Count             | Device Type DESC |
+	| Pie        | Widget18072 | All Devices | Device Type | Count             | Device Type ASC  |
 	Then Widget Preview is displayed to the user
-	And There are no errors in the browser console
-	And 'Device Type DESC' option displayed for Widget OrderBy
+	Then There are no errors in the browser console
+	Then 'Device Type ASC' option displayed for Widget OrderBy
+	When User selects 'Device Type DESC' in the 'Order By' dropdown
+	Then 'Device Type DESC' option displayed for Widget OrderBy
 	When User selects 'Hostname' in the 'SplitBy' dropdown
-	Then '' option displayed for Widget OrderBy
-	And Widget Preview is not displayed to the user
+	Then 'Hostname DESC' option displayed for Widget OrderBy
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
 	When User selects 'Hostname ASC' in the 'Order By' dropdown
 	Then Widget Preview is displayed to the user
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
+	When User selects 'Device Type' in the 'SplitBy' dropdown
+	Then 'Device Type ASC' option displayed for Widget OrderBy
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18635 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatPreviewDisplayedForWidgetWhenReadinessSelectedAsSplitBy
+	When Dashboard with 'Dashboard for DAS18635' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List                               | SplitBy               | AggregateFunction | OrderBy                   |
+	| Pie        | WidgetForDAS18635 | Device Readiness Columns & Filters | UserEvergr: Readiness | Count             | UserEvergr: Readiness ASC |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button 
+	Then 'WidgetForDAS18635' Widget is displayed to the user
+	When User clicks Ellipsis menu for 'WidgetForDAS18635' Widget on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User adds new Widget
+	| WidgetType | Title             | List                               | SplitBy               | AggregateFunction | AggregateBy | OrderBy                   |
+	| Pie        | WidgetForDAS18635 | Device Readiness Columns & Filters | UserEvergr: Readiness | Count distinct    | Device Type | UserEvergr: Readiness ASC |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18574 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWidget
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Blocked            |
+	| Amber              |
+	| Green              |
+	| Grey               |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "ListForDAS18574" name on "Devices" page
+	Then "ListForDAS18574" list is displayed to user
+	When Dashboard with 'Dashboard for DAS18574' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List            | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
+	| Pie        | WidgetForDAS18574 | ListForDAS18574 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
+	When User clicks 'CREATE' button 
+	Then 'WidgetForDAS18574' Widget is displayed to the user
+	When User clicks on 'Green' category of 'WidgetForDAS18574' widget
+	Then table content is present

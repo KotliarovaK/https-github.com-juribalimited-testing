@@ -341,7 +341,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
-            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, $"Values in table for '{columnName}' column in not sorted in descending order");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed(), $"Values in table for '{columnName}' column in not sorted in descending order");
+        }
+
+        [Then(@"data in table is sorted by '(.*)' column in descending order by default")]
+        public void ThenDataInTableIsSortedByColumnInDescendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
+            Verify.IsFalse(listPageMenu.DescendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"data in table is sorted by '(.*)' column in ascending order")]
@@ -352,7 +363,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, $"Values in table for '{columnName}' column in not sorted in ascending order");
+            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Values in table for '{columnName}' column in not sorted in ascending order");
+        }
+
+        [Then(@"data in table is sorted by '(.*)' column in ascending order by default")]
+        public void ThenDataInTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+
+            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(actualList);
+            _driver.WaitForDataLoading();
+            Verify.IsFalse(listPageMenu.AscendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"date in table is sorted by '(.*)' column in descending order")]
@@ -373,7 +395,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             var originalList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList);
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, $"Date in table for '{columnName}' column in not sorted in ascending order");
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Date in table for '{columnName}' column in not sorted in ascending order");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in ascending order")]
@@ -382,17 +404,34 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            Utils.Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), $"Numbers in table for '{columnName}' column in not sorted in ascending order");
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in ascending order by default")]
+        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var actualList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(actualList);
+            Verify.IsFalse(listPageMenu.AscendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"numeric data in table is sorted by '(.*)' column in descending order")]
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
-            Utils.Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed(), $"Numbers in table for '{columnName}' column in not sorted in descending order");
+        }
+
+        [Then(@"numeric data in table is sorted by '(.*)' column in descending order by default")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderByDefault(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(expectedList, false);
+            Verify.IsFalse(listPageMenu.DescendingSortingIcon.Displayed(), $"Sorting order ion should not be displayed for default sorting in the '{columnName}' column");
         }
 
         [Then(@"color data is sorted by '(.*)' column in ascending order")]
@@ -449,7 +488,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
-            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+
+            Verify.IsTrue(listPageMenu.AscendingSortingIcon.Displayed, "Ascending Sorting icon is not displayed");
         }
 
         [Then(@"boolean data is sorted by '(.*)' column in descending order")]
@@ -458,7 +498,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var listPageMenu = _driver.NowAt<BaseGridPage>();
             var expectedList = listPageMenu.GetColumnContentByColumnName(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList), false);
-            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(listPageMenu.DescendingSortingIcon.Displayed, "Descending Sorting icon is not displayed");
         }
 
         [Then(@"The first cell of the table matches to default sorting ""(.*)"" list")]
@@ -673,6 +713,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsGridGrouped(), "Grid is grouped");
         }
 
+        [Then(@"'(.*)' row in the groped grid does not contains '(.*)' text")]
+        public void ThenRowInTheGropedGridDoesNotContainsText(string groupedBy, string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(page.GetGroupedRowByContent(groupedBy).Text.Contains(text),
+                $"'{text}' is displayed in the '{groupedBy}' groped row");
+        }
+
         #endregion
 
         #region MoveItem
@@ -797,6 +845,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GetColumnSettingButton(setting).Click();
+        }
+
+        [Then(@"User sees following options for '(.*)' column settings")]
+        public void ThenUserSeesFollowingOptionsForColumnSettings(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.OpenColumnSettings(columnName);
+            var expectedList = table.Rows.Select(x => x.Values.First());
+            var actualList = page.ColumnSettingsList();
+            Verify.AreEqual(expectedList, actualList,
+                $"Incorrect column settings for '{columnName}' column are displayed");
         }
 
         #endregion

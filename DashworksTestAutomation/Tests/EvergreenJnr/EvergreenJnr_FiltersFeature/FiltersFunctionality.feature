@@ -1175,7 +1175,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
 	And User create static list with "StaticList8543" name
 	Then "StaticList8543" list is displayed to user
 	And Edit List menu is not displayed
-	And URL contains "evergreen/#/users?$listid="
+	And URL contains 'evergreen/#/users?$listid='
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13104 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTwoOrMoreFiltersUsingTheSameFieldAndClearingOneOfTheFilters
@@ -1211,11 +1211,11 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADa
 	Then "User whose Last Logon Date" filter is added to the list
 	When User create dynamic list with "DAS13414" name on "Applications" page
 	Then "DAS13414" list is displayed to user
-	And URL contains "evergreen/#/applications?$listid="
+	And URL contains 'evergreen/#/applications?$listid='
 	And Edit List menu is not displayed
 	When User navigates to the "All Applications" list
 	And User navigates to the "DAS13414" list
-	Then URL contains "evergreen/#/applications?$listid="
+	Then URL contains 'evergreen/#/applications?$listid='
 	And Edit List menu is not displayed
 
 @Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13384 @Cleanup
@@ -1317,12 +1317,12 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescri
 	When User create custom list with "DAS13473" name
 	Then "DAS13473" list is displayed to user
 	And "113" rows are displayed in the agGrid
-	And URL contains "evergreen/#/applications?$listid="
+	And URL contains 'evergreen/#/applications?$listid='
 	And Edit List menu is not displayed
 	When User navigates to the "All Applications" list
 	And User navigates to the "DAS13473" list
 	Then "113" rows are displayed in the agGrid
-	Then URL contains "evergreen/#/applications?$listid="
+	Then URL contains 'evergreen/#/applications?$listid='
 	And Edit List menu is not displayed
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13377
@@ -1727,7 +1727,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameter
 	Then 'All Users' list should be displayed to the user
 	When User navigates to the "TestList15246" list
 	Then "TestList15246" list is displayed to user
-	And URL contains "evergreen/#/users?$listid="
+	And URL contains 'evergreen/#/users?$listid='
 	And URL contains only "listid" filter
 
 @Evergreen @Users @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
@@ -2415,12 +2415,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOperatingSystemFilterWork
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17757
 Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProjectProperties
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
-	And User Add And "1803: Status" filter where type is "Equals" with added column and Lookup option
+	When User clicks the Filters button
+	When User add "1803: Status" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Offboarded     |
 	Then "4" rows are displayed in the agGrid
-	And Content in the '1803: Status' column is equal to
+	Then Content in the '1803: Status' column is equal to
 	| Content    |
 	| Offboarded |
 	| Offboarded |
@@ -2469,7 +2469,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork
 	| SelectedValues |
 	Then "16,819" rows are displayed in the agGrid
 
-@Evergreen @AllDeviceApplications @DAS18560 @Cleanup
+@Evergreen @Applications @DAS18560 @Cleanup
 Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToDeletedList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2500,7 +2500,7 @@ Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilte
 	When User clicks the Filters button
 	Then message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
 
-@Evergreen @AllDeviceApplications @DAS18100 @Cleanup
+@Evergreen @Devices @DAS18100 @Cleanup
 Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2508,7 +2508,7 @@ Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	When User add "Import Type" filter where type is "Not empty" with added column and Lookup option
     | SelectedValues |
 	Then "17,279" rows are displayed in the agGrid
-	Then URL contains "filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType"
+	Then URL contains 'filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType'
 	When User have removed "Import Type" filter
 	When User add "Import Type" filter where type is "Does not equal" with added column and Lookup option
     | SelectedValues |
@@ -2520,14 +2520,14 @@ Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	Then "NewFilter_18100_1" list is displayed to user
 	Then There are no errors in the browser console
 
-@Evergreen @AllDeviceApplications @DAS18100 @Cleanup
+@Evergreen @Devices @DAS18100 @Cleanup
 Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreatedViaAddressRow
 	When User navigates to 'devices?$filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType' url via address line
 	Then "17,279" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "Import Type is not empty" is displayed in added filter info
 
-@Evergreen @AllDeviceApplications @DAS18560 @Cleanup
+@Evergreen @Applications @DAS18560 @Cleanup
 Scenario: EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2593,3 +2593,39 @@ Examples:
 	| Applications | Device Owner Last Logon Date | Before (relative)       |
 	| Users        | Last Logon Date              | After (relative)        |
 	| Mailboxes    | Created Date                 | On or before (relative) |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersFunctionality @DAS19384
+Scenario: EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWork
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| zMailboxAu: Owner In Scope |
+	Then Content is present in the newly added column
+	| ColumnName                 |
+	| zMailboxAu: Owner In Scope |
+	Then "14,784" rows are displayed in the agGrid
+	When User clicks on 'zMailboxAu: Owner In Scope' column header
+	Then data in table is sorted by 'zMailboxAu: Owner In Scope' column in descending order
+	When User clicks on 'zMailboxAu: Owner In Scope' column header
+	Then data in table is sorted by 'zMailboxAu: Owner In Scope' column in ascending order
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "zMailboxAu: Owner In Scope" filter where type is "Equals" without added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	| FALSE              |
+	| Empty              |
+	Then "zMailboxAu: Owner In Scope" filter is added to the list
+	Then "14,784" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS19550
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringListBySavedList
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Device Owner (Saved List)" filter where type is "In list" with selected Checkboxes and following Association:
+	| SelectedCheckboxes      | Association    |
+	| Users with Device Count | Used on device |
+	Then There are no errors in the browser console

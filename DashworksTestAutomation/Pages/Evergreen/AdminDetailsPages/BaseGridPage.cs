@@ -59,6 +59,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #endregion
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='agGridTable']")]
+        public IWebElement AgGrid { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//li//label//span[@class='mat-checkbox-label']")]
         public IList<IWebElement> DropdownTaskItemsList { get; set; }
 
@@ -67,12 +70,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='aggrid-container']//div[@col-id='dragColumn']")]
         public IList<IWebElement> DragRowElements { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//div[@class='dialog-warning-title']")]
-        public IWebElement WarningPopUpPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
-        public IWebElement ErrorBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div[@row-index]")]
         public IWebElement TableString { get; set; }
@@ -101,14 +98,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyViewport']//div//span[text()='Evergreen']")]
-        public IWebElement EvergreenUnit { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]//button[@aria-label='GroupBy']")]
-        public IWebElement GroupByButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='action-container']//button[@automation = 'grid bar export']")]
         public IWebElement ExportButton { get; set; }
@@ -406,30 +397,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        public IWebElement GetValueInGroupByFilterOnAdminPage(string value)
-        {
-            var selector = By.XPath($".//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        //TODO probably should be separate control or moved to GridHeaderElement 
-        public List<KeyValuePair<string, bool>> GetAllOptionsInGroupByFilter()
-        {
-            var selector = By.XPath($".//div[@class='mat-menu-content']/mat-checkbox");
-            Driver.WaitForElementToBeDisplayed(selector);
-            var allOptions = Driver.FindElements(selector);
-            List<KeyValuePair<string, bool>> result = new List<KeyValuePair<string, bool>>();
-            foreach (IWebElement option in allOptions)
-            {
-                var text = option.FindElement(By.XPath(".//span[@class='mat-checkbox-label']")).Text.TrimStart(' ');
-                var selected = option.FindElement(By.XPath(".//input[@type='checkbox']")).Selected;
-                result.Add(new KeyValuePair<string, bool>(text, selected));
-            }
-            return result;
-        }
-
         #region Column Settings
 
         public void OpenColumnSettings(string columnName)
@@ -446,8 +413,32 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetColumnSettingButton(string settingName)
         {
-            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
-            return Driver.FindElement(By.XPath($".//span[@ref='eName'][text()='{settingName}']"));
+            var settings = ColumnSettingsElements();
+            if (settings.Any(x => GetColumnSettingText(x).Equals(settingName)))
+            {
+                return settings.First(x => GetColumnSettingText(x).Equals(settingName));
+            }
+            else
+            {
+                throw new Exception($"There are no '{settingName}' column setting");
+            }
+        }
+
+        public List<IWebElement> ColumnSettingsElements()
+        {
+            var settingsListSelector = By.XPath(".//span[@ref='eName']/..");
+            Driver.WaitForElementsToBeDisplayed(settingsListSelector);
+            return Driver.FindElements(settingsListSelector).ToList();
+        }
+
+        private string GetColumnSettingText(IWebElement columnSetting)
+        {
+            return columnSetting.FindElement(By.XPath(".//span[@ref='eName']")).Text;
+        }
+
+        public List<string> ColumnSettingsList()
+        {
+            return ColumnSettingsElements().Select(GetColumnSettingText).ToList();
         }
 
         #endregion

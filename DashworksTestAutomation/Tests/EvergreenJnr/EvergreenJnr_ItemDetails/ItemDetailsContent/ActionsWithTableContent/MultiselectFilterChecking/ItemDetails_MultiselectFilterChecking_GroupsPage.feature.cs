@@ -132,7 +132,7 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("User clicks on \"Schema Admins\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("Details page for \"Schema Admins\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Details page for \'Schema Admins\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.When("User navigates to the \'Members\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
@@ -157,24 +157,24 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "DEV50"});
 #line 22
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Domain\' col" +
-                    "umn", ((string)(null)), table1, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
+                    "olumn:", ((string)(null)), table1, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table2.AddRow(new string[] {
                         "True"});
 #line 25
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Enabled\' co" +
-                    "lumn", ((string)(null)), table2, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Enabled\' " +
+                    "column:", ((string)(null)), table2, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
                         "Active Directory"});
 #line 28
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Directory T" +
-                    "ype\' column", ((string)(null)), table3, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Directory" +
+                    " Type\' column:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -131,7 +131,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'002B5DC7D4D34D5C895@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \"002B5DC7D4D34D5C895@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'002B5DC7D4D34D5C895@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
  testRunner.When("User navigates to the \'Email Addresses\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -145,16 +145,16 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "SMTP"});
 #line 15
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Type\' colum" +
-                    "n", ((string)(null)), table1, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Type\' col" +
+                    "umn:", ((string)(null)), table1, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table2.AddRow(new string[] {
                         "True"});
 #line 18
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Reply To\' c" +
-                    "olumn", ((string)(null)), table2, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Reply To\'" +
+                    " column:", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -212,11 +212,11 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Mailbox\' details page for \'002B5DC7D4D34D5C895@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.Then("Details page for \"002B5DC7D4D34D5C895@bclabs.local\" item is displayed to the user" +
+ testRunner.Then("Details page for \'002B5DC7D4D34D5C895@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
- testRunner.When("User switches to the \"USE ME FOR AUTOMATION(MAIL SCHDLD)\" project in the Top bar " +
-                    "on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' in the \'Item Details Project\' d" +
+                    "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
@@ -231,16 +231,16 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "True"});
 #line 31
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Owner\' colu" +
-                    "mn", ((string)(null)), table3, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Owner\' co" +
+                    "lumn:", ((string)(null)), table3, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table4.AddRow(new string[] {
                         "Empty"});
 #line 34
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Domain\' col" +
-                    "umn", ((string)(null)), table4, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
+                    "olumn:", ((string)(null)), table4, "Then ");
 #line 37
  testRunner.When("User navigates to the \'Groups\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
@@ -251,8 +251,8 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "BCLABS"});
 #line 39
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Domain\' col" +
-                    "umn", ((string)(null)), table5, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
+                    "olumn:", ((string)(null)), table5, "Then ");
 #line 42
  testRunner.When("User navigates to the \'Mailbox Permissions\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
@@ -265,8 +265,8 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "BCLABS"});
 #line 45
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Domain\' col" +
-                    "umn", ((string)(null)), table6, "Then ");
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
+                    "olumn:", ((string)(null)), table6, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -281,8 +281,8 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "ChangeOwner"});
 #line 49
- testRunner.Then("following String Values are displayed in the filter dropdown for the \'Permission\'" +
-                    " column", ((string)(null)), table7, "Then ");
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Permissio" +
+                    "n\' column:", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

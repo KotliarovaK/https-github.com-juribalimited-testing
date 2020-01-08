@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -72,7 +73,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
 
             var pageOptions = JsonConvert.DeserializeObject<JObject>(content);
             var userLanguage = pageOptions["languageName"].ToString();
-            Utils.Verify.AreEqual(language, userLanguage, "Profile language was not changed");
+            Verify.AreEqual(language, userLanguage, "Profile language was not changed");
 
             #endregion
         }

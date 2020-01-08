@@ -29,7 +29,9 @@ Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 	When User enters "Delay" text in the Search field for "Automation" column
 	Then Rows counter contains "8" found row of all rows
 	When User clicks Reset Filters button on the Admin page
-	When User clicks Group By button on the Admin page and selects "Active" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Active     | true  |
 	Then Cog menu is not displayed on the Admin page
 	Then Grid is grouped
 
@@ -40,34 +42,34 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks on 'Automation' column header
-	Then data in table is sorted by "Automation" column in ascending order on the Admin page
+	Then data in table is sorted by 'Automation' column in ascending order
 	When User clicks on 'Automation' column header
-	Then data in table is sorted by "Automation" column in descending order on the Admin page
+	Then data in table is sorted by 'Automation' column in descending order
 	#Run steps after fixing Boolean sorting
 	#When User clicks on 'Active' column header
-	#Then Boolean data in table is sorted by "Active" column in ascending order on the Admin page
+	#Then Boolean data in table is sorted by 'Active' column in ascending order
 	#When User clicks on 'Active' column header
-	#Then Boolean data in table is sorted by "Active" column in descending order on the Admin page
+	#Then Boolean data in table is sorted by 'Active' column in descending order
 	When User clicks on 'Running' column header
-	Then Boolean data in table is sorted by "Running" column in ascending order on the Admin page
+	Then boolean data is sorted by 'Running' column in ascending order
 	When User clicks on 'Running' column header
-	Then Boolean data in table is sorted by "Running" column in descending order on the Admin page
+	Then boolean data is sorted by 'Running' column in descending order
 	When User clicks on 'Scope' column header
-	Then data in table is sorted by "Scope" column in ascending order on the Admin page
+	Then data in table is sorted by 'Scope' column in ascending order
 	When User clicks on 'Scope' column header
-	Then data in table is sorted by "Scope" column in descending order on the Admin page
+	Then data in table is sorted by 'Scope' column in descending order
 	When User clicks on 'Run' column header
-	Then data in table is sorted by "Run" column in ascending order on the Admin page
+	Then data in table is sorted by 'Run' column in ascending order
 	When User clicks on 'Run' column header
-	Then data in table is sorted by "Run" column in descending order on the Admin page
+	Then data in table is sorted by 'Run' column in descending order
 	When User clicks on 'Actions' column header
-	Then numeric data in table is sorted by "Actions" column in descending order on the Admin page
+	Then numeric data in table is sorted by 'Actions' column in descending order
 	When User clicks on 'Actions' column header
-	Then numeric data in table is sorted by "Actions" column in ascending order on the Admin page
+	Then numeric data in table is sorted by 'Actions' column in ascending order
 	When User clicks on 'Description' column header
-	Then data in table is sorted by "Description" column in ascending order on the Admin page
+	Then data in table is sorted by 'Description' column in ascending order
 	When User clicks on 'Description' column header
-	Then data in table is sorted by "Description" column in descending order on the Admin page
+	Then data in table is sorted by 'Description' column in descending order
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774
 Scenario: EvergreenJnr_AdminPage_CheckUnsavedChangesPopUp
@@ -91,23 +93,24 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	When User opens 'Automation' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Created By" checkbox on the Column Settings panel
-	When User select "Created Date" checkbox on the Column Settings panel
 	When User clicks on 'Created By' column header
 	Then data in table is sorted by 'Created By' column in ascending order
 	When User clicks on 'Created By' column header
 	Then data in table is sorted by 'Created By' column in descending order
+	When User enters "[User not found]" text in the Search field for "Created By" column
+	Then Rows counter contains "7" found row of all rows
+	When User clicks Reset Filters button on the Admin page
+	When User opens 'Automation' column settings
+	When User select "Created By" checkbox on the Column Settings panel
+	When User select "Created Date" checkbox on the Column Settings panel
 	When User clicks on 'Created Date' column header
 	Then date in table is sorted by 'Created Date' column in descending order
 	When User clicks on 'Created Date' column header
 	Then date in table is sorted by 'Created Date' column in ascending order
-	When User enters "[User not found]" text in the Search field for "Created By" column
-	Then Rows counter contains "7" found row of all rows
-	When User clicks Reset Filters button on the Admin page
 	When User enters '9 Aug 2019' text in the Search field for 'Created Date' datepicker
 	Then Rows counter contains "6" found row of all rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18346 @Cleanup
-#Waiting for "Object Type" column
 Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

@@ -385,15 +385,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             var list = listDetailsElement.OwnersList.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Owners are not in alphabetical order");
-        }
-
-        private string GetFullNameByUserName(string userName)
-        {
-            var fullName = DatabaseHelper.ExecuteReader(
-                $" select up.FullName from [DesktopBI].[dbo].[UserProfiles] up join [aspnetdb].[dbo].[aspnet_Users] u on up.UserId = u.UserId where u.LoweredUserName = '{userName}'",
-                0)[0];
-            return fullName;
+            Verify.AreEqual(list.OrderBy(s => s), list, "Owners are not in alphabetical order");
         }
 
         [When(@"User click Accept button in List Details panel")]
@@ -428,7 +420,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectUserDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown,
-                GetFullNameByUserName(_userDto.Username));
+                DatabaseHelper.GetFullNameByUserName(_userDto.Username));
         }
 
         [When(@"User select ""(.*)"" in Select Access dropdown")]

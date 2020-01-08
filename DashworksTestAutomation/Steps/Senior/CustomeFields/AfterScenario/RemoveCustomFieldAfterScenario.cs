@@ -24,18 +24,18 @@ namespace DashworksTestAutomation.Steps.Senior.CustomFields.AfterScenario
         [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedCustomField()
         {
-            if (_customFields.Value.Any())
+            if (!_customFields.Value.Any())
+                return;
+
+            foreach (SeniorCustomFieldDto fieldDto in _customFields.Value)
             {
-                foreach (SeniorCustomFieldDto fieldDto in _customFields.Value)
+                try
                 {
-                    try
-                    {
-                        DatabaseHelper.DeleteCustomField(fieldDto.Id);
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.Write($"Unable to delete Custom Field with '{fieldDto.FieldName}' name: {e}");
-                    }
+                    DatabaseHelper.DeleteCustomField(fieldDto.Id);
+                }
+                catch (Exception e)
+                {
+                    Logger.Write($"Unable to delete Custom Field with '{fieldDto.FieldName}' name: {e}");
                 }
             }
         }

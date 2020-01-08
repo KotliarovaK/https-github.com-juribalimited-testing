@@ -10,21 +10,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	When User creates new Team via api
 	| TeamName  | Description | IsDefault |
 	| TestTeam9 | test        | false     |
-	And User clicks 'Admin' on the left-hand menu
+	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
 	Then Page with 'Teams' header is displayed to user
 	When User enters "TestTeam9" text in the Search field for "Team" column
-	And User clicks content from "Team" column
-	And User navigates to the 'Team Settings' left menu item
-	And User enters "" in the Team Description field
+	When User clicks content from "Team" column
+	When User navigates to the 'Team Settings' left menu item
+	When User enters '' text to 'Team Name' textbox
+	When User enters 'TestTeam9' text to 'Team Name' textbox
+	Then No error message is displayed for 'Team Name' field
 	Then 'UPDATE' button is disabled
 	When User enters " " in the Team Description field
 	Then 'UPDATE' button is disabled
 	When User enters "testTeamtest" in the Team Description field
 	When User clicks 'UPDATE' button
 	Then 'The team was successfully updated' text is displayed on inline success banner
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User clicks refresh button in the browser
 	When User enters '' text to 'Team Name' textbox
 	Then 'UPDATE' button is disabled
@@ -33,4 +35,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	When User enters 'NewTeamName' text to 'Team Name' textbox
 	When User clicks 'UPDATE' button
 	Then 'The team was successfully updated' text is displayed on inline success banner
-	And There are no errors in the browser console
+	Then There are no errors in the browser console

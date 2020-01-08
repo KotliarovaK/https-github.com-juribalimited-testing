@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16121 @DAS17305
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
 	When User navigates to the '<PageName>' details page for '<SelectedName>' item
-	Then Details page for "<SelectedName>" item is displayed to the user
+	Then Details page for '<SelectedName>' item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
 	And User navigates to the 'Application Summary' left submenu item
 	Then Name of colors are displayed in following order on the Details Page:
@@ -38,14 +38,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxD
 	When User clicks on 'Email Address' column header
 	And User clicks on 'Email Address' column header
 	And User click content from "Email Address" column
-	Then User sees loaded tab "Mailbox" on the Details page
+	Then 'Mailbox' left submenu item is displayed
 	Then Item content is displayed to the User
 	And There are no errors in the browser console
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
-	Then Details page for "<SearchTerm>" item is displayed to the user
+	Then Details page for '<SearchTerm>' item is displayed to the user
 	When User navigates to the '<TabName>' left menu item
 	And User opens '<SelectedColumn>' column settings
 	And User clicks Filter button on the Column Settings panel
@@ -62,7 +62,7 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
 	When User navigates to the 'Device' details page for '30BGMTLBM9PTW5' item
-	Then Details page for "30BGMTLBM9PTW5" item is displayed to the user
+	Then Details page for '30BGMTLBM9PTW5' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	When User navigates to the '<SubMenuName>' left submenu item
 	Then "87" rows found label displays on Details Page
@@ -78,7 +78,7 @@ Examples:
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
-	Then Details page for "<SearchTerm>" item is displayed to the user
+	Then Details page for '<SearchTerm>' item is displayed to the user
 	When User navigates to the '<MainTab>' left menu item
 	And User navigates to the '<SubTab>' left submenu item
 	Then "1" rows found label displays on Details Page
@@ -91,7 +91,7 @@ Examples:
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
 	When User navigates to the 'Application' details page for 'Microsoft DirectX 5 DDK' item
-	Then Details page for "Microsoft DirectX 5 DDK" item is displayed to the user
+	Then Details page for 'Microsoft DirectX 5 DDK' item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item
 	When User selects following checkboxes in the filter dropdown menu for the 'Used' column:
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 @Evergreen @UsersLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15522
 Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThroughTheProjectNameFromObjectDetails
 	When User navigates to the 'User' details page for 'TON2490708' item
-	Then Details page for "TON2490708" item is displayed to the user
+	Then Details page for 'TON2490708' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Device Project Summary' left submenu item
 	When User enters "K-group" text in the Search field for "Bucket" column
@@ -172,16 +172,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16719
 Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage
 	When User navigates to the 'User' details page for 'AAD1011948' item
-	Then Details page for "AAD1011948" item is displayed to the user
+	Then Details page for 'AAD1011948' item is displayed to the user
 	When User navigates to the 'Compliance' left menu item
 	When User navigates to the 'Hardware Summary' left submenu item
-	Then element table is displayed on the Details page
+	Then table is displayed
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15913
 Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelOfGroupedRows
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	And User navigates to the 'Evergreen Summary' left submenu item
-	And User clicks Group By button on the Details page and selects "Vendor" value
-	Then "UNKNOWN" content is not displayed in the grid on the Item details page
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Vendor     | true  |
+	Then 'Adobe' row in the groped grid does not contains 'UNKNOWN' text

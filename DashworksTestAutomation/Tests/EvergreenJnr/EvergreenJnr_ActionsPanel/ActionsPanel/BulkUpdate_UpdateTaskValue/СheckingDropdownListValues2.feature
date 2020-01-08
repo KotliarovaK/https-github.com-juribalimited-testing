@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15618 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabledDateTasks
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
+	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "1803: Migration \ Migrated Date" filter where type is "Not empty" with added column and Date options
 	| StartDateInclusive | EndDateInclusive |
@@ -61,15 +61,14 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| CDQ172G3MZS444   |
-	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects '1803 Rollout' option from 'Project' autocomplete
-	And User selects 'Migration' option from 'Stage' autocomplete
-	And User selects 'Migrated Date' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Date' dropdown
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects 'Migration' option from 'Stage' autocomplete
+	When User selects 'Migrated Date' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
-	And User selects 'None' in the 'Capacity Slot' dropdown
-	And User clicks 'UPDATE' button 
+	When User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel

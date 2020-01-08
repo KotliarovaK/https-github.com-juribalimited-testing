@@ -37,31 +37,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	And User selects '1803 Rollout' option from 'Project' autocomplete
 	And User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
-	And User clicks Group By button on the Admin page and selects "Type" value
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Type       | true  |
 	Then Cog menu is not displayed on the Admin page
 	And Grid is grouped
-	When User clicks Group By button on the Admin page and selects "Type" value
-	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes | State |
+	| Type       | false |
+	When User clicks Cog-menu for '15427_Action1' item in the 'Action' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the second Action
-	When User clicks Cog-menu for '15427_Action2' item in the 'Action' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15427_Action2' item in the 'Action' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the last Action
-	When User clicks Cog-menu for '15427_Action3' item in the 'Action' column
-	Then User sees following cog-menu items on Admin page:
-	| items            |
+	When User clicks Cog-menu for '15427_Action3' item in the 'Action' column and sees following cog-menu options
+	| options          |
 	| Edit             |
 	| Move to top      |
 	| Move to bottom   |
@@ -120,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	When User moves 'Secont_Action' item from 'Action' column to the '4' position
 	Then Content in the 'Action' column is equal to
 	| Content         |
@@ -146,7 +147,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	When User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @DAS17625 @DAS17625 @Cleanup @Not_Ready
 #Change value after gold data complete added
@@ -164,7 +165,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	#Action 1
 	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
-	Then following Values are displayed in the ' ' dropdown:
+	Then following Values are displayed in the 'Actions' dropdown:
 	| Values            |
 	| Update path       |
 	| Update task value |
@@ -203,7 +204,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 	Then Content in the 'Action' column is equal to
 	| Content        |
 	| 15428_Action_2 |
@@ -491,13 +492,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	| Remove owner and team |
 	| No change             |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @DAS19317 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User clicks 'CREATE AUTOMATION' button 
+	When User clicks 'CREATE AUTOMATION' button
+	Then Page with 'Automations' header is displayed to user
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17544' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete
@@ -513,7 +515,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPa
 
 Examples:
 	| AutomationName     | Scope            | Project1                 | Project2                           | Project3                           |
-	| 17544_Automation   | All Devices      | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
+	| 17544_Automation   | All Devices      | User Scheduled Test (Jo) | 1803 Rollout                       | Barry's User Project               |
 	| 17544_Automation_1 | All Users        | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
 	| 17544_Automation_2 | All Applications | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
 	| 17544_Automation-3 | All Mailboxes    | Email Migration          | Mailbox Evergreen Capacity Project | USE ME FOR AUTOMATION(MAIL SCHDLD) |
@@ -632,6 +634,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17606_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	When User selects 'Update task value' in the 'Action Type' dropdown

@@ -58,9 +58,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	When User clicks point of Line widget
 	| WidgetName               | NumberOfPoint | 
 	| Project ScheduleDAS16069 | 1             | 
-	Then Save as a new list option is available
-	And "4" rows are displayed in the agGrid
-	And grid headers are displayed in the following order
+	Then "4" rows are displayed in the agGrid
+	Then grid headers are displayed in the following order
 	| ColumnName                           |
 	| Hostname                             |
 	| Device Type                          |
@@ -150,7 +149,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	| WidgetType | Title             | List            | SplitBy                           | AggregateFunction | OrderBy   |
 	| Line       | WidgetForDAS17825 | ListForDAS17825 | Windows7Mi: Application Readiness | Count             | Count ASC |
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder
+	And Color Scheme dropdown displayed with 'Readiness' placeholder
 	And Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS17825' Widget is displayed to the user

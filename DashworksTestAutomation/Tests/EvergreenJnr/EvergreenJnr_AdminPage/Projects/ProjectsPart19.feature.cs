@@ -855,11 +855,9 @@ this.FeatureBackground();
 #line 248
  testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table25, "Then ");
 #line 260
- testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Item\' column in ascending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 261
- testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
-                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Date\' column in descending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 262
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -888,11 +886,9 @@ this.FeatureBackground();
 #line 263
  testRunner.Then("following Items are displayed in the History table", ((string)(null)), table26, "Then ");
 #line 275
- testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Item\' column in ascending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 276
- testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
-                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Date\' column in descending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 277
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 278
@@ -952,11 +948,9 @@ this.FeatureBackground();
 #line 297
  testRunner.Then("following Items are displayed at the top of the list", ((string)(null)), table29, "Then ");
 #line 304
- testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Item\' column in ascending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 305
- testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
-                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("data in table is sorted by \'Date\' column in descending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 306
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

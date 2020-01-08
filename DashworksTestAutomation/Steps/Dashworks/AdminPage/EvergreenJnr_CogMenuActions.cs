@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -27,23 +28,47 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _automationStartTime = automationStartTime;
         }
 
-        [When(@"User clicks Cog-menu for '(.*)' item in the '(.*)' column")]
-        public void WhenUserClicksCog_MenuForItemInTheColumn(string columnContent, string column)
+        [When(@"User clicks Cog-menu for '(.*)' item in the '(.*)' column and sees following cog-menu options")]
+        public void WhenUserClicksCog_MenuForItemInTheColumnAndSeesFollowingCogMenuOptions(string columnContent, string column, Table options)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             cogMenu.BodyContainer.Click();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
+            var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
+            _driver.MouseHover(cogMenuElement);
             cogMenu.GetCogMenuByItem(column, columnContent).Click();
+
+            List<String> expectedCogMenuOptions = options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()).ToList();
+            List<String> cogMenuOptions = cogMenu.CogMenuItems.Select(x => x.GetText()).ToList();
+
+            Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
+                            "Items are not the same");
         }
 
         [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item from '(.*)' column")]
         public void WhenUserClicksOptionInCog_MenuForItemFromColumn(string option, string columnContent, string column)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
-            cogMenu.BodyContainer.Click();
-            _driver.MouseHover(cogMenu.GetCogMenuByItem(column, columnContent));
-            cogMenu.GetCogMenuByItem(column, columnContent).Click();
+            //Close cog-menu if it is still opened from previous step
+            if (cogMenu.CogMenuItems.Any(x => x.Displayed()))
+            {
+                cogMenu.BodyContainer.Click();
+            }
+            var cogMenuElement = cogMenu.GetCogMenuByItem(column, columnContent);
+            _driver.MouseHover(cogMenuElement);
+            cogMenuElement.Click();
             cogMenu.GetCogMenuOptionByName(option).Click();
+
+            //Grid should be refreshed after making active/inactive
+            if (option.Equals("Make active") || option.Equals("Make inactive"))
+            {
+                _driver.WaitForElementToBeNotDisplayed(cogMenuElement);
+            }
+
+            //For automation
+            if (option.Equals("Run now"))
+            {
+                _automationStartTime.Value = DateTime.Now.AddSeconds(-10);
+            }
         }
 
         [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]
@@ -61,13 +86,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             action.GetButton("MOVE").Click();
         }
 
-        [When(@"User clicks Cog-menu on the Admin page")]
-        public void WhenUserClicksCog_MenuOnTheAdminPage()
-        {
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            cogMenu.CogMenu.Click();
-        }
-
         [Then(@"Cog menu is displayed to the user")]
         public void ThenCogMenuIsDisplayedToTheUser()
         {
@@ -81,15 +99,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
             Utils.Verify.IsFalse(cogMenu.CogMenu.Displayed(), "Cog menu is displayed");
-        }
-
-        [Then(@"User sees following cog-menu items on Admin page:")]
-        public void ThenUserSeesFollowingCog_MenuItemsOnAdminPage(Table items)
-        {
-            var page = _driver.NowAt<CogMenuElements>();
-            for (var i = 0; i < items.RowCount; i++)
-                Utils.Verify.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
-                    "Items are not the same");
         }
 
         //TODO make it generic
@@ -166,7 +175,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
 
-            Utils.Verify.IsFalse(cogMenu.CheckItemDisplay(itenName), "Status display is incorrect");
+            Verify.IsFalse(cogMenu.CheckItemDisplay(itenName), "Status display is incorrect");
         }
     }
 }
