@@ -285,7 +285,7 @@ this.FeatureBackground();
 #line 62
  testRunner.And("User clicks \'CREATE SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.When("User selects \'req type comp\' option from \'Paths\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'req type comp\' option after search from \'Paths\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
  testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -418,8 +418,13 @@ this.FeatureBackground();
  testRunner.Then("\'Your capacity slot has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 101
  testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ChipValue"});
+            table6.AddRow(new string[] {
+                        "Stage 1 \\ WO Task13671"});
 #line 102
- testRunner.Then("\'Stage 1 \\ WO Task13671\' value is displayed in the \'Tasks\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("following chips value displayed for \'Tasks\' textbox", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -470,97 +475,97 @@ this.FeatureBackground();
                         "Slots",
                         "DAS13147",
                         "Cleanup"});
-#line 105
+#line 107
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "Scope",
                         "ProjectTemplate",
                         "Mode"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "ProjectForDAS13147",
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 106
- testRunner.When("Project created via API and opened", ((string)(null)), table6, "When ");
+#line 108
+ testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Project",
                         "SlotName",
                         "DisplayName",
                         "CapacityUnits",
                         "CapacityType"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "ProjectForDAS13147",
                         "Slot 1",
                         "Slot 1",
                         "Unassigned",
                         ""});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "ProjectForDAS13147",
                         "Slot 2",
                         "Slot 2",
                         "",
                         "Teams and Paths"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "ProjectForDAS13147",
                         "Slot 3",
                         "Slot 3",
                         "",
                         ""});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "ProjectForDAS13147",
                         "Slot 4",
                         "Slot 4",
                         "",
                         ""});
-#line 109
- testRunner.And("User creates new Slot via Api", ((string)(null)), table7, "And ");
-#line 115
+#line 111
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table8, "And ");
+#line 117
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 118
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Slot 3"});
-#line 117
- testRunner.When("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table8, "When ");
-#line 120
- testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 121
- testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 119
+ testRunner.When("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table9, "When ");
 #line 122
- testRunner.And("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
- testRunner.Then("\'The selected slot has been deleted\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 124
- testRunner.When("User opens \'Capacity Slot\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 125
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'The selected slot has been deleted\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
- testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User opens \'Capacity Slot\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 127
- testRunner.When("User select \"Display Order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 128
+ testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 129
+ testRunner.When("User select \"Display Order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 130
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "1"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "2"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "3"});
-#line 129
- testRunner.Then("User sees following Display order on the Automation page", ((string)(null)), table9, "Then ");
+#line 131
+ testRunner.Then("User sees following Display order on the Automation page", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

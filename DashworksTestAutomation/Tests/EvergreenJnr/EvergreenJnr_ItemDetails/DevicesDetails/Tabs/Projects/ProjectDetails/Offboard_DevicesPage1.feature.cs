@@ -554,9 +554,11 @@ this.FeatureBackground();
                         "Domain"});
             table4.AddRow(new string[] {
                         "Owner"});
+            table4.AddRow(new string[] {
+                        "Bucket"});
 #line 114
  testRunner.And("following columns are displayed on the Item details page:", ((string)(null)), table4, "And ");
-#line 120
+#line 121
  testRunner.When("User deselect all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -569,9 +571,11 @@ this.FeatureBackground();
                         "Domain"});
             table5.AddRow(new string[] {
                         "Owner"});
-#line 121
+            table5.AddRow(new string[] {
+                        "Bucket"});
+#line 122
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table5, "Then ");
-#line 127
+#line 129
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -584,7 +588,9 @@ this.FeatureBackground();
                         "Domain"});
             table6.AddRow(new string[] {
                         "Owner"});
-#line 128
+            table6.AddRow(new string[] {
+                        "Bucket"});
+#line 130
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table6, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -593,7 +599,7 @@ this.FeatureBackground();
                         "Username"});
             table7.AddRow(new string[] {
                         "Display Name"});
-#line 134
+#line 137
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
                     "n:", ((string)(null)), table7, "When ");
 #line hidden
@@ -603,14 +609,16 @@ this.FeatureBackground();
                         "Domain"});
             table8.AddRow(new string[] {
                         "Owner"});
-#line 138
+            table8.AddRow(new string[] {
+                        "Bucket"});
+#line 141
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table8, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "checkboxes"});
             table9.AddRow(new string[] {
                         "Display Name"});
-#line 142
+#line 146
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
                     "n:", ((string)(null)), table9, "When ");
 #line hidden
@@ -622,14 +630,16 @@ this.FeatureBackground();
                         "Domain"});
             table10.AddRow(new string[] {
                         "Owner"});
-#line 145
+            table10.AddRow(new string[] {
+                        "Bucket"});
+#line 149
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table10, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "checkboxes"});
             table11.AddRow(new string[] {
                         "Username"});
-#line 150
+#line 155
  testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
                     "n:", ((string)(null)), table11, "When ");
 #line hidden
@@ -643,7 +653,9 @@ this.FeatureBackground();
                         "Domain"});
             table12.AddRow(new string[] {
                         "Owner"});
-#line 153
+            table12.AddRow(new string[] {
+                        "Bucket"});
+#line 158
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -699,43 +711,43 @@ this.FeatureBackground();
                         "DAS18026",
                         "Cleanup",
                         "Not_Ready"});
-#line 162
+#line 168
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 163
+#line 169
  testRunner.When("User navigates to the \'Device\' details page for \'M2IMTW2YFVK1KLT\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 164
+#line 170
  testRunner.Then("Details page for \'M2IMTW2YFVK1KLT\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 165
+#line 171
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 166
+#line 172
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 167
+#line 173
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 168
+#line 174
  testRunner.When("User navigates to \'evergreen/#/device/3105/projects/project?$projectId=56\' URL in" +
                     " a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 169
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 170
- testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 171
- testRunner.When("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
- testRunner.When("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 173
- testRunner.When("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 174
- testRunner.When("User switches to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 175
- testRunner.When("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 176
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 177
+ testRunner.When("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 178
+ testRunner.When("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 179
+ testRunner.When("User clicks \'OFFBOARD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 180
+ testRunner.When("User switches to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 181
+ testRunner.When("User clicks \'OFFBOARD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 182
  testRunner.Then("\'This device has been offboarded from User Evergreen Capacity Project\' text is di" +
                     "splayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 177
+#line 183
  testRunner.Then("\'OFFBOARD\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

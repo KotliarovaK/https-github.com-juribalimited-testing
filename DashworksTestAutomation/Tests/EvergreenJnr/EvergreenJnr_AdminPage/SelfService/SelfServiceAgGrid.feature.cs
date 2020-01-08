@@ -236,8 +236,7 @@ this.FeatureBackground();
 #line 29
  testRunner.When("User clicks on \'Self Service Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
-    testRunner.Then("data in table is sorted by \"Self Service Name\" column in ascending order on the A" +
-                    "dmin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("data in table is sorted by \'Self Service Name\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -492,34 +491,30 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
  testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 60
- testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name1\' item in the \'Self Service" +
-                    " Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "items"});
+                        "options"});
             table5.AddRow(new string[] {
                         "Edit"});
             table5.AddRow(new string[] {
                         "Enable"});
             table5.AddRow(new string[] {
                         "Delete"});
-#line 61
- testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table5, "Then ");
-#line 66
- testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name5\' item in the \'Self Service" +
-                    " Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 60
+ testRunner.When("User clicks Cog-menu for \'TestSelfService_name1\' item in the \'Self Service Name\' " +
+                    "column and sees following cog-menu options", ((string)(null)), table5, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "items"});
+                        "options"});
             table6.AddRow(new string[] {
                         "Edit"});
             table6.AddRow(new string[] {
                         "Disable"});
             table6.AddRow(new string[] {
                         "Delete"});
-#line 67
- testRunner.Then("User sees following cog-menu items on Admin page:", ((string)(null)), table6, "Then ");
+#line 65
+ testRunner.When("User clicks Cog-menu for \'TestSelfService_name5\' item in the \'Self Service Name\' " +
+                    "column and sees following cog-menu options", ((string)(null)), table6, "When ");
 #line hidden
             this.ScenarioCleanup();
         }

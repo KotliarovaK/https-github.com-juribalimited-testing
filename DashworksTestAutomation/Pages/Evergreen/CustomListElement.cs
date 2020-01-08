@@ -236,7 +236,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='UPDATE LIST']")]
         public IWebElement UpdateCurrentListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='SAVE AS NEW LIST']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='SAVE AS NEW LIST'] | .//div[contains(@class, 'saveAs')]//button[text()='SAVE AS NEW DYNAMIC LIST'] | .//div[contains(@class, 'saveAs')]//button[text()='SAVE AS NEW STATIC LIST']")]
         public IWebElement SaveAsNewListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='SAVE AS DYNAMIC LIST']")]
