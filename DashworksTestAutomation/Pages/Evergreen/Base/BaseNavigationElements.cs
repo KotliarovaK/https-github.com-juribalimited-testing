@@ -74,7 +74,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         private IWebElement GetSubmenuItemsItemsCount(string subMenu)
         {
             var subMenuElement = GetSubMenuByName(subMenu);
-            if (Driver.IsElementInElementDisplayed(subMenuElement, By.XPath(".//span[contains(text(),'(') and contains(text(),')')]")
+            if (Driver.IsElementInElementExists(subMenuElement, By.XPath(".//span[contains(text(),'(') and contains(text(),')')]")
                 , WebDriverExtensions.WaitTime.Medium))
             {
                 return subMenuElement.FindElement(By.XPath(".//span[contains(text(),'(') and contains(text(),')')]"));
@@ -105,7 +105,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public int SubmenuItemsCount(string subMenu)
         {
-            var submenuCount = GetSubmenuItemsItemsCount(subMenu).Text;
+            var submenu = GetSubmenuItemsItemsCount(subMenu);
+            if (submenu.Equals(null))
+            {
+                throw new Exception($"Unable to get count for '{submenu}' submenu");
+            }
+            var submenuCount = submenu.Text;
             submenuCount = submenuCount.TrimStart().TrimStart('(').TrimEnd(')');
             return int.Parse(submenuCount);
         }

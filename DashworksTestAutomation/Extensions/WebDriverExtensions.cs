@@ -2374,7 +2374,7 @@ namespace DashworksTestAutomation.Extensions
             {
                 var time = int.Parse(waitTime.GetValue());
                 driver.WaitForElementInElementToBeDisplayed(element, selector, time);
-                return driver.FindElement(selector).Displayed;
+                return element.FindElement(selector).Displayed;
             }
             catch (Exception)
             {
@@ -2421,6 +2421,21 @@ namespace DashworksTestAutomation.Extensions
             }
 
             return true;
+        }
+
+        public static bool IsElementInElementExists(this RemoteWebDriver driver, IWebElement element, By selector, WaitTime waitTime)
+        {
+            try
+            {
+                var time = int.Parse(waitTime.GetValue());
+                driver.WaitForElementInElementToBeExists(element, selector, time);
+                var elementInElement = element.FindElement(selector);
+                return IsElementExists(driver, elementInElement);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         #endregion
