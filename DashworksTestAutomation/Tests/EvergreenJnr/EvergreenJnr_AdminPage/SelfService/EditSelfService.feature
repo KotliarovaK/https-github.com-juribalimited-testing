@@ -209,6 +209,5 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_progress
 	Then inline tip banner is not displayed
 	When User clicks 'Delete' option in Cog-menu for 'TestProj_13' item from 'Self Service Name' column
 	When User clicks 'DELETE' button on inline tip banner
-	Then inline success banner is displayed
-	#Then '1 self service has been deleted' text is displayed on inline success banner
+	Then '1 self service has been deleted' text is displayed on inline success banner
 	Then 'TestProj_13' content is not displayed in the 'Self Service Name' column
