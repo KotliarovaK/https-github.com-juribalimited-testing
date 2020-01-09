@@ -111,7 +111,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
             //Check that exact text is displayed in the banner
             var condition =
-                Driver.IsElementExists(By.XPath($"{GetInlineBannerSelector(messageType)}//descendant-or-self::div[text()='{expectedText}']"));
+                Driver.IsElementExists(By.XPath($"{GetInlineBannerSelector(messageType)}//descendant-or-self::*[text()='{expectedText}']"));
             return condition;
         }
 
