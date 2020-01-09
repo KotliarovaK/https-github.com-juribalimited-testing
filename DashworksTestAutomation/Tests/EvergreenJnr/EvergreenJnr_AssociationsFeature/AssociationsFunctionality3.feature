@@ -10,11 +10,11 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDispl
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects '<operator1>' option in expanded associations list
+	When User selects '<operator1>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
-	When User selects '<operator2>' option in expanded associations list
+	When User selects '<operator2>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
-	When User selects '<operator3>' option in expanded associations list
+	When User selects '<operator3>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User clicks content from "Hostname" column
 	Then Details page for '<hostname>' item is displayed to the user
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAf
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User clicks Save button on the list panel
-	When User selects Save as new list option
+	When User selects Save as dynamic list option
 	When User creates new custom list with "AssociationList18447" name
 	Then table content is present
 	When User navigates to the "All Device Applications" list
