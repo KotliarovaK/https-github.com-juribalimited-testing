@@ -224,6 +224,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         private static string AutocompleteSelectOptionsSelector = ".//ul//mat-checkbox";
 
         private static string AutocompleteValidationMessageSelector = ".//mat-option[@tabindex='-1']//span";
+        private static string AutocompleteResultsMessageSelector = ".//div[@aria-live='assertive']";
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-autocomplete-panel')]")]
         public IWebElement AutocompleteDropdown { get; set; }
@@ -343,6 +344,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return validationMessage;
         }
 
+        private IWebElement GetAutocompleteResultsCountElement()
+        {
+            Driver.WaitForElementInElementToBeDisplayed(AutocompleteSelectDropdown, By.XPath(AutocompleteResultsMessageSelector), 5);
+            return AutocompleteSelectDropdown.FindElement(By.XPath(AutocompleteResultsMessageSelector));
+        }
+
+        public bool IsAutocompleteResultsCountMessageDisplayed()
+        {
+            try
+            {
+                return GetAutocompleteResultsCountElement().Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public string GetAutocompleteResultsCountMessage()
+        {
+            var message =
+                GetAutocompleteResultsCountElement().Text;
+            return message;
+        }
+
         public void AutocompleteSelect(string placeholder, string searchText, bool withSearch = false, bool containsOption = false, params string[] optionsToSelect)
         {
             var textbox = GetTextbox(placeholder);
@@ -445,6 +471,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
             else
                 throw new Exception($"'{searchText}' was not found in the '{placeholder}' autocomplete");
+        }
+
+        public bool IsAutocompleteCheckboxDisplayed(string checkbox)
+        {
+            return IsCheckboxDisplayed(checkbox, AutocompleteSelectDropdownSelector);
         }
 
         #endregion
@@ -1003,11 +1034,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return enabled;
         }
 
-        public bool IsCheckboxDisplayed(string ariaLabel)
+        public bool IsCheckboxDisplayed(string ariaLabel, string parentElementSelector = "")
         {
             try
             {
-                return GetCheckbox(ariaLabel, string.Empty, WebDriverExtensions.WaitTime.Medium).Displayed();
+                return GetCheckbox(ariaLabel, parentElementSelector, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {
