@@ -117,6 +117,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
+	| Bucket       |
 	When User deselect all rows on the grid
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -124,6 +125,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
+	| Bucket       |
 	When User selects all rows on the grid
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
@@ -131,6 +133,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
+	| Bucket       |
 	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
 	| checkboxes   |
 	| Username     |
@@ -139,6 +142,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| ColumnName   |
 	| Domain       |
 	| Owner        |
+	| Bucket       |
 	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
 	| checkboxes   |
 	| Display Name |
@@ -147,6 +151,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
+	| Bucket       |
 	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
 	| checkboxes |
 	| Username   |
@@ -156,6 +161,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorks
 	| Display Name |
 	| Domain       |
 	| Owner        |
+	| Bucket       |
 
 #tag 'not_rady' added because need to create Cleanup (DAS-18070)
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18026 @Cleanup @Not_Ready

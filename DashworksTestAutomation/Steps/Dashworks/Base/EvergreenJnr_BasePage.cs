@@ -462,6 +462,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClearTextbox(placeholder);
         }
 
+        [When(@"User clears '(.*)' textbox with backspaces")]
+        public void WhenUserClearsTextboxWithBackspaces(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClearTextbox(placeholder, true);
+        }
+
         [When(@"User clicks on '(.*)' textbox")]
         public void WhenUserClicksOnTextbox(string placeholder)
         {
@@ -756,7 +763,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetDropdown(dropDownName).Click();
-            List<string> actualOptions = page.GetDropdownValues();
+            List<string> actualOptions = page.GetDropdownValues(true);
             page.BodyContainer.Click();
             Verify.AreEqual(actualOptions.Where(x => !string.IsNullOrEmpty(x)).OrderBy(s => s),
                 actualOptions.Where(x => !string.IsNullOrEmpty(x)),

@@ -994,18 +994,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.EnterValueByDayName(value, columnName);
         }
 
-        //TODO move this to BasePage
-        [Then(@"following checkbox items are displayed in the dropdown:")]
-        public void ThenFollowingCheckboxItemsAreDisplayedInTheDropdown(Table items)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            foreach (var row in items.Rows)
-            {
-                Verify.IsTrue(page.DropdownItemDisplayed(row["Items"]).Displayed,
-                    $"{row["Items"]} is not displayed in the dropdown");
-            }
-        }
-
         [Then(@"Tasks are displayed in the following order on Action panel:")]
         public void ThenTasksAreDisplayedInTheFollowingOrderOnActionPanel(Table table)
         {
