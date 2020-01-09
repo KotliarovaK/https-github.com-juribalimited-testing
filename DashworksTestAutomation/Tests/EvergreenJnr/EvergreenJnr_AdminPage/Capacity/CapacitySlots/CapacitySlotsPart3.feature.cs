@@ -518,11 +518,9 @@ this.FeatureBackground();
                         "Pre-Migration \\ Scheduled date"});
 #line 101
  testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table6, "Then ");
-#line 104
- testRunner.When("User clicks on \"Paths\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
+                        "options"});
             table7.AddRow(new string[] {
                         "Personal Mailbox"});
             table7.AddRow(new string[] {
@@ -533,14 +531,12 @@ this.FeatureBackground();
                         "Personal Mailbox - VIP"});
             table7.AddRow(new string[] {
                         "Personal Mailbox - EA"});
-#line 105
- testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table7, "Then ");
-#line 112
+#line 104
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table7, "Then ");
+#line 111
  testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 113
+#line 112
  testRunner.Then("\"\" content is displayed in \"Tasks\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 114
- testRunner.When("User clicks on \"Paths\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
@@ -548,14 +544,12 @@ this.FeatureBackground();
                         "Standard User"});
             table8.AddRow(new string[] {
                         "VIP User"});
-#line 115
- testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table8, "Then ");
-#line 119
+#line 113
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table8, "Then ");
+#line 117
  testRunner.When("User selects \'Application\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 120
+#line 118
  testRunner.Then("\"\" content is displayed in \"Tasks\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 121
- testRunner.When("User clicks on \"Paths\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
@@ -563,30 +557,28 @@ this.FeatureBackground();
                         "Public Folder"});
             table9.AddRow(new string[] {
                         "Sharepoint Application"});
-#line 122
- testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table9, "Then ");
-#line 126
+#line 119
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table9, "Then ");
+#line 123
  testRunner.When("User clicks \'Projects\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 127
+#line 124
  testRunner.And("User clicks Yes button in Leave Page Warning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
+#line 125
  testRunner.When("User navigates to \"Windows 7 Migration (Computer Scheduled Project)\" project deta" +
                     "ils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 129
+#line 126
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 127
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 128
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table10.AddRow(new string[] {
                         "Pre-Migration \\ Scheduled Date"});
-#line 132
+#line 129
  testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table10, "Then ");
-#line 135
- testRunner.When("User clicks on \"Paths\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
@@ -600,14 +592,12 @@ this.FeatureBackground();
                         "Computer: Laptop Replacement"});
             table11.AddRow(new string[] {
                         "Computer: Virtual Machine"});
-#line 136
- testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table11, "Then ");
-#line 143
+#line 132
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table11, "Then ");
+#line 139
  testRunner.When("User selects \'User\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
+#line 140
  testRunner.Then("\"\" content is displayed in \"Tasks\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 145
- testRunner.When("User clicks on \"Paths\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
@@ -619,14 +609,12 @@ this.FeatureBackground();
                         "User: VIP"});
             table12.AddRow(new string[] {
                         "User; Maternity"});
-#line 146
- testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table12, "Then ");
-#line 152
+#line 141
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table12, "Then ");
+#line 147
  testRunner.When("User selects \'Application\' in the \'Object Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 153
+#line 148
  testRunner.Then("\"\" content is displayed in \"Tasks\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 154
- testRunner.When("User clicks on \"Paths\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
@@ -636,8 +624,8 @@ this.FeatureBackground();
                         "Application: Request Type A"});
             table13.AddRow(new string[] {
                         "Application: Request Type B"});
-#line 155
- testRunner.Then("following checkbox items are displayed in the dropdown:", ((string)(null)), table13, "Then ");
+#line 149
+ testRunner.Then("\'Paths\' autocomplete have following checkbox options", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
