@@ -119,9 +119,9 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	| First_Action    |
 	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
-	And User select "Processing order" checkbox on the Column Settings panel
+	And User select "Processing Order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
+	Then numeric data in table is sorted by 'Processing Order' column in ascending order by default
 	When User moves 'Secont_Action' item from 'Action' column to the '4' position
 	Then Content in the 'Action' column is equal to
 	| Content         |
@@ -145,9 +145,9 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	| Secont_Action   |
 	When User opens 'Action' column settings
 	When User clicks Column button on the Column Settings panel
-	And User select "Processing order" checkbox on the Column Settings panel
+	And User select "Processing Order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
+	Then numeric data in table is sorted by 'Processing Order' column in ascending order by default
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @DAS17625 @DAS17625 @Cleanup @Not_Ready
 #Change value after gold data complete added
@@ -202,9 +202,9 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User moves '15428_Action_1' item to '15428_Action_3' item in the 'Action' column
 	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
-	And User select "Processing order" checkbox on the Column Settings panel
+	And User select "Processing Order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
+	Then numeric data in table is sorted by 'Processing Order' column in ascending order by default
 	Then Content in the 'Action' column is equal to
 	| Content        |
 	| 15428_Action_2 |

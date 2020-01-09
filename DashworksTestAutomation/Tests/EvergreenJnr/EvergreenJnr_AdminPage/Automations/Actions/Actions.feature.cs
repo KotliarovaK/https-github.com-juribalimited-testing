@@ -433,11 +433,11 @@ this.FeatureBackground();
 #line 121
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 122
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User select \"Processing Order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 124
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+ testRunner.Then("numeric data in table is sorted by \'Processing Order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 125
  testRunner.When("User moves \'Secont_Action\' item from \'Action\' column to the \'4\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -489,11 +489,11 @@ this.FeatureBackground();
 #line 147
  testRunner.When("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 148
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User select \"Processing Order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 149
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 150
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+ testRunner.Then("numeric data in table is sorted by \'Processing Order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -664,11 +664,11 @@ this.FeatureBackground();
 #line 204
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 205
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User select \"Processing Order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 206
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 207
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+ testRunner.Then("numeric data in table is sorted by \'Processing Order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
