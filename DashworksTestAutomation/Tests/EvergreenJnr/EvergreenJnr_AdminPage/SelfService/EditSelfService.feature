@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 	Then 'The TestProj_5 has been disabled' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedWhenDeleteSelfService
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationAndButtonsOnItWillBeDisplayedWhenUserIsAboutToDeleteSelfService
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 	Then 'CANCEL' button is displayed on inline tip banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_progress
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedAfterTheSelfServiceWasDeletedAndItDoesntDisaplysAnymoreInTheGrid
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
