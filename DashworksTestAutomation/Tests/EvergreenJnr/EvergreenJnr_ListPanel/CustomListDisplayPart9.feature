@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicating
 	Then "1111111111111111111111111111111111111111" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
-	When User clicks 'Duplicate' Settings menu item for '1111111111111111111111111111111111111111' list
+	When User clicks 'Duplicate' option in Cog-menu for '1111111111111111111111111111111111111111' list
 	Then "111111111111111111111111111111111111112" list is displayed to user
 	Then There are no errors in the browser console
 
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewL
 	When User creates new custom list with "CustomList5588" name
 	Then "CustomList5588" list is displayed to user
 	Then "2" rows are displayed in the agGrid
-	When User clicks 'Duplicate' Settings menu item for 'StaticList1412' list
+	When User clicks 'Duplicate' option in Cog-menu for 'StaticList1412' list
 	Then "StaticList14122" list is displayed to user
 	Then "2" rows are displayed in the agGrid
 
@@ -51,8 +51,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	Then "StaticList6542" list is displayed to user
 	When User navigates to the "All Users" list
 	Then 'StaticList6542' list is displayed in the Lists panel
-	When User clicks Settings button for "StaticList6542" list
-	When User clicks Delete button for custom list
+	When User clicks 'Delete' option in Cog-menu for 'StaticList6542' list
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	When User clicks 'DELETE' button
 	Then "List deleted" message is displayed
@@ -84,12 +83,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatConfirmationDeletionMessageDoesntDis
 	When User add "Device Type" filter where type is "Does not equal" without added column and "Virtual" Lookup option
 	And User create dynamic list with "List17711" name on "Devices" page
 	Then "List17711" list is displayed to user
-	When User clicks 'Duplicate' Settings menu item for 'List17711' list
+	When User clicks 'Duplicate' option in Cog-menu for 'List17711' list
 	Then "List177112" list is displayed to user
 	When User navigates to the "List177112" list
-	When User clicks Settings button for "List177112" list
-	Then Cog menu is displayed to the user
-	When User clicks 'Delete' option in opened Cog-menu
+	When User clicks 'Delete' option in Cog-menu for 'List177112' list
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	When User waits for '3' seconds
 	Then "list will be permanently deleted" message is displayed in the lists panel

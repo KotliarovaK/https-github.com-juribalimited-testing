@@ -91,8 +91,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 {
                     foreach (string cunit in slot.CapacityUnitsList.Where(x => !string.IsNullOrEmpty(x)))
                     {
-                        projectElement.SendKeysToTheNamedTextbox(cunit, "Capacity Units");
-                        page.GetCheckboxByName(cunit).Click();
+                        action.AutocompleteSelectCheckboxes("Capacity Units", cunit, true, true);
                         page.BodyContainer.Click();
                         Thread.Sleep(400);
                     }
@@ -102,8 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 {
                     foreach (string path in slot.PathsList.Where(x => !string.IsNullOrEmpty(x)))
                     {
-                        projectElement.SendKeysToTheNamedTextbox(path, "Paths");
-                        page.GetCheckboxByName(path).Click();
+                        action.AutocompleteSelectCheckboxes("Paths", path, true, true);
                         page.BodyContainer.Click();
                         Thread.Sleep(400);
                     }
@@ -113,8 +111,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 {
                     foreach (string team in slot.TeamsList.Where(x => !string.IsNullOrEmpty(x)))
                     {
-                        projectElement.SendKeysToTheNamedTextbox(team, "Teams");
-                        page.GetCheckboxByName(team).Click();
+                        action.AutocompleteSelectCheckboxes("Teams", team, true,true);
                         page.BodyContainer.Click();
                         Thread.Sleep(400);
                     }
@@ -124,8 +121,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 {
                     foreach (string task in slot.TasksList.Where(x => !string.IsNullOrEmpty(x)))
                     {
-                        projectElement.SendKeysToTheNamedTextbox(task, "Tasks");
-                        page.GetCheckboxByName(task).Click();
+                        action.AutocompleteSelectCheckboxes("Tasks", task, true, true);
                         page.BodyContainer.Click();
                         Thread.Sleep(400);
                     }
