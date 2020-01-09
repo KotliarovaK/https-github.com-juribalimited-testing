@@ -13,7 +13,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 {
     public class BaseInlineBannerElement : BaseDashboardPage
     {
-        private const string InlineTipSelector = ".//div[contains(@class,'inline-tip')]"; 
+        private const string InlineTipSelector = ".//div[contains(@class,'inline-tip')]";
         private const string InlineErrorSelector = ".//div[contains(@class,'inline-error')]";
         private const string InlineSuccessSelector = ".//div[contains(@class,'inline-success')]";
         private const string InlineInfoSelector = ".//div[contains(@class,'inline-info')]";
