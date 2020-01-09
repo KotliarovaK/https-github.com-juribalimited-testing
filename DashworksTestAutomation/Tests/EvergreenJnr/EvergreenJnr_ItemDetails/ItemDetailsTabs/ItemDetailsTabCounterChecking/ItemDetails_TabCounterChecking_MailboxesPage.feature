@@ -37,6 +37,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	Then 'Projects' left menu have following submenu items:
 	| SubTabName            |
 	| Evergreen Details     |
+	| Project Details       |
 	| Mailbox Projects      |
 	| Mailbox User Projects |
 	And 'Project Details' left submenu item is disabled

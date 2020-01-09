@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public List<string> GetTopBarItemsText()
         {
             var list = GetTopBarItems()
-                .Select(x => x.FindElement(By.XPath(TopBarTextSelector)))
+                .Select(x => x.FindElement(By.XPath(TopBarTitleSelector)))
                 .Select(x => x.Text).ToList();
             return list;
         }
