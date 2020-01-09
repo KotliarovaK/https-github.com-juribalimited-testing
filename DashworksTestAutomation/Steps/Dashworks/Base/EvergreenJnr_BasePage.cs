@@ -462,6 +462,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClearTextbox(placeholder);
         }
 
+        [When(@"User clears '(.*)' textbox with backspaces")]
+        public void WhenUserClearsTextboxWithBackspaces(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClearTextbox(placeholder, true);
+        }
+
         [When(@"User clicks on '(.*)' textbox")]
         public void WhenUserClicksOnTextbox(string placeholder)
         {
