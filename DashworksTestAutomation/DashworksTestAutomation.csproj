@@ -121,6 +121,7 @@
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Readiness\ReadinessDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceAllPagesDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
