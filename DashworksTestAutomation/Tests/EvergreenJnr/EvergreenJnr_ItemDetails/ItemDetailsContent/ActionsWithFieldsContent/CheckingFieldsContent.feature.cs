@@ -1262,22 +1262,22 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUser" +
-            "WithSpecificAccess")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserW" +
+            "ithSpecificAccess")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19538")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccess()
+        public virtual void EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccess()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessInternal();
+                    this.EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1296,10 +1296,10 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessInternal()
+        private void EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUser" +
-                    "WithSpecificAccess", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserW" +
+                    "ithSpecificAccess", null, new string[] {
                         "Evergreen",
                         "AllLists",
                         "EvergreenJnr_ItemDetails",

@@ -332,7 +332,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFi
 	Then button for editing the 'Capacity Unit' field is not displayed
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538 @Cleanup
-Scenario: EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccess
+Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccess
 	When User creates new Capacity Unit via api
 	| Name              | Description | IsDefault | Project                      |
 	| cu_DAS19538_4645s | DAS19538    | false     | I-Computer Scheduled Project |
