@@ -378,3 +378,82 @@ Scenario: EvergreenJnr__AllLists_CheckThatValueForCapacityUnitIsChangingSuccessf
 	Then following content is displayed on the Details Page
 	| Title         | Value             |
 	| Capacity Unit | cu_DAS19538_4645s |
+
+	#AnnI 1/9/20: 'nor ready' because I need more details from Elena.
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538 @Cleanup @Not_Ready
+Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessAndTeam
+	When User creates new Capacity Unit via api
+	| Name              | Description | IsDefault |
+	| cu_DAS19538_5689d | Devices     | false     |
+	When User create new User via API
+	| Username         | Email | FullName | Password  | Roles                                                                                                                                                                    |
+	| UserDAS195385689 | Value | DAS19538 | m!gration | Project Application Object Editor, Project Computer Object Editor, Project Mailbox Object Editor, Project User Object Editor |
+	And User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Teams' left menu item
+	Then Page with 'Teams' header is displayed to user
+	When User enters "My team" text in the Search field for "Team" column
+	And User clicks content from "Team" column
+	When User navigates to the 'Team Members' left menu item
+	When User clicks 'ADD MEMBERS' button 
+	And User selects following Objects from the expandable multiselect
+	| Objects          |
+	| UserDAS195385689 |
+	And User clicks 'ADD USERS' button
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username         | Password  |
+ 	| UserDAS195385689 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+		#--Devices--#
+	When User navigates to the 'Device' details page for the item with '13292' ID
+	Then Details page for 'CHAXTB7OLNX1W2' item is displayed to the user
+	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	Then popup is displayed to User
+	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
+	And User clicks 'MOVE' button 
+	Then following content is displayed on the Details Page
+	| Title         | Value             |
+	| Capacity Unit | cu_DAS19538_5689d |
+		#--Users--#
+	When User navigates to the 'User' details page for the item with '27418' ID
+	Then Details page for 'REM635708' item is displayed to the user
+	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	Then popup is displayed to User
+	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
+	And User clicks 'MOVE' button 
+	Then following content is displayed on the Details Page
+	| Title         | Value             |
+	| Capacity Unit | cu_DAS19538_5689d |
+		#--Mailboxes--#
+	When User navigates to the 'Mailbox' details page for the item with '46886' ID
+	Then Details page for '01DE1433D11E44E6A4A@bclabs.local' item is displayed to the user
+	When User selects 'TSTPROJ' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	Then popup is displayed to User
+	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
+	And User clicks 'MOVE' button 
+	Then following content is displayed on the Details Page
+	| Title         | Value             |
+	| Capacity Unit | cu_DAS19538_5689d |
+		#--Applications--#
+	When User navigates to the 'Application' details page for the item with '93' ID
+	Then Details page for '20040610sqlserverck' item is displayed to the user
+	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	Then popup is displayed to User
+	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
+	And User clicks 'MOVE' button 
+	Then following content is displayed on the Details Page
+	| Title         | Value             |
+	| Capacity Unit | cu_DAS19538_5689d |

@@ -1430,6 +1430,238 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserW" +
+            "ithSpecificAccessAndTeam")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS19538")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessAndTeam()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessAndTeamInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessAndTeamInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserW" +
+                    "ithSpecificAccessAndTeam", null, new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS19538",
+                        "Cleanup",
+                        "Not_Ready"});
+#line 384
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Description",
+                        "IsDefault"});
+            table27.AddRow(new string[] {
+                        "cu_DAS19538_5689d",
+                        "Devices",
+                        "false"});
+#line 385
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table27, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Email",
+                        "FullName",
+                        "Password",
+                        "Roles"});
+            table28.AddRow(new string[] {
+                        "UserDAS195385689",
+                        "Value",
+                        "DAS19538",
+                        "m!gration",
+                        "Project Application Object Editor, Project Computer Object Editor, Project Mailbo" +
+                            "x Object Editor, Project User Object Editor"});
+#line 388
+ testRunner.When("User create new User via API", ((string)(null)), table28, "When ");
+#line 391
+ testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 392
+ testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 393
+ testRunner.When("User navigates to the \'Teams\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 394
+ testRunner.Then("Page with \'Teams\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 395
+ testRunner.When("User enters \"My team\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 396
+ testRunner.And("User clicks content from \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 397
+ testRunner.When("User navigates to the \'Team Members\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 398
+ testRunner.When("User clicks \'ADD MEMBERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table29.AddRow(new string[] {
+                        "UserDAS195385689"});
+#line 399
+ testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table29, "And ");
+#line 402
+ testRunner.And("User clicks \'ADD USERS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 403
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Password"});
+            table30.AddRow(new string[] {
+                        "UserDAS195385689",
+                        "m!gration"});
+#line 404
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table30, "When ");
+#line 407
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 409
+ testRunner.When("User navigates to the \'Device\' details page for the item with \'13292\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 410
+ testRunner.Then("Details page for \'CHAXTB7OLNX1W2\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 411
+ testRunner.When("User selects \'1803 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 412
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 413
+ testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 414
+ testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 415
+ testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 416
+ testRunner.When("User selects \'cu_DAS19538_5689d\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 417
+ testRunner.And("User clicks \'MOVE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table31.AddRow(new string[] {
+                        "Capacity Unit",
+                        "cu_DAS19538_5689d"});
+#line 418
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table31, "Then ");
+#line 422
+ testRunner.When("User navigates to the \'User\' details page for the item with \'27418\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 423
+ testRunner.Then("Details page for \'REM635708\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 424
+ testRunner.When("User selects \'1803 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 425
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 426
+ testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 427
+ testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 428
+ testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 429
+ testRunner.When("User selects \'cu_DAS19538_5689d\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 430
+ testRunner.And("User clicks \'MOVE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table32.AddRow(new string[] {
+                        "Capacity Unit",
+                        "cu_DAS19538_5689d"});
+#line 431
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table32, "Then ");
+#line 435
+ testRunner.When("User navigates to the \'Mailbox\' details page for the item with \'46886\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 436
+ testRunner.Then("Details page for \'01DE1433D11E44E6A4A@bclabs.local\' item is displayed to the user" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 437
+ testRunner.When("User selects \'TSTPROJ\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 438
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 439
+ testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 440
+ testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 441
+ testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 442
+ testRunner.When("User selects \'cu_DAS19538_5689d\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 443
+ testRunner.And("User clicks \'MOVE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table33.AddRow(new string[] {
+                        "Capacity Unit",
+                        "cu_DAS19538_5689d"});
+#line 444
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table33, "Then ");
+#line 448
+ testRunner.When("User navigates to the \'Application\' details page for the item with \'93\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 449
+ testRunner.Then("Details page for \'20040610sqlserverck\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 450
+ testRunner.When("User selects \'I-Computer Scheduled Project\' in the \'Item Details Project\' dropdow" +
+                    "n with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 451
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 452
+ testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 453
+ testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 454
+ testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 455
+ testRunner.When("User selects \'cu_DAS19538_5689d\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 456
+ testRunner.And("User clicks \'MOVE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table34.AddRow(new string[] {
+                        "Capacity Unit",
+                        "cu_DAS19538_5689d"});
+#line 457
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table34, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
