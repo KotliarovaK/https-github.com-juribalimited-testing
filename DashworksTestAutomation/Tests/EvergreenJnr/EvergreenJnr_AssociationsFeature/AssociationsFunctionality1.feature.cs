@@ -303,7 +303,7 @@ this.FeatureBackground();
 #line 44
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
- testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects Save as dynamic list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
  testRunner.When("User creates new custom list with \"AssociationList18530\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
@@ -333,7 +333,7 @@ this.FeatureBackground();
 #line 60
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 61
- testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects Save as dynamic list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
  testRunner.When("User creates new custom list with \"AssociationList18530_1\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63

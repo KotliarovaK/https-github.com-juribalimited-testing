@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User clicks Save button on the list panel
-	When User selects Save as new list option
+	When User selects Save as dynamic list option
 	When User creates new custom list with "AssociationList18530" name
 	When User navigates to the "AssociationList18530" list
 	When User clicks the Filters button
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	Then table content is present
 	#18530
 	When User clicks Save button on the list panel
-	When User selects Save as new list option
+	When User selects Save as dynamic list option
 	When User creates new custom list with "AssociationList18530_1" name
 	Then "AssociationList18530_1" list is displayed to user
 	Then table content is present
