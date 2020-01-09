@@ -25,13 +25,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User clicks on ""(.*)"" dropdown on the Capacity Slots page")]
-        public void WhenUserClicksOnDropdownOnTheCapacitySlotsPage(string dropdownName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            page.ClickDropdownByName(dropdownName);
-        }
-
         [When(@"User clicks ""(.*)"" link on the Capacity Slot page")]
         public void WhenUserClicksLinkOnTheCapacitySlotPage(string linkName)
         {

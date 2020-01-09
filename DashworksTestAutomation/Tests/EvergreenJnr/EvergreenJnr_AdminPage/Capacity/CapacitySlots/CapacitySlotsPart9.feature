@@ -48,8 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	And User navigates to the 'Slots' left menu item
 	And User enters "Scheduled/Targeted" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
-	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then Tasks are displayed in the following order on Action panel:
+	Then 'Tasks' autocomplete have following checkbox options
 	| Items                   |
 	| i-stage A \ i-Completed |
 	| i-stage A \ i-comp-radb |
@@ -64,8 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	#| items         |
 	#| req type comp |
 	When User selects 'req type comp' option from 'Paths' autocomplete
-	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then Tasks are displayed in the following order on Action panel:
+	Then 'Tasks' autocomplete have following checkbox options
 	| Items                   |
 	| i-stage A \ i-Completed |
 	| i-stage A \ i-comp-radb |

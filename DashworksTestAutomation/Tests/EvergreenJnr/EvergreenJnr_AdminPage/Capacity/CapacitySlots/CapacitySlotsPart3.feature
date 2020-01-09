@@ -101,9 +101,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	Then only below options are selected in the 'Tasks' autocomplete
 	| Options                        |
 	| Pre-Migration \ Scheduled date |
-	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
-	| Items                  |
+	Then 'Paths' autocomplete have following checkbox options
+	| options                |
 	| Personal Mailbox       |
 	| Public Folder          |
 	| Shared Mailbox         |
@@ -111,15 +110,13 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Personal Mailbox - EA  |
 	When User selects 'User' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
-	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
+	Then 'Paths' autocomplete have following checkbox options
 	| Items         |
 	| Standard User |
 	| VIP User      |
 	When User selects 'Application' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
-	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
+	Then 'Paths' autocomplete have following checkbox options
 	| Items                  |
 	| Public Folder          |
 	| Sharepoint Application |
@@ -132,8 +129,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	Then only below options are selected in the 'Tasks' autocomplete
 	| Options                        |
 	| Pre-Migration \ Scheduled Date |
-	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
+	Then 'Paths' autocomplete have following checkbox options
 	| Items                                            |
 	| [This is the Default Request Type for Computer)] |
 	| Computer: PC Rebuild                             |
@@ -142,8 +138,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Computer: Virtual Machine                        |
 	When User selects 'User' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
-	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
+	Then 'Paths' autocomplete have following checkbox options
 	| Items            |
 	| [Default (User)] |
 	| User: No Agent   |
@@ -151,8 +146,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| User; Maternity  |
 	When User selects 'Application' in the 'Object Type' dropdown
 	Then "" content is displayed in "Tasks" field
-	When User clicks on "Paths" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
+	Then 'Paths' autocomplete have following checkbox options
 	| Items                       |
 	| [Default (Application)]     |
 	| Application: Request Type A |
