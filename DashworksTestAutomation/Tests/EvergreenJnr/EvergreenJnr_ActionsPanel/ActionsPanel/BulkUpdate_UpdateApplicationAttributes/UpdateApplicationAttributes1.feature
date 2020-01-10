@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19347
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19347 @Not_Ready
+#Waiting for 'FORWARD PATH' field below 'Evergreen' option
 Scenario: EvergreenJnr_ApplicationsList_CheckTargetApplicationSearchResultsBehaviour
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button

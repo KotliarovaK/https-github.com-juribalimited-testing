@@ -68,7 +68,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
 	Then 'RETIRE' content is displayed in the 'zDeviceAut: Target App' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Not_Ready
+#Waiting for 'FORWARD PATH' field below 'Evergreen' option
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForwardPath
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
