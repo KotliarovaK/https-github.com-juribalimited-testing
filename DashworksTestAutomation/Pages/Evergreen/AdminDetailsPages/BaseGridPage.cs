@@ -13,6 +13,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     public class BaseGridPage : SeleniumBasePage
     {
+        public string ColumnFilterDropdownOverlay = ".//div[contains(@class,'overlay-pane')][contains(@id,'overlay')]";
+
         public const string AllHeadersSelector = ".//div[@class='ag-header-container']/div[1]/div"; //.//span[@role='columnheader']
 
         public const string AllHeadersTextSelector = ".//span[@class='ag-header-cell-text']";
@@ -212,31 +214,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
-        #region Headers
-
-        public IList<IWebElement> GetAllHeaders()
-        {
-            var allHeadersSelector = By.XPath(AllHeadersSelector);
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
-            var allHeaders = Driver.FindElements(allHeadersSelector);
-            return allHeaders;
-        }
-
-        public List<string> GetAllHeadersText()
-        {
-            var allHeaders = GetAllHeaders()/*.Where(x => x.FindElements(By.XPath(AllHeadersTextSelector)).Count > 0)*/.Select(x => x.Text).ToList();
-            return allHeaders;
-        }
-
-        public List<IWebElement> GetAllHeadersTextElements()
-        {
-            var allHeaders = GetAllHeaders().Select(x => x.FindElement(By.XPath(AllHeadersTextSelector))).ToList();
-            return allHeaders;
-        }
-
-        #endregion
-
         //Selector to the Action element below Column header
         //This can be textbox filter or other
         private string ActionElementSelector(string columnName)
@@ -339,13 +316,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return false;
         }
 
-        public IWebElement DropdownItemDisplayed(string itemName)
-        {
-            var selector = By.XPath($"//li//label//span[contains(text(), '{itemName}')]");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public string GetTableStringRowNumber(string itemName)
         {
             return Driver.FindElement(By.XPath($"{AllCellsInTheGrid}//span[text()='{itemName}']/ancestor::div[@role='row']"))
@@ -378,16 +348,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public void GetStringFilterByColumnName(string columnName)
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-        }
-
         public IWebElement GetTextInSearchFieldByColumnName(string columnName)
         {
             var selector =
@@ -396,6 +356,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        #region Filter
+
+        public void OpenColumnFilter(string columnName)
+        {
+            var byControl =
+                By.XPath(
+                    $".//div[@role='presentation']//div[@class='ag-header-row'][2]/div[{GetColumnNumberByName(columnName)}]");
+            Driver.WaitForElementToBeDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+        }
+
+        #endregion
 
         #region Column Settings
 
@@ -764,6 +737,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 return false;
             }
+        }
+
+        public IList<IWebElement> GetAllHeaders()
+        {
+            var allHeadersSelector = By.XPath(AllHeadersSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            return allHeaders;
+        }
+
+        public List<string> GetAllHeadersText()
+        {
+            var allHeaders = GetAllHeaders()/*.Where(x => x.FindElements(By.XPath(AllHeadersTextSelector)).Count > 0)*/.Select(x => x.Text).ToList();
+            return allHeaders;
+        }
+
+        public List<IWebElement> GetAllHeadersTextElements()
+        {
+            var allHeaders = GetAllHeaders().Select(x => x.FindElement(By.XPath(AllHeadersTextSelector))).ToList();
+            return allHeaders;
         }
 
         #endregion

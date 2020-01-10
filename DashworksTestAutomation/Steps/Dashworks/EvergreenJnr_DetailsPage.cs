@@ -48,28 +48,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         //	| Values |
-        [Then(@"following checkboxes are displayed in the filter dropdown menu for the '(.*)' column:")]
-        public void ThenFollowingSCheckboxesAreDisplayedInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.Click();
-            page.GetStringFilterByColumnName(columnName);
-
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = filterElement.FilterCheckboxValuesForColumn.Select(value => value.Text);
-            Verify.AreEqual(expectedList, actualList, $"String Values in the filter dropdown for the '{columnName}' column are different!");
-
-            page.BodyContainer.Click();
-        }
-
-        //	| Values |
         [Then(@"following checkboxes are contained in the filter dropdown menu for the '(.*)' column:")]
         public void ThenFollowingStringValuesAreContainedInTheFilterDropdownForTheColumn(string columnName, Table table)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
-            page.GetStringFilterByColumnName(columnName);
+            page.OpenColumnFilter(columnName);
 
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             var actualList = filterElement.FilterCheckboxValuesForColumn.Select(value => value.Text).ToList();
@@ -87,22 +71,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Verify.IsFalse(filterElement.GetStringFilterTextByColumnName(columnName),
                 $"All text is displayed for {columnName} column");
-        }
-
-        //  | checkboxes |
-        [When(@"User selects following checkboxes in the filter dropdown menu for the '(.*)' column:")]
-        public void WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.Click();
-            page.GetStringFilterByColumnName(columnName);
-
-            foreach (var row in table.Rows)
-            {
-                page.GetFilterCheckboxValuesForColumn(row["checkboxes"]);
-            }
-
-            page.BodyContainer.Click();
         }
 
         [When(@"User clicks following checkboxes from Column Settings panel for the '(.*)' column:")]
@@ -128,7 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
-            page.GetStringFilterByColumnName(columnName);
+            page.OpenColumnFilter(columnName);
 
             Verify.IsTrue(page.GetCheckedFilterByCheckboxName(checkboxName).Displayed(), $"{checkboxName} Checkbox is not selected");
 
@@ -273,7 +241,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
-            filterElement.GetStringFilterByColumnName(columnName);
+            filterElement.OpenColumnFilter(columnName);
         }
 
         [When(@"User closes Checkbox filter")]

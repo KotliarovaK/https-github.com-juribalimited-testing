@@ -182,10 +182,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Projects Summary' left submenu item
-	When User selects following checkboxes in the filter dropdown menu for the 'Workflow' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| Empty      |
-	When User selects following checkboxes in the filter dropdown menu for the 'Workflow' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| Empty      |
 	Then 'Empty' checkbox is checked in the filter dropdown for the 'Workflow' column

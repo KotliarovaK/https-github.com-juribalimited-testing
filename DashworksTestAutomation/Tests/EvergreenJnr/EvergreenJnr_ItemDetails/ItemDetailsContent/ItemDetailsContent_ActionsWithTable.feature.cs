@@ -544,8 +544,8 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "False"});
 #line 97
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Used\' colu" +
-                    "mn:", ((string)(null)), table3, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table3, "When ");
 #line 100
  testRunner.And("User opens \'User\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
@@ -562,8 +562,8 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "False"});
 #line 105
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Used\' colu" +
-                    "mn:", ((string)(null)), table4, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table4, "When ");
 #line 108
  testRunner.And("User opens \'Device\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 109
