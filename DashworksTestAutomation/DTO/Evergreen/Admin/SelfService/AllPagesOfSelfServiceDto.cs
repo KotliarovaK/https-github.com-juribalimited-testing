@@ -8,19 +8,19 @@ using Newtonsoft.Json;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 {
-    public partial class SelfServiceAllPagesDto
+    public partial class AllPagesOfSelfServiceDto
     {
         [JsonProperty("pageId")]
-        public long PageId { get; set; }
+        public int PageId { get; set; }
 
         [JsonProperty("serviceId")]
-        public long ServiceId { get; set; }
+        public int ServiceId { get; set; }
 
         [JsonProperty("objectTypeId")]
-        public long ObjectTypeId { get; set; }
+        public int ObjectTypeId { get; set; }
 
         [JsonProperty("order")]
-        public long Order { get; set; }
+        public int Order { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -29,9 +29,9 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
         public bool ShowInSelfService { get; set; }
 
         [JsonProperty("deviceListId")]
-        public long DeviceListId { get; set; }
+        public int DeviceListId { get; set; }
 
         [JsonProperty("userListId")]
-        public long UserListId { get; set; }
+        public int UserListId { get; set; }
     }
 }
