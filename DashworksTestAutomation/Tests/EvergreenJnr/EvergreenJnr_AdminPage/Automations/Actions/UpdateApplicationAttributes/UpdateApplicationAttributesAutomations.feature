@@ -225,7 +225,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalis
 	Then 'Unknown' content is displayed in the 'Value' column
 	Then 'Unknown' content is displayed in the 'Action' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup @Not_Ready
+#Waiting for Rationalisation dropdown for Evergreen
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
