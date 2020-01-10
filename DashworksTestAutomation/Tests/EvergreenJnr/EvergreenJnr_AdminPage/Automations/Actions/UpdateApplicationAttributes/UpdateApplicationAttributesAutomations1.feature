@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Cleanup @Not_Ready
+#Waiting for 'FORWARD PATH' field below 'Evergreen' option
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -36,9 +37,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                              |
 	| zDeviceAut: Application Rationalisation |
-	| zDeviceAut: Target App                  |
+	| zDeviceAut: Target App Friendly Name    |
 	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
-	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App' column
+	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -52,8 +53,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19003_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '19003_Automation' item from 'Automation' column
+	When '19003_Automation' automation '19003_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
 	When User enters "19003_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -64,11 +65,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                              |
 	| zDeviceAut: Application Rationalisation |
-	| zDeviceAut: Target App                  |
-	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
-	Then 'RETIRE' content is displayed in the 'zDeviceAut: Target App' column
+	| zDeviceAut: Target App Friendly Name    |
+	Then 'RETIRE' content is displayed in the 'zDeviceAut: Application Rationalisation' column
+	Then '' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Cleanup @Not_Ready
 #Waiting for 'FORWARD PATH' field below 'Evergreen' option
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForwardPath
 	When User clicks 'Applications' on the left-hand menu
@@ -76,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values             |
 	| CodeWright 6.0BETA |
-	When User create dynamic list with "19003_List" name on "Devices" page
+	When User create dynamic list with "19003_List" name on "Applications" page
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope      | Run    |
 	| 19003_Automation1 | 19003       | true   | false              | 19003_List | Manual |
@@ -93,6 +94,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19003_Automation1" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '19003_Automation1' item from 'Automation' column
+	When '19003_Automation1' automation '19003_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When '19003_Automation1' automation '19003_Action' action run has finished
 	When User enters "19003_Automation1" text in the Search field for "Automation" column
@@ -105,9 +107,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                              |
 	| zDeviceAut: Application Rationalisation |
-	| zDeviceAut: Target App                  |
+	| zDeviceAut: Target App Friendly Name    |
 	Then 'KEEP' content is displayed in the 'zDeviceAut: Application Rationalisation' column
-	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App' column
+	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -121,8 +123,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19003_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '19003_Automation' item from 'Automation' column
+	When '19003_Automation1' automation '19003_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
 	When User enters "19003_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -133,6 +135,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                              |
 	| zDeviceAut: Application Rationalisation |
-	| zDeviceAut: Target App                  |
+	| zDeviceAut: Target App Friendly Name    |
 	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
-	Then 'RETIRE' content is displayed in the 'zDeviceAut: Target App' column
+	Then 'RETIRE' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
