@@ -239,8 +239,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 	When User navigates to the 'Application' details page for 'Standard SDK for Windows CE .NET 4.2' item
 	Then Details page for 'Standard SDK for Windows CE .NET 4.2' item is displayed to the user
 	Then User verifies data in the fields on details page
-	| Field             | Data   |
-	| Sticky Compliance | IGNORE |
+	| Field             | Data |
+	| Sticky Compliance |      |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849
 Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly
@@ -381,7 +381,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	| Capacity Unit | cu_DAS19538_4645s |
 
 	#AnnI 1/9/20: 'nor ready' because I need more details from Elena.
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538 @Cleanup @Not_Ready
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538 @Cleanup @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessAndTeam
 	When User creates new Capacity Unit via api
 	| Name              | Description | IsDefault |
@@ -414,11 +414,12 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
 	Then popup is displayed to User
-	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
+	When User deselect all rows on the grid
+	When User selects 'London - City' option from 'Capacity Unit' autocomplete
 	And User clicks 'MOVE' button 
 	Then following content is displayed on the Details Page
-	| Title         | Value             |
-	| Capacity Unit | cu_DAS19538_5689d |
+	| Title         | Value         |
+	| Capacity Unit | London - City |
 		#--Users--#
 	When User navigates to the 'User' details page for the item with '27418' ID
 	Then Details page for 'REM635708' item is displayed to the user
@@ -427,19 +428,21 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
 	Then popup is displayed to User
-	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
+	When User deselect all rows on the grid
+	When User selects 'London - City' option from 'Capacity Unit' autocomplete
 	And User clicks 'MOVE' button 
 	Then following content is displayed on the Details Page
-	| Title         | Value             |
-	| Capacity Unit | cu_DAS19538_5689d |
+	| Title         | Value         |
+	| Capacity Unit | London - City |
 		#--Mailboxes--#
 	When User navigates to the 'Mailbox' details page for the item with '46886' ID
 	Then Details page for '01DE1433D11E44E6A4A@bclabs.local' item is displayed to the user
-	When User selects 'TSTPROJ' in the 'Item Details Project' dropdown with wait
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
 	Then popup is displayed to User
+	When User deselect all rows on the grid
 	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
 	And User clicks 'MOVE' button 
 	Then following content is displayed on the Details Page
@@ -453,6 +456,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
 	Then popup is displayed to User
+	When User deselect all rows on the grid
 	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
 	And User clicks 'MOVE' button 
 	Then following content is displayed on the Details Page

@@ -78,11 +78,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	Then 'Distribution' left menu item is disabled
 	#================ checks sub-menu for main Details tab ================#
 	And 'Details' left menu have following submenu items:
-	| SubTabName     |
-	| Application    |
-	| Advertisements |
-	| Programs       |
-	| Custom Fields  |
+	| SubTabName        |
+	| Application       |
+	| Application Owner |
+	| Advertisements    |
+	| Programs          |
+	| Custom Fields     |
 	#================ checks counters ================#
 	And 'Advertisements' left submenu item with some count is displayed
 	And 'Programs' left submenu item with some count is displayed
@@ -106,5 +107,5 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| MSI Files  |
 	| AOK        |
 	#================ checks counters ================#
-	And 'MSIFiles' left submenu item is displayed without count
+	And 'MSI Files' left submenu item is displayed without count
 	And 'AOK' left submenu item is displayed without count
