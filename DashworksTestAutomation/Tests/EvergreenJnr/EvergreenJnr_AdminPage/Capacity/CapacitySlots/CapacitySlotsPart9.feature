@@ -48,8 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	And User navigates to the 'Slots' left menu item
 	And User enters "Scheduled/Targeted" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
-	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then Tasks are displayed in the following order on Action panel:
+	Then 'Tasks' autocomplete have following checkbox options
 	| Items                   |
 	| i-stage A \ i-Completed |
 	| i-stage A \ i-comp-radb |
@@ -63,9 +62,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	#And User selects following items in "Paths" dropdown:
 	#| items         |
 	#| req type comp |
-	When User selects 'req type comp' option from 'Paths' autocomplete
-	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then Tasks are displayed in the following order on Action panel:
+	When User checks 'req type comp' option after search from 'Paths' autocomplete
+	Then 'Tasks' autocomplete have following checkbox options
 	| Items                   |
 	| i-stage A \ i-Completed |
 	| i-stage A \ i-comp-radb |
@@ -99,7 +97,9 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForS
 	And User clicks 'CREATE' button 
 	Then 'Your capacity slot has been created' text is displayed on inline success banner
 	When User clicks newly created object link
-	Then 'Stage 1 \ WO Task13671' value is displayed in the 'Tasks' dropdown
+	Then following chips value displayed for 'Tasks' textbox
+	| ChipValue              |
+	| Stage 1 \ WO Task13671 |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13147 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatDisplayOrderIsResetAfterSlotDeletion

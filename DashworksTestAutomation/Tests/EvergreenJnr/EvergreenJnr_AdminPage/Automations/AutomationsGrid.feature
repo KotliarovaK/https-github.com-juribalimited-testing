@@ -91,8 +91,9 @@ Scenario: EvergreenJnr_AdminPage_CheckCreatedByAndCreatedDateColumnOnTheAutomati
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User opens 'Automation' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Created By" checkbox on the Column Settings panel
+	When User clicks Column button on the Column Settings panel
+	When User select "Description" checkbox on the Column Settings panel
+	When User select "Created By" checkbox on the Column Settings panel
 	When User clicks on 'Created By' column header
 	Then data in table is sorted by 'Created By' column in ascending order
 	When User clicks on 'Created By' column header

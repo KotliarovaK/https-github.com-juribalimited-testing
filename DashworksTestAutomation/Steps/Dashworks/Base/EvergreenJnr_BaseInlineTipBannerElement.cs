@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             _driver.WaitForDataLoading();
 
-            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAt<BaseInlineBannerElement>();
 
             page.VerifyColor(MessageType.Tip);
         }
@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"inline success banner is displayed")]
         public void ThenInlineSuccessBannerIsDisplayed()
         {
-            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAt<BaseInlineBannerElement>();
 
             page.VerifyColor(MessageType.Success);
         }
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"inline error banner is displayed")]
         public void ThenInlineErrorBannerIsDisplayed()
         {
-            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
+            BaseInlineBannerElement page = _driver.NowAt<BaseInlineBannerElement>();
 
             page.VerifyColor(MessageType.Error);
         }

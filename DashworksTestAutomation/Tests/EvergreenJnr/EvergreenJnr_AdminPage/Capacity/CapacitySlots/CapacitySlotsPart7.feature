@@ -98,20 +98,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	And User navigates to the 'Slots' left menu item
 	And User clicks 'CREATE SLOT' button 
 	And User selects 'Device' in the 'Object Type' dropdown
-	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
+	Then 'Tasks' autocomplete have following checkbox options
 	| Items      |
 	| 1Task13593 |
 	| 4Task13593 |
 	When User selects 'User' in the 'Object Type' dropdown
-	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
+	Then 'Tasks' autocomplete have following checkbox options
 	| Items      |
 	| 3Task13593 |
 	| 5Task13593 |
 	When User selects 'Application' in the 'Object Type' dropdown
-	And User clicks on "Tasks" dropdown on the Capacity Slots page
-	Then following checkbox items are displayed in the dropdown:
+	Then 'Tasks' autocomplete have following checkbox options
 	| Items      |
 	| 2Task13593 |
 	| 6Task13593 |

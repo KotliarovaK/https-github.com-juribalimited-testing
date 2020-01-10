@@ -150,7 +150,7 @@ this.FeatureBackground();
 #line 19
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
- testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects Save as dynamic list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
  testRunner.When("User creates new custom list with \"AssociationList18445\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
@@ -332,7 +332,7 @@ this.FeatureBackground();
 #line 61
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
- testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects Save as dynamic list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
  testRunner.When("User creates new custom list with \"AssociationList18531\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
@@ -359,7 +359,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossib" +
-            "leAssociationsAreAdde")]
+            "leAssociationsAreAdded")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
         [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
@@ -367,14 +367,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Used on device", "Entitled to device", "Installed on device", null)]
         [NUnit.Framework.TestCaseAttribute("Used on device", "Not entitled to device", "Not installed on device", null)]
         [NUnit.Framework.TestCaseAttribute("Entitled to device", "Not used on device", "Installed on device", null)]
-        public virtual void EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdde(string operator1, string operator2, string operator3, string[] exampleTags)
+        public virtual void EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdded(string operator1, string operator2, string operator3, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAddeInternal(operator1,operator2,operator3,exampleTags);
+                    this.EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAddedInternal(operator1,operator2,operator3,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -393,7 +393,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAddeInternal(string operator1, string operator2, string operator3, string[] exampleTags)
+        private void EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAddedInternal(string operator1, string operator2, string operator3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -405,7 +405,7 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossib" +
-                    "leAssociationsAreAdde", null, @__tags);
+                    "leAssociationsAreAdded", null, @__tags);
 #line 74
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -418,15 +418,18 @@ this.FeatureBackground();
 #line 77
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 78
- testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User selects \'{0}\' option in \'Search associations\' autocomplete of Associations p" +
+                        "anel", operator1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
- testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User selects \'{0}\' option in \'Search associations\' autocomplete of Associations p" +
+                        "anel", operator2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 81
  testRunner.When("User clicks Add And button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.When(string.Format("User selects \'{0}\' option in expanded associations list", operator3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User selects \'{0}\' option in \'Search associations\' autocomplete of Associations p" +
+                        "anel", operator3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 83
  testRunner.Then("Add And button is not displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -499,7 +502,7 @@ this.FeatureBackground();
 #line 100
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 101
- testRunner.When("User selects Save as new list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects Save as dynamic list option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 102
  testRunner.When("User creates new custom list with \"AssociationList18379\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103

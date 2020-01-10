@@ -45,8 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedContentIsUpdatedAfterChangingU
 	Then '' content is displayed in 'Find Value' textbox
 	Then '' content is displayed in 'Replace Value' textbox
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18705 @Cleanup @Not_Ready
-#Waiting for DAS18705 fixed on autorelease
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18705 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionsValueForDuplacatedAutomation
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -65,6 +64,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsValueForDuplacatedAutomation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18705_Automation" text in the Search field for "Automation" column
 	When User clicks 'Duplicate' option in Cog-menu for '18705_Automation' item from 'Automation' column
+	When User clicks refresh button in the browser
 	When User enters "18705_Automation2" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
