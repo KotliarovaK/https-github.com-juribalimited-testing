@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterC
 	When User clicks 'RUN LIST' button
 	Then table content is present
 	When User clicks Save button on the list panel
-	When User selects Save as new list option
+	When User selects Save as dynamic list option
 	When User creates new custom list with "AssociationList18445" name
 	Then "AssociationList18445" list is displayed to user
 	When User navigates to the "AssociationList18445" list
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User add "Device (Saved List)" filter where type is "In list" without added column and "ADevicesList18531" Lookup option
 	When User clicks 'RUN LIST' button
 	When User clicks Save button on the list panel
-	When User selects Save as new list option
+	When User selects Save as dynamic list option
 	When User creates new custom list with "AssociationList18531" name
 	Then "AssociationList18531" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
@@ -71,15 +71,15 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
 @Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18424
-Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdde
+Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdded
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects '<operator1>' option in expanded associations list
+	When User selects '<operator1>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
-	When User selects '<operator2>' option in expanded associations list
+	When User selects '<operator2>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
-	When User selects '<operator3>' option in expanded associations list
+	When User selects '<operator3>' option in 'Search associations' autocomplete of Associations panel
 	Then Add And button is not displayed on the Filter panel
 
 Examples: 
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User clicks Save button on the list panel
-	When User selects Save as new list option
+	When User selects Save as dynamic list option
 	When User creates new custom list with "AssociationList18379" name
 	Then "AssociationList18379" list is displayed to user
 	When User clicks Export button on the Admin page
