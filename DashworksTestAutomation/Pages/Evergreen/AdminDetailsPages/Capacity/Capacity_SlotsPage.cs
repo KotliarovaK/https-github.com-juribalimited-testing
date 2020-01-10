@@ -10,9 +10,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 {
     internal class Capacity_SlotsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//div[@class='title-container']/h1")]
-        public IWebElement TitleContainer { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div[@class='cdk-overlay-pane small-dialogs-styling']")]
         public IWebElement MoveToPositionDialog { get; set; }
 
@@ -28,10 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.TitleContainer)
-            };
+            return new List<By> { };
         }
 
         public IWebElement RemoveTaskIcon(string taskName)
@@ -61,14 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
                 Driver.FindElement(byControl).SendKeys(value);
                 BodyContainer.Click();
             }
-        }
-
-        public void ClickDropdownByName(string dropdownName)
-        {
-            var byControl = By.XPath($"//div//input[@placeholder='{dropdownName}']");
-            Driver.WaitForDataLoading();
-            Driver.WaitForElementToBeDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
         }
 
         public IWebElement GetLanguageLinkByName(string link)
@@ -109,14 +95,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public IList<string> GetSlotContent()
         {
             var by = By.XPath(".//div[@col-id='slotName' and @role='gridcell']");
-            Driver.WaitForElementsToBeDisplayed(by,30,false);
+            Driver.WaitForElementsToBeDisplayed(by, 30, false);
             return Driver.FindElements(by).Select(x => x.Text).ToList();
-        }
-
-        public IWebElement GetMoveToPositionDialogButtonByText(string buttonText)
-        {
-            var selector = By.XPath($".//change-order-dialog//span[contains(text(), '{buttonText.ToUpper()}')]//parent::button");
-            return Driver.FindElement(selector);
         }
     }
 }

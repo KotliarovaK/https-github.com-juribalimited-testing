@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 	And User remembers the Move to position dialog size
 	And User enters "1.2" value in Move to position dialog
 	Then User checks that Move to position dialog has the same size
-	And Button "Move" in Move to position dialog is displayed disabled
+	Then 'MOVE' button is disabled on popup
 	And Alert message is displayed and contains "Enter integer value between 1 and 32767" text
 	And There are no errors in the browser console
 
