@@ -2475,7 +2475,7 @@ this.FeatureBackground();
 #line 700
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'15949_Automation\' item from \'Automa" +
                     "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 702
+#line 707
  testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 703
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

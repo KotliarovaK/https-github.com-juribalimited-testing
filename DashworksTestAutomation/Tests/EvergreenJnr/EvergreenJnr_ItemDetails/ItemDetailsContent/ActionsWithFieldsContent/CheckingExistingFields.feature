@@ -270,5 +270,6 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyFor
 	| Evergreen Capacity Unit |
 	| In Catalog              |
 	| Criticality             |
-	| Rationalisation         |
+	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
+	#| Rationalisation         |
 	| Hide From End User      |

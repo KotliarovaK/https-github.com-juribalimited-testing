@@ -25,13 +25,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User clicks on ""(.*)"" dropdown on the Capacity Slots page")]
-        public void WhenUserClicksOnDropdownOnTheCapacitySlotsPage(string dropdownName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            page.ClickDropdownByName(dropdownName);
-        }
-
         [When(@"User clicks ""(.*)"" link on the Capacity Slot page")]
         public void WhenUserClicksLinkOnTheCapacitySlotPage(string linkName)
         {
@@ -68,18 +61,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             Utils.Verify.AreEqual(text, page.GetDisplayNameFieldByLanguage(language).GetAttribute("value"), $"'{text}' text is not displayed in Display Name field");
-        }
-
-        [When(@"User selects next items in the ""(.*)"" dropdown:")]
-        public void WhenUserSelectsNextItemsInTheDropdown(string dropdownName, Table items)
-        {
-            WhenUserClicksOnDropdownOnTheCapacitySlotsPage(dropdownName);
-
-            var page = _driver.NowAt<BaseGridPage>();
-            foreach (var row in items.Rows)
-            {
-                page.DropdownItemDisplayed(row["Items"]).Click();
-            }
         }
     }
 }

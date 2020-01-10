@@ -141,7 +141,9 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	When User clicks newly created object link
 	Then Page with 'DAS15989_TestProject' header is displayed to user
 	When User navigates to the 'Readiness' left menu item
-	Then 'IGNORE' content is not displayed in the 'Readiness' column
+	Then 'UNKNOWN' content is not displayed in the 'Readiness' column
+	#IGNORE is default and should always present
+	Then 'IGNORE' content is displayed in the 'Readiness' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16089 @Cleanup
 Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWithoutReadiness 

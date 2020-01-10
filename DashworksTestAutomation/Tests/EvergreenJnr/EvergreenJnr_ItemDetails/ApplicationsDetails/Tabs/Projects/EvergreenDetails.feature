@@ -28,7 +28,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheTargetAppForForwardPathRatio
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button on popup
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Not_Run
+	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDisplayedCorrectly
 	When User navigates to the 'Application' details page for 'Mozilla Sunbird (0.2a.)' item
 	Then Details page for 'Mozilla Sunbird (0.2a.)' item is displayed to the user
@@ -94,7 +95,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppl
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button on popup
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19448 @Cleanup
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19448 @Cleanup @Not_Run
+	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationFromKeepToForwardPathIsConsistentWithProjectRationalisationBehaviour
 		#--app 1 to app 2--#
 	When User navigates to the 'Application' details page for the item with '251' ID
