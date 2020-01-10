@@ -1048,6 +1048,70 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Checkbox mat-option
+
+        public List<IWebElement> GetMatOptionCheckboxes(string parentElementSelector = "", WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        {
+            var checkboxes = By.XPath($"{parentElementSelector}//mat-option[contains(@class,'mat-option')]");
+            Driver.WaitForElementsToBeDisplayed(checkboxes);
+            return Driver.FindElements(checkboxes).ToList();
+        }
+
+        public IWebElement GetMatOptionCheckbox(string checkbox, string parentElementSelector = "", WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        {
+            foreach (IWebElement element in GetMatOptionCheckboxes(parentElementSelector, wait))
+            {
+                try
+                {
+                    var text = element.Text;
+                }
+                catch (Exception e)
+                {
+                    var t = e;
+                }
+            }
+            if (GetMatOptionCheckboxes(parentElementSelector, wait)
+                .Any(x => x.Text.Equals(checkbox)))
+            {
+                return GetMatOptionCheckboxes(parentElementSelector, wait)
+                    .First(x => x.Text.Equals(checkbox));
+            }
+            else
+            {
+                throw new Exception($"Unable to get '{checkbox}' mat-option checkbox");
+            }
+        }
+
+        public bool IsMatOptionCheckboxDisplayed(string checkbox, string parentElementSelector = "")
+        {
+            try
+            {
+                return GetMatOptionCheckbox(checkbox, parentElementSelector, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool GetMatOptionCheckboxState(string checkbox, string parentElementSelector = "")
+        {
+            var cb = GetMatOptionCheckbox(checkbox, parentElementSelector);
+            var state = bool.Parse(cb.GetAttribute("aria-selected"));
+            return state;
+        }
+
+        public void SetMatOptionCheckboxState(string checkbox, bool expectedCondition, string parentElementSelector = "")
+        {
+            if (!GetMatOptionCheckboxState(checkbox, parentElementSelector).Equals(expectedCondition))
+            {
+                //We must click by text to check or uncheck element
+                GetMatOptionCheckbox(checkbox, parentElementSelector).Click();
+            }
+        }
+
+        #endregion
+
         #region Radio Button
 
         public IWebElement GetRadioButton(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)

@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then Content is present in the table on the Admin page
 	Then There are no errors in the browser console
-	When User selects following checkboxes in the filter dropdown menu for the 'Default' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| True       |
 	#When User clicks 'True' checkbox from String Filter in the filter dropdown for the 'Default' column

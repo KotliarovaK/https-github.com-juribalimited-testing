@@ -1084,7 +1084,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
-            filterElement.GetStringFilterByColumnName(columnName);
+            filterElement.OpenColumnFilter(columnName);
         }
 
         [Then(@"""(.*)"" is not displayed in the filter dropdown")]

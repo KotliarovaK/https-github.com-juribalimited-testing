@@ -860,6 +860,54 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Column filter
+
+        [When(@"User checks following checkboxes in the filter dropdown menu for the '(.*)' column:")]
+        public void WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
+        {
+            SetFilterCheckboxesState(columnName, table, true);
+        }
+
+        [When(@"User unchecks following checkboxes in the filter dropdown menu for the '(.*)' column:")]
+        public void WhenUserUnchecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
+        {
+            SetFilterCheckboxesState(columnName, table, false);
+        }
+
+        public void SetFilterCheckboxesState(string columnName, Table table, bool state)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            //TODO remove this click
+            page.BodyContainer.Click();
+            page.OpenColumnFilter(columnName);
+
+            var bpage = _driver.NowAt<BaseDashboardPage>();
+            foreach (string checkbox in table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()))
+            {
+                bpage.SetMatOptionCheckboxState(checkbox, state, page.ColumnFilterDropdownOverlay);
+            }
+
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following checkboxes are displayed in the filter dropdown menu for the '(.*)' column:")]
+        public void ThenFollowingSCheckboxesAreDisplayedInTheFilterDropdownMenuForTheColumn(string columnName, Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+            page.OpenColumnFilter(columnName);
+
+            var bpage = _driver.NowAt<BaseDashboardPage>();
+            foreach (string cb in table.Rows.SelectMany(row => row.Values))
+            {
+                Verify.IsTrue(bpage.IsMatOptionCheckboxDisplayed(cb), $"'{cb}' is not displayed in the filter for '{columnName}' column");
+            }
+
+            page.BodyContainer.Click();
+        }
+
+        #endregion
+
         #region Column content tooltip
 
         [Then(@"'(.*)' tooltip is displayed for '(.*)' content in the '(.*)' column")]

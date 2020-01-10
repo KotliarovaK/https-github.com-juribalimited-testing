@@ -244,8 +244,8 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "True"});
 #line 36
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Default\' c" +
-                    "olumn:", ((string)(null)), table1, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table1, "When ");
 #line 39
  testRunner.Then("Rows counter shows more than \"2793\" found rows of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40

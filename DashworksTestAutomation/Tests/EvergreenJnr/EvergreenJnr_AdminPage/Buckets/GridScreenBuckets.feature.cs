@@ -169,8 +169,8 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "True"});
 #line 26
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Default\' c" +
-                    "olumn:", ((string)(null)), table1, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table1, "When ");
 #line 30
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 31
