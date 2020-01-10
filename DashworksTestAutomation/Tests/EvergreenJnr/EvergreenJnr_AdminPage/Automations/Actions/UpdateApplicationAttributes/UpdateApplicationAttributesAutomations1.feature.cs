@@ -1185,8 +1185,8 @@ this.FeatureBackground();
 #line 284
  testRunner.Then("\'FORWARD PATH\' content is displayed in \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 285
- testRunner.Then("\'Hilfe zu Verzeichnisdiensten (32123)\' content is displayed in \'Target Applicatio" +
-                    "n\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Hilfe zu Verzeichnisdiensten (606)\' content is displayed in \'Target Application\'" +
+                    " textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 287
  testRunner.When("User enters \'New_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 288
