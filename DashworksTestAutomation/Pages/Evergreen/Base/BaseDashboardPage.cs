@@ -241,22 +241,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return new List<By> { };
         }
 
-        //TODO NOT USE THIS METHOD! Should be removed after Kate refactoring
-        public IWebElement GetGridCellByText(string cellText)
-        {
-            var allCellsWithExpectedText = Driver.FindElements(By.XPath(GridCell))
-                .Where(x => x.GetAttribute("innerHTML").Contains(cellText)).ToList();
-
-            if (allCellsWithExpectedText.Any())
-            {
-                return allCellsWithExpectedText.FirstOrDefault();
-            }
-            else
-            {
-                throw new Exception($"Unable to find cell with '{cellText}' text");
-            }
-        }
-
         //TODO Find out what this method is doing and remove ti from BDP, for now test is marked as Not_Run and it is not possible to execute it
         public IWebElement GetItalicContentByColumnName(string text)
         {
