@@ -193,7 +193,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 textbox.Clear();
                 textbox.SendKeys(value);
                 Verify.IsFalse(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some autocomplete checkboxes found for '{value}' text");
-                Verify.IsTrue(page.IsAutocompleteCheckboxDisplayed(value), $"Some autocomplete checkboxes found for '{value}' text");
+                Verify.IsTrue(page.IsAutocompleteCheckboxDisplayed(value), $"'{value}' checkbox is missed");
                 page.BodyContainer.Click();
             }
         }
