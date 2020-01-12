@@ -459,7 +459,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public bool IsAutocompleteCheckboxDisplayed(string checkbox)
         {
-            return IsCheckboxDisplayed(checkbox, AutocompleteSelectDropdownSelector);
+            var resutls = IsCheckboxDisplayed(checkbox, AutocompleteSelectDropdownSelector);
+            return resutls;
         }
 
         #endregion

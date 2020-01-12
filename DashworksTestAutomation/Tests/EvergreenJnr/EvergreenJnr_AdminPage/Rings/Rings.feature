@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User sets "None" value in Maps to evergreen ring field
 	Then Ring settings Maps to evergreen ring is displayed as "None"
 	When User clicks 'Administration' header breadcrumb
-	And User clicks Yes button in Leave Page Warning
+	When User clicks 'YES' button on popup
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
 	And User clicks Reset Filters button on the Admin page
