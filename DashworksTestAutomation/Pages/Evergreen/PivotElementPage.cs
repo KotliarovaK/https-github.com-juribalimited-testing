@@ -55,12 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'arrow_back')]/ancestor::button")]
         public IWebElement BackButtonOnPivotPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
-        public IWebElement AscendingSortingIcon { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
-        public IWebElement DescendingSortingIcon { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div/select[contains(@class, 'ng-valid')]")]
         public IWebElement AggregateFunctionsSelectBox { get; set; }
 
@@ -133,12 +127,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool GetChipNameOnPivot(string chipName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//span[contains(@class, 'pivot-filter')][text()='{chipName}']"));
-        }
-
-        public IWebElement GetChipValueByNameOnPivot(string chipValueName)
-        {
-            var selector = By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipValueName}']");
-            return Driver.FindElement(selector);
         }
 
         public bool GetChipValueNameOnPivot(string chipValueName)
