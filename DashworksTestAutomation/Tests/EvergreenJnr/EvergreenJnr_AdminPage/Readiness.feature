@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCheckboxCanNotBeUncheckedForRea
 	Then User checks that opened readiness name is the same as stored one
 	Then 'Default' checkbox is unchecked
 	When User navigates to the 'Readiness' left menu item
-	When User checks following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
 	| checkboxes |
 	| False      |
 	And User click content from "Readiness" column
@@ -243,7 +243,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 	When User click content from "Readiness" column
 	And User remembers opened Readiness data on Edit Readiness
 	When User clicks 'CANCEL' button 
-	When User checks following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
 	| checkboxes |
 	| False      |
 	Then Filtered readiness item equals to stored one

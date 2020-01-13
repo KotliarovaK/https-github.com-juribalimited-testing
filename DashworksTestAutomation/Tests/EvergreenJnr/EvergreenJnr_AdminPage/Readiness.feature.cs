@@ -874,8 +874,8 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "False"});
 #line 189
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default for" +
-                    " Applications\' column:", ((string)(null)), table17, "When ");
+ testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default f" +
+                    "or Applications\' column:", ((string)(null)), table17, "When ");
 #line 192
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 193
@@ -1148,8 +1148,8 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "False"});
 #line 246
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default for" +
-                    " Applications\' column:", ((string)(null)), table21, "When ");
+ testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default f" +
+                    "or Applications\' column:", ((string)(null)), table21, "When ");
 #line 249
  testRunner.Then("Filtered readiness item equals to stored one", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

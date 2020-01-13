@@ -5,13 +5,18 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#Update tests with new gold data
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15903 @DAS13467 @DAS16239 @DAS16510 @DAS16511 @DAS16754 @DAS16890 @DAS17222 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup @DAS15903 @DAS13467 @DAS16239 @DAS16510 @DAS16511 @DAS16754 @DAS16890 @DAS17222
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName     | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| Test258_Automation | Test258     | true   | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
+	When User enters "Test258_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for 'Test258_Automation' item from 'Automation' column
+	When 'Test258_Automation' automation run has finished
 	When User navigates to the 'Automation Log' left menu item
 	Then 'Automations' left menu item is expanded
 	Then grid headers are displayed in the following order
@@ -26,7 +31,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| User             |
 	| Outcome          |
 	Then Export button is displayed in panel
-	Then 'SUCCESS' content is displayed in the 'Outcome' column
 	When User opens 'Date' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -45,13 +49,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Project       |
 	| Action Task or Field |
 	| Action Value ID      |
-	When User clicks String Filter button for "Scope" column on the Admin page
-	When User selects "1803 Rollout" checkbox from String Filter on the Admin page
-	When User clicks content from "Automation" column
-	Then Automation page is displayed correctly
-	Then 'Edit Automation' page subheader is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222 @Not_Ready
+
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
