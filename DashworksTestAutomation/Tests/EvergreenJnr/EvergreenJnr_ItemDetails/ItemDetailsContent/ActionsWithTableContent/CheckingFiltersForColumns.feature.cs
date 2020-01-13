@@ -153,8 +153,8 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "True"});
 #line 19
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Enabled\' c" +
-                    "olumn:", ((string)(null)), table2, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table2, "When ");
 #line 22
  testRunner.Then("Content is present in the table on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
@@ -177,8 +177,8 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "DWLABS"});
 #line 30
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Domain\' co" +
-                    "lumn:", ((string)(null)), table3, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table3, "When ");
 #line 33
  testRunner.Then("Rows counter shows \"0\" of \"7\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -246,8 +246,8 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Red"});
 #line 41
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Compliance" +
-                    "\' column:", ((string)(null)), table4, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table4, "When ");
 #line 45
  testRunner.Then("All text is not displayed for \"Compliance\" column in the String Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 46
@@ -272,8 +272,8 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Unknown"});
 #line 54
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Used\' colu" +
-                    "mn:", ((string)(null)), table5, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table5, "When ");
 #line 57
  testRunner.Then("Rows counter contains \"0\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
@@ -284,8 +284,8 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "True"});
 #line 59
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Entitled\' " +
-                    "column:", ((string)(null)), table6, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table6, "When ");
 #line 62
  testRunner.Then("Rows counter contains \"0\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 63
@@ -943,8 +943,8 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "False"});
 #line 187
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Used\' colu" +
-                    "mn:", ((string)(null)), table10, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table10, "When ");
 #line 190
  testRunner.Then("Rows counter shows \"98\" of \"194\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 191
@@ -955,8 +955,8 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "False"});
 #line 192
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Used\' colu" +
-                    "mn:", ((string)(null)), table11, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table11, "When ");
 #line 195
  testRunner.Then("Rows counter shows \"94\" of \"168\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

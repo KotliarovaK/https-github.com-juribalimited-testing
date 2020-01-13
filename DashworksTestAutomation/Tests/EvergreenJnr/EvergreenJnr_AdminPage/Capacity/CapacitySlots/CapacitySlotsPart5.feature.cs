@@ -503,7 +503,7 @@ this.FeatureBackground();
 #line 90
  testRunner.Then("User checks that Move to position dialog has the same size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
- testRunner.And("Button \"Move\" in Move to position dialog is displayed disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'MOVE\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 92
  testRunner.And("Alert message is displayed and contains \"Enter integer value between 1 and 32767\"" +
                     " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

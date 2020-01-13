@@ -2004,7 +2004,7 @@ this.FeatureBackground();
 #line 467
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 468
- testRunner.Then("Color Scheme dropdown displayed with \'Readiness Colour Scheme\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Color Scheme dropdown displayed with \'Readiness\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 469
  testRunner.Then("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 470
@@ -2021,7 +2021,7 @@ this.FeatureBackground();
  testRunner.Then("User sees \'Application Compliance ASC\' option for Order By selector on Create Wid" +
                     "get page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 476
- testRunner.Then("Color Scheme dropdown displayed with \'Compliance Colour Scheme\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Color Scheme dropdown displayed with \'Compliance\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 477
  testRunner.Then("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 478

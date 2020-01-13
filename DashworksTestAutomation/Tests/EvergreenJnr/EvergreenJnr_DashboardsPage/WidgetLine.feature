@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	When User selects 'Application Compliance' in the 'SplitBy' dropdown
 	When User selects 'Application Compliance ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
-	And Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
+	And Color Scheme dropdown displayed with 'Compliance' placeholder 
 	And Color Scheme dropdown is disabled
 	When User clicks 'UPDATE' button 
 	Then 'WidgetForDAS17825' Widget is displayed to the user

@@ -465,7 +465,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	| Pie        | WidgetForDAS17515 | ListForDAS17515 | Windows7Mi: Application Readiness | Count             | Windows7Mi: Application Readiness ASC | 10        | true       |
 	Then Widget Preview is displayed to the user
 	Then There are no errors in the browser console
-	Then Color Scheme dropdown displayed with 'Readiness Colour Scheme' placeholder
+	Then Color Scheme dropdown displayed with 'Readiness' placeholder
 	Then Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
@@ -473,7 +473,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Application Compliance' in the 'SplitBy' dropdown
 	Then User sees 'Application Compliance ASC' option for Order By selector on Create Widget page
-	Then Color Scheme dropdown displayed with 'Compliance Colour Scheme' placeholder 
+	Then Color Scheme dropdown displayed with 'Compliance' placeholder 
 	Then Color Scheme dropdown is disabled
 	When User clicks 'UPDATE' button 
 	Then There are no errors in the browser console

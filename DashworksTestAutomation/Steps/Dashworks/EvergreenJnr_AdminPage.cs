@@ -1028,19 +1028,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(page.MoveToPositionDialog.Size.Width, Is.EqualTo(_elementCoordinates.Width));
         }
 
-        [Then(@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
-        public void ThenButtonInMoveToPositionDialogIsDisplayedDisabled(string buttonName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            var actionBtn = page.GetMoveToPositionDialogButtonByText(buttonName);
-            Utils.Verify.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
-        }
-
         [When(@"User moves ""(.*)"" slot to ""(.*)"" slot")]
         public void WhenUserMovesSlotToSlot(string slot, string moveToSlot)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            var slotFrom = page.GetMoveButtonBySlotName(slot);
+            var slotFrom = page.GetMoveButtonBySlotName(slot);  
             var slotTo = page.GetMoveButtonBySlotName(moveToSlot);
             _driver.DragAndDrop(slotFrom, slotTo);
         }
@@ -1092,7 +1084,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
-            filterElement.GetStringFilterByColumnName(columnName);
+            filterElement.OpenColumnFilter(columnName);
         }
 
         [Then(@"""(.*)"" is not displayed in the filter dropdown")]

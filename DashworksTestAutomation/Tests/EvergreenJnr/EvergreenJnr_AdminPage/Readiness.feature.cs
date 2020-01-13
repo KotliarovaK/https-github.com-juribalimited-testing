@@ -817,8 +817,8 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "False"});
 #line 167
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Default fo" +
-                    "r Applications\' column:", ((string)(null)), table15, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table15, "When ");
 #line 170
  testRunner.Then("\'TRUE\' content is displayed in the \'Default for Applications\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 171
@@ -874,8 +874,8 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "False"});
 #line 189
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Default fo" +
-                    "r Applications\' column:", ((string)(null)), table17, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table17, "When ");
 #line 192
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 193
@@ -1134,8 +1134,8 @@ this.FeatureBackground();
             table20.AddRow(new string[] {
                         "False"});
 #line 240
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Default fo" +
-                    "r Applications\' column:", ((string)(null)), table20, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table20, "When ");
 #line 243
  testRunner.When("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 244
@@ -1148,8 +1148,8 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "False"});
 #line 246
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Default fo" +
-                    "r Applications\' column:", ((string)(null)), table21, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table21, "When ");
 #line 249
  testRunner.Then("Filtered readiness item equals to stored one", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
