@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatDisabledSelfSer
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
 	Then 'Enable self service portal' checkbox is checked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @DAS19692 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEnabledSelfServiceChangesTheCheckboxStateInEditAfterDisableInCogMenu
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
@@ -167,7 +167,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEnabledSelfServ
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
 	Then 'Enable self service portal' checkbox is unchecked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @DAS19692 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedWhenEnableDisableSelfService
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
@@ -177,9 +177,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 	When User enters 'TestP_ID_5' text to 'Self Service Identifier' textbox
 	When User clicks 'CREATE' button
 	When User clicks 'Enable' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
-	Then 'The TestProj_5 has been enabled' text is displayed on inline success banner
+	Then 'The self service has been enabled' text is displayed on inline success banner
 	When User clicks 'Disable' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
-	Then 'The TestProj_5 has been disabled' text is displayed on inline success banner
+	Then 'The self service has been disabled' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationAndButtonsOnItWillBeDisplayedWhenUserIsAboutToDeleteSelfService

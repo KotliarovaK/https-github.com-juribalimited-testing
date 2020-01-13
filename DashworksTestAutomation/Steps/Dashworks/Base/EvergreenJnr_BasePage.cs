@@ -193,7 +193,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 textbox.Clear();
                 textbox.SendKeys(value);
                 Verify.IsFalse(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some autocomplete checkboxes found for '{value}' text");
-                Verify.IsTrue(page.IsAutocompleteCheckboxDisplayed(value), $"Some autocomplete checkboxes found for '{value}' text");
+                Verify.IsTrue(page.IsAutocompleteCheckboxDisplayed(value), $"'{value}' checkbox is missed");
                 page.BodyContainer.Click();
             }
         }
@@ -1234,7 +1234,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
             var expectedChipList = table.Rows.SelectMany(row => row.Values).ToList();
             var chipsValueList = baseActionItem.GetChipsOfTextbox(field).Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedChipList, chipsValueList, "Chips value are different");
+            Verify.AreEqual(expectedChipList, chipsValueList, "Chips value are different");
         }
 
         [Then(@"tooltip is not displayed for '(.*)' chip of '(.*)' textbox")]
