@@ -273,3 +273,46 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyFor
 	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 	#| Rationalisation         |
 	| Hide From End User      |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS9352
+Scenario: EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectly
+	When User navigates to the 'Mailbox' details page for the item with '36452' ID
+	Then Details page for 'ConfRoom-CanisMinor@dwlabs.local' item is displayed to the user
+	Then following fields are displayed in the open section:
+	| Fields                            |
+	| Key                               |
+	| Mailbox Platform                  |
+	| Mail Server                       |
+	| Principal Email Address           |
+	| Mailbox Database                  |
+	| Alias                             |
+	| Display Name                      |
+	| User Principal Name               |
+	| User GUID                         |
+	| Mailbox GUID                      |
+	| Language                          |
+	| Time Zone                         |
+	| Mailbox Enabled                   |
+	| Email Count                       |
+	| Mailbox Size (MB)                 |
+	| Associated Item Count             |
+	| Deleted Item Count                |
+	| Deleted Item Size (MB)            |
+	| Max Send Size (MB)                |
+	| Max Receive Size (MB)             |
+	| Forwarding Address (External)     |
+	| Forwarding Address (Internal)     |
+	| Created Date                      |
+	| Retention Hold Enabled            |
+	| Retain Deleted Items (Days)       |
+	| Last Logon By                     |
+	| Last Logon Date                   |
+	| Last Logoff Date                  |
+	| Mailbox Type                      |
+	| Recipient Type                    |
+	| Hidden From Address Lists Enabled |
+	| Prohibit Send Quota (MB)          |
+	| Prohibit Send Receive Quota (MB)  |
+	| Issue Warning Quota (MB)          |
+	| Use Database Quota Defaults       |
+	| Mailbox Plan                      |
