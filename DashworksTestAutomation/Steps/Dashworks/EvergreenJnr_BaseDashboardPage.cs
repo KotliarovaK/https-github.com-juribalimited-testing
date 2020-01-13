@@ -229,6 +229,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _columnValue.Value = page.GetColumnContentByColumnName(columnName).First();
         }
 
+        [When(@"User remembers the found rows number")]
+        public void WhenUserRemembersTheNumberOfFoundRowsNumber()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForElementToBeDisplayed(page.ListRowsCounter);
+            _columnValue.Value = page.ListRowsCounter.Text
+                .Replace(",", "")
+                .Replace("rows", "")
+                .Replace("row", "")
+                .TrimEnd();
+        }
+
         [Then(@"Rows counter number equals to remembered value")]
         public void ThenUserRememberedValueEqualsToGridCounter()
         {

@@ -43,3 +43,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBran
 	When User navigates to the "AssociationListS18987" list
 	Then There are no errors in the browser console
 	Then table content is present
+
+@Evergreen @AllDeviceApplications @DAS19185
+Scenario: EvergreenJnr_ApplicationsList_CheckThatListOfResultsIsNotChangedAfterAddingCpuArchitectureAndManufacturerColumns
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks 'RUN LIST' button
+	Then table content is present
+	When User remembers the found rows number
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| Manufacturer     |
+	| CPU Architecture |
+	When User clicks 'RUN LIST' button
+	Then table content is present
+	Then Rows counter number equals to remembered value
