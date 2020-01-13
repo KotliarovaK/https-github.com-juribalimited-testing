@@ -335,8 +335,8 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "False"});
 #line 77
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
-                    "n:", ((string)(null)), table4, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default\' co" +
+                    "lumn:", ((string)(null)), table4, "When ");
 #line 80
  testRunner.Then("Rows counter shows \"0\" of \"9\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 81
