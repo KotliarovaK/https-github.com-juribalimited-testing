@@ -99,19 +99,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	And User clicks 'CREATE SLOT' button 
 	And User selects 'Device' in the 'Object Type' dropdown
 	Then 'Tasks' autocomplete have following checkbox options
-	| Items      |
-	| 1Task13593 |
-	| 4Task13593 |
+	| Items                   |
+	| Stage13593 \ 1Task13593 |
+	| Stage13593 \ 4Task13593 |
 	When User selects 'User' in the 'Object Type' dropdown
 	Then 'Tasks' autocomplete have following checkbox options
-	| Items      |
-	| 3Task13593 |
-	| 5Task13593 |
+	| Items                   |
+	| Stage13593 \ 3Task13593 |
+	| Stage13593 \ 5Task13593 |
 	When User selects 'Application' in the 'Object Type' dropdown
 	Then 'Tasks' autocomplete have following checkbox options
-	| Items      |
-	| 2Task13593 |
-	| 6Task13593 |
+	| Items                   |
+	| Stage13593 \ 2Task13593 |
+	| Stage13593 \ 6Task13593 |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot

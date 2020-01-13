@@ -817,8 +817,8 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "False"});
 #line 167
- testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default f" +
-                    "or Applications\' column:", ((string)(null)), table15, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default for" +
+                    " Applications\' column:", ((string)(null)), table15, "When ");
 #line 170
  testRunner.Then("\'TRUE\' content is displayed in the \'Default for Applications\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 171
@@ -1134,8 +1134,8 @@ this.FeatureBackground();
             table20.AddRow(new string[] {
                         "False"});
 #line 240
- testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default f" +
-                    "or Applications\' column:", ((string)(null)), table20, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default for" +
+                    " Applications\' column:", ((string)(null)), table20, "When ");
 #line 243
  testRunner.When("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 244

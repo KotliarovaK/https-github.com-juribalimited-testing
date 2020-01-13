@@ -442,9 +442,9 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table12.AddRow(new string[] {
-                        "1Task13593"});
+                        "Stage13593 \\ 1Task13593"});
             table12.AddRow(new string[] {
-                        "4Task13593"});
+                        "Stage13593 \\ 4Task13593"});
 #line 101
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table12, "Then ");
 #line 105
@@ -453,9 +453,9 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table13.AddRow(new string[] {
-                        "3Task13593"});
+                        "Stage13593 \\ 3Task13593"});
             table13.AddRow(new string[] {
-                        "5Task13593"});
+                        "Stage13593 \\ 5Task13593"});
 #line 106
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table13, "Then ");
 #line 110
@@ -464,9 +464,9 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table14.AddRow(new string[] {
-                        "2Task13593"});
+                        "Stage13593 \\ 2Task13593"});
             table14.AddRow(new string[] {
-                        "6Task13593"});
+                        "Stage13593 \\ 6Task13593"});
 #line 111
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table14, "Then ");
 #line hidden

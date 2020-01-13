@@ -12,9 +12,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='Dashboards']")]
         public IWebElement Dashboards { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//p[@class='topnav-item-menu-toggle']/button[contains(@class,'topnav-toggle')]")]
-        public IWebElement ExpandCollapseMenuButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@id='wrapper']")]
         public IWebElement MenuToggleIndicator { get; set; }
 
