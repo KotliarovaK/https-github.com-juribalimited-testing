@@ -1113,7 +1113,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Chips
 
-        public IList<IWebElement> GetChipsUnderTextbox(string textbox)
+        public IList<IWebElement> GetChipsInTheTextbox(string textbox)
         {
             var chipsSelector = By.XPath("./ancestor::*[contains(@id,'mat-chip-list')]/div");
             return GetTextbox(textbox).FindElements(chipsSelector);

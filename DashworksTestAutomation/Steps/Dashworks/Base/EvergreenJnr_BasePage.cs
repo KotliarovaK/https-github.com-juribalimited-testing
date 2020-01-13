@@ -1237,12 +1237,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(expectedChipList, chipsValueList, "Chips value are different");
         }
 
-        [Then(@"following chips value displayed under '(.*)' textbox")]
-        public void ThenFollowingChipsValueDisplayedUnderTextbox(string field, Table table)
+        [Then(@"following chips value displayed in the '(.*)' textbox")]
+        public void ThenFollowingChipsValueDisplayedInTheTextbox(string field, Table table)
         {
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
             var expectedChipList = table.Rows.SelectMany(row => row.Values).ToList();
-            var chipsValueList = baseActionItem.GetChipsUnderTextbox(field).Select(value => value.Text);
+            var chipsValueList = baseActionItem.GetChipsInTheTextbox(field).Select(value => value.Text);
             Verify.AreEqual(expectedChipList, chipsValueList, "Chips value are different");
         }
 
