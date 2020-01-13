@@ -51,15 +51,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return CogMenuDropdownLabel.GetCssValue("background-color");
         }
 
-        public IWebElement GetCogMenuByItem(string item)
-        {
-            var page = Driver.NowAt<BaseDashboardPage>();
-
-            var selector = page.GetGridCellByText(item).FindElement(By.XPath($".//following-sibling::div//div[@class='cell-menu-settings']"));
-            Driver.WaitForElementToBeDisplayed(selector);
-            return selector;
-        }
-
         public IWebElement GetCogMenuByItem(string column, string item)
         {
             var page = Driver.NowAt<BaseGridPage>();

@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	When User click on "Mailboxes" column header on the Admin page
 	Then numeric data in table is sorted by 'Mailboxes' column in ascending order
 	#Filters
-	When User selects following checkboxes in the filter dropdown menu for the 'Default' column:
+	When User checks following checkboxes in the filter dropdown menu for the 'Default' column:
 	| checkboxes |
 	| False      |
 	Then Rows counter shows "0" of "9" rows

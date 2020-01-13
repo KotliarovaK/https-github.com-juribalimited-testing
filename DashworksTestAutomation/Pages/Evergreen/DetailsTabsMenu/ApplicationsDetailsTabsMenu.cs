@@ -14,18 +14,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public const string FilterTypeOnTheColumnPanel = ".//div[@class='ag-filter']//select[not(contains(@class,'hidden'))]//option";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/span")]
-        public IWebElement CheckboxesStringFilter { get; set; }
-
         [FindsBy(How = How.XPath,
             Using = ".//mat-option[@class='selectAllOption mat-option mat-option-multiple ng-star-inserted']")]
         public IWebElement AllCheckboxesSelectedStringFilter { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@style= 'opacity: 1;']")]
-        public IWebElement StringFilterPanel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-selected')]")]
-        public IWebElement SelectedStringFilters { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//input[@class='ag-filter-filter']")]
         public IWebElement DateFilterValue { get; set; }
@@ -33,17 +24,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath,
             Using = ".//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-active']")]
         public IWebElement UncheckedStringFilters { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//mat-pseudo-checkbox[@class='mat-option-pseudo-checkbox mat-pseudo-checkbox ng-star-inserted mat-pseudo-checkbox-checked']")]
-        public IWebElement SelectedCheckboxStringFilter { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='boolean-icon ng-star-inserted']/span")]
-        public IWebElement CheckboxesBooleanStringFilter { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons pull-right mat-laptop']")]
-        public IWebElement DeviceDetailsIcon { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//button[@aria-label='ResetFilters']")]
@@ -82,9 +62,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter-body']//input[@aria-label='Date']")]
         public IWebElement DateRegularValueFirst { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromConditionPanel']//input[@aria-label='Date']")]
-        public IWebElement DateRegularValueSecond { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromPanel']//input")]
         public IWebElement DateFromValue { get; set; }
 
@@ -101,14 +78,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Driver.WaitForDataLoading();
 
             return new List<By>();
-        }
-
-        public void OpenColumnSettingsByName(string columnName)
-        {
-            var columnSettingsSelector = By.XPath($"//*[text()='{columnName}']/ancestor::div/span[contains(@class, 'cell-menu-button')]");
-            Driver.MouseHover(columnSettingsSelector);
-            Driver.WaitForElementToBeDisplayed(columnSettingsSelector);
-            Driver.FindElement(columnSettingsSelector).Click();
         }
 
         public bool IsColumnPresent(string columnName)

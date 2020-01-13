@@ -873,16 +873,16 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "Empty"});
 #line 185
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Workflow\' " +
-                    "column:", ((string)(null)), table27, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table27, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "checkboxes"});
             table28.AddRow(new string[] {
                         "Empty"});
 #line 188
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Workflow\' " +
-                    "column:", ((string)(null)), table28, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table28, "When ");
 #line 191
  testRunner.Then("\'Empty\' checkbox is checked in the filter dropdown for the \'Workflow\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

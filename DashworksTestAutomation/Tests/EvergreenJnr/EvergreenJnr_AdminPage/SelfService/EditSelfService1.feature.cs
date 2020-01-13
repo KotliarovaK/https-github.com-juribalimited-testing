@@ -779,6 +779,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19280")]
+        [NUnit.Framework.CategoryAttribute("DAS19692")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEnabledSelfServiceChangesTheCheckboxStateInEditAfterDisableInCogMenu()
         {
@@ -815,6 +816,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS19280",
+                        "DAS19692",
                         "Cleanup"});
 #line 157
 this.ScenarioInitialize(scenarioInfo);
@@ -858,6 +860,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19280")]
+        [NUnit.Framework.CategoryAttribute("DAS19692")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedWhenEnableDisableSelfService()
         {
@@ -894,6 +897,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS19280",
+                        "DAS19692",
                         "Cleanup"});
 #line 171
 this.ScenarioInitialize(scenarioInfo);
@@ -918,12 +922,12 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Enable\' option in Cog-menu for \'TestProj_5\' item from \'Self Service " +
                     "Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 180
- testRunner.Then("\'The TestProj_5 has been enabled\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The self service has been enabled\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 181
  testRunner.When("User clicks \'Disable\' option in Cog-menu for \'TestProj_5\' item from \'Self Service" +
                     " Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 182
- testRunner.Then("\'The TestProj_5 has been disabled\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The self service has been disabled\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
