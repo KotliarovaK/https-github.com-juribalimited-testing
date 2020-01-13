@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	And User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 1059 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 35 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13428 @Cleanup
 Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownOnce

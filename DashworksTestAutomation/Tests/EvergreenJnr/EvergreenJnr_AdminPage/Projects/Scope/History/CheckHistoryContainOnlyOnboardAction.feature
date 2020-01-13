@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollo
 	| Onboard Application Object |
 	| Onboard Device Object      |
 	| Onboard User Object        |
-	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
 	| checkboxes                 |
 	| Onboard Application Object |
 	| Onboard User Object        |
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigr
 	| Onboard User Object        |
 	| Re-onboard Mailbox Object  |
 	| Re-onboard User Object     |
-	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
 	| checkboxes                 |
 	| Onboard User Object        |
 	Then Rows counter shows "807" of "1,527" rows
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEverg
 	| Onboard Application Object |
 	| Onboard Device Object      |
 	| Onboard User Object        |
-	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Action' column:
 	| checkboxes                 |
 	| Onboard Application Object |
 	| Onboard Device Object      |
