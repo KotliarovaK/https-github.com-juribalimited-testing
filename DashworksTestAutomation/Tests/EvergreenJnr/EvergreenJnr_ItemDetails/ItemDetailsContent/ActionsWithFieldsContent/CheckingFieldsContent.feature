@@ -387,7 +387,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	| Name              | Description | IsDefault |
 	| cu_DAS19538_5689d | Devices     | false     |
 	When User create new User via API
-	| Username         | Email | FullName | Password  | Roles                                                                                                                                                                    |
+	| Username         | Email | FullName | Password  | Roles                                                                                                                        |
 	| UserDAS195385689 | Value | DAS19538 | m!gration | Project Application Object Editor, Project Computer Object Editor, Project Mailbox Object Editor, Project User Object Editor |
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

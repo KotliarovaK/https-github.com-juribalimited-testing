@@ -155,8 +155,8 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Onboard User Object"});
 #line 19
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
-                    "n:", ((string)(null)), table2, "When ");
+ testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Action\' c" +
+                    "olumn:", ((string)(null)), table2, "When ");
 #line 23
  testRunner.Then("Rows counter shows \"60\" of \"405\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -242,8 +242,8 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Onboard User Object"});
 #line 38
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
-                    "n:", ((string)(null)), table4, "When ");
+ testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Action\' c" +
+                    "olumn:", ((string)(null)), table4, "When ");
 #line 41
  testRunner.Then("Rows counter shows \"807\" of \"1,527\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -308,7 +308,7 @@ this.FeatureBackground();
 #line 47
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.Then("Counter shows \"60,305\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Counter shows \"60,306\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -329,10 +329,10 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Onboard Device Object"});
 #line 54
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
-                    "n:", ((string)(null)), table6, "When ");
+ testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Action\' c" +
+                    "olumn:", ((string)(null)), table6, "When ");
 #line 58
- testRunner.Then("Rows counter shows \"41,339\" of \"60,305\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter shows \"41,340\" of \"60,306\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
