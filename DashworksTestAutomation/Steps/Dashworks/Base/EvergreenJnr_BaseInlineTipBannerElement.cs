@@ -114,6 +114,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.VerifyColor(MessageType.Success);
         }
 
+        //TODO Remove and do not use this step!!!
         [Then(@"inline error banner is displayed")]
         public void ThenInlineErrorBannerIsDisplayed()
         {
