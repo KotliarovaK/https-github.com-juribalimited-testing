@@ -242,6 +242,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='SAVE AS DYNAMIC LIST']")]
         public IWebElement SaveAsDynamicListButton { get; set; }
 
+        public IWebElement SaveAsMenuOption(string name)
+        {
+            return Driver.FindElementByXPath($".//div[contains(@class, 'saveAs')]//button[text()='{name}']");
+        }
+
         #endregion UpdateList
     }
 }

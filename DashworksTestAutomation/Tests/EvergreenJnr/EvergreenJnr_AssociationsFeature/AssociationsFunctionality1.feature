@@ -58,9 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	Then table content is present
 	#18530
 	When User clicks Save button on the list panel
-	When User selects Save as dynamic list option
-	When User creates new custom list with "AssociationList18530_1" name
-	Then "AssociationList18530_1" list is displayed to user
+	When User selects 'UPDATE DYNAMIC LIST' option in Save menu
 	Then table content is present
 	#==>18127
 	When User clicks the List Details button
@@ -70,7 +68,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	#==<
 	When User navigates to the "All Device Applications" list
 	Then There are no errors in the browser console
-	When User navigates to the "AssociationList18530_1" list
+	When User navigates to the "AssociationList18530" list
 	Then There are no errors in the browser console
 	When User navigates to the "All Device Applications" list
 	Then There are no errors in the browser console

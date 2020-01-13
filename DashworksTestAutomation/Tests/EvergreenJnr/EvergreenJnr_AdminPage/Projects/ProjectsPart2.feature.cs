@@ -596,8 +596,8 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "True"});
 #line 128
- testRunner.When("User selects following checkboxes in the filter dropdown menu for the \'Active\' co" +
-                    "lumn:", ((string)(null)), table12, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
+                    "n:", ((string)(null)), table12, "When ");
 #line 131
  testRunner.Then("Rows counter contains \"0\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 132
