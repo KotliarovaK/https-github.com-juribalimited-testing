@@ -226,7 +226,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalis
 	Then 'Unknown' content is displayed in the 'Action' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup @Not_Ready
-#Waiting for Rationalisation dropdown for Evergreen
+#Waiting for Rationalisation dropdown for Evergreen //Universe release
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -257,7 +257,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
 	Then '1803 Rollout' content is displayed in the 'Project' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup @Not_Ready
+#Waiting for 'Rationalisation' dropdown //Universe release
 Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicationAttributes
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
