@@ -1121,7 +1121,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IList<IWebElement> GetChipsOfTextbox(string textbox)
         {
-            //var chipsSelector = By.XPath("./ancestor::*[contains(@id,'mat-chip-list')]/div");
             var chipsSelector = By.XPath("./ancestor::div//span[contains(@class, 'chips-item')]");
             return GetTextbox(textbox).FindElements(chipsSelector);
         }
