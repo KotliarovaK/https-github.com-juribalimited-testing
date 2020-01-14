@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -22,11 +23,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
     class EvergreenJnr_BaseGrid : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly GridRowsCount _rowCountValue;
 
-        public EvergreenJnr_BaseGrid(RemoteWebDriver driver)
+        public EvergreenJnr_BaseGrid(RemoteWebDriver driver, GridRowsCount rowCountValue)
         {
             _driver = driver;
+            _rowCountValue = rowCountValue;
         }
+
+        #region Rows count
+
+        [When(@"User remembers the found rows number")]
+        public void WhenUserRemembersTheNumberOfFoundRowsNumber()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _rowCountValue.Value = page.GetFoundRowsCount();
+        }
+     
+        #endregion
+
 
         #region Headers
 
