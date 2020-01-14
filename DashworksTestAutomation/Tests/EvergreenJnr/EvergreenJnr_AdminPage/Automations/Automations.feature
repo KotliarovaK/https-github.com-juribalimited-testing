@@ -719,3 +719,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "15949_Action_1" checkbox from String Filter with item list on the Admin page
 	Then '5179' content is displayed in the 'Objects' column
+
+#Additional test to figure out Active position changing
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName          | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| Active_Automation1287   | test        | true   | false              | All Devices | Manual |
+	| Inactive_Automation6578 | test        | false  | false              | All Devices | Manual |
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	#Chenge Active_Test_Automation
+	When User enters "Active_Automation1287" text in the Search field for "Automation" column
+	Then "TRUE" content is displayed for "Active" column
+	When User clicks 'Make inactive' option in Cog-menu for 'Active_Automation1287' item from 'Automation' column
+	When User clicks refresh button in the browser
+	When User enters "Active_Automation1287" text in the Search field for "Automation" column
+	Then "FALSE" content is displayed for "Active" column
+	#Chenge Inactive_Test_Automation
+	When User enters "Inactive_Automation6578" text in the Search field for "Automation" column
+	Then "FALSE" content is displayed for "Active" column
+	When User clicks 'Make active' option in Cog-menu for 'Inactive_Automation6578' item from 'Automation' column
+	When User clicks refresh button in the browser
+	When User enters "Inactive_Automation6578" text in the Search field for "Automation" column
+	Then "TRUE" content is displayed for "Active" column

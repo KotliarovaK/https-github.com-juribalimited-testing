@@ -246,6 +246,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 	When User unchecks following checkboxes in the filter dropdown menu for the 'Default for Applications' column:
 	| checkboxes |
 	| False      |
+	Then "IGNORE" content is displayed for "Readiness" column
 	Then Filtered readiness item equals to stored one
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16148 @DAS16226 @DAS16163
