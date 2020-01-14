@@ -69,7 +69,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	Then '' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Universe
-#Waiting for 'FORWARD PATH' field below 'Evergreen' option
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForwardPath
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -137,3 +136,22 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	| zDeviceAut: Target App Friendly Name    |
 	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
 	Then 'RETIRE' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19663 @Cleanup @Universe
+Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| 19663_Project | All Devices | None            | Standalone Project |
+	#Need to Onboard Application
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope           | Run    |
+	| 19663_Automation | 19663       | true   | false              | All Application | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	And User enters '19663_Action' text to 'Action Name' textbox
+	And User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'KEEP' in the 'Rationalisation' dropdown
+	When User clicks 'CREATE' button
