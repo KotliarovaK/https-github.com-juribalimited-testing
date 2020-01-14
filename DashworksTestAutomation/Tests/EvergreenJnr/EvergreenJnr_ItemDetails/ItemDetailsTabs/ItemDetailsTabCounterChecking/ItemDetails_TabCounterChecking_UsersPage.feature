@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| LDAP             |
 	#================ checks counters ================#
 	And 'Groups' left submenu item with some count is displayed
-	And 'Active Directory' left submenu item is displayed without count
+	#And 'Active Directory' left submenu item is displayed without count
 	And 'LDAP' left submenu item is displayed without count
 	#================ checks sub-menu for main Applications tab ================#
 	When User navigates to the 'Applications' left menu item
@@ -62,6 +62,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Evergreen Summary |
 	| Evergreen Detail  |
 	| Evergreen Owned   |
+	| Project Owned     |
 	| Advertisements    |
 	| Collections       |
 	#================ checks counters ================#
@@ -149,6 +150,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| SubTabName        |
 	| Evergreen Summary |
 	| Evergreen Detail  |
+	| Evergreen Owned   |
+	| Project Owned     |
 	| Advertisements    |
 	| Collections       |
 	#================ checks counters ================#

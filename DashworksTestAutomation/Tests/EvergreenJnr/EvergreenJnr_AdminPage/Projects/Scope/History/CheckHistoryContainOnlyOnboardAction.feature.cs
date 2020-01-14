@@ -308,7 +308,7 @@ this.FeatureBackground();
 #line 47
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.Then("Counter shows \"60,305\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Counter shows \"60,306\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -332,7 +332,7 @@ this.FeatureBackground();
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Action\' c" +
                     "olumn:", ((string)(null)), table6, "When ");
 #line 58
- testRunner.Then("Rows counter shows \"41,339\" of \"60,305\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter shows \"41,340\" of \"60,306\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

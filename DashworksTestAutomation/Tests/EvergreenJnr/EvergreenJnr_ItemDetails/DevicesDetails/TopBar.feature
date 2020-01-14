@@ -59,7 +59,6 @@ Scenario: EvergreenJnr_Devices_CheckThatProjectsSwitcherDoesNotDuplicateItem
 	When User navigates to the 'Device' details page for '00BDM1JUR8IF419' item
 	Then Details page for '00BDM1JUR8IF419' item is displayed to the user
 	Then dropdown is not opened
-	Then '*Project K-Computer Scheduled Project' option is first in the 'Item Details Project' dropdown
 	Then following Values are not displayed in the 'Item Details Project' dropdown:
 	| Options   |
 	| Evergreen |

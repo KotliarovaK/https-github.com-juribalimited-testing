@@ -26,7 +26,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User checks following checkboxes in the filter dropdown menu for the 'Default' column:
 	| checkboxes |
 	| True       |
-	#When User clicks 'True' checkbox from String Filter in the filter dropdown for the 'Default' column
 	Then There are no errors in the browser console
 	When User opens 'Project' column settings
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
