@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Public Folder          |
 	| Sharepoint Application |
 	When User clicks 'Projects' header breadcrumb
-	And User clicks Yes button in Leave Page Warning
+	When User clicks 'YES' button on popup
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item

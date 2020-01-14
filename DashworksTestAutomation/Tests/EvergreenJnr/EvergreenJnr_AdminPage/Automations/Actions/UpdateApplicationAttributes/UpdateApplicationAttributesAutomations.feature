@@ -225,7 +225,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalis
 	Then 'Unknown' content is displayed in the 'Value' column
 	Then 'Unknown' content is displayed in the 'Action' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup @Not_Ready
+#Waiting for Rationalisation dropdown for Evergreen //Universe release
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -256,7 +257,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
 	Then '1803 Rollout' content is displayed in the 'Project' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup @Universe
+#Waiting for 'Rationalisation' dropdown //Universe release
 Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicationAttributes
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -282,7 +284,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicati
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
 	Then 'Barry's User Project' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'FORWARD PATH' content is displayed in 'Rationalisation' dropdown
-	Then 'Hilfe zu Verzeichnisdiensten (32123)' content is displayed in 'Target Application' textbox
+	Then 'Hilfe zu Verzeichnisdiensten (606)' content is displayed in 'Target Application' textbox
 	#Update Action
 	When User enters 'New_Action' text to 'Action Name' textbox
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete

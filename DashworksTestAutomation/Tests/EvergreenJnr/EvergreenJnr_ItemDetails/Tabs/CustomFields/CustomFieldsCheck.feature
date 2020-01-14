@@ -25,8 +25,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIs
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User navigates to the '<ItemType>' details page for '<ItemName>' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User opens 'Custom Field' column settings
-	Then User sees the following Column Settings
+	Then User sees following options for 'Custom Field' column settings
 	| ColumnSettings        |
 	| Pin left              |
 	| Pin right             |

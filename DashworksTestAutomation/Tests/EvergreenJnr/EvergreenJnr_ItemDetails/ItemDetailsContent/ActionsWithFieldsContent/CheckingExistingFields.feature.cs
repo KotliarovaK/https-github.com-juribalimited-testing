@@ -1292,6 +1292,141 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplay" +
+            "edCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS9352")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectlyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplay" +
+                    "edCorrectly", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS9352"});
+#line 278
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 279
+ testRunner.When("User navigates to the \'Mailbox\' details page for the item with \'36452\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 280
+ testRunner.Then("Details page for \'ConfRoom-CanisMinor@dwlabs.local\' item is displayed to the user" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Fields"});
+            table12.AddRow(new string[] {
+                        "Key"});
+            table12.AddRow(new string[] {
+                        "Mailbox Platform"});
+            table12.AddRow(new string[] {
+                        "Mail Server"});
+            table12.AddRow(new string[] {
+                        "Principal Email Address"});
+            table12.AddRow(new string[] {
+                        "Mailbox Database"});
+            table12.AddRow(new string[] {
+                        "Alias"});
+            table12.AddRow(new string[] {
+                        "Display Name"});
+            table12.AddRow(new string[] {
+                        "User Principal Name"});
+            table12.AddRow(new string[] {
+                        "User GUID"});
+            table12.AddRow(new string[] {
+                        "Mailbox GUID"});
+            table12.AddRow(new string[] {
+                        "Language"});
+            table12.AddRow(new string[] {
+                        "Time Zone"});
+            table12.AddRow(new string[] {
+                        "Mailbox Enabled"});
+            table12.AddRow(new string[] {
+                        "Email Count"});
+            table12.AddRow(new string[] {
+                        "Mailbox Size (MB)"});
+            table12.AddRow(new string[] {
+                        "Associated Item Count"});
+            table12.AddRow(new string[] {
+                        "Deleted Item Count"});
+            table12.AddRow(new string[] {
+                        "Deleted Item Size (MB)"});
+            table12.AddRow(new string[] {
+                        "Max Send Size (MB)"});
+            table12.AddRow(new string[] {
+                        "Max Receive Size (MB)"});
+            table12.AddRow(new string[] {
+                        "Forwarding Address (External)"});
+            table12.AddRow(new string[] {
+                        "Forwarding Address (Internal)"});
+            table12.AddRow(new string[] {
+                        "Created Date"});
+            table12.AddRow(new string[] {
+                        "Retention Hold Enabled"});
+            table12.AddRow(new string[] {
+                        "Retain Deleted Items (Days)"});
+            table12.AddRow(new string[] {
+                        "Last Logon By"});
+            table12.AddRow(new string[] {
+                        "Last Logon Date"});
+            table12.AddRow(new string[] {
+                        "Last Logoff Date"});
+            table12.AddRow(new string[] {
+                        "Mailbox Type"});
+            table12.AddRow(new string[] {
+                        "Recipient Type"});
+            table12.AddRow(new string[] {
+                        "Hidden From Address Lists Enabled"});
+            table12.AddRow(new string[] {
+                        "Prohibit Send Quota (MB)"});
+            table12.AddRow(new string[] {
+                        "Prohibit Send Receive Quota (MB)"});
+            table12.AddRow(new string[] {
+                        "Issue Warning Quota (MB)"});
+            table12.AddRow(new string[] {
+                        "Use Database Quota Defaults"});
+            table12.AddRow(new string[] {
+                        "Mailbox Plan"});
+#line 281
+ testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table12, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
