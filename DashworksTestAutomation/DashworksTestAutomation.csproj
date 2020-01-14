@@ -121,6 +121,9 @@
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Readiness\ReadinessDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\AllPagesOfSelfServiceDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\ComponentsOfSelfServicePageDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\ListOfComponentsTypesForSelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
@@ -243,7 +246,6 @@
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ItemDetailsTopBarPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseNavigationElements.cs" />
-    <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
@@ -401,7 +403,6 @@
     <Compile Include="Steps\Dashworks\AdminPage\Project\EvergreenJnr_CapacitySlotPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\EvergreenJnr_RingsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ImportListsFromCSV.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_LeavePageWarning.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListsPanel.cs" />

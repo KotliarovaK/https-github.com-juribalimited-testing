@@ -749,7 +749,7 @@ this.FeatureBackground();
 #line 161
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 162
- testRunner.And("Color Scheme dropdown displayed with \'Compliance Colour Scheme\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Color Scheme dropdown displayed with \'Compliance\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 163
  testRunner.And("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 164

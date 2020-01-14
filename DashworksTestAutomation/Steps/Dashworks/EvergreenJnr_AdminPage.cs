@@ -142,6 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        //TODO: AnnI 12/17/19 Replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step
         [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterOnTheAdminPage(string filterName)
         {
@@ -150,7 +151,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        //TODO: AnnI 12/17/19 Replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step
+        //TODO: AnnI 12/17/19 Can we replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
         [When(@"User selects ""(.*)"" checkbox from String Filter with item list on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterWithItemListOnTheAdminPage(string filterName)
         {
@@ -1027,19 +1028,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(page.MoveToPositionDialog.Size.Width, Is.EqualTo(_elementCoordinates.Width));
         }
 
-        [Then(@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
-        public void ThenButtonInMoveToPositionDialogIsDisplayedDisabled(string buttonName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            var actionBtn = page.GetMoveToPositionDialogButtonByText(buttonName);
-            Utils.Verify.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
-        }
-
         [When(@"User moves ""(.*)"" slot to ""(.*)"" slot")]
         public void WhenUserMovesSlotToSlot(string slot, string moveToSlot)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            var slotFrom = page.GetMoveButtonBySlotName(slot);
+            var slotFrom = page.GetMoveButtonBySlotName(slot);  
             var slotTo = page.GetMoveButtonBySlotName(moveToSlot);
             _driver.DragAndDrop(slotFrom, slotTo);
         }
@@ -1085,12 +1078,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is available for select");
         }
 
+        //TODO: AnnI 12/18/19 replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn remove this step
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
         public void WhenUserClicksStringFilterButtonForColumnOnTheAdminPage(string columnName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
-            filterElement.GetStringFilterByColumnName(columnName);
+            filterElement.OpenColumnFilter(columnName);
         }
 
         [Then(@"""(.*)"" is not displayed in the filter dropdown")]

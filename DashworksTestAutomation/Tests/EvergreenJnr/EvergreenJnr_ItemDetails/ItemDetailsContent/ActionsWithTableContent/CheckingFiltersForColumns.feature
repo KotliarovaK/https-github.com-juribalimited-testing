@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| Values  |
 	| True    |
 	| False   |
-	When User selects following checkboxes in the filter dropdown menu for the 'Enabled' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| True       |
 	Then Content is present in the table on the Details Page
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	And User enters "Administrator" text in the Search field for "Display Name" column
 	Then Rows counter shows "1" of "7" rows
 	When User clicks button with 'ResetFilters' aria label
-	When User selects following checkboxes in the filter dropdown menu for the 'Domain' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| DWLABS     |
 	Then Rows counter shows "0" of "7" rows
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	Then Details page for '001PSUMZYOW581' item is displayed to the user
 	When User navigates to the 'Applications' left menu item
 	Then 'All' text is displayed in the filter dropdown for the 'Compliance' column
-	When User selects following checkboxes in the filter dropdown menu for the 'Compliance' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| Red        |
 	#TODO upd!!!
@@ -51,12 +51,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	And User enters "3.0.0" text in the Search field for "Version" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks button with 'ResetFilters' aria label
-	When User selects following checkboxes in the filter dropdown menu for the 'Used' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| Unknown    |
 	Then Rows counter contains "0" found row of all rows
 	When User clicks button with 'ResetFilters' aria label
-	When User selects following checkboxes in the filter dropdown menu for the 'Entitled' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| True       |
 	Then Rows counter contains "0" found row of all rows
@@ -184,12 +184,12 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	When User click content from "Application" column
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item
-	When User selects following checkboxes in the filter dropdown menu for the 'Used' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| False      |
 	Then Rows counter shows "98" of "194" rows
 	When User navigates to the 'Devices' left submenu item
-	When User selects following checkboxes in the filter dropdown menu for the 'Used' column:
+	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
 	| checkboxes |
 	| False      |
 	Then Rows counter shows "94" of "168" rows

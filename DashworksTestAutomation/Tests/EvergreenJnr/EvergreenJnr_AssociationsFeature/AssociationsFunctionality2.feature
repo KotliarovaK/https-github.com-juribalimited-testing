@@ -80,13 +80,17 @@ Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotD
 	When User selects '<operator2>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
 	When User selects '<operator3>' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator4>' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	When User selects '<operator5>' option in 'Search associations' autocomplete of Associations panel
 	Then Add And button is not displayed on the Filter panel
 
 Examples: 
-	| operator1          | operator2              | operator3               |
-	| Used on device     | Entitled to device     | Installed on device     |
-	| Used on device     | Not entitled to device | Not installed on device |
-	| Entitled to device | Not used on device     | Installed on device     |
+	| operator1          | operator2              | operator3               | operator4                | operator5            |
+	| Used on device     | Entitled to device     | Installed on device     | Entitled to device owner | Used by device owner |
+	| Used on device     | Not entitled to device | Not installed on device | Entitled to device owner | Used by device owner |
+	| Entitled to device | Not used on device     | Installed on device     | Entitled to device owner | Used by device owner |
 
 @Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18379 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded

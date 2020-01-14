@@ -241,22 +241,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return new List<By> { };
         }
 
-        //TODO NOT USE THIS METHOD! Should be removed after Kate refactoring
-        public IWebElement GetGridCellByText(string cellText)
-        {
-            var allCellsWithExpectedText = Driver.FindElements(By.XPath(GridCell))
-                .Where(x => x.GetAttribute("innerHTML").Contains(cellText)).ToList();
-
-            if (allCellsWithExpectedText.Any())
-            {
-                return allCellsWithExpectedText.FirstOrDefault();
-            }
-            else
-            {
-                throw new Exception($"Unable to find cell with '{cellText}' text");
-            }
-        }
-
         //TODO Find out what this method is doing and remove ti from BDP, for now test is marked as Not_Run and it is not possible to execute it
         public IWebElement GetItalicContentByColumnName(string text)
         {
@@ -475,7 +459,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public bool IsAutocompleteCheckboxDisplayed(string checkbox)
         {
-            return IsCheckboxDisplayed(checkbox, AutocompleteSelectDropdownSelector);
+            var resutls = IsCheckboxDisplayed(checkbox, AutocompleteSelectDropdownSelector);
+            return resutls;
         }
 
         #endregion
@@ -1048,6 +1033,70 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion
 
+        #region Checkbox mat-option
+
+        public List<IWebElement> GetMatOptionCheckboxes(string parentElementSelector = "", WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        {
+            var checkboxes = By.XPath($"{parentElementSelector}//mat-option[contains(@class,'mat-option')]");
+            Driver.WaitForElementsToBeDisplayed(checkboxes);
+            return Driver.FindElements(checkboxes).ToList();
+        }
+
+        public IWebElement GetMatOptionCheckbox(string checkbox, string parentElementSelector = "", WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        {
+            foreach (IWebElement element in GetMatOptionCheckboxes(parentElementSelector, wait))
+            {
+                try
+                {
+                    var text = element.Text;
+                }
+                catch (Exception e)
+                {
+                    var t = e;
+                }
+            }
+            if (GetMatOptionCheckboxes(parentElementSelector, wait)
+                .Any(x => x.Text.Equals(checkbox)))
+            {
+                return GetMatOptionCheckboxes(parentElementSelector, wait)
+                    .First(x => x.Text.Equals(checkbox));
+            }
+            else
+            {
+                throw new Exception($"Unable to get '{checkbox}' mat-option checkbox");
+            }
+        }
+
+        public bool IsMatOptionCheckboxDisplayed(string checkbox, string parentElementSelector = "")
+        {
+            try
+            {
+                return GetMatOptionCheckbox(checkbox, parentElementSelector, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool GetMatOptionCheckboxState(string checkbox, string parentElementSelector = "")
+        {
+            var cb = GetMatOptionCheckbox(checkbox, parentElementSelector);
+            var state = bool.Parse(cb.GetAttribute("aria-selected"));
+            return state;
+        }
+
+        public void SetMatOptionCheckboxState(string checkbox, bool expectedCondition, string parentElementSelector = "")
+        {
+            if (!GetMatOptionCheckboxState(checkbox, parentElementSelector).Equals(expectedCondition))
+            {
+                //We must click by text to check or uncheck element
+                GetMatOptionCheckbox(checkbox, parentElementSelector).Click();
+            }
+        }
+
+        #endregion
+
         #region Radio Button
 
         public IWebElement GetRadioButton(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
@@ -1063,6 +1112,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         #endregion
 
         #region Chips
+
+        public IList<IWebElement> GetChipsInTheTextbox(string textbox)
+        {
+            var chipsSelector = By.XPath("./ancestor::*[contains(@id,'mat-chip-list')]/div");
+            return GetTextbox(textbox).FindElements(chipsSelector);
+        }
 
         public IList<IWebElement> GetChipsOfTextbox(string textbox)
         {
