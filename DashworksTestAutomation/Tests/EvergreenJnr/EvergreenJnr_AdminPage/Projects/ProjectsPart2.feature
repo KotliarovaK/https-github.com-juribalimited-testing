@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "NewProject15" text in the Search field for "Project" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Admin page
-	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
+	When User checks following checkboxes in the filter dropdown menu for the 'Active' column:
 	| checkboxes |
 	| True       |
 	Then Rows counter contains "0" found row of all rows

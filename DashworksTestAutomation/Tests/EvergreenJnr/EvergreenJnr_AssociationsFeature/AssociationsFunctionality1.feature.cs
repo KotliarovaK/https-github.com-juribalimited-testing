@@ -83,8 +83,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFe
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAl" +
             "lDeviceApplicationsList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18425")]
         [NUnit.Framework.CategoryAttribute("DAS18458")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -119,8 +118,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFe
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAl" +
                     "lDeviceApplicationsList", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18425",
                         "DAS18458",
                         "Cleanup"});
@@ -159,8 +157,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTw" +
             "oMoreAdded")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18425")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded()
         {
@@ -193,8 +190,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTw" +
                     "oMoreAdded", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18425"});
 #line 22
 this.ScenarioInitialize(scenarioInfo);
@@ -237,8 +233,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOn" +
             "AllDeviceApplicationsPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18456")]
         [NUnit.Framework.CategoryAttribute("DAS18530")]
         [NUnit.Framework.CategoryAttribute("DAS18562")]
@@ -275,8 +270,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOn" +
                     "AllDeviceApplicationsPage", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18456",
                         "DAS18530",
                         "DAS18562",
@@ -364,8 +358,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18489")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved()
@@ -398,8 +391,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18489",
                         "Cleanup"});
 #line 77

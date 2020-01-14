@@ -241,25 +241,25 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Email Count"});
             table5.AddRow(new string[] {
-                        "Mailbox Size (MB)"});
+                        "Mailbox Size"});
             table5.AddRow(new string[] {
                         "Associated Item Count"});
             table5.AddRow(new string[] {
                         "Deleted Item Count"});
             table5.AddRow(new string[] {
-                        "Deleted Item Size (MB)"});
+                        "Deleted Item Size"});
 #line 66
  testRunner.Then("\'Trend\' left menu have following submenu items:", ((string)(null)), table5, "Then ");
 #line 74
  testRunner.And("\'Email Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
- testRunner.And("\'Mailbox Size (MB)\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Size\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
  testRunner.And("\'Associated Item Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 77
  testRunner.And("\'Deleted Item Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
- testRunner.And("\'Deleted Item Size (MB)\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Deleted Item Size\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -426,25 +426,25 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Email Count"});
             table10.AddRow(new string[] {
-                        "Mailbox Size (MB)"});
+                        "Mailbox Size"});
             table10.AddRow(new string[] {
                         "Associated Item Count"});
             table10.AddRow(new string[] {
                         "Deleted Item Count"});
             table10.AddRow(new string[] {
-                        "Deleted Item Size (MB)"});
+                        "Deleted Item Size"});
 #line 135
  testRunner.Then("\'Trend\' left menu have following submenu items:", ((string)(null)), table10, "Then ");
 #line 143
  testRunner.And("\'Email Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
- testRunner.And("\'Mailbox Size (MB)\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Mailbox Size\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 145
  testRunner.And("\'Associated Item Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
  testRunner.And("\'Deleted Item Count\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147
- testRunner.And("\'Deleted Item Size (MB)\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'Deleted Item Size\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

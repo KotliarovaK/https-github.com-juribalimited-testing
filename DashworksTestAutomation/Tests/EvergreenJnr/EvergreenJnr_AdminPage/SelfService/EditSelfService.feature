@@ -211,3 +211,21 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 	When User clicks 'DELETE' button on inline tip banner
 	Then '1 self service has been deleted' text is displayed on inline success banner
 	Then 'TestProj_13' content is not displayed in the 'Self Service Name' column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfService
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' left menu item
+	When User clicks 'CREATE SELF SERVICE' button
+	When User enters 'TestProj_6' text to 'Self Service Name' textbox
+	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User enters 'TestP_ID_6' text to 'Self Service Identifier' textbox
+	When User clicks 'CREATE' button
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_6' item from 'Self Service Name' column
+	When User enters 'TestProj_1' text to 'Self Service Name' textbox
+	When User enters 'TestP_ID_1' text to 'Self Service Identifier' textbox
+	When User clicks 'UPDATE' button
+	Then 'The self service has been updated' text is displayed on inline success banner
+	Then 'click here to view the TestProj_1 self service' link is displayed on inline success banner
+	Then User clicks on 'click here to view the TestProj_1 self service' link on inline success banner
+	Then Page with 'TestProj_1' header is displayed to user
