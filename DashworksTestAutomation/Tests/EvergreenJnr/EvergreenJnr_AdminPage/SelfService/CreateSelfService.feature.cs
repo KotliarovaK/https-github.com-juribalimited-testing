@@ -839,7 +839,7 @@ this.FeatureBackground();
  testRunner.Then("\'click here to view the TestProj_7 self service\' link is displayed on inline succ" +
                     "ess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 146
- testRunner.Then("User clicks on \'click here to view the TestProj_7 self service\' link of inline su" +
+ testRunner.Then("User clicks on \'click here to view the TestProj_7 self service\' link on inline su" +
                     "ccess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 147
  testRunner.Then("Page with \'TestProj_7\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

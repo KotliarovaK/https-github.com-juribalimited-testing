@@ -143,5 +143,5 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificat
 	When User clicks 'CREATE' button
 	Then 'The self service has been created' text is displayed on inline success banner
 	Then 'click here to view the TestProj_7 self service' link is displayed on inline success banner
-	Then User clicks on 'click here to view the TestProj_7 self service' link of inline success banner
+	Then User clicks on 'click here to view the TestProj_7 self service' link on inline success banner
 	Then Page with 'TestProj_7' header is displayed to user
