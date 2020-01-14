@@ -141,8 +141,8 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "True"});
 #line 15
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
-                    "n:", ((string)(null)), table1, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default\' co" +
+                    "lumn:", ((string)(null)), table1, "When ");
 #line 18
  testRunner.Then("\'FALSE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
@@ -155,8 +155,8 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "False"});
 #line 21
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'(.*)\' colum" +
-                    "n:", ((string)(null)), table2, "When ");
+ testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default\' co" +
+                    "lumn:", ((string)(null)), table2, "When ");
 #line 24
  testRunner.Then("\'TRUE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25

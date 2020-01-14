@@ -64,18 +64,18 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	#================ checks sub-menu for main Trend tab ================#
 	When User navigates to the 'Trend' left menu item
 	Then 'Trend' left menu have following submenu items:
-	| SubTabName             |
-	| Email Count            |
-	| Mailbox Size (MB)      |
-	| Associated Item Count  |
-	| Deleted Item Count     |
-	| Deleted Item Size (MB) |
+	| SubTabName            |
+	| Email Count           |
+	| Mailbox Size          |
+	| Associated Item Count |
+	| Deleted Item Count    |
+	| Deleted Item Size     |
 	#================ checks counters ================#
 	And 'Email Count' left submenu item is displayed without count
-	And 'Mailbox Size (MB)' left submenu item is displayed without count
+	And 'Mailbox Size' left submenu item is displayed without count
 	And 'Associated Item Count' left submenu item is displayed without count
 	And 'Deleted Item Count' left submenu item is displayed without count
-	And 'Deleted Item Size (MB)' left submenu item is displayed without count
+	And 'Deleted Item Size' left submenu item is displayed without count
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906 @DAS16832 @DAS17143 @DAS17521
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode
@@ -133,15 +133,15 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	#================ checks sub-menu for main Trend tab ================#
 	When User navigates to the 'Trend' left menu item
 	Then 'Trend' left menu have following submenu items:
-	| SubTabName             |
-	| Email Count            |
-	| Mailbox Size (MB)      |
-	| Associated Item Count  |
-	| Deleted Item Count     |
-	| Deleted Item Size (MB) |
+	| SubTabName            |
+	| Email Count           |
+	| Mailbox Size          |
+	| Associated Item Count |
+	| Deleted Item Count    |
+	| Deleted Item Size     |
 	#================ checks counters ================#
 	And 'Email Count' left submenu item is displayed without count
-	And 'Mailbox Size (MB)' left submenu item is displayed without count
+	And 'Mailbox Size' left submenu item is displayed without count
 	And 'Associated Item Count' left submenu item is displayed without count
 	And 'Deleted Item Count' left submenu item is displayed without count
-	And 'Deleted Item Size (MB)' left submenu item is displayed without count
+	And 'Deleted Item Size' left submenu item is displayed without count

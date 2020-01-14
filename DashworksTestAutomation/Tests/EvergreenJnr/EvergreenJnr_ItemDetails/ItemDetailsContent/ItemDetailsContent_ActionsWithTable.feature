@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Details page for 'Microsoft DirectX 5 DDK' item is displayed to the user
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item
-	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
+	When User checks following checkboxes in the filter dropdown menu for the 'Used' column:
 	| checkboxes |
 	| False      |
 	And User opens 'User' column settings
@@ -102,7 +102,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 	When User navigates to the 'Devices' left submenu item
-	When User checks following checkboxes in the filter dropdown menu for the '(.*)' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Used' column:
 	| checkboxes |
 	| False      |
 	And User opens 'Device' column settings

@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForS
 	And User clicks 'CREATE' button 
 	Then 'Your capacity slot has been created' text is displayed on inline success banner
 	When User clicks newly created object link
-	Then following chips value displayed for 'Tasks' textbox
+	Then following chips value displayed in the 'Tasks' textbox
 	| ChipValue              |
 	| Stage 1 \ WO Task13671 |
 

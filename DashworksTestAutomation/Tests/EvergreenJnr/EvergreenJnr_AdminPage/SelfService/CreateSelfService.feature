@@ -131,3 +131,17 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserWillBeRetur
 	When User clicks 'CREATE SELF SERVICE' button
 	When User clicks 'CANCEL' button
 	Then 'CREATE SELF SERVICE' button is displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserCreatedSelfService
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' left menu item
+	When User clicks 'CREATE SELF SERVICE' button
+	When User enters 'TestProj_7' text to 'Self Service Name' textbox
+	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User enters 'TestP_ID_7' text to 'Self Service Identifier' textbox
+	When User clicks 'CREATE' button
+	Then 'The self service has been created' text is displayed on inline success banner
+	Then 'click here to view the TestProj_7 self service' link is displayed on inline success banner
+	Then User clicks on 'click here to view the TestProj_7 self service' link on inline success banner
+	Then Page with 'TestProj_7' header is displayed to user

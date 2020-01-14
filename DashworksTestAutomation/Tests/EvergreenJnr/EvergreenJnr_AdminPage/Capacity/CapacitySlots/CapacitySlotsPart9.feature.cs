@@ -420,7 +420,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Stage 1 \\ WO Task13671"});
 #line 100
- testRunner.Then("following chips value displayed for \'Tasks\' textbox", ((string)(null)), table6, "Then ");
+ testRunner.Then("following chips value displayed in the \'Tasks\' textbox", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
