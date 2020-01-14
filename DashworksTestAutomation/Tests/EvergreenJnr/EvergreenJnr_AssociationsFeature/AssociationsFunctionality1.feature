@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18425 @DAS18458 @Cleanup
+@Evergreen @Associations @DAS18425 @DAS18458 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFr
 	When User click content from "Application Name" column
 	Then There are no errors in the browser console
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18425
+@Evergreen @Associations @DAS18425
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedI
 	Then Remove icon displayed in 'true' state for 'Not installed on device' association
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18456 @DAS18530 @DAS18562 @DAS18127 @Cleanup
+@Evergreen @Associations @DAS18456 @DAS18530 @DAS18562 @DAS18127 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	When User navigates to the "All Device Applications" list
 	Then There are no errors in the browser console
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18489 @Cleanup
+@Evergreen @Associations @DAS18489 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

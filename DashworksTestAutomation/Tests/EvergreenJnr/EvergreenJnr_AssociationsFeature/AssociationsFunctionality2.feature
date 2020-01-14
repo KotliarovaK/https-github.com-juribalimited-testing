@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18445 @Cleanup
+@Evergreen @Associations @DAS18445 @Cleanup
 Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemoveIcon
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterC
 	When User removes 'Used on device' association in Association panel
 	Then Remove icon displayed in 'true' state for 'Entitled to device' association
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18531 @DAS18763
+@Evergreen @Associations @DAS18531 @DAS18763
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAsso
 	When User have reset all filters
 	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18531 @Cleanup
+@Evergreen @Associations @DAS18531 @Cleanup
 Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User navigates to the "All Device Applications" list
 	Then message 'No list generated Use association panel to create a list' is displayed to the user
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18424
+@Evergreen @Associations @DAS18424
 Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdded
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -92,7 +92,7 @@ Examples:
 	| Used on device     | Not entitled to device | Not installed on device | Entitled to device owner | Used by device owner |
 	| Entitled to device | Not used on device     | Installed on device     | Entitled to device owner | Used by device owner |
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18379 @Cleanup
+@Evergreen @Associations @DAS18379 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list

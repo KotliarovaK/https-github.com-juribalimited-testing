@@ -170,6 +170,7 @@
     <Compile Include="DTO\RuntimeVariables\Automations.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityDetails.cs" />
+    <Compile Include="DTO\RuntimeVariables\GridRowsCount.cs" />
     <Compile Include="DTO\RuntimeVariables\ColumnValue.cs" />
     <Compile Include="DTO\RuntimeVariables\ItemDetails\CustomFields.cs" />
     <Compile Include="DTO\RuntimeVariables\ElementCoordinates.cs" />

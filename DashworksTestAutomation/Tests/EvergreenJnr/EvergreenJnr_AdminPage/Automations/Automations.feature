@@ -34,6 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User opens 'Date' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
+	When User select "Type" checkbox on the Column Settings panel
 	When User select "Scope Object Type" checkbox on the Column Settings panel
 	When User select "Scope" checkbox on the Column Settings panel
 	When User select "Action Type" checkbox on the Column Settings panel
@@ -51,23 +52,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Value ID      |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222 @Not_Ready
-
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	Then grid headers are displayed in the following order
-	| ColumnName  |
-	|             |
-	| Automation  |
-	|             |
-	| Active      |
-	| Running     |
-	| Scope       |
-	| Run         |
-	| Actions     |
-	| Description |
+	| ColumnName       |
+	| Automation       |
+	|                  |
+	| Processing Order |
+	| Active           |
+	| Running          |
+	| Scope            |
+	| Run              |
+	| Actions          |
+	| Description      |
 	Then 'FALSE' content is displayed in the 'Running' column
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then 'TRUE' content is displayed in the 'Active' column
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'RUN' button 
 	Then 'Are you sure you wish to run 1 automation?' text is displayed on inline tip banner
 	When User clicks 'RUN' button on inline tip banner
-	Then '1 automation started,' text is displayed on inline success banner
+	Then '1 automation started' text is displayed on inline success banner
 	When User enters "DELAY_2" text in the Search field for "Automation" column
 	Then 'TRUE' content is displayed in the 'Running' column
 	When User clicks Cog-menu for 'DELAY_2' item in the 'Automation' column and sees following cog-menu options
@@ -99,11 +99,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'DELETE' button on inline tip banner
 	Then 'Cannot delete a running automation' text is displayed on inline tip banner
 	When User moves "Applications_Scope" automation to "DELAY_8" automation
-	When User opens 'Automation' column settings
-	And User clicks Column button on the Column Settings panel
-	Then Column Settings was opened
-	When User select "Processing order" checkbox on the Column Settings panel
-	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
+	Then numeric data in table is sorted by 'Processing Order' column in ascending order by default
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @DAS16764 @DAS17222 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
@@ -162,10 +158,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Move to position |
 	| Make active      |
 	| Delete           |
-	When User clicks 'Make active' option in Cog-menu for '15431_Third_Active' item from 'Automation' column
-	When User clicks refresh button in the browser
-	When User enters "15431_Third_Active" text in the Search field for "Automation" column
-	Then "TRUE" content is displayed for "Active" column
+	#When User clicks 'Make active' option in Cog-menu for '15431_Third_Active' item from 'Automation' column
+	#When User clicks refresh button in the browser
+	#When User enters "15431_Third_Active" text in the Search field for "Automation" column
+	#Then "TRUE" content is displayed for "Active" column
 	When User clicks 'Edit' option in Cog-menu for '15431_Third_Active' item from 'Automation' column
 	Then 'Edit Automation' page subheader is displayed to user
 	Then Page with '15431_Third_Active' header is displayed to user
