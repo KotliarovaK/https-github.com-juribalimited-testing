@@ -172,13 +172,13 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
-	When User enters 'TestProj_5' text to 'Self Service Name' textbox
+	When User enters 'TestProj_8' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_5' text to 'Self Service Identifier' textbox
+	When User enters 'TestP_ID_8' text to 'Self Service Identifier' textbox
 	When User clicks 'CREATE' button
-	When User clicks 'Enable' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
+	When User clicks 'Enable' option in Cog-menu for 'TestProj_8' item from 'Self Service Name' column
 	Then 'The self service has been enabled' text is displayed on inline success banner
-	When User clicks 'Disable' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
+	When User clicks 'Disable' option in Cog-menu for 'TestProj_8' item from 'Self Service Name' column
 	Then 'The self service has been disabled' text is displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
