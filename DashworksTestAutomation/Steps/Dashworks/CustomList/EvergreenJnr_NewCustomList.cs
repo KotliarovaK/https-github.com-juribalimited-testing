@@ -224,6 +224,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             _driver.WaitForElementToBeDisplayed(listElement.UpdateCurrentListButton);
             _driver.WaitForElementToBeEnabled(listElement.UpdateCurrentListButton);
             _driver.ClickByJavascript(listElement.UpdateCurrentListButton);
+
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButton("SAVE");
+
+            page.GetMenuButtonByName("UPDATE DYNAMIC LIST").Click();
         }
 
         [Then(@"User save changes in list with ""(.*)"" name")]

@@ -60,7 +60,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	When User add "<FilterName>" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| <Checkbox>     |
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	Then "<NewRowsCount>" rows are displayed in the agGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
