@@ -62,6 +62,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{link}' link is not displayed on inline success banner");
         }
 
+        [Then(@"User clicks on '(.*)' link of inline success banner")]
+        public void ThenUserClicksOnLinkOfInlineSuccessBanner(string link)
+        {
+            var page = _driver.NowAt<BaseInlineBannerElement>();
+            page.GetLinkByText(MessageType.Success, link).Click();
+        }
+
         #endregion
 
         #region Banner types display + text
