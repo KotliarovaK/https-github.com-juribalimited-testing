@@ -1098,22 +1098,22 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkA" +
-            "reDisplayedWhenUserUpadatesSelfService")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkI" +
+            "nItAreDisplayedWhenUserUpadatesSelfService")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19289")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkAreDisplayedWhenUserUpadatesSelfService()
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfService()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkAreDisplayedWhenUserUpadatesSelfServiceInternal();
+                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfServiceInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1132,10 +1132,10 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkAreDisplayedWhenUserUpadatesSelfServiceInternal()
+        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfServiceInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkA" +
-                    "reDisplayedWhenUserUpadatesSelfService", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkI" +
+                    "nItAreDisplayedWhenUserUpadatesSelfService", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",

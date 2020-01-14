@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 	Then 'TestProj_13' content is not displayed in the 'Self Service Name' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkAreDisplayedWhenUserUpadatesSelfService
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfService
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
