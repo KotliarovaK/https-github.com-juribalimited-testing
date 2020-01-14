@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	And "Import" subcategory is selected in Column panel
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	And User clicks the Columns button
 	And User clicks the Logout button
 	Then User is logged out
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then Filters panel is displayed to the user
 	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
 	Then "City" filter is added to the list
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	And User clicks the Filters button
 	And User clicks the Logout button
 	Then User is logged out
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "TestList9A0AE8" list is displayed to user
 	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	And User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

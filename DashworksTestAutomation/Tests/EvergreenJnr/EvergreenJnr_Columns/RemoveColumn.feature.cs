@@ -316,7 +316,7 @@ this.FeatureBackground();
 #line 66
  testRunner.When("User remove sorted column on \"Devices\" page by URL", ((string)(null)), table12, "When ");
 #line 69
- testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'SAVE\' button and select \'UPDATE DYNAMIC LIST\' menu button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
