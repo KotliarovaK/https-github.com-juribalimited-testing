@@ -380,12 +380,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	| Title         | Value             |
 	| Capacity Unit | cu_DAS19538_4645s |
 
-	#AnnI 1/9/20: 'nor ready' because I need more details from Elena.
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538 @Cleanup @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccessAndTeam
-	When User creates new Capacity Unit via api
-	| Name              | Description | IsDefault |
-	| cu_DAS19538_5689d | Devices     | false     |
 	When User create new User via API
 	| Username         | Email | FullName | Password  | Roles                                                                                                                        |
 	| UserDAS195385689 | Value | DAS19538 | m!gration | Project Application Object Editor, Project Computer Object Editor, Project Mailbox Object Editor, Project User Object Editor |
@@ -443,22 +439,21 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	When User clicks on edit button for 'Capacity Unit' field
 	Then popup is displayed to User
 	When User deselect all rows on the grid
-	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
+	When User selects 'Bb' option from 'Capacity Unit' autocomplete
 	And User clicks 'MOVE' button 
 	Then following content is displayed on the Details Page
-	| Title         | Value             |
-	| Capacity Unit | cu_DAS19538_5689d |
+	| Title         | Value |
+	| Capacity Unit | Bb    |
 		#--Applications--#
-	When User navigates to the 'Application' details page for the item with '93' ID
-	Then Details page for '20040610sqlserverck' item is displayed to the user
-	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Application' details page for the item with '855' ID
+	Then Details page for 'Adobe Reader 6.0 - Nederlands' item is displayed to the user
+	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
 	Then popup is displayed to User
-	When User deselect all rows on the grid
-	When User selects 'cu_DAS19538_5689d' option from 'Capacity Unit' autocomplete
+	When User selects 'Project Capacity Unit 1' option from 'Capacity Unit' autocomplete
 	And User clicks 'MOVE' button 
 	Then following content is displayed on the Details Page
-	| Title         | Value             |
-	| Capacity Unit | cu_DAS19538_5689d |
+	| Title         | Value                   |
+	| Capacity Unit | Project Capacity Unit 1 |
