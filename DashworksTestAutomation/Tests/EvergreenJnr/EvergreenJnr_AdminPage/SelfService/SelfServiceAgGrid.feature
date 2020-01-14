@@ -57,12 +57,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelfServiceCogMenuDisplaysProperly
 	| 5         | TestSelfServiceCogMenu_name5 | id193855          | true    | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
-	When User clicks Cog-menu for 'TestSelfService_name1' item in the 'Self Service Name' column and sees following cog-menu options
+	When User clicks Cog-menu for 'TestSelfServiceCogMenu_name1' item in the 'Self Service Name' column and sees following cog-menu options
 	| options          |
 	| Edit             |
 	| Enable           | 
 	| Delete           |
-	When User clicks Cog-menu for 'TestSelfService_name5' item in the 'Self Service Name' column and sees following cog-menu options
+	When User clicks Cog-menu for 'TestSelfServiceCogMenu_name5' item in the 'Self Service Name' column and sees following cog-menu options
 	| options          |
 	| Edit             |
 	| Disable          | 
