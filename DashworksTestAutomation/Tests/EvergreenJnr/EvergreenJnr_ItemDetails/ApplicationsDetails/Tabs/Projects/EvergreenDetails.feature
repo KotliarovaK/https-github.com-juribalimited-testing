@@ -148,3 +148,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationFromKeepToForwar
 	When User clicks on edit button for 'Rationalisation' field
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button on popup
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19694 @Universe
+Scenario: EvergreenJnr_ApplicationsList_CheckThatTextOfTheAmberMessageAfterTryingToChangeRationalisationFromKeepToAnotherOneIsDisplayedCorrectly
+	When User navigates to the 'Application' details page for the item with '389' ID
+	Then Details page for 'ACDSee 4.0.2 PowerPack Trial Version' item is displayed to the user
+	When User navigates to the 'Projects' parent left menu item
+	And User navigates to the 'Evergreen Details' left submenu item
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Macromedia MacrShockwave80' in the 'Application' autocomplete field and selects 'Macromedia MacrShockwave80 8.0 (265)' value
+	When User clicks 'UPDATE' button on popup
+	Then 'Any apps forward pathed to this app will remain Forward Pathed and will be targeted to the application selected above' text is displayed on inline tip banner
