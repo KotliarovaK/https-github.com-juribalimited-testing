@@ -146,7 +146,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Compliance\" filter where type is \"Equals\" without added column and foll" +
                     "owing checkboxes:", ((string)(null)), table1, "When ");
 #line 18
- testRunner.And("User create custom list with \"Test_Application_Filter_DAS_12917\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User creates \'Test_Application_Filter_DAS_12917\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
  testRunner.And("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
@@ -235,7 +235,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Created Date\" filter where type is \"Before\" with added column and follo" +
                     "wing value:", ((string)(null)), table2, "When ");
 #line 37
- testRunner.And("User create custom list with \"Test_Mailbox_Filter_DAS_12917\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User creates \'Test_Mailbox_Filter_DAS_12917\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
  testRunner.And("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39

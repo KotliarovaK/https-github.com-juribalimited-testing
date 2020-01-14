@@ -2469,7 +2469,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork
 	| SelectedValues |
 	Then "16,819" rows are displayed in the agGrid
 
-@Evergreen @Applications @DAS18560 @Cleanup
+@Evergreen @Applications @Evergreen_FiltersFeature @DAS18560 @Cleanup
 Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToDeletedList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2486,9 +2486,7 @@ Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilte
 	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
     | SelectedValues       | Association    |
     | ListToBeDeleted18560 | Used on device |
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "SecondList18560" name
+	When User creates 'SecondList18560' dynamic list
 	Then "SecondList18560" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2500,7 +2498,7 @@ Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilte
 	When User clicks the Filters button
 	Then message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
 
-@Evergreen @Devices @DAS18100 @Cleanup
+@Evergreen @Devices @Evergreen_FiltersFeature @DAS18100 @Cleanup
 Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2514,20 +2512,18 @@ Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
     | SelectedValues |
     | Empty          |
 	Then "17,279" rows are displayed in the agGrid
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "NewFilter_18100_1" name
+	When User creates 'NewFilter_18100_1' dynamic list
 	Then "NewFilter_18100_1" list is displayed to user
 	Then There are no errors in the browser console
 
-@Evergreen @Devices @DAS18100 @Cleanup
+@Evergreen @Devices @Evergreen_FiltersFeature @DAS18100 @Cleanup
 Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreatedViaAddressRow
 	When User navigates to 'devices?$filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType' url via address line
 	Then "17,279" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "Import Type is not empty" is displayed in added filter info
 
-@Evergreen @Applications @DAS18560 @Cleanup
+@Evergreen @Applications @Evergreen_FiltersFeature @DAS18560 @Cleanup
 Scenario: EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -2543,9 +2539,7 @@ Scenario: EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCrea
 	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
     | SelectedValues    | Association    |
     | ListForDAS18100_4 | Used on device |
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "SecondList18100" name
+	When User creates 'SecondList18100' dynamic list
 	Then "SecondList18100" list is displayed to user
 	Then There are no errors in the browser console
 

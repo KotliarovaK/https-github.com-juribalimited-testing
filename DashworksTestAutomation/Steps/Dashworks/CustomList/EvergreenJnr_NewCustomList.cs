@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             var page = _driver.NowAt<BaseDashboardPage>();
             page.ClickButton("SAVE");
             page.GetMenuButtonByName("SAVE AS DYNAMIC LIST").Click();
-            page.GetTextbox("List Name").SendKeys("listName");
+            page.GetTextbox("List Name").SendKeys(listName);
             page.ClickButton("SAVE");
 
             var listElement = _driver.NowAt<CustomListElement>();
@@ -82,19 +82,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             Thread.Sleep(300);
             _driver.WaitForElementToBeNotDisplayed(listElement.SuccessCreateMessage);
             _listsDetails.AddList($"{listName}");
-        }
-
-        [When(@"User creates new custom list with ""(.*)"" name")]
-        public void WhenUserCreatesNewCustomListWithName(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            //_driver.WaitForElementToBeDisplayed(listElement.TopToolsSubmenu);
-            //listElement.TopToolsSubmenu.Click();
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Utils.Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
-            listElement.ListNameTextBox.SendKeys(listName);
-            listElement.SaveButton.Click();
         }
 
         [When(@"User clicks Save button on the list panel")]

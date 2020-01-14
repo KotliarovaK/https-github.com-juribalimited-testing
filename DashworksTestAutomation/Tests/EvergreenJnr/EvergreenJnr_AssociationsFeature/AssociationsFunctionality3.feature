@@ -92,9 +92,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAf
 	When User clicks Add New button on the Filter panel
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
-	When User clicks Save button on the list panel
-	When User selects Save as dynamic list option
-	When User creates new custom list with "AssociationList18447" name
+	When User creates 'AssociationList18447' dynamic list
 	Then table content is present
 	When User navigates to the "All Device Applications" list
 	Then table content is present

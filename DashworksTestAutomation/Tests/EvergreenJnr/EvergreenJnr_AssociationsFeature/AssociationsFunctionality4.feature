@@ -33,9 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedC
 	| Values |
 	| 0      |
 	When User clicks 'RUN LIST' button
-	When User clicks Save button on the list panel
-	When User selects Save as dynamic list option
-	When User creates new custom list with "AssociationList18958" name
+	When User creates 'AssociationList18958' dynamic list
 	Then "AssociationList18958" list is displayed to user
 	Then table content is present
 	When User clicks refresh button in the browser
@@ -134,7 +132,5 @@ Scenario: EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAss
 	When User clicks 'RUN LIST' button
 	Then There are no errors in the browser console
 	Then table content is present
-	When User clicks Save button on the list panel
-	When User selects Save as dynamic list option
-	When User creates new custom list with "AssociationList18470" name
+	When User creates 'AssociationList18470' dynamic list
 	Then "AssociationList18470" list is displayed to user

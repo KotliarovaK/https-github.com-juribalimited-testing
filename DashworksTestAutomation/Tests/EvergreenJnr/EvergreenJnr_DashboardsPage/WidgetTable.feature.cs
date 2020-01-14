@@ -2119,7 +2119,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
                     "ng checkboxes:", ((string)(null)), table41, "When ");
 #line 434
- testRunner.When("User create custom list with \"AppCompliance18232\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'AppCompliance18232\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 435
  testRunner.Then("\"AppCompliance18232\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 436
