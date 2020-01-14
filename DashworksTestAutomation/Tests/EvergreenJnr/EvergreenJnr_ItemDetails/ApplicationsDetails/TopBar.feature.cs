@@ -404,14 +404,16 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("dropdown is not opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 55
- testRunner.Then("options are sorted in alphabetical order in the \'Item Details Project\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("options are sorted in alphabetical order in the \'Item Details Project\' dropdown o" +
+                    "n item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 56
  testRunner.When("User selects \'Computer Scheduled Test (Jo)\' in the \'Item Details Project\' dropdow" +
                     "n with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
  testRunner.Then("dropdown is not opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
- testRunner.Then("options are sorted in alphabetical order in the \'Item Details Project\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("options are sorted in alphabetical order in the \'Item Details Project\' dropdown o" +
+                    "n item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

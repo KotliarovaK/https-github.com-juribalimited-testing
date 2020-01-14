@@ -485,14 +485,16 @@ this.FeatureBackground();
 #line 74
  testRunner.Then("dropdown is not opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 75
- testRunner.Then("options are sorted in alphabetical order in the \'Item Details Project\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("options are sorted in alphabetical order in the \'Item Details Project\' dropdown o" +
+                    "n item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 76
  testRunner.When("User selects \'Devices Evergreen Capacity Project\' in the \'Item Details Project\' d" +
                     "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
  testRunner.Then("dropdown is not opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 78
- testRunner.Then("options are sorted in alphabetical order in the \'Item Details Project\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("options are sorted in alphabetical order in the \'Item Details Project\' dropdown o" +
+                    "n item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

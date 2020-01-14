@@ -52,10 +52,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectsInTheTopBarOnItemDetail
 	When User navigates to the 'Application' details page for '7zip' item
 	Then Details page for '7zip' item is displayed to the user
 	Then dropdown is not opened
-	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown on item details page
 	When User selects 'Computer Scheduled Test (Jo)' in the 'Item Details Project' dropdown with wait
 	Then dropdown is not opened
-	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown
+	Then options are sorted in alphabetical order in the 'Item Details Project' dropdown on item details page
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857
 Scenario: EvergreenJnr_ApplicationsList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
