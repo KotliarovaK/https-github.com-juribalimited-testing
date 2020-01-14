@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	And User move 'Compliance' column to 'Application' column
 	And User move 'Application' column to 'Vendor' column
 	And User clicks on 'Compliance' column header
-	And User create custom list with "1803 App Compliance" name
+	And User creates '1803 App Compliance' dynamic list
 	Then "1803 App Compliance" list is displayed to user
 	When Dashboard with 'Dashboard for DAS16069_2' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page

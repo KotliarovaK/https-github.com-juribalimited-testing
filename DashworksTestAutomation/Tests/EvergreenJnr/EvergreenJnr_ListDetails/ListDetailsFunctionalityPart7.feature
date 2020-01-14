@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnT
 	When User removes "Application" column by Column panel
 	And User removes "Vendor" column by Column panel
 	And User removes "Version" column by Column panel
-	And User create custom list with "TestList5478" name
+	And User creates 'TestList5478' dynamic list
 	Then Save and Cancel buttons are not displayed on the list panel
 	And "TestList5478" list is displayed to user
 

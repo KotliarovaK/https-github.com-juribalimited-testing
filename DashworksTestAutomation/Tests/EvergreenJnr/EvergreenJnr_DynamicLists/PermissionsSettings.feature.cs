@@ -443,7 +443,7 @@ this.FeatureBackground();
 #line 85
  testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
- testRunner.When("User create custom list with \"List_DAS16228\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'List_DAS16228\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
  testRunner.Then("\"List_DAS16228\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 88

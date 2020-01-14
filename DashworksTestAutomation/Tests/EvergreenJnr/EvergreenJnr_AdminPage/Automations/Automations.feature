@@ -641,9 +641,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Belfast" Lookup option
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "17003_List" name
+	When User creates '17003_List' dynamic list
 	Then "17003_List" list is displayed to user
 	When User clicks the Logout button
 	Then User is logged out

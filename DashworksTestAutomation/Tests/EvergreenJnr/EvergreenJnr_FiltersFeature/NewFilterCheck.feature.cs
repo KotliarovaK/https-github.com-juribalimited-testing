@@ -1500,7 +1500,7 @@ this.FeatureBackground();
  testRunner.And("User add \"Dashworks Last Seen\" filter where type is \"Equals\" with added column an" +
                     "d \"25 Jul 2019\" Date filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 401
- testRunner.And("User create custom list with \"TestNewColumnsAndFilters\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User creates \'TestNewColumnsAndFilters\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 402
  testRunner.Then("\"TestNewColumnsAndFilters\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1575,7 +1575,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Sticky Compliance\" filter where type is \"Equals\" without added column a" +
                     "nd following checkboxes:", ((string)(null)), table25, "When ");
 #line 414
- testRunner.When("User create custom list with \"DAS18875_list\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS18875_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 415
  testRunner.Then("\"DAS18875_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 416
@@ -1654,7 +1654,7 @@ this.FeatureBackground();
  testRunner.When("User add \"1803: Target App\" filter where type is \"Equals\" with added column and L" +
                     "ookup option", ((string)(null)), table26, "When ");
 #line 429
- testRunner.When("User create custom list with \"DAS18875_list\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS18875_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 430
  testRunner.Then("\"DAS18875_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 431
@@ -1733,7 +1733,7 @@ this.FeatureBackground();
  testRunner.When("User add \"1803: Target App Key\" filter where type is \"Does not equal\" with added " +
                     "column and following value:", ((string)(null)), table27, "When ");
 #line 444
- testRunner.When("User create custom list with \"DAS18875_list1\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS18875_list1\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 445
  testRunner.Then("\"DAS18875_list1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 446
@@ -1812,7 +1812,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Evergreen Target App Vendor\" filter where type is \"Contains\" with added" +
                     " column and following value:", ((string)(null)), table28, "When ");
 #line 459
- testRunner.When("User create custom list with \"DAS18875_list2\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS18875_list2\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 460
  testRunner.Then("\"DAS18875_list2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 461
@@ -1893,7 +1893,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Evergreen Target App Version\" filter where type is \"Does not contain\" w" +
                     "ith added column and following value:", ((string)(null)), table29, "When ");
 #line 475
- testRunner.When("User create custom list with \"DAS18875_list3\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS18875_list3\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 476
  testRunner.Then("\"DAS18875_list3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 477
@@ -1973,7 +1973,7 @@ this.FeatureBackground();
  testRunner.When("User add \"1803: Target App Readiness\" filter where type is \"Not empty\" with added" +
                     " column and following value:", ((string)(null)), table30, "When ");
 #line 490
- testRunner.When("User create custom list with \"DAS18875_list4\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS18875_list4\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 491
  testRunner.Then("\"DAS18875_list4\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 492
@@ -2052,7 +2052,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Evergreen Rationalisation\" filter where type is \"Equals\" without added " +
                     "column and following checkboxes:", ((string)(null)), table31, "When ");
 #line 505
- testRunner.When("User create custom list with \"DAS18896_list\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS18896_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 506
  testRunner.Then("\"DAS18896_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 507
@@ -2127,7 +2127,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Evergreen Target App Name\" filter where type is \"Not empty\" with added " +
                     "column and following value:", ((string)(null)), table32, "When ");
 #line 518
- testRunner.When("User create custom list with \"DAS19262_list\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS19262_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 519
  testRunner.Then("\"DAS19262_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 520
@@ -2203,7 +2203,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Evergreen Target App\" filter where type is \"Equals\" with added column a" +
                     "nd \"No Target Application\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 531
- testRunner.When("User create custom list with \"DAS192621_list\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'DAS192621_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 532
  testRunner.Then("\"DAS192621_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 533

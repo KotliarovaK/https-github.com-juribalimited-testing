@@ -4856,7 +4856,7 @@ this.FeatureBackground();
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
                         "kboxes:", filterName), ((string)(null)), table86, "When ");
 #line 1090
- testRunner.And(string.Format("User create custom list with \"{0}\" name", customList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User creates \'{0}\' dynamic list", customList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1091
  testRunner.And(string.Format("User navigates to the \"{0}\" list", allList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1092
@@ -5107,7 +5107,7 @@ this.FeatureBackground();
 #line 1140
  testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1141
- testRunner.And("User create custom list with \"TestList5434\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User creates \'TestList5434\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1142
  testRunner.And("User navigates to the \"All Users\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1143
@@ -5196,7 +5196,7 @@ this.FeatureBackground();
  testRunner.When("User add \"User Region\" filter where type is \"Equals\" with Selected Value and foll" +
                     "owing Association:", ((string)(null)), table89, "When ");
 #line 1159
- testRunner.And("User create custom list with \"TestList5435\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User creates \'TestList5435\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1160
  testRunner.And("User navigates to the \"All Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1161
@@ -6718,7 +6718,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Babel(Engl: Readiness\" filter where type is \"Equals\" with added column " +
                     "and Lookup option", ((string)(null)), table108, "When ");
 #line 1513
- testRunner.And("User create custom list with \"CheckColors13383\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User creates \'CheckColors13383\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1514
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1515

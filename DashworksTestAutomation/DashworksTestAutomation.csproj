@@ -1724,6 +1724,7 @@
       <DependentUpon>Senior_PMObject.feature</DependentUpon>
     </Compile>
     <Compile Include="Utils\BambooUtil.cs" />
+    <Compile Include="Utils\BrowsersList.cs" />
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\DatabaseWorker.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />

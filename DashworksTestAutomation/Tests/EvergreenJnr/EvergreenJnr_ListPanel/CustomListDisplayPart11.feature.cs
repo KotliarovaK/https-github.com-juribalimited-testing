@@ -754,7 +754,7 @@ this.FeatureBackground();
 #line 171
  testRunner.Then("\"100\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 172
- testRunner.When("User create custom list with \"Test_Application_List_DAS_17472\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates \'Test_Application_List_DAS_17472\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 173
  testRunner.Then("\"Test_Application_List_DAS_17472\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 174

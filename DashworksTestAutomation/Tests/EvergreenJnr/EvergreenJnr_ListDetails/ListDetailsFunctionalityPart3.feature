@@ -28,12 +28,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
-	And User create custom list with "2" name
+	And User creates '2' dynamic list
 	Then "2" list is displayed to user
 	When User navigates to the "<ListToNavigate>" list
 	And User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	When User create custom list with " 2" name
+	When User creates ' 2' dynamic list
 	Then Warning message with "List Name should be unique" is displayed
 
 	Examples: 

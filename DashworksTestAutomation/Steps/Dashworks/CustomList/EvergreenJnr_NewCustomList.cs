@@ -67,42 +67,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User create custom list with ""(.*)"" name")]
-        public void WhenUserCreateCustomListWithName(string listName)
+        [When(@"User creates '(.*)' dynamic list")]
+        public void WhenUserCreatesDynamicList(string listName)
         {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButton("SAVE");
+            page.GetMenuButtonByName("SAVE AS DYNAMIC LIST").Click();
+            page.GetTextbox("List Name").SendKeys(listName);
+            page.ClickButton("SAVE");
+
             var listElement = _driver.NowAt<CustomListElement>();
-
-            _driver.WaitForElementToBeDisplayed(listElement.CreateNewListButton);
-            Utils.Verify.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is displayed");
-            listElement.CreateNewListButton.Click();
-
-            _driver.WaitForElementToBeDisplayed(listElement.SaveAsNewListButton);
-            _driver.MouseHover(listElement.SaveAsNewListButton);
-            _driver.WaitForDataLoading();
-            listElement.SaveAsNewListButton.Click();
-
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Utils.Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
-            listElement.ListNameTextBox.SendKeys(listName);
-            listElement.SaveButton.Click();
 
             //Small wait for message display
             Thread.Sleep(300);
             _driver.WaitForElementToBeNotDisplayed(listElement.SuccessCreateMessage);
             _listsDetails.AddList($"{listName}");
-        }
-
-        [When(@"User creates new custom list with ""(.*)"" name")]
-        public void WhenUserCreatesNewCustomListWithName(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            //_driver.WaitForElementToBeDisplayed(listElement.TopToolsSubmenu);
-            //listElement.TopToolsSubmenu.Click();
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            Utils.Verify.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
-            listElement.ListNameTextBox.SendKeys(listName);
-            listElement.SaveButton.Click();
         }
 
         [When(@"User clicks Save button on the list panel")]

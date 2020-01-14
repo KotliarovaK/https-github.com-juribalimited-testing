@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	When User create custom list with "List_DAS16228" name
+	When User creates 'List_DAS16228' dynamic list
 	Then "List_DAS16228" list is displayed to user
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
