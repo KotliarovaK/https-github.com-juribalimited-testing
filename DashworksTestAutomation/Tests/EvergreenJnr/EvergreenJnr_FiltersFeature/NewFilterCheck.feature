@@ -398,7 +398,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewCurrentAndLastSeenFiltersAreAvail
 	| SelectedCheckboxes |
 	| TRUE               |
 	And User add "Dashworks Last Seen" filter where type is "Equals" with added column and "25 Jul 2019" Date filter
-	And User create custom list with "TestNewColumnsAndFilters" name
+	And User creates 'TestNewColumnsAndFilters' dynamic list
 	Then "TestNewColumnsAndFilters" list is displayed to user
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18875 @Cleanup @Not_Ready
@@ -411,7 +411,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckStickyComplianceFilter
 	When User add "Sticky Compliance" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
-	When User create custom list with "DAS18875_list" name
+	When User creates 'DAS18875_list' dynamic list
 	Then "DAS18875_list" list is displayed to user
 	When User clicks the Filters button
 	Then "Sticky Compliance is Red" is displayed in added filter info
@@ -426,7 +426,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppFilter
 	When User add "1803: Target App" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues      |
 	| Multi Edit 9 Client |
-	When User create custom list with "DAS18875_list" name
+	When User creates 'DAS18875_list' dynamic list
 	Then "DAS18875_list" list is displayed to user
 	When User clicks the Filters button
 	Then "1803: Target App is Multi Edit 9 Client" is displayed in added filter info
@@ -441,7 +441,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreeargetAppKeyFilter
 	When User add "1803: Target App Key" filter where type is "Does not equal" with added column and following value:
 	| Values |
 	| 12     |
-	When User create custom list with "DAS18875_list1" name
+	When User creates 'DAS18875_list1' dynamic list
 	Then "DAS18875_list1" list is displayed to user
 	When User clicks the Filters button
 	Then "1803: Target App Key is not 12" is displayed in added filter info
@@ -456,7 +456,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppVendorFilter
 	When User add "Evergreen Target App Vendor" filter where type is "Contains" with added column and following value:
 	| Values |
 	| Adobe  |
-	When User create custom list with "DAS18875_list2" name
+	When User creates 'DAS18875_list2' dynamic list
 	Then "DAS18875_list2" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Target App Vendor contains Adobe" is displayed in added filter info
@@ -472,7 +472,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppVersionFilter
 	When User add "Evergreen Target App Version" filter where type is "Does not contain" with added column and following value:
 	| Values    |
 	| Microsoft |
-	When User create custom list with "DAS18875_list3" name
+	When User creates 'DAS18875_list3' dynamic list
 	Then "DAS18875_list3" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Target App Version does not contain Microsoft" is displayed in added filter info
@@ -487,7 +487,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppReadinessFilter
 	When User add "1803: Target App Readiness" filter where type is "Not empty" with added column and following value:
 	| Values |
 	|        |
-	When User create custom list with "DAS18875_list4" name
+	When User creates 'DAS18875_list4' dynamic list
 	Then "DAS18875_list4" list is displayed to user
 	When User clicks the Filters button
 	Then "1803: Target App Readiness is not empty" is displayed in added filter info
@@ -502,7 +502,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenRationalisationFilter
 	When User add "Evergreen Rationalisation" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| UNCATEGORISED      |
-	When User create custom list with "DAS18896_list" name
+	When User creates 'DAS18896_list' dynamic list
 	Then "DAS18896_list" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Rationalisation is Uncategorised" is displayed in added filter info
@@ -515,7 +515,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppNameFilter
 	Then Filters panel is displayed to the user
 	When User add "Evergreen Target App Name" filter where type is "Not empty" with added column and following value:
 	| Values |
-	When User create custom list with "DAS19262_list" name
+	When User creates 'DAS19262_list' dynamic list
 	Then "DAS19262_list" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Target App Name is not empty" is displayed in added filter info
@@ -528,7 +528,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppFilterWithNoTarge
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Evergreen Target App" filter where type is "Equals" with added column and "No Target Application" Lookup option
-	When User create custom list with "DAS192621_list" name
+	When User creates 'DAS192621_list' dynamic list
 	Then "DAS192621_list" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Target App is No Target Application" is displayed in added filter info

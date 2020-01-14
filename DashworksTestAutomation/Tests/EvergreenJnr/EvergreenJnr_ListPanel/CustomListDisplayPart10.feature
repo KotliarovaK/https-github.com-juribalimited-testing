@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRena
 	| SelectedCheckboxes |
 	| Red                |
 	| Amber              |
-	And User create custom list with "Test_Application_Filter_DAS_12917" name
+	And User creates 'Test_Application_Filter_DAS_12917' dynamic list
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Application_Filter_DAS_12917"
 	And User clicks the Filters button
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameW
 	When User add "Created Date" filter where type is "Before" with added column and following value:
 	| Values      |
 	| 11 Dec 2017 |
-	And User create custom list with "Test_Mailbox_Filter_DAS_12917" name
+	And User creates 'Test_Mailbox_Filter_DAS_12917' dynamic list
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Mailbox_Filter_DAS_12917"
 	And User clicks the Filters button

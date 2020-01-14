@@ -431,7 +431,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
-	When User create custom list with "AppCompliance18232" name
+	When User creates 'AppCompliance18232' dynamic list
 	Then "AppCompliance18232" list is displayed to user
 	When Dashboard with 'Dashboard for DAS18232' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page

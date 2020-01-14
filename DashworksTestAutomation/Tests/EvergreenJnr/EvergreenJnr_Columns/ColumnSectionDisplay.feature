@@ -811,7 +811,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 	When User click Edit button for "EmailMigra: Object ID" filter
 	And User select "Not empty" Operator value
 	And User clicks Save filter button
-	And User create custom list with "Object ID != EMPTY" name
+	And User creates 'Object ID != EMPTY' dynamic list
 	Then "Object ID != EMPTY" list is displayed to user
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @DAS15167

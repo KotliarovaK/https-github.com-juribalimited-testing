@@ -1087,7 +1087,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterEqualsEmptyValueIsDisplay
 	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
     | SelectedCheckboxes |
     | Empty              |
-	And User create custom list with "<CustomList>" name
+	And User creates '<CustomList>' dynamic list
 	And User navigates to the "<AllList>" list
 	And User navigates to the "<CustomList>" list
 	And User clicks the Filters button
@@ -1138,7 +1138,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatFloorFilterEqualsEmptyValueIsDisplayed
 	When User enters "Empty" text in Search field at selected Lookup Filter
 	When User clicks checkbox at selected Lookup Filter
 	When User clicks Save filter button
-	And User create custom list with "TestList5434" name
+	When User creates 'TestList5434' dynamic list
 	And User navigates to the "All Users" list
 	And User navigates to the "TestList5434" list
 	And User clicks the Filters button
@@ -1156,7 +1156,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValu
 	When User add "User Region" filter where type is "Equals" with Selected Value and following Association:
     | SelectedList | Association  |
     | Empty        | Has used app |
-	And User create custom list with "TestList5435" name
+	And User creates 'TestList5435' dynamic list
 	And User navigates to the "All Applications" list
 	And User navigates to the "TestList5435" list
 	And User clicks the Filters button
@@ -1510,7 +1510,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColorsInReadinessFilterAreDisplayed
     | SelectedValues |
     | Red            |
     | Amber          |
-	And User create custom list with "CheckColors13383" name
+	And User creates 'CheckColors13383' dynamic list
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for "Babel(Engl: Readiness" filter

@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	When User click Edit button for " Application" filter
 	And User selects "StaticList13179" list for Saved List
 	And User clicks Save filter button
-	When User create custom list with "DynamicList13179" name
+	When User creates 'DynamicList13179' dynamic list
 	Then "DynamicList13179" list is displayed to user
 	And "17,248" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
@@ -197,7 +197,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	When User click Edit button for " Application" filter
 	And User selects "Dynamic13179" list for Saved List
 	And User clicks Save filter button
-	When User create custom list with "List13179" name
+	When User creates 'List13179' dynamic list
 	Then "List13179" list is displayed to user
 	And "17,279" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
@@ -226,7 +226,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	When User click Edit button for " Application" filter
 	And User selects "StaticList12911" list for Saved List
 	And User clicks Save filter button
-	When User create custom list with "List11179" name
+	When User creates 'List11179' dynamic list
 	Then "List11179" list is displayed to user
 	And "7,419" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
@@ -251,7 +251,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	When User click Edit button for " Application" filter
 	And User selects "Dynamic13579" list for Saved List
 	And User clicks Save filter button
-	When User create custom list with "List41179" name
+	When User creates 'List41179' dynamic list
 	Then "List41179" list is displayed to user
 	And "94" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list

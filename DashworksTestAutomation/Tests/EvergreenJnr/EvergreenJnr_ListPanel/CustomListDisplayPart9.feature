@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhi
 	| SelectedCheckboxes |
 	| Red                | 
 	| Green              | 
-	And User create custom list with "Test_Device_Filter_DAS_12917" name
+	And User creates 'Test_Device_Filter_DAS_12917' dynamic list
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Device_Filter_DAS_12917"
 	And User clicks the Filters button

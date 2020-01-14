@@ -1231,7 +1231,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSection
 	| Blue           |
 	Then "MigrationP: Readiness" filter is added to the list
 	When User click Edit button for "MigrationP: Readiness" filter
-	And User create custom list with "DynamicList13384" name
+	And User creates 'DynamicList13384' dynamic list
 	Then "DynamicList13384" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -1314,7 +1314,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescri
 	|                | Entitled to app |
 	Then "User whose Description" filter is added to the list
 	And "User whose Description is empty has used app; or entitled to app" is displayed in added filter info
-	When User create custom list with "DAS13473" name
+	When User creates 'DAS13473' dynamic list
 	Then "DAS13473" list is displayed to user
 	And "113" rows are displayed in the agGrid
 	And URL contains 'evergreen/#/applications?$listid='
@@ -1864,7 +1864,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickin
 	When User add "Device (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList                        | Association |
 	| Device List (Complex) - BROKEN LIST |             |
-	When User create custom list with "List_DAS16394" name
+	When User creates 'List_DAS16394' dynamic list
 	Then "List_DAS16394" list is displayed to user
 	Then Create button is disabled on the Base Dashboard Page
 	When User clicks the Filters button
