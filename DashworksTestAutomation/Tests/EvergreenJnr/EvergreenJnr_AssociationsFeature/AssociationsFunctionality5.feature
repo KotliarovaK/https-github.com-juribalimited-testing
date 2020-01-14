@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllDeviceApplications @DAS18092
+@Evergreen @Associations @DAS18092
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociationsDropdown
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedTo
 	Then There are no errors in the browser console
 	Then table content is present
 
-@Evergreen @AllDeviceApplications @DAS18987	@Cleanup
+@Evergreen @Associations @DAS18987	@Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBranchFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBran
 	Then There are no errors in the browser console
 	Then table content is present
 
-@Evergreen @AllDeviceApplications @DAS19185
+@Evergreen @Associations @DAS19185
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListOfResultsIsNotChangedAfterAddingCpuArchitectureAndManufacturerColumns
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

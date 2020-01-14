@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18426 @Cleanup
+@Evergreen @Associations @DAS18426 @Cleanup
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDisplayedAfterApplyingEntitledToDeviceFilter
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -31,7 +31,7 @@ Examples:
 	| Entitled to device  | Not installed on device | Not used on device      | 00BDM1JUR8IF419 | cdparanoia-libs               | UNKNOWN   | FALSE   | TRUE     |
 	| Installed on device | Not entitled to device  | Not used on device      | 00KWQ4J3WKQM0G  | Adobe Reader 6.0.1 - Fran?ais | TRUE      | UNKNOWN | FALSE    |
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18804
+@Evergreen @Associations @DAS18804
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayedWhenUsingFilterWithNegativeValue
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -61,7 +61,7 @@ Examples:
 	| Target Drive Free Space (GB) |
 	| Video Card Count             |
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18454 @Cleanup
+@Evergreen @Associations @DAS18454 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAfterSortingAndRunninList
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAft
 	When User clicks 'RUN LIST' button
 	Then table content is present
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18897 @Cleanup
+@Evergreen @Associations @DAS18897 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfterRunningList
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfte
 	Then table content is present
 	Then All column headers are unique
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18447 @Cleanup
+@Evergreen @Associations @DAS18447 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAfterGoingToAllDeviceApplicationsPageFromSavedList
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list

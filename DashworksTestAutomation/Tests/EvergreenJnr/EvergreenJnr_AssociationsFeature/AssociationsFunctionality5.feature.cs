@@ -83,7 +83,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFe
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociation" +
             "sDropdown")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18092")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociationsDropdown()
         {
@@ -116,7 +116,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFe
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedToAssociation" +
                     "sDropdown", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
+                        "Associations",
                         "DAS18092"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -164,7 +164,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBranchFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18987")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBranchFilter()
@@ -197,7 +197,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBranchFilter", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
+                        "Associations",
                         "DAS18987",
                         "Cleanup"});
 #line 27
@@ -253,7 +253,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListOfResultsIsNotChangedAfterAddingCpuArc" +
             "hitectureAndManufacturerColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS19185")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatListOfResultsIsNotChangedAfterAddingCpuArchitectureAndManufacturerColumns()
         {
@@ -286,7 +286,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatListOfResultsIsNotChangedAfterAddingCpuArc" +
                     "hitectureAndManufacturerColumns", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
+                        "Associations",
                         "DAS19185"});
 #line 48
 this.ScenarioInitialize(scenarioInfo);

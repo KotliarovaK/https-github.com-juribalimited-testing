@@ -83,8 +83,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFe
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted" +
             "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS19059")]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted()
         {
@@ -117,8 +116,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFe
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted" +
                     "", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS19059"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -162,8 +160,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedCorrectlyAft" +
             "erRefreshing")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18958")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedCorrectlyAfterRefreshing()
@@ -197,8 +194,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedCorrectlyAft" +
                     "erRefreshing", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18958",
                         "Cleanup"});
 #line 25
@@ -254,8 +250,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperationBlockInF" +
             "ilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18969")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperationBlockInFilter()
@@ -289,8 +284,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperationBlockInF" +
                     "ilter", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18969",
                         "Cleanup"});
 #line 46
@@ -334,8 +328,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorWhenSomeNotEmptyFiltersAppli" +
             "ed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18889")]
         [NUnit.Framework.TestCaseAttribute("Manufacturer", null)]
         [NUnit.Framework.TestCaseAttribute("CPU Architecture", null)]
@@ -369,8 +362,7 @@ this.FeatureBackground();
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "AllDeviceApplications",
-                    "AssociationsFunctionality",
+                    "Associations",
                     "DAS18889"};
             if ((exampleTags != null))
             {
@@ -418,8 +410,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAssociations")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18470")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAssociations()
@@ -452,8 +443,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAssociations", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18470",
                         "Cleanup"});
 #line 81

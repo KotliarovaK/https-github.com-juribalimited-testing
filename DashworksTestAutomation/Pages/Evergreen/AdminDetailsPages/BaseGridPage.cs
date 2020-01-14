@@ -357,6 +357,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public string GetFoundRowsNumber()
+        {
+            return new String(ListRowsCounter.Text.Where(Char.IsDigit).ToArray());
+        }
+
         #region Filter
 
         public void OpenColumnFilter(string columnName)

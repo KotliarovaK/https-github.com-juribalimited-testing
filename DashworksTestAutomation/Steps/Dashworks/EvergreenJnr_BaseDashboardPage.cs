@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using System;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -11,6 +12,7 @@ using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -233,12 +235,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserRemembersTheNumberOfFoundRowsNumber()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForElementToBeDisplayed(page.ListRowsCounter);
-            _columnValue.Value = page.ListRowsCounter.Text
-                .Replace(",", "")
-                .Replace("rows", "")
-                .Replace("row", "")
-                .TrimEnd();
+            _driver.WaitForDataLoading();
+            _columnValue.Value = page.GetFoundRowsNumber();
         }
 
         [Then(@"Rows counter number equals to remembered value")]

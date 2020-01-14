@@ -83,8 +83,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFe
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemo" +
             "veIcon")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18445")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemoveIcon()
@@ -118,8 +117,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AssociationsFe
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemo" +
                     "veIcon", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18445",
                         "Cleanup"});
 #line 9
@@ -171,8 +169,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18531")]
         [NUnit.Framework.CategoryAttribute("DAS18763")]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations()
@@ -205,8 +202,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18531",
                         "DAS18763"});
 #line 29
@@ -250,8 +246,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18531")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList()
@@ -284,8 +279,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18531",
                         "Cleanup"});
 #line 44
@@ -361,8 +355,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossib" +
             "leAssociationsAreAdded")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18424")]
         [NUnit.Framework.TestCaseAttribute("Used on device", "Entitled to device", "Installed on device", "Entitled to device owner", "Used by device owner", null)]
         [NUnit.Framework.TestCaseAttribute("Used on device", "Not entitled to device", "Not installed on device", "Entitled to device owner", "Used by device owner", null)]
@@ -397,8 +390,7 @@ this.FeatureBackground();
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "AllDeviceApplications",
-                    "AssociationsFunctionality",
+                    "Associations",
                     "DAS18424"};
             if ((exampleTags != null))
             {
@@ -450,8 +442,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllDeviceApplications")]
-        [NUnit.Framework.CategoryAttribute("AssociationsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS18379")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded()
@@ -484,8 +475,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded", null, new string[] {
                         "Evergreen",
-                        "AllDeviceApplications",
-                        "AssociationsFunctionality",
+                        "Associations",
                         "DAS18379",
                         "Cleanup"});
 #line 96

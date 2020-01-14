@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS19059
+@Evergreen @Associations @DAS19059
 Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumnCanBeSorted
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumn
 	When User clicks on 'Compliance' column header
 	Then color data is sorted by 'Compliance' column in descending order
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18958 @Cleanup
+@Evergreen @Associations @DAS18958 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedCorrectlyAfterRefreshing
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedC
 	Then "AssociationList18958" list is displayed to user
 	Then table content is present
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18969 @Cleanup
+@Evergreen @Associations @DAS18969 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperationBlockInFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperat
 	Then There are no errors in the browser console
 	Then table content is present
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18889
+@Evergreen @Associations @DAS18889
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorWhenSomeNotEmptyFiltersApplied
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -77,7 +77,7 @@ Examples:
 	| Manufacturer     |
 	| CPU Architecture |
 
-@Evergreen @AllDeviceApplications @AssociationsFunctionality @DAS18470 @Cleanup
+@Evergreen @Associations @DAS18470 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAssociations
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
