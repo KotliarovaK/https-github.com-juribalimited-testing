@@ -501,8 +501,8 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Delete"});
 #line 60
- testRunner.When("User clicks Cog-menu for \'TestSelfService_name1\' item in the \'Self Service Name\' " +
-                    "column and sees following cog-menu options", ((string)(null)), table5, "When ");
+ testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name1\' item in the \'Self Service" +
+                    " Name\' column and sees following cog-menu options", ((string)(null)), table5, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "options"});
@@ -513,8 +513,8 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Delete"});
 #line 65
- testRunner.When("User clicks Cog-menu for \'TestSelfService_name5\' item in the \'Self Service Name\' " +
-                    "column and sees following cog-menu options", ((string)(null)), table6, "When ");
+ testRunner.When("User clicks Cog-menu for \'TestSelfServiceCogMenu_name5\' item in the \'Self Service" +
+                    " Name\' column and sees following cog-menu options", ((string)(null)), table6, "When ");
 #line hidden
             this.ScenarioCleanup();
         }
