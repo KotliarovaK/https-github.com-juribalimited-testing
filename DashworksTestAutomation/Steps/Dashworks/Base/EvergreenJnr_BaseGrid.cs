@@ -23,21 +23,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
     class EvergreenJnr_BaseGrid : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly ColumnValue _columnValue;
+        private readonly GridRowsCount _rowCountValue;
 
-        public EvergreenJnr_BaseGrid(RemoteWebDriver driver, ColumnValue columnValue)
+        public EvergreenJnr_BaseGrid(RemoteWebDriver driver, GridRowsCount rowCountValue)
         {
             _driver = driver;
-            _columnValue = columnValue;
+            _rowCountValue = rowCountValue;
         }
+
+        #region Rows count
 
         [When(@"User remembers the found rows number")]
         public void WhenUserRemembersTheNumberOfFoundRowsNumber()
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            _columnValue.Value = page.GetFoundRowsCount();
+            _rowCountValue.Value = page.GetFoundRowsCount();
         }
+     
+        #endregion
+
 
         #region Headers
 
