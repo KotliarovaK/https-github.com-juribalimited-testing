@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEverg
 	When User navigates to "User Evergreen Capacity Project" project details
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
-	Then Counter shows "60,306" found rows
+	Then Counter shows "60,305" found rows
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Action' column:
 	| Values                     |
 	| Onboard Application Object |
@@ -55,4 +55,4 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInUserEverg
 	| checkboxes                 |
 	| Onboard Application Object |
 	| Onboard Device Object      |
-	Then Rows counter shows "41,340" of "60,306" rows
+	Then Rows counter shows "41,339" of "60,305" rows
