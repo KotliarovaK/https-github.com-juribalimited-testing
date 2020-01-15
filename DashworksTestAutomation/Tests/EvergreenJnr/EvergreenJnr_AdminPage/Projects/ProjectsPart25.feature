@@ -5,26 +5,40 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699
-Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForDeviceAndMailboxProjects
-	When User navigates to "<ProjectName>" project details
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForDeviceProjects
+	When Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| DAS17699_AllDevices | All Devices | None            | Standalone Project |
 	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Details' left menu item
-	When User navigates to the '<tab1>' tab on Project Scope Changes page
-	When User selects '<List1>' in the 'User Scope' dropdown with wait
-	When User navigates to the '<tab2>' tab on Project Scope Changes page
-	When User selects '<List2>' in the 'Application Scope' dropdown with wait
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
+	When User selects 'Users with Device Count' in the 'User Scope' dropdown with wait
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	When User selects 'Apps with a Vendor' in the 'Application Scope' dropdown with wait
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Scope Details' left menu item
-	When User navigates to the '<tab1>' tab on Project Scope Changes page
-	Then Scope List dropdown displayed with "<List1>" value
-	When User navigates to the '<tab2>' tab on Project Scope Changes page
-	Then Scope List dropdown displayed with "<List2>" value
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
+	Then Scope List dropdown displayed with "Users with Device Count" value
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	Then Scope List dropdown displayed with "Apps with a Vendor" value
 
-Examples:
-	| ProjectName                        | tab1       | List1                   | tab2              | List2              |
-	| 1803 Rollout                       | User Scope | Users with Device Count | Application Scope | Apps with a Vendor |
-	| Mailbox Evergreen Capacity Project | User Scope | Users with Device Count | Application Scope | Apps with a Vendor |
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailboxProjects
+	When Project created via API and opened
+	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| DAS17699_AllMailboxes | All Mailboxes | None            | Standalone Project |
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
+	When User selects 'Users with Device Count' in the 'User Scope' dropdown with wait
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	When User clicks 'Include applications' radio button
+	When User selects 'Apps with a Vendor' in the 'Application Scope' dropdown with wait
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Scope Details' left menu item
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
+	Then Scope List dropdown displayed with "Users with Device Count" value
+	When User navigates to the 'Application Scope' tab on Project Scope Changes page
+	Then Scope List dropdown displayed with "Apps with a Vendor" value
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699 @DAS18943
 Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject

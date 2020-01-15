@@ -29,13 +29,15 @@ namespace DashworksTestAutomation.Base
         private readonly ScenarioContext _scenarioContext;
         private readonly RestWebClient _client;
         private readonly TestInfo _testInfo;
+        private readonly BrowsersList _browsersList;
 
-        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext, RestWebClient client, TestInfo testInfo)
+        public BeforeAfterActions(IObjectContainer objectContainer, ScenarioContext scenarioContext, RestWebClient client, TestInfo testInfo, BrowsersList browsersList)
         {
             _objectContainer = objectContainer;
             _scenarioContext = scenarioContext;
             _client = client;
             _testInfo = testInfo;
+            _browsersList = browsersList;
         }
 
         [BeforeTestRun]
@@ -64,6 +66,7 @@ namespace DashworksTestAutomation.Base
                 if (!Browser.RemoteDriver.Equals("local"))
                     driverInstance.Manage().Window.Maximize();
                 _objectContainer.RegisterInstanceAs(driverInstance);
+                _browsersList.AddDriver(driverInstance);
             }
         }
 
@@ -134,19 +137,28 @@ namespace DashworksTestAutomation.Base
                         Logger.Write($"Unable to unleash test: {e}");
                     }
 
-                RemoteWebDriver driver = null;
+                //RemoteWebDriver driver = null;
                 if (!_testInfo.Tags.Contains("API"))
                     try
                     {
-                        driver = _objectContainer.Resolve<RemoteWebDriver>();
+                        foreach (RemoteWebDriver browser in _browsersList.GetAllBrowsers())
+                        {
+                            try
+                            {
+                                browser?.QuitDriver();
+                            }
+                            catch (Exception e)
+                            {
+                                Logger.Write($"Unable to close driver: {e}");
+                            }
+                        }
+                        //driver = _objectContainer.Resolve<RemoteWebDriver>();
                     }
                     catch (Exception e)
                     {
                         Logger.Write($"UNABLE to get driver from context. It was closed before or doesn't exist: {e}");
-                        driver = null;
+                        //driver = null;
                     }
-
-                driver?.QuitDriver();
             }
             catch (Exception e)
             {
