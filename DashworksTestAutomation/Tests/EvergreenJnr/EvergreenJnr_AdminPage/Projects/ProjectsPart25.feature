@@ -107,13 +107,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreatePr
 	When User create dynamic list with "ProjectListForDas16844" name on "Devices" page
 	When User selects 'Project' in the 'Create' dropdown
 	Then 'This list may contain archived devices which will not be onboarded' information message is displayed for 'Scope' field
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS19363
-Scenario: EvergreenJnr_AdminPage_CheckThatAppOwnersSectionIsDisabledWhenDoNotIncludeUsersRadioSelected
-	When User navigates to "Mailbox Evergreen Capacity Project" project details
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Details' left menu item
-	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	When User clicks 'Do not include users' radio button
-	Then 'Do not include app owners' radio button is disabled
-	Then 'Include app owners' radio button is disabled
