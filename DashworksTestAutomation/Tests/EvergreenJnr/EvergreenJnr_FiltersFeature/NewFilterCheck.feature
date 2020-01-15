@@ -325,7 +325,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	| Failed         | false |
 	| Complete       | false |
 	Then "1" rows are displayed in the agGrid
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 
 @Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @DAS14288
 Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPage
@@ -368,7 +368,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	| Not Sent       | false |
 	| Sent           | true  |
 	Then "4,642" rows are displayed in the agGrid
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS11830 @DAS14288
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories

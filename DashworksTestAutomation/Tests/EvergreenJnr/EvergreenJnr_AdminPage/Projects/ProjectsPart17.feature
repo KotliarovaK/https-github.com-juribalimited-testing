@@ -120,6 +120,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Dutch" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language
+	Then inline error banner is not displayed
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User click on Back button

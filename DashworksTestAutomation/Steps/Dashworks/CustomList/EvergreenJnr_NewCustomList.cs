@@ -215,17 +215,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
                 $"'{warningText}' message is not displayed in the list details panel");
         }
 
-        [When(@"User update current custom list")]
-        public void WhenUserUpdateCurrentCustomList()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
-            listElement.SaveAsDropdown.Click();
-            _driver.WaitForElementToBeDisplayed(listElement.UpdateCurrentListButton);
-            _driver.WaitForElementToBeEnabled(listElement.UpdateCurrentListButton);
-            _driver.ClickByJavascript(listElement.UpdateCurrentListButton);
-        }
-
         [Then(@"User save changes in list with ""(.*)"" name")]
         public void ThenUserSaveChangesInListWithName(string listName)
         {
