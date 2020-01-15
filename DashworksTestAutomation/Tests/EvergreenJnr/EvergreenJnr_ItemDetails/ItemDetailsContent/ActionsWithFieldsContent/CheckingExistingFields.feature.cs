@@ -1300,7 +1300,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS9352")]
+        [NUnit.Framework.CategoryAttribute("DAS19352")]
+        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -1335,7 +1336,8 @@ this.FeatureBackground();
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS9352"});
+                        "DAS19352",
+                        "Universe"});
 #line 278
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
