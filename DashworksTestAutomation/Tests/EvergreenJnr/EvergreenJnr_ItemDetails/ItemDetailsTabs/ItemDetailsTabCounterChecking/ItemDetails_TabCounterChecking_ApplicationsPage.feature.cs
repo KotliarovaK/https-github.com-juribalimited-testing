@@ -214,7 +214,7 @@ this.FeatureBackground();
 #line 46
  testRunner.Then("\'MSI\' left menu have following submenu items:", ((string)(null)), table4, "Then ");
 #line 51
- testRunner.And("\'MSIFiles\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\'MSI Files\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
  testRunner.And("\'AOK\' left submenu item is displayed without count", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
