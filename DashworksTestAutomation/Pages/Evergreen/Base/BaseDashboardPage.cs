@@ -1123,7 +1123,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public bool IsRadioButtonEnabled(string ariaLabel)
         {
-            return GetRadioButton(ariaLabel).GetAttribute("class").Contains("mat-radio-disabled");
+            var classValue = GetRadioButton(ariaLabel).GetAttribute("class");
+            return !classValue.Contains("mat-radio-disabled");
         }
 
         #endregion
