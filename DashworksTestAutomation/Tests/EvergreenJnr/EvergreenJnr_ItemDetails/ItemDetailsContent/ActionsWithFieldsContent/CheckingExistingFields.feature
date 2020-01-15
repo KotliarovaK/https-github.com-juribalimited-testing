@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyFor
 	#| Rationalisation         |
 	| Hide From End User      |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS9352
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19352 @Universe
 Scenario: EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectly
 	When User navigates to the 'Mailbox' details page for the item with '36452' ID
 	Then Details page for 'ConfRoom-CanisMinor@dwlabs.local' item is displayed to the user
