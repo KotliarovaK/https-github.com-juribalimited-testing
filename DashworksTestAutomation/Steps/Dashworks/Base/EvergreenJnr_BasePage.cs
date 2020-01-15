@@ -1213,6 +1213,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetRadioButton(radioButtonName).Click();
         }
 
+        [Then(@"'(.*)' radio button is disabled")]
+        public void ThenRadioButtonIsDisabled(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsRadioButtonEnabled(radioButtonName),$"'{radioButtonName}' radio button is not disabled");
+        }
+
         #endregion
 
         #region Chips

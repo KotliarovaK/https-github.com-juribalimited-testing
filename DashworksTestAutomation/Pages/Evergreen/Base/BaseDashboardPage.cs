@@ -1101,12 +1101,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IWebElement GetRadioButton(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
-            var selector = By.XPath($".//div[contains(@class, 'radio-label') and text()='{ariaLabel}']/ancestor::mat-radio-button");
+            var selector = By.XPath(".//div[contains(@class, 'radio-label') and text()='{ariaLabel}']/ancestor::mat-radio-button");
             if (!Driver.IsElementDisplayed(selector, wait))
             {
                 throw new Exception($"'{ariaLabel}' radio button was not displayed");
             }
             return Driver.FindElement(selector);
+        }
+
+        public bool IsRadioButtonEnabled(string ariaLabel)
+        {
+            return GetRadioButton(ariaLabel).GetAttribute("class").Contains("mat-radio-disabled");
         }
 
         #endregion

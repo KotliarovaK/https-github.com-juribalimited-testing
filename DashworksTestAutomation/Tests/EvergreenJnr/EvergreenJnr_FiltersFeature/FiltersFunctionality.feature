@@ -2623,3 +2623,21 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringLi
 	| SelectedCheckboxes      | Association    |
 	| Users with Device Count | Used on device |
 	Then There are no errors in the browser console
+
+@Evergreen @Devices @Evergreen_FiltersFeature @DAS19157 @Cleanup
+Scenario: EvergreenJnr_CheckThatThereIsNoAbilityToUseListAsFilterOptionIfItHasReferenceFiltersForCurrentProjectAsProjectScopeList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User add "1803: In Scope" filter where type is "Equals" with added column and Lookup option
+    | SelectedValues |
+    | TRUE           |
+	Then table content is present
+	When User create dynamic list with "ListForDAS19157" name on "Devices" page
+	Then "ListForDAS19157" list is displayed to user
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When user select "Device (Saved List)" filter
+	Then 'ListForDAS19157' checkbox is not displayed
