@@ -1088,6 +1088,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetMenuButtonByName(menuButtonName).Click();
         }
 
+        [Then(@"'(.*)' menu button is displayed for '(.*)' button")]
+        public void ThenMenuButtonIsDisplayedForButton(string menuButtonName, string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButton(buttonName);
+            Verify.IsTrue(page.IsMenuButtonDisplayed(menuButtonName),
+                $"'{menuButtonName}' menu button is not displayed for '{buttonName}' button");
+            page.BodyContainer.Click();
+        }
+
         #endregion
 
         #region Checkbox on Grid - TBR
@@ -1217,7 +1227,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenRadioButtonIsDisabled(string radioButtonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsFalse(page.IsRadioButtonEnabled(radioButtonName),$"'{radioButtonName}' radio button is not disabled");
+            Verify.IsFalse(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not disabled");
         }
 
         #endregion

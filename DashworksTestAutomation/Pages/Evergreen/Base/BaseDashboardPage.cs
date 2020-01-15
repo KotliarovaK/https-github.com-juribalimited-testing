@@ -683,6 +683,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElements(selector).First(x => x.Displayed());
         }
 
+        public bool IsMenuButtonDisplayed(string button)
+        {
+            try
+            {
+                return GetMenuButtonByName(button, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #endregion
 
         #region Dropdown
