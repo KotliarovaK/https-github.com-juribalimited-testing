@@ -40,11 +40,6 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailbo
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then Scope List dropdown displayed with "Apps with a Vendor" value
 
-#Examples:
-#	| ProjectName           | ProjectScope  | tab1       | List1                   | tab2              | List2              |
-#	| DAS17699_AllDevices   | All Devices   | User Scope | Users with Device Count | Application Scope | Apps with a Vendor |
-#	| DAS17699_AllMailboxes | All Mailboxes | User Scope | Users with Device Count | Application Scope | Apps with a Vendor |
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17699 @DAS18943
 Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject
 	When User navigates to "<ProjectName>" project details
