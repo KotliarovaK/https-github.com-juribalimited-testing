@@ -22,11 +22,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly ColumnValue _columnValue;
+        private readonly GridRowsCount _rowCountValue;
 
-        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ColumnValue columnValue)
+        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ColumnValue columnValue, GridRowsCount rowCountValue)
         {
             _driver = driver;
             _columnValue = columnValue;
+            _rowCountValue = rowCountValue;
         }
 
         [When(@"User navigate to the bottom of the Action panel")]
@@ -241,7 +243,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.ListRowsCounter);
 
-            string rememberedNumber = _columnValue.Value;
+            string rememberedNumber = !string.IsNullOrEmpty(_columnValue.Value)? _columnValue.Value: _rowCountValue.Value;
 
             Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
