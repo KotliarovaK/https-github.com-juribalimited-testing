@@ -34,6 +34,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public const string ColumnWithEvergreenIconSelector = ".//div[@col-id='projectName'][@role='gridcell']";
 
+        private const string RadioButtonSelector = ".//div[contains(@class, 'radio-label') and text()='{0}']/ancestor::mat-radio-button";
+
         public const string ImageSelector = ".//i";
 
         [FindsBy(How = How.XPath, Using = ".//h2")]
@@ -1101,12 +1103,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IWebElement GetRadioButton(string ariaLabel, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
         {
-            var selector = By.XPath($".//div[contains(@class, 'radio-label') and text()='{ariaLabel}']/ancestor::mat-radio-button");
+            var selector = By.XPath(string.Format(RadioButtonSelector, ariaLabel));
             if (!Driver.IsElementDisplayed(selector, wait))
             {
                 throw new Exception($"'{ariaLabel}' radio button was not displayed");
             }
             return Driver.FindElement(selector);
+        }
+
+        public bool IsRadioButtonEnabled(string ariaLabel)
+        {
+            return !Driver.FindElement(By.XPath(string.Format(RadioButtonSelector, ariaLabel)))
+                .GetAttribute("class").Contains("mat-radio-disabled");
         }
 
         #endregion
