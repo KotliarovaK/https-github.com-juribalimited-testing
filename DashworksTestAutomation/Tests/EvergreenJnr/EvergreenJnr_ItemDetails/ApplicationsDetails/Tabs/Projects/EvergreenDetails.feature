@@ -157,6 +157,24 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTextOfTheAmberMessageAfterTryin
 	And User navigates to the 'Evergreen Details' left submenu item
 	When User clicks on edit button for 'Rationalisation' field
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Macromedia MacrShockwave80' in the 'Application' autocomplete field and selects 'Macromedia MacrShockwave80 8.0 (265)' value
+	When User enters 'Acrobat Reader 3.01' in the 'Application' autocomplete field and selects 'Acrobat Reader 3.01' value
+	When User clicks 'UPDATE' button on popup
+	When User navigates to the 'Application' details page for the item with '705' ID
+	Then Details page for 'Acrobat Reader 3.01' item is displayed to the user
+	When User navigates to the 'Projects' parent left menu item
+	And User navigates to the 'Evergreen Details' left submenu item
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'RETIRE' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button on popup
+	Then 'Any apps forward pathed to this app will be changed to be Uncategorised and the forward path removed' text is displayed on inline tip banner
+	When User clicks 'CANCEL' button on popup
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
+	When User clicks 'UPDATE' button on popup
+	Then 'Any apps forward pathed to this app will be changed to be Uncategorised and the forward path removed' text is displayed on inline tip banner
+	When User clicks 'CANCEL' button on popup
+	When User clicks on edit button for 'Rationalisation' field
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'zip' in the 'Application' autocomplete field and selects '7zip (2015)' value
 	When User clicks 'UPDATE' button on popup
 	Then 'Any apps forward pathed to this app will remain Forward Pathed and will be targeted to the application selected above' text is displayed on inline tip banner
