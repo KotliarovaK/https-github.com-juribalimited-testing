@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
         [JsonProperty("components")]
         public List<Component> Components { get; set; }
 
-        public partial class Component
+        public class Component
         {
             [JsonProperty("componentId")]
             public int ComponentId { get; set; }
