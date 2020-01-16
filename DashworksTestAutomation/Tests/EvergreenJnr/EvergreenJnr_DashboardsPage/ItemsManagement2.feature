@@ -177,6 +177,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	When User clicks 'CREATE DASHBOARD' button 
 	When User creates new Dashboard with 'Dashboard_DAS12974' name
 	Then Dashboard with 'Dashboard_DAS12974' title displayed in All Dashboards
+	When User waits for '3' seconds
 	When User selects 'Manage' menu for 'Dashboard_DAS12974' dashboard
 	When User changes dashboard name to 'Dashboard_DAS12974Updated'
 	Then Dashboard with 'Dashboard_DAS12974Updated' title displayed in All Dashboards

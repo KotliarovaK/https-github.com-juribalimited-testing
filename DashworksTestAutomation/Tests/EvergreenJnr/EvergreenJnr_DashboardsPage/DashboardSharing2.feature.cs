@@ -806,7 +806,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table18.AddRow(new string[] {
-                        "automation_admin10",
+                        "automation_admin16",
                         "m!gration"});
 #line 202
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table18, "When ");
@@ -841,7 +841,7 @@ this.FeatureBackground();
                         "User",
                         "Permission"});
             table20.AddRow(new string[] {
-                        "Automation Admin 1",
+                        "Automation Admin 15",
                         "Read"});
 #line 217
  testRunner.When("User adds user to list of shared person", ((string)(null)), table20, "When ");
@@ -852,7 +852,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table21.AddRow(new string[] {
-                        "automation_admin1",
+                        "automation_admin15",
                         "m!gration"});
 #line 222
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table21, "When ");
@@ -894,7 +894,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table23.AddRow(new string[] {
-                        "automation_admin10",
+                        "automation_admin16",
                         "m!gration"});
 #line 238
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table23, "When ");
@@ -907,8 +907,8 @@ this.FeatureBackground();
 #line 244
  testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 245
- testRunner.When("User clicks \'Remove\' option in Cog-menu for \'automation_admin1\' user on Details p" +
-                    "anel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Remove\' option in Cog-menu for \'automation_admin15\' user on Details " +
+                    "panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 246
  testRunner.Then("There is no user in shared list of Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 248
@@ -918,7 +918,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table24.AddRow(new string[] {
-                        "automation_admin1",
+                        "automation_admin15",
                         "m!gration"});
 #line 249
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table24, "When ");

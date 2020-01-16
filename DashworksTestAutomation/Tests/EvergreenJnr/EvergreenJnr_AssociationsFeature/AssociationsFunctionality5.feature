@@ -36,9 +36,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBran
 	| Empty              |
 	When User clicks 'RUN LIST' button
 	Then table content is present
-	When User clicks Save button on the list panel
-	When User selects Save as dynamic list option
-	When User creates new custom list with "AssociationListS18987" name
+	When User creates 'AssociationListS18987' dynamic list
 	Then "AssociationListS18987" list is displayed to user
 	When User navigates to the "AssociationListS18987" list
 	Then There are no errors in the browser console

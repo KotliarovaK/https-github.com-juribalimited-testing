@@ -683,6 +683,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElements(selector).First(x => x.Displayed());
         }
 
+        public bool IsMenuButtonDisplayed(string button)
+        {
+            try
+            {
+                return GetMenuButtonByName(button, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #endregion
 
         #region Dropdown
@@ -1107,6 +1119,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 throw new Exception($"'{ariaLabel}' radio button was not displayed");
             }
             return Driver.FindElement(selector);
+        }
+
+        public bool IsRadioButtonEnabled(string ariaLabel)
+        {
+            var classValue = GetRadioButton(ariaLabel).GetAttribute("class");
+            return !classValue.Contains("mat-radio-disabled");
         }
 
         #endregion

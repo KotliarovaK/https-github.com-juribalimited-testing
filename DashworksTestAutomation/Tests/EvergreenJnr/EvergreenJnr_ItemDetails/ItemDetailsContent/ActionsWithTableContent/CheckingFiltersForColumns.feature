@@ -184,12 +184,12 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	When User click content from "Application" column
 	When User navigates to the 'Distribution' left menu item
 	When User navigates to the 'Users' left submenu item
-	When User checks following checkboxes in the filter dropdown menu for the 'Used' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Used' column:
 	| checkboxes |
 	| False      |
 	Then Rows counter shows "98" of "194" rows
 	When User navigates to the 'Devices' left submenu item
-	When User checks following checkboxes in the filter dropdown menu for the 'Used' column:
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Used' column:
 	| checkboxes |
 	| False      |
 	Then Rows counter shows "94" of "168" rows

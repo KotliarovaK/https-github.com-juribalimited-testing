@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -68,13 +68,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	Then 'RETIRE' content is displayed in the 'zDeviceAut: Application Rationalisation' column
 	Then '' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForwardPath
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
 	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values             |
 	| CodeWright 6.0BETA |
+	When User refreshes agGrid
 	When User create dynamic list with "19003_List" name on "Applications" page
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope      | Run    |

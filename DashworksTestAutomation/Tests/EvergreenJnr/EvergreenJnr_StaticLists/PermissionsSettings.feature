@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	| ColumnName      |
 	| Last Logon Date |
 	Then Update list option is NOT available
-	And Save as a new list option is available
+	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
 
 @Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @DAS12152 @DAS12602 @Cleanup @Do_Not_Run_With_PermissionsSettings
 Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel

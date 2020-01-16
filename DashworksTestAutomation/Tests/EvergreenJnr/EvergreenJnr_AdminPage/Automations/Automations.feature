@@ -143,25 +143,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Move to position |
 	| Make inactive    |
 	| Delete           |
-	When User enters "15431_Third_Active" text in the Search field for "Automation" column
-	Then "TRUE" content is displayed for "Active" column
-	When User clicks 'Make inactive' option in Cog-menu for '15431_Third_Active' item from 'Automation' column
-	When User clicks refresh button in the browser
-	When User enters "15431_Third_Active" text in the Search field for "Automation" column
-	Then "FALSE" content is displayed for "Active" column
-	When User clicks Cog-menu for '15431_Third_Active' item in the 'Automation' column and sees following cog-menu options
-	| items            |
-	| Edit             |
-	| Duplicate        |
-	| Move to top      |
-	| Move to bottom   |
-	| Move to position |
-	| Make active      |
-	| Delete           |
-	#When User clicks 'Make active' option in Cog-menu for '15431_Third_Active' item from 'Automation' column
-	#When User clicks refresh button in the browser
-	#When User enters "15431_Third_Active" text in the Search field for "Automation" column
-	#Then "TRUE" content is displayed for "Active" column
 	When User clicks 'Edit' option in Cog-menu for '15431_Third_Active' item from 'Automation' column
 	Then 'Edit Automation' page subheader is displayed to user
 	Then Page with '15431_Third_Active' header is displayed to user
@@ -641,9 +622,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "City" filter where type is "Equals" with added column and "Belfast" Lookup option
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "17003_List" name
+	When User creates '17003_List' dynamic list
 	Then "17003_List" list is displayed to user
 	When User clicks the Logout button
 	Then User is logged out
@@ -735,6 +714,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
 	When User enters "Active_Automation1287" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks 'Make inactive' option in Cog-menu for 'Active_Automation1287' item from 'Automation' column
+	Then '1 automation made inactive' text is displayed on inline success banner
 	When User clicks refresh button in the browser
 	When User enters "Active_Automation1287" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
@@ -742,6 +722,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
 	When User enters "Inactive_Automation6578" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
 	When User clicks 'Make active' option in Cog-menu for 'Inactive_Automation6578' item from 'Automation' column
+	Then '1 automation made active' text is displayed on inline success banner
 	When User clicks refresh button in the browser
 	When User enters "Inactive_Automation6578" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column

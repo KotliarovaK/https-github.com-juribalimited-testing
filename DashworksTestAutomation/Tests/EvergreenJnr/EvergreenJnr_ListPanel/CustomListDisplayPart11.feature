@@ -169,7 +169,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavi
 	| SelectedCheckboxes                | Association    |
 	| Users Readiness Columns & Filters | Used on device |
 	Then "100" rows are displayed in the agGrid
-	When User create custom list with "Test_Application_List_DAS_17472" name
+	When User creates 'Test_Application_List_DAS_17472' dynamic list
 	Then "Test_Application_List_DAS_17472" list is displayed to user
 	Then There are no errors in the browser console
 

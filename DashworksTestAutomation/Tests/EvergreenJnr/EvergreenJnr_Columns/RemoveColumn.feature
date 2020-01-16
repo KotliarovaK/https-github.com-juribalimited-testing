@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemov
 	When User remove sorted column on "Devices" page by URL
 	| ColumnName   |
 	| Boot Up Date |
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	Then ColumnName is removed from the list
 	| ColumnName   |
 	| Boot Up Date |

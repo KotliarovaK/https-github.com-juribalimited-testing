@@ -16,9 +16,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterC
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
-	When User clicks Save button on the list panel
-	When User selects Save as dynamic list option
-	When User creates new custom list with "AssociationList18445" name
+	When User creates 'AssociationList18445' dynamic list
 	Then "AssociationList18445" list is displayed to user
 	When User navigates to the "AssociationList18445" list
 	When User clicks the Associations button
@@ -58,9 +56,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User clicks the Filters button
 	When User add "Device (Saved List)" filter where type is "In list" without added column and "ADevicesList18531" Lookup option
 	When User clicks 'RUN LIST' button
-	When User clicks Save button on the list panel
-	When User selects Save as dynamic list option
-	When User creates new custom list with "AssociationList18531" name
+	When User creates 'AssociationList18531' dynamic list
 	Then "AssociationList18531" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -101,9 +97,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	When User clicks Add And button on the Filter panel
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
-	When User clicks Save button on the list panel
-	When User selects Save as dynamic list option
-	When User creates new custom list with "AssociationList18379" name
+	When User creates 'AssociationList18379' dynamic list
 	Then "AssociationList18379" list is displayed to user
 	When User clicks Export button on the Admin page
 	#TODO: need to develop step that checks file download and works on Bamboo remote machine

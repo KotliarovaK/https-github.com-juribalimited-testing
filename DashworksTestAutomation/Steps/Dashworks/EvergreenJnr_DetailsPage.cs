@@ -150,6 +150,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = fields.FieldListOnDetailsPage.Select(value => value.Text).ToList();
             _driver.WaitForElementsToBeDisplayed(fields.FieldListOnDetailsPage);
+            Verify.AreEqual(expectedList.Count, actualList.Count, "Incorrect items count in the table");
             Verify.AreEqual(expectedList, actualList, "Fields in the open section are different");
         }
 

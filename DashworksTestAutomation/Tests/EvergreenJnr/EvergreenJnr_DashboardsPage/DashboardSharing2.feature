@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| automation_admin16 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
@@ -215,13 +215,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person
-	| User               | Permission |
-	| Automation Admin 1 | Read       |
+	| User                | Permission |
+	| Automation Admin 15 | Read       |
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username          | Password  |
-	| automation_admin1 | m!gration |
+	| Username           | Password  |
+	| automation_admin15 | m!gration |
 	When Dashboard with 'Dashboard_DAS17592' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
@@ -237,18 +237,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| automation_admin16 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'ADevicesList17592' list
 	Then Details panel is displayed to the user
-	When User clicks 'Remove' option in Cog-menu for 'automation_admin1' user on Details panel
+	When User clicks 'Remove' option in Cog-menu for 'automation_admin15' user on Details panel
 	Then There is no user in shared list of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username          | Password  |
-	| automation_admin1 | m!gration |
+	| Username           | Password  |
+	| automation_admin15 | m!gration |
 	When User language is changed to "Deutsch" via API
 	When Dashboard with 'Dashboard_DAS17592' name is opened via API
 	Then 'Widget_For_DAS17592' Widget is displayed to the user

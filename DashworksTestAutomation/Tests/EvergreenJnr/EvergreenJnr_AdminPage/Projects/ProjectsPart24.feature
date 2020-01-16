@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList                             | Association        |
 	| Application List (Complex) - BROKEN LIST | Entitled to device |
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Projects' left menu item
 	When User enters "17122_Project" text in the Search field for "Project" column

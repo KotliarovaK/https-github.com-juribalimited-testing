@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	| Values               |
 	| Jeremiah S. O'Connor |
 	Then Update list option is NOT available
-	And Save as a new list option is available
+	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
 
 @Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10979 @DAS11553 @DAS10880 @DAS11951 @DAS14263 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	When User create custom list with "List_DAS16228" name
+	When User creates 'List_DAS16228' dynamic list
 	Then "List_DAS16228" list is displayed to user
 	When User clicks the List Details button
 	Then Details panel is displayed to the user

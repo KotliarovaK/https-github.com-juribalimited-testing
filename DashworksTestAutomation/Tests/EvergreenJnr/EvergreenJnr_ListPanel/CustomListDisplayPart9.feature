@@ -33,9 +33,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewL
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Enabled    |
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
-	When User creates new custom list with "CustomList5588" name
+	When User creates 'CustomList5588' dynamic list
 	Then "CustomList5588" list is displayed to user
 	Then "2" rows are displayed in the agGrid
 	When User clicks 'Duplicate' option in Cog-menu for 'StaticList1412' list
@@ -66,7 +64,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhi
 	| SelectedCheckboxes |
 	| Red                | 
 	| Green              | 
-	And User create custom list with "Test_Device_Filter_DAS_12917" name
+	And User creates 'Test_Device_Filter_DAS_12917' dynamic list
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Device_Filter_DAS_12917"
 	And User clicks the Filters button

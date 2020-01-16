@@ -348,82 +348,66 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [When(@"User enters '(.*)' text to '(.*)' textbox")]
         public void WhenUserEntersTextToTextbox(string text, string placeholder)
         {
+            switch (placeholder)
+            {
+                case "Self Service Identifier":
+                    _selfServices.Value.Add(new SelfServiceDto() { ServiceIdentifier = text });
+                    break;
+                case "Action Name":
+                    _automationActions.Value.Add(text);
+                    break;
+                case "Project Name":
+                    _projects.Value.Add(text);
+                    break;
+                case "Team Name":
+                    _teams.Value.Add(new TeamDto() { TeamName = text });
+                    break;
+                case "Bucket Name":
+                    _buckets.Value.Add(new BucketDto() { Name = text });
+                    break;
+                case "Slot Name":
+                    _slots.Value.Add(new SlotDto() { SlotName = text });
+                    break;
+                case "Automation Name":
+                    _automations.Value.Add(new AutomationsDto() { automationName = text });
+                    break;
+                case "Ring name":
+                    //Get project ID if Ring is inside project
+                    if (_driver.Url.Contains("/project/"))
+                    {
+                        //TODO wrap this in separate method
+                        Regex regex = new Regex(@"\/project\/(\d+)");
+                        Match m = regex.Match(_driver.Url);
+                        var projId = m.Groups[1].ToString();
+                        _rings.Value.Add(new RingDto() { Name = text, Project = DatabaseHelper.GetProjectName(projId) });
+                    }
+                    else
+                    {
+                        _rings.Value.Add(new RingDto() { Name = text });
+                    }
+                    break;
+                case "Capacity Unit Name":
+                    //Get project ID if Capacity Unit is inside project
+                    if (_driver.Url.Contains("/project/"))
+                    {
+                        //TODO wrap this in separate method
+                        Regex regex = new Regex(@"\/project\/(\d+)");
+                        Match m = regex.Match(_driver.Url);
+                        var projId = m.Groups[1].ToString();
+                        _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text, Project = DatabaseHelper.GetProjectName(projId) });
+                    }
+                    else
+                    {
+                        _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text });
+                    }
+                    break;
+            }
+
             var page = _driver.NowAt<BaseDashboardPage>();
             var textbox = page.GetTextbox(placeholder);
             textbox.ClearWithBackspaces();
             textbox.SendKeys(text);
             page.BodyContainer.Click();
-
-            //TODO rework to use switch
-            if (placeholder.Equals("Self Service Identifier"))
-            {
-                _selfServices.Value.Add(new SelfServiceDto() { ServiceIdentifier = text });
-            }
-
-            if (placeholder.Equals("Action Name"))
-            {
-                _automationActions.Value.Add(text);
-            }
-
-            if (placeholder.Equals("Project Name"))
-            {
-                _projects.Value.Add(text);
-            }
-
-            if (placeholder.Equals("Team Name"))
-            {
-                _teams.Value.Add(new TeamDto() { TeamName = text });
-            }
-
-            if (placeholder.Equals("Bucket Name"))
-            {
-                _buckets.Value.Add(new BucketDto() { Name = text });
-            }
-
-            if (placeholder.Equals("Slot Name"))
-            {
-                _slots.Value.Add(new SlotDto() { SlotName = text });
-            }
-
-            if (placeholder.Equals("Automation Name"))
-            {
-                _automations.Value.Add(new AutomationsDto() { automationName = text });
-            }
-
-            if (placeholder.Equals("Ring name"))
-            {
-                //Get project ID if Ring is inside project
-                if (_driver.Url.Contains("/project/"))
-                {
-                    //TODO wrap this in separate method
-                    Regex regex = new Regex(@"\/project\/(\d+)");
-                    Match m = regex.Match(_driver.Url);
-                    var projId = m.Groups[1].ToString();
-                    _rings.Value.Add(new RingDto() { Name = text, Project = DatabaseHelper.GetProjectName(projId) });
-                }
-                else
-                {
-                    _rings.Value.Add(new RingDto() { Name = text });
-                }
-            }
-
-            if (placeholder.Equals("Capacity Unit Name"))
-            {
-                //Get project ID if Capacity Unit is inside project
-                if (_driver.Url.Contains("/project/"))
-                {
-                    //TODO wrap this in separate method
-                    Regex regex = new Regex(@"\/project\/(\d+)");
-                    Match m = regex.Match(_driver.Url);
-                    var projId = m.Groups[1].ToString();
-                    _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text, Project = DatabaseHelper.GetProjectName(projId) });
-                }
-                else
-                {
-                    _capacityUnits.Value.Add(new CapacityUnitDto() { Name = text });
-                }
-            }
-
             _driver.WaitForDataLoading();
         }
 
@@ -765,6 +749,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetDropdown(dropDownName).Click();
             List<string> actualOptions = page.GetDropdownValues(true);
             page.BodyContainer.Click();
+
+            if (!actualOptions.Any())
+            {
+                throw new Exception($"There are no options in the '{dropDownName}' dropdown");
+            }
+
             Verify.AreEqual(actualOptions.Where(x => !string.IsNullOrEmpty(x)).OrderBy(s => s),
                 actualOptions.Where(x => !string.IsNullOrEmpty(x)),
                 $"Options are displayed in not in alphabetical order in the '{dropDownName}' dropdown");
@@ -1082,6 +1072,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetMenuButtonByName(menuButtonName).Click();
         }
 
+        [Then(@"'(.*)' menu button is displayed for '(.*)' button")]
+        public void ThenMenuButtonIsDisplayedForButton(string menuButtonName, string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButton(buttonName);
+            Verify.IsTrue(page.IsMenuButtonDisplayed(menuButtonName),
+                $"'{menuButtonName}' menu button is not displayed for '{buttonName}' button");
+            page.BodyContainer.Click();
+        }
+
         #endregion
 
         #region Checkbox on Grid - TBR
@@ -1205,6 +1205,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetRadioButton(radioButtonName).Click();
+        }
+
+        [Then(@"'(.*)' radio button is disabled")]
+        public void ThenRadioButtonIsDisabled(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not disabled");
         }
 
         #endregion
