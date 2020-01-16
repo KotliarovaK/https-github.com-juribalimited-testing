@@ -28,24 +28,22 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_1' text to 'Self Service Identifier' textbox
+	When User enters 'Test_ID_2' text to 'Self Service Identifier' textbox
 	Then 'CREATE' button is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedName
+    When User creates Self Service via API
+	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
+	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' left menu item
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
-	When User clicks 'CREATE' button
-	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
-	When User clicks 'CREATE SELF SERVICE' button
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
-	When User enters 'TestProj_3' text to 'Self Service Name' textbox
+	When User enters 'Test_ID_3' text to 'Self Service Identifier' textbox
 	Then 'A self service with this name already exists' error message is displayed for 'Self Service Name' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
@@ -56,8 +54,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutSelect
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
-	When User enters 'TestProject1' text to 'Self Service Name' textbox
-	When User enters 'TestP_ID_1' text to 'Self Service Identifier' textbox
+	When User enters 'TestProj_3' text to 'Self Service Name' textbox
+	When User enters 'Test_ID_4' text to 'Self Service Identifier' textbox
 	Then 'CREATE' button is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @Not_Ready
@@ -74,19 +72,15 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedIdentifier
+    When User creates Self Service via API
+	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
+	| 1         | TestProj_6 | Test_ID_6         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
 	When User clicks 'CREATE SELF SERVICE' button
-	When User enters 'TestProj_3' text to 'Self Service Name' textbox
+	When User enters 'TestProj_66' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
-	When User clicks 'CREATE' button
-	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
-	When User clicks 'CREATE SELF SERVICE' button
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
-	When User enters 'TestP_ID_2' text to 'Self Service Identifier' textbox
-	When User enters 'TestProj_4' text to 'Self Service Name' textbox
+	When User enters 'Test_ID_6' text to 'Self Service Identifier' textbox
 	Then 'A self service with this identifier already exists' error message is displayed for 'Self Service Identifier' field
 	Then 'CREATE' button is disabled
 
