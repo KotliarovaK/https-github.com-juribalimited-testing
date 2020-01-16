@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When User add "Application" filter where type is "Equals" with added column and following value:
 	| Values             |
 	| CodeWright 6.0BETA |
-	When User create dynamic list with "19003_List" name on "Devices" page
+	When User create dynamic list with "19003_List" name on "Applications" page
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope      | Run    |
 	| 19003_Automation1 | 19003       | true   | false              | 19003_List | Manual |

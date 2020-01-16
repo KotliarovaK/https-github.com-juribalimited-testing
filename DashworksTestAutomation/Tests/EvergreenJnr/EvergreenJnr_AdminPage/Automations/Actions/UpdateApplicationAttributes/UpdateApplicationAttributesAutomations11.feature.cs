@@ -325,7 +325,7 @@ this.FeatureBackground();
  testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
                     "ing value:", ((string)(null)), table4, "When ");
 #line 79
- testRunner.When("User create dynamic list with \"19003_List\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User create dynamic list with \"19003_List\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "AutomationName",
