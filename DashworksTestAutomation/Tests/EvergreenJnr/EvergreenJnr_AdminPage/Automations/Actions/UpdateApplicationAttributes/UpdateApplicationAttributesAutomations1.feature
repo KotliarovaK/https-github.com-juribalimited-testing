@@ -158,8 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User clicks 'UPDATE ALL CHANGES' button 
 	When User clicks 'UPDATE PROJECT' button 
 	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
-	When User navigates to the 'Queue' left menu item
-	When User clicks refresh button in the browser
+	When User waits for '5' seconds
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
