@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
                     request.AddParameter("objectId", null);
                     request.AddParameter("selectedObjectsList", team.GetId());
 
-                    var response = _client.Value.Put(request);
+                    var response = _client.Evergreen.Put(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
                     {

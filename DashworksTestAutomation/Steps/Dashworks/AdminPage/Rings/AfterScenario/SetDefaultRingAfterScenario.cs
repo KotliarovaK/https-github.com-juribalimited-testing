@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                 request.AddParameter("isDefault", ring.IsDefault);
                 request.AddParameter("ringId", _ringUnassignedId.Value);
 
-                _client.Value.Put(request);
+                _client.Evergreen.Put(request);
             }
             catch (Exception e)
             {

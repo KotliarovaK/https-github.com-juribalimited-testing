@@ -151,7 +151,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots.Api
                     request.AddParameter("tasks", "");
                 }
 
-                var response = _client.Value.Post(request);
+                var response = _client.Evergreen.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                     throw new Exception($"Slot with '{slot.SlotName}' name was not created via API");

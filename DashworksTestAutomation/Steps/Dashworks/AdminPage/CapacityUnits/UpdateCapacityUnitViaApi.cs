@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
                 request.AddParameter("isDefault", capacityUnits[i].IsDefault);
                 request.AddParameter("projectId", string.Empty);
 
-                var response = _client.Value.Put(request);
+                var response = _client.Evergreen.Put(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {

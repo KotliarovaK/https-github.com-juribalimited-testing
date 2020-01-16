@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields.A
                     request.AddParameter("fieldName", customField.FieldName);
                     request.AddParameter("fieldIndex", customField.FieldIndex);
 
-                    var response = _client.Value.Delete(request);
+                    var response = _client.Evergreen.Delete(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
                     {

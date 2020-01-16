@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                     request.AddParameter("isDefault", capacityUnitDto.IsDefault);
                     request.AddParameter("projectId", string.Empty);
 
-                    _client.Value.Put(request);
+                    _client.Evergreen.Put(request);
                 }
                 catch (Exception e)
                 {

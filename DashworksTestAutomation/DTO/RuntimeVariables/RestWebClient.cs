@@ -17,12 +17,12 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
     {
         public RestWebClient()
         {
-            Value = new RestClient(UrlProvider.RestClientBaseUrl);
-            SinValue = new RestClient("http://autorelease.corp.juriba.com");
+            Evergreen = new RestClient(UrlProvider.RestClientBaseUrl);
+            Senior = new RestClient(UrlProvider.BaseUrl);
         }
 
-        public RestClient Value { get; set; }
-        public RestClient SinValue { get; set; }
+        public RestClient Evergreen { get; set; }
+        public RestClient Senior { get; set; }
 
         public void ChangeUserProfileLanguage(string userName, string language)
         {
@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
 
-            Value.Options(request);
+            Evergreen.Options(request);
 
             #endregion
 
@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             request.AddParameter("languageName", language);
             request.AddParameter("userId", userId);
 
-            var response = Value.Put(request);
+            var response = Evergreen.Put(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception(
@@ -66,7 +66,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            response = Value.Get(request);
+            response = Evergreen.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
@@ -113,7 +113,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            var response = Value.Get(request);
+            var response = Evergreen.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception(
@@ -153,7 +153,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            var response = Value.Get(request);
+            var response = Evergreen.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception(

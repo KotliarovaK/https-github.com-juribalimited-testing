@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
                     request.AddParameter("projectId", DatabaseHelper.GetProjectId(capacityUnit.Project));
                 }
 
-                var response = _client.Value.Post(request);
+                var response = _client.Evergreen.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {

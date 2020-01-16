@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                     var request = requestUri.GenerateRequest();
                     request.AddParameter("selectedObjectsList", ring.GetId());
 
-                    var response = _client.Value.Put(request);
+                    var response = _client.Evergreen.Put(request);
 
                     if (!response.StatusCode.Equals(HttpStatusCode.OK))
                     {

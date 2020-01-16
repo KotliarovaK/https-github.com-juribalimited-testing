@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
 
                 request.AddObject(new { ServiceIds = ids.ToArray() });
 
-                var response = _client.Value.Delete(request);
+                var response = _client.Evergreen.Delete(request);
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {

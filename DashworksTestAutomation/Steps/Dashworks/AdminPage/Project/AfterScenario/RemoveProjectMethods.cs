@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.AfterScenari
                     request.AddParameter("Referer", UrlProvider.EvergreenUrl);
                     request.AddParameter("selectedObjectsList", projectId);
 
-                    var response = _client.Value.Post(request);
+                    var response = _client.Evergreen.Post(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
