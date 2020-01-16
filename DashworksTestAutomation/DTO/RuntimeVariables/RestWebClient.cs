@@ -18,9 +18,11 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
         public RestWebClient()
         {
             Value = new RestClient(UrlProvider.RestClientBaseUrl);
+            SinValue = new RestClient("http://autorelease.corp.juriba.com");
         }
 
         public RestClient Value { get; set; }
+        public RestClient SinValue { get; set; }
 
         public void ChangeUserProfileLanguage(string userName, string language)
         {

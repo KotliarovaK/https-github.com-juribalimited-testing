@@ -69,6 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
 
             // Add cookies to the RestClient to authorize it
             _client.Value.AddCookies(client.CookiesJar);
+            _client.SinValue.AddCookies(client.CookiesJar);
 
             //Change profile language
             try
@@ -111,6 +112,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
 
             // Add cookies to the RestClient to authorize it
             _client.Value.AddCookies(client.CookiesJar);
+            _client.SinValue.AddCookies(client.CookiesJar);
         }
 
         protected UserDto GetSupperAdminAndAddToUsedUsersList()
