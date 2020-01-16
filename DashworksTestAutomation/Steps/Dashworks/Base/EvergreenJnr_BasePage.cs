@@ -1002,7 +1002,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(page.GetButton(buttonName, "", WebDriverExtensions.WaitTime.Medium).Disabled(),
-                $"'{buttonName}' button is displayed");
+                $"'{buttonName}' button is enabled");
         }
 
         [Then(@"'(.*)' button is not disabled")]
