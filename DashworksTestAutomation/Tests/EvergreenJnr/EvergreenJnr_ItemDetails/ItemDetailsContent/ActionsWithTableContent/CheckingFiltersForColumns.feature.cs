@@ -943,8 +943,8 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "False"});
 #line 187
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Used\' colum" +
-                    "n:", ((string)(null)), table10, "When ");
+ testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Used\' col" +
+                    "umn:", ((string)(null)), table10, "When ");
 #line 190
  testRunner.Then("Rows counter shows \"98\" of \"194\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 191
@@ -955,8 +955,8 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "False"});
 #line 192
- testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Used\' colum" +
-                    "n:", ((string)(null)), table11, "When ");
+ testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Used\' col" +
+                    "umn:", ((string)(null)), table11, "When ");
 #line 195
  testRunner.Then("Rows counter shows \"94\" of \"168\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

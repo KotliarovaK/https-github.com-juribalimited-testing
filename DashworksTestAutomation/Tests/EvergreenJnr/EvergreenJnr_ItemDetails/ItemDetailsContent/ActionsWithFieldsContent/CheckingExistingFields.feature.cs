@@ -1225,6 +1225,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18850")]
+        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTab()
         {
             System.Exception lastException = null;
@@ -1259,7 +1260,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18850"});
+                        "DAS18850",
+                        "Universe"});
 #line 263
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1285,6 +1287,8 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Criticality"});
             table11.AddRow(new string[] {
+                        "Rationalisation"});
+            table11.AddRow(new string[] {
                         "Hide From End User"});
 #line 267
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table11, "Then ");
@@ -1300,7 +1304,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS9352")]
+        [NUnit.Framework.CategoryAttribute("DAS19352")]
+        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -1335,7 +1340,8 @@ this.FeatureBackground();
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS9352"});
+                        "DAS19352",
+                        "Universe"});
 #line 278
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList                             | Association        |
 	| Application List (Complex) - BROKEN LIST | Entitled to device |
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user

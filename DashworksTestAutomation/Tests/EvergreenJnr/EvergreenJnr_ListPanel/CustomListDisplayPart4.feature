@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedSta
 	| ColumnName |
 	| Compliance |
 	| Import     |
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 	And Edit List menu is displayed
@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	| First Seen Date |
 	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	Then "Static List TestName" list is displayed to user
 	When User navigates to the "Dynamic List TestName" list
 	Then "Dynamic List TestName" list is displayed to user

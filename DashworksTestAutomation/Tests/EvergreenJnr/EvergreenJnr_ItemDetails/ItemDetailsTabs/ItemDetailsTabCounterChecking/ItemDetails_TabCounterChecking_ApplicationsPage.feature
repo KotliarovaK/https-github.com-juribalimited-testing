@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| MSI Files  |
 	| AOK        |
 	#================ checks counters ================#
-	And 'MSIFiles' left submenu item is displayed without count
+	And 'MSI Files' left submenu item is displayed without count
 	And 'AOK' left submenu item is displayed without count
 	#================ checks sub-menu for main Distribution tab ================#
 	When User navigates to the 'Distribution' left menu item

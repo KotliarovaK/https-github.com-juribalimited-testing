@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	| Values               |
 	| Jeremiah S. O'Connor |
 	Then Update list option is NOT available
-	And Save as a new list option is available
+	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
 
 @Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10979 @DAS11553 @DAS10880 @DAS11951 @DAS14263 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList

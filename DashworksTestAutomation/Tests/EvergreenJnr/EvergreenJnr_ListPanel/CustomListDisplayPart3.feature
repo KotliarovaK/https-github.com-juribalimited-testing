@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	Then "Static List TestName" list is displayed to user
 	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
-	When User update current custom list
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "Custom List TestName" list

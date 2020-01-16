@@ -35,8 +35,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18769 @DAS19124
 Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnteringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton
-	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
-	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
+	When User navigates to the 'Application' details page for 'ACDSee 4.0.2 PowerPack Trial Version' item
+	Then Details page for 'ACDSee 4.0.2 PowerPack Trial Version' item is displayed to the user
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item

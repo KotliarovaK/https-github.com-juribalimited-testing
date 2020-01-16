@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	Then 'WidgetForDAS16069_2' Widget is displayed to the user	
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks data in card 'WidgetForDAS16069_2' widget
-	Then Save as a new list option is available
+	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
 	And "43" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Cleanup
