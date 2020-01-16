@@ -1225,6 +1225,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18850")]
+        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTab()
         {
             System.Exception lastException = null;
@@ -1259,7 +1260,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18850"});
+                        "DAS18850",
+                        "Universe"});
 #line 263
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1284,6 +1286,8 @@ this.FeatureBackground();
                         "In Catalog"});
             table11.AddRow(new string[] {
                         "Criticality"});
+            table11.AddRow(new string[] {
+                        "Rationalisation"});
             table11.AddRow(new string[] {
                         "Hide From End User"});
 #line 267

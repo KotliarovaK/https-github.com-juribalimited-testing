@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInList
 	And 'Archived devices included' label is displayed in List Details
 	When User clicks 'Archived devices included' checkbox in List Details
 	Then Archived devices icon enabled state is 'true' in toolbar
-	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
+	Then 'SAVE AS NEW STATIC LIST' menu button is displayed for 'SAVE' button
 
 @Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17440 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckArchivedItemsIconDisplayingAfterDeselectingArchivedItems

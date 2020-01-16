@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDevice
 	| TPM Version                  |
 	Then There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18850
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18850 @Universe
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyForEvergreenDetailsTab
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -271,7 +271,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyFor
 	| In Catalog              |
 	| Criticality             |
 	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
-	#| Rationalisation         |
+	| Rationalisation         |
 	| Hide From End User      |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19352 @Universe
