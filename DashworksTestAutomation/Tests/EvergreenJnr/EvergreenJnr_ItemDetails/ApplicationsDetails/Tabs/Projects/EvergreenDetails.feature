@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19189 @Cleanup
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19189 @Cleanup @Universe
+	#AnnI 1/16/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheTargetAppForForwardPathRationalisationIsChangedAfterChangingTheTargetAppWhenForwardPathRationalisationAlreadySelected
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -28,7 +29,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheTargetAppForForwardPathRatio
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button on popup
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Not_Run
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Universe
 	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDisplayedCorrectly
 	When User navigates to the 'Application' details page for 'Mozilla Sunbird (0.2a.)' item
@@ -45,7 +46,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDis
 	| RETIRE        |
 	| UNCATEGORISED |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Cleanup
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Cleanup @Universe
+	#AnnI 1/16/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppliedSuccessfully
 	When User navigates to the 'Application' details page for the item with '675' ID
 	Then Details page for 'Music Visualizer Library 1.0' item is displayed to the user
@@ -95,7 +97,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppl
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button on popup
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19448 @Cleanup @Not_Run
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19448 @Cleanup @Universe
 	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationFromKeepToForwardPathIsConsistentWithProjectRationalisationBehaviour
 		#--app 1 to app 2--#
@@ -150,6 +152,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationFromKeepToForwar
 	When User clicks 'UPDATE' button on popup
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19694 @Universe
+	#AnnI 1/16/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTextOfTheAmberMessageAfterTryingToChangeRationalisationFromKeepToAnotherOneIsDisplayedCorrectly
 	When User navigates to the 'Application' details page for the item with '389' ID
 	Then Details page for 'ACDSee 4.0.2 PowerPack Trial Version' item is displayed to the user
