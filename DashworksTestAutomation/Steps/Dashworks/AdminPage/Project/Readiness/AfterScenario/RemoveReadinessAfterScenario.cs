@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.Readiness.Af
                     request.AddParameter("selectedObjectsList", DatabaseHelper.GetReadinessId(readiness.ReadinessName, readiness.ProjectId));
                     request.AddParameter("replaceReadinessId", DatabaseHelper.GetProjectReadinessesIds(readiness.ProjectId).FirstOrDefault());
 
-                    var response = _client.Value.Put(request);
+                    var response = _client.Evergreen.Put(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
                     {

@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             {
                 var request = requestUri.GenerateRequest();
                 request.AddObject(SelfService);
-                var response = _client.Value.Post(request);
+                var response = _client.Evergreen.Post(request);
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             foreach (SelfServiceDto SelfService in _selfServices.Value)
             {
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{SelfService.ServiceId}";
-                var response = _client.Value.Get(requestUri.GenerateRequest());
+                var response = _client.Evergreen.Get(requestUri.GenerateRequest());
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
@@ -108,7 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{SelfService.ServiceId}";
                 var request = requestUri.GenerateRequest();
                 request.AddObject(SelfService);
-                var response = _client.Value.Put(request);
+                var response = _client.Evergreen.Put(request);
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
@@ -128,7 +128,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             foreach (SelfServiceDto SelfService in _selfServices.Value)
             {
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
-                var response = _client.Value.Get(requestUri.GenerateRequest());
+                var response = _client.Evergreen.Get(requestUri.GenerateRequest());
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
@@ -165,7 +165,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
             var request = requestUri.GenerateRequest();
             request.AddObject( new { ServiceIds = new List<int>() { selfService.ServiceId }.ToArray(), ActionRequestType = state ? "enable" : "disable" });
-            var response = _client.Value.Put(request);
+            var response = _client.Evergreen.Put(request);
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
             {

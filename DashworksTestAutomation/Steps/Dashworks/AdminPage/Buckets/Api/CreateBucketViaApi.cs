@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.Api
                 request.AddParameter("ownerTeamID", bucket.Team.GetId());
                 request.AddParameter("default", bucket.IsDefault);
 
-                var response = _client.Value.Post(request);
+                var response = _client.Evergreen.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                     throw new Exception($"Bucket with {bucket.Name} name was not created via api: {response.ErrorMessage}");

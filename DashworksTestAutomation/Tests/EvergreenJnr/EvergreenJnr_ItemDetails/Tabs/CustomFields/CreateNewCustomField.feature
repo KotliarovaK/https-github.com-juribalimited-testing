@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox | Computer | User | Application |
 	| CfDAS16487_1 | FlDAS16487_1 | true                | true    | true    | true     | true | true        |
 	And User navigates to the 'Mailbox' details page for '03F0CCD0F3384DE5A9F@bclabs.local' item

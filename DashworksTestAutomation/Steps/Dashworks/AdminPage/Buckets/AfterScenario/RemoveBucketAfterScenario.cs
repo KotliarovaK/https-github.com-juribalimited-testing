@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                     request.AddParameter("objectId", null);
                     request.AddParameter("selectedObjectsList", bucket.GetId());
 
-                    var response = _client.Value.Put(request);
+                    var response = _client.Evergreen.Put(request);
 
                     if(response.StatusCode != HttpStatusCode.OK)
                         Logger.Write($"Unable to delete '{bucket.Name}' Bucket via API");

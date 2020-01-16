@@ -7,7 +7,7 @@ namespace DashworksTestAutomation.Providers
 {
     internal class UrlProvider
     {
-        private static string BaseUrl
+        public static string BaseUrl
         {
             get
             {

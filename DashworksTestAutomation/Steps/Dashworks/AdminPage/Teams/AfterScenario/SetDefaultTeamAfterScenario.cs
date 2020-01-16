@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
                 request.AddParameter("description", team.Description);
                 request.AddParameter("isDefault", team.IsDefault);
 
-                var response = _client.Value.Put(request);
+                var response = _client.Evergreen.Put(request);
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {

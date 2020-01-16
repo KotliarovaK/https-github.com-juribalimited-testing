@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("sharedAccessType", "Private");
             request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
 
-            var response = _client.Value.Post(request);
+            var response = _client.Evergreen.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception(
@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
 
-            _client.Value.Options(request);
+            _client.Evergreen.Options(request);
 
             #endregion
 
@@ -138,7 +138,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("sharedAccessType", "Private");
             request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
 
-            var response = _client.Value.Post(request);
+            var response = _client.Evergreen.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
@@ -164,7 +164,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
 
-            _client.Value.Options(request);
+            _client.Evergreen.Options(request);
 
             #endregion
 
@@ -184,7 +184,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("sharedAccessType", "Private");
             request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
 
-            response = _client.Value.Put(request);
+            response = _client.Evergreen.Put(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
@@ -206,7 +206,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
 
-            _client.Value.Options(request);
+            _client.Evergreen.Options(request);
 
             #endregion
 
@@ -220,7 +220,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
             request.AddParameter("items", items);
 
-            response = _client.Value.Post(request);
+            response = _client.Evergreen.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception(
@@ -269,7 +269,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            var response = _client.Value.Delete(request);
+            var response = _client.Evergreen.Delete(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");

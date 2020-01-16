@@ -1,10 +1,15 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Net;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.ManagementConsole.CustomFields;
+using DashworksTestAutomation.Providers;
 using OpenQA.Selenium.Remote;
+using RestSharp;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -35,7 +40,7 @@ namespace DashworksTestAutomation.Steps.Senior.Senior_CreatingProject.CustomFiel
 
                 var page = _driver.NowAt<CustomFieldsPage>();
 
-                page.FieldNameTextbox.SendKeys(customField.FieldName);
+                page.FieldNameTextbox.SendKeys(customField.FieldName); 
                 page.FieldLabelTextbox.SendKeys(customField.FieldLabel);
 
                 page.AllowExternalUpdateCheckbox.SetCheckboxState(customField.AllowExternalUpdate);

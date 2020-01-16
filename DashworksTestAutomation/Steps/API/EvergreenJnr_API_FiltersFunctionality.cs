@@ -33,7 +33,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            var response = _client.Value.Get(request);
+            var response = _client.Evergreen.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            var response = _client.Value.Get(request);
+            var response = _client.Evergreen.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            var response = _client.Value.Get(request);
+            var response = _client.Evergreen.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
@@ -110,7 +110,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            var response = _client.Value.Get(request);
+            var response = _client.Evergreen.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            var response = _client.Value.Get(request);
+            var response = _client.Evergreen.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");

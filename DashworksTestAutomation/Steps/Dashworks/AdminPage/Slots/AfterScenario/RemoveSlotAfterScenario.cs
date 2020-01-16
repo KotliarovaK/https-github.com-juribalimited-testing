@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots.AfterScenario
                     var request = requestUri.GenerateRequest();
                     request.AddParameter("selectedObjectsList", slot.Id);
 
-                    var response = _client.Value.Post(request);
+                    var response = _client.Evergreen.Post(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
                         Logger.Write($"Unable to delete '{slot.SlotName}' Slot via API");
