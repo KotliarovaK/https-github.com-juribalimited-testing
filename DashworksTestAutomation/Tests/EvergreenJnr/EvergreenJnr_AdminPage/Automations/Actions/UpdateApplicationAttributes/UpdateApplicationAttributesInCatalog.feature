@@ -23,14 +23,19 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageD
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
 	When User selects 'TRUE ' in the 'In Catalog' dropdown
+	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Trevoli' in the 'Target Application' autocomplete field and selects 'Trevoli Photo Finale 2.1.000.0000 (429)' value
 	When User clicks 'CREATE' button
 	#Check Action Grid
-	Then "In Catalog" content is displayed for "Task or Field" column
+	Then "Sticky Compliance, Rationalisation, In Catalog" content is displayed for "Task or Field" column
+	Then '' content is displayed in the 'Project' column
+	Then 'Unknown, Forward Path, Photo Finale, True' content is displayed in the 'Value' column
 	When User clicks content from "Action" column
 	#Check Edit Action Page
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
-	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
-	Then 'No change' content is displayed in 'Rationalisation' dropdown
+	Then 'UNKNOWN' content is displayed in 'Sticky Compliance' dropdown
+	Then 'FORWARD PATH' content is displayed in 'Rationalisation' dropdown
 	Then 'TRUE' value is displayed in the 'In Catalog' dropdown
 	Then 'UPDATE' button is disabled
-	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
+	Then 'UPDATE' button has tooltip with 'No changes made' text
