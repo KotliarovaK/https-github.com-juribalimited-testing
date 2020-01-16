@@ -92,7 +92,7 @@ When User creates Self Service via API
 	When User enters 'TestProj_4' text to 'Self Service Name' textbox
 	Then 'A self service with this identifier already exists' error message is displayed for 'Self Service Identifier' field
 	Then 'CREATE' button is disabled
-#####################
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
