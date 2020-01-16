@@ -55,9 +55,9 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(By.XPath(
                         ".//div[@class='filterAddPanel ng-star-inserted']//div[contains(@class, 'add-column-checkbox')]//div[@class='mat-checkbox-inner-container']"))
                     .Click();
-            var unpdateButtonSelector = ".//div[contains(@class, 'actions')]//div[@class='actions-btn']/button";
-            _driver.MouseHover(By.XPath(unpdateButtonSelector));
-            _driver.FindElement(By.XPath(unpdateButtonSelector)).Click();
+            var updateButtonSelector = ".//div[contains(@class, 'actions')]//div[@class='actions-btn']/button";
+            _driver.MouseHover(By.XPath(updateButtonSelector));
+            _driver.FindElement(By.XPath(updateButtonSelector)).Click();
         }
     }
 
@@ -124,6 +124,45 @@ namespace DashworksTestAutomation.Helpers
                 .SendKeys(_value);
             _driver.FindElement(By.XPath(".//ul[@class='tree-list ng-star-inserted']//mat-checkbox"))
                 .Click();
+            SaveFilter();
+        }
+    }
+
+    public class TreeAssociationFilter : BaseFilter
+    {
+        public TreeAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(driver, operatorValue, false)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(
+                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                    .SendKeys(row["Value"]);
+                _driver.FindElement(By.XPath(".//ul[@class='tree-list ng-star-inserted']//mat-checkbox"))
+                    .Click();
+            }
+
+            foreach (var row in Table.Rows)
+            {
+                if (string.IsNullOrEmpty(row["Association"]))
+                    break;
+                _driver.FindElement(By.XPath(".//div[contains(@class, 'title-beetwen-blocks')]/following-sibling::div//input[@placeholder='Search']")).SendKeys(row["Association"]);
+                if (_driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Displayed)
+                    _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                else
+                    _driver.FindElement(By.XPath($".//li//div[text()='{row["Association"]}']")).Click();
+                _driver.FindElement(By.XPath(".//div[contains(@class, 'title-beetwen-blocks')]/following-sibling::div//input[@placeholder='Search']")).Clear();
+            }
+
             SaveFilter();
         }
     }

@@ -5,9 +5,12 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS19363
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS19363 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatAppOwnersSectionIsDisabledWhenDoNotIncludeUsersRadioSelected
-	When User navigates to "Mailbox Evergreen Capacity Project" project details
+	When Project created via API and opened
+	| ProjectName         | Scope         | ProjectTemplate | Mode               |
+	| DAS19363_AllDevices | All Mailboxes | None            | Standalone Project |
+	When User navigates to "DAS19363_AllDevices" project details
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
