@@ -7,11 +7,15 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS11120 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList
+	When User create new User via API
+	| Username   | Email | FullName | Password  | Roles                 |
+	| DAS14841_1 | Value | Test1    | m!gration | Project Administrator |
+	| DAS14841_2 | Value | Test2    | m!gration | Project Administrator |
 	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username          | Password  |
-	| automation_admin8 | m!gration |
+	| Username   | Password  |
+	| DAS14841_1 | m!gration |
 	#create and share list
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -22,13 +26,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person
-	| User                | Permission |
-	| Automation Admin 17 | Admin      |
+	| User  | Permission |
+	| Test2 | Admin      |
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin17 | m!gration |
+	| Username   | Password  |
+	| DAS14841_2 | m!gration |
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841_Admin' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
@@ -43,7 +47,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget 'WidgetForDAS14841_Admin' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
-	Then User 'Automation Admin 8' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
+	Then User 'Test1' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then Current permission 'Specific users / teams' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then New Permission 'Do not change' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	When User selects 'Everyone can see' permission for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
@@ -53,8 +57,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	#login as user1 and check if list permission changed
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username          | Password  |
-	| automation_admin8 | m!gration |
+	| Username   | Password  |
+	| DAS14841_1 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'ADeviceListFor14841_Admin' list
@@ -63,6 +67,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboard
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS15876_1 | Value | FN15876_1 | m!gration | Project Administrator |
+	| DAS15876_2 | Value | FN15876_2 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS15876_1 | m!gration |
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS15876' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
@@ -71,25 +84,34 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
-	| User                | Permission |
-	| Automation Admin 10 | Admin      |
-	Then User 'automation_admin10' was added to shared list with 'Admin' permission of Details panel
+	| User      | Permission |
+	| FN15876_2 | Admin      |
+	Then User 'DAS15876_2' was added to shared list with 'Admin' permission of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| Username   | Password  |
+	| DAS15876_2 | m!gration |
 	#remove share
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
-	When User clicks 'Remove' option in Cog-menu for 'automation_admin10' user on Details panel
+	When User clicks 'Remove' option in Cog-menu for 'DAS15876_2' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15550 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS15550_1 | Value | FN15550_1 | m!gration | Project Administrator |
+	| DAS15550_2 | Value | FN15550_2 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS15550_1 | m!gration |
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS15550' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
@@ -104,14 +126,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
-	| User                | Permission |
-	| Automation Admin 10 | Edit       |
-	Then User 'automation_admin10' was added to shared list with 'Edit' permission of Details panel
+	| User      | Permission |
+	| FN15550_2 | Edit       |
+	Then User 'DAS15550_2' was added to shared list with 'Edit' permission of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| Username   | Password  |
+	| DAS15550_2 | m!gration |
 	#edit widget
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS15550' dashboard
@@ -126,6 +148,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashboardName
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS14915_1 | Value | FN14915_1 | m!gration | Project Administrator |
+	| DAS14915_2 | Value | FN14915_2 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS14915_1 | m!gration |
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS14915' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
@@ -134,14 +165,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
-	| User                | Permission |
-	| Automation Admin 10 | Admin      |
-	Then User 'automation_admin10' was added to shared list with 'Admin' permission of Details panel
+	| User      | Permission |
+	| FN14915_2 | Admin      |
+	Then User 'DAS14915_2' was added to shared list with 'Admin' permission of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| Username   | Password  |
+	| DAS14915_2 | m!gration |
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
@@ -166,6 +197,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14915 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSharedSection
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS14915_3 | Value | FN14915_3 | m!gration | Project Administrator |
+	| DAS14915_4 | Value | FN14915_4 | m!gration | Project Administrator |
+	| DAS14915_5 | Value | FN14915_6 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS14915_3 | m!gration |
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for Share' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
@@ -174,34 +215,38 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
-	| User                | Permission |
-	| Automation Admin 10 | Admin      |
-	Then User 'automation_admin10' was added to shared list with 'Admin' permission of Details panel
+	| User      | Permission |
+	| FN14915_4 | Admin      |
+	Then User 'DAS14915_4' was added to shared list with 'Admin' permission of Details panel
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin10 | m!gration |
+	| Username   | Password  |
+	| DAS14915_4 | m!gration |
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks Settings button for 'Dashboard for Share' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
 	When User adds user to list of shared person
-	| User          | Permission |
-	| Administrator | Edit       |
-	Then User 'Admin' was added to shared list with 'Edit' permission of Details panel
-	When User clicks 'Remove' option in Cog-menu for 'Admin' user on Details panel
+	| User      | Permission |
+	| FN14915_5 | Edit       |
+	Then User 'DAS14915_5' was added to shared list with 'Edit' permission of Details panel
+	When User clicks 'Remove' option in Cog-menu for 'DAS14915_5' user on Details panel
 	When User adds user to list of shared person
-	| User          | Permission |
-	| Administrator | Read       |
-	Then User 'Admin' was added to shared list with 'Read Only' permission of Details panel
+	| User      | Permission |
+	| FN14915_5 | Read       |
+	Then User 'DAS14915_5' was added to shared list with 'Read Only' permission of Details panel
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17592 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetRefferedToUnavailableList
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS17592_1 | Value | FN17592_1 | m!gration | Project Administrator |
+	| DAS17592_2 | Value | FN17592_2 | m!gration | Project Administrator |
 	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin16 | m!gration |
+	| Username   | Password  |
+	| DAS17592_1 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
@@ -215,13 +260,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person
-	| User                | Permission |
-	| Automation Admin 15 | Read       |
+	| User      | Permission |
+	| FN17592_2 | Read       |
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin15 | m!gration |
+	| Username   | Password  |
+	| DAS17592_2 | m!gration |
 	When Dashboard with 'Dashboard_DAS17592' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
@@ -236,19 +281,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin16 | m!gration |
+	| Username   | Password  |
+	| DAS17592_1 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'ADevicesList17592' list
 	Then Details panel is displayed to the user
-	When User clicks 'Remove' option in Cog-menu for 'automation_admin15' user on Details panel
+	When User clicks 'Remove' option in Cog-menu for 'FN17592_2' user on Details panel
 	Then There is no user in shared list of Details panel
 	#login as user2
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin15 | m!gration |
+	| Username   | Password  |
+	| DAS17592_2 | m!gration |
 	When User language is changed to "Deutsch" via API
 	When Dashboard with 'Dashboard_DAS17592' name is opened via API
 	Then 'Widget_For_DAS17592' Widget is displayed to the user
