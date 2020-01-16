@@ -10,8 +10,9 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 {
     public class SelfServiceDto
     {
-        private string _id;
+        string _scope;
 
+        private string _id;
         [JsonProperty("serviceId")]
         public int ServiceId
         {
@@ -59,6 +60,20 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService
 
         [JsonProperty("scopeId")]
         public int ScopeId { get; set; }
+
+
+        public string Scope
+        {
+            get
+            {
+                return _scope;
+            }
+            set
+            {
+                ScopeId = int.Parse(DatabaseHelper.GetProjectListIdScope(value));
+                _scope = value;
+            }
+        }
 
         [JsonProperty("scopeName")]
         public string ScopeName { get; set; }
