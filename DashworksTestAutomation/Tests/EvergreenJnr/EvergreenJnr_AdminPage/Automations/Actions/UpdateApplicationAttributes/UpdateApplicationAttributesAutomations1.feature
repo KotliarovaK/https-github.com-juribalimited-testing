@@ -191,3 +191,31 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User clicks content from "Action" column
 	Then '[Project not found]' content is displayed in 'Project or Evergreen' textbox
 	#Then 'The selected project cannot be found' error message is displayed for 'Project or Evergreen' field
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @Cleanup @Universe
+Scenario: EvergreenJnr_AdminPage_CheckThatTargetApplicationNotFoundIsNotDisplayedOnEditActionPage
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 19690_Automation | 19690       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	And User enters '19690_Action' text to 'Action Name' textbox
+	And User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Project 00M Computer Scheduled' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Trevoli' in the 'Target Application' autocomplete field and selects 'Trevoli Photo Finale 2.1.000.0000 (429)' value
+	When User clicks 'CREATE' button
+	#Check Action Grid
+	Then "Sticky Compliance, Rationalisation, In Catalog" content is displayed for "Task or Field" column
+	Then '' content is displayed in the 'Project' column
+	Then 'Unknown, Forward Path, Photo Finale, True' content is displayed in the 'Value' column
+	When User clicks content from "Action" column
+	#Check Edit Action Page
+	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
+	Then 'UNKNOWN' content is displayed in 'Sticky Compliance' dropdown
+	Then 'FORWARD PATH' content is displayed in 'Rationalisation' dropdown
+	Then 'TRUE' value is displayed in the 'In Catalog' dropdown
+	Then 'UPDATE' button is disabled
+	Then 'UPDATE' button has tooltip with 'No changes made' text
