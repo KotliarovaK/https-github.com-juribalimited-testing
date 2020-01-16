@@ -31,6 +31,7 @@ namespace DashworksTestAutomation.Steps.Senior.Senior_CreatingProject.CustomFiel
             _authObject = authObject;
         }
 
+
         [When(@"User creates new Custom Field")]
         public void WhenUserCreatesNewCustomField(Table table)
         {
