@@ -1137,13 +1137,13 @@ this.FeatureBackground();
                         "Password",
                         "Roles"});
             table29.AddRow(new string[] {
-                        string.Format("{0}", login1),
+                        "Login1",
                         "Value",
                         string.Format("{0}", username1),
                         "m!gration",
                         "Project Administrator"});
             table29.AddRow(new string[] {
-                        "<Login2>",
+                        "Login2",
                         "Value",
                         string.Format("{0}", username2),
                         "m!gration",

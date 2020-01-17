@@ -318,8 +318,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
 	When User create new User via API
 	| Username | Email | FullName    | Password  | Roles                 |
-	| <Login1> | Value | <Username1> | m!gration | Project Administrator |
-	| <Login2> | Value | <Username2> | m!gration | Project Administrator |
+	| Login1   | Value | <Username1> | m!gration | Project Administrator |
+	| Login2   | Value | <Username2> | m!gration | Project Administrator |
 	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as

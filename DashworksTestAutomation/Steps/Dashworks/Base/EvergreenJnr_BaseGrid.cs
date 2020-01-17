@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 throw new Exception($"Some duplicated columns are spotted in the '{allHeaders}'");
         }
 
-        [Then(@"Column headers are displayed in High Contrast")]
+        [Then(@"Column headers are displayed in high contrast")]
         public void ThenColumnHeadersAreDisplayedInHighContrast()
         {
             var grid = _driver.NowAt<BaseGridPage>();

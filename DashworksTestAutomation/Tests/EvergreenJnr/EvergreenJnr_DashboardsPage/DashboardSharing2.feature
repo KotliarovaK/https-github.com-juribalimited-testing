@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	| Username   | Email | FullName  | Password  | Roles                 |
 	| DAS14915_3 | Value | FN14915_3 | m!gration | Project Administrator |
 	| DAS14915_4 | Value | FN14915_4 | m!gration | Project Administrator |
-	| DAS14915_5 | Value | FN14915_6 | m!gration | Project Administrator |
+	| DAS14915_5 | Value | FN14915_5 | m!gration | Project Administrator |
 	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -287,7 +287,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'ADevicesList17592' list
 	Then Details panel is displayed to the user
-	When User clicks 'Remove' option in Cog-menu for 'FN17592_2' user on Details panel
+	When User clicks 'Remove' option in Cog-menu for 'DAS17592_2' user on Details panel
 	Then There is no user in shared list of Details panel
 	#login as user2
 	When User clicks the Logout button

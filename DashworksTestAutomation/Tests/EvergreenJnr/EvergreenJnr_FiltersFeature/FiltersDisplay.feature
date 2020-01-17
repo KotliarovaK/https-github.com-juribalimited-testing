@@ -2196,7 +2196,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCor
 	When User add "Recipient Type" filter where type is "Does not equal" without added column and "Empty" Lookup option
 	Then "Recipient Type" filter is added to the list
 	Then Column headers are displayed in High Contrast
-	Then Text content of 'Recipient Type' column is displayed in High Contrast
+	Then Text content of 'Recipient Type' column is displayed in high contrast
 	#translation
 	When User language is changed to "Test Language" via API
 	Then grid headers are displayed in the following order
