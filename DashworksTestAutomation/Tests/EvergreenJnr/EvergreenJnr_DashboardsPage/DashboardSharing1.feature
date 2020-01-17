@@ -318,20 +318,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
 	When User create new User via API
 	| Username | Email | FullName    | Password  | Roles                 |
-	| Login1   | Value | <Username1> | m!gration | Project Administrator |
-	| Login2   | Value | <Username2> | m!gration | Project Administrator |
+	| <login1> | Value | <Username1> | m!gration | Project Administrator |
+	| <login2> | Value | <Username2> | m!gration | Project Administrator |
 	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
-	| <Login1> | m!gration |
+	| <login1> | m!gration |
 	#create list
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	Then table content is present
+	When User waits for '3' seconds
 	When User create dynamic list with "<listName>" name on "Devices" page
+	When User waits for '3' seconds
 	Then "<listName>" list is displayed to user
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
@@ -341,7 +342,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username | Password  |
-	| <Login2> | m!gration |
+	| <login2> | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
 	When Dashboard with '<dashboardName>' name created via API and opened
@@ -364,6 +365,6 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	Then New Permission dropdown has 'You cannot change the permission for this list' tooltip for '<listName>' list on Permissions Pop-up
 
 Examples:
-| Login1     | Username1 | login2     | Username2 | listName                | shareType | dashboardName                        | widgetName             |
-| DAS14841R1 | FN14841R1 | DAS14841R2 | FN14841R2 | DeviceListFor14841_Read | Read      | Dashboard for DAS14841_Read          | WidgetForDAS14841_Read |
-| DAS14841E1 | FN14841E1 | DAS14841E2 | FN14841E1 | DeviceListFor14841_Edit | Edit      | Dashboard for WidgetForDAS14841_Edit | WidgetForDAS14841_Edit |
+| login1     | Username1 | login2     | Username2 | listName                | shareType | dashboardName               | widgetName             |
+| DAS14841R1 | FN14841R1 | DAS14841R2 | FN14841R2 | DeviceListFor14841_Read | Read      | Dashboard for DAS14841_Read | WidgetForDAS14841_Read |
+| DAS14841E1 | FN14841E1 | DAS14841E2 | FN14841E2 | DeviceListFor14841_Edit | Edit      | Dashboard for DAS14841_Edit | WidgetForDAS14841_Edit |

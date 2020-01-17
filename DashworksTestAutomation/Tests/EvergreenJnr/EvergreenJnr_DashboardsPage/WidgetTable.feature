@@ -286,22 +286,22 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	| WidgetType | Title     | List         | SplitBy                                | AggregateFunction | AggregateBy                            |
 	| Table      | DAS-15852 | 1803 Rollout | 1803: Pre-Migration \ Ready to Migrate | Severity          | 1803: Pre-Migration \ Ready to Migrate |
 	Then User sees following options for Order By selector on Create Widget page:
-	| items                                               |
-	| 1803: Pre-Migration \ Ready to Migrate ASC          |
-	| 1803: Pre-Migration \ Ready to Migrate DESC         |
-	| 1803: Pre-Migration \ Ready to Migrate Severity ASC |
-	| 1803: Pre-Migration \ Ready to Migrate Severity DESC |
-	When User selects '1803: Pre-Migration \ Ready to Migrate Severity ASC' in the 'OrderBy' dropdown
+	| items                                                |
+	| 1803: Pre-Migration \ Ready to Migrate severity ASC  |
+	| 1803: Pre-Migration \ Ready to Migrate severity DESC |
+	| 1803: Pre-Migration \ Ready to Migrate ASC           |
+	| 1803: Pre-Migration \ Ready to Migrate DESC          |
+	When User selects '1803: Pre-Migration \ Ready to Migrate severity ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS-15852' Widget is displayed to the user
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
 	| Empty     |
-	| Unknown   |
 	| Not Ready |
 	| On Target |
 	| Ready     |
+	| Unknown   |
 	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects '1803: Pre-Migration \ Ready to Migrate DESC' in the 'OrderBy' dropdown
@@ -310,10 +310,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	Then 'DAS-15852' Widget is displayed to the user
 	Then Table columns of 'DAS-15852' widget placed in the next order:
 	| headers   |
-	| Unknown   |
 	| Ready     |
 	| On Target |
 	| Not Ready |
+	| Unknown   |
 	| Empty     |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
@@ -330,8 +330,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessValuesAreShownWithTheCor
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
-	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy     | OrderBy                      |
-	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | 1803: Readiness | 1803: Readiness Severity ASC |
+	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy     | OrderBy             |
+	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | 1803: Readiness | 1803: Readiness ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS16275_Widget' Widget is displayed to the user
@@ -351,8 +351,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceValuesAreShownWithTheCo
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
-	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy      | OrderBy                       |
-	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | Owner Compliance | Owner Compliance Severity ASC |
+	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy      | OrderBy              |
+	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | Owner Compliance | Owner Compliance ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button
 	Then 'DAS16275_Widget' Widget is displayed to the user
