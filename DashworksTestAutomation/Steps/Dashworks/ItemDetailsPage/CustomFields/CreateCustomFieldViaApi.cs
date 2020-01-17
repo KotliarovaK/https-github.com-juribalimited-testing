@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.CustomFields
                 request.AddParameter("value", customField.Value);
                 request.AddParameter("fieldIndex", customField.FieldIndex);
 
-                var response = _client.Value.Post(request);
+                var response = _client.Evergreen.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {

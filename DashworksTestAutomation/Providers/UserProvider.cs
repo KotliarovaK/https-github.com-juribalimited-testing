@@ -11,6 +11,7 @@ namespace DashworksTestAutomation.Providers
     internal class UserProvider
     {
         public static string DefaultUserLanguage = ConfigurationManager.AppSettings["user.language"];
+        private static readonly bool UseSupperAdmin = bool.Parse(ConfigurationManager.AppSettings["useSupperAdmin"]);
 
         static readonly RestClient client = new RestClient(JuribaAutomationApiProvider.Uri);
 
@@ -45,6 +46,10 @@ namespace DashworksTestAutomation.Providers
 
         public static UserDto GetFreeUserAccount()
         {
+            if (UseSupperAdmin)
+            {
+                return GetSupperAdmin();
+            }
             var iterator = GetUserIterator();
             _mut.WaitOne(1000);
             try

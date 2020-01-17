@@ -290,8 +290,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
             dashboardDetailsElement.DetailsNameInput.Clear();
             dashboardDetailsElement.DetailsNameInput.SendkeysWithDelay(dashboardName);
-            Thread.Sleep(3000);//Wait for autosave action, no indicators available
-            _driver.WaitForDataLoading();
+            //Wait for auto save action, no indicators available
+            _driver.WaitFor(()=> dashboardDetailsElement.DashboardsList.Select(title => title.Text).ToList().Contains(dashboardName));
         }
 
         [When(@"User clicks Default dashboard checkbox in Dashboard details")]

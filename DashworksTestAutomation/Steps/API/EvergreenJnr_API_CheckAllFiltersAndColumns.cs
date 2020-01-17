@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Steps.API
         private IRestResponse CheckFiltersCount(string list)
         {
             var url = $"{UrlProvider.RestClientBaseUrl}{list}/fields?$lang=en-US";
-            var response = _client.Value.Get(url.GenerateRequest());
+            var response = _client.Evergreen.Get(url.GenerateRequest());
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 throw new Exception($"Unable to get filters for '{list}' list: {response.ErrorMessage}");
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.API
         private IRestResponse CheckColumnsCount(string list)
         {
             var url = $"{UrlProvider.RestClientBaseUrl}{list.ToLower()}/filters?$lang=en-US";
-            var response = _client.Value.Get(url.GenerateRequest());
+            var response = _client.Evergreen.Get(url.GenerateRequest());
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 throw new Exception($"Unable to get filters for '{list}' list: {response.ErrorMessage}");
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Steps.API
                 //string content = reader.ReadToEnd();
 
                 var url = $"{UrlProvider.RestClientBaseUrl}/{row.Values.Last().Replace($"{list}?", $"{list}?$top=100&$skip=0&")}";
-                var response = _client.Value.Get(url.GenerateRequest());
+                var response = _client.Evergreen.Get(url.GenerateRequest());
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {

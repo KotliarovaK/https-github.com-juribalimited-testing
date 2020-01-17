@@ -39,7 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                     request.AddParameter("objectId", null);
                     request.AddParameter("selectedObjectsList", capacityUnit.GetId());
 
-                    var resp = _client.Value.Put(request);
+                    var resp = _client.Evergreen.Put(request);
 
                     if (resp.StatusCode != HttpStatusCode.OK)
                     {

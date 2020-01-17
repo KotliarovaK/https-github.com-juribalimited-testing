@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
-            _response.Value = _client.Value.Get(request);
+            _response.Value = _client.Evergreen.Get(request);
 
             if (_response.Value.StatusCode != HttpStatusCode.OK)
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
