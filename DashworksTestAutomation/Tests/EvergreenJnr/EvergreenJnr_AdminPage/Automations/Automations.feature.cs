@@ -2581,23 +2581,41 @@ this.FeatureBackground();
  testRunner.When("User enters \"Active_Automation1287\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 720
- testRunner.Then("\"FALSE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 721
+ testRunner.Then("\'Active\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 722
+ testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 723
+ testRunner.When("User enters \"Active_Automation1287\" text in the Search field for \"Automation\" col" +
+                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 724
+ testRunner.Then("\"FALSE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 726
  testRunner.When("User enters \"Inactive_Automation6578\" text in the Search field for \"Automation\" c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 723
+#line 727
  testRunner.Then("\"FALSE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 724
+#line 728
  testRunner.When("User clicks \'Make active\' option in Cog-menu for \'Inactive_Automation6578\' item f" +
                     "rom \'Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 725
+#line 729
  testRunner.Then("\'1 automation made active\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 726
+#line 730
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 727
+#line 731
  testRunner.When("User enters \"Inactive_Automation6578\" text in the Search field for \"Automation\" c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 728
+#line 732
+ testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 733
+ testRunner.Then("\'Active\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 734
+ testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 735
+ testRunner.When("User enters \"Inactive_Automation6578\" text in the Search field for \"Automation\" c" +
+                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 736
  testRunner.Then("\"TRUE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
