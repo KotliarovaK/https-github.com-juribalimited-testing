@@ -2,19 +2,17 @@
 	Create New Custom Field
 
 Background: Pre-Conditions
-	Given User is logged in to the Projects
-	When User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
+	Given User is logged in to the Evergreen
+	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Do_Not_Run_With_CustomFields @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckAddCustomFieldPopupUiAndTooltips
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName     | FieldLabel    | AllowExternalUpdate | Enabled | Computer |
 	| CfDAS16487_1a | FlDAS16487_1a | true                | true    | true     |
 	| CfDAS16487_1b | FlDAS16487_1b | true                | false   | true     |
 	| CfDAS16487_1c | FlDAS16487_1c | true                | true    | false    |
-	And User navigate to Evergreen URL
-	And User navigates to the 'Device' details page for 'QFI94WAUX17N4I' item
+	When User navigates to the 'Device' details page for 'QFI94WAUX17N4I' item
 	Then Details page for 'QFI94WAUX17N4I' item is displayed to the user
 	When User navigates to the 'Custom Fields' left submenu item
 	And User clicks 'ADD CUSTOM FIELD' button 
@@ -47,7 +45,7 @@ Scenario: EvergreenJnr_MailboxesList_CreateCustomFieldWithEmptyValue
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CreateCustomField
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_2 | FlDAS16487_2 | true                | true    | true |
 	And User navigates to the 'User' details page for 'BrissonTa' item
@@ -63,7 +61,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomField
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS16487_3 | FlDAS16487_3 | true                | true    | true |
 	And User navigates to the 'User' details page for 'VriezeGi' item
@@ -77,7 +75,7 @@ Scenario: EvergreenJnr_UsersList_CancelCustomFieldCreation
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS16487 @Cleanup
 Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS17614_4 | FlDAS17614_4 | true                | true    | true |
 	And User navigates to the 'User' details page for 'OBM473400' item
@@ -108,7 +106,7 @@ Scenario: EvergreenJnr_UsersList_CreateCustomFieldWithSameData
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @DAS17960 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckGroupByResetAfterCreatingNewCustomField
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | User |
 	| CfDAS17695_2 | FlDAS17695_2 | true                | true    | true |
 	And User creates Custom Field via API

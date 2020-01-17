@@ -717,6 +717,10 @@ Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
 	Then '1 automation made inactive' text is displayed on inline success banner
 	When User clicks refresh button in the browser
 	When User enters "Active_Automation1287" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then 'Active' checkbox is unchecked
+	When User click on Back button
+	When User enters "Active_Automation1287" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
 	#Chenge Inactive_Test_Automation
 	When User enters "Inactive_Automation6578" text in the Search field for "Automation" column
@@ -724,5 +728,9 @@ Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
 	When User clicks 'Make active' option in Cog-menu for 'Inactive_Automation6578' item from 'Automation' column
 	Then '1 automation made active' text is displayed on inline success banner
 	When User clicks refresh button in the browser
+	When User enters "Inactive_Automation6578" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then 'Active' checkbox is checked
+	When User click on Back button
 	When User enters "Inactive_Automation6578" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column

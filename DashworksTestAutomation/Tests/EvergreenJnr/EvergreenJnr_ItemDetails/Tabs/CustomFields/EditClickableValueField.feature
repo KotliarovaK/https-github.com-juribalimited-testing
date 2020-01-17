@@ -2,13 +2,12 @@
 	Edit clickable value field
 
 Background: Pre-Conditions
-	Given User is logged in to the Projects
-	When User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
+	Given User is logged in to the Evergreen
+	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Computer |
 	| CfDAS15473_1 | FlDAS15473_1 | true                | true    | true     |
 	And User creates Custom Field via API
@@ -22,7 +21,7 @@ Scenario: EvergreenJnr_DevicesList_CheckEditableFieldDisplayAndToolTips
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Application |
 	| CfDAS15473_2 | FlDAS15473_2 | true                | true    | true        |
 	And User creates Custom Field via API
@@ -43,7 +42,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedInClickableValue
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @CustomFields @DAS17584 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Application |
 	| CfDAS17584_1 | FlDAS17584_1 | true                | true    | true        |
 	And User creates Custom Field via API
@@ -65,7 +64,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDataIsUpdatedUsingCogMenu
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS15473 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox |
 	| CfDAS15473_3 | FlDAS15473_3 | true                | true    | true    |
 	And User navigate to Evergreen URL

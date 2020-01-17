@@ -67,6 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsValueForDuplacatedAutomation
 	When User clicks refresh button in the browser
 	When User enters "18705_Automation2" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	Then "18705_Action" content is displayed in "Action Name" field
