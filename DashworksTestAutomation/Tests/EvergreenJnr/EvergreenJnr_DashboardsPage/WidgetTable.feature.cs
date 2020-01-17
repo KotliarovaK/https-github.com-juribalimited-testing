@@ -1456,17 +1456,17 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
             table26.AddRow(new string[] {
+                        "1803: Pre-Migration \\ Ready to Migrate severity ASC"});
+            table26.AddRow(new string[] {
+                        "1803: Pre-Migration \\ Ready to Migrate severity DESC"});
+            table26.AddRow(new string[] {
                         "1803: Pre-Migration \\ Ready to Migrate ASC"});
             table26.AddRow(new string[] {
                         "1803: Pre-Migration \\ Ready to Migrate DESC"});
-            table26.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate Severity ASC"});
-            table26.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate Severity DESC"});
 #line 288
  testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table26, "Then ");
 #line 294
- testRunner.When("User selects \'1803: Pre-Migration \\ Ready to Migrate Severity ASC\' in the \'OrderB" +
+ testRunner.When("User selects \'1803: Pre-Migration \\ Ready to Migrate severity ASC\' in the \'OrderB" +
                     "y\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 295
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1480,13 +1480,13 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "Empty"});
             table27.AddRow(new string[] {
-                        "Unknown"});
-            table27.AddRow(new string[] {
                         "Not Ready"});
             table27.AddRow(new string[] {
                         "On Target"});
             table27.AddRow(new string[] {
                         "Ready"});
+            table27.AddRow(new string[] {
+                        "Unknown"});
 #line 298
  testRunner.Then("Table columns of \'DAS-15852\' widget placed in the next order:", ((string)(null)), table27, "Then ");
 #line 305
@@ -1506,13 +1506,13 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "headers"});
             table28.AddRow(new string[] {
-                        "Unknown"});
-            table28.AddRow(new string[] {
                         "Ready"});
             table28.AddRow(new string[] {
                         "On Target"});
             table28.AddRow(new string[] {
                         "Not Ready"});
+            table28.AddRow(new string[] {
+                        "Unknown"});
             table28.AddRow(new string[] {
                         "Empty"});
 #line 311
@@ -1610,7 +1610,7 @@ this.FeatureBackground();
                         "Device Type",
                         "Severity",
                         "1803: Readiness",
-                        "1803: Readiness Severity ASC"});
+                        "1803: Readiness ASC"});
 #line 332
  testRunner.And("User adds new Widget", ((string)(null)), table30, "And ");
 #line 335
@@ -1714,7 +1714,7 @@ this.FeatureBackground();
                         "Device Type",
                         "Severity",
                         "Owner Compliance",
-                        "Owner Compliance Severity ASC"});
+                        "Owner Compliance ASC"});
 #line 353
  testRunner.And("User adds new Widget", ((string)(null)), table32, "And ");
 #line 356
