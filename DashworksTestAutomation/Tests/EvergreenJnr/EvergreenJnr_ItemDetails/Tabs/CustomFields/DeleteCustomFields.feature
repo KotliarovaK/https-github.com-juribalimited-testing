@@ -2,13 +2,12 @@
 	Delete Custom fields
 
 Background: Pre-Conditions
-	Given User is logged in to the Projects
-	When User navigate to Manage link
-	And User select "Custom Fields" option in Management Console
+	Given User is logged in to the Evergreen
+	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS16489 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Computer |
 	| CfDAS16489_1 | FlDAS16489_1 | true                | true    | true     |
 	And User creates Custom Field via API
@@ -36,7 +35,7 @@ Scenario: EvergreenJnr_DevicesList_CheckCustomFieldDeleting
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS17695 @DAS18362 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_DeleteGroupedCustomFields
-	When User creates new Custom Field
+	When User creates new Custom Field via API
 	| FieldName    | FieldLabel   | AllowExternalUpdate | Enabled | Mailbox |
 	| CfDAS17695_1 | FlDAS17695_1 | true                | true    | true    |
 	And User creates Custom Field via API

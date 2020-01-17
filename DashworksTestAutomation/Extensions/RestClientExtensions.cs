@@ -70,21 +70,30 @@ namespace DashworksTestAutomation.Extensions
                 }
                 catch (Exception e)
                 {
-                    throw new Exception($"Unable to get VIEWSTATE {e}");
+                    throw new Exception($"Unable to get VIEWSTATE: {e}");
                 }
 
-                //Looks like eventValidation is not required
-                var eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
-                    .GetAttributeValue("value", "Failed to get EVENTVALIDATION");
-                //try
-                //{
-                //    eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
-                //        .GetAttributeValue("value", "Failed to get EVENTVALIDATION");
-                //}
-                //catch { }
+                var eventvalidation = string.Empty;
+                try
+                {
+                    eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
+                        .GetAttributeValue("value", "Failed to get EVENTVALIDATION");
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Unable to get EVENTVALIDATION: {e}");
+                }
 
-                var viewstateGenerator = doc.DocumentNode.SelectSingleNode(".//input[@id='__VIEWSTATEGENERATOR']")
-                    .GetAttributeValue("value", "Failed to get VIEWSTATEGENERATOR");
+                var viewstateGenerator = string.Empty;
+                try
+                {
+                    viewstateGenerator = doc.DocumentNode.SelectSingleNode(".//input[@id='__VIEWSTATEGENERATOR']")
+                        .GetAttributeValue("value", "Failed to get VIEWSTATEGENERATOR");
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Unable to get VIEWSTATEGENERATOR: {e}");
+                }
 
                 client.BaseUrl = cientBaseUrl;
 
