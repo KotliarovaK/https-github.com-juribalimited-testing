@@ -423,7 +423,8 @@
     <Compile Include="Steps\ManagementConsole\Users\Api\CreateUserViaApi.cs" />
     <Compile Include="Steps\ManagementConsole\Users\UserUiSteps.cs" />
     <Compile Include="Steps\RightSideActionsPanel\EvergreenJnr_SelfServiceBuilderPanel.cs" />
-    <Compile Include="Steps\Senior\CustomeFields\Projects_CreateCustomFieldsViaApi.cs" />
+    <Compile Include="Steps\Senior\CustomeFields\CreateCustomFields\CreateCustomFieldMethods.cs" />
+    <Compile Include="Steps\Senior\CustomeFields\CreateCustomFields\Projects_CreateCustomFieldsViaApi.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\CustomeFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
