@@ -66,7 +66,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
             request.AddParameter("projectName", pName);
             request.AddParameter("template", pTemplate);
 
-            var response = _client.Value.Post(request);
+            var response = _client.Evergreen.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception(

@@ -7,6 +7,15 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14911 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpecificUserWithDifferentPermissions
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS14911_1 | Value | FN14911_1 | m!gration | Project Administrator |
+	| DAS14911_2 | Value | FN14911_2 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS14911_1 | m!gration |
 	When Dashboard with 'Dashboard for DAS14911' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks Show Dashboards panel icon on Dashboards page
@@ -15,32 +24,41 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	Then Details panel is displayed to the user
 	When User select "Specific users" sharing option
 	When User adds user to list of shared person
-	| User          | Permission |
-	| Administrator | Admin      |
-	Then User 'Admin' was added to shared list with 'Admin' permission of Details panel
+	| User      | Permission |
+	| FN14911_2 | Admin      |
+	Then User 'DAS14911_2' was added to shared list with 'Admin' permission of Details panel
 	Then There are no errors in the browser console
-	When User clicks 'Remove' option in Cog-menu for 'Admin' user on Details panel
+	When User clicks 'Remove' option in Cog-menu for 'DAS14911_2' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then There are no errors in the browser console
 	When User adds user to list of shared person
-	| User          | Permission |
-	| Administrator | Edit       |
-	Then User 'Admin' was added to shared list with 'Edit' permission of Details panel
+	| User      | Permission |
+	| FN14911_2 | Edit       |
+	Then User 'DAS14911_2' was added to shared list with 'Edit' permission of Details panel
 	Then There are no errors in the browser console
-	When User clicks 'Remove' option in Cog-menu for 'Admin' user on Details panel
+	When User clicks 'Remove' option in Cog-menu for 'DAS14911_2' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then There are no errors in the browser console
 	When User adds user to list of shared person
-	| User          | Permission |
-	| Administrator | Read       |
-	Then User 'Admin' was added to shared list with 'Read Only' permission of Details panel
+	| User      | Permission |
+	| FN14911_2 | Read       |
+	Then User 'DAS14911_2' was added to shared list with 'Read Only' permission of Details panel
 	Then There are no errors in the browser console
-	When User clicks 'Remove' option in Cog-menu for 'Admin' user on Details panel
+	When User clicks 'Remove' option in Cog-menu for 'DAS14911_2' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16380 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS16380_1 | Value | FN16380_1 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS16380_1 | m!gration |
+	#create list
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
@@ -96,10 +114,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPermisson
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS14841_1 | Value | FN14841_1 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS14841_1 | m!gration |
 	#create private list
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
-	| ColumnName |
+	| ColumnName            |
 	| Service Pack or Build |
 	When User create dynamic list with "DeviceListFor14841" name on "Devices" page
 	#create dashboard
@@ -145,10 +171,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissionPoup
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS14841_2 | Value | FN14841_2 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS14841_2 | m!gration |
 	#create private list
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
-	| ColumnName |
+	| ColumnName            |
 	| Service Pack or Build |
 	When User create dynamic list with "DeviceListFor14841_1" name on "Devices" page
 	#create dashboard
@@ -180,6 +214,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissionPopup
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS14841_3 | Value | FN14841_3 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS14841_3 | m!gration |
 	#create private list
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
@@ -214,6 +256,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow
+	When User create new User via API
+	| Username   | Email | FullName  | Password  | Roles                 |
+	| DAS14841_4 | Value | FN14841_4 | m!gration | Project Administrator |
+	#login as user1
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username   | Password  |
+	| DAS14841_4 | m!gration |
 	#create private list#1
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
@@ -266,10 +316,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
+	When User create new User via API
+	| Username | Email | FullName    | Password  | Roles                 |
+	| <Login1> | Value | <Username1> | m!gration | Project Administrator |
+	| <Login2> | Value | <Username2> | m!gration | Project Administrator |
+	#login as user1
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin11 | m!gration |
+	| Username | Password  |
+	| <Login1> | m!gration |
+	#create list
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -280,12 +336,12 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	When User clicks the List Details button
 	When User select "Specific users / teams" sharing option
 	When User adds user to list of shared person
-	| User                | Permission  |
-	| Automation Admin 12 | <shareType> |
+	| User        | Permission  |
+	| <Username2> | <shareType> |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
-	| Username           | Password  |
-	| automation_admin12 | m!gration |
+	| Username | Password  |
+	| <Login2> | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
 	When Dashboard with '<dashboardName>' name created via API and opened
@@ -301,13 +357,13 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	When User select "Everyone can edit" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget '<widgetName>' displayed for '<listName>' list on Permissions Pop-up
-	Then User 'Automation Admin 11' displayed for '<listName>' list on Permissions Pop-up
+	Then User '<Username1>' displayed for '<listName>' list on Permissions Pop-up
 	Then Current permission 'Specific users / teams' displayed for '<listName>' list on Permissions Pop-up
 	Then New Permission 'Do not change' displayed for '<listName>' list on Permissions Pop-up
 	Then New Permission dropdown has disabled property 'true' for '<listName>' list on Permissions Pop-up
 	Then New Permission dropdown has 'You cannot change the permission for this list' tooltip for '<listName>' list on Permissions Pop-up
 
 Examples:
-| listName                | shareType | dashboardName                        | widgetName             |
-| DeviceListFor14841_Read | Read      | Dashboard for DAS14841_Read          | WidgetForDAS14841_Read |
-| DeviceListFor14841_Edit | Edit      | Dashboard for WidgetForDAS14841_Edit | WidgetForDAS14841_Edit |
+| Login1     | Username1 | login2     | Username2 | listName                | shareType | dashboardName                        | widgetName             |
+| DAS14841R1 | FN14841R1 | DAS14841R2 | FN14841R2 | DeviceListFor14841_Read | Read      | Dashboard for DAS14841_Read          | WidgetForDAS14841_Read |
+| DAS14841E1 | FN14841E1 | DAS14841E2 | FN14841E1 | DeviceListFor14841_Edit | Edit      | Dashboard for WidgetForDAS14841_Edit | WidgetForDAS14841_Edit |

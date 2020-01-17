@@ -37,7 +37,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails.AfterScenario
                 request.AddParameter("userId", DatabaseHelper.GetUserId(_userDto.Username));
                 request.AddParameter("email", _userDto.Email);
 
-                var response = _client.Value.Put(request);
+                var response = _client.Evergreen.Put(request);
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {
@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails.AfterScenario
                 prefRequest.AddParameter("userId", DatabaseHelper.GetUserId(_userDto.Username));
                 prefRequest.AddParameter("timeZone", "GMT Standard Time");
 
-                var prefResponse = _client.Value.Put(prefRequest);
+                var prefResponse = _client.Evergreen.Put(prefRequest);
 
                 if (!prefResponse.StatusCode.Equals(HttpStatusCode.OK))
                 {
@@ -83,7 +83,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails.AfterScenario
                 prefRequest.AddParameter("gridPageSize", 1000);
                 prefRequest.AddParameter("userId", DatabaseHelper.GetUserId(_userDto.Username));
 
-                var prefResponse = _client.Value.Put(prefRequest);
+                var prefResponse = _client.Evergreen.Put(prefRequest);
 
                 if (!prefResponse.StatusCode.Equals(HttpStatusCode.OK))
                 {
@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AccountDetails.AfterScenario
                 request.AddParameter("newPassword", UserProvider.Password);
                 request.AddParameter("userName", _userDto.Username);
 
-                var response = _client.Value.Put(request);
+                var response = _client.Evergreen.Put(request);
 
                 if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 {

@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.Api
                 request.AddParameter("description", team.Description);
                 request.AddParameter("isDefault", team.IsDefault);
 
-                var response = _client.Value.Post(request);
+                var response = _client.Evergreen.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                     throw new Exception($"Team with {team.TeamName} name was not created via api: {response.ErrorMessage}");

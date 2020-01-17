@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole.Users.Api
                 request.AddParameter("FullName", user.FullName);
                 request.AddParameter("Roles", user.ApiUserRoles.Aggregate((a, b) => $"{a},{b}"));
 
-                var response = _client.Value.Put(request);
+                var response = _client.Evergreen.Put(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {

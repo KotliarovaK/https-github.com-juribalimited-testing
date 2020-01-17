@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             request.AddParameter("dashboardName", name);
             request.AddParameter("sharedAccessType", "private");
 
-            var response = _client.Value.Post(request);
+            var response = _client.Evergreen.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
                 throw new Exception(

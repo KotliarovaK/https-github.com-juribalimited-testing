@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.AfterSce
             var request = requestUri.GenerateRequest();
             request.AddParameter("displayOrder", order);
 
-            var resp = _client.Value.Put(request);
+            var resp = _client.Evergreen.Put(request);
 
             if (resp.StatusCode != HttpStatusCode.OK)
             {

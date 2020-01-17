@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using HtmlAgilityPack;
 using RestSharp;
@@ -47,13 +48,17 @@ namespace DashworksTestAutomation.Extensions
 
                 attempts--;
                 if (attempts <= 0)
+                {
                     throw new Exception("Unable to get document during Authentication Details retrieving");
+                }
 
                 Thread.Sleep(800);
             }
 
             if (string.IsNullOrEmpty(html))
+            {
                 throw new Exception("Empty response from automation server was returned. Unable to get VIEWSTATE");
+            }
 
             try
             {
@@ -65,14 +70,30 @@ namespace DashworksTestAutomation.Extensions
                 }
                 catch (Exception e)
                 {
-                    throw new Exception($"Unable to get VIEWSTATE {e}");
+                    throw new Exception($"Unable to get VIEWSTATE: {e}");
                 }
 
-                var eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
-                    .GetAttributeValue("value", "Failed to get EVENTVALIDATION");
+                var eventvalidation = string.Empty;
+                try
+                {
+                    eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
+                        .GetAttributeValue("value", "Failed to get EVENTVALIDATION");
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Unable to get EVENTVALIDATION: {e}");
+                }
 
-                var viewstateGenerator = doc.DocumentNode.SelectSingleNode(".//input[@id='__VIEWSTATEGENERATOR']")
-                    .GetAttributeValue("value", "Failed to get VIEWSTATEGENERATOR");
+                var viewstateGenerator = string.Empty;
+                try
+                {
+                    viewstateGenerator = doc.DocumentNode.SelectSingleNode(".//input[@id='__VIEWSTATEGENERATOR']")
+                        .GetAttributeValue("value", "Failed to get VIEWSTATEGENERATOR");
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Unable to get VIEWSTATEGENERATOR: {e}");
+                }
 
                 client.BaseUrl = cientBaseUrl;
 
@@ -87,6 +108,20 @@ namespace DashworksTestAutomation.Extensions
             {
                 throw new Exception($"Error getting Authentication Details: {e}");
             }
+        }
+
+        public static RestRequest GenerateSeniorRequest(this RestClient client, string requestUri)
+        {
+            var auth = client.GetAuthenticationDetails(requestUri);
+
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Referer", requestUri);
+            request.AddParameter("__VIEWSTATE", auth.Viewstate);
+            request.AddParameter("__VIEWSTATEGENERATOR", auth.ViewstateGenerator);
+            request.AddParameter("__EVENTVALIDATION", auth.Eventvalidation);
+
+            return request;
         }
     }
 }

@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAu
 
                 request.AddJsonBody(automation);
 
-                var response = updated ? _client.Value.Put(request) : _client.Value.Post(request);
+                var response = updated ? _client.Evergreen.Put(request) : _client.Evergreen.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {

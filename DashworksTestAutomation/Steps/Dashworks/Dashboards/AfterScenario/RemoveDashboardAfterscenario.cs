@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Dashboards.AfterScenario
                 var client = new HttpClientHelper(user, restClient);
 
                 //Add cookies to the RestClient to authorize it
-                _client.Value.AddCookies(client.CookiesJar);
+                _client.Evergreen.AddCookies(client.CookiesJar);
 
                 foreach (DashboardDto dashboardDto in _dashboard.Value)
                 {
@@ -57,7 +57,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Dashboards.AfterScenario
                         request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
                         request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
                         request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                        var response = _client.Value.Delete(request);
+                        var response = _client.Evergreen.Delete(request);
 
                         if (response.StatusCode != HttpStatusCode.OK)
                         {

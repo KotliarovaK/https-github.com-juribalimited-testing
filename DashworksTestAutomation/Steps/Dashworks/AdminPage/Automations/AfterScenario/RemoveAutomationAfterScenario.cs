@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                     request.AddParameter("objectId", null);
                     request.AddParameter("selectedObjectsList", automation.Id);
 
-                    var resp = _client.Value.Put(request);
+                    var resp = _client.Evergreen.Put(request);
                     if (resp.StatusCode != HttpStatusCode.OK)
                     {
                         Logger.Write($"Unable to delete Automation via API: {resp.StatusCode}");

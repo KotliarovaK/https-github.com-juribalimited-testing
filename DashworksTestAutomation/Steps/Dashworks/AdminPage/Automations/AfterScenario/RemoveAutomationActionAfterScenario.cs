@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                         var request = requestUri.GenerateRequest();
                         request.AddParameter("selectedObjectsList", actionId);
 
-                        var resp = _client.Value.Put(request);
+                        var resp = _client.Evergreen.Put(request);
 
                         if (resp.StatusCode != HttpStatusCode.OK)
                         {
