@@ -74,13 +74,14 @@ namespace DashworksTestAutomation.Extensions
                 }
 
                 //Looks like eventValidation is not required
-                var eventvalidation = string.Empty;
-                try
-                {
-                    eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
-                        .GetAttributeValue("value", "Failed to get EVENTVALIDATION");
-                }
-                catch { }
+                var eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
+                    .GetAttributeValue("value", "Failed to get EVENTVALIDATION");
+                //try
+                //{
+                //    eventvalidation = doc.DocumentNode.SelectSingleNode(".//input[@id='__EVENTVALIDATION']")
+                //        .GetAttributeValue("value", "Failed to get EVENTVALIDATION");
+                //}
+                //catch { }
 
                 var viewstateGenerator = doc.DocumentNode.SelectSingleNode(".//input[@id='__VIEWSTATEGENERATOR']")
                     .GetAttributeValue("value", "Failed to get VIEWSTATEGENERATOR");
@@ -109,6 +110,7 @@ namespace DashworksTestAutomation.Extensions
             request.AddParameter("Referer", requestUri);
             request.AddParameter("__VIEWSTATE", auth.Viewstate);
             request.AddParameter("__VIEWSTATEGENERATOR", auth.ViewstateGenerator);
+            request.AddParameter("__EVENTVALIDATION", auth.Eventvalidation);
 
             return request;
         }
