@@ -311,15 +311,18 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS18100")]
+        [NUnit.Framework.CategoryAttribute("DAS19348")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated()
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Import Type", "Not empty", "ListForDAS18100_2", "DAS18100_Dashboard", "WidgetForDAS18100", "Import Type ASC", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Recipient Type", "Not empty", "ListForDAS19348_2", "DAS19348_Dashboard", "WidgetForDAS19348", "Recipient Type ASC", null)]
+        public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated(string listType, string listName, string filter, string @operator, string savedList, string dashboardName, string widgetName, string orderBy, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreatedInternal();
+                    this.EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreatedInternal(listType,listName,filter,@operator,savedList,dashboardName,widgetName,orderBy,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -338,39 +341,44 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreatedInternal()
+        private void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreatedInternal(string listType, string listName, string filter, string @operator, string savedList, string dashboardName, string widgetName, string orderBy, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated", null, new string[] {
-                        "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
-                        "Widgets",
-                        "DAS18100",
-                        "Cleanup"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "EvergreenJnr_DashboardsPage",
+                    "Widgets",
+                    "DAS18100",
+                    "DAS19348",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated", null, @__tags);
 #line 63
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line 64
- testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
- testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 66
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
 #line 67
- testRunner.When("User add \"Import Type\" filter where type is \"Not empty\" with added column and Loo" +
-                    "kup option", ((string)(null)), table5, "When ");
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and Lookup option", filter, @operator), ((string)(null)), table5, "When ");
 #line 69
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
- testRunner.When("User create dynamic list with \"ListForDAS18100_2\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User create dynamic list with \"{0}\" name on \"{1}\" page", savedList, listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
- testRunner.Then("\"ListForDAS18100_2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\"{0}\" list is displayed to user", savedList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 72
- testRunner.When("Dashboard with \'DAS18100_Dashboard\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Dashboard with \'{0}\' name created via API and opened", dashboardName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 74
@@ -385,11 +393,11 @@ this.FeatureBackground();
                         "OrderBy"});
             table6.AddRow(new string[] {
                         "Bar",
-                        "WidgetForDAS18100",
-                        "ListForDAS18100_2",
-                        "Import Type",
+                        string.Format("{0}", widgetName),
+                        string.Format("{0}", savedList),
+                        string.Format("{0}", filter),
                         "Count",
-                        "Import Type ASC"});
+                        string.Format("{0}", orderBy)});
 #line 75
  testRunner.When("User adds new Widget", ((string)(null)), table6, "When ");
 #line 78
@@ -399,7 +407,7 @@ this.FeatureBackground();
 #line 80
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 81
- testRunner.Then("\'WidgetForDAS18100\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("\'{0}\' Widget is displayed to the user", widgetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 82
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

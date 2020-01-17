@@ -59,24 +59,29 @@ Examples:
 	| Half donut |
 	| Table      |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18100 @Cleanup
-Scenario: EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18100 @DAS19348 @Cleanup
+Scenario Outline: EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated
+	When User clicks '<ListType>' on the left-hand menu
+	Then '<ListName>' list should be displayed to the user
 	When User clicks the Filters button
-	When User add "Import Type" filter where type is "Not empty" with added column and Lookup option
+	When User add "<Filter>" filter where type is "<Operator>" with added column and Lookup option
     | SelectedValues |
 	When User clicks Save button on the list panel
-	When User create dynamic list with "ListForDAS18100_2" name on "Devices" page
-	Then "ListForDAS18100_2" list is displayed to user
-	When Dashboard with 'DAS18100_Dashboard' name created via API and opened
+	When User create dynamic list with "<SavedList>" name on "<ListType>" page
+	Then "<SavedList>" list is displayed to user
+	When Dashboard with '<DashboardName>' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
-	| WidgetType | Title             | List              | SplitBy     | AggregateFunction | OrderBy         |
-	| Bar        | WidgetForDAS18100 | ListForDAS18100_2 | Import Type | Count             | Import Type ASC |
+	| WidgetType | Title        | List        | SplitBy  | AggregateFunction | OrderBy   |
+	| Bar        | <WidgetName> | <SavedList> | <Filter> | Count             | <OrderBy> |
 	Then Widget Preview is displayed to the user
 	Then There are no errors in the browser console
 	When User clicks 'CREATE' button 
-	Then 'WidgetForDAS18100' Widget is displayed to the user
+	Then '<WidgetName>' Widget is displayed to the user
 	Then There are no errors in the browser console
+
+ Examples:
+	| ListType  | ListName      | Filter         | Operator  | SavedList         | DashboardName      | WidgetName        | OrderBy            |
+	| Devices   | All Devices   | Import Type    | Not empty | ListForDAS18100_2 | DAS18100_Dashboard | WidgetForDAS18100 | Import Type ASC    |
+	| Mailboxes | All Mailboxes | Recipient Type | Not empty | ListForDAS19348_2 | DAS19348_Dashboard | WidgetForDAS19348 | Recipient Type ASC |

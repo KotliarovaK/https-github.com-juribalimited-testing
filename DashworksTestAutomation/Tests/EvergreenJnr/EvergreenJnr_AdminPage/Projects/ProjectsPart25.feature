@@ -90,29 +90,34 @@ Examples:
 	| User Evergreen Capacity Project    | User Scope    |
 	| Mailbox Evergreen Capacity Project | Mailbox Scope |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS18100 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingNotEmptyOperatorCanBeCreated
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS18100 @DAS19348 @Cleanup
+Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingNotEmptyOperatorCanBeCreated
+	When User clicks '<ListType>' on the left-hand menu
+	Then '<ListName>' list should be displayed to the user
 	When User clicks the Filters button
-	When User add "Import Type" filter where type is "Not empty" with added column and Lookup option
+	When User add "<Filter>" filter where type is "<Operator>" with added column and Lookup option
     | SelectedValues |
 	When User clicks Save button on the list panel
-	When User create dynamic list with "ListForDAS18100_3" name on "Devices" page
-	Then "ListForDAS18100_3" list is displayed to user
+	When User create dynamic list with "<SavedList>" name on "<ListType>" page
+	Then "<SavedList>" list is displayed to user
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User clicks 'CREATE PROJECT' button 
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters '18100Project' text to 'Project Name' textbox
-	When User selects 'ListForDAS18100_3' option from 'Scope' autocomplete
+	When User enters '<ProjectName>' text to 'Project Name' textbox
+	When User selects '<SavedList>' option from 'Scope' autocomplete
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	When User clicks 'CREATE' button
 	Then 'The project has been created' text is displayed on inline success banner
 	Then There are no errors in the browser console
-	When User enters "18100Project" text in the Search field for "Project" column
+	When User enters "<ProjectName>" text in the Search field for "Project" column
+
+Examples:
+	| ListType  | ListName      | Filter         | Operator  | SavedList         | ProjectName  |
+	| Devices   | All Devices   | Import Type    | Not empty | ListForDAS18100_3 | 18100Project |
+	| Mailboxes | All Mailboxes | Recipient Type | Not empty | ListForDAS19348_1 | 19348Project |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Projects @DAS16844 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncluded

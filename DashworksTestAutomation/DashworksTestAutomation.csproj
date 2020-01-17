@@ -423,7 +423,8 @@
     <Compile Include="Steps\ManagementConsole\Users\Api\CreateUserViaApi.cs" />
     <Compile Include="Steps\ManagementConsole\Users\UserUiSteps.cs" />
     <Compile Include="Steps\RightSideActionsPanel\EvergreenJnr_SelfServiceBuilderPanel.cs" />
-    <Compile Include="Steps\Senior\CustomeFields\Projects_CreateCustomFieldsViaApi.cs" />
+    <Compile Include="Steps\Senior\CustomeFields\CreateCustomFields\CreateCustomFieldMethods.cs" />
+    <Compile Include="Steps\Senior\CustomeFields\CreateCustomFields\Projects_CreateCustomFieldsViaApi.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\CustomeFields\AfterScenario\RemoveCustomFieldAfterScenario.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
@@ -1589,6 +1590,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveColumn.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart11.feature.cs">
+      <DependentUpon>PivotPart11.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart10.feature.cs">
       <DependentUpon>PivotPart10.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2679,6 +2685,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_Columns\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart11.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PivotPart11.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_Pivot\PivotPart10.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
