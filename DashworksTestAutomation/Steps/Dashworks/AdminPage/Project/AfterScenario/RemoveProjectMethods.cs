@@ -9,6 +9,7 @@ using RestSharp;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project.AfterScenario
 {
+    //TODO probably should be moved out of AfterScenario folder
     public class RemoveProjectMethods
     {
         private readonly RestWebClient _client;
