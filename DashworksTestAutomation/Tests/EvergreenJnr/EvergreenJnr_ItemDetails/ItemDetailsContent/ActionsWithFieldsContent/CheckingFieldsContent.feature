@@ -203,32 +203,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatInCatalogFieldsAreDisplayedAndW
 	| Title      | Value |
 	| In Catalog | FALSE |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18607
-Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAndWorkingCorrectly
-	When User navigates to the 'Application' details page for 'GogoTools version 2.1.0.9' item
-	Then Details page for 'GogoTools version 2.1.0.9' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	Then following content is displayed on the Details Page
-	| Title       | Value         |
-	| Criticality | Uncategorised |
-	Then following Values are displayed in the dropdown for the 'Criticality' field:
-	| Value         |
-	| Core          |
-	| Critical      |
-	| Important     |
-	| Not Important |
-	| Uncategorised |
-	When User selects 'Important' in the dropdown for the 'Criticality' field
-	Then 'Criticality successfully changed' text is displayed on inline success banner
-	When User clicks refresh button in the browser
-	Then following content is displayed on the Details Page
-	| Title       | Value     |
-	| Criticality | Important |
-	When User selects 'Uncategorised' in the dropdown for the 'Criticality' field
-	Then following content is displayed on the Details Page
-	| Title       | Value         |
-	| Criticality | Uncategorised |
-
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18865
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCorrectlyForStickyComplianceFieldOnTheApplicationDetailsTab 
 	When User navigates to the 'Application' details page for 'Axosoft OnTime 2005 Enterprise Server' item
@@ -262,38 +236,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplay
 	| Title              | Value |
 	| Hide From End User | FALSE |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18852
-Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirementsForAnalysisEditorRole
-	When User clicks the Logout button
- 	When User is logged in to the Evergreen as
- 	| Username       | Password |
- 	| TestBucketAuto | 123456   |
-	Then Evergreen Dashboards page should be displayed to the user
-	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
-	Then Details page for 'ACDSee for Windows 95' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	Then following Values are displayed in the dropdown for the 'In Catalog' field:
-	| Value |
-	| TRUE  |
-	| FALSE |
-	Then following Values are displayed in the dropdown for the 'Criticality' field:
-	| Value         |
-	| Core          |
-	| Critical      |
-	| Important     |
-	| Not Important |
-	| Uncategorised |
-	Then following Values are displayed in the dropdown for the 'Hide From End User' field:
-	| Value |
-	| TRUE  |
-	| FALSE |
-	When User clicks on edit button for 'Evergreen Capacity Unit' field
-	Then popup is displayed to User
-	When User clicks 'CANCEL' button
-	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
-	#When User clicks on edit button for 'Rationalisation' field
-	#Then popup is displayed to User
-	#When User clicks 'CANCEL' button
+
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538
 Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFieldForUserWithSpecificAccess

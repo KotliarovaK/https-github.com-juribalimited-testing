@@ -1205,10 +1205,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EvergreenDetails.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\CapacityUnit_ApplicationsPage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CapacityUnit_ApplicationsPage.feature</DependentUpon>
+      <DependentUpon>ProjectDetails.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\CapacityUnit_DevicesPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2377,9 +2377,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EvergreenDetails.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\CapacityUnit_ApplicationsPage.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CapacityUnit_ApplicationsPage.feature.cs</LastGenOutput>
+      <LastGenOutput>ProjectDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\CapacityUnit_DevicesPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
