@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS19538 @Cleanup @Set_Default_Capacity_Unit
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS19538 @DAS19463 @Cleanup @Set_Default_Capacity_Unit
 Scenario: EvergreenJnr_DevicesList_CheckThatValueForCapacityUnitIsChangingSuccessfully
 	When User creates new Capacity Unit via api
 	| Name          | Description | IsDefault | Project          |
@@ -17,6 +17,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForCapacityUnitIsChangingSucces
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
 	Then 'MOVE' button is disabled on popup
+	Then following columns are displayed on the Item details page:
+	| ColumnName    |
+	| Username      |
+	| Display Name  |
+	| Domain        |
+	| Owner         |
+	| Capacity Unit |
+	| Bucket        |
+	Then 'Move all' checkbox is not displayed
 	When User selects 'cu_DAS19538_1' option from 'Capacity Unit' autocomplete
 	When User clicks 'MOVE' button on popup
 	When User clicks 'MOVE' button on popup
