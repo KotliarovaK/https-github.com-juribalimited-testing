@@ -186,6 +186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	#Check Edit Action page
 	When User clicks content from "Action" column
 	Then '[Project not found]' content is displayed in 'Project or Evergreen' textbox
+	#Waiting for adding _ngcontent (Eugene K)
 	#Then 'The selected project cannot be found' error message is displayed for 'Project or Evergreen' field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @Cleanup @Universe
