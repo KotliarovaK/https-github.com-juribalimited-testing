@@ -87,6 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS19538")]
+        [NUnit.Framework.CategoryAttribute("DAS19463")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         public virtual void EvergreenJnr_DevicesList_CheckThatValueForCapacityUnitIsChangingSuccessfully()
@@ -124,6 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
                         "ItemDetailsDisplay",
                         "ProjectDetailsTab",
                         "DAS19538",
+                        "DAS19463",
                         "Cleanup",
                         "Set_Default_Capacity_Unit"});
 #line 9
@@ -158,32 +160,34 @@ this.FeatureBackground();
  testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
  testRunner.Then("\'MOVE\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 20
- testRunner.When("User selects \'cu_DAS19538_1\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
- testRunner.Then("\'The selected objects successfully moved to cu_DAS19538_1\' text is displayed on i" +
-                    "nline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Title",
-                        "Value"});
+                        "ColumnName"});
             table2.AddRow(new string[] {
-                        "Capacity Unit",
-                        "cu_DAS19538_1"});
-#line 24
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2, "Then ");
-#line 27
- testRunner.When("User navigates to the \'User\' details page for the item with \'2169\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "Username"});
+            table2.AddRow(new string[] {
+                        "Display Name"});
+            table2.AddRow(new string[] {
+                        "Domain"});
+            table2.AddRow(new string[] {
+                        "Owner"});
+            table2.AddRow(new string[] {
+                        "Capacity Unit"});
+            table2.AddRow(new string[] {
+                        "Bucket"});
+#line 20
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2, "Then ");
 #line 28
- testRunner.When("User selects \'Havoc (Big Data)\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'Move all\' checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'cu_DAS19538_1\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
- testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.Then("\'The selected objects successfully moved to cu_DAS19538_1\' text is displayed on i" +
+                    "nline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
@@ -191,8 +195,25 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Capacity Unit",
                         "cu_DAS19538_1"});
-#line 31
+#line 33
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3, "Then ");
+#line 36
+ testRunner.When("User navigates to the \'User\' details page for the item with \'2169\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+ testRunner.When("User selects \'Havoc (Big Data)\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table4.AddRow(new string[] {
+                        "Capacity Unit",
+                        "cu_DAS19538_1"});
+#line 40
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

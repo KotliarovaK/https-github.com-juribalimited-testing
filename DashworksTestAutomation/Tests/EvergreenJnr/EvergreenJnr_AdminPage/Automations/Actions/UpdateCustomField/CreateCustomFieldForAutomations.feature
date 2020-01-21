@@ -37,7 +37,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldValidations
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
-	#Then width of the 'Value' column is '500' pixels
 	Then "[Custom field not found]" content is displayed for "Task or Field" column
 	When User clicks content from "Action" column
 	Then "17881_Action" content is displayed in "Action Name" field

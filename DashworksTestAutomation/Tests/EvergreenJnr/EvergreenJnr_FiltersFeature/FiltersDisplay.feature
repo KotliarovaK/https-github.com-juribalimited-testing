@@ -2181,3 +2181,29 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoTooltipsForChipsInFilterPan
 	| Text2     |
 	| 1 more    |
 	Then tooltip is not displayed for '1 more' chip of 'Hostname' textbox
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS19348
+Scenario: EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly
+	When User clicks 'Mailboxes' on the left-hand menu
+	When User clicks the Columns button
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName     |
+	| Recipient Type |
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Recipient Type |
+	When User clicks the Filters button
+	When User add "Recipient Type" filter where type is "Does not equal" without added column and "Empty" Lookup option
+	Then "Recipient Type" filter is added to the list
+	Then Column headers are displayed in High Contrast
+	Then Text content of 'Recipient Type' column is displayed in high contrast
+	#translation
+	When User language is changed to "Test Language" via API
+	Then grid headers are displayed in the following order
+	| ColumnName                  |
+	| [9999999]                   |
+	| [9999999]                   |
+	| [9999999]                   |
+	| [9999999]                   |
+	| [9999999]                   |
+	| [9999999]                   |

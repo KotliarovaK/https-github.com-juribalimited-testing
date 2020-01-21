@@ -69,6 +69,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 throw new Exception($"Some duplicated columns are spotted in the '{allHeaders}'");
         }
 
+        [Then(@"Column headers are displayed in high contrast")]
+        public void ThenColumnHeadersAreDisplayedInHighContrast()
+        {
+            var grid = _driver.NowAt<BaseGridPage>();
+            Verify.That(grid.GetAllHeaders().All(x => x.GetCssValue("background-color").Equals("rgba(0, 0, 0, 0)")), Is.True, "Column header is not transparent");
+            Verify.That(grid.GetAllHeadersTextElements().All(x => x.GetCssValue("color").Equals("rgba(121, 124, 127, 1)")), Is.True, "Column header text has wrong color");
+        }
+
         #endregion
 
         #region Select content
@@ -232,6 +240,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         #endregion
 
         #region Check Content in the columns
+
+        [Then(@"Text content of '(.*)' column is displayed in High Contrast")]
+        public void ThenTextContentOfColumnIsDisplayedInInHighContrast(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            Verify.That(page.GetColumnElementsByColumnName(columnName).All(x => x.GetCssValue("background-color").Equals("rgba(0, 0, 0, 0)")), Is.True, "Column background is not transparent");
+            Verify.That(page.GetColumnElementsByColumnName(columnName).All(x => x.GetCssValue("color").Equals("rgba(55, 61, 69, 1)")), Is.True, "Column text has wrong color");
+        }
 
         [Then(@"'(.*)' content is displayed in the '(.*)' column")]
         public void ThenContentIsDisplayedInTheColumn(string textContent, string columnName)

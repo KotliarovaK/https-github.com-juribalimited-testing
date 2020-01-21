@@ -9551,6 +9551,105 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS19348")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectlyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS19348"});
+#line 2186
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2187
+ testRunner.When("User clicks \'Mailboxes\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2188
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table146.AddRow(new string[] {
+                        "Recipient Type"});
+#line 2189
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table146, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table147 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table147.AddRow(new string[] {
+                        "Recipient Type"});
+#line 2192
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table147, "Then ");
+#line 2195
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2196
+ testRunner.When("User add \"Recipient Type\" filter where type is \"Does not equal\" without added col" +
+                    "umn and \"Empty\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2197
+ testRunner.Then("\"Recipient Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2198
+ testRunner.Then("Column headers are displayed in High Contrast", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2199
+ testRunner.Then("Text content of \'Recipient Type\' column is displayed in high contrast", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2201
+ testRunner.When("User language is changed to \"Test Language\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table148 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table148.AddRow(new string[] {
+                        "[9999999]"});
+            table148.AddRow(new string[] {
+                        "[9999999]"});
+            table148.AddRow(new string[] {
+                        "[9999999]"});
+            table148.AddRow(new string[] {
+                        "[9999999]"});
+            table148.AddRow(new string[] {
+                        "[9999999]"});
+            table148.AddRow(new string[] {
+                        "[9999999]"});
+#line 2202
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table148, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

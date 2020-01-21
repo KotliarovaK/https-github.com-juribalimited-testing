@@ -816,7 +816,7 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "DAS14915_5",
                         "Value",
-                        "FN14915_6",
+                        "FN14915_5",
                         "m!gration",
                         "Project Administrator"});
 #line 200
@@ -1083,7 +1083,7 @@ this.FeatureBackground();
 #line 289
  testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 290
- testRunner.When("User clicks \'Remove\' option in Cog-menu for \'FN17592_2\' user on Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Remove\' option in Cog-menu for \'DAS17592_2\' user on Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 291
  testRunner.Then("There is no user in shared list of Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 293
