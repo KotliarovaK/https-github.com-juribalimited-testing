@@ -35,3 +35,24 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	Then 'UNKNOWN' content is not displayed in the 'Readiness' column
 	#IGNORE is default and should always present
 	Then 'IGNORE' content is displayed in the 'Readiness' column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12370 @DAS12369 @DAS14212 @Cleanup 
+Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	And Page with 'Projects' header is displayed to user
+	When User clicks 'IMPORT PROJECT' button 
+	Then Page with 'Import Project' subheader is displayed to user
+	When User selects "IncorrectFile.zip" file to upload on Import Project page
+	And User selects 'Import to new project' in the 'Import' dropdown
+	And User enters 'TestProjectNameDAS12370' text to 'Project Name' textbox
+	When User clicks 'IMPORT PROJECT' button
+	Then 'Selected file is not in a valid format' text is displayed on inline error banner
+	When User selects "BadContent_DAS12370.xml" file to upload on Import Project page
+	When User clicks 'IMPORT PROJECT' button
+	Then 'IMPORT PROJECT' button is not disabled
+	#Be sure that we can create a project after faild attempt
+	When User selects "CorrectFile_DAS12370.xml" file to upload on Import Project page
+	When User clicks 'IMPORT PROJECT' button
+	When User clicks newly created object link
+	Then Page with 'TestProjectNameDAS12370' header is displayed to user
