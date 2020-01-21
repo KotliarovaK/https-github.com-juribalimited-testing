@@ -730,7 +730,7 @@ this.FeatureBackground();
 #line 153
  testRunner.When("User clicks \'IMPORT PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 154
- testRunner.Then("Page with \'Import Project\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Import Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 155
  testRunner.When("User selects \"Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml\" f" +
                     "ile to upload on Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
