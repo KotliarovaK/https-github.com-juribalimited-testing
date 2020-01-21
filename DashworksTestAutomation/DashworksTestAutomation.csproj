@@ -548,6 +548,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateActionsPart2.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesInCatalog.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateApplicationAttributesInCatalog.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesAutomations11.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1850,6 +1855,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateActionsPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesInCatalog.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateApplicationAttributesInCatalog.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesAutomations1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
