@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @DAS18886 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalisation
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -224,6 +224,20 @@ Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalis
 	#Check Action grid
 	Then 'Unknown' content is displayed in the 'Value' column
 	Then 'Unknown' content is displayed in the 'Action' column
+	When User opens 'Action' column settings
+	When User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Update Type" checkbox on the Column Settings panel
+	Then "" content is displayed for "Update Type" column
+	Then grid headers are displayed in the following order
+	| ColumnName    |
+	| Action        |
+	|               |
+	| Type          |
+	| Project       |
+	| Task or Field |
+	| Update Type   |
+	| Value         |
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup @Not_Ready
 #Waiting for Rationalisation dropdown for Evergreen //Universe release

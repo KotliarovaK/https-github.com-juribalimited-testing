@@ -2637,6 +2637,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Actions")]
+        [NUnit.Framework.CategoryAttribute("DAS18886")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage()
         {
@@ -2671,6 +2672,7 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Actions",
+                        "DAS18886",
                         "Not_Ready"});
 #line 785
 this.ScenarioInitialize(scenarioInfo);
@@ -2684,16 +2686,47 @@ this.FeatureBackground();
 #line 788
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 789
- testRunner.When("User enters \"Devices_Scope\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"Users_Scope\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 790
  testRunner.And("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 791
- testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 792
- testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 793
- testRunner.Then("\'Edit Action\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User opens \'Action\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 794
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 795
+ testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 796
+ testRunner.When("User select \"Update Type\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 797
+ testRunner.Then("\"\" content is displayed for \"Update Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table41.AddRow(new string[] {
+                        "Action"});
+            table41.AddRow(new string[] {
+                        ""});
+            table41.AddRow(new string[] {
+                        "Type"});
+            table41.AddRow(new string[] {
+                        "Project"});
+            table41.AddRow(new string[] {
+                        "Task or Field"});
+            table41.AddRow(new string[] {
+                        "Update Type"});
+            table41.AddRow(new string[] {
+                        "Value"});
+#line 798
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table41, "Then ");
+#line 807
+ testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 808
+ testRunner.Then("\'Edit Action\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 809
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2707,7 +2740,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS19066")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckValidationForActionName()
         {
@@ -2743,46 +2775,47 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Actions",
                         "DAS19066",
-                        "Not_Ready",
                         "Cleanup"});
-#line 798
+#line 812
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "AutomationName",
                         "Description",
                         "Active",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
-            table41.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "DAS19066",
                         "19066",
                         "true",
                         "false",
                         "All Devices",
                         "Manual"});
-#line 799
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table41, "When ");
-#line 802
+#line 813
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table42, "When ");
+#line 816
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 817
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 804
+#line 819
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 805
+#line 820
  testRunner.When("User enters \' \' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 806
+#line 821
  testRunner.When("User selects \'Update path\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 807
+#line 822
  testRunner.When("User selects \'1803 Rollout\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 808
+#line 823
  testRunner.When("User selects \'Undetermined\' option from \'Path\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 809
+#line 824
  testRunner.Then("\'An action name must be entered\' error message is displayed for \'Action Name\' fie" +
                     "ld", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 810
+#line 825
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
