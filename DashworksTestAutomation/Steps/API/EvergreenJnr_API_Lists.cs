@@ -42,8 +42,8 @@ namespace DashworksTestAutomation.Steps.API
             _createCustomFieldMethods = new CreateCustomFieldMethods(_client, customFields);
         }
 
-        [When(@"User create broken list with ""(.*)"" name on ""(.*)"" page")]
-        public void WhenUserCreateBrokenListWithNameOnPage(string listName, string pageName)
+        [When(@"User creates list with '(.*)' name and missing column on '(.*)' page")]
+        public void WhenUserCreatesListWithNameAndMissingColumnOnPage(string listName, string pageName)
         {
             #region Create Custom Field
 
@@ -84,6 +84,15 @@ namespace DashworksTestAutomation.Steps.API
             CreateDynamicList(listName, pageName, columnsUrl);
 
             DatabaseHelper.DeleteCustomField(randomCustomField.Id);
+        }
+
+        [When(@"User creates broken list with '(.*)' name on '(.*)' page")]
+        public void WhenUserCreateBrokenListWithNameOnPage(string listName, string pageName)
+        {
+            var urlWithNotExistingFilter =
+                $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$filter=(notExistingFilter%20EQUALS%20('notExistingValue'))";
+
+            CreateDynamicList(listName, pageName, urlWithNotExistingFilter);
         }
 
         [When(@"User create dynamic list with ""(.*)"" name on ""(.*)"" page")]
