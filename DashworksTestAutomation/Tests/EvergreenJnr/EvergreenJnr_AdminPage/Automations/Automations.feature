@@ -673,13 +673,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User clicks 'Automations' header breadcrumb
 	When User enters "15949_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '15949_Automation' item from 'Automation' column
+	When '15949_Automation' automation '15949_Action_2' action run has finished
 	#check filters
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User clicks Add New button on the Filter panel
 	And User enters "15949_Automation" text in Search field at Filters Panel
 	Then the following Filters subcategories are presented for open category:
-	| Subcategories                        |
+	| Subcategories                     |
 	| 15949_Automation \ 15949_Action_1 |
 	| 15949_Automation \ 15949_Action_2 |
 	When User clears search textbox in Filters panel

@@ -498,6 +498,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdatePathPart2.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\UpdateRing.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateRing.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\CheckingUpdatedValue.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -547,6 +552,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateActionsPart2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesInCatalog.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateApplicationAttributesInCatalog.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesAutomations11.feature.cs">
       <AutoGen>True</AutoGen>
@@ -772,6 +782,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CloningOfEvergreenCapacityUnitsToProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ImportProjects\ImportProjects.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImportProjects.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart26.feature.cs">
       <DependentUpon>ProjectsPart26.feature</DependentUpon>
@@ -1205,10 +1220,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EvergreenDetails.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\CapacityUnit_ApplicationsPage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CapacityUnit_ApplicationsPage.feature</DependentUpon>
+      <DependentUpon>ProjectDetails.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\CapacityUnit_DevicesPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1811,6 +1826,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdatePathPart2.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\UpdateRing.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateRing.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateTaskValue\CheckingUpdatedValue.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CheckingUpdatedValue.feature.cs</LastGenOutput>
@@ -1850,6 +1869,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\CreateActionsPart2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateActionsPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesInCatalog.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateApplicationAttributesInCatalog.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesAutomations1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2030,6 +2053,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\Capacity\CloningOfEvergreenCapacityUnitsToProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CloningOfEvergreenCapacityUnitsToProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ImportProjects\ImportProjects.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ImportProjects.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Projects\ProjectsPart26.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2377,9 +2404,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EvergreenDetails.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\CapacityUnit_ApplicationsPage.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\ProjectDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CapacityUnit_ApplicationsPage.feature.cs</LastGenOutput>
+      <LastGenOutput>ProjectDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\CapacityUnit_DevicesPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2832,7 +2859,6 @@
   <ItemGroup>
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
-    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateRing\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Details\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\ActiveDirectory\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\" />
