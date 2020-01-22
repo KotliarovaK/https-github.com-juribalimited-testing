@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	When User selects 'FALSE ' in the 'In Catalog' dropdown
+	When User selects 'FALSE' in the 'In Catalog' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19542_Automation" text in the Search field for "Automation" column
