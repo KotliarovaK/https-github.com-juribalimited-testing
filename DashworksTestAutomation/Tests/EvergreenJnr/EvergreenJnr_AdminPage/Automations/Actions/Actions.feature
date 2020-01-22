@@ -149,8 +149,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in table is sorted by 'Processing Order' column in ascending order by default
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @DAS17625 @DAS17625 @Cleanup @Not_Ready
-#Change value after gold data complete added
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @DAS17625 @DAS17625 @Cleanup
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User clicks 'Admin' on the left-hand menu
@@ -159,16 +158,16 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	| AutomationName           | Description | Active | StopOnFailedAction | Scope       | Run    |
 	| Test_Automation_DAS15938 | DAS15938    | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
-	#Then 'Edit Automation' page subheader is displayed to user
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
 	#Action 1
 	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
-	Then following Values are displayed in the 'Actions' dropdown:
-	| Values            |
-	| Update path       |
-	| Update task value |
+	Then following Values are displayed in the 'Action Type' dropdown:
+	| Values              |
+	| Update path         |
+	| Update task value   |
+	| Update custom field |
 	When User enters '15428_Action_1' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete
@@ -199,7 +198,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User enters '15428_Action_3' text to 'Action Name' textbox
 	Then 'An action with this name already exists for this automation' error message is displayed for 'Action Name' field
 	When User clicks 'CANCEL' button 
-	When User moves '15428_Action_1' item to '15428_Action_3' item in the 'Action' column
+	When User moves '15428_Action_1' item from 'Action' column to the '3' position
 	When User opens 'Action' column settings
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing Order" checkbox on the Column Settings panel
@@ -208,13 +207,12 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then Content in the 'Action' column is equal to
 	| Content        |
 	| 15428_Action_2 |
-	| 15428_Action_1 |
 	| 15428_Action_3 |
+	| 15428_Action_1 |
 	When User clicks on 'Task or Field' column header
 	Then There are no errors in the browser console
 
-#Remove Pre-requisites after adding it to Gold data
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
 	When User clicks 'Users' on the left-hand menu
@@ -223,9 +221,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User create dynamic list with "Melbourne Users" name on "Users" page
 	When User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	Then 'CREATE' button is displayed
 	When User enters 'Melbourne User Migration' text to 'Project Name' textbox
-	Then 'CREATE' button is not displayed
 	When User clicks 'CREATE' button
 	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks 'Projects' on the left-hand menu
@@ -329,9 +325,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks 'CANCEL' button 
 	Then '[Default (User)]' content is displayed in the 'Value' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @DAS17625 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @DAS17625 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
-	#Add Pre-requisites to Gold Data
 	#Pre-requisites:
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
@@ -420,7 +415,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then 'CREATE' button is not disabled
 	When User clicks 'SAVE AND CREATE ANOTHER' button 
 	Then Create Action page is displayed to the User
-	#Add steps for running Automation (DAS-17427)
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17234 @DAS17625 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndDueDate
@@ -609,9 +603,9 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	#Actions content check
 	Then "17605_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
-	Then 'Computer Scheduled Test (Jo)' value is displayed in the 'Project' dropdown
-	Then 'One' value is displayed in the 'Stage' dropdown
-	Then 'Text Computer' value is displayed in the 'Task' dropdown
+	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' autocomplete
+	Then 'One' content is displayed in 'Stage' autocomplete
+	Then 'Text Computer' content is displayed in 'Task' autocomplete
 	Then 'Remove' value is displayed in the 'Update Value' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @Cleanup

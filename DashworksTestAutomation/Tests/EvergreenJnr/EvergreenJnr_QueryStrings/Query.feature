@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "94" rows are displayed in the agGrid
-	And "Any Application in list 1803 Apps or Dynamic13579 used on device" is displayed in added filter info
+	And "Any Application in list Dynamic13579 used on device" is displayed in added filter info
 
 @Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS13179
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList
