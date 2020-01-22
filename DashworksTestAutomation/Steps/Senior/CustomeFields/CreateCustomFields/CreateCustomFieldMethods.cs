@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Senior.CustomeFields.CreateCustomFields
 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {
-                    throw new Exception($"Unable to create user via API");
+                    throw new Exception($"Unable to create Custom Field via API");
                 }
             }
         }
