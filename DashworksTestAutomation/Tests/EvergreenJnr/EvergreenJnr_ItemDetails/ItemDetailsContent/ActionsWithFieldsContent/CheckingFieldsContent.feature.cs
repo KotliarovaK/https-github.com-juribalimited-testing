@@ -995,9 +995,9 @@ this.FeatureBackground();
 #line 254
  testRunner.Then("button for editing the \'Capacity Unit\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 256
- testRunner.When("User navigates to the \'User\' details page for \'0088FC8A50DD4344B92\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'User\' details page for \'IHA8903150\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 257
- testRunner.Then("Details page for \'0088FC8A50DD4344B92\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'IHA8903150\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 258
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
