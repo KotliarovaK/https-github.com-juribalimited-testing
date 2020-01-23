@@ -180,7 +180,7 @@ namespace DashworksTestAutomation.Base
 
                 var resp = _client.Evergreen.Get(request);
                 
-                if (resp.Content.Contains("count: 5108"))
+                if (!resp.Content.Contains("count: 5108"))
                 {
                     Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
                 }
