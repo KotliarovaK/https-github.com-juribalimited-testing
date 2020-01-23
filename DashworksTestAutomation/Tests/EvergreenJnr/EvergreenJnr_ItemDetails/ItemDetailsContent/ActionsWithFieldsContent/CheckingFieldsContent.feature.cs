@@ -828,6 +828,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18849")]
+        [NUnit.Framework.CategoryAttribute("Univers")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -862,7 +863,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18849"});
+                        "DAS18849",
+                        "Univers"});
 #line 220
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -880,7 +882,7 @@ this.FeatureBackground();
                         "Title",
                         "Value"});
             table11.AddRow(new string[] {
-                        "Hide From End User",
+                        "Hide From End Users",
                         "FALSE"});
 #line 224
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table11, "Then ");
@@ -896,7 +898,7 @@ this.FeatureBackground();
                         "Title",
                         "Value"});
             table12.AddRow(new string[] {
-                        "Hide From End User",
+                        "Hide From End Users",
                         "TRUE"});
 #line 230
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table12, "Then ");
@@ -910,7 +912,7 @@ this.FeatureBackground();
                         "Title",
                         "Value"});
             table13.AddRow(new string[] {
-                        "Hide From End User",
+                        "Hide From End Users",
                         "FALSE"});
 #line 235
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table13, "Then ");
