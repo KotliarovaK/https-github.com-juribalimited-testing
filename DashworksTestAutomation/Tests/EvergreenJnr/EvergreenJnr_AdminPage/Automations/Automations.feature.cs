@@ -1739,6 +1739,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("DAS16899")]
         [NUnit.Framework.CategoryAttribute("DAS17071")]
         [NUnit.Framework.CategoryAttribute("DAS17216")]
@@ -1776,6 +1777,7 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Automations",
+                        "Cleanup",
                         "DAS16899",
                         "DAS17071",
                         "DAS17216",
