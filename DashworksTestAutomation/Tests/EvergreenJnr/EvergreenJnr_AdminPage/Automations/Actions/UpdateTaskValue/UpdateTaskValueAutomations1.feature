@@ -62,8 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'Before current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @DAS18886 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -90,9 +89,23 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	When User selects 'After current value' in the 'Before or After' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
-	#Check Actions grid
 	Then 'The automation action has been created' text is displayed on inline success banner
+	#Check Actions grid
 	Then "2 days after current value" content is displayed for "Value" column
+	When User opens 'Action' column settings
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Update Type" checkbox on the Column Settings panel
+	Then "Update relative to current value" content is displayed for "Update Type" column
+	Then grid headers are displayed in the following order
+	| ColumnName    |
+	| Action        |
+	|               |
+	| Type          |
+	| Project       |
+	| Task or Field |
+	| Update Type   |
+	| Value         |
 	#Check created Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user

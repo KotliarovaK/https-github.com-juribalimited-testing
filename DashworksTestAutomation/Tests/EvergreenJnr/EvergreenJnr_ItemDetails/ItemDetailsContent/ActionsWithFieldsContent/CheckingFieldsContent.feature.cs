@@ -828,6 +828,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18849")]
+        [NUnit.Framework.CategoryAttribute("Univers")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -862,7 +863,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS18849"});
+                        "DAS18849",
+                        "Univers"});
 #line 220
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -880,7 +882,7 @@ this.FeatureBackground();
                         "Title",
                         "Value"});
             table11.AddRow(new string[] {
-                        "Hide From End User",
+                        "Hide From End Users",
                         "FALSE"});
 #line 224
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table11, "Then ");
@@ -896,7 +898,7 @@ this.FeatureBackground();
                         "Title",
                         "Value"});
             table12.AddRow(new string[] {
-                        "Hide From End User",
+                        "Hide From End Users",
                         "TRUE"});
 #line 230
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table12, "Then ");
@@ -910,7 +912,7 @@ this.FeatureBackground();
                         "Title",
                         "Value"});
             table13.AddRow(new string[] {
-                        "Hide From End User",
+                        "Hide From End Users",
                         "FALSE"});
 #line 235
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table13, "Then ");
@@ -993,9 +995,9 @@ this.FeatureBackground();
 #line 254
  testRunner.Then("button for editing the \'Capacity Unit\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 256
- testRunner.When("User navigates to the \'User\' details page for \'0088FC8A50DD4344B92\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'User\' details page for \'IHA8903150\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 257
- testRunner.Then("Details page for \'0088FC8A50DD4344B92\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'IHA8903150\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 258
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

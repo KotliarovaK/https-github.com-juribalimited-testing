@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18647 @DAS18461 @Not_Ready
-#Waiting for "Update application attributes" on the automation
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18647 @DAS18461
 Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
@@ -17,12 +16,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	Then 'Sticky Compliance' dropdown is not displayed
-	#Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
 	Then 'UPDATE' button is disabled
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 	Then following Values are displayed in the 'Rationalisation' dropdown:
 	| Options       |
 	| No change     |
@@ -43,8 +41,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	Then 'UPDATE' button is not disabled
 	Then 'CANCEL' button is not disabled
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18715 @DAS19033 @Not_Ready
-#Waiting for "Update application attributes" on the automation
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18715 @DAS19033
 Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Columns button
@@ -59,6 +56,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Empty' in the 'Sticky Compliance' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -66,9 +64,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	Then Success message with "1 update has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then '' content is displayed in the 'Sticky Compliance' column
-		#Revert 'Update application attributes' changes to default
+	#Revert 'Update application attributes' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -229,7 +228,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesWhenUpda
 	When User refreshes agGrid
 	#And User perform search by "Z11REX196H34MG"
 	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column
-		#Revert Changes
+	#Revert Changes
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
@@ -267,7 +266,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdat
 	When User refreshes agGrid
 	#And User perform search by "Z11REX196H34MG"
 	Then 'FORWARD PATH' content is displayed in the 'Evergreen Rationalisation' column
-		#Revert Changes
+	#Revert Changes
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete

@@ -495,7 +495,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters "15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @DAS17216
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup @DAS16899 @DAS17071 @DAS17216 @DAS17216
 Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

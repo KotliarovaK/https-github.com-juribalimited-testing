@@ -378,7 +378,7 @@ this.FeatureBackground();
 #line 122
  testRunner.When("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
- testRunner.Then("\"Applications to add (0 of 1915 selected)\" is displayed to the user in the Projec" +
+ testRunner.Then("\"Applications to add (0 of 2104 selected)\" is displayed to the user in the Projec" +
                     "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -476,7 +476,7 @@ this.FeatureBackground();
 #line 165
  testRunner.When("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 166
- testRunner.Then("\"Applications to add (0 of 1915 selected)\" is displayed to the user in the Projec" +
+ testRunner.Then("\"Applications to add (0 of 2104 selected)\" is displayed to the user in the Projec" +
                     "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {

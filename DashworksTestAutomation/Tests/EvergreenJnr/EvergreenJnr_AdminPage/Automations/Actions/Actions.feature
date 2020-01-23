@@ -334,12 +334,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
 	And User selects 'Project' in the 'Create' dropdown
 	Then Page with 'Create Project' subheader is displayed to user
-	When User enters 'Edinburgh Devices Migration' text to 'Project Name' textbox
+	When User enters 'Test17427_Project' text to 'Project Name' textbox
 	When User clicks 'CREATE' button
 	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
-	When User navigate to "Edinburgh Devices Migration" Project
+	When User navigate to "Test17427_Project" Project
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
@@ -356,31 +356,31 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User creates Task
-	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
-	| Device Task 1 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
+	When User creates Task
+	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| Device Task 1 | DAS16992 | Pre-Migration    | Normal         | Date            | Computer         |                          |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
+	When User clicks "Create Task" button
+	When User creates Task
+	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| Device Task 3 | DAS16992 | Pre-Migration    | Group          | Date            | Computer         |                          |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
 	And User creates Task
-	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
-	| Device Task 3 | DAS16992 | Pre-Migration | Group    | Date      | Computer   |                    |                    |
-	Then Success message is displayed with "Task successfully created" text
-	When User publishes the task
-	Then selected task was published
-	When User clicks "Cancel" button
-	And User clicks "Create Task" button
-	And User creates Task
-	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
-	| Device Task 2 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
+	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| Device Task 2 | DAS16992 | Pre-Migration    | Normal         | Date            | Computer         |                          |
 	Then Success message is displayed with "Task successfully created" text
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
 	And User creates Task
-	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
-	| Device Task 4 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
+	| Name          | Help     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| Device Task 4 | DAS16992 | Pre-Migration    | Normal         | Date            | Computer         |                          |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
@@ -405,15 +405,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User enters 'DAS16992_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
-	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
+	When User selects 'Test17427_Project' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
-	Then following items are displayed in the "Task" dropdown for Actions:
-	| Values        |
-	| Device Task 1 |
 	When User selects 'Device Task 1' option from 'Task' autocomplete
-	When User selects "Unknown" Value for Actions
+	When User selects 'Device Task 4' option from 'Task' autocomplete
+	When User selects 'Remove' in the 'Update Date' dropdown
 	Then 'CREATE' button is not disabled
-	When User clicks 'SAVE AND CREATE ANOTHER' button 
+	When User clicks 'SAVE AND CREATE ANOTHER' button
 	Then Create Action page is displayed to the User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17234 @DAS17625 @DAS19117 @Cleanup
@@ -424,10 +422,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	And User create dynamic list with "EdinburghDevices_17234" name on "Devices" page
 	When Project created via API and opened
 	| ProjectName                 | Scope                  | ProjectTemplate | Mode               |
-	| Edinburgh Devices Migration | EdinburghDevices_17234 | None            | Standalone Project |
+	| Test16992_Project | EdinburghDevices_17234 | None            | Standalone Project |
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
-	When User navigate to "Edinburgh Devices Migration" Project
+	When User navigate to "Test16992_Project" Project
 	Then "Manage Project Details" page is displayed to the user
 	When User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
@@ -464,7 +462,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	#Create Action
 	When User enters '17234_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
-	When User selects 'Edinburgh Devices Migration' option from 'Project' autocomplete
+	When User selects 'Test16992_Project' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects 'Devices Task 1' option from 'Task' autocomplete
 	Then inline error banner is not displayed
@@ -774,15 +772,30 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	And User clicks content from "Action" column
 	Then 'Scheduled Slot' content is displayed in 'Capacity Slot' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @Not_Ready
-#Waiting for GD issue fixed
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18886 @Not_Ready
+#Waiting for DAS-19582 fixed
 Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	When User enters "Devices_Scope" text in the Search field for "Automation" column
+	When User enters "Users_Scope" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
+	When User opens 'Action' column settings
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Update Type" checkbox on the Column Settings panel
+	Then "" content is displayed for "Update Type" column
+	Then grid headers are displayed in the following order
+	| ColumnName    |
+	| Action        |
+	|               |
+	| Type          |
+	| Project       |
+	| Task or Field |
+	| Update Type   |
+	| Value         |
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
