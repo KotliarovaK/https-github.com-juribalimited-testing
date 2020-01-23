@@ -891,6 +891,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19240")]
         [NUnit.Framework.CategoryAttribute("DAS18886")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalisation()
         {
             System.Exception lastException = null;
@@ -925,7 +926,8 @@ this.FeatureBackground();
                         "Automations",
                         "DAS19240",
                         "DAS18886",
-                        "Cleanup"});
+                        "Cleanup",
+                        "Universe"});
 #line 211
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

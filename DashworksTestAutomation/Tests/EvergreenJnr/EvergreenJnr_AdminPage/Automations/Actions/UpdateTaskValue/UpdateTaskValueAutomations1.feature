@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'Before current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @DAS18886 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @DAS18886 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |

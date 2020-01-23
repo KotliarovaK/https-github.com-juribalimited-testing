@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @DAS18886 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @DAS18886 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalisation
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
