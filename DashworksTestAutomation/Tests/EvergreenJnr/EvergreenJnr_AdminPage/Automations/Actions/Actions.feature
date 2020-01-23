@@ -774,15 +774,30 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	And User clicks content from "Action" column
 	Then 'Scheduled Slot' content is displayed in 'Capacity Slot' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @Not_Ready
-#Waiting for GD issue fixed
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18886 @Not_Ready
+#Waiting for DAS-19582 fixed
 Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
-	When User enters "Devices_Scope" text in the Search field for "Automation" column
+	When User enters "Users_Scope" text in the Search field for "Automation" column
 	And User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
+	When User opens 'Action' column settings
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Update Type" checkbox on the Column Settings panel
+	Then "" content is displayed for "Update Type" column
+	Then grid headers are displayed in the following order
+	| ColumnName    |
+	| Action        |
+	|               |
+	| Type          |
+	| Project       |
+	| Task or Field |
+	| Update Type   |
+	| Value         |
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'UPDATE' button is disabled
