@@ -216,25 +216,25 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 	| Field             | Data |
 	| Sticky Compliance |      |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849 @Univers
 Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
 	Then Details page for 'ACDSee for Windows 95' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then following content is displayed on the Details Page
-	| Title              | Value |
-	| Hide From End User | FALSE |
+	| Title               | Value |
+	| Hide From End Users | FALSE |
 	When User selects 'TRUE' in the dropdown for the 'Hide From End User' field
 	Then 'Hide from end user successfully changed' text is displayed on inline success banner
 	When User clicks refresh button in the browser
 	Then following content is displayed on the Details Page
-	| Title              | Value |
-	| Hide From End User | TRUE  |
+	| Title               | Value |
+	| Hide From End Users | TRUE  |
 	When User selects 'FALSE' in the dropdown for the 'Hide From End User' field
 	Then 'Hide from end user successfully changed' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
-	| Title              | Value |
-	| Hide From End User | FALSE |
+	| Title               | Value |
+	| Hide From End Users | FALSE |
 
 
 
@@ -253,8 +253,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFi
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Users--#
-	When User navigates to the 'User' details page for '0088FC8A50DD4344B92' item
-	Then Details page for '0088FC8A50DD4344B92' item is displayed to the user
+	When User navigates to the 'User' details page for 'IHA8903150' item
+	Then Details page for 'IHA8903150' item is displayed to the user
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item

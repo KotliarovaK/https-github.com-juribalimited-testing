@@ -1375,8 +1375,8 @@ this.FeatureBackground();
 #line 261
  testRunner.And("\"94\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 262
- testRunner.And("\"Any Application in list 1803 Apps or Dynamic13579 used on device\" is displayed i" +
-                    "n added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Any Application in list Dynamic13579 used on device\" is displayed in added filte" +
+                    "r info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

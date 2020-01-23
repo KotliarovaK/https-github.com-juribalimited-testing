@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 	| Criteria  | Date     |
 	| Not Equal | 23032018 |
 	Then User checks that date input has same position
-	Then Rows counter shows "1" of "18" rows
+	Then Rows counter shows "1" of "15" rows
 	And There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726

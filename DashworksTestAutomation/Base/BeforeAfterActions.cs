@@ -173,23 +173,23 @@ namespace DashworksTestAutomation.Base
                 catch { }
             }
 
-            //try
-            //{
-            //    var requestUri = "http://autorelease.corp.juriba.com/PMManageProject.aspx?ProjectId=1&v=Details";
-            //    var request = requestUri.GenerateRequest();
+            try
+            {
+                var requestUri = "http://autorelease.corp.juriba.com:81/devices?$top=1000&$skip=0&$filter=(project_task_1_472_1_Task_Value%20EQUALS%20(%271%27%2C%273%27))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_task_1_472_1_Task";
+                var request = requestUri.GenerateRequest();
 
-            //    var resp = _client.Value.Get(request);
-
-            //    if (resp.Content.Contains("Page Error"))
-            //    {
-            //        Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-            //    Logger.Write(e);
-            //    Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
-            //}
+                var resp = _client.Evergreen.Get(request);
+                
+                if (resp.Content.Contains("count: 5108"))
+                {
+                    Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Write(e);
+                Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
+            }
         }
 
         [BeforeTestRun]
