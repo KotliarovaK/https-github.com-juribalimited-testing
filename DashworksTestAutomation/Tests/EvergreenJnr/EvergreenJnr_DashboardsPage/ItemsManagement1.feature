@@ -242,6 +242,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14610
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenningNotExistingDashboard
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User tries to open same page with '9898998' item id
+	When User tries to open same page with non existing item id
 	Then User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
 	Then There are no errors in the browser console

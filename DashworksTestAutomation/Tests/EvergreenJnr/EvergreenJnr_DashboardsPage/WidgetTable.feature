@@ -490,3 +490,49 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedI
 	| Mobile      |
 	| Other       |
 	| Virtual     |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19383 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetCanBeCreatedForListUsingComplienceFilter
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Application Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	When User waits for '3' seconds
+	When User create dynamic list with "AppCompliance19383" name on "Devices" page
+	Then "AppCompliance19383" list is displayed to user
+	When Dashboard with 'Dashboard for DAS19383' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List               | SplitBy                | AggregateFunction | AggregateBy            | OrderBy                    | MaxValues |
+	| Table      | WidgetForDAS19383 | AppCompliance19383 | Application Compliance | Severity          | Application Compliance | Application Compliance ASC | 1         |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button
+	Then 'WidgetForDAS19383' Widget is displayed to the user
+
+ @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18777 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetShowsCorrectResultsIfTaskValueAreNotUnique
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Not Applicable |
+	| Not Started    |
+	When User waits for '3' seconds
+	When User create dynamic list with "List for DAS18777" name on "Devices" page
+	When Dashboard with 'Dashboard for DAS18777' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title     | List              | SplitBy                                                                                        | AggregateFunction | AggregateBy                                                                                    | OrderBy                                                                                                     |
+	| Table      | DAS-18777 | List for DAS18777 | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation | Severity          | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation severity ASC |
+	When User clicks 'CREATE' button 
+	Then 'DAS-18777' Widget is displayed to the user
+	Then following content is displayed in the 'Not Started' column for Widget
+	| Values      |
+	| NOT STARTED |
+	Then following content is displayed in the 'Not Applicable' column for Widget
+	| Values         |
+	| NOT APPLICABLE |

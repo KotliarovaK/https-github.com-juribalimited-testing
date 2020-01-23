@@ -2671,3 +2671,16 @@ Scenario: EvergreenJnr_Applications_CheckThatFilterStaysWorkingAfterAddingDepart
 	Then table content is present
 	When User clicks the Filters button
 	Then "Device Owner whose Department is Empty used on device" is displayed in added filter info
+
+@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS19460
+Scenario: EvergreenJnr_Devices_CheckThatCorrectOptionsAreDisplayedForOwnerStatusFilter
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "1803: Owner Status" filter
+	Then Following checkboxes are available for current opened filter:
+    | checkboxes    |
+    | Empty         |
+    | Not Onboarded |
+    | Onboarded     |
+    | Offboarded    |

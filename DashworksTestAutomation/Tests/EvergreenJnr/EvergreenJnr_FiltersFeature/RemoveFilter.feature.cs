@@ -610,6 +610,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("RemoveFilter")]
         [NUnit.Framework.CategoryAttribute("DAS17436")]
+        [NUnit.Framework.CategoryAttribute("DAS18561")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckBrokenListDisplayingAfterFilterRemoving()
         {
@@ -645,6 +646,7 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "RemoveFilter",
                         "DAS17436",
+                        "DAS18561",
                         "Cleanup"});
 #line 144
 this.ScenarioInitialize(scenarioInfo);
