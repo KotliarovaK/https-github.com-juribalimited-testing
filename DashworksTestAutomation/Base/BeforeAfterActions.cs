@@ -180,15 +180,15 @@ namespace DashworksTestAutomation.Base
 
                 var resp = _client.Evergreen.Get(request);
                 
-                if (resp.Content.Contains("5108"))
+                if (resp.Content.Contains("count: 5108"))
                 {
-                    Logger.Write("============> !!! DEVICES FIELD FOR PROJECT WAS CHANGED !!! <============");
+                    Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
                 }
             }
             catch (Exception e)
             {
                 Logger.Write(e);
-                Logger.Write("============> !!! PROJECT WAS BROKEN !!! <============");
+                Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
             }
         }
 

@@ -46,8 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	Then 'CANCEL' button is not disabled
 	Then 'SAVE AND CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @DAS19135 @Cleanup @Not_Ready
-#Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @DAS19135 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestoringValues
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -70,11 +69,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	Then 'Edit Action' page subheader is displayed to user
 	Then '18830_Action' content is displayed in 'Action Name' textbox
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
-	Then 'Evergreen' content is displayed in 'Project or Evergreen' dropdown
+	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'GREEN' content is displayed in 'Sticky Compliance' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @DAS19033 @Cleanup @Not_Ready
-#Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @DAS19033 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -102,6 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18834_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
+	When '18834_Automation' automation '18834_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When '18834_Automation' automation '18834_Action' action run has finished
 	When User clicks refresh button in the browser
@@ -125,6 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
+	Then 'UPDATE' button is disabled
 	When User selects 'IGNORE' in the 'Sticky Compliance' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @DAS18886 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalisation
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -224,6 +224,20 @@ Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalis
 	#Check Action grid
 	Then 'Unknown' content is displayed in the 'Value' column
 	Then 'Unknown' content is displayed in the 'Action' column
+	When User opens 'Action' column settings
+	When User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Update Type" checkbox on the Column Settings panel
+	Then "" content is displayed for "Update Type" column
+	Then grid headers are displayed in the following order
+	| ColumnName    |
+	| Action        |
+	|               |
+	| Type          |
+	| Project       |
+	| Task or Field |
+	| Update Type   |
+	| Value         |
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup @Not_Ready
 #Waiting for Rationalisation dropdown for Evergreen //Universe release
