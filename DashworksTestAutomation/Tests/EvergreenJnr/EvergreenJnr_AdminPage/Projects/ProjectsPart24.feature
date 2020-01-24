@@ -74,6 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListIsSetInProjectScope
+	When User creates broken list with 'Broken list DAS17122' name on 'Applications' page
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "Country" filter where type is "Equals" with added column and "England" Lookup option
@@ -90,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListI
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList                             | Association        |
-	| Application List (Complex) - BROKEN LIST | Entitled to device |
+	| Broken list DAS17122 | Entitled to device |
 	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Projects' left menu item
