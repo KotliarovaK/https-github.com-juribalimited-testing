@@ -34,6 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User opens 'Date' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
+	When User select "Date" checkbox on the Column Settings panel
 	When User select "Type" checkbox on the Column Settings panel
 	When User select "Scope Object Type" checkbox on the Column Settings panel
 	When User select "Scope" checkbox on the Column Settings panel
