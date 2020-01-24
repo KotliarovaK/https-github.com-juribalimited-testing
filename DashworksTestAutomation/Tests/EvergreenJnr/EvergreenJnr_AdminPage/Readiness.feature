@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User clicks 'DELETE' button on popup
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @DAS19456 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	When Project created via API and opened
 	| ProjectName      | Scope       | ProjectTemplate | Mode               |
@@ -91,15 +91,15 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	And User clicks 'DELETE' button 
 	Then popup with 'Delete Readiness' title is displayed
 	When User clicks 'CANCEL' button on popup
-	And User select "Readiness" rows in the grid
-	| SelectedRowsName |
-	| GREEN            |
 	And User clicks 'DELETE' button 
 	Then popup with 'Delete Readiness' title is displayed
 	Then 'CANCEL' popup button color is 'rgba(236, 237, 239, 1)'
 	Then 'DELETE' popup button color is 'rgba(242, 88, 49, 1)'
+	Then User sees that 'Replacement Readiness' dropdown contains following options:
+	| Options |
+	| Ignore  |
 	When User clicks 'DELETE' button on popup
-	Then 'The selected readinesses have been deleted' and ', changes might not take effect immediately' texts are displayed on inline success banner
+	Then 'The selected readiness has been deleted' and ', changes might not take effect immediately' texts are displayed on inline success banner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649 @Cleanup @Do_Not_Runt_With_Readiness
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
