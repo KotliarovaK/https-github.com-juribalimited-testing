@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Application @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323
+@Evergreen @Application @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323 @Universe
 Scenario: EvergreenJnr_ApplicationList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
 	When User navigates to the 'Application' details page for '7-Zip 16.04 (x64)' item
 	Then Details page for '7-Zip 16.04 (x64)' item is displayed to the user

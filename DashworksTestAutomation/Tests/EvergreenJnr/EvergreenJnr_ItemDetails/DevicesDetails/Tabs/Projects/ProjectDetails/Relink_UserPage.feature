@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @User @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323
+@Evergreen @User @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323 @Universe
 Scenario: EvergreenJnr_UserList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
 	When User navigates to the 'User' details page for '0231387EA0EE4B428FE' item
 	Then Details page for '0231387EA0EE4B428FE' item is displayed to the user

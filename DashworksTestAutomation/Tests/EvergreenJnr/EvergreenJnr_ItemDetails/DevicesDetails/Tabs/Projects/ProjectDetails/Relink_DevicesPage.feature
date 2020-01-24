@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTooltipForDisabledRelinkButtonIsDisp
 	Then popup is displayed to User
 	Then Button 'RELINK' has 'Select a device' tooltip on popup
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323 @Universe
 Scenario: EvergreenJnr_DevicesList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
 	When User navigates to the 'Device' details page for '01BQIYGGUW5PRP6' item
 	Then Details page for '01BQIYGGUW5PRP6' item is displayed to the user

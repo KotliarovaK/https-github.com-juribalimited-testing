@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Mailbox @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323
+@Evergreen @Mailbox @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323 @Universe
 Scenario: EvergreenJnr_MailboxList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
 	When User navigates to the 'Mailbox' details page for '0072B088173449E3A93@bclabs.local' item
 	Then Details page for '0072B088173449E3A93@bclabs.local' item is displayed to the user
