@@ -2195,8 +2195,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCor
 	When User clicks the Filters button
 	When User add "Recipient Type" filter where type is "Does not equal" without added column and "Empty" Lookup option
 	Then "Recipient Type" filter is added to the list
-	Then Column headers are displayed in High Contrast
-	Then Text content of 'Recipient Type' column is displayed in high contrast
+	Then Column headers are displayed in high contrast
+	Then Text content of 'Recipient Type' column is displayed in High Contrast
 	#translation
 	When User language is changed to "Test Language" via API
 	Then grid headers are displayed in the following order
@@ -2207,3 +2207,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCor
 	| [9999999]                   |
 	| [9999999]                   |
 	| [9999999]                   |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS18833
+Scenario: EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter
+When User clicks 'Devices' on the left-hand menu
+Then 'All Devices' list should be displayed to the user
+When User clicks the Filters button
+And User clicks Add New button on the Filter panel
+And User selects "1803: Owner (Saved List)" filter from "Saved List" category
+And User checks 'Users with Device Count' checkbox
+And User clicks Add New button on the Filter panel
+Then "Owner: 1803 in list Users with Device Count" is displayed in added filter info 
