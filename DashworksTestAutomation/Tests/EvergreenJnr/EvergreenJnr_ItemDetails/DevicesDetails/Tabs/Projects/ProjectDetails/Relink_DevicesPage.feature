@@ -82,3 +82,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTooltipForDisabledRelinkButtonIsDisp
 	When User clicks 'RELINK' button
 	Then popup is displayed to User
 	Then Button 'RELINK' has 'Select a device' tooltip on popup
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323
+Scenario: EvergreenJnr_DevicesList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
+	When User navigates to the 'Device' details page for '01BQIYGGUW5PRP6' item
+	Then Details page for '01BQIYGGUW5PRP6' item is displayed to the user
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button
+	Then only options having search term '094' are displayed in 'Device' autocomplete

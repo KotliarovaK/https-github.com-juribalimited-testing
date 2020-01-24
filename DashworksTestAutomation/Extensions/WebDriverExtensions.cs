@@ -1073,6 +1073,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false.Equals(displayedCondition);
+                }
             };
         }
 
