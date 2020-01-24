@@ -53,6 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             dialogContainer.GetButton(buttonName).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"'(.*)' popup button color is '(.*)'")]
