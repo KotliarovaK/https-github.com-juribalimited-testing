@@ -379,7 +379,7 @@ this.FeatureBackground();
 #line 87
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
- testRunner.When("User selects \'Core\t\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Core\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 89
  testRunner.When("User selects \'GREEN\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 90
@@ -401,11 +401,11 @@ this.FeatureBackground();
 #line 97
  testRunner.Then("\'Core\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 98
- testRunner.Then("\'Core\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'GREEN\' content is displayed in the \'Sticky Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
- testRunner.Then("\'Core\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'RETIRE\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 100
- testRunner.Then("\'Core\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'FALSE\' content is displayed in the \'In Catalog\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 102
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103
@@ -413,7 +413,7 @@ this.FeatureBackground();
 #line 104
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 105
- testRunner.When("User selects \'Uncategorised\t\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Uncategorised\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 106
  testRunner.When("User selects \'Empty\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
@@ -434,6 +434,12 @@ this.FeatureBackground();
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 114
  testRunner.Then("\'Uncategorised\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 115
+ testRunner.Then("\'\' content is displayed in the \'Sticky Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 116
+ testRunner.Then("\'KEEP\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 117
+ testRunner.Then("\'TRUE\' content is displayed in the \'In Catalog\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -480,16 +486,16 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS19225",
                         "Universe"});
-#line 117
+#line 120
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 118
+#line 121
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 119
+#line 122
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 120
+#line 123
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -498,71 +504,71 @@ this.FeatureBackground();
                         "Criticality"});
             table8.AddRow(new string[] {
                         "Evergreen Rationalisation"});
-#line 121
+#line 124
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
-#line 125
+#line 128
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 126
+#line 129
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table9.AddRow(new string[] {
                         "AddFlow 4"});
-#line 127
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table9, "When ");
 #line 130
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table9, "When ");
+#line 133
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 131
+#line 134
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 132
+#line 135
  testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' option from \'Project or Everg" +
                     "reen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 133
- testRunner.When("User selects \'Core\t\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 134
- testRunner.When("User selects \'RETIRE\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
- testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 136
- testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
-                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User selects \'Core\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 137
- testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'RETIRE\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
- testRunner.Then("Success message with \"1 of 1 object was in the selected project and has been queu" +
-                    "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 139
- testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
- testRunner.Then("\'Core\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 141
- testRunner.Then("\'RETIRE\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 143
- testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
- testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 145
- testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 146
- testRunner.When("User selects \'Uncategorised\t\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 147
- testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 148
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 149
+#line 139
  testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
                     "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 150
+#line 140
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 151
+#line 141
  testRunner.Then("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 152
+#line 142
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 143
+ testRunner.Then("\'Core\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 144
+ testRunner.Then("\'RETIRE\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 146
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 147
+ testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 148
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 149
+ testRunner.When("User selects \'Uncategorised\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 150
+ testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 151
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 152
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                    "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 153
- testRunner.Then("\'Uncategorised\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 154
+ testRunner.Then("Success message with \"1 of 1 object was in the selected project and has been queu" +
+                    "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 155
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 156
+ testRunner.Then("\'Uncategorised\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 157
  testRunner.Then("\'KEEP\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

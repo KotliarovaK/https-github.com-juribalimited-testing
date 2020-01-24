@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateC
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User selects 'Core	' in the 'Criticality' dropdown
+	When User selects 'Core' in the 'Criticality' dropdown
 	When User selects 'GREEN' in the 'Sticky Compliance' dropdown
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
 	When User selects 'FALSE' in the 'In Catalog' dropdown
@@ -95,14 +95,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateC
 	Then Success message with "1 update has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then 'Core' content is displayed in the 'Criticality' column
-	Then 'Core' content is displayed in the 'Criticality' column
-	Then 'Core' content is displayed in the 'Criticality' column
-	Then 'Core' content is displayed in the 'Criticality' column
+	Then 'GREEN' content is displayed in the 'Sticky Compliance' column
+	Then 'RETIRE' content is displayed in the 'Evergreen Rationalisation' column
+	Then 'FALSE' content is displayed in the 'In Catalog' column
 	#Revert changes
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User selects 'Uncategorised	' in the 'Criticality' dropdown
+	When User selects 'Uncategorised' in the 'Criticality' dropdown
 	When User selects 'Empty' in the 'Sticky Compliance' dropdown
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	When User selects 'TRUE' in the 'In Catalog' dropdown
@@ -112,6 +112,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateC
 	Then Success message with "1 update has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then 'Uncategorised' content is displayed in the 'Criticality' column
+	Then '' content is displayed in the 'Sticky Compliance' column
+	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column
+	Then 'TRUE' content is displayed in the 'In Catalog' column
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19225 @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCriticality
@@ -130,7 +133,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project or Evergreen' autocomplete
-	When User selects 'Core	' in the 'Criticality' dropdown
+	When User selects 'Core' in the 'Criticality' dropdown
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -143,7 +146,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User selects 'Uncategorised	' in the 'Criticality' dropdown
+	When User selects 'Uncategorised' in the 'Criticality' dropdown
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
