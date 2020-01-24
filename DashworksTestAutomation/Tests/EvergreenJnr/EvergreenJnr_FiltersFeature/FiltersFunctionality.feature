@@ -2684,3 +2684,16 @@ Scenario: EvergreenJnr_Devices_CheckThatCorrectOptionsAreDisplayedForOwnerStatus
     | Not Onboarded |
     | Onboarded     |
     | Offboarded    |
+
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS19713
+Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorsDoNotAppearWhenAddingInvalidDateFilter
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When user select "Boot Up Date" filter
+	When User changes filter date to "13 Dec 2017"
+	When User changes filter date to "R."
+	When User select "Installed on device" in Association
+	When User clicks 'ADD' button
+	Then There are no errors in the browser console

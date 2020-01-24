@@ -12038,6 +12038,79 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatErrorsDoNotAppearWhenAddingInvalidDateFilt" +
+            "er")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS19713")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatErrorsDoNotAppearWhenAddingInvalidDateFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatErrorsDoNotAppearWhenAddingInvalidDateFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatErrorsDoNotAppearWhenAddingInvalidDateFilterInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatErrorsDoNotAppearWhenAddingInvalidDateFilt" +
+                    "er", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_FiltersFeature",
+                        "FilterFunctionality",
+                        "DAS19713"});
+#line 2689
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2690
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2691
+ testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2692
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2693
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2694
+ testRunner.When("user select \"Boot Up Date\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2695
+ testRunner.When("User changes filter date to \"13 Dec 2017\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2696
+ testRunner.When("User changes filter date to \"R.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2697
+ testRunner.When("User select \"Installed on device\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2698
+ testRunner.When("User clicks \'ADD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2699
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

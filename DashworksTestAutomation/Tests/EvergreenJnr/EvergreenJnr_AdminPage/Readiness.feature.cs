@@ -332,6 +332,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16131")]
         [NUnit.Framework.CategoryAttribute("DAS16226")]
         [NUnit.Framework.CategoryAttribute("DAS16163")]
+        [NUnit.Framework.CategoryAttribute("DAS19456")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay()
         {
@@ -369,6 +370,7 @@ this.FeatureBackground();
                         "DAS16131",
                         "DAS16226",
                         "DAS16163",
+                        "DAS19456",
                         "Cleanup"});
 #line 70
 this.ScenarioInitialize(scenarioInfo);
@@ -430,26 +432,26 @@ this.FeatureBackground();
  testRunner.Then("popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 93
  testRunner.When("User clicks \'CANCEL\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 94
+ testRunner.And("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.Then("popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 96
+ testRunner.Then("\'CANCEL\' popup button color is \'rgba(236, 237, 239, 1)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 97
+ testRunner.Then("\'DELETE\' popup button color is \'rgba(242, 88, 49, 1)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedRowsName"});
+                        "Options"});
             table11.AddRow(new string[] {
-                        "GREEN"});
-#line 94
- testRunner.And("User select \"Readiness\" rows in the grid", ((string)(null)), table11, "And ");
-#line 97
- testRunner.And("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "Ignore"});
 #line 98
- testRunner.Then("popup with \'Delete Readiness\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 99
- testRunner.Then("\'CANCEL\' popup button color is \'rgba(236, 237, 239, 1)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 100
- testRunner.Then("\'DELETE\' popup button color is \'rgba(242, 88, 49, 1)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User sees that \'Replacement Readiness\' dropdown contains following options:", ((string)(null)), table11, "Then ");
 #line 101
  testRunner.When("User clicks \'DELETE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 102
- testRunner.Then("\'The selected readinesses have been deleted\' and \', changes might not take effect" +
-                    " immediately\' texts are displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected readiness has been deleted\' and \', changes might not take effect im" +
+                    "mediately\' texts are displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
