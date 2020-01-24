@@ -501,9 +501,9 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table8.AddRow(new string[] {
-                        "Criticality"});
+                        "UseMeForAu: Criticality"});
             table8.AddRow(new string[] {
-                        "Evergreen Rationalisation"});
+                        "UseMeForAu: Application Rationalisation"});
 #line 124
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
 #line 128
@@ -525,7 +525,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' option from \'Project or Everg" +
                     "reen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 136
- testRunner.When("User selects \'Core\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Important\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 137
  testRunner.When("User selects \'RETIRE\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
@@ -541,17 +541,19 @@ this.FeatureBackground();
 #line 142
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 143
- testRunner.Then("\'Core\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Important\' content is displayed in the \'UseMeForAu: Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 144
- testRunner.Then("\'RETIRE\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'RETIRE\' content is displayed in the \'UseMeForAu: Application Rationalisation\' co" +
+                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 146
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 148
- testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' option from \'Project or Everg" +
+                    "reen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 149
- testRunner.When("User selects \'Uncategorised\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Core\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 150
  testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
@@ -567,9 +569,10 @@ this.FeatureBackground();
 #line 155
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 156
- testRunner.Then("\'Uncategorised\' content is displayed in the \'Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Core\' content is displayed in the \'UseMeForAu: Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 157
- testRunner.Then("\'KEEP\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'KEEP\' content is displayed in the \'UseMeForAu: Application Rationalisation\' colu" +
+                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

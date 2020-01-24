@@ -122,9 +122,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                |
-	| Criticality               |
-	| Evergreen Rationalisation |
+	| ColumnName                              |
+	| UseMeForAu: Criticality                 |
+	| UseMeForAu: Application Rationalisation |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User searches and selects following rows in the grid on Details page:
@@ -133,25 +133,25 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project or Evergreen' autocomplete
-	When User selects 'Core' in the 'Criticality' dropdown
+	When User selects 'Important' in the 'Criticality' dropdown
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then 'Core' content is displayed in the 'Criticality' column
-	Then 'RETIRE' content is displayed in the 'Evergreen Rationalisation' column
+	Then 'Important' content is displayed in the 'UseMeForAu: Criticality' column
+	Then 'RETIRE' content is displayed in the 'UseMeForAu: Application Rationalisation' column
 	#Revert changes
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User selects 'Uncategorised' in the 'Criticality' dropdown
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project or Evergreen' autocomplete
+	When User selects 'Core' in the 'Criticality' dropdown
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then 'Uncategorised' content is displayed in the 'Criticality' column
-	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column
+	Then 'Core' content is displayed in the 'UseMeForAu: Criticality' column
+	Then 'KEEP' content is displayed in the 'UseMeForAu: Application Rationalisation' column
