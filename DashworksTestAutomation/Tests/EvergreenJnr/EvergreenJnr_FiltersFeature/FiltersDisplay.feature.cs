@@ -9624,9 +9624,9 @@ this.FeatureBackground();
 #line 2197
  testRunner.Then("\"Recipient Type\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2198
- testRunner.Then("Column headers are displayed in High Contrast", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Column headers are displayed in high contrast", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2199
- testRunner.Then("Text content of \'Recipient Type\' column is displayed in high contrast", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Text content of \'Recipient Type\' column is displayed in High Contrast", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2201
  testRunner.When("User language is changed to \"Test Language\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

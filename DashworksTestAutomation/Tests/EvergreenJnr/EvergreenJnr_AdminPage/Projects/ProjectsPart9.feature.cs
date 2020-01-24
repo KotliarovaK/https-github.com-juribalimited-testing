@@ -553,8 +553,8 @@ this.FeatureBackground();
 #line 128
  testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 130
- testRunner.Then("\"Users to add (0 of 1 selected)\" is displayed to the user in the Project Scope Ch" +
-                    "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Users to add (0 of 51 selected)\" is displayed to the user in the Project Scope C" +
+                    "hanges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 131
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
