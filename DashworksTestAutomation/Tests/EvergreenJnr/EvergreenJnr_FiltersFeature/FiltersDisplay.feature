@@ -2208,7 +2208,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCor
 	| [9999999]                   |
 	| [9999999]                   |
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DASDAS-18833
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS18833
 Scenario: EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter
 When User clicks 'Devices' on the left-hand menu
 Then 'All Devices' list should be displayed to the user

@@ -9657,7 +9657,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("DASDAS-18833")]
+        [NUnit.Framework.CategoryAttribute("DAS18833")]
         public virtual void EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter()
         {
             System.Exception lastException = null;
@@ -9691,7 +9691,7 @@ this.FeatureBackground();
                         "Mailboxes",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
-                        "DASDAS-18833"});
+                        "DAS18833"});
 #line 2212
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
