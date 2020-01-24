@@ -127,5 +127,5 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	And User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Users' tab on Project Scope Changes page
 	#here we should see only users that have devices
-	Then "Users to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 51 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
