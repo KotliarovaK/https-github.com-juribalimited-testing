@@ -197,6 +197,7 @@ namespace DashworksTestAutomation.Helpers
                             ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                         .Clear();
                 }
+
                 _driver.FindElement(By.XPath(
                         $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
                     .Click();

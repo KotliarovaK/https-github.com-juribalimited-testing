@@ -161,3 +161,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPe
 	When User enters "Exchange 2007" text in the Search field for "Mailbox Platform" column
 	Then 'FullAccess' content is displayed in the 'Permission' column
 	Then 'FullAccess' tooltip is displayed for 'FullAccess' content in the 'Permission' column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18827
+Scenario: EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNotExistingItem
+	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
+	Then Details page for '001PSUMZYOW581' item is displayed to the user
+	When User tries to open same page with non existing item id
+	Then There are only 'Page not found' errors in console
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	Then There are no errors in the browser console

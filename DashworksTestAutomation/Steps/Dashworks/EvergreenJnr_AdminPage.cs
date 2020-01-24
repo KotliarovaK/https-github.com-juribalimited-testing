@@ -11,6 +11,7 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using DashworksTestAutomation.DTO.Projects.Tasks;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
@@ -683,14 +684,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
-        [When(@"User tries to open same page with '(.*)' item id")]
-        public void WhenUserOpensSamePageForNotExistingItem(string Id)
+        [When(@"User tries to open same page with non existing item id")]
+        public void WhenUserOpensSamePageForNotExistingItem()
         {
             string current = _driver.Url;
-            int index = current.LastIndexOf("/");
-
-            if (index > 0)
-                current = current.Substring(0, index) + "/" + Id;
+            Regex regex = new Regex("[0-9]");
+            current = regex.Replace(current, "01");
             _driver.Navigate().GoToUrl(current);
             _driver.Navigate().Refresh();
         }

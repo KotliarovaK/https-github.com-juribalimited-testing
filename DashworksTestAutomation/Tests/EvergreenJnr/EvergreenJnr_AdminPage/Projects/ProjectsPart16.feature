@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	When User navigates to the 'Applications' tab on Project Scope Changes page
-	Then "Applications to add (0 of 1915 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| Objects                    |
 	| AAC860150 (Kerrie D. Ruiz) |
 	When User navigates to the 'Applications' tab on Project Scope Changes page
-	Then "Applications to add (0 of 1915 selected)" is displayed to the user in the Project Scope Changes section 
+	Then "Applications to add (0 of 2104 selected)" is displayed to the user in the Project Scope Changes section 
 	And following objects were not found
 	| Objects                                                              |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |

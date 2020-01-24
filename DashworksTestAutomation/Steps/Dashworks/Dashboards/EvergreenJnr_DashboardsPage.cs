@@ -36,7 +36,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _user = user;
         }
 
-
         #region Top row
 
         [When(@"User clicks Edit mode trigger on Dashboards page")]

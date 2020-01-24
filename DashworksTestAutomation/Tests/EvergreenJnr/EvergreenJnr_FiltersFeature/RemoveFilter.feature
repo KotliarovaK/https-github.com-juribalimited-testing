@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
 	When user select "Compliance" filter
 	When User deletes filter and agGrid does not reload
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS17436 @Cleanup
+@Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS17436 @DAS18561 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckBrokenListDisplayingAfterFilterRemoving
 	When User creates broken list with 'Broken list DAS17436' name on 'Devices' page
 	And User clicks 'Devices' on the left-hand menu
