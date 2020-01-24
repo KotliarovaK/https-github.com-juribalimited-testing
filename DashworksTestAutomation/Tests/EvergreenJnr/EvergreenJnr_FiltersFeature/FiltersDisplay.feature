@@ -2207,3 +2207,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCor
 	| [9999999]                   |
 	| [9999999]                   |
 	| [9999999]                   |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS18833
+Scenario: EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter
+When User clicks 'Devices' on the left-hand menu
+Then 'All Devices' list should be displayed to the user
+When User clicks the Filters button
+And User clicks Add New button on the Filter panel
+And User selects "1803: Owner (Saved List)" filter from "Saved List" category
+And User checks 'Users with Device Count' checkbox
+And User clicks Add New button on the Filter panel
+Then "Owner: 1803 in list Users with Device Count" is displayed in added filter info 
