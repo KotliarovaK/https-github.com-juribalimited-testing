@@ -250,7 +250,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	And User perform search by "Z11REX196H34MG"
 	Then '[Default (Computer)]' content is displayed in the 'zDeviceAut: Path' column
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Not_Ready
+#Kate will update this test.
 Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSecurity
 	When User clicks 'Projects' on the left-hand menu
 	When User navigate to Manage link
