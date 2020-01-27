@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18647 @DAS18461
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18647 @DAS18461 @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
@@ -19,6 +19,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
+	When User navigate to the bottom of the Action panel
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 	Then following Values are displayed in the 'Rationalisation' dropdown:
