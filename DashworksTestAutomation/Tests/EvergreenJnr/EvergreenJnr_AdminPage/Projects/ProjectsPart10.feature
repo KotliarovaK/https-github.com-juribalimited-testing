@@ -70,7 +70,6 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	When Project created via API and opened
 	| ProjectName     | Scope     | ProjectTemplate | Mode   |
 	| DevicesProject5 | All Users | None            | <Mode> |
-	#And User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left submenu item
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
@@ -86,8 +85,8 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 
 Examples:
 	| ChangingToList1 | ChangingToList2 | Mode                            | ObjectsToAdd1                      | ObjectsToAdd2                   |
-	| All Users       | StaticList6329  | Clone from Evergreen to Project | Users to add (0 of 41339 selected) | Users to add (0 of 2 selected)  |
-	| StaticList6329  | DynamicList37   | Standalone Project              | Users to add (0 of 2 selected)     | Users to add (0 of 92 selected) |
+	| All Users       | StaticList6329  | Clone from Evergreen to Project | Users to add (0 of 41339 selected) | Users to add (0 of 3 selected)  |
+	| StaticList6329  | DynamicList37   | Standalone Project              | Users to add (0 of 3 selected)     | Users to add (0 of 95 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS18943 @Cleanup @Projects
 Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndMailboxProjects

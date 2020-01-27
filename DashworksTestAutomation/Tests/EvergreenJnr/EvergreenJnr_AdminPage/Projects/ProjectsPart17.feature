@@ -139,6 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects "Do not include device owners" checkbox on the Project details page
+	When User selects "Do not include app owners" checkbox on the Project details page
 	Then Scope List dropdown is disabled
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
 	Then following associations are disabled:
