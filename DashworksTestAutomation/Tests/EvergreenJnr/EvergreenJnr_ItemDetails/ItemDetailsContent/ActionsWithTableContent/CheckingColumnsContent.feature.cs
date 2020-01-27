@@ -1129,74 +1129,80 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Related\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table12.AddRow(new string[] {
-                        "Device"});
-            table12.AddRow(new string[] {
-                        "Owner"});
-            table12.AddRow(new string[] {
-                        "Owner Display Name"});
-            table12.AddRow(new string[] {
-                        "Linked By"});
-            table12.AddRow(new string[] {
-                        "Path"});
-            table12.AddRow(new string[] {
-                        "Category"});
-            table12.AddRow(new string[] {
-                        "Status"});
-            table12.AddRow(new string[] {
-                        "Date"});
+                        "checkboxes"});
             table12.AddRow(new string[] {
                         "Application Readiness"});
-            table12.AddRow(new string[] {
-                        "Stage 1"});
-            table12.AddRow(new string[] {
-                        "Stage 2"});
 #line 276
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table12, "Then ");
-#line 289
- testRunner.When("User enters \"03ME2G7TIR4GBN\" text in the Search field for \"Device\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 290
- testRunner.Then("Links from \"Device\" column is displayed to the user on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owner\' colum" +
+                    "n:", ((string)(null)), table12, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table13.AddRow(new string[] {
+                        "Device"});
+            table13.AddRow(new string[] {
+                        "Owner"});
+            table13.AddRow(new string[] {
+                        "Owner Display Name"});
+            table13.AddRow(new string[] {
+                        "Linked By"});
+            table13.AddRow(new string[] {
+                        "Path"});
+            table13.AddRow(new string[] {
+                        "Category"});
+            table13.AddRow(new string[] {
+                        "Status"});
+            table13.AddRow(new string[] {
+                        "Date"});
+            table13.AddRow(new string[] {
+                        "Stage 1"});
+            table13.AddRow(new string[] {
+                        "Stage 2"});
+#line 279
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table13, "Then ");
 #line 291
- testRunner.And("Links from \"Owner\" column is displayed to the user on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \"03ME2G7TIR4GBN\" text in the Search field for \"Device\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 292
+ testRunner.Then("Links from \"Device\" column is displayed to the user on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 293
+ testRunner.And("Links from \"Owner\" column is displayed to the user on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 294
  testRunner.And("Links from \"Owner Display Name\" column is displayed to the user on the Details Pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 295
- testRunner.When("User clicks \"03ME2G7TIR4GBN\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 296
- testRunner.Then("Details page for \'03ME2G7TIR4GBN\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 297
- testRunner.And("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \"03ME2G7TIR4GBN\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 298
- testRunner.And("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Details page for \'03ME2G7TIR4GBN\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 299
- testRunner.When("User navigates to the \'Related\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 300
- testRunner.And("User enters \"ACG370114\" text in the Search field for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 301
- testRunner.And("User clicks \"ACG370114\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 302
- testRunner.Then("Details page for \'ACG370114 (James N. Snow)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 303
  testRunner.And("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 304
+#line 300
  testRunner.And("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 305
+#line 301
  testRunner.When("User navigates to the \'Related\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 302
+ testRunner.And("User enters \"ACG370114\" text in the Search field for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 303
+ testRunner.And("User clicks \"ACG370114\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 304
+ testRunner.Then("Details page for \'ACG370114 (James N. Snow)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 305
+ testRunner.And("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 306
+ testRunner.And("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 307
+ testRunner.When("User navigates to the \'Related\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 308
  testRunner.And("User enters \"James N. Snow\" text in the Search field for \"Owner Display Name\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 307
- testRunner.And("User clicks \"James N. Snow\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 308
- testRunner.Then("Details page for \'ACG370114 (James N. Snow)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 309
- testRunner.And("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \"James N. Snow\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 310
- testRunner.And("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Details page for \'ACG370114 (James N. Snow)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 311
+ testRunner.And("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 312
+ testRunner.And("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 313
  testRunner.When("User navigates to the \'Related\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
@@ -1246,23 +1252,23 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS16472",
                         "DAS15039"});
-#line 318
+#line 320
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 319
- testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 320
- testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 321
+ testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 322
+ testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 323
  testRunner.When("User selects \'Devices Evergreen Capacity Project\' in the \'Item Details Project\' d" +
                     "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 322
- testRunner.When("User navigates to the \'Related\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 323
- testRunner.When("User enters \"03ME2G7TIR4GBN\" text in the Search field for \"Device\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 324
+ testRunner.When("User navigates to the \'Related\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 325
+ testRunner.When("User enters \"03ME2G7TIR4GBN\" text in the Search field for \"Device\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 326
  testRunner.Then("\'31 May 2019\' content is displayed in the \'Date\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1312,27 +1318,27 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17087"});
-#line 327
+#line 329
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 328
+#line 330
  testRunner.When("User navigates to the \'Mailbox\' details page for \'abel.y.hanson@dwlabs.local\' ite" +
                     "m", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 329
- testRunner.Then("Details page for \'abel.y.hanson@dwlabs.local\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 330
- testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 331
- testRunner.Then("\"7\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'abel.y.hanson@dwlabs.local\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 332
- testRunner.And("\'Administrator\' content is displayed in the \'Username\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 333
- testRunner.When("User selects \'Email Migration\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"7\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 334
- testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("\'Administrator\' content is displayed in the \'Username\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 335
+ testRunner.When("User selects \'Email Migration\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 336
+ testRunner.Then("\"1\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 337
  testRunner.And("\'hansonay\' content is displayed in the \'Username\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1384,56 +1390,56 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS17734",
                         "DAS17733"});
-#line 338
+#line 340
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 339
- testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 340
- testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 341
- testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 342
+ testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 343
+ testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 344
  testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' in the \'Item Details Project\'" +
                     " dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "User"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Readiness"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Display Name"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Domain"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Owner"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Path"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Category"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Application Readiness"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Stage A"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Stage C"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Stage D"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Stage with (readiness) task"});
-#line 343
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table13, "Then ");
-#line 358
- testRunner.When("User enters \"AAC860150\" text in the Search field for \"User\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 359
- testRunner.Then("\"GREEN\" content is displayed for \"Stage A\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 345
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table14, "Then ");
 #line 360
- testRunner.And("\"RED\" content is displayed for \"Stage C\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \"AAC860150\" text in the Search field for \"User\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 361
+ testRunner.Then("\"GREEN\" content is displayed for \"Stage A\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 362
+ testRunner.And("\"RED\" content is displayed for \"Stage C\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 363
  testRunner.And("\"AMBER\" content is displayed for \"Stage D\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1483,22 +1489,22 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS18263"});
-#line 364
+#line 366
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 365
- testRunner.When("User navigates to the \'Application\' details page for \'7zip\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 366
- testRunner.Then("Details page for \'7zip\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 367
- testRunner.When("User navigates to the \'Distribution\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Application\' details page for \'7zip\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 368
- testRunner.And("User navigates to the \'Devices\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Details page for \'7zip\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 369
- testRunner.Then("\"\" content is displayed for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'Distribution\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 370
+ testRunner.And("User navigates to the \'Devices\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 371
+ testRunner.Then("\"\" content is displayed for \"Owner\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 372
  testRunner.Then("\"\" content is displayed for \"Owner Display Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
