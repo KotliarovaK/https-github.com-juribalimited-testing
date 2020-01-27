@@ -7,23 +7,13 @@ Background: Pre-Conditions
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username   | FullName             | Password | ConfirmPassword | Roles                |
-	| 000WithPBU | Project Bulk Updater | 1234qwer | 1234qwer        | Project Bulk Updater |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username   | Password |
-	| 000WithPBU | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username   | Email | FullName             | Password  | Roles                |
+	| 000WithPBU | Value | Project Bulk Updater | m!gration | Project Bulk Updater |
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username   | Password  |
+ 	| 000WithPBU | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -60,23 +50,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @DAS16826 @DAS18267 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
-	When User clicks 'Projects' on the left-hand menu
-	Then "Projects Home" page is displayed to the user
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User create new User
-	| Username  | FullName              | Password | ConfirmPassword | Roles                 |
-	| 000WithPA | Project Administrator | 1234qwer | 1234qwer        | Project Administrator |
-	Then Success message is displayed
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username  | Password |
-	| 000WithPA | 1234qwer |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User create new User via API
+	| Username  | Email | FullName              | Password  | Roles                 |
+	| 000WithPA | Value | Project Administrator | m!gration | Project Administrator |
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username  | Password  |
+ 	| 000WithPA | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -110,7 +90,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPA" User
-
 	
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @DAS16826
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevicesPage
