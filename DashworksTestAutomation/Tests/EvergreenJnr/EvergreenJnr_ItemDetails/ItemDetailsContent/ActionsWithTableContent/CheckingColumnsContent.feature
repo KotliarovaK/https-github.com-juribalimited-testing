@@ -273,6 +273,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User selects 'Devices Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Related' left menu item
+	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
+	| checkboxes            |
+	| Application Readiness |
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
 	| Device                |
@@ -283,7 +286,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	| Category              |
 	| Status                |
 	| Date                  |
-	| Application Readiness |
 	| Stage 1               |
 	| Stage 2               |
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
