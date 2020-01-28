@@ -772,7 +772,7 @@ Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	And User clicks content from "Action" column
 	Then 'Scheduled Slot' content is displayed in 'Capacity Slot' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18886 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18886 @Universe
 #Waiting for DAS-19582 fixed
 Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 	When User clicks 'Admin' on the left-hand menu

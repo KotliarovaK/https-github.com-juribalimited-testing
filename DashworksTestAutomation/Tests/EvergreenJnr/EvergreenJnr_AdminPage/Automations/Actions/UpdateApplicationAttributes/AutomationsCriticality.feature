@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	Then 'TRUE' content is displayed in 'In Catalog' dropdown
 	Then 'Core' content is displayed in 'Criticality' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DAS19353 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForProject
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -150,6 +150,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	Then "USE ME FOR AUTOMATION(DEVICE SCHDLD)" content is displayed for "Project" column
 	Then "Rationalisation, Criticality" content is displayed for "Task or Field" column
 	Then "Keep, Important" content is displayed for "Value" column
+	When User opens 'Action' column settings
+	When User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Update Type" checkbox on the Column Settings panel
+	Then "" content is displayed for "Update Type" column
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user

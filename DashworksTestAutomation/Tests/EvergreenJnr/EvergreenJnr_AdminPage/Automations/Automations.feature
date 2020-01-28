@@ -701,7 +701,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects "15949_Action_1" checkbox from String Filter with item list on the Admin page
 	Then '5179' content is displayed in the 'Objects' column
 
-#Additional test to figure out Active position changing
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
 	When User clicks 'Admin' on the left-hand menu
