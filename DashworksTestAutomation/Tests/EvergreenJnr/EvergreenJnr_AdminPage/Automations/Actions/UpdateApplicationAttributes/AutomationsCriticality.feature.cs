@@ -650,6 +650,119 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
+        [NUnit.Framework.CategoryAttribute("DAS19312")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Universe")]
+        public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNowInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNowInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_AdminPage",
+                        "Automations",
+                        "DAS19312",
+                        "Cleanup",
+                        "Universe"});
+#line 187
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "AutomationName",
+                        "Description",
+                        "Active",
+                        "StopOnFailedAction",
+                        "Scope",
+                        "Run"});
+            table7.AddRow(new string[] {
+                        "19312_Automation",
+                        "19312",
+                        "true",
+                        "false",
+                        "All Applications",
+                        "Manual"});
+#line 188
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table7, "When ");
+#line 191
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 192
+ testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 194
+ testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 195
+ testRunner.And("User enters \'19312_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And("User selects \'Update application attributes\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 197
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' option from \'Project or Everg" +
+                    "reen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 198
+ testRunner.When("User selects \'Core\' in the \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 199
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 201
+ testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 202
+ testRunner.When("User enters \"19312_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 203
+ testRunner.When("User clicks \'Run now\' option in Cog-menu for \'19312_Automation\' item from \'Automa" +
+                    "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 204
+ testRunner.When("\'19312_Automation\' automation \'19312_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 205
+ testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 206
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 207
+ testRunner.When("User enters \"19312_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 208
+ testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 209
+ testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 210
+ testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
+                    "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 211
+ testRunner.And("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 212
+ testRunner.Then("\'Core\' content is displayed in the \'UseMeForAu: Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

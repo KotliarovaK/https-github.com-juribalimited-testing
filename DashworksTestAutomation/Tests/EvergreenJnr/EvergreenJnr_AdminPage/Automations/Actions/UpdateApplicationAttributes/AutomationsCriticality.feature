@@ -182,3 +182,31 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	Then 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'UNCATEGORISED' content is displayed in 'Rationalisation' dropdown
 	Then 'Core' content is displayed in 'Criticality' dropdown
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19312 @Cleanup @Universe
+Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
+	| 19312_Automation | 19312       | true   | false              | All Applications | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	And User enters '19312_Action' text to 'Action Name' textbox
+	And User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project or Evergreen' autocomplete
+	When User selects 'Core' in the 'Criticality' dropdown
+	When User clicks 'CREATE' button
+	#Run Automations
+	When User clicks 'Automations' header breadcrumb
+	When User enters "19312_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19312_Automation' item from 'Automation' column
+	When '19312_Automation' automation '19312_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User refreshes agGrid
+	When User enters "19312_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	Then 'Core' content is displayed in the 'UseMeForAu: Criticality' column
