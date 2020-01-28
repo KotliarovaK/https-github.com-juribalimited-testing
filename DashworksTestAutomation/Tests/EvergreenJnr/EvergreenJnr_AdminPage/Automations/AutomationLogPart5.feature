@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17974 @Cleanup @Not_Ready
-#Waiting for 'zUser Sch for Automations Feature' project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17974 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUserScopedAutomationDAS17974
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                             | Run    |
@@ -27,6 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17974_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17974_Automation' item from 'Automation' column
+	When '17974_Automation' automation '17974_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17974_Automation" text in the Search field for "Automation" column
