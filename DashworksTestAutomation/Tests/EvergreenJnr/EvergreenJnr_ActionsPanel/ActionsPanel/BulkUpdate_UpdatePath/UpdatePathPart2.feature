@@ -205,17 +205,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Universe
 Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSecurity
-	When User clicks 'Projects' on the left-hand menu
-	When User navigate to Manage link
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username        | Password  |
-	| TestBulkUpdater | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username        | Password  |
+ 	| TestBulkUpdater | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -251,17 +244,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Universe
 Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSecurity
-	When User clicks 'Projects' on the left-hand menu
-	When User navigate to Manage link
-	When User cliks Logout link
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User login with following credentials:
-	| Username        | Password  |
-	| TestBulkUpdater | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User clicks the Switch to Evergreen link
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username        | Password  |
+ 	| TestBulkUpdater | m!gration |
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
