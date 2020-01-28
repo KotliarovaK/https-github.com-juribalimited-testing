@@ -9698,21 +9698,149 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 2213
-testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 2214
-testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 2215
-testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 2216
-testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2217
-testRunner.And("User selects \"1803: Owner (Saved List)\" filter from \"Saved List\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \"1803: Owner (Saved List)\" filter from \"Saved List\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2218
-testRunner.And("User checks \'Users with Device Count\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks \'Users with Device Count\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2219
-testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2220
-testRunner.Then("\"Owner: 1803 in list Users with Device Count\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Owner: 1803 in list Users with Device Count\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNewGroupsFilterIsDisplayedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS18759")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatNewGroupsFilterIsDisplayedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatNewGroupsFilterIsDisplayedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatNewGroupsFilterIsDisplayedCorrectlyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatNewGroupsFilterIsDisplayedCorrectly", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS18759",
+                        "Cleanup"});
+#line 2223
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2224
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2225
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2226
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2227
+ testRunner.When("User closes \"Suggested\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table149 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table149.AddRow(new string[] {
+                        "Group",
+                        "8"});
+#line 2228
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table149, "Then ");
+#line 2231
+ testRunner.When("User expands \"Group\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table150 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table150.AddRow(new string[] {
+                        "Group"});
+            table150.AddRow(new string[] {
+                        "Group Description"});
+            table150.AddRow(new string[] {
+                        "Group Display Name"});
+            table150.AddRow(new string[] {
+                        "Group Domain"});
+            table150.AddRow(new string[] {
+                        "Group Member Count"});
+            table150.AddRow(new string[] {
+                        "Group Name"});
+            table150.AddRow(new string[] {
+                        "Group Type"});
+            table150.AddRow(new string[] {
+                        "Group Username"});
+#line 2232
+ testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table150, "Then ");
+#line 2242
+ testRunner.When("user select \"Group\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2243
+ testRunner.Then("\"50 of 4510 shown\" results are displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2244
+ testRunner.When("User enters \"AU\\GAPP-A0121127\" text in Search field at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2245
+ testRunner.When("User clicks checkbox at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2246
+ testRunner.When("User enters \"AU\\GAPP-A012116D\" text in Search field at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2247
+ testRunner.When("User clicks checkbox at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2248
+ testRunner.When("User enters \"AU\\GAPP-A01211A7\" text in Search field at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2249
+ testRunner.When("User clicks checkbox at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table151 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ChipValue"});
+            table151.AddRow(new string[] {
+                        "AU\\GAPP-A0121127"});
+            table151.AddRow(new string[] {
+                        "AU\\GAPP-A012116D"});
+            table151.AddRow(new string[] {
+                        "1 more"});
+#line 2250
+ testRunner.Then("following chips value displayed for \'Search\' textbox", ((string)(null)), table151, "Then ");
+#line 2257
+ testRunner.When("User clicks \'ADD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2258
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 2259
+ testRunner.When("User create dynamic list with \"GroupList18759\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2260
+ testRunner.Then("\"GroupList18759\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
