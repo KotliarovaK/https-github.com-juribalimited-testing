@@ -404,8 +404,8 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "FALSE"});
 #line 76
- testRunner.Then("following Values are displayed in the dropdown for the \'Hide From End User\' field" +
-                    ":", ((string)(null)), table10, "Then ");
+ testRunner.Then("following Values are displayed in the dropdown for the \'Hide From End Users\' fiel" +
+                    "d:", ((string)(null)), table10, "Then ");
 #line 80
  testRunner.When("User clicks on edit button for \'Evergreen Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 81

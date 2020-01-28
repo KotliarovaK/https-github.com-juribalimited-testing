@@ -44,3 +44,21 @@ Scenario: EvergreenJnr_UsersList_CheckThatCheckboxesForAssociatedObjectsAredispl
 	| SelectedRowsName |
 	| 01BQIYGGUW5PRP6  |
 	Then select all rows checkbox is unchecked
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS19846 @Cleanup @Set_Default_Capacity_Unit @Universe
+Scenario: EvergreenJnr_UsersList_CheckThatTheAssociatedDevicesAreMovedToTheSelectedCapacityUnitInTheMoveCapacityUnitModalPopup
+	When User creates new Capacity Unit via api
+	| Name           | Description | IsDefault | Project                         |
+	| zen_DAS19846_1 | DAS19846    | false     | User Evergreen Capacity Project |
+	When User navigates to the 'User' details page for the item with '17815' ID
+	Then Details page for 'AKK984561 (Erik Q. Chan)' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	When User selects 'zen_DAS19846_1' option from 'Capacity Unit' autocomplete
+	When User clicks 'MOVE' button on popup
+	When User clicks 'MOVE' button on popup
+	Then 'The selected objects successfully moved to zen_DAS19846_1' text is displayed on inline success banner
+	When User clicks on edit button for 'Capacity Unit' field
+	Then 'zen_DAS19846_1' content is displayed in the 'Capacity Unit' column
