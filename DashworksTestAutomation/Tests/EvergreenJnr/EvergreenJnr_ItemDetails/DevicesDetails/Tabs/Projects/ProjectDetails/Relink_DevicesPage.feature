@@ -25,6 +25,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'RELINK' button on popup
 	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
+	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on inline success banner
 	Then Details page for 'QSFCLB19N5524S' item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field        | Data            |
