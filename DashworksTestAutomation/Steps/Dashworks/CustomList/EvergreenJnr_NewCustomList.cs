@@ -84,33 +84,29 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             _listsDetails.AddList($"{listName}");
         }
 
+        [When(@"User selects '(.*)' option from Save menu and creates '(.*)' list")]
+        public void WhenUserSelectsOptionFromSaveMenuAndCreatesListList(string optionName, string listName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButton("SAVE");
+            page.GetMenuButtonByName(optionName).Click();
+            page.GetTextbox("List Name").SendKeys(listName);
+            page.ClickButton("SAVE");
+
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            //Small wait for message display
+            Thread.Sleep(300);
+            _driver.WaitForElementToBeNotDisplayed(listElement.SuccessCreateMessage);
+            _listsDetails.AddList($"{listName}");
+        }
+
         [When(@"User clicks Save button on the list panel")]
         public void WhenUserClicksSaveButtonOnTheListPanel()
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitForElementToBeDisplayed(listElement.CreateNewListButton);
             listElement.CreateNewListButton.Click();
-        }
-
-        [When(@"User selects Save as new list option")]
-        public void WhenUserSelectsSaveAsNewListOption()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            listElement.SaveAsNewListButton.Click();
-        }
-
-        [When(@"User selects Save as dynamic list option")]
-        public void WhenUserSelectsSaveAsDynamicListOption()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            listElement.SaveAsDynamicListButton.Click();
-        }
-
-        [When(@"User selects '(.*)' option in Save menu")]
-        public void WhenUserSelectsOptionInSaveMenu(string menuItem)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            listElement.SaveAsMenuOption(menuItem).Click();
         }
 
         [When(@"User clicks Cancel button on the list panel")]
@@ -121,15 +117,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             listElement.CancelButton.Click();
         }
 
-        [Then(@"User type ""(.*)"" into Custom list name field")]
-        public void ThenUserTypeIntoCustomListNameField(string listName)
+        [When(@"User selects '(.*)' option from Save menu and types '(.*)' list name")]
+        public void ThenUserSelectsOptionFromSaveMenuAndTypesListName(string optionName, string listName)
         {
-            var listElement = _driver.NowAt<CustomListElement>();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButton("SAVE");
+            page.GetMenuButtonByName(optionName).Click();
+            page.GetTextbox("List Name").SendKeys(listName);
+        }
 
-            _driver.WaitForElementToBeDisplayed(listElement.SaveAsNewListButton);
-            listElement.SaveAsNewListButton.Click();
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            listElement.ListNameTextBox.SendKeys(listName);
+        [When(@"User selects '(.*)' option from Save menu")]
+        public void ThenUserSelectsOptionFromSaveMenu(string optionName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.ClickButton("SAVE");
+            page.GetMenuButtonByName(optionName).Click();
         }
 
         [Then(@"Save button is inactive for Custom list")]
@@ -213,19 +215,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
                 $"'{listName}' is not displayed in the list details panel");
             Utils.Verify.IsTrue(listElement.RemovingDependencyListMessage(warningText),
                 $"'{warningText}' message is not displayed in the list details panel");
-        }
-
-        [Then(@"User save changes in list with ""(.*)"" name")]
-        public void ThenUserSaveChangesInListWithName(string listName)
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
-            listElement.SaveAsDropdown.Click();
-            _driver.WaitForElementToBeDisplayed(listElement.SaveAsNewListButton);
-            listElement.SaveAsNewListButton.Click();
-            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
-            listElement.ListNameTextBox.SendKeys(listName);
-            listElement.SaveButton.Click();
         }
 
         [Then(@"Edit List menu is displayed")]

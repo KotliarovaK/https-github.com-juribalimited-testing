@@ -16,8 +16,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedA
 	| Red                |
 	Then "Compliance" filter is added to the list
 	Then Save to New Custom List element is displayed
-	When User clicks Save button on the list panel
-	Then User type "Test" into Custom list name field
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and types 'Test' list name
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	Then Save to New Custom List element is NOT displayed
@@ -29,9 +28,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
 	| Compliance          |
-	Then Save to New Custom List element is displayed	
-	When User clicks Save button on the list panel
-	Then User type "Test" into Custom list name field
+	Then Save to New Custom List element is displayed
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and types 'Test' list name
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	Then Save to New Custom List element is NOT displayed
@@ -44,8 +42,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	And User selects 'Create static list' in the 'Action' dropdown
 	Then User type "Test" into Static list name field
 	When User clicks the Actions button
-	And User clicks Save button on the list panel
-	And User selects Save as new list option
+	And User selects 'SAVE AS STATIC LIST' option from Save menu
 	Then Save button is inactive for Custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @DAS11951 @DAS12152 @DAS12595 @Cleanup
@@ -73,7 +70,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	Then "Static List TestName" list is displayed to user
 	When User clicks on 'Owner Display Name' column header
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
-	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
+	When User clicks 'SAVE' button and select 'UPDATE STATIC LIST' menu button
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "Custom List TestName" list

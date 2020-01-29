@@ -18,8 +18,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameN
 	Then Filters panel is displayed to the user
 	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
 	Then "City" filter is added to the list
-	When User clicks Save button on the list panel
-	Then User type "TestList993785" into Custom list name field
+	When User selects 'SAVE AS STATIC LIST' option from Save menu and types 'TestList993785' list name
 	Then Save button is inactive for Custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11655 @DAS11666 @DAS12156 @Cleanup
@@ -44,7 +43,7 @@ Scenario Outline: EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDispla
 	| Device Type        |
 	| Operating System   |
 	| Owner Display Name |
-	And URL contains "<URL>"
+	And URL contains '<URL>'
 
 Examples:
 	| OperatorValues | URL                          |

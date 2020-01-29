@@ -30,8 +30,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Build Date |
-	And User save changes in list with "NewDevice" name
-	And "NewDevice" list is displayed to user
+	When User selects 'SAVE AS NEW DYNAMIC LIST' option from Save menu and creates 'NewDevice' list
+	Then "NewDevice" list is displayed to user
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application1" list

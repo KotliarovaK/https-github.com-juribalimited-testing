@@ -55,8 +55,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 	When User click Edit button for "App Vendor" filter
 	Then table content is present
 	#18530
-	When User clicks Save button on the list panel
-	When User selects 'UPDATE DYNAMIC LIST' option in Save menu
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
 	Then table content is present
 	#==>18127
 	When User clicks the List Details button
