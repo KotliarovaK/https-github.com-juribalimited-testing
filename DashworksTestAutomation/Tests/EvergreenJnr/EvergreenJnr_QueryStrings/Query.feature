@@ -320,7 +320,7 @@ Examples:
 	#| Application Import     | evergreen/#/users?$filter=(applicationImport%20EQUALS%20('A01%20SMS%20Spoof§')%20WHERE%20(nioadobu%2Cnetdobu%2Cnetu%2Cnuodobu%2Cnubu)) | 41,339 |                                                                                                                                                                                                                         |
 	#| Application Name       | evergreen/#/users?$filter=(applicationName%20IS%20EMPTY%20()%20WHERE%20())                                                             | 2      |                                                                                                                                                                                                                         |
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS19348 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS19348 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterCheckForStaticListWithRecipientNotEmptyFilter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType      | QueryStringURL                                                           |
@@ -328,5 +328,16 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterCheckForStaticListWithRecipient
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Recipient Type is not Empty" is displayed in added filter info
+	Then Filter name is colored in the added filter info
+	Then Filter value is shown in bold in the added filter info
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS18759 @Cleanup
+Scenario: EvergreenJnr_QueryString_AdvancedFilterCheckForStaticListWithGroupFilter
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType      | QueryStringURL                                                                                  |
+	| Recipient Type | /evergreen/#/devices?$filter=(groupId%20EQUALS%20('26741'%2C'27716'%2C'27402')%20WHERE%20(inm)) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Device is not a member of Group AU\GAPP-A0121127, AU\GAPP-A012116D or AU\GAPP-A01211A7" is displayed in added filter info
 	Then Filter name is colored in the added filter info
 	Then Filter value is shown in bold in the added filter info

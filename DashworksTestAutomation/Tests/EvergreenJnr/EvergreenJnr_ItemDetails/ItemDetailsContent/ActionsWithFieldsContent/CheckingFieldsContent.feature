@@ -216,7 +216,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 	| Field             | Data |
 	| Sticky Compliance |      |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849 @Univers
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18849 @DAS19753 @Univers
 Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
 	Then Details page for 'ACDSee for Windows 95' item is displayed to the user
@@ -224,19 +224,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplay
 	Then following content is displayed on the Details Page
 	| Title               | Value |
 	| Hide From End Users | FALSE |
-	When User selects 'TRUE' in the dropdown for the 'Hide From End User' field
-	Then 'Hide from end user successfully changed' text is displayed on inline success banner
+	When User selects 'TRUE' in the dropdown for the 'Hide From End Users' field
+	Then 'Hide from end users successfully changed' text is displayed on inline success banner
 	When User clicks refresh button in the browser
 	Then following content is displayed on the Details Page
 	| Title               | Value |
 	| Hide From End Users | TRUE  |
-	When User selects 'FALSE' in the dropdown for the 'Hide From End User' field
-	Then 'Hide from end user successfully changed' text is displayed on inline success banner
+	When User selects 'FALSE' in the dropdown for the 'Hide From End Users' field
+	Then 'Hide from end users successfully changed' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
 	| Title               | Value |
 	| Hide From End Users | FALSE |
-
-
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538
 Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFieldForUserWithSpecificAccess

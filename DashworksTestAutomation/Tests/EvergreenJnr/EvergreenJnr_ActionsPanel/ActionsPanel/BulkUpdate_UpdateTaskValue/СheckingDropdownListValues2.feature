@@ -47,8 +47,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	| None       |
 	| Slot 17639 |
 
-#Ann.Ilchenko 3/10/19: fixed on 'radiant'
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15618 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15618
 Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabledDateTasks
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button

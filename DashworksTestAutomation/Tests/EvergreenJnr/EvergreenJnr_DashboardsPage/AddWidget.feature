@@ -312,3 +312,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavi
 	When User waits for '3' seconds
 	When User waits for '3' seconds
 	Then Profile page is displayed to user
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18759 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnGroupsFilteredList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User add "Group" filter where type is "Equals" without added column and "AU\GAPP-A0121127" Lookup option
+	When User clicks Save button on the list panel
+	When User create dynamic list with "ListForDAS18759_1" name on "Devices" page
+	Then "ListForDAS18759_1" list is displayed to user
+	When Dashboard with 'DAS18759_Dashboard' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button
+	When User creates new Widget
+	| WidgetType | Title               | List              | SplitBy  | AggregateFunction | AggregateBy | OrderBy       |
+	| Bar        | WidgetForDAS18759_1 | ListForDAS18759_1 | Hostname | Count distinct    | Hostname    | Hostname DESC |
+	Then 'WidgetForDAS18759_1' Widget is displayed to the user
+	When User clicks Dashboards Details icon on Dashboards page
+	When User expands the list of shared lists
+	Then User sees list icon displayed for 'WidgetForDAS18759_1' widget in List section of Dashboards Details

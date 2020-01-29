@@ -652,8 +652,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User create dynamic list with "Das15949_list" name on "Devices" page
 	#create automation
 	And User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope         | Run    |
-	| 15949_Automation | DAS15949    | true   | false              | DAS15949_List | Manual |
+	| AutomationName   | Description  | Active | StopOnFailedAction | Scope         | Run    |
+	| 15949_Automation | testDAS15949 | true   | false              | DAS15949_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#create action #1
