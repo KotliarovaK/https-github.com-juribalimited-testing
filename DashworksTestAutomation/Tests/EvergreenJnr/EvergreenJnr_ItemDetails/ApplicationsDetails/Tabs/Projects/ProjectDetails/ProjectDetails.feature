@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurity
 	| Important     |
 	| Not Important |
 	| Uncategorised |
-	Then following Values are displayed in the dropdown for the 'Hide From End User' field:
+	Then following Values are displayed in the dropdown for the 'Hide From End Users' field:
 	| Value |
 	| TRUE  |
 	| FALSE |
