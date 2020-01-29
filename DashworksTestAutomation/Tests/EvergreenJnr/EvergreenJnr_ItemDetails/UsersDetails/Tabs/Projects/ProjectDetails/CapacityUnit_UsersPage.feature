@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatValueForCapacityUnitIsChangingSuccessf
 Scenario: EvergreenJnr_UsersList_CheckThatCheckboxesForAssociatedObjectsAredisplayedInChangeCapacityPopup
 	When User navigates to the 'User' details page for the item with '537' ID
 	Then Details page for 'CVS3269200' item is displayed to the user
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
