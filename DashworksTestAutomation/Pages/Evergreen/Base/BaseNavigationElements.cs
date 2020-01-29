@@ -131,6 +131,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return submenuCount.Contains("disabled");
         }
 
+        public bool IsSubmenuActive(string subMenu)
+        {
+            var submenuCount = GetSubMenuByName(subMenu).FindElement(By.XPath("./..")).GetAttribute("class");
+            return submenuCount.Contains("active");
+        }
+
         #endregion
 
         #region Expanded/Collapsed state

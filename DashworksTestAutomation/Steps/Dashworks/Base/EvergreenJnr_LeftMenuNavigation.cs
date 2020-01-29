@@ -156,5 +156,23 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Active
+
+        [Then(@"'(.*)' left submenu item is active")]
+        public void ThenLeftSubmenuItemIsActive(string submenu)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsTrue(element.IsSubmenuActive(submenu), $"'{submenu}' submenu is not active");
+        }
+
+        [Then(@"'(.*)' left submenu item is not active")]
+        public void ThenLeftSubmenuItemIsNotActive(string submenu)
+        {
+            var element = _driver.NowAt<BaseNavigationElements>();
+            Verify.IsFalse(element.IsSubmenuActive(submenu), $"'{submenu}' submenu is active");
+        }
+
+        #endregion
     }
 }
