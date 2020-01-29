@@ -2258,3 +2258,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewGroupsFilterIsDisplayedCorrectly
 	Then There are no errors in the browser console
 	When User create dynamic list with "GroupList18759" name on "Devices" page
 	Then "GroupList18759" list is displayed to user
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS19773
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoUnknownOptionAvailableForDeviceFilter
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When user select "Device" filter
+	When User enters "Unknown" text in Search field at selected Lookup Filter
+	Then No options are displayed for selected Lookup Filter

@@ -87,20 +87,23 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	And 'Offboarding device 03AK1ZP1C9MPFV. Offboarding an object deletes all project related information about it.' text is displayed on popup
 
 #tag 'not_rady' added because need to create Cleanup (DAS-18070)
-@Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS17912 @Cleanup @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS17912 @DAS19836 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyQueuedForTheOffboarding
-	When User navigates to the 'Device' details page for '03AK1ZP1C9MPFV' item
-	Then Details page for '03AK1ZP1C9MPFV' item is displayed to the user
-	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Device' details page for '00CWZRC4UK6W20' item
+	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	And User clicks 'OFFBOARD' button 
 	And User clicks 'OFFBOARD' button on popup 
 	And User clicks 'OFFBOARD' button on popup 
-	Then 'The device was successfully queued for offboarding from USE ME FOR AUTOMATION(DEVICE SCHDLD)' text is displayed on inline success banner
+	Then 'The selected objects were successfully queued for offboarding from Windows 7 Migration (Computer Scheduled Project)' text is displayed on inline success banner
 	When User navigates to the 'Projects Summary' left submenu item
 	Then inline info banner is not displayed
 	Then inline success banner is not displayed
+	Then following Values are not displayed in the 'Item Details Project' dropdown:
+	| Options                                          |
+	| Windows 7 Migration (Computer Scheduled Project) |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18036
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly

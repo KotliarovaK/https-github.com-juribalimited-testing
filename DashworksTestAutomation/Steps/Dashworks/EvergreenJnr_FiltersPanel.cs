@@ -258,6 +258,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{value} is not displayed for that filter");
         }
 
+        [Then(@"No options are displayed for selected Lookup Filter")]
+        public void ThenNoOptionsDisplayedForSelectedLookupFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Verify.IsFalse(filterElement.IsLookupFilterHasOptionsExpanded(),
+                $"Options are displayed for that filter");
+        }
+
         [When(@"User clicks checkbox at selected Lookup Filter")]
         public void WhenUserClicksCheckboxAtSelectedLookupFilter()
         {
