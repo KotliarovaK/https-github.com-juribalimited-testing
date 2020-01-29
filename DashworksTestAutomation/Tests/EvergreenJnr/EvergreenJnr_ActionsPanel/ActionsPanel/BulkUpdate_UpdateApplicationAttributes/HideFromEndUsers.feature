@@ -20,6 +20,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersIsVisible
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
 	Then 'No change' content is displayed in 'Hide From End Users' dropdown
 	Then 'UPDATE' button is disabled
+	Then 'CANCEL' button is not disabled
 	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 	Then following Values are displayed in the 'Hide From End Users' dropdown:
 	| Options   |
@@ -32,6 +33,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersIsVisible
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'In Catalog' dropdown
 	Then 'No change' content is displayed in 'Hide From End Users' dropdown
+	Then 'CANCEL' button is not disabled
 	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 	Then following Values are displayed in the 'Hide From End Users' dropdown:
 	| Options   |

@@ -185,9 +185,19 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19312 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                                                     |
+	| Windows Phone Common Packaging and Test Tools (NT_x86_fre) |
+	When User clicks the Actions button
+	When User selects all rows on the grid
+	When User selects 'Create static list' in the 'Action' dropdown
+	When User create static list with "StaticList19312" name
+	Then "StaticList19312" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19312_Automation | 19312       | true   | false              | All Applications | Manual |
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope           | Run    |
+	| 19312_Automation | 19312       | true   | false              | StaticList19312 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -210,3 +220,41 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
 	Then 'Core' content is displayed in the 'UseMeForAu: Criticality' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19312 @Cleanup @Universe
+Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNowForEvergreen
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                                                        |
+	| Microsoft Visual C++ 2015 x64 Additional Runtime - 14.0.23026 |
+	When User clicks the Actions button
+	When User selects all rows on the grid
+	When User selects 'Create static list' in the 'Action' dropdown
+	When User create static list with "TestList19312" name
+	Then "TestList19312" list is displayed to user
+	When User creates new Automation via API and open it
+	| AutomationName        | Description | Active | StopOnFailedAction | Scope         | Run    |
+	| Test_19312_Automation | test19312   | true   | false              | TestList19312 | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	And User enters '19312_Action' text to 'Action Name' textbox
+	And User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Critical' in the 'Criticality' dropdown
+	When User clicks 'CREATE' button
+	#Run Automations
+	When User clicks 'Automations' header breadcrumb
+	When User enters "Test_19312_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for 'Test_19312_Automation' item from 'Automation' column
+	When 'Test_19312_Automation' automation '19312_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User refreshes agGrid
+	When User enters "Test_19312_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	Then 'Critical' content is displayed in the 'Criticality' column
