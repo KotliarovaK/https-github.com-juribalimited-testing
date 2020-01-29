@@ -617,3 +617,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFilterAppliesWhenDrilledDownCardW
 	Then 'WidgetForDAS18939' Widget is displayed to the user
 	When User clicks text in card widget
 	Then table content is present
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19115 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedWhenCreatingWidgetBasedOnEmptyStage
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "zUserAutom: Stage 1" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Empty          |
+	When User create dynamic list with "DAS19115_List" name on "Devices" page
+	Then "DAS19115_List" list is displayed to user
+	When Dashboard with 'Dashboard_DAS19115' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title             | List          | Type      | AggregateFunction | AggregateBy         |
+	| Card       | WidgetForDAS19115 | DAS19115_List | Aggregate | Severity          | zUserAutom: Stage 1 |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button
+	Then 'WidgetForDAS19115' Widget is displayed to the user
+	Then There are no errors in the browser console
