@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
@@ -81,6 +78,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             {
                 ContextPanelArrow(contextPanelType, contextPanelName).Click();
             }
+        }
+
+        public void CheckBuilderContextPanelItemDisplayState(string contextPanelType, string contextPanelName, bool expectedDisplayState)
+        {
+            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}";
+            Verify.AreEqual(expectedDisplayState, Driver.IsElementDisplayed(Driver.FindElement(By.XPath(selector)),
+                WebDriverExtensions.WaitTime.Short), $"Builder Context Panel Item Display State isn't: {expectedDisplayState}");
         }
     }
 }

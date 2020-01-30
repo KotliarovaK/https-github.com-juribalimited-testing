@@ -51,5 +51,21 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
+
+        [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void ThenUserSeesItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+
+            rightSidePanel.CheckBuilderContextPanelItemDisplayState(contextPanelType, contextPanelName, true);
+        }
+
+        [Then(@"User doesn't see item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void ThenUserDoesntSeeItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+
+            rightSidePanel.CheckBuilderContextPanelItemDisplayState(contextPanelType, contextPanelName, false);
+        }
     }
 }
