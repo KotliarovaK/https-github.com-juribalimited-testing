@@ -445,7 +445,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter
 	And User clicks Add New button on the Filter panel
 	And User selects "1803: Owner (Saved List)" filter from "Saved List" category
 	And User checks 'Users with Device Count' checkbox
-	And User clicks Add New button on the Filter panel
+	And User clicks 'ADD' button
 	Then "Owner: 1803 in list Users with Device Count" is displayed in added filter info
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812 @DAS12056
