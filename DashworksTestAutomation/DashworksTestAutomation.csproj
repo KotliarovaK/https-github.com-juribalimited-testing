@@ -122,8 +122,8 @@
     <Compile Include="DTO\Evergreen\Admin\Readiness\ReadinessDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\AllPagesOfSelfServiceDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\ComponentsOfSelfServicePageDto.cs" />
-    <Compile Include="DTO\Evergreen\Admin\SelfService\ListOfComponentsTypesForSelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
@@ -379,6 +379,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceMethods.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\ErrorMessagePage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\SelfServiceAgGrid.cs" />
@@ -992,6 +993,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DeleteRings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\SelfServiceBuilderTestApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelfServiceBuilderTestApi.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfService.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2273,6 +2279,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\SelfServiceBuilderTestApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SelfServiceBuilderTestApi.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfService.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateSelfService.feature.cs</LastGenOutput>
@@ -2952,6 +2962,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DTO\RuntimeVariables\SelfService\Builder\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Details\" />
