@@ -80,20 +80,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrl")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrl")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS18941")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrl()
+        [NUnit.Framework.CategoryAttribute("DAS19821")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrl()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrlInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrlInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -112,14 +113,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrlInternal()
+        private void EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrlInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrl", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrl", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "SelfService",
-                        "DAS18941"});
+                        "DAS18941",
+                        "DAS19821"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -138,24 +140,32 @@ this.FeatureBackground();
 #line 15
  testRunner.Then("Page with \'Self Service Settings\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
- testRunner.When("User enters \'https://autotest.corp.juriba.com\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
- testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
+ testRunner.When("User enters \'https://autotest.corp.juriba.com\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.Then("\'Self Services\' left submenu item is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 21
+ testRunner.Then("\'Self Service Settings\' left submenu item is not active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
  testRunner.Then("\'Self service settings have been updated\' text is displayed on inline success ban" +
                     "ner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 19
+#line 23
  testRunner.When("User navigates to the \'Self Service Settings\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
+#line 24
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
+#line 25
  testRunner.Then("\'https://autotest.corp.juriba.com\' content is displayed in \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 22
+#line 26
  testRunner.When("User enters \'https://autotest.corp.juriba.com/updated\' text to \'Base URL\' textbox" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
+#line 27
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 24
+#line 28
  testRunner.Then("self service base url is equals to \'https://autotest.corp.juriba.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -169,6 +179,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS18941")]
+        [NUnit.Framework.CategoryAttribute("DAS19821")]
         public virtual void EvergreenJnr_AdminPage_CheckBaseUrlValidationMessages()
         {
             System.Exception lastException = null;
@@ -202,74 +213,150 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "SelfService",
-                        "DAS18941"});
-#line 27
+                        "DAS18941",
+                        "DAS19821"});
+#line 31
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 28
+#line 32
  testRunner.When("User sets self service base url as \'https://errormessagevalidation.corp.juriba.co" +
                     "m\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
- testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
- testRunner.When("User navigates to the \'Self Service Settings\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
- testRunner.When("User enters \'\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
-                    "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 36
- testRunner.When("User enters \'https://\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.When("User navigates to the \'Self Service Settings\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User enters \'\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
- testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
-                    "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
- testRunner.When("User enters \'https://test\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
+                    "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 42
- testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
-                    "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User enters \'https://\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 44
- testRunner.When("User enters \'https://test.c\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 46
  testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
                     "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 47
+ testRunner.When("User enters \'https://test\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48
- testRunner.When("User enters \'https://te†st.com\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 49
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 50
  testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
                     "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 51
+ testRunner.When("User enters \'https://test.c\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
- testRunner.When("User enters \'//test.com\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 53
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 54
+#line 53
  testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
                     "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 55
+ testRunner.When("User enters \'https://te†st.com\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
- testRunner.When("User enters \'http://okurl.com\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 57
- testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 58
- testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
+                    "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
+ testRunner.When("User enters \'//test.com\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 60
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.Then("\'Ensure the Base URL is in the format: http(s)://www.address.com\' error message i" +
+                    "s displayed for \'Base URL\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 63
+ testRunner.When("User enters \'http://okurl.com/\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 64
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 65
+ testRunner.Then("tooltip is not displayed for \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
  testRunner.Then("\'Self service settings have been updated\' text is displayed on inline success ban" +
                     "ner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 60
+#line 68
  testRunner.Then("self service base url is equals to \'http://okurl.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditing")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS19821")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditing()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditing", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS19821"});
+#line 71
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 72
+ testRunner.When("User sets self service base url as \'https://cancelediting.corp.juriba.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 73
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 75
+ testRunner.When("User navigates to the \'Self Service Settings\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 76
+ testRunner.When("User enters \'https://testcancelation.corp.juriba.com\' text to \'Base URL\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 77
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 78
+ testRunner.Then("\'Self Services\' left submenu item is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 79
+ testRunner.Then("\'Self Service Settings\' left submenu item is not active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 80
+ testRunner.Then("self service base url is equals to \'https://cancelediting.corp.juriba.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

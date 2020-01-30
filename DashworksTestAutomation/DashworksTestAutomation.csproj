@@ -231,6 +231,8 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseHeaderElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
@@ -378,6 +380,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceMethods.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\ErrorMessagePage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\SelfServiceAgGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Settings\SettingsApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Slots\AfterScenario\RemoveSlotAfterScenario.cs" />
@@ -1014,6 +1017,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EditSelfService.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndClient\EndClient.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EndClient.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfServiceAgGrid.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2294,6 +2302,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EditSelfService.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditSelfService1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndClient\EndClient.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EndClient.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfServiceAgGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

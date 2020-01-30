@@ -17,9 +17,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//a[text()='Teams']")]
         public IWebElement Teams { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Buckets']")]
-        public IWebElement Buckets { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div/a[text()='Automations']")]
         public IWebElement Automations { get; set; }
 

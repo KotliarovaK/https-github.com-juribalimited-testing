@@ -1859,7 +1859,7 @@ this.FeatureBackground();
 #line 447
  testRunner.And("User checks \'Users with Device Count\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 448
- testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \'ADD\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 449
  testRunner.Then("\"Owner: 1803 in list Users with Device Count\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
