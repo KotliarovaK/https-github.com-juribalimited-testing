@@ -166,8 +166,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavi
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Device Owner (Saved List)" filter where type is "In list" with selected Expanded Checkboxes and following Association:
-	| SelectedCheckboxes                | Association    |
-	| Users Readiness Columns & Filters | Used on device |
+	| SelectedCheckboxes      | Association    |
+	| Users with Device Count | Used on device |
 	Then "100" rows are displayed in the agGrid
 	When User creates 'Test_Application_List_DAS_17472' dynamic list
 	Then "Test_Application_List_DAS_17472" list is displayed to user

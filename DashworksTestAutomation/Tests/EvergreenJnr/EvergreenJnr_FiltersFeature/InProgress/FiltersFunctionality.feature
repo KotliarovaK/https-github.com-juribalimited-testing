@@ -661,22 +661,7 @@ Examples:
 	| Users     | NY          |
 	| Mailboxes | VIC         |
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11824
-Scenario: EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingSpecialCharactersIntoTheApplicationNameFilterAndRefreshingThePage
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Application Name" filter where type is "Equals" with following Value and Association:
-	| Values | Association            |
-	| __     | Entitled to device     |
-	Then "Application whose Name" filter is added to the list
-	When User clicks refresh button in the browser
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User clicks Filter Expression icon in Filter Panel
-	Then "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container
+
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12202 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfterApplyingAStaticListWithApplicationSavedListFilter

@@ -102,3 +102,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTooltipForDisabledRelinkButtonI
 	When User clicks 'RELINK' button
 	Then popup is displayed to User
 	Then Button 'RELINK' has 'Select an application' tooltip on popup
+
+@Evergreen @Application @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323 @Universe
+Scenario: EvergreenJnr_ApplicationList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
+	When User navigates to the 'Application' details page for '7-Zip 16.04 (x64)' item
+	Then Details page for '7-Zip 16.04 (x64)' item is displayed to the user
+	When User selects 'Email Migration' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button
+	Then only options having search term '230' are displayed in 'Application' autocomplete

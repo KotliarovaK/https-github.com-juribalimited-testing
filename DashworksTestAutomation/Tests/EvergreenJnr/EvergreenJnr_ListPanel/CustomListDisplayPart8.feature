@@ -83,8 +83,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAft
 	Then '<ListLabel>' list should be displayed to the user
 	When User clicks on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	When User clicks Save button on the list panel
-	And User selects Save as new list option
+	When User clicks 'SAVE' button and select 'SAVE AS STATIC LIST' menu button
 	Then Save and Cancel buttons are displayed on the list panel
 	When User clicks Cancel button on the list panel
 	Then Save and Cancel buttons are not displayed on the list panel
@@ -97,8 +96,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAft
 	Then ColumnName is added to the list
 	| ColumnName  |
 	| <AddColumn> |
-	When User clicks Save button on the list panel
-	When User selects Save as new list option
+	When User clicks 'SAVE' button and select 'SAVE AS NEW DYNAMIC LIST' menu button
 	Then Save and Cancel buttons are displayed on the list panel
 	When User clicks Cancel button on the list panel
 	Then Save and Cancel buttons are not displayed on the list panel

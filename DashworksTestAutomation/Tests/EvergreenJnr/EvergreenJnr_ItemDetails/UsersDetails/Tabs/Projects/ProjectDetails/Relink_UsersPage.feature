@@ -64,3 +64,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatTooltipForDisabledRelinkButtonIsDispla
 	When User clicks 'RELINK' button
 	Then popup is displayed to User
 	Then Button 'RELINK' has 'Select a user' tooltip on popup
+
+@Evergreen @User @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323 @Universe
+Scenario: EvergreenJnr_UserList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
+	When User navigates to the 'User' details page for '0231387EA0EE4B428FE' item
+	Then Details page for '0231387EA0EE4B428FE' item is displayed to the user
+	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'RELINK' button
+	Then only options having search term '551' are displayed in 'User' autocomplete

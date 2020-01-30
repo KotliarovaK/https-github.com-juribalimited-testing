@@ -234,7 +234,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	Then 'UPDATE' button is displayed on inline tip banner
 	Then 'CANCEL' button is displayed on inline tip banner
 	When User clicks 'UPDATE' button
-	Then Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
+	Then inline success banner is displayed
 	#wait for the process to complete
 	When User waits for '3' seconds
 	When User refreshes agGrid
