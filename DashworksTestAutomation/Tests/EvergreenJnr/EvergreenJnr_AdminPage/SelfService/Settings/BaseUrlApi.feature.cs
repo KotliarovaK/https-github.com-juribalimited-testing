@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
+namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.SelfService.Settings
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("FilterExpression")]
-    public partial class FilterExpressionFeature
+    [NUnit.Framework.DescriptionAttribute("BaseUrlApi")]
+    public partial class BaseUrlApiFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "FilterExpression.feature"
+#line 1 "BaseUrlApi.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FilterExpression", "\tRuns Filter Expression related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BaseUrlApi", "\tEdit and Save Self Service base url via API", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -73,25 +73,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
         {
 #line 4
 #line 5
- testRunner.Given("User is logged in to the Evergreen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("User is logged in to the Evergreen via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrlApi")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("DAS17016")]
-        public virtual void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected()
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS18941")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrlApi()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelectedInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrlApiInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -110,41 +111,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
             }
         }
 
-        private void EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelectedInternal()
+        private void EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrlApiInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesPage_CheckThatFilterExpressionCanBeSelected", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUserUserCanEditBaseUrlApi", null, new string[] {
                         "Evergreen",
-                        "Evergreen_FiltersFeature",
-                        "DAS17016"});
-#line 9
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS18941",
+                        "API"});
+#line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
+#line 9
+ testRunner.When("User sets self service base url as \'https://api.test.corp.juriba.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
- testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
- testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
-            table1.AddRow(new string[] {
-                        "00I0COBFWHOF27"});
-#line 14
- testRunner.When("User add \"Hostname\" filter where type is \"Equals\" with added column and following" +
-                    " value:", ((string)(null)), table1, "When ");
-#line 17
- testRunner.When("User clicks Filter Expression icon in Filter Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 18
- testRunner.Then("Filter Expression displayed within Filter Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 19
- testRunner.When("User double clicks Filter Expression text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
- testRunner.Then("\'00I0COBFWHOF27\' text is highlighted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("self service base url is equals to \'https://api.test.corp.juriba.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

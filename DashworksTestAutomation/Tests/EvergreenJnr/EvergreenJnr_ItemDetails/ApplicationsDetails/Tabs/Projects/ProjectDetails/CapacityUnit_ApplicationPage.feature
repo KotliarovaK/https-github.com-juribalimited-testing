@@ -1,5 +1,5 @@
-﻿Feature: ProjectDetails
-	Runs related tests for Project Details page
+﻿Feature: CapacityUnit_ApplicationsPage
+	Runs related tests for Capacity Unit fields
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatValueForCapacityUnitIsChangingS
 	When User creates new Capacity Unit via api
 	| Name          | Description | IsDefault | Project                      |
 	| cu_DAS19538_3 | DAS19538    | false     | I-Computer Scheduled Project |
-	When User navigates to the 'Application' details page for '20040610sqlserverck' item
-	Then Details page for '20040610sqlserverck' item is displayed to the user
+	When User navigates to the 'Application' details page for the item with '419' ID
+	Then Details page for 'ACDSee 4.0' item is displayed to the user
 	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatValueForCapacityUnitIsChangingS
 	When User selects 'cu_DAS19538_3' option from 'Capacity Unit' autocomplete
 	When User clicks 'MOVE' button on popup
 	When User clicks 'MOVE' button on popup
-	Then 'Application successfully moved to cu_DAS19538_3' text is displayed on inline success banner
+	Then 'The selected objects successfully moved to cu_DAS19538_3' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
 	| Title         | Value         |
 	| Capacity Unit | cu_DAS19538_3 |

@@ -42,8 +42,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	Then "TestList4A22A5" list is displayed to user
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
-	And User save changes in list with "UnbelievableTestList" name
-	And "UnbelievableTestList" list is displayed to user
+	When User selects 'SAVE AS NEW STATIC LIST' option from Save menu and creates 'UnbelievableTestList' list
+	Then "UnbelievableTestList" list is displayed to user
 
 @Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @DAS13838 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder

@@ -746,7 +746,7 @@ this.FeatureBackground();
                         "SelectedCheckboxes",
                         "Association"});
             table14.AddRow(new string[] {
-                        "Users Readiness Columns & Filters",
+                        "Users with Device Count",
                         "Used on device"});
 #line 168
  testRunner.When("User add \"Device Owner (Saved List)\" filter where type is \"In list\" with selected" +

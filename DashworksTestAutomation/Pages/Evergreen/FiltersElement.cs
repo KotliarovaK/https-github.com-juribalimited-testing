@@ -562,6 +562,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public bool IsLookupFilterHasOptionsExpanded()
+        {
+            var selector = By.XPath($".//input[@placeholder='Search']/preceding::div[@class='dropdown-select input-wrapper']//ul//mat-checkbox");
+            return Driver.IsElementDisplayed(selector);
+        }
+
         public IWebElement GetCloseChipButtonByName(string chipName)
         {
             var selector = By.XPath($".//li//span[text()='{chipName}']/ancestor::li/button");

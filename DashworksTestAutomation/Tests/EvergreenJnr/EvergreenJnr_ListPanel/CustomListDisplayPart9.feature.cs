@@ -238,7 +238,8 @@ this.FeatureBackground();
 #line 33
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table4, "Then ");
 #line 36
- testRunner.When("User creates \'CustomList5588\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'SAVE AS NEW STATIC LIST\' option from Save menu and creates \'CustomL" +
+                    "ist5588\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
  testRunner.Then("\"CustomList5588\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 38
