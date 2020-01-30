@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using RestSharp;
 using TechTalk.SpecFlow;
@@ -102,6 +103,49 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             {
                 throw new Exception($"ADD EXCEPTION HERE: {response.StatusCode}, {response.ErrorMessage}");
             }
+        }
+
+        [Then(@"Self Service Page with below data is created")]
+        public void ThenSelfServicePageWithBelowDataIsCreated(Table table)
+        {
+            var ssPage = table.CreateInstance<SelfServicePageDto>();
+
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{ssPage.ServiceId}/pages";
+            var request = requestUri.GenerateRequest();
+
+            var response = _client.Evergreen.Get(request);
+
+            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            {
+                throw new Exception($"ADD EXCEPTION HERE: {response.StatusCode}, {response.ErrorMessage}");
+            }
+
+            var content = response.Content;
+            var createdSsPage = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content).First();
+
+            Verify.AreEqual(ssPage.Name, createdSsPage.Name, "ADD MESSAGE HERE");
+            Verify.AreEqual(ssPage.DisplayName, createdSsPage.DisplayName, "ADD MESSAGE HERE");
+            Verify.AreEqual(ssPage.ShowInSelfService, createdSsPage.ShowInSelfService, "ADD MESSAGE HERE");
+        }
+
+        [Then(@"'(.*)' Self Service does not contains any pages")]
+        public void ThenSelfServiceDoesNotContainsAnyPages(string serviceIdentifier)
+        {
+            var ss = new SelfServiceDto() { ServiceIdentifier = serviceIdentifier };
+
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{ss.ServiceId}/pages";
+            var request = requestUri.GenerateRequest();
+
+            var response = _client.Evergreen.Get(request);
+
+            if (!response.StatusCode.Equals(HttpStatusCode.OK))
+            {
+                throw new Exception($"ADD EXCEPTION HERE: {response.StatusCode}, {response.ErrorMessage}");
+            }
+
+            var content = response.Content;
+
+            Verify.AreEqual("[]", content, "ADD ERROR MESSAGE");
         }
     }
 }

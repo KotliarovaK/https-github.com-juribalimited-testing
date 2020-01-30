@@ -75,6 +75,6 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
         public string UserListId { get; set; }
 
         [JsonProperty("components")]
-        public string Components { get; set; }
+        public List<string> Components { get; set; }
     }
 }

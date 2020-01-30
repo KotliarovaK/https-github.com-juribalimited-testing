@@ -169,26 +169,54 @@ this.FeatureBackground();
                         "3",
                         "TestPageSsDisplay",
                         "true"});
-#line 12
+#line 13
  testRunner.When("User creates new Self Service Page cia API", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ServiceIdentifier",
                         "Name",
-                        "ObjectTypeId",
                         "DisplayName",
                         "ShowInSelfService"});
             table3.AddRow(new string[] {
                         "id1906113",
+                        "TestPageSs",
+                        "TestPageSsDisplay",
+                        "true"});
+#line 16
+ testRunner.Then("Self Service Page with below data is created", ((string)(null)), table3, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceIdentifier",
+                        "Name",
+                        "ObjectTypeId",
+                        "DisplayName",
+                        "ShowInSelfService"});
+            table4.AddRow(new string[] {
+                        "id1906113",
                         "TestPageSs_New",
                         "3",
                         "TestPageSsDisplay_New",
-                        "true"});
-#line 15
- testRunner.When("User updates \'TestPageSs\' Self Service Page via API", ((string)(null)), table3, "When ");
-#line 18
+                        "false"});
+#line 20
+ testRunner.When("User updates \'TestPageSs\' Self Service Page via API", ((string)(null)), table4, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceIdentifier",
+                        "Name",
+                        "DisplayName",
+                        "ShowInSelfService"});
+            table5.AddRow(new string[] {
+                        "id1906113",
+                        "TestPageSs_New",
+                        "TestPageSsDisplay_New",
+                        "false"});
+#line 23
+ testRunner.Then("Self Service Page with below data is created", ((string)(null)), table5, "Then ");
+#line 27
  testRunner.When("User deletes \'TestPageSs_New\' Self Service Page with \'id1906113\' dentifier via AP" +
                     "I", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+ testRunner.Then("\'id1906113\' Self Service does not contains any pages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
