@@ -172,6 +172,24 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User creates new Self Service Page cia API", ((string)(null)), table2, "When ");
 #line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceIdentifier",
+                        "Name",
+                        "ObjectTypeId",
+                        "DisplayName",
+                        "ShowInSelfService"});
+            table3.AddRow(new string[] {
+                        "id1906113",
+                        "TestPageSs_New",
+                        "3",
+                        "TestPageSsDisplay_New",
+                        "true"});
+#line 15
+ testRunner.When("User updates \'TestPageSs\' Self Service Page via API", ((string)(null)), table3, "When ");
+#line 18
+ testRunner.When("User deletes \'TestPageSs_New\' Self Service Page with \'id1906113\' dentifier via AP" +
+                    "I", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             this.ScenarioCleanup();
         }
 

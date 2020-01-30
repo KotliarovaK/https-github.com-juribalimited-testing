@@ -10,7 +10,29 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
 {
     public class SelfServicePageDto
     {
-        public string ServiceIdentifier { private get; set; }
+        public string ServiceIdentifier { get; set; }
+
+        private int _pid;
+        [JsonProperty("pageId")]
+        public int PageId
+        {
+            get
+            {
+                if (_pid.Equals(0))
+                {
+                    try
+                    {
+                        _pid = DatabaseHelper.GetSelfServicePageId(this);
+                    }
+                    catch
+                    {
+                        //Ignore for case when Page is not created
+                    }
+                }
+                return _pid;
+            }
+            set { _pid = value; }
+        }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -37,10 +59,22 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
         [JsonProperty("objectTypeId")]
         public int ObjectTypeId { get; set; }
 
+        [JsonProperty("order")]
+        public int Order { get; set; }
+
         [JsonProperty("displayName")]
         public string DisplayName { get; set; }
 
         [JsonProperty("showInSelfService")]
         public bool ShowInSelfService { get; set; }
+
+        [JsonProperty("deviceListId")]
+        public string DeviceListId { get; set; }
+
+        [JsonProperty("userListId")]
+        public string UserListId { get; set; }
+
+        [JsonProperty("components")]
+        public string Components { get; set; }
     }
 }

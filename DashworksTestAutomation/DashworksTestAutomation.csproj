@@ -123,6 +123,7 @@
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\AllPagesOfSelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePageDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePages.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\ComponentsOfSelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />

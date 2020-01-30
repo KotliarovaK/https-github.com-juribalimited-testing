@@ -12,3 +12,7 @@ Scenario: EvergreenJnr_AdminPage_fIRSTtEST
 	When User creates new Self Service Page cia API
 	| ServiceIdentifier | Name       | ObjectTypeId | DisplayName       | ShowInSelfService |
 	| id1906113         | TestPageSs | 3            | TestPageSsDisplay | true              |
+	When User updates 'TestPageSs' Self Service Page via API
+	| ServiceIdentifier | Name           | ObjectTypeId | DisplayName           | ShowInSelfService |
+	| id1906113         | TestPageSs_New | 3            | TestPageSsDisplay_New | true              |
+	When User deletes 'TestPageSs_New' Self Service Page with 'id1906113' dentifier via API
