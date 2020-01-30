@@ -1,5 +1,5 @@
-﻿Feature: EvergreenDetails
-	Runs Evergreen Details related tests
+﻿Feature: Rationalisation_ApplicationsPage
+	Runs related tests for Rationalisation field
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
