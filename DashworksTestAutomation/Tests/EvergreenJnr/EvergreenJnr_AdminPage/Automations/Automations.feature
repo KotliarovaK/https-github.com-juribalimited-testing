@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Task or Field |
 	| Action Value ID      |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728 @DAS17222
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -148,53 +148,31 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	Then 'Edit Automation' page subheader is displayed to user
 	Then Page with '15431_Third_Active' header is displayed to user
 
-#Need to use three Automations: inactive, inactive, active
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15742 @DAS16764 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15742 @DAS16764
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User opens 'Automation' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Processing order" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	#Update after gold data was complete
 	Then grid headers are displayed in the following order
     | ColumnName       |
-    |                  |
     | Automation       |
     |                  |
-    | Processing order |
+    | Processing Order |
     | Active           |
     | Running          |
     | Scope            |
     | Run              |
     | Actions          |
     | Description      |
-	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
-	When User clicks 'Move to top' option in Cog-menu for 'Add data' item from 'Automation' column
-	When User opens 'Automation' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Processing order" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
-	Then Content in the 'Automation' column is equal to
-	| Content      |
-	| AM 150419 II |
-	| Add data     |
+	Then numeric data in table is sorted by 'Processing Order' column in ascending order by default
+	When User clicks 'Move to top' option in Cog-menu for 'DELAY_7' item from 'Automation' column
+	Then "DELAY_7" content is displayed for "Automation" column
 	When User clicks 'Administration' header breadcrumb
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User opens 'Automation' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Processing order" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
-	Then Content in the 'Automation' column is equal to
-	| Content      |
-	| AM 150419 II |
-	| Add data     |
+	Then numeric data in table is sorted by 'Processing Order' column in ascending order by default
+	Then "DELAY_7" content is displayed for "Automation" column
 
 #Need to use three Automations: inactive, inactive, active
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15743 @Not_Ready
