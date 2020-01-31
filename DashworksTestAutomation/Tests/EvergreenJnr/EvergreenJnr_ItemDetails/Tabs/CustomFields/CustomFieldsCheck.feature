@@ -73,18 +73,26 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 	| Values       |
 	| Custom Field |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776 @DAS18363 @DAS18502
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776 @DAS18363 @DAS18502 @DAS18436 @Universe
 Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
-	And User opens 'Custom Field' column settings
-	And User clicks Column button on the Column Settings panel
+	When User clicks on 'Custom Field' column header
+	Then data in table is sorted by 'Custom Field' column in ascending order
+	When User opens 'Value' column settings
+	When User clicks Column button on the Column Settings panel
 	And User clicks Select All checkbox on Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then ColumnName is displayed in following order on the Details page:
 	| ColumnName   |
+	|              |
+	When User clicks button with 'reload' aria label
+	Then ColumnName is displayed in following order on the Details page:
+	| ColumnName   |
 	| Custom Field |
 	|              |
+	| Value        |
+	Then data in table is sorted by 'Custom Field' column in ascending order
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS18155
 Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedForCustomFields

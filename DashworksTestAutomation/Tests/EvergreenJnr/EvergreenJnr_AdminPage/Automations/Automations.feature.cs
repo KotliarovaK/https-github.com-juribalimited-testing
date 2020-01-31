@@ -260,7 +260,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16764")]
         [NUnit.Framework.CategoryAttribute("DAS16728")]
         [NUnit.Framework.CategoryAttribute("DAS17222")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations()
         {
             System.Exception lastException = null;
@@ -298,8 +297,7 @@ this.FeatureBackground();
                         "DAS15805",
                         "DAS16764",
                         "DAS16728",
-                        "DAS17222",
-                        "Not_Ready"});
+                        "DAS17222"});
 #line 56
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -590,7 +588,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15742")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -626,40 +623,29 @@ this.FeatureBackground();
                         "Automations",
                         "DAS15431",
                         "DAS15742",
-                        "DAS16764",
-                        "Not_Ready"});
-#line 153
+                        "DAS16764"});
+#line 152
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 154
+#line 153
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 155
+#line 154
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 156
+#line 155
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 157
+#line 156
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 158
- testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 159
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 160
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 161
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table11.AddRow(new string[] {
-                        ""});
             table11.AddRow(new string[] {
                         "Automation"});
             table11.AddRow(new string[] {
                         ""});
             table11.AddRow(new string[] {
-                        "Processing order"});
+                        "Processing Order"});
             table11.AddRow(new string[] {
                         "Active"});
             table11.AddRow(new string[] {
@@ -672,60 +658,27 @@ this.FeatureBackground();
                         "Actions"});
             table11.AddRow(new string[] {
                         "Description"});
-#line 163
+#line 157
  testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table11, "Then ");
-#line 175
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+#line 168
+ testRunner.Then("numeric data in table is sorted by \'Processing Order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 176
- testRunner.When("User clicks \'Move to top\' option in Cog-menu for \'Add data\' item from \'Automation" +
-                    "\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 177
- testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 178
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 179
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 180
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 181
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
-                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Content"});
-            table12.AddRow(new string[] {
-                        "AM 150419 II"});
-            table12.AddRow(new string[] {
-                        "Add data"});
-#line 182
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table12, "Then ");
-#line 186
+#line 169
+ testRunner.When("User clicks \'Move to top\' option in Cog-menu for \'DELAY_7\' item from \'Automation\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 170
+ testRunner.Then("\"DELAY_7\" content is displayed for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 171
  testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 187
+#line 172
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 188
+#line 173
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 189
- testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 190
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 191
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 192
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 193
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+#line 174
+ testRunner.Then("numeric data in table is sorted by \'Processing Order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Content"});
-            table13.AddRow(new string[] {
-                        "AM 150419 II"});
-            table13.AddRow(new string[] {
-                        "Add data"});
-#line 194
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table13, "Then ");
+#line 175
+ testRunner.Then("\"DELAY_7\" content is displayed for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -778,129 +731,129 @@ this.FeatureBackground();
                         "DAS15431",
                         "DAS15743",
                         "Not_Ready"});
-#line 201
+#line 179
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 202
+#line 180
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 203
+#line 181
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 204
+#line 182
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 205
+#line 183
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 206
+#line 184
  testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 207
+#line 185
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 208
+#line 186
  testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 209
+#line 187
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 188
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "options"});
+            table12.AddRow(new string[] {
+                        "Edit"});
+            table12.AddRow(new string[] {
+                        "Run now"});
+            table12.AddRow(new string[] {
+                        "Duplicate"});
+            table12.AddRow(new string[] {
+                        "Move to top"});
+            table12.AddRow(new string[] {
+                        "Move to position"});
+            table12.AddRow(new string[] {
+                        "Make inactive"});
+            table12.AddRow(new string[] {
+                        "Delete"});
+#line 190
+ testRunner.When("User clicks Cog-menu for \'AM Test 1\' item in the \'Automation\' column and sees fol" +
+                    "lowing cog-menu options", ((string)(null)), table12, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "options"});
+            table13.AddRow(new string[] {
+                        "Edit"});
+            table13.AddRow(new string[] {
+                        "Run now"});
+            table13.AddRow(new string[] {
+                        "Duplicate"});
+            table13.AddRow(new string[] {
+                        "Move to top"});
+            table13.AddRow(new string[] {
+                        "Move to bottom"});
+            table13.AddRow(new string[] {
+                        "Move to position"});
+            table13.AddRow(new string[] {
+                        "Make inactive"});
+            table13.AddRow(new string[] {
+                        "Delete"});
+#line 199
+ testRunner.When("User clicks Cog-menu for \'AM 150419 II\' item in the \'Automation\' column and sees " +
+                    "following cog-menu options", ((string)(null)), table13, "When ");
+#line 209
+ testRunner.When("User clicks \'Move to bottom\' option in Cog-menu for \'AM 150419 II\' item from \'Aut" +
+                    "omation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 210
+ testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 211
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 212
+ testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 213
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "options"});
+                        "Content"});
             table14.AddRow(new string[] {
-                        "Edit"});
+                        "AM 150419 I"});
             table14.AddRow(new string[] {
-                        "Run now"});
+                        "AM 150419 III"});
             table14.AddRow(new string[] {
-                        "Duplicate"});
+                        "AM Test 1"});
             table14.AddRow(new string[] {
-                        "Move to top"});
-            table14.AddRow(new string[] {
-                        "Move to position"});
-            table14.AddRow(new string[] {
-                        "Make inactive"});
-            table14.AddRow(new string[] {
-                        "Delete"});
-#line 212
- testRunner.When("User clicks Cog-menu for \'AM Test 1\' item in the \'Automation\' column and sees fol" +
-                    "lowing cog-menu options", ((string)(null)), table14, "When ");
+                        "AM 150419 II"});
+#line 215
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table14, "Then ");
+#line 221
+ testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 222
+ testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 223
+ testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 224
+ testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 225
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 226
+ testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 228
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "options"});
-            table15.AddRow(new string[] {
-                        "Edit"});
-            table15.AddRow(new string[] {
-                        "Run now"});
-            table15.AddRow(new string[] {
-                        "Duplicate"});
-            table15.AddRow(new string[] {
-                        "Move to top"});
-            table15.AddRow(new string[] {
-                        "Move to bottom"});
-            table15.AddRow(new string[] {
-                        "Move to position"});
-            table15.AddRow(new string[] {
-                        "Make inactive"});
-            table15.AddRow(new string[] {
-                        "Delete"});
-#line 221
- testRunner.When("User clicks Cog-menu for \'AM 150419 II\' item in the \'Automation\' column and sees " +
-                    "following cog-menu options", ((string)(null)), table15, "When ");
-#line 231
- testRunner.When("User clicks \'Move to bottom\' option in Cog-menu for \'AM 150419 II\' item from \'Aut" +
-                    "omation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 232
- testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 233
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 234
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 236
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
-                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
-            table16.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "AM 150419 I"});
-            table16.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "AM 150419 III"});
-            table16.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "AM Test 1"});
-            table16.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "AM 150419 II"});
-#line 237
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table16, "Then ");
-#line 243
- testRunner.When("User clicks \'Administration\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 244
- testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 245
- testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 246
- testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 247
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 248
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 249
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 250
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
-                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Content"});
-            table17.AddRow(new string[] {
-                        "AM 150419 I"});
-            table17.AddRow(new string[] {
-                        "AM 150419 III"});
-            table17.AddRow(new string[] {
-                        "AM Test 1"});
-            table17.AddRow(new string[] {
-                        "AM 150419 II"});
-#line 251
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table17, "Then ");
+#line 229
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table15, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -955,108 +908,108 @@ this.FeatureBackground();
                         "DAS15744",
                         "DAS16764",
                         "Not_Ready"});
-#line 260
+#line 238
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 261
+#line 239
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 262
+#line 240
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 263
+#line 241
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 264
+#line 242
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 265
+#line 243
  testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 266
+#line 244
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 267
+#line 245
  testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 268
+#line 246
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 269
+#line 247
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 270
+#line 248
  testRunner.When("User moves \'AM 150419 II\' item from \'Automation\' column to the \'2\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 271
+#line 249
  testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 272
+#line 250
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 273
+#line 251
  testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 252
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 253
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table16.AddRow(new string[] {
+                        "AM 150419 I"});
+            table16.AddRow(new string[] {
+                        "AM 150419 II"});
+            table16.AddRow(new string[] {
+                        "AM 150419 III"});
+            table16.AddRow(new string[] {
+                        "AM Test 1"});
+#line 254
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table16, "Then ");
+#line 260
+ testRunner.When("User moves \'AM 150419 I\' item from \'Automation\' column to the \'100\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 261
+ testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 262
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 263
+ testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 264
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 265
+ testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
+                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table17.AddRow(new string[] {
+                        "AM 150419 II"});
+            table17.AddRow(new string[] {
+                        "AM 150419 III"});
+            table17.AddRow(new string[] {
+                        "AM Test 1"});
+            table17.AddRow(new string[] {
+                        "AM 150419 I"});
+#line 266
+ testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table17, "Then ");
+#line 272
+ testRunner.When("User moves \' AM 150419 II\' item from \'Automation\' column to the \'1\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 273
+ testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 274
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 275
+ testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 276
+ testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 277
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
             table18.AddRow(new string[] {
-                        "AM 150419 I"});
-            table18.AddRow(new string[] {
                         "AM 150419 II"});
             table18.AddRow(new string[] {
                         "AM 150419 III"});
             table18.AddRow(new string[] {
                         "AM Test 1"});
-#line 276
+            table18.AddRow(new string[] {
+                        "AM 150419 I"});
+#line 278
  testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table18, "Then ");
-#line 282
- testRunner.When("User moves \'AM 150419 I\' item from \'Automation\' column to the \'100\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 283
- testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 284
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 286
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 287
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
-                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Content"});
-            table19.AddRow(new string[] {
-                        "AM 150419 II"});
-            table19.AddRow(new string[] {
-                        "AM 150419 III"});
-            table19.AddRow(new string[] {
-                        "AM Test 1"});
-            table19.AddRow(new string[] {
-                        "AM 150419 I"});
-#line 288
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table19, "Then ");
-#line 294
- testRunner.When("User moves \' AM 150419 II\' item from \'Automation\' column to the \'1\' position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 295
- testRunner.When("User opens \'Automation\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 296
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 297
- testRunner.And("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 298
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 299
- testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
-                    "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Content"});
-            table20.AddRow(new string[] {
-                        "AM 150419 II"});
-            table20.AddRow(new string[] {
-                        "AM 150419 III"});
-            table20.AddRow(new string[] {
-                        "AM Test 1"});
-            table20.AddRow(new string[] {
-                        "AM 150419 I"});
-#line 300
- testRunner.Then("Content in the \'Automation\' column is equal to", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1113,79 +1066,79 @@ this.FeatureBackground();
                         "DAS15750",
                         "DAS16899",
                         "Not_Ready"});
-#line 308
+#line 286
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 310
+#line 288
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 311
+#line 289
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 312
+#line 290
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 313
+#line 291
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 315
+#line 293
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'DELAY - do not delete3\' item from \'" +
                     "Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 316
+#line 294
  testRunner.Then("\'1 automation started,\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 317
+#line 295
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 318
+#line 296
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 319
+#line 297
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 320
+#line 298
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 321
+#line 299
  testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 322
+#line 300
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 323
+#line 301
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 324
+#line 302
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 325
+#line 303
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 326
+#line 304
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 327
+#line 305
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 328
+#line 306
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 329
+#line 307
  testRunner.When("User enters \"DELAY - do not delete3\" text in the Search field for \"Automation\" co" +
                     "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 330
+#line 308
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 331
+#line 309
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 332
+#line 310
  testRunner.And("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 333
+#line 311
  testRunner.When("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 334
+#line 312
  testRunner.Then("\'Cannot delete a running automation\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "options"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Edit"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Duplicate"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Move to top"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Move to bottom"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Move to position"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Make inactive"});
-#line 335
+#line 313
  testRunner.When("User clicks Cog-menu for \'DELAY - do not delete3\' item in the \'Automation\' column" +
-                    " and sees following cog-menu options", ((string)(null)), table21, "When ");
+                    " and sees following cog-menu options", ((string)(null)), table19, "When ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1242,115 +1195,115 @@ this.FeatureBackground();
                         "DAS15754",
                         "DAS17277",
                         "Not_Ready"});
-#line 346
+#line 324
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 347
+#line 325
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 348
+#line 326
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 349
+#line 327
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 350
+#line 328
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 351
+#line 329
  testRunner.When("User enters \"AM 030619 Devices 145\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 352
+#line 330
  testRunner.Then("\'3\' content is displayed in the \'Actions\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 353
+#line 331
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 354
+#line 332
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 355
+#line 333
  testRunner.Then("Counter shows \"3\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         ""});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Action"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         ""});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Type"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Project"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Task or Field"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Value"});
-#line 356
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table22, "Then ");
-#line 365
+#line 334
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table20, "Then ");
+#line 343
  testRunner.When("User opens \'Action\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 366
+#line 344
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 367
+#line 345
  testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 368
+#line 346
  testRunner.When("User select \"Action ID\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 369
+#line 347
  testRunner.When("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 370
+#line 348
  testRunner.When("User select \"Action Type ID\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 371
+#line 349
  testRunner.When("User select \"Project ID\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         ""});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Action ID"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Action"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         ""});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Processing order"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Action Type ID"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Type"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Project ID"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Project"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Task or Field"});
-            table23.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Value"});
-#line 372
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table23, "Then ");
-#line 386
+#line 350
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table21, "Then ");
+#line 364
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 387
+#line 365
  testRunner.Then("Create Action page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 388
+#line 366
  testRunner.When("User enters \'15309_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 389
+#line 367
  testRunner.When("User selects \'Update path\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 390
+#line 368
  testRunner.When("User selects \'1803 Rollout\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 391
+#line 369
  testRunner.When("User selects \'Undetermined\' option from \'Path\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 392
+#line 370
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 393
+#line 371
  testRunner.Then("\'click here to view the 15309_Action action\' link is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 394
+#line 372
  testRunner.When("User opens \'Action\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 395
+#line 373
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 396
+#line 374
  testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 397
+#line 375
  testRunner.When("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 398
+#line 376
  testRunner.Then("numeric data in table is sorted by \'Processing order\' column in ascending order b" +
                     "y default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1421,87 +1374,87 @@ this.FeatureBackground();
                         "DAS17277",
                         "DAS17336",
                         "Not_Ready"});
-#line 401
+#line 379
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 402
+#line 380
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 403
+#line 381
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 404
+#line 382
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 405
+#line 383
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 406
+#line 384
  testRunner.When("User clicks \'CREATE AUTOMATION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 407
+#line 385
  testRunner.Then("\'Create Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 408
+#line 386
  testRunner.When("User enters \'16764_Automation\' text to \'Automation Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 409
+#line 387
  testRunner.When("User enters \'16764\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 410
+#line 388
  testRunner.When("User selects \'All Devices\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 411
+#line 389
  testRunner.When("User checks \'Active\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 412
+#line 390
  testRunner.When("User checks \'Stop on failed action\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 413
+#line 391
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 414
+#line 392
  testRunner.When("User selects \'Manual\' in the \'Run\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 415
+#line 393
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 416
+#line 394
  testRunner.Then("\'click here to view the 16764_Automation automation\' link is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 417
+#line 395
  testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 418
+#line 396
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 419
+#line 397
  testRunner.Then("\'All Devices\' content is displayed in \'Scope\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 420
+#line 398
  testRunner.Then("\"16764\" content is displayed in \"Description\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 421
+#line 399
  testRunner.Then("\'Manual\' content is displayed in \'Run\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 422
+#line 400
  testRunner.Then("\'Active\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 423
+#line 401
  testRunner.Then("\'Stop on failed action\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 424
+#line 402
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 425
+#line 403
  testRunner.Then("\'CANCEL\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 426
+#line 404
  testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 429
+#line 407
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 430
+#line 408
  testRunner.When("User enters \"16764_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 431
+#line 409
  testRunner.When("User clicks \'Delete\' option in Cog-menu for \'16764_Automation\' item from \'Automat" +
                     "ion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 432
+#line 410
  testRunner.Then("\'This automation will be permanently deleted\' text is displayed on inline tip ban" +
                     "ner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 433
+#line 411
  testRunner.When("User clicks \'CANCEL\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 434
+#line 412
  testRunner.Then("inline tip banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 435
+#line 413
  testRunner.When("User clicks \'Delete\' option in Cog-menu for \'16764_Automation\' item from \'Automat" +
                     "ion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 436
+#line 414
  testRunner.When("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 437
+#line 415
  testRunner.Then("\'1 automation deleted\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 438
+#line 416
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 439
+#line 417
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 440
+#line 418
  testRunner.Then("inline success banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1553,36 +1506,36 @@ this.FeatureBackground();
                         "DAS15767",
                         "DAS15423",
                         "DAS18328"});
-#line 443
+#line 421
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 444
+#line 422
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 445
+#line 423
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 446
+#line 424
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 447
+#line 425
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 448
+#line 426
  testRunner.When("User enters \"Mailboxes_Scope\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 449
+#line 427
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 450
+#line 428
  testRunner.Then("\'Edit Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Lists"});
-            table24.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "Devices (0)"});
-            table24.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "Users (0)"});
-            table24.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "Applications (0)"});
-#line 451
- testRunner.Then("following lists are displayed in the Scope dropdown:", ((string)(null)), table24, "Then ");
+#line 429
+ testRunner.Then("following lists are displayed in the Scope dropdown:", ((string)(null)), table22, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1645,90 +1598,90 @@ this.FeatureBackground();
                         "DAS17336",
                         "DAS17275",
                         "Cleanup"});
-#line 458
+#line 436
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 459
+#line 437
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 460
+#line 438
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 461
+#line 439
  testRunner.And("User add \"City\" filter where type is \"Equals\" with added column and \"Belfast\" Loo" +
                     "kup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 462
+#line 440
  testRunner.And("User create dynamic list with \"DAS15423_List\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 463
+#line 441
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 464
+#line 442
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 465
+#line 443
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 466
+#line 444
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 467
+#line 445
  testRunner.When("User clicks \'CREATE AUTOMATION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 468
+#line 446
  testRunner.When("User enters \'15423_Automation\' text to \'Automation Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 469
+#line 447
  testRunner.When("User enters \'DAS15423\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 470
+#line 448
  testRunner.When("User selects \'DAS15423_List\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 471
+#line 449
  testRunner.When("User selects \'Manual\' in the \'Run\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 472
+#line 450
  testRunner.When("User checks \'Active\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 473
+#line 451
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 474
+#line 452
  testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 475
+#line 453
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 476
+#line 454
  testRunner.Then("\'DAS15423_List\' content is displayed in \'Scope\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 477
+#line 455
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 478
+#line 456
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 479
+#line 457
  testRunner.When("User navigates to the \"DAS15423_List\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 480
+#line 458
  testRunner.Then("\"DAS15423_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 481
+#line 459
  testRunner.When("User removes custom list with \"DAS15423_List\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 482
+#line 460
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 483
+#line 461
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 484
+#line 462
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 485
+#line 463
  testRunner.When("User enters \"15423_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 486
+#line 464
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 487
+#line 465
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 488
+#line 466
  testRunner.Then("\'[List not found]\' content is displayed in \'Scope\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 489
+#line 467
  testRunner.Then("\'The selected list cannot be found\' error message is displayed for \'Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 490
+#line 468
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 491
+#line 469
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 492
+#line 470
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 493
+#line 471
  testRunner.When("User enters \"15423_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 494
+#line 472
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'15423_Automation\' item from \'Automa" +
                     "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 495
+#line 473
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 496
+#line 474
  testRunner.When("User enters \"15423_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 497
+#line 475
  testRunner.Then("\"LIST NOT FOUND\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1784,64 +1737,64 @@ this.FeatureBackground();
                         "DAS17071",
                         "DAS17216",
                         "DAS17216"});
-#line 500
+#line 478
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 501
+#line 479
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 502
+#line 480
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "AutomationName",
                         "Description",
                         "Active",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
-            table25.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Test_Automation_First",
                         "test",
                         "true",
                         "false",
                         "All Devices",
                         "Manual"});
-            table25.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Test_Automation_Second",
                         "test",
                         "true",
                         "false",
                         "All Users",
                         "Manual"});
-#line 503
- testRunner.When("User creates new Automation via API", ((string)(null)), table25, "When ");
-#line 507
+#line 481
+ testRunner.When("User creates new Automation via API", ((string)(null)), table23, "When ");
+#line 485
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 508
+#line 486
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 509
+#line 487
  testRunner.When("User enters \"Test_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 510
+#line 488
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 511
+#line 489
  testRunner.And("User selects \'Run now\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 512
+#line 490
  testRunner.When("User clicks \'RUN\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 514
+#line 492
  testRunner.When("User clicks \'RUN\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 516
+#line 494
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 517
+#line 495
  testRunner.When("User enters \"Test_Automation_First\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 518
+#line 496
  testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 519
+#line 497
  testRunner.When("User enters \"Test_Automation_Second\" text in the Search field for \"Automation\" co" +
                     "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 520
+#line 498
  testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1891,43 +1844,43 @@ this.FeatureBackground();
                         "Automations",
                         "DAS17172",
                         "Not_Ready"});
-#line 523
+#line 501
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 524
+#line 502
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 525
+#line 503
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 526
+#line 504
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 527
+#line 505
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 528
+#line 506
  testRunner.When("User enters \"DAS-15949 - all users scope\" text in the Search field for \"Automatio" +
                     "n\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 529
+#line 507
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 530
+#line 508
  testRunner.And("User selects \'Run now\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 531
+#line 509
  testRunner.When("User clicks \'RUN\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 532
+#line 510
  testRunner.When("User clicks \'RUN\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 533
+#line 511
  testRunner.Then("\'1 automation started,\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 534
+#line 512
  testRunner.When("User enters \"Devices_Scope\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 535
+#line 513
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 536
+#line 514
  testRunner.And("User selects \'Run now\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 537
+#line 515
  testRunner.When("User clicks \'RUN\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 538
+#line 516
  testRunner.When("User clicks \'RUN\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 539
+#line 517
  testRunner.Then("\'1 automation started,\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1983,65 +1936,65 @@ this.FeatureBackground();
                         "DAS17003",
                         "DAS17260",
                         "Not_Ready"});
-#line 543
+#line 521
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 544
+#line 522
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 545
+#line 523
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 546
+#line 524
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 547
+#line 525
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 548
+#line 526
  testRunner.When("User enters \"Delay\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 549
+#line 527
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'DELAY - do not delete\' item from \'A" +
                     "utomation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 550
+#line 528
  testRunner.When("User enters \"DELAY - do not delete\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 551
+#line 529
  testRunner.When("User clicks \'Make inactive\' option in Cog-menu for \'DELAY - do not delete\' item f" +
                     "rom \'Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 552
+#line 530
  testRunner.Then("\'This automation is currently running\' text is displayed on inline error banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 553
+#line 531
  testRunner.When("User enters \"DELAY - do not delete\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 554
+#line 532
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 555
+#line 533
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 556
+#line 534
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 557
+#line 535
  testRunner.Then("Create Action page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 558
+#line 536
  testRunner.When("User enters \'17171_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 559
+#line 537
  testRunner.When("User selects \'Update path\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 560
+#line 538
  testRunner.When("User selects \'Migration Project Phase 2 (User Project)\' option from \'Project\' aut" +
                     "ocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 561
+#line 539
  testRunner.When("User selects \'[Default (User)]\' option from \'Path\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 562
+#line 540
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 563
+#line 541
  testRunner.Then("\'This automation is currently running\' text is displayed on inline error banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 564
+#line 542
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 565
+#line 543
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 566
+#line 544
  testRunner.When("User enters \'NewAction\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 567
+#line 545
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 568
+#line 546
  testRunner.Then("\'This automation is currently running\' text is displayed on inline error banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2093,82 +2046,82 @@ this.FeatureBackground();
                         "DAS17003",
                         "Cleanup",
                         "Not_Ready"});
-#line 571
+#line 549
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 572
+#line 550
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 573
+#line 551
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 574
+#line 552
  testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 575
+#line 553
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
                         "Password",
                         "ConfirmPassword",
                         "Roles"});
-            table26.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "17003User",
                         "17003",
                         "1234qwer",
                         "1234qwer",
                         "Project Administrator"});
-#line 576
- testRunner.And("User create new User", ((string)(null)), table26, "And ");
-#line 579
+#line 554
+ testRunner.And("User create new User", ((string)(null)), table24, "And ");
+#line 557
  testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 580
+#line 558
  testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 581
+#line 559
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 582
+#line 560
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 583
+#line 561
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
-            table27.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "17003User",
                         "1234qwer"});
-#line 584
- testRunner.When("User login with following credentials:", ((string)(null)), table27, "When ");
-#line 587
+#line 562
+ testRunner.When("User login with following credentials:", ((string)(null)), table25, "When ");
+#line 565
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 588
+#line 566
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 589
+#line 567
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 590
+#line 568
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 591
+#line 569
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 592
+#line 570
  testRunner.Then("\"Automations\" tab is not displayed to the User on Admin Page Navigation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 593
+#line 571
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 594
+#line 572
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 595
+#line 573
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 596
+#line 574
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 597
+#line 575
  testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 598
+#line 576
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 599
+#line 577
  testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 600
+#line 578
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 601
+#line 579
  testRunner.And("User removes \"17003User\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -2222,105 +2175,105 @@ this.FeatureBackground();
                         "DAS17789",
                         "Cleanup",
                         "Not_Ready"});
-#line 604
+#line 582
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 605
+#line 583
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 606
+#line 584
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 607
+#line 585
  testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 608
+#line 586
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
                         "Password",
                         "ConfirmPassword",
                         "Roles"});
-            table28.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "DAS_17003",
                         "17003",
                         "1234qwer",
                         "1234qwer",
                         "Project Administrator"});
-#line 609
- testRunner.And("User create new User", ((string)(null)), table28, "And ");
-#line 612
+#line 587
+ testRunner.And("User create new User", ((string)(null)), table26, "And ");
+#line 590
  testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 613
+#line 591
  testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 614
+#line 592
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 615
+#line 593
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 616
+#line 594
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
-            table29.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "DAS_17003",
                         "1234qwer"});
-#line 617
- testRunner.When("User login with following credentials:", ((string)(null)), table29, "When ");
-#line 620
+#line 595
+ testRunner.When("User login with following credentials:", ((string)(null)), table27, "When ");
+#line 598
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 621
+#line 599
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 622
+#line 600
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 623
+#line 601
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 624
+#line 602
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 625
+#line 603
  testRunner.And("User add \"City\" filter where type is \"Equals\" with added column and \"Belfast\" Loo" +
                     "kup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 626
+#line 604
  testRunner.When("User creates \'17003_List\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 627
+#line 605
  testRunner.Then("\"17003_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 628
+#line 606
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 629
+#line 607
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 630
+#line 608
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 631
+#line 609
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 632
+#line 610
  testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 633
+#line 611
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 634
+#line 612
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 635
+#line 613
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 636
+#line 614
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 637
+#line 615
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 638
+#line 616
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 639
+#line 617
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 640
+#line 618
  testRunner.When("User clicks \'CREATE AUTOMATION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 641
+#line 619
  testRunner.When("User selects \'17003_List\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 642
+#line 620
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 643
+#line 621
  testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 644
+#line 622
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 645
+#line 623
  testRunner.And("User removes \"DAS_17003\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -2370,123 +2323,123 @@ this.FeatureBackground();
                         "Automations",
                         "DAS15949",
                         "Cleanup"});
-#line 648
+#line 626
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 649
+#line 627
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 650
+#line 628
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 651
+#line 629
  testRunner.And("User add \"Device Type\" filter where type is \"Equals\" with added column and \"Virtu" +
                     "al\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 652
+#line 630
  testRunner.And("User create dynamic list with \"Das15949_list\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "AutomationName",
                         "Description",
                         "Active",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
-            table30.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "15949_Automation",
                         "testDAS15949",
                         "true",
                         "false",
                         "DAS15949_List",
                         "Manual"});
-#line 654
- testRunner.And("User creates new Automation via API and open it", ((string)(null)), table30, "And ");
-#line 657
+#line 632
+ testRunner.And("User creates new Automation via API and open it", ((string)(null)), table28, "And ");
+#line 635
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 658
+#line 636
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 660
+#line 638
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 661
+#line 639
  testRunner.And("User enters \'15949_Action_1\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 662
+#line 640
  testRunner.And("User selects \'Update path\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 663
+#line 641
  testRunner.And("User selects \'Windows 7 Migration (Computer Scheduled Project)\' option from \'Proj" +
                     "ect\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 664
+#line 642
  testRunner.And("User selects \'Computer: Laptop Replacement\' option from \'Path\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 665
+#line 643
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 667
+#line 645
  testRunner.And("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 668
+#line 646
  testRunner.And("User enters \'15949_Action_2\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 669
+#line 647
  testRunner.And("User selects \'Update path\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 670
+#line 648
  testRunner.And("User selects \'Barry\'s User Project\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 671
+#line 649
  testRunner.And("User selects \'Desktop Replacement\' option from \'Path\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 672
+#line 650
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 674
+#line 652
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 675
+#line 653
  testRunner.When("User enters \"15949_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 676
+#line 654
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'15949_Automation\' item from \'Automa" +
                     "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 677
+#line 655
  testRunner.When("\'15949_Automation\' automation \'15949_Action_2\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 679
+#line 657
  testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 680
+#line 658
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 681
+#line 659
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 682
+#line 660
  testRunner.And("User enters \"15949_Automation\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
-            table31.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "15949_Automation \\ 15949_Action_1"});
-            table31.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "15949_Automation \\ 15949_Action_2"});
-#line 683
- testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table31, "Then ");
-#line 687
+#line 661
+ testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table29, "Then ");
+#line 665
  testRunner.When("User clears search textbox in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 688
+#line 666
  testRunner.And("user select \"15949_Automation \\ 15949_Action_1\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 689
+#line 667
  testRunner.And("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 690
+#line 668
  testRunner.When("User selects current date checkbox from Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 691
+#line 669
  testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 692
+#line 670
  testRunner.Then("\"5,179\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 694
+#line 672
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 695
+#line 673
  testRunner.And("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 696
+#line 674
  testRunner.And("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 697
+#line 675
  testRunner.And("User enters \"15949_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 698
+#line 676
  testRunner.And("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 699
+#line 677
  testRunner.And("User selects \"Select All\" checkbox from String Filter with item list on the Admin" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 700
+#line 678
  testRunner.And("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 701
+#line 679
  testRunner.And("User selects \"15949_Action_1\" checkbox from String Filter with item list on the A" +
                     "dmin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 702
+#line 680
  testRunner.Then("\'5179\' content is displayed in the \'Objects\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2534,94 +2487,94 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "Cleanup"});
-#line 706
+#line 683
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 707
+#line 684
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 708
+#line 685
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "AutomationName",
                         "Description",
                         "Active",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
-            table32.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "Active_Automation1287",
                         "test",
                         "true",
                         "false",
                         "All Devices",
                         "Manual"});
-            table32.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "Inactive_Automation6578",
                         "test",
                         "false",
                         "false",
                         "All Devices",
                         "Manual"});
-#line 709
- testRunner.When("User creates new Automation via API", ((string)(null)), table32, "When ");
-#line 713
+#line 686
+ testRunner.When("User creates new Automation via API", ((string)(null)), table30, "When ");
+#line 690
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 714
+#line 691
  testRunner.Then("Page with \'Automations\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 716
+#line 693
  testRunner.When("User enters \"Active_Automation1287\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 717
+#line 694
  testRunner.Then("\"TRUE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 718
+#line 695
  testRunner.When("User clicks \'Make inactive\' option in Cog-menu for \'Active_Automation1287\' item f" +
                     "rom \'Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 719
+#line 696
  testRunner.Then("\'1 automation made inactive\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 720
+#line 697
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 721
+#line 698
  testRunner.When("User enters \"Active_Automation1287\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 722
+#line 699
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 723
+#line 700
  testRunner.Then("\'Active\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 724
+#line 701
  testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 725
+#line 702
  testRunner.When("User enters \"Active_Automation1287\" text in the Search field for \"Automation\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 726
+#line 703
  testRunner.Then("\"FALSE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 728
+#line 705
  testRunner.When("User enters \"Inactive_Automation6578\" text in the Search field for \"Automation\" c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 729
+#line 706
  testRunner.Then("\"FALSE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 730
+#line 707
  testRunner.When("User clicks \'Make active\' option in Cog-menu for \'Inactive_Automation6578\' item f" +
                     "rom \'Automation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 731
+#line 708
  testRunner.Then("\'1 automation made active\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 732
+#line 709
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 733
+#line 710
  testRunner.When("User enters \"Inactive_Automation6578\" text in the Search field for \"Automation\" c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 734
+#line 711
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 735
+#line 712
  testRunner.Then("\'Active\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 736
+#line 713
  testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 737
+#line 714
  testRunner.When("User enters \"Inactive_Automation6578\" text in the Search field for \"Automation\" c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 738
+#line 715
  testRunner.Then("\"TRUE\" content is displayed for \"Active\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

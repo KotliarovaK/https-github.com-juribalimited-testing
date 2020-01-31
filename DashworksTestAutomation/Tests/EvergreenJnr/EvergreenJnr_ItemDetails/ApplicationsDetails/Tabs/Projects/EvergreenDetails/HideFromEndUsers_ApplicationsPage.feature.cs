@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ap
         [NUnit.Framework.CategoryAttribute("HideFromEndUsers")]
         [NUnit.Framework.CategoryAttribute("DAS18849")]
         [NUnit.Framework.CategoryAttribute("DAS19753")]
-        [NUnit.Framework.CategoryAttribute("Univers")]
+        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ap
                         "HideFromEndUsers",
                         "DAS18849",
                         "DAS19753",
-                        "Univers"});
+                        "Universe"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
