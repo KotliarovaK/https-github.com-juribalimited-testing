@@ -334,40 +334,38 @@ this.FeatureBackground();
  testRunner.When("User add \"1803: Migration \\ Migrated Date\" filter where type is \"Not empty\" with " +
                     "added column and Date options", ((string)(null)), table5, "When ");
 #line 57
- testRunner.Then("\"7\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 58
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
+#line 58
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table6.AddRow(new string[] {
                         "CDQ172G3MZS444"});
-#line 60
+#line 59
  testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table6, "When ");
-#line 63
+#line 62
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 64
+#line 63
  testRunner.When("User selects \'Update task value\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
+#line 64
  testRunner.When("User selects \'1803 Rollout\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
+#line 65
  testRunner.When("User selects \'Migration\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 67
+#line 66
  testRunner.When("User selects \'Migrated Date\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
+#line 67
  testRunner.When("User selects \'Update\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 69
+#line 68
  testRunner.When("User enters next \'Tuesday\' day to \'Date\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 70
+#line 69
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 71
+#line 70
  testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
                     "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 72
+#line 71
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 73
+#line 72
  testRunner.Then("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -420,35 +418,35 @@ this.FeatureBackground();
                         "DAS18269",
                         "DAS18233",
                         "Not_Ready"});
-#line 77
+#line 76
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 78
+#line 77
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 79
+#line 78
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 80
+#line 79
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 81
+#line 80
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table7.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-#line 82
+#line 81
  testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table7, "When ");
-#line 85
+#line 84
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 85
  testRunner.When("User selects \'Update task value\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
+#line 86
  testRunner.When("User selects \'Computer Scheduled Test (Jo)\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 88
+#line 87
  testRunner.When("User selects \'One\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 89
+#line 88
  testRunner.When("User selects \'Date Computer\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -461,7 +459,7 @@ this.FeatureBackground();
                         "Update relative to now"});
             table8.AddRow(new string[] {
                         "Remove"});
-#line 90
+#line 89
  testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -511,35 +509,35 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS18233",
                         "Not_Ready"});
-#line 99
+#line 98
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 100
+#line 99
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 100
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 102
+#line 101
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 103
+#line 102
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table9.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-#line 104
+#line 103
  testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table9, "When ");
-#line 107
+#line 106
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 107
  testRunner.When("User selects \'Update task value\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
+#line 108
  testRunner.When("User selects \'Computer Scheduled Test (Jo)\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
+#line 109
  testRunner.When("User selects \'One\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 111
+#line 110
  testRunner.When("User selects \'Radio Rag Date Owner\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -554,7 +552,7 @@ this.FeatureBackground();
                         "Remove"});
             table10.AddRow(new string[] {
                         "No change"});
-#line 112
+#line 111
  testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -604,35 +602,35 @@ this.FeatureBackground();
                         "DAS18270",
                         "DAS18233",
                         "Not_Ready"});
-#line 122
+#line 121
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 123
+#line 122
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 124
+#line 123
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 125
+#line 124
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 126
+#line 125
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table11.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-#line 127
+#line 126
  testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table11, "When ");
-#line 130
+#line 129
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 131
+#line 130
  testRunner.When("User selects \'Update task value\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 132
+#line 131
  testRunner.When("User selects \'Computer Scheduled Test (Jo)\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 133
+#line 132
  testRunner.When("User selects \'One\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 134
+#line 133
  testRunner.When("User selects \'Date Computer\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -645,21 +643,21 @@ this.FeatureBackground();
                         "Update relative to now"});
             table12.AddRow(new string[] {
                         "Remove"});
-#line 135
+#line 134
  testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table12, "Then ");
-#line 141
+#line 140
  testRunner.When("User selects \'Update relative to current value\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 141
  testRunner.Then("\'Days\' content is displayed in \'Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 143
+#line 142
  testRunner.Then("\'After current value\' content is displayed in \'Before or After\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 144
+#line 143
  testRunner.When("User enters \'999999\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 145
+#line 144
  testRunner.Then("\'100000\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 146
+#line 145
  testRunner.When("User enters \'-5\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 147
+#line 146
  testRunner.Then("\'1\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -668,7 +666,7 @@ this.FeatureBackground();
                         "Before current value"});
             table13.AddRow(new string[] {
                         "After current value"});
-#line 148
+#line 147
  testRunner.Then("following Values are displayed in the \'Before or After\' dropdown:", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -720,41 +718,41 @@ this.FeatureBackground();
                         "DAS18281",
                         "DAS18233",
                         "Not_Ready"});
-#line 155
+#line 154
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 156
+#line 155
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 157
+#line 156
  testRunner.Then("\'All Users\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 158
+#line 157
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 159
+#line 158
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table14.AddRow(new string[] {
                         "002B5DC7D4D34D5C895"});
-#line 160
+#line 159
  testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table14, "When ");
-#line 163
+#line 162
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 164
+#line 163
  testRunner.When("User selects \'Update task value\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 165
+#line 164
  testRunner.When("User selects \'Barry\'s User Project\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 166
+#line 165
  testRunner.When("User selects \'Project Dates\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 167
+#line 166
  testRunner.When("User selects \'Forecast Date\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 168
+#line 167
  testRunner.When("User selects \'Update relative to now\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 169
+#line 168
  testRunner.When("User enters \'12\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 170
+#line 169
  testRunner.When("User selects \'Days\' in the \'Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -763,11 +761,11 @@ this.FeatureBackground();
                         "Before now"});
             table15.AddRow(new string[] {
                         "After now"});
-#line 171
+#line 170
  testRunner.Then("following Values are displayed in the \'Before or After\' dropdown:", ((string)(null)), table15, "Then ");
-#line 175
+#line 174
  testRunner.Then("\'After now\' content is displayed in \'Before or After\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 176
+#line 175
  testRunner.When("User selects \'Before now\' in the \'Before or After\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
