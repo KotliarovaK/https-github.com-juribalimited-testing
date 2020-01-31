@@ -381,7 +381,6 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceMethods.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\BuilderMainView.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfService.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
@@ -1003,15 +1002,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeleteRings.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\AddPageViaBuilder.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CreatePageViaBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AddPageViaBuilder.feature</DependentUpon>
+      <DependentUpon>CreatePageViaBuilder.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\SelfServiceBuilderTestApi.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CerateSelfServicePageViaBuilderApi.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SelfServiceBuilderTestApi.feature</DependentUpon>
+      <DependentUpon>CerateSelfServicePageViaBuilderApi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\UpdatePageViaBuilder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdatePageViaBuilder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\UpdateSelfServiceViaBuilderApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateSelfServiceViaBuilderApi.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfService.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2297,13 +2306,21 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\AddPageViaBuilder.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CreatePageViaBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AddPageViaBuilder.feature.cs</LastGenOutput>
+      <LastGenOutput>CreatePageViaBuilder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\SelfServiceBuilderTestApi.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CerateSelfServicePageViaBuilderApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SelfServiceBuilderTestApi.feature.cs</LastGenOutput>
+      <LastGenOutput>CerateSelfServicePageViaBuilderApi.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\UpdatePageViaBuilder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdatePageViaBuilder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\UpdateSelfServiceViaBuilderApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateSelfServiceViaBuilderApi.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfService.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
