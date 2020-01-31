@@ -203,7 +203,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Universe
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Not_Ready
+#The problem with the gold data. Contact Kate for more details.
 Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSecurity
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
@@ -242,7 +243,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	And User perform search by "Z11REX196H34MG"
 	Then '[Default (Computer)]' content is displayed in the 'zDeviceAut: Path' column
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Universe
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149
 Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSecurity
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
