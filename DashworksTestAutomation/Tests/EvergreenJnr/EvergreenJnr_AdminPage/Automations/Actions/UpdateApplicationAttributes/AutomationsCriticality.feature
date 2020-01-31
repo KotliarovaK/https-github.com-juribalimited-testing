@@ -275,8 +275,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	When User clicks content from "Objects" column
-	Then 'Critical' content is displayed in the 'Criticality' column
+	Then 'Core' content is displayed in the 'Criticality' column
 	Then 'RED' content is displayed in the 'Sticky Compliance' column
-	Then 'KEEP' content is displayed in the 'Rationalisation' column
+	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column
 	Then 'TRUE' content is displayed in the 'In Catalog' column
 	Then 'TRUE' content is displayed in the 'Hide From End Users' column

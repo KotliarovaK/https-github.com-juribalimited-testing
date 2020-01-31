@@ -203,7 +203,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Universe
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Universe @Not_Ready
+#waiting for TestBulkUpdate ring from GD
 Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSecurity
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
