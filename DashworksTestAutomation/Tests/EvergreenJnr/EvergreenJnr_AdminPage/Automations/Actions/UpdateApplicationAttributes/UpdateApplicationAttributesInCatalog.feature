@@ -132,3 +132,60 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogSavingAndRestor
 	Then 'RED' content is displayed in 'Sticky Compliance' dropdown
 	Then 'FALSE' value is displayed in the 'In Catalog' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19629 @Cleanup @Universe
+Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergreen
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values       |
+	| VBA (2627.4) |
+	When User refreshes agGrid
+	When User create dynamic list with "19629_List" name on "Applications" page
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
+	| 19629_Automation | 19629       | true   | false              | 19629_List | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	And User enters '19629_Action' text to 'Action Name' textbox
+	And User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Starbase CodeWright' in the 'Target Application' autocomplete field and selects 'Starbase CodeWright 6.0BETA (107)' value
+	When User clicks 'CREATE' button
+	#Run Automation
+	When User clicks 'Automations' header breadcrumb
+	When User enters "19629_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19629_Automation' item from 'Automation' column
+	When '19629_Automation' automation '19629_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When '19629_Automation' automation '19629_Action' action run has finished
+	When User enters "19629_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then '1' content is displayed in the 'Objects' column
+	#Return to previous value
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	When User enters "19629_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
+	When User clicks content from "Action" column
+	When User selects 'zUser Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
+	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
+	When User enters 'Starbase CodeWright' in the 'Target Application' autocomplete field and selects 'Starbase CodeWright 6.0BETA (107)' value
+	And User clicks 'UPDATE' button
+	When User clicks 'Automations' header breadcrumb
+	When User enters "19629_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19629_Automation' item from 'Automation' column
+	When '19629_Automation' automation '19629_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User enters "19629_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then '1' content is displayed in the 'Objects' column
