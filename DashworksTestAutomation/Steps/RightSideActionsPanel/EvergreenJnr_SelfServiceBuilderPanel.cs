@@ -1,5 +1,6 @@
 ﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -66,6 +67,14 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
 
             rightSidePanel.CheckBuilderContextPanelItemDisplayState(contextPanelType, contextPanelName, false);
+        }
+
+        [Then(@"item with '(.*)' type and '(.*)' name on Self Service Builder Panel is highlighted")]
+        public void ThenItemWithTypeAndNameOnSelfServiceBuilderPanelIsHighlighted(string contextPanelType, string contextPanelName)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+
+            Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), "ADD ERROR MESSAGE");
         }
     }
 }
