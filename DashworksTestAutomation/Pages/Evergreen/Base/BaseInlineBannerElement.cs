@@ -73,9 +73,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Verify
 
-        public void VerifyMessageTextAndColor(MessageType messageType, string expectedText)
+        public void VerifyMessageTextAndColor(MessageType messageType, string expectedText, bool contains = false)
         {
-            VerifyText(messageType, expectedText);
+            VerifyText(messageType, expectedText, contains);
             VerifyColor(messageType);
         }
 
@@ -85,9 +85,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 $"{messageType.GetValueAndDescription().Key} inline banner is not {messageType.GetValueAndDescription().Value}");
         }
 
-        public void VerifyText(MessageType messageType, string expectedText)
+        public void VerifyText(MessageType messageType, string expectedText, bool contains)
         {
-            Verify.IsTrue(IsTextPresent(messageType, expectedText),
+            Verify.IsTrue(IsTextPresent(messageType, expectedText, contains),
                 $"{messageType.ToString()} inline banner with '{expectedText}' text is not displayed");
         }
 
@@ -101,13 +101,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Text
 
-        public bool IsTextPresent(MessageType messageType, string expectedText)
+        public bool IsTextPresent(MessageType messageType, string expectedText, bool contains)
         {
             //Wait for banner with text
             Driver.WaitForElementToContainsText(GetInlineBanner(messageType), expectedText);
 
             //Check that exact text is displayed in the banner
-            var condition =
+            var condition = contains ?
+                Driver.IsElementExists(By.XPath($"{GetInlineBannerSelector(messageType)}//descendant-or-self::*[contains(text(),\"{expectedText}\")]")) :
                 Driver.IsElementExists(By.XPath($"{GetInlineBannerSelector(messageType)}//descendant-or-self::*[text()=\"{expectedText}\"]"));
             return condition;
         }
