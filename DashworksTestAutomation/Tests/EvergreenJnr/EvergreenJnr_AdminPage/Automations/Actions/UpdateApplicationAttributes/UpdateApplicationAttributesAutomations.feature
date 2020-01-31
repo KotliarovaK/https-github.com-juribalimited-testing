@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18727 @DAS18966 @Cleanup @Not_Ready
-#Waiting 'Update application attributes' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18727 @DAS18966 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -239,8 +238,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalis
 	| Update Type   |
 	| Value         |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup @Not_Ready
-#Waiting for Rationalisation dropdown for Evergreen //Universe release
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |

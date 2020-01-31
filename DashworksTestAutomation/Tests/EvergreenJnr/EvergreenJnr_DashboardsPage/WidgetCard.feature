@@ -626,6 +626,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedWhenCreatingWidge
 	When User add "zUserAutom: Stage 1" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Empty          |
+	When User waits for '3' seconds
 	When User create dynamic list with "DAS19115_List" name on "Devices" page
 	Then "DAS19115_List" list is displayed to user
 	When Dashboard with 'Dashboard_DAS19115' name created via API and opened
