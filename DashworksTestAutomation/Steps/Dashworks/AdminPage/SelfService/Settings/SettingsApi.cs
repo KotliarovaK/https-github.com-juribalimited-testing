@@ -39,8 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Settings
                     $"Unable to get Self Service Base URL. Error details: {JsonConvert.DeserializeObject<JObject>(response.Content)["message"]}");
             }
 
-            var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
-            string ssBaseUrl = responseContent["settingValue"].ToString();
+            string ssBaseUrl = response.Content.ReadJsonProperty("settingValue");
 
             Verify.AreEqual(url, ssBaseUrl, "Self Service Base URL is incorrect");
         }

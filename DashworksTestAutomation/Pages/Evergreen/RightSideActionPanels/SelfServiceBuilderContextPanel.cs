@@ -86,6 +86,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             Verify.AreEqual(expectedDisplayState, Driver.IsElementDisplayed(Driver.FindElement(By.XPath(selector)),
                 WebDriverExtensions.WaitTime.Short), $"Builder Context Panel Item Display State isn't: {expectedDisplayState}");
         }
+
+        public bool IsContentPanelHighlighted(string contextPanelType, string contextPanelName)
+        {
+            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/..";
+            var bgColor = Driver.FindElement(By.XPath(selector)).GetCssValue("border-color");
+            var result = bgColor.Equals("#f25831");
+            return result;
+        }
     }
 }
 

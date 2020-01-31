@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using DashworksTestAutomation.Providers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using TechTalk.SpecFlow;
 using RestSharp;
 
@@ -132,6 +134,13 @@ namespace DashworksTestAutomation.Extensions
             Match m = regex.Match(str);
             var match = m.Value;
             return match;
+        }
+
+        public static string ReadJsonProperty(this string str, string property)
+        {
+            var responseContent = JsonConvert.DeserializeObject<JObject>(str);
+            var content = responseContent[property].ToString();
+            return content;
         }
     }
 }
