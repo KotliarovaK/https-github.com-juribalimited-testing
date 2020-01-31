@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
                 "Self Service Details page is not displayed correctly");
             _driver.WaitForElementToHaveText(autocompleteElement.GetTextbox("Self Service Scope"));
             //For the stability of the Automation's tests
-            Thread.Sleep(800);
+            Thread.Sleep(5000);
         }
     }
 }

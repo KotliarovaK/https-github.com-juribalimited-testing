@@ -1,4 +1,4 @@
-﻿Feature: CreateSelfService
+﻿Feature: AddPageViaBuilder
 	Self Service
 
 Background: Pre-Conditions
@@ -21,10 +21,11 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	Then 'Page Display Name' textbox is displayed
 	When User enters 'Page_1' text to 'Page Name' textbox
 	When User enters 'DisplayPage_1' text to 'Page Display Name' textbox
-	When User checks 'Show this page in self-service' checkbox
+	When User checks 'Show page in self service' checkbox
 	When User clicks 'CREATE' button
 	Then 'The page has been created' text is displayed on inline success banner
 	Then User sees item with 'Page' type and 'Page_1' name on Self Service Builder Panel
+	Then Page with 'DisplayPage_1' subheader is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfServiceViaBuilderWithOnlyFiledPageName
@@ -55,21 +56,18 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsU
 	When User enters '<PageName>' text to 'Page Name' textbox
 	When User enters '<Page Display Name>' text to 'Page Display Name' textbox
 	When User checks 'Show page in self service' checkbox
-	Then 'Show this page in self-service' checkbox is unchecked
-	Then 'CREATE' button is disabled
-	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'CREATE' button is not disabled
 
 	Examples:
 	| PageName                                                     | Page Display Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 	|                                                              | DisplayPage_2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-	| Page_2                                                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-	| 60_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804 | 254_S"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                   |
+    | 60_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804 | 254_S"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                   |
 	| 41_S"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kk                    | 255_AS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                  |
 	| 40_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^kk                     | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep                                                                                                                                                                                                                                                                 |
 	| 39_S"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k                      | 256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep256_AS"ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep |
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatwhenTheCancelButtonIsClickedTheCreatePageConfigurationIsClosedAndTheDefaultViewIsReloaded
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheCancelButtonIsClickedTheCreatePageConfigurationIsClosedAndTheDefaultViewIsReloaded
 	When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_4 | Test_ID_4         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
@@ -87,17 +85,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatwhenTheCancelBu
 	When User clicks 'CREATE PAGE' button
 	When User enters 'Page_44' text to 'Page Name' textbox
 	When User enters 'DisplayPage_44' text to 'Page Display Name' textbox
-	When User clicks 'CREATE' button
-	When User clicks 'CREATE PAGE' button
-	When User enters 'Page_444' text to 'Page Name' textbox
-	When User enters 'DisplayPage_444' text to 'Page Display Name' textbox
-	When User checks 'Show page in self service' checkbox
-	Then 'Show this page in self-service' checkbox is unchecked
-	Then '' content is displayed in 'Page Name' textbox
-	Then '' content is displayed in 'Page Display Name' textbox
 	When User clicks 'CANCEL' button
 	Then 'CREATE PAGE' button is displayed
-	Then User sees page preview with '(.*)' title on the main Builder Page
+	Then Page with 'DisplayPage_4' subheader is displayed to user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenCancelButtonIsClickedWhileCreatingVeryFirstPageForTheSelfServiceThenCreatePageFormReturnsToTheDefaultState
@@ -106,15 +96,15 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenCancelButto
 	| 1         | TestProj_5 | Test_ID_5         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' left menu item
-	When User clicks 'Edit' option in Cog-menu for 'TestProj_4' item from 'Self Service Name' column
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
 	Then 'Create Application Page' page subheader is displayed to user
-	When User enters 'Page_4' text to 'Page Name' textbox
-	When User enters 'DisplayPage_4' text to 'Page Display Name' textbox
+	When User enters 'Page_5' text to 'Page Name' textbox
+	When User enters 'DisplayPage_5' text to 'Page Display Name' textbox
 	When User checks 'Show page in self service' checkbox
 	When User clicks 'CANCEL' button
-	Then 'Show this page in self-service' checkbox is unchecked
+	Then 'Show page in self service' checkbox is unchecked
 	Then '' content is displayed in 'Page Name' textbox
 	Then '' content is displayed in 'Page Display Name' textbox
 	Then 'CREATE' button is disabled
@@ -132,4 +122,4 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatValidationMessa
 	When User enters 'Page_5' text to 'Page Name' textbox
 	When User enters 'DisplayPage_5' text to 'Page Display Name' textbox
 	When User clears 'Page Name' textbox with backspaces
-	Then validation message 'A page name must be entered' is displayed below 'Page Name' field
+	Then 'A page name must be entered' error message is displayed for 'Page Name' field
