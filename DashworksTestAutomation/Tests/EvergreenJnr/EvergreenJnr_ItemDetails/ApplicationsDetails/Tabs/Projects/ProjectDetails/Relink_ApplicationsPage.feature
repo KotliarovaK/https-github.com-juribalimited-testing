@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
-	Then inline success banner is displayed
+	Then 'Application successfully relinked' text is displayed on inline success banner
 	Then Details page for 'Microsoft SQL Server 2012' item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field | Data                      |
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User enters 'WPF' in the 'Application' autocomplete field and selects '"WPF/E" (codename) Community Technology Preview (Feb 2007)' value
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
-	Then inline success banner is displayed
+	Then 'Application successfully relinked' text is displayed on inline success banner
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18769 @DAS19124
 Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorIsDisplayedInTheRelinkToPopupAfterEnteringTwoSymbolsAndSpaceToTheSearchFieldAndClickingEnterButton
