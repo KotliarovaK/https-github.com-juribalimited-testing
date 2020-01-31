@@ -68,6 +68,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17829_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17829_Automation' item from 'Automation' column
+	When '17829_Automation' automation '17829_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User refreshes agGrid
