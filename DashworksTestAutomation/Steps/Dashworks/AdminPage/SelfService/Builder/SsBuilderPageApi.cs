@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             _selfServicePages = selfServicePages;
         }
 
-        [When(@"User creates new Self Service Page cia API")]
+        [When(@"User creates new Self Service Page via API")]
         public void WhenUserCreatesNewSelfServicePageCiaAPI(Table table)
         {
             var ssPage = table.CreateInstance<SelfServicePageDto>();
@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
             {
-                throw new Exception($"ADD EXCEPTION HERE: {response.StatusCode}, {response.ErrorMessage}");
+                throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
             }
 
             var content = response.Content;
@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
             {
-                throw new Exception($"ADD EXCEPTION HERE: {response.StatusCode}, {response.ErrorMessage}");
+                throw new Exception($"Unable to update {name} Self Service: {response.StatusCode}, {response.ErrorMessage}");
             }
 
             var content = response.Content;
@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             _selfServicePages.Value.Add(updatedPage);
         }
 
-        [When(@"User deletes '(.*)' Self Service Page with '(.*)' dentifier via API")]
+        [When(@"User deletes '(.*)' Self Service Page with '(.*)' identifier via API")]
         public void WhenUserDeletesSelfServicePageWithDentifierViaAPI(string name, string serviceIdentifier)
         {
             var ssPage = _selfServicePages.Value
@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
 
             if (!response.StatusCode.Equals(HttpStatusCode.Accepted))
             {
-                throw new Exception($"ADD EXCEPTION HERE: {response.StatusCode}, {response.ErrorMessage}");
+                throw new Exception($"Unable to delete {name} Self Service with {serviceIdentifier} identifier: {response.StatusCode}, {response.ErrorMessage}");
             }
         }
 
@@ -117,15 +117,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
             {
-                throw new Exception($"ADD EXCEPTION HERE: {response.StatusCode}, {response.ErrorMessage}");
+                throw new Exception($"Unable to get Self Service: {response.StatusCode}, {response.ErrorMessage}");
             }
 
             var content = response.Content;
             var createdSsPage = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(content).First();
 
-            Verify.AreEqual(ssPage.Name, createdSsPage.Name, "ADD MESSAGE HERE");
-            Verify.AreEqual(ssPage.DisplayName, createdSsPage.DisplayName, "ADD MESSAGE HERE");
-            Verify.AreEqual(ssPage.ShowInSelfService, createdSsPage.ShowInSelfService, "ADD MESSAGE HERE");
+            Verify.AreEqual(ssPage.Name, createdSsPage.Name, $"Self Service name should be {ssPage.Name} but it is {createdSsPage.Name}");
+            Verify.AreEqual(ssPage.DisplayName, createdSsPage.DisplayName, $"Self Service display name should be {ssPage.DisplayName} but it is {createdSsPage.DisplayName}");
+            Verify.AreEqual(ssPage.ShowInSelfService, createdSsPage.ShowInSelfService, $"Self Service checkbox's state should be {ssPage.ShowInSelfService} but it is {createdSsPage.ShowInSelfService}");
         }
 
         [Then(@"'(.*)' Self Service does not contains any pages")]
@@ -140,12 +140,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
             {
-                throw new Exception($"ADD EXCEPTION HERE: {response.StatusCode}, {response.ErrorMessage}");
+                throw new Exception($"Unable to get the Self Service pages: {response.StatusCode}, {response.ErrorMessage}");
             }
 
             var content = response.Content;
 
-            Verify.AreEqual("[]", content, "ADD ERROR MESSAGE");
+            Verify.AreEqual("[]", content, $"Self Service shouldn't contain any pages, but it contains the following: {content}");
         }
     }
 }
