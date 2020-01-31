@@ -52,6 +52,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
 
+        [When(@"User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
+        }
+
         [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
         public void ThenUserSeesItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {

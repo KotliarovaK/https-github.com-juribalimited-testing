@@ -80,23 +80,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfS" +
-            "erviceViaBuilder")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationS" +
+            "hownWhenUserEditPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19061")]
+        [NUnit.Framework.CategoryAttribute("DAS19792")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfServiceViaBuilder()
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationShownWhenUserEditPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfS" +
-                    "erviceViaBuilder", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelectedPageConfigurationS" +
+                    "hownWhenUserEditPage", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "SelfService",
-                        "DAS19061",
+                        "DAS19792",
                         "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -160,6 +160,381 @@ this.FeatureBackground();
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table2, "When ");
 #line 20
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+    testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_1\' name" +
+                    " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+ testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.Then("\'TestPageName_1\' content is displayed in \'Page Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
+ testRunner.Then("\'TestPageDisplayName_1\' content is displayed in \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.Then("\'Show page in self service\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnab" +
+            "ledIfUserDidDidntChangesAndProperToolTipsAreDisplays")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS19792")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnabledIfUserDidDidntChangesAndProperToolTipsAreDisplays()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisabledEnab" +
+                    "ledIfUserDidDidntChangesAndProperToolTipsAreDisplays", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS19792",
+                        "Cleanup"});
+#line 28
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceId",
+                        "Name",
+                        "ServiceIdentifier",
+                        "Enabled",
+                        "ObjectType",
+                        "ObjectTypeId",
+                        "StartDate",
+                        "EndDate",
+                        "SelfServiceURL",
+                        "AllowAnonymousUsers",
+                        "ScopeId",
+                        "scopeName",
+                        "Scope"});
+            table3.AddRow(new string[] {
+                        "1",
+                        "TestProj_2",
+                        "Test_ID_2",
+                        "false",
+                        "Devimdmdmm",
+                        "3",
+                        "2019-12-10T21:34:47.24",
+                        "2019-12-31T21:34:47.24",
+                        "URL",
+                        "true",
+                        "2",
+                        "bob",
+                        "1803 Apps"});
+#line 29
+ testRunner.When("User creates Self Service via API", ((string)(null)), table3, "When ");
+#line 32
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_2\' item from \'Self Service Na" +
+                    "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceIdentifier",
+                        "Name",
+                        "ObjectTypeId",
+                        "DisplayName",
+                        "ShowInSelfService"});
+            table4.AddRow(new string[] {
+                        "Test_ID_2",
+                        "TestPageName_2",
+                        "3",
+                        "TestPageDisplayName_2",
+                        "true"});
+#line 36
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table4, "When ");
+#line 39
+ testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+    testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_2\' name" +
+                    " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 41
+ testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 42
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 43
+ testRunner.When("User enters \'TestPageName_2\' text to \'Page Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 45
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 46
+ testRunner.When("User enters \'ChangedPageName\' text to \'Page Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 48
+ testRunner.When("User enters \'TestPageName_2\' text to \'Page Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 50
+ testRunner.When("User enters \'DisplayPage_1\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 51
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 52
+ testRunner.When("User enters \'TestPageDisplayName_2\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 54
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 55
+ testRunner.When("User enters \'TestPageDisplayName_2\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 56
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 57
+ testRunner.When("User unchecks \'Show page in self service\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 58
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 59
+ testRunner.When("User checks \'Show page in self service\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 60
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 62
+ testRunner.When("User clears \'Page Display Name\' textbox with backspaces", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 63
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 64
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdatedPageChangesWillBeSa" +
+            "vedAndProperNotificationIsDisplayed")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS19792")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdatedPageChangesWillBeSavedAndProperNotificationIsDisplayed()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdatedPageChangesWillBeSa" +
+                    "vedAndProperNotificationIsDisplayed", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS19792",
+                        "Cleanup"});
+#line 67
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceId",
+                        "Name",
+                        "ServiceIdentifier",
+                        "Enabled",
+                        "ObjectType",
+                        "ObjectTypeId",
+                        "StartDate",
+                        "EndDate",
+                        "SelfServiceURL",
+                        "AllowAnonymousUsers",
+                        "ScopeId",
+                        "scopeName",
+                        "Scope"});
+            table5.AddRow(new string[] {
+                        "1",
+                        "TestProj_3",
+                        "Test_ID_3",
+                        "false",
+                        "Devimdmdmm",
+                        "3",
+                        "2019-12-10T21:34:47.24",
+                        "2019-12-31T21:34:47.24",
+                        "URL",
+                        "true",
+                        "2",
+                        "bob",
+                        "1803 Apps"});
+#line 68
+ testRunner.When("User creates Self Service via API", ((string)(null)), table5, "When ");
+#line 71
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 72
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 73
+ testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_3\' item from \'Self Service Na" +
+                    "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
+ testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceIdentifier",
+                        "Name",
+                        "ObjectTypeId",
+                        "DisplayName",
+                        "ShowInSelfService"});
+            table6.AddRow(new string[] {
+                        "Test_ID_3",
+                        "TestPageName_3",
+                        "3",
+                        "TestPageDisplayName_3",
+                        "false"});
+#line 75
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table6, "When ");
+#line 78
+ testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 79
+    testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_3\' name" +
+                    " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 80
+ testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 81
+ testRunner.When("User enters \'UPDATED_PageDisplayName\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 82
+ testRunner.When("User enters \'UPDATED_PageName\' text to \'Page Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 83
+ testRunner.When("User checks \'Show page in self service\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 84
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 85
+ testRunner.Then("\'The page has been updated\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 86
+ testRunner.Then("User sees item with \'Page\' type and \'UPDATED_PageName\' name on Self Service Build" +
+                    "er Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 87
+ testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'UPDATED_PageName\' na" +
+                    "me on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 89
+ testRunner.Then("\'UPDATED_PageName\' content is displayed in \'Page Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 90
+ testRunner.Then("\'UPDATED_PageDisplayName\' content is displayed in \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 91
+ testRunner.Then("\'Show page in self service\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
+            "tion")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS19792")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.TestCaseAttribute("DisplayPage_2", "", null)]
+        [NUnit.Framework.TestCaseAttribute("60_S\"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kknnnljfjndfjk9849804", "254_S\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjn" +
+            "gjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLF" +
+            "S\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjn" +
+            "gnrniorngiwep", null)]
+        [NUnit.Framework.TestCaseAttribute("41_S\"FEIJO:J&#*@YnifnoifnosndfJDN*&*(*^kk", "255_AS\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkj" +
+            "ngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NL" +
+            "FS\"FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngj" +
+            "ngnrniorngiwep", null)]
+        [NUnit.Framework.TestCaseAttribute("40_S\"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^kk", @"256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep", null)]
+        [NUnit.Framework.TestCaseAttribute("39_S\"FEJO:J&#*@YnifnoifnosndfJDN*&*(*^k", @"256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep256_AS""ASEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwepnbjfnbvjinerigwperignjehfbvhdfbvberouibgoewuibgrebghjebgouhe_NLFS""FEIJO:J&#*@Y)NFNDFnjn45nk5kl34NFDHKGBUD#*($)%&*$(%&()#@&$KJKSFBVKJBSVJKSkjngjngnrniorngiwep", null)]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValidation(string pageName, string pageDisplayName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Admin",
+                    "EvergreenJnr_AdminPage",
+                    "SelfService",
+                    "DAS19792",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
+                    "tion", null, @__tags);
+#line 94
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceId",
+                        "Name",
+                        "ServiceIdentifier",
+                        "Enabled",
+                        "ObjectType",
+                        "ObjectTypeId",
+                        "StartDate",
+                        "EndDate",
+                        "SelfServiceURL",
+                        "AllowAnonymousUsers",
+                        "ScopeId",
+                        "scopeName",
+                        "Scope"});
+            table7.AddRow(new string[] {
+                        "1",
+                        "TestProj_4",
+                        "Test_ID_4",
+                        "false",
+                        "Devimdmdmm",
+                        "3",
+                        "2019-12-10T21:34:47.24",
+                        "2019-12-31T21:34:47.24",
+                        "URL",
+                        "true",
+                        "2",
+                        "bob",
+                        "1803 Apps"});
+#line 95
+    testRunner.When("User creates Self Service via API", ((string)(null)), table7, "When ");
+#line 98
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 99
+ testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 100
+ testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_4\' item from \'Self Service Na" +
+                    "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
+ testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceIdentifier",
+                        "Name",
+                        "ObjectTypeId",
+                        "DisplayName",
+                        "ShowInSelfService"});
+            table8.AddRow(new string[] {
+                        "Test_ID_4",
+                        "TestPageName_4",
+                        "3",
+                        "TestPageDisplayName_4",
+                        "false"});
+#line 102
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table8, "When ");
+#line 105
+ testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 106
+    testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_4\' name" +
+                    " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 107
+ testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 108
+ testRunner.When(string.Format("User enters \'{0}\' text to \'Page Name\' textbox", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 109
+ testRunner.When(string.Format("User enters \'{0}\' text to \'Page Display Name\' textbox", pageDisplayName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 110
+ testRunner.When("User checks \'Show page in self service\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 111
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
