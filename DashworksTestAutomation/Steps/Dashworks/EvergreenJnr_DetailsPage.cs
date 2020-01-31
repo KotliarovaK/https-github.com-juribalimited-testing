@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 menu.GetColumnCheckbox(row["checkboxes"]).Click();
             }
+            page.BodyContainer.Click();
         }
 
         [Then(@"'(.*)' checkbox is checked in the filter dropdown for the '(.*)' column")]
