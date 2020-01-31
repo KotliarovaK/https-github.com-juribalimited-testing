@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @HideFromEndUsers @DAS18849 @DAS19753 @Univers
+@Evergreen @Applications @EvergreenJnr_ItemDetails @HideFromEndUsers @DAS18849 @DAS19753 @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUserFieldsAreDisplayedAndWorkingCorrectly
 	When User navigates to the 'Application' details page for 'ACDSee for Windows 95' item
 	Then Details page for 'ACDSee for Windows 95' item is displayed to the user

@@ -19,6 +19,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	Then popup is displayed to User
 	When User enters 'Microsoft SQL' in the 'Application' autocomplete field and selects 'Microsoft SQL Server 2012' value
 	When User clicks 'RELINK' button on popup
+	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
 	Then inline success banner is displayed
 	Then Details page for 'Microsoft SQL Server 2012' item is displayed to the user
