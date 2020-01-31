@@ -497,6 +497,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Criticality.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateApplicationAttributes\HideFromEndUsers.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HideFromEndUsers.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateApplicationAttributes\UpdateApplicationAttributes11.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1896,6 +1901,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateApplicationAttributes\Criticality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Criticality.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateApplicationAttributes\HideFromEndUsers.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>HideFromEndUsers.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateApplicationAttributes\UpdateApplicationAttributes1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

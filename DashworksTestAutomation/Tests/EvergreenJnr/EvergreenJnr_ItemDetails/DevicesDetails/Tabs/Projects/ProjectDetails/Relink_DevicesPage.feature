@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'RELINK' button on popup
 	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
-	Then inline success banner is displayed
+	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on inline success banner
 	Then Details page for 'QSFCLB19N5524S' item is displayed to the user
 	And User verifies data in the fields on details page
 	| Field        | Data            |
@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User enters '06RIV0KXJMHJ1K' in the 'Device' autocomplete field and selects '06RIV0KXJMHJ1K' value
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
-	Then inline success banner is displayed
+	Then 'Device successfully relinked' text is displayed on inline success banner
 	When User navigates to the 'User' details page for 'ZHC394580' item
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
@@ -44,8 +44,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 
-	#Ready on the 'radiant' server
-@Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @DAS19884 @Universe
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyRelinked
 	When User navigates to the 'Device' details page for 'FISC5NOXFB8Q7M' item
 	Then Details page for 'FISC5NOXFB8Q7M' item is displayed to the user

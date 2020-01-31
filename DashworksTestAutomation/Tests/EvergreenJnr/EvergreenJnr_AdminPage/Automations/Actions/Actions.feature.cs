@@ -2617,7 +2617,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS18886")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage()
         {
             System.Exception lastException = null;
@@ -2652,7 +2652,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Actions",
                         "DAS18886",
-                        "Not_Ready"});
+                        "Universe"});
 #line 777
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

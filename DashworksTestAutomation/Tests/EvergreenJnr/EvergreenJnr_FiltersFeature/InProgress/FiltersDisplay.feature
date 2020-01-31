@@ -72,9 +72,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpec
 		| Not used by device's owner     |
 		| Not entitled to device's owner |
 
-
-
-
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11187 @DAS13376
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
 	When User clicks 'Devices' on the left-hand menu
@@ -134,9 +131,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditi
 		| Option | State |
 		| Green  | true  |
 
-
-
-
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11088
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFilters
 	When User clicks '<ListName>' on the left-hand menu
@@ -154,8 +148,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedFor
 		| Users        | Barry'sUse: Project Dates \ Scheduled Date                                     |
 		| Applications | UserSchedu: Three \ Date App Req A                                             |
 		| Mailboxes    | Created Date                                                                   |
-
-
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS11831
 Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter
@@ -178,8 +170,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDispl
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	Then "Mailbox Owner" section is not displayed in the Filter panel
-
-
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11466
 Scenario: EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicationCategory
@@ -211,7 +201,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategor
 		| Users     |
 		| Mailboxes |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13201 @DAS14325
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13201 @DAS14325 @DAS14325 @DAS19309
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInFiltersPanel
 	When User clicks 'Applications' on the left-hand menu
 	And User clicks the Filters button
@@ -221,8 +211,18 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	When User closes "Suggested" filter category
 	And User expands "Evergreen" filter category
 	Then the following Filters subcategories are displayed for open category:
-		| Subcategories           |
-		| Evergreen Capacity Unit |
+		| Subcategories                   |
+		| Criticality                     |
+		| Evergreen Capacity Unit         |
+		| Evergreen Rationalisation       |
+		| Evergreen Target App            |
+		| Evergreen Target App Compliance |
+		| Evergreen Target App Key        |
+		| Evergreen Target App Name       |
+		| Evergreen Target App Vendor     |
+		| Evergreen Target App Version    |
+		| Hide from End Users             |
+		| In Catalog                      |
 
 #'archived' tag was added, because "Evergreen" option in "Mode" dropdown is not available now.
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Projects @Cleanup @DAS13201 @archived
@@ -334,8 +334,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEver
 	Then Filters panel is displayed to the user
 	When user select "Evergreen Capacity Unit" filter
 	Then "Capacity_Unit_DAS13201_to_be_deleted" checkbox is not available for current opened filter
-
-
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS13183
 Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedToApplicationVendor
@@ -503,8 +501,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilt
 		| 26    |
 		| 49    |
 		| 51    |
-
-
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15625
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
