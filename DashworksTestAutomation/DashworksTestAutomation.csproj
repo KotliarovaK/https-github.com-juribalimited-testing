@@ -573,11 +573,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationsCriticality.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\AutomationsHideFromEndUsers.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutomationsHideFromEndUsers.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesInCatalog.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1946,10 +1941,6 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\AutomationsCriticality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationsCriticality.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\AutomationsHideFromEndUsers.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AutomationsHideFromEndUsers.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateApplicationAttributes\UpdateApplicationAttributesInCatalog.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
