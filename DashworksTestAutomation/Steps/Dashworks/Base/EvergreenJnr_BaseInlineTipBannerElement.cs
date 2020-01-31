@@ -138,6 +138,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.VerifyMessageTextAndColor(MessageType.Success, text);
         }
 
+        [Then(@"inline success banner contains '(.*)' text")]
+        public void ThenInlineSuccessBannerContainsText(string text)
+        {
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
+
+            page.VerifyMessageTextAndColor(MessageType.Success, text);
+        }
+
         [Then(@"'(.*)' and '(.*)' texts are displayed on inline success banner")]
         public void ThenAndTextsAreDisplayedOnInlineSuccessBanner(string firstPart, string secondPart)
         {
