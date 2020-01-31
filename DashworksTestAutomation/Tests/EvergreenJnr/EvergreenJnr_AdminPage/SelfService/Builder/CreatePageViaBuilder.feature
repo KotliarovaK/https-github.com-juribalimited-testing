@@ -16,6 +16,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
 	Then 'Create Application Page' page subheader is displayed to user
+	Then 'CREATE' button has tooltip with 'Some settings are missing or not valid' text
 	Then 'CREATE' button is displayed
 	Then 'Page Name' textbox is displayed
 	Then 'Page Display Name' textbox is displayed
