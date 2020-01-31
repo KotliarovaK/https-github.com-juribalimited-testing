@@ -113,6 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.VerifyColor(MessageType.Tip);
         }
 
+        //TODO DO NOT USE THIS STEP!!!!!!
         [Then(@"inline success banner is displayed")]
         public void ThenInlineSuccessBannerIsDisplayed()
         {
@@ -132,6 +133,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         [Then(@"'(.*)' text is displayed on inline success banner")]
         public void ThenTextIsDisplayedOnInlineSuccessBanner(string text)
+        {
+            BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
+
+            page.VerifyMessageTextAndColor(MessageType.Success, text);
+        }
+
+        [Then(@"inline success banner contains '(.*)' text")]
+        public void ThenInlineSuccessBannerContainsText(string text)
         {
             BaseInlineBannerElement page = _driver.NowAtWithoutWait<BaseInlineBannerElement>();
 
