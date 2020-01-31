@@ -76,12 +76,12 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             rightSidePanel.CheckBuilderContextPanelItemDisplayState(contextPanelType, contextPanelName, false);
         }
 
-        [Then(@"item with '(.*)' type and '(.*)' name on Self Service Builder Panel is highlighted")]
+        [Then(@"Item with '(.*)' type and '(.*)' name on Self Service Builder Panel is highlighted")]
         public void ThenItemWithTypeAndNameOnSelfServiceBuilderPanelIsHighlighted(string contextPanelType, string contextPanelName)
         {
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
 
-            Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), "ADD ERROR MESSAGE");
+            Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
         }
     }
 }

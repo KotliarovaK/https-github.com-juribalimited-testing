@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_1 | Test_ID_1         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_1' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_2 | Test_ID_2         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_2' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
@@ -49,7 +49,7 @@ Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsU
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_3' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenTheCancelBu
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_4 | Test_ID_4         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_4' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenCancelButto
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_5 | Test_ID_5         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatValidationMessa
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_5 | Test_ID_5         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_5' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item

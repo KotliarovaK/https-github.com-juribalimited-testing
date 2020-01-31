@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         {
             var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/..";
             var bgColor = Driver.FindElement(By.XPath(selector)).GetCssValue("border-color");
-            var result = bgColor.Equals("#f25831");
+            var result = bgColor.Equals("rgb(242, 88, 49)");
             return result;
         }
     }
