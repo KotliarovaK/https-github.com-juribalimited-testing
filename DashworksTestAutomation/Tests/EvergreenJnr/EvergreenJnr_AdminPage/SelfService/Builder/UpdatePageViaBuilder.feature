@@ -1,11 +1,20 @@
 ﻿Feature: UpdatePageViaBuilder
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	Self Service
 
-@mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+Background: Pre-Conditions
+	Given User is logged in to the Evergreen
+	Then Evergreen Dashboards page should be displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddPageToSelfServiceViaBuilder
+	When User creates Self Service via API
+	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
+	| 1         | TestProj_1 | Test_ID_1         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' left menu item
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_1' item from 'Self Service Name' column
+	Then Self Service Details page is displayed correctly
+	When User creates new Self Service Page via API
+	| ServiceIdentifier | Name           | ObjectTypeId | DisplayName           | ShowInSelfService |
+	| Test_ID_1         | TestPageName_1 | 3            | TestPageDisplayName_1 | true              |
+	When User navigates to the 'Builder' left menu item
