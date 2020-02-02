@@ -2632,6 +2632,106 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreation")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS17715")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreation()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreationInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreationInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreation", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS17715",
+                        "Cleanup"});
+#line 645
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 646
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 647
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values",
+                        "Association"});
+            table50.AddRow(new string[] {
+                        "",
+                        "Entitled to device"});
+#line 648
+ testRunner.And("User add \"Device ComputerCustomField\" filter where type is \"Not empty\" with follo" +
+                    "wing Value and Association:", ((string)(null)), table50, "And ");
+#line 652
+ testRunner.Then("\"842\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 653
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 654
+ testRunner.When("User create dynamic list with \"TestList_DAS17715\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 655
+ testRunner.Then("\"TestList_DAS17715\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 656
+ testRunner.When("Dashboard with \'Dashboard for DAS17715\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 657
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 658
+ testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type"});
+            table51.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS17715",
+                        "TestList_DAS17715",
+                        "First Cell"});
+#line 659
+ testRunner.And("User adds new Widget", ((string)(null)), table51, "And ");
+#line 662
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 663
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 664
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 665
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
