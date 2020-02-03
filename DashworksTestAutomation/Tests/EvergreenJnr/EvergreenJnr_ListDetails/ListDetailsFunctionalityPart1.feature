@@ -17,13 +17,19 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
 	Then Edit List menu is not displayed
-	When User mark list as favorite
-	Then Star icon is active in list details panel
+	When User checks 'Favorite List' checkbox
 	Then Edit List menu is not displayed
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	Then Edit List menu is not displayed
+	When User clicks the List Details button
+	Then Details panel is displayed to the user
 	Then "RenamedList" list is displayed to user
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
 	When User select "Automation Admin 1" as a Owner of a list
+	When User clicks the List Details button
 	And User click Accept button in List Details panel
 	Then Edit List menu is not displayed
 
