@@ -824,6 +824,70 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNumberOfRequestsToListsDontExceedAllowedCount")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("DAS15785")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "/devices", "23", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", "/users", "11", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "/applications", "11", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "/mailboxes", "11", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToListsDontExceedAllowedCount(string listType, string listTitle, string url, string requests, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatNumberOfRequestsToListsDontExceedAllowedCountInternal(listType,listTitle,url,requests,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToListsDontExceedAllowedCountInternal(string listType, string listTitle, string url, string requests, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ListPanel",
+                    "DAS15785"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatNumberOfRequestsToListsDontExceedAllowedCount", null, @__tags);
+#line 185
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 186
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 187
+ testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 188
+ testRunner.Then(string.Format("Number of requests to \'{0}\' is not greater than \'{1}\'", url, requests), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
