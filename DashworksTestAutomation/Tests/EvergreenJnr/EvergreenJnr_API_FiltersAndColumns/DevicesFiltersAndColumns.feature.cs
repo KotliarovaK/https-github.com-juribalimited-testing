@@ -136,7 +136,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData()
         {
             System.Exception lastException = null;
@@ -169,14 +168,13 @@ this.FeatureBackground();
                         "Evergreen",
                         "Devices",
                         "API",
-                        "FiltersAndColumns",
-                        "Not_Run"});
-#line 13
+                        "FiltersAndColumns"});
+#line 14
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 14
+#line 15
  testRunner.Then("Positive number of results returned for \'DevicesQueryUrls\' requests", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

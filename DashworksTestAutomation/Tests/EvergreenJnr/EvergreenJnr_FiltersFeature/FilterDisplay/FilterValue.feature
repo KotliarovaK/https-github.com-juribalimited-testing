@@ -34,51 +34,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfter
 	When User deletes one character from the Search field
 	Then "50" of all shown label displays in the Filter panel
 
- #'archived' tag was added, because "Evergreen" option in "Mode" dropdown is not available now.
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Projects @Cleanup @DAS13201 @archived
-Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
-	When User clicks 'Admin' on the left-hand menu
-	And User clicks 'CREATE PROJECT' button
-	And User enters '13201' text to 'Project Name' textbox
-	And User selects 'All Mailboxes' option from 'Scope' autocomplete
-	When User selects 'Evergreen' in the 'Mode' dropdown
-	When User clicks 'CREATE' button
-	And User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "DeviceSche: Capacity Unit" filter
-	Then Following checkboxes are available for current opened filter:
-		| checkboxes              |
-		| Project Capacity Unit 1 |
-		| Project Capacity Unit 2 |
-		| Unassigned              |
-	When User clicks 'Users' on the left-hand menu
-	And User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "UserEvergr: Capacity Unit" filter
-	Then Following checkboxes are available for current opened filter:
-		| checkboxes                |
-		| Evergreen Capacity Unit 1 |
-		| Evergreen Capacity Unit 2 |
-		| Evergreen Capacity Unit 3 |
-		| Unassigned                |
-	When User clicks 'Mailboxes' on the left-hand menu
-	And User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "13201: Capacity Unit" filter
-	Then Following checkboxes are available for current opened filter:
-		| checkboxes |
-		| Unassigned |
-	When User clicks 'Applications' on the left-hand menu
-	And User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "DeviceSche: Capacity Unit" filter
-	Then Following checkboxes are available for current opened filter:
-		| checkboxes              |
-		| Project Capacity Unit 1 |
-		| Project Capacity Unit 2 |
-		| Unassigned              |
-
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS10771 @DAS10972 @DAS14748
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	When User clicks '<PageName>' on the left-hand menu
