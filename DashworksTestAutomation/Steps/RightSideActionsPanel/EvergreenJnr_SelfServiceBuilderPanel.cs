@@ -1,5 +1,6 @@
 ﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -50,6 +51,37 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
+        }
+
+        [When(@"User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
+        }
+
+        [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void ThenUserSeesItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+
+            rightSidePanel.CheckBuilderContextPanelItemDisplayState(contextPanelType, contextPanelName, true);
+        }
+
+        [Then(@"User doesn't see item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void ThenUserDoesntSeeItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+
+            rightSidePanel.CheckBuilderContextPanelItemDisplayState(contextPanelType, contextPanelName, false);
+        }
+
+        [Then(@"Item with '(.*)' type and '(.*)' name on Self Service Builder Panel is highlighted")]
+        public void ThenItemWithTypeAndNameOnSelfServiceBuilderPanelIsHighlighted(string contextPanelType, string contextPanelName)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+
+            Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
         }
     }
 }
