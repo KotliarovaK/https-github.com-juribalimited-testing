@@ -286,3 +286,7 @@ Scenario: EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmal
 	Then 'NEW dashboard' list is displayed in the Lists panel
 	When User enters "New" text in Search field at List Panel
 	Then 'NEW dashboard' list is displayed in the Lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15896
+Scenario: EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCount
+	Then Number of requests to '/dashboard' is not greater than '11'

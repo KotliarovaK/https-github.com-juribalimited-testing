@@ -274,3 +274,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickin
 	When User clicks 'Automations' header breadcrumb
 	Then Page with 'Automations' header is displayed to user
 	Then 'Automations' left menu item is expanded
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15896
+Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfRequestsDontExceedAllowedCount
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	Then Number of requests to '/admin' is not greater than '7'
