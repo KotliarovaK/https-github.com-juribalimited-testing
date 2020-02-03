@@ -654,7 +654,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
-	| Hide from End Users             |
+	| Hide From End Users             |
 	| In Catalog                      |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299

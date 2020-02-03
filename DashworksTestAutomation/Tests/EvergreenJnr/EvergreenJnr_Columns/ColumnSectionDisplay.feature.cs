@@ -2568,7 +2568,7 @@ this.FeatureBackground();
             table74.AddRow(new string[] {
                         "Evergreen Target App Version"});
             table74.AddRow(new string[] {
-                        "Hide from End Users"});
+                        "Hide From End Users"});
             table74.AddRow(new string[] {
                         "In Catalog"});
 #line 647
