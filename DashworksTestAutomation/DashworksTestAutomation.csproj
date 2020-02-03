@@ -971,11 +971,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Buckets\Buckets.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Buckets.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2410,10 +2405,6 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Rings\Rings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Rings.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Buckets\Buckets.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Buckets.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
