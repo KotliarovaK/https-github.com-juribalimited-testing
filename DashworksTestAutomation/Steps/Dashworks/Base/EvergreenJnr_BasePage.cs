@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(_driver.IsElementDisplayed(page.SubHeader, WebDriverExtensions.WaitTime.Short), $"Page with '{subHeader}' is not displayed");
-            Verify.AreEqual(subHeader, page.SubHeader.Text, "Incorrect page header");
+            Verify.AreEqual(subHeader, page.SubHeader.Text, "Incorrect page subheader");
         }
 
         #endregion

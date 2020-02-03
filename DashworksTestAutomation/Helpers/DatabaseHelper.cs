@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.Projects;
@@ -664,6 +665,17 @@ namespace DashworksTestAutomation.Helpers
             var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
             return selfServiceId;
         }
+
+        #region Builder
+
+        public static int GetSelfServicePageId(SelfServicePageDto page)
+        {
+            string query = $"SELECT [PageId]  FROM [PM].[SS].[SelfServicePage] WHERE [Name] = '{page.Name}' AND [SelfServiceId] = '{page.ServiceId}' ";
+            var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return int.Parse(selfServiceId);
+        }
+
+        #endregion
 
         #endregion
     }
