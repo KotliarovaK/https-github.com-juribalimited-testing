@@ -233,8 +233,9 @@ Examples:
 	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
 	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
 
-#Awaiting Lisa's response and updating the autotest scenario 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup @Not_Run
+#Awaiting Lisa's response and updating the autotest scenario
+#sz: NotRun tag removed 
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |

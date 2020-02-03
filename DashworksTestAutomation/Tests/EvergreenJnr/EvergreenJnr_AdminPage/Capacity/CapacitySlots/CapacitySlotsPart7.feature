@@ -113,7 +113,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	| Stage13593 \ 2Task13593 |
 	| Stage13593 \ 6Task13593 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Cleanup @Not_Run
+# sz: removed NotRun tag
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User creates new Slot

@@ -365,7 +365,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12389")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingProjectPage()
         {
             System.Exception lastException = null;
@@ -400,22 +399,21 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Projects",
-                        "DAS12389",
-                        "Not_Run"});
-#line 86
+                        "DAS12389"});
+#line 87
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 87
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
- testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 89
- testRunner.And("User tries to open not existing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
- testRunner.Then("Page not found displayed for the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User tries to open not existing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
+ testRunner.Then("Page not found displayed for the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 92
  testRunner.And("There are only \'Page not found\' errors in console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -469,18 +467,18 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS16137",
                         "Cleanup"});
-#line 94
+#line 95
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 95
- testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
- testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
- testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 98
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 99
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -495,17 +493,17 @@ this.FeatureBackground();
                         "1234qwer",
                         "1234qwer",
                         "Analysis Editor"});
-#line 99
+#line 100
  testRunner.And("User create new User", ((string)(null)), table6, "And ");
-#line 102
- testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 103
- testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 104
- testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 105
- testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 107
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -514,13 +512,13 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "DAS16137_user",
                         "1234qwer"});
-#line 107
+#line 108
  testRunner.When("User login with following credentials:", ((string)(null)), table7, "When ");
-#line 110
- testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 111
- testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 112
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 113
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -529,11 +527,11 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Devices",
                         "evergreen/#/admin/project/63/scope/scopeChanges"});
-#line 113
+#line 114
  testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType with expecting error", ((string)(null)), table8, "When ");
-#line 116
- testRunner.Then("\'Admin\' left-hand menu item is hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 117
+ testRunner.Then("\'Admin\' left-hand menu item is hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 118
  testRunner.Then("error page with \'403\' status code and \'You are not authorized to view this page, " +
                     "speak to your Dashworks administrator\' error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

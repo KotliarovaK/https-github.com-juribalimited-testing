@@ -488,7 +488,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Senior")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot()
         {
             System.Exception lastException = null;
@@ -529,14 +528,13 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Capacity",
                         "Do_Not_Run_With_Slots",
                         "Do_Not_Run_With_Senior",
-                        "Cleanup",
-                        "Not_Run"});
-#line 117
+                        "Cleanup"});
+#line 118
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 118
+#line 119
  testRunner.When("User navigates to \"Windows 7 Migration (Computer Scheduled Project)\" project deta" +
                     "ils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -551,46 +549,46 @@ this.FeatureBackground();
                         "Slot 1",
                         "Pre-Migration \\ Scheduled Date‡Pre-Migration \\ Forecast Date‡Computer Information" +
                             " ---- Text fill; Text fill; \\ Group Computer Rag Radio Date Owner"});
-#line 119
+#line 120
  testRunner.And("User creates new Slot", ((string)(null)), table15, "And ");
-#line 122
- testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
- testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 124
+ testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 133
- testRunner.And("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
- testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
- testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 136
- testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 137
- testRunner.And("User navigate to \"Forecast Date\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
- testRunner.And("User unpublishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
  testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
- testRunner.And("User navigate to \"Group Computer Rag Radio Date Owner\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
+#line 138
+ testRunner.And("User navigate to \"Forecast Date\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
  testRunner.And("User unpublishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 140
+ testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+ testRunner.And("User navigate to \"Group Computer Rag Radio Date Owner\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 142
- testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User unpublishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 143
- testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
+ testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
  testRunner.And("User navigates to \"Windows 7 Migration (Computer Scheduled Project)\" project deta" +
                     "ils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 145
- testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 146
- testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
- testRunner.And("User enters \"Slot 1\" text in the Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 148
+ testRunner.And("User enters \"Slot 1\" text in the Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -602,15 +600,15 @@ this.FeatureBackground();
                             "wner"});
             table16.AddRow(new string[] {
                         "Pre-Migration \\ Scheduled Date"});
-#line 149
+#line 150
  testRunner.Then("only below options are selected in the \'(.*)\' autocomplete", ((string)(null)), table16, "Then ");
-#line 154
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 155
- testRunner.And("User clicks \'CREATE NEW SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 156
- testRunner.And("User enters \'Slot 2\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \'CREATE NEW SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 157
+ testRunner.And("User enters \'Slot 2\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 158
  testRunner.And("User enters \'Slot 2\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -620,43 +618,43 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "Computer Information ---- Text fill; Text fill; \\ Group Computer Rag Radio Date O" +
                             "wner"});
-#line 158
+#line 159
  testRunner.Then("\'Tasks\' autocomplete does not have following checkbox options", ((string)(null)), table17, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "options"});
             table18.AddRow(new string[] {
                         "Pre-Migration \\ Scheduled Date"});
-#line 162
+#line 163
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table18, "Then ");
-#line 165
+#line 166
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table19.AddRow(new string[] {
                         "Slot 1"});
-#line 166
+#line 167
  testRunner.And("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table19, "And ");
-#line 169
- testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 170
- testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 171
- testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 172
- testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 173
- testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 174
- testRunner.And("User navigate to \"Forecast Date\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 175
- testRunner.And("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 176
  testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 175
+ testRunner.And("User navigate to \"Forecast Date\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 176
+ testRunner.And("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 177
- testRunner.And("User navigate to \"Group Computer Rag Radio Date Owner\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 178
+ testRunner.And("User navigate to \"Group Computer Rag Radio Date Owner\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 179
  testRunner.And("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -716,23 +714,23 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Slots",
                         "Do_Not_Run_With_Senior",
                         "Cleanup"});
-#line 181
+#line 182
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 182
- testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 183
- testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 184
- testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 185
+ testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 186
  testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
                     " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 186
- testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 187
+ testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 188
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -751,13 +749,13 @@ this.FeatureBackground();
                         "Date",
                         "Computer",
                         ""});
-#line 188
+#line 189
  testRunner.And("User creates Task", ((string)(null)), table20, "And ");
-#line 191
- testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 192
- testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 193
+ testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 194
  testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -772,13 +770,13 @@ this.FeatureBackground();
                         "Slot Task13502",
                         "Capacity Units",
                         "Computer Information ---- Text fill; Text fill; \\ Task13502"});
-#line 194
+#line 195
  testRunner.When("User creates new Slot via Api", ((string)(null)), table21, "When ");
-#line 197
- testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 198
- testRunner.Then("CapacityEnabled flag is equal to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 199
+ testRunner.Then("CapacityEnabled flag is equal to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 200
  testRunner.When("User removes \"Computer Information ---- Text fill; Text fill; \\ Task13502\" on the" +
                     " Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -786,11 +784,11 @@ this.FeatureBackground();
                         "options"});
             table22.AddRow(new string[] {
                         "Computer Information ---- Text fill; Text fill; \\ Task13502"});
-#line 200
+#line 201
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table22, "Then ");
-#line 203
- testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 204
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 205
  testRunner.Then("CapacityEnabled flag is equal to \"False\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -850,23 +848,23 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Slots",
                         "Do_Not_Run_With_Senior",
                         "Cleanup"});
-#line 207
+#line 208
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 208
- testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 209
- testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 210
- testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 211
+ testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 212
  testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
                     " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 212
- testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 213
+ testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 214
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
@@ -885,17 +883,17 @@ this.FeatureBackground();
                         "Date",
                         "Computer",
                         ""});
-#line 214
+#line 215
  testRunner.And("User creates Task", ((string)(null)), table23, "And ");
-#line 217
- testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 218
- testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 219
- testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 220
- testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 221
+ testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 222
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -914,13 +912,13 @@ this.FeatureBackground();
                         "Date",
                         "Computer",
                         ""});
-#line 222
+#line 223
  testRunner.And("User creates Task", ((string)(null)), table24, "And ");
-#line 225
- testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 226
- testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 227
+ testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 228
  testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -936,58 +934,58 @@ this.FeatureBackground();
                         "Capacity Units",
                         "Computer Information ---- Text fill; Text fill; \\ 1Task13500‡Computer Information" +
                             " ---- Text fill; Text fill; \\ 2Task13500‡Pre-Migration \\ Scheduled Date"});
-#line 228
+#line 229
  testRunner.When("User creates new Slot via Api", ((string)(null)), table25, "When ");
-#line 231
- testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 232
- testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 233
- testRunner.And("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 234
- testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 235
- testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 236
+ testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 237
  testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
                     " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 237
- testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 238
- testRunner.And("User removes \"1Task13500\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 239
- testRunner.And("User removes \"2Task13500\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User removes \"1Task13500\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 240
- testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User removes \"2Task13500\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 241
- testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 242
+ testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 243
  testRunner.And("User navigates to \"Windows 7 Migration (Computer Scheduled Project)\" project deta" +
                     "ils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
- testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 244
- testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 245
- testRunner.And("User enters \"Slot 1\" text in the Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 246
+ testRunner.And("User enters \"Slot 1\" text in the Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 247
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table26.AddRow(new string[] {
                         "Pre-Migration \\ Scheduled Date"});
-#line 247
+#line 248
  testRunner.Then("only below options are selected in the \'Tasks\' autocomplete", ((string)(null)), table26, "Then ");
-#line 250
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 251
- testRunner.And("User clicks \'CREATE SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 252
- testRunner.And("User enters \'Slot 2\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \'CREATE SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 253
- testRunner.And("User enters \'Slot 2\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'Slot 2\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 254
+ testRunner.And("User enters \'Slot 2\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 255
  testRunner.And("User selects \'Capacity Units\' in the \'Capacity Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -996,14 +994,14 @@ this.FeatureBackground();
                         "Computer Information ---- Text fill; Text fill; \\ 1Task13500"});
             table27.AddRow(new string[] {
                         "Computer Information ---- Text fill; Text fill; \\ 2Task13500"});
-#line 255
+#line 256
  testRunner.Then("\'Tasks\' autocomplete does not have following checkbox options", ((string)(null)), table27, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "options"});
             table28.AddRow(new string[] {
                         "Pre-Migration \\ Scheduled Date"});
-#line 259
+#line 260
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table28, "Then ");
 #line hidden
             this.ScenarioCleanup();

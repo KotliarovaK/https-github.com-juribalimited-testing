@@ -95,7 +95,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	| SS Department and Location Enabled |
 
 #Ann.Ilchenko 10/2/19: remove 'not run' tag when 'DAS18368' bug will be fixed.
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @DAS18368 @Not_Run
+#sz: bug marked as fixed so tag is removed
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @DAS18368
 Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
