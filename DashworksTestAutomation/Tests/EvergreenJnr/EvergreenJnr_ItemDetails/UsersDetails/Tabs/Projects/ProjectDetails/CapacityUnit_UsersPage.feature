@@ -36,14 +36,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatCheckboxesForAssociatedObjectsAredispl
 	Then select all rows checkbox is checked
 	When User deselect all rows on the grid
 	Then select all rows checkbox is unchecked
-	When User select "Hostname" rows in the grid
-	| SelectedRowsName |
-	| 01BQIYGGUW5PRP6  |
+	When User selects all rows on the grid
 	Then select all rows checkbox is checked
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 01BQIYGGUW5PRP6  |
 	Then select all rows checkbox is unchecked
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 01BQIYGGUW5PRP6  |
+	Then select all rows checkbox is checked
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS19846 @Cleanup @Set_Default_Capacity_Unit @Universe
 Scenario: EvergreenJnr_UsersList_CheckThatTheAssociatedDevicesAreMovedToTheSelectedCapacityUnitInTheMoveCapacityUnitModalPopup
