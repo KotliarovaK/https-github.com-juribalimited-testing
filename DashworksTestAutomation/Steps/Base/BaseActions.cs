@@ -46,6 +46,13 @@ namespace DashworksTestAutomation.Steps.Base
             _driver.CheckConsoleErrors("the server responded with a status of 404(Not Found)");
         }
 
+        [Then(@"Number of requests to '(.*)' is not greater than '(.*)'")]
+        public void ThenNumberOfRequestsToHostIsEqualToExpectedNumber(string partOfLink, string requestNumber)
+        {
+            _driver.WaitForDataLoading();
+            Verify.That(_driver.GetAllRequests().FindAll(x => x.Contains(partOfLink)).Count, Is.LessThan(Int32.Parse(requestNumber)), $"Requests count is greater than {requestNumber}.");
+        }
+
         [When(@"User clicks Body container")]
         public void WhenUserClicksBodyContainer()
         {

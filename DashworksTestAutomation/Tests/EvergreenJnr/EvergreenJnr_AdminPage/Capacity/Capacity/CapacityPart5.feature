@@ -80,7 +80,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User selects "Project13156" checkbox from String Filter with item list on the Admin page
 	Then '2' content is displayed in the 'Applications' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @Not_Run
+#sz: removed NotRun tag
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User navigates to the 'Capacity' left menu item

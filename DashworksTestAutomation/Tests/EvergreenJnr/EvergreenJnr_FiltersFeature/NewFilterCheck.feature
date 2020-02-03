@@ -401,8 +401,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewCurrentAndLastSeenFiltersAreAvail
 	And User creates 'TestNewColumnsAndFilters' dynamic list
 	Then "TestNewColumnsAndFilters" list is displayed to user
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18875 @Cleanup @Not_Ready
-#Waiting for "Sticky Compliance" filter on the autorelease
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18875 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckStickyComplianceFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -416,8 +415,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckStickyComplianceFilter
 	When User clicks the Filters button
 	Then "Sticky Compliance is Red" is displayed in added filter info
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Not_Ready
-#Waiting for "Target App" filter on the autorelease
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -431,8 +429,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppFilter
 	When User clicks the Filters button
 	Then "1803: Target App is Multi Edit 9 Client" is displayed in added filter info
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Not_Ready
-#Waiting for "Target App Key" filter on the autorelease
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckEvergreeargetAppKeyFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -446,8 +443,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreeargetAppKeyFilter
 	When User clicks the Filters button
 	Then "1803: Target App Key is not 12" is displayed in added filter info
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Not_Ready
-#Waiting for "Target App Vendor" filter on the autorelease
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppVendorFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -460,10 +456,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppVendorFilter
 	Then "DAS18875_list2" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Target App Vendor contains Adobe" is displayed in added filter info
-	Then 'Adobe' content is displayed in the 'Evergreen Target App Vendor' column
+	Then 'Adobe Systems, Inc.' content is displayed in the 'Evergreen Target App Vendor' column
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Not_Ready
-#Waiting for "Evergreen Target App Version" filter on the autorelease
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppVersionFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -477,8 +472,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppVersionFilter
 	When User clicks the Filters button
 	Then "Evergreen Target App Version does not contain Microsoft" is displayed in added filter info
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Not_Ready
-#Waiting for "Target App Readiness" filter on the autorelease
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18961 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppReadinessFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -492,8 +486,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppReadinessFilter
 	When User clicks the Filters button
 	Then "1803: Target App Readiness is not empty" is displayed in added filter info
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18896 @Cleanup @Not_Ready
-#Waiting for "Evergreen Rationalisation" filter on the autorelease
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS18896 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenRationalisationFilter
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -520,8 +513,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppNameFilter
 	When User clicks the Filters button
 	Then "Evergreen Target App Name is not empty" is displayed in added filter info
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS19262 @Cleanup @Not_Ready
-#Waiting for No Target Application
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS19262 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppFilterWithNoTargetApplication
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

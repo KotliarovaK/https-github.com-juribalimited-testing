@@ -171,3 +171,20 @@ Scenario: EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNo
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	Then There are no errors in the browser console
+
+#sz: waiting for Lisa response for DAS15785
+@Evergreen @AllLists  @EvergreenJnr_ItemDetails @DAS15785 @Not_Ready
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount
+	When User clicks '<listType>' on the left-hand menu
+	Then '<listTitle>' list should be displayed to the user
+	When User perform search by "<itemName>"
+	When User click content from "<column>" column
+	Then Details page for '<itemName>' item is displayed to the user
+	Then Number of requests to '<url>' is not greater than '<requests>'
+
+Examples:
+	| listType     | listTitle        | itemName                                                  | column        | url               | requests |
+	| Devices      | All Devices      | 00KLL9S8NRF0X6                                            | Hostname      | /device/8892/     | 7        |
+	| Users        | All Users        | $231000-3AC04R8AR431                                      | Username      | /user/67941/      | 7        |
+	| Applications | All Applications | WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | /application/493/ | 6        |
+	| Mailboxes    | All Mailboxes    | 000F977AC8824FE39B8@bclabs.local                          | Email Address | /mailbox/43917/   | 6        |

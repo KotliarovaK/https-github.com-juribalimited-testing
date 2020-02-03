@@ -640,3 +640,26 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedWhenCreatingWidge
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS19115' Widget is displayed to the user
 	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17715 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetCreation
+	When User clicks 'Applications' on the left-hand menu
+	And User clicks the Filters button
+	And User add "Device ComputerCustomField" filter where type is "Not empty" with following Value and Association:
+	| Values | Association        |
+	|        | Entitled to device |
+	#counter can be updated
+	Then "842" rows are displayed in the agGrid
+	And There are no errors in the browser console
+	When User create dynamic list with "TestList_DAS17715" name on "Applications" page
+	Then "TestList_DAS17715" list is displayed to user
+	When Dashboard with 'Dashboard for DAS17715' name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks 'ADD WIDGET' button 
+	And User adds new Widget
+	| WidgetType | Title             | List              | Type       |
+	| Card       | WidgetForDAS17715 | TestList_DAS17715 | First Cell |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks 'CREATE' button 
+	Then There are no errors in the browser console
