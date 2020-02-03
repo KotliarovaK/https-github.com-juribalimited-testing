@@ -202,12 +202,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTargetApplicationNotFoundIsNotDisplaye
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Project 00 M Computer Scheduled' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Photo Finale' in the 'Target Application' autocomplete field and selects 'Photo Finale (42' value
+	When User enters 'Photo Premium' in the 'Target Application' autocomplete field and selects 'Microsoft Microsoft Photo Premium 10 10.0.0706 (534)' value
 	When User clicks 'CREATE' button
 	#Check Action Grid
 	Then "Rationalisation" content is displayed for "Task or Field" column
 	Then 'Project 00 M Computer Scheduled' content is displayed in the 'Project' column
-	Then 'Forward Path, Photo Finale' content is displayed in the 'Value' column
+	Then 'Forward Path, Microsoft Microsoft Photo Premium 10 10.0.0706' content is displayed in the 'Value' column
 	When User clicks content from "Action" column
 	#Check Edit Action Page
 	Then 'Project 00 M Computer Scheduled' content is displayed in 'Project or Evergreen' autocomplete

@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
-	| Hide from End Users             |
+	| Hide From End Users             |
 	| In Catalog                      |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD COLUMN" button in Pivot panel
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
-	| Hide from End Users             |
+	| Hide From End Users             |
 	| In Catalog                      |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD VALUE" button in Pivot panel
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
-	| Hide from End Users             |
+	| Hide From End Users             |
 	| In Catalog                      |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682
