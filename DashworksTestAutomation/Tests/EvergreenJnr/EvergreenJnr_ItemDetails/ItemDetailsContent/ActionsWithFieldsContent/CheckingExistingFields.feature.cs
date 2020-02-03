@@ -1289,7 +1289,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Rationalisation"});
             table11.AddRow(new string[] {
-                        "Hide From End User"});
+                        "Hide From End Users"});
 #line 267
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table11, "Then ");
 #line hidden
@@ -1342,14 +1342,14 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS19352",
                         "Universe"});
-#line 278
+#line 277
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 279
+#line 278
  testRunner.When("User navigates to the \'Mailbox\' details page for the item with \'36452\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 280
+#line 279
  testRunner.Then("Details page for \'ConfRoom-CanisMinor@dwlabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1427,7 +1427,7 @@ this.FeatureBackground();
                         "Use Database Quota Defaults"});
             table12.AddRow(new string[] {
                         "Mailbox Plan"});
-#line 281
+#line 280
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();

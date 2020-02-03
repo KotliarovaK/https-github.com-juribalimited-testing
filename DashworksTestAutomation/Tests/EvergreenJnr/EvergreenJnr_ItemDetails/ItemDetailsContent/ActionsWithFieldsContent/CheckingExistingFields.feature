@@ -270,9 +270,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyFor
 	| Evergreen Capacity Unit |
 	| In Catalog              |
 	| Criticality             |
-	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 	| Rationalisation         |
-	| Hide From End User      |
+	| Hide From End Users     |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19352 @Universe
 Scenario: EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectly

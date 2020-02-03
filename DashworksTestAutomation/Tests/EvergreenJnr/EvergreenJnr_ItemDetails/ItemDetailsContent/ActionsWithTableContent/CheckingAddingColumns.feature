@@ -11,10 +11,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then Details page for '<SearchTerm>' item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	When User navigates to the '<SubTabName>' left submenu item
-	And User opens '<ColumnName>' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "<CheckboxName>" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the '<ColumnName>' column:
+	| checkboxes     |
+	| <CheckboxName> |
 	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
@@ -36,10 +35,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	When User click content from "Hostname" column
 	And User navigates to the '<MainTabName>' left menu item
 	And User navigates to the '<SubTabName>' left submenu item
-	And User opens '<ColumnName>' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "<CheckboxName>" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the '<ColumnName>' column:
+	| checkboxes     |
+	| <CheckboxName> |
 	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
@@ -65,10 +63,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then Details page for '<SearchTerm>' item is displayed to the user
 	When User navigates to the '<MainTabName>' left menu item
 	And User navigates to the '<SubTabName>' left submenu item
-	And User opens '<ColumnName>' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "<CheckboxName>" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the '<ColumnName>' column:
+	| checkboxes     |
+	| <CheckboxName> |
 	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
@@ -102,10 +99,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for '<SearchTerm>' item is displayed to the user
 	When User navigates to the '<SubTabName>' left submenu item
-	And User opens '<ColumnName>' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "<CheckboxName>" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the '<ColumnName>' column:
+	| checkboxes     |
+	| <CheckboxName> |
 	Then following columns added to the table:
 	| ColumnName      |
 	| <NewColumnName> |
