@@ -25,12 +25,12 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageD
 	When User selects 'TRUE' in the 'In Catalog' dropdown
 	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Trevoli' in the 'Target Application' autocomplete field and selects 'Trevoli Photo Finale 2.1.000.0000 (429)' value
+	When User enters 'Parental Controls' in the 'Target Application' autocomplete field and selects 'Yahoo! Yahoo! Parental Controls (1036)' value
 	When User clicks 'CREATE' button
 	#Check Action Grid
 	Then "Sticky Compliance, Rationalisation, In Catalog" content is displayed for "Task or Field" column
 	Then '' content is displayed in the 'Project' column
-	Then 'Unknown, Forward Path, Photo Finale, True' content is displayed in the 'Value' column
+	Then 'Unknown, Forward Path, Yahoo! Yahoo! Parental Controls, True' content is displayed in the 'Value' column
 	When User clicks content from "Action" column
 	#Check Edit Action Page
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
