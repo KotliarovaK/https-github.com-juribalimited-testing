@@ -2484,7 +2484,7 @@ namespace DashworksTestAutomation.Extensions
         {
             if (!checkbox.Selected.Equals(desiredState))
             {
-                driver.ClickByJavascript(checkbox);
+                driver.ClickByActions(checkbox);
             }
         }
 
