@@ -275,13 +275,13 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterI
 
 Examples: 
 	| ColumnName                      | Operators                         | FilterOption | Text                                     | RowsCount |
-	| Windows7Mi: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Windows7Mi: Hide from End Users is False | 1,067     |
-	| Babel(Engl: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Hide from End Users is Empty | 1,921     |
-	| Barry'sUse: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide from End Users is False | 1,078     |
-	| ComputerSc: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide from End Users is False | 1,043     |
-	| Havoc(BigD: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide from End Users is Empty | 1,155     |
-	| MigrationP: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | MigrationP: Hide from End Users is False | 220       |
-	| UserSchedu: Hide from End Users | Equals, Does not equal, Not empty | Empty        | UserSchedu: Hide from End Users is Empty | 1,242     |
+	| Windows7Mi: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | Windows7Mi: Hide From End Users is False | 1,067     |
+	| Babel(Engl: Hide From End Users | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Hide From End Users is Empty | 1,921     |
+	| Barry'sUse: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide From End Users is False | 1,078     |
+	| ComputerSc: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide From End Users is False | 1,043     |
+	| Havoc(BigD: Hide From End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide From End Users is Empty | 1,155     |
+	| MigrationP: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | MigrationP: Hide From End Users is False | 220       |
+	| UserSchedu: Hide From End Users | Equals, Does not equal, Not empty | Empty        | UserSchedu: Hide From End Users is Empty | 1,242     |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @DAS12639 @DAS14288
 Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPage

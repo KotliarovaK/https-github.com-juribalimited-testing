@@ -933,13 +933,13 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11509")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS11509")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "Windows7Mi: Hide from End Users is False", "1,067", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Hide from End Users", "Equals, Does not equal, Not empty", "Empty", "Babel(Engl: Hide from End Users is Empty", "1,921", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "Barry\'sUse: Hide from End Users is False", "1,078", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "ComputerSc: Hide from End Users is False", "1,043", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide from End Users", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Hide from End Users is Empty", "1,155", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "MigrationP: Hide from End Users is False", "220", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide from End Users", "Equals, Does not equal, Not empty", "Empty", "UserSchedu: Hide from End Users is Empty", "1,242", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "Windows7Mi: Hide From End Users is False", "1,067", null)]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "Babel(Engl: Hide From End Users is Empty", "1,921", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "Barry\'sUse: Hide From End Users is False", "1,078", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "ComputerSc: Hide From End Users is False", "1,043", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Hide From End Users is Empty", "1,155", null)]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "MigrationP: Hide From End Users is False", "220", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "UserSchedu: Hide From End Users is Empty", "1,242", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;
