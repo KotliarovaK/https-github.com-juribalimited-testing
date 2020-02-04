@@ -41,14 +41,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _elementCoordinates = elementCoordinates;
         }
 
-        [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
-        public void WhenUserSelectsColorInTheApplicationScopeTabOnTheProjectDetailsPage(string colorName)
-        {
-            var applicationTab = _driver.NowAt<ProjectsPage>();
-            applicationTab.DefaultReadinessDropdown.Click();
-            applicationTab.GetReadinessOptionByName(colorName).Click();
-        }
-
         [Then(@"following checkboxes are checked in the Scope section")]
         public void ThenFollowingCheckboxesAreCheckedInTheScopeSection(Table table)
         {
@@ -701,7 +693,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int index = current.LastIndexOf("/");
 
             if (index > 0)
-                current = current.Substring(0, index) + "/project/52/scope";
+                current = current.Substring(0, index) + "/project/52/scope/scopeChanges";
             _driver.Navigate().GoToUrl(current);
         }
 
