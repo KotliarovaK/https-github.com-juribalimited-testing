@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGeneralViewOfSelfServiceAgGrid
     Then data in table is sorted by 'Self Service Name' column in ascending order
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19392 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetion
+Scenario: EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelection
     When User creates Self Service via API
 	| ServiceId | Name                   | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName |
 	| 1         | A_TestSelection_name1  | id193851          | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       |
