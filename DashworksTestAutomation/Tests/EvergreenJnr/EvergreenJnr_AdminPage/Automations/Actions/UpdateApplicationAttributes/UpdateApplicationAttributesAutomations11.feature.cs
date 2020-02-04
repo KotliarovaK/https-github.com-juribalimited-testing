@@ -712,8 +712,8 @@ this.FeatureBackground();
 #line 204
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 205
- testRunner.When("User enters \'Photo Finale\' in the \'Target Application\' autocomplete field and sel" +
-                    "ects \'Photo Finale (42\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'Photo Premium\' in the \'Target Application\' autocomplete field and se" +
+                    "lects \'Microsoft Microsoft Photo Premium 10 10.0.0706 (534)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 206
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 208
@@ -721,7 +721,8 @@ this.FeatureBackground();
 #line 209
  testRunner.Then("\'Project 00 M Computer Scheduled\' content is displayed in the \'Project\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 210
- testRunner.Then("\'Forward Path, Photo Finale\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Forward Path, Microsoft Microsoft Photo Premium 10 10.0.0706\' content is display" +
+                    "ed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 211
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 213

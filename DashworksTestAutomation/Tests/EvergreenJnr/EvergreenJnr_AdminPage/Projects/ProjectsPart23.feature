@@ -82,7 +82,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User selects all rows on the grid
 	And User removes selected item
 
-#sz: removed not run tag
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS12389
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingProjectPage
 	When User clicks 'Admin' on the left-hand menu

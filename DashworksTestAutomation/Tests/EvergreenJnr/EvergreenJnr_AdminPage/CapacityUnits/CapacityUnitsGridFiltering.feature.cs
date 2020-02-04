@@ -86,6 +86,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Capa
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("DAS13017")]
+        [NUnit.Framework.CategoryAttribute("DAS19894")]
         public virtual void EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumn()
         {
             System.Exception lastException = null;
@@ -119,7 +120,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Capa
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "CapacityUnits",
-                        "DAS13017"});
+                        "DAS13017",
+                        "DAS19894"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -144,7 +146,7 @@ this.FeatureBackground();
  testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default\' co" +
                     "lumn:", ((string)(null)), table1, "When ");
 #line 18
- testRunner.Then("\'FALSE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'FALSE\' content is displayed in all \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
  testRunner.When("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
@@ -158,7 +160,7 @@ this.FeatureBackground();
  testRunner.When("User checks following checkboxes in the filter dropdown menu for the \'Default\' co" +
                     "lumn:", ((string)(null)), table2, "When ");
 #line 24
- testRunner.Then("\'TRUE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'TRUE\' content is displayed in all \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 25
  testRunner.When("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
