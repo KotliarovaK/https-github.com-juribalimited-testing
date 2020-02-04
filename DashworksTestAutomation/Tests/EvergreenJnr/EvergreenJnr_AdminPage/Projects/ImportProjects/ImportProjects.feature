@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWit
 	And Page with 'Projects' header is displayed to user
 	When User clicks 'IMPORT PROJECT' button 
 	Then Page with 'Import Project' subheader is displayed to user
-	When User selects "Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml" file to upload on Import Project page
+	When User selects "File for import project with missing Readiness.xml" file to upload on Import Project page
 	And User selects 'Import to new project' in the 'Import' dropdown
 	And User enters 'DAS16089_TestProject' text to 'Project Name' textbox
 	When User clicks 'IMPORT PROJECT' button
