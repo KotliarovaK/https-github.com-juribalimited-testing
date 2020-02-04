@@ -140,8 +140,8 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("Page with \'Import Project\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
- testRunner.When("User selects \"Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml\" f" +
-                    "ile to upload on Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"File for import project with missing Readiness.xml\" file to upload " +
+                    "on Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
  testRunner.And("User selects \'Import to new project\' in the \'Import\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
