@@ -5,18 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12855
-Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdvancedUserFilter
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add Advanced "User" filter where type is "Does not equal" with following Lookup Value and Association:
-	| SelectedValues | Association                         |
-	| FR\RZM6552051  | Owns a device which app was used on |
-	Then "100" rows are displayed in the agGrid
-	Then table content is present
-
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12807
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDifferentAssociationTypes
 	When User clicks 'Devices' on the left-hand menu
@@ -43,29 +31,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	And User clicks Save filter button
 	Then "17,279" rows are displayed in the agGrid
 
-@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12804 @Cleanup
-Scenario: EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Domain" filter where type is "Equals" with added column and Lookup option
-	| SelectedValues |
-	| AU             |
-	Then "Domain" filter is added to the list
-	When  User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Username" rows in the grid
-	| SelectedRowsName |
-	| AAO798996        |
-	| AGC788194        |
-	| AIU705098        |
-	And User selects 'Create static list' in the 'Action' dropdown
-	And User create static list with "StaticList8543" name
-	Then "StaticList8543" list is displayed to user
-	And Edit List menu is not displayed
-	And URL contains 'evergreen/#/users?$listid='
-
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13104 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTwoOrMoreFiltersUsingTheSameFieldAndClearingOneOfTheFilters
 	When User clicks 'Devices' on the left-hand menu
@@ -87,22 +52,3 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTw
 	Then Add And button is displayed on the Filter panel
 	When User have removed "Compliance" filter
 	Then Add And button is displayed on the Filter panel
-
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS13414 @Cleanup
-Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADateBasedAdvancedFilterAreSavedAndNotOpenedInEditMode
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "User Last Logon Date" filter where type is "Equals" with following Data and Association:
-	| Values      | Association  |
-	| 12 Sep 2018 | Has used app |
-	Then "User whose Last Logon Date" filter is added to the list
-	When User create dynamic list with "DAS13414" name on "Applications" page
-	Then "DAS13414" list is displayed to user
-	And URL contains 'evergreen/#/applications?$listid='
-	And Edit List menu is not displayed
-	When User navigates to the "All Applications" list
-	And User navigates to the "DAS13414" list
-	Then URL contains 'evergreen/#/applications?$listid='
-	And Edit List menu is not displayed

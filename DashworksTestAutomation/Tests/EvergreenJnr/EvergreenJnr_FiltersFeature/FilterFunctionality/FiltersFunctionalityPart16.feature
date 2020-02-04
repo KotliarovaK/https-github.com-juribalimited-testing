@@ -22,16 +22,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickin
 	When User click Edit button for " Device" filter
 	Then Create button is disabled on the Base Dashboard Page
 
-@Evergreen @Users @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS15807
-Scenario: EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Language" filter where type is "Equals" with added column and Lookup option
-	| SelectedValues  |
-	| English         |
-
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS16071
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatNotAndOffBoarderValuesIncludedToStatusFilter
 	When User clicks 'Devices' on the left-hand menu
