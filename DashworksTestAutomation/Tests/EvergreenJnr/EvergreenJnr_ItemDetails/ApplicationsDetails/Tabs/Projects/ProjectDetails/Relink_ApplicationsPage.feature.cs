@@ -150,13 +150,13 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Data"});
+                        "Title",
+                        "Value"});
             table1.AddRow(new string[] {
                         "Name",
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
 #line 15
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table1, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table1, "Then ");
 #line 18
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
@@ -177,13 +177,13 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Microsoft SQL Server 2012\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Data"});
+                        "Title",
+                        "Value"});
             table2.AddRow(new string[] {
                         "Name",
                         "Microsoft SQL Server 2012"});
 #line 26
- testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2, "And ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2, "Then ");
 #line 29
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
@@ -366,13 +366,13 @@ this.FeatureBackground();
  testRunner.Then("\'Application successfully relinked\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Data"});
+                        "Title",
+                        "Value"});
             table3.AddRow(new string[] {
                         "App Owner",
                         ""});
 #line 63
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table3, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3, "Then ");
 #line 67
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 68

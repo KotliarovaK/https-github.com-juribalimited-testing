@@ -9,7 +9,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckAllColumnsAndFilters
 	Then All filters with correct data are returned from the API for 'Applications' list
 	Then All columns with correct data are returned from the API for 'Applications' list
 
-@Evergreen @Applications @API @FiltersAndColumns @Not_Run @DAS19261
+# sz: mentioned bug was fixed so NotRun tag was removed.
+@Evergreen @Applications @API @FiltersAndColumns @DAS19261
 #Remove not run after DAS-19261 fix
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsResponseData
 	Then Positive number of results returned for 'ApplicationsQueryUrls' requests

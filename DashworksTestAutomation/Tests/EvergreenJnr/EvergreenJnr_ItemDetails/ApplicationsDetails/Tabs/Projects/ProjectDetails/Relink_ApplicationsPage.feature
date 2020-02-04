@@ -12,8 +12,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
-	Then User verifies data in the fields on details page
-	| Field | Data                                                       |
+	Then following content is displayed on the Details Page
+	| Title | Value                                                      |
 	| Name  | "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	When User clicks 'RELINK' button 
 	Then popup is displayed to User
@@ -23,8 +23,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 	Then Details page for 'Microsoft SQL Server 2012' item is displayed to the user
-	And User verifies data in the fields on details page
-	| Field | Data                      |
+	Then following content is displayed on the Details Page
+	| Title | Value                     |
 	| Name  | Microsoft SQL Server 2012 |
 	When User clicks 'RELINK' button
 	Then popup is displayed to User
@@ -60,8 +60,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
-	Then User verifies data in the fields on details page
-	| Field     | Data |
+	Then following content is displayed on the Details Page
+	| Title | Value                     |
 	| App Owner |      |
 	#return values ​​back
 	When User clicks 'RELINK' button 
