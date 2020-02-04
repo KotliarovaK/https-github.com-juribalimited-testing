@@ -21,17 +21,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-panel']//button")]
         public IWebElement CloseListDetailsPanelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(@class,'material-icons pull-left list-star-icon')]")]
-        public IWebElement FavoriteButton { get; set; }
-        
-        [FindsBy(How = How.XPath,
-            Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
-        public IWebElement UnFavoriteButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='favourite']")]
-        public IWebElement ActiveFavoriteButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'remove mat-icon-button')]")]
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'delete')]")]
         public IWebElement RemoveListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-notification ng-star-inserted')]//button[contains(@class,'btn mat-button')]")]
@@ -48,9 +38,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//i[@class='material-icons mat-item_add ng-star-inserted']")]
         public IWebElement DependantsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='ACCEPT']/ancestor::button")]
-        public IWebElement AcceptButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-item_add ng-star-inserted']")]
         public IWebElement OpenDependantsButton { get; set; }
@@ -79,14 +66,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Team']")]
-        public IWebElement SharingTeamField { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div[@role='listbox']")]
         public IWebElement SharingUserList { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'action-panel-inner-wrapper')]")]
-        public IWebElement SharingFormContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//td[@class='userName']")]
         public IList<IWebElement> PermissionAddedUser { get; set; }
@@ -127,13 +108,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetDependentListByName(string listName)
         {
             var selector = By.XPath($"//a[text()='{listName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetSharingUserInDllByName(string userName)
-        {
-            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{userName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	When User clicks the List Details button
 	Then current user is selected as a owner of a list
 	When User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "DynamicListFirst" list
 	When User clicks the List Details button
 	Then current user is selected as a owner of a list

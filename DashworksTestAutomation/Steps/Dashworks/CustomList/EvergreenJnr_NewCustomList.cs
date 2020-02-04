@@ -152,7 +152,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             var page = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading(45);
             _driver.ExecuteAction(() => page.GetActiveList().Displayed());
-            Verify.AreEqual(listName, page.GetActiveList().Text, "Incorrect list name is displayed");
+            Verify.AreEqual(listName, page.GetActiveList().Text, $"'{listName}' list is not displayed");
         }
 
         [Then(@"""(.*)"" edited list is displayed to user")]
@@ -162,7 +162,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(page.ActiveCustomListEdited);
-            Utils.Verify.AreEqual(listName, page.ActiveCustomListEdited.Text, "PLEASE ADD EXCEPTION MESSAGE");
+            Utils.Verify.AreEqual(listName, page.ActiveCustomListEdited.Text, $"'{listName} edited list is not displayed'");
         }
 
         [Then(@"""(.*)"" list name is displayed correctly on top tools panel")]

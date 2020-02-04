@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Details panel is displayed to the user
 	When User select "Everyone can see" sharing option
 	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Display Name" filter where type is "Equals" with added column and following value:
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	And User select "Admin" in Select Access dropdown
 	And User click Add User button
 	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks 'ACCEPT' button on inline tip banner
 	And User clicks the List Details button
 	Then Delete list button is disabled in List Details panel
 	And Delete List option is NOT available

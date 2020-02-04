@@ -92,8 +92,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	| Compliance |
 	When User create dynamic list with "TestApplicationsList12208" name on "Applications" page
 	Then "TestApplicationsList12208" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
 	When User select "Everyone can see" sharing option
 	Then "Everyone can see" sharing option is selected
 	When User clicks 'Devices' on the left-hand menu
@@ -106,8 +106,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then "Any Application" filter is added to the list
 	When User create dynamic list with "TestDevicesList12208" name on "Devices" page
 	Then "TestDevicesList12208" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
 	When User select "Everyone can edit" sharing option
 	Then "Everyone can edit" sharing option is selected
 	When User clicks the Logout button

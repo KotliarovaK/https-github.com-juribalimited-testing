@@ -57,34 +57,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeNotDisplayed(listDetailsElement.ListDetailsPanel);
         }
 
-        [When(@"User mark list as favorite")]
-        public void WhenUserMarkListAsFavorite()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.FavoriteButton.Click();
-        }
-
-        [Then(@"List is NOT marked as favorite")]
-        public void ThenListIsNOTMarkedAsFavorite()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsTrue(listDetailsElement.FavoriteButton.Displayed(), "List is marked as favorite");
-        }
-
-        [When(@"User mark list as unfavorite")]
-        public void WhenUserMarkListAUnfavorite()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.UnFavoriteButton.Click();
-        }
-
-        [Then(@"List is marked as favorite")]
-        public void ThenListIsMarkedAsFavorite()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsTrue(listDetailsElement.UnFavoriteButton.Displayed(), "List is marked as unfavorite");
-        }
-
         [Then(@"""(.*)"" name is displayed in list details panel")]
         public void ThenNameIsDisplayedInListDetailsPanel(string listName)
         {
@@ -93,15 +65,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingInActionsPanel();
             Utils.Verify.AreEqual(listName, listDetailsElement.ListNameField.GetAttribute("value"),
                 $"{listName} is not displayed in Name Field");
-        }
-
-        [Then(@"Star icon is active in list details panel")]
-        public void ThenStarIconIsActiveInListDetailsPanel()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.ActiveFavoriteButton); 
-            Utils.Verify.IsTrue(listDetailsElement.ActiveFavoriteButton.Displayed(),
-                "Star icon is not active");
         }
 
         [Then(@"Details panel is displayed to the user")]
@@ -236,33 +199,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.ListNameInDependantsSection(listName).Displayed(), $"{listName} is not displayed");
         }
 
-        [Then(@"form container is displayed to the user")]
-        public void ThenFormContainerIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsTrue(page.SharingFormContainer.Displayed(), "Form container is not loaded");
-        }
-
-        [Then(@"form container is not displayed to the user")]
-        public void ThenFormContainerIsNotDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsFalse(page.SharingFormContainer.Displayed(), "Form container is loaded");
-        }
 
         [When(@"User selects the ""(.*)"" user for sharing")]
         public void WhenUserSelectsTheUserForSharing(string userName)
         {
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
             baseActionItem.AutocompleteSelect("User", userName);
-        }
-
-        [When(@"User selects the ""(.*)"" team for sharing")]
-        public void WhenUserSelectsTheTeamForSharing(string teamName)
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            page.SharingTeamField.SendKeys(teamName);
-            page.GetSharingUserInDllByName(teamName).Click();
         }
 
         [Then(@"User list for sharing is not displayed")]
@@ -339,16 +281,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqual(list.OrderBy(s => s), list, "Owners are not in alphabetical order");
         }
 
-        [When(@"User click Accept button in List Details panel")]
-        public void WhenUserClickAcceptButtonInListDetailsPanel()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.AcceptButton);
-            listDetailsElement.AcceptButton.Click();
-            _driver.WaitForDataLoadingInActionsPanel();
-            _driver.WaitForDataLoading();
-        }
-
         [When(@"User click Add User button")]
         public void WhenUserClickAddUserButton()
         {
@@ -418,11 +350,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{warningText} message is displayed in the list details panel");
         }
 
+        [When(@"User clicks Delete list button")]
+        public void WhenUserClicksDeleteListButton()
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.RemoveListButton.Click();
+        }
+
         [Then(@"Delete list button is disabled in List Details panel")]
         public void ThenDeleteListButtonIsDisabledInListDetailsPanel()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsTrue(Convert.ToBoolean(listDetailsElement.RemoveListButton.GetAttribute("disabled")),
+            Verify.IsTrue(Convert.ToBoolean(listDetailsElement.RemoveListButton.GetAttribute("disabled")),
                 "Delete List button is enabled");
         }
 

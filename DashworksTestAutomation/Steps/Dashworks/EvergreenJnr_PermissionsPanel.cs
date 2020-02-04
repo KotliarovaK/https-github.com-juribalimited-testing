@@ -79,5 +79,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Selected option is not {sharingOption}");
         }
 
+        [Then(@"form container is displayed to the user")]
+        public void ThenFormContainerIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<PermissionsElement>();
+            Utils.Verify.IsTrue(page.SharingFormContainer.Displayed(), "Form container is not loaded");
+        }
+
+        [Then(@"form container is not displayed to the user")]
+        public void ThenFormContainerIsNotDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<PermissionsElement>();
+            Utils.Verify.IsFalse(page.SharingFormContainer.Displayed(), "Form container is loaded");
+        }
+
+        [When(@"User selects the ""(.*)"" team for sharing")]
+        public void WhenUserSelectsTheTeamForSharing(string teamName)
+        {
+            var page = _driver.NowAt<PermissionsElement>();
+            page.SharingTeamField.SendKeys(teamName);
+            page.GetSharingUserInDllByName(teamName).Click();
+        }
     }
 }
