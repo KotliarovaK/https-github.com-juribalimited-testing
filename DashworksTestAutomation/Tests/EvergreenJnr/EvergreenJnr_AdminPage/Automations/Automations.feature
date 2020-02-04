@@ -375,7 +375,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in table is sorted by 'Processing order' column in ascending order by default
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @DAS16475 @DAS17290 @DAS17277 @DAS17336 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @DAS16475 @DAS17290 @DAS17277 @DAS17336 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -390,7 +390,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User checks 'Stop on failed action' checkbox
 	Then 'CREATE' button is disabled
 	When User selects 'Manual' in the 'Run' dropdown
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	Then 'click here to view the 16764_Automation automation' link is displayed
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
@@ -402,8 +402,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
-	#Wait for "RUN NOW" button
-	#Then 'RUN NOW' button is not disabled
 	When User clicks 'Automations' header breadcrumb
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks 'Delete' option in Cog-menu for '16764_Automation' item from 'Automation' column
