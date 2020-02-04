@@ -84,7 +84,6 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	Then Application Scope checkboxes are active
 	When User selects "Do not include applications" checkbox on the Project details page
 	Then Scope List dropdown is disabled
-	Then Application Scope checkboxes are disabled
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
