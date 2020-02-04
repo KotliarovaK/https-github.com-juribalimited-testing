@@ -232,7 +232,6 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Builder\BuilderMainViewPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
@@ -972,11 +971,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Buckets\Buckets.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Buckets.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1239,6 +1233,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart26.feature.cs">
+      <DependentUpon>FiltersFunctionalityPart26.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart27.feature.cs">
+      <DependentUpon>FiltersFunctionalityPart27.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart28.feature.cs">
+      <DependentUpon>FiltersFunctionalityPart28.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart29.feature.cs">
+      <DependentUpon>FiltersFunctionalityPart29.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterManagement.feature.cs">
       <DependentUpon>FilterManagement.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1399,10 +1413,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\NewFilterCheck.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart30.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NewFilterCheck.feature</DependentUpon>
+      <DependentUpon>FiltersFunctionalityPart30.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\RemoveFilter.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2412,10 +2426,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Rings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Buckets\Buckets.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Buckets.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacityPart1.feature.cs</LastGenOutput>
@@ -2626,6 +2636,22 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AssociationsFunctionality1.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart26.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FiltersFunctionalityPart26.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart27.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FiltersFunctionalityPart27.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart28.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FiltersFunctionalityPart28.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart29.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FiltersFunctionalityPart29.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterManagement.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FilterManagement.feature.cs</LastGenOutput>
@@ -2754,9 +2780,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Associations.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\NewFilterCheck.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityPart30.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>NewFilterCheck.feature.cs</LastGenOutput>
+      <LastGenOutput>FiltersFunctionalityPart30.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\RemoveFilter.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

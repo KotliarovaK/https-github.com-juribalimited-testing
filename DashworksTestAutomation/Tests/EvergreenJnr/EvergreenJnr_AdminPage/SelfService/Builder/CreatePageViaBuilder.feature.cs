@@ -163,7 +163,7 @@ this.FeatureBackground();
 #line 13
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_1\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -284,7 +284,7 @@ this.FeatureBackground();
 #line 36
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_2\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -405,7 +405,7 @@ this.FeatureBackground();
 #line 51
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_3\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -512,7 +512,7 @@ this.FeatureBackground();
 #line 75
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_4\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -635,7 +635,7 @@ this.FeatureBackground();
 #line 98
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 100
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_5\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -750,7 +750,7 @@ this.FeatureBackground();
 #line 118
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 119
- testRunner.When("User navigates to the \'Self Services\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 120
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_5\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -391,7 +391,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", null)]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide from End Users", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide From End Users", null)]
         public virtual void EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages(string columnName, string[] exampleTags)
         {
             System.Exception lastException = null;

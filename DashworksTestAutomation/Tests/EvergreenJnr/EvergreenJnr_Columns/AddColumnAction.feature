@@ -72,7 +72,7 @@ Examples:
 	| Windows7Mi: Application Rationalisation |
 	| Windows7Mi: Application Readiness       |
 	| Windows7Mi: Core Application            |
-	| Windows7Mi: Hide from End Users         |
+	| Windows7Mi: Hide From End Users         |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn

@@ -53,6 +53,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
 
+        [When(@"User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
+        }
+
         [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
         public void ThenUserSeesItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
@@ -69,12 +76,12 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             rightSidePanel.CheckBuilderContextPanelItemDisplayState(contextPanelType, contextPanelName, false);
         }
 
-        [Then(@"item with '(.*)' type and '(.*)' name on Self Service Builder Panel is highlighted")]
+        [Then(@"Item with '(.*)' type and '(.*)' name on Self Service Builder Panel is highlighted")]
         public void ThenItemWithTypeAndNameOnSelfServiceBuilderPanelIsHighlighted(string contextPanelType, string contextPanelName)
         {
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
 
-            Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), "ADD ERROR MESSAGE");
+            Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
         }
     }
 }

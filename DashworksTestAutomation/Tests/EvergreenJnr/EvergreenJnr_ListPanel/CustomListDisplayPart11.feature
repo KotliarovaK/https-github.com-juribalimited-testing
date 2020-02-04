@@ -180,3 +180,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListCanBeFoundUsingAnyCapsOrSmallLet
 	Then 'New York - Devices' list is displayed in the Lists panel
 	When User enters "New" text in Search field at List Panel
 	Then 'New York - Devices' list is displayed in the Lists panel
+
+@Evergreen @AllLists @EvergreenJnr_ListPanel @DAS15785
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNumberOfRequestsToListsDontExceedAllowedCount
+	When User clicks '<ListType>' on the left-hand menu
+	Then '<ListTitle>' list should be displayed to the user
+	Then Number of requests to '<url>' is not greater than '<requests>'
+
+Examples:
+	| ListType     | ListTitle        | url           | requests |
+	| Devices      | All Devices      | /devices      | 23       |
+	| Users        | All Users        | /users        | 11       |
+	| Applications | All Applications | /applications | 11       |
+	| Mailboxes    | All Mailboxes    | /mailboxes    | 11       |
