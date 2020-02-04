@@ -173,8 +173,8 @@ this.FeatureBackground();
 #line 27
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
- testRunner.When("User enters \'Trevoli\' in the \'Target Application\' autocomplete field and selects " +
-                    "\'Trevoli Photo Finale 2.1.000.0000 (429)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'Parental Controls\' in the \'Target Application\' autocomplete field an" +
+                    "d selects \'Yahoo! Yahoo! Parental Controls (1036)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
@@ -183,8 +183,8 @@ this.FeatureBackground();
 #line 32
  testRunner.Then("\'\' content is displayed in the \'Project\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 33
- testRunner.Then("\'Unknown, Forward Path, Photo Finale, True\' content is displayed in the \'Value\' c" +
-                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Unknown, Forward Path, Yahoo! Yahoo! Parental Controls, True\' content is display" +
+                    "ed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 34
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 36
