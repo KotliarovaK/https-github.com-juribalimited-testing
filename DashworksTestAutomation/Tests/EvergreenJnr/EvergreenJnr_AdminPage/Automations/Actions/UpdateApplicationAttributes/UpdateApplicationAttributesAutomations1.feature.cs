@@ -605,11 +605,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table10.AddRow(new string[] {
+                        "Update custom field"});
+            table10.AddRow(new string[] {
                         "Update path"});
             table10.AddRow(new string[] {
                         "Update task value"});
-            table10.AddRow(new string[] {
-                        "Update custom field"});
 #line 155
  testRunner.Then("following Values are displayed in the \'Action Type\' dropdown:", ((string)(null)), table10, "Then ");
 #line hidden

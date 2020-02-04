@@ -3241,7 +3241,7 @@
     <Content Include="Resources\CorrectFile_DAS12370.xml" />
     <Content Include="Resources\DAS_13733_Duplicates_in_project_tasks.xml" />
     <Content Include="Resources\DAS_13733_Valid_file.xml" />
-    <Content Include="Resources\Windows_7_Migration_%28Computer_Scheduled_Project%29 %28jet 5.3.3%29.xml" />
+    <Content Include="Resources\File for import project with missing Readiness.xml" />
     <Content Include="TestData\QueryUrls\ApplicationsQueryUrls.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

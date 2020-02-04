@@ -154,9 +154,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesNotShownForNoAp
 	And User enters '18966_Action' text to 'Action Name' textbox
 	Then following Values are displayed in the 'Action Type' dropdown:
 	| Value               |
+	| Update custom field |
 	| Update path         |
 	| Update task value   |
-	| Update custom field |
 	Then following Values are not displayed in the 'Action Type' dropdown:
 	| Options                       |
 	| Update application attributes |
