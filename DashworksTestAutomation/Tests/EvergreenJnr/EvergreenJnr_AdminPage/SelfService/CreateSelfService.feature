@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @DAS19364 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	Then Page with 'Self Services' header is displayed to user
 	When User clicks 'CREATE SELF SERVICE' button
 	Then Page with 'Self Services' header is displayed to user
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutName
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
 	When User enters 'Test_ID_2' text to 'Self Service Identifier' textbox
@@ -37,9 +37,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutSelectedScope
 	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User enters 'Test_ID_4' text to 'Self Service Identifier' textbox
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithoutSelect
 #Need to add REALY broken list to the step or make the existing as broken
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithBrokenScopeList
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_4' text to 'Self Service Name' textbox
 	When User selects 'Application List (Complex) - BROKEN LIST' option from 'Self Service Scope' autocomplete 
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_6 | Test_ID_6         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_66' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -104,7 +104,7 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -121,7 +121,7 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserWillBeReturnedToTheGridPageIfNoDataWasEnteredAndCancelButtonWasClicked
 	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User clicks 'CANCEL' button
 	Then 'CREATE SELF SERVICE' button is displayed
@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserWillBeRetur
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserCreatedSelfService
     When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Self Services' left menu item
+	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_7' text to 'Self Service Name' textbox
 	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
@@ -139,3 +139,21 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificat
 	Then 'click here to view the TestProj_7 self service' link is displayed on inline success banner
 	Then User clicks on 'click here to view the TestProj_7 self service' link on inline success banner
 	Then Page with 'TestProj_7' header is displayed to user
+
+	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19842 @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceNameShouldShowsWhenEachOfTheSelfServiceSubActionsAreSelected
+    When User creates Self Service via API
+	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
+	| 1         | TestProj_8 | Test_ID_8         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	Then Page with 'Self Services' header is displayed to user
+	When User navigates to the 'Self Services' left submenu item
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_8' item from 'Self Service Name' column
+	Then Self Service Details page is displayed correctly
+	When User navigates to the 'Builder' left submenu item
+	Then Page with 'TestProj_8' header is displayed to user
+	When User navigates to the 'Style' left submenu item
+	Then Page with 'TestProj_8' header is displayed to user
+	When User navigates to the 'Details' left submenu item
+	Then Page with 'TestProj_8' header is displayed to user
