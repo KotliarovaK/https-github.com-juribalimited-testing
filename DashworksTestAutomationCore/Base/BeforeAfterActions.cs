@@ -8,6 +8,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using DashworksTestAutomationCore.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using RestSharp;
@@ -172,7 +173,7 @@ namespace DashworksTestAutomation.Base
                 var request = requestUri.GenerateRequest();
 
                 var resp = _client.Evergreen.Get(request);
-                
+
                 if (!resp.Content.Contains("count: 5108"))
                 {
                     Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
@@ -188,14 +189,14 @@ namespace DashworksTestAutomation.Base
         [BeforeTestRun]
         public static void OnTestsStart()
         {
-            if (bool.Parse(ConfigurationManager.AppSettings["browsersCleanup"]))
+            if (bool.Parse(ConfigReader.ByKey("browsersCleanup")))
                 KillDriverProcesses.Do();
         }
 
         [AfterTestRun]
         public static void OnTestsComplete()
         {
-            if (bool.Parse(ConfigurationManager.AppSettings["browsersCleanup"]))
+            if (bool.Parse(ConfigReader.ByKey("browsersCleanup")))
                 KillDriverProcesses.Do();
 
             Logger.Write("ALL TESTS ARE FINISHED");

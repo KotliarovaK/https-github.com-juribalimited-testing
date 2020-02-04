@@ -1,14 +1,15 @@
 ﻿using System.Configuration;
+using DashworksTestAutomationCore.Utils;
 
 namespace DashworksTestAutomation.Providers
 {
     public static class Browser
     {
-        public static string Type => ConfigurationManager.AppSettings["targetBrowser"];
-        public static string Version => ConfigurationManager.AppSettings["browserVersion"];
-        public static string Platform => ConfigurationManager.AppSettings["platform"];
-        public static string Resolution => ConfigurationManager.AppSettings["browserSize"];
-        public static string HubUri => ConfigurationManager.AppSettings["hubUri"];
-        public static string RemoteDriver => ConfigurationManager.AppSettings["remoteDriver"];
+        public static string Type => ConfigReader.ByKey("targetBrowser");
+        public static string Version => ConfigReader.ByKey("browserVersion");
+        public static string Platform => ConfigReader.ByKey("platform");
+        public static string Resolution => ConfigReader.ByKey("browserSize");
+        public static string HubUri => ConfigReader.ByKey("hubUri");
+        public static string RemoteDriver => ConfigReader.ByKey("remoteDriver");
     }
 }
