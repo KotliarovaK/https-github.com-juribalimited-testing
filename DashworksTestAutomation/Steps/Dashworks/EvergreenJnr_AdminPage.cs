@@ -878,20 +878,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"Success converting message appears with the next ""(.*)"" text")]
-        public void ThenSuccessConvertingMessageIsDisplayedAndContainsText(string text)
-        {
-            var page = _driver.NowAt<ProjectDetailsPage>();
-            _driver.WaitForElementToBeDisplayed(page.SuccessConvertMessage);
-            Utils.Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor(), "PLEASE ADD EXCEPTION MESSAGE"); //Green color
-            Utils.Verify.Contains(text, page.SuccessConvertMessage.Text, "Success Message is not displayed");
-        }
-
         [Then(@"Convert to Evergreen button is not displayed")]
         public void ThenConvertsToEvergreenButtonIsNotDisplayed()
         {
             var projectPage = _driver.NowAt<ProjectDetailsPage>();
-            Utils.Verify.IsFalse(projectPage.ConvertToEvergreen.Displayed(),
+            Verify.IsFalse(projectPage.ConvertToEvergreen.Displayed(),
                 "Convert to Evergreen button is displayed");
         }
 
