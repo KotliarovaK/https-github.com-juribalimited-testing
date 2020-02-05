@@ -50,9 +50,9 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	When User clicks the List Details button
 	Then current user is selected as a owner of a list
 	When User navigates to the "DynamicListSecond" list
-	When User clicks the List Details button
-	Then current user is selected as a owner of a list
-	When User select "Automation Admin 1" as a Owner of a list
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
+	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "DynamicListFirst" list
 	When User clicks the List Details button
@@ -65,30 +65,30 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	When User clicks on 'Application' column header
 	And User create dynamic list with "DynamicList13066" name on "Applications" page
 	Then "DynamicList13066" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Specific users / teams" sharing option
-	Then "Specific users / teams" sharing option is selected
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	Then 'Specific users / teams' content is displayed in 'Sharing' dropdown
 	When User clicks 'ADD TEAM' button 
-	When User selects the "1803 Team" team for sharing
+	When User selects '1803 Team' option from 'Team' autocomplete
 	Then 'ADD TEAM' button is disabled
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
-	When User selects the "1803 Team" team for sharing
+	When User selects '1803 Team' option from 'Team' autocomplete
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD USER' button 
 	Then form container is displayed to the user
-	When User selects the "Administrator" user for sharing
+	When User selects 'Administrator' option from 'User' autocomplete
 	When User clicks 'CANCEL' button 
 	And User clicks 'ADD USER' button 
-	When User selects the "Administrator" user for sharing
-	When User select "Edit" in Select Access dropdown
-	And User clicks 'ADD USER' button 
-	And User clicks 'ADD USER' button 
+	When User selects 'Administrator' option from 'User' autocomplete
+	When User selects 'Edit' option from 'Permission' autocomplete
+	And User clicks 'ADD USER' button
+	And User clicks 'ADD USER' button
 	And User clicks the Columns button
 	Then Columns panel is displayed to the user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
 	And There are no errors in the browser console
 	And "Admin" Sharing user is displayed correctly
 	And form container is not displayed to the user
@@ -104,7 +104,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOwnersIsDisplayedInAlphabeticalOrde
 	When User clicks on 'Hostname' column header
 	And User create dynamic list with "List13029" name on "Devices" page
 	Then "List13029" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User clears Owner field on List Details panel
-	Then Owners is displayed in alphabetical order
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
+	Then options are sorted in alphabetical order in the 'Owner' dropdown

@@ -21,14 +21,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then Edit List menu is not displayed
 	When User clicks the Permissions button
 	Then Permissions panel is displayed to the user
-	When User select "Everyone can edit" sharing option
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then Edit List menu is not displayed
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	Then "RenamedList" list is displayed to user
 	When User clicks the Permissions button
 	Then Permissions panel is displayed to the user
-	When User select "Automation Admin 1" as a Owner of a list
+	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 
 Examples: 
@@ -56,9 +56,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then Edit List menu is not displayed
 	When User clicks the Permissions button
 	Then Permissions panel is displayed to the user
-	When User select "Everyone can edit" sharing option
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then Edit List menu is not displayed
-	When User select "Automation Admin 1" as a Owner of a list
+	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 	Then Edit List menu is not displayed
 

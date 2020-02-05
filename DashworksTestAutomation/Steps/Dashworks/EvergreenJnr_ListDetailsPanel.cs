@@ -90,14 +90,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsFalse(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel has {text} label");
             Logger.Write("List Details does not have label");
         }
-        
-        [When(@"User clicks '(.*)' checkbox in List Details")]
-        public void ThenUserClicksCheckboxInListDetailsPanel(string text)
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.GetListDetailsLabelByText(text).Click();
-            _driver.WaitForDataLoading();
-        }
 
         [Then(@"User open the Dependents component")]
         public void ThenUserOpenTheDependentsComponent()
@@ -199,14 +191,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.ListNameInDependantsSection(listName).Displayed(), $"{listName} is not displayed");
         }
 
-
-        [When(@"User selects the ""(.*)"" user for sharing")]
-        public void WhenUserSelectsTheUserForSharing(string userName)
-        {
-            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            baseActionItem.AutocompleteSelect("User", userName);
-        }
-
         [Then(@"User list for sharing is not displayed")]
         public void ThenUserListForSharingIsNotDisplayed()
         {
@@ -273,30 +257,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"Owners is displayed in alphabetical order")]
-        public void ThenOwnersIsDisplayedInAlphabeticalOrder()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            var list = listDetailsElement.OwnersList.Select(x => x.Text).ToList();
-            Verify.AreEqual(list.OrderBy(s => s), list, "Owners are not in alphabetical order");
-        }
-
-        [When(@"User click Add User button")]
-        public void WhenUserClickAddUserButton()
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.AddUserButton);
-            listDetailsElement.AddUserButton.Click();
-        }
-
-        [When(@"User select '(.*)' in Select User dropdown")]
-        public void WhenUserSelectInSelectUserDropdown(string userOption)
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectUserDropdown);
-            _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown, userOption);
-        }
-
         [When(@"User select current user in Select User dropdown")]
         public void WhenUserSelectCurrentUserInSelectUserDropdown()
         {
@@ -304,24 +264,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectUserDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown,
                 DatabaseHelper.GetFullNameByUserName(_userDto.Username));
-        }
-
-        [When(@"User select ""(.*)"" in Select Access dropdown")]
-        public void WhenUserSelectInSelectAccessDropdown(string accessOption)
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectAccessDropdown);
-            _driver.SelectCustomSelectbox(listDetailsElement.SelectAccessDropdown, accessOption);
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User select ""(.*)"" in Permission dropdown")]
-        public void WhenUserSelectInPermissionDropdown(string option)
-        {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectPermissionDropdown);
-            _driver.SelectCustomSelectbox(listDetailsElement.SelectPermissionDropdown, option);
-            _driver.WaitForDataLoading();
         }
 
         //warning RED message
@@ -419,13 +361,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Utils.Verify.IsTrue(page.AllListsIcon.Displayed(), "Appropriate icon is not displayed");
-        }
-
-        [Then(@"Owner Drop-down list is disabled on List details panel")]
-        public void ThenOwnerDrop_DownListIsDisabledOnListDetailsPanel()
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(Convert.ToBoolean(page.OwnerDropDown.GetAttribute("disabled")), "Owner Drop-down list is available!");
         }
     }
 }

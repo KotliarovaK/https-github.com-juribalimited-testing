@@ -33,33 +33,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(listDetailsElement.PermissionsPanel.Displayed(), "Permissions panel is not displayed");
         }
 
-        [When(@"User select ""(.*)"" sharing option")]
-        public void WhenUserSelectSharingOption(string sharingOption)
-        {
-            var listDetailsElement = _driver.NowAt<PermissionsElement>();
-            _driver.WaitForDataLoading();
-            _driver.SelectCustomSelectbox(listDetailsElement.SharingDropdown, sharingOption);
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User select ""(.*)"" as a Owner of a list")]
-        public void WhenUserSelectAsAOwnerOfAList(string ownerOption)
-        {
-            //Save user to remove its lists after test execution
-            _usersWithSharedLists.Value.Add(DatabaseWorker.GetUserNameByFullName(ownerOption));
-            var listDetailsElement = _driver.NowAt<PermissionsElement>();
-            listDetailsElement.OwnerDropdown.ClearWithBackspaces();
-            _driver.SelectCustomSelectbox(listDetailsElement.OwnerDropdown, ownerOption);
-            _driver.WaitForDataLoading();
-        }
-
-        [When(@"User clears Owner field on List Details panel")]
-        public void WhenUserClearsOwnerFieldOnListDetailsPanel()
-        {
-            var listDetailsElement = _driver.NowAt<PermissionsElement>();
-            listDetailsElement.OwnerDropdown.Clear();
-        }
-
         [Then(@"current user is selected as a owner of a list")]
         public void ThenCurrentUserIsSelectedAsAOwnerOfAList()
         {
@@ -68,15 +41,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(header.UserNameDropdown.Text,
                 listDetailsElement.OwnerDropdown.GetAttribute("value"),
                 "Another User is selected as a owner");
-        }
-
-        [Then(@"""(.*)"" sharing option is selected")]
-        public void ThenSharingOptionIsSelected(string sharingOption)
-        {
-            var listDetailsElement = _driver.NowAt<PermissionsElement>();
-            _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(sharingOption, listDetailsElement.GetSelectedValue(listDetailsElement.SharingDropdown),
-                $"Selected option is not {sharingOption}");
         }
 
         [Then(@"form container is displayed to the user")]
@@ -91,14 +55,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PermissionsElement>();
             Utils.Verify.IsFalse(page.SharingFormContainer.Displayed(), "Form container is loaded");
-        }
-
-        [When(@"User selects the ""(.*)"" team for sharing")]
-        public void WhenUserSelectsTheTeamForSharing(string teamName)
-        {
-            var page = _driver.NowAt<PermissionsElement>();
-            page.SharingTeamField.SendKeys(teamName);
-            page.GetSharingUserInDllByName(teamName).Click();
         }
     }
 }

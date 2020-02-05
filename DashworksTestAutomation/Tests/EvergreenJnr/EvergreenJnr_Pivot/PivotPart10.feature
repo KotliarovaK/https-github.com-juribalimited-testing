@@ -173,28 +173,28 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS14263_Pivot" name
 	Then "DAS14263_Pivot" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Specific users / teams" sharing option
-	When User clicks 'ADD USER' button 
-	When User selects the "Administrator" user for sharing
+	When User clicks the Permissions button
+	Then Permissions panel is displayed to the user
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'ADD USER' button
+	When User selects 'Administrator' option from 'User' autocomplete
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD USER' button 
-	When User selects the "Administrator" user for sharing
+	When User selects 'Administrator' option from 'User' autocomplete
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
-	When User selects the "Team 1062" team for sharing
+	When User selects 'Team 1062' option from 'Team' autocomplete
 	Then 'ADD TEAM' button is disabled
-	When User select "Edit" in Select Access dropdown
+	When User selects 'Edit' option from 'Permission' autocomplete
 	Then 'ADD TEAM' button is not disabled
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
-	When User selects the "Team 1062" team for sharing
-	When User select "Admin" in Select Access dropdown
+	When User selects 'Team 1062' option from 'Team' autocomplete
+	When User selects 'Admin' option from 'Permission' autocomplete
 	When User clicks 'CANCEL' button 
 	When User clicks 'ADD TEAM' button 
-	When User selects the "Team 1062" team for sharing
-	When User select "Read" in Select Access dropdown
+	When User selects 'Team 1062' option from 'Team' autocomplete
+	When User selects 'Read' option from 'Permission' autocomplete
 	When User clicks 'CANCEL' button 
 	When User navigates to the "DAS14263_Pivot" list
 	Then User remove list with "DAS14263_Pivot" name on "Devices" page

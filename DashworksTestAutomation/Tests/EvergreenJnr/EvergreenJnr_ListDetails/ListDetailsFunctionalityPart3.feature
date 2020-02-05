@@ -94,8 +94,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then "TestApplicationsList12208" list is displayed to user
 	When User clicks the Permissions button
 	Then Permissions panel is displayed to the user
-	When User select "Everyone can see" sharing option
-	Then "Everyone can see" sharing option is selected
+	When User selects 'Everyone can see' in the 'Sharing' dropdown
+	Then 'Everyone can see' content is displayed in 'Sharing' dropdown
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
@@ -108,8 +108,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	Then "TestDevicesList12208" list is displayed to user
 	When User clicks the Permissions button
 	Then Permissions panel is displayed to the user
-	When User select "Everyone can edit" sharing option
-	Then "Everyone can edit" sharing option is selected
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
+	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

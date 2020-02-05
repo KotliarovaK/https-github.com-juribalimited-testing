@@ -54,15 +54,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='User']")]
         public IWebElement SelectUserDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Permission']/ancestor::div[@class='mat-select-trigger']")]
-        public IWebElement SelectAccessDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//label[text()='Permission']/ancestor::div[@class='mat-form-field-infix']")]
-        public IWebElement SelectPermissionDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']/ancestor::button")]
-        public IWebElement AddUserButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
 
@@ -74,9 +65,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//td[@class='permission']")]
         public IList<IWebElement> PermissionTypeOfAccess { get; set; }
-    
-        [FindsBy(How = How.XPath, Using = Owner)]
-        public IList<IWebElement> OwnersList { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

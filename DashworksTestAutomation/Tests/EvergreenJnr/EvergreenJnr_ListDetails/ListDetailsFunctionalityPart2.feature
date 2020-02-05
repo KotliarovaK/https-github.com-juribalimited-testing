@@ -31,7 +31,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	Then 'Favorite List' checkbox is unchecked
 	When User clicks the Permissions button
 	Then current user is selected as a owner of a list
-	Then "Private" sharing option is selected
+	Then 'Private' content is displayed in 'Sharing' dropdown
 
 Examples: 
 	| PageName     | Columnname    |
@@ -51,7 +51,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	Then 'Favorite List' checkbox is unchecked
 	When User clicks the Permissions button
 	Then current user is selected as a owner of a list
-	Then "Private" sharing option is selected
+	Then 'Private' content is displayed in 'Sharing' dropdown
 
 Examples: 
 	| PageName     |
@@ -69,7 +69,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	When User creates 'TestListE11493' dynamic list
 	Then "TestListE11493" list is displayed to user
 	When User clicks the Permissions button
-	When User select "Automation Admin 1" as a Owner of a list
+	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 	Then List details button is disabled
 	Then list with "TestListE11493" name is not displayed

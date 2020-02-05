@@ -29,8 +29,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "ATestListAA0888" list is displayed to user
 	When User clicks the Permissions button
 	Then Permissions panel is displayed to the user
-	When User select "Everyone can edit" sharing option
-	Then "Everyone can edit" sharing option is selected
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
+	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -96,8 +96,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "ATestList0A788F" list is displayed to user
 	When User clicks the Permissions button
 	Then Permissions panel is displayed to the user
-	When User select "Everyone can edit" sharing option
-	Then "Everyone can edit" sharing option is selected
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
+	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -148,8 +148,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	Then "ATestList9A0AE8" list is displayed to user
 	When User clicks the Permissions button
 	Then Permissions panel is displayed to the user
-	When User select "Everyone can edit" sharing option
-	Then "Everyone can edit" sharing option is selected
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
+	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
