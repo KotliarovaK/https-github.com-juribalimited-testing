@@ -12,8 +12,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
-	Then User verifies data in the fields on details page
-	| Field        | Data           |
+	Then following content is displayed on the Details Page
+	| Title        | Value          |
 	| Name         | 06RIV0KXJMHJ1K |
 	| Device Owner | Tonia T. Mason |
 	When User clicks 'RELINK' button 
@@ -27,8 +27,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'RELINK' button on popup
 	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on inline success banner
 	Then Details page for 'QSFCLB19N5524S' item is displayed to the user
-	And User verifies data in the fields on details page
-	| Field        | Data            |
+	And following content is displayed on the Details Page
+	| Title        | Value           |
 	| Name         | QSFCLB19N5524S  |
 	| Device Owner | Gerard C. Kelly |
 	When User clicks 'RELINK' button 
