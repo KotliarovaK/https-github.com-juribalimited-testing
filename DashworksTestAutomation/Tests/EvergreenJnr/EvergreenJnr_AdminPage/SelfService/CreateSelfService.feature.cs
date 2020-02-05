@@ -894,6 +894,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19842")]
+        [NUnit.Framework.CategoryAttribute("DAS19876")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceNameShouldShowsWhenEachOfTheSelfServiceSubActionsAreSelected()
         {
@@ -930,6 +931,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS19842",
+                        "DAS19876",
                         "Cleanup"});
 #line 144
 this.ScenarioInitialize(scenarioInfo);
@@ -991,6 +993,22 @@ this.FeatureBackground();
 #line 158
  testRunner.When("User navigates to the \'Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 159
+ testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 160
+ testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 161
+ testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 162
+ testRunner.When("User navigates to the \'Style\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 163
+ testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 164
+ testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 165
+ testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 166
+ testRunner.When("User navigates to the \'Style\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 167
  testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
