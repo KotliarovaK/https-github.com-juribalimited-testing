@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificat
 	Then User clicks on 'click here to view the TestProj_7 self service' link on inline success banner
 	Then Page with 'TestProj_7' header is displayed to user
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19842 @Cleanup
+	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19842 @DAS19876 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceNameShouldShowsWhenEachOfTheSelfServiceSubActionsAreSelected
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
@@ -156,4 +156,12 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceName
 	When User navigates to the 'Style' left submenu item
 	Then Page with 'TestProj_8' header is displayed to user
 	When User navigates to the 'Details' left submenu item
+	Then Page with 'TestProj_8' header is displayed to user
+	When User navigates to the 'Builder' left submenu item
+	Then Page with 'TestProj_8' header is displayed to user
+	When User navigates to the 'Style' left submenu item
+	Then Page with 'TestProj_8' header is displayed to user
+	When User navigates to the 'Builder' left submenu item
+	Then Page with 'TestProj_8' header is displayed to user
+	When User navigates to the 'Style' left submenu item
 	Then Page with 'TestProj_8' header is displayed to user
