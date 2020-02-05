@@ -30,7 +30,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	Then "TestListCED2D6" name is displayed in list details panel
 	Then 'Favorite List' checkbox is unchecked
 	When User clicks the Permissions button
-	Then current user is selected as a owner of a list
+	Then current user is selected in 'Owner' autocomplete
 	Then 'Private' content is displayed in 'Sharing' dropdown
 
 Examples: 
@@ -50,7 +50,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	Then "Static List TestName" name is displayed in list details panel
 	Then 'Favorite List' checkbox is unchecked
 	When User clicks the Permissions button
-	Then current user is selected as a owner of a list
+	Then current user is selected in 'Owner' autocomplete
 	Then 'Private' content is displayed in 'Sharing' dropdown
 
 Examples: 

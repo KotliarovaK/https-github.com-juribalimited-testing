@@ -32,30 +32,30 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	Then "DynamicListFirst" list is displayed to user
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
-	Then current user is selected as a owner of a list
+	Then current user is selected in 'Owner' autocomplete
 	When User navigates to the "All Applications" list
 	Then 'All Applications' list should be displayed to the user
 	When User clicks on 'Vendor' column header
 	When User create dynamic list with "DynamicListSecond" name on "Applications" page
 	Then "DynamicListSecond" list is displayed to user
 	When User clicks the List Details button
-	Then current user is selected as a owner of a list
+	Then current user is selected in 'Owner' autocomplete
 	When User create static list with "StaticList7844" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	Then "StaticList7844" list is displayed to user
 	When User clicks the List Details button
-	Then current user is selected as a owner of a list
+	Then current user is selected in 'Owner' autocomplete
 	When User navigates to the "DynamicListFirst" list
 	When User clicks the List Details button
-	Then current user is selected as a owner of a list
+	Then current user is selected in 'Owner' autocomplete
 	When User navigates to the "DynamicListSecond" list
 	When User clicks the Permissions button
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "DynamicListFirst" list
 	When User clicks the List Details button
-	Then current user is selected as a owner of a list
+	Then current user is selected in 'Owner' autocomplete
 
 @Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS13066 @DAS15561 @DAS15569 @DAS16403 @DAS16407 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAfterSwitchingBetweenTabsWhileAddUserFormIsOpen

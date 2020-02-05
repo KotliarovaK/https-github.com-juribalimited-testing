@@ -162,7 +162,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(page.ActiveCustomListEdited);
-            Utils.Verify.AreEqual(listName, page.ActiveCustomListEdited.Text, $"'{listName} edited list is not displayed'");
+            Utils.Verify.AreEqual(listName, page.ActiveCustomListEdited.Text, $"'{listName}' edited list is not displayed'");
         }
 
         [Then(@"""(.*)"" list name is displayed correctly on top tools panel")]

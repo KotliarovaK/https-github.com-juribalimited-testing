@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -24,14 +25,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _usersWithSharedLists = usersWithSharedLists;
         }
 
-        [Then(@"current user is selected as a owner of a list")]
-        public void ThenCurrentUserIsSelectedAsAOwnerOfAList()
+        [Then(@"current user is selected in '(.*)' autocomplete")]
+        public void ThenCurrentUserIsSelectedInAutocomplete(string dropdown)
         {
-            var listDetailsElement = _driver.NowAt<PermissionsElement>();
             var header = _driver.NowAt<HeaderElement>();
-            Utils.Verify.AreEqual(header.UserNameDropdown.Text,
-                listDetailsElement.OwnerDropdown.GetAttribute("value"),
-                "Another User is selected as a owner");
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.AreEqual(header.UserNameDropdown.Text, page.GetTextbox(dropdown).GetAttribute("value"),
+                "Invalid user selected as owner");
         }
 
         [Then(@"form container is displayed to the user")]

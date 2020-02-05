@@ -25,9 +25,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Owner']")]
-        public IWebElement OwnerDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'action-panel-inner-wrapper')]")]
         public IWebElement SharingFormContainer { get; set; }
     }
