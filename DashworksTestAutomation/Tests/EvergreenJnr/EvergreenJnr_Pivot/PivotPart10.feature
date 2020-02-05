@@ -174,7 +174,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	When User creates Pivot list with "DAS14263_Pivot" name
 	Then "DAS14263_Pivot" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User clicks 'ADD USER' button
 	When User selects 'Administrator' option from 'User' autocomplete

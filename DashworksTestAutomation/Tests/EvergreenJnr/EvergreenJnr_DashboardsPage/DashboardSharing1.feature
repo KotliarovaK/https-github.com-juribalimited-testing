@@ -309,7 +309,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_3' list
 	Then Details panel is displayed to the user
-	And "Everyone can edit" sharing option is selected
+	When User clicks the Permissions button
+	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_4' list
 	Then Details panel is displayed to the user
 	Then 'Private' content is displayed in 'Sharing' dropdown

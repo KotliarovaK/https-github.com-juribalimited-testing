@@ -51,7 +51,6 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	Then current user is selected as a owner of a list
 	When User navigates to the "DynamicListSecond" list
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "DynamicListFirst" list
@@ -66,7 +65,6 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	And User create dynamic list with "DynamicList13066" name on "Applications" page
 	Then "DynamicList13066" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	Then 'Specific users / teams' content is displayed in 'Sharing' dropdown
 	When User clicks 'ADD TEAM' button 
@@ -88,8 +86,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
 	And "Admin" Sharing user is displayed correctly
 	And form container is not displayed to the user
 	When User clicks 'ADD USER' button 
@@ -105,5 +102,4 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOwnersIsDisplayedInAlphabeticalOrde
 	And User create dynamic list with "List13029" name on "Devices" page
 	Then "List13029" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	Then options are sorted in alphabetical order in the 'Owner' dropdown

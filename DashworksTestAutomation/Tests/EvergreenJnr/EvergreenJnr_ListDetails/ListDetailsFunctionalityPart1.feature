@@ -20,14 +20,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User checks 'Favorite List' checkbox
 	Then Edit List menu is not displayed
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then Edit List menu is not displayed
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	Then "RenamedList" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 
@@ -55,7 +53,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User checks 'Favorite List' checkbox
 	Then Edit List menu is not displayed
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then Edit List menu is not displayed
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown

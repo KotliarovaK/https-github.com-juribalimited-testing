@@ -13,7 +13,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	|          |
 	Then "Static List TestName23" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can see' in the 'Sharing' dropdown
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
@@ -47,7 +46,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| CLUSTERSSAS    |
 	Then "NotOwnerSpecifiedAdmin" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User clicks 'ADD USER' button
 	And User select current user in Select User dropdown
@@ -65,7 +63,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedEdit" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User clicks 'ADD USER' button
 	And User select current user in Select User dropdown
@@ -83,7 +80,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedRead" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User clicks 'ADD USER' button
 	And User select current user in Select User dropdown
@@ -101,7 +97,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| SANOFI2-POC     |
 	Then "NotOwnerEveryoneCanEdit" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner

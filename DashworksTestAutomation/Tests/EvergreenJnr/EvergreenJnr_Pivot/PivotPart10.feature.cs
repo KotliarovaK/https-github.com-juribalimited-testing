@@ -714,52 +714,50 @@ this.FeatureBackground();
 #line 176
  testRunner.When("User clicks the Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 177
- testRunner.Then("Permissions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 178
  testRunner.When("User selects \'Specific users / teams\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 178
+ testRunner.When("User clicks \'ADD USER\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 179
- testRunner.When("User clicks \'ADD USER\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Administrator\' option from \'User\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 180
- testRunner.When("User selects \'Administrator\' option from \'User\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 181
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 182
  testRunner.When("User clicks \'ADD USER\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 183
+#line 182
  testRunner.When("User selects \'Administrator\' option from \'User\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 183
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 184
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'ADD TEAM\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 185
- testRunner.When("User clicks \'ADD TEAM\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Team 1062\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 186
- testRunner.When("User selects \'Team 1062\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 187
  testRunner.Then("\'ADD TEAM\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 188
+#line 187
  testRunner.When("User selects \'Edit\' option from \'Permission\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 189
+#line 188
  testRunner.Then("\'ADD TEAM\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 189
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 190
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'ADD TEAM\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 191
- testRunner.When("User clicks \'ADD TEAM\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Team 1062\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 192
- testRunner.When("User selects \'Team 1062\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 193
  testRunner.When("User selects \'Admin\' option from \'Permission\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 193
+ testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 194
- testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 195
  testRunner.When("User clicks \'ADD TEAM\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 196
+#line 195
  testRunner.When("User selects \'Team 1062\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 197
+#line 196
  testRunner.When("User selects \'Read\' option from \'Permission\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 198
+#line 197
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 199
+#line 198
  testRunner.When("User navigates to the \"DAS14263_Pivot\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 200
+#line 199
  testRunner.Then("User remove list with \"DAS14263_Pivot\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -809,68 +807,68 @@ this.FeatureBackground();
                         "Pivot",
                         "DAS16815",
                         "Cleanup"});
-#line 203
+#line 202
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 204
+#line 203
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 205
+#line 204
  testRunner.And("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 206
+#line 205
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table21.AddRow(new string[] {
                         "TRUE"});
-#line 207
+#line 206
  testRunner.And("User add \"1803: In Scope\" filter where type is \"Equals\" with added column and fol" +
                     "lowing checkboxes:", ((string)(null)), table21, "And ");
-#line 210
+#line 209
  testRunner.And("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
             table22.AddRow(new string[] {
                         "Operating System"});
-#line 211
+#line 210
  testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table22, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table23.AddRow(new string[] {
                         "Device Type"});
-#line 214
+#line 213
  testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table23, "And ");
+#line 216
+ testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 217
- testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 218
- testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 219
  testRunner.When("User creates Pivot list with \"DAS16815_Pivot\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 219
+ testRunner.Then("\"DAS16815_Pivot\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 220
- testRunner.Then("\"DAS16815_Pivot\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 221
  testRunner.When("User sets includes archived devices in \'false\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 221
+ testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 222
- testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 223
- testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 224
  testRunner.When("User updates existing pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 225
+#line 224
  testRunner.Then("\"DAS16815_Pivot\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 226
+#line 225
  testRunner.When("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 227
+#line 226
  testRunner.And("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 228
+#line 227
  testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 229
+#line 228
  testRunner.When("User creates Pivot list with \"DAS16815_Pivot_Updated\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 230
+#line 229
  testRunner.Then("\"DAS16815_Pivot_Updated\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

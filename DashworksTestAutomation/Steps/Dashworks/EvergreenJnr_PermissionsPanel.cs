@@ -24,15 +24,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _usersWithSharedLists = usersWithSharedLists;
         }
 
-        [Then(@"Permissions panel is displayed to the user")]
-        public void ThenPermissionsPanelIsDisplayedToTheUser()
-        {
-            var listDetailsElement = _driver.NowAt<PermissionsElement>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(listDetailsElement.PermissionsPanel);
-            Utils.Verify.IsTrue(listDetailsElement.PermissionsPanel.Displayed(), "Permissions panel is not displayed");
-        }
-
         [Then(@"current user is selected as a owner of a list")]
         public void ThenCurrentUserIsSelectedAsAOwnerOfAList()
         {

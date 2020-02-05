@@ -28,7 +28,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User create dynamic list with "ATestListAA0888" name on "Devices" page
 	Then "ATestListAA0888" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
@@ -95,7 +94,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User create dynamic list with "ATestList0A788F" name on "Devices" page
 	Then "ATestList0A788F" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
@@ -147,7 +145,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedL
 	When User create dynamic list with "ATestList9A0AE8" name on "Devices" page
 	Then "ATestList9A0AE8" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button

@@ -14,7 +14,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "TestList83C1C0" name on "Users" page
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can see' in the 'Sharing' dropdown
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
@@ -34,7 +33,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "TestList9507DA" name on "Users" page
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User clicks 'ADD TEAM' button
 	Then form container is displayed to the user
@@ -86,7 +84,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	When User creates 'List_DAS16228' dynamic list
 	Then "List_DAS16228" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User clicks 'ADD TEAM' button 
 	When User selects 'Team 1' option from 'Team' autocomplete
@@ -102,5 +99,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatExpandIconIsInactiveForOwnerDdlForNo
 	When User navigates to the "1803 Rollout" list
 	Then "1803 Rollout" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	Then 'Owner' dropdown is disabled

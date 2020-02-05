@@ -93,7 +93,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	When User create dynamic list with "TestApplicationsList12208" name on "Applications" page
 	Then "TestApplicationsList12208" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can see' in the 'Sharing' dropdown
 	Then 'Everyone can see' content is displayed in 'Sharing' dropdown
 	When User clicks 'Devices' on the left-hand menu
@@ -107,7 +106,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	When User create dynamic list with "TestDevicesList12208" name on "Devices" page
 	Then "TestDevicesList12208" list is displayed to user
 	When User clicks the Permissions button
-	Then Permissions panel is displayed to the user
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
