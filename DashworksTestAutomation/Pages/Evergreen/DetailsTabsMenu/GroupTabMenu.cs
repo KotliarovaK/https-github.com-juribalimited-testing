@@ -1,37 +1,13 @@
 ﻿using System.Collections.Generic;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
-    internal class GroupTabMenu : BaseTabSectionElements
+    internal class GroupTabMenu : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//span[text()='Application Summary']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement ApplicationSummarySection { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//span[text()='Application Detail']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement ApplicationDetailSection { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//span[text()='Advertisements']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement AdvertisementsSection { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = ".//span[text()='Collections']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement CollectionsSection { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-icon ag-icon-columns']")]
-        public IWebElement ColumnButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-column-select-label']")]
-        public IList<IWebElement> ColumnCheckboxName { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[text()='Application Summary']")]
         public IList<IWebElement> ApplicationSummarySectionHeader { get; set; }
 
