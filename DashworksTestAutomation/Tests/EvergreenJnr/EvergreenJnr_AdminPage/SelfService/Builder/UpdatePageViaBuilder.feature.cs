@@ -357,8 +357,6 @@ this.FeatureBackground();
 #line 62
  testRunner.When("User clears \'Page Display Name\' textbox with backspaces", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
- testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 64
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -410,7 +408,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19792",
                         "Cleanup"});
-#line 67
+#line 66
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -444,16 +442,16 @@ this.FeatureBackground();
                         "2",
                         "bob",
                         "1803 Apps"});
-#line 68
+#line 67
  testRunner.When("User creates Self Service via API", ((string)(null)), table5, "When ");
-#line 71
+#line 70
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 72
+#line 71
  testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 73
+#line 72
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_3\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
+#line 73
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -468,41 +466,41 @@ this.FeatureBackground();
                         "3",
                         "TestPageDisplayName_3",
                         "false"});
-#line 75
+#line 74
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table6, "When ");
-#line 78
+#line 77
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 79
+#line 78
     testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_3\' name" +
                     " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 79
  testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 81
+#line 80
  testRunner.When("User enters \'UPDATED_PageDisplayName\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 81
  testRunner.When("User enters \'UPDATED_PageName\' text to \'Page Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 83
+#line 82
  testRunner.When("User checks \'Show page in self service\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 83
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 84
  testRunner.Then("Item with \'Page\' type and \'UPDATED_PageName\' name on Self Service Builder Panel i" +
                     "s highlighted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 86
+#line 85
  testRunner.Then("\'The page has been updated\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 87
+#line 86
  testRunner.Then("User sees item with \'Page\' type and \'UPDATED_PageName\' name on Self Service Build" +
                     "er Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 88
+#line 87
  testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'UPDATED_PageName\' na" +
                     "me on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 89
+#line 88
  testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 90
+#line 89
  testRunner.Then("\'UPDATED_PageName\' content is displayed in \'Page Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 91
+#line 90
  testRunner.Then("\'UPDATED_PageDisplayName\' content is displayed in \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 92
+#line 91
  testRunner.Then("\'Show page in self service\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -570,7 +568,7 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckNameAndDisplayNameFieldsValida" +
                     "tion", null, @__tags);
-#line 95
+#line 94
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -604,16 +602,16 @@ this.FeatureBackground();
                         "2",
                         "bob",
                         "1803 Apps"});
-#line 96
+#line 95
     testRunner.When("User creates Self Service via API", ((string)(null)), table7, "When ");
-#line 99
+#line 98
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 100
+#line 99
  testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 100
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_4\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 102
+#line 101
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -628,22 +626,22 @@ this.FeatureBackground();
                         "3",
                         "TestPageDisplayName_4",
                         "false"});
-#line 103
+#line 102
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table8, "When ");
-#line 106
+#line 105
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 107
+#line 106
     testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_4\' name" +
                     " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 107
  testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
+#line 108
  testRunner.When(string.Format("User enters \'{0}\' text to \'Page Name\' textbox", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
+#line 109
  testRunner.When(string.Format("User enters \'{0}\' text to \'Page Display Name\' textbox", pageDisplayName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 111
+#line 110
  testRunner.When("User checks \'Show page in self service\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 112
+#line 111
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -695,7 +693,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19792",
                         "Cleanup"});
-#line 123
+#line 122
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -729,16 +727,16 @@ this.FeatureBackground();
                         "2",
                         "bob",
                         "1803 Apps"});
-#line 124
+#line 123
  testRunner.When("User creates Self Service via API", ((string)(null)), table9, "When ");
-#line 127
+#line 126
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 128
+#line 127
  testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 129
+#line 128
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_5\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 130
+#line 129
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -753,18 +751,18 @@ this.FeatureBackground();
                         "3",
                         "TestPageDisplayName_5",
                         "true"});
-#line 131
+#line 130
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table10, "When ");
-#line 134
+#line 133
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
+#line 134
     testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_5\' name" +
                     " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 136
+#line 135
  testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 137
+#line 136
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 138
+#line 137
  testRunner.Then("\'TestPageDisplayName_5\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -816,7 +814,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19792",
                         "Cleanup"});
-#line 141
+#line 140
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -850,16 +848,16 @@ this.FeatureBackground();
                         "2",
                         "bob",
                         "1803 Apps"});
-#line 142
+#line 141
  testRunner.When("User creates Self Service via API", ((string)(null)), table11, "When ");
-#line 145
+#line 144
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 146
+#line 145
  testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 147
+#line 146
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_6\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 148
+#line 147
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -874,20 +872,20 @@ this.FeatureBackground();
                         "3",
                         "TestPageDisplayName_5",
                         "true"});
-#line 149
+#line 148
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table12, "When ");
-#line 152
+#line 151
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 153
+#line 152
     testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_6\' name" +
                     " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 154
+#line 153
  testRunner.When("User clicks \'Edit\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 155
+#line 154
  testRunner.When("User enters \'UpdatedDisplayPage_6\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 156
+#line 155
  testRunner.When("User navigates to the \'Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 157
+#line 156
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

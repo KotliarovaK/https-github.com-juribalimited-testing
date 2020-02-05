@@ -60,7 +60,6 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdateButtonIsD
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User clears 'Page Display Name' textbox with backspaces
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19792 @Cleanup
