@@ -53,6 +53,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]//i[contains(@class,'arrow')]")]
         public IList<IWebElement> AllCollapseExpandSectionsArrows { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='dashboardsModes']//mat-expansion-panel-header")]
+        public IList<IWebElement> SectionsBlocks { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]")]
         public IList<IWebElement> AllSections { get; set; }
 

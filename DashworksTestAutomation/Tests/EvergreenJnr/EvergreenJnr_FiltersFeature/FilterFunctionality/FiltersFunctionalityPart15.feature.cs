@@ -209,112 +209,6 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
-        [NUnit.Framework.CategoryAttribute("DAS15291")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsListInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsListInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList", null, new string[] {
-                        "Evergreen",
-                        "Applications",
-                        "Evergreen_FiltersFeature",
-                        "FilterFunctionality",
-                        "DAS15291"});
-#line 48
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 49
- testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 50
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 51
- testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 52
- testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedCheckboxes"});
-            table5.AddRow(new string[] {
-                        "Empty"});
-#line 53
- testRunner.When("User add \"UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Application) (S" +
-                    "lot)\" filter where type is \"Does not equal\" with added column and following chec" +
-                    "kboxes:", ((string)(null)), table5, "When ");
-#line 56
- testRunner.When("User clicks on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
-                    "on) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Content"});
-            table6.AddRow(new string[] {
-                        "Application Slot 1"});
-            table6.AddRow(new string[] {
-                        "Application Slot 1"});
-            table6.AddRow(new string[] {
-                        "Application Slot 1"});
-            table6.AddRow(new string[] {
-                        "Application Slot 1"});
-            table6.AddRow(new string[] {
-                        "Application Slot 2"});
-#line 57
- testRunner.Then("Content in the \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
-                    "on) (Slot)\' column is equal to", ((string)(null)), table6, "Then ");
-#line 64
- testRunner.When("User clicks on \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
-                    "on) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Content"});
-            table7.AddRow(new string[] {
-                        "Application Slot 2"});
-            table7.AddRow(new string[] {
-                        "Application Slot 1"});
-            table7.AddRow(new string[] {
-                        "Application Slot 1"});
-            table7.AddRow(new string[] {
-                        "Application Slot 1"});
-            table7.AddRow(new string[] {
-                        "Application Slot 1"});
-#line 65
- testRunner.Then("Content in the \'UserEvergr: Stage 3 \\ Radiobutton Readiness Date Owner (Applicati" +
-                    "on) (Slot)\' column is equal to", ((string)(null)), table7, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
@@ -355,65 +249,65 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "FilterFunctionality",
                         "DAS15291"});
-#line 74
+#line 48
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 75
+#line 49
  testRunner.When("User clicks \'Mailboxes\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 76
+#line 50
  testRunner.Then("\'All Mailboxes\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 77
+#line 51
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
+#line 52
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table8.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Empty"});
-#line 79
+#line 53
  testRunner.When("User add \"MailboxEve: 1 \\ Scheduled - mailbox (Slot)\" filter where type is \"Does " +
-                    "not equal\" with added column and Lookup option", ((string)(null)), table8, "When ");
+                    "not equal\" with added column and Lookup option", ((string)(null)), table5, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table9.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Spruill, Shea"});
-            table9.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Bandyopadhyay, Sudipta"});
-            table9.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Balanceactiv, Info"});
-#line 82
+#line 56
  testRunner.When("User Add And \"Owner Display Name\" filter where type is \"Equals\" with added column" +
-                    " and following value:", ((string)(null)), table9, "When ");
-#line 87
+                    " and following value:", ((string)(null)), table6, "When ");
+#line 61
  testRunner.When("User clicks on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
-            table10.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
-            table10.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "CA -Mailbox-Nov 11, 2018-Nov 30, 2018"});
-            table10.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
-#line 88
- testRunner.Then("Content in the \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column is equal to", ((string)(null)), table10, "Then ");
-#line 93
+#line 62
+ testRunner.Then("Content in the \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column is equal to", ((string)(null)), table7, "Then ");
+#line 67
  testRunner.When("User clicks on \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
-            table11.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
-            table11.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "CA -Mailbox-Nov 11, 2018-Nov 30, 2018"});
-            table11.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
-#line 94
- testRunner.Then("Content in the \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column is equal to", ((string)(null)), table11, "Then ");
+#line 68
+ testRunner.Then("Content in the \'MailboxEve: 1 \\ Scheduled - mailbox (Slot)\' column is equal to", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

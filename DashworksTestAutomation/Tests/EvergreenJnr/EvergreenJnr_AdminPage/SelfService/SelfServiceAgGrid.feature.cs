@@ -243,21 +243,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetion")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelection")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19392")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetion()
+        public virtual void EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelection()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetionInternal();
+                    this.EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelectionInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -276,9 +276,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetionInternal()
+        private void EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelectionInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelcetion", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckSelfServiceAgGridSelection", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",

@@ -44,49 +44,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	Then full list content is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11838 @DAS13001
-Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "ComputerSc: Target App Readiness" filter where type is "Equals" with added column and Lookup option
-	| SelectedValues     |
-	| <SelectedCheckbox> |
-	Then '<ColorName>' content is displayed in all 'ComputerSc: Target App Readiness' column
-	Then '<SelectedCheckbox>' path is displayed in the 'ComputerSc: Target App Readiness' column
-
-Examples:
-	| SelectedCheckbox        | ColorName               |
-	| Red                     | RED                     |
-	| Blue                    | BLUE                    |
-	| Light Blue              | LIGHT BLUE              |
-	| Brown                   | BROWN                   |
-	| Amber                   | AMBER                   |
-	| Really Extremely Orange | REALLY EXTREMELY ORANGE |
-	| Purple                  | PURPLE                  |
-	| Green                   | GREEN                   |
-	| Grey                    | GREY                    |
-
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11838
-Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "ComputerSc: Application Rationalisation" filter where type is "Equal" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| <SelectedCheckbox> |
-	Then '<SelectedCheckbox>' content is displayed in all 'ComputerSc: Application Rationalisation' column
-	Then '<SelectedCheckbox>' path is displayed in the 'ComputerSc: Application Rationalisation' column
-
-Examples:
-	| SelectedCheckbox |
-	| FORWARD PATH     |
-	| KEEP             |
-	| RETIRE           |
-	| UNCATEGORISED    |
-
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS12076 @DAS12351
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter
 	When User clicks 'Devices' on the left-hand menu

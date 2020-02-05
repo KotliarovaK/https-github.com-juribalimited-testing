@@ -154,9 +154,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesNotShownForNoAp
 	And User enters '18966_Action' text to 'Action Name' textbox
 	Then following Values are displayed in the 'Action Type' dropdown:
 	| Value               |
+	| Update custom field |
 	| Update path         |
 	| Update task value   |
-	| Update custom field |
 	Then following Values are not displayed in the 'Action Type' dropdown:
 	| Options                       |
 	| Update application attributes |
@@ -270,7 +270,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	Then '1803 Rollout' content is displayed in the 'Project' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup @Universe
-#Waiting for 'Rationalisation' dropdown //Universe release
 Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicationAttributes
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -283,29 +282,29 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicati
 	When User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Barry's User Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Hilfe zu Verzeichnisdiensten' in the 'Target Application' autocomplete field and selects 'Hilfe zu Verzeichnisdiensten (A01) (606)' value
+	When User enters 'Drawing Converter' in the 'Target Application' autocomplete field and selects 'Visio CAD Drawing Converter 1.0.0.0 (340)' value
 	When User clicks 'CREATE' button
 	#Check Action grid
 	Then '18978_Action' content is displayed in the 'Action' column
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
 	Then 'Barry's User Project' content is displayed in the 'Project' column
-	Then 'Forward Path, Hilfe zu Verzeichnisdiensten (A01)' content is displayed in the 'Value' column
+	Then 'Forward Path, Visio CAD Drawing Converter 1.0.0.0' content is displayed in the 'Value' column
 	#Check Action value
 	When User clicks content from "Action" column
 	Then "18978_Action" content is displayed in "Action Name" field
 	Then 'Update application attributes' content is displayed in 'Action Type' dropdown
 	Then 'Barry's User Project' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'FORWARD PATH' content is displayed in 'Rationalisation' dropdown
-	Then 'Hilfe zu Verzeichnisdiensten (606)' content is displayed in 'Target Application' textbox
+	Then 'Visio CAD Drawing Converter 1.0.0.0 (340)' content is displayed in 'Target Application' textbox
 	#Update Action
 	When User enters 'New_Action' text to 'Action Name' textbox
 	When User selects 'Email Migration' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Intel(R) Processor Graphics' in the 'Target Application' autocomplete field and selects 'Intel(R) Processor Graphics (4349)' value
+	When User enters 'EC2ConfigService' in the 'Target Application' autocomplete field and selects 'Amazon Web Services EC2ConfigService 3.17.1032.0 (4006)' value
 	When User clicks 'UPDATE' button
 	#Check Action grid
 	Then 'New_Action' content is displayed in the 'Action' column
-	Then 'Forward Path, Intel(R) Processor Graphics' content is displayed in the 'Value' column
+	Then 'Forward Path, Amazon Web Services EC2ConfigService 3.17.1032.0' content is displayed in the 'Value' column
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
 	Then 'Email Migration' content is displayed in the 'Project' column
 
@@ -326,10 +325,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForward
 	Then validation message 'Enter at least 3 characters' is displayed below 'Target Application' field
 	When User enters 'Autotest' text to 'Target Application' textbox
 	Then validation message 'No results found' is displayed below 'Target Application' field
-	When User enters 'Creative MediaSource' in the 'Target Application' autocomplete field and selects 'Creative MediaSource (A01) (1047)' value
+	When User enters 'MacrShockwave80 ' in the 'Target Application' autocomplete field and selects 'Macromedia MacrShockwave80 8.0 (265)' value
 	When User clicks 'CREATE' button
 	#Check Action grid
 	Then '18988_Action' content is displayed in the 'Action' column
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
 	Then 'Computer Scheduled Test (Jo)' content is displayed in the 'Project' column
-	Then 'Forward Path, Creative MediaSource (A01)' content is displayed in the 'Value' column
+	Then 'Forward Path, Macromedia MacrShockwave80 8.0' content is displayed in the 'Value' column

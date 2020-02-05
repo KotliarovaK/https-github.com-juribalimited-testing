@@ -5,14 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18082
-Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOperatingSystemFilterWork
-	When User clicks 'Applications' on the left-hand menu
-	And User clicks the Filters button
-	And User add "Device Operating System" filter where type is "Equals" with following Lookup Value and Association:
-	| SelectedValues | Association        |
-	| Other          | Entitled to device |
-	Then "4" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS17757
 Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProjectProperties
@@ -70,32 +62,3 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork
 	And User add "Owner Compliance" filter where type is "Not empty" with added column and Lookup option
 	| SelectedValues |
 	Then "16,819" rows are displayed in the agGrid
-
-@Evergreen @Applications @Evergreen_FiltersFeature @DAS18560 @Cleanup
-Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToDeletedList
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Device Type" filter where type is "Equals" with added column and Lookup option
-    | SelectedValues |
-    | Mobile         |
-	When User create dynamic list with "ListToBeDeleted18560" name on "Devices" page
-	Then "ListToBeDeleted18560" list is displayed to user
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	When User add "Device (Saved List)" filter where type is "In list" with following Lookup Value and Association:
-    | SelectedValues       | Association    |
-    | ListToBeDeleted18560 | Used on device |
-	When User creates 'SecondList18560' dynamic list
-	Then "SecondList18560" list is displayed to user
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User removes custom list with "ListToBeDeleted18560" name
-	Then list with "ListToBeDeleted18560" name is removed
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User navigates to the "SecondList18560" list
-	When User clicks the Filters button
-	Then message 'This list could not be processed, it may refer to a list with errors' is displayed to the user

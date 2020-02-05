@@ -75,9 +75,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Category']")]
         public IWebElement CategoryDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='readinessForOnboardedApplications']")]
-        public IWebElement DefaultReadinessDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'mat-tab-label-active')]")]
         public IWebElement ActiveTabOnScopeChangesSection { get; set; }
 
@@ -239,12 +236,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var pathSelector = $".//mat-select//div//span[contains(text(), '{pathTypeName}')]";
             return Driver.FindElement(By.XPath(pathSelector));
-        }
-
-        public IWebElement GetReadinessOptionByName(string colorName)
-        {
-            var option = $".//mat-option[@role='option']//span[text()='{colorName}']";
-            return Driver.FindElement(By.XPath(option));
         }
 
         public IWebElement SelectCategoryByName(string categoryName)

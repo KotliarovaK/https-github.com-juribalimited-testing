@@ -165,9 +165,9 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then Create Action page is displayed to the User
 	Then following Values are displayed in the 'Action Type' dropdown:
 	| Values              |
+	| Update custom field |
 	| Update path         |
 	| Update task value   |
-	| Update custom field |
 	When User enters '15428_Action_1' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '1803 Rollout' option from 'Project' autocomplete

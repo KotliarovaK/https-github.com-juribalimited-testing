@@ -408,7 +408,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Evergreen Target App Version"});
             table7.AddRow(new string[] {
-                        "Hide from End Users"});
+                        "Hide From End Users"});
             table7.AddRow(new string[] {
                         "In Catalog"});
 #line 93
@@ -445,7 +445,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Evergreen Target App Version"});
             table8.AddRow(new string[] {
-                        "Hide from End Users"});
+                        "Hide From End Users"});
             table8.AddRow(new string[] {
                         "In Catalog"});
 #line 111
@@ -482,7 +482,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "Evergreen Target App Version"});
             table9.AddRow(new string[] {
-                        "Hide from End Users"});
+                        "Hide From End Users"});
             table9.AddRow(new string[] {
                         "In Catalog"});
 #line 129

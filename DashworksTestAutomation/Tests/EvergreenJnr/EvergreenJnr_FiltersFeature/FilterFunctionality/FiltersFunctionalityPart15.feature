@@ -44,32 +44,6 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| Manchester Morning         |
 	| Birmingham Morning         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
-Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	When User add "UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)" filter where type is "Does not equal" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| Empty              |
-	When User clicks on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
-	Then Content in the 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column is equal to
-	| Content            |
-	| Application Slot 1 |
-	| Application Slot 1 |
-	| Application Slot 1 |
-	| Application Slot 1 |
-	| Application Slot 2 |
-	When User clicks on 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column header
-	Then Content in the 'UserEvergr: Stage 3 \ Radiobutton Readiness Date Owner (Application) (Slot)' column is equal to
-	| Content            |
-	| Application Slot 2 |
-	| Application Slot 1 |
-	| Application Slot 1 |
-	| Application Slot 1 |
-	| Application Slot 1 |
-
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
 Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
 	When User clicks 'Mailboxes' on the left-hand menu
