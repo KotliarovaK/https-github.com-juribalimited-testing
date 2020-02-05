@@ -149,8 +149,8 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Data"});
+                        "Title",
+                        "Value"});
             table1.AddRow(new string[] {
                         "Name",
                         "06RIV0KXJMHJ1K"});
@@ -158,7 +158,7 @@ this.FeatureBackground();
                         "Device Owner",
                         "Tonia T. Mason"});
 #line 15
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table1, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table1, "Then ");
 #line 19
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
@@ -187,8 +187,8 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'QSFCLB19N5524S\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Data"});
+                        "Title",
+                        "Value"});
             table2.AddRow(new string[] {
                         "Name",
                         "QSFCLB19N5524S"});
@@ -196,7 +196,7 @@ this.FeatureBackground();
                         "Device Owner",
                         "Gerard C. Kelly"});
 #line 30
- testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2, "And ");
+ testRunner.And("following content is displayed on the Details Page", ((string)(null)), table2, "And ");
 #line 34
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
