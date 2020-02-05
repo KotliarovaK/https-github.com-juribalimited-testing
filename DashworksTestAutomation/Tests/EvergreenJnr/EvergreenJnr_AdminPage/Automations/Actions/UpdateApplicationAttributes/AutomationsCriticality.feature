@@ -30,9 +30,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAut
 	| Not Important |
 	| Uncategorised |
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
-	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
 	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Criticality' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown

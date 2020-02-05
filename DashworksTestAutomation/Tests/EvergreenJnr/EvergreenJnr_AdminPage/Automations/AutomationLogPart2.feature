@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then 'CREATE' button is disabled
-	And 'SAVE AND CREATE ANOTHER' button is disabled
+	And 'SAVE & CREATE ANOTHER' button is disabled
 	When User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -503,6 +503,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17430_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17430_Automation' item from 'Automation' column
+	When '17430_Automation' automation '17430_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17430_Automation" text in the Search field for "Automation" column

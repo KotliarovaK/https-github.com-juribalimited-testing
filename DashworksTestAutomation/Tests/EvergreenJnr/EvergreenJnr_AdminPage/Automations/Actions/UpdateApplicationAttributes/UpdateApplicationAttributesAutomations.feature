@@ -36,14 +36,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	| RETIRE        |
 	| UNCATEGORISED |
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
-	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
 	When User selects 'RED' in the 'Sticky Compliance' dropdown
 	Then 'CREATE' button is not disabled
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @DAS19135 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestoringValues
