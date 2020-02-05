@@ -45,8 +45,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             page.EditModeOnOffTrigger.Click();
             //TODO: expand section by index
-            page.SectionsBlocks.First().Click();
-            _driver.WaitForElementToContainsTextInAttribute(page.SectionsBlocks.First(), "true", "aria-expanded");
+            //page.SectionsBlocks.First().Click();
+            //_driver.WaitForElementToContainsTextInAttribute(page.SectionsBlocks.First(), "true", "aria-expanded");
         }
 
         [When(@"User clicks Dashboards Details icon on Dashboards page")]
