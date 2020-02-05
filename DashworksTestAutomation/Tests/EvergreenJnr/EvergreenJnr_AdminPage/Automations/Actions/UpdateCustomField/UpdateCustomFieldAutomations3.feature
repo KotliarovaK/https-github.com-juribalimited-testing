@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedContentIsUpdatedAfterChangingU
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
-	When User clicks 'CREATE ACTION' button 
+	When User clicks 'CREATE ACTION' button
 	And User enters '18411_Action' text to 'Action Name' textbox
 	And User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
