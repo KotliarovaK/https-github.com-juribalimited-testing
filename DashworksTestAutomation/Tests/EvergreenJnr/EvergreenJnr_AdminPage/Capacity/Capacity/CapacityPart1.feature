@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	Then 'Capacity Units' content is displayed in 'Capacity Mode' dropdown
 	When User navigates to the 'Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "1" rows
 	When User clicks content from "Capacity Unit" column
 	And User enters 'Default Capacity Unit' text to 'Capacity Unit Name' textbox
 	And User clicks 'UPDATE' button 
