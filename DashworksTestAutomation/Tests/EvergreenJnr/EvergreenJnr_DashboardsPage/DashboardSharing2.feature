@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User create dynamic list with "ADeviceListFor14841_Admin" name on "Devices" page
 	Then "ADeviceListFor14841_Admin" list is displayed to user
 	When User clicks the List Details button
-	When User select "Specific users / teams" sharing option
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User  | Permission |
 	| Test2 | Admin      |
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	#display permission modal
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
-	When User select "Everyone can see" sharing option
+	When User selects 'Everyone can see' in the 'Sharing' dropdown
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget 'WidgetForDAS14841_Admin' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	Then User 'Test1' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User selects 'Everyone can see' permission for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
 	When User clicks 'UPDATE & SHARE' button on popup
 	Then Review Widget List Permissions is not displayed to the User
-	Then "Everyone can see" sharing option is selected
+	Then 'Everyone can see' content is displayed in 'Sharing' dropdown
 	#login as user1 and check if list permission changed
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'ADeviceListFor14841_Admin' list
 	Then Details panel is displayed to the user
-	Then "Everyone can see" sharing option is selected
+	Then 'Everyone can see' content is displayed in 'Sharing' dropdown
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboard
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
-	When User select "Specific users" sharing option
+	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN15876_2 | Admin      |
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	When User clicks Settings button for 'Dashboard for DAS15550' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
-	When User select "Specific users" sharing option
+	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN15550_2 | Edit       |
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
-	When User select "Specific users" sharing option
+	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN14915_2 | Admin      |
@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	When User clicks Settings button for 'Dashboard for Share' dashboard
 	When User clicks 'Manage' option in opened Cog-menu
 	Then Details panel is displayed to the user
-	When User select "Specific users" sharing option
+	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN14915_4 | Admin      |
@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User create dynamic list with "ADevicesList17592" name on "Devices" page
 	Then "ADevicesList17592" list is displayed to user
 	When User clicks the List Details button
-	When User select "Specific users / teams" sharing option
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN17592_2 | Read       |
@@ -306,7 +306,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	#Then Permission panel is displayed to the user
 	#When User changes sharing type from "Private" to "Specific users / teams"
 	#When User clicks 'ADD TEAM' button 
-	#When User selects the "Team 1061" team for sharing
+	#When User selects 'Team 1061' option from 'Team' autocomplete
 	#And User select "Admin" in Select Access dropdown
 	#When User clicks the "CANCEL" button on Dashboard Details
 	#Then Team/User section in not displayed on Dashboard Details

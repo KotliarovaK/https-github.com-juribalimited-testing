@@ -128,7 +128,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     Driver.WaitForElementToBeDisplayed(element);
                     return element;
                 }
-
             }
 
             Driver.WaitForAnyElementToContainsTextInAttribute(ListElementsInListsPanel.Select(x => x.FindElement(ListSubMenusInListsPanel)),

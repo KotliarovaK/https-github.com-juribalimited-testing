@@ -94,8 +94,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	| Radio Rag Date Owner Req B         |
 	| SS Department and Location Enabled |
 
-#Ann.Ilchenko 10/2/19: remove 'not run' tag when 'DAS18368' bug will be fixed.
-#sz: bug marked as fixed so tag is removed
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @DAS18368
 Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User clicks 'Devices' on the left-hand menu
@@ -202,6 +200,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	And User selects 'Slot17833_1' in the 'Capacity Slot' dropdown
+	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
