@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -28,6 +29,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             _driver.WaitForElementToHaveText(autocompleteElement.GetTextbox("Self Service Scope"));
             //For the stability of the Self Service's tests
             Thread.Sleep(6000);
+        }
+
+        [Then(@"Self Service URL preview that contains '(.*)' base URL and '(.*)' Self Service identifier displays")]
+        public void ThenSelfServiceURLPreviewContains(string baseSelfServiceUrl, string selfServiceIdentifier)
+        {
+            var SelfServiceDetailsPage = _driver.NowAt<SelfServiceDetailsPage>();
+            Verify.IsTrue(SelfServiceDetailsPage.SelfServiceUrlPreview(baseSelfServiceUrl, selfServiceIdentifier).Displayed,
+                "Expected Self Service URL wasn't displayed");
         }
     }
 }

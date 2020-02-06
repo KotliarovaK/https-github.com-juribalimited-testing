@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificat
 	Then User clicks on 'click here to view the TestProj_7 self service' link on inline success banner
 	Then Page with 'TestProj_7' header is displayed to user
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19842 @DAS19876 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19842 @DAS19876 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceNameShouldShowsWhenEachOfTheSelfServiceSubActionsAreSelected
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
@@ -165,3 +165,14 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceName
 	Then Page with 'TestProj_8' header is displayed to user
 	When User navigates to the 'Style' left submenu item
 	Then Page with 'TestProj_8' header is displayed to user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19864 @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceUrlPreviewConstructedProperly
+    When User creates Self Service via API
+	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
+	| 1         | TestProj_9 | Test_ID_9         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_9' item from 'Self Service Name' column
+	Then Self Service Details page is displayed correctly
+	Then Self Service URL preview that contains 'https://api.test.corp.juriba.com' base URL and 'Test_ID_9' Self Service identifier displays
