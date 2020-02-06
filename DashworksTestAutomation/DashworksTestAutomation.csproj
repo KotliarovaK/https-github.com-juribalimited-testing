@@ -281,6 +281,7 @@
     <Compile Include="Pages\Evergreen\HeaderElement.cs" />
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
     <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
+    <Compile Include="Pages\Evergreen\PermissionsElement.cs" />
     <Compile Include="Pages\Evergreen\PivotElementPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AccountDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
@@ -399,6 +400,7 @@
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseGrid.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BaseHeader.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_BasePage.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_PermissionsPanel.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_BaseTable.cs" />
     <Compile Include="Steps\Dashworks\Base\EvergreenJnr_LeftMenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\CustomList\AfterScenario\RemoveCustomListAfterScenario.cs" />

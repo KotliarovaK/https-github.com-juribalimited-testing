@@ -587,7 +587,7 @@ this.FeatureBackground();
 #line 133
  testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 134
- testRunner.When("User clicks \'DELETE LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks Delete list button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 135
  testRunner.And("User navigates to the \"DynamicList2569\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136

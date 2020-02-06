@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	And "2" rows are displayed in the agGrid
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User clicks 'DELETE LIST' button
+	When User clicks Delete list button
 	And User navigates to the "DynamicList2569" list
 	Then inline success banner is not displayed
 	When User clicks the List Details button
