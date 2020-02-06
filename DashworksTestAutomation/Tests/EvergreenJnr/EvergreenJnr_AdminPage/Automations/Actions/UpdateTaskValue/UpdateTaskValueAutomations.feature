@@ -65,8 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	#Waiting for _ngcontent on the automaster
 	#Then 'The selected project cannot be found' error message is displayed for 'Project' field
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @DAS18739 @Cleanup @Not_Ready
-#Waiting for updated Validation messages on the automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @DAS18739 @DAS19228 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDeletedStage
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |

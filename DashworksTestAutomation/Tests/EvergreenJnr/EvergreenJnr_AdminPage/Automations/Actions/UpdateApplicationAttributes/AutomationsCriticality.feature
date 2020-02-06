@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19312_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '19312_Automation' item from 'Automation' column
-	#When '19312_Automation' automation '19312_Action' action run has finished
+	When '19312_Automation' automation '19312_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User refreshes agGrid
 	When User enters "19312_Automation" text in the Search field for "Automation" column

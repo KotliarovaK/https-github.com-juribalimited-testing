@@ -279,7 +279,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks 'CREATE' button 
 	Then 'The automation action has been created' text is displayed on inline success banner
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @DAS17802 @DAS19228 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -305,6 +305,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User enters "15425_Action" text in the Search field for "Action" column
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
+	#Actions content check
 	Then "15425_Action" content is displayed in "Action Name" field
 	Then 'Update path' content is displayed in 'Action Type' dropdown
 	Then 'User Evergreen Capacity Project' content is displayed in 'Project' autocomplete
@@ -639,7 +640,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	Then 'Update' value is displayed in the 'Update Date' dropdown
 	Then "5 Aug 2019" content is displayed in "Date" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @DAS19117 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @DAS19117 @DAS17485 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -660,8 +661,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User enters '31 Aug 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
 	When User selects '1803 Team' option from 'Team' autocomplete
-	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
-	And User clicks 'CREATE' button 
+	When User selects 'Unassigned' option from 'Owner' autocomplete
+	When User clicks 'CREATE' button 
 	#Test
 	When User enters "DAS17797_Action" text in the Search field for "Action" column
 	And User clicks content from "Action" column
@@ -671,17 +672,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#DAS-17816 <=
 	When User selects 'Radio Rag only Comp' option from 'Task' autocomplete
-	And User clicks Body container
-	And User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
+	When User clicks Body container
+	When User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
 	Then 'Update Value' content is displayed in 'Update Value' dropdown
-	And 'Update Date' content is displayed in 'Update Date' dropdown
-	And 'Update Owner' content is displayed in 'Update Owner' dropdown
+	Then 'Update Date' content is displayed in 'Update Date' dropdown
+	Then 'Update Owner' content is displayed in 'Update Owner' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17744 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17744 @DAS17485 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
+	When User clicks 'Users' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Username" filter where type is "Equals" with added column and following value:
+	| Values     |
+	| BVX3396756 |
+	When User clicks the Actions button
+	When User selects all rows on the grid
+	When User selects 'Create static list' in the 'Action' dropdown
+	When User create static list with "ListDAS17485" name
+	When User refreshes agGrid
+	Then "ListDAS17485" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| DAS17744       | 17744       | true   | false              | All Users | Manual |
+	| AutomationName | Description | Active | StopOnFailedAction | Scope        | Run    |
+	| DAS17744       | 17744       | true   | false              | ListDAS17485 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action
@@ -697,11 +709,26 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User enters '5 Sep 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
 	When User selects '1803 Team' option from 'Team' autocomplete
-	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
-	And User clicks 'CREATE' button 
-	#Test
-	When User enters "DAS17744_Action" text in the Search field for "Action" column
-	Then 'Started, 2019-09-05, 1803 Team, Lisa Bailey' content is displayed in the 'Value' column
+	When User selects 'Unassigned' option from 'Owner' autocomplete
+	And User clicks 'CREATE' button
+	Then 'Started, 2019-09-05, 1803 Team, Unassigned' content is displayed in the 'Value' column
+	#Run Automations
+	When User clicks 'Automations' header breadcrumb
+	When User enters "DAS17744" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for 'DAS17744' item from 'Automation' column
+	When 'DAS17744' automation 'DAS17744_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User refreshes agGrid
+	When User enters "DAS17744" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	When User clicks the Columns button
+	When User removes "Username" column by Column panel
+	When User removes "Display Name" column by Column panel
+	When User clicks the Columns button
+	Then 'Unassigned' content is displayed in the 'ComputerSc: One \ Radio Rag Date Owner User Req A (Owner)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @DAS17948 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData
@@ -711,7 +738,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action
-	And User clicks 'CREATE ACTION' button 
+	And User clicks 'CREATE ACTION' button
 	And User enters 'DAS17772_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete

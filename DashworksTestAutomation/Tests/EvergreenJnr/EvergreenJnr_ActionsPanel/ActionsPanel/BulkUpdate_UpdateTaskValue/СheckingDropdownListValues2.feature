@@ -173,3 +173,51 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	| After now  |
 	Then 'After now' content is displayed in 'Before or After' dropdown
 	When User selects 'Before now' in the 'Before or After' dropdown
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17485
+Scenario: EvergreenJnr_DevicesList_CheckUnassignedOwnerForUpdateTaskValueBulkUpdate
+	When User clicks 'Users' on the left-hand menu
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                                                |
+	| ComputerSc: One \ Radio Rag Date Owner User Req A (Owner) |
+	When User clicks the Filters button
+	When User add "Username" filter where type is "Equals" with added column and following value:
+	| Values    |
+	| CCQ492432 |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User selects all rows on the grid
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	When User selects 'One' option from 'Stage' autocomplete
+	When User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Value' dropdown
+	When User selects 'Started' in the 'Value' dropdown
+	When User selects 'No change' in the 'Update Date' dropdown
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects 'Unassigned' option from 'Owner' autocomplete
+	When User clicks 'UPDATE' button
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then 'Unassigned' content is displayed in the 'ComputerSc: One \ Radio Rag Date Owner User Req A (Owner)' column
+		#Revert changes to default
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
+	When User selects 'One' option from 'Stage' autocomplete
+	When User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
+	When User selects 'No change' in the 'Update Value' dropdown
+	When User selects 'No change' in the 'Update Date' dropdown
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
+	When User clicks 'UPDATE' button
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then 'Lisa Bailey' content is displayed in the 'ComputerSc: One \ Radio Rag Date Owner User Req A (Owner)' column
