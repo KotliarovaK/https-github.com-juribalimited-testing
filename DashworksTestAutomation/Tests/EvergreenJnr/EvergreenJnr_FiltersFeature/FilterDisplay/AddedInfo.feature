@@ -556,8 +556,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	When User create dynamic list with "DevicesList" name on "Devices" page
 	And User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User select "Everyone can edit" sharing option
-	Then "Everyone can edit" sharing option is selected
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
+	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

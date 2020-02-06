@@ -99,11 +99,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                             |
-	| zMailboxAu: Relative BU \ DT Auto Mail |
 	Then '25 Oct 2019' content is displayed in the 'zMailboxAu: Relative BU \ DT Auto Mail' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
@@ -127,11 +122,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                             |
-	| zMailboxAu: Relative BU \ DT Auto Mail |
 	Then '15 Oct 2019' content is displayed in the 'zMailboxAu: Relative BU \ DT Auto Mail' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @Cleanup @Not_Ready

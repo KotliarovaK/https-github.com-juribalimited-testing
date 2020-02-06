@@ -18,6 +18,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         [FindsBy(How = How.XPath, Using = ".//das-self-service-footer/div")]
         public IWebElement Footer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ssw-tools']")]
+        public IWebElement SelfServiceToolsPanel { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

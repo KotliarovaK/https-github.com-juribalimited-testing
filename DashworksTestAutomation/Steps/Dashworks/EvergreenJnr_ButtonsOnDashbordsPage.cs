@@ -37,9 +37,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForDataLoadingInActionsPanel();
-            _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
             menu.ListDetailsButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks the Permissions button")]
+        public void WhenUserClicksThePermissionsButton()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.PermissionsButton);
+            menu.PermissionsButton.Click();
             _driver.WaitForDataLoading();
         }
 
@@ -47,7 +56,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheColumnsButton()
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
-            _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.ColumnButton);
             menu.ColumnButton.Click();
@@ -58,7 +66,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheFiltersButton()
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
-            _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
             menu.FilterButton.Click();
@@ -69,7 +76,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheAssociationButton()
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
-            _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.AssociationButton);
             menu.AssociationButton.Click();
