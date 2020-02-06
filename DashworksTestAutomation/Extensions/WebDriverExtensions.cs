@@ -663,6 +663,10 @@ namespace DashworksTestAutomation.Extensions
                 {
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -680,6 +684,10 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (StaleElementReferenceException)
+                {
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     return false.Equals(condition);
                 }
@@ -735,6 +743,11 @@ namespace DashworksTestAutomation.Extensions
                 catch (InvalidOperationException)
                 {
                     // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }                
+                catch (TargetInvocationException)
+                {
+                    // Return false as element was staled
                     return false.Equals(displayedCondition);
                 }
             };
@@ -845,6 +858,12 @@ namespace DashworksTestAutomation.Extensions
                     // is no longer visible.
                     return false;
                 }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
             };
         }
 
@@ -862,6 +881,12 @@ namespace DashworksTestAutomation.Extensions
                     return false;
                 }
                 catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
                 {
                     // Returns false because stale element reference implies that element
                     // is no longer visible.
@@ -890,6 +915,12 @@ namespace DashworksTestAutomation.Extensions
                     // is no longer visible.
                     return false;
                 }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
             };
         }
 
@@ -907,6 +938,12 @@ namespace DashworksTestAutomation.Extensions
                     return false;
                 }
                 catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
                 {
                     // Returns false because stale element reference implies that element
                     // is no longer visible.
@@ -994,6 +1031,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
             };
         }
 
@@ -1017,6 +1059,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(displayedCondition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
@@ -1182,6 +1229,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
             };
         }
 
@@ -1214,6 +1266,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
             };
         }
 
@@ -1242,6 +1299,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(displayedCondition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(displayedCondition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
@@ -1328,6 +1390,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1351,6 +1418,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1457,6 +1529,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1481,6 +1558,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1609,6 +1691,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1639,6 +1726,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1761,6 +1853,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1784,6 +1881,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1816,6 +1918,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1839,6 +1946,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -1927,6 +2039,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -1958,6 +2075,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -2057,6 +2179,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -2085,6 +2212,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false.Equals(condition);
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
             };
         }
 
@@ -2108,6 +2240,11 @@ namespace DashworksTestAutomation.Extensions
                     return false.Equals(condition);
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false.Equals(condition);
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false.Equals(condition);
@@ -2160,6 +2297,11 @@ namespace DashworksTestAutomation.Extensions
                     return false;
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false;
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false;
@@ -2245,6 +2387,11 @@ namespace DashworksTestAutomation.Extensions
                     // Return false as no elements was located
                     return false;
                 }
+                catch (TargetInvocationException)
+                {
+                    // Return false as no elements was located
+                    return false;
+                }
             };
         }
 
@@ -2269,6 +2416,11 @@ namespace DashworksTestAutomation.Extensions
                     return false;
                 }
                 catch (InvalidOperationException)
+                {
+                    // Return false as no elements was located
+                    return false;
+                }
+                catch (TargetInvocationException)
                 {
                     // Return false as no elements was located
                     return false;
@@ -2504,6 +2656,10 @@ namespace DashworksTestAutomation.Extensions
                 return false;
             }
             catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+            catch (TargetInvocationException)
             {
                 return false;
             }
