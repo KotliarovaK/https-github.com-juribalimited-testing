@@ -69,7 +69,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	When User creates 'TestListE11493' dynamic list
 	Then "TestListE11493" list is displayed to user
 	When User clicks the Permissions button
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	Then List details button is disabled
 	Then list with "TestListE11493" name is not displayed
