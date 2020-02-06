@@ -20,11 +20,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _driver = driver;
         }
 
-        [Then(@"Self Service Tools Panel is displayed for end client")]
-        public void ThenSelfServiceToolsPanelIsDisplayedForEndClient()
+        [Then(@"Self Service Tools Panel displayed for end client")]
+        public void ThenSelfServiceToolsPanelDisplayedForEndClient()
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
-            Verify.IsTrue(page.SelfServiceToolsPanel.IsElementDisplayed())
+            Verify.IsTrue(page.SelfServiceToolsPanel.Displayed, "Self Service Tools Panel are missing");
         }
     }
 }
