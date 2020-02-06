@@ -59,6 +59,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(page.DashboardDetails);
         }
 
+        [When(@"User clicks Dashboards Permission icon on Dashboards page")]
+        public void WhenUserClicksDashboardsPermissionIconOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForElementToBeDisplayed(page.DashboardsPermissionIcon);
+            page.DashboardsPermissionIcon.Click();
+        }
+
         [Then(@"User sees Edit mode trigger is in the On position on Dashboards page")]
         public void ThenUserSeesEditModeTriggerIsInTheOnPositionOnDashboardsPage()
         {

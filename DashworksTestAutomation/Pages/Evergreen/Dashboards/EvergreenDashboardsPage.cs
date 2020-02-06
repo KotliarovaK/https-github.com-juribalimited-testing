@@ -22,8 +22,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-actions']/button")]
+        [FindsBy(How = How.XPath, Using = ".//button[@id='showDashboardDetails']")]
         public IWebElement DashboardsDetailsIcon { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[@id='showDashboardPermissions']")]
+        public IWebElement DashboardsPermissionIcon { get; set; }
 
         #endregion
 

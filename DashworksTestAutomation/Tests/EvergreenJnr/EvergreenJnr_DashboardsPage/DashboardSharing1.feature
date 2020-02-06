@@ -76,8 +76,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	| List       | Widget_For_DAS16380 | First_List_DAS16380 | 10      | 10         |
 	Then 'Widget_For_DAS16380' Widget is displayed to the user
 	#change permission to Everyone can see
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Dashboards Permission icon on Dashboards page
 	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	When User selects 'Everyone can see' permission for 'First_List_DAS16380' list on Permissions Pop-up
@@ -89,8 +88,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	Then User sees 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' warning text below Lists field
 	#change permission to Everyone can edit
 	When User clicks 'CREATE' button 
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Dashboards Permission icon on Dashboards page
 	When User select "Everyone can edit" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	When User clicks 'IGNORE & SHARE' button 
@@ -101,8 +99,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	Then User sees 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' warning text below Lists field
 	#change permission to Everyone can edit
 	When User clicks 'CREATE' button 
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Dashboards Permission icon on Dashboards page
 	When User select "Specific users / teams" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	When User clicks 'IGNORE & SHARE' button 
@@ -138,8 +135,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	| Table      | WidgetForDAS14841 | DeviceListFor14841 | Hostname | Count             | Count DESC |
 	Then 'WidgetForDAS14841' Widget is displayed to the user
 	#display permission modal
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Dashboards Permission icon on Dashboards page
 	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	#check row data
@@ -195,8 +191,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	| Table      | WidgetForDAS14841 | DeviceListFor14841_1 | Hostname | Count             | Count DESC |
 	Then 'WidgetForDAS14841' Widget is displayed to the user
 	#display permission modal
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Dashboards Permission icon on Dashboards page
 	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	#act	
@@ -238,8 +233,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	| Table      | WidgetForDAS14841 | DeviceListFor14841_2 | Hostname | Count             | Count DESC |
 	Then 'WidgetForDAS14841' Widget is displayed to the user
 	#display permission modal
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Dashboards Permission icon on Dashboards page
 	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	#act
@@ -294,8 +288,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	| Table      | WidgetForDAS14841_2 | DeviceListFor14841_4 | Hostname | Count             | Count DESC |
 	Then 'WidgetForDAS14841_2' Widget is displayed to the user
 	#display permission modal
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Dashboards Permission icon on Dashboards page
 	When User select "Everyone can see" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	#act
@@ -353,8 +346,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	| Table      | <widgetName> | <listName> | Hostname | Count             | Count DESC |
 	Then '<widgetName>' Widget is displayed to the user
 	#display permission modal
-	When User clicks Dashboards Details icon on Dashboards page
-	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Dashboards Permission icon on Dashboards page
 	When User select "Everyone can edit" sharing option
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget '<widgetName>' displayed for '<listName>' list on Permissions Pop-up
