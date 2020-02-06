@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User selects '1803 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	#Action 2
-	When User clicks 'SAVE AND CREATE ANOTHER' button 
+	When User clicks 'SAVE & CREATE ANOTHER' button 
 	Then 'The automation action has been created' text is displayed on inline success banner
 	When User enters '15427_Action2' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
@@ -256,25 +256,25 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then Create Action page is displayed to the User
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CANCEL' button is not disabled
 	When User enters '' text to 'Action Name' textbox
 	Then 'An action name must be entered' error message is displayed for 'Action Name' field
 	When User enters 'Melbourne users' text to 'Action Name' textbox
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CANCEL' button is not disabled
 	When User selects 'Update path' in the 'Action Type' dropdown
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CANCEL' button is not disabled
 	When User selects 'Melbourne User Migration' option from 'Project' autocomplete
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CANCEL' button is not disabled
 	When User selects 'User Migration' option from 'Path' autocomplete
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 	Then 'CANCEL' button is not disabled
 	When User clicks 'CREATE' button 
 	Then 'The automation action has been created' text is displayed on inline success banner
@@ -401,8 +401,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User clicks 'CREATE' button 
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE & CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User enters 'DAS16992_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Test17427_Project' option from 'Project' autocomplete
@@ -411,7 +411,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	When User selects 'Device Task 4' option from 'Task' autocomplete
 	When User selects 'Remove' in the 'Update Date' dropdown
 	Then 'CREATE' button is not disabled
-	When User clicks 'SAVE AND CREATE ANOTHER' button
+	When User clicks 'SAVE & CREATE ANOTHER' button
 	Then Create Action page is displayed to the User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17234 @DAS17625 @DAS19117 @Cleanup
@@ -554,7 +554,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User selects 'Text Computer' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	When User enters 'To be updated' text to 'Value' textbox
-	And User clicks 'CREATE' button 
+	And User clicks 'CREATE' button
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17602_Automation" text in the Search field for "Automation" column

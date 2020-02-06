@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Steps.API
                 x["translatedCategory"].ToString().Equals(categoryName) &&
                 x["label"].ToString().Equals(filterName));
             var allOperators = filter["operators"];
-            var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
+            var operatorsValues = allOperators.Select(x => x["translatedDropdownValue"].ToString()).ToList();
             Utils.Verify.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues,
                 $"Incorrect operators are displayed for {filterName} filter");
         }
