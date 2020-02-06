@@ -22,12 +22,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='showDashboardDetails']")]
-        public IWebElement DashboardsDetailsIcon { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//button[@id='showDashboardPermissions']")]
-        public IWebElement DashboardsPermissionIcon { get; set; }
-
         #endregion
 
         #region Dashboards Panel
@@ -273,7 +267,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
             foreach (var section in AllSections)
             {
-                widgetsInSections.Add(section.FindElements(By.XPath(".//following-sibling::div[@class='widgets']//h5")).Select(x => x.Text).ToList());
+                widgetsInSections.Add(section.FindElements(By.XPath(".//following-sibling::div[@class='widgets']//h5/span[1]")).Select(x => x.Text).ToList());
             }
 
             return widgetsInSections;

@@ -42,6 +42,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks the Dashboard Details button")]
+        public void WhenUserClicksTheDashboardDetailsButton()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.DashboardsDetailsButton);
+            menu.DashboardsDetailsButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User clicks the Permissions button")]
         public void WhenUserClicksThePermissionsButton()
         {
@@ -49,6 +59,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForElementToBeDisplayed(menu.PermissionsButton);
             menu.PermissionsButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks the Dashboard Permissions button")]
+        public void WhenUserClicksTheDashboardPermissionsButton()
+        {
+            var menu = _driver.NowAt<BaseHeaderElement>();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForElementToBeDisplayed(menu.DashboardPermissionsButton);
+            menu.DashboardPermissionsButton.Click();
             _driver.WaitForDataLoading();
         }
 

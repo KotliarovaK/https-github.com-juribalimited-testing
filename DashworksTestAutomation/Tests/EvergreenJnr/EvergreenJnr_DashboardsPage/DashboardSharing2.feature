@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| Table      | WidgetForDAS14841_Admin | ADeviceListFor14841_Admin | Hostname | Count             | Count DESC |
 	Then 'WidgetForDAS14841_Admin' Widget is displayed to the user
 	#display permission modal
-	When User clicks Dashboards Permission icon on Dashboards page
+	When User clicks the Dashboard Permissions button
 	When User selects 'Everyone can see' in the 'Sharing' dropdown
 	Then Review Widget List Permissions is displayed to the User
 	Then Widget 'WidgetForDAS14841_Admin' displayed for 'ADeviceListFor14841_Admin' list on Permissions Pop-up
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'ADeviceListFor14841_Admin' list
-	When User clicks Dashboards Permission icon on Dashboards page
+	When User clicks the Dashboard Permissions button
 	Then 'Everyone can see' content is displayed in 'Sharing' dropdown
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Cleanup
@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	| List       | Widget_For_DAS17592 | ADevicesList17592 | 10      | 10         |
 	Then 'Widget_For_DAS17592' Widget is displayed to the user
 	When User language is changed to "Deutsch" via API
-	When User clicks Dashboards Permission icon on Dashboards page
+	When User clicks the Dashboard Permissions button
 	When User expands the list of shared lists
 	Then User sees table headers as 'Widget' and 'Liste'
 	#login as user1
@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in Cog-menu for 'ADevicesList17592' list
-	When User clicks Dashboards Permission icon on Dashboards page
+	When User clicks the Dashboard Permissions button
 	When User clicks 'Remove' option in Cog-menu for 'DAS17592_2' user on Details panel
 	Then There is no user in shared list of Details panel
 	#login as user2

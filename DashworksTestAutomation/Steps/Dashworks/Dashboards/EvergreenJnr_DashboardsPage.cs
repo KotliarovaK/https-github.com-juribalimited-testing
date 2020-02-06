@@ -44,28 +44,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
             page.EditModeOnOffTrigger.Click();
-            //TODO: expand section by index
-            //page.SectionsBlocks.First().Click();
-            //_driver.WaitForElementToContainsTextInAttribute(page.SectionsBlocks.First(), "true", "aria-expanded");
-        }
-
-        [When(@"User clicks Dashboards Details icon on Dashboards page")]
-        public void WhenUserClicksDashboardsDetailsIconOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(page.DashboardsDetailsIcon);
-            page.DashboardsDetailsIcon.Click();
-            _driver.WaitForElementToBeDisplayed(page.DashboardDetails);
-        }
-
-        [When(@"User clicks Dashboards Permission icon on Dashboards page")]
-        public void WhenUserClicksDashboardsPermissionIconOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(page.DashboardsPermissionIcon);
-            page.DashboardsPermissionIcon.Click();
         }
 
         [Then(@"User sees Edit mode trigger is in the On position on Dashboards page")]
