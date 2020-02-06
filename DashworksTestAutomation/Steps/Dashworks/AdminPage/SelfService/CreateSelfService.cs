@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         public void ThenSelfServiceURLPreviewContains(string baseSelfServiceUrl, string selfServiceIdentifier)
         {
             var SelfServiceDetailsPage = _driver.NowAt<SelfServiceDetailsPage>();
-            Verify.IsTrue(SelfServiceDetailsPage.SelfServiceUrlPreview(baseSelfServiceUrl, selfServiceIdentifier).Displayed,
+            Verify.IsTrue(SelfServiceDetailsPage.SelfServiceUrlPreview(baseSelfServiceUrl, selfServiceIdentifier).Displayed(),
                 "Expected Self Service URL wasn't displayed");
         }
     }
