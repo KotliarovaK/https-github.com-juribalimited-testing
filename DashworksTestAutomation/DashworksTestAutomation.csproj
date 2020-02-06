@@ -379,6 +379,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfService.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\BaseSelfServiceEndUser.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\ErrorMessagePage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\SelfServiceAgGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Settings\SettingsApi.cs" />
