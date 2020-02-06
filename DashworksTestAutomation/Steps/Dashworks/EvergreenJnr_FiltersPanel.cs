@@ -862,9 +862,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             var basePage = _driver.NowAt<BaseGridPage>();
             var filtersNames = filterElement.GetFiltersNames();
-            var allColumns = filtersNames.Select(filtersName =>
-                new KeyValuePair<string, List<string>>(filtersName, basePage.GetColumnContentByColumnName(filtersName)));
-            for (var i = 0; i < allColumns.First().Value.Count; i++)
+
+            List<KeyValuePair<String, List<string>>> allColumns = filtersNames.Select(filtersName =>
+                new KeyValuePair<string, List<string>>(filtersName, basePage.GetColumnContentByColumnName(filtersName))).ToList();
+
+            for (var i = 0; i < allColumns.Count; i++)
             {
                 var result = false;
 
@@ -872,31 +874,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 //This happens after 22 row when data is not loading
                 var allValuesAreEmpty = allColumns.Select(column => column.Value[i])
                     .All(rowValue => string.IsNullOrEmpty(rowValue));
+
                 if (allValuesAreEmpty)
                 {
+                    //why?
                     result = true;
                     continue;
                 }
 
-                foreach (var filtersName in filtersNames)
-                {
-                    foreach (var filterValue in filterElement.GetFilterValuesByFilterName(filtersName))
-                    {
-                        if (string.IsNullOrEmpty(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
-                            continue;
+                int foundRowItem = 0;
 
-                        if (filterValue.ToLower()
-                            .Contains(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
-                        {
-                            result = true;
-                            break;
-                        }
-                    }
+                foreach (var filterValue in filterElement.GetFilterValuesByFilterName(allColumns[i].Key))
+                    foundRowItem += allColumns[i].Value.FindAll(x=>x.Equals(filterValue)).Count();
 
-                    if (result) break;
-                }
+                if (foundRowItem == allColumns[i].Value.Count)
+                    result = true;
 
-                Utils.Verify.IsTrue(result, "Table data is filtered incorrectly");
+                Verify.IsTrue(result, "Table data is filtered incorrectly");
             }
         }
 
@@ -1436,7 +1430,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
-                                                                                                                                                   
+
             foreach (var item in expectedList)
             {
                 Utils.Verify.That(actualList, Does.Contain(item), $"{item} value is missing");
@@ -1448,7 +1442,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).Where(x=>!string.IsNullOrEmpty(x)).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).Where(x => !string.IsNullOrEmpty(x)).ToList();
             Utils.Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
