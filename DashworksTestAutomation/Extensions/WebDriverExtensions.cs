@@ -227,6 +227,8 @@ namespace DashworksTestAutomation.Extensions
         public static void WaitForDataLoading(this RemoteWebDriver driver)
         {
             WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner') and not(contains(@class,'small'))]", WaitTimeout);
+            //TODO: Remove Thread.Sleep when DAS-19945 will be done
+            Thread.Sleep(500);
         }
 
         public static void WaitForDataLoading(this RemoteWebDriver driver, int timeoutInSeconds)
