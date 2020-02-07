@@ -1014,6 +1014,104 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceUrlPreviewConst" +
+            "ructedProperly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS19864")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceUrlPreviewConstructedProperly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceUrlPreviewConstructedProperlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceUrlPreviewConstructedProperlyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceUrlPreviewConst" +
+                    "ructedProperly", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS19864",
+                        "Cleanup"});
+#line 170
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceId",
+                        "Name",
+                        "ServiceIdentifier",
+                        "Enabled",
+                        "ObjectType",
+                        "ObjectTypeId",
+                        "StartDate",
+                        "EndDate",
+                        "SelfServiceURL",
+                        "AllowAnonymousUsers",
+                        "ScopeId",
+                        "scopeName",
+                        "Scope"});
+            table4.AddRow(new string[] {
+                        "1",
+                        "TestProj_9",
+                        "Test_ID_9",
+                        "false",
+                        "Devimdmdmm",
+                        "3",
+                        "2019-12-10T21:34:47.24",
+                        "2019-12-31T21:34:47.24",
+                        "URL",
+                        "true",
+                        "2",
+                        "bob",
+                        "1803 Apps"});
+#line 171
+    testRunner.When("User creates Self Service via API", ((string)(null)), table4, "When ");
+#line 174
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 175
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 176
+ testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_9\' item from \'Self Service Na" +
+                    "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 177
+ testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 178
+ testRunner.Then("Self Service URL preview that contains \'https://api.test.corp.juriba.com\' base UR" +
+                    "L and \'Test_ID_9\' Self Service identifier displays", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

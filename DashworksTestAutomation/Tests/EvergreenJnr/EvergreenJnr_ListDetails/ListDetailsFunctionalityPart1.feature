@@ -17,15 +17,17 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
 	Then Edit List menu is not displayed
-	When User mark list as favorite
-	Then Star icon is active in list details panel
+	When User checks 'Favorite List' checkbox
 	Then Edit List menu is not displayed
-	When User select "Everyone can edit" sharing option
+	When User clicks the Permissions button
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then Edit List menu is not displayed
+	When User clicks the List Details button
+	Then Details panel is displayed to the user
 	Then "RenamedList" list is displayed to user
-	When User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
-	Then Edit List menu is not displayed
+	When User clicks the Permissions button
+	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User clicks 'ACCEPT' button on inline tip banner
 
 Examples: 
 	| PageName     | Columnname    |
@@ -48,14 +50,13 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User changes list name to "RenamedList"
 	Then "RenamedList" name is displayed in list details panel
 	And Edit List menu is not displayed
-	When User mark list as favorite
-	Then Star icon is active in list details panel
-	And Edit List menu is not displayed
-	When User select "Everyone can edit" sharing option
+	When User checks 'Favorite List' checkbox
 	Then Edit List menu is not displayed
-	And "RenamedList" list is displayed to user
-	When User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks the Permissions button
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
+	Then Edit List menu is not displayed
+	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User clicks 'ACCEPT' button on inline tip banner
 	Then Edit List menu is not displayed
 
 Examples: 
@@ -74,14 +75,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	When User create dynamic list with "TestList80EA23" name on "<PageName>" page
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User mark list as favorite
+	When User checks 'Favorite List' checkbox
 	When User navigates to the "<ListToNavigate>" list
 	Then Star icon is displayed for "TestList80EA23" list
 	When User navigates to the "TestList80EA23" list
 	Then Star icon is displayed for "TestList80EA23" list
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User mark list as unfavorite
+	When User unchecks 'Favorite List' checkbox
 	Then Star icon is not displayed for "TestList80EA23" list
 	When User navigates to the "<ListToNavigate>" list
 	Then Star icon is not displayed for "TestList80EA23" list
@@ -104,14 +105,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyFo
 	And User create static list with "Static List TestName36" name
 	And User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User mark list as favorite
+	When User checks 'Favorite List' checkbox
 	When User navigates to the "<ListToNavigate>" list
 	Then Star icon is displayed for "Static List TestName36" list
 	When User navigates to the "Static List TestName36" list
 	Then Star icon is displayed for "Static List TestName36" list
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User mark list as unfavorite
+	When User unchecks 'Favorite List' checkbox
 	Then Star icon is not displayed for "Static List TestName36" list
 	When User navigates to the "<ListToNavigate>" list
 	Then Star icon is not displayed for "Static List TestName36" list

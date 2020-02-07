@@ -98,10 +98,9 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Slots
             }
         }
 
-        //On UI if user not set date then it will be DateTim.Now
-        public DateTime SlotAvailableFrom => DateTime.Now;
-        //On UI if user not set date then it will be DateTim.Now
-        public DateTime SlotAvailableTo => DateTime.Now;
+        public DateTime SlotAvailableFrom { get; set; }
+
+        public DateTime SlotAvailableTo { get; set; }
 
         public string SlotStartTime { get; set; }
         public string SlotEndTime { get; set; }
