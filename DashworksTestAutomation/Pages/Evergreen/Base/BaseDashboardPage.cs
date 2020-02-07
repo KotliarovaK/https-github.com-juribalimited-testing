@@ -123,10 +123,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]/..//following-sibling::span[text()='All lists']")]
         public IWebElement AllListsIcon { get; set; }
 
-        //TODO should be replaced by AutocompleteSelect
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Owner']")]
-        public IWebElement OwnerDropDown { get; set; }
-
         #endregion
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]

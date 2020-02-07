@@ -76,6 +76,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS18972")]
+        [NUnit.Framework.CategoryAttribute("DAS19885")]
         public virtual void EvergreenJnr_AdminPage_CheckErrorMessageWhenSelfServiceIsNotAvailable()
         {
             System.Exception lastException = null;
@@ -109,7 +110,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "SelfService",
-                        "DAS18972"});
+                        "DAS18972",
+                        "DAS19885"});
 #line 5
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -119,6 +121,60 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
  testRunner.Then("self service error page with \'This is not a valid self service\' text is displayed" +
                     " for end client", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckNoErrorMessageWhenSelfServiceIsAvailable")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS19885")]
+        public virtual void EvergreenJnr_AdminPage_CheckNoErrorMessageWhenSelfServiceIsAvailable()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckNoErrorMessageWhenSelfServiceIsAvailableInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckNoErrorMessageWhenSelfServiceIsAvailableInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckNoErrorMessageWhenSelfServiceIsAvailable", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS19885"});
+#line 10
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 11
+ testRunner.When("User navigates to \'selfservice/AV1?ObjectId=C56A4180-65AA-42EC-A945-5FD21DEC0538\'" +
+                    " url via address line", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.Then("Self Service Tools Panel displayed for end client", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

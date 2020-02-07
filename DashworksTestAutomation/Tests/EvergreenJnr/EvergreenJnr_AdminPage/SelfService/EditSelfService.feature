@@ -202,3 +202,22 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificat
 	Then 'click here to view the TestProj_55 self service' link is displayed on inline success banner
 	Then User clicks on 'click here to view the TestProj_55 self service' link on inline success banner
 	Then Page with 'TestProj_55' header is displayed to user
+
+	@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19864 @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdatedSelfServiceUrlPreviewConstructedProperly
+    When User creates Self Service via API
+	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
+	| 1         | TestProj_6 | Test_ID_6         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_6' item from 'Self Service Name' column
+	Then Self Service Details page is displayed correctly
+	Then Self Service URL preview that contains 'https://api.test.corp.juriba.com' base URL and 'Test_ID_6' Self Service identifier displays
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+    When User clicks 'Edit' option in Cog-menu for 'TestProj_6' item from 'Self Service Name' column
+	When User enters 'Test_ID_66' text to 'Self Service Identifier' textbox
+	When User clicks 'UPDATE' button
+	When User clicks 'Edit' option in Cog-menu for 'TestProj_6' item from 'Self Service Name' column
+	Then Self Service Details page is displayed correctly
+	Then Self Service URL preview that contains 'https://api.test.corp.juriba.com' base URL and 'Test_ID_66' Self Service identifier displays
