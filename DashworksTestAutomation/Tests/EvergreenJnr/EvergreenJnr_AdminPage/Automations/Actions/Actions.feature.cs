@@ -2374,8 +2374,7 @@ this.FeatureBackground();
 #line 713
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 714
- testRunner.Then("\'Started, 2019-09-05, 1803 Team, Unassigned\' content is displayed in the \'Value\' " +
-                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Started, 2019-09-05, 1803 Team\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 716
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 717

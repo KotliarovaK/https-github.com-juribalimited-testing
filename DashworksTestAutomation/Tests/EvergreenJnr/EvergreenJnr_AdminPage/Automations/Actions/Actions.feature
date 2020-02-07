@@ -711,7 +711,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User selects '1803 Team' option from 'Team' autocomplete
 	When User selects 'Unassigned' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button
-	Then 'Started, 2019-09-05, 1803 Team, Unassigned' content is displayed in the 'Value' column
+	Then 'Started, 2019-09-05, 1803 Team' content is displayed in the 'Value' column
 	#Run Automations
 	When User clicks 'Automations' header breadcrumb
 	When User enters "DAS17744" text in the Search field for "Automation" column
