@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
 	Then 'RETIRE' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19663 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19663 @DAS19229 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -188,6 +188,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	Then '[Project not found]' content is displayed in 'Project or Evergreen' textbox
 	#Waiting for adding _ngcontent (Eugene K)
 	#Then 'The selected project cannot be found' error message is displayed for 'Project or Evergreen' field
+	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	Then No error message is displayed for 'Project or Evergreen' field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckThatTargetApplicationNotFoundIsNotDisplayedOnEditActionPage
