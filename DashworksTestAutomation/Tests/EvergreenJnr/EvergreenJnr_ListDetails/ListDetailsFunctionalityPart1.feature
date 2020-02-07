@@ -26,7 +26,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	Then Details panel is displayed to the user
 	Then "RenamedList" list is displayed to user
 	When User clicks the Permissions button
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 
 Examples: 
@@ -47,15 +47,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	And User create static list with "Static List TestName" name
 	And User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User changes list name to "RenamedList"
-	Then "RenamedList" name is displayed in list details panel
+	When User changes list name to "AAARenamedList"
+	Then "AAARenamedList" name is displayed in list details panel
 	And Edit List menu is not displayed
 	When User checks 'Favorite List' checkbox
 	Then Edit List menu is not displayed
 	When User clicks the Permissions button
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then Edit List menu is not displayed
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	Then Edit List menu is not displayed
 

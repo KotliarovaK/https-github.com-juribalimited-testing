@@ -5,7 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-# sz: removed NotRun tag
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWithCorrectNameAndSameContent
 	When Project created via API and opened
@@ -17,7 +16,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User clicks 'Duplicate' option in Cog-menu for 'Slot 13979' item from 'Capacity Slot' column
-	Then 'Your capacity slot has been created, click here to view the Slot 13979 (copy) slot' text is displayed on inline success banner
+	Then 'Your capacity slot has been created' text is displayed on inline success banner
+	Then 'click here to view the  Slot 13979 (copy) slot' link is displayed on inline success banner
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue | duplicateCount |
 	| Monday         | 0               | 2              |
@@ -31,7 +31,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	| Teams          | All Teams       | 2              |
 	| Capacity Units |                 | 2              |
 	When User clicks 'Duplicate' option in Cog-menu for 'Slot 13979 (copy)' item from 'Capacity Slot' column
-	Then 'Your capacity slot has been created, click here to view the Slot 13979 (copy) (copy) slot' text is displayed on inline success banner
+	Then 'Your capacity slot has been created' text is displayed on inline success banner
+	Then 'click here to view the  Slot 13979 (copy) (copy) slot' link is displayed on inline success banner
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue | duplicateCount |
 	| Monday         | 0               | 3              |
