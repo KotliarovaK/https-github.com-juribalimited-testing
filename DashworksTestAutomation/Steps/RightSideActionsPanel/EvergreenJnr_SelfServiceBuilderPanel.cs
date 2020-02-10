@@ -3,6 +3,10 @@ using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using DashworksTestAutomation.Pages.Evergreen.Base;
+using System.Linq;
+using System.Collections.Generic;
+using System;
 
 namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 {
@@ -53,11 +57,14 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
 
-        [When(@"User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
-        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        [When(@"User clicks on '(.*)' option in Cog-menu with '(.*)' item type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string option, string contextPanelType, string contextPanelName)
         {
-            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
+            ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            cogMenu.GetCogMenuOptionByName(option).Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
@@ -82,6 +89,33 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
 
             Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
+        }
+
+        [When("User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
+        }
+
+        [Then("User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel and sees the following cog-menu options")]
+        public void ThenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanelAndSeesTheFollowingCogmenuOptions(string contextPanelType, string contextPanelName, Table options)
+        {
+            ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            _driver.WaitForDataLoading();
+
+            List<String> expectedCogMenuOptions = options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()).ToList();
+            List<String> cogMenuOptions = cogMenu.CogMenuItems.Select(x => x.GetText()).ToList();
+
+            Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
+                            "Items are not the same");
+        }
+
+        public void ClickOnCogMenuButtonOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
         }
     }
 }

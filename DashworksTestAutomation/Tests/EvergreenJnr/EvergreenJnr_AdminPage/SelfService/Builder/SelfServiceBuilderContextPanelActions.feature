@@ -38,19 +38,16 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatReorderingCogMe
 	| Test_ID_2         | TestPageName_2 | 3            | TestPageDisplayName_2 | true              |
 	| Test_ID_3         | TestPageName_3 | 3            | TestPageDisplayName_3 | true              |
 	When User navigates to the 'Builder' left menu item
-    When User clicks on CogMenu button for item with 'Page' type and 'TestPageName_1' name on Self Service Builder Panel
-	Then User sees the following cog-menu options
+    Then User clicks on CogMenu button for item with 'Page' type and 'TestPageName_1' name on Self Service Builder Panel and sees the following cog-menu options
 	| Options        |
 	| Edit           |
 	| Move to bottom |
-	When User clicks on CogMenu button for item with 'Page' type and 'TestPageName_2' name on Self Service Builder Panel
-	Then User sees the following cog-menu options
+	Then User clicks on CogMenu button for item with 'Page' type and 'TestPageName_2' name on Self Service Builder Panel and sees the following cog-menu options
 	| Options        |
 	| Edit           |
 	| Move to top    |
 	| Move to bottom |
-	When User clicks on CogMenu button for item with 'Page' type and 'TestPageName_3' name on Self Service Builder Panel
-	Then User sees the following cog-menu options
+	Then User clicks on CogMenu button for item with 'Page' type and 'TestPageName_3' name on Self Service Builder Panel and sees the following cog-menu options
 	| Options        |
 	| Edit           |
 	| Move to top    |

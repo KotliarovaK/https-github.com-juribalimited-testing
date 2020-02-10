@@ -44,20 +44,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                             "Items are not the same");
         }
 
-        [Then(@"User sees the following cog-menu options")]
-        public void WhenUserClicksCog_MenuForItemInTheColumnAndSeesFollowingCogMenuOptions(Table options)
-        {
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            _driver.WaitForDataLoading();
-
-            List<String> expectedCogMenuOptions = options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()).ToList();
-            List<String> cogMenuOptions = cogMenu.CogMenuItems.Select(x => x.GetText()).ToList();
-
-            Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
-                            "Items are not the same");
-        }
-
         [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item from '(.*)' column")]
         public void WhenUserClicksOptionInCog_MenuForItemFromColumn(string option, string columnContent, string column)
         {
