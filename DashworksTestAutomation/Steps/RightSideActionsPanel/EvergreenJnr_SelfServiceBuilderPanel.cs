@@ -95,13 +95,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
         
         //This step can only been used on specific cases!!! 
-        [When("User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        [When("User clicks on cogmenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
         public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
             ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
         }
 
-        [Then("User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel and sees the following cog-menu options")]
+        [Then("User clicks on cogmenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel and sees the following cogmenu options")]
         public void ThenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanelAndSeesTheFollowingCogmenuOptions(string contextPanelType, string contextPanelName, Table options)
         {
             ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
