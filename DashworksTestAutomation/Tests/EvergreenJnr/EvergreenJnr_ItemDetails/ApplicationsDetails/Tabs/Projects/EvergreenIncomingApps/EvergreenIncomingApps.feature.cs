@@ -136,6 +136,8 @@ this.FeatureBackground();
 #line 13
  testRunner.When("User navigates to the \'Evergreen Incoming Apps\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
+ testRunner.Then("\'Evergreen Incoming Apps\' left submenu item with \'1\' count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
  testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -154,7 +156,7 @@ this.FeatureBackground();
                         "Criticality"});
             table1.AddRow(new string[] {
                         "Hide From End Users"});
-#line 15
+#line 16
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
