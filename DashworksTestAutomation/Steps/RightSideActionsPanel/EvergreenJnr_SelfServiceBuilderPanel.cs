@@ -7,6 +7,8 @@ using DashworksTestAutomation.Pages.Evergreen.Base;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using DashworksTestAutomation.Steps.Dashworks.AdminPage;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 
 namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 {
@@ -14,10 +16,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
     class EvergreenJnr_SelfServiceBuilderPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_SelfServiceBuilderPanel(RemoteWebDriver driver)
+
+        public EvergreenJnr_SelfServiceBuilderPanel(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
+            _automationStartTime = automationStartTime;
         }
 
         [When(@"User clicks Expand All Sections button on Self Service Builder Panel")]
@@ -57,14 +62,12 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
 
-        [When(@"User clicks on '(.*)' option in Cog-menu with '(.*)' item type and '(.*)' name on Self Service Builder Panel")]
+        [When(@"User selects '(.*)' cogmenu option for '(.*)' item type with '(.*)' name on Self Service Builder Panel")]
         public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string option, string contextPanelType, string contextPanelName)
         {
             ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogMenuOptionByName(option).Click();
-            _driver.WaitForDataLoading();
+            var cogMenu = new EvergreenJnr_CogMenuActions(_driver, _automationStartTime);
+            cogMenu.ClickOnCogMenuOption(option);
         }
 
         [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
@@ -90,7 +93,8 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
         }
-
+        
+        //This step can only been used on specific cases!!! 
         [When("User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
         public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
         {
@@ -102,6 +106,18 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         {
             ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
             var cogMenu = _driver.NowAt<CogMenuElements>();
+            CheckThatFollowingItemsAreDisplaysInCogMenu(options);
+        }
+
+        public void ClickOnCogMenuButtonOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
+        }
+
+        public void CheckThatFollowingItemsAreDisplaysInCogMenu(Table options)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
             _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
             _driver.WaitForDataLoading();
 
@@ -110,12 +126,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
                             "Items are not the same");
-        }
-
-        public void ClickOnCogMenuButtonOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
-        {
-            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
         }
     }
 }
