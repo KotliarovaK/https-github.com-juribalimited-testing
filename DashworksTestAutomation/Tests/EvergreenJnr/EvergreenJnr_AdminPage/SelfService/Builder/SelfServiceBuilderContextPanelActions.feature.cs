@@ -313,8 +313,6 @@ this.FeatureBackground();
                         "Move to top"});
 #line 53
  testRunner.Then("User sees the following cog-menu options", ((string)(null)), table7, "Then ");
-#line 59
-  testRunner.When("User clicks \'Delete\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }

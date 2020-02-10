@@ -54,6 +54,3 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatReorderingCogMe
 	| Options        |
 	| Edit           |
 	| Move to top    |
-
-
-		When User clicks 'Delete' option in opened Cog-menu
