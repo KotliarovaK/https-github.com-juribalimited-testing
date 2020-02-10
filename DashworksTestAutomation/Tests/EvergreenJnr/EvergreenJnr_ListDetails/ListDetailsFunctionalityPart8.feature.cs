@@ -209,6 +209,32 @@ this.FeatureBackground();
             " Shea", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks(string pageName, string columnName, string targetCell, string selectedRow, string expectedData, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorksInternal(pageName,columnName,targetCell,selectedRow,expectedData,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorksInternal(string pageName, string columnName, string targetCell, string selectedRow, string expectedData, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -247,6 +273,7 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks")]
@@ -266,6 +293,32 @@ this.FeatureBackground();
             "Christopher \\t0072B088173449E3A93@bclabs.local\\tExchange 2007\\tbc-exch07\\tUserMa" +
             "ilbox\\tRegister, Donna", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks(string pageName, string columnName, string targetCell, string selectedRow1, string selectedRow2, string expectedData, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorksInternal(pageName,columnName,targetCell,selectedRow1,selectedRow2,expectedData,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorksInternal(string pageName, string columnName, string targetCell, string selectedRow1, string selectedRow2, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -307,6 +360,7 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsP" +
