@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatValueForCapacityUnitIsChangingS
 	When User selects 'cu_DAS19538_3' option from 'Capacity Unit' autocomplete
 	When User clicks 'MOVE' button on popup
 	When User clicks 'MOVE' button on popup
-	Then 'The selected objects successfully moved to cu_DAS19538_3' text is displayed on inline success banner
+	Then 'Application successfully moved to cu_DAS19538_3' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
 	| Title         | Value         |
 	| Capacity Unit | cu_DAS19538_3 |
