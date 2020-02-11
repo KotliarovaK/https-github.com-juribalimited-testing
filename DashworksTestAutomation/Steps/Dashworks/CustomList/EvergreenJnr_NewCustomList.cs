@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
 
-        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' list")]
+        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item in left panel")]
         public void WhenUserClicksOptionInCogMenuForList(string option, string listName)
         {
             var page = _driver.NowAt<CustomListElement>();
