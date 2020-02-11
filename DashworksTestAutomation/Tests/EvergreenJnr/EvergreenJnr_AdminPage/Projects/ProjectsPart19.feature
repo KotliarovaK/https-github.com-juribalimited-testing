@@ -16,13 +16,11 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| *Project K-Computer Scheduled Project             |
 	| :/                                                |
 	| 1803 Rollout                                      |
-	| Babel (English, German and French)                |
 	| Barry's User Project                              |
 	| Computer Scheduled Test (Jo)                      |
 	| Devices Evergreen Capacity Project                |
 	| Email Migration                                   |
 	| Havoc (Big Data)                                  |
-	| I-Computer Scheduled Project                      |
 	| Mailbox Evergreen Capacity Project                |
 	| Migration Project Phase 2 (User Project)          |
 	| Project 00 M Computer Scheduled                   |
