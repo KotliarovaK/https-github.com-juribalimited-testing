@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	Then '18432_Action' content is displayed in 'Action Name' textbox
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '[Project not found]' content is displayed in 'Project' textbox
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	Then '' content is displayed in 'Stage' textbox
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	Then '' content is displayed in 'Task' textbox

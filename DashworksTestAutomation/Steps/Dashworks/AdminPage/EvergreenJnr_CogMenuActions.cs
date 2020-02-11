@@ -96,10 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         [When(@"User clicks '(.*)' option in opened Cog-menu")]
         public void WhenUserClicksOptionInOpenedCogMenu(string option)
         {
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogMenuOptionByName(option).Click();
-            _driver.WaitForDataLoading();
+            ClickOnCogMenuOption(option);
         }
 
         [Then(@"Cog-menu DDL is displayed in High Contrast mode")]
@@ -111,6 +108,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.CogMenu.Click();
             Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", cogMenu.GetCogMenuDropdownColor(), "PLEASE ADD EXCEPTION MESSAGE");
             Utils.Verify.AreEqual("rgba(0, 0, 0, 0)", cogMenu.GetCogMenuDropdownLabelColor(), "PLEASE ADD EXCEPTION MESSAGE");
+        }
+
+        public void ClickOnCogMenuOption(string option)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            cogMenu.GetCogMenuOptionByName(option).Click();
+            _driver.WaitForDataLoading();
         }
     }
 }

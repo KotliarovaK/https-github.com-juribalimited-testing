@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 Scenario: EvergreenJnr_DevicesList_CheckThatExpandIconIsInactiveForOwnerDdlForNonOwnerUserInItemDetails
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "1803 Rollout" list
-	Then "1803 Rollout" list is displayed to user
+	When User navigates to the "2004 Rollout" list
+	Then "2004 Rollout" list is displayed to user
 	When User clicks the Permissions button
 	Then 'Owner' dropdown is disabled

@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List         | Type      | AggregateBy                          | AggregateFunction | Drilldown |
-	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             | Yes       |
+	| Card       | WidgetForDAS16138 | 2004 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16138' Widget is displayed to the user
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then "8" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "1803: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
-	Then "Any Device in list 1803 Rollout" is displayed in added filter info
+	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 
 #serhii: testing purposes 11/28/2019
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @Cleanup @Not_Run
@@ -611,7 +611,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFilterAppliesWhenDrilledDownCardW
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List         | Type      | AggregateFunction | AggregateBy                            | Drilldown |
-	| Card       | WidgetForDAS18939 | 1803 Rollout | Aggregate | Severity          | 1803: Pre-Migration \ Ready to Migrate | Yes       |
+	| Card       | WidgetForDAS18939 | 2004 Rollout | Aggregate | Severity          | 1803: Pre-Migration \ Ready to Migrate | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS18939' Widget is displayed to the user

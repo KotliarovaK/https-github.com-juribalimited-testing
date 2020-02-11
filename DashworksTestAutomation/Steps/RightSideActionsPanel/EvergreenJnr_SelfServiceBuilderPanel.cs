@@ -3,6 +3,12 @@ using DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using DashworksTestAutomation.Pages.Evergreen.Base;
+using System.Linq;
+using System.Collections.Generic;
+using System;
+using DashworksTestAutomation.Steps.Dashworks.AdminPage;
+using DashworksTestAutomation.DTO.RuntimeVariables;
 
 namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 {
@@ -10,10 +16,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
     class EvergreenJnr_SelfServiceBuilderPanel : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_SelfServiceBuilderPanel(RemoteWebDriver driver)
+
+        public EvergreenJnr_SelfServiceBuilderPanel(RemoteWebDriver driver, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
+            _automationStartTime = automationStartTime;
         }
 
         [When(@"User clicks Expand All Sections button on Self Service Builder Panel")]
@@ -53,11 +62,12 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
 
-        [When(@"User clicks on CogMenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
-        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        [When(@"User selects '(.*)' cogmenu option for '(.*)' item type with '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string option, string contextPanelType, string contextPanelName)
         {
-            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
+            ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
+            var cogMenu = new EvergreenJnr_CogMenuActions(_driver, _automationStartTime);
+            cogMenu.ClickOnCogMenuOption(option);
         }
 
         [Then(@"User sees item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
@@ -82,6 +92,40 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
 
             Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
+        }
+        
+        //This step can only been used on specific cases!!! 
+        [When("User clicks on cogmenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
+        }
+
+        [Then("User clicks on cogmenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel and sees the following cogmenu options")]
+        public void ThenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanelAndSeesTheFollowingCogmenuOptions(string contextPanelType, string contextPanelName, Table options)
+        {
+            ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            CheckThatFollowingItemsAreDisplaysInCogMenu(options);
+        }
+
+        public void ClickOnCogMenuButtonOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            dashboardPage.ContextPanelPageCogMenuButton(contextPanelType, contextPanelName).Click();
+        }
+
+        public void CheckThatFollowingItemsAreDisplaysInCogMenu(Table options)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
+            _driver.WaitForDataLoading();
+
+            List<String> expectedCogMenuOptions = options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()).ToList();
+            List<String> cogMenuOptions = cogMenu.CogMenuItems.Select(x => x.GetText()).ToList();
+
+            Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
+                            "Items are not the same");
         }
     }
 }

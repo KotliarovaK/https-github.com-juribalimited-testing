@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalf
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List         | AggregateFunction | SplitBy                                |
-	| Half donut | WidgetForDAS15918 | 1803 Rollout | Count             | 1803: Pre-Migration \ Ready to Migrate |
+	| Half donut | WidgetForDAS15918 | 2004 Rollout | Count             | 1803: Pre-Migration \ Ready to Migrate |
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                                       |
 	| 1803: Pre-Migration \ Ready to Migrate ASC  |

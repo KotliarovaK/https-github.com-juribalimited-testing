@@ -636,7 +636,7 @@ this.FeatureBackground();
                         "18265",
                         "true",
                         "false",
-                        "1803 Rollout",
+                        "2004 Rollout",
                         "Manual"});
 #line 145
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table6, "When ");

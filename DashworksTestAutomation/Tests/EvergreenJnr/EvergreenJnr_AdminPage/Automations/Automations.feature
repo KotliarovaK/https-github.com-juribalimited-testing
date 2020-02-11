@@ -365,7 +365,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	Then Create Action page is displayed to the User
 	When User enters '15309_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	Then 'click here to view the 15309_Action action' link is displayed

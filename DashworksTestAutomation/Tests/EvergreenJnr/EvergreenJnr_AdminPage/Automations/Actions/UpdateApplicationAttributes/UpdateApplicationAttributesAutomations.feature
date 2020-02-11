@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User clicks 'CREATE ACTION' button
 	When User enters '18966_Action' text to 'Action Name' textbox
 	When User selects 'Update application attributes' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	Then 'CREATE' button is not disabled
 
@@ -260,14 +260,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	#Update Action
 	When User clicks content from "Action" column
 	When User enters '19094_New_Action' text to 'Action Name' textbox
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'RETIRE' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button
 	#Check Action grid
 	Then '19094_New_Action' content is displayed in the 'Action' column
 	Then 'Retire' content is displayed in the 'Value' column
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
-	Then '1803 Rollout' content is displayed in the 'Project' column
+	Then '2004 Rollout' content is displayed in the 'Project' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicationAttributes
