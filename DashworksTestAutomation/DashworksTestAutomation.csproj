@@ -1308,6 +1308,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataInTable.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenIncomingApps\EvergreenIncomingApps.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvergreenIncomingApps.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\InCatalog_ApplicationsPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2570,6 +2575,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_GridActions\DataInTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenIncomingApps\EvergreenIncomingApps.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EvergreenIncomingApps.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\InCatalog_ApplicationsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
