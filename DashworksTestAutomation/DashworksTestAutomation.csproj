@@ -1628,8 +1628,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart1.feature.cs">
-      <DependentUpon>ListDetailsFunctionalityPart1.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart01.feature.cs">
+      <DependentUpon>ListDetailsFunctionalityPart01.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -2837,9 +2837,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ListDetailsFunctionalityPart2.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart1.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart01.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ListDetailsFunctionalityPart1.feature.cs</LastGenOutput>
+      <LastGenOutput>ListDetailsFunctionalityPart01.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ListFromCSV\ListsFromCSV.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
