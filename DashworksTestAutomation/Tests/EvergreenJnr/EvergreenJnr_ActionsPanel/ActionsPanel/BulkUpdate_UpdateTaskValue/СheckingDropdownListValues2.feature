@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacity
 	When User creates new Slot via Api
 	| Project      | SlotName   | DisplayName | CapacityType    | ObjectType | Tuesday | Tasks                     |
-	| 1803 Rollout | Slot 17639 | 17639       | Teams and Paths | Device     | 10      | Migration \ Migrated Date |
+	| 2004 Rollout | Slot 17639 | 17639       | Teams and Paths | Device     | 10      | Migration \ Migrated Date |
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	| 00I0COBFWHOF27   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Migration' option from 'Stage' autocomplete
 	And User selects 'Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	| CDQ172G3MZS444   |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Migration' option from 'Stage' autocomplete
 	When User selects 'Migrated Date' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
@@ -173,51 +173,3 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	| After now  |
 	Then 'After now' content is displayed in 'Before or After' dropdown
 	When User selects 'Before now' in the 'Before or After' dropdown
-
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS17485
-Scenario: EvergreenJnr_DevicesList_CheckUnassignedOwnerForUpdateTaskValueBulkUpdate
-	When User clicks 'Users' on the left-hand menu
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                                |
-	| ComputerSc: One \ Radio Rag Date Owner User Req A (Owner) |
-	When User clicks the Filters button
-	When User add "Username" filter where type is "Equals" with added column and following value:
-	| Values    |
-	| CCQ492432 |
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User selects all rows on the grid
-	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Started' in the 'Value' dropdown
-	When User selects 'No change' in the 'Update Date' dropdown
-	When User selects 'Update' in the 'Update Owner' dropdown
-	When User selects '1803 Team' option from 'Team' autocomplete
-	When User selects 'Unassigned' option from 'Owner' autocomplete
-	When User clicks 'UPDATE' button
-	When User clicks 'UPDATE' button
-	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
-	When User refreshes agGrid
-	Then 'Unassigned' content is displayed in the 'ComputerSc: One \ Radio Rag Date Owner User Req A (Owner)' column
-		#Revert changes to default
-	When User selects 'Bulk update' in the 'Action' dropdown
-	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
-	When User selects 'No change' in the 'Update Value' dropdown
-	When User selects 'No change' in the 'Update Date' dropdown
-	When User selects 'Update' in the 'Update Owner' dropdown
-	When User selects '1803 Team' option from 'Team' autocomplete
-	When User selects 'Lisa Bailey' option from 'Owner' autocomplete
-	When User clicks 'UPDATE' button
-	When User clicks 'UPDATE' button
-	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
-	When User refreshes agGrid
-	Then 'Lisa Bailey' content is displayed in the 'ComputerSc: One \ Radio Rag Date Owner User Req A (Owner)' column

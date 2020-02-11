@@ -828,8 +828,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var datepicker = page.GetTextbox(placeholder);
             //Just clear is not working for some reason
             datepicker.Click();
-            //TODO AnnI 2/4/2020: why do we need this?
-            //datepicker.SendKeys(OpenQA.Selenium.Keys.Control + "a");
+            datepicker.SendKeys(OpenQA.Selenium.Keys.Control + "a");
             datepicker.SendKeys(OpenQA.Selenium.Keys.Delete);
             datepicker.SendKeys(text);
 

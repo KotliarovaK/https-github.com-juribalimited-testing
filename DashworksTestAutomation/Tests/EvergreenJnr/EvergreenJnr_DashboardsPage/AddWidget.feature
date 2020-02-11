@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 	And User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
-	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
+	| Bar        | WidgetForDAS16853 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
 	Then 'WidgetForDAS16853' Widget is displayed to the user
 	When  User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
-	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
+	| Bar        | WidgetForDAS16853 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
 	Then 'WidgetForDAS16853' Widget is displayed to the user
 	When User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
@@ -246,7 +246,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	| Shared  |
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      |
-	| Bar        | WidgetForDAS16842 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC |
+	| Bar        | WidgetForDAS16842 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC |
 	Then 'WidgetForDAS16842' Widget is displayed to the user
 	When User clicks Dashboards Details icon on Dashboards page
 	When User expands the list of shared lists

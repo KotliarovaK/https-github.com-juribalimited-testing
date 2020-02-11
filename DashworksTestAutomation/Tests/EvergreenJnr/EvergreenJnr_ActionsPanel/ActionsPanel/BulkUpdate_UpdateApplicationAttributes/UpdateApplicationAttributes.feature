@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateRationalisationDDLD
 	| KEEP          |
 	| RETIRE        |
 	| UNCATEGORISED |
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'Sticky Compliance' dropdown is not displayed
 	Then following Values are displayed in the 'Rationalisation' dropdown:
 	| Options       |
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForDevic
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19213
@@ -190,7 +190,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelec
 	When User enters 'Zune (03.01.0620.00)' text to 'Target Application' textbox
 	Then validation message 'No results found' is displayed below 'Target Application' field
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18463 @DAS19906
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18463 @Not_Ready
+#Waiting for 'Target Application'
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdateRationalisationValidations
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
@@ -200,7 +201,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdat
 	| CodeWright 6.0BETA |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18516 @Not_Ready

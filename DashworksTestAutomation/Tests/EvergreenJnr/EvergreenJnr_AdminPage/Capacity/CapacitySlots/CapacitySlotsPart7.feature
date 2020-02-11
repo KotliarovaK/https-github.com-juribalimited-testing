@@ -113,24 +113,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	| Stage13593 \ 2Task13593 |
 	| Stage13593 \ 6Task13593 |
 
-# sz: removed NotRun tag
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Cleanup
-Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
-	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User creates new Slot
+Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlo
+	When User creates new Slot via Api
 	| Project                                          | SlotName | DisplayName | Tasks                                                                                                                                              |
 	| Windows 7 Migration (Computer Scheduled Project) | Slot 1   | Slot 1      | Pre-Migration \ Scheduled Date‡Pre-Migration \ Forecast Date‡Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
-	And User clicks content from "Project" column
-	And User navigates to the 'Capacity' left menu item
-	And User navigates to the 'Slots' left menu item
-	#TODO Remove commented steps. I have saved them just to save data during NotRun removing
-	#And User clicks 'CREATE NEW SLOT' button 
-	#And User enters 'Slot 1' text to 'Slot Name' textbox
-	#And User enters 'Slot 1' text to 'Display Name' textbox
-	#And User checks 'Pre-Migration \ Scheduled Date' option after search from 'Tasks' autocomplete
-	#And User checks 'Pre-Migration \ Forecast Date' option after search from 'Tasks' autocomplete
-	#And User checks 'Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner' option after search from 'Tasks' autocomplete
-	#And User clicks 'CREATE' button 
 	And User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
@@ -147,13 +134,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User navigates to the 'Slots' left menu item
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
-	Then only below options are selected in the '(.*)' autocomplete
+	Then only below options are selected in the 'Tasks' autocomplete
 	| Value                                                                                 |
 	| Pre-Migration \ Forecast Date                                                         |
 	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
 	| Pre-Migration \ Scheduled Date                                                        |
 	When User clicks 'CANCEL' button 
-	And User clicks 'CREATE NEW SLOT' button 
+	And User clicks 'CREATE SLOT' button 
 	And User enters 'Slot 2' text to 'Slot Name' textbox
 	And User enters 'Slot 2' text to 'Display Name' textbox
 	Then 'Tasks' autocomplete does not have following checkbox options

@@ -124,8 +124,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	| Project                    | SlotName             | DisplayName | SlotAvailableFrom | SlotAvailableTo |
 	| ProjectForCapacityDAS13824 | CapacitySlotDAS13824 | DAS13824    | 29 Oct 2018       | 30 Oct 2018     |
 	And User navigates to newly created Slot
-	When User enters '' text to 'Slot Available From' datepicker
-	When User enters '' text to 'Slot Available To' datepicker
+	When User clears 'Slot Available From' textbox with backspaces
+	When User clears 'Slot Available To' textbox with backspaces
 	When User clicks 'UPDATE' button 
 	When User clicks content from "Capacity Slot" column
 	Then '' content is displayed in 'Slot Available From' textbox

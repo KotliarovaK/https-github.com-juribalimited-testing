@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User clicks 'CREATE PROJECT CAPACITY UNIT' button 
-	#next capacity name used in "1803 Rollout" project
+	#next capacity name used in "2004 Rollout" project
 	And User enters 'Manchester' text to 'Capacity Unit Name' textbox 
 	And User enters 'Manchester Operations' text to 'Description' textbox
 	And User clicks 'CREATE' button 

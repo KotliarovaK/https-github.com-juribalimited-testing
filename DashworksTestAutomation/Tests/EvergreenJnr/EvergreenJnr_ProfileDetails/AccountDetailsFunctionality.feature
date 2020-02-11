@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	When User selects 'English UK' in the 'Language' dropdown
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User enters "1803 Rollout" text in the Search field for "Project" column
+	When User enters "2004 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Readiness' left menu item
 	Then Cog-menu DDL is displayed in High Contrast mode
