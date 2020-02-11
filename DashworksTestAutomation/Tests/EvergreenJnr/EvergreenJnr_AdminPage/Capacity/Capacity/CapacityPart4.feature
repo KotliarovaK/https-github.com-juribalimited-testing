@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField
 	When Project created via API and opened
 	| ProjectName        | Scope        | ProjectTemplate | Mode               |
-	| ProjectForDAS13422 | 1803 Rollout | None            | Standalone Project |
+	| ProjectForDAS13422 | 2004 Rollout | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	And User changes Percentage to reach before showing amber to "101"
 	Then 'UPDATE' button is disabled

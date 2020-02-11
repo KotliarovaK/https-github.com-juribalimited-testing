@@ -1339,7 +1339,7 @@ this.FeatureBackground();
             table24.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS18091",
-                        "1803 Rollout",
+                        "2004 Rollout",
                         "Operating System",
                         "Severity",
                         "1803: Pre-Migration \\ Ready to Migrate",
@@ -1359,7 +1359,7 @@ this.FeatureBackground();
 #line 268
  testRunner.Then("\"Operating System is Windows 7\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 269
- testRunner.Then("\"Any Device in list 1803 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Any Device in list 2004 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 270
  testRunner.Then("\"1803: Pre-Migration \\ Ready to Migrate is Not Ready\" is displayed in added filte" +
                     "r info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1374,7 +1374,7 @@ this.FeatureBackground();
 #line 276
  testRunner.Then("\"Operating System is Windows Vista\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 277
- testRunner.Then("\"Any Device in list 1803 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Any Device in list 2004 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 278
  testRunner.Then("\"1803: Pre-Migration \\ Ready to Migrate is Ready\" is displayed in added filter in" +
                     "fo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1446,7 +1446,7 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "Table",
                         "DAS-15852",
-                        "1803 Rollout",
+                        "2004 Rollout",
                         "1803: Pre-Migration \\ Ready to Migrate",
                         "Severity",
                         "1803: Pre-Migration \\ Ready to Migrate"});

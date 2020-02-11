@@ -270,7 +270,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS17699")]
         [NUnit.Framework.CategoryAttribute("DAS18943")]
-        [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "Device Scope", "1803 Rollout", "Application Scope", "Apps with a Vendor", null)]
+        [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "Device Scope", "2004 Rollout", "Application Scope", "Apps with a Vendor", null)]
         public virtual void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject(string projectName, string tab1, string list1, string tab2, string list2, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -428,7 +428,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16842")]
-        [NUnit.Framework.TestCaseAttribute("1803 Rollout", "Device Scope", null)]
+        [NUnit.Framework.TestCaseAttribute("2004 Rollout", "Device Scope", null)]
         [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "User Scope", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox Evergreen Capacity Project", "Mailbox Scope", null)]
         public virtual void EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScopeDetailsPage(string projectName, string tab, string[] exampleTags)
