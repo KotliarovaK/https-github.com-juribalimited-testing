@@ -862,11 +862,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             var basePage = _driver.NowAt<BaseGridPage>();
             var filtersNames = filterElement.GetFiltersNames();
-
-            List<KeyValuePair<String, List<string>>> allColumns = filtersNames.Select(filtersName =>
-                new KeyValuePair<string, List<string>>(filtersName, basePage.GetColumnContentByColumnName(filtersName))).ToList();
-
-            for (var i = 0; i < allColumns.Count; i++)
+            var allColumns = filtersNames.Select(filtersName =>
+                new KeyValuePair<string, List<string>>(filtersName, basePage.GetColumnContentByColumnName(filtersName)));
+            for (var i = 0; i < allColumns.First().Value.Count; i++)
             {
                 var result = false;
 
@@ -874,23 +872,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 //This happens after 22 row when data is not loading
                 var allValuesAreEmpty = allColumns.Select(column => column.Value[i])
                     .All(rowValue => string.IsNullOrEmpty(rowValue));
-
                 if (allValuesAreEmpty)
                 {
-                    //why?
                     result = true;
                     continue;
                 }
 
-                int foundRowItem = 0;
+                foreach (var filtersName in filtersNames)
+                {
+                    foreach (var filterValue in filterElement.GetFilterValuesByFilterName(filtersName))
+                    {
+                        if (string.IsNullOrEmpty(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
+                            continue;
 
-                foreach (var filterValue in filterElement.GetFilterValuesByFilterName(allColumns[i].Key))
-                    foundRowItem += allColumns[i].Value.FindAll(x=>x.Equals(filterValue)).Count();
+                        if (filterValue.ToLower()
+                            .Contains(allColumns.First(x => x.Key.Equals(filtersName)).Value[i].ToLower()))
+                        {
+                            result = true;
+                            break;
+                        }
+                    }
 
-                if (foundRowItem == allColumns[i].Value.Count)
-                    result = true;
+                    if (result) break;
+                }
 
-                Verify.IsTrue(result, "Table data is filtered incorrectly");
+                Utils.Verify.IsTrue(result, "Table data is filtered incorrectly");
             }
         }
 

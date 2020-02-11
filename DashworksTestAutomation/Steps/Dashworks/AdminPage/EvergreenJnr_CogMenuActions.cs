@@ -71,6 +71,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             }
         }
 
+        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' list")]
+        public void WhenUserClicksOptionInCog_MenuForList(string option, string listName)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            //Close cog-menu if it is still opened from previous step
+            if (cogMenu.CogMenuItems.Any(x => x.Displayed()))
+            {
+                cogMenu.BodyContainer.Click();
+            }
+
+            var leftPanel = _driver.NowAt<CustomListElement>();
+            var itemCogMenu = leftPanel.GetSettingsIconForList(listName);
+
+            _driver.MouseHover(itemCogMenu);
+            itemCogMenu.Click();
+            cogMenu.GetCogMenuOptionByName(option).Click();
+        }
+
         [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]
         public void WhenUserMovesItemFromColumnToThePosition(string columnContent, string column, string position)
         {
