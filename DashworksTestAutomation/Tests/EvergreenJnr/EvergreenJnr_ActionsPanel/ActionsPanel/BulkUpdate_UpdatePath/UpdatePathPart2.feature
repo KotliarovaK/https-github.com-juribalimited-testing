@@ -46,13 +46,11 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	Then 'Project' autocomplete contains following options:
 	| Options                                          |
 	| *Project K-Computer Scheduled Project            |
-	| 2004 Rollout                                     |
-	| Babel (English, German and French)               |
+	| 1803 Rollout                                     |
 	| Barry's User Project                             |
 	| Computer Scheduled Test (Jo)                     |
 	| Devices Evergreen Capacity Project               |
 	| Havoc (Big Data)                                 |
-	| I-Computer Scheduled Project                     |
 	| Migration Project Phase 2 (User Project)         |
 	| Project 00 M Computer Scheduled                  |
 	| USE ME FOR AUTOMATION(DEVICE SCHDLD)             |
@@ -181,7 +179,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	And User selects 'London - Southbank' option from 'Capacity Unit' autocomplete
 	#====#
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
-	And User selects 'I-Computer Scheduled Project' option from 'Project' autocomplete
+	And User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	And User selects '[Default (Computer)]' option from 'Path' autocomplete
 	#====#
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
@@ -192,9 +190,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	And User selects 'Evergreen Ring 1' option from 'Ring' autocomplete
 	#====#
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects 'Babel (English, German and French)' option from 'Project' autocomplete
-	And User selects 'Initiation' option from 'Stage' autocomplete
-	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Stage 2' option from 'Stage' autocomplete
+	And User selects 'Date Task (Computer)' option from 'Task' autocomplete
 	#====#
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
