@@ -153,8 +153,8 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks on '<ColumnHeader>' column header
-	When User create dynamic list with "DynamicList12946" name on "<PageName>" page
-	Then "DynamicList12946" list is displayed to user
+	When User create dynamic list with "001DynamicList12946" name on "<PageName>" page
+	Then "001DynamicList12946" list is displayed to user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<ColumnHeader>" rows in the grid
@@ -163,6 +163,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	Then following Values are displayed in the 'Action' dropdown:
 	| Value              |
 	| Create static list |
+	| Add to static list |
 	| Bulk update        |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown

@@ -50,7 +50,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInList
 	When User navigates to the "2004 Rollout" list
 	And User clicks the List Details button
 	Then Details panel is displayed to the user
-	And 'Archived devices included' label is displayed in List Details
 	When User checks 'Archived Devices Included' checkbox
 	Then Archived devices icon enabled state is 'true' in toolbar
 	Then 'SAVE AS NEW STATIC LIST' menu button is displayed for 'SAVE' button
@@ -79,7 +78,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxINotDis
 Examples: 
 	| PageName     | ListToNavigate   | List                              |
 	| Users        | All Users        | Users Readiness Columns & Filters |
-	| Applications | All Applications | 1803 Apps                         |
+	| Applications | All Applications | 2004 Apps                         |
 	| Mailboxes    | All Mailboxes    | Mailbox Pivot (Complex)           |
 
 @Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18127 @Cleanup

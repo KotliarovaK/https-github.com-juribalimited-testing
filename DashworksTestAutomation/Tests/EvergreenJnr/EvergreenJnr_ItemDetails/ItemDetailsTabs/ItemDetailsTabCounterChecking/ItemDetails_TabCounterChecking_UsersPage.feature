@@ -193,11 +193,11 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	Then "3" rows found label displays on Details Page
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'User Projects' left submenu item
-	Then 'User Projects' left submenu item with '8' count is displayed
-	And "8" rows found label displays on Details Page
+	Then 'User Projects' left submenu item with '7' count is displayed
+	And "7" rows found label displays on Details Page
 	When User navigates to the 'Device Project Summary' left submenu item
-	Then 'Device Project Summary' left submenu item with '15' count is displayed
-	And "15" rows found label displays on Details Page
+	Then 'Device Project Summary' left submenu item with '14' count is displayed
+	And "14" rows found label displays on Details Page
 	When User navigates to the 'Devices' left menu item
 	Then 'Devices' left submenu item with '2' count is displayed
 	And "2" rows found label displays on Details Page
@@ -219,8 +219,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatTheNumberOfCountersInTheTabIsEqualToT
 	Then Details page for '0137C8E69921432992B' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Mailbox Project Summary' left submenu item
-	Then 'Mailbox Project Summary' left submenu item with '3' count is displayed
-	And "3" rows found label displays on Details Page
+	Then 'Mailbox Project Summary' left submenu item with '2' count is displayed
+	And "2" rows found label displays on Details Page
 	When User navigates to the 'Active Directory' left menu item
 	And User navigates to the 'Groups' left submenu item
 	Then 'Groups' left submenu item with '1' count is displayed

@@ -24,10 +24,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create dynamic list with "TestListCED2D6" name on "<PageName>" page
+	When User create dynamic list with "AAATestListCED2D6" name on "<PageName>" page
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
-	Then "TestListCED2D6" name is displayed in list details panel
+	Then "AAATestListCED2D6" name is displayed in list details panel
 	Then 'Favorite List' checkbox is unchecked
 	When User clicks the Permissions button
 	Then current user is selected in 'Owner' autocomplete

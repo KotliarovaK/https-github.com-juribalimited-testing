@@ -191,21 +191,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(page.ListNameInDependantsSection(listName).Displayed(), $"{listName} is not displayed");
         }
 
-        [Then(@"User list for sharing is not displayed")]
-        public void ThenUserListForSharingIsNotDisplayed()
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsFalse(page.SharingUserList.Displayed(), "User list for sharing is displayed");
-        }
-
-        [Then(@"""(.*)"" Sharing user is displayed correctly")]
-        public void ThenSharingUserIsDisplayedCorrectly(string userName)
-        {
-            var page = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(),
-                "Selected Sharing user is not displayed on Details panel");
-        }
-
         [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' user on Details panel")]
         public void WhenUserClickSettingsMenuForSharedUser(string option, string username)
         {

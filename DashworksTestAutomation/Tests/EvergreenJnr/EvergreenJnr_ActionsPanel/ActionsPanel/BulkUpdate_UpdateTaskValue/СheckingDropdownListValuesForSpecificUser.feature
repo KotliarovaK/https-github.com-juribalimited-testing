@@ -154,8 +154,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User create new User via API
-	| Username   | Email | FullName | Password  | Roles                                            |
-	| DAS13281_2 | Value | Test     | m!gration | Project Administrator  |
+	| Username   | Email | FullName | Password  | Roles                 |
+	| DAS13281_2 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username   | Password  |
