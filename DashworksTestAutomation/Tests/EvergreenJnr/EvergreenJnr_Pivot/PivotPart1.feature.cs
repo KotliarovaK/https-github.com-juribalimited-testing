@@ -501,7 +501,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14188")]
         [NUnit.Framework.CategoryAttribute("DAS14748")]
         [NUnit.Framework.CategoryAttribute("DAS15682")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Babel(Engl: Application Readiness", "Last Seen Date", "All Devices", "Build Date", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "2004: Application Readiness", "Last Seen Date", "All Devices", "Build Date", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "App Count (Entitled)", "Domain", "All Users", "Common Name", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "All Mailboxes", "Alias", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Evergreen Capacity Unit", "Vendor", "All Applications", "Application Key", null)]
@@ -618,7 +618,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "DeviceSche: Bucket", "Building", "Boot Up Date", "Device", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Common Name", "UserSchedu: Application Readiness", "Cost Centre", "Description", "User", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Department Name", "Country", "Display Name", "Mailbox", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", "Babel(Engl: Category", "Application Key", "Application Key", "Application", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", "2004: Category", "Application Key", "Application Key", "Application", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNewPivot(string listName, string rowGroup, string column, string value, string filterName, string categoryName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -715,7 +715,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13747")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Babel(Engl: Application Readiness", "Last Seen Date", "Pivot_Devices_List_13747", "Boot Up Date", "Device", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "2004: Application Readiness", "Last Seen Date", "Pivot_Devices_List_13747", "Boot Up Date", "Device", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "App Count (Entitled)", "Domain", "Pivot_Users_List_13747", "Description", "User", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "Pivot_Mailboxes_List_13747", "Display Name", "Mailbox", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Evergreen Capacity Unit", "Vendor", "Pivot_Applications_List_13747", "Application Key", "Application", null)]

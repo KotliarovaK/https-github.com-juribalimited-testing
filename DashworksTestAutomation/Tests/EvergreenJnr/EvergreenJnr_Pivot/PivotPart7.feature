@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrec
 	| Compliance |
 	And User selects the following Values on Pivot:
 	| Values          |
-	| 1803: Readiness |
+	| 2004: Readiness |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Inventory Site" column in ascending order by default for the Pivot

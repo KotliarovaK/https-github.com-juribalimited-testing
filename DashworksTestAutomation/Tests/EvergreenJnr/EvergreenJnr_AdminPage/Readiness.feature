@@ -315,18 +315,18 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Projects' left menu item
-	And User enters "E.Project Device" text in the Search field for "Project" column
+	And User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Readiness' left menu item
 	When User right clicks on 'RED' cell from 'Readiness' column
 	And User selects 'Copy row' option in context menu
 	Then There are no errors in the browser console
-	And Next data 'RED\t\tRed\tFalse\tFalse\t1\t0\t0\t0\t4' is copied
+	And Next data 'Red\t\tRed\tFalse\tFalse\t5\t0\t0\t0\t4' is copied
 	When User clicks refresh button in the browser
 	When User right clicks on 'AMBER' cell from 'Readiness' column
 	And User selects 'Copy cell' option in context menu
 	Then There are no errors in the browser console
-	And Next data 'AMBER' is copied
+	And Next data 'Amber' is copied
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720 @DAS15720 @DAS16653 @DAS16617
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader

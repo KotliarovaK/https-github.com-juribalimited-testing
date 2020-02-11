@@ -257,7 +257,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table7.AddRow(new string[] {
-                        "1803: Readiness"});
+                        "2004: Readiness"});
 #line 44
  testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table7, "And ");
 #line 47
