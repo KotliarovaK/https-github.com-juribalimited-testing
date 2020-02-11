@@ -60,7 +60,8 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	Then "AssociationList18531" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User removes custom list with "ADevicesList18531" name
+	When User clicks 'Remove' option in cogmenu for 'ADevicesList18531' list
+	When User confirms list removing
 	Then list with "ADevicesList18531" name is removed
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list

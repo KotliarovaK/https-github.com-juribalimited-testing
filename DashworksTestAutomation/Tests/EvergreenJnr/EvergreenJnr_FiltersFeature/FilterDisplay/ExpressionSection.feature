@@ -263,7 +263,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentL
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
-	When User removes custom list with "ApplicationList1" name
+	When User clicks 'Remove' option in cogmenu for 'ApplicationList1' list
+	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "DevicesList1" list

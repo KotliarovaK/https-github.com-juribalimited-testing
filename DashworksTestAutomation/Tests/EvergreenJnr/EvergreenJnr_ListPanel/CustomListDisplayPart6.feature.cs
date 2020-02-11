@@ -337,27 +337,33 @@ this.FeatureBackground();
 #line 60
  testRunner.Then("\"1234567890123456789012345678901234567890\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 61
- testRunner.When("User clicks \'Duplicate\' option in Cog-menu for \'123456789012345678901234567890123" +
-                    "4567890\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Duplicate\' option in cogmenu for \'1234567890123456789012345678901234" +
+                    "567890\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
  testRunner.Then("\"123456789012345678901234567890123456782\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 63
- testRunner.When("User removes custom list with \"123456789012345678901234567890123456782\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Remove\' option in cogmenu for \'1234567890123456789012345678901234567" +
+                    "82\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
- testRunner.Then("list with \"123456789012345678901234567890123456782\" name is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User confirms list removing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
- testRunner.When("User removes custom list with \"1234567890123456789012345678901234567890\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("list with \"123456789012345678901234567890123456782\" name is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 66
- testRunner.Then("list with \"1234567890123456789012345678901234567890\" name is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Remove\' option in cogmenu for \'1234567890123456789012345678901234567" +
+                    "890\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
- testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User confirms list removing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 68
- testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("list with \"1234567890123456789012345678901234567890\" name is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
- testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
- testRunner.When("User create static list with \"1234567890123456789012345678901234567890111\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
+ testRunner.And("User selects \'Create static list\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.When("User create static list with \"1234567890123456789012345678901234567890111\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 73
  testRunner.Then("\"1234567890123456789012345678901234567890\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -414,16 +420,16 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatAllListsNamesAreDisplayedCorrectly", null, @__tags);
-#line 74
+#line 76
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 75
- testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 76
- testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 77
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 78
+ testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 79
  testRunner.Then(string.Format("\"All {0}\" list is displayed to user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

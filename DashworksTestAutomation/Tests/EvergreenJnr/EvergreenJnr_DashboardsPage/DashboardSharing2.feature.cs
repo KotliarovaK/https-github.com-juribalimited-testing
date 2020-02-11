@@ -265,7 +265,7 @@ this.FeatureBackground();
 #line 62
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 63
- testRunner.When("User clicks \'Manage\' option in Cog-menu for \'ADeviceListFor14841_Admin\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'ADeviceListFor14841_Admin\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
  testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
@@ -358,12 +358,10 @@ this.FeatureBackground();
 #line 80
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 81
- testRunner.When("User clicks Settings button for \'Dashboard for DAS15876\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Dashboard for DAS15876\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.When("User clicks \'Manage\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 83
- testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 84
  testRunner.When("User selects \'Specific users\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -372,12 +370,12 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "FN15876_2",
                         "Admin"});
-#line 85
+#line 84
  testRunner.When("User adds user to list of shared person", ((string)(null)), table9, "When ");
-#line 88
+#line 87
  testRunner.Then("User \'DAS15876_2\' was added to shared list with \'Admin\' permission of Details pan" +
                     "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 90
+#line 89
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -386,21 +384,19 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "DAS15876_2",
                         "m!gration"});
-#line 91
+#line 90
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table10, "When ");
-#line 95
+#line 94
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 95
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Dashboard for DAS15876\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
- testRunner.When("User clicks Settings button for \'Dashboard for DAS15876\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
- testRunner.When("User clicks \'Manage\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 98
- testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 99
  testRunner.When("User clicks \'Remove\' option in Cog-menu for \'DAS15876_2\' user on Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 100
+#line 98
  testRunner.Then("There is no user in shared list of Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 101
+#line 99
  testRunner.Then("User sees \'This dashboard does not exist or you do not have access to it\' text in" +
                     " warning message on Dashboards submenu pane", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -449,7 +445,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15550",
                         "Cleanup"});
-#line 104
+#line 102
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -473,9 +469,9 @@ this.FeatureBackground();
                         "FN15550_2",
                         "m!gration",
                         "Project Administrator"});
-#line 105
+#line 103
  testRunner.When("User create new User via API", ((string)(null)), table11, "When ");
-#line 110
+#line 108
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -484,13 +480,13 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "DAS15550_1",
                         "m!gration"});
-#line 111
+#line 109
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table12, "When ");
-#line 115
+#line 113
  testRunner.When("Dashboard with \'Dashboard for DAS15550\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 116
+#line 114
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 117
+#line 115
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -511,19 +507,17 @@ this.FeatureBackground();
                         "Count distinct",
                         "Application ASC",
                         "10"});
-#line 118
+#line 116
  testRunner.When("User creates new Widget", ((string)(null)), table13, "When ");
-#line 121
+#line 119
  testRunner.Then("\'WidgetForDAS15550\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 122
+#line 120
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 121
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Dashboard for DAS15550\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 122
+ testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
- testRunner.When("User clicks Settings button for \'Dashboard for DAS15550\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 124
- testRunner.When("User clicks \'Manage\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 125
- testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 126
  testRunner.When("User selects \'Specific users\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -532,12 +526,12 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "FN15550_2",
                         "Edit"});
-#line 127
+#line 124
  testRunner.When("User adds user to list of shared person", ((string)(null)), table14, "When ");
-#line 130
+#line 127
  testRunner.Then("User \'DAS15550_2\' was added to shared list with \'Edit\' permission of Details pane" +
                     "l", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 132
+#line 129
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -546,19 +540,17 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "DAS15550_2",
                         "m!gration"});
-#line 133
+#line 130
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table15, "When ");
-#line 137
+#line 134
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 138
- testRunner.When("User clicks Settings button for \'Dashboard for DAS15550\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 139
- testRunner.When("User clicks \'Manage\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
+#line 135
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Dashboard for DAS15550\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 136
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 141
+#line 137
  testRunner.When("User clicks Ellipsis menu for \'WidgetForDAS15550\' Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 138
  testRunner.When("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -579,9 +571,9 @@ this.FeatureBackground();
                         "Count distinct",
                         "Application ASC",
                         "5"});
-#line 143
+#line 139
  testRunner.When("User updates Widget with following info:", ((string)(null)), table16, "When ");
-#line 146
+#line 142
  testRunner.Then("\'WidgetForDAS15550_Edited\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -629,7 +621,7 @@ this.FeatureBackground();
                         "DAS14915",
                         "DAS12974",
                         "Cleanup"});
-#line 149
+#line 145
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -653,9 +645,9 @@ this.FeatureBackground();
                         "FN14915_2",
                         "m!gration",
                         "Project Administrator"});
-#line 150
+#line 146
  testRunner.When("User create new User via API", ((string)(null)), table17, "When ");
-#line 155
+#line 151
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -664,19 +656,17 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "DAS14915_1",
                         "m!gration"});
-#line 156
+#line 152
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table18, "When ");
-#line 160
+#line 156
  testRunner.When("Dashboard with \'Dashboard for DAS14915\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 161
+#line 157
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 162
- testRunner.When("User clicks Settings button for \'Dashboard for DAS14915\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 163
- testRunner.When("User clicks \'Manage\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 164
- testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 165
+#line 158
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Dashboard for DAS14915\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 159
+ testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 160
  testRunner.When("User selects \'Specific users\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -685,12 +675,12 @@ this.FeatureBackground();
             table19.AddRow(new string[] {
                         "FN14915_2",
                         "Admin"});
-#line 166
+#line 161
  testRunner.When("User adds user to list of shared person", ((string)(null)), table19, "When ");
-#line 169
+#line 164
  testRunner.Then("User \'DAS14915_2\' was added to shared list with \'Admin\' permission of Details pan" +
                     "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 171
+#line 166
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -699,47 +689,46 @@ this.FeatureBackground();
             table20.AddRow(new string[] {
                         "DAS14915_2",
                         "m!gration"});
-#line 172
+#line 167
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table20, "When ");
-#line 175
+#line 170
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 176
- testRunner.When("User clicks Settings button for \'Dashboard for DAS14915\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 177
- testRunner.When("User clicks \'Manage\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 178
+#line 171
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Dashboard for DAS14915\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 172
  testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 179
+#line 173
  testRunner.When("User changes dashboard name to \'DashboardUpdated\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 180
- testRunner.Then("Dashboard with \'DashboardUpdated\' title displayed in All Dashboards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 182
+#line 174
+ testRunner.Then("\'DashboardUpdated\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 176
  testRunner.When("User sets \'true\' as favorite state in dashboard details for \'DashboardUpdated\' da" +
                     "shboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 183
+#line 177
  testRunner.Then("Dashboard with name \'DashboardUpdated\' marked as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 184
+#line 178
  testRunner.When("User sets \'false\' as favorite state in dashboard details for \'DashboardUpdated\' d" +
                     "ashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 185
+#line 179
  testRunner.Then("Dashboard with name \'DashboardUpdated\' not marked as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 186
- testRunner.When("User selects \'Make favourite\' menu for \'DashboardUpdated\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 187
+#line 180
+ testRunner.When("User clicks \'Make favourite\' option in cogmenu for \'DashboardUpdated\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 181
  testRunner.Then("Dashboard with name \'DashboardUpdated\' marked as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 188
- testRunner.When("User selects \'Unfavourite\' menu for \'DashboardUpdated\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 189
+#line 182
+ testRunner.When("User clicks \'Unfavourite\' option in cogmenu for \'DashboardUpdated\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 183
  testRunner.Then("Dashboard with name \'DashboardUpdated\' not marked as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 191
+#line 185
  testRunner.When("Dashboard with \'NewDefaultDashboardForDAS12974\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 192
+#line 186
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 193
- testRunner.When("User selects \'Set default\' menu for \'NewDefaultDashboardForDAS12974\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 194
+#line 187
+ testRunner.When("User clicks \'Set default\' option in cogmenu for \'NewDefaultDashboardForDAS12974\' " +
+                    "list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 188
  testRunner.Then("Dashboard with name \'NewDefaultDashboardForDAS12974\' marked as default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 195
+#line 189
  testRunner.Then("Dashboard with name \'DashboardUpdated\' not marked as default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -787,7 +776,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "DAS14915",
                         "Cleanup"});
-#line 198
+#line 192
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -817,9 +806,9 @@ this.FeatureBackground();
                         "FN14915_5",
                         "m!gration",
                         "Project Administrator"});
-#line 199
+#line 193
  testRunner.When("User create new User via API", ((string)(null)), table21, "When ");
-#line 205
+#line 199
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -828,19 +817,17 @@ this.FeatureBackground();
             table22.AddRow(new string[] {
                         "DAS14915_3",
                         "m!gration"});
-#line 206
+#line 200
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table22, "When ");
-#line 210
+#line 204
  testRunner.When("Dashboard with \'Dashboard for Share\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 211
+#line 205
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 212
- testRunner.When("User clicks Settings button for \'Dashboard for Share\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 213
- testRunner.When("User clicks \'Manage\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 214
- testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 215
+#line 206
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Dashboard for Share\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 207
+ testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 208
  testRunner.When("User selects \'Specific users\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
@@ -849,12 +836,12 @@ this.FeatureBackground();
             table23.AddRow(new string[] {
                         "FN14915_4",
                         "Admin"});
-#line 216
+#line 209
  testRunner.When("User adds user to list of shared person", ((string)(null)), table23, "When ");
-#line 219
+#line 212
  testRunner.Then("User \'DAS14915_4\' was added to shared list with \'Admin\' permission of Details pan" +
                     "el", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 220
+#line 213
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -863,16 +850,14 @@ this.FeatureBackground();
             table24.AddRow(new string[] {
                         "DAS14915_4",
                         "m!gration"});
-#line 221
+#line 214
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table24, "When ");
-#line 224
+#line 217
  testRunner.When("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 225
- testRunner.When("User clicks Settings button for \'Dashboard for Share\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 226
- testRunner.When("User clicks \'Manage\' option in opened Cog-menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 227
- testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 218
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Dashboard for Share\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 219
+ testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
@@ -880,12 +865,12 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "FN14915_5",
                         "Edit"});
-#line 228
+#line 220
  testRunner.When("User adds user to list of shared person", ((string)(null)), table25, "When ");
-#line 231
+#line 223
  testRunner.Then("User \'DAS14915_5\' was added to shared list with \'Edit\' permission of Details pane" +
                     "l", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 232
+#line 224
  testRunner.When("User clicks \'Remove\' option in Cog-menu for \'DAS14915_5\' user on Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -894,9 +879,9 @@ this.FeatureBackground();
             table26.AddRow(new string[] {
                         "FN14915_5",
                         "Read"});
-#line 233
+#line 225
  testRunner.When("User adds user to list of shared person", ((string)(null)), table26, "When ");
-#line 236
+#line 228
  testRunner.Then("User \'DAS14915_5\' was added to shared list with \'Read Only\' permission of Details" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -947,7 +932,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS17592",
                         "Cleanup"});
-#line 239
+#line 231
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -971,9 +956,9 @@ this.FeatureBackground();
                         "FN17592_2",
                         "m!gration",
                         "Project Administrator"});
-#line 240
+#line 232
  testRunner.When("User create new User via API", ((string)(null)), table27, "When ");
-#line 245
+#line 237
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -982,33 +967,33 @@ this.FeatureBackground();
             table28.AddRow(new string[] {
                         "DAS17592_1",
                         "m!gration"});
-#line 246
+#line 238
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table28, "When ");
-#line 249
+#line 241
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 250
+#line 242
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 251
+#line 243
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 252
+#line 244
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
             table29.AddRow(new string[] {
                         "Mobile"});
-#line 253
+#line 245
  testRunner.When("User add \"Device Type\" filter where type is \"Equals\" with added column and Lookup" +
                     " option", ((string)(null)), table29, "When ");
-#line 256
+#line 248
  testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 257
+#line 249
  testRunner.When("User create dynamic list with \"ADevicesList17592\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 258
+#line 250
  testRunner.Then("\"ADevicesList17592\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 259
+#line 251
  testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 260
+#line 252
  testRunner.When("User selects \'Specific users / teams\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1017,9 +1002,9 @@ this.FeatureBackground();
             table30.AddRow(new string[] {
                         "FN17592_2",
                         "Read"});
-#line 261
+#line 253
  testRunner.When("User adds user to list of shared person", ((string)(null)), table30, "When ");
-#line 265
+#line 257
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1028,13 +1013,13 @@ this.FeatureBackground();
             table31.AddRow(new string[] {
                         "DAS17592_2",
                         "m!gration"});
-#line 266
+#line 258
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table31, "When ");
-#line 269
+#line 261
  testRunner.When("Dashboard with \'Dashboard_DAS17592\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 270
+#line 262
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 271
+#line 263
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1049,19 +1034,19 @@ this.FeatureBackground();
                         "ADevicesList17592",
                         "10",
                         "10"});
-#line 272
+#line 264
  testRunner.When("User creates new Widget", ((string)(null)), table32, "When ");
-#line 275
+#line 267
  testRunner.Then("\'Widget_For_DAS17592\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 276
+#line 268
  testRunner.When("User language is changed to \"Deutsch\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 277
+#line 269
  testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 278
+#line 270
  testRunner.When("User expands the list of shared lists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 279
+#line 271
  testRunner.Then("User sees table headers as \'Widget\' and \'Liste\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 281
+#line 273
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1070,21 +1055,21 @@ this.FeatureBackground();
             table33.AddRow(new string[] {
                         "DAS17592_1",
                         "m!gration"});
-#line 282
+#line 274
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table33, "When ");
-#line 285
+#line 277
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 286
+#line 278
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 287
- testRunner.When("User clicks \'Manage\' option in Cog-menu for \'ADevicesList17592\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 288
+#line 279
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'ADevicesList17592\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 280
  testRunner.When("User clicks the Dashboard Permissions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 289
+#line 281
  testRunner.When("User clicks \'Remove\' option in Cog-menu for \'DAS17592_2\' user on Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 290
+#line 282
  testRunner.Then("There is no user in shared list of Details panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 292
+#line 284
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1093,19 +1078,19 @@ this.FeatureBackground();
             table34.AddRow(new string[] {
                         "DAS17592_2",
                         "m!gration"});
-#line 293
+#line 285
  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table34, "When ");
-#line 296
+#line 288
  testRunner.When("User language is changed to \"Deutsch\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 297
+#line 289
  testRunner.When("Dashboard with \'Dashboard_DAS17592\' name is opened via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 298
+#line 290
  testRunner.Then("\'Widget_For_DAS17592\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 299
+#line 291
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 300
+#line 292
  testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 301
+#line 293
  testRunner.Then("User sees \'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.\' text in w" +
                     "arning message of \'Widget_For_DAS17592\' widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

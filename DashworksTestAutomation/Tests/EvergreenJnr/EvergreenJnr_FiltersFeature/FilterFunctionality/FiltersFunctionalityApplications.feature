@@ -933,7 +933,8 @@ Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilte
 	Then "SecondList18560" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User removes custom list with "ListToBeDeleted18560" name
+	When User clicks 'Remove' option in cogmenu for 'ListToBeDeleted18560' list
+	When User confirms list removing
 	Then list with "ListToBeDeleted18560" name is removed
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
