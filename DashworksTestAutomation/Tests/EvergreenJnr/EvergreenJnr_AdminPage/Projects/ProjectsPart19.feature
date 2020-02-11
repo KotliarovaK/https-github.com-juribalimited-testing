@@ -16,7 +16,6 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| *Project K-Computer Scheduled Project             |
 	| :/                                                |
 	| 2004 Rollout                                      |
-	| Babel (English, German and French)                |
 	| Barry's User Project                              |
 	| Computer Scheduled Test (Jo)                      |
 	| Devices Evergreen Capacity Project                |
