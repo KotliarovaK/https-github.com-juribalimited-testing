@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS15878 @DAS15291
 Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
-	When User navigates to "1803 Rollout" project details
+	When User navigates to "2004 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
 	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot

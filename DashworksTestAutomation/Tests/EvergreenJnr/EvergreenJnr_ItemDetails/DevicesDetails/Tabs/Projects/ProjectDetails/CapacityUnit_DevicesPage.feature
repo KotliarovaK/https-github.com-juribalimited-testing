@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 		#--Devices--#
 	When User navigates to the 'Device' details page for the item with '13292' ID
 	Then Details page for 'CHAXTB7OLNX1W2' item is displayed to the user
-	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
+	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 		#--Users--#
 	When User navigates to the 'User' details page for the item with '27418' ID
 	Then Details page for 'REM635708' item is displayed to the user
-	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
+	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field

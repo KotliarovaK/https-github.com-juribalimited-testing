@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	#Action 2
 	When User enters 'New_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb

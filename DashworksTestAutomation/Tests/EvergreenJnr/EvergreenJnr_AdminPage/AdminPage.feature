@@ -197,7 +197,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	| ColumnName              |
 	| Evergreen Capacity Unit |
 	When User clicks 'Admin' on the left-hand menu
-	When User enters "1803 Rollout" text in the Search field for "Project" column
+	When User enters "2004 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Units' left menu item

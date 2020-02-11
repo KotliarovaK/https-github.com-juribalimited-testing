@@ -253,7 +253,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptions
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
-	When User enters "1803 Rollout" text in the Search field for "Project" column
+	When User enters "2004 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Readiness' left menu item
 	When User enters "Grey" text in the Search field for "Readiness" column
@@ -350,7 +350,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15898
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
-	When User navigates to "1803 Rollout" project details
+	When User navigates to "2004 Rollout" project details
 	And User navigates to the 'Readiness' left menu item
 	And User enters "GREY" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
@@ -363,7 +363,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16363
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnCreatePage
 	When User language is changed to "Deutsch" via API
-	And User navigates to Create Readiness page of "1803 Rollout" project
+	And User navigates to Create Readiness page of "2004 Rollout" project
 	And User clicks Colour Template field on Edit Readiness
 	Then User sees following options for Colour Template selector on Create Readiness page:
 	| ColorTemplate |
@@ -383,7 +383,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccou
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16363
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessAreTranslatedAccordingToAccountLanguageOnEditPage
 	When User language is changed to "Deutsch" via API
-	And User navigates to Readiness page of "1803 Rollout" project
+	And User navigates to Readiness page of "2004 Rollout" project
 	And User enters "GREEN" text in the Search field for "Bereitschaft" column
 	And User click content from "Bereitschaft" column
 	And User clicks Colour Template field on Edit Readiness

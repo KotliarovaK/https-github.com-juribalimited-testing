@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfter
 	| SelectedList          | Association    |
 	| StaticDeviceList18376 | Used on device |
 	When User create dynamic list with "ApplicationsDynamicList18376" name on "Applications" page
-	When User navigates to "1803 Rollout" project details
+	When User navigates to "2004 Rollout" project details
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Details' left submenu item
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page

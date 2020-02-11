@@ -322,12 +322,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingActio
 	When User clicks 'CREATE ACTION' button 
 	And User enters '18705_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects 'Device Priority' option from 'Task' autocomplete
 	When User selects 'Medium' in the 'Value' dropdown
 	When User clicks 'CREATE' button
-	Then "1803 Rollout" content is displayed for "Project" column
+	Then "2004 Rollout" content is displayed for "Project" column
 	When User clicks content from "Action" column
 	When User selects 'Update custom field' in the 'Action Type' dropdown
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete

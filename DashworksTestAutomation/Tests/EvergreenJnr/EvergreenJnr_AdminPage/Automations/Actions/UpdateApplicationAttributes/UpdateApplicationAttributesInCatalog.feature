@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageD
 	When User clicks 'CREATE ACTION' button
 	And User enters '19259_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'InCatalog' dropdown is not displayed
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' value is displayed in the 'In Catalog' dropdown

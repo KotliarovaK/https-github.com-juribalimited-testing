@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOpIdColumnInTheAutomationLog
 Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGrid
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope        | Run    |
-	| 18265_Automation | 18265       | true   | false              | 1803 Rollout | Manual |
+	| 18265_Automation | 18265       | true   | false              | 2004 Rollout | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

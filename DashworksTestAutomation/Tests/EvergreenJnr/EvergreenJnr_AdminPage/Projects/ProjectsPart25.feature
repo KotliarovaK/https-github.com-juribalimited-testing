@@ -58,7 +58,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageF
 
 Examples:
 	| ProjectName                     | tab1         | List1        | tab2              | List2              |
-	| User Evergreen Capacity Project | Device Scope | 1803 Rollout | Application Scope | Apps with a Vendor |
+	| User Evergreen Capacity Project | Device Scope | 2004 Rollout | Application Scope | Apps with a Vendor |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17967
 Scenario: EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter
@@ -86,7 +86,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScop
 
 Examples:
 	| ProjectName                        | tab           |
-	| 1803 Rollout                       | Device Scope  |
+	| 2004 Rollout                       | Device Scope  |
 	| User Evergreen Capacity Project    | User Scope    |
 	| Mailbox Evergreen Capacity Project | Mailbox Scope |
 

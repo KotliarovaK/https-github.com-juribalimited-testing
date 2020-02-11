@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	| Scheduled: Dashworks Daily |
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	When User enters 'LongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescription' text to 'Description' textbox
-	When User selects '1803 Rollout' option from 'Scope' autocomplete
+	When User selects '2004 Rollout' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then 'Active' checkbox is unchecked
 	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
-	When User selects '1803 Rollout' option from 'Scope' autocomplete
+	When User selects '2004 Rollout' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
