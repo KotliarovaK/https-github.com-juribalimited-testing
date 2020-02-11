@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             }
         }
 
-        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' list")]
+        [When(@"User clicks '(.*)' option in cogmenu for '(.*)' list")]
         public void WhenUserClicksOptionInCog_MenuForList(string option, string listName)
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();

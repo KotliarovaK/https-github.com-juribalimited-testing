@@ -151,7 +151,7 @@ this.FeatureBackground();
 #line 14
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
- testRunner.When(string.Format("User clicks \'Set default\' option in Cog-menu for \'{0}\' item in left panel", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Set default\' option in cogmenu for \'{0}\' item in left panel", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
@@ -163,13 +163,13 @@ this.FeatureBackground();
 #line 20
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
- testRunner.When(string.Format("User clicks \'Set default\' option in Cog-menu for \'{0}\' item in left panel", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Set default\' option in cogmenu for \'{0}\' item in left panel", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
  testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
- testRunner.When(string.Format("User clicks \'Remove default\' option in Cog-menu for \'{0}\' item in left panel", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Remove default\' option in cogmenu for \'{0}\' item in left panel", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
@@ -256,7 +256,7 @@ this.FeatureBackground();
 #line 40
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 41
- testRunner.When(string.Format("User clicks \'Set default\' option in Cog-menu for \'{0}\' item in left panel", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Set default\' option in cogmenu for \'{0}\' item in left panel", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
@@ -266,13 +266,13 @@ this.FeatureBackground();
 #line 45
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 46
- testRunner.When(string.Format("User clicks \'Set default\' option in Cog-menu for \'{0}\' item in left panel", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Set default\' option in cogmenu for \'{0}\' item in left panel", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48
  testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 49
- testRunner.When(string.Format("User clicks \'Remove default\' option in Cog-menu for \'{0}\' item in left panel", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Remove default\' option in cogmenu for \'{0}\' item in left panel", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 51

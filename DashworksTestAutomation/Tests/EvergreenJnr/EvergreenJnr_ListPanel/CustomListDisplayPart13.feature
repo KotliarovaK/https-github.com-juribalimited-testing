@@ -12,16 +12,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynami
 	When User clicks on '<Column>' column header
 	When User create dynamic list with "<ListName1>" name on "<ListType>" page
 	Then "<ListName1>" list is displayed to user
-	When User clicks 'Set default' option in Cog-menu for '<ListName1>' item in left panel
+	When User clicks 'Set default' option in cogmenu for '<ListName1>' item in left panel
 	When User clicks '<ListType>' on the left-hand menu
 	Then '<ListName1>' list should be displayed to the user
 	When User clicks on '<Column>' column header
 	When User create dynamic list with "<ListName2>" name on "<ListType>" page
 	Then "<ListName2>" list is displayed to user
-	When User clicks 'Set default' option in Cog-menu for '<ListName2>' item in left panel
+	When User clicks 'Set default' option in cogmenu for '<ListName2>' item in left panel
 	When User clicks '<ListType>' on the left-hand menu
 	Then '<ListName2>' list should be displayed to the user
-	When User clicks 'Remove default' option in Cog-menu for '<ListName2>' item in left panel
+	When User clicks 'Remove default' option in cogmenu for '<ListName2>' item in left panel
 	When User clicks '<ListType>' on the left-hand menu
 	Then '<ListTitle>' list should be displayed to the user
 
@@ -38,15 +38,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStatic
 	| ItemName   |
 	| <ItemName> |
 	Then "<ListName1>" list is displayed to user
-	When User clicks 'Set default' option in Cog-menu for '<ListName1>' item in left panel
+	When User clicks 'Set default' option in cogmenu for '<ListName1>' item in left panel
 	When User clicks '<ListType>' on the left-hand menu
 	Then '<ListName1>' list should be displayed to the user
 	When User create dynamic list with "<ListName2>" name on "<ListType>" page
 	Then "<ListName2>" list is displayed to user
-	When User clicks 'Set default' option in Cog-menu for '<ListName2>' item in left panel
+	When User clicks 'Set default' option in cogmenu for '<ListName2>' item in left panel
 	When User clicks '<ListType>' on the left-hand menu
 	Then '<ListName2>' list should be displayed to the user
-	When User clicks 'Remove default' option in Cog-menu for '<ListName2>' item in left panel
+	When User clicks 'Remove default' option in cogmenu for '<ListName2>' item in left panel
 	When User clicks '<ListType>' on the left-hand menu
 	Then '<ListTitle>' list should be displayed to the user
 
