@@ -1589,14 +1589,9 @@
       <DependentUpon>TopBar.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart10.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>ListDetailsFunctionalityPart10.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
-      <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart8.feature.cs">
       <DependentUpon>ListDetailsFunctionalityPart8.feature</DependentUpon>
@@ -1638,10 +1633,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListDetails\ListDetailsFunctionalityPart9.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListDetailsFunctionalityPart9.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListFromCSV\ListsFromCSV.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListsFromCSV.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListPanel\CustomListDisplayPart11.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomListDisplayPart11.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListPanel\CustomListDisplayPart13.feature.cs">
       <DependentUpon>CustomListDisplayPart13.feature</DependentUpon>
@@ -1650,11 +1655,6 @@
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListPanel\CustomListDisplayPart12.feature.cs">
       <DependentUpon>CustomListDisplayPart12.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListPanel\CustomListDisplayPart11.feature.cs">
-      <DependentUpon>CustomListDisplayPart11.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
