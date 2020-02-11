@@ -19,14 +19,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then Create Action page is displayed to the User
 	When User enters '15427_Action1' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	#Action 2
 	When User clicks 'SAVE & CREATE ANOTHER' button 
 	Then 'The automation action has been created' text is displayed on inline success banner
 	When User enters '15427_Action2' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
-	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	#Action 3
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then Page with 'Test_Automation_15427' header is displayed to user
 	When User enters '15427_Action3' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
-	And User selects '1803 Rollout' option from 'Project' autocomplete
+	And User selects '2004 Rollout' option from 'Project' autocomplete
 	And User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	When User clicks Group By button and set checkboxes state
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectlyForAutomations
 	Then Create Action page is displayed to the User
 	When User enters 'DAS15427_Action' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks 'CREATE' button 
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	| Update task value   |
 	When User enters '15428_Action_1' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	#Action 2
@@ -178,7 +178,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then Create Action page is displayed to the User
 	When User enters '15428_Action_2' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks 'CREATE' button 
@@ -188,7 +188,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then Create Action page is displayed to the User
 	When User enters '15428_Action_3' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	Then 'Undetermined' content is displayed in 'Path' textbox
 	When User clicks 'CREATE' button 
@@ -507,9 +507,9 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPa
 
 Examples:
 	| AutomationName     | Scope            | Project1                 | Project2                           | Project3                           |
-	| 17544_Automation   | All Devices      | User Scheduled Test (Jo) | 1803 Rollout                       | Barry's User Project               |
-	| 17544_Automation_1 | All Users        | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
-	| 17544_Automation_2 | All Applications | User Scheduled Test (Jo) | 1803 Rollout                       | Email Migration                    |
+	| 17544_Automation   | All Devices      | User Scheduled Test (Jo) | 2004 Rollout                       | Barry's User Project               |
+	| 17544_Automation_1 | All Users        | User Scheduled Test (Jo) | 2004 Rollout                       | Email Migration                    |
+	| 17544_Automation_2 | All Applications | User Scheduled Test (Jo) | 2004 Rollout                       | Email Migration                    |
 	| 17544_Automation-3 | All Mailboxes    | Email Migration          | Mailbox Evergreen Capacity Project | USE ME FOR AUTOMATION(MAIL SCHDLD) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17542 @Cleanup
@@ -811,7 +811,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForActionName
 	When User clicks 'CREATE ACTION' button 
 	When User enters ' ' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	Then 'An action name must be entered' error message is displayed for 'Action Name' field
 	Then 'CREATE' button is disabled

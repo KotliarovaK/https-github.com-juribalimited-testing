@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy          | AggregateFunction | AggregateBy                            | OrderBy              |
-	| Table      | WidgetForDAS18091 | 1803 Rollout | Operating System | Severity          | 1803: Pre-Migration \ Ready to Migrate | Operating System ASC |
+	| Table      | WidgetForDAS18091 | 2004 Rollout | Operating System | Severity          | 1803: Pre-Migration \ Ready to Migrate | Operating System ASC |
 	Then 'WidgetForDAS18091' Widget is displayed to the user
 	Then There is no 'Empty' column for 'WidgetForDAS18091' widget
 	#DAS18090 
@@ -266,7 +266,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Operating System is Windows 7" is displayed in added filter info
-	Then "Any Device in list 1803 Rollout" is displayed in added filter info
+	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 	Then "1803: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
 	#DAS16516
 	When Dashboard with 'Dashboard for DAS18091' name is opened via API
@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Operating System is Windows Vista" is displayed in added filter info
-	Then "Any Device in list 1803 Rollout" is displayed in added filter info
+	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 	Then "1803: Pre-Migration \ Ready to Migrate is Ready" is displayed in added filter info
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
@@ -284,7 +284,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title     | List         | SplitBy                                | AggregateFunction | AggregateBy                            |
-	| Table      | DAS-15852 | 1803 Rollout | 1803: Pre-Migration \ Ready to Migrate | Severity          | 1803: Pre-Migration \ Ready to Migrate |
+	| Table      | DAS-15852 | 2004 Rollout | 1803: Pre-Migration \ Ready to Migrate | Severity          | 1803: Pre-Migration \ Ready to Migrate |
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                                                |
 	| 1803: Pre-Migration \ Ready to Migrate severity ASC  |

@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersIsVisible
 	| 7-Zip 16.02 (x64) |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Criticality' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
 	Then 'No change' content is displayed in 'Hide From End Users' dropdown

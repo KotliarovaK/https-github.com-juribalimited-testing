@@ -21,8 +21,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemStillRemainsInStaticList
 	And User create static list with "StaticList17651" name
 	Then "StaticList17651" list is displayed to user
 	And "2" rows are displayed in the agGrid
-	When User navigates to the "1803 Rollout" list
-	Then "1803 Rollout" list is displayed to user
+	When User navigates to the "2004 Rollout" list
+	Then "2004 Rollout" list is displayed to user
 	When User navigates to the "StaticList17651" list
 	Then "StaticList17651" list is displayed to user
 	And "2" rows are displayed in the agGrid
@@ -47,7 +47,7 @@ Examples:
 Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInListDetails
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "1803 Rollout" list
+	When User navigates to the "2004 Rollout" list
 	And User clicks the List Details button
 	Then Details panel is displayed to the user
 	And 'Archived devices included' label is displayed in List Details

@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsColumnContainsNullOfObjectsForF
 	When User clicks 'CREATE ACTION' button
 	And User enters '18464_Action1' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Undetermined' option from 'Path' autocomplete
 	When User clicks 'CREATE' button
 	#Create Action2

@@ -330,7 +330,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16138",
-                        "1803 Rollout",
+                        "2004 Rollout",
                         "Aggregate",
                         "1803: Pre-Migration \\ Scheduled Date",
                         "First",
@@ -355,7 +355,7 @@ this.FeatureBackground();
  testRunner.Then("\"1803: Pre-Migration \\ Scheduled Date is 5 Nov 2018\" is displayed in added filter" +
                     " info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 62
- testRunner.Then("\"Any Device in list 1803 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Any Device in list 2004 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2505,7 +2505,7 @@ this.FeatureBackground();
             table47.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS18939",
-                        "1803 Rollout",
+                        "2004 Rollout",
                         "Aggregate",
                         "Severity",
                         "1803: Pre-Migration \\ Ready to Migrate",

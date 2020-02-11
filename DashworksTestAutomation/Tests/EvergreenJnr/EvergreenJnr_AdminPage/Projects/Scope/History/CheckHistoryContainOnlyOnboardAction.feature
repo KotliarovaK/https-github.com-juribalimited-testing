@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout
-	When User navigates to "1803 Rollout" project details
+	When User navigates to "2004 Rollout" project details
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
 	Then Counter shows "405" found rows

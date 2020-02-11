@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	And User enters '18320_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
-	When User selects '1803 Rollout' option from 'Project' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
 	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	When User selects 'App Workflow' option from 'Task' autocomplete
 	And User selects 'Not Started' in the 'Value' dropdown
