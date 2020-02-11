@@ -14,7 +14,6 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	Then User sees that 'Select Existing Project' dropdown contains following options:
 	| OptionLabel                                       |
 	| *Project K-Computer Scheduled Project             |
-	| :/                                                |
 	| 2004 Rollout                                      |
 	| Barry's User Project                              |
 	| Computer Scheduled Test (Jo)                      |
@@ -22,7 +21,6 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| Email Migration                                   |
 	| Havoc (Big Data)                                  |
 	| Mailbox Evergreen Capacity Project                |
-	| Migration Project Phase 2 (User Project)          |
 	| Project 00 M Computer Scheduled                   |
 	| Project using broken list as scope                |
 	| Project with associated broken list               |
