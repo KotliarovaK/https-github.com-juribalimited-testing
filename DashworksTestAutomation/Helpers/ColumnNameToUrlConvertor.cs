@@ -271,19 +271,19 @@ namespace DashworksTestAutomation.Helpers
                 case "Sticky Compliance":
                     return "stickyCompliance";
 
-                case "1803: Target App":
+                case "2004: Target App":
                     return "project_63_targetApplication";
 
-                case "1803: Target App Vendor":
+                case "2004: Target App Vendor":
                     return "project_63_targetApplicationVendor";
 
-                case "1803: Target App Version":
+                case "2004: Target App Version":
                     return "project_63_targetApplicationVersion";
 
-                case "1803: Target App Readiness":
+                case "2004: Target App Readiness":
                     return "project_63_targetApplicationReadiness";
 
-                case "1803: Target App Key":
+                case "2004: Target App Key":
                     return "project_63_targetApplicationKey";
 
                 case "Evergreen Rationalisation":
@@ -298,7 +298,7 @@ namespace DashworksTestAutomation.Helpers
                 case "Evergreen Target App":
                     return "evergreenTargetApplication";
 
-                case "1803: In Scope":
+                case "2004: In Scope":
                     return "project_63_inScope";
 
                 case "HDD Total Size (GB)":
@@ -352,7 +352,7 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
-                case "1803: Status":
+                case "2004: Status":
                     switch (pageName)
                     {
                         case "Devices":
@@ -370,7 +370,7 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
-                case "1803: Pre-Migration \\ Ready to Migrate":
+                case "2004: Pre-Migration \\ Ready to Migrate":
                     return "project_task_63_13266_1_Task";
 
                 default:
