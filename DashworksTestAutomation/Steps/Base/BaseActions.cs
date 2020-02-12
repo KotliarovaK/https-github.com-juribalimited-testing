@@ -14,11 +14,13 @@ namespace DashworksTestAutomation.Steps.Base
     [Binding]
     internal class BaseActions : SpecFlowContext
     {
-        private readonly RemoteWebDriver _driver;
+        private RemoteWebDriver _driver;
+        private readonly BrowsersList _browsersList;
 
-        public BaseActions(RemoteWebDriver driver)
+        public BaseActions(RemoteWebDriver driver, BrowsersList browsersList)
         {
-            _driver = driver;
+            _driver = browsersList.GetBrowser();
+            _browsersList = browsersList;
         }
 
         [Then(@"User click back button in the browser")]
@@ -88,6 +90,13 @@ namespace DashworksTestAutomation.Steps.Base
         public void WhenUserSwitchesToPreviousTab()
         {
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
+        }
+
+        [Given(@"User creates new browser")]
+        public void GivenUserCreatesNewBrowser()
+        {
+            _browsersList.AddDriver(BrowserFactory.CreateDriver());
+            _driver = _browsersList.GetBrowser(1);
         }
 
         #region Check/Navigate to URL
