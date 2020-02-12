@@ -742,11 +742,118 @@ namespace DashworksTestAutomation.Extensions
                 {
                     // Return false as no elements was located
                     return false.Equals(displayedCondition);
-                }                
+                }
                 catch (TargetInvocationException)
                 {
                     // Return false as element was staled
                     return false.Equals(displayedCondition);
+                }
+            };
+        }
+
+        #endregion
+
+        #region Wait for ElementS to be (not) Exists
+
+        public static void WaitForElementsToBeExists(this RemoteWebDriver driver, By by, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
+        {
+            WaitForElementsExistsCondition(driver, by, true, waitSeconds);
+        }
+
+        public static void WaitForElementsToBeExists(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementsExistsCondition(driver, elements, true, waitSeconds);
+        }
+
+        public static void WaitForElementsToBeNotExists(this RemoteWebDriver driver, By by, int waitSeconds = WaitTimeoutSeconds, bool allElements = true)
+        {
+            WaitForElementsExistsCondition(driver, by, false, waitSeconds);
+        }
+
+        public static void WaitForElementsToBeNotExists(this RemoteWebDriver driver, IList<IWebElement> elements, int waitSeconds = WaitTimeoutSeconds)
+        {
+            WaitForElementsExistsCondition(driver, elements, false, waitSeconds);
+        }
+
+        private static void WaitForElementsExistsCondition(this RemoteWebDriver driver, By by, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(ExistsConditionOfElementsLocatedBy(by, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Elements with '{by}' selector were not changed Exists condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static void WaitForElementsExistsCondition(this RemoteWebDriver driver, IList<IWebElement> elements, bool condition, int waitSeconds)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(waitSeconds));
+                wait.Until(ExistsConditionOfElementsLocatedBy(elements, condition));
+            }
+            catch (WebDriverTimeoutException e)
+            {
+                throw new Exception($"Not all from {elements.Count} elements were not changed Exists condition to '{condition}' after {waitSeconds} seconds", e);
+            }
+        }
+
+        private static Func<IWebDriver, bool> ExistsConditionOfElementsLocatedBy(By locator, bool expectedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    var elements = driver.FindElements(locator);
+                    return elements.All(element => IsElementExists(driver, element).Equals(expectedCondition));
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+            };
+        }
+
+        private static Func<IWebDriver, bool> ExistsConditionOfElementsLocatedBy(IList<IWebElement> elements, bool expectedCondition)
+        {
+            return (driver) =>
+            {
+                try
+                {
+                    return elements.All(element => IsElementExists(driver, element).Equals(expectedCondition));
+                }
+                catch (NoSuchElementException)
+                {
+                    // Returns false because the element is not present in DOM.
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
+                }
+                catch (TargetInvocationException)
+                {
+                    // Returns false because stale element reference implies that element
+                    // is no longer visible.
+                    return false;
                 }
             };
         }

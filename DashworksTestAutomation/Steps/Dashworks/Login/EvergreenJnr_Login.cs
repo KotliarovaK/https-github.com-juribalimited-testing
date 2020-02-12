@@ -22,12 +22,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
     [Binding]
     internal class EvergreenJnr_Login : BaseLoginActions
     {
-        private readonly RemoteWebDriver _driver;
+        private RemoteWebDriver _driver;
 
-        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject) :
+        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject, BrowsersList browsersList) :
             base(user, usedUsers, client, authObject)
         {
-            _driver = driver;
+            _driver = browsersList.GetBrowser();
         }
 
         [Given(@"User is logged in to the Evergreen")]
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
 
             if (user == null)
                 throw new Exception("User table is not set");
-            
+
             //Login to website via api
             LoginViaApiAsUser(_driver, user);
             //Navigate to Evergreen page
