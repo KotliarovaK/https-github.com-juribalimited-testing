@@ -443,10 +443,10 @@ Scenario: EvergreenJnr_DevicesList_CheckDisplayingListAfterAppliyingFilter
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	And User selects "1803: Owner (Saved List)" filter from "Saved List" category
+	And User selects "2004: Owner (Saved List)" filter from "Saved List" category
 	And User checks 'Users with Device Count' checkbox
 	And User clicks 'ADD' button
-	Then "Owner: 1803 in list Users with Device Count" is displayed in added filter info
+	Then "2004: Owner in list Users with Device Count" is displayed in added filter info
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812 @DAS12056
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly

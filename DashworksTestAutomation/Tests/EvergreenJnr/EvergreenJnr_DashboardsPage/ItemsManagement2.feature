@@ -145,7 +145,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	Then "AApplicationsList17551" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User removes custom list with "ADevicesList17551" name
+	When User clicks 'Delete' option in cogmenu for 'ADevicesList17551' list
+	When User confirms list removing
 	Then list with "ADevicesList17551" name is removed
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page

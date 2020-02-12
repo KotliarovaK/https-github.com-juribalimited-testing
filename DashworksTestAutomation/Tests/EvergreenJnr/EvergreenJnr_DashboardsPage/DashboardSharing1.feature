@@ -19,9 +19,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	When Dashboard with 'Dashboard for DAS14911' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for DAS14911' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
-	Then Details panel is displayed to the user
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS14911' list
+	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
@@ -203,8 +202,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	#teardown
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_1' list
-	When User clicks the Permissions button
+	When User clicks 'Manage' option in cogmenu for 'DeviceListFor14841_1' list
+	When User clicks the Dashboard Permissions button
 	Then 'Private' content is displayed in 'Sharing' dropdown
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
@@ -244,7 +243,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	#teardown
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_2' list
+	When User clicks 'Manage' option in cogmenu for 'DeviceListFor14841_2' list
 	When User clicks the Dashboard Permissions button
 	Then 'Private' content is displayed in 'Sharing' dropdown
 
@@ -300,10 +299,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then 'Everyone can see' content is displayed in 'Sharing' dropdown
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_3' list
+	When User clicks 'Manage' option in cogmenu for 'DeviceListFor14841_3' list
 	When User clicks the Dashboard Permissions button
 	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
-	When User clicks 'Manage' option in Cog-menu for 'DeviceListFor14841_4' list
+	When User clicks 'Manage' option in cogmenu for 'DeviceListFor14841_4' list
 	When User clicks the Dashboard Permissions button
 	Then 'Private' content is displayed in 'Sharing' dropdown
 

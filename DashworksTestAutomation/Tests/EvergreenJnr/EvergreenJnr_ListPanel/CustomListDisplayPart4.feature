@@ -107,8 +107,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "Empty" Lookup option
-	Then "Babel(Engl: Readiness" filter is added to the list
+	When User add "2004: Readiness" filter where type is "Equals" with added column and "Empty" Lookup option
+	Then "2004: Readiness" filter is added to the list
 	When User create dynamic list with "Readiness List TestName" name on "Devices" page
 	Then "Readiness List TestName" list is displayed to user
 	When User navigates to the "All Devices" list

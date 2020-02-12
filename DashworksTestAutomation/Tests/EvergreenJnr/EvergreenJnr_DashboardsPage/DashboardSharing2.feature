@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| DAS14841_1 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks 'Manage' option in Cog-menu for 'ADeviceListFor14841_Admin' list
+	When User clicks 'Manage' option in cogmenu for 'ADeviceListFor14841_Admin' list
 	When User clicks the Dashboard Permissions button
 	Then 'Everyone can see' content is displayed in 'Sharing' dropdown
 
@@ -78,9 +78,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS15876' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
-	Then Details panel is displayed to the user
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS15876' list
+	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
@@ -93,9 +92,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	| DAS15876_2 | m!gration |
 	#remove share
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for DAS15876' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
-	Then Details panel is displayed to the user
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS15876' list
+	When User clicks the Dashboard Permissions button
 	When User clicks 'Remove' option in Cog-menu for 'DAS15876_2' user on Details panel
 	Then There is no user in shared list of Details panel
 	Then User sees 'This dashboard does not exist or you do not have access to it' text in warning message on Dashboards submenu pane
@@ -120,9 +118,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	| Table      | WidgetForDAS15550 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
 	Then 'WidgetForDAS15550' Widget is displayed to the user
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for DAS15550' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
-	Then Details panel is displayed to the user
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS15550' list
+	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
@@ -135,8 +132,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	| DAS15550_2 | m!gration |
 	#edit widget
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for DAS15550' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS15550' list
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks Ellipsis menu for 'WidgetForDAS15550' Widget on Dashboards page
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
@@ -159,9 +155,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS14915' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
-	Then Details panel is displayed to the user
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS14915' list
+	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
@@ -173,24 +168,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	| Username   | Password  |
 	| DAS14915_2 | m!gration |
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for DAS14915' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS14915' list
 	Then Details panel is displayed to the user
 	When User changes dashboard name to 'DashboardUpdated'
-	Then Dashboard with 'DashboardUpdated' title displayed in All Dashboards
+	Then 'DashboardUpdated' list is displayed in the Lists panel
 	#12974 favorite for shared
 	When User sets 'true' as favorite state in dashboard details for 'DashboardUpdated' dashboard
 	Then Dashboard with name 'DashboardUpdated' marked as favorite
 	When User sets 'false' as favorite state in dashboard details for 'DashboardUpdated' dashboard
 	Then Dashboard with name 'DashboardUpdated' not marked as favorite
-	When User selects 'Make favourite' menu for 'DashboardUpdated' dashboard
+	When User clicks 'Make favourite' option in cogmenu for 'DashboardUpdated' list
 	Then Dashboard with name 'DashboardUpdated' marked as favorite
-	When User selects 'Unfavourite' menu for 'DashboardUpdated' dashboard
+	When User clicks 'Unfavourite' option in cogmenu for 'DashboardUpdated' list
 	Then Dashboard with name 'DashboardUpdated' not marked as favorite
 	#12974 default for shared
 	When Dashboard with 'NewDefaultDashboardForDAS12974' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User selects 'Set default' menu for 'NewDefaultDashboardForDAS12974' dashboard
+	When User clicks 'Set default' option in cogmenu for 'NewDefaultDashboardForDAS12974' list
 	Then Dashboard with name 'NewDefaultDashboardForDAS12974' marked as default
 	Then Dashboard with name 'DashboardUpdated' not marked as default
 
@@ -209,9 +203,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for Share' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for Share' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
-	Then Details panel is displayed to the user
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for Share' list
+	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
@@ -222,9 +215,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	| Username   | Password  |
 	| DAS14915_4 | m!gration |
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks Settings button for 'Dashboard for Share' dashboard
-	When User clicks 'Manage' option in opened Cog-menu
-	Then Details panel is displayed to the user
+	When User clicks 'Manage' option in cogmenu for 'Dashboard for Share' list
+	When User clicks the Dashboard Permissions button
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN14915_5 | Edit       |
@@ -284,7 +276,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	| DAS17592_1 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks 'Manage' option in Cog-menu for 'ADevicesList17592' list
+	When User clicks 'Manage' option in cogmenu for 'ADevicesList17592' list
 	When User clicks the Dashboard Permissions button
 	When User clicks 'Remove' option in Cog-menu for 'DAS17592_2' user on Details panel
 	Then There is no user in shared list of Details panel

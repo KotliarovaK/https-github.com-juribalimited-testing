@@ -199,6 +199,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17774")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Automations")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Actions")]
         public virtual void EvergreenJnr_AdminPage_CheckSortingAutomationsGrid()
         {
             System.Exception lastException = null;
@@ -232,7 +234,9 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Automations",
-                        "DAS17774"});
+                        "DAS17774",
+                        "Do_Not_Run_With_Automations",
+                        "Do_Not_Run_With_Actions"});
 #line 39
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

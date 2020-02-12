@@ -18,7 +18,8 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	Then data in table is sorted by 'Domain' column in ascending order
 	When User create dynamic list with "DynamicList4781" name on "Users" page
 	Then "DynamicList4781" list is displayed to user
-	When User removes custom list with "DynamicList4781" name
+	When User clicks 'Delete' option in cogmenu for 'DynamicList4781' list
+	When User confirms list removing
 	And User navigates to the "DynamicList4587" list
 	Then inline success banner is not displayed
 	When User clicks the List Details button
@@ -34,7 +35,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWas
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "<ListName>" name
 	Then "<ListName>" list is displayed to user
-	When User clicks 'Manage' option in Cog-menu for '<ListName>' list
+	When User clicks 'Manage' option in cogmenu for '<ListName>' list
 	Then Details panel is displayed to the user
 
 Examples:
@@ -59,12 +60,12 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSe
 	And table content is present
 	And "2" rows are displayed in the agGrid
 	When User navigates to the "All Mailboxes" list
-	When User clicks 'Manage' option in Cog-menu for 'DynamicList4557' list
+	When User clicks 'Manage' option in cogmenu for 'DynamicList4557' list
 	Then "DynamicList4557" list is displayed to user
 	And Details panel is displayed to the user
 	When User navigates to the "StaticList2845" list
 	Then "StaticList2845" list is displayed to user
-	When User clicks 'Manage' option in Cog-menu for 'StaticList2845' list
+	When User clicks 'Manage' option in cogmenu for 'StaticList2845' list
 	Then "StaticList2845" list is displayed to user
 	And Details panel is displayed to the user
 

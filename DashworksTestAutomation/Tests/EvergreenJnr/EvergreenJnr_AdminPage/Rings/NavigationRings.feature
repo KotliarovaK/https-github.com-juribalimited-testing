@@ -19,14 +19,14 @@ Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsLi
 	Then "1" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "1803: Ring" filter is added to the list
+	Then "2004: Ring" filter is added to the list
 	And Values is displayed in added filter info
 	| Values     |
 	| Unassigned |
 	And Options is displayed in added filter info
 	| Values |
 	| is     |
-	And "(1803: Ring = Unassigned)" text is displayed in filter container
+	And "(2004: Ring = Unassigned)" text is displayed in filter container
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903 @DAS15180
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetails
