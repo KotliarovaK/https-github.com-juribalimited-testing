@@ -166,11 +166,11 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningP
 	| <ColumnToBeAdded> |
 
 Examples:
-	| ListName     | RowGroup    | Column                            | Value          | Link             | ColumnToBeAdded |
-	| Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | All Devices      | Build Date      |
-	| Users        | Compliance  | App Count (Entitled)              | Domain         | All Users        | Common Name     |
-	| Mailboxes    | Alias       | Owner City                        | Created Date   | All Mailboxes    | Alias           |
-	| Applications | Application | Evergreen Capacity Unit           | Vendor         | All Applications | Application Key |
+	| ListName     | RowGroup    | Column                      | Value          | Link             | ColumnToBeAdded |
+	| Devices      | Compliance  | 2004: Application Readiness | Last Seen Date | All Devices      | Build Date      |
+	| Users        | Compliance  | App Count (Entitled)        | Domain         | All Users        | Common Name     |
+	| Mailboxes    | Alias       | Owner City                  | Created Date   | All Mailboxes    | Alias           |
+	| Applications | Application | Evergreen Capacity Unit     | Vendor         | All Applications | Application Key |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNewPivot
@@ -197,7 +197,7 @@ Examples:
 	| Devices      | Hostname    | DeviceSche: Bucket                | Building        | Boot Up Date    | Device       |
 	| Users        | Common Name | UserSchedu: Application Readiness | Cost Centre     | Description     | User         |
 	| Mailboxes    | Alias       | Department Name                   | Country         | Display Name    | Mailbox      |
-	| Applications | Vendor      | Babel(Engl: Category              | Application Key | Application Key | Application  |
+	| Applications | Vendor      | 2004: Category                    | Application Key | Application Key | Application  |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSavedPivot
@@ -223,8 +223,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFil
 	Then "Add column" checkbox is not displayed
 
 Examples:
-	| ListName     | RowGroup    | Column                            | Value          | PivotName                     | FilterName      | CategoryName |
-	| Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | Pivot_Devices_List_13747      | Boot Up Date    | Device       |
-	| Users        | Compliance  | App Count (Entitled)              | Domain         | Pivot_Users_List_13747        | Description     | User         |
-	| Mailboxes    | Alias       | Owner City                        | Created Date   | Pivot_Mailboxes_List_13747    | Display Name    | Mailbox      |
-	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Pivot_Applications_List_13747 | Application Key | Application  |
+	| ListName     | RowGroup    | Column                      | Value          | PivotName                     | FilterName      | CategoryName |
+	| Devices      | Compliance  | 2004: Application Readiness | Last Seen Date | Pivot_Devices_List_13747      | Boot Up Date    | Device       |
+	| Users        | Compliance  | App Count (Entitled)        | Domain         | Pivot_Users_List_13747        | Description     | User         |
+	| Mailboxes    | Alias       | Owner City                  | Created Date   | Pivot_Mailboxes_List_13747    | Display Name    | Mailbox      |
+	| Applications | Application | Evergreen Capacity Unit     | Vendor         | Pivot_Applications_List_13747 | Application Key | Application  |

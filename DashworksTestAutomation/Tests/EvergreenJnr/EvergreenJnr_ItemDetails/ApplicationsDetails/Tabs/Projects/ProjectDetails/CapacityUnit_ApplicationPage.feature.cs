@@ -143,7 +143,7 @@ this.FeatureBackground();
                         "cu_DAS19538_3",
                         "DAS19538",
                         "false",
-                        "I-Computer Scheduled Project"});
+                        "USE ME FOR AUTOMATION(USR SCHDLD)"});
 #line 10
  testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table1, "When ");
 #line 13
@@ -151,8 +151,8 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("Details page for \'ACDSee 4.0\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
- testRunner.When("User selects \'I-Computer Scheduled Project\' in the \'Item Details Project\' dropdow" +
-                    "n with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' in the \'Item Details Project\' dr" +
+                    "opdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17

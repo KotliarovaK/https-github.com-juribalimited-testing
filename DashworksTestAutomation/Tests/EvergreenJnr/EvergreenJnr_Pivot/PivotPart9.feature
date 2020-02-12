@@ -72,8 +72,8 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	Then 'All Users' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
-	| RowGroups          |
-	| MigrationP: Status |
+	| RowGroups    |
+	| 2004: Status |
 	And User selects the following Columns on Pivot:
 	| Columns |
 	| Country |
@@ -85,11 +85,6 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	| ColumnName    |
 	| Not Onboarded |
 	| Onboarded     |
-	| Forecast      |
-	| Scheduled     |
-	| Migrated      |
-	| Complete      |
-	| Offboarded    |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Last Logon Date" filter where type is "Between" without added column and Date options

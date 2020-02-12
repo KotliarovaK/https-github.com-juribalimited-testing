@@ -80,7 +80,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	When User clicks 'RUN LIST' button
 	When User selects 'Pivot' in the 'Create' dropdown
 	Then No pivot generated message is displayed
-	When User clicks the Pivot button
 	When User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| App Vendor |

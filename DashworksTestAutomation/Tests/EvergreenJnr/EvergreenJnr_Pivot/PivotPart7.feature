@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrec
 	| Compliance |
 	And User selects the following Values on Pivot:
 	| Values          |
-	| 1803: Readiness |
+	| 2004: Readiness |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Inventory Site" column in ascending order by default for the Pivot
@@ -219,5 +219,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	When User navigates to the "All Devices" list
 	And User navigates to the "PivotList_DAS13842" list
 	Then "PivotList_DAS13842" list is displayed to user
-	When User clicks 'Manage' option in Cog-menu for 'PivotList_DAS13842' list
+	When User clicks 'Manage' option in cogmenu for 'PivotList_DAS13842' list
 	Then "Dynamic Pivot Details" panel is displayed to the user

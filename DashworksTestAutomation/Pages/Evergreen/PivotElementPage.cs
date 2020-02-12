@@ -142,7 +142,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetCloseButtonForValueElementsByNameOnPivot(string button)
         {
-            var selector = By.XPath($"//div[text()='{button}']/..//following-sibling::button");
+            var selector = By.XPath($".//*[text()='{button}']/..//ancestor::button");
             return Driver.FindElement(selector);
         }
 

@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypin
 	| TRUE               |
 	And User create dynamic list with "TestListName" name on "Devices" page
 	Then "TestListName" list is displayed to user
-	When User clicks 'Manage' option in Cog-menu for 'TestListName' list
+	When User clicks 'Manage' option in cogmenu for 'TestListName' list
 	And User adds "post" to list name
 	Then "TestListNamepost" list is displayed to user
 
