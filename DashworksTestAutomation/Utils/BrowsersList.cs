@@ -18,6 +18,11 @@ namespace DashworksTestAutomation.Utils
 
         private RemoteWebDriver DriverInUse { get; set; }
 
+        public RemoteWebDriver GetBrowser()
+        {
+            return DriverInUse;
+        }
+
         //id starts from 0 where zero is the main browser
         public RemoteWebDriver GetBrowser(int id)
         {
@@ -33,7 +38,7 @@ namespace DashworksTestAutomation.Utils
             DriverInUse = _drivers[id];
 
             //Start ping thread if not yet started
-            if (_pingDriversThread.Equals(null))
+            if (_pingDriversThread == null)
             {
                 _pingDriversThread = new Thread(PingDrivers);
             }
@@ -44,6 +49,12 @@ namespace DashworksTestAutomation.Utils
         public void AddDriver(RemoteWebDriver driver)
         {
             _drivers.Add(driver);
+
+            //First browser that was added will be main in focus
+            if (_drivers.Count == 1)
+            {
+                DriverInUse = driver;
+            }
         }
 
         public List<RemoteWebDriver> GetAllBrowsers()
