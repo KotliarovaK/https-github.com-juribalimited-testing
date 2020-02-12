@@ -1533,6 +1533,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Mailboxes.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Bucket_UsersPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bucket_UsersPage.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\CapacityUnit_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2766,6 +2771,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\Mailboxes.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Mailboxes.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Bucket_UsersPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Bucket_UsersPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\CapacityUnit_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

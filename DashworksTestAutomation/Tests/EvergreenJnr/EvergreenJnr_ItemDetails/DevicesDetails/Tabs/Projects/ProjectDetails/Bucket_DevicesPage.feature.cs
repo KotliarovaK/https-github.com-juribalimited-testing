@@ -80,21 +80,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyF" +
+            "orAssociatedUsers")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS18227")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectly()
+        public virtual void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedUsers()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedUsersInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -113,9 +114,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyInternal()
+        private void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedUsersInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectly", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyF" +
+                    "orAssociatedUsers", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
@@ -172,7 +174,8 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAs" +
+            "sociatedUsers")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
@@ -180,14 +183,14 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS18227")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectly()
+        public virtual void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedUsers()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedUsersInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -206,9 +209,10 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyInternal()
+        private void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedUsersInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectly", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAs" +
+                    "sociatedUsers", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
@@ -221,57 +225,52 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "TeamName",
-                        "IsDefault"});
-            table2.AddRow(new string[] {
-                        "ItemDetailsBucket_DAS18227",
-                        "Admin IT",
-                        "false"});
 #line 31
- testRunner.When("User creates new Bucket via api", ((string)(null)), table2, "When ");
-#line 34
- testRunner.When("User navigates to the \'Device\' details page for \'02M88BG4P29EEM\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
- testRunner.Then("Details page for \'02M88BG4P29EEM\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 36
+ testRunner.When("User navigates to the \'Device\' details page for \'001PSUMZYOW581\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.Then("Details page for \'001PSUMZYOW581\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 33
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
+#line 34
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 38
+#line 35
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
+#line 36
  testRunner.When("User clicks on edit button for \'Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+ testRunner.When("User selects \'Evergreen Bucket 2\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 40
- testRunner.When("User selects \'ItemDetailsBucket_DAS18227\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 41
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
- testRunner.Then("\'The selected objects successfully moved to ItemDetailsBucket_DAS18227\' text is d" +
-                    "isplayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected objects successfully moved to Evergreen Bucket 2\' text is displayed" +
+                    " on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
                         "Value"});
-            table3.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Bucket",
-                        "ItemDetailsBucket_DAS18227"});
+                        "Evergreen Bucket 2"});
+#line 41
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2, "Then ");
 #line 44
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3, "Then ");
-#line 47
  testRunner.When("User clicks on edit button for \'Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
-            table4.AddRow(new string[] {
-                        "ItemDetailsBucket_DAS18227"});
+            table3.AddRow(new string[] {
+                        "Evergreen Bucket 2"});
+#line 45
+ testRunner.Then("\'Bucket\' column contains following content", ((string)(null)), table3, "Then ");
 #line 48
- testRunner.Then("\'Bucket\' column contains following content", ((string)(null)), table4, "Then ");
+ testRunner.When("User selects \'Unassigned\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
