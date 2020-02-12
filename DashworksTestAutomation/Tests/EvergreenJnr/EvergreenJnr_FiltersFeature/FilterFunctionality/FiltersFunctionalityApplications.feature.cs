@@ -4295,7 +4295,7 @@ this.FeatureBackground();
 #line 935
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 936
- testRunner.When("User clicks \'Remove\' option in cogmenu for \'ListToBeDeleted18560\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Delete\' option in cogmenu for \'ListToBeDeleted18560\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 937
  testRunner.When("User confirms list removing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 938

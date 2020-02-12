@@ -342,14 +342,14 @@ this.FeatureBackground();
 #line 62
  testRunner.Then("\"123456789012345678901234567890123456782\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 63
- testRunner.When("User clicks \'Remove\' option in cogmenu for \'1234567890123456789012345678901234567" +
+ testRunner.When("User clicks \'Delete\' option in cogmenu for \'1234567890123456789012345678901234567" +
                     "82\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
  testRunner.When("User confirms list removing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
  testRunner.Then("list with \"123456789012345678901234567890123456782\" name is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 66
- testRunner.When("User clicks \'Remove\' option in cogmenu for \'1234567890123456789012345678901234567" +
+ testRunner.When("User clicks \'Delete\' option in cogmenu for \'1234567890123456789012345678901234567" +
                     "890\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
  testRunner.When("User confirms list removing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

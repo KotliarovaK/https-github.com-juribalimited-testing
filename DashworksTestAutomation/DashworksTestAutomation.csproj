@@ -1648,6 +1648,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomListDisplayPart11.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListPanel\CustomListDisplayPart14.feature.cs">
+      <DependentUpon>CustomListDisplayPart14.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ListPanel\CustomListDisplayPart13.feature.cs">
       <DependentUpon>CustomListDisplayPart13.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2844,6 +2849,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ListFromCSV\ListsFromCSV.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ListsFromCSV.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ListPanel\CustomListDisplayPart14.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart14.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ListPanel\CustomListDisplayPart13.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

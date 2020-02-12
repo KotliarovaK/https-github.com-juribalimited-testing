@@ -1649,7 +1649,7 @@ this.FeatureBackground();
 #line 456
  testRunner.Then("\"DAS15423_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 457
- testRunner.When("User clicks \'Remove\' option in cogmenu for \'DAS15423_List\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Delete\' option in cogmenu for \'DAS15423_List\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 458
  testRunner.When("User confirms list removing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 459

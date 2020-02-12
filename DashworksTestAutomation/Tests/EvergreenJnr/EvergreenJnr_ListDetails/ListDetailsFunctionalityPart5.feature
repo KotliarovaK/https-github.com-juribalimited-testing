@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Application12075" list is displayed to user
 	When User clicks 'Delete' option in cogmenu for 'Application12075' list
 	Then "Application12075" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
-	When User clicks 'Remove' option in cogmenu for 'Application12075' list
+	When User clicks 'Delete' option in cogmenu for 'Application12075' list
 	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then "Application3_12075" list is displayed to user
 	When User clicks 'Delete' option in cogmenu for 'Application3_12075' list
 	Then "Application3_12075" list "list is used by 2 lists, do you wish to proceed?" message is displayed in the list panel
-	When User clicks 'Remove' option in cogmenu for 'Application3_12075' list
+	When User clicks 'Delete' option in cogmenu for 'Application3_12075' list
 	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	Then "Application4" list is displayed to user
 	When User clicks 'Delete' option in cogmenu for 'Application4' list
 	Then "Application4" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
-	When User clicks 'Remove' option in cogmenu for 'Application4' list
+	When User clicks 'Delete' option in cogmenu for 'Application4' list
 	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	Then data in table is sorted by 'Domain' column in ascending order
 	When User create dynamic list with "DynamicList4781" name on "Users" page
 	Then "DynamicList4781" list is displayed to user
-	When User clicks 'Remove' option in cogmenu for 'DynamicList4781' list
+	When User clicks 'Delete' option in cogmenu for 'DynamicList4781' list
 	When User confirms list removing
 	And User navigates to the "DynamicList4587" list
 	Then inline success banner is not displayed

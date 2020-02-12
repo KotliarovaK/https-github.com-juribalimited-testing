@@ -219,7 +219,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
         }
 
         [When(@"User confirms list removing")]
-        public void WhenUserRemovesCustomListWithName(string listName)
+        public void WhenUserRemovesCustomListWithName()
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitForElementToBeDisplayed(listElement.DeleteConfirmationMessage);

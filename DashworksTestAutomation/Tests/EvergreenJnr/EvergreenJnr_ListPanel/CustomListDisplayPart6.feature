@@ -60,10 +60,10 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongN
 	Then "1234567890123456789012345678901234567890" list is displayed to user
 	When User clicks 'Duplicate' option in cogmenu for '1234567890123456789012345678901234567890' list
 	Then "123456789012345678901234567890123456782" list is displayed to user
-	When User clicks 'Remove' option in cogmenu for '123456789012345678901234567890123456782' list
+	When User clicks 'Delete' option in cogmenu for '123456789012345678901234567890123456782' list
 	When User confirms list removing
 	Then list with "123456789012345678901234567890123456782" name is removed
-	When User clicks 'Remove' option in cogmenu for '1234567890123456789012345678901234567890' list
+	When User clicks 'Delete' option in cogmenu for '1234567890123456789012345678901234567890' list
 	When User confirms list removing
 	Then list with "1234567890123456789012345678901234567890" name is removed
 	When User clicks the Actions button

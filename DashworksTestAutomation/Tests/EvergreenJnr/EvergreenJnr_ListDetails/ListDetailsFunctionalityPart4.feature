@@ -136,7 +136,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessag
 	And "<ListName1>" list is displayed to user
 	When User clicks 'Delete' option in cogmenu for '<ListName1>' list
 	Then "<ListName1>" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
-	When User clicks 'Remove' option in cogmenu for '<ListName1>' list
+	When User clicks 'Delete' option in cogmenu for '<ListName1>' list
 	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

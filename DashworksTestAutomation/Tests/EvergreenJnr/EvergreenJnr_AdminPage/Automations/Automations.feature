@@ -454,7 +454,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "DAS15423_List" list
 	Then "DAS15423_List" list is displayed to user
-	When User clicks 'Remove' option in cogmenu for 'DAS15423_List' list
+	When User clicks 'Delete' option in cogmenu for 'DAS15423_List' list
 	When User confirms list removing
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
