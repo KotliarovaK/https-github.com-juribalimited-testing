@@ -9,6 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	Then User sees 'Print' tooltip for 'Print' on the Dashboard
 	Then User sees 'Refresh' tooltip for 'Refresh' on the Dashboard
+	When User clicks 'print' button
 	When User clicks 'print'  button on the Dashboards page
 	Then Print Preview is displayed to the User
 	Then There is no breadcrumbs displayed on Dashboard page
@@ -191,7 +192,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	And User sees Ellipsis icon disabled for Section having 'WidgetForDAS12977' Widget on Dashboards page
 	And User sees Ellipsis icon disabled for 'WidgetForDAS12977' Widget on Dashboards page
 	And Dashboards context menu is hidden on Dashboards page
-	When User clicks Dashboards Details icon on Dashboards page
+	When User clicks the Dashboard Details button
 	Then User sees Dashboards context menu on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Cleanup

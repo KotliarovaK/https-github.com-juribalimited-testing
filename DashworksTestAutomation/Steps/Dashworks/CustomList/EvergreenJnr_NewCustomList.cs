@@ -52,21 +52,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             Logger.Write("The Save to Custom List Element was NOT displayed");
         }
 
-        [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' item in left panel")]
-        public void WhenUserClicksOptionInCogMenuForList(string option, string listName)
-        {
-            var page = _driver.NowAt<CustomListElement>();
-            var icon = page.GetSettingsIconForList(listName);
-            _driver.MouseHover(icon);
-            _driver.WaitForElementToBeDisplayed(icon);
-            icon.Click();
-
-            var cogMenu = _driver.NowAt<CogMenuElements>();
-            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuList);
-            cogMenu.GetCogMenuOptionByName(option).Click();
-            _driver.WaitForDataLoading();
-        }
-
         [When(@"User creates '(.*)' dynamic list")]
         public void WhenUserCreatesDynamicList(string listName)
         {
@@ -233,19 +218,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             Utils.Verify.IsFalse(listElement.SaveAsDropdown.Displayed(), "Edit List menu is displayed");
         }
 
-        [When(@"User removes custom list with ""(.*)"" name")]
-        public void WhenUserRemovesCustomListWithName(string listName)
+        [When(@"User confirms list removing")]
+        public void WhenUserRemovesCustomListWithName()
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            WhenUserClicksOptionInCogMenuForList("Delete", listName);
             _driver.WaitForElementToBeDisplayed(listElement.DeleteConfirmationMessage);
-            listElement.ConfirmDeleteButton.Click();
-        }
-
-        [Then(@"User confirm removed list")]
-        public void ThenUserConfirmRemovedList()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
             listElement.ConfirmDeleteButton.Click();
         }
 

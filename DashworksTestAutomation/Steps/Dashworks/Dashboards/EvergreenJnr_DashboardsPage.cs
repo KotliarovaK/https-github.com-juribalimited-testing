@@ -135,69 +135,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Dashboards panel
 
-        //TODO should be deleted and replaced by the same step as it done for Lists - GetAllListNames
-        [Then(@"Dashboard with '(.*)' title displayed in All Dashboards")]
-        public void ThenFollowingDashboardDisplayedInAllDashboardList(string dashboardName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DashboardsList.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
-        }
-
-        [When(@"User clicks Settings button for '(.*)' dashboard")]
-        public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.GetDashboardMenuByName(dashboardName).Click();
-        }
-
-        [Then(@"User sees dashboard menu with next options")]
-        public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(Table table)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-
-            List<string> options = page.DashboardsSettingsItems.Select(x => x.Text).ToList();
-
-            foreach (var row in table.Rows)
-            {
-                Verify.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1,
-                    "PLEASE ADD EXCEPTION MESSAGE");
-            }
-            Verify.That(options.Count, Is.EqualTo(table.Rows.Count));
-        }
-
-        [When(@"User clicks menu for '(.*)' dashboard")]
-        public void WhenUserClicksMenuForDashboard(string dashboardName)
-        {
-            var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
-            dashboardElement.ClickMenuButtonByDashboardName(dashboardName);
-            Thread.Sleep(500);
-        }
-
-        [When(@"User selects '(.*)' menu for '(.*)' dashboard")]
-        public void WhenUserManagePaneForListName(string menuItem, string dashboardName)
-        {
-            var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
-
-            try
-            {
-                WhenUserClicksMenuForDashboard(dashboardName);
-                _driver.WaitForElementToBeDisplayed(dashboardElement.DashboardsSettingsItemByName(menuItem));
-                dashboardElement.DashboardsSettingsItemByName(menuItem).Click();
-
-                _driver.WaitForDataLoading(60);
-            }
-            catch (Exception)
-            {
-                if (menuItem.Equals("Duplicate"))
-                {
-                    var action = _driver.NowAt<BaseDashboardPage>();
-                    _driver.WaitForElementToBeDisplayed(action.SuccessMessage, 60);
-                    _dashboard.Value.Add(new DashboardDto() { DashboardName = $"{dashboardName}2", User = _user });
-                }
-            }
-        }
-
         [Then(@"Dashboard with name '(.*)' marked as favorite")]
         public void ThenUserSeesDashboardsMarkedAsFavorite(string dashboardName)
         {
