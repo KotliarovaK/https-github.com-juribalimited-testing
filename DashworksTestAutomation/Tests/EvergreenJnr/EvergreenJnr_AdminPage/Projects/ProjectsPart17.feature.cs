@@ -194,7 +194,7 @@ this.FeatureBackground();
 #line 36
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 37
- testRunner.When("User clicks \'Delete\' option in Cog-menu for \'TestList0A78U9\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Delete\' option in cogmenu for \'TestList0A78U9\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
  testRunner.Then("\"TestList0A78U9 list will be permanently deleted\" message is displayed in the lis" +
                     "ts panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -445,7 +445,7 @@ this.FeatureBackground();
 #line 90
  testRunner.Then("\"ListForProject\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
- testRunner.When("User clicks \'Delete\' option in Cog-menu for \'ListForProject\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Delete\' option in cogmenu for \'ListForProject\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
  testRunner.Then("\"list is used by 1 project, do you wish to proceed?\" message is displayed in the " +
                     "lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

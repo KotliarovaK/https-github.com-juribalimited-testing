@@ -328,7 +328,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table8.AddRow(new string[] {
-                        "Babel(Engl: Initiation"});
+                        "Current"});
 #line 54
  testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table8, "And ");
 #line hidden
@@ -419,7 +419,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table11.AddRow(new string[] {
-                        "1803: Target App Readiness"});
+                        "2004: Target App Readiness"});
 #line 73
  testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table11, "And ");
 #line hidden

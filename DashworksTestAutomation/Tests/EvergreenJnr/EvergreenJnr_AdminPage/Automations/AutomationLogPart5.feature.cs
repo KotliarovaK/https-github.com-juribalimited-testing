@@ -668,14 +668,16 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'18265_Automation\' item from \'Automa" +
                     "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 163
- testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'18265_Automation\' automation \'18265_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 164
- testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 165
- testRunner.When("User enters \"59\" text in the Search field for \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 166
- testRunner.And("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User enters \"59\" text in the Search field for \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 167
+ testRunner.And("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
  testRunner.Then("\"59\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

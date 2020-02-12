@@ -201,7 +201,7 @@ this.FeatureBackground();
 #line 38
  testRunner.Then("\"Application1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 39
- testRunner.When("User clicks \'Manage\' option in Cog-menu for \'Application1\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Application1\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 40
  testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 41
@@ -300,7 +300,7 @@ this.FeatureBackground();
 #line 57
  testRunner.Then("\"Adobe Apps\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
- testRunner.When("User clicks \'Manage\' option in Cog-menu for \'Adobe Apps\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Adobe Apps\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
  testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 60
@@ -340,7 +340,7 @@ this.FeatureBackground();
 #line 75
  testRunner.Then("\"Adobe Apps\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 76
- testRunner.When("User clicks \'Manage\' option in Cog-menu for \'Adobe Apps\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'Adobe Apps\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
  testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 78
@@ -458,7 +458,7 @@ this.FeatureBackground();
 #line 105
  testRunner.Then("\"A1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 106
- testRunner.When("User clicks \'Manage\' option in Cog-menu for \'A1\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'A1\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
  testRunner.Then("Details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 108
@@ -578,7 +578,7 @@ this.FeatureBackground();
 #line 131
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 132
- testRunner.When(string.Format("User clicks \'Delete\' option in Cog-menu for \'{0}\' list", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Delete\' option in cogmenu for \'{0}\' list", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 133
  testRunner.Then("Delete and Cancel buttons are available in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 134
@@ -588,23 +588,25 @@ this.FeatureBackground();
 #line 136
  testRunner.And(string.Format("\"{0}\" list is displayed to user", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 137
- testRunner.When(string.Format("User clicks \'Delete\' option in Cog-menu for \'{0}\' list", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Delete\' option in cogmenu for \'{0}\' list", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
  testRunner.Then(string.Format("\"{0}\" list \"list is used by 1 list, do you wish to proceed?\" message is displayed" +
                         " in the list panel", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 139
- testRunner.When(string.Format("User removes custom list with \"{0}\" name", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User clicks \'Delete\' option in cogmenu for \'{0}\' list", listName1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 140
- testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User confirms list removing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 141
- testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 142
- testRunner.When(string.Format("User navigates to the \"{0}\" list", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 143
- testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("User navigates to the \"{0}\" list", listName2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 144
- testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 145
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 146
  testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", filterInfoText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

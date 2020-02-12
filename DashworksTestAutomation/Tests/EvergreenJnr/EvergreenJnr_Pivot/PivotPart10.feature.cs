@@ -514,7 +514,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15328")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "HDD Count", "Count(HDD Count)", "Sum(HDD Count)", "Min(HDD Count)", "Max(HDD Count)", "Avg(HDD Count)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Device Count", "Count(Device Count)", "Sum(Device Count)", "Min(Device Count)", "Max(Device Count)", "Avg(Device Count)", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "1803: Current User Count", "Count(1803: Current User Count)", "Sum(1803: Current User Count)", "Min(1803: Current User Count)", "Max(1803: Current User Count)", "Avg(1803: Current User Count)", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "2004: Current User Count", "Count(2004: Current User Count)", "Sum(2004: Current User Count)", "Min(2004: Current User Count)", "Max(2004: Current User Count)", "Avg(2004: Current User Count)", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Associated Item Count", "Count(Associated Item Count)", "Sum(Associated Item Count)", "Min(Associated Item Count)", "Max(Associated Item Count)", "Avg(Associated Item Count)", null)]
         public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues(string list, string listLabel, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
         {
@@ -824,7 +824,7 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "TRUE"});
 #line 206
- testRunner.And("User add \"1803: In Scope\" filter where type is \"Equals\" with added column and fol" +
+ testRunner.And("User add \"2004: In Scope\" filter where type is \"Equals\" with added column and fol" +
                     "lowing checkboxes:", ((string)(null)), table21, "And ");
 #line 209
  testRunner.And("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

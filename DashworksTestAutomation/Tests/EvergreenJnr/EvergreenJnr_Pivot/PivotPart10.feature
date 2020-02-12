@@ -152,7 +152,7 @@ Examples:
 	| List         | ListLabel        | AddValues                | CountAggregateFunctions         | SumAggregateFunctions         | MinAggregateFunctions         | MaxAggregateFunctions         | AvgAggregateFunctions         |
 	| Devices      | All Devices      | HDD Count                | Count(HDD Count)                | Sum(HDD Count)                | Min(HDD Count)                | Max(HDD Count)                | Avg(HDD Count)                |
 	| Users        | All Users        | Device Count             | Count(Device Count)             | Sum(Device Count)             | Min(Device Count)             | Max(Device Count)             | Avg(Device Count)             |
-	| Applications | All Applications | 1803: Current User Count | Count(1803: Current User Count) | Sum(1803: Current User Count) | Min(1803: Current User Count) | Max(1803: Current User Count) | Avg(1803: Current User Count) |
+	| Applications | All Applications | 2004: Current User Count | Count(2004: Current User Count) | Sum(2004: Current User Count) | Min(2004: Current User Count) | Max(2004: Current User Count) | Avg(2004: Current User Count) |
 	| Mailboxes    | All Mailboxes    | Associated Item Count    | Count(Associated Item Count)    | Sum(Associated Item Count)    | Min(Associated Item Count)    | Max(Associated Item Count)    | Avg(Associated Item Count)    |
 
 @Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @DAS16403 @DAS16407 @Cleanup
@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
 	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in 'true'
 	And User clicks the Filters button
-	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	And User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
 	And User selects 'Pivot' in the 'Create' dropdown

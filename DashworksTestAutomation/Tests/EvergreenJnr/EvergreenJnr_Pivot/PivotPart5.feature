@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	| Barry'sUse: Audit & Configuration \ Validate User Device Ownership |
 	And User selects the following Values on Pivot:
 	| Values                      |
-	| 1803: Application Readiness |
+	| 2004: Application Readiness |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
