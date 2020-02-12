@@ -391,7 +391,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Last Logon Date"});
             table7.AddRow(new string[] {
-                        "MigrationP: Important Dates \\ Migrated Date"});
+                        "Barry\'sUse: Project Dates \\ Migrated Date"});
 #line 60
  testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table7, "When ");
 #line hidden
@@ -413,15 +413,15 @@ this.FeatureBackground();
 #line 70
  testRunner.Then("date in table is sorted by \'Last Logon Date\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 71
- testRunner.When("User clicks on \'MigrationP: Important Dates \\ Migrated Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Barry\'sUse: Project Dates \\ Migrated Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 72
- testRunner.Then("date in table is sorted by \'MigrationP: Important Dates \\ Migrated Date\' column i" +
-                    "n descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("date in table is sorted by \'Barry\'sUse: Project Dates \\ Migrated Date\' column in " +
+                    "descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 73
- testRunner.When("User clicks on \'MigrationP: Important Dates \\ Migrated Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Barry\'sUse: Project Dates \\ Migrated Date\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 74
- testRunner.Then("date in table is sorted by \'MigrationP: Important Dates \\ Migrated Date\' column i" +
-                    "n ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("date in table is sorted by \'Barry\'sUse: Project Dates \\ Migrated Date\' column in " +
+                    "ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

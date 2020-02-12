@@ -114,7 +114,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
-            Driver.WhatForElementToBeExists(SubMenuTopItems.First());
+            Driver.WaitForElementsToBeExists(SubMenuTopItems);
 
             if (SubMenuTopItems.Any(x => x.GetAttribute("class").Contains("selected")))
             {

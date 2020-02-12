@@ -11,8 +11,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInT
 	Then 'All Devices' list should be displayed to the user
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
-	| RowGroups                                              |
-	| MigrationP: Computer Stage \ Computer Owner Idenitfied |
+	| RowGroups        |
+	| UseMeForAu: Ring |
 	And User selects the following Columns on Pivot:
 	| Columns     |
 	| City        |
@@ -22,8 +22,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInT
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	Then data in the column headers is sorted in correct order for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the left-pinned column is sorted in descending order for the Pivot
+	Then color data in the left-pinned column is sorted in descending order for the Pivot
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864 @DAS13786 @DAS13867 @DAS15376
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder

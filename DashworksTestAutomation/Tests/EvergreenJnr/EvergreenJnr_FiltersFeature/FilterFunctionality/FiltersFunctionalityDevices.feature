@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	| Purple                  |
 	| Green                   |
 	| Grey                    |
-	| None                    |
+	| Empty                   |
 	When User Add And "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
@@ -78,13 +78,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| None               |
+	| Empty              |
 	Then Content is empty in the column
 	| ColumnName           |
 	| Windows7Mi: Category |
 	When User add "Windows7Mi: Category" filter where type is "Does not equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
-	| None               |
+	| Empty              |
 	When User clicks on 'Windows7Mi: Category' column header
 	Then Content is present in the newly added column
 	| ColumnName           |
@@ -105,13 +105,13 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameError
 
 Examples: 
 	| FilterName                                                      | SelectedCheckboxes   | Rows   |
-	| Windows7Mi: Category                                            | None                 | 17,248 |
+	| Windows7Mi: Category                                            | Empty                | 17,248 |
 	| Windows7Mi: Migration \ Values but no RAG                       | Three                | 1      |
 	| Windows7Mi: Portal Self Service \ SS Application List Completed | Not Applicable       | 5,159  |
-	| MigrationP: Category                                            | None                 | 17,274 |
-	| Babel(Engl: Path                                                | Machines             | 62     |
+	| UserSchedu: Category                                            | Empty                | 17,279 |
+	| Havoc(BigD: Path                                                | [Default (Computer)] | 8,403  |
 	| ComputerSc: Path                                                | Request Type A       | 132    |
-	| MigrationP: Path                                                | [Default (Computer)] | 41     |
+	| UserSchedu: Path                                                | [Default (Computer)] | 689    |
 	| UserSchedu: Path                                                | Request Type A       | 60     |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS12522
@@ -227,14 +227,14 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	When User add "1803: Pre-Migration \ Scheduled Date (Slot)" filter where type is "Does not equal" with added column and Lookup option
+	When User add "2004: Pre-Migration \ Scheduled Date (Slot)" filter where type is "Does not equal" with added column and Lookup option
 	| SelectedValues |
 	| Empty          |
 	When User Add And "Device Type" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Laptop         |
-	When User clicks on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
-	Then Content in the '1803: Pre-Migration \ Scheduled Date (Slot)' column is equal to
+	When User clicks on '2004: Pre-Migration \ Scheduled Date (Slot)' column header
+	Then Content in the '2004: Pre-Migration \ Scheduled Date (Slot)' column is equal to
 	| Content                    |
 	| Birmingham Morning         |
 	| Manchester Morning         |
@@ -246,8 +246,8 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
-	When User clicks on '1803: Pre-Migration \ Scheduled Date (Slot)' column header
-	Then Content in the '1803: Pre-Migration \ Scheduled Date (Slot)' column is equal to
+	When User clicks on '2004: Pre-Migration \ Scheduled Date (Slot)' column header
+	Then Content in the '2004: Pre-Migration \ Scheduled Date (Slot)' column is equal to
 	| Content                    |
 	| London Depot 09:00 - 11:00 |
 	| London Depot 09:00 - 11:00 |
@@ -262,13 +262,14 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 
 @Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS16394 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickingEditFilterForTheListBasedOnSavedListWithErrors
+	When User creates broken list with 'Broken list DAS16394' name on 'Devices' page
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Device (Saved List)" filter where type is "In list" with Selected Value and following Association:
-	| SelectedList                        | Association |
-	| Device List (Complex) - BROKEN LIST |             |
+	| SelectedList         | Association |
+	| Broken list DAS16394 |             |
 	When User creates 'List_DAS16394' dynamic list
 	Then "List_DAS16394" list is displayed to user
 	Then Create button is disabled on the Base Dashboard Page
@@ -408,11 +409,11 @@ Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreat
 Scenario: EvergreenJnr_DevicesList_CheckThatOffboardedItemsDontShowAnyOtherProjectProperties
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
-	When User add "1803: Status" filter where type is "Equals" with added column and Lookup option
+	When User add "2004: Status" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Offboarded     |
 	Then "4" rows are displayed in the agGrid
-	Then Content in the '1803: Status' column is equal to
+	Then Content in the '2004: Status' column is equal to
 	| Content    |
 	| Offboarded |
 	| Offboarded |
@@ -494,7 +495,7 @@ Scenario: EvergreenJnr_CheckThatThereIsNoAbilityToUseListAsFilterOptionIfItHasRe
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
-	When User add "1803: In Scope" filter where type is "Equals" with added column and Lookup option
+	When User add "2004: In Scope" filter where type is "Equals" with added column and Lookup option
     | SelectedValues |
     | TRUE           |
 	Then table content is present
@@ -512,7 +513,7 @@ Scenario: EvergreenJnr_Devices_CheckThatCorrectOptionsAreDisplayedForOwnerStatus
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "1803: Owner Status" filter
+	When user select "2004: Owner Status" filter
 	Then Following checkboxes are available for current opened filter:
     | checkboxes    |
     | Empty         |
