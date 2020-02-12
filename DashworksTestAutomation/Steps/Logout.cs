@@ -12,9 +12,9 @@ namespace DashworksTestAutomation.Steps
     {
         private readonly RemoteWebDriver _driver;
 
-        public Logout(RemoteWebDriver driver)
+        public Logout(RemoteWebDriver driver, BrowsersList browsersList)
         {
-            _driver = driver;
+            _driver = browsersList.GetBrowser();
         }
 
         [Then(@"Signed Out page is displayed to the user")]
