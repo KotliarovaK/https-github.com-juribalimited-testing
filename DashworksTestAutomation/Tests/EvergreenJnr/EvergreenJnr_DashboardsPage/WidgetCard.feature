@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List         | Type      | AggregateBy                          | AggregateFunction | Drilldown |
-	| Card       | WidgetForDAS16138 | 2004 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             | Yes       |
+	| Card       | WidgetForDAS16138 | 2004 Rollout | Aggregate | 2004: Pre-Migration \ Scheduled Date | First             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16138' Widget is displayed to the user
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	#Then Save as a new list option is available
 	Then "8" rows are displayed in the agGrid
 	When User clicks the Filters button
-	Then "1803: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
+	Then "2004: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 
 #serhii: testing purposes 11/28/2019
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks 'Applications' on the left-hand menu
 	And User clicks the Filters button
-	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	And User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               | 
 	And User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
@@ -79,14 +79,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	And User move 'Compliance' column to 'Application' column
 	And User move 'Application' column to 'Vendor' column
 	And User clicks on 'Compliance' column header
-	And User creates '1803 App Compliance' dynamic list
-	Then "1803 App Compliance" list is displayed to user
+	And User creates '2004 App Compliance' dynamic list
+	Then "2004 App Compliance" list is displayed to user
 	When Dashboard with 'Dashboard for DAS16069_2' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title               | List                | Type      | AggregateFunction | Drilldown |
-	| Card       | WidgetForDAS16069_2 | 1803 App Compliance | Aggregate | Count             | Yes       |
+	| Card       | WidgetForDAS16069_2 | 2004 App Compliance | Aggregate | Count             | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16069_2' Widget is displayed to the user	
@@ -109,8 +109,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	When User move 'Compliance' column to 'Application' column
 	When User move 'Application' column to 'Vendor' column
 	When User clicks on 'Compliance' column header
-	When User create dynamic list with "1803 App Compliance" name on "Applications" page
-	Then "1803 App Compliance" list is displayed to user
+	When User create dynamic list with "2004 App Compliance" name on "Applications" page
+	Then "2004 App Compliance" list is displayed to user
 	
 	When Dashboard with 'Dashboard for DAS15355' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List                | Type       |
-	| Card       | WidgetForDAS15355 | 1803 App Compliance | First Cell |
+	| Card       | WidgetForDAS15355 | 2004 App Compliance | First Cell |
 	Then Widget Preview is displayed to the user
 	Then Colour Scheme dropdown is not displayed to the user
 	
@@ -246,10 +246,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Readiness" filter where type is "Equals" with added column and Lookup option
+	When User add "2004: Readiness" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Green          |
-	And User move '1803: Readiness' column to 'Hostname' column
+	And User move '2004: Readiness' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DAS15355_List" name on "Devices" page
@@ -312,17 +312,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
-	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	And User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	And User Add And "1803: Pre-Migration \ Ready to Migrate" filter where type is "Equals" with added column and following checkboxes:
+	And User Add And "2004: Pre-Migration \ Ready to Migrate" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Ready              |
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                             |
-	| 1803: Pre-Migration \ Ready to Migrate |
-	And User move '1803: Pre-Migration \ Ready to Migrate' column to 'Hostname' column
+	| 2004: Pre-Migration \ Ready to Migrate |
+	And User move '2004: Pre-Migration \ Ready to Migrate' column to 'Hostname' column
 	Then 'All Devices' list should be displayed to the user
 	When User move 'Hostname' column to 'Device Type' column
 	Then 'All Devices' list should be displayed to the user
@@ -341,14 +341,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
-	And User add "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
+	And User add "2004: Readiness" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Green              |
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName      |
-	| 1803: Readiness |
-	And User move '1803: Readiness' column to 'Hostname' column
+	| 2004: Readiness |
+	And User move '2004: Readiness' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor16127" name on "Devices" page
@@ -374,8 +374,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                           |
-	| 1803: Pre-Migration \ Scheduled Date |
-	And User move '1803: Pre-Migration \ Scheduled Date' column to 'Hostname' column
+	| 2004: Pre-Migration \ Scheduled Date |
+	And User move '2004: Pre-Migration \ Scheduled Date' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor15765" name on "Devices" page
@@ -496,7 +496,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFun
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
-	| 1803: In Scope                       |
+	| 2004: In Scope                       |
 	| HDD Total Size (GB)                  |
 	| First Seen Date                      |
 	| Windows7Mi: Communication \ DateTime |
@@ -611,7 +611,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFilterAppliesWhenDrilledDownCardW
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List         | Type      | AggregateFunction | AggregateBy                            | Drilldown |
-	| Card       | WidgetForDAS18939 | 2004 Rollout | Aggregate | Severity          | 1803: Pre-Migration \ Ready to Migrate | Yes       |
+	| Card       | WidgetForDAS18939 | 2004 Rollout | Aggregate | Severity          | 2004: Pre-Migration \ Ready to Migrate | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS18939' Widget is displayed to the user

@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	And User move 'Hostname' column to 'Device Type' column
 	And User create dynamic list with "ListForDas15780" name on "Devices" page
 	Then "ListForDas15780" list is displayed to user
-	When Dashboard with '1803 ProjectDAS15780' name created via API and opened
+	When Dashboard with '2004 ProjectDAS15780' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget

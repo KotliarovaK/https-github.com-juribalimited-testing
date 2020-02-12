@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy          | AggregateFunction | AggregateBy                            | OrderBy              |
-	| Table      | WidgetForDAS18091 | 2004 Rollout | Operating System | Severity          | 1803: Pre-Migration \ Ready to Migrate | Operating System ASC |
+	| Table      | WidgetForDAS18091 | 2004 Rollout | Operating System | Severity          | 2004: Pre-Migration \ Ready to Migrate | Operating System ASC |
 	Then 'WidgetForDAS18091' Widget is displayed to the user
 	Then There is no 'Empty' column for 'WidgetForDAS18091' widget
 	#DAS18090 
@@ -267,7 +267,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	Then Filters panel is displayed to the user
 	Then "Operating System is Windows 7" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
-	Then "1803: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
+	Then "2004: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
 	#DAS16516
 	When Dashboard with 'Dashboard for DAS18091' name is opened via API
 	When User clicks 'READY' value for 'Windows Vista' column
@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	Then Filters panel is displayed to the user
 	Then "Operating System is Windows Vista" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
-	Then "1803: Pre-Migration \ Ready to Migrate is Ready" is displayed in added filter info
+	Then "2004: Pre-Migration \ Ready to Migrate is Ready" is displayed in added filter info
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidget
@@ -284,14 +284,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title     | List         | SplitBy                                | AggregateFunction | AggregateBy                            |
-	| Table      | DAS-15852 | 2004 Rollout | 1803: Pre-Migration \ Ready to Migrate | Severity          | 1803: Pre-Migration \ Ready to Migrate |
+	| Table      | DAS-15852 | 2004 Rollout | 2004: Pre-Migration \ Ready to Migrate | Severity          | 2004: Pre-Migration \ Ready to Migrate |
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                                                |
-	| 1803: Pre-Migration \ Ready to Migrate severity ASC  |
-	| 1803: Pre-Migration \ Ready to Migrate severity DESC |
-	| 1803: Pre-Migration \ Ready to Migrate ASC           |
-	| 1803: Pre-Migration \ Ready to Migrate DESC          |
-	When User selects '1803: Pre-Migration \ Ready to Migrate severity ASC' in the 'OrderBy' dropdown
+	| 2004: Pre-Migration \ Ready to Migrate severity ASC  |
+	| 2004: Pre-Migration \ Ready to Migrate severity DESC |
+	| 2004: Pre-Migration \ Ready to Migrate ASC           |
+	| 2004: Pre-Migration \ Ready to Migrate DESC          |
+	When User selects '2004: Pre-Migration \ Ready to Migrate severity ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS-15852' Widget is displayed to the user
@@ -304,7 +304,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	| Unknown   |
 	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	When User selects '1803: Pre-Migration \ Ready to Migrate DESC' in the 'OrderBy' dropdown
+	When User selects '2004: Pre-Migration \ Ready to Migrate DESC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button
 	Then 'DAS-15852' Widget is displayed to the user
@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessValuesAreShownWithTheCorrectColours
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
-	And User add "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
+	And User add "2004: Readiness" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Green              |
 	And User clicks Save button on the list panel
@@ -331,7 +331,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessValuesAreShownWithTheCor
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy     | OrderBy             |
-	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | 1803: Readiness | 1803: Readiness ASC |
+	| Table      | DAS16275_Widget | Devices_List_DAS15852 | Device Type | Severity          | 2004: Readiness | 2004: Readiness ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS16275_Widget' Widget is displayed to the user
@@ -398,10 +398,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingE
 Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyAfterClickingThroughTableWidget
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
-	When User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	When User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	When User Add And "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
+	When User Add And "2004: Readiness" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Empty              |
 	| Green              |
@@ -413,7 +413,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy        | AggregateFunction | AggregateBy     | OrderBy            |
-	| Table      | DAS18327_Widget | Devices_List_DAS18327 | 1803: In Scope | Severity          | 1803: Readiness | 1803: In Scope ASC |
+	| Table      | DAS18327_Widget | Devices_List_DAS18327 | 2004: In Scope | Severity          | 2004: Readiness | 2004: In Scope ASC |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS18327_Widget' Widget is displayed to the user
@@ -422,7 +422,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
-	Then "(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber AND 1803: In Scope = true)" text is displayed in filter container
+	Then "(2004: In Scope = true AND 2004: Readiness = Empty, Green or Amber AND 2004: In Scope = true)" text is displayed in filter container
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18232 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplayedInTableWidget
@@ -471,14 +471,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedI
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                             |
-	| 1803: Pre-Migration \ Ready to Migrate |
+	| 2004: Pre-Migration \ Ready to Migrate |
 	When User create dynamic list with "19369_List" name on "Devices" page
 	When Dashboard with 'Dashboard for DAS19369' name created via API and opened
 	When User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title     | List       | SplitBy     | AggregateFunction | AggregateBy                            | OrderBy         | MaxValues |
-	| Table      | DAS-19369 | 19369_List | Device Type | Severity          | 1803: Pre-Migration \ Ready to Migrate | Device Type ASC | 30        |
+	| Table      | DAS-19369 | 19369_List | Device Type | Severity          | 2004: Pre-Migration \ Ready to Migrate | Device Type ASC | 30        |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS-19369' Widget is displayed to the user
