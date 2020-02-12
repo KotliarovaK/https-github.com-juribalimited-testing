@@ -55,8 +55,8 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList       | Association    |
 	| Application3_12075 | Used on device |
-	And User create dynamic list with "ATDevices3_12075" name on "Devices" page
-	Then "ATDevices3_12075" list is displayed to user
+	And User create dynamic list with "Devices3_12075" name on "Devices" page
+	Then "Devices3_12075" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
@@ -64,8 +64,8 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList       | Association        |
 	| Application3_12075 | Entitled to device |
-	And User create dynamic list with "ATDevices4_12075" name on "Devices" page
-	Then "ATDevices4_12075" list is displayed to user
+	And User create dynamic list with "Devices4_12075" name on "Devices" page
+	Then "Devices4_12075" list is displayed to user
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application3_12075" list
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "ATDevices3_12075" list
+	When User navigates to the "Devices3_12075" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] used on device" is displayed in added filter info
@@ -122,20 +122,20 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	Then 'All Users' list should be displayed to the user
 	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
-	When User create dynamic list with "ATDynamicList2569" name on "Users" page
-	Then "ATDynamicList2569" list is displayed to user
+	When User create dynamic list with "DynamicList2569" name on "Users" page
+	Then "DynamicList2569" list is displayed to user
 	When User navigates to the "All Users" list
-	And User create static list with "ATStaticList2584" name on "Users" page with following items
+	And User create static list with "StaticList2584" name on "Users" page with following items
 	| ItemName            |
 	| 000F977AC8824FE39B8 |
 	| 002B5DC7D4D34D5C895 |
-	Then "ATStaticList2584" list is displayed to user
+	Then "StaticList2584" list is displayed to user
 	And table content is present
 	And "2" rows are displayed in the agGrid
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	When User clicks Delete list button
-	And User navigates to the "ATDynamicList2569" list
+	And User navigates to the "DynamicList2569" list
 	Then inline success banner is not displayed
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
