@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| Pre-Migration \ Out Of Office End Date                    |
 	| Pre-Migration \ Out Of Office Start Date                  |
 	| Pre-Migration \ Scheduled date                            |
-	| Project Dates \ Target Date                               |
+	| Pre-Migration \ Target date                               |
 	When User clicks 'CANCEL' button
 	And User clicks 'CREATE SLOT' button
 	When User checks 'Shared Mailbox' option after search from 'Paths' autocomplete
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| Pre-Migration \ Out Of Office End Date                    |
 	| Pre-Migration \ Out Of Office Start Date                  |
 	| Pre-Migration \ Scheduled date                            |
-	| Project Dates \ Target Date                               |
+	| Pre-Migration \ Target date                               |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13671 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForSelection

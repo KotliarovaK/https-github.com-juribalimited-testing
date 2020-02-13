@@ -30,31 +30,30 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	When User clicks on 'Application' column header
 	When User create dynamic list with "DynamicListFirst" name on "Applications" page
 	Then "DynamicListFirst" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
+	When User clicks the Permissions button
 	Then current user is selected in 'Owner' autocomplete
 	When User navigates to the "All Applications" list
 	Then 'All Applications' list should be displayed to the user
 	When User clicks on 'Vendor' column header
-	When User create dynamic list with "DynamicListSecond" name on "Applications" page
-	Then "DynamicListSecond" list is displayed to user
-	When User clicks the List Details button
+	When User create dynamic list with "DynamicListSecond5684" name on "Applications" page
+	Then "DynamicListSecond5684" list is displayed to user
+	When User clicks the Permissions button
 	Then current user is selected in 'Owner' autocomplete
-	When User create static list with "StaticList7844" name on "Applications" page with following items
+	When User create static list with "StaticList7844AT" name on "Applications" page with following items
 	| ItemName |
 	|          |
-	Then "StaticList7844" list is displayed to user
-	When User clicks the List Details button
+	Then "StaticList7844AT" list is displayed to user
+	When User clicks the Permissions button
 	Then current user is selected in 'Owner' autocomplete
 	When User navigates to the "DynamicListFirst" list
-	When User clicks the List Details button
-	Then current user is selected in 'Owner' autocomplete
-	When User navigates to the "DynamicListSecond" list
 	When User clicks the Permissions button
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	Then current user is selected in 'Owner' autocomplete
+	When User navigates to the "DynamicListSecond5684" list
+	When User clicks the Permissions button
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "DynamicListFirst" list
-	When User clicks the List Details button
+	When User clicks the Permissions button
 	Then current user is selected in 'Owner' autocomplete
 
 @Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS13066 @DAS15561 @DAS15569 @DAS16403 @DAS16407 @Cleanup
@@ -78,13 +77,11 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	Then form container is displayed to the user
 	When User selects 'Administrator' option from 'User' autocomplete
 	When User clicks 'CANCEL' button 
-	And User clicks 'ADD USER' button 
+	And User clicks 'ADD USER' button
 	When User selects 'Administrator' option from 'User' autocomplete
-	When User selects 'Edit' option from 'Permission' autocomplete
+	When User selects 'Edit' in the 'Permission' dropdown
 	And User clicks 'ADD USER' button
-	And User clicks 'ADD USER' button
-	And User clicks the Columns button
-	Then Columns panel is displayed to the user
+	When User clicks Close panel button
 	When User clicks the Permissions button
 	Then There are no errors in the browser console
 	And "Admin" Sharing user is displayed correctly
@@ -99,7 +96,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOwnersIsDisplayedInAlphabeticalOrde
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks on 'Hostname' column header
-	And User create dynamic list with "List13029" name on "Devices" page
-	Then "List13029" list is displayed to user
+	And User create dynamic list with "ATList13029" name on "Devices" page
+	Then "ATList13029" list is displayed to user
 	When User clicks the Permissions button
-	Then options are sorted in alphabetical order in the 'Owner' dropdown
+	Then 'Owner' autocomplete options are sorted in the alphabetical order

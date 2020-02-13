@@ -139,16 +139,16 @@ this.FeatureBackground();
                         "WidgetForDAS15918",
                         "2004 Rollout",
                         "Count",
-                        "1803: Pre-Migration \\ Ready to Migrate"});
+                        "2004: Pre-Migration \\ Ready to Migrate"});
 #line 12
  testRunner.And("User adds new Widget", ((string)(null)), table1, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
             table2.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate ASC"});
+                        "2004: Pre-Migration \\ Ready to Migrate ASC"});
             table2.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate DESC"});
+                        "2004: Pre-Migration \\ Ready to Migrate DESC"});
             table2.AddRow(new string[] {
                         "Count ASC"});
             table2.AddRow(new string[] {

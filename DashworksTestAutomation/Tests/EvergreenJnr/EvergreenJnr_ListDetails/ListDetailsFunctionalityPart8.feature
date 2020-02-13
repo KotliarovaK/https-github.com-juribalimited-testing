@@ -86,14 +86,14 @@ Examples:
 Scenario: EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPane
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
-	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	And User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	And User create dynamic list with "TestListName" name on "Devices" page
-	Then "TestListName" list is displayed to user
-	When User clicks 'Manage' option in cogmenu for 'TestListName' list
+	And User create dynamic list with "TestListName4682" name on "Devices" page
+	Then "TestListName4682" list is displayed to user
+	When User clicks 'Manage' option in cogmenu for 'TestListName4682' list
 	And User adds "post" to list name
-	Then "TestListNamepost" list is displayed to user
+	Then "TestListName4682post" list is displayed to user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS17632
 Scenario: EvergreenJnr_DevicesLists_CheckThatArchivedEmptyNameCantBeClicked

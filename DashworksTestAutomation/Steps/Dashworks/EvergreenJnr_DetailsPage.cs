@@ -544,14 +544,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
         }
 
-        [When(@"User clicks New Ring ddl in popup of Project Summary section on the Details Page")]
-        public void WhenUserClicksNewRingDdlOfInProjectSummarySectionOnTheDetailsPage()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForElementToBeDisplayed(detailsPage.ProjectSummaryRingPopupDDL);
-            detailsPage.ProjectSummaryRingPopupDDL.Click();
-        }
-
         [Then(@"Rings ddl contains data on Project Summary section of the Details Page")]
         public void ThenRingDdlContainsOptionsInProjectSummarySectionOnTheDetailsPage()
         {

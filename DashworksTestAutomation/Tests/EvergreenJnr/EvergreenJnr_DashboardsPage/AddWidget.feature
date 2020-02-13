@@ -248,7 +248,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      |
 	| Bar        | WidgetForDAS16842 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC |
 	Then 'WidgetForDAS16842' Widget is displayed to the user
-	When User clicks Dashboards Details icon on Dashboards page
+	When User clicks the Dashboard Details button
 	When User expands the list of shared lists
 	Then User sees list icon displayed for 'WidgetForDAS16842' widget in List section of Dashboards Details
 	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details
@@ -329,6 +329,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnGroupsFi
 	| WidgetType | Title               | List              | SplitBy  | AggregateFunction | AggregateBy | OrderBy       |
 	| Bar        | WidgetForDAS18759_1 | ListForDAS18759_1 | Hostname | Count distinct    | Hostname    | Hostname DESC |
 	Then 'WidgetForDAS18759_1' Widget is displayed to the user
-	When User clicks Dashboards Details icon on Dashboards page
+	When User clicks the Dashboard Details button
 	When User expands the list of shared lists
 	Then User sees list icon displayed for 'WidgetForDAS18759_1' widget in List section of Dashboards Details

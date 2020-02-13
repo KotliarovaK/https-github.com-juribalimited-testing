@@ -907,12 +907,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	Then Category with counter is displayed on Columns panel
 	| Category                  | Number |
 	| Evergreen                 | 1      |
-	| Project Rings: 1803       | 1      |
-	| Project Rings: Babel(Engl | 1      |
+	| Project Rings: 2004       | 1      |
 	| Project Rings: ComputerSc | 1      |
 	| Project Rings: DeviceSche | 1      |
 	| Project Rings: Havoc(BigD | 1      |
-	| Project Rings: ICSP       | 1      |
 	| Project Rings: prK        | 1      |
 	| Project Rings: Windows101 | 1      |
 	| Project Rings: Windows102 | 1      |
@@ -929,7 +927,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	| Category                  | Number |
 	| Evergreen                 | 1      |
 	| Project Rings: Barry'sUse | 1      |
-	| Project Rings: MigrationP | 1      |
 	| Project Rings: UserEvergr | 1      |
 	| Project Rings: UserSched2 | 1      |
 	| Project Rings: UserSchedu | 1      |
