@@ -48,3 +48,28 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsWorksCor
 	When User selects 'Unassigned' option from 'Move Bucket' autocomplete
 	When User clicks 'MOVE' button on popup
 	When User clicks 'MOVE' button on popup
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18227 @Cleanup
+Scenario: EvergreenJnr_AllLists_CheckThatValueForBucketIsChangingSuccessfullyForUserWithSpecificAccess
+	When User create new User via API
+	| Username        | Email | FullName | Password  | Roles                                                                                                                        |
+	| UserDAS18227454 | Value | DAS18227 | m!gration | Project Application Object Editor, Project Computer Object Editor, Project Mailbox Object Editor, Project User Object Editor |
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username        | Password  |
+	| UserDAS18227454 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+		#--Devices--#
+	When User navigates to the 'Device' details page for the item with '5123' ID
+	Then Details page for '001PSUMZYOW581' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Bucket' field is not displayed
+		#--Users--#
+	When User navigates to the 'User' details page for the item with '89891' ID
+	Then Details page for '01DE1433D11E44E6A4A (Anderson, Nancy)' item is displayed to the user
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then button for editing the 'Bucket' field is not displayed
