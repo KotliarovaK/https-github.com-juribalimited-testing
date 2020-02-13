@@ -25,6 +25,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public By SettingsIcon = By.XPath(".//ancestor::div[@class='submenu-item']//i[contains(@class,'settings')]");
 
+        public By SettingsIconOnDashboard = By.XPath(".//following-sibling::div//i[contains(@class,'settings')]");
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'list-edit-wrapper')]//button")]
         public IWebElement CreateNewListButton { get; set; }
 
@@ -92,7 +94,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
                 default:
                     var listElement = ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
-                        .FirstOrDefault(c => c.GetAttribute("text").Equals(listName));
+                        .FirstOrDefault(c => c.Text.Equals(listName));
                     if (listElement.Displayed())
                     {
                         return listElement;
@@ -112,7 +114,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetActiveList()
         {
-            Driver.WhatForElementToBeExists(SubMenuTopItems.First());
+            Driver.WaitForElementsToBeExists(SubMenuTopItems);
 
             if (SubMenuTopItems.Any(x => x.GetAttribute("class").Contains("selected")))
             {
@@ -162,7 +164,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetSettingsIconForList(string listName)
         {
-            return GetListElementByName(listName).FindElement(SettingsIcon);
+            try
+            {
+                return GetListElementByName(listName).FindElement(SettingsIcon);
+            }
+            catch (Exception)
+            {
+                return GetListElementByName(listName).FindElement(SettingsIconOnDashboard);
+            }
+            
         }
 
         public IWebElement GetListNameOnTopToolsPanel(string listName)

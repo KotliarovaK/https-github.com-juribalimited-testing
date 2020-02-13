@@ -735,7 +735,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Device Key"});
             table12.AddRow(new string[] {
-                        "1803: In Scope"});
+                        "2004: In Scope"});
             table12.AddRow(new string[] {
                         "HDD Total Size (GB)"});
             table12.AddRow(new string[] {
@@ -827,7 +827,7 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "Device Key"});
             table13.AddRow(new string[] {
-                        "1803: In Scope"});
+                        "2004: In Scope"});
             table13.AddRow(new string[] {
                         "HDD Total Size (GB)"});
             table13.AddRow(new string[] {
@@ -876,7 +876,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "Owner Display Name"});
             table14.AddRow(new string[] {
-                        "1803: In Scope"});
+                        "2004: In Scope"});
             table14.AddRow(new string[] {
                         "Windows7Mi: Communication \\ DateTime"});
 #line 185
@@ -955,7 +955,7 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "Device Key"});
             table15.AddRow(new string[] {
-                        "1803: In Scope"});
+                        "2004: In Scope"});
             table15.AddRow(new string[] {
                         "HDD Total Size (GB)"});
             table15.AddRow(new string[] {
@@ -1052,7 +1052,7 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "Device Key"});
             table17.AddRow(new string[] {
-                        "1803: In Scope"});
+                        "2004: In Scope"});
             table17.AddRow(new string[] {
                         "HDD Total Size (GB)"});
             table17.AddRow(new string[] {
@@ -1845,7 +1845,7 @@ this.FeatureBackground();
             table32.AddRow(new string[] {
                         "Grey"});
 #line 424
- testRunner.When("User add \"1803: Readiness\" filter where type is \"Does not equal\" with added colum" +
+ testRunner.When("User add \"2004: Readiness\" filter where type is \"Does not equal\" with added colum" +
                     "n and following checkboxes:", ((string)(null)), table32, "When ");
 #line 430
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1872,9 +1872,9 @@ this.FeatureBackground();
                         "Pie",
                         "WidgetForDAS17467_1",
                         "ListForDAS17467_1",
-                        "1803: Readiness",
+                        "2004: Readiness",
                         "Count",
-                        "1803: Readiness ASC",
+                        "2004: Readiness ASC",
                         "true"});
 #line 436
  testRunner.When("User adds new Widget", ((string)(null)), table33, "When ");
@@ -2312,7 +2312,7 @@ this.FeatureBackground();
             table40.AddRow(new string[] {
                         "Grey"});
 #line 529
- testRunner.When("User add \"1803: Readiness\" filter where type is \"Equals\" with added column and fo" +
+ testRunner.When("User add \"2004: Readiness\" filter where type is \"Equals\" with added column and fo" +
                     "llowing checkboxes:", ((string)(null)), table40, "When ");
 #line 535
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2339,9 +2339,9 @@ this.FeatureBackground();
                         "Pie",
                         "WidgetForDAS18574",
                         "ListForDAS18574",
-                        "1803: Readiness",
+                        "2004: Readiness",
                         "Count",
-                        "1803: Readiness ASC",
+                        "2004: Readiness ASC",
                         "true"});
 #line 541
  testRunner.When("User adds new Widget", ((string)(null)), table41, "When ");

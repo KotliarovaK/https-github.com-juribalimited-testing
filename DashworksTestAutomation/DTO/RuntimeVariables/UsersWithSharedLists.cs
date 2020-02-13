@@ -2,7 +2,7 @@
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
-    //If we assigne list to any user we nned to add it to this list
+    //If we assigne list to any user we need to add it to this list
     //to be able to remove list after test execution
     public class UsersWithSharedLists
     {

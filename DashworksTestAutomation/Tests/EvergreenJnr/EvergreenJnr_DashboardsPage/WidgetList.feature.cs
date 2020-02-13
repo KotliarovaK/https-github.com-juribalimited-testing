@@ -231,14 +231,14 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table2.AddRow(new string[] {
-                        "1803: Application Rationalisation"});
+                        "2004: Application Rationalisation"});
 #line 32
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table3.AddRow(new string[] {
-                        "1803: Application Rationalisation"});
+                        "2004: Application Rationalisation"});
 #line 35
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table3, "Then ");
 #line 38
