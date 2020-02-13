@@ -23,9 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public By ListStarIcons = By.XPath(".//preceding-sibling::span//i[contains(@class,'star')]");
 
-        public By SettingsIcon = By.XPath(".//ancestor::div[@class='submenu-item']//i[contains(@class,'settings')]");
-
-        public By SettingsIconOnDashboard = By.XPath(".//following-sibling::div//i[contains(@class,'settings')]");
+        public By SettingsIcon = By.XPath(".//ancestor::li//i[contains(@class,'settings')]");
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'list-edit-wrapper')]//button")]
         public IWebElement CreateNewListButton { get; set; }
@@ -164,16 +162,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetSettingsIconForList(string listName)
         {
-            try
-            {
-                return GetListElementByName(listName).FindElement(SettingsIcon);
-            }
-            catch (Exception)
-            {
-                //for dashboard page
-                return GetListElementByName(listName).FindElement(SettingsIconOnDashboard);
-            }
-            
+            return GetListElementByName(listName).FindElement(SettingsIcon);
         }
 
         public IWebElement GetListNameOnTopToolsPanel(string listName)
