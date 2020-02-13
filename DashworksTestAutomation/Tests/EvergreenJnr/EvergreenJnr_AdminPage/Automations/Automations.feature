@@ -384,7 +384,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks 'CREATE AUTOMATION' button 
 	Then 'Create Automation' page subheader is displayed to user
 	When User enters '16764_Automation' text to 'Automation Name' textbox
-	When User enters '16764' text to 'Description' textbox
+	When User enters 'test_16764' text to 'Description' textbox
 	When User selects 'All Devices' option from 'Scope' autocomplete
 	When User checks 'Active' checkbox
 	When User checks 'Stop on failed action' checkbox
@@ -395,7 +395,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks newly created object link
 	Then Automation page is displayed correctly
 	Then 'All Devices' content is displayed in 'Scope' textbox
-	Then "16764" content is displayed in "Description" field
+	Then "test_16764" content is displayed in "Description" field
 	Then 'Manual' content is displayed in 'Run' dropdown
 	Then 'Active' checkbox is checked
 	Then 'Stop on failed action' checkbox is checked
