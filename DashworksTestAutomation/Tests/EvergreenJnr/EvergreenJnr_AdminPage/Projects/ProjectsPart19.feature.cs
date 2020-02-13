@@ -147,8 +147,6 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "*Project K-Computer Scheduled Project"});
             table1.AddRow(new string[] {
-                        ":/"});
-            table1.AddRow(new string[] {
                         "2004 Rollout"});
             table1.AddRow(new string[] {
                         "Barry\'s User Project"});
@@ -162,8 +160,6 @@ this.FeatureBackground();
                         "Havoc (Big Data)"});
             table1.AddRow(new string[] {
                         "Mailbox Evergreen Capacity Project"});
-            table1.AddRow(new string[] {
-                        "Migration Project Phase 2 (User Project)"});
             table1.AddRow(new string[] {
                         "Project 00 M Computer Scheduled"});
             table1.AddRow(new string[] {
@@ -252,20 +248,20 @@ this.FeatureBackground();
                         "DAS13110",
                         "Cleanup",
                         "Projects"});
-#line 45
+#line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 46
+#line 44
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 47
+#line 45
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 48
+#line 46
  testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 49
+#line 47
  testRunner.And("User create dynamic list with \"Dynamic13110\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 48
  testRunner.Then("\"Dynamic13110\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -278,17 +274,17 @@ this.FeatureBackground();
                         "Dynamic13110",
                         "None",
                         "Standalone Project"});
-#line 51
+#line 49
  testRunner.When("Project created via API and opened", ((string)(null)), table2, "When ");
-#line 54
+#line 52
  testRunner.Then("Page with \'Project13110Dynamic1\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 55
+#line 53
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 56
+#line 54
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
+#line 55
  testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 56
  testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -299,16 +295,16 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table3.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 59
+#line 57
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table3, "When ");
-#line 64
+#line 62
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 63
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 64
  testRunner.Then("\'3 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 67
+#line 65
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -319,15 +315,15 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table4.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 68
+#line 66
  testRunner.Then("following Items are displayed in the History table", ((string)(null)), table4, "Then ");
-#line 73
+#line 71
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 72
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 75
+#line 73
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 74
  testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -338,16 +334,16 @@ this.FeatureBackground();
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
             table5.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
-#line 77
+#line 75
  testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table5, "And ");
-#line 82
+#line 80
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 81
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 82
  testRunner.Then("\'3 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 85
+#line 83
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -358,9 +354,9 @@ this.FeatureBackground();
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
             table6.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English"});
-#line 86
+#line 84
  testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table6, "Then ");
-#line 91
+#line 89
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -373,17 +369,17 @@ this.FeatureBackground();
                         "Dynamic13110",
                         "None",
                         "Standalone Project"});
-#line 92
+#line 90
  testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
-#line 95
+#line 93
  testRunner.Then("Page with \'Project13110Dynamic2\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 96
+#line 94
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
+#line 95
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 98
+#line 96
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 97
  testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -394,16 +390,16 @@ this.FeatureBackground();
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
             table8.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
-#line 100
+#line 98
  testRunner.And("User selects following Objects from the expandable multiselect", ((string)(null)), table8, "And ");
-#line 105
+#line 103
  testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 106
+#line 104
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 105
  testRunner.Then("\'3 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 108
+#line 106
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -414,17 +410,17 @@ this.FeatureBackground();
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
             table9.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English"});
-#line 109
+#line 107
  testRunner.Then("following Items are displayed in the History table", ((string)(null)), table9, "Then ");
-#line 114
+#line 112
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 113
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 116
+#line 114
  testRunner.And("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
+#line 115
  testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
+#line 116
  testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -435,16 +431,16 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table10.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 119
+#line 117
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table10, "When ");
-#line 124
+#line 122
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 123
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
+#line 124
  testRunner.Then("\'3 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 127
+#line 125
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -455,9 +451,9 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table11.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 128
+#line 126
  testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table11, "Then ");
-#line 133
+#line 131
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -511,7 +507,7 @@ this.FeatureBackground();
                         "Projects",
                         "DAS13110",
                         "Cleanup"});
-#line 136
+#line 134
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -525,10 +521,10 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table12.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 137
+#line 135
  testRunner.When("User create static list with \"Static13110\" name on \"Devices\" page with following " +
                     "items", ((string)(null)), table12, "When ");
-#line 142
+#line 140
  testRunner.Then("\"Static13110\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -541,17 +537,17 @@ this.FeatureBackground();
                         "Static13110",
                         "None",
                         "Standalone Project"});
-#line 143
+#line 141
  testRunner.When("Project created via API and opened", ((string)(null)), table13, "When ");
-#line 146
+#line 144
  testRunner.Then("Page with \'Project13110Static1\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 147
+#line 145
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 148
+#line 146
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 149
+#line 147
  testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 150
+#line 148
  testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -562,16 +558,16 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table14.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 151
+#line 149
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table14, "When ");
-#line 156
+#line 154
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 157
+#line 155
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 158
+#line 156
  testRunner.Then("\'3 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 159
+#line 157
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -582,38 +578,38 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table15.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 160
+#line 158
  testRunner.Then("following Items are displayed in the History table", ((string)(null)), table15, "Then ");
-#line 165
+#line 163
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 166
+#line 164
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 167
+#line 165
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table16.AddRow(new string[] {
                         "NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) (7.1.0)"});
-#line 168
+#line 166
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table16, "When ");
-#line 171
+#line 169
  testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
+#line 170
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 173
+#line 171
  testRunner.Then("\'1 object queued for onboarding, 0 objects offboarded\' text is displayed on inlin" +
                     "e success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 174
+#line 172
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table17.AddRow(new string[] {
                         "NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1)"});
-#line 175
+#line 173
  testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table17, "Then ");
-#line 178
+#line 176
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -626,15 +622,15 @@ this.FeatureBackground();
                         "Static13110",
                         "None",
                         "Standalone Project"});
-#line 179
+#line 177
  testRunner.When("Project created via API and opened", ((string)(null)), table18, "When ");
-#line 182
+#line 180
  testRunner.Then("Page with \'Project13110Static2\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 183
+#line 181
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 184
+#line 182
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 185
+#line 183
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -645,16 +641,16 @@ this.FeatureBackground();
                         "AddressGrabber Standard (3.1)"});
             table19.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0 (1.0)"});
-#line 186
+#line 184
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table19, "When ");
-#line 191
+#line 189
  testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 192
+#line 190
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 193
+#line 191
  testRunner.Then("\'3 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 194
+#line 192
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -665,15 +661,15 @@ this.FeatureBackground();
                         "AddressGrabber Standard"});
             table20.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0"});
-#line 195
+#line 193
  testRunner.Then("following Items are displayed in the History table", ((string)(null)), table20, "Then ");
-#line 200
+#line 198
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 201
+#line 199
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 202
+#line 200
  testRunner.And("User expands multiselect to add objects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 203
+#line 201
  testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -684,16 +680,16 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table21.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 204
+#line 202
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table21, "When ");
-#line 209
+#line 207
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 210
+#line 208
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 211
+#line 209
  testRunner.Then("\'3 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 212
+#line 210
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -704,9 +700,9 @@ this.FeatureBackground();
                         "001PSUMZYOW581"});
             table22.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-#line 213
+#line 211
  testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table22, "Then ");
-#line 218
+#line 216
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -762,7 +758,7 @@ this.FeatureBackground();
                         "DAS12820",
                         "DAS11978",
                         "Cleanup"});
-#line 221
+#line 219
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -778,18 +774,18 @@ this.FeatureBackground();
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 222
+#line 220
  testRunner.When("Project created via API and opened", ((string)(null)), table23, "When ");
-#line 225
+#line 223
  testRunner.Then("Page with \'TestProject55\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 226
+#line 224
  testRunner.Then("\"Show Original Application Column On Application Dashboards\" checkbox is not disp" +
                     "layed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 227
+#line 225
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 228
+#line 226
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 229
+#line 227
  testRunner.Then("open tab in the Project Scope Changes section is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -814,16 +810,16 @@ this.FeatureBackground();
                         "0GLO1UYQ5AKCZEA"});
             table24.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
-#line 230
+#line 228
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table24, "When ");
-#line 242
+#line 240
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
+#line 241
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 244
+#line 242
  testRunner.Then("\'10 objects queued for onboarding, 0 objects offboarded\' text is displayed on inl" +
                     "ine success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 245
+#line 243
  testRunner.When("User navigates to the \'Queue\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -848,13 +844,13 @@ this.FeatureBackground();
                         "0GLO1UYQ5AKCZEA"});
             table25.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
-#line 246
+#line 244
  testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table25, "Then ");
-#line 258
+#line 256
  testRunner.Then("data in table is sorted by \'Item\' column in ascending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 259
+#line 257
  testRunner.Then("data in table is sorted by \'Date\' column in descending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 260
+#line 258
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -879,15 +875,15 @@ this.FeatureBackground();
                         "0GLO1UYQ5AKCZEA"});
             table26.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
-#line 261
+#line 259
  testRunner.Then("following Items are displayed in the History table", ((string)(null)), table26, "Then ");
-#line 273
+#line 271
  testRunner.Then("data in table is sorted by \'Item\' column in ascending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 274
+#line 272
  testRunner.Then("data in table is sorted by \'Date\' column in descending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 275
+#line 273
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 276
+#line 274
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -902,16 +898,16 @@ this.FeatureBackground();
                         "Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4)"});
             table27.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
-#line 277
+#line 275
  testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table27, "When ");
-#line 284
+#line 282
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
+#line 283
  testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 286
+#line 284
  testRunner.Then("\'5 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 287
+#line 285
  testRunner.When("User navigates to the \'Queue\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -926,7 +922,7 @@ this.FeatureBackground();
                         "Microsoft Exchange Client Language Pack - Hindi"});
             table28.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
-#line 288
+#line 286
  testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table28, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -941,13 +937,13 @@ this.FeatureBackground();
                         "Microsoft Exchange Client Language Pack - Hindi"});
             table29.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
-#line 295
+#line 293
  testRunner.Then("following Items are displayed at the top of the list", ((string)(null)), table29, "Then ");
-#line 302
+#line 300
  testRunner.Then("data in table is sorted by \'Item\' column in ascending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 303
+#line 301
  testRunner.Then("data in table is sorted by \'Date\' column in descending order by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 304
+#line 302
  testRunner.When("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -962,7 +958,7 @@ this.FeatureBackground();
                         "Microsoft Exchange Client Language Pack - Hindi"});
             table30.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
-#line 305
+#line 303
  testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table30, "Then ");
 #line hidden
             this.ScenarioCleanup();

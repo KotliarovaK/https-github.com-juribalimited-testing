@@ -39,15 +39,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                           |
-	| 1803: Pre-Migration \ Scheduled Date |
-	And User create dynamic list with "1803 ScheduleDAS16069" name on "Devices" page
-	Then "1803 ScheduleDAS16069" list is displayed to user
-	When Dashboard with '1803 ProjectDAS16069' name created via API and opened
+	| 2004: Pre-Migration \ Scheduled Date |
+	And User create dynamic list with "2004 ScheduleDAS16069" name on "Devices" page
+	Then "2004 ScheduleDAS16069" list is displayed to user
+	When Dashboard with '2004 ProjectDAS16069' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                    | List                  | AggregateBy | AggregateFunction | SplitBy                              | OrderBy                                  | Drilldown |
-	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 | Hostname    | Count distinct    | 1803: Pre-Migration \ Scheduled Date | 1803: Pre-Migration \ Scheduled Date ASC | Yes       |
+	| Line       | Project ScheduleDAS16069 | 2004 ScheduleDAS16069 | Hostname    | Count distinct    | 2004: Pre-Migration \ Scheduled Date | 2004: Pre-Migration \ Scheduled Date ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'Project ScheduleDAS16069' Widget is displayed to the user
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| Device Type                          |
 	| Operating System                     |
 	| Owner Display Name                   |
-	| 1803: Pre-Migration \ Scheduled Date |	
+	| 2004: Pre-Migration \ Scheduled Date |	
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15920 @DAS15662 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| ColumnName          |
 	| Service Pack or Build |
 	And User create dynamic list with "ListForDas15544" name on "Devices" page
-	And Dashboard with '1803 ProjectDAS15544' name created via API and opened
+	And Dashboard with '2004 ProjectDAS15544' name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget

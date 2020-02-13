@@ -1545,7 +1545,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/users?$filter=(entitledApplications%20%3D%2010)", "32", "App Count (Entitled) is 10", null)]
-        [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/users?$filter=(installedApplications%20%3E%3D%2010)", "1,068", "App Count (Installed) is greater than or equal to 10", null)]
+        [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/users?$filter=(installedApplications%20%3E%3D%2010)", "1,068", "App Count (Installed on Owned Device) is greater than or equal to 10", null)]
         [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/users?$filter=(usedApplications%20%3C%3D%2010)", "41,337", "App Count (Used) is less than or equal to 10", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/users?$filter=(application%20EQUALS%20(\'493\')%20WHERE%20(ubu%2Cetu%2C" +
             "uodou%2Cetdobu%2Ciodobu))", "61", "Application \"WPF/E\" (codename) Community Technology Preview (Feb 2007) (493) used" +

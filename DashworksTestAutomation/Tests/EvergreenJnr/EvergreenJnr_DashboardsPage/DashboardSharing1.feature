@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS14911' list
 	When User clicks the Dashboard Permissions button
-	When User selects 'Specific users' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN14911_2 | Admin      |
@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in cogmenu for 'DeviceListFor14841_1' list
-	When User clicks the Dashboard Permissions button
+	When User clicks the Permissions button
 	Then 'Private' content is displayed in 'Sharing' dropdown
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
@@ -244,7 +244,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in cogmenu for 'DeviceListFor14841_2' list
-	When User clicks the Dashboard Permissions button
+	When User clicks the Permissions button
 	Then 'Private' content is displayed in 'Sharing' dropdown
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
@@ -300,10 +300,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks 'Manage' option in cogmenu for 'DeviceListFor14841_3' list
-	When User clicks the Dashboard Permissions button
+	When User clicks the Permissions button
 	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks 'Manage' option in cogmenu for 'DeviceListFor14841_4' list
-	When User clicks the Dashboard Permissions button
+	When User clicks the Permissions button
 	Then 'Private' content is displayed in 'Sharing' dropdown
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Cleanup
@@ -327,6 +327,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	When User waits for '3' seconds
 	Then "<listName>" list is displayed to user
 	When User clicks the List Details button
+	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User        | Permission  |

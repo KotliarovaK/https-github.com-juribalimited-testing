@@ -31,10 +31,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                        |
-	| 1803: Application Rationalisation |
+	| 2004: Application Rationalisation |
 	Then ColumnName is added to the list
 	| ColumnName                        |
-	| 1803: Application Rationalisation |
+	| 2004: Application Rationalisation |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Vendor" filter where type is "Equals" with added column and following value:

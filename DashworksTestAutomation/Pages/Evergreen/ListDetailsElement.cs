@@ -51,9 +51,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='form-group ng-star-inserted']//table")]
         public IWebElement ExpandedDependantsSection { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='User']")]
-        public IWebElement SelectUserDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
 
@@ -109,16 +106,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 return null;
             }
-        }
-
-        //TODO will be replaced COG MENU element
-        public IWebElement GetMenuOfSharedUser(string username)
-        {
-            var sharedUserCogMenu =
-                By.XPath($".//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]//i");
-            Driver.MouseHover(sharedUserCogMenu);
-            Driver.WaitForElementToBeDisplayed(sharedUserCogMenu);
-            return Driver.FindElement(sharedUserCogMenu);
         }
     }
 }

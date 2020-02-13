@@ -22,11 +22,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly UserDto _userDto;
+        private readonly UsersWithSharedLists _usersWithSharedLists;
 
-        public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver, UserDto userDto)
+        public EvergreenJnr_ListDetailsPanel(RemoteWebDriver driver, UserDto userDto, UsersWithSharedLists usersWithSharedLists)
         {
             _driver = driver;
             _userDto = userDto;
+            _usersWithSharedLists = usersWithSharedLists;
         }
 
         [When(@"User changes list name to ""(.*)""")]
@@ -194,7 +196,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' user on Details panel")]
         public void WhenUserClickSettingsMenuForSharedUser(string option, string username)
         {
-            var page = _driver.NowAt<ListDetailsElement>();
+            var page = _driver.NowAt<PermissionsElement>();
             page.GetMenuOfSharedUser(username).Click();
 
             var cogMenu = _driver.NowAt<CogMenuElements>();
@@ -204,14 +206,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"There is no user in shared list of Details panel")]
         public void ThenNoUserFoundInSharedList()
         {
-            var page = _driver.NowAt<ListDetailsElement>();
+            var page = _driver.NowAt<PermissionsElement>();
             Verify.That(page.PermissionAddedUser.Count, Is.EqualTo(0), "Username found in shared list");
         }
 
         [Then(@"User '(.*)' was added to shared list with '(.*)' permission of Details panel")]
         public void ThenUserWasAddedToSharedList(string username, string permission)
         {
-            var page = _driver.NowAt<ListDetailsElement>();
+            var page = _driver.NowAt<PermissionsElement>();
             _driver.WaitForElementsToBeDisplayed(page.PermissionAddedUser);
 
             Verify.That(page.PermissionAddedUser.Select(x => x.Text).ToList(), Does.Contain(username), "Username is not one that expected");
@@ -239,13 +241,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 //TODO Section reloads with delay
                 Thread.Sleep(2000);
+
+                _usersWithSharedLists.Value.Add(row["User"]);
             }
+            
         }
 
         [When(@"User select current user in Select User dropdown")]
         public void WhenUserSelectCurrentUserInSelectUserDropdown()
         {
-            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            var listDetailsElement = _driver.NowAt<PermissionsElement>();
             _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectUserDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown,
                 DatabaseHelper.GetFullNameByUserName(_userDto.Username));

@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
-	| 1803: In Scope                       |
+	| 2004: In Scope                       |
 	| HDD Total Size (GB)                  |
 	| First Seen Date                      |
 	| Windows7Mi: Communication \ DateTime |
@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
-	| 1803: In Scope                       |
+	| 2004: In Scope                       |
 	| HDD Total Size (GB)                  |
 	| First Seen Date                      |
 	| Windows7Mi: Communication \ DateTime |
@@ -192,9 +192,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	| HDD Total Size (GB)                  |
 	| Operating System                     |
 	| Owner Display Name                   |
-	| 1803: In Scope                       |
+	| 2004: In Scope                       |
 	| Windows7Mi: Communication \ DateTime |
-
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown	
@@ -202,7 +201,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctio
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
-	| 1803: In Scope                       |
+	| 2004: In Scope                       |
 	| HDD Total Size (GB)                  |
 	| First Seen Date                      |
 	| Windows7Mi: Communication \ DateTime |
@@ -233,7 +232,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
-	| 1803: In Scope                       |
+	| 2004: In Scope                       |
 	| HDD Total Size (GB)                  |
 	| First Seen Date                      |
 	| Windows7Mi: Communication \ DateTime |
@@ -421,7 +420,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
+	When User add "2004: Readiness" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Blocked            |
 	| Amber              |
@@ -435,7 +434,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title               | List              | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
-	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
+	| Pie        | WidgetForDAS17467_1 | ListForDAS17467_1 | 2004: Readiness | Count             | 2004: Readiness ASC | true       |
 	When User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
 	Then Color Scheme dropdown displayed with 'Readiness' placeholder 
@@ -526,7 +525,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWi
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
+	When User add "2004: Readiness" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Blocked            |
 	| Amber              |
@@ -540,7 +539,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWi
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List            | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
-	| Pie        | WidgetForDAS18574 | ListForDAS18574 | 1803: Readiness | Count             | 1803: Readiness ASC | true       |
+	| Pie        | WidgetForDAS18574 | ListForDAS18574 | 2004: Readiness | Count             | 2004: Readiness ASC | true       |
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS18574' Widget is displayed to the user
 	When User clicks on 'Green' category of 'WidgetForDAS18574' widget

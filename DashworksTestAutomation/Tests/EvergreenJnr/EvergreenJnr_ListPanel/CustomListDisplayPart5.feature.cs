@@ -80,8 +80,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ListPanel
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingTo" +
-            "SaveListsInEvergreenAreNotDisplayed")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringWhenAttemptingToSaveLists" +
+            "InEvergreenAreNotDisplayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
@@ -90,14 +90,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS13001")]
         [NUnit.Framework.CategoryAttribute("DAS13838")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed()
+        public virtual void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayedInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayedInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -116,10 +116,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ListPanel
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayedInternal()
+        private void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayedInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingTo" +
-                    "SaveListsInEvergreenAreNotDisplayed", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringWhenAttemptingToSaveLists" +
+                    "InEvergreenAreNotDisplayed", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ListPanel",
@@ -142,10 +142,10 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
- testRunner.When("User add \"Babel(Engl: Readiness\" filter where type is \"Equals\" with added column " +
-                    "and \"Amber\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User add \"2004: Readiness\" filter where type is \"Equals\" with added column and \"A" +
+                    "mber\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
- testRunner.Then("\"Babel(Engl: Readiness\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"2004: Readiness\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
  testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
@@ -155,7 +155,7 @@ this.FeatureBackground();
 #line 19
  testRunner.Then("\"TestName QQRT\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
- testRunner.And("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"8\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
