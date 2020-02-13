@@ -32,10 +32,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	#================ checks sub-menu for main Projects tab ================#
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' left menu have following submenu items:
-	| SubTabName        |
-	| Evergreen Details |
-	| Project Details   |
-	| Projects          |
+	| SubTabName              |
+	| Evergreen Details       |
+	| Evergreen Incoming Apps |
+	| Project Details         |
+	| Projects                |
 	And 'Project Details' left submenu item is disabled
 	#================ checks counters ================#
 	And 'Projects' left submenu item with some count is displayed
@@ -92,10 +93,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	#================ checks sub-menu for main Projects tab ================#
 	When User navigates to the 'Projects' left menu item
 	Then 'Projects' left menu have following submenu items:
-	| SubTabName        |
-	| Evergreen Details |
-	| Project Details   |
-	| Projects          |
+	| SubTabName              |
+	| Evergreen Details       |
+	| Evergreen Incoming Apps |
+	| Project Details         |
+	| Projects                |
 	#================ checks counters ================#
 	And 'Projects' left submenu item with some count is displayed
 	And 'Evergreen Details' left submenu item is displayed without count

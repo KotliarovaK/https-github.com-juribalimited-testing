@@ -54,6 +54,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
         public IWebElement WarningMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//td[@class='userName']")]
+        public IList<IWebElement> PermissionAddedUser { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//td[@class='permission']")]
+        public IList<IWebElement> PermissionTypeOfAccess { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -84,13 +90,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetDependentListByName(string listName)
         {
             var selector = By.XPath($"//a[text()='{listName}']");
-            Driver.WaitForElementToBeDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetSharingUserOnDetailsPanelByName(string userName)
-        {
-            var selector = By.XPath($".//tr[contains(@class, 'menu-show-on-hover')]//td[text()='{userName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

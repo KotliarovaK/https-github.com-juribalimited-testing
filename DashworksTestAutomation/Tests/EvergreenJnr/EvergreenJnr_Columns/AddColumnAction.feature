@@ -385,11 +385,11 @@ Scenario: EvergreenJnr_Devices_CheckOrderByStatusColumnSorting
 	When User clicks 'Devices' on the left-hand menu
 	And User add following columns using URL to the "Devices" page:
 	| ColumnName   |
-	| 1803: Status |
-	When User clicks on '1803: Status' column header
-	Then 'Not Onboarded' content is displayed in the '1803: Status' column
-	When User clicks on '1803: Status' column header
-	Then 'Offboarded' content is displayed in the '1803: Status' column
+	| 2004: Status |
+	When User clicks on '2004: Status' column header
+	Then 'Not Onboarded' content is displayed in the '2004: Status' column
+	When User clicks on '2004: Status' column header
+	Then 'Offboarded' content is displayed in the '2004: Status' column
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18762 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying
@@ -419,13 +419,13 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName           |
-	| 1803: Target App Key |
+	| 2004: Target App Key |
 	When User create dynamic list with "DAS18961_List1" name on "Applications" page
 	Then "DAS18961_List1" list is displayed to user
-	When User clicks on '1803: Target App Key' column header
-	Then numeric data in table is sorted by '1803: Target App Key' column in ascending order
-	When User clicks on '1803: Target App Key' column header
-	Then numeric data in table is sorted by '1803: Target App Key' column in descending order
+	When User clicks on '2004: Target App Key' column header
+	Then numeric data in table is sorted by '2004: Target App Key' column in ascending order
+	When User clicks on '2004: Target App Key' column header
+	Then numeric data in table is sorted by '2004: Target App Key' column in descending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying

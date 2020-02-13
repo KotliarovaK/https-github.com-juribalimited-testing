@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| Update ring          |
 	| Update task value    |
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
-	And User selects 'Babel (English, German and French)' option from 'Project' autocomplete
-	And User selects 'Machines' option from 'Path' autocomplete
+	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Request Type:Device' option from 'Path' autocomplete
 	And User clicks 'CANCEL' button 
 	Then Actions panel is not displayed to the user
 	Then checkboxes are not displayed for content in the grid
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	Then 'Project' autocomplete contains following options:
 	| Options                                          |
 	| *Project K-Computer Scheduled Project            |
-	| 1803 Rollout                                     |
+	| 2004 Rollout                                     |
 	| Barry's User Project                             |
 	| Computer Scheduled Test (Jo)                     |
 	| Devices Evergreen Capacity Project               |

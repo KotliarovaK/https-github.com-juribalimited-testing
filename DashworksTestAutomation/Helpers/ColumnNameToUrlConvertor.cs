@@ -271,7 +271,7 @@ namespace DashworksTestAutomation.Helpers
                 case "Sticky Compliance":
                     return "stickyCompliance";
 
-                case "2004: Target App":
+                case "2004: Target App Name":
                     return "project_63_targetApplication";
 
                 case "2004: Target App Vendor":

@@ -25,6 +25,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShow
 	Then following Values are displayed in the 'Action' dropdown:
 	| Value                   |
 	| Create static list      |
+	| Add to static list      |
 	| Remove from static list |
 	| Bulk update             |
 
@@ -105,7 +106,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	Then 'Project' autocomplete contains following options:
 	| Options                                  |
 	| Barry's User Project                     |
-	| Migration Project Phase 2 (User Project) |
 	| Project with associated broken list      |
 	| User Evergreen Capacity Project          |
 	| User Scheduled Test (Jo)                 |
