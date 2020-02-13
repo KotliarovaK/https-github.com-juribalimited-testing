@@ -190,8 +190,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelec
 	When User enters 'Zune (03.01.0620.00)' text to 'Target Application' textbox
 	Then validation message 'No results found' is displayed below 'Target Application' field
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18463 @Not_Ready
-#Waiting for 'Target Application'
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18463
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdateRationalisationValidations
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button

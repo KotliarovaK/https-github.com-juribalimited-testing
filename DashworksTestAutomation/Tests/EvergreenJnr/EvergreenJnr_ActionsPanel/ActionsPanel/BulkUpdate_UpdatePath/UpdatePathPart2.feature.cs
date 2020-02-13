@@ -266,7 +266,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "*Project K-Computer Scheduled Project"});
             table4.AddRow(new string[] {
-                        "2004 Rollout"});
+                        "1803 Rollout"});
             table4.AddRow(new string[] {
                         "Barry\'s User Project"});
             table4.AddRow(new string[] {

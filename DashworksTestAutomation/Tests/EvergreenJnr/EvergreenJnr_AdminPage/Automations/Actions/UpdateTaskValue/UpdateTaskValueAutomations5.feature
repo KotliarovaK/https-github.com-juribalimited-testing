@@ -310,8 +310,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateAfterTaskChangingToTaskWi
 	Then 'The configuration of this task has changed, this action no longer has the correct parameters, update the action to change these' text is displayed on inline error banner
 	Then 'UPDATE' button is disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19065 @Cleanup @Not_Ready
-#Waiting for DAS-19065 fixed
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19065 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingAction
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -334,3 +333,48 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingActio
 	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks 'UPDATE' button
 	Then "" content is displayed for "Project" column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18716 @Cleanup @Universe
+Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
+	When User creates new Automation via API and open it
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 18716_Automation  | 18716       | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	And User enters '18705_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage C' option from 'Stage' autocomplete
+	When User selects 'Date Only with Capacity' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '1 Sep 2019' text to 'Date' datepicker
+	When User selects 'DAS-17846 Slot Device' in the 'Capacity Slot' dropdown
+	When User clicks 'CREATE' button
+	#Create Action
+	When User clicks 'Administration' header breadcrumb
+	When User enters "zDevice Sch for Automations Feature" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User navigates to the 'Capacity' left menu item
+	When User checks 'Enable Capacity' checkbox
+	When User clicks 'UPDATE' button
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	When User enters "18716_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	When User clicks content from "Action" column
+	#delete refresh
+	When User clicks refresh button in the browser
+	#delete refresh
+	Then 'This action has parameters which are not shown and no longer applicable to the task type, update the action to remove these' text is displayed on inline error banner
+	#Revert default Capacity position
+	When User clicks 'Administration' header breadcrumb
+	When User enters "zDevice Sch for Automations Feature" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User navigates to the 'Capacity' left menu item
+	When User checks 'Enable Capacity' checkbox
+	When User clicks 'UPDATE' button
