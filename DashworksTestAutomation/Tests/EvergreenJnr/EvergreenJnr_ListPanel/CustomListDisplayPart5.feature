@@ -6,18 +6,18 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10647 @DAS13001 @DAS13838 @Cleanup
-Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed 
+Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed 
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "Amber" Lookup option
-	Then "Babel(Engl: Readiness" filter is added to the list
+	When User add "2004: Readiness" filter where type is "Equals" with added column and "Amber" Lookup option
+	Then "2004: Readiness" filter is added to the list
 	When User clicks on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestName QQRT" name on "Devices" page
 	Then "TestName QQRT" list is displayed to user
-	And "2" rows are displayed in the agGrid
+	And "8" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11465 @Cleanup
 Scenario: EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors

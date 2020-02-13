@@ -1342,7 +1342,7 @@ this.FeatureBackground();
                         "2004 Rollout",
                         "Operating System",
                         "Severity",
-                        "1803: Pre-Migration \\ Ready to Migrate",
+                        "2004: Pre-Migration \\ Ready to Migrate",
                         "Operating System ASC"});
 #line 259
  testRunner.When("User creates new Widget", ((string)(null)), table24, "When ");
@@ -1361,7 +1361,7 @@ this.FeatureBackground();
 #line 269
  testRunner.Then("\"Any Device in list 2004 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 270
- testRunner.Then("\"1803: Pre-Migration \\ Ready to Migrate is Not Ready\" is displayed in added filte" +
+ testRunner.Then("\"2004: Pre-Migration \\ Ready to Migrate is Not Ready\" is displayed in added filte" +
                     "r info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 272
  testRunner.When("Dashboard with \'Dashboard for DAS18091\' name is opened via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1376,7 +1376,7 @@ this.FeatureBackground();
 #line 277
  testRunner.Then("\"Any Device in list 2004 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 278
- testRunner.Then("\"1803: Pre-Migration \\ Ready to Migrate is Ready\" is displayed in added filter in" +
+ testRunner.Then("\"2004: Pre-Migration \\ Ready to Migrate is Ready\" is displayed in added filter in" +
                     "fo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1447,26 +1447,26 @@ this.FeatureBackground();
                         "Table",
                         "DAS-15852",
                         "2004 Rollout",
-                        "1803: Pre-Migration \\ Ready to Migrate",
+                        "2004: Pre-Migration \\ Ready to Migrate",
                         "Severity",
-                        "1803: Pre-Migration \\ Ready to Migrate"});
+                        "2004: Pre-Migration \\ Ready to Migrate"});
 #line 285
  testRunner.When("User adds new Widget", ((string)(null)), table25, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
             table26.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate severity ASC"});
+                        "2004: Pre-Migration \\ Ready to Migrate severity ASC"});
             table26.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate severity DESC"});
+                        "2004: Pre-Migration \\ Ready to Migrate severity DESC"});
             table26.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate ASC"});
+                        "2004: Pre-Migration \\ Ready to Migrate ASC"});
             table26.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate DESC"});
+                        "2004: Pre-Migration \\ Ready to Migrate DESC"});
 #line 288
  testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table26, "Then ");
 #line 294
- testRunner.When("User selects \'1803: Pre-Migration \\ Ready to Migrate severity ASC\' in the \'OrderB" +
+ testRunner.When("User selects \'2004: Pre-Migration \\ Ready to Migrate severity ASC\' in the \'OrderB" +
                     "y\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 295
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1494,7 +1494,7 @@ this.FeatureBackground();
 #line 306
  testRunner.When("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 307
- testRunner.When("User selects \'1803: Pre-Migration \\ Ready to Migrate DESC\' in the \'OrderBy\' dropd" +
+ testRunner.When("User selects \'2004: Pre-Migration \\ Ready to Migrate DESC\' in the \'OrderBy\' dropd" +
                     "own", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 308
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1580,7 +1580,7 @@ this.FeatureBackground();
             table29.AddRow(new string[] {
                         "Green"});
 #line 323
- testRunner.And("User add \"1803: Readiness\" filter where type is \"Equals\" with added column and fo" +
+ testRunner.And("User add \"2004: Readiness\" filter where type is \"Equals\" with added column and fo" +
                     "llowing checkboxes:", ((string)(null)), table29, "And ");
 #line 326
  testRunner.And("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1609,8 +1609,8 @@ this.FeatureBackground();
                         "Devices_List_DAS15852",
                         "Device Type",
                         "Severity",
-                        "1803: Readiness",
-                        "1803: Readiness ASC"});
+                        "2004: Readiness",
+                        "2004: Readiness ASC"});
 #line 332
  testRunner.And("User adds new Widget", ((string)(null)), table30, "And ");
 #line 335
@@ -1991,7 +1991,7 @@ this.FeatureBackground();
             table38.AddRow(new string[] {
                         "TRUE"});
 #line 401
- testRunner.When("User add \"1803: In Scope\" filter where type is \"Equals\" with added column and fol" +
+ testRunner.When("User add \"2004: In Scope\" filter where type is \"Equals\" with added column and fol" +
                     "lowing checkboxes:", ((string)(null)), table38, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2003,7 +2003,7 @@ this.FeatureBackground();
             table39.AddRow(new string[] {
                         "Amber"});
 #line 404
- testRunner.When("User Add And \"1803: Readiness\" filter where type is \"Equals\" with added column an" +
+ testRunner.When("User Add And \"2004: Readiness\" filter where type is \"Equals\" with added column an" +
                     "d following checkboxes:", ((string)(null)), table39, "When ");
 #line 409
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2028,10 +2028,10 @@ this.FeatureBackground();
                         "Table",
                         "DAS18327_Widget",
                         "Devices_List_DAS18327",
-                        "1803: In Scope",
+                        "2004: In Scope",
                         "Severity",
-                        "1803: Readiness",
-                        "1803: In Scope ASC"});
+                        "2004: Readiness",
+                        "2004: In Scope ASC"});
 #line 414
  testRunner.When("User adds new Widget", ((string)(null)), table40, "When ");
 #line 417
@@ -2051,7 +2051,7 @@ this.FeatureBackground();
 #line 424
  testRunner.When("User clicks Filter Expression icon in Filter Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 425
- testRunner.Then("\"(1803: In Scope = true AND 1803: Readiness = Empty, Green or Amber AND 1803: In " +
+ testRunner.Then("\"(2004: In Scope = true AND 2004: Readiness = Empty, Green or Amber AND 2004: In " +
                     "Scope = true)\" text is displayed in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2260,7 +2260,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table43.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate"});
+                        "2004: Pre-Migration \\ Ready to Migrate"});
 #line 472
  testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table43, "When ");
 #line 475
@@ -2287,7 +2287,7 @@ this.FeatureBackground();
                         "19369_List",
                         "Device Type",
                         "Severity",
-                        "1803: Pre-Migration \\ Ready to Migrate",
+                        "2004: Pre-Migration \\ Ready to Migrate",
                         "Device Type ASC",
                         "30"});
 #line 479

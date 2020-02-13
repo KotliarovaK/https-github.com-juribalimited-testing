@@ -58,9 +58,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	When User add following columns using URL to the "Users" page:
-	| ColumnName                                  |
-	| Last Logon Date                             |
-	| MigrationP: Important Dates \ Migrated Date |
+	| ColumnName                                |
+	| Last Logon Date                           |
+	| Barry'sUse: Project Dates \ Migrated Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Tim            | 147          |
@@ -68,10 +68,10 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	Then date in table is sorted by 'Last Logon Date' column in descending order
 	When User clicks on 'Last Logon Date' column header
 	Then date in table is sorted by 'Last Logon Date' column in ascending order
-	When User clicks on 'MigrationP: Important Dates \ Migrated Date' column header
-	Then date in table is sorted by 'MigrationP: Important Dates \ Migrated Date' column in descending order
-	When User clicks on 'MigrationP: Important Dates \ Migrated Date' column header
-	Then date in table is sorted by 'MigrationP: Important Dates \ Migrated Date' column in ascending order
+	When User clicks on 'Barry'sUse: Project Dates \ Migrated Date' column header
+	Then date in table is sorted by 'Barry'sUse: Project Dates \ Migrated Date' column in descending order
+	When User clicks on 'Barry'sUse: Project Dates \ Migrated Date' column header
+	Then date in table is sorted by 'Barry'sUse: Project Dates \ Migrated Date' column in ascending order
 
 @Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList

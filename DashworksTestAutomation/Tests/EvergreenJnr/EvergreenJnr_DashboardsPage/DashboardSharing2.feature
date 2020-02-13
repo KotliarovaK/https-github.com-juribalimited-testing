@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS15876' list
 	When User clicks the Dashboard Permissions button
-	When User selects 'Specific users' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN15876_2 | Admin      |
@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS15550' list
 	When User clicks the Dashboard Permissions button
-	When User selects 'Specific users' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN15550_2 | Edit       |
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS14915' list
 	When User clicks the Dashboard Permissions button
-	When User selects 'Specific users' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN14915_2 | Admin      |
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithAdminRightsCanAddUserInSh
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard for Share' list
 	When User clicks the Dashboard Permissions button
-	When User selects 'Specific users' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |
 	| FN14915_4 | Admin      |

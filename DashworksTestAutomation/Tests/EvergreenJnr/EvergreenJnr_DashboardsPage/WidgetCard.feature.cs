@@ -332,7 +332,7 @@ this.FeatureBackground();
                         "WidgetForDAS16138",
                         "2004 Rollout",
                         "Aggregate",
-                        "1803: Pre-Migration \\ Scheduled Date",
+                        "2004: Pre-Migration \\ Scheduled Date",
                         "First",
                         "Yes"});
 #line 50
@@ -352,7 +352,7 @@ this.FeatureBackground();
 #line 60
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 61
- testRunner.Then("\"1803: Pre-Migration \\ Scheduled Date is 5 Nov 2018\" is displayed in added filter" +
+ testRunner.Then("\"2004: Pre-Migration \\ Scheduled Date is 5 Nov 2018\" is displayed in added filter" +
                     " info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 62
  testRunner.Then("\"Any Device in list 2004 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -423,7 +423,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "TRUE"});
 #line 69
- testRunner.And("User add \"1803: In Scope\" filter where type is \"Equals\" with added column and fol" +
+ testRunner.And("User add \"2004: In Scope\" filter where type is \"Equals\" with added column and fol" +
                     "lowing checkboxes:", ((string)(null)), table5, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -449,9 +449,9 @@ this.FeatureBackground();
 #line 81
  testRunner.And("User clicks on \'Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
- testRunner.And("User creates \'1803 App Compliance\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User creates \'2004 App Compliance\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
- testRunner.Then("\"1803 App Compliance\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"2004 App Compliance\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 84
  testRunner.When("Dashboard with \'Dashboard for DAS16069_2\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 85
@@ -469,7 +469,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS16069_2",
-                        "1803 App Compliance",
+                        "2004 App Compliance",
                         "Aggregate",
                         "Count",
                         "Yes"});
@@ -568,9 +568,9 @@ this.FeatureBackground();
 #line 111
  testRunner.When("User clicks on \'Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 112
- testRunner.When("User create dynamic list with \"1803 App Compliance\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User create dynamic list with \"2004 App Compliance\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 113
- testRunner.Then("\"1803 App Compliance\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"2004 App Compliance\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 115
  testRunner.When("Dashboard with \'Dashboard for DAS15355\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 116
@@ -586,7 +586,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS15355",
-                        "1803 App Compliance",
+                        "2004 App Compliance",
                         "First Cell"});
 #line 119
  testRunner.When("User adds new Widget", ((string)(null)), table11, "When ");
@@ -1054,10 +1054,10 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "Green"});
 #line 249
- testRunner.When("User add \"1803: Readiness\" filter where type is \"Equals\" with added column and Lo" +
+ testRunner.When("User add \"2004: Readiness\" filter where type is \"Equals\" with added column and Lo" +
                     "okup option", ((string)(null)), table18, "When ");
 #line 252
- testRunner.And("User move \'1803: Readiness\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User move \'2004: Readiness\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 253
  testRunner.And("User move \'Hostname\' column to \'Operating System\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 254
@@ -1292,7 +1292,7 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "TRUE"});
 #line 315
- testRunner.And("User add \"1803: In Scope\" filter where type is \"Equals\" with added column and fol" +
+ testRunner.And("User add \"2004: In Scope\" filter where type is \"Equals\" with added column and fol" +
                     "lowing checkboxes:", ((string)(null)), table21, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1300,7 +1300,7 @@ this.FeatureBackground();
             table22.AddRow(new string[] {
                         "Ready"});
 #line 318
- testRunner.And("User Add And \"1803: Pre-Migration \\ Ready to Migrate\" filter where type is \"Equal" +
+ testRunner.And("User Add And \"2004: Pre-Migration \\ Ready to Migrate\" filter where type is \"Equal" +
                     "s\" with added column and following checkboxes:", ((string)(null)), table22, "And ");
 #line 321
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1308,11 +1308,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table23.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Ready to Migrate"});
+                        "2004: Pre-Migration \\ Ready to Migrate"});
 #line 322
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table23, "And ");
 #line 325
- testRunner.And("User move \'1803: Pre-Migration \\ Ready to Migrate\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User move \'2004: Pre-Migration \\ Ready to Migrate\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 326
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 327
@@ -1409,7 +1409,7 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "Green"});
 #line 344
- testRunner.And("User add \"1803: Readiness\" filter where type is \"Equals\" with added column and fo" +
+ testRunner.And("User add \"2004: Readiness\" filter where type is \"Equals\" with added column and fo" +
                     "llowing checkboxes:", ((string)(null)), table25, "And ");
 #line 347
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1417,11 +1417,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table26.AddRow(new string[] {
-                        "1803: Readiness"});
+                        "2004: Readiness"});
 #line 348
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table26, "And ");
 #line 351
- testRunner.And("User move \'1803: Readiness\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User move \'2004: Readiness\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 352
  testRunner.And("User move \'Hostname\' column to \'Operating System\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 353
@@ -1528,11 +1528,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table29.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Scheduled Date"});
+                        "2004: Pre-Migration \\ Scheduled Date"});
 #line 375
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table29, "And ");
 #line 378
- testRunner.And("User move \'1803: Pre-Migration \\ Scheduled Date\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User move \'2004: Pre-Migration \\ Scheduled Date\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 379
  testRunner.And("User move \'Hostname\' column to \'Operating System\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 380
@@ -1991,7 +1991,7 @@ this.FeatureBackground();
             table37.AddRow(new string[] {
                         "Device Key"});
             table37.AddRow(new string[] {
-                        "1803: In Scope"});
+                        "2004: In Scope"});
             table37.AddRow(new string[] {
                         "HDD Total Size (GB)"});
             table37.AddRow(new string[] {
@@ -2508,7 +2508,7 @@ this.FeatureBackground();
                         "2004 Rollout",
                         "Aggregate",
                         "Severity",
-                        "1803: Pre-Migration \\ Ready to Migrate",
+                        "2004: Pre-Migration \\ Ready to Migrate",
                         "Yes"});
 #line 612
  testRunner.And("User adds new Widget", ((string)(null)), table47, "And ");

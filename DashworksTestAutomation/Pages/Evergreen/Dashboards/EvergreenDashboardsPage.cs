@@ -93,17 +93,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         #region Dashboard Details
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='context']/app-dashboards-details/div[@class='context-container']")]
-        public IWebElement DashboardDetails { get; set; }
-
+        [FindsBy(How = How.XPath, Using = ".//div[@id='context-container']")]
+        public IWebElement DashboardDetailsPanel { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//input[@id='DashboardName']")]
-        public IWebElement DetailsNameInput { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//input[@type='checkbox']")]
-        public IWebElement DetailsDefaultCheckbox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Default dashboard']")]
-        public IWebElement DetailsDefaultCheckboxLabel { get; set; }
+        public IWebElement DetailsDashboardName { get; set; }
 
         //TODO looks like generic element and should be moved to BaseDashboardPage
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'dependants')]//button")]

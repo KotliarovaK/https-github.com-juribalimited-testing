@@ -281,7 +281,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Pre-Migration \\ Scheduled date"});
             table3.AddRow(new string[] {
-                        "Project Dates \\ Target Date"});
+                        "Pre-Migration \\ Target date"});
 #line 52
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table3, "Then ");
 #line 63
@@ -310,7 +310,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Pre-Migration \\ Scheduled date"});
             table4.AddRow(new string[] {
-                        "Project Dates \\ Target Date"});
+                        "Pre-Migration \\ Target date"});
 #line 66
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table4, "Then ");
 #line hidden

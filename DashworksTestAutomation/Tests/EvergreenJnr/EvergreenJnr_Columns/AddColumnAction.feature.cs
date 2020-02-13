@@ -1819,17 +1819,17 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table40.AddRow(new string[] {
-                        "1803: Status"});
+                        "2004: Status"});
 #line 386
  testRunner.And("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table40, "And ");
 #line 389
- testRunner.When("User clicks on \'1803: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'2004: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 390
- testRunner.Then("\'Not Onboarded\' content is displayed in the \'1803: Status\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Not Onboarded\' content is displayed in the \'2004: Status\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 391
- testRunner.When("User clicks on \'1803: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'2004: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 392
- testRunner.Then("\'Offboarded\' content is displayed in the \'1803: Status\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Offboarded\' content is displayed in the \'2004: Status\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2031,7 +2031,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table43.AddRow(new string[] {
-                        "1803: Target App Key"});
+                        "2004: Target App Key"});
 #line 420
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table43, "And ");
 #line 423
@@ -2039,14 +2039,14 @@ this.FeatureBackground();
 #line 424
  testRunner.Then("\"DAS18961_List1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 425
- testRunner.When("User clicks on \'1803: Target App Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'2004: Target App Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 426
- testRunner.Then("numeric data in table is sorted by \'1803: Target App Key\' column in ascending ord" +
+ testRunner.Then("numeric data in table is sorted by \'2004: Target App Key\' column in ascending ord" +
                     "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 427
- testRunner.When("User clicks on \'1803: Target App Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'2004: Target App Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 428
- testRunner.Then("numeric data in table is sorted by \'1803: Target App Key\' column in descending or" +
+ testRunner.Then("numeric data in table is sorted by \'2004: Target App Key\' column in descending or" +
                     "der", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

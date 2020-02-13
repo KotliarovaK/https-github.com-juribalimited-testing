@@ -79,7 +79,8 @@ namespace DashworksTestAutomation.Base
                 if (!_testInfo.Tags.Contains("API"))
                     try
                     {
-                        driver = _objectContainer.Resolve<RemoteWebDriver>();
+                        //driver = _objectContainer.Resolve<RemoteWebDriver>();
+                        driver = _browsersList.GetBrowser();
                     }
                     catch (Exception e)
                     {

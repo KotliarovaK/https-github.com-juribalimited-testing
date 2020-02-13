@@ -136,6 +136,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
         {
             var page = _driver.NowAt<CustomListElement>();
             _driver.WaitForDataLoading(45);
+            _driver.MoveToElement(page.GetActiveList());
             _driver.ExecuteAction(() => page.GetActiveList().Displayed());
             Verify.AreEqual(listName, page.GetActiveList().Text, $"'{listName}' list is not displayed");
         }

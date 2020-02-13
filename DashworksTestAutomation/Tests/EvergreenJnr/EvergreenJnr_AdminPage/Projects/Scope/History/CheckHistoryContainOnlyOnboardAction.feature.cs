@@ -80,21 +80,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Proj
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004Rollout")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13959")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        public virtual void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout()
+        public virtual void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004Rollout()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803RolloutInternal();
+                    this.EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004RolloutInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -113,9 +113,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Proj
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803RolloutInternal()
+        private void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004RolloutInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004Rollout", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
@@ -134,7 +134,7 @@ this.FeatureBackground();
 #line 12
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("Counter shows \"405\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Counter shows \"419\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -158,7 +158,7 @@ this.FeatureBackground();
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Action\' c" +
                     "olumn:", ((string)(null)), table2, "When ");
 #line 23
- testRunner.Then("Rows counter shows \"60\" of \"405\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter shows \"60\" of \"419\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
