@@ -45,6 +45,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	Then following Values are displayed in the 'Action' dropdown:
 	| Value              |
 	| Create static list |
+	| Add to static list |
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	And following Roles are available for User:

@@ -163,6 +163,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	Then following Values are displayed in the 'Action' dropdown:
 	| Value              |
 	| Create static list |
+	| Add to static list |
 	| Bulk update        |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown

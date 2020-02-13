@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting
 	When User click content from "Hostname" column
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Ring' field
-	And User clicks New Ring ddl in popup of Project Summary section on the Details Page
+	When User clicks on 'New Ring' textbox
 	Then Rings ddl contains data on Project Summary section of the Details Page
 	Then There are no errors in the browser console
 

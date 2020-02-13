@@ -47,5 +47,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PermissionsElement>();
             Utils.Verify.IsFalse(page.SharingFormContainer.Displayed(), "Form container is loaded");
         }
+
+        [Then(@"""(.*)"" Sharing user is displayed correctly")]
+        public void ThenSharingUserIsDisplayedCorrectly(string userName)
+        {
+            var page = _driver.NowAt<PermissionsElement>();
+            Utils.Verify.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(),
+                "Selected Sharing user is not displayed on Details panel");
+        }
+
+        [Then(@"User list for sharing is not displayed")]
+        public void ThenUserListForSharingIsNotDisplayed()
+        {
+            var page = _driver.NowAt<PermissionsElement>();
+            Utils.Verify.IsFalse(page.SharingUserList.Displayed(), "User list for sharing is displayed");
+        }
     }
 }

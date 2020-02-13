@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Migration \ Migrated Date" filter where type is "Not empty" with added column and Date options
+	When User add "2004: Migration \ Migrated Date" filter where type is "Not empty" with added column and Date options
 	| StartDateInclusive | EndDateInclusive |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user

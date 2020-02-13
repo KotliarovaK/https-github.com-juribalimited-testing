@@ -163,9 +163,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
 	When Dashboard with 'Dashboard_DAS15877' name created via API and opened
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User clicks menu for 'Dashboard_DAS15877' dashboard
-	Then User sees dashboard menu with next options
-	| OptionsName    |
+	When User clicks cogmenu for 'Dashboard_DAS15877' list and sees following cog-menu options
+	| options    |
 	| Manage         |
 	| Make favourite |
 	| Duplicate      |
@@ -177,14 +176,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	When User clicks 'Dashboards' on the left-hand menu
 	When User clicks 'CREATE DASHBOARD' button 
 	When User creates new Dashboard with 'Dashboard_DAS12974' name
-	Then Dashboard with 'Dashboard_DAS12974' title displayed in All Dashboards
-	When User waits for '3' seconds
-	When User selects 'Manage' menu for 'Dashboard_DAS12974' dashboard
+	When User clicks 'Manage' option in cogmenu for 'Dashboard_DAS12974' list
 	When User changes dashboard name to 'Dashboard_DAS12974Updated'
-	Then Dashboard with 'Dashboard_DAS12974Updated' title displayed in All Dashboards
-	When User sets 'true' as favorite state in dashboard details for 'Dashboard_DAS12974Updated' dashboard
+	Then 'Dashboard_DAS12974Updated' list is displayed in the Lists panel
+	When User selects state 'true' for 'Favorite Dashboard' checkbox
 	Then Dashboard with name 'Dashboard_DAS12974Updated' marked as favorite
-	When User sets 'false' as favorite state in dashboard details for 'Dashboard_DAS12974Updated' dashboard
+	When User selects state 'false' for 'Favorite Dashboard' checkbox
 	Then Dashboard with name 'Dashboard_DAS12974Updated' not marked as favorite
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
@@ -193,10 +190,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	When User clicks Edit mode trigger on Dashboards page
 	Then User sees correct tooltip for Show Dashboards panel
 	When User clicks Show Dashboards panel icon on Dashboards page
-	When User selects 'Manage' menu for 'Dashboard_DAS12974Default' dashboard
-	When User clicks Default dashboard checkbox in Dashboard details
-	Then Default dashboard checkbox becomes disabled in Dashboard details
-	Then Default dashboard checkbox displayed checked in Dashboard details
+	When User clicks 'Manage' option in cogmenu for 'Dashboard_DAS12974Default' list
+	When User selects state 'true' for 'Default Dashboard' checkbox
+	Then 'Default Dashboard' checkbox is checked
+	Then 'Default Dashboard' checkbox is disabled
 	Then Dashboard with name 'Dashboard_DAS12974Default' marked as default
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup

@@ -191,9 +191,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	And User sees Collapse/Expand icon disabled for Section having 'WidgetForDAS12977' Widget on Dashboards page
 	And User sees Ellipsis icon disabled for Section having 'WidgetForDAS12977' Widget on Dashboards page
 	And User sees Ellipsis icon disabled for 'WidgetForDAS12977' Widget on Dashboards page
-	And Dashboards context menu is hidden on Dashboards page
 	When User clicks the Dashboard Details button
-	Then User sees Dashboards context menu on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
