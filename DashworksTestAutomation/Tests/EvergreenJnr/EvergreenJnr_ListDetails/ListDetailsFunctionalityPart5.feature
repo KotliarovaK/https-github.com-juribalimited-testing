@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	| SelectedList | Association    |
 	| Application4 | Used on device |
 	| Application5 | Used on device |
-	And User create dynamic list with "ATDevices4" name on "Devices" page
+	And User create dynamic list with "Devices15551" name on "Devices" page
 	And User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application4" list
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "ATDevices4" list
+	When User navigates to the "Devices15551" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] or Application5 used on device" is displayed in added filter info
