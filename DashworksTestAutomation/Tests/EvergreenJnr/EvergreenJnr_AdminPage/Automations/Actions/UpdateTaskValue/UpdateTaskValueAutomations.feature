@@ -66,6 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	#Then 'The selected project cannot be found' error message is displayed for 'Project' field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @DAS18739 @DAS19228 @Cleanup @Not_Ready
+#Waiting for resolving issue with empty Stage ddl after deleted stage
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDeletedStage
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -125,7 +126,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	#Actions content check
-	Then inline error banner is displayed
 	Then "17429_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '17429Project1' content is displayed in 'Project' textbox
