@@ -170,6 +170,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
             catch (Exception)
             {
+                //for dashboard page
                 return GetListElementByName(listName).FindElement(SettingsIconOnDashboard);
             }
             

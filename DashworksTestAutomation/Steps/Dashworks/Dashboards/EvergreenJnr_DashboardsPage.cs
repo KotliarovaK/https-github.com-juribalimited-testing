@@ -214,71 +214,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesDashboardNameTo(string dashboardName)
         {
             var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
-            dashboardDetailsElement.DetailsNameInput.Clear();
-            dashboardDetailsElement.DetailsNameInput.SendkeysWithDelay(dashboardName);
+            dashboardDetailsElement.DetailsDashboardName.Clear();
+            dashboardDetailsElement.DetailsDashboardName.SendKeys(dashboardName);
+
             //Wait for auto save action, no indicators available
-            _driver.WaitFor(()=> dashboardDetailsElement.DashboardsList.Select(title => title.Text).ToList().Contains(dashboardName));
+            var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitFor(()=> listElement.GetAllListNames().Select(title => title).ToList().Contains(dashboardName));
         }
 
-        [When(@"User clicks Default dashboard checkbox in Dashboard details")]
-        public void WhenUserClicksDefaultDashboardCheckboxInDashboardDetails()
-        {
-            var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
-            dashboardDetailsElement.DetailsDefaultCheckboxLabel.Click();
-            _driver.WaitForDataLoading(60);
-        }
 
-        [Then(@"Default dashboard checkbox becomes disabled in Dashboard details")]
-        public void ThenDefaultDashboardCheckboxBecomesDisabled()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DetailsDefaultCheckbox.GetAttribute("disabled"), Is.EqualTo("true"), $"Default dashboard displayed enabled");
-        }
-
-        [Then(@"Default dashboard checkbox displayed checked in Dashboard details")]
-        public void ThenDefaultDashboardCheckboxDisplayedChecked()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DetailsDefaultCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
-        }
-
-        [When(@"User sets '(.*)' as favorite state in dashboard details for '(.*)' dashboard")]
-        public void WhenUserSetsDashboardFavoriteState(string state, string dashboardName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            if (Convert.ToBoolean(state))
-            {
-                if (!page.GetFavoriteStateInDashboardDetailsPane())
-                {
-                    page.MarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(() => page.IsDashboardMarkedAsFavoriteInList(dashboardName));
-                }
-            }
-
-            if (!Convert.ToBoolean(state))
-            {
-                if (page.GetFavoriteStateInDashboardDetailsPane())
-                {
-                    page.UnMarkFavoriteInDashboardDetails();
-                    _driver.WaitFor(() => !page.IsDashboardMarkedAsFavoriteInList(dashboardName));
-                }
-            }
-        }
-
-        [Then(@"User sees Dashboards context menu on Dashboards page")]
-        public void ThenUserSeesDashboardsContextMenuOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DashboardDetails.Displayed(), Is.True);
-        }
-
-        [Then(@"Dashboards context menu is hidden on Dashboards page")]
-        public void ThenDashboardsContextMenuIsHiddenOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.DashboardDetails.Displayed(), Is.False);
-        }
 
         [When(@"User expands the list of shared lists")]
         public void UserExpandsTheListOfSharedLists()

@@ -89,6 +89,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             cogMenu.GetCogMenuOptionByName(option).Click();
         }
 
+        [When(@"User clicks cogmenu for '(.*)' list and sees following cog-menu options")]
+        public void WhenUserClicksCogMenuForListAndSeesFollowingCogMenuOptions(string listName, Table options)
+        {
+            var cogMenu = _driver.NowAt<CogMenuElements>();
+            cogMenu.BodyContainer.Click();
+
+            var leftPanel = _driver.NowAt<CustomListElement>();
+            var itemCogMenu = leftPanel.GetSettingsIconForList(listName);
+
+            _driver.MouseHover(itemCogMenu);
+            itemCogMenu.Click();
+
+            List<String> expectedCogMenuOptions = options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()).ToList();
+            List<String> cogMenuOptions = cogMenu.CogMenuItems.Select(x => x.GetText()).ToList();
+
+            Verify.AreEqual(cogMenuOptions, expectedCogMenuOptions,
+                "Items are not the same");
+        }
+
         [When(@"User moves '(.*)' item from '(.*)' column to the '(.*)' position")]
         public void WhenUserMovesItemFromColumnToThePosition(string columnContent, string column, string position)
         {
