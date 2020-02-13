@@ -12,8 +12,12 @@ Scenario: EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting
 	When User click content from "Hostname" column
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Ring' field
-	When User clicks on 'New Ring' textbox
-	Then Rings ddl contains data on Project Summary section of the Details Page
+	Then 'New Ring' autocomplete contains following options:
+	| Options          |
+	| Unassigned       |
+	| Evergreen Ring 1 |
+	| Evergreen Ring 3 |
+	| TestBulkUpdate   |
 	Then There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS14923

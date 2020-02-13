@@ -34,8 +34,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
-	#| App Owner        |
 	| Device Owner     |
 	| Readiness        |
 	| Path             |
@@ -58,8 +56,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
-	#| App Owner        |
 	| Primary Device   |
 	| Readiness        |
 	| Path             |
@@ -108,8 +104,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
-	#| App Owner        |
 	| Mailbox Owner    |
 	| Readiness        |
 	| Path             |

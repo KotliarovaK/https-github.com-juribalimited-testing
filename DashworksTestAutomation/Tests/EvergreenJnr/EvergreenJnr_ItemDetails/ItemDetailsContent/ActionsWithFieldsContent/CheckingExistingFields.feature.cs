@@ -335,21 +335,21 @@ this.FeatureBackground();
                         "DAS18095",
                         "DAS18011",
                         "DAS17810"});
-#line 51
+#line 49
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 52
+#line 50
  testRunner.When("User navigates to the \'User\' details page for \'0072B088173449E3A93\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 53
+#line 51
  testRunner.Then("Details page for \'0072B088173449E3A93\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 54
+#line 52
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
+#line 53
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 54
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -380,7 +380,7 @@ this.FeatureBackground();
                         "Language"});
             table4.AddRow(new string[] {
                         "Tags"});
-#line 57
+#line 55
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -448,23 +448,23 @@ this.FeatureBackground();
                         "DAS18011",
                         "DAS17810",
                         "Universe"});
-#line 76
+#line 72
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 77
+#line 73
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                     "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
+#line 74
  testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 79
+#line 75
  testRunner.When("User selects \'Devices Evergreen Capacity Project\' in the \'Item Details Project\' d" +
                     "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 76
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 77
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -499,7 +499,7 @@ this.FeatureBackground();
                         "Category"});
             table5.AddRow(new string[] {
                         "Tags"});
-#line 82
+#line 78
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -563,23 +563,23 @@ this.FeatureBackground();
                         "DAS18095",
                         "DAS18011",
                         "DAS17810"});
-#line 101
+#line 97
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 102
+#line 98
  testRunner.When("User navigates to the \'Mailbox\' details page for \'00A5B910A1004CF5AC4@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 103
+#line 99
  testRunner.Then("Details page for \'00A5B910A1004CF5AC4@bclabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 104
+#line 100
  testRunner.When("User selects \'Mailbox Evergreen Capacity Project\' in the \'Item Details Project\' d" +
                     "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 105
+#line 101
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 102
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -610,7 +610,7 @@ this.FeatureBackground();
                         "Language"});
             table6.AddRow(new string[] {
                         "Tags"});
-#line 107
+#line 103
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -660,18 +660,18 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS11510"});
-#line 126
+#line 120
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 127
+#line 121
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 128
+#line 122
  testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 129
+#line 123
  testRunner.When("User navigates to the \'Device Owner\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 130
+#line 124
  testRunner.Then("\'Last Logoff Date\' field is not displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -721,19 +721,19 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17775"});
-#line 133
+#line 127
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 134
+#line 128
  testRunner.When("User navigates to the \'Mailbox\' details page for \'000F977AC8824FE39B8@bclabs.loca" +
                     "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
+#line 129
  testRunner.Then("Details page for \'000F977AC8824FE39B8@bclabs.loca\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 136
+#line 130
  testRunner.When("User navigates to the \'Mailbox Owner\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 137
+#line 131
  testRunner.Then("\'Last Logoff Date\' field is not displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -783,21 +783,21 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17735"});
-#line 140
+#line 134
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 141
+#line 135
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 136
  testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 143
+#line 137
  testRunner.When("User selects \'Devices Evergreen Capacity Project\' in the \'Item Details Project\' d" +
                     "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
+#line 138
  testRunner.And("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 145
+#line 139
  testRunner.And("User navigates to the \'Device\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -814,9 +814,9 @@ this.FeatureBackground();
                         "Inventory Site"});
             table7.AddRow(new string[] {
                         "Dashworks First Seen Date"});
-#line 146
+#line 140
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table7, "Then ");
-#line 154
+#line 148
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -874,16 +874,16 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatDomainFieldIsDisplayedOnSelectedPages", null, @__tags);
-#line 157
+#line 151
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 158
+#line 152
  testRunner.When(string.Format("User navigates to the \'{0}\' details page for \'{1}\' item", pageName, itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 159
+#line 153
  testRunner.Then(string.Format("Details page for \'{0}\' item is displayed to the user", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 160
+#line 154
  testRunner.When(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -926,7 +926,7 @@ this.FeatureBackground();
                         "Home Directory"});
             table8.AddRow(new string[] {
                         "Email Address"});
-#line 161
+#line 155
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -987,22 +987,22 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown", null, @__tags);
-#line 192
+#line 186
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 193
+#line 187
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 194
+#line 188
  testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 195
+#line 189
  testRunner.When(string.Format("User perform search by \"{0}\"", selectedName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 196
+#line 190
  testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 197
+#line 191
  testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subMenuName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 198
+#line 192
  testRunner.Then("Empty rows are displayed if the data is unknown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1068,18 +1068,18 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully", null, @__tags);
-#line 208
+#line 202
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 209
+#line 203
  testRunner.When(string.Format("User navigates to the \'{0}\' details page for \'{1}\' item", listName, itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 210
+#line 204
  testRunner.Then(string.Format("Details page for \'{0}\' item is displayed to the user", itemName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 211
+#line 205
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 212
+#line 206
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1092,9 +1092,9 @@ this.FeatureBackground();
                         "Evergreen Capacity Unit"});
             table9.AddRow(new string[] {
                         "Evergreen Ring"});
-#line 213
+#line 207
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table9, "Then ");
-#line 219
+#line 213
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1144,16 +1144,16 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS18423"});
-#line 228
+#line 222
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 229
+#line 223
  testRunner.When("User navigates to the \'Device\' details page for \'2B35YERQEMAYHYUE\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 230
+#line 224
  testRunner.Then("Details page for \'2B35YERQEMAYHYUE\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 231
+#line 225
  testRunner.When("User navigates to the \'Specification\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1212,9 +1212,9 @@ this.FeatureBackground();
                         "TPM Enabled"});
             table10.AddRow(new string[] {
                         "TPM Version"});
-#line 232
+#line 226
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table10, "Then ");
-#line 261
+#line 255
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1266,18 +1266,18 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS18850",
                         "Universe"});
-#line 264
+#line 258
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 265
+#line 259
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                     "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 266
+#line 260
  testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                     "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 267
+#line 261
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1294,7 +1294,7 @@ this.FeatureBackground();
                         "Rationalisation"});
             table11.AddRow(new string[] {
                         "Hide From End Users"});
-#line 268
+#line 262
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1346,14 +1346,14 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS19352",
                         "Universe"});
-#line 278
+#line 272
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 279
+#line 273
  testRunner.When("User navigates to the \'Mailbox\' details page for the item with \'36452\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 280
+#line 274
  testRunner.Then("Details page for \'ConfRoom-CanisMinor@dwlabs.local\' item is displayed to the user" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1431,7 +1431,7 @@ this.FeatureBackground();
                         "Use Database Quota Defaults"});
             table12.AddRow(new string[] {
                         "Mailbox Plan"});
-#line 281
+#line 275
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
