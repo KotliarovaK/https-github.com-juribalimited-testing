@@ -373,6 +373,9 @@ namespace DashworksTestAutomation.Helpers
                 case "2004: Pre-Migration \\ Ready to Migrate":
                     return "project_task_63_13266_1_Task";
 
+                case "Havoc(BigD: Application Readiness":
+                    return "project_43_applicationReadiness";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }

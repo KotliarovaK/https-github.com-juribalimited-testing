@@ -68,11 +68,11 @@ Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplaye
 	Then There are no errors in the browser console
 
 Examples:
-	| ColumnName                              |
-	| Windows7Mi: Application Rationalisation |
-	| Windows7Mi: Application Readiness       |
-	| Windows7Mi: Core Application            |
-	| Windows7Mi: Hide From End Users         |
+	| ColumnName                        |
+	| Windows7Mi: Rationalisation       |
+	| Windows7Mi: Application Readiness |
+	| Windows7Mi: Core Application      |
+	| Windows7Mi: Hide From End Users   |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn

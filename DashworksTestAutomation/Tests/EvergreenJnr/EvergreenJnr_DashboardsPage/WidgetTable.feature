@@ -527,7 +527,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetShowsCorrectResultsIfT
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title     | List              | SplitBy                                                                                        | AggregateFunction | AggregateBy                                                                                    | OrderBy                                                                                                     |
-	| Table      | DAS-18777 | List for DAS18777 | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation | Severity          | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation severity ASC |
+	| Table      | DAS-18777 | List for DAS18777 | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation | Severity          | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation Severity ASC |
 	When User clicks 'CREATE' button 
 	Then 'DAS-18777' Widget is displayed to the user
 	Then following content is displayed in the 'Not Started' column for Widget

@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                   |
-	| ICSP: i-stage A \ i-Schedule |
+	| ColumnName                                 |
+	| Windows7Mi: Pre-Migration \ Scheduled Code |
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
 	| SelectedRowsName |
@@ -24,13 +24,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
-	| WidgetType | Title                  | List              | SplitBy                      | AggregateFunction | OrderBy   | MaxValues |
-	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | Count             | Count ASC | 5         |
+	| WidgetType | Title                  | List              | SplitBy                                    | AggregateFunction | OrderBy   | MaxValues |
+	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | Windows7Mi: Pre-Migration \ Scheduled Code | Count             | Count ASC | 5         |
 	Then 'Test_Widget_DAS14668_1' Widget is displayed to the user
 	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
-	| WidgetType | Title                  | List              | SplitBy                      | AggregateBy                  | AggregateFunction | OrderBy                           | MaxValues |
-	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | ICSP: i-stage A \ i-Schedule | Count distinct    | ICSP: i-stage A \ i-Schedule DESC | 20        |
+	| WidgetType | Title                  | List              | SplitBy                                    | AggregateBy                                | AggregateFunction | OrderBy                                         | MaxValues |
+	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | Windows7Mi: Pre-Migration \ Scheduled Code | Windows7Mi: Pre-Migration \ Scheduled Code | Count distinct    | Windows7Mi: Pre-Migration \ Scheduled Code DESC | 20        |
 	Then 'Test_Widget_DAS14668_2' Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Cleanup

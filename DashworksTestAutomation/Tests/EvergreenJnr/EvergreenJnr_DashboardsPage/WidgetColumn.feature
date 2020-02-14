@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName            |
-	| Babel(Engl: Readiness |
-	And User move 'Babel(Engl: Readiness' column to 'Hostname' column
+	| DeviceSche: Readiness |
+	And User move 'DeviceSche: Readiness' column to 'Hostname' column
 	And User move 'Hostname' column to 'Device Type' column
 	And User create dynamic list with "ListForDas15780" name on "Devices" page
 	Then "ListForDas15780" list is displayed to user
@@ -71,19 +71,22 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                     | List            | AggregateFunction | SplitBy               | OrderBy                   | Drilldown |
-	| Column     | SortOrderCheckForDas15780 | ListForDas15780 | Count             | Babel(Engl: Readiness | Babel(Engl: Readiness ASC | Yes       |
+	| Column     | SortOrderCheckForDas15780 | ListForDas15780 | Count             | DeviceSche: Readiness | DeviceSche: Readiness ASC | Yes       |
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'SortOrderCheckForDas15780' Widget is displayed to the user
 	And Line X labels of 'SortOrderCheckForDas15780' column widget is displayed in following order:
-	| ColumnName   |
-	| Empty        |
-	| Out Of Scope |
-	| Blue         |
-	| Red          |
-	| Amber        |
-	| Green        |
-	| Grey         |
+	| ColumnName              |
+	| Empty                   |
+	| Out Of Scope            |
+	| Blue                    |
+	| Light Blue              |
+	| Red                     |
+	| Brown                   |
+	| Amber                   |
+	| Really Extremely Orange |
+	| Purple                  |
+	| Grey                    |
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded

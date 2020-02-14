@@ -261,7 +261,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
             foreach (var section in AllSections)
             {
-                widgetsInSections.Add(section.FindElements(By.XPath(".//following-sibling::div[@class='widgets']//h5/span[1]")).Select(x => x.Text).ToList());
+                widgetsInSections.Add(section.FindElements(By.XPath(".//ancestor::mat-expansion-panel//div[@class='widgets']//h5/span[1]")).Select(x => x.Text).ToList());
             }
 
             return widgetsInSections;
@@ -460,7 +460,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         #region Column
         public List<string> GetPointOfColumnWidgetByName(string widgetName)
         {
-            var totalLabelsCount = By.XPath($"//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class, 'xaxis-labels')]/*[@text-anchor='middle']");
+            var totalLabelsCount = By.XPath($"//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class, 'xaxis-labels')]/*[@text-anchor='end']");
             return Driver.FindElements(totalLabelsCount).Select(x => x.Text).ToList();
         }
         #endregion

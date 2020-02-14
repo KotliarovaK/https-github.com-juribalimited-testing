@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFavouriteFilterForListsIsWorkedCorre
 	Then '2004 Rollout' list is displayed in the Lists panel
 	When User apply "Favourite" filter to lists panel
 	Then '2004 Rollout' list is not displayed in the Lists panel
-	When User enters "1803" text in Search field at List Panel
+	When User enters "2004" text in Search field at List Panel
 	Then '2004 Rollout' list is not displayed in the Lists panel
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13643
@@ -89,4 +89,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharingiteFilterForListsIsWorkedCorr
 	When User apply "Owned by me " filter to lists panel
 	Then '2004 Rollout' list is not displayed in the Lists panel
 	When User enters "2004" text in Search field at List Panel
-	Then '1803 Rollout' list is not displayed in the Lists panel
+	Then '2004 Rollout' list is not displayed in the Lists panel

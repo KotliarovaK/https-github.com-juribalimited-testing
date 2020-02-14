@@ -228,7 +228,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18830")]
         [NUnit.Framework.CategoryAttribute("DAS19135")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestoringValues()
         {
             System.Exception lastException = null;
@@ -263,8 +262,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS18830",
                         "DAS19135",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 49
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
