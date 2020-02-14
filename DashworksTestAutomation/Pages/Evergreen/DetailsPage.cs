@@ -57,9 +57,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 ".//table[@class='table projectDetails']/*//span[text()='Evergreen Bucket']/ancestor::tr/td[@class='fld-value']")]
         public IWebElement ProjectSummaryBucketValue { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
-        public IList<IWebElement> OperatorOptions { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
 

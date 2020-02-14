@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	Then 'CANCEL' button is not disabled
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @DAS19135 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @DAS19135 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestoringValues
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |

@@ -544,14 +544,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
         }
 
-        [Then(@"Rings ddl contains data on Project Summary section of the Details Page")]
-        public void ThenRingDdlContainsOptionsInProjectSummarySectionOnTheDetailsPage()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Utils.Verify.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x => x.Contains("Ring") || x.Contains("Unassigned")),
-                "Some options are not available for selected filter");
-        }
-
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
         public void ThenFieldDisplayStateIsOnDetailsTab(string fieldName, bool state)
         {
