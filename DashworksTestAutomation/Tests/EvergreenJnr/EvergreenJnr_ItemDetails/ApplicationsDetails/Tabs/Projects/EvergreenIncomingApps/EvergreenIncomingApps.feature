@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19242 @Universe
+#AnnI. 2/14/20: need to wait for gold data in March
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19242 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTableOnEvergreenIncomingAppsTabIsDisplayedCorrectly
 	When User navigates to the 'Application' details page for the item with '1' ID
 	Then Details page for 'Python 2.2a4' item is displayed to the user
