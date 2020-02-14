@@ -9,8 +9,7 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	Then User sees 'Print' tooltip for 'Print' on the Dashboard
 	Then User sees 'Refresh' tooltip for 'Refresh' on the Dashboard
-	When User clicks 'print' button
-	When User clicks 'print'  button on the Dashboards page
+	When User clicks 'print' button on the Dashboards page
 	Then Print Preview is displayed to the User
 	Then There is no breadcrumbs displayed on Dashboard page
 	When User selects 'A4' option in the 'Paper Size' dropdown for Print Preview Settings
@@ -44,9 +43,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	And User clicks Ellipsis menu for Section having 'Operating System' Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:
 	| items            |
+	| Edit             |
 	| Hide             |
-	| 1 column         |
-	| 3 column         |
 	| Duplicate        |
 	| Move to top      |
 	| Move to bottom   |
@@ -173,24 +171,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12977 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When Dashboard with 'Dashboard for DAS12977' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS12977 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	And User clicks refresh button in the browser
+	When User clicks refresh button in the browser
 	Then Dashboards sub menu is hidden on Dashboards page
 	When User clicks Show Dashboards panel icon on Dashboards page
 	Then User sees Dashboards sub menu on Dashboards page
 	When User navigates to the "Dashboard for DAS12977" list
-	Then 'CREATE DASHBOARD' button is not disabled
-	And 'ADD SECTION' button is not displayed
-	And 'ADD WIDGET' button is not displayed
-	And User sees Edit mode trigger is in the Off position on Dashboards page
-	And User sees Edit mode trigger has grey style on Dashboards page
-	And User sees Collapse/Expand icon disabled for Section having 'WidgetForDAS12977' Widget on Dashboards page
-	And User sees Ellipsis icon disabled for Section having 'WidgetForDAS12977' Widget on Dashboards page
-	And User sees Ellipsis icon disabled for 'WidgetForDAS12977' Widget on Dashboards page
+	Then 'CREATE DASHBOARD' button is displayed 
+	Then 'ADD SECTION' button is not displayed
+	Then 'ADD WIDGET' button is not displayed
+	Then User sees Edit mode trigger is in the Off position on Dashboards page
+	Then User sees Edit mode trigger has grey style on Dashboards page
+	Then User sees Ellipsis icon disabled for Section having 'WidgetForDAS12977' Widget on Dashboards page
+	Then User sees Ellipsis icon disabled for 'WidgetForDAS12977' Widget on Dashboards page
 	When User clicks the Dashboard Details button
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Cleanup

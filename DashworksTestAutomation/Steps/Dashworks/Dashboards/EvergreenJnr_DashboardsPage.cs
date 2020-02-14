@@ -114,7 +114,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         //TODO does it make sense to make this step more generic?
-        [When(@"User clicks '(.*)'  button on the Dashboards page")]
+        [When(@"User clicks '(.*)' button on the Dashboards page")]
         public void WhenUserClicksButtonOnTheDashboardsPage(string buttonName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
@@ -338,15 +338,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var aa = page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault();
             Verify.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
                 Is.True);
-        }
-
-        [Then(@"User sees Collapse/Expand icon disabled for Section having '(.*)' Widget on Dashboards page")]
-        public void ThenUserSeesCollapseExpandIconDisabledForSectionHavingWidgetOnDashboardsPage(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            Verify.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
-                Is.False);
         }
 
         [When(@"User collapses all sections on Dashboards page")]

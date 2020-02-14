@@ -395,10 +395,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	When User clicks 'Applications' on the left-hand menu
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                        |
-	| MigrationP: Application Readiness |
-	And User move 'MigrationP: Application Readiness' column to 'Application' column
+	| Havoc(BigD: Application Readiness |
+	And User move 'Havoc(BigD: Application Readiness' column to 'Application' column
 	And User move 'Application' column to 'Vendor' column
-	And User clicks on 'MigrationP: Application Readiness' column header
+	And User clicks on 'Havoc(BigD: Application Readiness' column header
 	Then 'All Applications' list should be displayed to the user
 	When User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
 	Then "DAS16336_Applications_List" list is displayed to user
@@ -410,36 +410,36 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	| Card       | WidgetForDAS16336 | DAS16336_Applications_List | First Cell | Text Only |
 	Then Widget Preview is displayed to the user
 	And Text Only is displayed for Card widget on Preview
-	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
+	And 'Red' color is displayed for Card Widget on Preview
 	
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS16336' Widget is displayed to the user
 	Then There are no errors in the browser console
 	Then Text Only is displayed for Card widget
-	And 'Really Extremely Orange' color is displayed for Card Widget
+	And 'Red' color is displayed for Card Widget
 
 	When User clicks Ellipsis menu for 'WidgetForDAS16336' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
-	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
+	And 'Red' color is displayed for Card Widget on Preview
 	
 	When User clicks 'UPDATE' button
 	Then 'WidgetForDAS16336' Widget is displayed to the user
 	Then There are no errors in the browser console
 	And Icon Only is displayed for Card widget
-	And 'Really Extremely Orange' color is displayed for Card Widget
+	And 'Red' color is displayed for Card Widget
 	
 	When User clicks Ellipsis menu for 'WidgetForDAS16336' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
-	And 'Really Extremely Orange' color is displayed for Card Widget on Preview
+	And 'Red' color is displayed for Card Widget on Preview
 	
 	When User clicks 'UPDATE' button
 	Then 'WidgetForDAS16336' Widget is displayed to the user
 	Then There are no errors in the browser console
-	And 'Really Extremely Orange' color is displayed for Card Widget
+	And 'Red' color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @DAS15145 @Cleanup
@@ -448,10 +448,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName     |
-	| ICSP: In Scope |
-	And User move 'ICSP: In Scope' column to 'Hostname' column
+	| 2004: In Scope |
+	And User move '2004: In Scope' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
-	And User clicks on 'ICSP: In Scope' column header
+	And User clicks on '2004: In Scope' column header
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DeviceListFor16325" name on "Devices" page
 	Then "DeviceListFor16325" list is displayed to user

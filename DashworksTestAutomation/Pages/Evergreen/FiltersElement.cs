@@ -605,7 +605,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitForDataLoading();
 
             var optionSelector =
-                $".//input[@placeholder='{placeholder}']/ancestor::div[@class='searchPanel input-wrapper']/following-sibling::div//div[contains(text(), '{option}')]";
+                $".//input[@placeholder='{placeholder}']/ancestor::div[contains(@class, 'searchPanel input-wrapper')]/following-sibling::div//div[contains(text(), '{option}')]";
             Driver.FindElementByXPath(optionSelector).Click();
         }
 
