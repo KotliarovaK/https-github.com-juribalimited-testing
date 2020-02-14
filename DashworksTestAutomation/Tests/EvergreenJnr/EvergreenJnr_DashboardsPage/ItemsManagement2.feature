@@ -247,21 +247,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18152 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget
 	When Dashboard with 'Dashboard for DAS18152' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 1_Widget | All Devices | 5       | 5          |
 	Then '1_Widget' Widget is displayed to the user
 	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 2_Widget | All Devices | 5       | 5          |
 	Then '2_Widget' Widget is displayed to the user
 	When User clicks Ellipsis menu for '1_Widget' Widget on Dashboards page
-	And User clicks 'Move to end' item from Ellipsis menu on Dashboards page
-	And User clicks Ellipsis menu for '1_Widget' Widget on Dashboards page
-	And User clicks 'Duplicate' item from Ellipsis menu on Dashboards page
+	When User clicks 'Move to end' item from Ellipsis menu on Dashboards page
+	When User clicks Ellipsis menu for '1_Widget' Widget on Dashboards page
+	When User clicks 'Duplicate' item from Ellipsis menu on Dashboards page
 	Then User sees following Widgets in one Section on Dashboards page:
 	| WidgetNames |
 	| 2_Widget    |
@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWi
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS18080
 Scenario: EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo
-	When User clicks 'print'  button on the Dashboards page
+	When User clicks 'print' button on the Dashboards page
 	Then Print Preview is displayed to the User
 	And User clicks on Dashworks logo
 	Then Print Preview is displayed to the User

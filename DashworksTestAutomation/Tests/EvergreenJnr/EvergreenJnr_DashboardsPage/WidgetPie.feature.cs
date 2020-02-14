@@ -135,7 +135,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table1.AddRow(new string[] {
-                        "ICSP: i-stage A \\ i-Schedule"});
+                        "Windows7Mi: Pre-Migration \\ Scheduled Code"});
 #line 12
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1, "And ");
 #line 15
@@ -174,7 +174,7 @@ this.FeatureBackground();
                         "Pie",
                         "Test_Widget_DAS14668_1",
                         "TestList_DAS14668",
-                        "ICSP: i-stage A \\ i-Schedule",
+                        "Windows7Mi: Pre-Migration \\ Scheduled Code",
                         "Count",
                         "Count ASC",
                         "5"});
@@ -198,10 +198,10 @@ this.FeatureBackground();
                         "Pie",
                         "Test_Widget_DAS14668_2",
                         "TestList_DAS14668",
-                        "ICSP: i-stage A \\ i-Schedule",
-                        "ICSP: i-stage A \\ i-Schedule",
+                        "Windows7Mi: Pre-Migration \\ Scheduled Code",
+                        "Windows7Mi: Pre-Migration \\ Scheduled Code",
                         "Count distinct",
-                        "ICSP: i-stage A \\ i-Schedule DESC",
+                        "Windows7Mi: Pre-Migration \\ Scheduled Code DESC",
                         "20"});
 #line 31
  testRunner.And("User creates new Widget", ((string)(null)), table4, "And ");

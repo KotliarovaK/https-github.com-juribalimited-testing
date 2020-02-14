@@ -46,9 +46,9 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18089
 Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInListDetails
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "2004 Rollout" list
-	And User clicks the List Details button
+	Then "2004 Rollout" list is displayed to user
+	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	When User checks 'Archived Devices Included' checkbox
 	Then Archived devices icon enabled state is 'true' in toolbar
