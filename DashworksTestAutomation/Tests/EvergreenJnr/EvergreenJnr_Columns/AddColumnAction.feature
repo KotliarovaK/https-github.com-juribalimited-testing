@@ -100,21 +100,22 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicat
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Application Rationalisation" filter where type is "Equal" with added column and following checkboxes:
+	When User add "Windows7Mi: Rationalisation" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| KEEP               |
-	Then "Windows7Mi: Application Rationalisation" filter is added to the list
+	Then "Windows7Mi: Rationalisation" filter is added to the list
 	When User add "Windows7Mi: In Scope" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FALSE              |
 	Then "Windows7Mi: In Scope" filter is added to the list
+	When User clicks the Columns button
+	When User removes "Application" column by Column panel
 	When User clicks on 'Windows7Mi: In Scope' column header
 	And User clicks on 'Windows7Mi: In Scope' column header
-	When User clicks the Filters button
 	Then data in table is sorted by 'Windows7Mi: In Scope' column in ascending order
 	Then Content is empty in the column
-	| ColumnName                              |
-	| Windows7Mi: Application Rationalisation |
+	| ColumnName                  |
+	| Windows7Mi: Rationalisation |
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11839
 Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIsNull
@@ -445,26 +446,26 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName               |
-	| 1803: Target App Version |
+	| 2004: Target App Version |
 	When User create dynamic list with "DAS18961_List3" name on "Applications" page
 	Then "DAS18961_List3" list is displayed to user
-	When User clicks on '1803: Target App Version' column header
-	Then data in table is sorted by '1803: Target App Version' column in ascending order
-	When User clicks on '1803: Target App Version' column header
-	Then data in table is sorted by '1803: Target App Version' column in descending order
+	When User clicks on '2004: Target App Version' column header
+	Then data in table is sorted by '2004: Target App Version' column in ascending order
+	When User clicks on '2004: Target App Version' column header
+	Then data in table is sorted by '2004: Target App Version' column in descending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName                 |
-	| 1803: Target App Readiness |
+	| 2004: Target App Readiness |
 	When User create dynamic list with "DAS18961_List4" name on "Applications" page
 	Then "DAS18961_List4" list is displayed to user
-	When User clicks on '1803: Target App Readiness' column header
+	When User clicks on '2004: Target App Readiness' column header
 	Then data in table is sorted by '1803: Target App Readiness' column in descending order
-	When User clicks on '1803: Target App Readiness' column header
-	Then data in table is sorted by '1803: Target App Readiness' column in ascending order
+	When User clicks on '2004: Target App Readiness' column header
+	Then data in table is sorted by '2004: Target App Readiness' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18896 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying
