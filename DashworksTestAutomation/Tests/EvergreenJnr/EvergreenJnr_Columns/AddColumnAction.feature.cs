@@ -388,7 +388,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12026")]
         [NUnit.Framework.CategoryAttribute("DAS12156")]
         [NUnit.Framework.CategoryAttribute("DAS12780")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Rationalisation", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide From End Users", null)]
