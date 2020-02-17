@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @DAS19274 @Cleanup @Void
 Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -42,10 +42,13 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	When User selects 'One' option from 'Stage' autocomplete
 	When User selects 'Date Computer' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '0' text to 'Value' textbox
+	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then '0' content is displayed in 'Value' autocomplete
 	When User enters '999999' text to 'Value' textbox
 	Then '100000' content is displayed in 'Value' textbox
 	When User enters '-5' text to 'Value' textbox
-	Then '1' content is displayed in 'Value' textbox
+	Then '0' content is displayed in 'Value' textbox
 	When User enters '2' text to 'Value' textbox
 	Then 'CREATE' button is not disabled
 	When User selects 'Before current value' in the 'Before or After' dropdown
@@ -157,7 +160,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'After current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @DAS19274 @Cleanup @Void
 Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -173,6 +176,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User selects 'Forecast Date' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
+	When User enters '0' text to 'Value' textbox
+	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then '0' content is displayed in 'Value' autocomplete
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options    |
 	| Before now |
