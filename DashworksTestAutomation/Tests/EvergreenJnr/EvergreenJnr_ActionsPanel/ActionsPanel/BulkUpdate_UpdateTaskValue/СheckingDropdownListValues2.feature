@@ -116,8 +116,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProp
 	| Remove                           |
 	| No change                        |
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233 @Not_Ready
-#Waiting for 'Update relative to now' value
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -149,8 +148,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	| Before current value |
 	| After current value  |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @Not_Ready
-#Waiting for 'Update relative to now' value
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274 @Universe
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -165,6 +163,9 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	When User selects 'Project Dates' option from 'Stage' autocomplete
 	When User selects 'Forecast Date' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
+	When User enters '0' text to 'Value' textbox
+	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then '0' content is displayed in 'Value' autocomplete
 	When User enters '12' text to 'Value' textbox
 	When User selects 'Days' in the 'Units' dropdown
 	Then following Values are displayed in the 'Before or After' dropdown:
@@ -173,3 +174,21 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	| After now  |
 	Then 'After now' content is displayed in 'Before or After' dropdown
 	When User selects 'Before now' in the 'Before or After' dropdown
+
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Universe
+Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User searches and selects following rows in the grid on Details page:
+	| SelectedRowsName |
+	| 001BAQXT6JWFPI   |
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'Barry's User Project' option from 'Project' autocomplete
+	When User selects 'Audit & Configuration \ Validate User Device Ownership' option from 'Task' autocomplete
+	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '0' text to 'Value' textbox
+	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then '0' content is displayed in 'Value' autocomplete
