@@ -35,14 +35,14 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedName
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
-	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
+	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 2004 Apps |         
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
 	When User enters 'TestProj_3' text to 'Self Service Name' textbox
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User selects '2004 Apps' option from 'Self Service Scope' autocomplete
 	When User enters 'Test_ID_3' text to 'Self Service Identifier' textbox
 	Then 'A self service with this name already exists' error message is displayed for 'Self Service Name' field
 	Then 'CREATE' button is disabled
@@ -176,3 +176,17 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatSelfServiceUrlP
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_9' item from 'Self Service Name' column
 	Then Self Service Details page is displayed correctly
 	Then Self Service URL preview that contains 'https://api.test.corp.juriba.com' base URL and 'Test_ID_9' Self Service identifier displays
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19922 @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdown
+    When User creates Self Service via API
+	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
+	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 2004 Apps |         
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+    When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User clicks 'CREATE SELF SERVICE' button
+	Then 'Self Service Scope' autocomplete contains following options:
+	| Options          |
+	| All Applications |

@@ -123,13 +123,13 @@ namespace DashworksTestAutomation.Helpers
                 case "User Application Compliance":
                     return "userApplicationCompliance";
 
-                case "Windows7Mi: Application Rationalisation":
+                case "Windows7Mi: Rationalisation":
                     return "project_1_applicationRationalisation";
 
                 case "Windows7Mi: Core Application":
                     return "project_1_coreApplication";
 
-                case "Windows7Mi: Hide from End Users":
+                case "Windows7Mi: Hide From End Users":
                     return "project_1_hideFromEndUsers";
 
                 case "Manufacturer":

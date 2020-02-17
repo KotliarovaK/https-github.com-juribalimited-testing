@@ -161,7 +161,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedCol
 	Then Filters panel is displayed to the user
 	When User add "<FilterName>" filter where type is "Does not equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| None               |
+	| Empty              |
 	Then Content is present in the newly added column
 	| ColumnName         |
 	| <NewlyAddedColumn> |
@@ -279,11 +279,11 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectly
 
 Examples: 
 	| PageName     | ColumnName    | FilterName                               | FilterValue    | Search                                     | FilterInfo                                                 |
-	| Devices      | Hostname      | Babel(Engl: Category                     | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None                               |
-	| Devices      | Hostname      | Babel(Engl: In Scope                     | FALSE          | 00I0COBFWHOF27                             | Babel(Engl: In Scope is False                              |
+	| Devices      | Hostname      | Havoc(BigD: Category                     | Empty          | 019BFPQGKK5QT8N                            | Havoc(BigD: Category is Empty                              |
+	| Devices      | Hostname      | Havoc(BigD: In Scope                     | FALSE          | 08HRHU20R2JY3W                             | Havoc(BigD: In Scope is False                              |
 	| Devices      | Hostname      | ComputerSc: Path                         | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Path is Request Type A                         |
-	| Applications | Application   | Havoc(BigD: Hide from End Users          | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown                 |
-	| Applications | Application   | MigrationP: Core Application             | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is False                      |
+	| Applications | Application   | Havoc(BigD: Hide From End Users          | Empty          | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide From End Users is Empty                   |
+	| Applications | Application   | Barry'sUse: Core Application             | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | Barry'sUse: Core Application is False                      |
 	| Mailboxes    | Email Address | EmailMigra: Mobile Devices \ Device Type | Not Identified | 238BAE24882E48BFA9F@bclabs.local           | EmailMigra: Mobile Devices \ Device Type is Not Identified |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS14524
@@ -314,11 +314,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
 	And user select "<TranslatedColumnName>" filter
 	Then Following checkboxes are available for current opened filter:
 	| checkboxes |
+	| Leer       |
 	| Unbekannt  |
 	| Rot        |
 	| Bernstein  |
 	| Grün       |
-	| Keine      |
+	| Ignorieren |
 
 Examples: 
 	| ListName     | TranslatedColumnName        |
