@@ -112,7 +112,7 @@ Examples:
 	| FilterName                                                       | SelectedCheckboxes | Rows   |
 	| Windows7Mi: Category                                             | Terminated         | 1      |
 	| Windows7Mi: Stage for User Tasks \ Read Only on Bulk Update Page | Not Applicable     | 4,642  |
-	| Barry'sUse: Category                                             | None               | 41,339 |
+	| Barry'sUse: Category                                             | Empty              | 41,339 |
 	| Havoc(BigD: Path                                                 | [Default (User)]   | 7,578  |
 	| UserSchedu: Group Stage \ Group User Default Request Type        | Not Applicable     | 679    |
 	| ComputerSc: Group Stage \ Group User Default Request Type        | Not Applicable     | 1,809  |
@@ -146,18 +146,18 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSection
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "MigrationP: Readiness" filter where type is "Equals" with added column and Lookup option
+	When User add "UserSched2: Readiness" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Light Blue     |
 	| Out Of Scope   |
 	| Blue           |
-	Then "MigrationP: Readiness" filter is added to the list
-	When User click Edit button for "MigrationP: Readiness" filter
+	Then "UserSched2: Readiness" filter is added to the list
+	When User click Edit button for "UserSched2: Readiness" filter
 	When User creates 'DynamicList13384' dynamic list
 	Then "DynamicList13384" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Edit button is displayed correctly for "MigrationP: Readiness" filter
+	Then Edit button is displayed correctly for "UserSched2: Readiness" filter
 
 @Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS9820 @DAS13296
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage
