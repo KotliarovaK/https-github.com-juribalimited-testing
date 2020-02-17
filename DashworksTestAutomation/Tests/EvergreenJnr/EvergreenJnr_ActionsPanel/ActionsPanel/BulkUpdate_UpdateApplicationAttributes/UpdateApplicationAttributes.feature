@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdat
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18516 @Not_Ready
 #Waiting for 'Rationalisation' dropdown

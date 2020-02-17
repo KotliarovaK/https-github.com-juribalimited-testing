@@ -123,13 +123,13 @@ namespace DashworksTestAutomation.Helpers
                 case "User Application Compliance":
                     return "userApplicationCompliance";
 
-                case "Windows7Mi: Application Rationalisation":
+                case "Windows7Mi: Rationalisation":
                     return "project_1_applicationRationalisation";
 
                 case "Windows7Mi: Core Application":
                     return "project_1_coreApplication";
 
-                case "Windows7Mi: Hide from End Users":
+                case "Windows7Mi: Hide From End Users":
                     return "project_1_hideFromEndUsers";
 
                 case "Manufacturer":
@@ -375,6 +375,9 @@ namespace DashworksTestAutomation.Helpers
 
                 case "Havoc(BigD: Application Readiness":
                     return "project_43_applicationReadiness";
+
+                case "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task for Workstation":
+                    return "project_task_1_8397_1_Task";
 
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
