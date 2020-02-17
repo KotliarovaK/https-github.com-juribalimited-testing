@@ -199,7 +199,7 @@ this.FeatureBackground();
 #line 22
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
-    testRunner.When("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_3\' name" +
+    testRunner.When("User clicks on cogmenu button for item with \'Page\' type and \'TestPageName_3\' name" +
                     " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.Then("Item with \'Page\' type and \'TestPageDisplayName_1\' name on Self Service Builder Pa" +
@@ -336,8 +336,8 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Move to bottom"});
 #line 41
-    testRunner.Then("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_1\' name" +
-                    " on Self Service Builder Panel and sees the following cog-menu options", ((string)(null)), table5, "Then ");
+    testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'TestPageName_1\' name" +
+                    " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table5, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -348,8 +348,8 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "Move to bottom"});
 #line 45
- testRunner.Then("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_2\' name" +
-                    " on Self Service Builder Panel and sees the following cog-menu options", ((string)(null)), table6, "Then ");
+ testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'TestPageName_2\' name" +
+                    " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table6, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -358,8 +358,8 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Move to top"});
 #line 50
- testRunner.Then("User clicks on CogMenu button for item with \'Page\' type and \'TestPageName_3\' name" +
-                    " on Self Service Builder Panel and sees the following cog-menu options", ((string)(null)), table7, "Then ");
+ testRunner.Then("User clicks on cogmenu button for item with \'Page\' type and \'TestPageName_3\' name" +
+                    " on Self Service Builder Panel and sees the following cogmenu options", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

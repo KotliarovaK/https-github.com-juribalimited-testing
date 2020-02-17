@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatIfdDifferentPag
 	| Test_ID_2         | TestPageName_2 | 3            | TestPageDisplayName_2 | true              |
 	| Test_ID_3         | TestPageName_3 | 3            | TestPageDisplayName_3 | true              |
 	When User navigates to the 'Builder' left menu item
-    When User clicks on CogMenu button for item with 'Page' type and 'TestPageName_3' name on Self Service Builder Panel
+    When User clicks on cogmenu button for item with 'Page' type and 'TestPageName_3' name on Self Service Builder Panel
 	Then Item with 'Page' type and 'TestPageDisplayName_1' name on Self Service Builder Panel is highlighted
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18994 @Cleanup
@@ -38,16 +38,16 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatReorderingCogMe
 	| Test_ID_2         | TestPageName_2 | 3            | TestPageDisplayName_2 | true              |
 	| Test_ID_3         | TestPageName_3 | 3            | TestPageDisplayName_3 | true              |
 	When User navigates to the 'Builder' left menu item
-    Then User clicks on CogMenu button for item with 'Page' type and 'TestPageName_1' name on Self Service Builder Panel and sees the following cog-menu options
+    Then User clicks on cogmenu button for item with 'Page' type and 'TestPageName_1' name on Self Service Builder Panel and sees the following cogmenu options
 	| Options        |
 	| Edit           |
 	| Move to bottom |
-	Then User clicks on CogMenu button for item with 'Page' type and 'TestPageName_2' name on Self Service Builder Panel and sees the following cog-menu options
+	Then User clicks on cogmenu button for item with 'Page' type and 'TestPageName_2' name on Self Service Builder Panel and sees the following cogmenu options
 	| Options        |
 	| Edit           |
 	| Move to top    |
 	| Move to bottom |
-	Then User clicks on CogMenu button for item with 'Page' type and 'TestPageName_3' name on Self Service Builder Panel and sees the following cog-menu options
+	Then User clicks on cogmenu button for item with 'Page' type and 'TestPageName_3' name on Self Service Builder Panel and sees the following cogmenu options
 	| Options        |
 	| Edit           |
 	| Move to top    |
