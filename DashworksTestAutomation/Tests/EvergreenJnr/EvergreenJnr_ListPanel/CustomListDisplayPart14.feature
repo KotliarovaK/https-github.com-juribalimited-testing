@@ -55,3 +55,17 @@ Scenario: EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaibleAn
 	| DAS13184_2 | m!gration |
 	When User clicks 'Devices' on the left-hand menu
 	Then 'DAS13184forShare' list should be displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS19901 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThaProjectCanBeCreatedBasedOnDynamicListWithInScopeColumn
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName     |
+	| 2004: In Scope |
+	Then Save to New Custom List element is displayed
+	When User creates 'List19901' dynamic list
+	When User selects 'Project' in the 'Create' dropdown
+	Then Page with 'Projects' header is displayed to user
+	When User enters 'TestProjectFor19901' text to 'Project Name' textbox
+	When User clicks 'CREATE' button
+	Then 'The project has been created' text is displayed on inline success banner
+	Then There are no errors in the browser console

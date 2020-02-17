@@ -376,6 +376,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Havoc(BigD: Application Readiness":
                     return "project_43_applicationReadiness";
 
+                case "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task for Workstation":
+                    return "project_task_1_8397_1_Task";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }
