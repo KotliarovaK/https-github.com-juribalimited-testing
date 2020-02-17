@@ -222,8 +222,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitFor(()=> listElement.GetAllListNames().Select(title => title).ToList().Contains(dashboardName));
         }
 
-
-
         [When(@"User expands the list of shared lists")]
         public void UserExpandsTheListOfSharedLists()
         {

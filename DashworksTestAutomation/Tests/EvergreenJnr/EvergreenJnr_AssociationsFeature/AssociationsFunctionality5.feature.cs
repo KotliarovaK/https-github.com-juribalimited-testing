@@ -132,9 +132,9 @@ this.FeatureBackground();
 #line 13
  testRunner.When("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
- testRunner.Then("\"Entitled to device owner\" filter is presented in the filters list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 15
  testRunner.Then("\"Used by device owner\" filter is presented in the filters list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+ testRunner.Then("\"Entitled to device owner\" filter is presented in the filters list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
  testRunner.When("User selects \'Entitled to device owner\' option in \'Search associations\' autocompl" +
                     "ete of Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

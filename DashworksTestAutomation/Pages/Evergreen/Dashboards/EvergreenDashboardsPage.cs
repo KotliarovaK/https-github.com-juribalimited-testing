@@ -460,7 +460,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         #region Column
         public List<string> GetPointOfColumnWidgetByName(string widgetName)
         {
-            var totalLabelsCount = By.XPath($"//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class, 'xaxis-labels')]/*[@text-anchor='end']");
+            var totalLabelsCount = By.XPath($"//div/h5/span[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[contains(@class, 'xaxis-labels')]/*[@text-anchor='middle' or @text-anchor='end']");
             return Driver.FindElements(totalLabelsCount).Select(x => x.Text).ToList();
         }
         #endregion

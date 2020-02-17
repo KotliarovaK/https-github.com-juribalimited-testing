@@ -11,8 +11,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedTo
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
-	Then "Entitled to device owner" filter is presented in the filters list
 	Then "Used by device owner" filter is presented in the filters list
+	Then "Entitled to device owner" filter is presented in the filters list
 	When User selects 'Entitled to device owner' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
 	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
