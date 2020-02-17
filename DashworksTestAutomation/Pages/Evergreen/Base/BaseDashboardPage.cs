@@ -502,6 +502,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             GetTextboxAddButton(placeholder).Click();
         }
 
+        public IWebElement GetFieldInstruction(string fieldName)
+        {
+            return Driver.FindElement(By.XPath($".//input[@placeholder='{fieldName}']/ancestor::div[@class='mat-form-field-wrapper']//mat-hint"));
+        }
+
         public IWebElement GetTextboxAddButton(string placeholder)
         {
             var selector = GetTextbox(placeholder).FindElement(By.XPath(".//../ancestor::mat-form-field//button"));

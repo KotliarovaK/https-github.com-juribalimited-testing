@@ -160,8 +160,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
-	When User selects 'Project Dates' option from 'Stage' autocomplete
-	When User selects 'Forecast Date' option from 'Task' autocomplete
+	When User selects 'Project Dates \ Forecast Date' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
 	Then User sees instruction '0 to 100,000' below 'Value' field
