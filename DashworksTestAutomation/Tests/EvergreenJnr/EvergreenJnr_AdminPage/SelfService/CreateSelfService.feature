@@ -7,6 +7,9 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19187 @DAS19364 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToCreateSelfService
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          | 
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	Then Page with 'Self Services' header is displayed to user
@@ -27,12 +30,15 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
-	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User selects 'StaticListForSS' option from 'Self Service Scope' autocomplete
 	When User enters 'Test_ID_2' text to 'Self Service Identifier' textbox
 	Then 'CREATE' button is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedName
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          | 
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 2004 Apps |         
@@ -72,6 +78,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithDuplicatedIdentifier
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          | 
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_6 | Test_ID_6         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
@@ -86,6 +95,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          | 
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
@@ -103,6 +115,9 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantCreateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          | 
     When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'CREATE SELF SERVICE' button
