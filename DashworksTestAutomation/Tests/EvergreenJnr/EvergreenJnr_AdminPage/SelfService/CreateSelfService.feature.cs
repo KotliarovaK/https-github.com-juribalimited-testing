@@ -628,29 +628,37 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table8.AddRow(new string[] {
+                        ""});
 #line 146
-    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 147
- testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 148
- testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
+                    "ng items", ((string)(null)), table8, "When ");
 #line 149
- testRunner.When("User enters \'TestProj_7\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 150
- testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
- testRunner.When("User enters \'TestP_ID_7\' text to \'Self Service Identifier\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 152
- testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'TestProj_7\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 153
- testRunner.Then("\'The self service has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 154
+ testRunner.When("User enters \'TestP_ID_7\' text to \'Self Service Identifier\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 155
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 156
+ testRunner.Then("\'The self service has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 157
  testRunner.Then("\'click here to view the TestProj_7 self service\' link is displayed on inline succ" +
                     "ess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 155
+#line 158
  testRunner.Then("User clicks on \'click here to view the TestProj_7 self service\' link on inline su" +
                     "ccess banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 156
+#line 159
  testRunner.Then("Page with \'TestProj_7\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -677,13 +685,21 @@ this.FeatureBackground();
                         "DAS19842",
                         "DAS19876",
                         "Cleanup"});
-#line 159
+#line 162
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table9.AddRow(new string[] {
+                        ""});
+#line 163
+    testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
+                    "ng items", ((string)(null)), table9, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "ServiceId",
                         "Name",
                         "ServiceIdentifier",
@@ -697,7 +713,7 @@ this.FeatureBackground();
                         "ScopeId",
                         "scopeName",
                         "Scope"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "1",
                         "TestProj_8",
                         "Test_ID_8",
@@ -711,33 +727,21 @@ this.FeatureBackground();
                         "2",
                         "bob",
                         "1803 Apps"});
-#line 160
-    testRunner.When("User creates Self Service via API", ((string)(null)), table8, "When ");
-#line 163
-    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 164
- testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 165
- testRunner.Then("Page with \'Self Services\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 166
+    testRunner.When("User creates Self Service via API", ((string)(null)), table10, "When ");
+#line 169
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 170
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 171
+ testRunner.Then("Page with \'Self Services\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 172
  testRunner.When("User navigates to the \'Self Services\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 167
+#line 173
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_8\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 168
- testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 169
- testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 170
- testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 171
- testRunner.When("User navigates to the \'Style\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
- testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 173
- testRunner.When("User navigates to the \'Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 174
- testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 175
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 176
@@ -747,12 +751,24 @@ this.FeatureBackground();
 #line 178
  testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 179
- testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 180
  testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 181
- testRunner.When("User navigates to the \'Style\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 182
+ testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 183
+ testRunner.When("User navigates to the \'Style\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 184
+ testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 185
+ testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 186
+ testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 187
+ testRunner.When("User navigates to the \'Style\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 188
  testRunner.Then("Page with \'TestProj_8\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -777,13 +793,21 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19864",
                         "Cleanup"});
-#line 185
+#line 191
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table11.AddRow(new string[] {
+                        ""});
+#line 192
+    testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
+                    "ng items", ((string)(null)), table11, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "ServiceId",
                         "Name",
                         "ServiceIdentifier",
@@ -797,7 +821,7 @@ this.FeatureBackground();
                         "ScopeId",
                         "scopeName",
                         "Scope"});
-            table9.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "1",
                         "TestProj_9",
                         "Test_ID_9",
@@ -811,18 +835,18 @@ this.FeatureBackground();
                         "2",
                         "bob",
                         "1803 Apps"});
-#line 186
-    testRunner.When("User creates Self Service via API", ((string)(null)), table9, "When ");
-#line 189
+#line 195
+    testRunner.When("User creates Self Service via API", ((string)(null)), table12, "When ");
+#line 198
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 190
+#line 199
  testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 191
+#line 200
  testRunner.When("User clicks \'Edit\' option in Cog-menu for \'TestProj_9\' item from \'Self Service Na" +
                     "me\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 192
+#line 201
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 193
+#line 202
  testRunner.Then("Self Service URL preview that contains \'https://api.test.corp.juriba.com\' base UR" +
                     "L and \'Test_ID_9\' Self Service identifier displays", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -848,13 +872,21 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19922",
                         "Cleanup"});
-#line 196
+#line 205
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table13.AddRow(new string[] {
+                        ""});
+#line 206
+    testRunner.When("User create static list with \"1803 Apps\" name on \"Applications\" page with followi" +
+                    "ng items", ((string)(null)), table13, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "ServiceId",
                         "Name",
                         "ServiceIdentifier",
@@ -868,7 +900,7 @@ this.FeatureBackground();
                         "ScopeId",
                         "scopeName",
                         "Scope"});
-            table10.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "1",
                         "TestProj_3",
                         "Test_ID_3",
@@ -882,25 +914,25 @@ this.FeatureBackground();
                         "2",
                         "bob",
                         "2004 Apps"});
-#line 197
-    testRunner.When("User creates Self Service via API", ((string)(null)), table10, "When ");
-#line 200
+#line 209
+    testRunner.When("User creates Self Service via API", ((string)(null)), table14, "When ");
+#line 212
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 201
+#line 213
  testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 202
+#line 214
     testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 203
+#line 215
  testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 204
+#line 216
  testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
-            table11.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "All Applications"});
-#line 205
- testRunner.Then("\'Self Service Scope\' autocomplete contains following options:", ((string)(null)), table11, "Then ");
+#line 217
+ testRunner.Then("\'Self Service Scope\' autocomplete contains following options:", ((string)(null)), table15, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
