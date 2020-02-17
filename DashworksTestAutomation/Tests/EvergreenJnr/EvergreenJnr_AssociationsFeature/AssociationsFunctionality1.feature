@@ -8,11 +8,11 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS18425 @DAS18458 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFromCreatedAllDeviceApplicationsList
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	Then Associations panel is displayed to the user
 	Then Export button is displayed disabled
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User click content from "Application Name" column
@@ -21,13 +21,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorAppearsAfterOpenningItemFr
 @Evergreen @Associations @DAS18425
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedIfThereAreTwoMoreAdded
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Not installed on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	Then Remove icon displayed in 'false' state for 'Used on device' association
 	Then Remove icon displayed in 'true' state for 'Not installed on device' association
@@ -36,9 +38,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFirstAssociationsCantBeRemovedI
 @Evergreen @Associations @DAS18456 @DAS18530 @DAS18562 @DAS18127 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelectingFilterOnAllDeviceApplicationsPage
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User creates 'AssociationList18530' dynamic list
@@ -73,9 +75,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatGridIsNotDisappearedAfterSelect
 @Evergreen @Associations @DAS18489 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasRemoved
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User selects 'Pivot' in the 'Create' dropdown
