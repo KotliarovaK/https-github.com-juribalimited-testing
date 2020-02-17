@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
 	When User navigates to the 'Details' left menu item
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User enters '15427_NewName' text to 'Action Name' textbox
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks content from "Action" column
 	Then "15427_NewName" content is displayed in "Action Name" field
 

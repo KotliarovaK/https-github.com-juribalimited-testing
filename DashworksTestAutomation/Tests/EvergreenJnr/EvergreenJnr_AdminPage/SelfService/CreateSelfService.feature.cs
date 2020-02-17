@@ -307,7 +307,7 @@ this.FeatureBackground();
                         "true",
                         "2",
                         "bob",
-                        "1803 Apps"});
+                        "2004 Apps"});
 #line 36
     testRunner.When("User creates Self Service via API", ((string)(null)), table1, "When ");
 #line 39
@@ -323,7 +323,7 @@ this.FeatureBackground();
 #line 44
  testRunner.When("User enters \'TestProj_3\' text to \'Self Service Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
- testRunner.When("User selects \'1803 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'2004 Apps\' option from \'Self Service Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
  testRunner.When("User enters \'Test_ID_3\' text to \'Self Service Identifier\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
@@ -1108,6 +1108,109 @@ this.FeatureBackground();
 #line 178
  testRunner.Then("Self Service URL preview that contains \'https://api.test.corp.juriba.com\' base UR" +
                     "L and \'Test_ID_9\' Self Service identifier displays", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleIn" +
+            "SelfServiceScopeDropdown")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS19922")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdown()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdownInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdownInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleIn" +
+                    "SelfServiceScopeDropdown", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS19922",
+                        "Cleanup"});
+#line 181
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceId",
+                        "Name",
+                        "ServiceIdentifier",
+                        "Enabled",
+                        "ObjectType",
+                        "ObjectTypeId",
+                        "StartDate",
+                        "EndDate",
+                        "SelfServiceURL",
+                        "AllowAnonymousUsers",
+                        "ScopeId",
+                        "scopeName",
+                        "Scope"});
+            table5.AddRow(new string[] {
+                        "1",
+                        "TestProj_3",
+                        "Test_ID_3",
+                        "false",
+                        "Devimdmdmm",
+                        "3",
+                        "2019-12-10T21:34:47.24",
+                        "2019-12-31T21:34:47.24",
+                        "URL",
+                        "true",
+                        "2",
+                        "bob",
+                        "2004 Apps"});
+#line 182
+    testRunner.When("User creates Self Service via API", ((string)(null)), table5, "When ");
+#line 185
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 186
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 187
+    testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 188
+ testRunner.When("User navigates to the \'Self Services\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 189
+ testRunner.When("User clicks \'CREATE SELF SERVICE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table6.AddRow(new string[] {
+                        "All Applications"});
+#line 190
+ testRunner.Then("\'Self Service Scope\' autocomplete contains following options:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

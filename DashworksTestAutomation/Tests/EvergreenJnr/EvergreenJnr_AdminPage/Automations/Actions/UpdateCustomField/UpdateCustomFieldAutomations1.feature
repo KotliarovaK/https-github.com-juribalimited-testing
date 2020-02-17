@@ -32,7 +32,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValu
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
 	Then 'CANCEL' button is not disabled
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
-	#Create Action
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
 #Waiting 'Update custom field' in the 'Action Type' dropdown for automation
@@ -58,8 +57,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingV
 	Then 'CANCEL' button is not disabled
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @DAS17751 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @DAS17751 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValues
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -81,6 +79,10 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks 'CREATE' button
 	Then 'The automation action has been created' text is displayed on inline success banner
+	When User clicks 'Automations' header breadcrumb
+	When User enters "17881_Automation_3" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user

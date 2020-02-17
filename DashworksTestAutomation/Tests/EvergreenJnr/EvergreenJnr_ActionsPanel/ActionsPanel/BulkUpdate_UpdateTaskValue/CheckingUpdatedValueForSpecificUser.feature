@@ -38,6 +38,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
 	When User selects '<NewTeam>' option from 'Team' autocomplete
+	When User selects 'Unassigned' option from 'Owner' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	Then inline warning banner is displayed

@@ -174,15 +174,15 @@ namespace DashworksTestAutomation.Base
                 catch { }
             }
             //FOR DEBUG ONLY
-            /*
+
             try
             {
                 var requestUri = "http://autorelease.corp.juriba.com:81/devices?$top=1000&$skip=0&$filter=(project_task_1_472_1_Task_Value%20EQUALS%20(%271%27%2C%273%27))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_task_1_472_1_Task";
                 var request = requestUri.GenerateRequest();
 
                 var resp = _client.Evergreen.Get(request);
-                
-                if (!resp.Content.Contains("count: 5108"))
+
+                if (!resp.Content.Contains("count: 5107"))
                 {
                     Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
                 }
@@ -191,7 +191,7 @@ namespace DashworksTestAutomation.Base
             {
                 Logger.Write(e);
                 Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
-            }*/
+            }
         }
 
         [BeforeTestRun]

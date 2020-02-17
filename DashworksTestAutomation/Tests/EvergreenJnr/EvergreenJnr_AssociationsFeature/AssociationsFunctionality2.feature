@@ -81,7 +81,8 @@ Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotD
 	When User selects '<operator4>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
 	When User selects '<operator5>' option in 'Search associations' autocomplete of Associations panel
-	Then Add And button is not displayed on the Filter panel
+	#sz: should be updated after implementation DAS-19580
+	#Then Add And button is not displayed on the Filter panel
 
 Examples: 
 	| operator1          | operator2              | operator3               | operator4                | operator5            |

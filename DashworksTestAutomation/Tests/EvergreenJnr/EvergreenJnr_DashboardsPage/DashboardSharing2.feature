@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then table content is present
 	When User create dynamic list with "ADeviceListFor14841_Admin" name on "Devices" page
 	Then "ADeviceListFor14841_Admin" list is displayed to user
-	When User clicks the List Details button
+	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User  | Permission |
@@ -173,9 +173,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User changes dashboard name to 'DashboardUpdated'
 	Then 'DashboardUpdated' list is displayed in the Lists panel
 	#12974 favorite for shared
-	When User sets 'true' as favorite state in dashboard details for 'DashboardUpdated' dashboard
+	When User selects state 'true' for 'Favorite Dashboard' checkbox
 	Then Dashboard with name 'DashboardUpdated' marked as favorite
-	When User sets 'false' as favorite state in dashboard details for 'DashboardUpdated' dashboard
+	When User selects state 'false' for 'Favorite Dashboard' checkbox
 	Then Dashboard with name 'DashboardUpdated' not marked as favorite
 	When User clicks 'Make favourite' option in cogmenu for 'DashboardUpdated' list
 	Then Dashboard with name 'DashboardUpdated' marked as favorite
@@ -248,7 +248,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	Then table content is present
 	When User create dynamic list with "ADevicesList17592" name on "Devices" page
 	Then "ADevicesList17592" list is displayed to user
-	When User clicks the List Details button
+	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person
 	| User      | Permission |

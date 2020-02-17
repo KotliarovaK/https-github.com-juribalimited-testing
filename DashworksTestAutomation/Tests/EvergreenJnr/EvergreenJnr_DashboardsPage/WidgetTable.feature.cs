@@ -2518,7 +2518,7 @@ this.FeatureBackground();
                         "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task fo" +
                             "r Workstation",
                         "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task fo" +
-                            "r Workstation severity ASC"});
+                            "r Workstation Severity ASC"});
 #line 528
  testRunner.When("User adds new Widget", ((string)(null)), table49, "When ");
 #line 531
