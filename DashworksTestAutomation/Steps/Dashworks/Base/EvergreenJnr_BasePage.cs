@@ -1214,6 +1214,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not disabled");
         }
 
+        [Then(@"'(.*)' radio button is checked")]
+        public void ThenRadioButtonIsChecked(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
         #endregion
 
         #region Chips
