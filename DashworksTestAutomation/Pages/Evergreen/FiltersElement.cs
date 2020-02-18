@@ -175,7 +175,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = FilterValue)]
         public IList<IWebElement> FilterValueList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='dateDirection']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='relativeSelect']")]
         public IWebElement AheadOrAgoInput { get; set; }
         
         public override List<By> GetPageIdentitySelectors()
