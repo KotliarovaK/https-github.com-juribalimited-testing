@@ -16,11 +16,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
     [Binding]
     class RemoveSelfServiceAfterScenario : SpecFlowContext
     {
-        private readonly RemoveSelfServiceMethods _removeSelfServiceMethods;
+        private readonly SelfServiceApiMethods _removeSelfServiceMethods;
 
         public RemoveSelfServiceAfterScenario(SelfServices selfServices, RestWebClient client)
         {
-            _removeSelfServiceMethods = new RemoveSelfServiceMethods(selfServices, client);
+            _removeSelfServiceMethods = new SelfServiceApiMethods(selfServices, client);
         }
 
         [AfterScenario("Cleanup", Order = 10)]
