@@ -287,11 +287,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	| Table      | DAS-15852 | 2004 Rollout | 2004: Pre-Migration \ Ready to Migrate | Severity          | 2004: Pre-Migration \ Ready to Migrate |
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                                                |
-	| 2004: Pre-Migration \ Ready to Migrate severity ASC  |
-	| 2004: Pre-Migration \ Ready to Migrate severity DESC |
+	| 2004: Pre-Migration \ Ready to Migrate Severity ASC  |
+	| 2004: Pre-Migration \ Ready to Migrate Severity DESC |
 	| 2004: Pre-Migration \ Ready to Migrate ASC           |
 	| 2004: Pre-Migration \ Ready to Migrate DESC          |
-	When User selects '2004: Pre-Migration \ Ready to Migrate severity ASC' in the 'OrderBy' dropdown
+	When User selects '2004: Pre-Migration \ Ready to Migrate Severity ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS-15852' Widget is displayed to the user

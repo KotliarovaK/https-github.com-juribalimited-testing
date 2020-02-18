@@ -31,15 +31,17 @@ namespace DashworksTestAutomation.Steps.API
         private readonly ListsDetails _listsDetails;
         private readonly UserDto _user;
         private readonly CreateCustomFieldMethods _createCustomFieldMethods;
+        private readonly UsersWithSharedLists _usersWithSharedLists;
 
         public EvergreenJnr_Lists(RestWebClient client, UserDto user, RemoteWebDriver driver, ListsDetails listsDetails,
-            SeniorCustomFields customFields)
+            SeniorCustomFields customFields, UsersWithSharedLists usersWithSharedLists)
         {
             _client = client;
             _user = user;
             _driver = driver;
             _listsDetails = listsDetails;
             _createCustomFieldMethods = new CreateCustomFieldMethods(_client, customFields);
+            _usersWithSharedLists = usersWithSharedLists;
         }
 
         [When(@"User creates list with '(.*)' name and missing column on '(.*)' page")]
@@ -156,6 +158,7 @@ namespace DashworksTestAutomation.Steps.API
 
             //Add created list to context
             _listsDetails.AddList(name, listId);
+            _usersWithSharedLists.Value.Add(_user.Username);
 
             return resultUrl;
         }
