@@ -207,7 +207,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #endregion TableColumns
 
-        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'])";
+        private static string NamedTextboxSelector = "(.//textarea[@placeholder='{0}'] | .//input[@placeholder='{0}'] | .//input[@automation='{0}'])";
 
         //For cases when more than 4 items are selected they are collapsed to '1 more'
         public string ExpandNamedTextboxSelector = "//preceding-sibling::button[contains(@class,'chips-expand')]";
