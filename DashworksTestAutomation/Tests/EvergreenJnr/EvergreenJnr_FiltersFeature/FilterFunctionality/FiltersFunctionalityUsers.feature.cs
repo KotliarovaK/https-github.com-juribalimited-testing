@@ -467,7 +467,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "Terminated", "1", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Stage for User Tasks \\ Read Only on Bulk Update Page", "Not Applicable", "4,642", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Category", "None", "41,339", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Category", "Empty", "41,339", null)]
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Path", "[Default (User)]", "7,578", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Group Stage \\ Group User Default Request Type", "Not Applicable", "679", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Group Stage \\ Group User Default Request Type", "Not Applicable", "1,809", null)]
@@ -702,12 +702,12 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Blue"});
 #line 149
- testRunner.When("User add \"MigrationP: Readiness\" filter where type is \"Equals\" with added column " +
+ testRunner.When("User add \"UserSched2: Readiness\" filter where type is \"Equals\" with added column " +
                     "and Lookup option", ((string)(null)), table10, "When ");
 #line 154
- testRunner.Then("\"MigrationP: Readiness\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"UserSched2: Readiness\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 155
- testRunner.When("User click Edit button for \"MigrationP: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click Edit button for \"UserSched2: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 156
  testRunner.When("User creates \'DynamicList13384\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 157
@@ -717,7 +717,7 @@ this.FeatureBackground();
 #line 159
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 160
- testRunner.Then("Edit button is displayed correctly for \"MigrationP: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Edit button is displayed correctly for \"UserSched2: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

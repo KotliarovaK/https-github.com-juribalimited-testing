@@ -300,6 +300,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             Utils.Verify.IsTrue(_driver.GetAllRequests().Any(x => x.Contains("archiveditems=false")), "Request has no needed parameters");
         }
 
+        [Then(@"Associations request has correct operator")]
+        public void ThenAssociationsRequestHasCorrectOperator()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Verify.IsTrue(_driver.GetAllRequests().Last().Contains("%20OR%20"), "Request has no needed parameters");
+        }
+
         [Then(@"Update list option is NOT available")]
         public void ThenUpdateListOptionIsNotAvailable()
         {

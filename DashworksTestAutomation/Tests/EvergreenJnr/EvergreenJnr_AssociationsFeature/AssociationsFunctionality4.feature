@@ -10,6 +10,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumn
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Installed on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Columns button
 	When ColumnName is entered into the search box and the selection is clicked
@@ -24,9 +25,9 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckThatListHavingComplianceColumn
 @Evergreen @Associations @DAS18958 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedCorrectlyAfterRefreshing
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "Network Card Count" filter where type is "Greater than" with added column and following value:
@@ -43,9 +44,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListWithAppliedFilterDisplayedC
 @Evergreen @Associations @DAS18969 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperationBlockInFilter
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "Device Operating System" filter where type is "Does not equal" with added column and Lookup option
@@ -58,9 +59,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenUsingOperat
 @Evergreen @Associations @DAS18889
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorWhenSomeNotEmptyFiltersApplied
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -78,9 +79,9 @@ Examples:
 @Evergreen @Associations @DAS18470 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsAvailabilityForAssociations
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User clicks Add New button on the Filter panel

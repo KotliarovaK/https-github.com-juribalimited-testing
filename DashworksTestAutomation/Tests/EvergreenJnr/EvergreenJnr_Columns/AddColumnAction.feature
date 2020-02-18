@@ -463,7 +463,7 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying
 	When User create dynamic list with "DAS18961_List4" name on "Applications" page
 	Then "DAS18961_List4" list is displayed to user
 	When User clicks on '2004: Target App Readiness' column header
-	Then data in table is sorted by '1803: Target App Readiness' column in descending order
+	Then data in table is sorted by '2004: Target App Readiness' column in descending order
 	When User clicks on '2004: Target App Readiness' column header
 	Then data in table is sorted by '2004: Target App Readiness' column in ascending order
 
