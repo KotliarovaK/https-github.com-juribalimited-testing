@@ -87,6 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19061")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck()
         {
             System.Exception lastException = null;
@@ -121,8 +122,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS19061",
-                        "Cleanup"});
-#line 9
+                        "Cleanup",
+                        "Not_Ready"});
+#line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -138,14 +140,14 @@ this.FeatureBackground();
                         "All Applications",
                         "None",
                         "Standalone Project"});
-#line 10
+#line 11
  testRunner.When("Project created via API and opened", ((string)(null)), table1, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table2.AddRow(new string[] {
                         ""});
-#line 13
+#line 14
  testRunner.When("User create static list with \"DAS_20019_1\" name on \"Applications\" page with follo" +
                     "wing items", ((string)(null)), table2, "When ");
 #line hidden
@@ -153,7 +155,7 @@ this.FeatureBackground();
                         "ItemName"});
             table3.AddRow(new string[] {
                         ""});
-#line 16
+#line 17
  testRunner.When("User create static list with \"DAS_20019_11\" name on \"Users\" page with following i" +
                     "tems", ((string)(null)), table3, "When ");
 #line hidden
@@ -169,7 +171,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_20019_1"});
-#line 19
+#line 20
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table4, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -182,23 +184,23 @@ this.FeatureBackground();
                         "TestPageSs2",
                         "DAS_20019_Page",
                         "true"});
-#line 22
+#line 23
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table5, "When ");
-#line 28
- testRunner.Then("Page with \'Create Ownership Component\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
- testRunner.Then("\'DAS_20019_Page\' label with self service parent page name is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'Create Ownership Component\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 30
+ testRunner.Then("\'DAS_20019_Page\' label with self service parent page name is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 31
  testRunner.Then("\'\' content is displayed in \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
+#line 33
  testRunner.Then("\'\' content is displayed in \'Project\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
- testRunner.Then("\'Don\'t allow owner to be changed\' radio button is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
- testRunner.Then("\'User Scope\' dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Don\'t allow owner to be changed\' radio button is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 36
+ testRunner.Then("\'User Scope\' dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 37
  testRunner.Then("\'Show this component\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 38
+#line 39
  testRunner.Then("\'A component name must be entered\' error message is displayed for \'Component Name" +
                     "\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -206,30 +208,30 @@ this.FeatureBackground();
                         "values"});
             table6.AddRow(new string[] {
                         "DAS_20019_Proj"});
-#line 39
+#line 40
  testRunner.Then("User sees that \'Project\' dropdown contains following options:", ((string)(null)), table6, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "values"});
             table7.AddRow(new string[] {
                         "Evergreen"});
-#line 42
+#line 43
  testRunner.Then("following Values are not displayed in the \'Project\' dropdown:", ((string)(null)), table7, "Then ");
-#line 46
- testRunner.When("User clicks \'Allow owner to be removed only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
- testRunner.Then("\'User Scope\' dropdown is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Allow owner to be removed only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48
- testRunner.When("User clicks \'Allow owner to be set to another user only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'User Scope\' dropdown is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 49
- testRunner.Then("\'User Scope\' dropdown is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Allow owner to be set to another user only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
- testRunner.When("User clicks \'Allow owner to be set to another user\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 51
  testRunner.Then("\'User Scope\' dropdown is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 51
+ testRunner.When("User clicks \'Allow owner to be set to another user\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
- testRunner.When("User clicks \'Allow owner to be removed or set to another user\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'User Scope\' dropdown is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 53
+ testRunner.When("User clicks \'Allow owner to be removed or set to another user\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 54
  testRunner.Then("\'User Scope\' dropdown is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -238,11 +240,11 @@ this.FeatureBackground();
                         "All Users"});
             table8.AddRow(new string[] {
                         "DAS_20019_11"});
-#line 55
+#line 56
  testRunner.Then("User sees that \'User Scope\' dropdown contains following options:", ((string)(null)), table8, "Then ");
-#line 59
+#line 60
  testRunner.Then("\'All Users\' option is first in the \'User Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 61
+#line 62
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
