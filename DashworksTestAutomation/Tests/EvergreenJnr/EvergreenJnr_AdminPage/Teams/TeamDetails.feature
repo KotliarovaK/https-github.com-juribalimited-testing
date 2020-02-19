@@ -16,8 +16,9 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	And User selects all rows on the grid
 	Then User sees "8" of "8" rows selected label
 	When User navigates to the 'Buckets' left menu item
+	When User enters "Evergreen Bucket" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	Then User sees "8" of "8" rows selected label
+	Then User sees "3" rows in grid
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12375 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDefault
