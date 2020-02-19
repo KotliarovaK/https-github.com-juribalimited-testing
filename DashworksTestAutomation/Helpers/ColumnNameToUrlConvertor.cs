@@ -141,26 +141,29 @@ namespace DashworksTestAutomation.Helpers
                 case "Build Date":
                     return "buildDate";
 
-                case "Windows7Mi: Target App":
+                case "Windows7Mi: Target App Name":
                     return "project_1_targetApplication";
 
-                case "Babel(Engl: Target App":
+                case "Babel(Engl: Target App Name":
                     return "project_46_targetApplication";
 
-                case "Barry'sUse: Target App":
+                case "Barry'sUse: Target App Name":
                     return "project_38_targetApplication";
 
-                case "ComputerSc: Target App":
+                case "ComputerSc: Target App Name":
                     return "project_40_targetApplication";
 
-                case "Havoc(BigD: Target App":
+                case "Havoc(BigD: Target App Name":
                     return "project_43_targetApplication";
 
-                case "MigrationP: Target App":
+                case "MigrationP: Target App Name":
                     return "project_34_targetApplication";
 
-                case "UserSchedu: Target App":
+                case "UserSchedu: Target App Name":
                     return "project_41_targetApplication";
+
+                case "MailboxEve: Target App Name":
+                    return "project_54_targetApplication";
 
                 case "User Key":
                     return "objectKey";

@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearAndFullDataIsDispla
 	Then full list content is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS12076 @DAS12351
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS12076 @DAS12351 @DAS20089
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContainsContentWhenDoesnotequalNoneForWindows7MiCategoryFilter
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -85,7 +85,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsEmptyWhenEqualNoneAndContain
 	When User add "Windows7Mi: Category" filter where type is "Does not equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Empty              |
-	When User clicks on 'Windows7Mi: Category' column header
 	Then Content is present in the newly added column
 	| ColumnName           |
 	| Windows7Mi: Category |
