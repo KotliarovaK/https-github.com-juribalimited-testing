@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTableOnEvergreenIncomingAppsTab
 
 #AnnI. 2/19/20: need to wait for gold data in March
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20026 @Not_Ready
-Scenario: EvergreenJnr_ApplicationsList_CheckThatTableOnEvergreenIncomingAppsTabIsDisplayedCorrectly
+Scenario: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersValueIsAdjustedOnTheEvergreenIncomingAppsTabAccordingToTheChangesMadeOnTheAppropriateApplicationDetailsPage
 	When User navigates to the 'Application' details page for the item with '1' ID
 	Then Details page for 'Python 2.2a4' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
