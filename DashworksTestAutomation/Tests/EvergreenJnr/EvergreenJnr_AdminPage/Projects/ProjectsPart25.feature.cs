@@ -615,7 +615,9 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWh" +
             "enArchivedItemsIncluded")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16844")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -650,7 +652,9 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWh" +
                     "enArchivedItemsIncluded", null, new string[] {
                         "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
                         "Projects",
                         "DAS16844",
                         "Cleanup"});

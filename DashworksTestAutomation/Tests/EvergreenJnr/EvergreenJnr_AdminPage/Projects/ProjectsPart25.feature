@@ -119,7 +119,7 @@ Examples:
 	| Devices   | All Devices   | Import Type    | Not empty | ListForDAS18100_3 | 18100Project |
 	| Mailboxes | All Mailboxes | Recipient Type | Not empty | ListForDAS19348_1 | 19348Project |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Projects @DAS16844 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16844 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncluded
 	When User clicks 'Devices' on the left-hand menu
 	When User sets includes archived devices in 'true'
