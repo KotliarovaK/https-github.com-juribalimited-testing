@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterT
 #Waiting for updated Validation messages on the automation
 Scenario: EvergreenJnr_AdminPage_CheckBannerMessageActionsGridValueDisplayAfterTaskChangingToTaskWithNoOwner
 	When Project created via API and opened
-	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| ProjectName    | Scope       | ProjectTemplate | Mode               |
 	| 18712_Project1 | All Devices | None            | Standalone Project |
 	When User clicks 'Projects' on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -378,3 +378,61 @@ Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	When User navigates to the 'Capacity' left menu item
 	When User checks 'Enable Capacity' checkbox
 	When User clicks 'UPDATE' button
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20013 @Cleanup @Void
+Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScreenIfSlotWasNotSelected
+	When User clicks 'Users' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Display Name" filter where type is "Equals" with added column and following value:
+	| Values              |
+	| 09CDC1FCD0C843E3B1C |
+	When User refreshes agGrid
+	When User create dynamic list with "20013_List" name on "Users" page
+	When Project created via API and opened
+	| ProjectName   | Scope      | ProjectTemplate | Mode               |
+	| 20013_Project | 20013_List | None            | Standalone Project |
+	When User clicks 'Projects' on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "20013_Project" Project
+	Then "Manage Project Details" page is displayed to the user
+	When User navigate to "Stages" tab
+	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName   |
+	| 20013_Stage |
+	And User clicks "Create Stage" button
+	And User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User creates Task
+	| Name       | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| 20013_Task | 20013 | 20013_Stage      | Normal         | Date            | User             |                          | false              |
+	Then Success message is displayed with "Task successfully created" text
+	When User updates the Task page
+	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskHasAnOwner | TaskImpactsReadiness | ShowDetails | ProjectObject | BulkUpdate | SelfService |
+	| true           | DateOnly       | None                  | true           | true                 | false       | false         | false      | false       |
+	When User publishes the task
+	Then selected task was published
+	When User navigate to Evergreen link
+	When User clicks 'Admin' on the left-hand menu
+	When User creates new Slot via Api
+	| Project       | SlotName   | DisplayName | CapacityType   | ObjectType | Sunday | Tasks                    |
+	| 20013_Project | slot_20013 | slot_20013  | Capacity Units | User       | 0      | 20013_Stage \ 20013_Task |
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
+	| 20013_Automation | 20013       | true   | false              | 20013_List | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	When User enters '20013_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects '20013_Project' option from 'Project' autocomplete
+	When User selects '20013_Stage \ 20013_Task' option from 'Task' autocomplete
+	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '12' text to 'Find Value' textbox
+	When User selects 'Days' in the 'Units' dropdown
+	When User clicks 'CREATE' button
+	When User clicks content from "Action" column
+	Then inline error banner is not displayed

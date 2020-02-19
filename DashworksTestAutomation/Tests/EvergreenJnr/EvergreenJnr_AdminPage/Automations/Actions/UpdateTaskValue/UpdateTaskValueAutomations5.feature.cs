@@ -1381,6 +1381,235 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScreenIfSlotWasN" +
+            "otSelected")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
+        [NUnit.Framework.CategoryAttribute("DAS20013")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Void")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScreenIfSlotWasNotSelected()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScreenIfSlotWasNotSelectedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScreenIfSlotWasNotSelectedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScreenIfSlotWasN" +
+                    "otSelected", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_AdminPage",
+                        "Automations",
+                        "DAS20013",
+                        "Cleanup",
+                        "Void"});
+#line 383
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 384
+ testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 385
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table27.AddRow(new string[] {
+                        "09CDC1FCD0C843E3B1C"});
+#line 386
+ testRunner.When("User add \"Display Name\" filter where type is \"Equals\" with added column and follo" +
+                    "wing value:", ((string)(null)), table27, "When ");
+#line 389
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 390
+ testRunner.When("User create dynamic list with \"20013_List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ProjectName",
+                        "Scope",
+                        "ProjectTemplate",
+                        "Mode"});
+            table28.AddRow(new string[] {
+                        "20013_Project",
+                        "20013_List",
+                        "None",
+                        "Standalone Project"});
+#line 391
+ testRunner.When("Project created via API and opened", ((string)(null)), table28, "When ");
+#line 394
+ testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 395
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 396
+ testRunner.When("User navigate to \"20013_Project\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 397
+ testRunner.Then("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 398
+ testRunner.When("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 399
+ testRunner.Then("\"Manage Stages\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 400
+ testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "StageName"});
+            table29.AddRow(new string[] {
+                        "20013_Stage"});
+#line 401
+ testRunner.And("User create Stage", ((string)(null)), table29, "And ");
+#line 404
+ testRunner.And("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 405
+ testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 406
+ testRunner.Then("\"Manage Tasks\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 407
+ testRunner.When("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
+                        "ObjectTypeString",
+                        "TaskValuesTemplateString",
+                        "ApplyToAllCheckbox"});
+            table30.AddRow(new string[] {
+                        "20013_Task",
+                        "20013",
+                        "20013_Stage",
+                        "Normal",
+                        "Date",
+                        "User",
+                        "",
+                        "false"});
+#line 408
+ testRunner.And("User creates Task", ((string)(null)), table30, "And ");
+#line 411
+ testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "TaskHaADueDate",
+                        "DateModeString",
+                        "TaskProjectRoleString",
+                        "TaskHasAnOwner",
+                        "TaskImpactsReadiness",
+                        "ShowDetails",
+                        "ProjectObject",
+                        "BulkUpdate",
+                        "SelfService"});
+            table31.AddRow(new string[] {
+                        "true",
+                        "DateOnly",
+                        "None",
+                        "true",
+                        "true",
+                        "false",
+                        "false",
+                        "false",
+                        "false"});
+#line 412
+ testRunner.When("User updates the Task page", ((string)(null)), table31, "When ");
+#line 415
+ testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 416
+ testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 417
+ testRunner.When("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 418
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
+                        "SlotName",
+                        "DisplayName",
+                        "CapacityType",
+                        "ObjectType",
+                        "Sunday",
+                        "Tasks"});
+            table32.AddRow(new string[] {
+                        "20013_Project",
+                        "slot_20013",
+                        "slot_20013",
+                        "Capacity Units",
+                        "User",
+                        "0",
+                        "20013_Stage \\ 20013_Task"});
+#line 419
+ testRunner.When("User creates new Slot via Api", ((string)(null)), table32, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "AutomationName",
+                        "Description",
+                        "Active",
+                        "StopOnFailedAction",
+                        "Scope",
+                        "Run"});
+            table33.AddRow(new string[] {
+                        "20013_Automation",
+                        "20013",
+                        "true",
+                        "false",
+                        "20013_List",
+                        "Manual"});
+#line 422
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table33, "When ");
+#line 425
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 426
+ testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 428
+ testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 429
+ testRunner.When("User enters \'20013_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 430
+ testRunner.When("User selects \'Update task value\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 431
+ testRunner.When("User selects \'20013_Project\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 432
+ testRunner.When("User selects \'20013_Stage \\ 20013_Task\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 433
+ testRunner.When("User selects \'Update relative to current value\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 434
+ testRunner.When("User enters \'12\' text to \'Find Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 435
+ testRunner.When("User selects \'Days\' in the \'Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 436
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 437
+ testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 438
+ testRunner.Then("inline error banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
