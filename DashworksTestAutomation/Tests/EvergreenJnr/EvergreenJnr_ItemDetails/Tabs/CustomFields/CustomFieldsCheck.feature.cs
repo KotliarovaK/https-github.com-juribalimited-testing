@@ -856,6 +856,86 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupBy" +
+            "Action")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17906")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupByAction()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupByActionInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupByActionInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupBy" +
+                    "Action", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17906"});
+#line 162
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 163
+ testRunner.When("User navigates to the \'Device\' details page for \'04R5RM0R0MVFCM\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 164
+ testRunner.Then("Details page for \'04R5RM0R0MVFCM\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 165
+ testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 166
+ testRunner.And("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "checkboxes"});
+            table11.AddRow(new string[] {
+                        "Value"});
+#line 167
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Custom Field" +
+                    "\' column:", ((string)(null)), table11, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkboxes",
+                        "State"});
+            table12.AddRow(new string[] {
+                        "Custom Field",
+                        "true"});
+#line 170
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table12, "When ");
+#line 173
+ testRunner.Then("Grid is grouped", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
