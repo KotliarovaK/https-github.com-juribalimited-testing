@@ -626,6 +626,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Thread.Sleep(5000);
         }
 
+        [When(@"User focus on '(.*)' dropdown")]
+        public void WhenUserFocusOnDropdown(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Long, true);
+        }
+
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]
         public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
         {

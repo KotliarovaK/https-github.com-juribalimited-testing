@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ".//quill-editor/..")]
         public IWebElement TextEditor { get; set; }
 
@@ -698,11 +698,23 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Dropdown
 
-        public IWebElement GetDropdown(string dropdownName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetDropdown(string dropdownName, WebDriverExtensions.WaitTime wait = WebDriverExtensions.WaitTime.Long, bool focusOnDropDown = false)
         {
             var selector = By.XPath(string.Format(NamedDropdownSelector, dropdownName));
-            if (!Driver.IsElementDisplayed(selector, wait))
+            if (!Driver.IsElementExists(selector, wait))
+            {
+                throw new Exception($"'{dropdownName}' dropdown is not exists");
+            }
+            if (focusOnDropDown)
+            {
+                Driver.MouseHover(selector);
+            }
+
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Short))
+            {
                 throw new Exception($"'{dropdownName}' dropdown is not displayed");
+            }
+
             Driver.WaitForElementToBeEnabled(selector);
             return Driver.FindElement(selector);
         }
@@ -720,7 +732,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public void SelectDropdown(string value, string dropdownName)
         {
             GetDropdown(dropdownName).Click();
-            GetDropdownValueByName(value).Click();
+            var ddValue = GetDropdownValueByName(value);
+            Driver.MouseHover(ddValue);
+            ddValue.Click();
         }
 
         public bool IsDropdownDisplayed(string dropdownName)
