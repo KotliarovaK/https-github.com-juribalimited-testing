@@ -122,7 +122,9 @@ Examples:
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16844 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncluded
 	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User sets includes archived devices in 'true'
+	Then table content is present
 	When User create dynamic list with "ProjectListForDas16844" name on "Devices" page
 	When User selects 'Project' in the 'Create' dropdown
 	Then 'This list may contain archived devices which will not be onboarded' information message is displayed for 'Scope' field
