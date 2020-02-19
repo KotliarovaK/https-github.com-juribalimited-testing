@@ -98,6 +98,35 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(tooltip, Is.EqualTo(toolTipText), $"Popup '{button}' button has incorrect tooltip");
         }
 
+
+
+        #endregion
+
+        #region Components
+
+        [Then(@"User sees '(.*)' component on dialog page")]
+        public void ThenUserSeesComponentOnDialogPage(string componentName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+            Verify.IsTrue(dialogContainer.ConponentOfDialogPage(componentName).Displayed, $"{componentName} wasn't displayed");
+        }
+
+        [When(@"User clicks on '(.*)' component on dialog page")]
+        public void ThenUserClicksOnComponentOnDialogPage(string componentName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+            var component = dialogContainer.ConponentOfDialogPage(componentName);
+            _driver.ClickByActions(component);
+        }
+
+        [Then(@"'(.*)' component on dialog page is highlighted")]
+        public void ThenComponentOnDialogPageIsHighlighted(string componentName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+
+            Verify.IsTrue(dialogContainer.IsConponentOfDialogPageHighlighted(componentName), $"{componentName} component wasn't highlighted");
+        }
+
         #endregion
     }
 }
