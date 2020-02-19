@@ -437,3 +437,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	| Sent           | true  |
 	Then "4,642" rows are displayed in the agGrid
 	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
+
+@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS19714
+Scenario: EvergreenJnr_UsersList_CheckThatThereIsNoErrorAfterTryingToFilterDataByWrongDate
+	When User clicks 'Users' on the left-hand menu
+	When User clicks the Filters button
+	When user select "Last Logon Date" filter
+	When User enters 'R.1111' text in 'Date' Search field
+	When User clicks Body container
+	When User enters 'R.' text in 'Date' Search field
+	When User clicks 'ADD' button
+	Then 'ADD' button is disabled
+	Then There are no errors in the browser console
