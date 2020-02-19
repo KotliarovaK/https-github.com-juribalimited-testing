@@ -177,20 +177,21 @@ namespace DashworksTestAutomation.Base
 
             try
             {
-                var requestUri = "http://autorelease.corp.juriba.com:81/devices?$top=1000&$skip=0&$filter=(project_task_1_472_1_Task_Value%20EQUALS%20(%271%27%2C%273%27))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_task_1_472_1_Task";
+                var requestUri = "http://autorelease.corp.juriba.com:81/devices?$top=1000&$skip=0&$filter=(project_task_1_472_1_Task_Value%20EQUALS%20(%271%27))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_task_1_472_1_Task";
                 var request = requestUri.GenerateRequest();
 
                 var resp = _client.Evergreen.Get(request);
 
-                if (!resp.Content.Contains("count: 5107"))
+                if (!resp.Content.Contains("{\"count\":5107"))
                 {
-                    Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
+                    Logger.Write("AFTER ============> !!! DEVICES TASK WAS CHANGED !!! <============");
+                    Logger.Write(resp.Content.Substring(0, 50));
                 }
             }
             catch (Exception e)
             {
                 Logger.Write(e);
-                Logger.Write("============> !!! DEVICES TASK WAS CHANGED !!! <============");
+                Logger.Write("AFTER ============> !!! DEVICES TASK WAS CHANGED !!! <============");
             }
         }
 

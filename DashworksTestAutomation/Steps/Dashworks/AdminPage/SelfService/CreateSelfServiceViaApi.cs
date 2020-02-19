@@ -22,48 +22,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
     {
         private readonly SelfServices _selfServices;
         private readonly RestWebClient _client;
-        private readonly RemoveSelfServiceMethods _removeSelfServiceMethods;
+        private readonly SelfServiceApiMethods _selfServiceApiMethods;
 
         public CreateSelfServiceViaApi(SelfServices selfServices, RestWebClient client)
         {
             _selfServices = selfServices;
             _client = client;
-            _removeSelfServiceMethods = new RemoveSelfServiceMethods(selfServices, client);
+            _selfServiceApiMethods = new SelfServiceApiMethods(selfServices, client);
         }
 
         //| ServiceId | Name | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate | EndDate | SelfServiceURL | AllowAnonymousUsers | ScopeId |
         [When(@"User creates Self Service via API")]
         public void WhenUserCreatesSelfServiceViaApi(Table table)
         {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
-            var createSelfService = table.CreateSet<SelfServiceDto>();
-
-            foreach (SelfServiceDto SelfService in createSelfService)
+            var exception = string.Empty;
+            _selfServices.Value.AddRange(_selfServiceApiMethods.CreateSelfService(table, out exception).Value);
+            if (!string.IsNullOrEmpty(exception))
             {
-                var request = requestUri.GenerateRequest();
-                request.AddObject(SelfService);
-                var response = _client.Evergreen.Post(request);
-
-                if (!response.StatusCode.Equals(HttpStatusCode.OK))
-                {
-                    _selfServices.Value.Add(new SelfServiceDto() { ServiceIdentifier = SelfService.ServiceIdentifier });
-                    throw new Exception($"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}");
-                }
-
-                var content = response.Content;
-                var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(content);
-
-                SelfService.ServiceId = selfServiceObjResponse.ServiceId;
-                SelfService.CreatedByUser = selfServiceObjResponse.CreatedByUser;
-                SelfService.ScopeId = selfServiceObjResponse.ScopeId;
-                SelfService.ScopeName = selfServiceObjResponse.ScopeName;
-                SelfService.StartDate = selfServiceObjResponse.StartDate;
-                SelfService.EndDate = selfServiceObjResponse.EndDate;
-                SelfService.ObjectType = selfServiceObjResponse.ObjectType;
-                SelfService.ObjectTypeId = selfServiceObjResponse.ObjectTypeId;
-                SelfService.SelfServiceURL = selfServiceObjResponse.SelfServiceURL;
-
-                _selfServices.Value.Add(SelfService);
+                throw new Exception(exception);
             }
         }
 
@@ -144,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         [Then(@"User deletes the Self Services via API")]
         public void ThenUserDeletesSelfServicesViaApi()
         {
-            _removeSelfServiceMethods.DeleteSelfService();
+            _selfServiceApiMethods.DeleteSelfService();
         }
 
         [Then(@"User enables Self Service with '(.*)' identifier via API")]

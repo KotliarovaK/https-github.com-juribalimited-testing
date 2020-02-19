@@ -15,10 +15,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService
     {
         public IWebElement SelfServiceUrlPreview(string baseSelfServiceUrl, string selfServiceIdentifier)
         {
-            string validUrl = $"{baseSelfServiceUrl}/{ selfServiceIdentifier}";
+            string validUrl = $"{baseSelfServiceUrl}/{selfServiceIdentifier}";
             var selector = By.XPath($".//span[@class='ng-star-inserted']//self::*[contains(text(),'{validUrl}')]");
             return Driver.FindElement(selector);
         }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

@@ -1456,9 +1456,9 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
             table26.AddRow(new string[] {
-                        "2004: Pre-Migration \\ Ready to Migrate severity ASC"});
+                        "2004: Pre-Migration \\ Ready to Migrate Severity ASC"});
             table26.AddRow(new string[] {
-                        "2004: Pre-Migration \\ Ready to Migrate severity DESC"});
+                        "2004: Pre-Migration \\ Ready to Migrate Severity DESC"});
             table26.AddRow(new string[] {
                         "2004: Pre-Migration \\ Ready to Migrate ASC"});
             table26.AddRow(new string[] {
@@ -1466,7 +1466,7 @@ this.FeatureBackground();
 #line 288
  testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table26, "Then ");
 #line 294
- testRunner.When("User selects \'2004: Pre-Migration \\ Ready to Migrate severity ASC\' in the \'OrderB" +
+ testRunner.When("User selects \'2004: Pre-Migration \\ Ready to Migrate Severity ASC\' in the \'OrderB" +
                     "y\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 295
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2539,6 +2539,122 @@ this.FeatureBackground();
                         "NOT APPLICABLE"});
 #line 536
  testRunner.Then("following content is displayed in the \'Not Applicable\' column for Widget", ((string)(null)), table51, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeverityHasCorrec" +
+            "tOrder")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS19736")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeverityHasCorrectOrder()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeverityHasCorrectOrderInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeverityHasCorrectOrderInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeverityHasCorrec" +
+                    "tOrder", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS19736",
+                        "Cleanup"});
+#line 541
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 542
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table52.AddRow(new string[] {
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task fo" +
+                            "r Workstation"});
+#line 543
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table52, "When ");
+#line 546
+ testRunner.When("User create dynamic list with \"19736_List\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 547
+ testRunner.When("Dashboard with \'Dashboard for DAS19736\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 548
+ testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 549
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "AggregateBy",
+                        "OrderBy",
+                        "MaxValues"});
+            table53.AddRow(new string[] {
+                        "Table",
+                        "19736_List",
+                        "19736_List",
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task fo" +
+                            "r Workstation",
+                        "Severity",
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task fo" +
+                            "r Workstation",
+                        "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task fo" +
+                            "r Workstation Severity ASC",
+                        "10"});
+#line 550
+ testRunner.When("User adds new Widget", ((string)(null)), table53, "When ");
+#line 553
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 554
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 555
+ testRunner.Then("\'19736_List\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+                        "headers"});
+            table54.AddRow(new string[] {
+                        "Empty"});
+            table54.AddRow(new string[] {
+                        "Started"});
+            table54.AddRow(new string[] {
+                        "Complete"});
+            table54.AddRow(new string[] {
+                        "Not Started"});
+            table54.AddRow(new string[] {
+                        "Not Applicable"});
+#line 556
+ testRunner.Then("Table columns of \'19736_List\' widget placed in the next order:", ((string)(null)), table54, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

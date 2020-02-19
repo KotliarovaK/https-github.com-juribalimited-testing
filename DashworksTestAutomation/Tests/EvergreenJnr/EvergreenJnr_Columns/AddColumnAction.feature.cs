@@ -2269,7 +2269,7 @@ this.FeatureBackground();
 #line 465
  testRunner.When("User clicks on \'2004: Target App Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 466
- testRunner.Then("data in table is sorted by \'1803: Target App Readiness\' column in descending orde" +
+ testRunner.Then("data in table is sorted by \'2004: Target App Readiness\' column in descending orde" +
                     "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 467
  testRunner.When("User clicks on \'2004: Target App Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

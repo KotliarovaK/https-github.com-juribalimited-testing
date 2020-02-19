@@ -287,11 +287,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	| Table      | DAS-15852 | 2004 Rollout | 2004: Pre-Migration \ Ready to Migrate | Severity          | 2004: Pre-Migration \ Ready to Migrate |
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                                                |
-	| 2004: Pre-Migration \ Ready to Migrate severity ASC  |
-	| 2004: Pre-Migration \ Ready to Migrate severity DESC |
+	| 2004: Pre-Migration \ Ready to Migrate Severity ASC  |
+	| 2004: Pre-Migration \ Ready to Migrate Severity DESC |
 	| 2004: Pre-Migration \ Ready to Migrate ASC           |
 	| 2004: Pre-Migration \ Ready to Migrate DESC          |
-	When User selects '2004: Pre-Migration \ Ready to Migrate severity ASC' in the 'OrderBy' dropdown
+	When User selects '2004: Pre-Migration \ Ready to Migrate Severity ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS-15852' Widget is displayed to the user
@@ -536,3 +536,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetShowsCorrectResultsIfT
 	Then following content is displayed in the 'Not Applicable' column for Widget
 	| Values         |
 	| NOT APPLICABLE |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19736 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeverityHasCorrectOrder
+	When User clicks 'Devices' on the left-hand menu
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName                                                                                     |
+	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation |
+	When User create dynamic list with "19736_List" name on "Devices" page
+	When Dashboard with 'Dashboard for DAS19736' name created via API and opened
+	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title      | List       | SplitBy                                                                                        | AggregateFunction | AggregateBy                                                                                    | OrderBy                                                                                                     | MaxValues |
+	| Table      | 19736_List | 19736_List | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation | Severity          | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation Severity ASC | 10        |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button 
+	Then '19736_List' Widget is displayed to the user
+	Then Table columns of '19736_List' widget placed in the next order:
+	| headers        |
+	| Empty          |
+	| Started        |
+	| Complete       |
+	| Not Started    |
+	| Not Applicable |

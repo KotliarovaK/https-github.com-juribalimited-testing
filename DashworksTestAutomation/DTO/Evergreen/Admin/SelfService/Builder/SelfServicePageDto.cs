@@ -56,8 +56,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
             }
         }
 
-        [JsonProperty("objectTypeId")]
-        public int ObjectTypeId { get; set; }
+        [JsonProperty("objectTypeId")] public int ObjectTypeId => 3;
 
         [JsonProperty("order")]
         public int Order { get; set; }

@@ -175,7 +175,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = FilterValue)]
         public IList<IWebElement> FilterValueList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='dateDirection']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='relativeSelect']")]
         public IWebElement AheadOrAgoInput { get; set; }
         
         public override List<By> GetPageIdentitySelectors()
@@ -594,13 +594,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void SelectAssociation(string placeholder, string option)
         {
-            Driver.FindElement(By.XPath(SearchTextBoxSelector)).Click();
-            Driver.FindElement(By.XPath(SearchTextBoxSelector)).Clear();
-            Driver.FindElement(By.XPath(SearchTextBoxSelector)).SendKeys(option);
-            Driver.WaitForDataLoading();
-
             var optionSelector =
                 $".//input[@placeholder='{placeholder}']/ancestor::div[contains(@class, 'searchPanel input-wrapper')]/following-sibling::div//div[contains(text(), '{option}')]";
+
+            Driver.WaitForDataLoading();
+
             Driver.FindElementByXPath(optionSelector).Click();
         }
 

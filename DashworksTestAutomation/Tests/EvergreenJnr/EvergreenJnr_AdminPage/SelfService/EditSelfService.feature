@@ -7,6 +7,9 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS18214 @DAS19364 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpenedOneAndUserIsAbleToEditIt
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name        | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_1  | Test_ID_1         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
@@ -33,6 +36,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreatedSelfServiceIsMatchedToTheOpened
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutName
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
 	When User creates Self Service via API
 	| ServiceId | Name        | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_12 | Test_ID_12        | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
@@ -46,6 +52,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutChanges
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
 	When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_4 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
@@ -60,6 +69,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelectedScope
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_5 | Test_ID_5         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
@@ -74,6 +86,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithoutSelect
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup @Not_Ready
 #Need to add REALY broken list to the step or make the existing as broken
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithBrokenScopeList
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_6 | Test_ID_6         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
@@ -88,6 +103,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithNotAllowableCharactersInSelfServiceIdentifierTextField
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_7 | Test_ID_7         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
@@ -108,6 +126,9 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19082 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCantUpdateSelfServiceWithMoreThanTenCharactersInSelfServiceIdentifierTextField
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_8 | Test_ID_8         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |   
@@ -128,6 +149,9 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatDisabledSelfServiceChangesTheCheckboxStateInEditAfterEnableInCogMenu
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_9 | Test_ID_9         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |      
@@ -139,6 +163,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatDisabledSelfSer
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @DAS19692 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEnabledSelfServiceChangesTheCheckboxStateInEditAfterDisableInCogMenu
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_1 | Test_ID_1         | true   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |       
@@ -150,6 +177,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEnabledSelfServ
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @DAS19692 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedWhenEnableDisableSelfService
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_2 | Test_ID_2         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
@@ -162,6 +192,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationAndButtonsOnItWillBeDisplayedWhenUserIsAboutToDeleteSelfService
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_3 | Test_ID_3         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
@@ -174,6 +207,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19280 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificationWillBeDisplayedAfterTheSelfServiceWasDeletedAndItDoesntDisaplysAnymoreInTheGrid
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_4 | Test_ID_4         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
@@ -189,6 +225,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNitificat
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19289 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificationAndLinkInItAreDisplayedWhenUserUpadatesSelfService
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_5 | Test_ID_5         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
@@ -205,6 +244,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatProperNotificat
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19864 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdatedSelfServiceUrlPreviewConstructedProperly
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
     When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_6 | Test_ID_6         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |         
@@ -224,6 +266,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUpdatedSelfServ
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19922 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAllAplicationsAreAvaibleInSelfServiceScopeDropdownWhileUpdate
+	When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
 	When User creates Self Service via API
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_7 | Test_ID_7         | false   | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 2004 Apps |
