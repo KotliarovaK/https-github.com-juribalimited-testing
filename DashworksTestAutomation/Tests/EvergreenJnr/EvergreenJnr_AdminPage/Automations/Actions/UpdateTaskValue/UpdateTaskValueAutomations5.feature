@@ -431,7 +431,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScree
 	When User selects '20013_Project' option from 'Project' autocomplete
 	When User selects '20013_Stage \ 20013_Task' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
-	When User enters '12' text to 'Find Value' textbox
+	When User enters '12' text to 'Value' textbox
 	When User selects 'Days' in the 'Units' dropdown
 	When User clicks 'CREATE' button
 	When User clicks content from "Action" column
