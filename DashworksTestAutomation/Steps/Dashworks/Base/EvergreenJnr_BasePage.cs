@@ -78,6 +78,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Text Editor
+
+        [Then(@"text editor is displayed")]
+        public void ThenTextEditorIsDisplayed()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(_driver.IsElementExists(page.TextEditor), "Text editor is not displayed on page");
+        }
+
+        #endregion
+
         #region Autocomplete
 
         //TODO it is better to no use it and delete at all

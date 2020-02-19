@@ -38,6 +38,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
+        
+        [FindsBy(How = How.XPath, Using = ".//quill-editor/..")]
+        public IWebElement TextEditor { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }

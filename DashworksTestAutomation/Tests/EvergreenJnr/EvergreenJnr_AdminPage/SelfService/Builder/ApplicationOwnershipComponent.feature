@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #Complete this test when DAS-20019 will be completelly implemented
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19061 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20019 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When Project created via API and opened
 	| ProjectName    | Scope            | ProjectTemplate | Mode               |
