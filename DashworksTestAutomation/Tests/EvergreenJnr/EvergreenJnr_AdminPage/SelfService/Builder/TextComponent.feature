@@ -27,8 +27,6 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
 	Then '' content is displayed in 'Component Name' textbox
 	Then 'Show this component' checkbox is unchecked
 	Then 'CREATE' button is disabled
-	#Not clear what tooltip is correct
-	#Then 'CREATE' button has tooltip with 'No changes made' text
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	When User enters '' text to 'Component Name' textbox
 	Then 'Enter a component name' error message is displayed for 'Component Name' field
