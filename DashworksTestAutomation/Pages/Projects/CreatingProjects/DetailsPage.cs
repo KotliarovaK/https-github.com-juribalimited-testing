@@ -36,9 +36,6 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DefaultAppsViewOrderID')]")]
         public IWebElement ApplicationsTab2 { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DefaultAppsForwardPathTypeID')]")]
-        public IWebElement ApplicationRationalisation { get; set; }
-
         [FindsBy(How = How.XPath,
             Using = ".//input[@aria-label='Show Original Application Column On Application Dashboards']")]
         public IWebElement OriginalApplicationColumnCheckbox { get; set; }
