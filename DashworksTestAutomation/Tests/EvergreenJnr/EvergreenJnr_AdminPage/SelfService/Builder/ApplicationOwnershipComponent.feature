@@ -23,6 +23,8 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName    | ShowInSelfService |
 	| 20019_1_SI        | TestPageSs2 | DAS_20019_Page | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User selects 'Edit' cogmenu option for 'Text' item type with 'TestPageSs2' name on Self Service Builder Panel
 	#
 	#ADD Application Ownership component - currently Andrew is creating these steps
 	#

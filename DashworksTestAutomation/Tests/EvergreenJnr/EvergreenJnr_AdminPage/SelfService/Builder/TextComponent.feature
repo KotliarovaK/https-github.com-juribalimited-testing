@@ -17,6 +17,8 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName    | ShowInSelfService |
 	| 19979_1_SI        | TestPageSs2 | DAS_19979_Page | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs2' name on Self Service Builder Panel
 	#
 	#Open Text Component
 	#
@@ -45,14 +47,20 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19979_2_SI        | TestPageSs3 | DAS_19979_Page_2 | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs3' name on Self Service Builder Panel
 	#
-	#Open already Created Text component
+	#Open Text Component
 	#
+	When User enters 'Text_Component_Name' text to 'Component Name' textbox
+	When User checks 'Show this component' checkbox
+	When User clicks 'CREATE' button
+	When User selects 'Edit' cogmenu option for 'Text' item type with 'Text_Component_Name' name on Self Service Builder Panel
 	Then Page with 'DAS_19979_SS_2' header is displayed to user
-	Then Page with 'Create Text Component' subheader is displayed to user
+	Then Page with 'Edit Text Component' subheader is displayed to user
 	Then 'TestPageSs3' label with self service parent page name is displayed
 	Then text editor is displayed
-	Then 'COMPONENT_NAME' content is displayed in 'Component Name' textbox
+	Then 'Text_Component_Name' content is displayed in 'Component Name' textbox
 	Then 'Show this component' checkbox is checked
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
