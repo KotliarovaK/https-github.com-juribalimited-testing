@@ -637,15 +637,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	When User clicks 'CREATE ACTION' button
 	And User enters '15949_Action_1' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
-	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'Computer: Laptop Replacement' option from 'Path' autocomplete
+	And User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	And User selects '[Default (Computer)]' option from 'Path' autocomplete
 	And User clicks 'CREATE' button 
 	#create action #2
 	And User clicks 'CREATE ACTION' button 
 	And User enters '15949_Action_2' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
-	And User selects 'Barry's User Project' option from 'Project' autocomplete
-	And User selects 'Desktop Replacement' option from 'Path' autocomplete
+	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	And User selects '[Default (Computer)]' option from 'Path' autocomplete
 	And User clicks 'CREATE' button
 	#run automation
 	When User clicks 'Automations' header breadcrumb
@@ -666,7 +666,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User select "Equals" Operator value
 	When User selects current date checkbox from Filter panel
 	And User clicks Save filter button
-	Then "5,179" rows are displayed in the agGrid
+	Then "51" rows are displayed in the agGrid
 	#check log
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Automations' left menu item
@@ -676,7 +676,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And User selects "Select All" checkbox from String Filter with item list on the Admin page
 	And User clicks String Filter button for "Action" column on the Admin page
 	And User selects "15949_Action_1" checkbox from String Filter with item list on the Admin page
-	Then '5179' content is displayed in the 'Objects' column
+	Then '51' content is displayed in the 'Objects' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation

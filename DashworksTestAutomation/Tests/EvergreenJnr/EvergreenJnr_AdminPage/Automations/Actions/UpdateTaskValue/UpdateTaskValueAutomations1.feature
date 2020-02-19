@@ -85,6 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	| Remove                           |
 	| No change                        |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+
 	When User enters '2' text to 'Value' textbox
 	When User selects 'After current value' in the 'Before or After' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
