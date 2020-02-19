@@ -4961,21 +4961,21 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("Filter_ApplicationsList")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App", "Equals, Does not equal, Not empty", "WebZIP (A01)", "Windows7Mi: Target App is WebZIP (A01)", "3", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App", "Equals, Does not equal, Not empty", "sndconfig", "Babel(Engl: Target App is sndconfig", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App", "Equals, Does not equal, Not empty", "World Watch (A01)", "Barry\'sUse: Target App is World Watch (A01)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App", "Equals, Does not equal, Not empty", "World Watch (A01)", "ComputerSc: Target App is World Watch (A01)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App", "Equals, Does not equal, Not empty", "WebZIP (A01)", "Havoc(BigD: Target App is WebZIP (A01)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Target App", "Equals, Does not equal, Not empty", "Zune (A01)", "MigrationP: Target App is Zune (A01)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App", "Equals, Does not equal, Not empty", "Zune (A01)", "UserSchedu: Target App is Zune (A01)", "1", null)]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Name", "Windows7Mi: Target App", "Equals, Does not equal, Not empty", "WebZIP (A01)", "Windows7Mi: Target App is WebZIP (A01)", "3", null)]
+        [NUnit.Framework.TestCaseAttribute("MailboxEve: Target App Name", "MailboxEve: Target App", "Equals, Does not equal, Not empty", "Empty", "MailboxEve: Target App is Empty", "2,223", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App Name", "Barry\'sUse: Target App", "Equals, Does not equal, Not empty", "World Watch (A01)", "Barry\'sUse: Target App is World Watch (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Target App Name", "ComputerSc: Target App", "Equals, Does not equal, Not empty", "World Watch (A01)", "ComputerSc: Target App is World Watch (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App Name", "Havoc(BigD: Target App", "Equals, Does not equal, Not empty", "WebZIP (A01)", "Havoc(BigD: Target App is WebZIP (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Target App Name", "Barry\'sUse: Target App", "Equals, Does not equal, Not empty", "Zune (A01)", "Barry\'sUse: Target App is Zune (A01)", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App Name", "UserSchedu: Target App", "Equals, Does not equal, Not empty", "Zune (A01)", "UserSchedu: Target App is Zune (A01)", "1", null)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList(string columnName, string filterName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheListInternal(columnName,operators,filterOption,text,rowsCount,exampleTags);
+                    this.EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheListInternal(columnName,filterName,operators,filterOption,text,rowsCount,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -4994,7 +4994,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheListInternal(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        private void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheListInternal(string columnName, string filterName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -5023,7 +5023,7 @@ this.FeatureBackground();
 #line 1077
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1078
- testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1079
  testRunner.Then(string.Format("\"{0}\" option is available for this filter", operators), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1080
@@ -5507,8 +5507,7 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToT" +
-            "heList")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatRationalisationFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("Filter_ApplicationsList")]
@@ -5517,20 +5516,19 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS11509")]
         [NUnit.Framework.CategoryAttribute("DAS12026")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", "Equals, Does not equal, Not empty", "RETIRE", "Windows7Mi: Application Rationalisation is Retire", "85", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Rationalisation", "Equals, Does not equal, Not empty", "KEEP", "Barry\'sUse: Application Rationalisation is Keep", "2", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Application Rationalisation", "Equals, Does not equal, Not empty", "FORWARD PATH", "ComputerSc: Application Rationalisation is Forward Path", "15", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Rationalisation", "Equals, Does not equal, Not empty", "UNCATEGORISED", "Havoc(BigD: Application Rationalisation is Uncategorised", "1,068", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Application Rationalisation", "Equals, Does not equal, Not empty", "RETIRE", "MigrationP: Application Rationalisation is Retire", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Application Rationalisation", "Equals, Does not equal, Not empty", "UNCATEGORISED", "UserSchedu: Application Rationalisation is Uncategorised", "981", null)]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Rationalisation", "Equals, Does not equal, Not empty", "RETIRE", "Windows7Mi: Rationalisation is Retire", "85", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Rationalisation", "Equals, Does not equal, Not empty", "KEEP", "Barry\'sUse: Rationalisation is Keep", "2", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Rationalisation", "Equals, Does not equal, Not empty", "FORWARD PATH", "ComputerSc: Rationalisation is Forward Path", "15", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Rationalisation", "Equals, Does not equal, Not empty", "UNCATEGORISED", "Havoc(BigD: Rationalisation is Uncategorised", "1,068", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Rationalisation", "Equals, Does not equal, Not empty", "UNCATEGORISED", "UserSchedu: Rationalisation is Uncategorised", "981", null)]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatRationalisationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheListInternal(columnName,operators,filterOption,text,rowsCount,exampleTags);
+                    this.EvergreenJnr_ApplicationsList_CheckThatRationalisationFilterIsAddedToTheListInternal(columnName,operators,filterOption,text,rowsCount,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -5549,7 +5547,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheListInternal(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        private void EvergreenJnr_ApplicationsList_CheckThatRationalisationFilterIsAddedToTheListInternal(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -5564,8 +5562,7 @@ this.FeatureBackground();
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToT" +
-                    "heList", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatRationalisationFilterIsAddedToTheList", null, @__tags);
 #line 1231
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5667,48 +5664,48 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList", null, @__tags);
-#line 1262
+#line 1260
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1263
+#line 1261
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1264
+#line 1262
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1265
+#line 1263
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1266
+#line 1264
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table122.AddRow(new string[] {
                         string.Format("{0}", columnName)});
-#line 1267
+#line 1265
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table122, "When ");
-#line 1270
+#line 1268
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1271
+#line 1269
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1272
+#line 1270
  testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1273
+#line 1271
  testRunner.Then(string.Format("\"{0}\" option is available for this filter", operators), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table123.AddRow(new string[] {
                         string.Format("{0}", filterOption)});
-#line 1274
+#line 1272
  testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table123, "When ");
-#line 1277
+#line 1275
  testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1278
+#line 1276
  testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1279
+#line 1277
  testRunner.When(string.Format("User clicks on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1280
+#line 1278
  testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -5724,13 +5721,13 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11509")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS11509")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "Windows7Mi: Hide from End Users is False", "1,067", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Hide from End Users", "Equals, Does not equal, Not empty", "Empty", "Babel(Engl: Hide from End Users is Empty", "1,921", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "Barry\'sUse: Hide from End Users is False", "1,078", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "ComputerSc: Hide from End Users is False", "1,043", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide from End Users", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Hide from End Users is Empty", "1,155", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Hide from End Users", "Equals, Does not equal, Not empty", "FALSE", "MigrationP: Hide from End Users is False", "220", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide from End Users", "Equals, Does not equal, Not empty", "Empty", "UserSchedu: Hide from End Users is Empty", "1,242", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "Windows7Mi: Hide From End Users is False", "1,067", null)]
+        [NUnit.Framework.TestCaseAttribute("Pr00: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "Pr00: Hide From End Users is Empty", "1,096", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "Barry\'sUse: Hide From End Users is False", "1,078", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "ComputerSc: Hide From End Users is False", "1,043", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Hide From End Users is Empty", "1,155", null)]
+        [NUnit.Framework.TestCaseAttribute("DeviceSche: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "DeviceSche: Hide From End Users is False", "100", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "UserSchedu: Hide From End Users is Empty", "1,242", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -5772,48 +5769,48 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList", null, @__tags);
-#line 1293
+#line 1291
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1294
+#line 1292
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1295
+#line 1293
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1296
+#line 1294
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1297
+#line 1295
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table124.AddRow(new string[] {
                         string.Format("{0}", columnName)});
-#line 1298
+#line 1296
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table124, "When ");
-#line 1301
+#line 1299
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1302
+#line 1300
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1303
+#line 1301
  testRunner.When(string.Format("user select \"{0}\" filter", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1304
+#line 1302
  testRunner.Then(string.Format("\"{0}\" option is available for this filter", operators), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table125.AddRow(new string[] {
                         string.Format("{0}", filterOption)});
-#line 1305
+#line 1303
  testRunner.When("User have created \"Equals\" filter with column and following options:", ((string)(null)), table125, "When ");
-#line 1308
+#line 1306
  testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1309
+#line 1307
  testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1310
+#line 1308
  testRunner.When(string.Format("User clicks on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1311
+#line 1309
  testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -5863,34 +5860,34 @@ this.FeatureBackground();
                         "DAS18875",
                         "Cleanup",
                         "Universe"});
-#line 1324
+#line 1322
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1325
+#line 1323
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1326
+#line 1324
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1327
+#line 1325
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1328
+#line 1326
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table126.AddRow(new string[] {
                         "Red"});
-#line 1329
+#line 1327
  testRunner.When("User add \"Sticky Compliance\" filter where type is \"Equals\" without added column a" +
                     "nd following checkboxes:", ((string)(null)), table126, "When ");
-#line 1332
+#line 1330
  testRunner.When("User creates \'DAS18875_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1333
+#line 1331
  testRunner.Then("\"DAS18875_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1334
+#line 1332
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1335
+#line 1333
  testRunner.Then("\"Sticky Compliance is Red\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -5940,34 +5937,34 @@ this.FeatureBackground();
                         "DAS18961",
                         "Cleanup",
                         "Universe"});
-#line 1338
+#line 1336
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1339
+#line 1337
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1340
+#line 1338
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1341
+#line 1339
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1342
+#line 1340
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
             table127.AddRow(new string[] {
                         "Multi Edit 9 Client"});
-#line 1343
+#line 1341
  testRunner.When("User add \"1803: Target App\" filter where type is \"Equals\" with added column and L" +
                     "ookup option", ((string)(null)), table127, "When ");
-#line 1346
+#line 1344
  testRunner.When("User creates \'DAS18875_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1347
+#line 1345
  testRunner.Then("\"DAS18875_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1348
+#line 1346
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1349
+#line 1347
  testRunner.Then("\"1803: Target App is Multi Edit 9 Client\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -6017,34 +6014,34 @@ this.FeatureBackground();
                         "DAS18961",
                         "Cleanup",
                         "Universe"});
-#line 1352
+#line 1350
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1353
+#line 1351
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1354
+#line 1352
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1355
+#line 1353
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1356
+#line 1354
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table128.AddRow(new string[] {
                         "12"});
-#line 1357
+#line 1355
  testRunner.When("User add \"1803: Target App Key\" filter where type is \"Does not equal\" with added " +
                     "column and following value:", ((string)(null)), table128, "When ");
-#line 1360
+#line 1358
  testRunner.When("User creates \'DAS18875_list1\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1361
+#line 1359
  testRunner.Then("\"DAS18875_list1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1362
+#line 1360
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1363
+#line 1361
  testRunner.Then("\"1803: Target App Key is not 12\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -6094,36 +6091,36 @@ this.FeatureBackground();
                         "DAS18961",
                         "Cleanup",
                         "Universe"});
-#line 1366
+#line 1364
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1367
+#line 1365
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1368
+#line 1366
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1369
+#line 1367
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1370
+#line 1368
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table129.AddRow(new string[] {
                         "Adobe"});
-#line 1371
+#line 1369
  testRunner.When("User add \"Evergreen Target App Vendor\" filter where type is \"Contains\" with added" +
                     " column and following value:", ((string)(null)), table129, "When ");
-#line 1374
+#line 1372
  testRunner.When("User creates \'DAS18875_list2\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1375
+#line 1373
  testRunner.Then("\"DAS18875_list2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1376
+#line 1374
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1377
+#line 1375
  testRunner.Then("\"Evergreen Target App Vendor contains Adobe\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1378
+#line 1376
  testRunner.Then("\'Adobe Systems, Inc.\' content is displayed in the \'Evergreen Target App Vendor\' c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -6174,34 +6171,34 @@ this.FeatureBackground();
                         "DAS18961",
                         "Cleanup",
                         "Universe"});
-#line 1381
+#line 1379
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1382
+#line 1380
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1383
+#line 1381
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1384
+#line 1382
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1385
+#line 1383
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table130.AddRow(new string[] {
                         "Microsoft"});
-#line 1386
+#line 1384
  testRunner.When("User add \"Evergreen Target App Version\" filter where type is \"Does not contain\" w" +
                     "ith added column and following value:", ((string)(null)), table130, "When ");
-#line 1389
+#line 1387
  testRunner.When("User creates \'DAS18875_list3\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1390
+#line 1388
  testRunner.Then("\"DAS18875_list3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1391
+#line 1389
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1392
+#line 1390
  testRunner.Then("\"Evergreen Target App Version does not contain Microsoft\" is displayed in added f" +
                     "ilter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -6252,34 +6249,34 @@ this.FeatureBackground();
                         "DAS18961",
                         "Cleanup",
                         "Universe"});
-#line 1395
+#line 1393
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1396
+#line 1394
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1397
+#line 1395
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1398
+#line 1396
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1399
+#line 1397
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table131.AddRow(new string[] {
                         ""});
-#line 1400
+#line 1398
  testRunner.When("User add \"1803: Target App Readiness\" filter where type is \"Not empty\" with added" +
                     " column and following value:", ((string)(null)), table131, "When ");
-#line 1403
+#line 1401
  testRunner.When("User creates \'DAS18875_list4\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1404
+#line 1402
  testRunner.Then("\"DAS18875_list4\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1405
+#line 1403
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1406
+#line 1404
  testRunner.Then("\"1803: Target App Readiness is not empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -6329,34 +6326,34 @@ this.FeatureBackground();
                         "DAS18896",
                         "Cleanup",
                         "Universe"});
-#line 1409
+#line 1407
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1410
+#line 1408
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1411
+#line 1409
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1412
+#line 1410
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1413
+#line 1411
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table132.AddRow(new string[] {
                         "UNCATEGORISED"});
-#line 1414
+#line 1412
  testRunner.When("User add \"Evergreen Rationalisation\" filter where type is \"Equals\" without added " +
                     "column and following checkboxes:", ((string)(null)), table132, "When ");
-#line 1417
+#line 1415
  testRunner.When("User creates \'DAS18896_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1418
+#line 1416
  testRunner.Then("\"DAS18896_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1419
+#line 1417
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1420
+#line 1418
  testRunner.Then("\"Evergreen Rationalisation is Uncategorised\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -6404,32 +6401,32 @@ this.FeatureBackground();
                         "Filter_ApplicationsList",
                         "DAS19262",
                         "Cleanup"});
-#line 1423
+#line 1421
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1424
+#line 1422
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1425
+#line 1423
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1426
+#line 1424
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1427
+#line 1425
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table133 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-#line 1428
+#line 1426
  testRunner.When("User add \"Evergreen Target App Name\" filter where type is \"Not empty\" with added " +
                     "column and following value:", ((string)(null)), table133, "When ");
-#line 1430
+#line 1428
  testRunner.When("User creates \'DAS19262_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1431
+#line 1429
  testRunner.Then("\"DAS19262_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1432
+#line 1430
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1433
+#line 1431
  testRunner.Then("\"Evergreen Target App Name is not empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -6481,29 +6478,29 @@ this.FeatureBackground();
                         "DAS19262",
                         "Cleanup",
                         "Universe"});
-#line 1436
+#line 1434
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1437
+#line 1435
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1438
+#line 1436
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1439
+#line 1437
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1440
+#line 1438
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1441
+#line 1439
  testRunner.When("User add \"Evergreen Target App\" filter where type is \"Equals\" with added column a" +
                     "nd \"No Target Application\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1442
+#line 1440
  testRunner.When("User creates \'DAS192621_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1443
+#line 1441
  testRunner.Then("\"DAS192621_list\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1444
+#line 1442
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1445
+#line 1443
  testRunner.Then("\"Evergreen Target App is No Target Application\" is displayed in added filter info" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
