@@ -1075,7 +1075,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	| <ColumnName> |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "<ColumnName>" filter
+	When user select "<FilterName>" filter
 	Then "<Operators>" option is available for this filter
 	When User have created "Equals" Lookup filter with column and "<FilterOption>" option
 	Then "<Text>" is displayed in added filter info
@@ -1084,14 +1084,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples:
-	| ColumnName             | Operators                         | FilterOption      | Text                                        | RowsCount |
-	| Windows7Mi: Target App | Equals, Does not equal, Not empty | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
-	| Babel(Engl: Target App | Equals, Does not equal, Not empty | sndconfig         | Babel(Engl: Target App is sndconfig         | 1         |
-	| Barry'sUse: Target App | Equals, Does not equal, Not empty | World Watch (A01) | Barry'sUse: Target App is World Watch (A01) | 1         |
-	| ComputerSc: Target App | Equals, Does not equal, Not empty | World Watch (A01) | ComputerSc: Target App is World Watch (A01) | 1         |
-	| Havoc(BigD: Target App | Equals, Does not equal, Not empty | WebZIP (A01)      | Havoc(BigD: Target App is WebZIP (A01)      | 1         |
-	| MigrationP: Target App | Equals, Does not equal, Not empty | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
-	| UserSchedu: Target App | Equals, Does not equal, Not empty | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
+	| ColumnName                  | FilterName             | Operators                         | FilterOption      | Text                                        | RowsCount |
+	| Windows7Mi: Target App Name | Windows7Mi: Target App | Equals, Does not equal, Not empty | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
+	| MailboxEve: Target App Name | MailboxEve: Target App | Equals, Does not equal, Not empty | Empty             | MailboxEve: Target App is Empty             | 2,223     |
+	| Barry'sUse: Target App Name | Barry'sUse: Target App | Equals, Does not equal, Not empty | World Watch (A01) | Barry'sUse: Target App is World Watch (A01) | 1         |
+	| ComputerSc: Target App Name | ComputerSc: Target App | Equals, Does not equal, Not empty | World Watch (A01) | ComputerSc: Target App is World Watch (A01) | 1         |
+	| Havoc(BigD: Target App Name | Havoc(BigD: Target App | Equals, Does not equal, Not empty | WebZIP (A01)      | Havoc(BigD: Target App is WebZIP (A01)      | 1         |
+	| Barry'sUse: Target App Name | Barry'sUse: Target App | Equals, Does not equal, Not empty | Zune (A01)        | Barry'sUse: Target App is Zune (A01)        | 1         |
+	| UserSchedu: Target App Name | UserSchedu: Target App | Equals, Does not equal, Not empty | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10828 @DAS14287
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
@@ -1228,7 +1228,7 @@ Examples:
 	| UserSchedu: Application Readiness | Equals, Does not equal, Not empty | Empty        | UserSchedu: Application Readiness is Empty | 1,242     |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026
-Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatRationalisationFilterIsAddedToTheList
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Columns button
@@ -1249,14 +1249,12 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
-	| ColumnName                              | Operators                         | FilterOption  | Text                                                     | RowsCount |
-	| Windows7Mi: Application Rationalisation | Equals, Does not equal, Not empty | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
-	#| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
-	| Barry'sUse: Application Rationalisation | Equals, Does not equal, Not empty | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
-	| ComputerSc: Application Rationalisation | Equals, Does not equal, Not empty | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 15        |
-	| Havoc(BigD: Application Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,068     |
-	| MigrationP: Application Rationalisation | Equals, Does not equal, Not empty | RETIRE        | MigrationP: Application Rationalisation is Retire        | 1         |
-	| UserSchedu: Application Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | UserSchedu: Application Rationalisation is Uncategorised | 981       |
+	| ColumnName                  | Operators                         | FilterOption  | Text                                         | RowsCount |
+	| Windows7Mi: Rationalisation | Equals, Does not equal, Not empty | RETIRE        | Windows7Mi: Rationalisation is Retire        | 85        |
+	| Barry'sUse: Rationalisation | Equals, Does not equal, Not empty | KEEP          | Barry'sUse: Rationalisation is Keep          | 2         |
+	| ComputerSc: Rationalisation | Equals, Does not equal, Not empty | FORWARD PATH  | ComputerSc: Rationalisation is Forward Path  | 15        |
+	| Havoc(BigD: Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | Havoc(BigD: Rationalisation is Uncategorised | 1,068     |
+	| UserSchedu: Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | UserSchedu: Rationalisation is Uncategorised | 981       |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11507
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList
@@ -1312,13 +1310,13 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterI
 
 Examples: 
 	| ColumnName                      | Operators                         | FilterOption | Text                                     | RowsCount |
-	| Windows7Mi: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Windows7Mi: Hide from End Users is False | 1,067     |
-	| Babel(Engl: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Hide from End Users is Empty | 1,921     |
-	| Barry'sUse: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide from End Users is False | 1,078     |
-	| ComputerSc: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide from End Users is False | 1,043     |
-	| Havoc(BigD: Hide from End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide from End Users is Empty | 1,155     |
-	| MigrationP: Hide from End Users | Equals, Does not equal, Not empty | FALSE        | MigrationP: Hide from End Users is False | 220       |
-	| UserSchedu: Hide from End Users | Equals, Does not equal, Not empty | Empty        | UserSchedu: Hide from End Users is Empty | 1,242     |
+	| Windows7Mi: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | Windows7Mi: Hide From End Users is False | 1,067     |
+	| Pr00: Hide From End Users       | Equals, Does not equal, Not empty | Empty        | Pr00: Hide From End Users is Empty       | 1,096     |
+	| Barry'sUse: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide From End Users is False | 1,078     |
+	| ComputerSc: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide From End Users is False | 1,043     |
+	| Havoc(BigD: Hide From End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide From End Users is Empty | 1,155     |
+	| DeviceSche: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | DeviceSche: Hide From End Users is False | 100       |
+	| UserSchedu: Hide From End Users | Equals, Does not equal, Not empty | Empty        | UserSchedu: Hide From End Users is Empty | 1,242     |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18875 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckStickyComplianceFilter
