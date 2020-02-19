@@ -217,6 +217,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFil
 	Then Pivot run was completed
 	When User creates Pivot list with "<PivotName>" name
 	And User clicks '<ListName>' on the left-hand menu
+	When User enters "<PivotName>" text in Search field at List Panel
 	And User navigates to the "<PivotName>" list
 	And User clicks the Filters button
 	And User selects "<FilterName>" filter from "<CategoryName>" category
