@@ -1456,9 +1456,9 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
             table26.AddRow(new string[] {
-                        "2004: Pre-Migration \\ Ready to Migrate severity ASC"});
+                        "2004: Pre-Migration \\ Ready to Migrate Severity ASC"});
             table26.AddRow(new string[] {
-                        "2004: Pre-Migration \\ Ready to Migrate severity DESC"});
+                        "2004: Pre-Migration \\ Ready to Migrate Severity DESC"});
             table26.AddRow(new string[] {
                         "2004: Pre-Migration \\ Ready to Migrate ASC"});
             table26.AddRow(new string[] {
@@ -1466,7 +1466,7 @@ this.FeatureBackground();
 #line 288
  testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table26, "Then ");
 #line 294
- testRunner.When("User selects \'2004: Pre-Migration \\ Ready to Migrate severity ASC\' in the \'OrderB" +
+ testRunner.When("User selects \'2004: Pre-Migration \\ Ready to Migrate Severity ASC\' in the \'OrderB" +
                     "y\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 295
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

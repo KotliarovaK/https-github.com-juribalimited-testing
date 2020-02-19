@@ -442,7 +442,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	When User enters '15423_Automation' text to 'Automation Name' textbox
-	When User enters 'DAS15423' text to 'Description' textbox
+	When User enters 'test_DAS15423' text to 'Description' textbox
 	When User selects 'DAS15423_List' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User checks 'Active' checkbox

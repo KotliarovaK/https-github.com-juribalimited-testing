@@ -48,7 +48,7 @@ Examples:
 	| Applications | Barry'sUse: Target App                       | Python 2.2a4 (SMS_GEN) | 1         | Application   | Python 2.2a4            | Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)            |
 	| Mailboxes    | EmailMigra: Migration \ BT/QMM Switch Status | Not Started            | 729       | Email Address | alex.cristea@juriba.com | EmailMigra: Migration \ BT/QMM Switch Status is Not Started |
 
-@Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS13201 @DAS14757
+@Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS13201 @DAS14757 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Evergreen' left menu item
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00KLL9S8NRF0X6   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Also Move Users' dropdown
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00DBB114BE1B41B0A38 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Also Move Users' dropdown
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 01C4FB7C6D2C4F979BD@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Also Move Users' dropdown
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 7-Zip 9.20 (x64 edition) |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Also Move Users' dropdown
+	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -251,8 +251,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcluded
 	| ACT Data Collection Packages (1104) |
 	Then "ACT Data Collection Packages (1104)" is displayed after "Acrobat Reader 6.0.1 (500)" in Application list filter
 	When User enters "1104" text in Search field at selected Lookup Filter
-	Then "1 shown" results are displayed in the Filter panel
-	And "ACT Data Collection Packages (1104)" value is displayed for selected Lookup Filter
+	Then "ACT Data Collection Packages (1104)" value is displayed for selected Lookup Filter
 
 Examples:
 	| PageName |
@@ -339,7 +338,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingLis
 
 Examples:
 	| List         | Filter                               | Value                                       |
-	| Devices      | 1803: Pre-Migration \ Scheduled Date | 1                                           |
+	| Devices      | 2004: Pre-Migration \ Scheduled Date | 1                                           |
 	| Applications | Owner Last Logon Date                | 1                                           |
 	| Devices      | Owner Last Logon Date                | 2.37457468568568568568658464554575547547547 |
 
@@ -349,9 +348,18 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeF
 	When User clicks the Filters button
 	When user select "<Filter>" filter
 	When User select "<Operator>" Operator value
-	When User enters '0' text to 'Value' textbox
-	Then User sees instruction 'Enter a value between 0 and 100,000' below 'Value' field
-	Then Ahead or Ago dropdown is disabled
+	When User enters '-1' text to 'dayValue' textbox
+	Then '0' content is displayed in 'dayValue' textbox
+	# Yurii T. 18 Feb 2020 this step is skipped because there is no such message on UI in current app version, it replaced to autmatically set values. But it will be returned
+	# Void version with following task - https://juriba.atlassian.net/browse/DAS-19781. When it's done return check for message and Ago/Ahead dropdown activity
+	#Then User sees instruction 'Enter a value between 0 and 100,000' below 'Value' field
+	#Then Ahead or Ago dropdown is disabled
+	When User enters '100001' text to 'dayValue' textbox
+	Then '100000' content is displayed in 'dayValue' textbox
+	# Yurii T. 18 Feb 2020 this step is skipped because there is no such message on UI in current app version, it replaced to autmatically set values. But it will be returned
+	# Void version with following task - https://juriba.atlassian.net/browse/DAS-19781. When it's done return check for message and Ago/Ahead dropdown activity
+	#Then User sees instruction 'Enter a value between 0 and 100,000' below 'Value' field
+	#Then Ahead or Ago dropdown is disabled
 
 Examples:
 	| List         | Filter                       | Operator                |
