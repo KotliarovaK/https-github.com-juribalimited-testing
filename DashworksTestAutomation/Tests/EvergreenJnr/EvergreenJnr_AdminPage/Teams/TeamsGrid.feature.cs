@@ -147,8 +147,8 @@ this.FeatureBackground();
                         "Description",
                         "IsDefault"});
             table1.AddRow(new string[] {
-                        "DASTeam13000",
-                        "13000",
+                        "testDASTeam_default",
+                        "test_team",
                         "true"});
 #line 12
  testRunner.When("User creates new Team via api", ((string)(null)), table1, "When ");
@@ -161,7 +161,7 @@ this.FeatureBackground();
 #line 18
  testRunner.Then("Page with \'Teams\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
- testRunner.When("User enters \"DASTeam13000\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"testDASTeam_default\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
  testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
@@ -178,15 +178,15 @@ this.FeatureBackground();
                         "Description",
                         "IsDefault"});
             table2.AddRow(new string[] {
-                        "DAS1Team13000",
-                        "13000",
+                        "NewDefaulTeam_Test",
+                        "12894587454",
                         "true"});
 #line 25
  testRunner.When("User creates new Team via api", ((string)(null)), table2, "When ");
 #line 28
  testRunner.And("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And("User enters \"DASTeam13000\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"testDASTeam_default\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
  testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31

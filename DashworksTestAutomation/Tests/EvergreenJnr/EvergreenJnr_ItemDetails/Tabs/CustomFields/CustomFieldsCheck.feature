@@ -157,3 +157,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	| Checkboxes | State |
 	| Value      | true  |
 	Then Grid is grouped
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17906
+Scenario: EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupByAction
+	When User navigates to the 'Device' details page for '04R5RM0R0MVFCM' item
+	Then Details page for '04R5RM0R0MVFCM' item is displayed to the user
+	When User navigates to the 'Details' left menu item
+	And User navigates to the 'Custom Fields' left submenu item
+	When User clicks following checkboxes from Column Settings panel for the 'Custom Field' column:
+	| checkboxes |
+	| Value      |
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes   | State |
+	| Custom Field | true  |
+	Then Grid is grouped

@@ -286,6 +286,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User enters '(.*)' text in '(.*)' Search field")]
+        public void WhenUserEntersTextInSearchFieldByPlaceholder(string searchedText, string placeholder)
+        {
+            //should be configured: added search filed only in filter panel
+            var baseElement = _driver.NowAt<BaseDashboardPage>();
+            baseElement.GetTextbox(placeholder).ClearWithBackspaces();
+
+            baseElement.PopulateTextbox(placeholder, searchedText, false);
+        }
+
+
         [Then(@"User sees instruction '(.*)' below '(.*)' field")]
         public void ThenValueIsDisplayedForSelectedLookupFilter(string instruction, string fieldName)
         {

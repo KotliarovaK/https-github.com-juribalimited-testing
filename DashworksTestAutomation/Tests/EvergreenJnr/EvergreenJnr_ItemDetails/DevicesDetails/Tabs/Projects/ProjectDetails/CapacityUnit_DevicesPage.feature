@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFi
 		#--Applications--#
 	When User navigates to the 'Application' details page for '20040610sqlserverck' item
 	Then Details page for '20040610sqlserverck' item is displayed to the user
-	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
