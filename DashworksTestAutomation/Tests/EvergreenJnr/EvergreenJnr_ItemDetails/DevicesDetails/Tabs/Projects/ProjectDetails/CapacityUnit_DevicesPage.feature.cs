@@ -310,8 +310,8 @@ this.FeatureBackground();
 #line 67
  testRunner.Then("Details page for \'20040610sqlserverck\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
- testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' in the \'Item Details Project\'" +
-                    " dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' in the \'Item Details Project\' dr" +
+                    "opdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 70
