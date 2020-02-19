@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	Then "StaticList13179" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                             | QueryStringURL                                                                                                   |
-	| Application (Saved List) - Static - All rows selected | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('36')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo)) |
+	| Application (Saved List) - Static - All rows selected | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('285')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo)) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "17,248" rows are displayed in the agGrid
-	And "Any Application in list Apps with a Vendor or StaticList13179 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner" is displayed in added filter info
+	And "Any Application in list StaticList13179 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList
@@ -190,8 +190,8 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User create dynamic list with "Dynamic13179" name on "Applications" page
 	Then "Dynamic13179" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType                                            | QueryStringURL                                                                                                        |
-	| Application (Saved List) - Dynamic - All data sorted | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('36')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod)) |
+	| QueryType                                            | QueryStringURL                                                                                                         |
+	| Application (Saved List) - Dynamic - All data sorted | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('290')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod)) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "17,279" rows are displayed in the agGrid
-	And "Any Application in list Apps with a Vendor or Dynamic13179 not entitled to device's owner; not used by device's owner; not installed on device; not entitled to device; or not used on device" is displayed in added filter info
+	And "Any Application in list Dynamic13179 not entitled to device's owner; not used by device's owner; not installed on device; not entitled to device; or not used on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	Then "Dynamic13579" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                                                        | QueryStringURL                                                                         |
-	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('36')%20WHERE%20(uod)) |
+	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('37')%20WHERE%20(uod)) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "94" rows are displayed in the agGrid
-	And "Any Application in list Apps with a Vendor or Dynamic13579 used on device" is displayed in added filter info
+	And "Any Application in list Dynamic13579 used on device" is displayed in added filter info
 
 @Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS13179
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList
