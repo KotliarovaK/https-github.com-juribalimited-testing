@@ -246,9 +246,6 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.ShowLinkedObjects.SelectboxSelect(_detailsDto.DefaultValueForShowLinkedObjects.GetValue());
             page.ApplicationsTab1.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab1.GetValue());
             page.ApplicationsTab2.SelectboxSelect(_detailsDto.DefaultViewForProjectObjectApplicationsTab2.GetValue());
-            //TODO: This dropdown has been hidden.
-            //page.ApplicationRationalisation.SelectboxSelect(_detailsDto.DefaultValueForApplicationRationalization
-            //    .GetValue());
             page.OriginalApplicationColumnCheckbox.SetCheckboxState(_detailsDto.ShowOriginalColumn);
             page.IncludeSiteNameCheckbox.SetCheckboxState(_detailsDto.IncludeSiteName);
             page.IncludeVersionInApplicationNameCheckbox.SetCheckboxState(_detailsDto.IncludeVersionInApplicationName);
