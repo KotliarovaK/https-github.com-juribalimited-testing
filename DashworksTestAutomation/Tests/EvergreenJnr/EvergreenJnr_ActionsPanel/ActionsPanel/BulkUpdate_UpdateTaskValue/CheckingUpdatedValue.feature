@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	When User refreshes agGrid
 	Then "+5 days from current" content is displayed for "zDeviceAut: Relative BU \ DT BU App" column
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18245 @Void
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19656 @Void
 Scenario: EvergreenJnr_UsersList_CheckCheckUnitsDropDownUpdateTaskValueForBulkUpdate
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

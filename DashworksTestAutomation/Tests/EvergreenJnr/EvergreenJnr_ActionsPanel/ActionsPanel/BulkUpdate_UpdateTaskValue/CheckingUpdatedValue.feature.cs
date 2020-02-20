@@ -954,7 +954,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
-        [NUnit.Framework.CategoryAttribute("DAS18245")]
+        [NUnit.Framework.CategoryAttribute("DAS19656")]
         [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_UsersList_CheckCheckUnitsDropDownUpdateTaskValueForBulkUpdate()
         {
@@ -989,7 +989,7 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
-                        "DAS18245",
+                        "DAS19656",
                         "Void"});
 #line 279
 this.ScenarioInitialize(scenarioInfo);
