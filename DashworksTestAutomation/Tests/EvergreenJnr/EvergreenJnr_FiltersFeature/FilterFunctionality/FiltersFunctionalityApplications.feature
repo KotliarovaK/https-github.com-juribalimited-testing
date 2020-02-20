@@ -140,22 +140,21 @@ Examples:
 	| Grey                    | GREY                    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS11838
-Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheRationalisationItemIsMatchingTheCaption
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "ComputerSc: Application Rationalisation" filter where type is "Equal" with added column and following checkboxes:
+	When User add "ComputerSc: Rationalisation" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| <SelectedCheckbox> |
-	Then '<SelectedCheckbox>' content is displayed in all 'ComputerSc: Application Rationalisation' column
-	Then '<SelectedCheckbox>' path is displayed in the 'ComputerSc: Application Rationalisation' column
+	Then '<SelectedCheckbox>' content is displayed in all 'ComputerSc: Rationalisation' column
+	Then '<SelectedCheckbox>' path is displayed in the 'ComputerSc: Rationalisation' column
 
 Examples:
 	| SelectedCheckbox |
 	| FORWARD PATH     |
 	| KEEP             |
-	| RETIRE           |
 	| UNCATEGORISED    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12202 @Cleanup
@@ -416,14 +415,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnName
 	Then "<Rows>" rows are displayed in the agGrid
 	
 Examples:
-	| FilterName                                           | SelectedCheckboxes | Rows  |
-	| Windows7Mi: Category                                 | A Star Packages    | 3     |
-	| Windows7Mi: Application Information \ Technical Test | Started            | 4     |
-	| EmailMigra: Category                                 | None               | 2,223 |
-	| UserSchedu: Category                                 | None               | 2,223 |
-	| Babel(Engl: Path                                     | Tools              | 302   |
-	| EmailMigra: Path                                     | Public Folder      | 49    |
-	| UserSchedu: Path                                     | Request Type A     | 47    |
+	| FilterName                                           | SelectedCheckboxes      | Rows  |
+	| Windows7Mi: Category                                 | A Star Packages         | 3     |
+	| Windows7Mi: Application Information \ Technical Test | Started                 | 4     |
+	| EmailMigra: Category                                 | Empty                   | 2,223 |
+	| UserSchedu: Category                                 | Empty                   | 2,223 |
+	| prK: Path                                            | [Default (Application)] | 1,030 |
+	| EmailMigra: Path                                     | Public Folder           | 49    |
+	| UserSchedu: Path                                     | Request Type A          | 47    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12855
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdvancedUserFilter
@@ -590,14 +589,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckRowsCountedForOwnerOrganizationalUn
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User Organizational Unit" filter where type is "Empty" with following Value and Association:
+	When User add "User Organisational Unit" filter where type is "Empty" with following Value and Association:
 	| Values | Association                             |
 	|        | Has used app                            |
 	|        | Entitled to app                         |
 	|        | Owns a device which app was used on     |
 	|        | Owns a device which app is entitled to  |
 	|        | Owns a device which app is installed on |
-	Then "User whose Organizational Unit" filter is added to the list
+	Then "User whose Organisational Unit" filter is added to the list
 	And "215" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS15291
