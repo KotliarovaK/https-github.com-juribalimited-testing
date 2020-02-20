@@ -86,10 +86,9 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
                 SelectorFor(this, p => p.OriginalApplicationColumnCheckbox),
                 SelectorFor(this, p => p.IncludeSiteNameCheckbox),
                 //SelectorFor(this, p => p.OnboardNotApplicableApplicationsCheckbox),
-                //TODO: skiped in case of DAS-20009
                 //SelectorFor(this, p => p.OnboardInstalledApplicationsByAssociationCheckbox),
-                SelectorFor(this, p => p.OnboardEntitledApplicationsByAssociationCheckbox),
-                SelectorFor(this, p => p.OnboardUsedApplicationsByAssociationTo),
+                //SelectorFor(this, p => p.OnboardEntitledApplicationsByAssociationCheckbox),
+                //SelectorFor(this, p => p.OnboardUsedApplicationsByAssociationTo),
                 SelectorFor(this, p => p.CcEmail),
                 SelectorFor(this, p => p.BccEmail),
                 SelectorFor(this, p => p.StartDate),
