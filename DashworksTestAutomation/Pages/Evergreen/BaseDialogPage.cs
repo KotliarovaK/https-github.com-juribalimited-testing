@@ -21,14 +21,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = PopupSelector + "//div[@mat-dialog-title]")]
         public IWebElement PopupTitle { get; set; }
 
-        public IWebElement ConponentOfDialogPage(string componentName, bool getCss = false)
+        public IWebElement ComponentOfDialogPage(string componentName)
         {
             var selector = $"{PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{componentName}']";
-
-            if (getCss.Equals(true))
-            {
-                selector = $"{PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{componentName}']/ancestor::button[contains(@class, mat-list-item)]";
-            }
 
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
@@ -36,7 +31,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public bool IsConponentOfDialogPageHighlighted(string componentName)
         {
-            var bgColor = ConponentOfDialogPage(componentName, true).GetCssValue("background");
+            var bgColor = ComponentOfDialogPage(componentName).FindElement(By.XPath("ancestor::button[contains(@class, mat-list-item)]")).GetCssValue("background");
             var result = bgColor.Contains("rgb(128, 139, 153)");
             return result;
         }
