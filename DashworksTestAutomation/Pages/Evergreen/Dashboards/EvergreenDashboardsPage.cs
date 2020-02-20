@@ -132,6 +132,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         #region HeaderMethods
 
+        public IWebElement SlideToggleByName(string name) => Driver.FindElement(By.XPath($".//mat-slide-toggle//span[text()='{name}']"));
+
         public IWebElement GetTopBarActionButton(string buttonName)
         {
             var page = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName.ToLower()}']");

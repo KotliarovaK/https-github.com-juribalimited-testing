@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| DAS14841_2 | m!gration |
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841_Admin' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title                   | List                      | SplitBy  | AggregateFunction | OrderBy    |
@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	| DAS15550_1 | m!gration |
 	#create dashboard and share it
 	When Dashboard with 'Dashboard for DAS15550' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	#edit widget
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS15550' list
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks Ellipsis menu for 'WidgetForDAS15550' Widget on Dashboards page
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User updates Widget with following info:
@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	| Username   | Password  |
 	| DAS17592_2 | m!gration |
 	When Dashboard with 'Dashboard_DAS17592' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
@@ -289,7 +289,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When Dashboard with 'Dashboard_DAS17592' name is opened via API
 	Then 'Widget_For_DAS17592' Widget is displayed to the user
 	Then There are no errors in the browser console
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in warning message of 'Widget_For_DAS17592' widget on Dashboards page
 
 	#Sergiy: DAS14263 create test and recomment issue
