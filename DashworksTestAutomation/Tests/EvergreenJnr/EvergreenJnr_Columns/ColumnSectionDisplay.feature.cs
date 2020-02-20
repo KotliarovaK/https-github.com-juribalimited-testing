@@ -4302,6 +4302,110 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumn")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS18861")]
+        public virtual void EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumnInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumn", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS18861"});
+#line 1044
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1045
+ testRunner.When("User clicks \'Mailboxes\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1046
+ testRunner.Then("\'All Mailboxes\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1047
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1048
+ testRunner.When("User collapses \'Selected Columns\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1049
+ testRunner.When("User expands \'Mailbox Owner\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table101.AddRow(new string[] {
+                        "Owner Common Name"});
+            table101.AddRow(new string[] {
+                        "Owner Compliance"});
+            table101.AddRow(new string[] {
+                        "Owner Description"});
+            table101.AddRow(new string[] {
+                        "Owner Directory Type"});
+            table101.AddRow(new string[] {
+                        "Owner Distinguished Name"});
+            table101.AddRow(new string[] {
+                        "Owner Domain"});
+            table101.AddRow(new string[] {
+                        "Owner Email Address"});
+            table101.AddRow(new string[] {
+                        "Owner Enabled"});
+            table101.AddRow(new string[] {
+                        "Owner Given Name"});
+            table101.AddRow(new string[] {
+                        "Owner GUID"});
+            table101.AddRow(new string[] {
+                        "Owner Home Directory"});
+            table101.AddRow(new string[] {
+                        "Owner Home Drive"});
+            table101.AddRow(new string[] {
+                        "Owner Key"});
+            table101.AddRow(new string[] {
+                        "Owner Last Logon Date"});
+            table101.AddRow(new string[] {
+                        "Owner Organisational Unit"});
+            table101.AddRow(new string[] {
+                        "Owner Parent Distinguished Name"});
+            table101.AddRow(new string[] {
+                        "Owner SID"});
+            table101.AddRow(new string[] {
+                        "Owner Surname"});
+            table101.AddRow(new string[] {
+                        "Owner Username"});
+#line 1050
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table101, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

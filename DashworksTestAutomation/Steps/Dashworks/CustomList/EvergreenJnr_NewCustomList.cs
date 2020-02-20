@@ -151,6 +151,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             Utils.Verify.AreEqual(listName, page.ActiveCustomListEdited.Text, $"'{listName}' edited list is not displayed'");
         }
 
+        [Then(@"'(.*)' prefix for active list is displayed to user")]
+        public void ThenListPrefixIsDisplayedToUser(string prefix)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
+            Verify.AreEqual(prefix, page.GetCustomListPrefix().Text.Trim(), $"'{prefix}' prefix is not displayed'");
+        }
+
         [Then(@"""(.*)"" list name is displayed correctly on top tools panel")]
         public void ThenListNameIsDisplayedCorrectlyOnTopToolsPanel(string listName)
         {

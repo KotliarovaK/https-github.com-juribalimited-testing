@@ -248,9 +248,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
-        #region Link
+        public IWebElement GetCustomListPrefix() =>
+            ActiveCustomListEdited.FindElement(By.XPath("./preceding-sibling::span"));
 
-        public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+    #region Link
+
+    public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var selector = By.XPath($"{parentElementSelector}//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             if (!Driver.IsElementDisplayed(selector, waitTime))
