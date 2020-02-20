@@ -220,7 +220,7 @@ this.FeatureBackground();
 #line 37
  testRunner.When("User navigates to the \'Capacity Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
- testRunner.And("User selects \'Clone evergreen capacity units to project capacity units\' in the \'C" +
+ testRunner.And("User selects \'Clone Evergreen capacity units to project capacity units\' in the \'C" +
                     "apacity Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

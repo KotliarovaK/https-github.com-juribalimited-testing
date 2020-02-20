@@ -414,6 +414,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS15291")]
         [NUnit.Framework.CategoryAttribute("DAS18368")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
         public virtual void EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot()
         {
             System.Exception lastException = null;
@@ -448,7 +450,9 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS15291",
-                        "DAS18368"});
+                        "DAS18368",
+                        "Do_Not_Run_With_Capacity",
+                        "Do_Not_Run_With_Slots"});
 #line 98
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
