@@ -31,6 +31,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(dialogContainer.PopupElement.Displayed(), "Dialog Pop-up is not displayed");
         }
 
+        [Then(@"popup is not displayed to User")]
+        public void ThenPopupIsNotDisplayedToUser()
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+            Verify.IsFalse(dialogContainer.PopupElement.Displayed(), "Dialog Pop-up was displayed");
+        }
+
         [Then(@"popup with '(.*)' title is displayed")]
         public void ThenPopupWithTitleIsDisplayed(string title)
         {
