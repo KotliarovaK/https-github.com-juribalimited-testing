@@ -81,7 +81,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
                 SelectorFor(this, p => p.ShowLinkedObjects),
                 SelectorFor(this, p => p.ApplicationsTab1),
                 SelectorFor(this, p => p.ApplicationsTab2),
-                //TODO: skiped in case of DAS-20045
+                //TODO: skiped in case of DAS-20009
                 //SelectorFor(this, p => p.ApplicationRationalisation),
                 SelectorFor(this, p => p.OriginalApplicationColumnCheckbox),
                 SelectorFor(this, p => p.IncludeSiteNameCheckbox),
