@@ -125,6 +125,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.AreEqual(textContent, firstColumnCell, "Content is not displayed correctly");
         }
 
+        [Then(@"current date is displayed for '(.*)' column")]
+        public void ThenCurrentDateIsDisplayedForColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var currentDate = DateTime.Now.ToString("dd MMM yyyy");
+            var firstColumnCell = page.GetColumnContentByColumnName(columnName).FirstOrDefault();
+            //Sometimes data is not changed immediately and we need to wait for it
+            if (!currentDate.Equals(firstColumnCell))
+            {
+                Thread.Sleep(2000);
+                firstColumnCell = page.GetColumnContentByColumnName(columnName).FirstOrDefault();
+            }
+            Verify.AreEqual(currentDate, firstColumnCell, $"{currentDate} is not displayed in the {columnName}");
+        }
+
         [Then(@"""(.*)"" italic content is displayed")]
         public void ThenItalicContentIsDisplayed(string textContent)
         {
