@@ -817,11 +817,11 @@ this.FeatureBackground();
 #line 181
  testRunner.Then("\'Dashboard_DAS12974Updated\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 182
- testRunner.When("User selects state \'true\' for \'Favorite Dashboard\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects state \'true\' for \'Favourite Dashboard\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 183
  testRunner.Then("Dashboard with name \'Dashboard_DAS12974Updated\' marked as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 184
- testRunner.When("User selects state \'false\' for \'Favorite Dashboard\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects state \'false\' for \'Favourite Dashboard\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 185
  testRunner.Then("Dashboard with name \'Dashboard_DAS12974Updated\' not marked as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

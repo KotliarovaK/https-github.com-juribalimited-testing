@@ -119,28 +119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionValueIDInTheAutomationLog
 	When User enters "498" text in the Search field for "Action Value ID" column
 	Then "Action_1" content is displayed for "Action" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17786 @DAS18287 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckOpIdColumnInTheAutomationLog
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User navigates to the 'Automations' left menu item
-	Then Page with 'Automations' header is displayed to user
-	When User enters "Mailboxes_Scope" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for 'Mailboxes_Scope' item from 'Automation' column
-	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
-	When User opens 'Type' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Operation ID" checkbox on the Column Settings panel
-	When User select "Scope" checkbox on the Column Settings panel
-	When User enters "50" text in the Search field for "Objects" column
-	Then content is present in the following newly added columns:
-	| ColumnName   |
-	| Operation ID |
-	When User clicks content from "Scope" column
-	Then 'All Mailboxes' list should be displayed to the user
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18265 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS18265 @DAS17786 @DAS18287 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGrid
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope        | Run    |
@@ -163,6 +142,13 @@ Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGri
 	When '18265_Automation' automation '18265_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
+	When User opens 'Type' column settings
+	And User clicks Column button on the Column Settings panel
+	And User select "Operation ID" checkbox on the Column Settings panel
+	When User select "Scope" checkbox on the Column Settings panel
 	When User enters "59" text in the Search field for "Objects" column
-	And User clicks content from "Objects" column
-	Then "59" rows are displayed in the agGrid
+	Then content is present in the following newly added columns:
+	| ColumnName   |
+	| Operation ID |
+	When User clicks content from "Scope" column
+	Then '2004 Rollout' list should be displayed to the user

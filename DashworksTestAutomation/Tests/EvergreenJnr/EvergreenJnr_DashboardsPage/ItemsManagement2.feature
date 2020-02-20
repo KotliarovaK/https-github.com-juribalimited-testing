@@ -179,9 +179,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	When User clicks 'Manage' option in cogmenu for 'Dashboard_DAS12974' list
 	When User changes dashboard name to 'Dashboard_DAS12974Updated'
 	Then 'Dashboard_DAS12974Updated' list is displayed in the Lists panel
-	When User selects state 'true' for 'Favorite Dashboard' checkbox
+	When User selects state 'true' for 'Favourite Dashboard' checkbox
 	Then Dashboard with name 'Dashboard_DAS12974Updated' marked as favorite
-	When User selects state 'false' for 'Favorite Dashboard' checkbox
+	When User selects state 'false' for 'Favourite Dashboard' checkbox
 	Then Dashboard with name 'Dashboard_DAS12974Updated' not marked as favorite
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup

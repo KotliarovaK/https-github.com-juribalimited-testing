@@ -118,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Page with 'TestProject12777' header is displayed to user
 	Then 'Clone Evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
 	When User navigates to the 'Capacity' left menu item
-	Then 'Clone evergreen capacity units to project capacity units' content is displayed in 'Capacity Units' dropdown
+	Then 'Clone Evergreen capacity units to project capacity units' content is displayed in 'Capacity Units' dropdown
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	And User expands multiselect to add objects 

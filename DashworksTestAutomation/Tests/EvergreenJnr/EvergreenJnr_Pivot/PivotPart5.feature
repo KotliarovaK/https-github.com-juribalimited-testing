@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups           |
-	| Organizational Unit |
+	| Organisational Unit |
 	And User selects the following Columns on Pivot:
 	| Columns                           |
 	| Windows7Mi: Application Readiness |
