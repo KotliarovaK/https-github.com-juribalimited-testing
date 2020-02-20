@@ -808,32 +808,6 @@ this.FeatureBackground();
             "iceOwnerCustomField_79", "16,228", null)]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceList(string filterName, string queryString, string rows, string[] exampleTags)
         {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceListInternal(filterName,queryString,rows,exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceListInternal(string filterName, string queryString, string rows, string[] exampleTags)
-        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Devices",
@@ -865,7 +839,6 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
-
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList")]
@@ -915,32 +888,6 @@ this.FeatureBackground();
             "(ubdo))", "160", "Application whose Name is not 7zip used by device\'s owner", null)]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList(string filterName, string queryString, string rows, string filterInfo, string[] exampleTags)
         {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceListInternal(filterName,queryString,rows,filterInfo,exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceListInternal(string filterName, string queryString, string rows, string filterInfo, string[] exampleTags)
-        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Devices",
@@ -989,7 +936,6 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
-
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticL" +
@@ -1287,8 +1233,8 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Application (Saved List) - Static - Specific rows selected by Compliance = Red, A" +
                             "mber or Unknown",
-                        "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'295\')%20WHERE%20" +
-                            "(niod))"});
+                        "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'36\')%20WHERE%20(" +
+                            "niod))"});
 #line 221
  testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table16, "When ");
 #line 224
@@ -1306,7 +1252,7 @@ this.FeatureBackground();
 #line 230
  testRunner.Then("\"List11179\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 231
- testRunner.And("\"7,419\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"5,195\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 232
  testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 233
@@ -1316,7 +1262,7 @@ this.FeatureBackground();
 #line 235
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 236
- testRunner.And("\"7,419\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"5,195\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 237
  testRunner.And("\"Any Application in list StaticList12911 not installed on device\" is displayed in" +
                     " added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1477,32 +1423,6 @@ this.FeatureBackground();
             "\')%20WHERE%20(ubu%2Cetu%2Ciodobu%2Cetdobu%2Cuodou))", "871", null)]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList(string filterName, string queryString, string rows, string[] exampleTags)
         {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserListInternal(filterName,queryString,rows,exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserListInternal(string filterName, string queryString, string rows, string[] exampleTags)
-        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Users",
@@ -1534,7 +1454,6 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
-
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList")]
@@ -1567,32 +1486,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%202%20WHERE%20(ubu%2Cuodou))", "186", "Application whose Key is less than 2 used by user; or used on a device owned by u" +
             "ser", null)]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList(string filterName, string queryString, string rows, string filterInfo, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserListInternal(filterName,queryString,rows,filterInfo,exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserListInternal(string filterName, string queryString, string rows, string filterInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1642,7 +1535,6 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
-
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterCheckForStaticListWithRecipientNotEmptyFil" +
