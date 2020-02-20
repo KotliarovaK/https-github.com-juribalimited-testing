@@ -173,9 +173,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserWithEditRightsCanChangeDashbo
 	When User changes dashboard name to 'DashboardUpdated'
 	Then 'DashboardUpdated' list is displayed in the Lists panel
 	#12974 favorite for shared
-	When User selects state 'true' for 'Favorite Dashboard' checkbox
+	When User selects state 'true' for 'Favourite Dashboard' checkbox
 	Then Dashboard with name 'DashboardUpdated' marked as favorite
-	When User selects state 'false' for 'Favorite Dashboard' checkbox
+	When User selects state 'false' for 'Favourite Dashboard' checkbox
 	Then Dashboard with name 'DashboardUpdated' not marked as favorite
 	When User clicks 'Make favourite' option in cogmenu for 'DashboardUpdated' list
 	Then Dashboard with name 'DashboardUpdated' marked as favorite

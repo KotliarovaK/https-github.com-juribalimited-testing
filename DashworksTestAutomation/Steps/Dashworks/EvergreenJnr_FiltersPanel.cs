@@ -286,6 +286,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User enters '(.*)' text in '(.*)' Search field")]
+        public void WhenUserEntersTextInSearchFieldByPlaceholder(string searchedText, string placeholder)
+        {
+            //should be configured: added search filed only in filter panel
+            var baseElement = _driver.NowAt<BaseDashboardPage>();
+            baseElement.GetTextbox(placeholder).ClearWithBackspaces();
+
+            baseElement.PopulateTextbox(placeholder, searchedText, false);
+        }
+
+
+        [Then(@"User sees instruction '(.*)' below '(.*)' field")]
+        public void ThenValueIsDisplayedForSelectedLookupFilter(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Verify.That(filterElement.FilterFieldInstruction(fieldName).Text, Is.EqualTo(instruction), $"{fieldName} has no or wrong instruction");
+        }
+
         [Then(@"Ahead or Ago dropdown is disabled")]
         public void ThenValueIsDisplayedForSelectedLookupFilter()
         {

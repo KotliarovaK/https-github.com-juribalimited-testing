@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	| ProjectForDAS14780 | All Devices | None            | Clone from Evergreen to Project |
 	Then Page with 'ProjectForDAS14780' header is displayed to user
 	When User navigates to the 'Details' left menu item
-	Then 'Clone evergreen rings to project rings' content is displayed in 'Rings' dropdown
+	Then 'Clone Evergreen rings to project rings' content is displayed in 'Rings' dropdown
 	When User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column
@@ -61,18 +61,18 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User changes Project Short Name to "New_Short"
 	Then "14690_Project" content is displayed in "Project Description" field
 	When User changes Project Description to "New_14690_Description"
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone Evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then "Device scoped project" is displayed in the disabled Project Type field
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone Evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then 'Use project rings' content is displayed in 'Rings' dropdown
-	When User selects 'Clone evergreen rings to project rings' in the 'Rings' dropdown
+	When User selects 'Clone Evergreen rings to project rings' in the 'Rings' dropdown
 	When User clicks 'Projects' header breadcrumb
 	When User enters "New_14690_Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Page with 'New_14690_Project' header is displayed to user
 	When User navigates to the 'Details' left menu item
-	Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
-	Then 'Clone evergreen rings to project rings' content is displayed in 'Rings' dropdown
+	Then 'Clone Evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
+	Then 'Clone Evergreen rings to project rings' content is displayed in 'Rings' dropdown
 	Then "New_Short" content is displayed in "Project Short Name" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15906

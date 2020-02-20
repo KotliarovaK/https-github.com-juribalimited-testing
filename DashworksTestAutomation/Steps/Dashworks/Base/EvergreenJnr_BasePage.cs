@@ -78,6 +78,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #endregion
 
+        #region Text Editor
+
+        [Then(@"text editor is displayed")]
+        public void ThenTextEditorIsDisplayed()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(_driver.IsElementExists(page.TextEditor), "Text editor is not displayed on page");
+        }
+
+        #endregion
+
         #region Autocomplete
 
         //TODO it is better to no use it and delete at all
@@ -620,6 +631,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             //TODO: 21.11.2019 Oleksandr - increased sleep from 3 to 7 seconds to make sure that change list operation is applied
             //Vitalii: decreased to 5 seconds. Contact me if you need to increase this number or tests start failing again
             Thread.Sleep(5000);
+        }
+
+        [When(@"User focus on '(.*)' dropdown")]
+        public void WhenUserFocusOnDropdown(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdown(dropdownName, WebDriverExtensions.WaitTime.Long, true);
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' dropdown")]

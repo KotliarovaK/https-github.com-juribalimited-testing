@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| ProjectName      | Scope     | ProjectTemplate | Mode                            |
 	| TestProject12777 | All Users | None            | Clone from Evergreen to Project |
 	Then Page with 'TestProject12777' header is displayed to user
-	Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
+	Then 'Clone Evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
 	When User navigates to the 'Capacity' left menu item
 	Then 'Clone evergreen capacity units to project capacity units' content is displayed in 'Capacity Units' dropdown
 	When User navigates to the 'Scope' left menu item

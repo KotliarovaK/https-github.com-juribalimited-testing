@@ -551,7 +551,7 @@ this.FeatureBackground();
 #line 118
  testRunner.Then("Page with \'TestProject12777\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 119
- testRunner.Then("\'Clone evergreen buckets to project buckets\' content is displayed in \'Buckets\' dr" +
+ testRunner.Then("\'Clone Evergreen buckets to project buckets\' content is displayed in \'Buckets\' dr" +
                     "opdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 120
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
