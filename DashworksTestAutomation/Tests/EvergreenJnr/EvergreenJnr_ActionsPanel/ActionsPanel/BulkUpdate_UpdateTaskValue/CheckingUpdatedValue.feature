@@ -339,9 +339,9 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
-	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User selects 'Before now' in the 'Before or After' dropdown
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
