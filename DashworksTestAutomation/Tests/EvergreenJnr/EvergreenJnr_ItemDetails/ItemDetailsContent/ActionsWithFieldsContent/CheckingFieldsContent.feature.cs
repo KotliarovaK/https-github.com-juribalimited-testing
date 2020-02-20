@@ -178,6 +178,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17007")]
         [NUnit.Framework.CategoryAttribute("DAS17768")]
         [NUnit.Framework.CategoryAttribute("DAS17768")]
+        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement()
         {
             System.Exception lastException = null;
@@ -214,7 +215,8 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS17007",
                         "DAS17768",
-                        "DAS17768"});
+                        "DAS17768",
+                        "Void"});
 #line 26
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
