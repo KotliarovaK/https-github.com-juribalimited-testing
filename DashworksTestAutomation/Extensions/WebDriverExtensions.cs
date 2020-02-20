@@ -2687,6 +2687,20 @@ namespace DashworksTestAutomation.Extensions
             return true;
         }
 
+        public static bool IsElementExists(this RemoteWebDriver driver, By @by, WaitTime waitTime)
+        {
+            try
+            {
+                var time = int.Parse(waitTime.GetValue());
+                WhatForElementToBeInExistsCondition(driver, @by, true, time);
+                return driver.IsElementExists(@by);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public static bool IsElementInElementExists(this RemoteWebDriver driver, IWebElement element, By selector, WaitTime waitTime)
         {
             try

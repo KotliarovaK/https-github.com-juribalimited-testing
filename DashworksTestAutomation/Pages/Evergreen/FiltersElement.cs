@@ -395,7 +395,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetEditFilterButton(string filterName)
         {
             var editFilterSelector =
-                $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[@class='filter-group no-border-bottom ng-star-inserted']//button";
+                $".//span[@class='filter-label-name'][text()='{filterName}']//ancestor::div[contains(@class,'filter-group') and not(contains(@class, 'relationContainer'))]//button";
             return Driver.FindElements(By.XPath(editFilterSelector)).Last();
         }
 
