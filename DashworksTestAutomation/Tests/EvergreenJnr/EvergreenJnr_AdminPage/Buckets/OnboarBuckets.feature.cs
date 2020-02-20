@@ -167,7 +167,7 @@ this.FeatureBackground();
 #line 14
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
- testRunner.And("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
+ testRunner.And("User selects \"Clone Evergreen buckets to project buckets\" in the Buckets Project " +
                     "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

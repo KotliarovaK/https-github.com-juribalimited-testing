@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
-	When User selects 'Clone evergreen buckets to project buckets' in the 'Bucket' dropdown
+	When User selects 'Clone Evergreen buckets to project buckets' in the 'Bucket' dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
