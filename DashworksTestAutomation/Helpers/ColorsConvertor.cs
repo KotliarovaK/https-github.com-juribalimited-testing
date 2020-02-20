@@ -13,6 +13,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Red":
                 case "RED":
                     return "rgba(245, 96, 86, 0.5)";
+                case "Blocked":
+                case "BLOCKED":
+                    return "rgba(245, 96, 86, 0.5)";
                 case "Amber":
                 case "AMBER":
                     return "rgba(235, 175, 37, 0.5)";
