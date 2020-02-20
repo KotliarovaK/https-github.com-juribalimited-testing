@@ -29,7 +29,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $"{PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{componentName}']/ancestor::button[contains(@class, mat-list-item)]";
             }
-            
 
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));

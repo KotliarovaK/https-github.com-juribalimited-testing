@@ -105,8 +105,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(tooltip, Is.EqualTo(toolTipText), $"Popup '{button}' button has incorrect tooltip");
         }
 
-
-
         #endregion
 
         #region Components

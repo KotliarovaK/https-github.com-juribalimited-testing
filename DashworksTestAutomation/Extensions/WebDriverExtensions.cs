@@ -206,7 +206,7 @@ namespace DashworksTestAutomation.Extensions
                 }
                 catch (Exception e)
                 {
-                  throw new Exception($"Error waiting element by '{by}' : {e.Message}");
+                    throw new Exception($"Error waiting element by '{by}' : {e.Message}");
                 }
         }
 
