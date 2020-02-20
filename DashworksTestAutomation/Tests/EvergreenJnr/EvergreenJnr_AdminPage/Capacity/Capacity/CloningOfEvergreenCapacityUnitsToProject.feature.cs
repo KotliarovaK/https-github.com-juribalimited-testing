@@ -194,7 +194,7 @@ this.FeatureBackground();
 #line 38
  testRunner.When("User selects \'Teams and Paths\' in the \'Capacity Mode\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
- testRunner.And("User selects \'Clone evergreen capacity units to project capacity units\' in the \'C" +
+ testRunner.And("User selects \'Clone Evergreen capacity units to project capacity units\' in the \'C" +
                     "apacity Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -369,7 +369,7 @@ this.FeatureBackground();
 #line 95
  testRunner.When("User selects \'Teams and Paths\' in the \'Capacity Mode\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
- testRunner.And("User selects \'Clone evergreen capacity units to project capacity units\' in the \'C" +
+ testRunner.And("User selects \'Clone Evergreen capacity units to project capacity units\' in the \'C" +
                     "apacity Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 97
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -546,7 +546,7 @@ this.FeatureBackground();
 #line 153
  testRunner.When("User selects \'Teams and Paths\' in the \'Capacity Mode\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 154
- testRunner.And("User selects \'Clone evergreen capacity units to project capacity units\' in the \'C" +
+ testRunner.And("User selects \'Clone Evergreen capacity units to project capacity units\' in the \'C" +
                     "apacity Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 155
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
