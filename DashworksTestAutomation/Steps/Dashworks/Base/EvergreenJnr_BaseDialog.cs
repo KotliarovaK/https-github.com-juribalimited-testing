@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"popup is not displayed to User")]
         public void ThenPopupIsNotDisplayedToUser()
         {
-            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+            var dialogContainer = _driver.NowAtWithoutWait<BaseDialogPage>();
             Verify.IsFalse(dialogContainer.PopupElement.Displayed(), "Dialog Pop-up was displayed");
         }
 
