@@ -36,7 +36,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<NewValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
+	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects '<NewTeam>' option from 'Team' autocomplete
 	When User selects 'Unassigned' option from 'Owner' autocomplete
 	And User navigate to the bottom of the Action panel
@@ -58,8 +60,11 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<DefaultValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
+	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects '<DefaultTeam>' option from 'Team' autocomplete
+	When User selects 'Unassigned' option from 'Owner' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	And User navigate to the top of the Action panel
