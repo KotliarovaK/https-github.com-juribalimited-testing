@@ -220,7 +220,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	Then "StaticList12911" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                                                        | QueryStringURL                                                                          |
-	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('36')%20WHERE%20(niod)) |
+	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('295')%20WHERE%20(niod)) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
@@ -228,12 +228,12 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And User clicks Save filter button
 	When User creates 'List11179' dynamic list
 	Then "List11179" list is displayed to user
-	And "5,195" rows are displayed in the agGrid
+	And "7,419" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	And User navigates to the "List11179" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "5,195" rows are displayed in the agGrid
+	And "7,419" rows are displayed in the agGrid
 	And "Any Application in list StaticList12911 not installed on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup

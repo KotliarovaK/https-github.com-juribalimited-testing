@@ -85,13 +85,12 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "MigrationP: Package Stage \ Date Task for Package Stage" filter where type is "Between" with added column and Date options
+	When User add "UserEvergr: Stage 2 \ Application Delivery Date" filter where type is "Between" with added column and Date options
 		| StartDateInclusive | EndDateInclusive |
 		| 11 Nov 2012        | 22 Nov 2019      |
-	Then "19" rows are displayed in the agGrid
-	Then '12 Nov 2012' content is displayed in the 'MigrationP: Package Stage \ Date Task for Package Stage' column
-	Then '22 Nov 2012' content is displayed in the 'MigrationP: Package Stage \ Date Task for Package Stage' column
-	Then "(MigrationP: Package Stage \ Date Task for Package Stage between (2012-11-11, 2019-11-22))" text is displayed in filter container
+	Then "18" rows are displayed in the agGrid
+	Then '8 Feb 2019' content is displayed in the 'UserEvergr: Stage 2 \ Application Delivery Date' column
+	Then "(UserEvergr: Stage 2 \ Application Delivery Date between (2012-11-11, 2019-11-22))" text is displayed in filter container
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13831 @DAS15376
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLogonDateFilter

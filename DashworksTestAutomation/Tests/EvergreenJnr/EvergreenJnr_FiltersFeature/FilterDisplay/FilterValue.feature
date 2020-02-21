@@ -183,18 +183,18 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColorsInReadinessFilterAreDisplayed
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and Lookup option
+	When User add "2004: Readiness" filter where type is "Equals" with added column and Lookup option
 		| SelectedValues |
-		| Red            |
+		| Blocked        |
 		| Amber          |
 	And User creates 'CheckColors13383' dynamic list
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User click Edit button for "Babel(Engl: Readiness" filter
+	When User click Edit button for "2004: Readiness" filter
 	Then color for following values are displayed correctly:
-		| Color |
-		| Red   |
-		| Amber |
+		| Color   |
+		| Blocked |
+		| Amber   |
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS12547
 Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock
@@ -232,15 +232,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
 	When User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 		| ColumnName                                  |
-		| 1803: Pre-Migration \ Scheduled Date (Slot) |
+		| 2004: Pre-Migration \ Scheduled Date (Slot) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "1803: Pre-Migration \ Scheduled Date (Slot)" filter
+	When user select "2004: Pre-Migration \ Scheduled Date (Slot)" filter
 	And User select "Equals" Operator value
 	And User enters "Empty" text in Search field at selected Lookup Filter
 	And User clicks checkbox at selected Lookup Filter
 	And User clicks Save filter button
-	Then Column '1803: Pre-Migration \ Scheduled Date (Slot)' with no data displayed
+	Then Column '2004: Pre-Migration \ Scheduled Date (Slot)' with no data displayed
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS16426
 Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFieldIsEmpty
@@ -315,7 +315,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoEmptyOptionInProjectSpecifi
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	When User clicks Add New button on the Filter panel
-	When User selects "1803: Owner (Saved List)" filter from "Saved List" category
+	When User selects "2004: Owner (Saved List)" filter from "Saved List" category
 	Then "Empty" checkbox is not available for current opened filter
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS18367

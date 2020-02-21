@@ -702,11 +702,11 @@ this.FeatureBackground();
 #line 174
  testRunner.Then("\'DashboardUpdated\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 176
- testRunner.When("User selects state \'true\' for \'Favorite Dashboard\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects state \'true\' for \'Favourite Dashboard\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 177
  testRunner.Then("Dashboard with name \'DashboardUpdated\' marked as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 178
- testRunner.When("User selects state \'false\' for \'Favorite Dashboard\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects state \'false\' for \'Favourite Dashboard\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 179
  testRunner.Then("Dashboard with name \'DashboardUpdated\' not marked as favorite", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 180

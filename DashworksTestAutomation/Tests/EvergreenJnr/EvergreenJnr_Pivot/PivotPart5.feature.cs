@@ -347,7 +347,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
             table9.AddRow(new string[] {
-                        "Organizational Unit"});
+                        "Organisational Unit"});
 #line 60
  testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table9, "And ");
 #line hidden

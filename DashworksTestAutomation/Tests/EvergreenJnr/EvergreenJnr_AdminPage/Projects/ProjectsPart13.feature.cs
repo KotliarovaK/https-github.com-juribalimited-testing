@@ -556,7 +556,7 @@ this.FeatureBackground();
 #line 120
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 121
- testRunner.Then("\'Clone evergreen capacity units to project capacity units\' content is displayed i" +
+ testRunner.Then("\'Clone Evergreen capacity units to project capacity units\' content is displayed i" +
                     "n \'Capacity Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 122
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

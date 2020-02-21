@@ -181,6 +181,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18095")]
         [NUnit.Framework.CategoryAttribute("DAS18011")]
         [NUnit.Framework.CategoryAttribute("DAS17810")]
+        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects()
         {
             System.Exception lastException = null;
@@ -222,7 +223,8 @@ this.FeatureBackground();
                         "DAS17809",
                         "DAS18095",
                         "DAS18011",
-                        "DAS17810"});
+                        "DAS17810",
+                        "Void"});
 #line 26
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -292,6 +294,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18095")]
         [NUnit.Framework.CategoryAttribute("DAS18011")]
         [NUnit.Framework.CategoryAttribute("DAS17810")]
+        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects()
         {
             System.Exception lastException = null;
@@ -334,7 +337,8 @@ this.FeatureBackground();
                         "DAS17809",
                         "DAS18095",
                         "DAS18011",
-                        "DAS17810"});
+                        "DAS17810",
+                        "Void"});
 #line 49
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -519,6 +523,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18095")]
         [NUnit.Framework.CategoryAttribute("DAS18011")]
         [NUnit.Framework.CategoryAttribute("DAS17810")]
+        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects()
         {
             System.Exception lastException = null;
@@ -560,7 +565,8 @@ this.FeatureBackground();
                         "DAS17809",
                         "DAS18095",
                         "DAS18011",
-                        "DAS17810"});
+                        "DAS17810",
+                        "Void"});
 #line 96
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
