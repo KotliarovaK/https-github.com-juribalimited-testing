@@ -262,9 +262,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Nov 29, 2018' text to 'Date' datepicker
+	And User enters 'Jan 20, 2019' text to 'Date' datepicker
+	When User focus on 'Capacity Slot' dropdown
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects '<NewTeam>' option from 'Team' autocomplete
 	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
@@ -284,9 +287,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Jan 5, 2019' text to 'Date' datepicker
+	And User enters 'Jan 20, 2019' text to 'Date' datepicker
+	When User focus on 'Capacity Slot' dropdown
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects '<DefaultTeam>' option from 'Team' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 

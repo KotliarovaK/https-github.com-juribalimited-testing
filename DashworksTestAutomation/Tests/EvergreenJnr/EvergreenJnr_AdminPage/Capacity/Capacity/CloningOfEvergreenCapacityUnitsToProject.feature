@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Prj_D_DAS14103 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
-	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
+	And User selects 'Clone Evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Prj_U_DAS14103 | All Users | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
-	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
+	And User selects 'Clone Evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Prj_A_DAS14103 | All Users | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
-	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
+	And User selects 'Clone Evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope

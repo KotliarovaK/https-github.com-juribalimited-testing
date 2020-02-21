@@ -11,26 +11,26 @@ Scenario: EvergreenJnr_ApplicationsList_Check500ErrorIsNotReturnedForBooleanFilt
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" without added column and following checkboxes:
+	When User add "Windows7Mi: Hide From End Users" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
 	| FALSE              |
 	| Empty              |
-	Then "Windows7Mi: Hide from End Users" filter is added to the list
+	Then "Windows7Mi: Hide From End Users" filter is added to the list
 	And "2,223" rows are displayed in the agGrid
-	When User have removed "Windows7Mi: Hide from End Users" filter
-	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" without added column and following checkboxes:
+	When User have removed "Windows7Mi: Hide From End Users" filter
+	When User add "Windows7Mi: Hide From End Users" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FALSE              |
 	| Empty              |
-	Then "Windows7Mi: Hide from End Users" filter is added to the list
+	Then "Windows7Mi: Hide From End Users" filter is added to the list
 	And "2,223" rows are displayed in the agGrid
-	When User have removed "Windows7Mi: Hide from End Users" filter
-	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" without added column and following checkboxes:
+	When User have removed "Windows7Mi: Hide From End Users" filter
+	When User add "Windows7Mi: Hide From End Users" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
 	| Empty              |
-	Then "Windows7Mi: Hide from End Users" filter is added to the list
+	Then "Windows7Mi: Hide From End Users" filter is added to the list
 	And "1,156" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS11166 @DAS11665 @DAS13172 @Cleanup
@@ -140,22 +140,21 @@ Examples:
 	| Grey                    | GREY                    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS11838
-Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheApplicationRationalisationItemIsMatchingTheCaption
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheRationalisationItemIsMatchingTheCaption
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "ComputerSc: Application Rationalisation" filter where type is "Equal" with added column and following checkboxes:
+	When User add "ComputerSc: Rationalisation" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| <SelectedCheckbox> |
-	Then '<SelectedCheckbox>' content is displayed in all 'ComputerSc: Application Rationalisation' column
-	Then '<SelectedCheckbox>' path is displayed in the 'ComputerSc: Application Rationalisation' column
+	Then '<SelectedCheckbox>' content is displayed in all 'ComputerSc: Rationalisation' column
+	Then '<SelectedCheckbox>' path is displayed in the 'ComputerSc: Rationalisation' column
 
 Examples:
 	| SelectedCheckbox |
 	| FORWARD PATH     |
 	| KEEP             |
-	| RETIRE           |
 	| UNCATEGORISED    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12202 @Cleanup
@@ -314,11 +313,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCor
 	And Filter value is shown in bold in the added filter info
 	And There are no errors in the browser console
 
-@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @Archived
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                              |
-	| Windows7Mi: Application Rationalisation |
+	| Windows7Mi: Rationalisation |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Group (Current State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
@@ -330,31 +329,31 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFilters
 	When User create dynamic list with "Project Group (Current State)" name on "Applications" page
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	When User Add And "Windows7Mi: Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FORWARD PATH       |
 	Then "1" rows are displayed in the agGrid
-	When User have removed "Windows7Mi: Application Rationalisation" filter
-	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	When User have removed "Windows7Mi: Rationalisation" filter
+	And User Add And "Windows7Mi: Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| RETIRE             |
 	Then "4" rows are displayed in the agGrid
-	When User have removed "Windows7Mi: Application Rationalisation" filter
-	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	When User have removed "Windows7Mi: Rationalisation" filter
+	And User Add And "Windows7Mi: Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| KEEP               |
 	Then "8" rows are displayed in the agGrid
-	When User have removed "Windows7Mi: Application Rationalisation" filter
-	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	When User have removed "Windows7Mi: Rationalisation" filter
+	And User Add And "Windows7Mi: Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| UNCATEGORISED      |
 	Then "21" rows are displayed in the agGrid
 
-@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @Archived
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
-	| ColumnName                              |
-	| Windows7Mi: Application Rationalisation |
+	| ColumnName                  |
+	| Windows7Mi: Rationalisation |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Group (Target State)" filter where type is "Equal" without added column and "Parkfield Office" Lookup option
@@ -366,22 +365,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersI
 	When User create dynamic list with "Project Group (Target State)" name on "Applications" page
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	When User Add And "Windows7Mi: Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| KEEP               |
 	Then "9" rows are displayed in the agGrid
-	When User have removed "Windows7Mi: Application Rationalisation" filter
-	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	When User have removed "Windows7Mi: Rationalisation" filter
+	And User Add And "Windows7Mi: Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| UNCATEGORISED      |
 	Then "20" rows are displayed in the agGrid
-	When User have removed "Windows7Mi: Application Rationalisation" filter
-	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	When User have removed "Windows7Mi: Rationalisation" filter
+	And User Add And "Windows7Mi: Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| RETIRE			 |
 	Then message 'No applications found' is displayed to the user
-	When User have removed "Windows7Mi: Application Rationalisation" filter
-	And User Add And "Windows7Mi: Application Rationalisation" filter where type is "Equal" without added column and following checkboxes:
+	When User have removed "Windows7Mi: Rationalisation" filter
+	And User Add And "Windows7Mi: Rationalisation" filter where type is "Equal" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FORWARD PATH		 |
 	Then message 'No applications found' is displayed to the user
@@ -416,14 +415,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnName
 	Then "<Rows>" rows are displayed in the agGrid
 	
 Examples:
-	| FilterName                                           | SelectedCheckboxes | Rows  |
-	| Windows7Mi: Category                                 | A Star Packages    | 3     |
-	| Windows7Mi: Application Information \ Technical Test | Started            | 4     |
-	| EmailMigra: Category                                 | None               | 2,223 |
-	| UserSchedu: Category                                 | None               | 2,223 |
-	| Babel(Engl: Path                                     | Tools              | 302   |
-	| EmailMigra: Path                                     | Public Folder      | 49    |
-	| UserSchedu: Path                                     | Request Type A     | 47    |
+	| FilterName                                           | SelectedCheckboxes      | Rows  |
+	| Windows7Mi: Category                                 | A Star Packages         | 3     |
+	| Windows7Mi: Application Information \ Technical Test | Started                 | 4     |
+	| EmailMigra: Category                                 | Empty                   | 2,223 |
+	| UserSchedu: Category                                 | Empty                   | 2,223 |
+	| prK: Path                                            | [Default (Application)] | 1,030 |
+	| EmailMigra: Path                                     | Public Folder           | 50    |
+	| UserSchedu: Path                                     | Request Type A          | 47    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12855
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDataIsDisplayedCorrectlyForAdvancedUserFilter
@@ -590,14 +589,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckRowsCountedForOwnerOrganizationalUn
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User Organizational Unit" filter where type is "Empty" with following Value and Association:
+	When User add "User Organisational Unit" filter where type is "Empty" with following Value and Association:
 	| Values | Association                             |
 	|        | Has used app                            |
 	|        | Entitled to app                         |
 	|        | Owns a device which app was used on     |
 	|        | Owns a device which app is entitled to  |
 	|        | Owns a device which app is installed on |
-	Then "User whose Organizational Unit" filter is added to the list
+	Then "User whose Organisational Unit" filter is added to the list
 	And "215" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS15291
@@ -703,7 +702,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartIII
 	| SelectedCheckboxes | Association         |
 	| FALSE              | Used on device      |
 	| TRUE               | Entitled to device  |
-	| UNKNOWN            | Installed on device |
 	And User Add And "Device TPM Version" filter where type is "Not empty" with following Value and Association:
 	| Values | Association         |
 	|        | Used on device      |
@@ -722,7 +720,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceHardwareItemsCounterPartIII
 	| Mobile         |                     |
 	| Other          |                     |
 	| Virtual        |                     |
-	Then "361" rows are displayed in the agGrid
+	Then "212" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS15082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceDeviceOperatingSystemItemsCounterI
@@ -901,7 +899,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNo500ErrorOnApplicationPageAfterUpda
 	|                | Used on device      |
 	|                | Entitled to device  |
 	|                | Installed on device |
-	Then 'UPDATE' button is disabled
+	Then 'ADD' button is disabled
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18082
 Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOperatingSystemFilterWork
@@ -1027,12 +1025,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatErrorsDoNotAppearWhenAddingInva
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	When User clicks Add New button on the Filter panel
-	When user select "Boot Up Date" filter
+	When user select "Device Boot Up Date" filter
 	When User changes filter date to "13 Dec 2017"
 	When User changes filter date to "R."
 	When User select "Installed on device" in Association
-	When User clicks 'ADD' button
-	Then There are no errors in the browser console
+	Then 'ADD' button is disabled
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS11552
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelevantDataSetBeDisplayedAfterRemovingFilter
@@ -1117,11 +1114,9 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAdd
 Examples:
 	| ColumnName                 | Operators                                                                                        | FilterOption | Text                               | RowsCount |
 	| Windows7Mi: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1051         | Windows7Mi: Target App Key is 1051 | 4         |
-	| Babel(Engl: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 15           | Babel(Engl: Target App Key is 15   | 1         |
 	| Barry'sUse: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 115          | Barry'sUse: Target App Key is 115  | 1         |
 	| ComputerSc: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1060         | ComputerSc: Target App Key is 1060 | 1         |
 	| Havoc(BigD: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1050         | Havoc(BigD: Target App Key is 1050 | 1         |
-	| MigrationP: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 960          | MigrationP: Target App Key is 960  | 1         |
 	| UserSchedu: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1            | UserSchedu: Target App Key is 1    | 1         |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10828 @DAS13001
@@ -1146,11 +1141,9 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilte
 Examples:
 	| ColumnName                       | Operators                         | FilterOption | Text                                      | RowsCount |
 	| Windows7Mi: Target App Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
-	| Babel(Engl: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Target App Readiness is Empty | 1,921     |
 	| Barry'sUse: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Target App Readiness is Empty | 1,145     |
 	| ComputerSc: Target App Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Target App Readiness is Green | 913       |
 	| Havoc(BigD: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Target App Readiness is Empty | 1,155     |
-	| MigrationP: Target App Readiness | Equals, Does not equal, Not empty | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal, Not empty | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12388
@@ -1167,11 +1160,9 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 Examples:
 	| FilterName                 |
 	| Windows7Mi: Target App Key |
-	| Babel(Engl: Target App Key |
 	| Barry'sUse: Target App Key |
 	| ComputerSc: Target App Key |
 	| Havoc(BigD: Target App Key |
-	| MigrationP: Target App Key |
 	| UserSchedu: Target App Key |
 	| prK: Target App Key        |
 
@@ -1189,12 +1180,10 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 Examples:
 	| FilterName                |
 	| Windows7Mi: Target App ID |
-	| Babel(Engl: Target App ID |
 	| Barry'sUse: Target App ID |
 	| ComputerSc: Target App ID |
 	| EmailMigra: Target App ID |
 	| Havoc(BigD: Target App ID |
-	| MigrationP: Target App ID |
 	| UserSchedu: Target App ID |
 	| prK: Target App ID        |
 
@@ -1220,11 +1209,9 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 Examples:
 	| ColumnName                        | Operators                         | FilterOption | Text                                       | RowsCount |
 	| Windows7Mi: Application Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Application Readiness is Red   | 27        |
-	| Babel(Engl: Application Readiness | Equals, Does not equal, Not empty | Empty        | Babel(Engl: Application Readiness is Empty | 1,921     |
 	| Barry'sUse: Application Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Application Readiness is Empty | 1,145     |
 	| ComputerSc: Application Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Application Readiness is Green | 911       |
 	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Application Readiness is Empty | 1,155     |
-	| MigrationP: Application Readiness | Equals, Does not equal, Not empty | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal, Not empty | Empty        | UserSchedu: Application Readiness is Empty | 1,242     |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026
@@ -1280,11 +1267,9 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIs
 Examples: 
 	| ColumnName                   | Operators                         | FilterOption | Text                                  | RowsCount |
 	| Windows7Mi: Core Application | Equals, Does not equal, Not empty | TRUE         | Windows7Mi: Core Application is True  | 11        |
-	| Babel(Engl: Core Application | Equals, Does not equal, Not empty | FALSE        | Babel(Engl: Core Application is False | 302       |
 	| Barry'sUse: Core Application | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Core Application is Empty | 1,145     |
 	| ComputerSc: Core Application | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Core Application is False | 1,043     |
 	| Havoc(BigD: Core Application | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Core Application is Empty | 1,155     |
-	| MigrationP: Core Application | Equals, Does not equal, Not empty | FALSE        | MigrationP: Core Application is False | 220       |
 	| UserSchedu: Core Application | Equals, Does not equal, Not empty | Empty        | UserSchedu: Core Application is Empty | 1,242     |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11509 @DAS11507 @DAS11509

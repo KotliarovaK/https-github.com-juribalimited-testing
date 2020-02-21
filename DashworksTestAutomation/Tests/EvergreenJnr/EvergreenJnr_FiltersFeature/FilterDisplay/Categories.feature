@@ -559,7 +559,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	| Category                  | Number |
 	| Evergreen                 | 1      |
 	| Project Rings: Barry'sUse | 1      |
-	| Project Rings: MigrationP | 1      |
 	| Project Rings: UserEvergr | 1      |
 	| Project Rings: UserSched2 | 1      |
 	| Project Rings: UserSchedu | 1      |

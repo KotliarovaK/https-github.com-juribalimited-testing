@@ -40,6 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London Depot 11:00 - 13:00   |
 	| London Depot 13:00 - 15:00   |
 	| London Depot 15:00 - 17:00   |
+	When User moves "Birmingham Afternoon" slot to "Birmingham Morning" slot
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13671
 Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen

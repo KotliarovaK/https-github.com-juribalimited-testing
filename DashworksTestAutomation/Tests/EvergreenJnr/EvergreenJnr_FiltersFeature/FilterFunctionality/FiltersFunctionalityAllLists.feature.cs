@@ -1059,10 +1059,10 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("Filter_AllLists")]
         [NUnit.Framework.CategoryAttribute("DAS14524")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Organizational Unit", "Equals", "Users.Cardiff.UK.local", "1,458", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Organizational Unit", "Contains", "Users", "11,665", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Organizational Unit", "Begins with", "Users", "23,728", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Organizational Unit", "Not Empty", "", "14,747", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Organisational Unit", "Equals", "Users.Cardiff.UK.local", "1,458", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Organisational Unit", "Contains", "Users", "11,665", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Organisational Unit", "Begins with", "Users", "23,728", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Organisational Unit", "Not Empty", "", "14,747", null)]
         public virtual void EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFilterWithSelectedValue(string page, string filterName, string type, string value, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;

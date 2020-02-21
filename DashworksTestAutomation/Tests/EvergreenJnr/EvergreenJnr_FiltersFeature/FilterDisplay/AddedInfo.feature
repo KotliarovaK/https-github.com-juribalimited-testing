@@ -23,10 +23,10 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatDatesDisplayIsRegionSpe
 	And User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Pre-Migration \ Scheduled Date" filter where type is "<Option>" with added column and following value:
+	When User add "2004: Pre-Migration \ Scheduled Date" filter where type is "<Option>" with added column and following value:
 		| Values         |
 		| <ExpectedDate> |
-	Then "1803: Pre-Migration \ Scheduled Date" filter is added to the list
+	Then "2004: Pre-Migration \ Scheduled Date" filter is added to the list
 	And Values is displayed in added filter info
 		| Values         |
 		| <ExpectedDate> |
@@ -44,14 +44,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterIn
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Hide from End Users" filter
+	When user select "Windows7Mi: Hide From End Users" filter
 	Then correct true and false options are displayed in filter settings
 	When User have created "Equals" filter without column and following options:
 		| SelectedCheckboxes |
 		| TRUE               |
 		| FALSE              |
 		| Empty              |
-	Then "Windows7Mi: Hide from End Users" filter is added to the list
+	Then "Windows7Mi: Hide From End Users" filter is added to the list
 	Then Values is displayed in added filter info
 		| Values |
 		| True   |
@@ -554,8 +554,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 		| SelectedList    | Association        |
 		| ApplicationList | Entitled to device |
 	When User create dynamic list with "DevicesList" name on "Devices" page
-	And User clicks the List Details button
-	Then Details panel is displayed to the user
+	When User clicks the Permissions button
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then 'Everyone can edit' content is displayed in 'Sharing' dropdown
 	When User clicks the Logout button
