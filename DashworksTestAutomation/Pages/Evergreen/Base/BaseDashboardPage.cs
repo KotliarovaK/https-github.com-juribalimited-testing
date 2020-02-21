@@ -251,9 +251,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetCustomListPrefix() =>
             ActiveCustomListEdited.FindElement(By.XPath("./preceding-sibling::span"));
 
-    #region Link
+        #region Link
 
-    public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var selector = By.XPath($"{parentElementSelector}//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             if (!Driver.IsElementDisplayed(selector, waitTime))
@@ -1242,6 +1242,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public void SetCheckboxStateFromMenuPanel(string ariaLabel, bool expectedCondition)
         {
             SetCheckboxState(ariaLabel, expectedCondition, MenuPanelSelector);
+        }
+
+        #endregion
+
+        #region Slide toggle
+
+        public IWebElement GetSlideToggle(string slideToggle)
+        {
+            return Driver.FindElement(By.XPath($".//mat-slide-toggle//span[text()='{slideToggle}']"));
+        }
+
+        public bool GetSlideToggleCondition(string slideToggle)
+        {
+            return GetSlideToggle(slideToggle).GetAttribute("class").Contains("checked");
+        }
+
+        public void SetSlideToggleCondition(string slideToggle, bool expectedCondition)
+        {
+            if (!GetSlideToggleCondition(slideToggle).Equals(expectedCondition))
+                GetSlideToggle(slideToggle).Click();
         }
 
         #endregion

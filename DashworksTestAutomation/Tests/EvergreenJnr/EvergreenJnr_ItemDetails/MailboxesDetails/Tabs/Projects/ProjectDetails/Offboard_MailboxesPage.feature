@@ -27,7 +27,6 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
-	Then " BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state

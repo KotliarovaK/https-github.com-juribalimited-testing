@@ -1437,7 +1437,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_ApplicationsList")]
         [NUnit.Framework.CategoryAttribute("DAS12058")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Archived")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -1473,7 +1473,7 @@ this.FeatureBackground();
                         "Filter_ApplicationsList",
                         "DAS12058",
                         "Cleanup",
-                        "Archived"});
+                        "archived"});
 #line 317
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1569,7 +1569,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_ApplicationsList")]
         [NUnit.Framework.CategoryAttribute("DAS12058")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Archived")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -1605,7 +1605,7 @@ this.FeatureBackground();
                         "Filter_ApplicationsList",
                         "DAS12058",
                         "Cleanup",
-                        "Archived"});
+                        "archived"});
 #line 353
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

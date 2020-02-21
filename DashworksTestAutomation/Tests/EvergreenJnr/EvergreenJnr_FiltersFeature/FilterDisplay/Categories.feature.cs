@@ -603,7 +603,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Evergreen Target App Version"});
             table2.AddRow(new string[] {
-                        "Hide from End Users"});
+                        "Hide From End Users"});
             table2.AddRow(new string[] {
                         "In Catalog"});
 #line 93
@@ -721,7 +721,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Mailbox Count (Owned)"});
             table3.AddRow(new string[] {
-                        "Organizational Unit"});
+                        "Organisational Unit"});
             table3.AddRow(new string[] {
                         "Parent Distinguished Name"});
             table3.AddRow(new string[] {
@@ -1258,7 +1258,7 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Device Owner Last Logon Date"});
             table10.AddRow(new string[] {
-                        "Device Owner Organizational Unit"});
+                        "Device Owner Organisational Unit"});
             table10.AddRow(new string[] {
                         "Device Owner Parent Distinguished Name"});
             table10.AddRow(new string[] {

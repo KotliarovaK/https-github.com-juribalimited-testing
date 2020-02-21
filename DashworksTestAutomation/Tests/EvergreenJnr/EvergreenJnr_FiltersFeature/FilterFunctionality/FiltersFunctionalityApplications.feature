@@ -313,7 +313,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCor
 	And Filter value is shown in bold in the added filter info
 	And There are no errors in the browser console
 
-@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @Archived
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @archived
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                              |
@@ -349,7 +349,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFilters
 	| UNCATEGORISED      |
 	Then "21" rows are displayed in the agGrid
 
-@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @Archived
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @archived
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                  |

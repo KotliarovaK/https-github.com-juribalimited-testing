@@ -51,7 +51,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCriticalityFieldsAreDisplayedAn
 	| Title       | Value         |
 	| Criticality | Uncategorised |
 
-	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18852 @DAS19651 @DAS19318 @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckThatAllFieldsAreAensitiveToSecurityRequirementsForAnalysisEditorRole
 	When User clicks the Logout button

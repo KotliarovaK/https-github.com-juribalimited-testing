@@ -203,3 +203,16 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	Then following content is displayed on the Details Page
 	| Title         | Value                   |
 	| Capacity Unit | Project Capacity Unit 1 |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19985 @DAS20088 @Void
+Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheCapacityUnitPopUp
+	When User navigates to the 'Device' details page for '32UIH1IBLQ050JY' item
+	Then Details page for '32UIH1IBLQ050JY' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	When User deselect all rows on the grid
+	Then 'FQT1418241' content is displayed in the 'Username' column
+	When User checks 'Show only selected items' slide toggle
+	Then 'FQT1418241' content is not displayed in the 'Username' column

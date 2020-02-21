@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User create dynamic list with "AListForDAS16278" name on "Devices" page
 	Then "AListForDAS16278" list is displayed to user
 	When Dashboard with 'DAS16278_Dashboard' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title           | List             | SplitBy            | AggregateBy         | AggregateFunction | OrderBy                | MaxValues | ShowLegend |
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	When User create dynamic list with "ListForDas15780" name on "Devices" page
 	Then "ListForDas15780" list is displayed to user
 	When Dashboard with '2004 ProjectDAS15780' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title                     | List            | AggregateFunction | SplitBy               | OrderBy                   | Drilldown |
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	When Dashboard with 'Dashboard12983' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When  User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy | MaxValues |
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When Dashboard with 'Dashboard12983' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When  User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy | MaxValues |
