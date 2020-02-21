@@ -84,5 +84,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheBucke
 	When User clicks on edit button for 'Capacity Unit' field
 	When User deselect all rows on the grid
 	Then 'FQT1418241' content is displayed in the 'Username' column
-	When User clicks 'Show only selected items' slide toggle
+	When User checks 'Show only selected items' slide toggle
 	Then 'FQT1418241' content is not displayed in the 'Username' column

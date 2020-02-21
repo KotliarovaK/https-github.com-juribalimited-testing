@@ -251,9 +251,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetCustomListPrefix() =>
             ActiveCustomListEdited.FindElement(By.XPath("./preceding-sibling::span"));
 
-    #region Link
+        #region Link
 
-    public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var selector = By.XPath($"{parentElementSelector}//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             if (!Driver.IsElementDisplayed(selector, waitTime))
@@ -1248,11 +1248,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         #region Slide toggle
 
-        public IWebElement SlideToggleByName(string name)
+        public IWebElement GetSlideToggle(string slideToggle)
         {
-            var page = By.XPath($".//mat-slide-toggle//span[text()='{name}']");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(page);
+            return Driver.FindElement(By.XPath($".//mat-slide-toggle//span[text()='{slideToggle}']"));
+        }
+
+        public bool OnOrOffSlideToggle(string slideToggle)
+        {
+            return GetSlideToggle(slideToggle).GetAttribute("class").Contains("checked");
+        }
+
+        public void SlideToggleState(string slideToggle, bool expectedCondition)
+        {
+            if (!OnOrOffSlideToggle(slideToggle).Equals(expectedCondition))
+                GetSlideToggle(slideToggle).Click();
         }
 
         #endregion

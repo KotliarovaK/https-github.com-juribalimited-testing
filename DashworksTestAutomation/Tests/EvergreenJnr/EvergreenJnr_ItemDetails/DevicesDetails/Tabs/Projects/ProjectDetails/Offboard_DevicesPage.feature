@@ -194,5 +194,5 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffbo
 	When User clicks 'OFFBOARD' button
 	When User deselect all rows on the grid
 	Then 'FQT1418241' content is displayed in the 'Username' column
-	When User clicks 'Show only selected items' slide toggle
+	When User checks 'Show only selected items' slide toggle
 	Then 'FQT1418241' content is not displayed in the 'Username' column
