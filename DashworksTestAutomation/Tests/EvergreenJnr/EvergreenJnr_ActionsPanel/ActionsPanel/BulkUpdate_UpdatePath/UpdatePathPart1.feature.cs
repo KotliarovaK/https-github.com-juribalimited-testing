@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
         [NUnit.Framework.CategoryAttribute("DAS12932")]
         [NUnit.Framework.CategoryAttribute("DAS13261")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects()
         {
             System.Exception lastException = null;
@@ -127,7 +128,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
                         "DAS12864",
                         "DAS12932",
                         "DAS13261",
-                        "Cleanup"});
+                        "Cleanup",
+                        "Void"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
