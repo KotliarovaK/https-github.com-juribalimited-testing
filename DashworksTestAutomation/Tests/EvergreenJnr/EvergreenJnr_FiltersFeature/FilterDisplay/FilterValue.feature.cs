@@ -841,12 +841,12 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
             table12.AddRow(new string[] {
-                        "Red"});
+                        "Blocked"});
             table12.AddRow(new string[] {
                         "Amber"});
 #line 186
- testRunner.When("User add \"Babel(Engl: Readiness\" filter where type is \"Equals\" with added column " +
-                    "and Lookup option", ((string)(null)), table12, "When ");
+ testRunner.When("User add \"2004: Readiness\" filter where type is \"Equals\" with added column and Lo" +
+                    "okup option", ((string)(null)), table12, "When ");
 #line 190
  testRunner.And("User creates \'CheckColors13383\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 191
@@ -854,12 +854,12 @@ this.FeatureBackground();
 #line 192
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 193
- testRunner.When("User click Edit button for \"Babel(Engl: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User click Edit button for \"2004: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Color"});
             table13.AddRow(new string[] {
-                        "Red"});
+                        "Blocked"});
             table13.AddRow(new string[] {
                         "Amber"});
 #line 194
@@ -1030,7 +1030,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table15.AddRow(new string[] {
-                        "1803: Pre-Migration \\ Scheduled Date (Slot)"});
+                        "2004: Pre-Migration \\ Scheduled Date (Slot)"});
 #line 233
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table15, "And ");
 #line 236
@@ -1038,7 +1038,7 @@ this.FeatureBackground();
 #line 237
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 238
- testRunner.When("user select \"1803: Pre-Migration \\ Scheduled Date (Slot)\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("user select \"2004: Pre-Migration \\ Scheduled Date (Slot)\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 239
  testRunner.And("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 240
@@ -1048,7 +1048,7 @@ this.FeatureBackground();
 #line 242
  testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 243
- testRunner.Then("Column \'1803: Pre-Migration \\ Scheduled Date (Slot)\' with no data displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Column \'2004: Pre-Migration \\ Scheduled Date (Slot)\' with no data displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1427,7 +1427,7 @@ this.FeatureBackground();
 #line 317
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 318
- testRunner.When("User selects \"1803: Owner (Saved List)\" filter from \"Saved List\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"2004: Owner (Saved List)\" filter from \"Saved List\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 319
  testRunner.Then("\"Empty\" checkbox is not available for current opened filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
