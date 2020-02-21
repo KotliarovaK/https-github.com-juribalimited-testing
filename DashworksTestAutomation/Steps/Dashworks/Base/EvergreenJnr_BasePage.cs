@@ -80,11 +80,56 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Text Editor
 
+        [When(@"User enters '(.*)' text to the text editor")]
+        public void WhenUserEntersTextToTheTextEditor(string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.TextEditorInput.SendKeys(text);
+        }
+
+        [When(@"User clears text editor")]
+        public void WhenUserClearsTextEditor()
+        {
+            try
+            {
+                var page = _driver.NowAt<BaseDashboardPage>();
+                page.TextEditorInput.Clear();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         [Then(@"text editor is displayed")]
         public void ThenTextEditorIsDisplayed()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsTrue(_driver.IsElementExists(page.TextEditor), "Text editor is not displayed on page");
+        }
+
+        [Then(@"text editor contains text")]
+        public void ThenTextEditorContainsText(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textEditorContent = page.TextEditorInput.Text;
+            foreach (TableRow row in table.Rows)
+            {
+                var expectedText = row.Values.First();
+                Verify.IsTrue(textEditorContent.Contains(expectedText), $"Text editor doesn't contains '{expectedText}' text");
+            }
+        }
+
+        [Then(@"text editor does not contains text")]
+        public void ThenTextEditorDoesNotContainsText(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textEditorContent = page.TextEditorInput.Text;
+            foreach (TableRow row in table.Rows)
+            {
+                var expectedText = row.Values.First();
+                Verify.IsFalse(textEditorContent.Contains(expectedText), $"Text editor contains '{expectedText}' text");
+            }
         }
 
         #endregion

@@ -39,8 +39,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//quill-editor/..")]
+        private const string TextEditorSelector = ".//quill-editor/..";
+
+        [FindsBy(How = How.XPath, Using = TextEditorSelector)]
         public IWebElement TextEditor { get; set; }
+
+        [FindsBy(How = How.XPath, Using = TextEditorSelector + "//div[contains(@class,'ql-editor')]")]
+        public IWebElement TextEditorInput { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
@@ -251,9 +256,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetCustomListPrefix() =>
             ActiveCustomListEdited.FindElement(By.XPath("./preceding-sibling::span"));
 
-    #region Link
+        #region Link
 
-    public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        public IWebElement GetLinkByText(string text, string parentElementSelector = "", WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var selector = By.XPath($"{parentElementSelector}//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             if (!Driver.IsElementDisplayed(selector, waitTime))
