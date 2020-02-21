@@ -1382,7 +1382,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserClicksSlideToggle(string slideToggleName)
         {
             var slide = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
             slide.GetSlideToggle(slideToggleName).Click();
         }
 
