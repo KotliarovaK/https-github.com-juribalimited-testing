@@ -1389,14 +1389,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void WhenUserChecksSlideToggle(string slideToggleName)
         {
             var slide = _driver.NowAt<BaseDashboardPage>();
-            slide.SlideToggleState(slideToggleName, true);
+            slide.SetSlideToggleCondition(slideToggleName, true);
         }
 
         [When(@"User unchecks '(.*)' slide toggle")]
         public void WhenUserUnchecksSlideToggle(string slideToggleName)
         {
             var slide = _driver.NowAt<BaseDashboardPage>();
-            slide.SlideToggleState(slideToggleName, false);
+            slide.SetSlideToggleCondition(slideToggleName, false);
         }
 
         #endregion

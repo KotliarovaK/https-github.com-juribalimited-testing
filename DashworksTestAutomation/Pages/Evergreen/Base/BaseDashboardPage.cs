@@ -1253,14 +1253,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(By.XPath($".//mat-slide-toggle//span[text()='{slideToggle}']"));
         }
 
-        public bool OnOrOffSlideToggle(string slideToggle)
+        public bool GetSlideToggleCondition(string slideToggle)
         {
             return GetSlideToggle(slideToggle).GetAttribute("class").Contains("checked");
         }
 
-        public void SlideToggleState(string slideToggle, bool expectedCondition)
+        public void SetSlideToggleCondition(string slideToggle, bool expectedCondition)
         {
-            if (!OnOrOffSlideToggle(slideToggle).Equals(expectedCondition))
+            if (!GetSlideToggleCondition(slideToggle).Equals(expectedCondition))
                 GetSlideToggle(slideToggle).Click();
         }
 
