@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheBucke
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
-	When User clicks on edit button for 'Capacity Unit' field
+	When User clicks on edit button for 'Bucket' field
 	When User deselect all rows on the grid
 	Then 'FQT1418241' content is displayed in the 'Username' column
 	When User checks 'Show only selected items' slide toggle
