@@ -1245,5 +1245,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         #endregion
+
+        #region Slide toggle
+
+        public IWebElement SlideToggleByName(string name)
+        {
+            var page = By.XPath($".//mat-slide-toggle//span[text()='{name}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(page);
+        }
+
+        #endregion
     }
 }

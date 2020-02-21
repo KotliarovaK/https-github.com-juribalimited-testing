@@ -38,14 +38,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Top row
 
-        [When(@"User clicks '(.*)' slide toggle")]
-        public void WhenUserClicksSlideToggle(string slide)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            page.SlideToggleByName(slide).Click();
-        }
-
         [Then(@"User sees Edit mode trigger is in the On position on Dashboards page")]
         public void ThenUserSeesEditModeTriggerIsInTheOnPositionOnDashboardsPage()
         {

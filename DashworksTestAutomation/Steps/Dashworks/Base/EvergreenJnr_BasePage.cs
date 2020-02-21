@@ -1373,5 +1373,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Slide toggle
+
+        [When(@"User clicks '(.*)' slide toggle")]
+        public void WhenUserClicksSlideToggle(string slide)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            page.SlideToggleByName(slide).Click();
+        }
+
+        #endregion
     }
 }
