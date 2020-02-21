@@ -129,7 +129,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
 
-            Verify.IsTrue(dialogContainer.IsConponentOfDialogPageHighlighted(componentName), $"'{componentName}' component wasn't highlighted");
+            Verify.IsTrue(dialogContainer.IsComponentOfDialogPageHighlighted(componentName), $"'{componentName}' component wasn't highlighted");
+        }
+
+        [Then(@"'(.*)' component on dialog is disabled")]
+        public void ThenComponentOnDialogPageIsdisabled(string componentName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+
+            Verify.IsTrue(dialogContainer.IsComponentOfDialogPageDisabled(componentName), $"'{componentName}' component wasn't disabled");
         }
 
         #endregion

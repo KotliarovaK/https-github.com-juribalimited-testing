@@ -29,11 +29,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(selector));
         }
 
-        public bool IsConponentOfDialogPageHighlighted(string componentName)
+        public bool IsComponentOfDialogPageHighlighted(string componentName)
         {
-            var bgColor = ComponentOfDialogPage(componentName).FindElement(By.XPath("ancestor::button[contains(@class, mat-list-item)]")).GetCssValue("background");
-            var result = bgColor.Contains("rgb(128, 139, 153)");
+            var bgColor = ComponentOfDialogPage(componentName).FindElement(By.XPath(".//ancestor::button[contains(@class, mat-list-item)]")).GetCssValue("background");
+            var result = bgColor.Contains("rgb(49, 122, 193)");
             return result;
+        }
+
+        public bool IsComponentOfDialogPageDisabled(string componentName)
+        {
+            var componentState = ComponentOfDialogPage(componentName).FindElement(By.XPath("ancestor::button[contains(@class, mat-list-item)]")).IsAttributePresent("disabled");
+            
+            return componentState;
         }
 
         public override List<By> GetPageIdentitySelectors()
