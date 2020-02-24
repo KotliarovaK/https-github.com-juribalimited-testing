@@ -62,6 +62,17 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
 
+        [Then("User sees '(.*)' tootltip text of Add Item button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void ThenUserClicksOnCogMenuButtonForItemWithType(string text, string contextPanelType, string contextPanelName)
+        {
+            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            var button = dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText,
+                $"'{contextPanelName}' button tooltip is incorrect");
+        }
+
         [When(@"User selects '(.*)' cogmenu option for '(.*)' item type with '(.*)' name on Self Service Builder Panel")]
         public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string option, string contextPanelType, string contextPanelName)
         {

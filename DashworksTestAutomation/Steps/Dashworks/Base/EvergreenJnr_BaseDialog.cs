@@ -31,6 +31,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsTrue(dialogContainer.PopupElement.Displayed(), "Dialog Pop-up is not displayed");
         }
 
+        [Then(@"popup is not displayed to User")]
+        public void ThenPopupIsNotDisplayedToUser()
+        {
+            var dialogContainer = _driver.NowAtWithoutWait<BaseDialogPage>();
+            Verify.IsFalse(dialogContainer.PopupElement.Displayed(), "Dialog Pop-up was displayed");
+        }
+
         [Then(@"popup with '(.*)' title is displayed")]
         public void ThenPopupWithTitleIsDisplayed(string title)
         {
@@ -96,6 +103,41 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _driver.WaitForDataLoading();
             var toolTipText = _driver.GetTooltipText();
             Verify.That(tooltip, Is.EqualTo(toolTipText), $"Popup '{button}' button has incorrect tooltip");
+        }
+
+        #endregion
+
+        #region Components
+
+        [Then(@"User sees '(.*)' component on dialog")]
+        public void ThenUserSeesComponentOnDialogPage(string componentName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+            Verify.IsTrue(_driver.IsElementDisplayed(dialogContainer.ComponentOfDialogPage(componentName)), $"'{componentName}' wasn't displayed");
+        }
+
+        [When(@"User clicks on '(.*)' component on dialog")]
+        public void ThenUserClicksOnComponentOnDialogPage(string componentName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+            var component = dialogContainer.ComponentOfDialogPage(componentName);
+            _driver.ClickByActions(component);
+        }
+
+        [Then(@"'(.*)' component on dialog is highlighted")]
+        public void ThenComponentOnDialogPageIsHighlighted(string componentName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+
+            Verify.IsTrue(dialogContainer.IsComponentOfDialogPageHighlighted(componentName), $"'{componentName}' component wasn't highlighted");
+        }
+
+        [Then(@"'(.*)' component on dialog is disabled")]
+        public void ThenComponentOnDialogPageIsdisabled(string componentName)
+        {
+            var dialogContainer = _driver.NowAt<BaseDialogPage>();
+
+            Verify.IsTrue(dialogContainer.IsComponentOfDialogPageDisabled(componentName), $"'{componentName}' component wasn't disabled");
         }
 
         #endregion

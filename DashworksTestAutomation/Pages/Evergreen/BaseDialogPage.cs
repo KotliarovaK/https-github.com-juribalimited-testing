@@ -21,6 +21,28 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = PopupSelector + "//div[@mat-dialog-title]")]
         public IWebElement PopupTitle { get; set; }
 
+        public IWebElement ComponentOfDialogPage(string componentName)
+        {
+            var selector = $"{PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{componentName}']";
+
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            return Driver.FindElement(By.XPath(selector));
+        }
+
+        public bool IsComponentOfDialogPageHighlighted(string componentName)
+        {
+            var bgColor = ComponentOfDialogPage(componentName).FindElement(By.XPath(".//ancestor::button[contains(@class, mat-list-item)]")).GetCssValue("background");
+            var result = bgColor.Contains("rgb(49, 122, 193)");
+            return result;
+        }
+
+        public bool IsComponentOfDialogPageDisabled(string componentName)
+        {
+            var componentState = ComponentOfDialogPage(componentName).FindElement(By.XPath("ancestor::button[contains(@class, mat-list-item)]")).IsAttributePresent("disabled");
+            
+            return componentState;
+        }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
