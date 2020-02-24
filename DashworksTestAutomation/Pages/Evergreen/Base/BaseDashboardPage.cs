@@ -1250,5 +1250,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         #endregion
+
+        #region Slide toggle
+
+        public IWebElement GetSlideToggle(string slideToggle)
+        {
+            return Driver.FindElement(By.XPath($".//mat-slide-toggle//span[text()='{slideToggle}']"));
+        }
+
+        public bool GetSlideToggleCondition(string slideToggle)
+        {
+            return GetSlideToggle(slideToggle).GetAttribute("class").Contains("checked");
+        }
+
+        public void SetSlideToggleCondition(string slideToggle, bool expectedCondition)
+        {
+            if (!GetSlideToggleCondition(slideToggle).Equals(expectedCondition))
+                GetSlideToggle(slideToggle).Click();
+        }
+
+        #endregion
     }
 }

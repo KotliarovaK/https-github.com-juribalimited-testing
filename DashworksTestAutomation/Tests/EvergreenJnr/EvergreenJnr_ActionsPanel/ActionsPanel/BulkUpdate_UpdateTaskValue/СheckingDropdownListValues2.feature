@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	| Before current value |
 	| After current value  |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274 @Universe
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274 @Void
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	Then 'After now' content is displayed in 'Before or After' dropdown
 	When User selects 'Before now' in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @DAS19274 @Universe
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @DAS19276 @Void
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

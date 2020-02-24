@@ -1418,5 +1418,32 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Slide toggle
+
+        //TODO AnnI 2/21/20: please update tests for 'Dashboards' and remove this step
+        //please, use only WhenUserChecksSlideToggle/WhenUserUnchecksSlideToggle steps
+        [When(@"User clicks '(.*)' slide toggle")]
+        public void WhenUserClicksSlideToggle(string slideToggleName)
+        {
+            var slide = _driver.NowAt<BaseDashboardPage>();
+            slide.GetSlideToggle(slideToggleName).Click();
+        }
+
+        [When(@"User checks '(.*)' slide toggle")]
+        public void WhenUserChecksSlideToggle(string slideToggleName)
+        {
+            var slide = _driver.NowAt<BaseDashboardPage>();
+            slide.SetSlideToggleCondition(slideToggleName, true);
+        }
+
+        [When(@"User unchecks '(.*)' slide toggle")]
+        public void WhenUserUnchecksSlideToggle(string slideToggleName)
+        {
+            var slide = _driver.NowAt<BaseDashboardPage>();
+            slide.SetSlideToggleCondition(slideToggleName, false);
+        }
+
+        #endregion
     }
 }

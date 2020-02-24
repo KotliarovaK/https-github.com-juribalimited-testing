@@ -25,7 +25,6 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
-	Then "02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state

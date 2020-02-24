@@ -746,6 +746,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsGridGrouped(), "Grid is grouped");
         }
 
+        [Then(@"'(.*)' grouped name is not displayed as a link")]
+        public void ThenGroupedNameIsNotDisplayedAsALink(string groupName)
+        {
+            var group = _driver.NowAt<BaseGridPage>();
+            Verify.IsFalse(group.CheckHrefByGroupedValue(groupName), $"'{groupName}' grouped name is displayed as a link");
+        }
+
         [Then(@"'(.*)' row in the groped grid does not contains '(.*)' text")]
         public void ThenRowInTheGropedGridDoesNotContainsText(string groupedBy, string text)
         {

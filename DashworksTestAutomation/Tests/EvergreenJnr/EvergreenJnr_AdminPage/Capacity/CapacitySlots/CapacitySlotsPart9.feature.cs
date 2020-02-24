@@ -136,12 +136,14 @@ this.FeatureBackground();
 #line 12
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.When("User moves \"Birmingham Morning\" slot to \"London Depot 15:00 - 17:00\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User moves \"Birmingham Morning\" slot to \"Manchester Morning\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
             table1.AddRow(new string[] {
                         "Birmingham Afternoon"});
+            table1.AddRow(new string[] {
+                        "Birmingham Morning"});
             table1.AddRow(new string[] {
                         "Manchester Morning"});
             table1.AddRow(new string[] {
@@ -161,20 +163,18 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "London Depot 13:00 - 15:00"});
             table1.AddRow(new string[] {
-                        "Birmingham Morning"});
-            table1.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
 #line 14
  testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table1, "Then ");
 #line 28
- testRunner.When("User moves \"Birmingham Morning\" slot to \"Birmingham Afternoon\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User moves \"Birmingham Afternoon\" slot to \"Manchester Morning\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
             table2.AddRow(new string[] {
-                        "Birmingham Afternoon"});
-            table2.AddRow(new string[] {
                         "Birmingham Morning"});
+            table2.AddRow(new string[] {
+                        "Birmingham Afternoon"});
             table2.AddRow(new string[] {
                         "Manchester Morning"});
             table2.AddRow(new string[] {
@@ -197,8 +197,6 @@ this.FeatureBackground();
                         "London Depot 15:00 - 17:00"});
 #line 29
  testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table2, "Then ");
-#line 43
- testRunner.When("User moves \"Birmingham Afternoon\" slot to \"Birmingham Morning\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -245,23 +243,23 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "DAS13671"});
-#line 46
+#line 45
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 47
+#line 46
  testRunner.When("User navigates to \"Email Migration\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 48
+#line 47
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
+#line 48
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 49
  testRunner.And("User enters \"Slot 2018-05-01 - 2019-05-31[Team: 3; RequestType: 458]\" text in the" +
                     " Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
+#line 50
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 51
  testRunner.When("User clicks close button for \"Pre-Migration \\ Scheduled date\" chip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -284,13 +282,13 @@ this.FeatureBackground();
                         "Pre-Migration \\ Scheduled date"});
             table3.AddRow(new string[] {
                         "Pre-Migration \\ Target date"});
-#line 53
+#line 52
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table3, "Then ");
-#line 64
+#line 63
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
+#line 64
  testRunner.And("User clicks \'CREATE SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 65
  testRunner.When("User checks \'Shared Mailbox\' option after search from \'Paths\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -313,7 +311,7 @@ this.FeatureBackground();
                         "Pre-Migration \\ Scheduled date"});
             table4.AddRow(new string[] {
                         "Pre-Migration \\ Target date"});
-#line 67
+#line 66
  testRunner.Then("\'Tasks\' autocomplete have following checkbox options", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -363,22 +361,22 @@ this.FeatureBackground();
                         "Capacity",
                         "DAS13671",
                         "Cleanup"});
-#line 80
+#line 79
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 81
+#line 80
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 81
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 83
+#line 82
  testRunner.When("User navigate to \"Devices Evergreen Capacity Project\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 83
  testRunner.Then("Project with \"Devices Evergreen Capacity Project\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 85
+#line 84
  testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 85
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -397,43 +395,43 @@ this.FeatureBackground();
                         "Date",
                         "Computer",
                         ""});
-#line 87
+#line 86
  testRunner.And("User creates Task", ((string)(null)), table5, "And ");
-#line 90
+#line 89
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 91
+#line 90
  testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 92
+#line 91
  testRunner.When("User navigates to \"Devices Evergreen Capacity Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 93
+#line 92
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 93
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 94
  testRunner.And("User clicks \'CREATE SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 95
  testRunner.And("User enters \'Slot13671\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
+#line 96
  testRunner.And("User enters \'13671\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 97
  testRunner.And("User selects \'Teams and Paths\' in the \'Capacity Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 98
  testRunner.And("User checks \'[Default (Computer)]\' option after search from \'Paths\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 99
  testRunner.And("User checks \'Stage 1 \\ WO Task13671\' option after search from \'Tasks\' autocomplet" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
+#line 100
  testRunner.And("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 101
  testRunner.Then("\'Your capacity slot has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 103
+#line 102
  testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ChipValue"});
             table6.AddRow(new string[] {
                         "Stage 1 \\ WO Task13671"});
-#line 104
+#line 103
  testRunner.Then("following chips value displayed in the \'Tasks\' textbox", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -485,7 +483,7 @@ this.FeatureBackground();
                         "Slots",
                         "DAS13147",
                         "Cleanup"});
-#line 109
+#line 108
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -501,7 +499,7 @@ this.FeatureBackground();
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 110
+#line 109
  testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -534,36 +532,36 @@ this.FeatureBackground();
                         "Slot 4",
                         "",
                         ""});
-#line 113
+#line 112
  testRunner.And("User creates new Slot via Api", ((string)(null)), table8, "And ");
-#line 119
+#line 118
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
+#line 119
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table9.AddRow(new string[] {
                         "Slot 3"});
-#line 121
+#line 120
  testRunner.When("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table9, "When ");
-#line 124
+#line 123
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 125
+#line 124
  testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 126
+#line 125
  testRunner.And("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
+#line 126
  testRunner.Then("\'The selected slot has been deleted\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 128
+#line 127
  testRunner.When("User opens \'Capacity Slot\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 129
+#line 128
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 129
  testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 131
+#line 130
  testRunner.When("User select \"Display Order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 132
+#line 131
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -574,7 +572,7 @@ this.FeatureBackground();
                         "2"});
             table10.AddRow(new string[] {
                         "3"});
-#line 133
+#line 132
  testRunner.Then("User sees following Display order on the Automation page", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();

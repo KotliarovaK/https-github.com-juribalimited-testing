@@ -313,7 +313,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserLastLogonDateFilterWorksCor
 	And Filter value is shown in bold in the added filter info
 	And There are no errors in the browser console
 
-@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @Archived
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @archived
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                              |
@@ -349,7 +349,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFilters
 	| UNCATEGORISED      |
 	Then "21" rows are displayed in the agGrid
 
-@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @Archived
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12058 @Cleanup @archived
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName                  |
@@ -1323,13 +1323,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppFilter
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Target App" filter where type is "Equals" with added column and Lookup option
+	When User add "2004: Target App" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues      |
 	| Multi Edit 9 Client |
 	When User creates 'DAS18875_list' dynamic list
 	Then "DAS18875_list" list is displayed to user
 	When User clicks the Filters button
-	Then "1803: Target App is Multi Edit 9 Client" is displayed in added filter info
+	Then "2004: Target App is Multi Edit 9 Client" is displayed in added filter info
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18961 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckEvergreeargetAppKeyFilter
@@ -1337,13 +1337,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreeargetAppKeyFilter
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Target App Key" filter where type is "Does not equal" with added column and following value:
+	When User add "2004: Target App Key" filter where type is "Does not equal" with added column and following value:
 	| Values |
 	| 12     |
 	When User creates 'DAS18875_list1' dynamic list
 	Then "DAS18875_list1" list is displayed to user
 	When User clicks the Filters button
-	Then "1803: Target App Key is not 12" is displayed in added filter info
+	Then "2004: Target App Key is not 12" is displayed in added filter info
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18961 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppVendorFilter
@@ -1380,13 +1380,13 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTargetAppReadinessFilter
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "1803: Target App Readiness" filter where type is "Not empty" with added column and following value:
+	When User add "2004: Target App Readiness" filter where type is "Not empty" with added column and following value:
 	| Values |
 	|        |
 	When User creates 'DAS18875_list4' dynamic list
 	Then "DAS18875_list4" list is displayed to user
 	When User clicks the Filters button
-	Then "1803: Target App Readiness is not empty" is displayed in added filter info
+	Then "2004: Target App Readiness is not empty" is displayed in added filter info
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18896 @Cleanup @Universe
 Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenRationalisationFilter
@@ -1415,7 +1415,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppNameFilter
 	When User clicks the Filters button
 	Then "Evergreen Target App Name is not empty" is displayed in added filter info
 
-@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS19262 @Cleanup @Universe
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS19262 @Cleanup @Universe @archived
 Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppFilterWithNoTargetApplication
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
