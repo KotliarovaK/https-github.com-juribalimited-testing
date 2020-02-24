@@ -46,7 +46,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingC
 	Then User click back button in the browser
 	And Details page for 'ZZP911429' item is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20046 @Set_Application_Owned_User
+#This is fixed only on void (DAS-20046)
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20046 @Set_Application_Owned_User @Void
 Scenario: EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink
 	Given Link user to the Evergreen application owned
 	| UserName  | ApplicationId |

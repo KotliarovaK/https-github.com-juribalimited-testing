@@ -273,6 +273,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS20046")]
         [NUnit.Framework.CategoryAttribute("Set_Application_Owned_User")]
+        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink()
         {
             System.Exception lastException = null;
@@ -307,8 +308,9 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS20046",
-                        "Set_Application_Owned_User"});
-#line 50
+                        "Set_Application_Owned_User",
+                        "Void"});
+#line 51
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -320,15 +322,15 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "ZZP911429",
                         "57"});
-#line 51
+#line 52
  testRunner.Given("Link user to the Evergreen application owned", ((string)(null)), table4, "Given ");
-#line 54
- testRunner.When("User navigates to the \'User\' details page for \'ZZP911429\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
- testRunner.Then("Details page for \'ZZP911429\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'User\' details page for \'ZZP911429\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \'ZZP911429\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 57
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 58
  testRunner.When("User navigates to the \'Evergreen Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -337,9 +339,9 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "Application",
                         "true"});
-#line 58
+#line 59
  testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table5, "When ");
-#line 61
+#line 62
  testRunner.Then("\'DirectX 8.1 SDK for Visual Basic\' grouped name is not displayed as a link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
