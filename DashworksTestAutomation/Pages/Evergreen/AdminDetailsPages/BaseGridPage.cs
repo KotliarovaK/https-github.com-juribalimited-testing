@@ -431,7 +431,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetGroupedRowByContent(string groupedValue)
         {
-            var selector = By.XPath($"{GroupedValue}//div[text()='{groupedValue}']/ancestor::span[contains(@class,'ag-cell-wrapper')]");
+            var selector = By.XPath($"{GroupedValue}//*[text()='{groupedValue}']/ancestor::span[contains(@class,'ag-cell-wrapper')]");
             if (Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Long))
                 return Driver.FindElement(selector);
             else
@@ -472,6 +472,30 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 throw new Exception($"Unable to collapse '{groupedValue}' row: {e}");
             }
+        }
+
+        public bool CheckHrefByGroupedValue(string groupedValue)
+        {
+            var row = GetGroupedRowByContent(groupedValue);
+            var allLinks = row.FindElements(By.XPath(".//a[@href]"));
+            var containsLink = allLinks.Any();
+            return containsLink;
+        }
+
+        #endregion
+
+        #region Links
+
+        public By GetLinkByNameSelector(string linkName)
+        {
+            var selector = $".//a[@href][text()='{linkName}']";
+            return By.XPath(selector);
+        }
+
+        public IWebElement GetLinkByName(string linkName)
+        {
+            var by = GetLinkByNameSelector(linkName);
+            return Driver.FindElement(by);
         }
 
         #endregion
