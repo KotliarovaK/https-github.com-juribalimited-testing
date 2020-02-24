@@ -1287,8 +1287,8 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "Application (Saved List) - Static - Specific rows selected by Compliance = Red, A" +
                             "mber or Unknown",
-                        "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'36\')%20WHERE%20(" +
-                            "niod))"});
+                        "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'295\')%20WHERE%20" +
+                            "(niod))"});
 #line 221
  testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table16, "When ");
 #line 224
@@ -1306,7 +1306,7 @@ this.FeatureBackground();
 #line 230
  testRunner.Then("\"List11179\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 231
- testRunner.And("\"5,195\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"7,419\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 232
  testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 233
@@ -1316,7 +1316,7 @@ this.FeatureBackground();
 #line 235
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 236
- testRunner.And("\"5,195\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"7,419\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 237
  testRunner.And("\"Any Application in list StaticList12911 not installed on device\" is displayed in" +
                     " added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

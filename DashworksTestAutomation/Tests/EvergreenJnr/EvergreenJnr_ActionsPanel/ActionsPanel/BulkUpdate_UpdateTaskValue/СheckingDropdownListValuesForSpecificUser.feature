@@ -232,7 +232,9 @@ Examples:
 	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
 	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup
+	#AnnI. 2/21/20 Will be checked on Monday with Marina.
+	#It looks like access has changed. Need to update the test.
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
@@ -262,9 +264,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Nov 29, 2018' text to 'Date' datepicker
+	And User enters 'Jan 20, 2019' text to 'Date' datepicker
+	When User focus on 'Capacity Slot' dropdown
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects '<NewTeam>' option from 'Team' autocomplete
 	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
@@ -284,9 +289,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Jan 5, 2019' text to 'Date' datepicker
+	And User enters 'Jan 20, 2019' text to 'Date' datepicker
+	When User focus on 'Capacity Slot' dropdown
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects '<DefaultTeam>' option from 'Team' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 

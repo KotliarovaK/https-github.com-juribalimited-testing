@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD SECTION' button 
 	And User clicks Ellipsis menu for 'Top 10 App Vendors' Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD SECTION' button 
 	And User clicks Ellipsis menu for Section having 'Operating System' Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14358 @DAS12989 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIntoSameSection
 	When Dashboard with 'Dashboard for DAS12989' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD SECTION' button 
 	And User clicks ADD WIDGET button for '1' Section on Dashboards page
 	And User creates new Widget
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated
 	When Dashboard with 'Dashboard for DAS14358' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBe
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14586 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists
 	When Dashboard with '<DashboardName>' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title   | List   | SplitBy   | AggregateBy   | AggregateFunction  | OrderBy   | MaxValues | ShowLegend   |
@@ -120,7 +120,7 @@ Examples:
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14728 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection
 	When Dashboard with 'Dashboard for DAS14728' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12978 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	When Dashboard with 'Dashboard for DAS12978' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	And User clicks refresh button in the browser
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User navigates to the "Dashboard for DAS12978" list
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	Then User sees Edit mode trigger is in the On position on Dashboards page
 	And User sees Edit mode trigger has blue style on Dashboards page
 	And 'CREATE DASHBOARD' button is disabled
@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12977 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When Dashboard with 'Dashboard for DAS12977' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
 	When Dashboard with 'Dashboard for DAS14583' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14855 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingWidget
 	When Dashboard with 'Dashboard for DAS14855' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |

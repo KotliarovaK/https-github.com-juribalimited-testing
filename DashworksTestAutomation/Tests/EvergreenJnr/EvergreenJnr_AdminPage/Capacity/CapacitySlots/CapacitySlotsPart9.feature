@@ -10,10 +10,11 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	When User navigates to "2004 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot
+	When User moves "Birmingham Morning" slot to "Manchester Morning" slot
 	Then Content in the 'Capacity Slot' column is equal to
 	| Content                      |
 	| Birmingham Afternoon         |
+	| Birmingham Morning           |
 	| Manchester Morning           |
 	| Manchester Afternoon         |
 	| London - City Morning        |
@@ -23,13 +24,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London Depot 09:00 - 11:00   |
 	| London Depot 11:00 - 13:00   |
 	| London Depot 13:00 - 15:00   |
-	| Birmingham Morning           |
 	| London Depot 15:00 - 17:00   |
-	When User moves "Birmingham Morning" slot to "Birmingham Afternoon" slot
+	When User moves "Birmingham Afternoon" slot to "Manchester Morning" slot
 	Then Content in the 'Capacity Slot' column is equal to
 	| Content                      |
-	| Birmingham Afternoon         |
 	| Birmingham Morning           |
+	| Birmingham Afternoon         |
 	| Manchester Morning           |
 	| Manchester Afternoon         |
 	| London - City Morning        |

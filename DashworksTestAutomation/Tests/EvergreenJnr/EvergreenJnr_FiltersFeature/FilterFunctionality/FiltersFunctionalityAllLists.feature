@@ -299,10 +299,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFil
 
 Examples:
 	| Page         | FilterName                | Type        | Value                  | Rows   |
-	| Devices      | Owner Organizational Unit | Equals      | Users.Cardiff.UK.local | 1,458  |
-	| Devices      | Owner Organizational Unit | Contains    | Users                  | 11,665 |
-	| Users        | Organizational Unit       | Begins with | Users                  | 23,728 |
-	| Mailboxes    | Owner Organizational Unit | Not Empty   |                        | 14,747 |
+	| Devices      | Owner Organisational Unit | Equals      | Users.Cardiff.UK.local | 1,458  |
+	| Devices      | Owner Organisational Unit | Contains    | Users                  | 11,665 |
+	| Users        | Organisational Unit       | Begins with | Users                  | 23,728 |
+	| Mailboxes    | Owner Organisational Unit | Not Empty   |                        | 14,747 |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS16912
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilter

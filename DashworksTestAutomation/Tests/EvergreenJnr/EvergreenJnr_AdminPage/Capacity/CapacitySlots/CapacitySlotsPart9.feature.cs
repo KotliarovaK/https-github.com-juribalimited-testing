@@ -136,12 +136,14 @@ this.FeatureBackground();
 #line 12
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.When("User moves \"Birmingham Morning\" slot to \"London Depot 15:00 - 17:00\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User moves \"Birmingham Morning\" slot to \"Manchester Morning\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
             table1.AddRow(new string[] {
                         "Birmingham Afternoon"});
+            table1.AddRow(new string[] {
+                        "Birmingham Morning"});
             table1.AddRow(new string[] {
                         "Manchester Morning"});
             table1.AddRow(new string[] {
@@ -161,20 +163,18 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "London Depot 13:00 - 15:00"});
             table1.AddRow(new string[] {
-                        "Birmingham Morning"});
-            table1.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
 #line 14
  testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table1, "Then ");
 #line 28
- testRunner.When("User moves \"Birmingham Morning\" slot to \"Birmingham Afternoon\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User moves \"Birmingham Afternoon\" slot to \"Manchester Morning\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
             table2.AddRow(new string[] {
-                        "Birmingham Afternoon"});
-            table2.AddRow(new string[] {
                         "Birmingham Morning"});
+            table2.AddRow(new string[] {
+                        "Birmingham Afternoon"});
             table2.AddRow(new string[] {
                         "Manchester Morning"});
             table2.AddRow(new string[] {

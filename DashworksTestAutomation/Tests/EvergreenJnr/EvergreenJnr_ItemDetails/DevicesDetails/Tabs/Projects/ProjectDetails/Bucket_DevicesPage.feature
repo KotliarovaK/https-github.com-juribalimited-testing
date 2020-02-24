@@ -73,3 +73,16 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForBucketIsChangingSuccessfullyFor
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Bucket' field is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19985 @DAS20088 @Void
+Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheBucketPopUp
+	When User navigates to the 'Device' details page for '32UIH1IBLQ050JY' item
+	Then Details page for '32UIH1IBLQ050JY' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Bucket' field
+	When User deselect all rows on the grid
+	Then 'FQT1418241' content is displayed in the 'Username' column
+	When User checks 'Show only selected items' slide toggle
+	Then 'FQT1418241' content is not displayed in the 'Username' column

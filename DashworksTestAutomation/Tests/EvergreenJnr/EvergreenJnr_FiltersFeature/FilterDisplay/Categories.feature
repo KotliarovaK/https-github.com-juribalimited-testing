@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 		| Evergreen Target App Name       |
 		| Evergreen Target App Vendor     |
 		| Evergreen Target App Version    |
-		| Hide from End Users             |
+		| Hide From End Users             |
 		| In Catalog                      |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659 @DAS14629
@@ -132,7 +132,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 		| Last Logon Date               |
 		| Mailbox Count (Access)        |
 		| Mailbox Count (Owned)         |
-		| Organizational Unit           |
+		| Organisational Unit           |
 		| Parent Distinguished Name     |
 		| Primary Device                |
 		| SID                           |
@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCor
 		| Device Owner Home Drive                |
 		| Device Owner Key                       |
 		| Device Owner Last Logon Date           |
-		| Device Owner Organizational Unit       |
+		| Device Owner Organisational Unit       |
 		| Device Owner Parent Distinguished Name |
 		| Device Owner SID                       |
 		| Device Owner Surname                   |
@@ -559,7 +559,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	| Category                  | Number |
 	| Evergreen                 | 1      |
 	| Project Rings: Barry'sUse | 1      |
-	| Project Rings: MigrationP | 1      |
 	| Project Rings: UserEvergr | 1      |
 	| Project Rings: UserSched2 | 1      |
 	| Project Rings: UserSchedu | 1      |

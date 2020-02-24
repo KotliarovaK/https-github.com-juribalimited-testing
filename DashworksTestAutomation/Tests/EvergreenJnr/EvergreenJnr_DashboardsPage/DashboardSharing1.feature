@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	| Username   | Password  |
 	| DAS14911_1 | m!gration |
 	When Dashboard with 'Dashboard for DAS14911' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS14911' list
 	When User clicks the Dashboard Permissions button
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	When User create dynamic list with "Second_List_DAS16380_2" name on "Devices" page
 	Then "Second_List_DAS16380_2" list is displayed to user
 	When Dashboard with 'Dashboard for DAS16380' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title               | List                  | MaxRows | MaxColumns |
@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	When User create dynamic list with "DeviceListFor14841" name on "Devices" page
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	#add widget
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	When User create dynamic list with "DeviceListFor14841_1" name on "Devices" page
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841_1' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	#add widget
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	And User create dynamic list with "DeviceListFor14841_2" name on "Devices" page
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841_2' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	#add widget
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then "DeviceListFor14841_4" list is displayed to user
 	#create dashboard
 	When Dashboard with 'Dashboard for DAS14841_3' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	#add widget#1
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
@@ -339,7 +339,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
 	When Dashboard with '<dashboardName>' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title        | List       | SplitBy  | AggregateFunction | OrderBy    |

@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	Then data in table is sorted by 'Manufacturer' column in ascending order
 	When User create dynamic list with "List15356" name on "Devices" page
 	And User clicks 'Dashboards' on the left-hand menu
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | MaxValues | ShowLegend |
@@ -38,7 +38,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	And User create dynamic list with "ListForDAS16167" name on "Devices" page
 	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType   | Title             | List            | SplitBy          | AggregateFunction | OrderBy              |
@@ -70,7 +70,7 @@ Scenario Outline: EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorC
 	When User create dynamic list with "<SavedList>" name on "<ListType>" page
 	Then "<SavedList>" list is displayed to user
 	When Dashboard with '<DashboardName>' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title        | List        | SplitBy  | AggregateFunction | OrderBy   |

@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 	When User create dynamic list with "List15364" name on "Devices" page
 	Then "List15364" list is displayed to user
 	When Dashboard with 'Dashboard for DAS15364' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List      | Type       |
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15207 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList
 	When Dashboard with 'Dashboard for DAS15207' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction |
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
 	When Dashboard with 'Dashboard for DAS16138' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List         | Type      | AggregateBy                          | AggregateFunction | Drilldown |
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16138' Widget is displayed to the user
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks data in card 'WidgetForDAS16138' widget
 	#Then Save as a new list option is available
 	Then "8" rows are displayed in the agGrid
@@ -82,7 +82,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	And User creates '2004 App Compliance' dynamic list
 	Then "2004 App Compliance" list is displayed to user
 	When Dashboard with 'Dashboard for DAS16069_2' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title               | List                | Type      | AggregateFunction | Drilldown |
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16069_2' Widget is displayed to the user	
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks data in card 'WidgetForDAS16069_2' widget
 	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
 	And "43" rows are displayed in the agGrid
@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	Then "2004 App Compliance" list is displayed to user
 	
 	When Dashboard with 'Dashboard for DAS15355' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15134 @DAS16263 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
 	When Dashboard with 'Dashboard for DAS15134' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List        | Type       |
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListForDas15722" name on "Devices" page
 	And Dashboard with 'DashboardForDas15722' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List            | Type      | AggregateBy | AggregateFunction | Drilldown |
@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS15722' Widget is displayed to the user
 	And There are no errors in the browser console
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks data in card 'WidgetForDAS15722' widget
 	Then "1" rows are displayed in the agGrid
 
@@ -211,7 +211,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User create dynamic list with "DAS15355_Applications_List" name on "Applications" page
 	Then "DAS15355_Applications_List" list is displayed to user
 	When Dashboard with 'Dashboard_DAS15355' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List                       | Type       | Layout    |
@@ -231,7 +231,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User clicks 'UPDATE' button
 	Then 'WidgetForDAS15355' Widget is displayed to the user
 	Then Icon and Text is displayed for Card widget
-
 	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	When User selects 'Icon Only' in the 'Layout' dropdown
@@ -254,9 +253,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "DAS15355_List" name on "Devices" page
 	Then "DAS15355_List" list is displayed to user
-
 	When Dashboard with 'Dashboard_DAS15355_1' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title               | List          | Type       | Layout    |
@@ -300,7 +298,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	When User create dynamic list with "DAS16266_List" name on "Devices" page
 	Then "DAS16266_List" list is displayed to user
 	When Dashboard with 'DAS16266_Dashboard' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List          | Type       |
@@ -329,7 +327,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	When User create dynamic list with "DeviceListFor15914" name on "Devices" page
 	Then "DeviceListFor15914" list is displayed to user
 	When Dashboard with 'Dashboard for DAS15914' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       |
@@ -354,7 +352,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	When User create dynamic list with "DeviceListFor16127" name on "Devices" page
 	Then "DeviceListFor16127" list is displayed to user
 	When Dashboard with 'Dashboard for DAS16127' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       |
@@ -381,7 +379,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	When User create dynamic list with "DeviceListFor15765" name on "Devices" page
 	Then "DeviceListFor15765" list is displayed to user
 	When Dashboard with 'Dashboard for DAS15765' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       |
@@ -403,7 +401,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	When User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
 	Then "DAS16336_Applications_List" list is displayed to user
 	When Dashboard with 'Dashboard_DAS16336' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List                       | Type       | Layout    |
@@ -456,7 +454,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	When User create dynamic list with "DeviceListFor16325" name on "Devices" page
 	Then "DeviceListFor16325" list is displayed to user
 	When Dashboard with 'Dashboard for DAS16325' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       |
@@ -482,7 +480,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRin
 	When User clicks Save button on the list panel
 	And User create dynamic list with "List16347" name on "Devices" page
 	And Dashboard with 'Dashboard_DAS16347' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List      | Type       |
@@ -504,7 +502,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFun
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
 	And Dashboard with 'All Data Types for DAS15514' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title       | List                 | Type      | AggregateFunction |
@@ -526,13 +524,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "List16844" name on "Devices" page
 	And Dashboard with 'Dashboard for DAS16844' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List      | Type      | AggregateFunction |
 	| Card       | WidgetForDAS16844 | List16844 | Aggregate | Count             |
 	Then 'WidgetForDAS16844' Widget is displayed to the user
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	Then Value '17,427' is displayed in the card 'WidgetForDAS16844' widget
 	When User clicks data in card 'WidgetForDAS16844' widget
 	#Then Save as a new list option is available
@@ -551,13 +549,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	When User selects 'Create static list' in the 'Action' dropdown
 	When User create static list with "StaticList16844" name
 	When Dashboard with 'Dashboard for DAS16844' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title             | List            | Type      | AggregateFunction |
 	| Card       | WidgetForDAS16844 | StaticList16844 | Aggregate | Count             |
 	Then 'WidgetForDAS16844' Widget is displayed to the user
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	Then Value '1' is displayed in the card 'WidgetForDAS16844' widget
 	When User clicks data in card 'WidgetForDAS16844' widget
 	Then "1" rows are displayed in the agGrid
@@ -574,7 +572,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnCardWidget
 	When User create dynamic list with "ListForDAS16167" name on "Devices" page
 	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List            | Type       |
@@ -596,7 +594,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidg
 	When User create dynamic list with "ApplicationListFor19015" name on "Applications" page
 	Then "ApplicationListFor19015" list is displayed to user
 	When Dashboard with 'DashboardDAS19015' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List                    | Type      | AggregateFunction | AggregateBy       |
@@ -607,7 +605,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedInPreviewWhenWidg
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18939 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatFilterAppliesWhenDrilledDownCardWidgetBasedOnSeverity
 	When Dashboard with 'Dashboard for DAS18939' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List         | Type      | AggregateFunction | AggregateBy                            | Drilldown |
@@ -630,7 +628,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorDisplayedWhenCreatingWidge
 	When User create dynamic list with "DAS19115_List" name on "Devices" page
 	Then "DAS19115_List" list is displayed to user
 	When Dashboard with 'Dashboard_DAS19115' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List          | Type      | AggregateFunction | AggregateBy         |
@@ -654,7 +652,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckCustomFieldsUsingInFilterAndWidgetC
 	When User create dynamic list with "TestList_DAS17715" name on "Applications" page
 	Then "TestList_DAS17715" list is displayed to user
 	When Dashboard with 'Dashboard for DAS17715' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List              | Type       |
