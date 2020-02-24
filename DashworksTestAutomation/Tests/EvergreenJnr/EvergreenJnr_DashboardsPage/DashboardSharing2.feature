@@ -289,7 +289,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardHasTranslatedWidgetReffe
 	When Dashboard with 'Dashboard_DAS17592' name is opened via API
 	Then 'Widget_For_DAS17592' Widget is displayed to the user
 	Then There are no errors in the browser console
-	When User clicks 'Edit mode' slide toggle
+	When User clicks 'Modus bearbeiten' slide toggle
 	Then User sees 'Dieses Widget bezieht sich auf eine nicht verfügbare Liste.' text in warning message of 'Widget_For_DAS17592' widget on Dashboards page
 
 	#Sergiy: DAS14263 create test and recomment issue

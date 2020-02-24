@@ -9,6 +9,8 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
+using DashworksTestAutomation.Pages.Evergreen.Base;
+using DashworksTestAutomation.Pages.Evergreen.Dashboards;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
@@ -68,6 +70,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
             _dashboard.Value.Add(newDashboard);
 
             _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/dashboards/{newDashboard.DashboardId}");
+            var dash =_driver.NowAt<EvergreenDashboardsPage>();
         }
 
         [When(@"Dashboard with '(.*)' name is opened via API")]
