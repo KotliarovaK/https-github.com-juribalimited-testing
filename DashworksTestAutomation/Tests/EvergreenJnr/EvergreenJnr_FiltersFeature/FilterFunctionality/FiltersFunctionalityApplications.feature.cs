@@ -5939,7 +5939,7 @@ this.FeatureBackground();
             table127.AddRow(new string[] {
                         "Multi Edit 9 Client"});
 #line 1326
- testRunner.When("User add \"1803: Target App\" filter where type is \"Equals\" with added column and L" +
+ testRunner.When("User add \"2004: Target App\" filter where type is \"Equals\" with added column and L" +
                     "ookup option", ((string)(null)), table127, "When ");
 #line 1329
  testRunner.When("User creates \'DAS18875_list\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5948,7 +5948,7 @@ this.FeatureBackground();
 #line 1331
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1332
- testRunner.Then("\"1803: Target App is Multi Edit 9 Client\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"2004: Target App is Multi Edit 9 Client\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -6016,7 +6016,7 @@ this.FeatureBackground();
             table128.AddRow(new string[] {
                         "12"});
 #line 1340
- testRunner.When("User add \"1803: Target App Key\" filter where type is \"Does not equal\" with added " +
+ testRunner.When("User add \"2004: Target App Key\" filter where type is \"Does not equal\" with added " +
                     "column and following value:", ((string)(null)), table128, "When ");
 #line 1343
  testRunner.When("User creates \'DAS18875_list1\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -6025,7 +6025,7 @@ this.FeatureBackground();
 #line 1345
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1346
- testRunner.Then("\"1803: Target App Key is not 12\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"2004: Target App Key is not 12\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -6251,7 +6251,7 @@ this.FeatureBackground();
             table131.AddRow(new string[] {
                         ""});
 #line 1383
- testRunner.When("User add \"1803: Target App Readiness\" filter where type is \"Not empty\" with added" +
+ testRunner.When("User add \"2004: Target App Readiness\" filter where type is \"Not empty\" with added" +
                     " column and following value:", ((string)(null)), table131, "When ");
 #line 1386
  testRunner.When("User creates \'DAS18875_list4\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -6260,7 +6260,7 @@ this.FeatureBackground();
 #line 1388
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1389
- testRunner.Then("\"1803: Target App Readiness is not empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"2004: Target App Readiness is not empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -6425,6 +6425,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19262")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Universe")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppFilterWithNoTargetApplication()
         {
             System.Exception lastException = null;
@@ -6460,7 +6461,8 @@ this.FeatureBackground();
                         "Filter_ApplicationsList",
                         "DAS19262",
                         "Cleanup",
-                        "Universe"});
+                        "Universe",
+                        "archived"});
 #line 1419
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
