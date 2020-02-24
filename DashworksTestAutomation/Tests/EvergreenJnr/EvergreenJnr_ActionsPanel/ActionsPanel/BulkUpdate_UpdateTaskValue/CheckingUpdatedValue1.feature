@@ -1,4 +1,4 @@
-﻿Feature: CheckingUpdatedValue
+﻿Feature: CheckingUpdatedValue1
 	Runs Checking Updated Value related tests
 
 Background: Pre-Conditions
