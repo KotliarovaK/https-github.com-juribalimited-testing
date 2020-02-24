@@ -273,6 +273,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS20046")]
         [NUnit.Framework.CategoryAttribute("Set_Application_Owned_User")]
+        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink()
         {
             System.Exception lastException = null;
@@ -307,7 +308,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS20046",
-                        "Set_Application_Owned_User"});
+                        "Set_Application_Owned_User",
+                        "Void"});
 #line 50
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
