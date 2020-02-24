@@ -46,31 +46,28 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @DAS19884 @Universe
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyRelinked
-	When User navigates to the 'Device' details page for 'FISC5NOXFB8Q7M' item
-	Then Details page for 'FISC5NOXFB8Q7M' item is displayed to the user
+	When User navigates to the 'Device' details page for '00K4CEEQ737BA4L' item
+	Then Details page for '00K4CEEQ737BA4L' item is displayed to the user
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	And User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
-	When User clicks 'RELINK' button 
-	And User enters '5XW9ZW6O6HG7IP9' in the 'Device' autocomplete field and selects '5XW9ZW6O6HG7IP9' value
+	When User clicks 'RELINK' button
+	When User unchecks 'Resync owner' checkbox
+	When User unchecks 'Resync name' checkbox
+	And User enters 'L1IWSS0WKQG8IU' in the 'Device' autocomplete field and selects 'L1IWSS0WKQG8IU' value
 	And User clicks 'RELINK' button on popup
 	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
-	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on inline success banner
+	Then 'Device successfully relinked' text is displayed on inline success banner
 	When User navigates to the 'Projects Summary' left submenu item
 	Then inline success banner is not displayed
 	When User navigates to the 'Project Details' left submenu item
-	When User clicks 'RELINK' button 
-	And User enters 'FISC5NOXFB8Q7M' in the 'Device' autocomplete field and selects 'FISC5NOXFB8Q7M' value
+	When User clicks 'RELINK' button
+	When User unchecks 'Resync owner' checkbox
+	When User unchecks 'Resync name' checkbox
+	And User enters '00K4CEEQ737BA4L' in the 'Device' autocomplete field and selects '00K4CEEQ737BA4L' value
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
-	#waiting for the RELINK process to be completed
-	When User waits for '3' seconds
-	When User clicks "Sherri R. Bautista" link on the Details Page
-	And User navigates to the 'Project Details' left submenu item
-	And User clicks 'OFFBOARD' button 
-	When User clicks 'OFFBOARD' button on popup
-	And User clicks 'OFFBOARD' button on popup
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19335
 Scenario: EvergreenJnr_DevicesList_CheckThatTooltipForDisabledRelinkButtonIsDisplayed
