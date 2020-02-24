@@ -87,7 +87,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19979")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage()
         {
             System.Exception lastException = null;
@@ -122,9 +121,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Self
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS19979",
-                        "Cleanup",
-                        "Not_Ready"});
-#line 10
+                        "Cleanup"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -134,7 +132,7 @@ this.FeatureBackground();
                         "ItemName"});
             table1.AddRow(new string[] {
                         ""});
-#line 11
+#line 10
  testRunner.When("User create static list with \"DAS_19979_11\" name on \"Users\" page with following i" +
                     "tems", ((string)(null)), table1, "When ");
 #line hidden
@@ -150,7 +148,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_19979_11"});
-#line 14
+#line 13
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -163,36 +161,40 @@ this.FeatureBackground();
                         "TestPageSs2",
                         "DAS_19979_Page",
                         "true"});
-#line 17
+#line 16
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table3, "When ");
-#line 20
+#line 19
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
+#line 20
  testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs2\' name o" +
                     "n Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 25
+#line 21
+ testRunner.When("User clicks on \'Text\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+ testRunner.When("User clicks \'ADD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
  testRunner.Then("Page with \'DAS_19979_SS_1\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 26
+#line 24
  testRunner.Then("Page with \'Create Text Component\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 27
+#line 25
  testRunner.Then("\'TestPageSs2\' label with self service parent page name is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 28
+#line 26
  testRunner.Then("text editor is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 29
+#line 27
  testRunner.Then("\'\' content is displayed in \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 30
+#line 28
  testRunner.Then("\'Show this component\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 31
+#line 29
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
+#line 30
  testRunner.Then("\'CREATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 33
+#line 31
  testRunner.When("User enters \'\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 34
+#line 32
  testRunner.Then("\'Enter a component name\' error message is displayed for \'Component Name\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 35
+#line 33
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 36
+#line 34
  testRunner.Then("\'CREATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -244,7 +246,7 @@ this.FeatureBackground();
                         "DAS19979",
                         "DAS20049",
                         "Cleanup"});
-#line 39
+#line 37
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -254,7 +256,7 @@ this.FeatureBackground();
                         "ItemName"});
             table4.AddRow(new string[] {
                         ""});
-#line 40
+#line 38
  testRunner.When("User create static list with \"DAS_19979_22\" name on \"Users\" page with following i" +
                     "tems", ((string)(null)), table4, "When ");
 #line hidden
@@ -270,7 +272,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_19979_22"});
-#line 43
+#line 41
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table5, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -283,7 +285,7 @@ this.FeatureBackground();
                         "TestPageSs3",
                         "DAS_19979_Page_2",
                         "true"});
-#line 46
+#line 44
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table6, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -294,89 +296,89 @@ this.FeatureBackground();
                         "Text_Component_Name",
                         "<p>Some_Content</p>",
                         "true"});
-#line 49
- testRunner.When("User creates new text component for \'TestPageSs3\' Self Service page", ((string)(null)), table7, "When ");
-#line 52
+#line 47
+ testRunner.When("User creates new text component for \'TestPageSs3\' Self Service page via API", ((string)(null)), table7, "When ");
+#line 50
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 53
+#line 51
  testRunner.When("User selects \'Edit\' cogmenu option for \'Text\' item type with \'Text_Component_Name" +
                     "\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
+#line 52
  testRunner.Then("Page with \'DAS_19979_SS_2\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 55
+#line 53
  testRunner.Then("Page with \'Edit Text Component\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 56
+#line 54
  testRunner.Then("\'TestPageSs3\' label with self service parent page name is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
+#line 55
  testRunner.Then("\'Text_Component_Name\' content is displayed in \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 58
+#line 56
  testRunner.Then("text editor is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "text"});
             table8.AddRow(new string[] {
                         "Some_Content"});
-#line 59
+#line 57
  testRunner.Then("text editor contains text", ((string)(null)), table8, "Then ");
-#line 62
+#line 60
  testRunner.Then("\'Show this component\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 62
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 63
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 64
- testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 65
  testRunner.When("User enters \'\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
+#line 64
  testRunner.Then("\'Enter a component name\' error message is displayed for \'Component Name\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 67
+#line 65
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
- testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 70
  testRunner.When("User enters \'Text_Component_Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 71
+#line 69
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 70
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 72
- testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 74
  testRunner.When("User clears text editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 75
+#line 73
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 76
+#line 74
  testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 78
+#line 76
  testRunner.When("User enters \'Some_Content\' text to the text editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 79
+#line 77
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 80
+#line 78
  testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 82
+#line 80
  testRunner.When("User enters \'_Additional_Text\' text to the text editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 83
+#line 81
  testRunner.When("User enters \'Updated Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 82
  testRunner.When("User unchecks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 83
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 84
  testRunner.Then("\'The Updated Name component has been updated\' text is displayed on inline success" +
                     " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 87
+#line 85
  testRunner.Then("Item with \'Page\' type and \'TestPageSs3\' name on Self Service Builder Panel is hig" +
                     "hlighted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 88
+#line 86
  testRunner.When("User selects \'Edit\' cogmenu option for \'Text\' item type with \'Updated Name\' name " +
                     "on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 89
+#line 87
  testRunner.Then("\'Updated Name\' content is displayed in \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "text"});
             table9.AddRow(new string[] {
                         "Some_Content_Additional_Text"});
-#line 90
+#line 88
  testRunner.Then("text editor contains text", ((string)(null)), table9, "Then ");
-#line 93
+#line 91
  testRunner.Then("\'Show this component\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -391,7 +393,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS20049")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_TextComponentUiCheckForCancelUpdateFunctionality()
         {
             System.Exception lastException = null;
@@ -426,9 +427,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS20049",
-                        "Cleanup",
-                        "Not_Ready"});
-#line 97
+                        "Cleanup"});
+#line 94
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -438,7 +438,7 @@ this.FeatureBackground();
                         "ItemName"});
             table10.AddRow(new string[] {
                         ""});
-#line 98
+#line 95
  testRunner.When("User create static list with \"DAS_20049_33\" name on \"Users\" page with following i" +
                     "tems", ((string)(null)), table10, "When ");
 #line hidden
@@ -454,7 +454,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_20049_33"});
-#line 101
+#line 98
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table11, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -467,49 +467,49 @@ this.FeatureBackground();
                         "TestPageSs4",
                         "DAS_20049_Page_2",
                         "true"});
-#line 104
+#line 101
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table12, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ComponentName",
+                        "ExtraPropertiesText",
+                        "ShowInSelfService"});
+            table13.AddRow(new string[] {
+                        "Text_Component_Name",
+                        "<p>Some_Content</p>",
+                        "true"});
+#line 104
+ testRunner.When("User creates new text component for \'TestPageSs4\' Self Service page via API", ((string)(null)), table13, "When ");
 #line 107
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 108
- testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs4\' name o" +
-                    "n Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 112
- testRunner.When("User enters \'Text_Component_Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 113
- testRunner.When("User enters \'Some_Content\' text to the text editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 114
- testRunner.When("User checks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
- testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 116
  testRunner.When("User selects \'Edit\' cogmenu option for \'Text\' item type with \'Text_Component_Name" +
                     "\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 117
+#line 109
  testRunner.When("User enters \'Updated Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 118
+#line 110
  testRunner.When("User enters \'Additional Text\' text to the text editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 119
+#line 111
  testRunner.When("User unchecks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 120
+#line 112
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 122
+#line 114
  testRunner.Then("Item with \'Page\' type and \'TestPageSs4\' name on Self Service Builder Panel is hig" +
                     "hlighted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 123
+#line 115
  testRunner.When("User selects \'Edit\' cogmenu option for \'Text\' item type with \'Text_Component_Name" +
                     "\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 124
+#line 116
  testRunner.Then("\'Text_Component_Name\' content is displayed in \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 125
+#line 117
  testRunner.Then("\'Show this component\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "text"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Additional Text"});
-#line 126
- testRunner.Then("text editor does not contains text", ((string)(null)), table13, "Then ");
+#line 118
+ testRunner.Then("text editor does not contains text", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

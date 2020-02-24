@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
             _selfServiceTextComponents = selfServiceTextComponents;
         }
 
-        [When(@"User creates new text component for '(.*)' Self Service page")]
+        [When(@"User creates new text component for '(.*)' Self Service page via API")]
         public void WhenUserCreatesNewTextComponentForSelfServicePage(string ssPageName, Table table)
         {
             if (!_selfServicePages.Value.Any(x => x.Name.Equals(ssPageName)))

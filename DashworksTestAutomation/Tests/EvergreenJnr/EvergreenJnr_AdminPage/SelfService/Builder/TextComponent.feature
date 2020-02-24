@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#Vitalii: waiting steps from Andrew
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @Cleanup
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
 	When User create static list with "DAS_19979_11" name on "Users" page with following items
 	| ItemName |
@@ -19,9 +18,8 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
 	| 19979_1_SI        | TestPageSs2 | DAS_19979_Page | true              |
 	When User navigates to the 'Builder' left submenu item
 	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs2' name on Self Service Builder Panel
-	#
-	#Open Text Component
-	#
+	When User clicks on 'Text' component on dialog
+	When User clicks 'ADD' button on popup
 	Then Page with 'DAS_19979_SS_1' header is displayed to user
 	Then Page with 'Create Text Component' subheader is displayed to user
 	Then 'TestPageSs2' label with self service parent page name is displayed
@@ -46,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19979_2_SI        | TestPageSs3 | DAS_19979_Page_2 | true              |
-	When User creates new text component for 'TestPageSs3' Self Service page
+	When User creates new text component for 'TestPageSs3' Self Service page via API
 	| ComponentName       | ExtraPropertiesText | ShowInSelfService |
 	| Text_Component_Name | <p>Some_Content</p> | true              |
 	When User navigates to the 'Builder' left submenu item
@@ -92,8 +90,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 	| Some_Content_Additional_Text |
 	Then 'Show this component' checkbox is unchecked
 
-#Vitalii: waiting steps from Andrew
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20049 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20049 @Cleanup
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCancelUpdateFunctionality
 	When User create static list with "DAS_20049_33" name on "Users" page with following items
 	| ItemName |
@@ -104,15 +101,10 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCancelUpdateFunctionalit
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 20049_3_SI        | TestPageSs4 | DAS_20049_Page_2 | true              |
+	When User creates new text component for 'TestPageSs4' Self Service page via API
+	| ComponentName       | ExtraPropertiesText | ShowInSelfService |
+	| Text_Component_Name | <p>Some_Content</p> | true              |
 	When User navigates to the 'Builder' left submenu item
-	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs4' name on Self Service Builder Panel
-	#
-	#Open Text Component
-	#
-	When User enters 'Text_Component_Name' text to 'Component Name' textbox
-	When User enters 'Some_Content' text to the text editor
-	When User checks 'Show this component' checkbox
-	When User clicks 'CREATE' button
 	When User selects 'Edit' cogmenu option for 'Text' item type with 'Text_Component_Name' name on Self Service Builder Panel
 	When User enters 'Updated Name' text to 'Component Name' textbox
 	When User enters 'Additional Text' text to the text editor
