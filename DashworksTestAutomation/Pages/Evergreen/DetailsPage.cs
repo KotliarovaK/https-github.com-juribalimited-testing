@@ -157,19 +157,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return columnNumber;
         }
 
-        public By GetLinkByNameSelector(string linkName)
-        {
-            var selector = $".//a[@href][text()='{linkName}']";
-            return By.XPath(selector);
-        }
-
-        public IWebElement GetLinkByName(string linkName)
-        {
-            var by = GetLinkByNameSelector(linkName);
-            Driver.WaitForElementToBeDisplayed(by);
-            return Driver.FindElement(by);
-        }
-
         public IWebElement GetIconByName(string detailsIconName)
         {
             var byControl =
