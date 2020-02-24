@@ -517,7 +517,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "UseMeForAu: Criticality"});
             table8.AddRow(new string[] {
-                        "UseMeForAu: Application Rationalisation"});
+                        "UseMeForAu: Rationalisation"});
             table8.AddRow(new string[] {
                         "UseMeForAu: Hide From End Users"});
 #line 129
@@ -561,8 +561,7 @@ this.FeatureBackground();
 #line 150
  testRunner.Then("\'Important\' content is displayed in the \'UseMeForAu: Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 151
- testRunner.Then("\'RETIRE\' content is displayed in the \'UseMeForAu: Application Rationalisation\' co" +
-                    "lumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'RETIRE\' content is displayed in the \'UseMeForAu: Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 152
  testRunner.Then("\'TRUE\' content is displayed in the \'UseMeForAu: Hide From End Users\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 154
@@ -593,8 +592,7 @@ this.FeatureBackground();
 #line 165
  testRunner.Then("\'Core\' content is displayed in the \'UseMeForAu: Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 166
- testRunner.Then("\'KEEP\' content is displayed in the \'UseMeForAu: Application Rationalisation\' colu" +
-                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'KEEP\' content is displayed in the \'UseMeForAu: Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 167
  testRunner.Then("\'FALSE\' content is displayed in the \'UseMeForAu: Hide From End Users\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
