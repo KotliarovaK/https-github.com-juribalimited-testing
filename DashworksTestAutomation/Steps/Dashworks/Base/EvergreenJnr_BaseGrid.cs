@@ -51,8 +51,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseGridPage>();
             var allHeaders = page.GetAllHeadersText();
-            var expectedList = table.Rows.SelectMany(row => row.Values).Where(row => row != string.Empty).ToList();
-            Verify.AreEqual(expectedList, allHeaders, "Columns order is incorrect");
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Verify.AreEqual(allHeaders, expectedList, "Columns order is incorrect");
         }
 
         [Then(@"All column headers are unique")]
