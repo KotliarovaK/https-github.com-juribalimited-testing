@@ -124,6 +124,8 @@
     <Compile Include="DTO\Evergreen\Admin\SelfService\AllPagesOfSelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePages.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServiceTextComponent.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServiceTextComponents.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\ComponentsOfSelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
@@ -381,6 +383,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\SelfServiceApiMethods.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\ParentPageLabel.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\TextComponentApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfService.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\BaseSelfServiceEndUser.cs" />

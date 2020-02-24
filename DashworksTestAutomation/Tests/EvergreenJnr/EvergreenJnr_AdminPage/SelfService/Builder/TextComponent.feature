@@ -35,8 +35,7 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCreatePage
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 
-#Vitalii: waiting steps from Andrew
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @DAS20049 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19979 @DAS20049 @Cleanup
 Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 	When User create static list with "DAS_19979_22" name on "Users" page with following items
 	| ItemName |
@@ -47,15 +46,10 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19979_2_SI        | TestPageSs3 | DAS_19979_Page_2 | true              |
+	When User creates new text component for 'TestPageSs3' Self Service page
+	| ComponentName       | ExtraPropertiesText | ShowInSelfService |
+	| Text_Component_Name | <p>Some_Content</p> | true              |
 	When User navigates to the 'Builder' left submenu item
-	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs3' name on Self Service Builder Panel
-	#
-	#Open Text Component
-	#
-	When User enters 'Text_Component_Name' text to 'Component Name' textbox
-	When User enters 'Some_Content' text to the text editor
-	When User checks 'Show this component' checkbox
-	When User clicks 'CREATE' button
 	When User selects 'Edit' cogmenu option for 'Text' item type with 'Text_Component_Name' name on Self Service Builder Panel
 	Then Page with 'DAS_19979_SS_2' header is displayed to user
 	Then Page with 'Edit Text Component' subheader is displayed to user
