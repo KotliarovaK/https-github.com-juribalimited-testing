@@ -236,7 +236,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Relink")]
         [NUnit.Framework.CategoryAttribute("DAS18043")]
         [NUnit.Framework.CategoryAttribute("DAS19884")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyRelinked()
         {
             System.Exception lastException = null;
@@ -272,8 +271,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "Relink",
                         "DAS18043",
-                        "DAS19884",
-                        "Universe"});
+                        "DAS19884"});
 #line 48
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

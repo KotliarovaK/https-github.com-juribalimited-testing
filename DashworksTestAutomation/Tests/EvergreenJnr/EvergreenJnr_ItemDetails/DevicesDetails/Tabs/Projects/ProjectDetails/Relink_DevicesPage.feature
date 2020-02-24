@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @DAS19884 @Universe
+@Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @DAS19884
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyRelinked
 	When User navigates to the 'Device' details page for '00K4CEEQ737BA4L' item
 	Then Details page for '00K4CEEQ737BA4L' item is displayed to the user
