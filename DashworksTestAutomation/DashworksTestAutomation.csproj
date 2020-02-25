@@ -234,6 +234,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\AppOwnershipComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\SelfServiceBaseComponents.cs" />
@@ -381,6 +382,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\SelfServiceApiMethods.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\Components\AppOwnershipComponentSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\ParentPageLabel.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\TextComponentApi.cs" />
@@ -3169,6 +3171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\RuntimeVariables\SelfService\Builder\" />
+    <Folder Include="Pages\Evergreen\AdminDetailsPages\SelfService\Builder\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Details\" />
