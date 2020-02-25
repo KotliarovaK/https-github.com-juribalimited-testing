@@ -83,15 +83,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	When User selects 'Pivot' in the 'Create' dropdown
 	Then No pivot generated message is displayed
 	When User selects the following Row Groups on Pivot:
-	| RowGroups  |
-	| App Vendor |
+		| RowGroups  |
+		| App Vendor |
 	When User selects the following Columns on Pivot:
-	| Columns  |
-	| App Version |
+		| Columns     |
+		| App Version |
 	When User selects the following Values on Pivot:
-	| Values  |
-	| Hostname |
-	When User clicks 'RUN PIVOT' button 
+		| Values   |
+		| Hostname |
+	When User clicks 'RUN PIVOT' button
 	Then Pivot run was completed
 	When User creates Pivot list with "Pivot18489" name
 	Then "Pivot18489" list is displayed to user
@@ -100,3 +100,37 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	When User removes 'Used on device' association in Association panel
 	Then 'RUN PIVOT' button is disabled
 	Then 'RUN PIVOT' button has tooltip with 'Use association panel to create a list' text
+
+@Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS19937 @DAS19887 @Cleanup
+Scenario: EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User navigates to the "All Device Applications" list
+	Then Associations panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks 'RUN LIST' button
+	When User selects 'Pivot' in the 'Create' dropdown
+	Then "Pivot" panel is displayed to the user
+	When User selects the following Row Groups on Pivot:
+		| RowGroups  |
+		| App Vendor |
+	When User selects the following Columns on Pivot:
+		| Columns     |
+		| App Version |
+	When User selects the following Values on Pivot:
+		| Values   |
+		| Hostname |
+	When User clicks 'RUN PIVOT' button
+	Then Pivot run was completed
+	When User creates Pivot list with "DAS19937_Pivot" name
+	Then "DAS19937_Pivot" list is displayed to user
+	When User clicks the List Details button
+	Then Details panel is displayed to the user
+	Then 'List Type: Dynamic Pivot' label is displayed in List Details
+	Then 'Data: Device Applications' label is displayed in List Details
+	When User navigates to the "All Device Applications" list
+	Then "Associations" panel is displayed to the user
+	When User navigates to the "DAS19937_Pivot" list
+	Then Pivot panel is not displayed to the user

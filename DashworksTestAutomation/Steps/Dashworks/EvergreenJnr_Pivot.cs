@@ -48,6 +48,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Pivot panel is visible");
         }
 
+        [Then(@"Pivot panel is not displayed to the user")]
+        public void ThenColumnsPanelIsNotDisplayedToTheUser()
+        {
+            var pivotElement = _driver.NowAt<PivotElementPage>();
+            Utils.Verify.IsFalse(pivotElement.PivotPanel.Displayed(), "Pivot panel is displayed");
+            Logger.Write("Pivot panel is not visible");
+        }
+
         [When(@"User closes the Pivot panel")]
         public void WhenUserClosesThePivotPanel()
         {
