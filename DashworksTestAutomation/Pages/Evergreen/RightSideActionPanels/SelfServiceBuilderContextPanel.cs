@@ -21,28 +21,35 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             };
         }
 
-        public String ContextPanelPage(string contextPanelType, string contextPanelName)
+        public String ContextPanelPagePath(string contextPanelType, string contextPanelName)
         {
             return $".//div[text()='{contextPanelName}']/preceding-sibling::div[text()='{contextPanelType}']/ancestor::div[contains(@class,'level-info')]";
         }
 
         public IWebElement ContextPanelArrow(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class,'arrow')";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class,'arrow')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
         public IWebElement ContextPanelPageAddItemButton(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class, 'mat-item_add')]";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-level')]//i[contains(@class, 'mat-item_add')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
         public IWebElement ContextPanelPageCogMenuButton(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'level')]//div[contains(@class, 'menu-wrapper')]";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'level')]//div[contains(@class, 'menu-wrapper')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+            return Driver.FindElement(By.XPath(selector));
+        }
+
+        public IWebElement ContextPanelItem(string contextPanelType, string contextPanelName)
+        {
+            var selector = ContextPanelPagePath(contextPanelType, contextPanelName);
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
@@ -82,16 +89,24 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public void CheckBuilderContextPanelItemDisplayState(string contextPanelType, string contextPanelName, bool expectedDisplayState)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}";
             Verify.AreEqual(expectedDisplayState, Driver.IsElementDisplayed(Driver.FindElement(By.XPath(selector)),
                 WebDriverExtensions.WaitTime.Short), $"Builder Context Panel Item Display State isn't: {expectedDisplayState}");
         }
 
         public bool IsContentPanelHighlighted(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPage(contextPanelType, contextPanelName)}/..";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/..";
             var bgColor = Driver.FindElement(By.XPath(selector)).GetCssValue("border-color");
             var result = bgColor.Equals("rgb(242, 88, 49)");
+            return result;
+        }
+
+        public bool IsContentPanelNameTextHighlighted(string contextPanelType, string contextPanelName)
+        {
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}//div[@class='page-level-name']";
+            var bgColor = Driver.FindElement(By.XPath(selector)).GetCssValue("color");
+            var result = bgColor.Equals("rgba(0,0,0,.87)");
             return result;
         }
     }

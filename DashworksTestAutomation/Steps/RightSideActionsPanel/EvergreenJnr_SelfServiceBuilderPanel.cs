@@ -25,6 +25,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             _automationStartTime = automationStartTime;
         }
 
+        [When(@"User clicks on item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var builderPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            builderPage.ContextPanelItem(contextPanelType, contextPanelName).Click();
+        }
+
         [When(@"User clicks Expand All Sections button on Self Service Builder Panel")]
         public void WhenUserClicksExpandAllSectionsButtonOnSelfServiceBuilderPanel()
         {
@@ -101,10 +108,16 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         public void ThenItemWithTypeAndNameOnSelfServiceBuilderPanelIsHighlighted(string contextPanelType, string contextPanelName)
         {
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
-
             Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
         }
-        
+
+        [Then(@"Item name text with '(.*)' type and '(.*)' name on Self Service Builder Panel isn't highlighted")]
+        public void ThenItemNameTextWithTypeAndNameOnSelfServiceBuilderPanelIsntHighlighted(string contextPanelType, string contextPanelName)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            Verify.IsFalse(rightSidePanel.IsContentPanelNameTextHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} name text wasn't highlighted");
+        }
+
         //This step can only been used on specific cases!!! 
         [When("User clicks on cogmenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
         public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
