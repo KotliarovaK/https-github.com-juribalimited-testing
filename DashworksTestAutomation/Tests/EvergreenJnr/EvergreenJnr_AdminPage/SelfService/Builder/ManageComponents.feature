@@ -11,8 +11,8 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenСomponentI
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
-    | Name       | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                    |
-    | TestProj_1 | Test_ID_1         | true    | true                | SelfServiceStaticAppList |
+	| Name       | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope                    |
+	| TestProj_1 | Test_ID_1         | true    | true                | SelfServiceStaticAppList |
 	When User creates new Self Service Page via API
 	| ServiceIdentifier | Name          | DisplayName       | ShowInSelfService |
 	| Test_ID_1         | TestPageSs1_1 | TestPageSsDisplay | false             |
