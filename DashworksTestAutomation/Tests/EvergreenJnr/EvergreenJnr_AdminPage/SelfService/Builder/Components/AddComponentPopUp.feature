@@ -1,6 +1,10 @@
 ﻿Feature: AddComponentPopUp
 	Tests that are related to Add Component PopUp
 
+Background: Pre-Conditions
+	Given User is logged in to the Evergreen
+	Then Evergreen Dashboards page should be displayed to the user
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasAListOfAvailableComponents
 	When User create static list with "SelfServiceStaticAppList" name on "Applications" page with following items
