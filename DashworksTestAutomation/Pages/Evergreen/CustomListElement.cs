@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
                 default:
                     var listElement = ListElementsInListsPanel.Select(x => x.FindElement(AllListNamesInListsPanel))
-                        .FirstOrDefault(c => c.Text.Equals(listName));
+                        .FirstOrDefault(c => c.GetAttribute("innerText").Equals(listName));
                     if (listElement.Displayed())
                     {
                         return listElement;
