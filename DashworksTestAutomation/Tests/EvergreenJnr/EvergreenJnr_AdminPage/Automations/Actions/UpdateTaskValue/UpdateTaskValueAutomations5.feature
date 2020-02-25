@@ -334,7 +334,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingActio
 	When User clicks 'UPDATE' button
 	Then "" content is displayed for "Project" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18716 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18716 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |

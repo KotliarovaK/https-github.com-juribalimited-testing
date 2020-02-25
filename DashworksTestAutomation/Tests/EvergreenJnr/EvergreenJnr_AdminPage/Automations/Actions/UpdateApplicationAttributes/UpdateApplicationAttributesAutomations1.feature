@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @DAS19832 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @DAS19832 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -38,10 +38,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
+	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Rationalisation' column
 	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Name' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForwardPath
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -74,13 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                              |
-	| zDeviceAut: Target App Friendly Name    |
-	Then 'KEEP' content is displayed in the 'zDeviceAut: Application Rationalisation' column
-	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
+	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -101,15 +95,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                              |
-	| zDeviceAut: Target App Friendly Name    |
-	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Application Rationalisation' column
-	Then 'RETIRE' content is displayed in the 'zDeviceAut: Target App Friendly Name' column
+	Then 'RETIRE' content is displayed in the 'Evergreen Rationalisation' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19663 @DAS19229 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19663 @DAS19229 @Cleanup @Void
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -129,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User clicks 'UPDATE ALL CHANGES' button 
 	When User clicks 'UPDATE PROJECT' button 
 	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
-	When User waits for '5' seconds
+	When User waits for '10' seconds
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
@@ -138,8 +126,10 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
+	When User clicks refresh button in the browser
 	#Create Action
 	When User clicks 'CREATE ACTION' button
+	When User clicks refresh button in the browser
 	And User enters '19663_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects '19663_Project' option from 'Project or Evergreen' autocomplete
@@ -163,7 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	Then '[Project not found]' content is displayed in 'Project or Evergreen' textbox
 	#Waiting for adding _ngcontent (Eugene K)
 	#Then 'The selected project cannot be found' error message is displayed for 'Project or Evergreen' field
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then No error message is displayed for 'Project or Evergreen' field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @Cleanup @Universe
