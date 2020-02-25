@@ -9,8 +9,8 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20019 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When Project created via API and opened
-	| ProjectName    | Scope            | ProjectTemplate | Mode               |
-	| DAS_20019_Proj | All Applications | None            | Standalone Project |
+	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| DAS_20019_Proj | All Users | None            | Standalone Project |
 	When User create static list with "DAS_20019_1" name on "Applications" page with following items
 	| ItemName |
 	|          |
@@ -24,11 +24,10 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	| ServiceIdentifier | Name        | DisplayName    | ShowInSelfService |
 	| 20019_1_SI        | TestPageSs2 | DAS_20019_Page | true              |
 	When User navigates to the 'Builder' left submenu item
-	When User selects 'Edit' cogmenu option for 'Text' item type with 'TestPageSs2' name on Self Service Builder Panel
-	#
-	#ADD Application Ownership component - currently Andrew is creating these steps
-	#
-	Then Page with 'Create Ownership Component' header is displayed to user
+	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs2' name on Self Service Builder Panel
+	When User clicks on 'Application Ownership' component on dialog
+	When User clicks 'ADD' button on popup
+	Then Page with 'Create App Ownership Component' header is displayed to user
 	Then 'DAS_20019_Page' label with self service parent page name is displayed
 	Then '' content is displayed in 'Component Name' textbox
 	#no project is selected
