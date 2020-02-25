@@ -111,11 +111,11 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
         }
 
-        [Then(@"Item name text with '(.*)' type and '(.*)' name on Self Service Builder Panel isn't highlighted")]
-        public void ThenItemNameTextWithTypeAndNameOnSelfServiceBuilderPanelIsntHighlighted(string contextPanelType, string contextPanelName)
+        [Then(@"Item name text with '(.*)' type and '(.*)' name on Self Service Builder Panel is not highlighted")]
+        public void ThenItemNameTextWithTypeAndNameOnSelfServiceBuilderPanelIsnotHighlighted(string contextPanelType, string contextPanelName)
         {
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
-            Verify.IsFalse(rightSidePanel.IsContentPanelNameTextHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} name text wasn't highlighted");
+            Verify.IsFalse(rightSidePanel.IsContentPanelNameTextHighlighted(contextPanelType, contextPanelName), $"The '{contextPanelName}' name text shouldn't be highlighted");
         }
 
         //This step can only been used on specific cases!!! 

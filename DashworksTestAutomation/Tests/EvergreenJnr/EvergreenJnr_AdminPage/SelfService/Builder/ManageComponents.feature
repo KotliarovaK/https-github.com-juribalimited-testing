@@ -36,4 +36,4 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatWhenСomponentI
 	When User clicks on item with 'Text' type and 'TextCompName_1' name on Self Service Builder Panel
 	When User clicks on Collapse button for item with 'Page' type and 'TestPageSs1_1' name on Self Service Builder Panel
 	Then Item with 'Page' type and 'TestPageSs1_1' name on Self Service Builder Panel is highlighted
-	Then Item name text with 'Page' type and 'TestPageSs1_1' name on Self Service Builder Panel isn't highlighted
+	Then Item name text with 'Page' type and 'TestPageSs1_1' name on Self Service Builder Panel is not highlighted

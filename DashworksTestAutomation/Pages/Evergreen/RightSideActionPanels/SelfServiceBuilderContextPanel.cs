@@ -44,6 +44,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         {
             var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'level')]//div[contains(@class, 'menu-wrapper')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+
+            if (!Driver.IsElementDisplayed(By.XPath(selector), WebDriverExtensions.WaitTime.Short))
+            {
+                throw new Exception($"Page cog menu button is not displayed");
+            }
+
             return Driver.FindElement(By.XPath(selector));
         }
 
