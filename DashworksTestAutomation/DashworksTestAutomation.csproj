@@ -234,6 +234,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\AppOwnershipComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\SelfServiceBaseComponents.cs" />
@@ -381,6 +382,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\SelfServiceApiMethods.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\Components\AppOwnershipComponentSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\ParentPageLabel.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\TextComponentApi.cs" />
@@ -1001,7 +1003,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeleteRings.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ApplicationOwnershipComponent.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApplicationOwnershipComponent.feature</DependentUpon>
@@ -1041,7 +1043,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SelfServiceBuilderContextPanelActions.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\TextComponent.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\TextComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TextComponent.feature</DependentUpon>
@@ -2402,7 +2404,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ApplicationOwnershipComponent.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ApplicationOwnershipComponent.feature.cs</LastGenOutput>
     </None>
@@ -2434,7 +2436,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SelfServiceBuilderContextPanelActions.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\TextComponent.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\TextComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TextComponent.feature.cs</LastGenOutput>
     </None>
@@ -3178,6 +3180,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\RuntimeVariables\SelfService\Builder\" />
+    <Folder Include="Pages\Evergreen\AdminDetailsPages\SelfService\Builder\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Details\" />

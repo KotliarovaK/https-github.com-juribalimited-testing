@@ -201,6 +201,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.ClearTextbox(placeholder, true);
         }
 
+        [Then(@"'(.*)' autocomplete is displayed")]
+        public void ThenAutocompleteIsDisplayed(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsTextboxDisplayed(placeholder),
+                $"'{placeholder}' autocomplete is not displayed");
+        }
+
+        [Then(@"'(.*)' autocomplete is not displayed")]
+        public void ThenAutocompleteIsNotDisplayed(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(page.IsTextboxDisplayed(placeholder),
+                $"'{placeholder}' autocomplete is displayed");
+        }
+
         [Then(@"'(.*)' autocomplete last option is '(.*)'")]
         public void ThenAutocompleteLastOptionIs(string placeholder, string option)
         {
@@ -208,6 +224,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var options = page.GetAllAutocompleteOptions(placeholder);
             Verify.AreEqual(option, options.Last(),
                 $"'{option}' option should be in the bottom of the '{placeholder}' autocomplete");
+        }
+
+        [Then(@"'(.*)' autocomplete first option is '(.*)'")]
+        public void ThenAutocompleteFirstOptionIs(string placeholder, string option)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var options = page.GetAllAutocompleteOptions(placeholder);
+            Verify.AreEqual(option, options.First(),
+                $"'{option}' option should be first in the '{placeholder}' autocomplete");
+            page.BodyContainer.Click();
         }
 
         [Then(@"'(.*)' autocomplete does NOT have options")]
@@ -295,6 +321,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(actualOptions,
                 Is.SupersetOf(table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
                 "Some options are missing!");
+            page.BodyContainer.Click();
         }
 
         [Then(@"'(.*)' content is displayed in '(.*)' autocomplete")]
@@ -395,7 +422,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             VerifyTooltipOfDropdownIcons(page, expectedTooltips);
             page.BodyContainer.Click();
         }
-
 
         #endregion
 
@@ -1278,9 +1304,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         [Then(@"'(.*)' radio button is checked")]
-        public void ThenRadioButtonIsChecked(string p0)
+        public void ThenRadioButtonIsChecked(string radioButtonName)
         {
-            ScenarioContext.Current.Pending();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsRadioButtonChecked(radioButtonName), $"'{radioButtonName}' radio button is not checked");
         }
 
         #endregion
