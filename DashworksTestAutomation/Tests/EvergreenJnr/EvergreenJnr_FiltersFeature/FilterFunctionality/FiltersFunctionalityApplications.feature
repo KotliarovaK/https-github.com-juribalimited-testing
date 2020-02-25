@@ -1426,3 +1426,28 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppFilterWithNoTarge
 	Then "DAS192621_list" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Target App is No Target Application" is displayed in added filter info
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS17413
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUserCanAddAssociationAfterSelectingNotEmptyOperator
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Owner Department" filter where type is "Not empty" with following Tree List option and Association:
+	| Value | Association        |
+	|       | Entitled to device |
+	Then table content is present
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS17413 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterValueDisregardsWhenNotEmptyOperatorIsSelected
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Department" filter where type is "Equals" with following Tree List option and Association:
+	| Value | Association  |
+	| Empty | Has used app |
+	When User click Edit button for "User " filter
+	When User select "Not empty" Operator value
+	When User clicks 'UPDATE' button
+	Then "User whose Department is not empty has used app" is displayed in added filter info

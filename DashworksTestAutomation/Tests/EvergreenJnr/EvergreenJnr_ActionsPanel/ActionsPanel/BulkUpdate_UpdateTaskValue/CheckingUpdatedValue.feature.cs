@@ -606,38 +606,36 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "Create static list"});
             table8.AddRow(new string[] {
-                        "Add to static list"});
-            table8.AddRow(new string[] {
                         "Bulk update"});
 #line 162
  testRunner.Then("following Values are displayed in the \'Action\' dropdown:", ((string)(null)), table8, "Then ");
-#line 167
+#line 166
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 168
+#line 167
  testRunner.When("User selects \'Update task value\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 169
+#line 168
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 170
+#line 169
  testRunner.And("\'CANCEL\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
+#line 170
  testRunner.When(string.Format("User selects \'{0}\' option from \'Project\' autocomplete", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
+#line 171
  testRunner.And(string.Format("User selects \'{0}\' option from \'Stage\' autocomplete", stageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 173
+#line 172
  testRunner.And(string.Format("User selects \'{0}\' option from \'Task\' autocomplete", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
+#line 173
  testRunner.And(string.Format("User selects \'{0}\' in the \'Value\' dropdown", value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 175
+#line 174
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 176
+#line 175
  testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
                     "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 177
+#line 176
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 178
+#line 177
  testRunner.Then("Success message with \"0 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 179
+#line 178
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -693,37 +691,37 @@ this.FeatureBackground();
                         "DAS13293",
                         "DAS13359",
                         "Cleanup"});
-#line 189
+#line 188
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 190
+#line 189
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 191
+#line 190
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 192
+#line 191
  testRunner.When("User navigate to \"Havoc (Big Data)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 193
+#line 192
  testRunner.When("User navigate to \"Stages\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 194
+#line 193
  testRunner.Then("\"Manage Stages\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 195
+#line 194
  testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "StageName"});
             table9.AddRow(new string[] {
                         "Stage DAS12864_0"});
-#line 196
+#line 195
  testRunner.And("User create Stage", ((string)(null)), table9, "And ");
-#line 199
+#line 198
  testRunner.When("User clicks \"Create Stage\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 200
+#line 199
  testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 201
+#line 200
  testRunner.Then("\"Manage Tasks\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 202
+#line 201
  testRunner.When("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -744,85 +742,85 @@ this.FeatureBackground();
                         "User",
                         "",
                         "true"});
-#line 203
+#line 202
  testRunner.And("User creates Task", ((string)(null)), table10, "And ");
-#line 206
+#line 205
  testRunner.When("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 207
+#line 206
  testRunner.Then("selected task was published", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 208
+#line 207
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 209
+#line 208
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 210
+#line 209
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 211
+#line 210
  testRunner.Then("\'All Users\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 212
+#line 211
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 213
+#line 212
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table11.AddRow(new string[] {
                         "Havoc(BigD: Stage DAS12864_0 \\ Task DAS12864_0"});
-#line 214
+#line 213
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table11, "When ");
-#line 217
+#line 216
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 218
+#line 217
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table12.AddRow(new string[] {
                         "TRUE"});
-#line 219
+#line 218
  testRunner.When("User add \"Havoc(BigD: In Scope\" filter where type is \"Equals\" with added column a" +
                     "nd following checkboxes:", ((string)(null)), table12, "When ");
-#line 222
+#line 221
  testRunner.Then("\"Havoc(BigD: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 223
+#line 222
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 224
+#line 223
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 225
+#line 224
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 226
+#line 225
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 227
+#line 226
  testRunner.And("User selects \'Update task value\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 228
+#line 227
  testRunner.And("User selects \'Havoc (Big Data)\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 229
+#line 228
  testRunner.And("User selects \'Stage DAS12864_0\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 230
+#line 229
  testRunner.And("User selects \'Task DAS12864_0\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 231
+#line 230
  testRunner.And("User selects \'Started\' in the \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
+#line 231
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 233
+#line 232
  testRunner.Then("inline warning banner is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 234
+#line 233
  testRunner.Then("\'UPDATE\' button is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 235
+#line 234
  testRunner.Then("\'CANCEL\' button is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 236
+#line 235
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 237
+#line 236
  testRunner.Then("inline success banner is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 239
+#line 238
  testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 240
+#line 239
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
             table13.AddRow(new string[] {
                         "STARTED"});
-#line 241
+#line 240
  testRunner.Then("\'Havoc(BigD: Stage DAS12864_0 \\ Task DAS12864_0\' column contains following conten" +
                     "t", ((string)(null)), table13, "Then ");
 #line hidden
@@ -875,72 +873,72 @@ this.FeatureBackground();
                         "DAS18269",
                         "DAS18245",
                         "Not_Ready"});
-#line 247
+#line 246
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 248
+#line 247
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 249
+#line 248
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table14.AddRow(new string[] {
                         "zDeviceAut: Relative BU \\ DT BU App"});
-#line 250
+#line 249
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table14, "When ");
-#line 253
+#line 252
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 254
+#line 253
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table15.AddRow(new string[] {
                         "boot"});
-#line 255
+#line 254
  testRunner.When("User add \"Application\" filter where type is \"Begins with\" with added column and f" +
                     "ollowing value:", ((string)(null)), table15, "When ");
-#line 258
+#line 257
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 259
+#line 258
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 260
+#line 259
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 261
+#line 260
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 262
+#line 261
  testRunner.When("User selects \'Update task value\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 263
+#line 262
  testRunner.When("User selects \'zDevice Sch for Automations Feature\' option from \'Project\' autocomp" +
                     "lete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 264
+#line 263
  testRunner.When("User selects \'Relative BU\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 265
+#line 264
  testRunner.When("User selects \'DT BU App\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 266
+#line 265
  testRunner.When("User selects \'Update relative to now\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 267
+#line 266
  testRunner.When("User enters \'5\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 268
+#line 267
  testRunner.When("User selects \'After now\' in the \'Before or After\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 269
+#line 268
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 270
+#line 269
  testRunner.Then("inline warning banner is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 271
+#line 270
  testRunner.Then("\'UPDATE\' button is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 272
+#line 271
  testRunner.Then("\'CANCEL\' button is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 273
+#line 272
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 274
+#line 273
  testRunner.Then("Success message with \" \" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 275
+#line 274
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 276
+#line 275
  testRunner.Then("\"+5 days from current\" content is displayed for \"zDeviceAut: Relative BU \\ DT BU " +
                     "App\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

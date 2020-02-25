@@ -5057,32 +5057,6 @@ this.FeatureBackground();
             "han or equal to", "1", "UserSchedu: Target App Key is 1", "1", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheListInternal(columnName,operators,filterOption,text,rowsCount,exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheListInternal(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
-        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Evergreen_FiltersFeature",
@@ -5140,7 +5114,6 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
-
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList")]
@@ -6488,6 +6461,157 @@ this.FeatureBackground();
 #line 1428
  testRunner.Then("\"Evergreen Target App is No Target Application\" is displayed in added filter info" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserCanAddAssociationAfterSelectingNotEmpt" +
+            "yOperator")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("Filter_ApplicationsList")]
+        [NUnit.Framework.CategoryAttribute("DAS17413")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatUserCanAddAssociationAfterSelectingNotEmptyOperator()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatUserCanAddAssociationAfterSelectingNotEmptyOperatorInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatUserCanAddAssociationAfterSelectingNotEmptyOperatorInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatUserCanAddAssociationAfterSelectingNotEmpt" +
+                    "yOperator", null, new string[] {
+                        "Evergreen",
+                        "Evergreen_FiltersFeature",
+                        "Filter_ApplicationsList",
+                        "DAS17413"});
+#line 1431
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1432
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1433
+ testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1434
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1435
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value",
+                        "Association"});
+            table134.AddRow(new string[] {
+                        "",
+                        "Entitled to device"});
+#line 1436
+ testRunner.When("User add \"Device Owner Department\" filter where type is \"Not empty\" with followin" +
+                    "g Tree List option and Association:", ((string)(null)), table134, "When ");
+#line 1439
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatFilterValueDisregardsWhenNotEmptyOperatorI" +
+            "sSelected")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("Filter_ApplicationsList")]
+        [NUnit.Framework.CategoryAttribute("DAS17413")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterValueDisregardsWhenNotEmptyOperatorIsSelected()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatFilterValueDisregardsWhenNotEmptyOperatorIsSelectedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatFilterValueDisregardsWhenNotEmptyOperatorIsSelectedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatFilterValueDisregardsWhenNotEmptyOperatorI" +
+                    "sSelected", null, new string[] {
+                        "Evergreen",
+                        "Evergreen_FiltersFeature",
+                        "Filter_ApplicationsList",
+                        "DAS17413",
+                        "Cleanup"});
+#line 1442
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1443
+ testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1444
+ testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1445
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1446
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value",
+                        "Association"});
+            table135.AddRow(new string[] {
+                        "Empty",
+                        "Has used app"});
+#line 1447
+ testRunner.When("User add \"User Department\" filter where type is \"Equals\" with following Tree List" +
+                    " option and Association:", ((string)(null)), table135, "When ");
+#line 1450
+ testRunner.When("User click Edit button for \"User \" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1451
+ testRunner.When("User select \"Not empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1452
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1453
+ testRunner.Then("\"User whose Department is not empty has used app\" is displayed in added filter in" +
+                    "fo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
