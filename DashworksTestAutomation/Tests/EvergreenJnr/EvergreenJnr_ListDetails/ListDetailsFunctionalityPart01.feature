@@ -39,8 +39,8 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS12152 @DAS12555 @DAS12602 @DAS12624 @DAS16866 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists
 	When User create new User via API
-	| Username   | Email | FullName | Password  | Roles                 |
-	| <Username> | Value | DAS10880 | m!gration | Project Administrator |
+	| Username   | Email | FullName   | Password  | Roles                 |
+	| <UserName> | Value | <UserName> | m!gration | Project Administrator |
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Actions button
@@ -58,16 +58,16 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User clicks the Permissions button
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then Edit List menu is not displayed
-	When User selects '<Username>' option from 'Owner' autocomplete
+	When User selects '<UserName>' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	Then Edit List menu is not displayed
 
-Examples: 
-	| Username          | PageName     | Columnname    |
-	| ForListDAS10880_1 | Devices      | Hostname      |
-	| ForListDAS10880_2 | Users        | Username      |
-	| ForListDAS10880_3 | Applications | Application   |
-	| ForListDAS10880_4 | Mailboxes    | Email Address |
+Examples:
+	| UserName          | PageName     |
+	| ForListDAS10880_1 | Devices      |
+	| ForListDAS10880_2 | Users        |
+	| ForListDAS10880_3 | Applications |
+	| ForListDAS10880_4 | Mailboxes    |
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10880 @DAS11951 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFavoriteAListWorkingCorrectlyForDynamicLists

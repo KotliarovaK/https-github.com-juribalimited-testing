@@ -200,18 +200,18 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12624")]
         [NUnit.Framework.CategoryAttribute("DAS16866")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.TestCaseAttribute("ForListDAS10880_1", "Devices", "Hostname", null)]
-        [NUnit.Framework.TestCaseAttribute("ForListDAS10880_2", "Users", "Username", null)]
-        [NUnit.Framework.TestCaseAttribute("ForListDAS10880_3", "Applications", "Application", null)]
-        [NUnit.Framework.TestCaseAttribute("ForListDAS10880_4", "Mailboxes", "Email Address", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists(string username, string pageName, string columnname, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("ForListDAS10880_1", "Devices", null)]
+        [NUnit.Framework.TestCaseAttribute("ForListDAS10880_2", "Users", null)]
+        [NUnit.Framework.TestCaseAttribute("ForListDAS10880_3", "Applications", null)]
+        [NUnit.Framework.TestCaseAttribute("ForListDAS10880_4", "Mailboxes", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticLists(string userName, string pageName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticListsInternal(username,pageName,columnname,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticListsInternal(userName,pageName,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -230,7 +230,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticListsInternal(string username, string pageName, string columnname, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyForStaticListsInternal(string userName, string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -262,9 +262,9 @@ this.FeatureBackground();
                         "Password",
                         "Roles"});
             table1.AddRow(new string[] {
-                        string.Format("{0}", username),
+                        string.Format("{0}", userName),
                         "Value",
-                        "DAS10880",
+                        string.Format("{0}", userName),
                         "m!gration",
                         "Project Administrator"});
 #line 41
@@ -304,7 +304,7 @@ this.FeatureBackground();
 #line 60
  testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 61
- testRunner.When(string.Format("User selects \'{0}\' option from \'Owner\' autocomplete", username), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User selects \'{0}\' option from \'Owner\' autocomplete", userName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
  testRunner.When("User clicks \'ACCEPT\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
