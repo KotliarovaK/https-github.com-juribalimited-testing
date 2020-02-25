@@ -23,6 +23,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	When User clicks on 'Application Ownership' component on dialog
 	When User clicks 'ADD' button on popup
 	When User enters 'OwnComp_1' text to 'Component Name' textbox
+	#Replace project to some that will be created using API after 20114 implementation
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User clicks 'CREATE' button
 	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs4_1' name on Self Service Builder Panel

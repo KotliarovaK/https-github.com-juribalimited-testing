@@ -183,15 +183,15 @@ this.FeatureBackground();
  testRunner.When("User clicks \'ADD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
  testRunner.When("User enters \'OwnComp_1\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
+#line 27
  testRunner.When("User selects \'User Evergreen Capacity Project\' option from \'Project\' autocomplete" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
- testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
  testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs4_1\' name" +
                     " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
+#line 30
  testRunner.Then("\'Application Ownership\' component on dialog is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -243,7 +243,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19982",
                         "Cleanup"});
-#line 32
+#line 33
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -253,7 +253,7 @@ this.FeatureBackground();
                         "ItemName"});
             table4.AddRow(new string[] {
                         ""});
-#line 33
+#line 34
  testRunner.When("User create static list with \"SelfServiceStaticAppList\" name on \"Applications\" pa" +
                     "ge with following items", ((string)(null)), table4, "When ");
 #line hidden
@@ -269,7 +269,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "SelfServiceStaticAppList"});
-#line 36
+#line 37
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table5, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -287,16 +287,16 @@ this.FeatureBackground();
                         "TestPageSs_2",
                         "TestPageSsDisplay",
                         "false"});
-#line 39
+#line 40
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table6, "When ");
-#line 43
- testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 44
- testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
+ testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
  testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs_2\' name " +
                     "on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 46
+#line 47
  testRunner.Then("\'Application Ownership\' component on dialog is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
