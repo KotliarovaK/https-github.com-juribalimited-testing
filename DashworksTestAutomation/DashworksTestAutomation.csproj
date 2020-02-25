@@ -1003,7 +1003,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeleteRings.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ApplicationOwnershipComponent.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApplicationOwnershipComponent.feature</DependentUpon>
@@ -1038,7 +1038,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SelfServiceBuilderContextPanelActions.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\TextComponent.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\TextComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TextComponent.feature</DependentUpon>
@@ -2399,7 +2399,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ApplicationOwnershipComponent.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ApplicationOwnershipComponent.feature.cs</LastGenOutput>
     </None>
@@ -2427,7 +2427,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SelfServiceBuilderContextPanelActions.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\TextComponent.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\TextComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TextComponent.feature.cs</LastGenOutput>
     </None>
