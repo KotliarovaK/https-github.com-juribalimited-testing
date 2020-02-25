@@ -147,6 +147,9 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
+                if (string.IsNullOrEmpty(row["Value"]))
+                    return;
+
                 _driver.FindElement(
                         By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                     .SendKeys(row["Value"]);
