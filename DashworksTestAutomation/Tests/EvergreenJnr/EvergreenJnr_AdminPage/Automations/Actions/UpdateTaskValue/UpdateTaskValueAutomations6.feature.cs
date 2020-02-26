@@ -491,107 +491,107 @@ this.FeatureBackground();
 #line 129
  testRunner.When("User selects \'Stage 1 \\ Original Auto Task\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 130
- testRunner.When("User selects \'Update relative to a different task valuel\' in the \'Update Date\' dr" +
-                    "opdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Update relative to a different task value\' in the \'Update Date\' dro" +
+                    "pdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 131
  testRunner.When("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
  testRunner.When("User selects \'Complete\' in the \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 133
- testRunner.When("User selects \'zUser Sch for Automations Feature\' option from \'Project\' autocomple" +
-                    "te", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 134
  testRunner.When("User selects \'Stage 2 \\ Relative Task\' option from \'Relative Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
+#line 134
  testRunner.When("User enters \'0\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 135
+ testRunner.When("User selects \'Week days\' in the \'Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 136
- testRunner.When("User selects \'Week Days\' in the \'Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 137
  testRunner.When("User selects \'After now\' in the \'Before or After\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 138
+#line 137
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
+#line 139
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 141
+#line 140
  testRunner.When("User enters \"19854_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 141
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'19854_Automation\' item from \'Automa" +
                     "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 143
+#line 142
  testRunner.When("\'19854_Automation\' automation \'19854_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
+#line 143
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 145
+#line 144
  testRunner.When("User enters \"19854_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 146
+#line 145
  testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 147
+#line 146
  testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 148
+#line 147
  testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 149
+#line 148
  testRunner.And("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 150
+#line 149
  testRunner.Then("\'20 Feb 2020\' content is displayed in the \'zUserAutom: Stage 1 \\ Original Auto Ta" +
                     "sk (Date)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 151
- testRunner.Then("\'COMPLETE\' content is displayed in the \'zUserAutom: Stage 2 \\ Relative Task\' colu" +
-                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 153
+#line 150
+ testRunner.Then("\'COMPLETE\' content is displayed in the \'zUserAutom: Stage 1 \\ Original Auto Task\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 152
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 154
+#line 153
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 155
+#line 154
  testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 156
+#line 155
  testRunner.When("User enters \"19854_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 157
+#line 156
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 158
+#line 157
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 159
+#line 158
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 160
+#line 159
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 161
+#line 160
  testRunner.When("User selects \'zUser Sch for Automations Feature\' option from \'Project\' autocomple" +
                     "te", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 162
+#line 161
  testRunner.When("User selects \'Stage 1 \\ Original Auto Task\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 163
+#line 162
  testRunner.When("User selects \'Update\' in the \'Update Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 164
+#line 163
  testRunner.When("User selects \'Complete\' in the \'Value\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 165
+#line 164
  testRunner.When("User selects \'Remove\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 166
+#line 165
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 168
+#line 167
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 169
+#line 168
  testRunner.When("User enters \"19854_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 170
+#line 169
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'19854_Automation\' item from \'Automa" +
                     "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 171
+#line 170
  testRunner.When("\'19854_Automation\' automation \'19854_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 172
+#line 171
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 173
+#line 172
  testRunner.When("User enters \"19854_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 174
+#line 173
  testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 175
+#line 174
  testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 176
+#line 175
  testRunner.When("User selects \"Automation Finish\" checkbox from String Filter with item list on th" +
                     "e Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 177
+#line 176
  testRunner.And("User clicks content from \"Objects\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 177
+ testRunner.Then("\'\' content is displayed in the \'zUserAutom: Stage 1 \\ Original Auto Task (Date)\' " +
+                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 178
- testRunner.Then("\'10 Feb 2020\' content is displayed in the \'zUserAutom: Stage 2 \\ Weekdays Task\' c" +
-                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'COMPLETE\' content is displayed in the \'zUserAutom: Stage 1 \\ Original Auto Task\'" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
