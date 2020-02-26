@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Pivot panel is not displayed to the user")]
-        public void ThenColumnsPanelIsNotDisplayedToTheUser()
+        public void ThenPivotPanelIsNotDisplayedToTheUser()
         {
             var rightSideActionsPanel = _driver.NowAt<BaseRightSideActionsPanel>();
             Utils.Verify.IsFalse(rightSideActionsPanel.IsPanelOpened("Pivot"), "Pivot panel is displayed");
