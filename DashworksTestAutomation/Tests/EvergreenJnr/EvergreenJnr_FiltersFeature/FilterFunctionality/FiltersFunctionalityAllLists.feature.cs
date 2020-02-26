@@ -795,8 +795,8 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
-            "DepartmentFilter")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDep" +
+            "artmentFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("Filter_AllLists")]
@@ -804,14 +804,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "Application Development", "873", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Application Development", "1,858", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Application Development", "1,118", null)]
-        public virtual void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilterInternal(pageName,selectedCheckboxes,rows,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilterInternal(pageName,selectedCheckboxes,rows,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -830,7 +830,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilterInternal(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilterInternal(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -841,8 +841,8 @@ this.FeatureBackground();
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUse" +
-                    "DepartmentFilter", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDep" +
+                    "artmentFilter", null, @__tags);
 #line 224
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1217,8 +1217,8 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRe" +
-            "lative")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelat" +
+            "ive")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("Filter_AllLists")]
@@ -1228,14 +1228,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "2004: Pre-Migration \\ Scheduled Date", "1", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Owner Last Logon Date", "1", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Owner Last Logon Date", "2.37457468568568568568658464554575547547547", null)]
-        public virtual void EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative(string list, string filter, string value, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative(string list, string filter, string value, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelativeInternal(list,filter,value,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelativeInternal(list,filter,value,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1254,7 +1254,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelativeInternal(string list, string filter, string value, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelativeInternal(string list, string filter, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1267,8 +1267,8 @@ this.FeatureBackground();
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRe" +
-                    "lative", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelat" +
+                    "ive", null, @__tags);
 #line 331
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1294,7 +1294,7 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilter")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("Filter_AllLists")]
@@ -1303,14 +1303,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Device Owner Last Logon Date", "Before (relative)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Last Logon Date", "After (relative)", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Created Date", "On or before (relative)", null)]
-        public virtual void EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilter(string list, string filter, string @operator, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilter(string list, string filter, string @operator, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilterInternal(list,filter,@operator,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilterInternal(list,filter,@operator,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1329,7 +1329,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilterInternal(string list, string filter, string @operator, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilterInternal(string list, string filter, string @operator, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1340,7 +1340,7 @@ this.FeatureBackground();
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilter", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilter", null, @__tags);
 #line 346
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1602,6 +1602,200 @@ this.FeatureBackground();
  testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 421
  testRunner.Then("\"Empty, Off, On\" checkbox is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("Filter_AllLists")]
+        [NUnit.Framework.CategoryAttribute("DAS10771")]
+        [NUnit.Framework.CategoryAttribute("DAS10972")]
+        [NUnit.Framework.CategoryAttribute("DAS14748")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Category", "Compliance", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "UserSchedu: Category", "Compliance", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Havoc(BigD: Category", "Compliance", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Category", "Owner Compliance", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters(string pageName, string filterName, string newFilterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFiltersInternal(pageName,filterName,newFilterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFiltersInternal(string pageName, string filterName, string newFilterName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Evergreen_FiltersFeature",
+                    "Filter_AllLists",
+                    "DAS10771",
+                    "DAS10972",
+                    "DAS14748"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters", null, @__tags);
+#line 430
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 431
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 432
+ testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 433
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 434
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table28.AddRow(new string[] {
+                        "Empty"});
+#line 435
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" without added column and following c" +
+                        "heckboxes:", filterName), ((string)(null)), table28, "When ");
+#line 438
+ testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 439
+ testRunner.When(string.Format("User click Edit button for \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 440
+ testRunner.Then("User changes filter type to \"Does not equal\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 441
+ testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 442
+ testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 443
+ testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table29.AddRow(new string[] {
+                        "Empty"});
+#line 444
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" without added column and following c" +
+                        "heckboxes:", filterName), ((string)(null)), table29, "When ");
+#line 447
+ testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table30.AddRow(new string[] {
+                        "Red"});
+#line 448
+ testRunner.When(string.Format("User Add And \"{0}\" filter where type is \"Equals\" without added column and followi" +
+                        "ng checkboxes:", newFilterName), ((string)(null)), table30, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table31.AddRow(new string[] {
+                        "Amber"});
+#line 451
+ testRunner.When(string.Format("User Add And \"{0}\" filter where type is \"Equals\" without added column and followi" +
+                        "ng checkboxes:", newFilterName), ((string)(null)), table31, "When ");
+#line 454
+ testRunner.Then("Save to New Custom List element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 455
+ testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 456
+ testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFilters")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("Filter_AllLists")]
+        [NUnit.Framework.CategoryAttribute("DAS11088")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Build Date", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner Last Logon Date", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Barry\'sUse: Project Dates \\ Scheduled Date", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "UserSchedu: Three \\ Date App Req A", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Created Date", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFilters(string listName, string filterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFiltersInternal(listName,filterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFiltersInternal(string listName, string filterName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Evergreen_FiltersFeature",
+                    "Filter_AllLists",
+                    "DAS11088"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFilters", null, @__tags);
+#line 466
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 467
+ testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 468
+ testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 469
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 470
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 471
+ testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 472
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

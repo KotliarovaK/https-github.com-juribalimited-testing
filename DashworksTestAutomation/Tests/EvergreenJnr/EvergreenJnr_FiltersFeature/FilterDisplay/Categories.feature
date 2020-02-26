@@ -5,105 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13391 @DAS15776
-Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel
-	When User clicks '<ListName>' on the left-hand menu
-	And User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	Then User sees "Suggested" section expanded by default in Filters panel
-
-	Examples:
-		| ListName     |
-		| Devices      |
-		| Users        |
-		| Applications |
-		| Mailboxes    |
-
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11466
-Scenario: EvergreenJnr_DevicesList_CheckingThatVendorFilterIsDisplayedInApplicationCategory
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User selects "Application Vendor" filter from "Application" category
-	Then setting section for "Application Vendor" filter is loaded
-
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10781 @DAS11507
-Scenario: EvergreenJnr_ApplicationsList_CheckThatGroupAndTeamRelatedFiltersIsNotPresentedInTheList
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	Then "Windows7Mi: Group" filter is not presented in the filters list
-	Then "Windows7Mi: Group Key" filter is not presented in the filters list
-	Then "Windows7Mi: Team" filter is not presented in the filters list
-	Then "Windows7Mi: Team Key" filter is not presented in the filters list
-
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS11539
-Scenario: EvergreenJnr_DevicesList_CheckThatFilterCategoriesAreClosedAfterClearingAFilterSearchValue
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User clicks Add New button on the Filter panel
-	And User enters "date" text in Search field at Filters Panel
-	Then Minimize buttons are displayed for all category in Filters panel
-	When User clears search textbox in Filters panel
-	Then Maximize buttons are displayed for all category in Filters panel
-
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
-Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User clicks Add New button on the Filter panel
-	Then "Mailbox Owner" section is not displayed in the Filter panel
-
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940 @DAS13201 @DAS14325
-Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInFiltersPanel
-	When User clicks '<ListName>' on the left-hand menu
-	And User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User clicks Add New button on the Filter panel
-	Then "Evergreen" section is displayed in the Filter panel
-	When User closes "Suggested" filter category
-	And User expands "Evergreen" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories           |
-		| Evergreen Bucket        |
-		| Evergreen Capacity Unit |
-		| Evergreen Ring          |
-
-	Examples:
-		| ListName  |
-		| Devices   |
-		| Users     |
-		| Mailboxes |
-
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13201 @DAS14325 @DAS14325 @DAS19309
-Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInFiltersPanel
-	When User clicks 'Applications' on the left-hand menu
-	And User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User clicks Add New button on the Filter panel
-	Then "Evergreen" section is displayed in the Filter panel
-	When User closes "Suggested" filter category
-	And User expands "Evergreen" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories                   |
-		| Criticality                     |
-		| Evergreen Capacity Unit         |
-		| Evergreen Rationalisation       |
-		| Evergreen Target App            |
-		| Evergreen Target App Compliance |
-		| Evergreen Target App Key        |
-		| Evergreen Target App Name       |
-		| Evergreen Target App Vendor     |
-		| Evergreen Target App Version    |
-		| Hide From End Users             |
-		| In Catalog                      |
-
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659 @DAS14629
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage
 	When User clicks 'Users' on the left-hand menu
@@ -168,7 +69,7 @@ Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
 		| DeviceSche: Stage 2 \ radiobutton task w/date        |
 		| DeviceSche: Stage 2 \ radiobutton task w/date (Date) |
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+  @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
 Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -182,7 +83,7 @@ Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
 		| DeviceSche: Stage 2 \ user radiobutton task |
 		| DeviceSche: Stage 2 \ user text task        |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+ @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
 Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -195,7 +96,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplication
 		| DeviceSche: Stage 2 \ app date task        |
 		| DeviceSche: Stage 2 \ app radiobutton task |
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+   @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
 Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
@@ -215,6 +116,52 @@ Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
 		| MailboxEve: 1 \ Scheduled - mailbox (Slot) |
 		| MailboxEve: 1 \ Target                     |
 		| MailboxEve: 1 \ Target (Slot)              |
+
+ @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17727 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Device Hardware" filter category
+	Then the following Filters subcategories are displayed for open category:
+		| Subcategories                       |
+		| Device CPU Architecture             |
+		| Device CPU Speed (GHz)              |
+		| Device Format                       |
+		| Device HDD Total Size (GB)          |
+		| Device IP Address                   |
+		| Device IP v6 Address                |
+		| Device Manufacturer                 |
+		| Device Memory (GB)                  |
+		| Device Model                        |
+		| Device Target Drive Free Space (GB) |
+		| Device TPM Enabled                  |
+		| Device TPM Version                  |
+		| Device Type                         |
+		| Device Virtual Machine Host         |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
+Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "Mailbox Owner" section is not displayed in the Filter panel
+
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS10781 @DAS11507
+Scenario: EvergreenJnr_ApplicationsList_CheckThatGroupAndTeamRelatedFiltersIsNotPresentedInTheList
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then "Windows7Mi: Group" filter is not presented in the filters list
+	Then "Windows7Mi: Group Key" filter is not presented in the filters list
+	Then "Windows7Mi: Team" filter is not presented in the filters list
+	Then "Windows7Mi: Team Key" filter is not presented in the filters list
 
 @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS16845
 Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsMissingForProjectOfMailboxesLists
@@ -367,30 +314,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckAutomationsCategoryOrder
 	And User closes "Suggested" filter category
 	Then Category Automations displayed before projects categories
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17727 @Not_Ready
-Scenario: EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	And User closes "Suggested" filter category
-	And User expands "Device Hardware" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories                       |
-		| Device CPU Architecture             |
-		| Device CPU Speed (GHz)              |
-		| Device Format                       |
-		| Device HDD Total Size (GB)          |
-		| Device IP Address                   |
-		| Device IP v6 Address                |
-		| Device Manufacturer                 |
-		| Device Memory (GB)                  |
-		| Device Model                        |
-		| Device Target Drive Free Space (GB) |
-		| Device TPM Enabled                  |
-		| Device TPM Version                  |
-		| Device Type                         |
-		| Device Virtual Machine Host         |
+
 
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18150
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterSubcategoriesAreSortedByCaseInsensitiveAlphabetOrder
