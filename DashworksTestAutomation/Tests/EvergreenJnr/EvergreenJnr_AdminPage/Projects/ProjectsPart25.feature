@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailbo
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects 'Users with Device Count' in the 'User Scope' dropdown with wait
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	When User clicks 'Include applications' radio button
+	When User checks 'Include applications' radio button
 	When User selects 'Apps with a Vendor' in the 'Application Scope' dropdown with wait
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Scope Details' left menu item
