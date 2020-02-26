@@ -197,7 +197,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks ""(.*)"" link on the Details Page")]
         public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
+            var detailsPage = _driver.NowAt<BaseGridPage>();
             if (!_driver.IsElementDisplayed(detailsPage.GetLinkByNameSelector(linkName), WebDriverExtensions.WaitTime.Short))
                 _driver.WaitForElementToBeDisplayedAfterRefresh(detailsPage.GetLinkByNameSelector(linkName), true, 50);
             detailsPage.GetLinkByName(linkName).Click();

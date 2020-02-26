@@ -41,7 +41,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             var lastSs = _selfServices.Value.Last();
 
             _driver.WaitForDataLoading();
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/selfservice/{lastSs.ServiceId}/details");
+            var url = $"{UrlProvider.EvergreenUrl}#/admin/selfservice/{lastSs.ServiceId}/details";
+            _driver.Navigate().GoToUrl(url);
 
             var header = _driver.NowAt<BaseHeaderElement>();
             header.CheckPageHeader(lastSs.Name);

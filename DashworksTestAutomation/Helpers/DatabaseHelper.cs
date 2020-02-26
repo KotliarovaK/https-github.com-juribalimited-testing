@@ -670,7 +670,7 @@ namespace DashworksTestAutomation.Helpers
 
         public static int GetSelfServicePageId(SelfServicePageDto page)
         {
-            string query = $"SELECT [PageId]  FROM [PM].[SS].[SelfServicePage] WHERE [Name] = '{page.Name}' AND [SelfServiceId] = '{page.ServiceId}' ";
+            string query = $"SELECT [PageId]  FROM [PM].[SS].[SelfServicePage] WHERE [Name] = '{page.Name}' AND [SelfServiceId] = '{page.ServiceId}'";
             var selfServiceId = DatabaseHelper.ExecuteReader(query, 0)[0];
             return int.Parse(selfServiceId);
         }

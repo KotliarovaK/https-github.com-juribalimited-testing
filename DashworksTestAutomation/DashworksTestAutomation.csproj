@@ -124,6 +124,8 @@
     <Compile Include="DTO\Evergreen\Admin\SelfService\AllPagesOfSelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePages.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServiceTextComponent.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServiceTextComponents.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\ComponentsOfSelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
@@ -232,6 +234,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\AppOwnershipComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\SelfServiceBaseComponents.cs" />
@@ -379,8 +382,10 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\SelfServiceApiMethods.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\Components\AppOwnershipComponentSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\ParentPageLabel.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\TextComponentApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfService.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\BaseSelfServiceEndUser.cs" />
@@ -1008,10 +1013,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeleteRings.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ApplicationOwnershipComponent.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApplicationOwnershipComponent.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddApplicationOwnershipViaSelfServiceBuilder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddApplicationOwnershipViaSelfServiceBuilder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddComponentPopUp.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddComponentPopUp.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddTextComponentViaSelfServiceBuilder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddTextComponentViaSelfServiceBuilder.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CreatePageViaBuilder.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1023,12 +1043,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CerateSelfServicePageViaBuilderApi.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ManageComponents.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageComponents.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\SelfServiceBuilderContextPanelActions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SelfServiceBuilderContextPanelActions.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\TextComponent.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\TextComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TextComponent.feature</DependentUpon>
@@ -1379,6 +1404,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Offboard_DevicesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\ProjectDetails_DevicesPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectDetails_DevicesPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\ProjectDetails_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2392,9 +2422,21 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ApplicationOwnershipComponent.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ApplicationOwnershipComponent.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddApplicationOwnershipViaSelfServiceBuilder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddApplicationOwnershipViaSelfServiceBuilder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddComponentPopUp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddComponentPopUp.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddTextComponentViaSelfServiceBuilder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddTextComponentViaSelfServiceBuilder.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CreatePageViaBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2404,11 +2446,15 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CerateSelfServicePageViaBuilderApi.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ManageComponents.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ManageComponents.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\SelfServiceBuilderContextPanelActions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SelfServiceBuilderContextPanelActions.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\TextComponent.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\TextComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TextComponent.feature.cs</LastGenOutput>
     </None>
@@ -2685,6 +2731,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TopBar.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\ProjectDetails_DevicesPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectDetails_DevicesPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\ProjectDetails_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -3148,6 +3198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\RuntimeVariables\SelfService\Builder\" />
+    <Folder Include="Pages\Evergreen\AdminDetailsPages\SelfService\Builder\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Details\" />

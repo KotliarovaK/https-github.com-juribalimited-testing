@@ -127,10 +127,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                              |
-	| UseMeForAu: Criticality                 |
-	| UseMeForAu: Application Rationalisation |
-	| UseMeForAu: Hide From End Users         |
+	| ColumnName                      |
+	| UseMeForAu: Criticality         |
+	| UseMeForAu: Rationalisation     |
+	| UseMeForAu: Hide From End Users |
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User searches and selects following rows in the grid on Details page:
@@ -148,7 +148,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then 'Important' content is displayed in the 'UseMeForAu: Criticality' column
-	Then 'RETIRE' content is displayed in the 'UseMeForAu: Application Rationalisation' column
+	Then 'RETIRE' content is displayed in the 'UseMeForAu: Rationalisation' column
 	Then 'TRUE' content is displayed in the 'UseMeForAu: Hide From End Users' column
 	#Revert changes
 	When User selects 'Bulk update' in the 'Action' dropdown
@@ -163,5 +163,5 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCri
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then 'Core' content is displayed in the 'UseMeForAu: Criticality' column
-	Then 'KEEP' content is displayed in the 'UseMeForAu: Application Rationalisation' column
+	Then 'KEEP' content is displayed in the 'UseMeForAu: Rationalisation' column
 	Then 'FALSE' content is displayed in the 'UseMeForAu: Hide From End Users' column

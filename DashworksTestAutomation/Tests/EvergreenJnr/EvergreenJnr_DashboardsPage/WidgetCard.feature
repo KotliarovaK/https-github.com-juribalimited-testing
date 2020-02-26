@@ -523,7 +523,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatArchivedItemsIncludedInCountWhenR
 	And User sets includes archived devices in 'true'
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "List16844" name on "Devices" page
-	And Dashboard with 'Dashboard for DAS16844' name created via API and opened
+	When Dashboard with 'Dashboard for DAS16844' name created via API and opened
 	When User clicks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget

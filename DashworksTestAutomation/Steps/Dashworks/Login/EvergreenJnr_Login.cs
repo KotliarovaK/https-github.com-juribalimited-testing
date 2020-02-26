@@ -37,26 +37,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
             LoginViaApi(_driver);
             //Navigate to Evergreen page
             _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
-
-            //FOR DEBUG ONLY
-            try
-            {
-                var requestUri = "http://autorelease.corp.juriba.com:81/mailboxes?$top=1000&$skip=0&$filter=(project_48_pathId%20EQUALS%20(%27461%27))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_path";
-                var request = requestUri.GenerateRequest();
-
-                var resp = _client.Evergreen.Get(request);
-
-                if (!resp.Content.Contains("{\"count\":6"))
-                {
-                    Logger.Write("BEFORE ============> !!! FILTER WAS CHANGED !!! <============");
-                    Logger.Write(resp.Content.Substring(0, 50));
-                }
-            }
-            catch (Exception e)
-            {
-                Logger.Write(e);
-                Logger.Write("BEFORE ============> !!! FILTER TASK WAS CHANGED !!! <============");
-            }
         }
 
         [When(@"User is logged in to the Evergreen as")]

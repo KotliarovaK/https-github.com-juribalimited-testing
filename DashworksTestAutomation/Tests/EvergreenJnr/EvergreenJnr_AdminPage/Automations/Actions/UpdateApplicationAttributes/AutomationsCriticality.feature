@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18674 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18674 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAutomationsIsVisible
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForA
 	Then 'No change' content is displayed in 'Sticky Compliance' dropdown
 	Then 'No change' content is displayed in 'In Catalog' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DASDAS19601 @DAS19150 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DASDAS19601 @DAS19150 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForEvergreen
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -95,8 +95,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	#Actions grid check
 	Then "Update application attributes" content is displayed for "Type" column
 	Then "" content is displayed for "Project" column
-	Then "Sticky Compliance, Rationalisation, In Catalog, Criticality, Hide From End Users" content is displayed for "Task or Field" column
-	Then "Red, Keep, False, Critical, True" content is displayed for "Value" column
+	Then "Sticky Compliance, In Catalog, Criticality, Rationalisation, Hide From End Users" content is displayed for "Task or Field" column
+	Then "Red, False, Critical, Keep, True" content is displayed for "Value" column
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -120,8 +120,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	#Actions grid check
 	Then "Update application attributes" content is displayed for "Type" column
 	Then "" content is displayed for "Project" column
-	Then "Sticky Compliance, Rationalisation, In Catalog, Criticality, Hide From End Users" content is displayed for "Task or Field" column
-	Then "Green, Retire, True, Core, False" content is displayed for "Value" column
+	Then "Sticky Compliance, In Catalog, Criticality, Rationalisation, Hide From End Users" content is displayed for "Task or Field" column
+	Then "Green, True, Core, Retire, False" content is displayed for "Value" column
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -134,7 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	Then 'Core' content is displayed in 'Criticality' dropdown
 	Then 'FALSE' content is displayed in 'Hide From End Users' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DAS19353 @DASDAS19601 @DAS19150 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DAS19353 @DASDAS19601 @DAS19150 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForProject
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -153,8 +153,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	#Actions grid check
 	Then "Update application attributes" content is displayed for "Type" column
 	Then "USE ME FOR AUTOMATION(DEVICE SCHDLD)" content is displayed for "Project" column
-	Then "Rationalisation, Criticality, Hide From End Users" content is displayed for "Task or Field" column
-	Then "Keep, Important, True" content is displayed for "Value" column
+	Then "Criticality, Rationalisation, Hide From End Users" content is displayed for "Task or Field" column
+	Then "Important, Keep, True" content is displayed for "Value" column
 	When User opens 'Action' column settings
 	When User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -179,8 +179,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	#Actions grid check
 	Then "Update application attributes" content is displayed for "Type" column
 	Then "USE ME FOR AUTOMATION(DEVICE SCHDLD)" content is displayed for "Project" column
-	Then "Rationalisation, Criticality, Hide From End Users" content is displayed for "Task or Field" column
-	Then "Uncategorised, Core, False" content is displayed for "Value" column
+	Then "Criticality, Rationalisation, Hide From End Users" content is displayed for "Task or Field" column
+	Then "Core, Uncategorised, False" content is displayed for "Value" column
 	#Actions content check
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -191,13 +191,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 	Then 'Core' content is displayed in 'Criticality' dropdown
 	Then 'FALSE' content is displayed in 'Hide From End Users' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19312 @DAS19566 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19312 @DAS19566 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
 	When User add "Application" filter where type is "Equals" with added column and following value:
-	| Values         |
-	| TiffSurfer 3.4 |
+	| Values                  |
+	| Microsoft Office XP SP1 |
 	When User clicks the Actions button
 	When User selects all rows on the grid
 	When User selects 'Create static list' in the 'Action' dropdown
@@ -231,7 +231,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
 	Then 'Core' content is displayed in the 'UseMeForAu: Criticality' column
-	Then 'KEEP' content is displayed in the 'UseMeForAu: Application Rationalisation' column
+	Then 'KEEP' content is displayed in the 'UseMeForAu: Rationalisation' column
 	Then 'TRUE' content is displayed in the 'UseMeForAu: Hide From End Users' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19312 @DAS19566 @Cleanup @Universe

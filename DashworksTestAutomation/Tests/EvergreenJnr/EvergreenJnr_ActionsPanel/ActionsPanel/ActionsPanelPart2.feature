@@ -25,7 +25,6 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShow
 	Then following Values are displayed in the 'Action' dropdown:
 	| Value                   |
 	| Create static list      |
-	| Add to static list      |
 	| Remove from static list |
 	| Bulk update             |
 

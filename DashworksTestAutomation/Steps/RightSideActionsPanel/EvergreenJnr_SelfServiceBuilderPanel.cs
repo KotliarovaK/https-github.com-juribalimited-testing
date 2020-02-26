@@ -25,6 +25,13 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             _automationStartTime = automationStartTime;
         }
 
+        [When(@"User clicks on item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void WhenUserClicksOnItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)
+        {
+            var builderPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            builderPage.ContextPanelItem(contextPanelType, contextPanelName).Click();
+        }
+
         [When(@"User clicks Expand All Sections button on Self Service Builder Panel")]
         public void WhenUserClicksExpandAllSectionsButtonOnSelfServiceBuilderPanel()
         {
@@ -62,6 +69,17 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName).Click();
         }
 
+        [Then("User sees '(.*)' tootltip text of Add Item button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
+        public void ThenUserClicksOnCogMenuButtonForItemWithType(string text, string contextPanelType, string contextPanelName)
+        {
+            var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            var button = dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText,
+                $"'{contextPanelName}' button tooltip is incorrect");
+        }
+
         [When(@"User selects '(.*)' cogmenu option for '(.*)' item type with '(.*)' name on Self Service Builder Panel")]
         public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string option, string contextPanelType, string contextPanelName)
         {
@@ -90,10 +108,16 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         public void ThenItemWithTypeAndNameOnSelfServiceBuilderPanelIsHighlighted(string contextPanelType, string contextPanelName)
         {
             var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
-
             Verify.IsTrue(rightSidePanel.IsContentPanelHighlighted(contextPanelType, contextPanelName), $"The {contextPanelName} item wasn't highlighted");
         }
-        
+
+        [Then(@"Item name text with '(.*)' type and '(.*)' name on Self Service Builder Panel is not highlighted")]
+        public void ThenItemNameTextWithTypeAndNameOnSelfServiceBuilderPanelIsnotHighlighted(string contextPanelType, string contextPanelName)
+        {
+            var rightSidePanel = _driver.NowAt<SelfServiceBuilderContextPanel>();
+            Verify.IsFalse(rightSidePanel.IsContentPanelNameTextHighlighted(contextPanelType, contextPanelName), $"The '{contextPanelName}' name text shouldn't be highlighted");
+        }
+
         //This step can only been used on specific cases!!! 
         [When("User clicks on cogmenu button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
         public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string contextPanelType, string contextPanelName)

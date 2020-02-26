@@ -39,8 +39,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//quill-editor/..")]
+        private const string TextEditorSelector = ".//quill-editor/..";
+
+        [FindsBy(How = How.XPath, Using = TextEditorSelector)]
         public IWebElement TextEditor { get; set; }
+
+        [FindsBy(How = How.XPath, Using = TextEditorSelector + "//div[contains(@class,'ql-editor')]")]
+        public IWebElement TextEditorInput { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
@@ -473,7 +478,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
             if (!Driver.IsElementDisplayed(by, wait))
+            {
                 throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
+            }
             return Driver.FindElement(by);
         }
 
@@ -1140,6 +1147,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 throw new Exception($"'{ariaLabel}' radio button was not displayed");
             }
             return Driver.FindElement(selector);
+        }
+
+        public bool IsRadioButtonChecked(string ariaLabel)
+        {
+            var classValue = GetRadioButton(ariaLabel).GetAttribute("class");
+            return classValue.Contains("mat-radio-checked");
         }
 
         public bool IsRadioButtonEnabled(string ariaLabel)

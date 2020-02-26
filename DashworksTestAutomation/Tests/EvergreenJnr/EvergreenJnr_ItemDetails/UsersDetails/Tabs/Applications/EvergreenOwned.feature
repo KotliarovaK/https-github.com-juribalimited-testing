@@ -45,3 +45,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingC
 	Then Details page for 'DirectX 8.1 SDK for Visual Basic' item is displayed to the user
 	Then User click back button in the browser
 	And Details page for 'ZZP911429' item is displayed to the user
+
+#This is fixed only on void (DAS-20046)
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20046 @Set_Application_Owned_User @Void
+Scenario: EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink
+	Given Link user to the Evergreen application owned
+	| UserName  | ApplicationId |
+	| ZZP911429 | 57            |
+	When User navigates to the 'User' details page for 'ZZP911429' item
+	Then Details page for 'ZZP911429' item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Evergreen Owned' left submenu item
+	When User clicks Group By button and set checkboxes state
+	| Checkboxes  | State |
+	| Application | true  |
+	Then 'DirectX 8.1 SDK for Visual Basic' grouped name is not displayed as a link
