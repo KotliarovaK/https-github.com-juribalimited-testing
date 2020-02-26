@@ -83,14 +83,14 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatPivotCantBeRunIfAssociationWasR
 	When User selects 'Pivot' in the 'Create' dropdown
 	Then No pivot generated message is displayed
 	When User selects the following Row Groups on Pivot:
-		| RowGroups  |
-		| App Vendor |
+	| RowGroups  |
+	| App Vendor |
 	When User selects the following Columns on Pivot:
-		| Columns     |
-		| App Version |
+	| Columns     |
+	| App Version |
 	When User selects the following Values on Pivot:
-		| Values   |
-		| Hostname |
+	| Values   |
+	| Hostname |
 	When User clicks 'RUN PIVOT' button
 	Then Pivot run was completed
 	When User creates Pivot list with "Pivot18489" name
@@ -114,14 +114,14 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault
 	When User selects 'Pivot' in the 'Create' dropdown
 	Then "Pivot" panel is displayed to the user
 	When User selects the following Row Groups on Pivot:
-		| RowGroups  |
-		| App Vendor |
+	| RowGroups  |
+	| App Vendor |
 	When User selects the following Columns on Pivot:
-		| Columns     |
-		| App Version |
+	| Columns     |
+	| App Version |
 	When User selects the following Values on Pivot:
-		| Values   |
-		| Hostname |
+	| Values   |
+	| Hostname |
 	When User clicks 'RUN PIVOT' button
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS19937_Pivot" name
@@ -134,3 +134,4 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault
 	Then "Associations" panel is displayed to the user
 	When User navigates to the "DAS19937_Pivot" list
 	Then Pivot panel is not displayed to the user
+	Then Associations panel is not displayed to the user
