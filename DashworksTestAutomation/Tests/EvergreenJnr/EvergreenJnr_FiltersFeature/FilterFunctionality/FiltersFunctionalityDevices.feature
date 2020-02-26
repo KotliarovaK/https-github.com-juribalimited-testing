@@ -387,7 +387,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSerialNumberToETLComputerAdded
 	Then "54" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS17715 @Cleanup
-Scenario: EvergreenJnr_DevicedList_CheckCustomFieldsUsingInFilterAndProjectCreation
+Scenario: EvergreenJnr_DevicesList_CheckCustomFieldsUsingInFilterAndProjectCreation
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
 	And User add "ComputerCustomField" filter where type is "Equals" with added column and following value:
@@ -447,7 +447,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerComplianceFilterWork
 	Then "16,819" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS18100 @Cleanup
-Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
+Scenario: EvergreenJnr_DevicesList_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
@@ -465,7 +465,7 @@ Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFilters
 	Then There are no errors in the browser console
 
 @Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS18100 @Cleanup
-Scenario: EvergreenJnr_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreatedViaAddressRow
+Scenario: EvergreenJnr_DevicesList_CheckThatNotEmptyOperatorWasAddedToMultipleFiltersIfFilterWasCreatedViaAddressRow
 	When User navigates to 'devices?$filter=(distributionType%20IS%20NOT%20EMPTY%20())&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,distributionType' url via address line
 	Then "17,279" rows are displayed in the agGrid
 	When User clicks the Filters button
@@ -490,7 +490,7 @@ Examples:
 	| TRUE     | TRUE    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS19157 @Cleanup
-Scenario: EvergreenJnr_CheckThatThereIsNoAbilityToUseListAsFilterOptionIfItHasReferenceFiltersForCurrentProjectAsProjectScopeList
+Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoAbilityToUseListAsFilterOptionIfItHasReferenceFiltersForCurrentProjectAsProjectScopeList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
@@ -508,7 +508,7 @@ Scenario: EvergreenJnr_CheckThatThereIsNoAbilityToUseListAsFilterOptionIfItHasRe
 	Then 'ListForDAS19157' checkbox is not displayed
 
 @Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS19460
-Scenario: EvergreenJnr_Devices_CheckThatCorrectOptionsAreDisplayedForOwnerStatusFilter
+Scenario: EvergreenJnr_DevicesList_CheckThatCorrectOptionsAreDisplayedForOwnerStatusFilter
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -660,3 +660,243 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewCurrentAndLastSeenFiltersAreAvail
 	And User add "Dashworks Last Seen" filter where type is "Equals" with added column and "25 Jul 2019" Date filter
 	And User creates 'TestNewColumnsAndFilters' dynamic list
 	Then "TestNewColumnsAndFilters" list is displayed to user
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS11552 @DAS12207 @DAS12639
+Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditingFilter
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+		| SelectedCheckboxes |
+		| Empty              |
+	Then message 'No devices found' is displayed to the user
+	When User click Edit button for "Compliance" filter
+	And User closes "Empty" Chip item in the Filter panel
+	When User change selected checkboxes:
+		| Option | State |
+		| Green  | true  |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS13383 @Cleanup
+Scenario: EvergreenJnr_DevicesList_ChecksThatColorsInReadinessFilterAreDisplayedCorrectlyAfterSavingList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "2004: Readiness" filter where type is "Equals" with added column and Lookup option
+		| SelectedValues |
+		| Blocked        |
+		| Amber          |
+	And User creates 'CheckColors13383' dynamic list
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "2004: Readiness" filter
+	Then color for following values are displayed correctly:
+		| Color   |
+		| Blocked |
+		| Amber   |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS15625
+Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+		| ColumnName                                  |
+		| 2004: Pre-Migration \ Scheduled Date (Slot) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "2004: Pre-Migration \ Scheduled Date (Slot)" filter
+	And User select "Equals" Operator value
+	And User enters "Empty" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	And User clicks Save filter button
+	Then Column '2004: Pre-Migration \ Scheduled Date (Slot)' with no data displayed
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS16071
+Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Status" filter
+	And User clicks in search field in the Filter block
+	Then Following checkboxes are available for current opened filter:
+		| checkboxes    |
+		| Not Onboarded |
+		| Onboarded     |
+		| Forecast      |
+		| Targeted      |
+		| Scheduled     |
+		| Migrated      |
+		| Complete      |
+		| Offboarded    |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS18375
+Scenario: EvergreenJnr_DevicesList_CheckAppearanceOfComplianceValuesInTheFilterBlock
+	When User clicks 'Devices' on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Compliance" filter
+	Then the values are displayed for "applicationCompliance" filter on "Devices" page in the following order:
+		| Value   |
+		| Empty   |
+		| Unknown |
+		| Red     |
+		| Amber   |
+		| Green   |
+		| None    |
+	When User clicks in search field in the Filter block
+	Then No ring icon displayed for Empty item in Lookup
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS18367
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoEmptyOptionInDeviceAndApplicationSavedList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "<List>" filter from "Saved List" category
+	When User enters "Empty" text in Search field at selected Lookup Filter
+	Then "Empty" checkbox is not available for current opened filter
+
+	Examples:
+		| List                     |
+		| Device (Saved List)      |
+		| Application (Saved List) |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS18367
+Scenario: EvergreenJnr_DevicesList_CheckThatThereIsNoEmptyOptionInProjectSpecificSavedList
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "2004: Owner (Saved List)" filter from "Saved List" category
+	Then "Empty" checkbox is not available for current opened filter
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS18759 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatNewGroupsFilterIsDisplayedCorrectly
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User closes "Suggested" filter category
+	Then Category with counter is displayed on Filter panel
+		| Category | Number |
+		| Group    | 8      |
+	When User expands "Group" filter category
+	Then the following Filters subcategories are displayed for open category:
+		| Subcategories      |
+		| Group              |
+		| Group Description  |
+		| Group Display Name |
+		| Group Domain       |
+		| Group Member Count |
+		| Group Name         |
+		| Group Type         |
+		| Group Username     |
+	When user select "Group" filter
+	Then "50 of 4510 shown" results are displayed in the Filter panel
+	When User enters "AU\GAPP-A0121127" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	When User enters "AU\GAPP-A012116D" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	When User enters "AU\GAPP-A01211A7" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	Then following chips value displayed for 'Search' textbox
+		| ChipValue        |
+		| AU\GAPP-A0121127 |
+		| AU\GAPP-A012116D |
+		| 1 more           |
+	#SZ: should be uncommented after adding Member placeholder
+	#When User selects 'Not a member' in the 'Member' dropdown
+	When User clicks 'ADD' button
+	Then There are no errors in the browser console
+	When User create dynamic list with "GroupList18759" name on "Devices" page
+	Then "GroupList18759" list is displayed to user
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS10696 @DAS13376
+Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsFilterIsContainsAllExpectedAssociations
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application (Saved List)" filter
+	Then Associations is displayed in the filter
+		| Associations                   |
+		| Used on device                 |
+		| Entitled to device             |
+		| Installed on device            |
+		| Used by device's owner         |
+		| Entitled to device's owner     |
+		| Not used on device             |
+		| Not entitled to device         |
+		| Not installed on device        |
+		| Not used by device's owner     |
+		| Not entitled to device's owner |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS11187 @DAS13376
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatCustomFiltersAreContainsAllExpectedAssociations
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User selects "<FilterName>" filter from "Application Custom Fields" category
+	Then Associations is displayed in the filter
+		| Associations                   |
+		| Used on device                 |
+		| Entitled to device             |
+		| Installed on device            |
+		| Used by device's owner         |
+		| Entitled to device's owner     |
+		| Not used on device             |
+		| Not entitled to device         |
+		| Not installed on device        |
+		| Not used by device's owner     |
+		| Not entitled to device's owner |
+
+	Examples:
+		| FilterName                  |
+		| App field 1                 |
+		| App field 2                 |
+		| Application Owner           |
+		| General information field 1 |
+		| General information field 2 |
+		| General information field 3 |
+		| General information field 4 |
+		| General information field 5 |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS11469
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	When User enters "used" in Association search field 
+	Then search values in Association section working by specific search criteria
+
+Examples:
+	| FilterName                 |
+	| Application                |
+	| Application Import         |
+	| Application Inventory Site |
+	| Application Vendor         |
+	| Application Version        |
+	#| Application Compliance     |
+	#| Application (Saved List)   |
+	#| Application Import Type    |
+	#| Application Name           |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS11551 @DAS11550 @DAS11749
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatEmptyNotEmptyOperatorsIsWorkedCorrectly
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Application Name" filter
+	When User select "<OperatorValues>" Operator value
+	Then Associations panel is displayed in the filter
+
+Examples:
+	| OperatorValues |
+	| Empty          |
+	| Not Empty      |

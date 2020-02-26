@@ -1246,7 +1246,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18716")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase()
         {
             System.Exception lastException = null;
@@ -1280,8 +1279,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18716",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 338
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -300,3 +300,63 @@ Examples:
 	| Project Tasks: Windows7Mi  | Windows7Mi: Communication \ Send an Email to the end User (Date)                     | applications?$filter=(project_task_1_12861_1_date%20IS%20EMPTY%20())&$select=packageName,packageManufacturer,packageVersion,project_task_1_12861_1_date&$orderby=project_task_1_12861_1_date%20desc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 	| Project Stages: Windows7Mi | Windows7Mi: Application Information                                                  | applications?$filter=(project_stage_1_5_stageValueId%20NOT%20EQUALS%20('1001'%2C'1003'%2C'1004'))&$select=packageName,packageManufacturer,packageVersion,project_stage_1_5_stageValue&$orderby=project_stage_1_5_stageValue%20asc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 	| Project Stages: Windows7Mi | Windows7Mi: Communication                                                            | applications?$filter=(project_stage_1_7_stageValueId%20EQUALS%20('1000'%2C'1001'%2C'1008'%2C'1010'%2C'1003'%2C'1009'))&$select=packageName,packageManufacturer,packageVersion,project_stage_1_7_stageValue&$orderby=project_stage_1_7_stageValue%20desc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+
+@Evergreen @Applications @API @FiltersAndColumns @DAS17579
+Scenario: EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying
+	Then following operators are displayed in "User Location" category for "User Postal Code" filter on "Applications" page:
+	| OperatorValues      |
+	| Equals              |
+	| Does not equal      |
+	| Contains            |
+	| Does not contain    |
+	| Begins with         |
+	| Does not begin with |
+	| Ends with           |
+	| Does not end with   |
+	| Empty               |
+	| Not empty           |
+
+@Evergreen @Applications @API @FiltersAndColumns @DAS15194 @DAS16485
+Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrectFilterOptions
+	Then following operators are displayed in "Device Owner Custom Fields" category for "Device Owner Zip Code" filter on "Applications" page:
+	| OperatorValues      | 
+	| Equals              |
+	| Does not equal      |
+	| Contains            |
+	| Does not contain    |
+	| Begins with         |
+	| Does not begin with |
+	| Ends with           |
+	| Does not end with   |
+	| Empty               |
+	| Not empty           |
+
+@Evergreen @Applications @API @FiltersAndColumns @DAS12940 @DAS13201 @DAS14325
+Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInFiltersPanel
+	Then the following filter subcategories are displayed for 'Evergreen' category on '<ListName>' page:
+	| value                   |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
+
+	Examples:
+		| ListName  |
+		| Devices   |
+		| Users     |
+		| Mailboxes |
+
+@Evergreen @Applications @API @FiltersAndColumns @DAS13201 @DAS14325 @DAS14325 @DAS19309
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInFiltersPanel
+	Then the following filter subcategories are displayed for 'Evergreen' category on 'Applications' page:
+	| value                           |
+	| Criticality                     |
+	| Evergreen Capacity Unit         |
+	| Evergreen Rationalization       |
+	| Evergreen Target App            |
+	| Evergreen Target App Compliance |
+	| Evergreen Target App Key        |
+	| Evergreen Target App Name       |
+	| Evergreen Target App Vendor     |
+	| Evergreen Target App Version    |
+	| Hide From End Users             |
+	| In Catalog                      |

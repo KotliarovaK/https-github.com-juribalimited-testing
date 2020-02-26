@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19259 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19259 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageDisplay
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -28,9 +28,9 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageD
 	When User enters 'Parental Controls' in the 'Target Application' autocomplete field and selects 'Yahoo! Yahoo! Parental Controls (1036)' value
 	When User clicks 'CREATE' button
 	#Check Action Grid
-	Then "Sticky Compliance, Rationalisation, In Catalog" content is displayed for "Task or Field" column
+	Then "Sticky Compliance, In Catalog, Rationalisation" content is displayed for "Task or Field" column
 	Then '' content is displayed in the 'Project' column
-	Then 'Unknown, Forward Path, Yahoo! Yahoo! Parental Controls, True' content is displayed in the 'Value' column
+	Then 'Unknown, True, Forward Path, Yahoo! Yahoo! Parental Controls' content is displayed in the 'Value' column
 	When User clicks content from "Action" column
 	#Check Edit Action Page
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
