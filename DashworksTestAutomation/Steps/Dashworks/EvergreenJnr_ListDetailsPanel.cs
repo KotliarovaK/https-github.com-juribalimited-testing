@@ -244,7 +244,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _usersWithSharedLists.Value.Add(row["User"]);
             }
-            
         }
 
         [When(@"User select current user in Select User dropdown")]
