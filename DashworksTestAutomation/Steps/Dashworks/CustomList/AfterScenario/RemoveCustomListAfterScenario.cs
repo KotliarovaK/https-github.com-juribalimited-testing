@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList.AfterScenario
             _customListMethods = new RemoveCustomListMethods(usedUsers, usersWithSharedLists);
         }
 
-        [AfterScenario("Cleanup")]
+        [AfterScenario("Cleanup", Order = 31)]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
             try

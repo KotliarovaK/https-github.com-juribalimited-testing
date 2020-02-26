@@ -574,6 +574,76 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperators")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17413")]
+        [NUnit.Framework.TestCaseAttribute("Organisation", "Department", null)]
+        [NUnit.Framework.TestCaseAttribute("Device Owner Organisation", "Owner Department Level 1", null)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperators(string category, string filter, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperatorsInternal(category,filter,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperatorsInternal(string category, string filter, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "Evergreen_FiltersFeature",
+                    "FiltersDisplay",
+                    "DAS17413"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperators", null, @__tags);
+#line 109
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "OperatorValues"});
+            table7.AddRow(new string[] {
+                        "Equals"});
+            table7.AddRow(new string[] {
+                        "Does not equal"});
+            table7.AddRow(new string[] {
+                        "Not empty"});
+#line 110
+ testRunner.Then(string.Format("following operators are displayed in \"{0}\" category for \"{1}\" filter on \"Devices\"" +
+                        " page:", category, filter), ((string)(null)), table7, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

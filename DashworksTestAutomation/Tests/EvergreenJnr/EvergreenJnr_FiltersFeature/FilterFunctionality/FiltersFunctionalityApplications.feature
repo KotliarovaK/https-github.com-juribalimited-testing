@@ -1143,7 +1143,7 @@ Examples:
 	| Windows7Mi: Target App Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
 	| Barry'sUse: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Target App Readiness is Empty | 1,145     |
 	| ComputerSc: Target App Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Target App Readiness is Green | 913       |
-	| Havoc(BigD: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Target App Readiness is Empty | 1,155     |
+	| Havoc(BigD: Target App Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Target App Readiness is Empty | 1,153     |
 	| UserSchedu: Target App Readiness | Equals, Does not equal, Not empty | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12388
@@ -1211,7 +1211,7 @@ Examples:
 	| Windows7Mi: Application Readiness | Equals, Does not equal, Not empty | Red          | Windows7Mi: Application Readiness is Red   | 27        |
 	| Barry'sUse: Application Readiness | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Application Readiness is Empty | 1,145     |
 	| ComputerSc: Application Readiness | Equals, Does not equal, Not empty | Green        | ComputerSc: Application Readiness is Green | 911       |
-	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Application Readiness is Empty | 1,155     |
+	| Havoc(BigD: Application Readiness | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Application Readiness is Empty | 1,153     |
 	| UserSchedu: Application Readiness | Equals, Does not equal, Not empty | Empty        | UserSchedu: Application Readiness is Empty | 1,242     |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11509 @DAS11507 @DAS11509 @DAS12026
@@ -1240,7 +1240,7 @@ Examples:
 	| Windows7Mi: Rationalisation | Equals, Does not equal, Not empty | RETIRE        | Windows7Mi: Rationalisation is Retire        | 85        |
 	| Barry'sUse: Rationalisation | Equals, Does not equal, Not empty | KEEP          | Barry'sUse: Rationalisation is Keep          | 2         |
 	| ComputerSc: Rationalisation | Equals, Does not equal, Not empty | FORWARD PATH  | ComputerSc: Rationalisation is Forward Path  | 15        |
-	| Havoc(BigD: Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | Havoc(BigD: Rationalisation is Uncategorised | 1,068     |
+	| Havoc(BigD: Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | Havoc(BigD: Rationalisation is Uncategorised | 1,070     |
 	| UserSchedu: Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | UserSchedu: Rationalisation is Uncategorised | 981       |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11507
@@ -1269,7 +1269,7 @@ Examples:
 	| Windows7Mi: Core Application | Equals, Does not equal, Not empty | TRUE         | Windows7Mi: Core Application is True  | 11        |
 	| Barry'sUse: Core Application | Equals, Does not equal, Not empty | Empty        | Barry'sUse: Core Application is Empty | 1,145     |
 	| ComputerSc: Core Application | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Core Application is False | 1,043     |
-	| Havoc(BigD: Core Application | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Core Application is Empty | 1,155     |
+	| Havoc(BigD: Core Application | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Core Application is Empty | 1,153     |
 	| UserSchedu: Core Application | Equals, Does not equal, Not empty | Empty        | UserSchedu: Core Application is Empty | 1,242     |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11509 @DAS11507 @DAS11509
@@ -1299,7 +1299,7 @@ Examples:
 	| Pr00: Hide From End Users       | Equals, Does not equal, Not empty | Empty        | Pr00: Hide From End Users is Empty       | 1,096     |
 	| Barry'sUse: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide From End Users is False | 1,078     |
 	| ComputerSc: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide From End Users is False | 1,043     |
-	| Havoc(BigD: Hide From End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide From End Users is Empty | 1,155     |
+	| Havoc(BigD: Hide From End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide From End Users is Empty | 1,153     |
 	| DeviceSche: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | DeviceSche: Hide From End Users is False | 100       |
 	| UserSchedu: Hide From End Users | Equals, Does not equal, Not empty | Empty        | UserSchedu: Hide From End Users is Empty | 1,242     |
 
@@ -1426,3 +1426,28 @@ Scenario: EvergreenJnr_ApplicationsList_CheckEvergreenTargetAppFilterWithNoTarge
 	Then "DAS192621_list" list is displayed to user
 	When User clicks the Filters button
 	Then "Evergreen Target App is No Target Application" is displayed in added filter info
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS17413
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUserCanAddAssociationAfterSelectingNotEmptyOperator
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Owner Department" filter where type is "Not empty" with following Tree List option and Association:
+	| Value | Association        |
+	|       | Entitled to device |
+	Then table content is present
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS17413 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterValueDisregardsWhenNotEmptyOperatorIsSelected
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Department" filter where type is "Equals" with following Tree List option and Association:
+	| Value | Association  |
+	| Empty | Has used app |
+	When User click Edit button for "User " filter
+	When User select "Not empty" Operator value
+	When User clicks 'UPDATE' button
+	Then "User whose Department is not empty has used app" is displayed in added filter info

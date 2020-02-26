@@ -104,3 +104,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrect
 	| Does not end with   |
 	| Empty               |
 	| Not empty           |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS17413
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperators
+	Then following operators are displayed in "<Category>" category for "<Filter>" filter on "Devices" page:
+	| OperatorValues      | 
+	| Equals              |
+	| Does not equal      |
+	| Not empty           |
+
+	Examples: 
+	| Category                  | Filter                   |
+	| Organisation              | Department               |
+	| Device Owner Organisation | Owner Department Level 1 |

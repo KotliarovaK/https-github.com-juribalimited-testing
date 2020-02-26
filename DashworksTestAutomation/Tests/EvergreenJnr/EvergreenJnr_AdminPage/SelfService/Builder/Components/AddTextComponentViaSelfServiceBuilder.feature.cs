@@ -178,110 +178,6 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasALi" +
-            "stOfAvailableComponents")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19982")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasAListOfAvailableComponents()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasAListOfAvailableComponentsInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasAListOfAvailableComponentsInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatTheAddComponentPopUpHasALi" +
-                    "stOfAvailableComponents", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "SelfService",
-                        "DAS19982",
-                        "Cleanup"});
-#line 24
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
-            table4.AddRow(new string[] {
-                        ""});
-#line 25
- testRunner.When("User create static list with \"SelfServiceStaticAppList\" name on \"Applications\" pa" +
-                    "ge with following items", ((string)(null)), table4, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "ServiceIdentifier",
-                        "Enabled",
-                        "AllowAnonymousUsers",
-                        "Scope"});
-            table5.AddRow(new string[] {
-                        "TestProj_2",
-                        "Test_ID_2",
-                        "true",
-                        "true",
-                        "SelfServiceStaticAppList"});
-#line 28
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table5, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ServiceIdentifier",
-                        "Name",
-                        "DisplayName",
-                        "ShowInSelfService"});
-            table6.AddRow(new string[] {
-                        "Test_ID_2",
-                        "TestPageSs2",
-                        "TestPageSsDisplay",
-                        "false"});
-#line 31
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table6, "When ");
-#line 34
- testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 35
- testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
-    testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs2\' name o" +
-                    "n Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
- testRunner.Then("popup with \'Add Component\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 38
- testRunner.Then("User sees \'Text\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 39
- testRunner.Then("User sees \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatAfterClickOnComponentItWil" +
             "lBeHighlightedAndAddButtonEnabled")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -326,67 +222,67 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19982",
                         "Cleanup"});
-#line 42
+#line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table7.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         ""});
-#line 43
+#line 25
  testRunner.When("User create static list with \"SelfServiceStaticAppList\" name on \"Applications\" pa" +
-                    "ge with following items", ((string)(null)), table7, "When ");
+                    "ge with following items", ((string)(null)), table4, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "ServiceIdentifier",
                         "Enabled",
                         "AllowAnonymousUsers",
                         "Scope"});
-            table8.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "TestProj_3",
                         "Test_ID_3",
                         "true",
                         "true",
                         "SelfServiceStaticAppList"});
-#line 46
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table8, "When ");
+#line 28
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table5, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ServiceIdentifier",
                         "Name",
                         "DisplayName",
                         "ShowInSelfService"});
-            table9.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Test_ID_3",
                         "TestPageSs3",
                         "TestPageSsDisplay",
                         "false"});
-#line 49
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table9, "When ");
-#line 52
+#line 31
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table6, "When ");
+#line 34
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 53
+#line 35
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
+#line 36
     testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs3\' name o" +
                     "n Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
+#line 37
  testRunner.Then("\'ADD\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 56
+#line 38
  testRunner.Then("\'CANCEL\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
+#line 39
  testRunner.Then("Button \'ADD\' has \'Select a component\' tooltip on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 58
+#line 40
     testRunner.When("User clicks on \'Text\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
+#line 41
  testRunner.Then("\'CANCEL\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 60
+#line 42
  testRunner.Then("\'ADD\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 61
+#line 43
  testRunner.Then("\'Text\' component on dialog is highlighted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -440,318 +336,74 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19982",
                         "Cleanup"});
-#line 64
+#line 46
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table10.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         ""});
-#line 65
+#line 47
  testRunner.When("User create static list with \"SelfServiceStaticAppList\" name on \"Applications\" pa" +
-                    "ge with following items", ((string)(null)), table10, "When ");
+                    "ge with following items", ((string)(null)), table7, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "ServiceIdentifier",
                         "Enabled",
                         "AllowAnonymousUsers",
                         "Scope"});
-            table11.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "TestProj_4",
                         "Test_ID_4",
                         "true",
                         "true",
                         "SelfServiceStaticAppList"});
-#line 68
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table11, "When ");
+#line 50
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table8, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "ServiceIdentifier",
                         "Name",
                         "DisplayName",
                         "ShowInSelfService"});
-            table12.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Test_ID_4",
                         "TestPageSs4",
                         "TestPageSsDisplay",
                         "false"});
-#line 71
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table12, "When ");
-#line 74
+#line 53
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table9, "When ");
+#line 56
  testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 75
+#line 57
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 76
+#line 58
     testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs4\' name o" +
                     "n Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 77
+#line 59
     testRunner.When("User clicks on \'Text\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
+#line 60
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 79
+#line 61
  testRunner.When("User clicks \'ADD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 62
  testRunner.Then("popup is not displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 81
+#line 63
  testRunner.Then("\'CREATE\' button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 82
+#line 64
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 83
+#line 65
  testRunner.Then("\'CANCEL\' button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 84
+#line 66
  testRunner.Then("\'CANCEL\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 85
+#line 67
  testRunner.Then("\'Show this component\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 86
+#line 68
  testRunner.Then("Page with \'Create Text Component\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneAppl" +
-            "icationOwnershipInToFirstPage")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19982")]
-        [NUnit.Framework.CategoryAttribute("DAS19982")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwnershipInToFirstPage()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwnershipInToFirstPageInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneApplicationOwnershipInToFirstPageInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAddOnlyOneAppl" +
-                    "icationOwnershipInToFirstPage", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "SelfService",
-                        "DAS19982",
-                        "DAS19982",
-                        "Cleanup"});
-#line 89
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
-            table13.AddRow(new string[] {
-                        ""});
-#line 90
- testRunner.When("User create static list with \"SelfServiceStaticAppList\" name on \"Applications\" pa" +
-                    "ge with following items", ((string)(null)), table13, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "ServiceIdentifier",
-                        "Enabled",
-                        "AllowAnonymousUsers",
-                        "Scope"});
-            table14.AddRow(new string[] {
-                        "TestProj_4",
-                        "Test_ID_4",
-                        "true",
-                        "true",
-                        "SelfServiceStaticAppList"});
-#line 93
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table14, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ServiceIdentifier",
-                        "Name",
-                        "DisplayName",
-                        "ShowInSelfService"});
-            table15.AddRow(new string[] {
-                        "Test_ID_4",
-                        "TestPageSs4_1",
-                        "TestPageSsDisplay",
-                        "false"});
-#line 96
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table15, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ServiceIdentifier",
-                        "Name",
-                        "DisplayName",
-                        "ShowInSelfService"});
-            table16.AddRow(new string[] {
-                        "Test_ID_4",
-                        "TestPageSs4_2",
-                        "TestPageSsDisplay",
-                        "false"});
-#line 99
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table16, "When ");
-#line 102
- testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 103
- testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 104
-    testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs4_1\' name" +
-                    " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 105
- testRunner.When("User clicks on \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 106
- testRunner.When("User clicks \'ADD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 107
- testRunner.When("User enters \'OwnComp_1\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
- testRunner.When("User selects \'User Evergreen Capacity Project\' option from \'Project\' autocomplete" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
- testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
- testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs4_1\' name" +
-                    " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 111
- testRunner.Then("\'Application Ownership\' component on dialog is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInt" +
-            "eractiveComponentToBeAdded")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS19982")]
-        [NUnit.Framework.CategoryAttribute("DAS19982")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInteractiveComponentToBeAdded()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInteractiveComponentToBeAddedInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInteractiveComponentToBeAddedInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInt" +
-                    "eractiveComponentToBeAdded", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "SelfService",
-                        "DAS19982",
-                        "DAS19982",
-                        "Cleanup"});
-#line 114
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
-            table17.AddRow(new string[] {
-                        ""});
-#line 115
- testRunner.When("User create static list with \"SelfServiceStaticAppList\" name on \"Applications\" pa" +
-                    "ge with following items", ((string)(null)), table17, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "ServiceIdentifier",
-                        "Enabled",
-                        "AllowAnonymousUsers",
-                        "Scope"});
-            table18.AddRow(new string[] {
-                        "TestProj_5",
-                        "Test_ID_5",
-                        "true",
-                        "true",
-                        "SelfServiceStaticAppList"});
-#line 118
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table18, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ServiceIdentifier",
-                        "Name",
-                        "DisplayName",
-                        "ShowInSelfService"});
-            table19.AddRow(new string[] {
-                        "Test_ID_5",
-                        "TestPageSs_1",
-                        "TestPageSsDisplay",
-                        "false"});
-#line 121
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table19, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ServiceIdentifier",
-                        "Name",
-                        "DisplayName",
-                        "ShowInSelfService"});
-            table20.AddRow(new string[] {
-                        "Test_ID_5",
-                        "TestPageSs_2",
-                        "TestPageSsDisplay",
-                        "false"});
-#line 124
- testRunner.When("User creates new Self Service Page via API", ((string)(null)), table20, "When ");
-#line 127
- testRunner.Then("Self Service Details page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 128
- testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 129
- testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs_2\' name " +
-                    "on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 130
- testRunner.Then("\'Application Ownership\' component on dialog is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

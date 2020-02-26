@@ -478,7 +478,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var by = By.XPath(string.Format(NamedTextboxSelector, placeholder));
             if (!Driver.IsElementDisplayed(by, wait))
+            {
                 throw new Exception($"Textbox with '{placeholder}' placeholder is not displayed");
+            }
             return Driver.FindElement(by);
         }
 
@@ -1140,6 +1142,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
                 throw new Exception($"'{ariaLabel}' radio button was not displayed");
             }
             return Driver.FindElement(selector);
+        }
+
+        public bool IsRadioButtonChecked(string ariaLabel)
+        {
+            var classValue = GetRadioButton(ariaLabel).GetAttribute("class");
+            return classValue.Contains("mat-radio-checked");
         }
 
         public bool IsRadioButtonEnabled(string ariaLabel)
