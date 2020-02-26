@@ -19,6 +19,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
         public IWebElement RowsCount { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row-select-empty')]")]
+        public IWebElement ActionsPanelMessage { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

@@ -53,12 +53,14 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 "Action panel is opened");
         }
 
-        [Then(@"Actions container message is displayed to the user")]
-        public void ThenActionsContainerMessageIsDisplayedToTheUser()
+        [Then(@"'(.*)' message is displayed on Actions panel to the user")]
+        public void ThenMessageIsDisplayedOnActionPanelToTheUser(string textMessage)
         {
-            var panel = _driver.NowAt<ActionsElement>();
-            Verify.IsTrue(panel.ActionsContainerMessage.Displayed(),
-                "'Select at least one row' was not displayed");
+            _driver.WaitForDataLoadingInActionsPanel();
+
+            var panel = _driver.NowAt<ActionsPanelElement>();
+            Verify.IsTrue(panel.ActionsPanelMessage.GetText().Equals(textMessage),
+                $"{textMessage} message was not displayed");
         }
 
         [When(@"User closes Actions panel")]
