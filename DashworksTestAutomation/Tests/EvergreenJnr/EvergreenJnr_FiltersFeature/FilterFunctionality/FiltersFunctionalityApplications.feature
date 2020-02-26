@@ -911,7 +911,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceOperatingSystemFilterWork
 	Then "4" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18560 @Cleanup
-Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToDeletedList
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilterRelatedToDeletedList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
@@ -941,7 +941,7 @@ Scenario: EvergreenJnr_CheckThatNoErrorMessageDisplayedAfterOpeningListWithFilte
 	Then message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18560 @Cleanup
-Scenario: EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated
+Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCreated
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
@@ -961,7 +961,7 @@ Scenario: EvergreenJnr_CheckThatFilterBasedOnListHavingNotEmptyOperatorCanBeCrea
 	Then There are no errors in the browser console
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18922
-Scenario: EvergreenJnr_DevicesList_CheckThatGridDataDisplayedAfterSortingByOwnerCompliance
+Scenario: EvergreenJnr_ApplicationsList_CheckThatGridDataDisplayedAfterSortingByOwnerCompliance
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
 	When User add "Owner Compliance" filter where type is "Equals" with added column and Lookup option
@@ -1451,3 +1451,67 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterValueDisregardsWhenNotEmp
 	When User select "Not empty" Operator value
 	When User clicks 'UPDATE' button
 	Then "User whose Department is not empty has used app" is displayed in added filter info
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS19773
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNoUnknownOptionAvailableForDeviceFilter
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When user select "Device" filter
+	When User enters "Unknown" text in Search field at selected Lookup Filter
+	Then No options are displayed for selected Lookup Filter
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS12793 @Cleanup
+Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisplayedCorrectly
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add Advanced "User" filter where type is "Equals" with following Lookup Value and Association:
+		| SelectedValues | Association     |
+		| AAD1011948     | Entitled to app |
+	Then "4" rows are displayed in the agGrid
+	When User create dynamic list with "UsersFilterList" name on "Applications" page
+	Then "UsersFilterList" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "User" filter
+	Then "FR\AAD1011948 (Pinabel Cinq-Mars)" value is displayed in the filter info
+	And There are no errors in the browser console
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	And There are no errors in the browser console
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS16426
+Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFieldIsEmpty
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "User Dashworks First Seen" filter
+	And User select "Equals" Operator value
+	Then 'ADD' button has tooltip with 'You must enter a date' text
+	When User select "Between" Operator value
+	Then 'ADD' button has tooltip with 'You must enter a start date' text
+	When User select "Empty" Operator value
+	Then 'ADD' button has tooltip with 'Complete all fields before saving this filter' text
+	When User select "Not empty" Operator value
+	Then 'ADD' button has tooltip with 'Complete all fields before saving this filter' text
+
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS18367
+Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatThereIsNoEmptyOptionInInListFilter
+	When User clicks 'Applications' on the left-hand menu
+	Then 'All Applications' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "<List>" filter from "Saved List" category
+	Then "Empty" checkbox is not available for current opened filter
+
+	Examples:
+		| List                      |
+		| Application (Saved List)  |
+		| Device (Saved List)       |
+		| Device Owner (Saved List) |
+		| User (Saved List)         |
