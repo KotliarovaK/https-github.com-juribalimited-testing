@@ -117,21 +117,23 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @Cleanup @Void
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 19854_Automation | 19854       | true   | false              | All Devices | Manual |
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
+	| 19854_Automation | 19854       | true   | false              | New York - Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
 	When User enters '19854_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
-	When User selects ' ' option from 'Project' autocomplete
-	When User selects ' ' option from 'Task' autocomplete
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 1 \ Original Auto Task' option from 'Task' autocomplete
 	When User selects 'Update relative to a different task valuel' in the 'Update Date' dropdown
-	When User selects ' ' option from 'Project' autocomplete
-	When User selects ' ' option from 'Relative Task' autocomplete
-	When User enters '5' text to 'Value' textbox
-	When User selects 'Days' in the 'Units' dropdown
+	When User selects 'Update' in the 'Update Value' dropdown
+	When User selects 'Complete' in the 'Value' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
+	When User enters '0' text to 'Value' textbox
+	When User selects 'Week Days' in the 'Units' dropdown
 	When User selects 'After now' in the 'Before or After' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
@@ -145,6 +147,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
+	Then '20 Feb 2020' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task (Date)' column
+	Then 'COMPLETE' content is displayed in the 'zUserAutom: Stage 2 \ Relative Task' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -154,8 +158,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	When User selects 'Update' in the 'Update Date' dropdown
-	When User enters '10 Feb 2020' text to 'Date' datepicker
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 1 \ Original Auto Task' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Value' dropdown
+	When User selects 'Complete' in the 'Value' dropdown
+	When User selects 'Remove' in the 'Update Date' dropdown
 	When User clicks 'UPDATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
