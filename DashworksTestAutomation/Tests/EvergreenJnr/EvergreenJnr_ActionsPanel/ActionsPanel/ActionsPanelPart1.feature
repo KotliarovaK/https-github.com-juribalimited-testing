@@ -138,4 +138,4 @@ Scenario: EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListV
 	And User clicks 'SAVE' button
 	Then "FirstList197462" list is displayed to user
 	When User clicks the Actions button
-	Then Actions panel is displayed to the user
+	Then Actions container message is displayed to the user

@@ -39,8 +39,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var button = _driver.NowAt<BaseHeaderElement>();
             Verify.IsTrue(button.ActionsButton.IsElementActive(),
                 "Action button is not active");
-
-            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [Then(@"Actions panel is not displayed to the user")]
@@ -53,6 +51,14 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var panel = _driver.NowAt<BaseRightSideActionsPanel>();
             Verify.IsFalse(panel.IsPanelOpened("ACTIONS"),
                 "Action panel is opened");
+        }
+
+        [Then(@"Actions container message is displayed to the user")]
+        public void ThenActionsContainerMessageIsDisplayedToTheUser()
+        {
+            var panel = _driver.NowAt<ActionsElement>();
+            Verify.IsTrue(panel.ActionsContainerMessage.Displayed(),
+                "'Select at least one row' was not displayed");
         }
 
         [When(@"User closes Actions panel")]
