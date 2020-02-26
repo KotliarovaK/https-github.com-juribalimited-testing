@@ -87,7 +87,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18674")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAutomationsIsVisible()
         {
             System.Exception lastException = null;
@@ -122,8 +121,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18674",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -340,7 +338,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DASDAS19601")]
         [NUnit.Framework.CategoryAttribute("DAS19150")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForEvergreen()
         {
             System.Exception lastException = null;
@@ -377,8 +374,7 @@ this.FeatureBackground();
                         "DAS19311",
                         "DASDAS19601",
                         "DAS19150",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 78
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -430,10 +426,10 @@ this.FeatureBackground();
 #line 97
  testRunner.Then("\"\" content is displayed for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 98
- testRunner.Then("\"Sticky Compliance, Rationalisation, In Catalog, Criticality, Hide From End Users" +
+ testRunner.Then("\"Sticky Compliance, In Catalog, Criticality, Rationalisation, Hide From End Users" +
                     "\" content is displayed for \"Task or Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
- testRunner.Then("\"Red, Keep, False, Critical, True\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Red, False, Critical, Keep, True\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 101
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 102
@@ -475,10 +471,10 @@ this.FeatureBackground();
 #line 122
  testRunner.Then("\"\" content is displayed for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 123
- testRunner.Then("\"Sticky Compliance, Rationalisation, In Catalog, Criticality, Hide From End Users" +
+ testRunner.Then("\"Sticky Compliance, In Catalog, Criticality, Rationalisation, Hide From End Users" +
                     "\" content is displayed for \"Task or Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 124
- testRunner.Then("\"Green, Retire, True, Core, False\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Green, True, Core, Retire, False\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 127
@@ -515,7 +511,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DASDAS19601")]
         [NUnit.Framework.CategoryAttribute("DAS19150")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForProject()
         {
             System.Exception lastException = null;
@@ -553,8 +548,7 @@ this.FeatureBackground();
                         "DAS19353",
                         "DASDAS19601",
                         "DAS19150",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 138
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -603,10 +597,10 @@ this.FeatureBackground();
 #line 155
  testRunner.Then("\"USE ME FOR AUTOMATION(DEVICE SCHDLD)\" content is displayed for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 156
- testRunner.Then("\"Rationalisation, Criticality, Hide From End Users\" content is displayed for \"Tas" +
+ testRunner.Then("\"Criticality, Rationalisation, Hide From End Users\" content is displayed for \"Tas" +
                     "k or Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 157
- testRunner.Then("\"Keep, Important, True\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Important, Keep, True\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 158
  testRunner.When("User opens \'Action\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 159
@@ -651,10 +645,10 @@ this.FeatureBackground();
 #line 181
  testRunner.Then("\"USE ME FOR AUTOMATION(DEVICE SCHDLD)\" content is displayed for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 182
- testRunner.Then("\"Rationalisation, Criticality, Hide From End Users\" content is displayed for \"Tas" +
+ testRunner.Then("\"Criticality, Rationalisation, Hide From End Users\" content is displayed for \"Tas" +
                     "k or Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 183
- testRunner.Then("\"Uncategorised, Core, False\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Core, Uncategorised, False\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 185
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 186
@@ -685,7 +679,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19312")]
         [NUnit.Framework.CategoryAttribute("DAS19566")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow()
         {
             System.Exception lastException = null;
@@ -720,8 +713,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS19312",
                         "DAS19566",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 195
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -735,7 +727,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table7.AddRow(new string[] {
-                        "TiffSurfer 3.4"});
+                        "Microsoft Office XP SP1"});
 #line 198
  testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
                     "ing value:", ((string)(null)), table7, "When ");
@@ -816,8 +808,7 @@ this.FeatureBackground();
 #line 233
  testRunner.Then("\'Core\' content is displayed in the \'UseMeForAu: Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 234
- testRunner.Then("\'KEEP\' content is displayed in the \'UseMeForAu: Application Rationalisation\' colu" +
-                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'KEEP\' content is displayed in the \'UseMeForAu: Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 235
  testRunner.Then("\'TRUE\' content is displayed in the \'UseMeForAu: Hide From End Users\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

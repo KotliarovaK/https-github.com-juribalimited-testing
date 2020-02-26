@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18727 @DAS18966 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18727 @DAS18966 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -37,8 +37,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	| UNCATEGORISED |
 	Then 'CREATE' button is disabled
 	Then 'SAVE & CREATE ANOTHER' button is disabled
-	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
-	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User selects 'RED' in the 'Sticky Compliance' dropdown
 	Then 'CREATE' button is not disabled
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
