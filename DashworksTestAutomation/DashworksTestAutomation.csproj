@@ -1280,11 +1280,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PermissionsSettings.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\ExpressionSection.feature.cs">
-      <DependentUpon>ExpressionSection.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1.feature.cs">
       <DependentUpon>AssociationsFunctionality1.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1300,18 +1295,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterManagement.feature.cs">
-      <DependentUpon>FilterManagement.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\AddedInfo.feature.cs">
-      <DependentUpon>AddedInfo.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\AddColumn.feature.cs">
-      <DependentUpon>AddColumn.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\FilterDisplay.feature.cs">
+      <DependentUpon>FilterDisplay.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -1334,21 +1319,6 @@
       <DependentUpon>FiltersFunctionalityAllLists.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FiltersFunctionalityApi.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FiltersFunctionalityApi.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\Associations.feature.cs">
-      <DependentUpon>Associations.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\RemoveFilter.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RemoveFilter.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_GlobalSearch\MainFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1864,11 +1834,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AllCheckbox.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\FilterValue.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FilterValue.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_GridActions\ColumnOrder.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2636,10 +2601,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PermissionsSettings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\ExpressionSection.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ExpressionSection.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AssociationsFunctionality1.feature.cs</LastGenOutput>
@@ -2652,17 +2613,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FiltersFunctionalityUsers.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterManagement.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\FilterDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>FilterManagement.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\AddedInfo.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AddedInfo.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\AddColumn.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AddColumn.feature.cs</LastGenOutput>
+      <LastGenOutput>FilterDisplay.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\Categories.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2679,18 +2632,6 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterFunctionality\FiltersFunctionalityAllLists.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FiltersFunctionalityAllLists.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FiltersFunctionalityApi.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>FiltersFunctionalityApi.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\Associations.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Associations.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\RemoveFilter.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>RemoveFilter.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_GlobalSearch\MainFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -3099,10 +3040,6 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\AllCheckbox.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AllCheckbox.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\FilterDisplay\FilterValue.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>FilterValue.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_GridActions\ColumnOrder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

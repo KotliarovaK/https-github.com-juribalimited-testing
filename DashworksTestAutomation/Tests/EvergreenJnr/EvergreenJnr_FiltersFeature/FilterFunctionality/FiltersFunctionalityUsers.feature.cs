@@ -18,8 +18,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("FiltersFunctionalityPart01")]
-    public partial class FiltersFunctionalityPart01Feature
+    [NUnit.Framework.DescriptionAttribute("FiltersFunctionalityUsers")]
+    public partial class FiltersFunctionalityUsersFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_FiltersFeature
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FiltersFunctionalityPart01", "\tRuns Filters Functionality related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FiltersFunctionalityUsers", "\tRuns Filters Functionality related tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -960,20 +960,20 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameters")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParameters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
         [NUnit.Framework.CategoryAttribute("DAS15246")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameters()
+        public virtual void EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParameters()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParametersInternal();
+                    this.EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParametersInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -992,9 +992,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParametersInternal()
+        private void EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParametersInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameters", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParameters", null, new string[] {
                         "Evergreen",
                         "Evergreen_FiltersFeature",
                         "Filter_UsersList",
@@ -1869,6 +1869,74 @@ this.FeatureBackground();
  testRunner.Then("\'ADD\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 451
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("Filter_UsersList")]
+        [NUnit.Framework.CategoryAttribute("DAS18367")]
+        [NUnit.Framework.TestCaseAttribute("User (Saved List)", null)]
+        [NUnit.Framework.TestCaseAttribute("Application (Saved List)", null)]
+        public virtual void EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter(string list, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilterInternal(list,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilterInternal(string list, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Evergreen_FiltersFeature",
+                    "Filter_UsersList",
+                    "DAS18367"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter", null, @__tags);
+#line 454
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 455
+ testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 456
+ testRunner.Then("\'All Users\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 457
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 458
+ testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 459
+ testRunner.When(string.Format("User selects \"{0}\" filter from \"Saved List\" category", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 460
+ testRunner.Then("\"Empty\" checkbox is not available for current opened filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

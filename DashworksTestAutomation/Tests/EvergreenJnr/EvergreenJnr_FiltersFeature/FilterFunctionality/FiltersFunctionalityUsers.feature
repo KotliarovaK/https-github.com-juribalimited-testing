@@ -1,4 +1,4 @@
-﻿Feature: FiltersFunctionalityPart01
+﻿Feature: FiltersFunctionalityUsers
 	Runs Filters Functionality related tests
 
 Background: Pre-Conditions
@@ -241,7 +241,7 @@ Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	Then Chip box is not displayed in the Filter panel
 
 @Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS15246 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameters
+Scenario: EvergreenJnr_UsersList_CheckThatUrlOfSavedListHasNoEmptyParameters
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Filters button
@@ -449,3 +449,17 @@ Scenario: EvergreenJnr_UsersList_CheckThatThereIsNoErrorAfterTryingToFilterDataB
 	When User clicks 'ADD' button
 	Then 'ADD' button is disabled
 	Then There are no errors in the browser console
+
+@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS18367
+Scenario Outline: EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFilter
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Filters button
+	When User clicks Add New button on the Filter panel
+	When User selects "<List>" filter from "Saved List" category
+	Then "Empty" checkbox is not available for current opened filter
+
+	Examples:
+		| List                     |
+		| User (Saved List)        |
+		| Application (Saved List) |

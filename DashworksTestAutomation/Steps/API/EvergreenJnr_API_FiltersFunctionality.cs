@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -148,6 +149,31 @@ namespace DashworksTestAutomation.Steps.API
             {
                 Utils.Verify.IsFalse(subcategoryList.Contains(value), "Selected values are not displayed in that filter");
             }
+        }
+
+        [Then(@"the following filter subcategories are displayed for '(.*)' category on '(.*)' page:")]
+        public void ThenTheFollowingFilterSubcategoriesAreDisplayedForCategory(string categoryName, string filter, Table table)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}{filter.ToLower()}/filters?$lang=en-US";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Evergreen.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var responseContent = JsonConvert.DeserializeObject<List<JObject>>(content).ToList();
+            var subcategory = responseContent.FindAll(x => x["translatedCategory"].ToString().Equals(categoryName)).ToList();
+            var subcategoryList = subcategory.Select(x => x["translatedTextLabel"].ToString()).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+
+            Verify.That(subcategoryList, Is.EqualTo(expectedList), "Selected values are not displayed in that filter");
         }
     }
 }

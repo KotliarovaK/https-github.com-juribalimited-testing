@@ -221,7 +221,7 @@ Examples:
 	| Mailboxes    | Mail Server | No mailboxes found    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS12351
-Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
+Scenario Outline:EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
 	When User clicks '<PageName>' on the left-hand menu
 	Then 'All <PageName>' list should be displayed to the user
 	When User clicks the Filters button
@@ -328,7 +328,7 @@ Examples:
 	| Mailboxes    | Konformität des Inhabers    |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS18377 @DAS18621 @DAS18686
-Scenario Outline: EvergreenJnr_DevicesList_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative
+Scenario Outline: EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative
 	When User clicks '<List>' on the left-hand menu
 	And User clicks the Filters button
 	And User add "<Filter>" filter where type is "Equals (relative)" with added column and following value:
@@ -343,7 +343,7 @@ Examples:
 	| Devices      | Owner Last Logon Date                | 2.37457468568568568568658464554575547547547 |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS18387
-Scenario Outline: EvergreenJnr_DevicesList_CheckThatZeroCanBeSelectedInRelativeFilter
+Scenario Outline: EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilter
 	When User clicks '<List>' on the left-hand menu
 	When User clicks the Filters button
 	When user select "<Filter>" filter
@@ -425,3 +425,57 @@ Examples:
 	| Users        | ComputerSc: One \ User Off/On        |
 	| Devices      | ComputerSc: One \ Computer Off/On    |
 	| Applications | ComputerSc: One \ Application Off/On |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS10771 @DAS10972 @DAS14748
+Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
+	When User clicks '<PageName>' on the left-hand menu
+	Then 'All <PageName>' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+		| SelectedCheckboxes |
+		| Empty              |
+	Then Save to New Custom List element is displayed
+	When User click Edit button for "<FilterName>" filter
+	Then User changes filter type to "Does not equal"
+	Then Save to New Custom List element is displayed
+	When User have reset all filters
+	Then Save to New Custom List element is NOT displayed
+	When User add "<FilterName>" filter where type is "Equals" without added column and following checkboxes:
+		| SelectedCheckboxes |
+		| Empty              |
+	Then Save to New Custom List element is displayed
+	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
+		| SelectedCheckboxes |
+		| Red                |
+	When User Add And "<NewFilterName>" filter where type is "Equals" without added column and following checkboxes:
+		| SelectedCheckboxes |
+		| Amber              |
+	Then Save to New Custom List element is displayed
+	When User have reset all filters
+	Then Save to New Custom List element is NOT displayed
+
+	Examples:
+		| PageName     | FilterName           | NewFilterName    |
+		| Devices      | Windows7Mi: Category | Compliance       |
+		| Users        | UserSchedu: Category | Compliance       |
+		| Applications | Havoc(BigD: Category | Compliance       |
+		| Mailboxes    | EmailMigra: Category | Owner Compliance |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS11088
+Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFilters
+	When User clicks '<ListName>' on the left-hand menu
+	Then 'All <ListName>' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "<FilterName>" filter
+	Then There are no errors in the browser console
+
+	Examples:
+		| ListName     | FilterName                                                                     |
+		| Devices      | Build Date                                                                     |
+		| Devices      | Owner Last Logon Date                                                          |
+		| Devices      | Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
+		| Users        | Barry'sUse: Project Dates \ Scheduled Date                                     |
+		| Applications | UserSchedu: Three \ Date App Req A                                             |
+		| Mailboxes    | Created Date                                                                   |
