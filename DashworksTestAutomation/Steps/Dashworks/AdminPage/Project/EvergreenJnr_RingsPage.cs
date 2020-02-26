@@ -20,17 +20,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User clicks Create button on the Create Ring page")]
-        public void WhenUserClicksCreateButtonOnTheCreateRingPage()
-        {
-            var page = _driver.NowAt<CreateRingPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateRingButton);
-            page.CreateRingButton.Click();
-            Thread.Sleep(2000);
-            _driver.WaitForDataLoading();
-            Logger.Write("Create Ring button was clicked");
-        }
-
         [When(@"User sets ""(.*)"" value in Maps to evergreen ring field")]
         public void WhenUserSetsMapsToEvergreenRingValue(string option)
         {
