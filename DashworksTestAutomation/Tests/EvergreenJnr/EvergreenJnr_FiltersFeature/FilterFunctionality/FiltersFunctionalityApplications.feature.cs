@@ -5406,7 +5406,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", "Equals, Does not equal, Not empty", "Red", "Windows7Mi: Application Readiness is Red", "27", null)]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Readiness", "Equals, Does not equal, Not empty", "Empty", "Barry\'sUse: Application Readiness is Empty", "1,145", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Application Readiness", "Equals, Does not equal, Not empty", "Green", "ComputerSc: Application Readiness is Green", "911", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Readiness", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Application Readiness is Empty", "1,153", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Readiness", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Application Readiness is Empty", "1,155", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Application Readiness", "Equals, Does not equal, Not empty", "Empty", "UserSchedu: Application Readiness is Empty", "1,242", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
@@ -5504,7 +5504,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Rationalisation", "Equals, Does not equal, Not empty", "RETIRE", "Windows7Mi: Rationalisation is Retire", "85", null)]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Rationalisation", "Equals, Does not equal, Not empty", "KEEP", "Barry\'sUse: Rationalisation is Keep", "2", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Rationalisation", "Equals, Does not equal, Not empty", "FORWARD PATH", "ComputerSc: Rationalisation is Forward Path", "15", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Rationalisation", "Equals, Does not equal, Not empty", "UNCATEGORISED", "Havoc(BigD: Rationalisation is Uncategorised", "1,070", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Rationalisation", "Equals, Does not equal, Not empty", "UNCATEGORISED", "Havoc(BigD: Rationalisation is Uncategorised", "1,068", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Rationalisation", "Equals, Does not equal, Not empty", "UNCATEGORISED", "UserSchedu: Rationalisation is Uncategorised", "981", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRationalisationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
@@ -5606,7 +5606,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", "Equals, Does not equal, Not empty", "TRUE", "Windows7Mi: Core Application is True", "11", null)]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Core Application", "Equals, Does not equal, Not empty", "Empty", "Barry\'sUse: Core Application is Empty", "1,145", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Core Application", "Equals, Does not equal, Not empty", "FALSE", "ComputerSc: Core Application is False", "1,043", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Core Application", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Core Application is Empty", "1,153", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Core Application", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Core Application is Empty", "1,155", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Core Application", "Equals, Does not equal, Not empty", "Empty", "UserSchedu: Core Application is Empty", "1,242", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
@@ -5708,7 +5708,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Pr00: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "Pr00: Hide From End Users is Empty", "1,096", null)]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "Barry\'sUse: Hide From End Users is False", "1,078", null)]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "ComputerSc: Hide From End Users is False", "1,043", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Hide From End Users is Empty", "1,153", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "Havoc(BigD: Hide From End Users is Empty", "1,155", null)]
         [NUnit.Framework.TestCaseAttribute("DeviceSche: Hide From End Users", "Equals, Does not equal, Not empty", "FALSE", "DeviceSche: Hide From End Users is False", "100", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide From End Users", "Equals, Does not equal, Not empty", "Empty", "UserSchedu: Hide From End Users is Empty", "1,242", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
