@@ -21,11 +21,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And 'Resync owner' checkbox is checked
 	And 'Resync apps' checkbox is checked
 	And 'Resync name' checkbox is checked
+	When User unchecks 'Resync owner' checkbox
 	When User enters 'QSFCLB19N5524S' in the 'Device' autocomplete field and selects 'QSFCLB19N5524S' value
 	When User clicks 'RELINK' button on popup
 	Then 'This object will be relinked to the selected Evergreen object in this project' text is displayed on inline tip banner
 	When User clicks 'RELINK' button on popup
-	Then 'The Evergreen owner of this Device has been queued for onboarding into this project, the change in ownership for this Device will show once this is complete' text is displayed on inline success banner
+	Then 'Device successfully relinked' text is displayed on inline success banner
 	Then Details page for 'QSFCLB19N5524S' item is displayed to the user
 	And following content is displayed on the Details Page
 	| Title        | Value           |
@@ -36,13 +37,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
 	Then 'Device successfully relinked' text is displayed on inline success banner
-	When User navigates to the 'User' details page for 'ZHC394580' item
-	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
-	And User navigates to the 'Projects' left menu item
-	And User navigates to the 'Project Details' left submenu item
-	And User clicks 'OFFBOARD' button 
-	When User clicks 'OFFBOARD' button on popup
-	And User clicks 'OFFBOARD' button on popup
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @Relink @DAS18043 @DAS19884
 Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPagesAfterTheObjectWasSuccessfullyRelinked
