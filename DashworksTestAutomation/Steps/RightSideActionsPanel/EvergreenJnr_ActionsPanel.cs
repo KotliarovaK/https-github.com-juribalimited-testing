@@ -39,6 +39,8 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
             var button = _driver.NowAt<BaseHeaderElement>();
             Verify.IsTrue(button.ActionsButton.IsElementActive(),
                 "Action button is not active");
+
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [Then(@"Actions panel is not displayed to the user")]

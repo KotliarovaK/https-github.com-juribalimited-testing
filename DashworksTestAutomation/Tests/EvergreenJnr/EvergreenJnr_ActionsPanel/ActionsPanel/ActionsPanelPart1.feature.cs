@@ -583,6 +583,95 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListViaListPanel" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("DAS197462")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListViaListPanel()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListViaListPanelInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListViaListPanelInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListViaListPanel" +
+                    "", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_ActionsPanel",
+                        "DAS197462",
+                        "Cleanup"});
+#line 125
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table12.AddRow(new string[] {
+                        ""});
+#line 126
+testRunner.When("User create static list with \"FirstList197462\" name on \"Applications\" page with f" +
+                    "ollowing items", ((string)(null)), table12, "When ");
+#line 129
+testRunner.Then("\"FirstList197462\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table13.AddRow(new string[] {
+                        ""});
+#line 130
+testRunner.When("User create static list with \"SecondList197462\" name on \"Applications\" page with " +
+                    "following items", ((string)(null)), table13, "When ");
+#line 133
+testRunner.Then("\"SecondList197462\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 134
+testRunner.When("User clicks on \'Vendor\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 135
+testRunner.Then("data in table is sorted by \'Vendor\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 136
+testRunner.When("User clicks \'SAVE\' button and select \'ADD TO STATIC LIST\' menu button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 137
+testRunner.And("User selects \'FirstList197462\' in the \'Add to static list\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+testRunner.And("User clicks \'SAVE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+testRunner.Then("\"FirstList197462\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 140
+testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 141
+testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
