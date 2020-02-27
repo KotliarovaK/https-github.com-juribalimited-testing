@@ -66,14 +66,17 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForUpdatePage
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#
 	When User enters 'Text_Component_Name' text to 'Component Name' textbox
+	When User clicks Body container
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#
 	When User clears text editor
+	When User clicks Body container
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#
 	When User enters 'Some_Content' text to the text editor
+	When User clicks Body container
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#
