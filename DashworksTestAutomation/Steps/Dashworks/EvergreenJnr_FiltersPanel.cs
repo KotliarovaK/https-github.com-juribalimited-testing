@@ -1346,6 +1346,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.IsTrue(filterElement.AssociationSearchTextBox.Displayed(), "Associations panel is not displayed");
         }
 
+        [Then(@"Associations panel is not displayed to the user")]
+        public void ThenAssociationsPanelIsNotDisplayedToTheUser()
+        {
+            var rightSideActionsPanel = _driver.NowAt<BaseRightSideActionsPanel>();
+            Utils.Verify.IsFalse(rightSideActionsPanel.IsPanelOpened("Associations"), "Associations panel is displayed");
+        }
+
         [Then(@"""(.*)"" is displayed in added filter info")]
         public void ThenIsDisplayedInAddedFilterInfo(string text)
         {
