@@ -56,8 +56,6 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         [Then(@"'(.*)' message is displayed on Actions panel to the user")]
         public void ThenMessageIsDisplayedOnActionPanelToTheUser(string textMessage)
         {
-            _driver.WaitForDataLoadingInActionsPanel();
-
             var panel = _driver.NowAt<ActionsPanelElement>();
             Verify.IsTrue(panel.ActionsPanelMessage.GetText().Equals(textMessage),
                 $"'{textMessage}' message was not displayed");
