@@ -25,6 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
+            Driver.WaitForDataLoadingInActionsPanel();
             return new List<By>
             {
                 SelectorFor(this, p => p.ActionsPanel)
