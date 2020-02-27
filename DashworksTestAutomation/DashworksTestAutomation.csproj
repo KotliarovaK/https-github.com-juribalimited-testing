@@ -1023,6 +1023,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddTextComponentViaSelfServiceBuilder.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponentValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationOwnershipComponentValidation.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CreatePageViaBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2384,6 +2389,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddTextComponentViaSelfServiceBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddTextComponentViaSelfServiceBuilder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponentValidation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ApplicationOwnershipComponentValidation.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CreatePageViaBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
