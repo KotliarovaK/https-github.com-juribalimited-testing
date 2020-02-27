@@ -463,3 +463,15 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatThereIsNoEmptyOptionInInListFi
 		| List                     |
 		| User (Saved List)        |
 		| Application (Saved List) |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_UsersList @DAS19670
+Scenario: EvergreenJnr_UsersList_CheckAppCountFilter
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "App Count (Installed on Owned Device)" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 1      |
+	Then "App Count (Installed on Owned Device) is 1" is displayed in added filter info
+	Then "101" rows are displayed in the agGrid
