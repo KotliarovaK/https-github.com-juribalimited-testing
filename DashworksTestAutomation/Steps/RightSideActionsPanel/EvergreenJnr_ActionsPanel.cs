@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
 
             var panel = _driver.NowAt<ActionsPanelElement>();
             Verify.IsTrue(panel.ActionsPanelMessage.GetText().Equals(textMessage),
-                $"{textMessage} message was not displayed");
+                $"'{textMessage}' message was not displayed");
         }
 
         [When(@"User closes Actions panel")]
