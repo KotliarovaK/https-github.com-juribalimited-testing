@@ -152,3 +152,40 @@ Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGri
 	| Operation ID |
 	When User clicks content from "Scope" column
 	Then '2004 Rollout' list should be displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20065 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckFoundObjectsForRenamedAutomation
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Hostname" filter where type is "Equals" with added column and following value:
+	| Values         |
+	| 00I0COBFWHOF27 |
+	When User refreshes agGrid
+	When User create dynamic list with "20065_List" name on "Devices" page
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
+	| 20065_Automation | 20065       | true   | false              | 20065_List | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '20065_Action' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Replace single value' in the 'Update Values' dropdown
+	When User enters '0' text to 'Find Value' textbox
+	When User enters '1' text to 'Replace Value' textbox
+	When User clicks 'CREATE' button
+	#Run Automation
+	When User clicks 'Automations' header breadcrumb
+	When User enters "19003_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19003_Automation' item from 'Automation' column
+	When '19003_Automation' automation '19003_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User enters "19003_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	And User clicks content from "Objects" column
+	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Rationalisation' column
+	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Name' column
