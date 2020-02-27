@@ -849,6 +849,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Options are displayed in not in alphabetical order in the '{dropDownName}' dropdown");
         }
 
+        //This is not dropdown but autocomplete
         [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
         public void ThenErrorMessageIsDisplayedForDropdown(string errorMassage, string dropdown)
         {
