@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	#If the user does not enter a component name a hint is shown with the text: A component name must be entered
 	When User enters ' ' text to 'Component Name' textbox
 	Then 'Enter a component name' error message is displayed for 'Component Name' field
-	#Then '' content is displayed in 'Project' autocomplete
+	Then '' content is displayed in 'Project' autocomplete
 	#TODO update this part after 20114 will be implemented
 	#Then 'Project' autocomplete contains following options:
 	#| values         |
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	Then 'User Scope' autocomplete is displayed
 	When User checks 'Allow owner to be removed or set to another user' radio button
 	Then 'User Scope' autocomplete is displayed
-	#Then '' content is displayed in 'User Scope' autocomplete
+	Then '' content is displayed in 'User Scope' autocomplete
 	Then 'User Scope' autocomplete contains following options:
 	| values       |
 	| All Users    |
@@ -158,18 +158,21 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User clicks 'CREATE' button
 	#Update information
+	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	When User enters 'AOC_Updated Name' text to 'Component Name' textbox
 	#When User selects 'DAS_19909_Proj_Up' option from 'Project' autocomplete
 	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
-	Then 'DAS_19909_3' content is displayed in 'User Scope' autocomplete
+	When User selects 'DAS_19909_3' option from 'User Scope' autocomplete
 	When User checks 'Show this component' checkbox
 	When User clicks 'CANCEL' button
 	#Check that data is not updated
-	#Then 'DAS_19909_Proj_Up' content is displayed in 'Project' autocomplete
-	Then 'Windows 7 Migration (Computer Scheduled Project)' content is displayed in 'Project' autocomplete
+	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
+	Then 'AOC Name' content is displayed in 'Component Name' textbox
+	#Then 'DAS_19909_Proj' content is displayed in 'Project' autocomplete
+	Then 'User Evergreen Capacity Project' content is displayed in 'Project' autocomplete
 	Then 'Do not allow owner to be changed' radio button is checked
 	Then 'User Scope' autocomplete is not displayed
 	When User checks 'Allow owner to be set to another user only' radio button
-	#Then '' content is displayed in 'User Scope' autocomplete
+	Then '' content is displayed in 'User Scope' autocomplete
 	Then 'Show this component' checkbox is unchecked
