@@ -1119,6 +1119,311 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsListsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "API",
+                        "FiltersAndColumns",
+                        "DAS15899"});
+#line 365
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "value"});
+            table6.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ app date task"});
+            table6.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ app radiobutton task"});
+#line 366
+ testRunner.Then("the following filter subcategories are displayed for \'Project Tasks: DeviceSche\' " +
+                    "category on \'Applications\' page:", ((string)(null)), table6, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [NUnit.Framework.CategoryAttribute("DAS17727")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategoryInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategoryInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "API",
+                        "FiltersAndColumns",
+                        "DAS17727",
+                        "Not_Ready"});
+#line 372
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "value"});
+            table7.AddRow(new string[] {
+                        "Device CPU Architecture"});
+            table7.AddRow(new string[] {
+                        "Device CPU Speed (GHz)"});
+            table7.AddRow(new string[] {
+                        "Device Format"});
+            table7.AddRow(new string[] {
+                        "Device HDD Total Size (GB)"});
+            table7.AddRow(new string[] {
+                        "Device IP Address"});
+            table7.AddRow(new string[] {
+                        "Device IP v6 Address"});
+            table7.AddRow(new string[] {
+                        "Device Manufacturer"});
+            table7.AddRow(new string[] {
+                        "Device Memory (GB)"});
+            table7.AddRow(new string[] {
+                        "Device Model"});
+            table7.AddRow(new string[] {
+                        "Device Target Drive Free Space (GB)"});
+            table7.AddRow(new string[] {
+                        "Device TPM Enabled"});
+            table7.AddRow(new string[] {
+                        "Device TPM Version"});
+            table7.AddRow(new string[] {
+                        "Device Type"});
+            table7.AddRow(new string[] {
+                        "Device Virtual Machine Host"});
+#line 373
+ testRunner.Then("the following filter subcategories are displayed for \'Device Hardware\' category o" +
+                    "n \'Applications\' page:", ((string)(null)), table7, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcate" +
+            "gories")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS15194")]
+        [NUnit.Framework.CategoryAttribute("DAS17743")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcate" +
+                    "gories", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS15194",
+                        "DAS17743"});
+#line 391
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "value"});
+            table8.AddRow(new string[] {
+                        "Device Owner"});
+            table8.AddRow(new string[] {
+                        "Device Owner (Saved List)"});
+            table8.AddRow(new string[] {
+                        "Device Owner Common Name"});
+            table8.AddRow(new string[] {
+                        "Device Owner Compliance"});
+            table8.AddRow(new string[] {
+                        "Device Owner Description"});
+            table8.AddRow(new string[] {
+                        "Device Owner Directory Type"});
+            table8.AddRow(new string[] {
+                        "Device Owner Display Name"});
+            table8.AddRow(new string[] {
+                        "Device Owner Distinguished Name"});
+            table8.AddRow(new string[] {
+                        "Device Owner Domain"});
+            table8.AddRow(new string[] {
+                        "Device Owner Email Address"});
+            table8.AddRow(new string[] {
+                        "Device Owner Enabled"});
+            table8.AddRow(new string[] {
+                        "Device Owner Given Name"});
+            table8.AddRow(new string[] {
+                        "Device Owner GUID"});
+            table8.AddRow(new string[] {
+                        "Device Owner Home Directory"});
+            table8.AddRow(new string[] {
+                        "Device Owner Home Drive"});
+            table8.AddRow(new string[] {
+                        "Device Owner Key"});
+            table8.AddRow(new string[] {
+                        "Device Owner Last Logon Date"});
+            table8.AddRow(new string[] {
+                        "Device Owner Organizational Unit"});
+            table8.AddRow(new string[] {
+                        "Device Owner Parent Distinguished Name"});
+            table8.AddRow(new string[] {
+                        "Device Owner SID"});
+            table8.AddRow(new string[] {
+                        "Device Owner Surname"});
+            table8.AddRow(new string[] {
+                        "Device Owner Username"});
+#line 392
+ testRunner.Then("the following filter subcategories are displayed for \'Device Owner\' category on \'" +
+                    "Applications\' page:", ((string)(null)), table8, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "value"});
+            table9.AddRow(new string[] {
+                        "Device Owner Building"});
+            table9.AddRow(new string[] {
+                        "Device Owner City"});
+            table9.AddRow(new string[] {
+                        "Device Owner Country"});
+            table9.AddRow(new string[] {
+                        "Device Owner Floor"});
+            table9.AddRow(new string[] {
+                        "Device Owner Location Name"});
+            table9.AddRow(new string[] {
+                        "Device Owner Postal Code"});
+            table9.AddRow(new string[] {
+                        "Device Owner Region"});
+            table9.AddRow(new string[] {
+                        "Device Owner State/County"});
+#line 416
+ testRunner.Then("the following filter subcategories are displayed for \'Device Owner Location\' cate" +
+                    "gory on \'Applications\' page:", ((string)(null)), table9, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "value"});
+            table10.AddRow(new string[] {
+                        "Device Owner  Department Full Path"});
+            table10.AddRow(new string[] {
+                        "Device Owner Cost Centre"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Code"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Level 1"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Level 2"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Level 3"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Level 4"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Level 5"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Level 6"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Level 7"});
+            table10.AddRow(new string[] {
+                        "Device Owner Department Name"});
+#line 426
+ testRunner.Then("the following filter subcategories are displayed for \'Device Owner Organization\' " +
+                    "category on \'Applications\' page:", ((string)(null)), table10, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

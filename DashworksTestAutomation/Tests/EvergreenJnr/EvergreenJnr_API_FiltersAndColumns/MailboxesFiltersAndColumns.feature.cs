@@ -182,6 +182,83 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        public virtual void EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesListsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "API",
+                        "FiltersAndColumns",
+                        "DAS15899"});
+#line 18
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "value"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Completed"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Completed (Slot)"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Forecast"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Forecast (Slot)"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Migrated"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Migrated (Slot)"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Scheduled - mailbox"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Scheduled - mailbox (Slot)"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Target"});
+            table1.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Target (Slot)"});
+#line 19
+ testRunner.Then("the following filter subcategories are displayed for \'Project Tasks: MailboxEve\' " +
+                    "category on \'Mailboxes\' page:", ((string)(null)), table1, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

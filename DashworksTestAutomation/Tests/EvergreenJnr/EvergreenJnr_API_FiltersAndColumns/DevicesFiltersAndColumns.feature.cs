@@ -505,6 +505,95 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        public virtual void EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesListsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "API",
+                        "FiltersAndColumns",
+                        "DAS15899"});
+#line 87
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "value"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Completed Date"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Completed Date (Slot)"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Forecast Date"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Forecast Date (Slot)"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Group Task"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Group Task (Date)"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Group Task (Slot)"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Migrated Date"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Migrated Date (Slot)"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Scheduled Date"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Scheduled Date (Slot)"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Target Date"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Target Date (Slot)"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ radiobutton task"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ radiobutton task w/date"});
+            table5.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ radiobutton task w/date (Date)"});
+#line 88
+ testRunner.Then("the following filter subcategories are displayed for \'Project Tasks: DeviceSche\' " +
+                    "category on \'Devices\' page:", ((string)(null)), table5, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

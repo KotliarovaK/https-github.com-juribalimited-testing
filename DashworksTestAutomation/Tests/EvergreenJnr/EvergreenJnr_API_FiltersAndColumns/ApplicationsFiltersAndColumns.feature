@@ -360,3 +360,80 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Evergreen Target App Version    |
 	| Hide From End Users             |
 	| In Catalog                      |
+
+@Evergreen @Applications @API @FiltersAndColumns @DAS15899
+Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists
+	Then the following filter subcategories are displayed for 'Project Tasks: DeviceSche' category on 'Applications' page:
+	| value                                      |
+	| DeviceSche: Stage 2 \ app date task        |
+	| DeviceSche: Stage 2 \ app radiobutton task |
+
+@Evergreen @Applications @API @FiltersAndColumns @DAS17727 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory
+	Then the following filter subcategories are displayed for 'Device Hardware' category on 'Applications' page:
+	| value                               |
+	| Device CPU Architecture             |
+	| Device CPU Speed (GHz)              |
+	| Device Format                       |
+	| Device HDD Total Size (GB)          |
+	| Device IP Address                   |
+	| Device IP v6 Address                |
+	| Device Manufacturer                 |
+	| Device Memory (GB)                  |
+	| Device Model                        |
+	| Device Target Drive Free Space (GB) |
+	| Device TPM Enabled                  |
+	| Device TPM Version                  |
+	| Device Type                         |
+	| Device Virtual Machine Host         |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194 @DAS17743
+Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories
+	Then the following filter subcategories are displayed for 'Device Owner' category on 'Applications' page:
+	| value                                  |
+	| Device Owner                           |
+	| Device Owner (Saved List)              |
+	| Device Owner Common Name               |
+	| Device Owner Compliance                |
+	| Device Owner Description               |
+	| Device Owner Directory Type            |
+	| Device Owner Display Name              |
+	| Device Owner Distinguished Name        |
+	| Device Owner Domain                    |
+	| Device Owner Email Address             |
+	| Device Owner Enabled                   |
+	| Device Owner Given Name                |
+	| Device Owner GUID                      |
+	| Device Owner Home Directory            |
+	| Device Owner Home Drive                |
+	| Device Owner Key                       |
+	| Device Owner Last Logon Date           |
+	| Device Owner Organizational Unit       |
+	| Device Owner Parent Distinguished Name |
+	| Device Owner SID                       |
+	| Device Owner Surname                   |
+	| Device Owner Username                  |
+	Then the following filter subcategories are displayed for 'Device Owner Location' category on 'Applications' page:
+	| value                      |
+	| Device Owner Building      |
+	| Device Owner City          |
+	| Device Owner Country       |
+	| Device Owner Floor         |
+	| Device Owner Location Name |
+	| Device Owner Postal Code   |
+	| Device Owner Region        |
+	| Device Owner State/County  |
+	Then the following filter subcategories are displayed for 'Device Owner Organization' category on 'Applications' page:
+	| value                              |
+	| Device Owner  Department Full Path |
+	| Device Owner Cost Centre           |
+	| Device Owner Department            |
+	| Device Owner Department Code       |
+	| Device Owner Department Level 1    |
+	| Device Owner Department Level 2    |
+	| Device Owner Department Level 3    |
+	| Device Owner Department Level 4    |
+	| Device Owner Department Level 5    |
+	| Device Owner Department Level 6    |
+	| Device Owner Department Level 7    |
+	| Device Owner Department Name       |
