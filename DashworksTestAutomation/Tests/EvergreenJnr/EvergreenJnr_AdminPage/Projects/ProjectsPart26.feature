@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAppOwnersSectionIsDisabledWhenDoNotInc
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	When User clicks 'Do not include users' radio button
+	When User checks 'Do not include users' radio button
 	Then 'Do not include app owners' radio button is disabled
 	Then 'Include app owners' radio button is disabled
 
