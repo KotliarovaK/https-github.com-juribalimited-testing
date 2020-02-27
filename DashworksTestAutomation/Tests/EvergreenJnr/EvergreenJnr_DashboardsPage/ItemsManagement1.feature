@@ -21,36 +21,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	Then Print Preview is displayed in 'A4' format and 'Landscape' layout view
 	When User clicks Cancel button on the Print Preview Settings pop-up
 
-@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @DAS14618
-Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
-	When User clicks 'Edit mode' slide toggle
-	And User clicks 'ADD SECTION' button 
-	And User clicks Ellipsis menu for 'Top 10 App Vendors' Widget on Dashboards page
-	Then User sees following Ellipsis menu items on Dashboards page:
-	| items            |
-	| Edit             |
-	| Duplicate        |
-	| Move to start    |
-	| Move to end      |
-	| Move to position |
-	| Move to section  |
-	| Delete           |
-
-@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358
-Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
-	When User clicks 'Edit mode' slide toggle
-	And User clicks 'ADD SECTION' button 
-	And User clicks Ellipsis menu for Section having 'Operating System' Widget on Dashboards page
-	Then User sees following Ellipsis menu items on Dashboards page:
-	| items            |
-	| Edit             |
-	| Hide             |
-	| Duplicate        |
-	| Move to top      |
-	| Move to bottom   |
-	| Move to position |
-	| Delete           |
-
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14358 @DAS12989 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIntoSameSection
 	When Dashboard with 'Dashboard for DAS12989' name created via API and opened
@@ -190,7 +160,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	Then User sees Ellipsis icon disabled for 'WidgetForDAS12977' Widget on Dashboards page
 	When User clicks the Dashboard Details button
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @DAS14358 @DAS14618 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
 	When Dashboard with 'Dashboard for DAS14583' name created via API and opened
 	When User clicks 'Edit mode' slide toggle
@@ -206,7 +176,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 	When User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | false      |
+	When User clicks 'ADD SECTION' button 
+	When User clicks Ellipsis menu for Section having 'WidgetForDAS14583_3' Widget on Dashboards page
+	Then User sees following Ellipsis menu items on Dashboards page:
+	| items            |
+	| Edit             |
+	| Hide             |
+	| Duplicate        |
+	| Move to top      |
+	| Move to bottom   |
+	| Move to position |
+	| Delete           |
+	When User clicks Body container
 	When User clicks Ellipsis menu for 'WidgetForDAS14583_3' Widget on Dashboards page
+	Then User sees following Ellipsis menu items on Dashboards page:
+	| items            |
+	| Edit             |
+	| Duplicate        |
+	| Move to start    |
+	| Move to end      |
+	| Move to position |
+	| Move to section  |
+	| Delete           |
 	When User clicks 'Move to start' item from Ellipsis menu on Dashboards page
 	When User clicks Ellipsis menu for 'WidgetForDAS14583_3' Widget on Dashboards page
 	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
