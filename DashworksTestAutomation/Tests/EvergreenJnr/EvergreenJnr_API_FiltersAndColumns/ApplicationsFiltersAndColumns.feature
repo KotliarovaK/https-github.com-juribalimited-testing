@@ -368,7 +368,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplication
 	| DeviceSche: Stage 2 \ app date task        |
 	| DeviceSche: Stage 2 \ app radiobutton task |
 
-@Evergreen @Applications @API @FiltersAndColumns @DAS17727 @Not_Ready
+@Evergreen @Applications @API @FiltersAndColumns @DAS17727
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory
 	Then the following filter subcategories are displayed for 'Device Hardware' category on 'Applications' page:
 	| value                               |
@@ -387,7 +387,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareC
 	| Device Type                         |
 	| Device Virtual Machine Host         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194 @DAS17743
+@Evergreen @Applications @API @FiltersAndColumns @DAS15194 @DAS17743
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories
 	Then the following filter subcategories are displayed for 'Device Owner' category on 'Applications' page:
 	| value                                  |

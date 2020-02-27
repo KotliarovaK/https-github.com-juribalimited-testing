@@ -1188,7 +1188,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         [NUnit.Framework.CategoryAttribute("DAS17727")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory()
         {
             System.Exception lastException = null;
@@ -1222,8 +1221,7 @@ this.FeatureBackground();
                         "Applications",
                         "API",
                         "FiltersAndColumns",
-                        "DAS17727",
-                        "Not_Ready"});
+                        "DAS17727"});
 #line 372
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1273,8 +1271,8 @@ this.FeatureBackground();
             "gories")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         [NUnit.Framework.CategoryAttribute("DAS15194")]
         [NUnit.Framework.CategoryAttribute("DAS17743")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories()
@@ -1309,8 +1307,8 @@ this.FeatureBackground();
                     "gories", null, new string[] {
                         "Evergreen",
                         "Applications",
-                        "Evergreen_FiltersFeature",
-                        "FiltersDisplay",
+                        "API",
+                        "FiltersAndColumns",
                         "DAS15194",
                         "DAS17743"});
 #line 391
