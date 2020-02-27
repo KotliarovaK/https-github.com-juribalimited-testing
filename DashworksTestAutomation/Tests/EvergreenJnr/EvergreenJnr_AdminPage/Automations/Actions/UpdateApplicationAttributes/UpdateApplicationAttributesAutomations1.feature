@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When User create dynamic list with "19003_List" name on "Applications" page
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 19003_Automation1 | 19003       | true   | false              | 19003_List | Manual |
+	| 19003_Automation1 | test_19003  | true   | false              | 19003_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -117,8 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User clicks 'UPDATE ALL CHANGES' button 
 	When User clicks 'UPDATE PROJECT' button 
 	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
-	#Wait for onboarding objects
-	When User waits for '10' seconds
+	When User waits until Queue disappears
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
@@ -157,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then No error message is displayed for 'Project or Evergreen' field
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatTargetApplicationNotFoundIsNotDisplayedOnEditActionPage
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |

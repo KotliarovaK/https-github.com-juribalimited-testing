@@ -503,7 +503,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19629")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergreen()
         {
             System.Exception lastException = null;
@@ -537,8 +536,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19629",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 137
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -592,8 +590,8 @@ this.FeatureBackground();
 #line 155
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 156
- testRunner.When("User enters \'Starbase CodeWright\' in the \'Target Application\' autocomplete field " +
-                    "and selects \'Starbase CodeWright 6.0BETA (107)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'Starbase Cosmic\' in the \'Target Application\' autocomplete field and " +
+                    "selects \'Starbase Cosmic CodeWright Integrator (11)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 157
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 159
@@ -640,8 +638,8 @@ this.FeatureBackground();
 #line 179
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 180
- testRunner.When("User enters \'Starbase CodeWright\' in the \'Target Application\' autocomplete field " +
-                    "and selects \'Starbase CodeWright 6.0BETA (107)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'Starbase CodeWright \' in the \'Target Application\' autocomplete field" +
+                    " and selects \'Starbase CodeWright 6.0BETA (107)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 181
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 182

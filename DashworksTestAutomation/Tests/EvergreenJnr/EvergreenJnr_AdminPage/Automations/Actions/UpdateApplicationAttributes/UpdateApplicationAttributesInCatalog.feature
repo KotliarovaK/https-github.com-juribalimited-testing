@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogSavingAndRestor
 	Then 'FALSE' value is displayed in the 'In Catalog' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19629 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19629 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergreen
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Starbase CodeWright' in the 'Target Application' autocomplete field and selects 'Starbase CodeWright 6.0BETA (107)' value
+	When User enters 'Starbase Cosmic' in the 'Target Application' autocomplete field and selects 'Starbase Cosmic CodeWright Integrator (11)' value
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	When User clicks content from "Action" column
 	When User selects 'zUser Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Starbase CodeWright' in the 'Target Application' autocomplete field and selects 'Starbase CodeWright 6.0BETA (107)' value
+	When User enters 'Starbase CodeWright ' in the 'Target Application' autocomplete field and selects 'Starbase CodeWright 6.0BETA (107)' value
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19629_Automation" text in the Search field for "Automation" column
