@@ -200,6 +200,103 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheRingField" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS17144")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Void")]
+        public virtual void EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheRingField()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheRingFieldInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheRingFieldInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheRingField" +
+                    "", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS17144",
+                        "Cleanup",
+                        "Void"});
+#line 39
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Email",
+                        "FullName",
+                        "Password",
+                        "Roles"});
+            table4.AddRow(new string[] {
+                        "UserDAS17144",
+                        "Value",
+                        "DAS17144",
+                        "m!gration",
+                        "Project Computer Object Editor"});
+#line 40
+ testRunner.When("User create new User via API", ((string)(null)), table4, "When ");
+#line 43
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Password"});
+            table5.AddRow(new string[] {
+                        "UserDAS17144",
+                        "m!gration"});
+#line 44
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table5, "When ");
+#line 47
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 48
+ testRunner.When("User navigates to the \'Device\' details page for \'CDBR7TV3Y9T2ITS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
+ testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 50
+ testRunner.When("User selects \'2004 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 51
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 52
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.Then("arrow for editing the \'Ring\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
