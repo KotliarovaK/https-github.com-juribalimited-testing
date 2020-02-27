@@ -42,106 +42,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 		| User Application Compliance   |
 		| User Key                      |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
-Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	And User closes "Suggested" filter category
-	And User expands "Project Tasks: DeviceSche" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories                                        |
-		| DeviceSche: Stage 1 \ Completed Date                 |
-		| DeviceSche: Stage 1 \ Completed Date (Slot)          |
-		| DeviceSche: Stage 1 \ Forecast Date                  |
-		| DeviceSche: Stage 1 \ Forecast Date (Slot)           |
-		| DeviceSche: Stage 1 \ Group Task                     |
-		| DeviceSche: Stage 1 \ Group Task (Date)              |
-		| DeviceSche: Stage 1 \ Group Task (Slot)              |
-		| DeviceSche: Stage 1 \ Migrated Date                  |
-		| DeviceSche: Stage 1 \ Migrated Date (Slot)           |
-		| DeviceSche: Stage 1 \ Scheduled Date                 |
-		| DeviceSche: Stage 1 \ Scheduled Date (Slot)          |
-		| DeviceSche: Stage 1 \ Target Date                    |
-		| DeviceSche: Stage 1 \ Target Date (Slot)             |
-		| DeviceSche: Stage 2 \ radiobutton task               |
-		| DeviceSche: Stage 2 \ radiobutton task w/date        |
-		| DeviceSche: Stage 2 \ radiobutton task w/date (Date) |
-
-  @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
-Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
-	When User clicks 'Users' on the left-hand menu
-	Then 'All Users' list should be displayed to the user
-	When User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	And User closes "Suggested" filter category
-	And User expands "Project Tasks: DeviceSche" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories                               |
-		| DeviceSche: Stage 2 \ user DDL task         |
-		| DeviceSche: Stage 2 \ user radiobutton task |
-		| DeviceSche: Stage 2 \ user text task        |
-
- @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
-Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	And User closes "Suggested" filter category
-	And User expands "Project Tasks: DeviceSche" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories                              |
-		| DeviceSche: Stage 2 \ app date task        |
-		| DeviceSche: Stage 2 \ app radiobutton task |
-
-   @Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
-Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
-	When User clicks 'Mailboxes' on the left-hand menu
-	Then 'All Mailboxes' list should be displayed to the user
-	When User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	And User closes "Suggested" filter category
-	And User expands "Project Tasks: MailboxEve" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories                              |
-		| MailboxEve: 1 \ Completed                  |
-		| MailboxEve: 1 \ Completed (Slot)           |
-		| MailboxEve: 1 \ Forecast                   |
-		| MailboxEve: 1 \ Forecast (Slot)            |
-		| MailboxEve: 1 \ Migrated                   |
-		| MailboxEve: 1 \ Migrated (Slot)            |
-		| MailboxEve: 1 \ Scheduled - mailbox        |
-		| MailboxEve: 1 \ Scheduled - mailbox (Slot) |
-		| MailboxEve: 1 \ Target                     |
-		| MailboxEve: 1 \ Target (Slot)              |
-
- @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS17727 @Not_Ready
-Scenario: EvergreenJnr_ApplicationsList_CheckThatOrderOfFiltersInDeviceHardwareCategory
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	And User closes "Suggested" filter category
-	And User expands "Device Hardware" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories                       |
-		| Device CPU Architecture             |
-		| Device CPU Speed (GHz)              |
-		| Device Format                       |
-		| Device HDD Total Size (GB)          |
-		| Device IP Address                   |
-		| Device IP v6 Address                |
-		| Device Manufacturer                 |
-		| Device Memory (GB)                  |
-		| Device Model                        |
-		| Device Target Drive Free Space (GB) |
-		| Device TPM Enabled                  |
-		| Device TPM Version                  |
-		| Device Type                         |
-		| Device Virtual Machine Host         |
-
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
 Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList
 	When User clicks 'Devices' on the left-hand menu
@@ -177,102 +77,40 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsM
 		| Subcategories                     |
 		| EmailMigra: Application Readiness |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194 @DAS17743
-Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerFilterCategoryHasCorrectSubcategories
-	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
-	When User clicks the Filters button
-	And User clicks Add New button on the Filter panel
-	And User enters "Device Owner" text in Search field at Filters Panel
-	And User closes all filters categories
-	And User expands "Device Owner" filter category
-	Then the following Filters subcategories are presented for open category:
-		| Subcategories                          |
-		| Device Owner (Saved List)              |
-		| Device Owner                           |
-		| Device Owner Common Name               |
-		| Device Owner Compliance                |
-		| Device Owner Compliance                |
-		| Device Owner Description               |
-		| Device Owner Directory Type            |
-		| Device Owner Display Name              |
-		| Device Owner Distinguished Name        |
-		| Device Owner Domain                    |
-		| Device Owner Email Address             |
-		| Device Owner Enabled                   |
-		| Device Owner Given Name                |
-		| Device Owner GUID                      |
-		| Device Owner Home Directory            |
-		| Device Owner Home Drive                |
-		| Device Owner Key                       |
-		| Device Owner Last Logon Date           |
-		| Device Owner Organisational Unit       |
-		| Device Owner Parent Distinguished Name |
-		| Device Owner SID                       |
-		| Device Owner Surname                   |
-		| Device Owner Username                  |
-	When User collapses 'Device Owner' category
-	And User expands "Device Owner Location" filter category
-	Then the following Filters subcategories are presented for open category:
-		| Subcategories              |
-		| Device Owner Building      |
-		| Device Owner City          |
-		| Device Owner Country       |
-		| Device Owner Floor         |
-		| Device Owner Region        |
-		| Device Owner Location Name |
-		| Device Owner Postal Code   |
-		| Device Owner State/County  |
-	When User collapses 'Device Owner Location' category
-	And User expands "Device Owner Organisation" filter category
-	Then the following Filters subcategories are presented for open category:
-		| Subcategories                     |
-		| Device Owner Cost Centre          |
-		| Device Owner Department Code      |
-		| Device Owner Department           |
-		| Device Owner Department Full Path |
-		| Device Owner Department Level 1   |
-		| Device Owner Department Level 2   |
-		| Device Owner Department Level 3   |
-		| Device Owner Department Level 4   |
-		| Device Owner Department Level 5   |
-		| Device Owner Department Level 6   |
-		| Device Owner Department Level 7   |
-		| Device Owner Department Name      |
-	When User collapses 'Device Owner Organisation' category
-	And User expands "Device Owner Custom Fields" filter category
-	Then the following Filters subcategories are presented for open category:
-		| Subcategories                            |
-		| Device Owner General information field 1 |
-		| Device Owner General information field 2 |
-		| Device Owner General information field 3 |
-		| Device Owner General information field 4 |
-		| Device Owner General information field 5 |
-		| Device Owner Telephone                   |
-		| Device Owner User Field 1                |
-		| Device Owner User Field 2                |
-		| Device Owner Zip Code                    |
-	When User clears search textbox in Filters panel
-	And User enters "Device Owner R" text in Search field at Filters Panel
-	Then the following Filters subcategories are presented for open category:
-		| Subcategories       |
-		| Device Owner Region |
-	When User clears search textbox in Filters panel
-	And User enters "Device Owner S" text in Search field at Filters Panel
-	Then the following Filters subcategories are presented for open category:
-		| Subcategories        |
-		| Device Owner SID     |
-		| Device Owner Surname |
-	When User clears search textbox in Filters panel
-	And User enters "Device Owner U" text in Search field at Filters Panel
-	Then the following Filters subcategories are presented for open category:
-		| Subcategories         |
-		| Device Owner Username |
-	When User clears search textbox in Filters panel
-	And User enters "Device Owner D" text in Search field at Filters Panel
-	Then the following Filters subcategories are presented for open category:
-		| Subcategories           |
-		| Device Owner Department |
+#sz: continues to move them to api
+	#When User expands "Device Owner Custom Fields" filter category
+	#Then the following Filters subcategories are presented for open category:
+	#	| Subcategories                            |
+	#	| Device Owner General information field 1 |
+	#	| Device Owner General information field 2 |
+	#	| Device Owner General information field 3 |
+	#	| Device Owner General information field 4 |
+	#	| Device Owner General information field 5 |
+	#	| Device Owner Telephone                   |
+	#	| Device Owner User Field 1                |
+	#	| Device Owner User Field 2                |
+	#	| Device Owner Zip Code                    |
+	#When User clears search textbox in Filters panel
+	#And User enters "Device Owner R" text in Search field at Filters Panel
+	#Then the following Filters subcategories are presented for open category:
+	#	| Subcategories       |
+	#	| Device Owner Region |
+	#When User clears search textbox in Filters panel
+	#And User enters "Device Owner S" text in Search field at Filters Panel
+	#Then the following Filters subcategories are presented for open category:
+	#	| Subcategories        |
+	#	| Device Owner SID     |
+	#	| Device Owner Surname |
+	#When User clears search textbox in Filters panel
+	#And User enters "Device Owner U" text in Search field at Filters Panel
+	#Then the following Filters subcategories are presented for open category:
+	#	| Subcategories         |
+	#	| Device Owner Username |
+	#When User clears search textbox in Filters panel
+	#And User enters "Device Owner D" text in Search field at Filters Panel
+	#Then the following Filters subcategories are presented for open category:
+	#	| Subcategories           |
+	#	| Device Owner Department |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15194
 Scenario: EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomFieldsFilterCategoryHasCorrectSubcategories

@@ -78,7 +78,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	Then 'You can not delete the default bucket' text is not displayed on warning inline tip banner
 	Then 'This bucket will be permanently deleted and any objects within it reassigned to the default bucket' text is displayed on inline tip banner
 
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12331 @Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfterSwitchingFocusToAnotherBucket 
 	When User creates new Bucket via api

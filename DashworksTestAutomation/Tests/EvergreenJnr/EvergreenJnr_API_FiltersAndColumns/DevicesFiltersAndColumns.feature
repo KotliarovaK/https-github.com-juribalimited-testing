@@ -82,3 +82,24 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFi
 	| Category                  | Filter                   |
 	| Organisation              | Department               |
 	| Device Owner Organisation | Owner Department Level 1 |
+
+@Evergreen @Devices @API @FiltersAndColumns @DAS15899
+Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
+	Then the following filter subcategories are displayed for 'Project Tasks: DeviceSche' category on 'Devices' page:
+	| value                                                |
+	| DeviceSche: Stage 1 \ Completed Date                 |
+	| DeviceSche: Stage 1 \ Completed Date (Slot)          |
+	| DeviceSche: Stage 1 \ Forecast Date                  |
+	| DeviceSche: Stage 1 \ Forecast Date (Slot)           |
+	| DeviceSche: Stage 1 \ Group Task                     |
+	| DeviceSche: Stage 1 \ Group Task (Date)              |
+	| DeviceSche: Stage 1 \ Group Task (Slot)              |
+	| DeviceSche: Stage 1 \ Migrated Date                  |
+	| DeviceSche: Stage 1 \ Migrated Date (Slot)           |
+	| DeviceSche: Stage 1 \ Scheduled Date                 |
+	| DeviceSche: Stage 1 \ Scheduled Date (Slot)          |
+	| DeviceSche: Stage 1 \ Target Date                    |
+	| DeviceSche: Stage 1 \ Target Date (Slot)             |
+	| DeviceSche: Stage 2 \ radiobutton task               |
+	| DeviceSche: Stage 2 \ radiobutton task w/date        |
+	| DeviceSche: Stage 2 \ radiobutton task w/date (Date) |

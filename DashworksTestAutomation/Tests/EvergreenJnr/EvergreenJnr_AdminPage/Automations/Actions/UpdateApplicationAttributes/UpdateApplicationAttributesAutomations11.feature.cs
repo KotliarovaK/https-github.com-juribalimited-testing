@@ -284,7 +284,7 @@ this.FeatureBackground();
                         "Run"});
             table4.AddRow(new string[] {
                         "19003_Automation1",
-                        "19003",
+                        "test_19003",
                         "true",
                         "false",
                         "19003_List",
@@ -563,7 +563,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19690")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckThatTargetApplicationNotFoundIsNotDisplayedOnEditActionPage()
         {
             System.Exception lastException = null;
@@ -598,8 +597,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19690",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 160
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
