@@ -60,6 +60,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRenamingAListWorkingCorrectlyFo
 	When User selects 'OwnerForDAS10880' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	Then Edit List menu is not displayed
+	When User clicks the Logout button
+	When User is logged in to the Evergreen as
+	| Username         | Password  |
+	| OwnerForDAS10880 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User lists were removed by API
 
 Examples:
 	| PageName     | ItemName                                |
