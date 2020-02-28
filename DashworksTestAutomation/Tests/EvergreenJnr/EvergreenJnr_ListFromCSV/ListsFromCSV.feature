@@ -23,8 +23,7 @@ Examples:
 	| Applications | All Applications | Import Applications from CSV | Application key |
 	| Mailboxes    | All Mailboxes    | Import Mailboxes from CSV    | Mailbox key     |
 
-@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS16616 @DAS16585 @DAS18336 @Not_Ready
-#Waiting for 'List from CSV' on the automation
+@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS16616 @DAS16585 @DAS18336 @Void
 Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -34,10 +33,9 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	Then 'All Devices' list should be displayed to the user
 	When User selects 'List from CSV' in the 'Create' dropdown
 	When User selects "IncorrectFile.zip" file to upload on Import Lists from CSV page
-	#Check error message
 	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
 	Then 'File has headers' checkbox is unchecked
-	Then 'Include archived applications' checkbox is unchecked
+	Then 'Include archived devices' checkbox is unchecked
 	When User selects 'Hostname' in the 'File Contains' dropdown
 	Then 'NEXT' button is not disabled
 	When User clicks 'CANCEL' button 
@@ -47,3 +45,20 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	Then popup is displayed to User
 	When User clicks 'YES' button on popup
 	Then 'All Devices' list should be displayed to the user
+
+@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS18451 @Void
+Scenario: EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFromCSV
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User selects 'List from CSV' in the 'Create' dropdown
+	Then "Import Devices from CSV" Import page is displayed to the User
+	When User clicks 'CANCEL' button 
+	Then 'All Devices' list should be displayed to the user
+	When User selects 'List from CSV' in the 'Create' dropdown
+	When User selects "IncorrectFile.zip" file to upload on Import Lists from CSV page
+	When User selects state 'true' for 'File has headers' checkbox
+	When User selects state 'true' for 'Include archived devices' checkbox
+	When User selects 'Hostname' in the 'File Contains' dropdown
+	Then 'NEXT' button is not disabled
+	When User clicks 'NEXT' button 
+	Then 'Selected file is not in a valid format' text is displayed on inline error banner
