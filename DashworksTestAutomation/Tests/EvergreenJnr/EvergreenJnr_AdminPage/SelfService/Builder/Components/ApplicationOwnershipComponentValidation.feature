@@ -225,7 +225,8 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdatedButtonValidation
 	Then 'UPDATED' button is disabled
 	Then 'UPDATED' button has tooltip with 'No changes made' text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
+	#Sould be updated after DAS-20114 implementation
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWasRemoved
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
