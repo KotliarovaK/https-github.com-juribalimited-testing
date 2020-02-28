@@ -121,7 +121,13 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	#When User selects 'DAS_19910_Proj_3' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
+	#Check that use is not able to create AOC with broken list
 	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
+	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
+	Then 'CREATE' button is disabled
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	#Check that use is not able to create AOC with list with missed columns
+	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
 	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
