@@ -378,7 +378,8 @@ this.FeatureBackground();
 #line 89
  testRunner.Then("\'[List not found]\' content is displayed in \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 90
- testRunner.Then("\'ADD ERROR MESSAGE\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected list cannot be found\' error message is displayed for \'User Scope\' f" +
+                    "ield", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 91
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 92
@@ -618,7 +619,7 @@ this.FeatureBackground();
                         "ProjectTemplate",
                         "Mode"});
             table16.AddRow(new string[] {
-                        "DAS_19910_Proj_3",
+                        "DAS_19910_Proj_4",
                         "All Users",
                         "None",
                         "Standalone Project"});
@@ -795,6 +796,146 @@ this.FeatureBackground();
  testRunner.Then("\'UPDATED\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 226
  testRunner.Then("\'UPDATED\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWasRemoved")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS19910")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWasRemoved()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWasRemovedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWasRemovedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWasRemoved", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS19910",
+                        "Cleanup"});
+#line 229
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ProjectName",
+                        "Scope",
+                        "ProjectTemplate",
+                        "Mode"});
+            table23.AddRow(new string[] {
+                        "DAS_19910_Proj_5",
+                        "All Users",
+                        "None",
+                        "Standalone Project"});
+#line 230
+ testRunner.When("Project created via API", ((string)(null)), table23, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table24.AddRow(new string[] {
+                        ""});
+#line 233
+ testRunner.When("User create static list with \"DAS_19910_2\" name on \"Applications\" page with follo" +
+                    "wing items", ((string)(null)), table24, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table25.AddRow(new string[] {
+                        ""});
+#line 236
+ testRunner.When("User create static list with \"DAS_19910_22\" name on \"Users\" page with following i" +
+                    "tems", ((string)(null)), table25, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "ServiceIdentifier",
+                        "Enabled",
+                        "AllowAnonymousUsers",
+                        "Scope"});
+            table26.AddRow(new string[] {
+                        "DAS_19910_SS_5",
+                        "19910_5_SI",
+                        "true",
+                        "true",
+                        "DAS_19910_5"});
+#line 239
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table26, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ServiceIdentifier",
+                        "Name",
+                        "DisplayName",
+                        "ShowInSelfService"});
+            table27.AddRow(new string[] {
+                        "19910_5_SI",
+                        "TestPageSs1",
+                        "DAS_19910_Page_1",
+                        "true"});
+            table27.AddRow(new string[] {
+                        "19910_5_SI",
+                        "TestPageSs2",
+                        "DAS_19910_Page_2",
+                        "true"});
+#line 242
+ testRunner.When("User creates new Self Service Page via API", ((string)(null)), table27, "When ");
+#line 246
+ testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 247
+ testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs1\' name o" +
+                    "n Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 248
+ testRunner.When("User clicks on \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 249
+ testRunner.When("User clicks \'ADD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 251
+ testRunner.When("User enters \'AOC Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 253
+ testRunner.When("User selects \'DAS_19910_Proj_5\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 254
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 256
+ testRunner.When("Projects created by User are removed via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 257
+ testRunner.When("User selects \'Edit\' cogmenu option for \'Application Ownership\' item type with \'AO" +
+                    "C Name\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 258
+ testRunner.Then("\'[Project not found]\' content is displayed in \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 259
+ testRunner.Then("\'The selected project cannot be found\' error message is displayed for \'User Scope" +
+                    "\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
