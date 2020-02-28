@@ -18,8 +18,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder.
             _driver = driver;
         }
 
-        [Then(@"following fields to display are displayed on app ownership component page")]
-        public void ThenFollowingFieldsToDisplayAreDisplayedOnAppOwnershipComponentPage(Table table)
+        [Then(@"following fields to display are displayed on application ownership component page")]
+        public void ThenFollowingFieldsToDisplayAreDisplayedOnApplicationOwnershipComponentPage(Table table)
         {
             var page = _driver.NowAt<AppOwnershipComponentPage>();
             var expectedFieldsToDisplay = table.Rows.Select(x => x.Values.First()).ToList();

@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;

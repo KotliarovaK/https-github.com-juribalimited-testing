@@ -251,7 +251,8 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Display Name"});
 #line 56
- testRunner.Then("following fields to display are displayed on app ownership component page", ((string)(null)), table7, "Then ");
+ testRunner.Then("following fields to display are displayed on application ownership component page" +
+                    "", ((string)(null)), table7, "Then ");
 #line 61
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 62

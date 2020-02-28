@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	| All Users    |
 	| DAS_20019_11 |
 	Then 'User Scope' autocomplete first option is 'All Users'
-	Then following fields to display are displayed on app ownership component page
+	Then following fields to display are displayed on application ownership component page
 	| fields          |
 	| Username (User) |
 	| Domain          |

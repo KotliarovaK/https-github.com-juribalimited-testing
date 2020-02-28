@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
+namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components
 {
     public class SelfServiceTextComponents
     {
