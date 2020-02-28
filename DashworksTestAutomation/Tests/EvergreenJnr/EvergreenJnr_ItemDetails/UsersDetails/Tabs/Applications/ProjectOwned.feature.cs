@@ -84,7 +84,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("UsersDetails")]
+        [NUnit.Framework.CategoryAttribute("ApplicationsTab")]
         [NUnit.Framework.CategoryAttribute("DAS17808")]
         [NUnit.Framework.CategoryAttribute("DAS18408")]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly()
@@ -119,7 +120,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
+                        "UsersDetails",
+                        "ApplicationsTab",
                         "DAS17808",
                         "DAS18408"});
 #line 9
@@ -201,7 +203,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("UsersDetails")]
+        [NUnit.Framework.CategoryAttribute("ApplicationsTab")]
         [NUnit.Framework.CategoryAttribute("DAS18700")]
         public virtual void EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrectlyOnProjectOwnedTab()
         {
@@ -236,7 +239,8 @@ this.FeatureBackground();
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
+                        "UsersDetails",
+                        "ApplicationsTab",
                         "DAS18700"});
 #line 41
 this.ScenarioInitialize(scenarioInfo);
@@ -283,7 +287,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("UsersDetails")]
+        [NUnit.Framework.CategoryAttribute("ApplicationsTab")]
         [NUnit.Framework.CategoryAttribute("DAS18743")]
         public virtual void EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCorrectly()
         {
@@ -317,7 +322,8 @@ this.FeatureBackground();
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
+                        "UsersDetails",
+                        "ApplicationsTab",
                         "DAS18743"});
 #line 57
 this.ScenarioInitialize(scenarioInfo);
@@ -354,7 +360,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("UsersDetails")]
+        [NUnit.Framework.CategoryAttribute("ApplicationsTab")]
         [NUnit.Framework.CategoryAttribute("DAS19321")]
         public virtual void EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject()
         {
@@ -389,7 +396,8 @@ this.FeatureBackground();
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
+                        "UsersDetails",
+                        "ApplicationsTab",
                         "DAS19321"});
 #line 69
 this.ScenarioInitialize(scenarioInfo);
@@ -415,6 +423,78 @@ this.FeatureBackground();
 #line 77
  testRunner.Then("\'Vertigo Managed Smart Documents Wrapper (SMS_GEN)\' content is displayed in the \'" +
                     "Current App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutAName")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("UsersDetails")]
+        [NUnit.Framework.CategoryAttribute("ApplicationsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS20047")]
+        [NUnit.Framework.CategoryAttribute("DAS20088")]
+        public virtual void EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutAName()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutAName", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ItemDetails",
+                        "UsersDetails",
+                        "ApplicationsTab",
+                        "DAS20047",
+                        "DAS20088"});
+#line 80
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 81
+ testRunner.When("User navigates to the \'User\' details page for the item with \'573\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 82
+ testRunner.Then("Details page for \'CVS3269200\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+ testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
+                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 84
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 85
+ testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 86
+ testRunner.Then("\'Empty\' content is displayed in the \'Current App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 87
+ testRunner.When("User clicks \"Empty\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.Then("Details page for \'CVS3269200\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
