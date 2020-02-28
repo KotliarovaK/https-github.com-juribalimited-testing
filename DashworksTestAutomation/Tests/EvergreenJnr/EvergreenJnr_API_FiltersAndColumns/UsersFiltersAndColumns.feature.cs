@@ -136,52 +136,41 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData()
+        [NUnit.Framework.CategoryAttribute("DAS19261")]
+        [NUnit.Framework.TestCaseAttribute("Application", "App Count (Installed on Owned Device)", "users?$filter=(installedApplications%20%3D%201)&$select=username,directoryName,di" +
+            "splayName,fullyDistinguishedObjectName,installedApplications", null)]
+        public virtual void EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Users",
+                    "API",
+                    "FiltersAndColumns",
+                    "DAS19261"};
+            if ((exampleTags != null))
             {
-                try
-                {
-                    this.EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseDataInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseDataInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData", null, new string[] {
-                        "Evergreen",
-                        "Users",
-                        "API",
-                        "FiltersAndColumns",
-                        "Not_Run"});
-#line 14
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData", null, @__tags);
+#line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 15
- testRunner.Then("Positive number of results returned for \'UsersQueryUrls\' requests", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FilterCategory",
+                        "FilterName",
+                        "QueryString"});
+            table1.AddRow(new string[] {
+                        string.Format("{0}", filterCategory),
+                        string.Format("{0}", filterName),
+                        string.Format("{0}", queryString)});
+#line 14
+testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
-
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList")]
@@ -230,37 +219,37 @@ this.FeatureBackground();
                         "DAS14629",
                         "DAS14663",
                         "DAS14629"});
-#line 18
+#line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "OperatorValues"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Equals"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Does not equal"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Contains"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Does not contain"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Begins with"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Does not begin with"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Ends with"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Does not end with"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Empty"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Not empty"});
-#line 19
+#line 24
 testRunner.Then("following operators are displayed in \"User\" category for \"Primary Device\" filter " +
-                    "on \"Users\" page:", ((string)(null)), table1, "Then ");
+                    "on \"Users\" page:", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -309,23 +298,23 @@ testRunner.Then("following operators are displayed in \"User\" category for \"Pr
                         "FiltersAndColumns",
                         "API",
                         "DAS15899"});
-#line 33
+#line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "value"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ user DDL task"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ user radiobutton task"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ user text task"});
-#line 34
+#line 39
  testRunner.Then("the following filter subcategories are displayed for \'Project Tasks: DeviceSche\' " +
-                    "category on \'Users\' page:", ((string)(null)), table2, "Then ");
+                    "category on \'Users\' page:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
