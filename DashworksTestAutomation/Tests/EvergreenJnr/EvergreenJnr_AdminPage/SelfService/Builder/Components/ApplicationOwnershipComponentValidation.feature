@@ -103,6 +103,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	| ItemName |
 	|          |
 	When User creates broken list with 'Broken_DAS_19910_33' name on 'Users' page
+	When User creates list with 'MissedClolumn_DAS_19910_33' name and missing column on 'Users' page
 	When User creates Self Service via API and open it
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
 	| DAS_19910_SS_3 | 19910_3_SI        | true    | true                | DAS_19910_3 |
@@ -124,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	#
+	#Check Broken list column validation
 	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
 	When User clicks 'CREATE' button
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
@@ -134,3 +135,92 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
 	Then 'UPDATED' button is disabled
 	Then 'UPDATED' button has tooltip with 'Some values are missing or not valid' text
+	#Check list with missed column validation
+	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
+	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
+	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
+	Then 'UPDATED' button is disabled
+	Then 'UPDATED' button has tooltip with 'Some values are missing or not valid' text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
+Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdatedButtonValidation
+	When Project created via API
+	| ProjectName      | Scope     | ProjectTemplate | Mode               |
+	| DAS_19910_Proj_3 | All Users | None            | Standalone Project |
+	When Project created via API
+	| ProjectName           | Scope     | ProjectTemplate | Mode               |
+	| DAS_19910_Proj_Test_3 | All Users | None            | Standalone Project |
+	When User create static list with "DAS_19910_3" name on "Applications" page with following items
+	| ItemName |
+	|          |
+	When User create static list with "DAS_19910_33" name on "Users" page with following items
+	| ItemName |
+	|          |
+	When User create static list with "DAS_19910_test_33" name on "Users" page with following items
+	| ItemName |
+	|          |
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
+	| DAS_19910_SS_3 | 19910_3_SI        | true    | true                | DAS_19910_3 |
+	When User creates new Self Service Page via API
+	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
+	| 19910_3_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
+	| 19910_3_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs1' name on Self Service Builder Panel
+	When User clicks on 'Application Ownership' component on dialog
+	When User clicks 'ADD' button on popup
+	#Create AOC
+	When User enters 'AOC Name' text to 'Component Name' textbox
+	#Uncomment this and remove line below when all rpojects will be available to select
+	#When User selects 'DAS_19910_Proj_3' option from 'Project' autocomplete
+	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	When User checks 'Allow owner to be set to another user only' radio button
+	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
+	When User checks 'Show this component' checkbox
+	When User clicks 'CREATE' button
+	#By default update button is disabled
+	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
+	Then 'UPDATED' button is disabled
+	Then 'UPDATED' button has tooltip with 'No changes made' text
+	#Updated button is still disabled when user change name to the same one
+	When User enters 'TEMP NAME' text to 'Component Name' textbox
+	Then 'UPDATED' button is not disabled
+	When User enters 'AOC Name' text to 'Component Name' textbox
+	Then 'UPDATED' button is disabled
+	Then 'UPDATED' button has tooltip with 'No changes made' text
+	#Updated button is still disabled when user change Project to the same one
+	#When User selects 'DAS_19910_Proj_Test_3' option from 'Project' autocomplete
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	Then 'UPDATED' button is not disabled
+	#When User selects 'DAS_19910_Proj_3' option from 'Project' autocomplete
+	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	Then 'UPDATED' button is disabled
+	Then 'UPDATED' button has tooltip with 'No changes made' text
+	#Updated button is still disabled when user change radiobutton selection to the same state
+	When User checks 'Allow owner to be removed or set to another user' radio button
+	Then 'UPDATED' button is disabled
+	Then 'UPDATED' button has tooltip with 'Some values are missing or not valid' text
+	When User checks 'Allow owner to be set to another user only' radio button
+	When User checks 'Do not allow owner to be changed' radio button
+	Then 'UPDATED' button is not disabled
+	When User checks 'Allow owner to be set to another user only' radio button
+	Then 'UPDATED' button is disabled
+	Then 'UPDATED' button has tooltip with 'No changes made' text
+	#Updated button is still disabled when user change 'Show this component' selection to the same one
+	When User unchecks 'Show this component' checkbox
+	Then 'UPDATED' button is not disabled
+	When User checks 'Show this component' checkbox
+	Then 'UPDATED' button is disabled
+	Then 'UPDATED' button has tooltip with 'No changes made' text
+	#Updated User Scope
+	When User checks 'Allow owner to be removed or set to another user' radio button
+	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
+	When User clicks 'UPDATE' button
+	Then 'The AOC Name component has been updated' text is displayed on inline success banner
+	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
+	When User selects 'DAS_19910_test_33' option from 'User Scope' autocomplete
+	Then 'UPDATED' button is not disabled
+	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
+	Then 'UPDATED' button is disabled
+	Then 'UPDATED' button has tooltip with 'No changes made' text
