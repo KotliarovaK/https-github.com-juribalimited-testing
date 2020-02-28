@@ -51,3 +51,22 @@ Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForT
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	Then arrow for editing the 'Ring' field is not displayed
+
+#AnnI: These updates are only developed on the 'void'.
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @Void
+Scenario: EvergreenJnr_DevicesList_CheckThatListOfRingsIsDisplayedCorrectlyOnTheDetailsPage
+	When User navigates to the 'Device' details page for 'CDBR7TV3Y9T2ITS' item
+	Then Details page for 'CDBR7TV3Y9T2ITS' item is displayed to the user
+	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	Then following Values are displayed in the dropdown for the 'Ring' field:
+	| Value            |
+	| Unassigned       |
+	| Pilot            |
+	| Early Adopters   |
+	| IT Users         |
+	| Business Wave 1  |
+	| Business Wave 2  |
+	| Business Wave 3  |
+	| Critical Systems |
