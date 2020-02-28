@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	Then Page with 'Create App Ownership Component' subheader is displayed to user
 	#Create AOC with default setting
 	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select
+	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
 	#When User selects 'DAS_19909_Proj' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User clicks 'CREATE' button
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	Then Page with 'Create App Ownership Component' subheader is displayed to user
 	#Create AOC with default setting
 	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select
+	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
 	#When User selects 'DAS_19909_Proj' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User clicks 'CREATE' button

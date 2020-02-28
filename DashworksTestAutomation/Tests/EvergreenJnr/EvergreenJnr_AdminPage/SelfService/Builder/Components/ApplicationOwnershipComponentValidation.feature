@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CreateApplicationOwnershipPageValidation
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Create become enabled again after correct data imput
 	When User enters 'Name To Be Removed' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select
+	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
 	#When User selects 'DAS_19910_Proj' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	Then 'CREATE' button is not disabled
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenUserScope
 	When User clicks 'ADD' button on popup
 	#Create AOC
 	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select
+	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
 	#When User selects 'DAS_19910_Proj_2' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	When User clicks 'ADD' button on popup
 	#Create AOC
 	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select
+	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
 	#When User selects 'DAS_19910_Proj_3' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdatedButtonValidation
 	When User clicks 'ADD' button on popup
 	#Create AOC
 	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select
+	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
 	#When User selects 'DAS_19910_Proj_4' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdatedButtonValidation
 	When User enters 'AOC Name' text to 'Component Name' textbox
 	Then 'UPDATED' button is disabled
 	Then 'UPDATED' button has tooltip with 'No changes made' text
-	#Updated button is still disabled when user change Project to the same one
+	#Updated button is still disabled when user change Project to the same one: DAS-20114
 	#When User selects 'DAS_19910_Proj_Test_3' option from 'Project' autocomplete
 	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	Then 'UPDATED' button is not disabled
