@@ -53,6 +53,14 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
                 "Action panel is opened");
         }
 
+        [Then(@"'(.*)' message is displayed on Actions panel to the user")]
+        public void ThenMessageIsDisplayedOnActionPanelToTheUser(string textMessage)
+        {
+            var panel = _driver.NowAt<ActionsPanelElement>();
+            Verify.IsTrue(panel.ActionsPanelMessage.GetText().Equals(textMessage),
+                $"'{textMessage}' message was not displayed");
+        }
+
         [When(@"User closes Actions panel")]
         public void WhenUserClosesActionsPanel()
         {

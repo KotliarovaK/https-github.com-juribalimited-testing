@@ -3517,7 +3517,7 @@ this.FeatureBackground();
             table78.AddRow(new string[] {
                         "Green"});
             table78.AddRow(new string[] {
-                        "None"});
+                        "Ignore"});
 #line 741
  testRunner.Then("the values are displayed for \"applicationCompliance\" filter on \"Devices\" page in " +
                     "the following order:", ((string)(null)), table78, "Then ");

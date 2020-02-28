@@ -265,6 +265,71 @@ testRunner.Then("following operators are displayed in \"User\" category for \"Pr
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        public virtual void EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersListsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "API",
+                        "FiltersAndColumns",
+                        "API",
+                        "DAS15899"});
+#line 33
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "value"});
+            table2.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ user DDL task"});
+            table2.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ user radiobutton task"});
+            table2.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ user text task"});
+#line 34
+ testRunner.Then("the following filter subcategories are displayed for \'Project Tasks: DeviceSche\' " +
+                    "category on \'Users\' page:", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

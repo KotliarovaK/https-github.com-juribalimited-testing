@@ -174,15 +174,15 @@ namespace DashworksTestAutomation.Base
                 catch { }
             }
             //FOR DEBUG ONLY
-            /*
+            
             try
             {
-                var requestUri = "http://autorelease.corp.juriba.com:81/mailboxes?$top=1000&$skip=0&$filter=(project_48_pathId%20EQUALS%20(%27461%27))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_path";
+                var requestUri = "http://autorelease.corp.juriba.com:81/applications?$top=1000&$skip=0&$filter=(project_43_applicationReadinessId%20EQUALS%20(%27NULL%27))&$select=packageName,packageManufacturer,packageVersion,project_43_hideFromEndUsers,project_43_applicationReadiness";
                 var request = requestUri.GenerateRequest();
 
                 var resp = _client.Evergreen.Get(request);
 
-                if (!resp.Content.Contains("{\"count\":6"))
+                if (!resp.Content.Contains("{\"count\":1155"))
                 {
                     Logger.Write("AFTER ============> !!! FILTER WAS CHANGED !!! <============");
                     Logger.Write(resp.Content.Substring(0, 50));
@@ -192,7 +192,7 @@ namespace DashworksTestAutomation.Base
             {
                 Logger.Write(e);
                 Logger.Write("AFTER ============> !!! FILTER WAS CHANGED !!! <============");
-            }*/
+            }
         }
 
         [BeforeTestRun]

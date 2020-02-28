@@ -28,3 +28,11 @@ Then following operators are displayed in "User" category for "Primary Device" f
 	| Does not end with   |
 	| Empty               |
 	| Not empty           |
+
+@Evergreen @Users @API @FiltersAndColumns @API @DAS15899
+Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
+	Then the following filter subcategories are displayed for 'Project Tasks: DeviceSche' category on 'Users' page:
+	| value                                       |
+	| DeviceSche: Stage 2 \ user DDL task         |
+	| DeviceSche: Stage 2 \ user radiobutton task |
+	| DeviceSche: Stage 2 \ user text task        |

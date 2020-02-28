@@ -1144,6 +1144,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(selector);
         }
 
+        public void SetRadioButtonState(string ariaLabel, bool state)
+        {
+            if (!IsRadioButtonChecked(ariaLabel).Equals(state))
+            {
+                GetRadioButton(ariaLabel).Click();
+            }
+        }
+
         public bool IsRadioButtonChecked(string ariaLabel)
         {
             var classValue = GetRadioButton(ariaLabel).GetAttribute("class");
