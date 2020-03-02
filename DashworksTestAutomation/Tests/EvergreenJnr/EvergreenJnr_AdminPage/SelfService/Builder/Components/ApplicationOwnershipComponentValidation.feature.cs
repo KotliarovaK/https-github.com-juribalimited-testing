@@ -525,7 +525,7 @@ this.FeatureBackground();
 #line 125
  testRunner.When("User selects \'Broken_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 126
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 127
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 128
@@ -533,7 +533,7 @@ this.FeatureBackground();
 #line 130
  testRunner.When("User selects \'MissedClolumn_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 131
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 132
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 133
@@ -552,7 +552,7 @@ this.FeatureBackground();
 #line 140
  testRunner.When("User selects \'Broken_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 141
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 142
  testRunner.Then("\'UPDATED\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 143
@@ -562,7 +562,7 @@ this.FeatureBackground();
 #line 146
  testRunner.When("User selects \'MissedClolumn_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 148
  testRunner.Then("\'UPDATED\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 149
