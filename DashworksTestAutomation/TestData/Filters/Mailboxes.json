@@ -4221,9 +4221,9 @@
 	},
 	{
 		"id": "ownerOrganizationalUnit",
-		"label": "Owner Organizational Unit",
+		"label": "Owner Organisational Unit",
 		"translatedShortLabel": null,
-		"translatedTextLabel": "Owner Organizational Unit",
+		"translatedTextLabel": "Owner Organisational Unit",
 		"customTranslatedTextLabel": null,
 		"translatedCategory": "Mailbox Owner",
 		"translatedNoItems": null,
@@ -4295,7 +4295,7 @@
 		"hasCorrespondingColumn": true,
 		"columns": [
 			{
-				"translatedName": "Owner Organizational Unit",
+				"translatedName": "Owner Organisational Unit",
 				"name": "ownerOrganizationalUnit"
 			}
 		],
@@ -19981,7 +19981,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Cost Centre",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 0,
@@ -20069,7 +20069,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Code",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 0,
@@ -20157,7 +20157,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Full Path",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 0,
@@ -20245,7 +20245,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Name",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 0,
@@ -20333,7 +20333,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 10,
@@ -20390,7 +20390,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Level 1",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 7,
@@ -20443,7 +20443,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Level 2",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 7,
@@ -20496,7 +20496,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Level 3",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 7,
@@ -20549,7 +20549,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Level 4",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 7,
@@ -20602,7 +20602,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Level 5",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 7,
@@ -20655,7 +20655,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Level 6",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 7,
@@ -20708,7 +20708,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Owner Department Level 7",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Mailbox Owner Organization",
+		"translatedCategory": "Mailbox Owner Organisation",
 		"translatedNoItems": null,
 		"category": "Mailbox Owner Organisation",
 		"filterType": 7,
@@ -21637,11 +21637,11 @@
 	},
 	{
 		"id": "costCentre",
-		"label": "Cost Center",
+		"label": "Cost Centre",
 		"translatedShortLabel": null,
-		"translatedTextLabel": "Cost Center",
+		"translatedTextLabel": "Cost Centre",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 0,
@@ -21711,7 +21711,7 @@
 		"hasCorrespondingColumn": true,
 		"columns": [
 			{
-				"translatedName": "Cost Center",
+				"translatedName": "Cost Centre",
 				"name": "costCentre"
 			}
 		],
@@ -21729,7 +21729,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Code",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 0,
@@ -21817,7 +21817,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Full Path",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 0,
@@ -21905,7 +21905,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Name",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 0,
@@ -21993,7 +21993,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Level 1",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 7,
@@ -22046,7 +22046,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Level 2",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 7,
@@ -22099,7 +22099,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Level 3",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 7,
@@ -22152,7 +22152,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Level 4",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 7,
@@ -22205,7 +22205,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Level 5",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 7,
@@ -22258,7 +22258,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Level 6",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 7,
@@ -22311,7 +22311,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department Level 7",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 7,
@@ -22364,7 +22364,7 @@
 		"translatedShortLabel": null,
 		"translatedTextLabel": "Department",
 		"customTranslatedTextLabel": null,
-		"translatedCategory": "Organization",
+		"translatedCategory": "Organisation",
 		"translatedNoItems": null,
 		"category": "Organisation",
 		"filterType": 10,
@@ -23607,59 +23607,6 @@
 		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
 	},
 	{
-		"id": "automationField_9_8",
-		"label": "DELAY_7 \\ Delay",
-		"translatedShortLabel": null,
-		"translatedTextLabel": "DELAY_7 \\ Delay",
-		"customTranslatedTextLabel": null,
-		"translatedCategory": "Automation Actions",
-		"translatedNoItems": null,
-		"category": "Automation Actions",
-		"filterType": 7,
-		"type": "multiselect",
-		"operators": [
-			{
-				"key": "Equals",
-				"translatedDropdownValue": "Equals",
-				"translatedTextValue": "is"
-			},
-			{
-				"key": "Does not equal",
-				"translatedDropdownValue": "Does not equal",
-				"translatedTextValue": "is not"
-			},
-			{
-				"key": "Not empty",
-				"translatedDropdownValue": "Not empty",
-				"translatedTextValue": "is not empty"
-			}
-		],
-		"options": [],
-		"addEmptyValue": true,
-		"optionsUrl": "/mailboxes/filters/options/automationfield_9_8",
-		"getOptionsMethodParams": null,
-		"validate": false,
-		"displayType": null,
-		"displayOrder": 0,
-		"parameterCount": 0,
-		"getAssociationsMethodParams": null,
-		"associations": null,
-		"hasCorrespondingColumn": true,
-		"columns": [
-			{
-				"translatedName": "DELAY_7 \\ Delay",
-				"name": "automationField_9_8_date"
-			}
-		],
-		"tooltip": null,
-		"includeOperators": null,
-		"excludeOperators": null,
-		"savedListFilter": false,
-		"objectTypeId": 0,
-		"taskFilter": false,
-		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
-	},
-	{
 		"id": "automationField_1_1",
 		"label": "DAS-15949 - all users scope \\ Action name 1 - update path",
 		"translatedShortLabel": null,
@@ -23872,165 +23819,6 @@
 		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
 	},
 	{
-		"id": "automationField_14_19",
-		"label": "Applications_Scope \\ Action_1",
-		"translatedShortLabel": null,
-		"translatedTextLabel": "Applications_Scope \\ Action_1",
-		"customTranslatedTextLabel": null,
-		"translatedCategory": "Automation Actions",
-		"translatedNoItems": null,
-		"category": "Automation Actions",
-		"filterType": 7,
-		"type": "multiselect",
-		"operators": [
-			{
-				"key": "Equals",
-				"translatedDropdownValue": "Equals",
-				"translatedTextValue": "is"
-			},
-			{
-				"key": "Does not equal",
-				"translatedDropdownValue": "Does not equal",
-				"translatedTextValue": "is not"
-			},
-			{
-				"key": "Not empty",
-				"translatedDropdownValue": "Not empty",
-				"translatedTextValue": "is not empty"
-			}
-		],
-		"options": [],
-		"addEmptyValue": true,
-		"optionsUrl": "/mailboxes/filters/options/automationfield_14_19",
-		"getOptionsMethodParams": null,
-		"validate": false,
-		"displayType": null,
-		"displayOrder": 0,
-		"parameterCount": 0,
-		"getAssociationsMethodParams": null,
-		"associations": null,
-		"hasCorrespondingColumn": true,
-		"columns": [
-			{
-				"translatedName": "Applications_Scope \\ Action_1",
-				"name": "automationField_14_19_date"
-			}
-		],
-		"tooltip": null,
-		"includeOperators": null,
-		"excludeOperators": null,
-		"savedListFilter": false,
-		"objectTypeId": 0,
-		"taskFilter": false,
-		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
-	},
-	{
-		"id": "automationField_14_20",
-		"label": "Applications_Scope \\ Action_2",
-		"translatedShortLabel": null,
-		"translatedTextLabel": "Applications_Scope \\ Action_2",
-		"customTranslatedTextLabel": null,
-		"translatedCategory": "Automation Actions",
-		"translatedNoItems": null,
-		"category": "Automation Actions",
-		"filterType": 7,
-		"type": "multiselect",
-		"operators": [
-			{
-				"key": "Equals",
-				"translatedDropdownValue": "Equals",
-				"translatedTextValue": "is"
-			},
-			{
-				"key": "Does not equal",
-				"translatedDropdownValue": "Does not equal",
-				"translatedTextValue": "is not"
-			},
-			{
-				"key": "Not empty",
-				"translatedDropdownValue": "Not empty",
-				"translatedTextValue": "is not empty"
-			}
-		],
-		"options": [],
-		"addEmptyValue": true,
-		"optionsUrl": "/mailboxes/filters/options/automationfield_14_20",
-		"getOptionsMethodParams": null,
-		"validate": false,
-		"displayType": null,
-		"displayOrder": 0,
-		"parameterCount": 0,
-		"getAssociationsMethodParams": null,
-		"associations": null,
-		"hasCorrespondingColumn": true,
-		"columns": [
-			{
-				"translatedName": "Applications_Scope \\ Action_2",
-				"name": "automationField_14_20_date"
-			}
-		],
-		"tooltip": null,
-		"includeOperators": null,
-		"excludeOperators": null,
-		"savedListFilter": false,
-		"objectTypeId": 0,
-		"taskFilter": false,
-		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
-	},
-	{
-		"id": "automationField_14_21",
-		"label": "Applications_Scope \\ Action_3",
-		"translatedShortLabel": null,
-		"translatedTextLabel": "Applications_Scope \\ Action_3",
-		"customTranslatedTextLabel": null,
-		"translatedCategory": "Automation Actions",
-		"translatedNoItems": null,
-		"category": "Automation Actions",
-		"filterType": 7,
-		"type": "multiselect",
-		"operators": [
-			{
-				"key": "Equals",
-				"translatedDropdownValue": "Equals",
-				"translatedTextValue": "is"
-			},
-			{
-				"key": "Does not equal",
-				"translatedDropdownValue": "Does not equal",
-				"translatedTextValue": "is not"
-			},
-			{
-				"key": "Not empty",
-				"translatedDropdownValue": "Not empty",
-				"translatedTextValue": "is not empty"
-			}
-		],
-		"options": [],
-		"addEmptyValue": true,
-		"optionsUrl": "/mailboxes/filters/options/automationfield_14_21",
-		"getOptionsMethodParams": null,
-		"validate": false,
-		"displayType": null,
-		"displayOrder": 0,
-		"parameterCount": 0,
-		"getAssociationsMethodParams": null,
-		"associations": null,
-		"hasCorrespondingColumn": true,
-		"columns": [
-			{
-				"translatedName": "Applications_Scope \\ Action_3",
-				"name": "automationField_14_21_date"
-			}
-		],
-		"tooltip": null,
-		"includeOperators": null,
-		"excludeOperators": null,
-		"savedListFilter": false,
-		"objectTypeId": 0,
-		"taskFilter": false,
-		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
-	},
-	{
 		"id": "automationField_7_6",
 		"label": "DELAY_5 \\ Delay",
 		"translatedShortLabel": null,
@@ -24179,6 +23967,59 @@
 			{
 				"translatedName": "DELAY_6 \\ Delay",
 				"name": "automationField_8_7_date"
+			}
+		],
+		"tooltip": null,
+		"includeOperators": null,
+		"excludeOperators": null,
+		"savedListFilter": false,
+		"objectTypeId": 0,
+		"taskFilter": false,
+		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
+	},
+	{
+		"id": "automationField_9_8",
+		"label": "DELAY_7 \\ Delay",
+		"translatedShortLabel": null,
+		"translatedTextLabel": "DELAY_7 \\ Delay",
+		"customTranslatedTextLabel": null,
+		"translatedCategory": "Automation Actions",
+		"translatedNoItems": null,
+		"category": "Automation Actions",
+		"filterType": 7,
+		"type": "multiselect",
+		"operators": [
+			{
+				"key": "Equals",
+				"translatedDropdownValue": "Equals",
+				"translatedTextValue": "is"
+			},
+			{
+				"key": "Does not equal",
+				"translatedDropdownValue": "Does not equal",
+				"translatedTextValue": "is not"
+			},
+			{
+				"key": "Not empty",
+				"translatedDropdownValue": "Not empty",
+				"translatedTextValue": "is not empty"
+			}
+		],
+		"options": [],
+		"addEmptyValue": true,
+		"optionsUrl": "/mailboxes/filters/options/automationfield_9_8",
+		"getOptionsMethodParams": null,
+		"validate": false,
+		"displayType": null,
+		"displayOrder": 0,
+		"parameterCount": 0,
+		"getAssociationsMethodParams": null,
+		"associations": null,
+		"hasCorrespondingColumn": true,
+		"columns": [
+			{
+				"translatedName": "DELAY_7 \\ Delay",
+				"name": "automationField_9_8_date"
 			}
 		],
 		"tooltip": null,
@@ -24709,6 +24550,165 @@
 			{
 				"translatedName": "Mailboxes_Scope \\ Action_3",
 				"name": "automationField_13_18_date"
+			}
+		],
+		"tooltip": null,
+		"includeOperators": null,
+		"excludeOperators": null,
+		"savedListFilter": false,
+		"objectTypeId": 0,
+		"taskFilter": false,
+		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
+	},
+	{
+		"id": "automationField_14_19",
+		"label": "Applications_Scope \\ Action_1",
+		"translatedShortLabel": null,
+		"translatedTextLabel": "Applications_Scope \\ Action_1",
+		"customTranslatedTextLabel": null,
+		"translatedCategory": "Automation Actions",
+		"translatedNoItems": null,
+		"category": "Automation Actions",
+		"filterType": 7,
+		"type": "multiselect",
+		"operators": [
+			{
+				"key": "Equals",
+				"translatedDropdownValue": "Equals",
+				"translatedTextValue": "is"
+			},
+			{
+				"key": "Does not equal",
+				"translatedDropdownValue": "Does not equal",
+				"translatedTextValue": "is not"
+			},
+			{
+				"key": "Not empty",
+				"translatedDropdownValue": "Not empty",
+				"translatedTextValue": "is not empty"
+			}
+		],
+		"options": [],
+		"addEmptyValue": true,
+		"optionsUrl": "/mailboxes/filters/options/automationfield_14_19",
+		"getOptionsMethodParams": null,
+		"validate": false,
+		"displayType": null,
+		"displayOrder": 0,
+		"parameterCount": 0,
+		"getAssociationsMethodParams": null,
+		"associations": null,
+		"hasCorrespondingColumn": true,
+		"columns": [
+			{
+				"translatedName": "Applications_Scope \\ Action_1",
+				"name": "automationField_14_19_date"
+			}
+		],
+		"tooltip": null,
+		"includeOperators": null,
+		"excludeOperators": null,
+		"savedListFilter": false,
+		"objectTypeId": 0,
+		"taskFilter": false,
+		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
+	},
+	{
+		"id": "automationField_14_20",
+		"label": "Applications_Scope \\ Action_2",
+		"translatedShortLabel": null,
+		"translatedTextLabel": "Applications_Scope \\ Action_2",
+		"customTranslatedTextLabel": null,
+		"translatedCategory": "Automation Actions",
+		"translatedNoItems": null,
+		"category": "Automation Actions",
+		"filterType": 7,
+		"type": "multiselect",
+		"operators": [
+			{
+				"key": "Equals",
+				"translatedDropdownValue": "Equals",
+				"translatedTextValue": "is"
+			},
+			{
+				"key": "Does not equal",
+				"translatedDropdownValue": "Does not equal",
+				"translatedTextValue": "is not"
+			},
+			{
+				"key": "Not empty",
+				"translatedDropdownValue": "Not empty",
+				"translatedTextValue": "is not empty"
+			}
+		],
+		"options": [],
+		"addEmptyValue": true,
+		"optionsUrl": "/mailboxes/filters/options/automationfield_14_20",
+		"getOptionsMethodParams": null,
+		"validate": false,
+		"displayType": null,
+		"displayOrder": 0,
+		"parameterCount": 0,
+		"getAssociationsMethodParams": null,
+		"associations": null,
+		"hasCorrespondingColumn": true,
+		"columns": [
+			{
+				"translatedName": "Applications_Scope \\ Action_2",
+				"name": "automationField_14_20_date"
+			}
+		],
+		"tooltip": null,
+		"includeOperators": null,
+		"excludeOperators": null,
+		"savedListFilter": false,
+		"objectTypeId": 0,
+		"taskFilter": false,
+		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.6.0, Culture=neutral, PublicKeyToken=null"
+	},
+	{
+		"id": "automationField_14_21",
+		"label": "Applications_Scope \\ Action_3",
+		"translatedShortLabel": null,
+		"translatedTextLabel": "Applications_Scope \\ Action_3",
+		"customTranslatedTextLabel": null,
+		"translatedCategory": "Automation Actions",
+		"translatedNoItems": null,
+		"category": "Automation Actions",
+		"filterType": 7,
+		"type": "multiselect",
+		"operators": [
+			{
+				"key": "Equals",
+				"translatedDropdownValue": "Equals",
+				"translatedTextValue": "is"
+			},
+			{
+				"key": "Does not equal",
+				"translatedDropdownValue": "Does not equal",
+				"translatedTextValue": "is not"
+			},
+			{
+				"key": "Not empty",
+				"translatedDropdownValue": "Not empty",
+				"translatedTextValue": "is not empty"
+			}
+		],
+		"options": [],
+		"addEmptyValue": true,
+		"optionsUrl": "/mailboxes/filters/options/automationfield_14_21",
+		"getOptionsMethodParams": null,
+		"validate": false,
+		"displayType": null,
+		"displayOrder": 0,
+		"parameterCount": 0,
+		"getAssociationsMethodParams": null,
+		"associations": null,
+		"hasCorrespondingColumn": true,
+		"columns": [
+			{
+				"translatedName": "Applications_Scope \\ Action_3",
+				"name": "automationField_14_21_date"
 			}
 		],
 		"tooltip": null,
