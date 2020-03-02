@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Green              |
-	Then Appropriate filter is added to URL
+	Then "Compliance" column is added to URL on "Users" page
 	When User navigates to the "All Users" list
 	Then default URL is displayed on "Users" page
 	When User clicks the Filters button
@@ -146,7 +146,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User add "User Application Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Amber              |
-	Then Appropriate filter is added to URL
+	Then "User Application Compliance" column is added to URL on "Users" page
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641
 Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks

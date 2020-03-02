@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder
+namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components
 {
     public class SelfServiceTextComponent
     {

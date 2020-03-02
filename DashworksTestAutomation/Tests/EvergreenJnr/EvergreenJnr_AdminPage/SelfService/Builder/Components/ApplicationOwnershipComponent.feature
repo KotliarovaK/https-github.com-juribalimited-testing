@@ -5,10 +5,9 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#Complete this test when DAS-20019 will be completelly implemented
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20019 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20019 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
-	When Project created via API and opened
+	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20019_Proj | All Users | None            | Standalone Project |
 	When User create static list with "DAS_20019_1" name on "Applications" page with following items
@@ -54,7 +53,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	| All Users    |
 	| DAS_20019_11 |
 	Then 'User Scope' autocomplete first option is 'All Users'
-	Then following fields to display are displayed on app ownership component page
+	Then following fields to display are displayed on application ownership component page
 	| fields          |
 	| Username (User) |
 	| Domain          |
@@ -62,10 +61,9 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 
-#Test under construction
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
-	When Project created via API and opened
+	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_19909_Proj | All Users | None            | Standalone Project |
 	When Project created via API and opened
@@ -91,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	Then Page with 'Create App Ownership Component' subheader is displayed to user
 	#Create AOC with default setting
 	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select
+	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
 	#When User selects 'DAS_19909_Proj' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User clicks 'CREATE' button
@@ -124,10 +122,9 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	Then 'DAS_19909_3' content is displayed in 'User Scope' autocomplete
 	Then 'Show this component' checkbox is checked
 
-#Test under construction
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19909 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
-	When Project created via API and opened
+	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_19909_Proj | All Users | None            | Standalone Project |
 	When Project created via API and opened
@@ -153,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	Then Page with 'Create App Ownership Component' subheader is displayed to user
 	#Create AOC with default setting
 	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select
+	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
 	#When User selects 'DAS_19909_Proj' option from 'Project' autocomplete
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User clicks 'CREATE' button

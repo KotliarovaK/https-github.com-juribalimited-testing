@@ -298,12 +298,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	Then Category with counter is displayed on Filter panel
 	| Category                  | Number |
 	| Evergreen                 | 1      |
-	| Project Rings: 1803       | 1      |
-	| Project Rings: Babel(Engl | 1      |
+	| Project Rings: 2004       | 1      |
 	| Project Rings: ComputerSc | 1      |
 	| Project Rings: DeviceSche | 1      |
 	| Project Rings: Havoc(BigD | 1      |
-	| Project Rings: ICSP       | 1      |
 	| Project Rings: prK        | 1      |
 	| Project Rings: Windows101 | 1      |
 	| Project Rings: Windows102 | 1      |

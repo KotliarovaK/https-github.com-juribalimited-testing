@@ -122,10 +122,11 @@
     <Compile Include="DTO\Evergreen\Admin\Readiness\ReadinessDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\AllPagesOfSelfServiceDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\Components\SelfServiceApplicationOwnershipComponent.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePages.cs" />
-    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServiceTextComponent.cs" />
-    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServiceTextComponents.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\Components\SelfServiceTextComponent.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\Components\SelfServiceTextComponents.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\ComponentsOfSelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
@@ -382,6 +383,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\RemoveSelfServiceAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\AfterScenarios\SelfServiceApiMethods.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\Components\ApplicationOwnershipApiSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\Components\AppOwnershipComponentSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\ParentPageLabel.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />

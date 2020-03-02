@@ -9,11 +9,15 @@ Scenario: EvergreenJnr_UsersList_CheckAllColumnsAndFilters
 	Then All filters with correct data are returned from the API for 'Users' list
 	Then All columns with correct data are returned from the API for 'Users' list
 
-@Evergreen @Users @API @FiltersAndColumns
+@Evergreen @Users @API @FiltersAndColumns @DAS19261
 Scenario Outline: EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData
 Then Positive number of results returned for requests:
 	| FilterCategory   | FilterName   | QueryString   |
 	| <FilterCategory> | <FilterName> | <QueryString> |
+
+Examples: 
+	| FilterCategory | FilterName                            | QueryString                                                                                                                                   |
+	| Application    | App Count (Installed on Owned Device) | users?$filter=(installedApplications%20%3D%201)&$select=username,directoryName,displayName,fullyDistinguishedObjectName,installedApplications |   
 
 Examples: 
 	| FilterCategory | FilterName   | QueryString                                                          |
