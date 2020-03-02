@@ -123,12 +123,12 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	When User checks 'Allow owner to be set to another user only' radio button
 	#Check that use is not able to create AOC with broken list
 	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
-	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
+	Then 'This list has errors' error message is displayed for 'User Scope' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check that use is not able to create AOC with list with missed columns
 	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
-	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
+	Then 'This list has errors' error message is displayed for 'User Scope' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check Broken list column validation
@@ -138,13 +138,13 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	Then 'UPDATED' button is disabled
 	Then 'UPDATED' button has tooltip with 'No changes made' text
 	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
-	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
+	Then 'This list has errors' error message is displayed for 'User Scope' field
 	Then 'UPDATED' button is disabled
 	Then 'UPDATED' button has tooltip with 'Some values are missing or not valid' text
 	#Check list with missed column validation
 	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
 	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
-	Then 'This list has errors' error message is displayed for 'User Scope' dropdown
+	Then 'This list has errors' error message is displayed for 'User Scope' field
 	Then 'UPDATED' button is disabled
 	Then 'UPDATED' button has tooltip with 'Some values are missing or not valid' text
 
