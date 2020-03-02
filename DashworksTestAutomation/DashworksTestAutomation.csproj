@@ -130,9 +130,9 @@
     <Compile Include="DTO\Evergreen\Admin\SelfService\SelfServiceDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Slots\SlotDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
-    <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
-    <Compile Include="DTO\Evergreen\DashboardDto.cs" />
     <Compile Include="DTO\Evergreen\API\FilterDto.cs" />
+    <Compile Include="DTO\Evergreen\DashboardDto.cs" />
+    <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
     <Compile Include="DTO\ItemDetails\ApplicationOwnedUserDto.cs" />
     <Compile Include="DTO\ItemDetails\CustomFieldDto.cs" />
     <Compile Include="DTO\ManagementConsole\SeniorCustomFieldDto.cs" />
@@ -1934,18 +1934,6 @@
     <None Include="Resources\IncorrectFile.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestData\Columns\Applications.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\Columns\Devices.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\Columns\Mailboxes.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\Columns\Users.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="TestData\Filters\Applications.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1956,6 +1944,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="TestData\Filters\Users.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Applications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Devices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Mailboxes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Users.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\ActionsPanelPart3.feature">
@@ -3106,18 +3106,6 @@
     <Content Include="Resources\DAS_13733_Duplicates_in_project_tasks.xml" />
     <Content Include="Resources\DAS_13733_Valid_file.xml" />
     <Content Include="Resources\File for import project with missing Readiness.xml" />
-    <Content Include="TestData\QueryUrls\ApplicationsQueryUrls.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\QueryUrls\DevicesQueryUrls.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\QueryUrls\MailboxesQueryUrls.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\QueryUrls\UsersQueryUrls.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">

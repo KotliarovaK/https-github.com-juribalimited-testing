@@ -136,15 +136,15 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData()
+        [NUnit.Framework.TestCaseAttribute("Organization", "Department Level 1", "mailboxes?$filter=(departmentLevelFieldId_1%20EQUALS%20(\'2\'%2C\'9\'))", null)]
+        public virtual void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal();
+                    this.EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal(filterCategory,filterName,queryString,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -163,98 +163,34 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal()
+        private void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData", null, new string[] {
-                        "Evergreen",
-                        "Mailboxes",
-                        "API",
-                        "FiltersAndColumns",
-                        "Not_Run"});
-#line 14
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 15
- testRunner.Then("Positive number of results returned for \'MailboxesQueryUrls\' requests", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS15899")]
-        public virtual void EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "API",
+                    "FiltersAndColumns"};
+            if ((exampleTags != null))
             {
-                try
-                {
-                    this.EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesListsInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesListsInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists", null, new string[] {
-                        "Evergreen",
-                        "Mailboxes",
-                        "API",
-                        "FiltersAndColumns",
-                        "DAS15899"});
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData", null, @__tags);
+#line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "value"});
+                        "FilterCategory",
+                        "FilterName",
+                        "QueryString"});
             table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Completed"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Completed (Slot)"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Forecast"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Forecast (Slot)"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Migrated"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Migrated (Slot)"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Scheduled - mailbox"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Scheduled - mailbox (Slot)"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Target"});
-            table1.AddRow(new string[] {
-                        "MailboxEve: 1 \\ Target (Slot)"});
-#line 19
- testRunner.Then("the following filter subcategories are displayed for \'Project Tasks: MailboxEve\' " +
-                    "category on \'Mailboxes\' page:", ((string)(null)), table1, "Then ");
+                        string.Format("{0}", filterCategory),
+                        string.Format("{0}", filterName),
+                        string.Format("{0}", queryString)});
+#line 14
+ testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
