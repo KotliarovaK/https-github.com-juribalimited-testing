@@ -595,6 +595,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
+        [Then(@"User sees '(.*)' hint below '(.*)' field")]
+        public void ThenUserSeesHintBelowField(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(filterElement.GetFieldHint(fieldName).Text, Is.EqualTo(instruction),
+                $"{fieldName} has no or wrong instruction");
+        }
+
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
         public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
         {

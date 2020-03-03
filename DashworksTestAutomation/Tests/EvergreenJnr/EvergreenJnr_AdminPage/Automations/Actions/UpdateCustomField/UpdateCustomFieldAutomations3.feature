@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18317 @Cleanup @Not_Ready
-#Waiting for 'Phoenix Field' from GD to automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18317 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionsUpdateCustomFieldValues
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -81,3 +80,97 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsValueForDuplacatedAutomation
 	When User enters "18705_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20116 @Cleanup @Void
+Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtTheSameTime
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User creates new Automation via API
+	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 20116_Automation1 | 20116       | true   | false              | All Devices | Manual |
+	| 20116_Automation2 | 20116       | true   | false              | All Devices | Manual |
+	| 20116_Automation3 | 20116       | true   | false              | All Devices | Manual |
+	| 20116_Automation4 | 20116       | true   | false              | All Devices | Manual |
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User enters "20116_Automation1" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action1
+	When User clicks 'CREATE ACTION' button 
+	And User enters '20116_Action1' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Remove specific values' in the 'Update Values' dropdown
+	When User adds 'Phoenix' value from 'Value' textbox
+	When User clicks 'CREATE' button 
+	#Create Action2
+	When User clicks 'Automations' header breadcrumb
+	When User enters "20116_Automation2" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	When User clicks 'CREATE ACTION' button 
+	And User enters '20116_Action2' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Remove specific values' in the 'Update Values' dropdown
+	When User adds 'Phoenix' value from 'Value' textbox
+	When User clicks 'CREATE' button
+	#Create Action3
+	When User clicks 'Automations' header breadcrumb
+	When User enters "20116_Automation3" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	When User clicks 'CREATE ACTION' button 
+	And User enters '20116_Action3' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Remove specific values' in the 'Update Values' dropdown
+	When User adds 'Phoenix' value from 'Value' textbox
+	When User clicks 'CREATE' button
+	#Create Action4
+	When User clicks 'Automations' header breadcrumb
+	When User enters "20116_Automation4" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	When User clicks 'CREATE ACTION' button 
+	And User enters '20116_Action4' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Remove specific values' in the 'Update Values' dropdown
+	When User adds 'Phoenix' value from 'Value' textbox
+	When User clicks 'CREATE' button
+	#Run Automations
+	When User clicks 'Automations' header breadcrumb
+	When User enters "20116_Automation" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	And User selects 'Run now' in the 'Actions' dropdown
+	When User clicks 'RUN' button 
+	When User clicks 'RUN' button on inline tip banner
+	Then '4 automations started,' text is displayed on inline success banner
+	When User navigates to the 'Automation Log' left menu item
+	When User clicks refresh button in the browser
+	When User enters "20116_Automation1" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then "Action Finish" content is displayed for "Type" column
+	When User enters "20116_Automation2" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then "Action Finish" content is displayed for "Type" column
+	When User enters "20116_Automation3" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then "Action Finish" content is displayed for "Type" column
+	When User enters "20116_Automation4" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then "Action Finish" content is displayed for "Type" column

@@ -152,3 +152,47 @@ Scenario: EvergreenJnr_AdminPage_CheckArchivedObjectNumbersFromAnutomationLogGri
 	| Operation ID |
 	When User clicks content from "Scope" column
 	Then '2004 Rollout' list should be displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20065 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckFoundObjectsForRenamedAutomation
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Hostname" filter where type is "Equals" with added column and following value:
+	| Values         |
+	| 00I0COBFWHOF27 |
+	When User refreshes agGrid
+	When User create dynamic list with "20065_List" name on "Devices" page
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
+	| 20065_Automation | 20065       | true   | false              | 20065_List | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '20065_Action' text to 'Action Name' textbox
+	When User selects 'Update path' in the 'Action Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'TestBulkUpdate' option from 'Path' autocomplete
+	When User clicks 'CREATE' button
+	#Run Automation
+	When User clicks 'Automations' header breadcrumb
+	When User enters "20065_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '20065_Automation' item from 'Automation' column
+	When '20065_Automation' automation '20065_Action' action run has finished
+	#Rename Automation
+	When User enters "20065_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
+	When User enters 'New_Test_Automation' text to 'Automation Name' textbox
+	When User clicks 'UPDATE' button
+	#Run Automation
+	When User enters "New_Test_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for 'New_Test_Automation' item from 'Automation' column
+	When 'New_Test_Automation' automation '20065_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User enters "20065_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User clicks content from "Objects" column
+	Then "TestBulkUpdate" content is displayed for "zDeviceAut: Path" column
