@@ -217,15 +217,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{placeholder}' autocomplete is displayed");
         }
 
-        [Then(@"'(.*)' autocomplete last option is '(.*)'")]
-        public void ThenAutocompleteLastOptionIs(string placeholder, string option)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var options = page.GetAllAutocompleteOptions(placeholder);
-            Verify.AreEqual(option, options.Last(),
-                $"'{option}' option should be in the bottom of the '{placeholder}' autocomplete");
-        }
-
         [Then(@"'(.*)' autocomplete first option is '(.*)'")]
         public void ThenAutocompleteFirstOptionIs(string placeholder, string option)
         {
@@ -234,6 +225,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(option, options.First(),
                 $"'{option}' option should be first in the '{placeholder}' autocomplete");
             page.BodyContainer.Click();
+        }
+
+        [Then(@"'(.*)' autocomplete last option is '(.*)'")]
+        public void ThenAutocompleteLastOptionIs(string placeholder, string option)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var options = page.GetAllAutocompleteOptions(placeholder);
+            Verify.AreEqual(option, options.Last(),
+                $"'{option}' option should be in the bottom of the '{placeholder}' autocomplete");
         }
 
         [Then(@"'(.*)' autocomplete does NOT have options")]
@@ -856,6 +856,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Options are displayed in not in alphabetical order in the '{dropDownName}' dropdown");
         }
 
+        //This is not dropdown but autocomplete
         [Then(@"'(.*)' error message is displayed for '(.*)' dropdown")]
         public void ThenErrorMessageIsDisplayedForDropdown(string errorMassage, string dropdown)
         {
@@ -895,6 +896,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdownForField(value, fieldName);
         }
 
+        //| Value |
         [Then(@"following Values are displayed in the dropdown for the '(.*)' field:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdownForTheField(string fieldName, Table table)
         {
@@ -1296,11 +1298,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Radio button
 
-        [When(@"User clicks '(.*)' radio button")]
-        public void WhenUserClicksRadioButton(string radioButtonName)
+        [When(@"User checks '(.*)' radio button")]
+        public void WhenUserChecksRadiobutton(string radioButtonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetRadioButton(radioButtonName).Click();
+            page.SetRadioButtonState(radioButtonName, true);
         }
 
         [Then(@"'(.*)' radio button is disabled")]
@@ -1314,7 +1316,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenRadioButtonIsChecked(string radioButtonName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Verify.IsTrue(page.IsRadioButtonChecked(radioButtonName), $"'{radioButtonName}' radio button is not checked");
+            Verify.IsTrue(page.IsRadioButtonChecked(radioButtonName),
+                $"'{radioButtonName}' radio button is not checked");
         }
 
         #endregion

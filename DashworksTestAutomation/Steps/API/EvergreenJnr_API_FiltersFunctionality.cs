@@ -170,8 +170,14 @@ namespace DashworksTestAutomation.Steps.API
 
             var responseContent = JsonConvert.DeserializeObject<List<JObject>>(content).ToList();
             var subcategory = responseContent.FindAll(x => x["translatedCategory"].ToString().Equals(categoryName)).ToList();
-            var subcategoryList = subcategory.Select(x => x["translatedTextLabel"].ToString()).ToList();
+            var subcategoryList = subcategory.Select(x => x["label"].ToString()).OrderBy(l=>l).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+
+            //sz: for debugging
+            //for (int i = 0; i < expectedList.Count; i++)
+            //{
+            //    Verify.That(expectedList[i], Is.EqualTo(subcategoryList[i]), "check!!!");
+            //}
 
             Verify.That(subcategoryList, Is.EqualTo(expectedList), "Selected values are not displayed in that filter");
         }

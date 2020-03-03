@@ -476,6 +476,125 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObject" +
+            "DetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenApplied")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("CustomFields")]
+        [NUnit.Framework.CategoryAttribute("DAS20064")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObjectDetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenApplied()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObjectDetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenAppliedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObjectDetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenAppliedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObject" +
+                    "DetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenApplied", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_ItemDetails",
+                        "CustomFields",
+                        "DAS20064",
+                        "Cleanup"});
+#line 84
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FieldName",
+                        "FieldLabel",
+                        "AllowExternalUpdate",
+                        "Enabled",
+                        "Mailbox"});
+            table9.AddRow(new string[] {
+                        "CfDAS20064_3A",
+                        "FlDAS20064_3A",
+                        "true",
+                        "true",
+                        "true"});
+            table9.AddRow(new string[] {
+                        "CfDAS20064_3B",
+                        "FlDAS20064_3B",
+                        "true",
+                        "true",
+                        "true"});
+#line 85
+ testRunner.When("User creates new Custom Field via API", ((string)(null)), table9, "When ");
+#line 89
+ testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ObjectType",
+                        "ObjectId",
+                        "FieldName",
+                        "Value"});
+            table10.AddRow(new string[] {
+                        "mailbox",
+                        "46384",
+                        "CfDAS20064_3A",
+                        "ValueDAS20064_3A"});
+            table10.AddRow(new string[] {
+                        "mailbox",
+                        "46384",
+                        "CfDAS20064_3B",
+                        "ValueDAS20064_3B"});
+#line 90
+ testRunner.And("User creates Custom Field via API", ((string)(null)), table10, "And ");
+#line 94
+ testRunner.And("User navigates to the \'Mailbox\' details page for \'0072B088173449E3A93@bclabs.loca" +
+                    "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.Then("Details page for \'0072B088173449E3A93@bclabs.local\' item is displayed to the user" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 96
+ testRunner.When("User navigates to the \'Custom Fields\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 97
+ testRunner.When("User enters \"DAS20064\" text in the Search field for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 98
+ testRunner.When("User clicks \'Edit\' option in Cog-menu for \'FlDAS20064_3B\' item from \'Custom Field" +
+                    "\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 99
+ testRunner.Then("Save and Cancel buttons with tooltips are displayed for clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 100
+ testRunner.When("User save \'ValueDAS20064_3B_UPD\' text in clickable value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
+ testRunner.When("User clicks button with \'ResetFilters\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 102
+ testRunner.When("User enters \"FlDAS20064_3B\" text in the Search field for \"Custom Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 103
+ testRunner.Then("\'ValueDAS20064_3B_UPD\' content is displayed in the \'Value\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

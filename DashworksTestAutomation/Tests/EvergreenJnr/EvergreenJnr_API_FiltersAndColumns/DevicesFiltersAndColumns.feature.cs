@@ -136,14 +136,17 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        public virtual void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData()
+        [NUnit.Framework.TestCaseAttribute("Suggested", "Windows7Mi: Category", "devices?$filter=(project_1_subCategoryId%20EQUALS%20(\'NULL\'%2C\'76\'))&$select=host" +
+            "name,chassisCategory,oSCategory,ownerDisplayName,project_1_subCategoryId,project" +
+            "_1_subCategory", null)]
+        public virtual void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseDataInternal();
+                    this.EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseDataInternal(filterCategory,filterName,queryString,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -162,345 +165,34 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseDataInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData", null, new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "API",
-                        "FiltersAndColumns"});
-#line 14
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 15
- testRunner.Then("Positive number of results returned for \'DevicesQueryUrls\' requests", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS11550")]
-        [NUnit.Framework.CategoryAttribute("DAS11749")]
-        [NUnit.Framework.CategoryAttribute("DAS9583")]
-        [NUnit.Framework.TestCaseAttribute("Application", "Application Name", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "App field 1", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "Application Owner", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "General information field 1", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Custom Fields", "App field 2", null)]
-        public virtual void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI(string categoryName, string filterName, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPIInternal(categoryName,filterName,exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPIInternal(string categoryName, string filterName, string[] exampleTags)
+        private void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseDataInternal(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Devices",
                     "API",
-                    "FiltersAndColumns",
-                    "DAS11550",
-                    "DAS11749",
-                    "DAS9583"};
+                    "FiltersAndColumns"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI" +
-                    "", null, @__tags);
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData", null, @__tags);
+#line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "OperatorValues"});
+                        "FilterCategory",
+                        "FilterName",
+                        "QueryString"});
             table1.AddRow(new string[] {
-                        "Equals"});
-            table1.AddRow(new string[] {
-                        "Does not equal"});
-            table1.AddRow(new string[] {
-                        "Contains"});
-            table1.AddRow(new string[] {
-                        "Does not contain"});
-            table1.AddRow(new string[] {
-                        "Begins with"});
-            table1.AddRow(new string[] {
-                        "Does not begin with"});
-            table1.AddRow(new string[] {
-                        "Ends with"});
-            table1.AddRow(new string[] {
-                        "Does not end with"});
-            table1.AddRow(new string[] {
-                        "Empty"});
-            table1.AddRow(new string[] {
-                        "Not empty"});
-#line 19
- testRunner.Then(string.Format("following operators are displayed in \"{0}\" category for \"{1}\" filter on \"Devices\"" +
-                        " page:", categoryName, filterName), ((string)(null)), table1, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableForObjectKey" +
-            "Filter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS10776")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableForObjectKeyFilter()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableForObjectKeyFilterInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableForObjectKeyFilterInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatEmptyAndNotEmptyOptionsIsAvaildableForObjectKey" +
-                    "Filter", null, new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "API",
-                        "FiltersAndColumns",
-                        "DAS10776"});
-#line 41
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "OperatorValues"});
-            table2.AddRow(new string[] {
-                        "Equals"});
-            table2.AddRow(new string[] {
-                        "Does not equal"});
-            table2.AddRow(new string[] {
-                        "Greater than"});
-            table2.AddRow(new string[] {
-                        "Greater than or equal to"});
-            table2.AddRow(new string[] {
-                        "Less than"});
-            table2.AddRow(new string[] {
-                        "Less than or equal to"});
-            table2.AddRow(new string[] {
-                        "Empty"});
-            table2.AddRow(new string[] {
-                        "Not empty"});
-#line 42
- testRunner.Then("following operators are displayed in \"Computer AD Object\" category for \"AD Object" +
-                    " Key\" filter on \"Devices\" page:", ((string)(null)), table2, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperator")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS13831")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperator()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperatorInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperatorInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperator", null, new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "API",
-                        "FiltersAndColumns",
-                        "DAS13831"});
-#line 54
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "OperatorValues"});
-            table3.AddRow(new string[] {
-                        "Equals"});
-            table3.AddRow(new string[] {
-                        "Equals (relative)"});
-            table3.AddRow(new string[] {
-                        "Does not equal"});
-            table3.AddRow(new string[] {
-                        "Between"});
-            table3.AddRow(new string[] {
-                        "Does not equal (relative)"});
-            table3.AddRow(new string[] {
-                        "Before"});
-            table3.AddRow(new string[] {
-                        "Before (relative)"});
-            table3.AddRow(new string[] {
-                        "On or before"});
-            table3.AddRow(new string[] {
-                        "On or before (relative)"});
-            table3.AddRow(new string[] {
-                        "After"});
-            table3.AddRow(new string[] {
-                        "After (relative)"});
-            table3.AddRow(new string[] {
-                        "On or after"});
-            table3.AddRow(new string[] {
-                        "On or after (relative)"});
-            table3.AddRow(new string[] {
-                        "Empty"});
-            table3.AddRow(new string[] {
-                        "Not empty"});
-#line 55
- testRunner.Then("following operators are displayed in \"Device\" category for \"Build Date\" filter on" +
-                    " \"Devices\" page:", ((string)(null)), table3, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperators")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS17413")]
-        [NUnit.Framework.TestCaseAttribute("Organisation", "Department", null)]
-        [NUnit.Framework.TestCaseAttribute("Device Owner Organisation", "Owner Department Level 1", null)]
-        public virtual void EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperators(string category, string filter, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperatorsInternal(category,filter,exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperatorsInternal(string category, string filter, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Devices",
-                    "API",
-                    "FiltersAndColumns",
-                    "DAS17413"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatDeviceDepartmentHasCorrectFilterOperators", null, @__tags);
-#line 74
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "OperatorValues"});
-            table4.AddRow(new string[] {
-                        "Equals"});
-            table4.AddRow(new string[] {
-                        "Does not equal"});
-            table4.AddRow(new string[] {
-                        "Not empty"});
-#line 75
- testRunner.Then(string.Format("following operators are displayed in \"{0}\" category for \"{1}\" filter on \"Devices\"" +
-                        " page:", category, filter), ((string)(null)), table4, "Then ");
+                        string.Format("{0}", filterCategory),
+                        string.Format("{0}", filterName),
+                        string.Format("{0}", queryString)});
+#line 14
+ testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -1277,41 +1277,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 urlPartToCheck.ToLower(),
                 $"{filterName} is not added to URL");
         }
-
-        [Then(@"Appropriate filter is added to URL")]
-        public void ThenAppropriateFilterIsAddedToURL()
-        {
-            var filterPanel = _driver.NowAt<FiltersElement>();
-            var basePage = _driver.NowAt<BaseDashboardPage>();
-            var currentUrl = _driver.Url;
-            var pattern = @"\$filter=(.*)&\$";
-            if (filterPanel.GetFiltersNames().Count > 1)
-            {
-                pattern = @"\$filter=(.*)";
-                for (var i = 0; i < filterPanel.GetFiltersNames().Count - 1; i++) pattern = pattern + @"%20OR%20(.*)";
-
-                pattern = pattern + @"&\$";
-            }
-
-            var filtersInUrl = Regex.Match(currentUrl, pattern).Groups;
-            IList<string> filtersValuesInUrl = new List<string>();
-            for (var i = 1; i < Regex.Match(currentUrl, pattern).Groups.Count; i++)
-                filtersValuesInUrl.Add(filtersInUrl[i].Value);
-
-            for (var i = 0; i < filterPanel.GetAddedFilters().Count; i++)
-            {
-                var filter = filterPanel.GetAddedFilters()[i];
-                var filterName = filter.FindElement(By.XPath(FiltersElement.FilterNameSelector)).Text;
-                var filterValue = filter.FindElement(By.XPath(FiltersElement.FilterValuesSelector)).Text;
-                var filterOption = filter.FindElement(By.XPath(FiltersElement.FilterOptionsSelector)).Text;
-                var urlPartToCheck = filtersValuesInUrl[i];
-                var headerElement = _driver.NowAt<BaseHeaderElement>();
-                headerElement.CheckPageHeaderContainsText(filterName);
-                Verify.Contains(FilterOperatorsConvertor.Convert(filterOption), urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
-                Verify.Contains(filterValue, urlPartToCheck, "PLEASE ADD EXCEPTION MESSAGE");
-            }
-        }
-
         #endregion
 
         [Then(@"Options is displayed in added filter info")]
@@ -1550,14 +1515,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.UpdateButton.Click();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
-        }
-
-        [Then(@"Save button is not available on the Filter panel")]
-        public void ThenSaveButtonIsNotAvailableOnTheFilterPanel()
-        {
-            var filterPanel = _driver.NowAt<FiltersElement>();
-            _driver.WaitForElementToBeDisplayed(filterPanel.SaveButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(filterPanel.SaveButton.GetAttribute("disabled")), "Save Button is active");
         }
 
         [Then(@"User save change in current filter")]

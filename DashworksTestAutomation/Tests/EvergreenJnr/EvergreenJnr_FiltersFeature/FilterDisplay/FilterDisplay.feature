@@ -11,10 +11,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Build Date" filter where type is "Equals" with added column and following value:
-	| Values |
-	| 1      |
-	Then Save button is not available on the Filter panel
+	When user select "Build Date" filter
+	And User enters '111' text to 'Date' textbox
+	Then 'ADD' button is disabled
 
 @Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS11738 @DAS12194 @DAS12199 @DAS12220
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
@@ -94,7 +93,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	And User enters "testText" text in Search field at selected Filter
 	And User clicks Add button for input filter value
 	And User select "Not entitled to device" Association for Application filter with Lookup value
-	When User clicks 'UPDATE' button 
+	When User clicks 'ADD' button 
 	Then "Application whose Name is testText not entitled to device" is displayed in added filter info
 	When User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed

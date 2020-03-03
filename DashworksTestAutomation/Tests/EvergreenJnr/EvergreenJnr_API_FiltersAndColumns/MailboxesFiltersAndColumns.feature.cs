@@ -136,15 +136,15 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData()
+        [NUnit.Framework.TestCaseAttribute("Organization", "Department Level 1", "mailboxes?$filter=(departmentLevelFieldId_1%20EQUALS%20(\'2\'%2C\'9\'))", null)]
+        public virtual void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal();
+                    this.EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal(filterCategory,filterName,queryString,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -163,21 +163,34 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal()
+        private void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData", null, new string[] {
-                        "Evergreen",
-                        "Mailboxes",
-                        "API",
-                        "FiltersAndColumns",
-                        "Not_Run"});
-#line 14
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "API",
+                    "FiltersAndColumns"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData", null, @__tags);
+#line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 15
- testRunner.Then("Positive number of results returned for \'MailboxesQueryUrls\' requests", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FilterCategory",
+                        "FilterName",
+                        "QueryString"});
+            table1.AddRow(new string[] {
+                        string.Format("{0}", filterCategory),
+                        string.Format("{0}", filterName),
+                        string.Format("{0}", queryString)});
+#line 14
+ testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

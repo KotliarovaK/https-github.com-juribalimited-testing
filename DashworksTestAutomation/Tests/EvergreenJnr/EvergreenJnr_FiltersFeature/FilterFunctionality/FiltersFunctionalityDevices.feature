@@ -745,7 +745,7 @@ Scenario: EvergreenJnr_DevicesList_CheckAppearanceOfComplianceValuesInTheFilterB
 		| Red     |
 		| Amber   |
 		| Green   |
-		| None    |
+		| Ignore  |
 	When User clicks in search field in the Filter block
 	Then No ring icon displayed for Empty item in Lookup
 

@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterAddingAFilter
 	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Category" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| None               |
+	| Empty              |
 	Then grid headers are displayed in the following order
 	| ColumnName           |
 	| Hostname             |

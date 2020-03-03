@@ -85,9 +85,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	Then "List_DAS16228" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'ADD TEAM' button 
+	When User clicks 'ADD TEAM' button
 	When User selects 'Team 1' option from 'Team' autocomplete
-	When User selects 'Admin' option from 'Permission' autocomplete
+	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 
 	When User navigates to the "All Devices" list
 	Then All lists are unique on the Lists panel
