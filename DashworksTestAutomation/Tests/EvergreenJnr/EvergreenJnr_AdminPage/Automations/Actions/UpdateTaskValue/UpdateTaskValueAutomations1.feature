@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
 	When User enters '999999' text to 'Value' textbox
 	Then '100000' content is displayed in 'Value' textbox
@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	Then inline error banner is not displayed
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options    |

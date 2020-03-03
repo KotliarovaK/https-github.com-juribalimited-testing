@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	When User selects 'Project Dates \ Forecast Date' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
 	When User enters '12' text to 'Value' textbox
 	When User selects 'Days' in the 'Units' dropdown
@@ -187,5 +187,5 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
 	When User selects 'Audit & Configuration \ Validate User Device Ownership' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
