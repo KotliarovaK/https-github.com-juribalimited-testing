@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using DashworksTestAutomation.DTO.Evergreen;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using RestSharp;
 using TechTalk.SpecFlow;
-using System.IO;
 using DashworksTestAutomation.DTO.Evergreen.API;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -27,36 +24,24 @@ namespace DashworksTestAutomation.Steps.API
             _client = client;
         }
 
-        private IRestResponse CheckFiltersCount(string list)
+        private IRestResponse GetFiltersByListName(string list)
         {
-            var url = $"{UrlProvider.RestClientBaseUrl}{list}/fields?$lang=en-US";
+            var url = $"{UrlProvider.RestClientBaseUrl}{list}/filters?$lang=en-US";
             var response = _client.Evergreen.Get(url.GenerateRequest());
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 throw new Exception($"Unable to get filters for '{list}' list: {response.ErrorMessage}");
-
-            var currentFilters = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FilterDto>>(response.Content);
-
-            var expectedList = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json");
-
-            Utils.Verify.AreEqual(expectedList.Count, currentFilters.Count, "Filters count are different");
 
             return response;
         }
 
-        private IRestResponse CheckColumnsCount(string list)
+        private IRestResponse GetColumnsByListName(string list)
         {
-            var url = $"{UrlProvider.RestClientBaseUrl}{list.ToLower()}/filters?$lang=en-US";
+            var url = $"{UrlProvider.RestClientBaseUrl}{list.ToLower()}/fields?$lang=en-US";
             var response = _client.Evergreen.Get(url.GenerateRequest());
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
                 throw new Exception($"Unable to get filters for '{list}' list: {response.ErrorMessage}");
-
-            var currentColumns = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
-
-            var expectedList = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json");
-
-            Utils.Verify.AreEqual(expectedList.Count, currentColumns.Count, "Columns count are different");
 
             return response;
         }
@@ -64,37 +49,33 @@ namespace DashworksTestAutomation.Steps.API
         [Then(@"All columns with correct data are returned from the API for '(.*)' list")]
         public void ThenAllColumnsWithCorrectDataAreReturnedFromTheAPIForList(string list)
         {
-            var response = CheckColumnsCount(list);
+            var response = GetColumnsByListName(list);
 
-            var currentColumns = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
+            var currentColumns = JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
+            var expectedColumns = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json");
 
-            var expectedList = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json");
+            Verify.AreEqual(currentColumns.Count, expectedColumns.Count, "Columns count are different");
 
-            foreach (ColumnDto columnDto in expectedList)
+            foreach (ColumnDto columnDto in expectedColumns)
             {
-                Verify.IsTrue(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.Label}' name");
+                Verify.That(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.ColumnName}' name");
             }
         }
 
         [Then(@"All filters with correct data are returned from the API for '(.*)' list")]
         public void ThenAllFiltersWithCorrectDataAreReturnedFromTheAPIForList(string list)
         {
-            var response = CheckFiltersCount(list);
+            var response = GetFiltersByListName(list);
 
-            var currentFilters = Newtonsoft.Json.JsonConvert.DeserializeObject<List<FilterDto>>(response.Content);
+            var currentFilters = JsonConvert.DeserializeObject<List<FilterDto>>(response.Content);
+            var expectedFilters = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json");
 
-            var expectedList = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json");
+            Verify.AreEqual(expectedFilters.Count, currentFilters.Count, "Filters count are different");
 
-            foreach (FilterDto filterDto in expectedList)
+            foreach (FilterDto filterDto in expectedFilters)
             {
-                Verify.IsTrue(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.ColumnName}' name");
+                Verify.IsTrue(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.Label}' name");
             }
-        }
-
-        [Then(@"Positive number of results returned for '(.*)' requests")]
-        public void ThenPositiveNumberOfResultsReturnedForRequests(string fileName)
-        {
-           
         }
 
         [Then(@"Positive number of results returned for requests:")]
@@ -103,19 +84,6 @@ namespace DashworksTestAutomation.Steps.API
             foreach (TableRow row in table.Rows)
             {
                 var list = row.Values.Last().Split('?').First();
-
-                #region Ckeck that Filters and Columns count is correct to proceed with queries
-
-                //Commented this to save time. Anyway we doing exactly the same in general test
-                //CheckFiltersCount(list);
-                //CheckColumnsCount(list);
-
-                #endregion
-
-                //var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource($"QueryUrls\\{fileName}.txt");
-                //var reader = new StreamReader(fullPath);
-                //string content = reader.ReadToEnd();
-
                 var url = $"{UrlProvider.RestClientBaseUrl}/{row.Values.Last().Replace($"{list}?", $"{list}?$top=100&$skip=0&")}";
                 var response = _client.Evergreen.Get(url.GenerateRequest());
 

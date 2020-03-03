@@ -46,10 +46,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| CLUSTERSSAS    |
 	Then "NotOwnerSpecifiedAdmin" list is displayed to user
 	When User clicks the Permissions button
-	When User selects 'Specific users' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User clicks 'ADD USER' button
 	And User select current user in Select User dropdown
-	When User selects 'Admin' option from 'Permission' autocomplete
+	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
@@ -63,10 +63,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedEdit" list is displayed to user
 	When User clicks the Permissions button
-	When User selects 'Specific users' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User clicks 'ADD USER' button
 	And User select current user in Select User dropdown
-	When User selects 'Edit' option from 'Permission' autocomplete
+	When User selects 'Edit' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
@@ -80,10 +80,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedRead" list is displayed to user
 	When User clicks the Permissions button
-	When User selects 'Specific users' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User clicks 'ADD USER' button
 	And User select current user in Select User dropdown
-	When User selects 'Read' option from 'Permission' autocomplete
+	When User selects 'Read' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner

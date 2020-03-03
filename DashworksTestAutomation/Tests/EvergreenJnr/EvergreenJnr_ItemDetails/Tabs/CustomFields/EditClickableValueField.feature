@@ -79,3 +79,25 @@ Scenario: EvergreenJnr_MailboxesList_CheckClickableValueSavedOnFocusLost
 	When User clicks Body container
 	Then Save and Cancel buttons are NOT displayed for clickable value
 	And 'UPDATED_Focus_Lost' content is displayed in the 'Value' column
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @CustomFields @DAS20064 @Cleanup
+Scenario: EvergreenJnr_MailboxesList_CheckThatEditingOfTheCustomFieldIsActivatedOnTheObjectDetailsPageViaTheCogMenuInCaseTheSearchFilterHadBeenApplied
+	When User creates new Custom Field via API
+	| FieldName     | FieldLabel    | AllowExternalUpdate | Enabled | Mailbox |
+	| CfDAS20064_3A | FlDAS20064_3A | true                | true    | true    |
+	| CfDAS20064_3B | FlDAS20064_3B | true                | true    | true    |
+	And User navigate to Evergreen URL
+	And User creates Custom Field via API
+	| ObjectType | ObjectId | FieldName     | Value            |
+	| mailbox    | 46384    | CfDAS20064_3A | ValueDAS20064_3A |
+	| mailbox    | 46384    | CfDAS20064_3B | ValueDAS20064_3B |
+	And User navigates to the 'Mailbox' details page for '0072B088173449E3A93@bclabs.local' item
+	Then Details page for '0072B088173449E3A93@bclabs.local' item is displayed to the user
+	When User navigates to the 'Custom Fields' left submenu item
+	When User enters "DAS20064" text in the Search field for "Value" column
+	When User clicks 'Edit' option in Cog-menu for 'FlDAS20064_3B' item from 'Custom Field' column
+	Then Save and Cancel buttons with tooltips are displayed for clickable value
+	When User save 'ValueDAS20064_3B_UPD' text in clickable value
+	When User clicks button with 'ResetFilters' aria label
+	When User enters "FlDAS20064_3B" text in the Search field for "Custom Field" column
+	Then 'ValueDAS20064_3B_UPD' content is displayed in the 'Value' column

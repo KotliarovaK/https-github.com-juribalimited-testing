@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17808 @DAS18408
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS17808 @DAS18408
 Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User navigates to the 'User' details page for 'ZZP911429' item
 	Then Details page for 'ZZP911429' item is displayed to the user
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	| App Readiness        |
 	| Stage 3              |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18700
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS18700
 Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrectlyOnProjectOwnedTab 
 	When User navigates to the 'User' details page for 'LYZ6880619' item
 	Then Details page for 'LYZ6880619' item is displayed to the user
@@ -53,7 +53,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatRationalisationColumnIsDisplayedCorrec
 	| Content       |
 	| UNCATEGORISED |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18743
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS18743
 Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCorrectly
 	When User navigates to the 'User' details page for 'LYZ6880619' item
 	Then Details page for 'LYZ6880619' item is displayed to the user
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInProjectOwnedSubtabAreWorkingCor
 	Then User click back button in the browser
 	And Details page for 'LYZ6880619' item is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19321
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS19321
 Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfterChangingTheProject
 	When User navigates to the 'User' details page for the item with '29342' ID
 	Then Details page for 'SNL594136' item is displayed to the user
@@ -75,3 +75,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfter
 	Then 'VideoLAN VLC media player 0.8.2-test2 (A01)' content is displayed in the 'Current App' column
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	Then 'Vertigo Managed Smart Documents Wrapper (SMS_GEN)' content is displayed in the 'Current App' column
+
+#This is fixed only on void
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS20047 @DAS20088 @Void
+Scenario: EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutAName
+	When User navigates to the 'User' details page for the item with '537' ID
+	Then Details page for 'CVS3269200' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Project Owned' left submenu item
+	Then 'Empty' content is displayed in the 'Current App' column
+	When User clicks "Empty" link on the Details Page
+	Then 'Details' left menu item is expanded

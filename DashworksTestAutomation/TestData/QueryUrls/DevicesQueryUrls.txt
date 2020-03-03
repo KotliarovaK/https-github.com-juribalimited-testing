@@ -1,1 +1,0 @@
-devices?$filter=(project_1_subCategoryId%20EQUALS%20('NULL'%2C'76'))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_1_subCategoryId,project_1_subCategory
