@@ -889,6 +889,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdownForField(value, fieldName);
         }
 
+        //| Value |
         [Then(@"following Values are displayed in the dropdown for the '(.*)' field:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdownForTheField(string fieldName, Table table)
         {
