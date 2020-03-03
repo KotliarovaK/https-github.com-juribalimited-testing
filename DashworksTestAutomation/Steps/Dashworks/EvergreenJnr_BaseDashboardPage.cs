@@ -106,7 +106,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   ").Trim(),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
-       
+
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
         public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
         {
@@ -129,16 +129,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCurrentDateIsDisplayedForColumn(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            var currentDate = DateTime.Now.ToString("dd MMM yyyy");
-            var firstColumnCell = page.GetColumnContentByColumnName(columnName).FirstOrDefault();
-            //Sometimes data is not changed immediately and we need to wait for it
-            if (!currentDate.Equals(firstColumnCell))
+            var currentDate = DateTime.Now.ToString("d MMM yyyy");
+            var allCells = page.GetColumnElementsByColumnName(columnName);
+            _driver.WaitForElementToContainsText(allCells, currentDate);
+            var columnContent = page.GetColumnContentByColumnName(columnName);
+            foreach (string content in columnContent)
             {
-                Thread.Sleep(2000);
-                firstColumnCell = page.GetColumnContentByColumnName(columnName).FirstOrDefault();
+                Verify.AreEqual(currentDate, content, $"'{currentDate}' is not displayed in the '{columnName}'");
             }
-            Verify.AreEqual(currentDate, firstColumnCell, $"{currentDate} is not displayed in the {columnName}");
         }
 
         [Then(@"""(.*)"" italic content is displayed")]
@@ -212,7 +210,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
         }
-        
+
         [Then(@"String filter values are not duplicated")]
         public void ThenStringFilterValuesAreNotDuplicated()
         {
@@ -259,7 +257,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.ListRowsCounter);
 
-            string rememberedNumber = !string.IsNullOrEmpty(_columnValue.Value)? _columnValue.Value: _rowCountValue.Value;
+            string rememberedNumber = !string.IsNullOrEmpty(_columnValue.Value) ? _columnValue.Value : _rowCountValue.Value;
 
             Verify.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
