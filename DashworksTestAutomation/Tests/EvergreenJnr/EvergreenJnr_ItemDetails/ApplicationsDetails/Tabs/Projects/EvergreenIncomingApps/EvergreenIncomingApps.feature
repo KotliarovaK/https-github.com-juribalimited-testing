@@ -52,6 +52,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIncomingAppCounterIsDynamicall
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
 	When User enters 'Corel WordPerfect' in the 'Application' autocomplete field and selects 'Corel WordPerfect 8 (327)' value
 	When User clicks 'UPDATE' button on popup
+	When User clicks 'UPDATE' button on popup
 	When User navigates to the 'Evergreen Incoming Apps' left submenu item
-	Then 'Evergreen Incoming Apps' left submenu item with '5' count is displayed
-	Then Counter shows "5" found rows
+	Then 'Evergreen Incoming Apps' left submenu item with '0' count is displayed
+	Then 'No Evergreen incoming apps found for this application' message is displayed on empty greed

@@ -314,11 +314,14 @@ this.FeatureBackground();
 #line 54
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
- testRunner.When("User navigates to the \'Evergreen Incoming Apps\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 56
- testRunner.Then("\'Evergreen Incoming Apps\' left submenu item with \'5\' count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'Evergreen Incoming Apps\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 57
- testRunner.Then("Counter shows \"5\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Evergreen Incoming Apps\' left submenu item with \'0\' count is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 58
+ testRunner.Then("\'No Evergreen incoming apps found for this application\' message is displayed on e" +
+                    "mpty greed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
