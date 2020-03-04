@@ -564,6 +564,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return error.Text;
         }
 
+        private By textboxInfoSelector = By.XPath("./span[contains(@class,'info-text')]");
+
+        public string GetTextboxInfoMessage(string placeholder)
+        {
+
+            var error = GetTextboxErrorMessageElement(placeholder).FindElement(textboxInfoSelector);
+            return error.Text;
+        }
+
+        public void WaitForTextboxInfoMessageDisappears(string placeholder)
+        {
+            try
+            {
+                Driver.WaitForElementToBeNotDisplayed(GetTextboxErrorMessageElement(placeholder), textboxInfoSelector);
+            }
+            catch
+            {
+                //No error/info message located. Nothing to wait
+            }
+        }
+
         public IWebElement GetTextboxErrorMessageExclamationIcon(string placeholder)
         {
             var exclamationIcon = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[@class]"));
