@@ -22,6 +22,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
 
         public const string EditButton = ".//*[text()='{0}']//ancestor::tr//span[@class='editIcon']";
+        
+        public const string EditArrow = ".//*[text()='{0}']//ancestor::tr//div[contains(@class, 'select-arrow')]";
 
         private string FieldContent = ".//td//span[text()='{0}']//ancestor::tr//td//*[contains(text(),'{0}')]";
 
@@ -218,6 +220,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool EditFieldButtonDisplaying(string fieldName)
         {
             return Driver.IsElementDisplayed(By.XPath(string.Format(EditButton, fieldName)));
+        }
+
+        public bool EditArrowDisplaying(string fieldName)
+        {
+            return Driver.IsElementDisplayed(By.XPath(string.Format(EditArrow, fieldName)));
         }
 
         #endregion

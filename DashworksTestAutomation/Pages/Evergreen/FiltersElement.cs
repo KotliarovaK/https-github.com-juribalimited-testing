@@ -193,11 +193,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()=\"" + filterCategoryName + "\"]/ancestor::div[@class='filter-category ng-star-inserted']"));
         }
 
-        public IWebElement FilterFieldInstruction(string filterField)
-        {
-            return Driver.FindElement(By.XPath($".//input[@placeholder='{filterField}']/ancestor::div[@class='mat-form-field-wrapper']//mat-hint"));
-        }
-
         public List<string> GetFilterValuesByFilterName(string filterName)
         {
             var filterValues = new List<string>();

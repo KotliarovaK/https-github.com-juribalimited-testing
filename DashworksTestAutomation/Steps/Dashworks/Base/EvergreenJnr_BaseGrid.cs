@@ -43,7 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
      
         #endregion
 
-
         #region Headers
 
         [Then(@"grid headers are displayed in the following order")]
