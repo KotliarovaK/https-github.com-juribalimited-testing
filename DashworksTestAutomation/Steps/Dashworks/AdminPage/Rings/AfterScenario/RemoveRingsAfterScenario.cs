@@ -16,10 +16,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
     [Binding]
     public class RemoveRingsAfterScenario : SpecFlowContext
     {
-        private readonly Rings _rings;
+        private readonly DTO.RuntimeVariables.Rings.Rings _rings;
         private readonly RestWebClient _client;
 
-        private RemoveRingsAfterScenario(Rings rings, RestWebClient client)
+        private RemoveRingsAfterScenario(DTO.RuntimeVariables.Rings.Rings rings, RestWebClient client)
         {
             _rings = rings;
             _client = client;

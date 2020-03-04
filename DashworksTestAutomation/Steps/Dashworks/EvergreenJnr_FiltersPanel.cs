@@ -296,14 +296,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             baseElement.PopulateTextbox(placeholder, searchedText, false);
         }
 
-
-        [Then(@"User sees instruction '(.*)' below '(.*)' field")]
-        public void ThenValueIsDisplayedForSelectedLookupFilter(string instruction, string fieldName)
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            Verify.That(filterElement.FilterFieldInstruction(fieldName).Text, Is.EqualTo(instruction), $"{fieldName} has no or wrong instruction");
-        }
-
         [Then(@"Ahead or Ago dropdown is disabled")]
         public void ThenValueIsDisplayedForSelectedLookupFilter()
         {

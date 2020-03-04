@@ -635,8 +635,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenButtonForEditingTheFieldIsNotDisplayed(string fieldName)
         {
             var page = _driver.NowAt<DetailsPage>();
-            var t = page.EditFieldButtonDisplaying(fieldName);
-            Verify.IsFalse(t, $"Edit button for '{fieldName}' field is displayed");
+            Verify.IsFalse(page.EditFieldButtonDisplaying(fieldName), $"Edit button for '{fieldName}' field is displayed");
+        }
+
+        [Then(@"arrow for editing the '(.*)' field is not displayed")]
+        public void ThenArrowForEditingTheFieldIsNotDisplayed(string fieldName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            Verify.IsFalse(page.EditArrowDisplaying(fieldName), $"Edit arrow for '{fieldName}' field is displayed");
         }
 
         #endregion
