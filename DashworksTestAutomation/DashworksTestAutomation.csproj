@@ -1328,6 +1328,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataInTable.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Distribution\ApplicationsDetails_Distribution_Devices.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationsDetails_Distribution_Devices.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Distribution\ApplicationsDetails_Distribution_Groups.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationsDetails_Distribution_Groups.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenIncomingApps\EvergreenIncomingApps.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1352,6 +1362,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HideFromEndUsers_ApplicationsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\DevicesDetails_Applications_EvergreenDetail.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevicesDetails_Applications_EvergreenDetail.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\DevicesDetails_Applications_EvergreenSummary.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevicesDetails_Applications_EvergreenSummary.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Details\DevicesDetails_Details_DeviceOwner.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevicesDetails_Details_DeviceOwner.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\EvergreenDetails\DevicesDetails_Projects_EvergreenDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevicesDetails_Projects_EvergreenDetails.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\Bucket_DevicesPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1383,10 +1413,50 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ring_DevicesPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectsSummary\DevicesDetails_Projects_ProjectsSummary.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevicesDetails_Projects_ProjectsSummary.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Users\DevicesDetails_Users.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevicesDetails_Users.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetails_CopyActions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetails_CopyActions.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Details\MailboxesDetails_Details_Mailbox.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailboxesDetails_Details_Mailbox.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Details\MailboxesDetails_Details_MailboxOwner.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailboxesDetails_Details_MailboxOwner.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\MailboxesDetails_Projects_ProjectDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailboxesDetails_Projects_ProjectDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Ring_MailboxesPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ring_MailboxesPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Trend\MailboxesDetails_Trend.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailboxesDetails_Trend.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes_MailboxPermissions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDetails_Mailboxes_MailboxPermissions.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\ProjectDetails_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1428,22 +1498,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectOwned.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\CreateNewCustomField.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\CreateNewCustomField.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateNewCustomField.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\CustomFieldsCheck.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\CustomFieldsCheck.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomFieldsCheck.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\DeleteCustomFields.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\DeleteCustomFields.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DeleteCustomFields.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\EditClickableValueField.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\EditClickableValueField.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EditClickableValueField.feature</DependentUpon>
@@ -1503,60 +1573,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_MultiselectFilterChecking_UsersPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay_Api.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ItemDetailsContent_ActionsWithFields.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFieldsApi.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ItemDetailsContent_ActionsWithFieldsApi.feature</DependentUpon>
+      <DependentUpon>ItemDetailsDisplay_Api.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithTable.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetailsContent_ActionsWithTable.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\Offboard.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Offboard.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_ApplicationsPage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\ItemDetails_TabCounterChecking_ApplicationsPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TabCounterChecking_ApplicationsPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_DevicesPage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\ItemDetails_TabCounterChecking_DevicesPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TabCounterChecking_DevicesPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_GroupsPage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\GroupDetails\ItemDetails_TabCounterChecking_GroupsPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TabCounterChecking_GroupsPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_MailboxesPage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\ItemDetails_TabCounterChecking_MailboxesPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TabCounterChecking_MailboxesPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_UsersPage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\ItemDetails_TabCounterChecking_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_TabCounterChecking_UsersPage.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabContentChecking.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ItemDetails_TabContentChecking.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabsMenu.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ItemDetails_TabsMenu.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\Offboard_ApplicationsPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1573,10 +1623,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Offboard_MailboxesPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\Mailboxes.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Mailboxes.feature</DependentUpon>
+      <DependentUpon>UsersDetails_Mailboxes.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Bucket_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1642,6 +1692,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ring_UsersPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\UsersDetails_Projects_DeviceProjectSummary.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDetails_Projects_DeviceProjectSummary.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\TopBar.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2650,6 +2705,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Distribution\ApplicationsDetails_Distribution_Devices.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ApplicationsDetails_Distribution_Devices.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Distribution\ApplicationsDetails_Distribution_Groups.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ApplicationsDetails_Distribution_Groups.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenIncomingApps\EvergreenIncomingApps.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EvergreenIncomingApps.feature.cs</LastGenOutput>
@@ -2669,6 +2732,22 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\HideFromEndUsers_ApplicationsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HideFromEndUsers_ApplicationsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\DevicesDetails_Applications_EvergreenDetail.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DevicesDetails_Applications_EvergreenDetail.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\DevicesDetails_Applications_EvergreenSummary.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DevicesDetails_Applications_EvergreenSummary.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Details\DevicesDetails_Details_DeviceOwner.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DevicesDetails_Details_DeviceOwner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\EvergreenDetails\DevicesDetails_Projects_EvergreenDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DevicesDetails_Projects_EvergreenDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectDetails\Bucket_DevicesPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2690,9 +2769,41 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Ring_DevicesPage.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\ProjectsSummary\DevicesDetails_Projects_ProjectsSummary.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DevicesDetails_Projects_ProjectsSummary.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Users\DevicesDetails_Users.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DevicesDetails_Users.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetails_CopyActions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetails_CopyActions.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Details\MailboxesDetails_Details_Mailbox.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxesDetails_Details_Mailbox.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Details\MailboxesDetails_Details_MailboxOwner.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxesDetails_Details_MailboxOwner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\MailboxesDetails_Projects_ProjectDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxesDetails_Projects_ProjectDetails.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Ring_MailboxesPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Ring_MailboxesPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Trend\MailboxesDetails_Trend.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxesDetails_Trend.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes_MailboxPermissions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UsersDetails_Mailboxes_MailboxPermissions.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\ProjectDetails_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2726,19 +2837,19 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectOwned.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\CreateNewCustomField.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\CreateNewCustomField.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateNewCustomField.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\CustomFieldsCheck.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\CustomFieldsCheck.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CustomFieldsCheck.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\DeleteCustomFields.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\DeleteCustomFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteCustomFields.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\EditClickableValueField.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\EditClickableValueField.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditClickableValueField.feature.cs</LastGenOutput>
     </None>
@@ -2786,49 +2897,33 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_MultiselectFilterChecking_UsersPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay_Api.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ItemDetailsContent_ActionsWithFields.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFieldsApi.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ItemDetailsContent_ActionsWithFieldsApi.feature.cs</LastGenOutput>
+      <LastGenOutput>ItemDetailsDisplay_Api.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsContent_ActionsWithTable.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\Offboard.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Offboard.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_ApplicationsPage.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\ItemDetails_TabCounterChecking_ApplicationsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TabCounterChecking_ApplicationsPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_DevicesPage.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\ItemDetails_TabCounterChecking_DevicesPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TabCounterChecking_DevicesPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_GroupsPage.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\GroupDetails\ItemDetails_TabCounterChecking_GroupsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TabCounterChecking_GroupsPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_MailboxesPage.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\ItemDetails_TabCounterChecking_MailboxesPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TabCounterChecking_MailboxesPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetailsTabCounterChecking\ItemDetails_TabCounterChecking_UsersPage.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\ItemDetails_TabCounterChecking_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_TabCounterChecking_UsersPage.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabContentChecking.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ItemDetails_TabContentChecking.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\ItemDetails_TabsMenu.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ItemDetails_TabsMenu.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\ProjectDetails\Offboard_ApplicationsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2842,9 +2937,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Offboard_MailboxesPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\Mailboxes.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Mailboxes.feature.cs</LastGenOutput>
+      <LastGenOutput>UsersDetails_Mailboxes.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Bucket_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2897,6 +2992,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Ring_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Ring_UsersPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\UsersDetails_Projects_DeviceProjectSummary.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UsersDetails_Projects_DeviceProjectSummary.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -3148,11 +3247,10 @@
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateBucket\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\ActionsPanel\BulkUpdate_UpdateCapacityUnit\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Details\" />
+    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\MSI\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\ActiveDirectory\" />
-    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\" />
-    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Details\" />
-    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Projects\EvergreenDetails\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Specification\" />
+    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
