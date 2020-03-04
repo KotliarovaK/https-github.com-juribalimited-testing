@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Steps.API
 
         private IRestResponse GetFiltersByListName(string list)
         {
-            var url = $"{UrlProvider.RestClientBaseUrl}{list}/filters?$lang=en-US";
+            var url = $"{UrlProvider.RestClientBaseUrl}{list}/filters?$lang={UserProvider.DefaultUserLanguage}";
             var response = _client.Evergreen.Get(url.GenerateRequest());
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
