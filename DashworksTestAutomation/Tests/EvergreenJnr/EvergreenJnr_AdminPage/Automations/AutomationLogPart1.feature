@@ -158,11 +158,10 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
-	When User clicks 'Run now' option in Cog-menu for 'DELAY - do not delete2' item from 'Automation' column
-	When User clicks refresh button in the browser
-	When User clicks 'Run now' option in Cog-menu for 'DELAY - do not delete2' item from 'Automation' column
+	When User enters "DELAY_4" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for 'DELAY_4' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
-	When User enters "DELAY - do not delete2" text in the Search field for "Automation" column
+	When User enters "DELAY_4" text in the Search field for "Automation" column
 	Then "AUTOMATION IS ALREADY RUNNING" content is displayed for "Outcome" column
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17011 @DAS17374 @DAS17370 @DAS17367 @Cleanup @Not_Ready

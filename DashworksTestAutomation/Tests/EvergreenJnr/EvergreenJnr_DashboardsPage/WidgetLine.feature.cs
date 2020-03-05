@@ -143,7 +143,7 @@ this.FeatureBackground();
 #line 15
  testRunner.And("Dashboard with \'Dashboard for DAS15737\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.When("User clicks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
@@ -251,7 +251,7 @@ this.FeatureBackground();
 #line 45
  testRunner.When("Dashboard with \'2004 ProjectDAS16069\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.When("User clicks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -282,7 +282,7 @@ this.FeatureBackground();
 #line 53
  testRunner.Then("\'Project ScheduleDAS16069\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 54
- testRunner.When("User clicks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetName",
@@ -391,7 +391,7 @@ this.FeatureBackground();
 #line 78
  testRunner.And("Dashboard with \'DashboardForDas15920\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
- testRunner.When("User clicks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -486,7 +486,7 @@ this.FeatureBackground();
 #line 97
  testRunner.And("Dashboard with \'2004 ProjectDAS15544\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 98
- testRunner.When("User clicks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -592,7 +592,7 @@ this.FeatureBackground();
 #line 121
  testRunner.When("User clicks \'Dashboards\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 122
- testRunner.When("User clicks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 123
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -621,7 +621,7 @@ this.FeatureBackground();
 #line 129
  testRunner.Then("\'Project AllDevicesDAS15462\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 130
- testRunner.When("User clicks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetName",
@@ -706,7 +706,7 @@ this.FeatureBackground();
 #line 145
  testRunner.When("Dashboard with \'DAS17825_Dashboard\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 146
- testRunner.When("User clicks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @DAS18911 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
 	When Dashboard with 'Dashboard for DAS15721' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD SECTION' button 
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When Dashboard with 'Dashboard_DAS14618' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    |
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title               | List                                 | MaxRows | MaxColumns |
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBr
 	When User confirms list removing
 	Then list with "ADevicesList17551" name is removed
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title               | List                   | MaxRows | MaxColumns |
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	When Dashboard with 'Dashboard_DAS12974Default' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	Then User sees correct tooltip for Show Dashboards panel
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard_DAS12974Default' list
@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	When Dashboard with 'Dashboard for DAS12974SECTION' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
@@ -235,7 +235,7 @@ Examples:
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff
 	When Dashboard with 'Dashboard for DAS17985' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18152 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget
 	When Dashboard with 'Dashboard for DAS18152' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |

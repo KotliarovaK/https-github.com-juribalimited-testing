@@ -1,4 +1,4 @@
-﻿Feature: CheckingUpdatedValue
+﻿Feature: CheckingUpdatedValue1
 	Runs Checking Updated Value related tests
 
 Background: Pre-Conditions
@@ -273,3 +273,88 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	Then Success message with " " text is displayed on Action panel
 	When User refreshes agGrid
 	Then "+5 days from current" content is displayed for "zDeviceAut: Relative BU \ DT BU App" column
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19656 @Void
+Scenario: EvergreenJnr_UsersList_CheckUnitsDropDownUpdateTaskValueForBulkUpdate
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                             |
+	| zDeviceAut: Stage A \ Weekdays BU Task |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Hostname" filter where type is "Equals" with added column and following value:
+	| Values         |
+	| 00I0COBFWHOF27 |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User selects all rows on the grid
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
+	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '5' text to 'Value' textbox
+	When User selects 'Week days' in the 'Units' dropdown
+	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User clicks 'UPDATE' button
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then "10 Feb 2020" content is displayed for "zDeviceAut: Stage A \ Weekdays BU Task" column
+	#Return value
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '17 Feb 2020' text to 'Date' datepicker
+	When User clicks 'UPDATE' button
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then "17 Feb 2020" content is displayed for "zDeviceAut: Stage A \ Weekdays BU Task" column
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Void
+Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                             |
+	| zDeviceAut: Stage A \ Weekdays BU Task |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Hostname" filter where type is "Equals" with added column and following value:
+	| Values         |
+	| 0QJU500MO3M620 |
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User selects all rows on the grid
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
+	When User selects 'Update relative to now' in the 'Update Date' dropdown
+	When User enters '0' text to 'Value' textbox
+	When User selects 'Before now' in the 'Before or After' dropdown
+	When User clicks 'UPDATE' button
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then current date is displayed for 'zDeviceAut: Stage A \ Weekdays BU Task' column
+	#Return value
+	When User selects 'Bulk update' in the 'Action' dropdown
+	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '10 Feb 2020' text to 'Date' datepicker
+	When User clicks 'UPDATE' button
+	When User clicks 'UPDATE' button
+	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User refreshes agGrid
+	Then "10 Feb 2020" content is displayed for "zDeviceAut: Stage A \ Weekdays BU Task" column

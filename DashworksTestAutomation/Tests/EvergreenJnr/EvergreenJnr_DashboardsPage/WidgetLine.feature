@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	| prK: Application Readiness |
 	And User create dynamic list with "TestList_DAS15737" name on "Users" page
 	And Dashboard with 'Dashboard for DAS15737' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Line' in the 'WidgetType' dropdown
 	And User enters 'DAS15737' as Widget Title
@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	And User create dynamic list with "2004 ScheduleDAS16069" name on "Devices" page
 	Then "2004 ScheduleDAS16069" list is displayed to user
 	When Dashboard with '2004 ProjectDAS16069' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                    | List                  | AggregateBy | AggregateFunction | SplitBy                              | OrderBy                                  | Drilldown |
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'Project ScheduleDAS16069' Widget is displayed to the user
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName               | NumberOfPoint | Tooltip      |
 	| Project ScheduleDAS16069 | 1             | 5 Nov 2018 4 |
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	| Compliance                    |
 	And User create dynamic list with "ListForDas15920" name on "Users" page
 	And Dashboard with 'DashboardForDas15920' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                 | List            | AggregateFunction | SplitBy                       | OrderBy                           | Drilldown |
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| Service Pack or Build |
 	And User create dynamic list with "ListForDas15544" name on "Devices" page
 	And Dashboard with '2004 ProjectDAS15544' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                     | List            | AggregateFunction | SplitBy               | OrderBy                   | Drilldown |
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15462
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCount
 	When User clicks 'Dashboards' on the left-hand menu
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                      | List        | AggregateBy | AggregateFunction | SplitBy          | OrderBy              |
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'Project AllDevicesDAS15462' Widget is displayed to the user
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	Then Tooltip is displayed for the point of Line widget
 	| WidgetName                 | NumberOfPoint | Tooltip     |
 	| Project AllDevicesDAS15462 | 2             | OS X 10.5 1 |
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	And User create dynamic list with "ListForDAS17825" name on "Devices" page
 	Then "ListForDAS17825" list is displayed to user
 	When Dashboard with 'DAS17825_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List            | SplitBy                           | AggregateFunction | OrderBy   |

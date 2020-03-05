@@ -415,7 +415,7 @@ this.FeatureBackground();
 #line 98
  testRunner.Then("\'Show this component\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
- testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 101
  testRunner.When("User enters \'AOC_Updated Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103
@@ -575,56 +575,52 @@ this.FeatureBackground();
                         "true"});
 #line 137
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table20, "When ");
-#line 141
- testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ComponentName",
+                        "ProjectName",
+                        "OwnerPermission"});
+            table21.AddRow(new string[] {
+                        "AOC Name",
+                        "User Evergreen Capacity Project",
+                        "Do not allow owner to be changed"});
 #line 142
- testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs1\' name o" +
-                    "n Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 143
- testRunner.When("User clicks on \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
- testRunner.When("User clicks \'ADD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User creates new application ownership component for \'TestPageSs1\' Self Service p" +
+                    "age via API", ((string)(null)), table21, "When ");
 #line 145
- testRunner.Then("Page with \'Create App Ownership Component\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 147
- testRunner.When("User enters \'AOC Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 150
- testRunner.When("User selects \'User Evergreen Capacity Project\' option from \'Project\' autocomplete" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 151
- testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 153
  testRunner.When("User selects \'Edit\' cogmenu option for \'Application Ownership\' item type with \'AO" +
                     "C Name\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 154
+#line 148
  testRunner.When("User enters \'AOC_Updated Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 156
+#line 150
  testRunner.When("User selects \'Windows 7 Migration (Computer Scheduled Project)\' option from \'Proj" +
                     "ect\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 157
+#line 151
  testRunner.When("User checks \'Allow owner to be set to another user only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 158
+#line 152
  testRunner.When("User selects \'DAS_19909_3\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 159
+#line 153
  testRunner.When("User checks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 160
+#line 154
  testRunner.When("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 162
+#line 156
  testRunner.When("User selects \'Edit\' cogmenu option for \'Application Ownership\' item type with \'AO" +
                     "C Name\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 163
+#line 157
  testRunner.Then("\'AOC Name\' content is displayed in \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 165
+#line 159
  testRunner.Then("\'User Evergreen Capacity Project\' content is displayed in \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 166
+#line 160
  testRunner.Then("\'Do not allow owner to be changed\' radio button is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 167
+#line 161
  testRunner.Then("\'User Scope\' autocomplete is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 168
+#line 162
  testRunner.When("User checks \'Allow owner to be set to another user only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 169
+#line 163
  testRunner.Then("\'\' content is displayed in \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 170
+#line 164
  testRunner.Then("\'Show this component\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

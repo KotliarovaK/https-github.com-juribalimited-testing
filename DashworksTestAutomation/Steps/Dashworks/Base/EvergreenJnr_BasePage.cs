@@ -595,6 +595,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
+        [Then(@"User sees '(.*)' hint below '(.*)' field")]
+        public void ThenUserSeesHintBelowField(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(filterElement.GetFieldHint(fieldName).Text, Is.EqualTo(instruction),
+                $"{fieldName} has no or wrong instruction");
+        }
+
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
         public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
         {
@@ -1450,15 +1458,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         #endregion
 
         #region Slide toggle
-
-        //TODO AnnI 2/21/20: please update tests for 'Dashboards' and remove this step
-        //please, use only WhenUserChecksSlideToggle/WhenUserUnchecksSlideToggle steps
-        [When(@"User clicks '(.*)' slide toggle")]
-        public void WhenUserClicksSlideToggle(string slideToggleName)
-        {
-            var slide = _driver.NowAt<BaseDashboardPage>();
-            slide.GetSlideToggle(slideToggleName).Click();
-        }
 
         [When(@"User checks '(.*)' slide toggle")]
         public void WhenUserChecksSlideToggle(string slideToggleName)

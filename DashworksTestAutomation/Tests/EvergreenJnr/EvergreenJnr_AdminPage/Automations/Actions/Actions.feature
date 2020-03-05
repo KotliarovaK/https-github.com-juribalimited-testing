@@ -572,7 +572,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	Then 'Update' value is displayed in the 'Update Value' dropdown
 	Then 'To be updated' content is displayed in 'Value' textbox
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17605 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17605 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -583,6 +583,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17605_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action with
 	When User clicks 'CREATE ACTION' button 
