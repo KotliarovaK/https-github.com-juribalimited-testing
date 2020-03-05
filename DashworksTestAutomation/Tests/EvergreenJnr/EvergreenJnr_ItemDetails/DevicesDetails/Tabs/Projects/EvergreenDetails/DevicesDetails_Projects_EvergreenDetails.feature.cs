@@ -87,6 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS14941")]
         [NUnit.Framework.CategoryAttribute("DAS12963")]
+        [NUnit.Framework.CategoryAttribute("DAS20166")]
         public virtual void EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting()
         {
             System.Exception lastException = null;
@@ -121,7 +122,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS14941",
-                        "DAS12963"});
+                        "DAS12963",
+                        "DAS20166"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -135,22 +137,31 @@ this.FeatureBackground();
  testRunner.When("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
- testRunner.When("User clicks on edit button for \'Evergreen Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "Evergreen Ring",
+                        "Evergreen Ring 2"});
+#line 14
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table1, "Then ");
+#line 17
+ testRunner.When("User clicks on edit button for \'Evergreen Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Unassigned"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Evergreen Ring 1"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Evergreen Ring 3"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "TestBulkUpdate"});
-#line 15
- testRunner.Then("\'New Ring\' autocomplete contains following options:", ((string)(null)), table1, "Then ");
-#line 21
+#line 18
+ testRunner.Then("\'New Ring\' autocomplete contains following options:", ((string)(null)), table2, "Then ");
+#line 24
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
