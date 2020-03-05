@@ -102,8 +102,8 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	#When User selects 'DAS_19909_Proj_Up' option from 'Project' autocomplete
 	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
-	#Then 'DAS_19909_3' content is displayed in 'User Scope' autocomplete
 	When User selects 'DAS_19909_3' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	When User checks 'Show this component' checkbox
 	When User clicks 'UPDATE' button
 	#Check updated data

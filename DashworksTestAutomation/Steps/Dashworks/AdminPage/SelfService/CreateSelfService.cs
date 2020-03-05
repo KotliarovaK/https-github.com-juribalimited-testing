@@ -48,6 +48,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             header.CheckPageHeader(lastSs.Name);
         }
 
+        [When(@"User opens '(.*)' Self Service")]
+        public void WhenUserOpensSelfService(string selfService)
+        {
+            var ss = _selfServices.Value.First(x => x.Name.Equals(selfService));
+            _driver.WaitForDataLoading();
+            var url = $"{UrlProvider.EvergreenUrl}#/admin/selfservice/{ss.ServiceId}/details";
+            _driver.Navigate().GoToUrl(url);
+        }
+
         [Then(@"Self Service Details page is displayed correctly")]
         public void ThenSelfServiceDetailsPageIsDisplayedCorrectly()
         {

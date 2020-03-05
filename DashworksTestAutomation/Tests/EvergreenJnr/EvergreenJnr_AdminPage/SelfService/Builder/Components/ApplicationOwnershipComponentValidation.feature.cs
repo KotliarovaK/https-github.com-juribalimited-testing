@@ -525,47 +525,59 @@ this.FeatureBackground();
 #line 119
  testRunner.When("User selects \'Broken_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 120
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 121
- testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 122
- testRunner.Then("\'CREATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 124
- testRunner.When("User selects \'MissedClolumn_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 125
  testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 126
+#line 122
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 127
+#line 123
  testRunner.Then("\'CREATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 125
+ testRunner.When("User selects \'MissedClolumn_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 126
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 127
+ testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 128
+ testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 129
- testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 130
- testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'CREATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 131
+ testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 132
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 133
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 134
  testRunner.When("User selects \'Edit\' cogmenu option for \'Application Ownership\' item type with \'AO" +
                     "C Name\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 132
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 133
- testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 134
- testRunner.When("User selects \'Broken_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 135
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 136
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 137
- testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User selects \'Broken_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 138
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 139
- testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
- testRunner.When("User selects \'MissedClolumn_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 141
  testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 142
+#line 140
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 141
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 143
+ testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 144
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 145
+ testRunner.When("User selects \'MissedClolumn_DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 146
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 147
+ testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 148
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 149
  testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -573,21 +585,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidation")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19910")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidation()
+        public virtual void EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidationInternal();
+                    this.EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidationInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -606,16 +618,16 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidationInternal()
+        private void EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidationInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidation", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "SelfService",
                         "DAS19910",
                         "Cleanup"});
-#line 146
+#line 152
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -631,7 +643,7 @@ this.FeatureBackground();
                         "All Users",
                         "None",
                         "Standalone Project"});
-#line 147
+#line 153
  testRunner.When("Project created via API", ((string)(null)), table17, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -644,14 +656,14 @@ this.FeatureBackground();
                         "All Users",
                         "None",
                         "Standalone Project"});
-#line 150
+#line 156
  testRunner.When("Project created via API", ((string)(null)), table18, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table19.AddRow(new string[] {
                         ""});
-#line 153
+#line 159
  testRunner.When("User create static list with \"DAS_19910_3\" name on \"Applications\" page with follo" +
                     "wing items", ((string)(null)), table19, "When ");
 #line hidden
@@ -659,7 +671,7 @@ this.FeatureBackground();
                         "ItemName"});
             table20.AddRow(new string[] {
                         ""});
-#line 156
+#line 162
  testRunner.When("User create static list with \"DAS_19910_33\" name on \"Users\" page with following i" +
                     "tems", ((string)(null)), table20, "When ");
 #line hidden
@@ -667,7 +679,7 @@ this.FeatureBackground();
                         "ItemName"});
             table21.AddRow(new string[] {
                         ""});
-#line 159
+#line 165
  testRunner.When("User create static list with \"DAS_19910_test_33\" name on \"Users\" page with follow" +
                     "ing items", ((string)(null)), table21, "When ");
 #line hidden
@@ -683,8 +695,8 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_19910_3"});
-#line 162
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table22, "When ");
+#line 168
+ testRunner.When("User creates Self Service via API", ((string)(null)), table22, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "ServiceIdentifier",
@@ -701,7 +713,7 @@ this.FeatureBackground();
                         "TestPageSs2",
                         "DAS_19910_Page_2",
                         "true"});
-#line 165
+#line 171
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table23, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -716,85 +728,99 @@ this.FeatureBackground();
                         "Allow owner to be set to another user only",
                         "DAS_19910_33",
                         "true"});
-#line 170
+#line 176
  testRunner.When("User creates new application ownership component for \'TestPageSs1\' Self Service p" +
                     "age via API", ((string)(null)), table24, "When ");
-#line 173
+#line 179
+ testRunner.When("User opens \'DAS_19910_SS_3\' Self Service", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 180
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 175
+#line 182
  testRunner.When("User selects \'Edit\' cogmenu option for \'Application Ownership\' item type with \'AO" +
                     "C Name\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 176
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 177
- testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 179
- testRunner.When("User enters \'TEMP NAME\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 180
- testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 181
- testRunner.When("User enters \'AOC Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 182
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 183
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 184
  testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 186
- testRunner.When("User selects \'Windows 7 Migration (Computer Scheduled Project)\' option from \'Proj" +
-                    "ect\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'TEMP NAME\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 187
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 188
+ testRunner.When("User enters \'AOC Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 189
- testRunner.When("User selects \'User Evergreen Capacity Project\' option from \'Project\' autocomplete" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 190
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 191
+#line 190
  testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 193
- testRunner.When("User checks \'Allow owner to be removed or set to another user\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Windows 7 Migration (Computer Scheduled Project)\' option from \'Proj" +
+                    "ect\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 194
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 195
- testRunner.When("User checks \'Do not allow owner to be changed\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 196
- testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User selects \'User Evergreen Capacity Project\' option from \'Project\' autocomplete" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 197
- testRunner.When("User checks \'Allow owner to be set to another user only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 198
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 199
  testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 201
- testRunner.When("User unchecks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 202
- testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 203
- testRunner.When("User checks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 204
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 205
- testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 207
+#line 200
  testRunner.When("User checks \'Allow owner to be removed or set to another user\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 201
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 202
+ testRunner.When("User checks \'Do not allow owner to be changed\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 203
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 204
+ testRunner.When("User checks \'Allow owner to be set to another user only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 205
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 206
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 208
- testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'\' content is displayed in \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 209
- testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 210
- testRunner.Then("\'The AOC Name component has been UPDATE\' text is displayed on inline success bann" +
-                    "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 211
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 212
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 214
+ testRunner.When("User unchecks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 215
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 216
+ testRunner.When("User checks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 217
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 218
+ testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 220
+ testRunner.When("User checks \'Allow owner to be removed or set to another user\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 221
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 222
+ testRunner.Then("\'The AOC Name component has been updated\' text is displayed on inline success ban" +
+                    "ner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 223
  testRunner.When("User selects \'Edit\' cogmenu option for \'Application Ownership\' item type with \'AO" +
                     "C Name\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 212
+#line 224
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 225
  testRunner.When("User selects \'DAS_19910_test_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 213
+#line 226
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 214
+#line 227
  testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 215
+#line 228
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 229
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 216
+#line 230
  testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -846,7 +872,7 @@ this.FeatureBackground();
                         "DAS19910",
                         "Cleanup",
                         "Not_Ready"});
-#line 220
+#line 234
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -862,14 +888,14 @@ this.FeatureBackground();
                         "All Users",
                         "None",
                         "Standalone Project"});
-#line 221
+#line 235
  testRunner.When("Project created via API", ((string)(null)), table25, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table26.AddRow(new string[] {
                         ""});
-#line 224
+#line 238
  testRunner.When("User create static list with \"DAS_19910_2\" name on \"Applications\" page with follo" +
                     "wing items", ((string)(null)), table26, "When ");
 #line hidden
@@ -877,7 +903,7 @@ this.FeatureBackground();
                         "ItemName"});
             table27.AddRow(new string[] {
                         ""});
-#line 227
+#line 241
  testRunner.When("User create static list with \"DAS_19910_22\" name on \"Users\" page with following i" +
                     "tems", ((string)(null)), table27, "When ");
 #line hidden
@@ -893,7 +919,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_19910_5"});
-#line 230
+#line 244
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table28, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -911,31 +937,31 @@ this.FeatureBackground();
                         "TestPageSs2",
                         "DAS_19910_Page_2",
                         "true"});
-#line 233
+#line 247
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table29, "When ");
-#line 237
+#line 251
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 238
+#line 252
  testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs1\' name o" +
                     "n Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 239
+#line 253
  testRunner.When("User clicks on \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 240
+#line 254
  testRunner.When("User clicks \'ADD\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 242
+#line 256
  testRunner.When("User enters \'AOC Name\' text to \'Component Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 244
+#line 258
  testRunner.When("User selects \'DAS_19910_Proj_5\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 245
+#line 259
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 247
+#line 261
  testRunner.When("Projects created by User are removed via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 248
+#line 262
  testRunner.When("User selects \'Edit\' cogmenu option for \'Application Ownership\' item type with \'AO" +
                     "C Name\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 249
+#line 263
  testRunner.Then("\'[Project not found]\' content is displayed in \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 250
+#line 264
  testRunner.Then("\'The selected project cannot be found\' error message is displayed for \'User Scope" +
                     "\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

@@ -117,33 +117,39 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	When User checks 'Allow owner to be set to another user only' radio button
 	#Check that use is not able to create AOC with broken list
 	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	Then 'This list has errors' error message is displayed for 'User Scope' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check that use is not able to create AOC with list with missed columns
 	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	Then 'This list has errors' error message is displayed for 'User Scope' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check Broken list column validation
 	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	When User clicks 'CREATE' button
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	Then 'This list has errors' error message is displayed for 'User Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check list with missed column validation
 	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	Then 'This list has errors' error message is displayed for 'User Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
-Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidation
+Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj_4 | All Users | None            | Standalone Project |
@@ -159,7 +165,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidation
 	When User create static list with "DAS_19910_test_33" name on "Users" page with following items
 	| ItemName |
 	|          |
-	When User creates Self Service via API and open it
+	When User creates Self Service via API
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
 	| DAS_19910_SS_3 | 19910_3_SI        | true    | true                | DAS_19910_3 |
 	When User creates new Self Service Page via API
@@ -170,6 +176,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidation
 	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
 	| ComponentName | ProjectName                     | OwnerPermission                            | UserScope    | ShowInSelfService |
 	| AOC Name      | User Evergreen Capacity Project | Allow owner to be set to another user only | DAS_19910_33 | true              |
+	When User opens 'DAS_19910_SS_3' Self Service
 	When User navigates to the 'Builder' left submenu item
 	#By default update button is disabled
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
@@ -196,6 +203,12 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidation
 	Then 'UPDATE' button is not disabled
 	When User checks 'Allow owner to be set to another user only' radio button
 	Then 'UPDATE' button is disabled
+	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	#Scope selection should be dropped
+	Then '' content is displayed in 'User Scope' autocomplete
+	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
+	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#UPDATE button is still disabled when user change 'Show this component' selection to the same one
 	When User unchecks 'Show this component' checkbox
@@ -205,13 +218,14 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUPDATEButtonValidation
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#UPDATE User Scope
 	When User checks 'Allow owner to be removed or set to another user' radio button
-	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
 	When User clicks 'UPDATE' button
-	Then 'The AOC Name component has been UPDATE' text is displayed on inline success banner
+	Then 'The AOC Name component has been updated' text is displayed on inline success banner
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
+	When User waits for info message disappears under 'User Scope' field
 	When User selects 'DAS_19910_test_33' option from 'User Scope' autocomplete
 	Then 'UPDATE' button is not disabled
 	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 

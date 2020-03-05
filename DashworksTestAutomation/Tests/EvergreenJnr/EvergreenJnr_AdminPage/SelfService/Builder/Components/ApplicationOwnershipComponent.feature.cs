@@ -423,8 +423,10 @@ this.FeatureBackground();
                     "ect\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 104
  testRunner.When("User checks \'Allow owner to be set to another user only\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 106
+#line 105
  testRunner.When("User selects \'DAS_19909_3\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 106
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 107
  testRunner.When("User checks \'Show this component\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 108
