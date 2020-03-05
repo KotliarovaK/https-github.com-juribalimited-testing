@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14685 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget
 	When Dashboard with 'Dashboard for DAS14685' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	| Windows7Mi: In Scope |
 	And User create dynamic list with "14920_List" name on "Devices" page
 	And Dashboard with 'Dashboard for DAS14920' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title       | List       | SplitBy             | AggregateFunction | OrderBy   | MaxValues |
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16073 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 	When Dashboard with 'Dashboard for DAS16073' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicationsListFilteredPage
 	When Dashboard with 'Dashboard for DAS16069_1' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateFunction | OrderBy    | MaxValues |
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15208
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPreviewPane
 	When User clicks 'Dashboards' on the left-hand menu
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title     | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation |
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	| Windows7Mi: Pre-Migration \ Scheduled Date (Slot) |
 	And User create dynamic list with "Devices_List_DAS16275" name on "Devices" page
 	And Dashboard with 'DAS16275_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy                                           | AggregateFunction | OrderBy   | TableOrientation |
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| UserEvergr: Ring (All Users) |
 	And User create dynamic list with "DeviceListForDAS15826" name on "Devices" page
 	And Dashboard with 'DAS15826_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title           | List                  | SplitBy                      | AggregateFunction | OrderBy                          | TableOrientation |
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15582 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereThereAreNoColumnsAvailableShowsWarning
 	When Dashboard with 'Dashboard for DAS15582' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -179,7 +179,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 	| Last Logon Date |
 	And User create dynamic list with "LastLogout" name on "Users" page
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -202,7 +202,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggr
 	| Last Logon Date |
 	And User create dynamic list with "LastLogout" name on "Users" page
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickthoughNumbersBasedArchivedItemsR
 	And User sets includes archived devices in 'true'
 	And User create dynamic list with "List17599" name on "Devices" page
 	When Dashboard with 'Dashboard for DAS17599' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List      | SplitBy  | AggregateFunction | OrderBy      |
@@ -241,7 +241,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreate
 	| Compliance                           |
 	And User create dynamic list with "ListFor18145" name on "Devices" page
 	And Dashboard with 'DashboardForDAS18145' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title     | List         | SplitBy          | AggregateBy | AggregateFunction | OrderBy              |
@@ -254,7 +254,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreate
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18091 @DAS18090 @DAS16516 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashboardPageForTheListWithoutArchivedItem
 	When Dashboard with 'Dashboard for DAS18091' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy          | AggregateFunction | AggregateBy                            | OrderBy              |
@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidget
 	When Dashboard with 'Dashboard for DAS15852' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title     | List         | SplitBy                                | AggregateFunction | AggregateBy                            |
@@ -327,7 +327,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessValuesAreShownWithTheCor
 	And User create dynamic list with "Devices_List_DAS15852" name on "Devices" page
 	Then "Devices_List_DAS15852" list is displayed to user
 	When Dashboard with 'DAS15852_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy     | OrderBy             |
@@ -348,7 +348,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceValuesAreShownWithTheCo
 	And User create dynamic list with "Devices_List_DAS15852" name on "Devices" page
 	Then "Devices_List_DAS15852" list is displayed to user
 	When Dashboard with 'DAS15852_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy     | AggregateFunction | AggregateBy      | OrderBy              |
@@ -361,7 +361,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceValuesAreShownWithTheCo
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFuncAreNotAvailableForColumnsThatDoNotHaveComplianceOrReadiness
 	When Dashboard with 'DAS15852_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title           | List        | SplitBy     | AggregateFunction |
@@ -386,7 +386,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorsOccurWhenCreatingE
 	And User create dynamic list with "AListForDAS18324" name on "Devices" page
 	Then "AListForDAS18324" list is displayed to user
 	When Dashboard with 'Dashboard for DAS18324' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List             | SplitBy          | AggregateFunction | OrderBy              |
@@ -409,7 +409,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	When User clicks Save button on the list panel
 	When User create dynamic list with "Devices_List_DAS18327" name on "Devices" page
 	When Dashboard with 'DAS18327_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy        | AggregateFunction | AggregateBy     | OrderBy            |
@@ -417,7 +417,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatFiltersSectionDisplayedCorrectlyA
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS18327_Widget' Widget is displayed to the user
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'AMBER' value for 'True' column
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -436,7 +436,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	When User create dynamic list with "AppCompliance18232" name on "Applications" page
 	Then "AppCompliance18232" list is displayed to user
 	When Dashboard with 'Dashboard for DAS18232' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List               | SplitBy    | AggregateFunction | AggregateBy | OrderBy        | MaxValues |
@@ -474,7 +474,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedI
 	| 2004: Pre-Migration \ Ready to Migrate |
 	When User create dynamic list with "19369_List" name on "Devices" page
 	When Dashboard with 'Dashboard for DAS19369' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title     | List       | SplitBy     | AggregateFunction | AggregateBy                            | OrderBy         | MaxValues |
@@ -502,7 +502,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetCanBeCreatedForListUsi
 	When User create dynamic list with "AppCompliance19383" name on "Devices" page
 	Then "AppCompliance19383" list is displayed to user
 	When Dashboard with 'Dashboard for DAS19383' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List               | SplitBy                | AggregateFunction | AggregateBy            | OrderBy                    | MaxValues |
@@ -523,7 +523,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetShowsCorrectResultsIfT
 	When User waits for '3' seconds
 	When User create dynamic list with "List for DAS18777" name on "Devices" page
 	When Dashboard with 'Dashboard for DAS18777' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title     | List              | SplitBy                                                                                        | AggregateFunction | AggregateBy                                                                                    | OrderBy                                                                                                     |
@@ -545,7 +545,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeveri
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Radiobutton Task for Workstation |
 	When User create dynamic list with "19736_List" name on "Devices" page
 	When Dashboard with 'Dashboard for DAS19736' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title      | List       | SplitBy                                                                                        | AggregateFunction | AggregateBy                                                                                    | OrderBy                                                                                                     | MaxValues |

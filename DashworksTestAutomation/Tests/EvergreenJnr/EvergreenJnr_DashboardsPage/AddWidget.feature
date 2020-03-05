@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14587 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
 	When Dashboard with 'Dashboard for DAS14587' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When Dashboard with 'Dashboard for DAS14578' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title                                                                                                       | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues |
@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
 	When Dashboard with 'Dashboard for DAS15900' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects '<WidgetType>' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
@@ -73,7 +73,7 @@ Examples:
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @DAS14605 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'List' in the 'WidgetType' dropdown
 	Then 'Aggregate Function' dropdown is missing
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 	| Secure Boot Enabled |
 	When User create dynamic list with "List16958" name on "Devices" page
 	When Dashboard with 'Dashboard for DAS16958' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | MaxValues | ShowLegend |
@@ -103,14 +103,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 	When User lists were removed by API
 	When User clicks refresh button in the browser
 	When Dashboard page loaded
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks edit option for broken widget on Dashboards page
 	Then Message saying that list is unavailable appears in Edit Widget page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16853 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
 	When Dashboard with 'DAS16853_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	Then 'Show legend' checkbox has a correct label
 	And 'Show data labels' checkbox has a correct label
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	And User create static list with "TestList_DAS17539" name
 	And Projects created by User are removed via API
 	And Dashboard with 'Dashboard for DAS17539' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title                 | List              | SplitBy          | AggregateFunction | OrderBy              |
@@ -166,7 +166,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18151 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedIfUserClicksFastOnTheCreateButtonSeveralTimes
 	When Dashboard with 'DAS18151_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	Then 'Show legend' checkbox has a correct label
 	And 'Show data labels' checkbox has a correct label
@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedI
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18167 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateByAndOrderFieldsAreEnabledForEditingAndTheWidgetIsDisplayedInThePreviewBlock
 	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18163 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAvailableOptionsForSelecting
 	When Dashboard with 'DAS18163_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
@@ -221,7 +221,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18066 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsApplied
 	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy    | DrillDown | ShowLegend |
@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyV
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16842 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropdown
 	When Dashboard with 'DAS16842_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	Then All items in the 'List' autocomplete have icons
 	Then All icon items in the 'List' autocomplete have any of tooltip
@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	When User create dynamic list with "DAS18168_List" name on "Devices" page
 	Then "DAS18168_List" list is displayed to user
 	When Dashboard with 'DAS18168_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User adds new Widget
     | WidgetType | Title             | List          | SplitBy   | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLabels |
@@ -294,14 +294,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters
 	When Dashboard with 'DAS18741_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	Then only options having search term 'De' are displayed in 'List' autocomplete
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS18054 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPage
 	When Dashboard with 'Dashboard for DAS18054' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List        |
@@ -323,7 +323,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnGroupsFi
 	When User create dynamic list with "ListForDAS18759_1" name on "Devices" page
 	Then "ListForDAS18759_1" list is displayed to user
 	When Dashboard with 'DAS18759_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title               | List              | SplitBy  | AggregateFunction | AggregateBy | OrderBy       |

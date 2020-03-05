@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "TestList_DAS14668" name
 	And Dashboard with 'Dashboard for DAS14668' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                  | List              | SplitBy                                    | AggregateFunction | OrderBy   | MaxValues |
@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	| CPU Architecture |
 	And User create dynamic list with "List15372" name on "Devices" page
 	And User clicks 'Dashboards' on the left-hand menu
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | MaxValues | ShowLegend |
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	| Model      |
 	And User create dynamic list with "List15365" name on "Devices" page
 	And User clicks 'Dashboards' on the left-hand menu
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15662 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	When Dashboard with 'DAS15662_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType   | Title             | List        | SplitBy  | AggregateFunction | OrderBy   |
@@ -121,7 +121,7 @@ Examples:
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15500 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection
 	When Dashboard with 'Dashboard for DAS15500' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title           | List        | SplitBy  | AggregateFunction | OrderBy      | MaxValues |
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	| Compliance                           |
 	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
 	And Dashboard with 'All Data Types for DAS15508' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	| Compliance                           |
 	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
 	And Dashboard with 'All Data Types for DAS15509' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -208,7 +208,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctio
 	| Compliance                           |
 	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
 	And Dashboard with 'All Data Types for DAS15510' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -239,7 +239,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	| Compliance                           |
 	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
 	And Dashboard with 'All Data Types for DAS15524' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -257,7 +257,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunctionIsSelected
 	When Dashboard with 'TestDashboardForDAS15362' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAgg
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDistinctAggregateFunctionIsSelected
 	When Dashboard with 'TestDashboardForDAS15362' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -297,7 +297,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggre
 	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggre
 	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -343,7 +343,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggre
 	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -366,7 +366,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggre
 	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
 	And Dashboard with 'TestDashboardForDAS15362' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
@@ -397,7 +397,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	And User create dynamic list with "ListForDAS17467" name on "Devices" page
 	Then "ListForDAS17467" list is displayed to user
 	When Dashboard with 'Dashboard for DAS17467' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List            | SplitBy          | AggregateFunction | OrderBy              | ShowLegend |
@@ -430,7 +430,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User create dynamic list with "ListForDAS17467_1" name on "Devices" page
 	Then "ListForDAS17467_1" list is displayed to user
 	When Dashboard with 'Dashboard for DAS17467_1' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title               | List              | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
@@ -457,7 +457,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	When User create dynamic list with "ListForDAS17515" name on "Devices" page
 	Then "ListForDAS17515" list is displayed to user
 	When Dashboard with 'DAS17515_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List            | SplitBy                           | AggregateFunction | OrderBy                               | MaxValues | ShowLegend |
@@ -480,7 +480,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18072 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfterSelectingAnotherFilter
 	When Dashboard with 'DAS18072_Dashboard' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title       | List        | SplitBy     | AggregateFunction | OrderBy          |
@@ -503,7 +503,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFilterChangedInUiPartAfter
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18635 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatPreviewDisplayedForWidgetWhenReadinessSelectedAsSplitBy
 	When Dashboard with 'Dashboard for DAS18635' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List                               | SplitBy               | AggregateFunction | OrderBy                   |
@@ -535,7 +535,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWi
 	When User create dynamic list with "ListForDAS18574" name on "Devices" page
 	Then "ListForDAS18574" list is displayed to user
 	When Dashboard with 'Dashboard for DAS18574' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List            | SplitBy         | AggregateFunction | OrderBy             | ShowLegend |
