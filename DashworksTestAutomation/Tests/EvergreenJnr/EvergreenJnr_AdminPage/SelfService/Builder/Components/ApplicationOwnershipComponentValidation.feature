@@ -38,9 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CreateApplicationOwnershipPageValidation
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Create become enabled again after correct data imput
 	When User enters 'Name To Be Removed' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
-	#When User selects 'DAS_19910_Proj' option from 'Project' autocomplete
-	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	When User selects 'DAS_19910_Proj' option from 'Project' autocomplete
 	Then 'CREATE' button is not disabled
 	#Create is disabled when User Scope is not set
 	When User checks 'Allow owner to be removed or set to another user' radio button
@@ -71,10 +69,9 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenUserScope
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_2_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_2_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
-	#Change project name to DAS_19910_Proj_2 after DAS-20114 fix
 	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
-	| ComponentName | ProjectName                     | OwnerPermission                            | UserScope    | ShowInSelfService |
-	| AOC Name      | User Evergreen Capacity Project | Allow owner to be set to another user only | DAS_19910_22 | true              |
+	| ComponentName | ProjectName      | OwnerPermission                            | UserScope    | ShowInSelfService |
+	| AOC Name      | DAS_19910_Proj_2 | Allow owner to be set to another user only | DAS_19910_22 | true              |
 	When User navigates to the 'Builder' left submenu item
 	#
 	When User lists were removed by API
@@ -111,9 +108,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	When User clicks 'ADD' button on popup
 	#Create AOC
 	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
-	#When User selects 'DAS_19910_Proj_3' option from 'Project' autocomplete
-	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	When User selects 'DAS_19910_Proj_3' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
 	#Check that use is not able to create AOC with broken list
 	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
@@ -172,10 +167,9 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_3_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_3_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
-	#Change project name to DAS_19910_Proj_4 after DAS-20114 fix
 	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
-	| ComponentName | ProjectName                     | OwnerPermission                            | UserScope    | ShowInSelfService |
-	| AOC Name      | User Evergreen Capacity Project | Allow owner to be set to another user only | DAS_19910_33 | true              |
+	| ComponentName | ProjectName      | OwnerPermission                            | UserScope    | ShowInSelfService |
+	| AOC Name      | DAS_19910_Proj_4 | Allow owner to be set to another user only | DAS_19910_33 | true              |
 	When User opens 'DAS_19910_SS_3' Self Service
 	When User navigates to the 'Builder' left submenu item
 	#By default update button is disabled
@@ -188,12 +182,9 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	When User enters 'AOC Name' text to 'Component Name' textbox
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
-	#UPDATE button is still disabled when user change Project to the same one: DAS-20114
-	#When User selects 'DAS_19910_Proj_Test_3' option from 'Project' autocomplete
-	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	When User selects 'DAS_19910_Proj_Test_3' option from 'Project' autocomplete
 	Then 'UPDATE' button is not disabled
-	#When User selects 'DAS_19910_Proj_4' option from 'Project' autocomplete
-	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	When User selects 'DAS_19910_Proj_4' option from 'Project' autocomplete
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#UPDATE button is still disabled when user change radiobutton selection to the same state
@@ -229,16 +220,12 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 
-	#Sould be UPDATE after DAS-20114 implementation
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19910 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWasRemoved
 	When Project created via API
 	| ProjectName      | Scope     | ProjectTemplate | Mode               |
 	| DAS_19910_Proj_5 | All Users | None            | Standalone Project |
-	When User create static list with "DAS_19910_2" name on "Applications" page with following items
-	| ItemName |
-	|          |
-	When User create static list with "DAS_19910_22" name on "Users" page with following items
+	When User create static list with "DAS_19910_5" name on "Applications" page with following items
 	| ItemName |
 	|          |
 	When User creates Self Service via API and open it
@@ -248,15 +235,10 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWa
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19910_5_SI        | TestPageSs1 | DAS_19910_Page_1 | true              |
 	| 19910_5_SI        | TestPageSs2 | DAS_19910_Page_2 | true              |
+	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
+	| ComponentName | ProjectName      | OwnerPermission                | ShowInSelfService |
+	| AOC Name      | DAS_19910_Proj_5 | Allow owner to be removed only | true              |
 	When User navigates to the 'Builder' left submenu item
-	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs1' name on Self Service Builder Panel
-	When User clicks on 'Application Ownership' component on dialog
-	When User clicks 'ADD' button on popup
-	#Create AOC
-	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
-	When User selects 'DAS_19910_Proj_5' option from 'Project' autocomplete
-	When User clicks 'CREATE' button
 	#
 	When Projects created by User are removed via API
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel

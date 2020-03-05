@@ -35,10 +35,9 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When User enters ' ' text to 'Component Name' textbox
 	Then 'Enter a component name' error message is displayed for 'Component Name' field
 	Then '' content is displayed in 'Project' autocomplete
-	#TODO update this part after 20114 will be implemented
-	#Then 'Project' autocomplete contains following options:
-	#| values         |
-	#| DAS_20019_Proj |
+	Then 'Project' autocomplete contains following options:
+	| values         |
+	| DAS_20019_Proj |
 	Then 'Do not allow owner to be changed' radio button is checked
 	Then 'User Scope' autocomplete is not displayed
 	When User checks 'Allow owner to be removed only' radio button
@@ -54,10 +53,10 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	| DAS_20019_11 |
 	Then 'User Scope' autocomplete first option is 'All Users'
 	Then following fields to display are displayed on application ownership component page
-	| fields          |
-	| Username (User) |
-	| Domain          |
-	| Display Name    |
+	| fields       |
+	| Username     |
+	| Domain       |
+	| Display Name |
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 
