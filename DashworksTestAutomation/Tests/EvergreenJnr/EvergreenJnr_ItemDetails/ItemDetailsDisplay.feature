@@ -16,10 +16,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	When User perform search by "<ItemName>"
 	When User click content from "<Column>" column
 	Then Details page for '<ItemName>' item is displayed to the user
-	Then URL is "<URLpart>"
+	Then URL contains '<URL>'
 
 Examples:
-	| PageName     | Column          | ItemName                         | URLpart                                         |
+	| PageName     | Column          | ItemName                         | URL                                             |
 	| Devices      | Device Key      | 00KLL9S8NRF0X6                   | evergreen/#/device/8892/details/device          |
 	| Users        | User Key        | 0072B088173449E3A93              | evergreen/#/user/85167/details/user             |
 	| Applications | Application Key | ACDSee for Windows 95            | evergreen/#/application/312/details/application |
