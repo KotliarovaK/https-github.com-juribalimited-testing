@@ -525,7 +525,7 @@ this.FeatureBackground();
 #line 115
  testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 116
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 117
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 118
@@ -535,7 +535,7 @@ this.FeatureBackground();
 #line 121
  testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 122
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 123
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 124
@@ -558,7 +558,7 @@ this.FeatureBackground();
 #line 133
  testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 134
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 135
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 136
@@ -572,7 +572,7 @@ this.FeatureBackground();
 #line 141
  testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 142
- testRunner.Then("\'This list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected list has errors\' error message is displayed for \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 143
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 144
