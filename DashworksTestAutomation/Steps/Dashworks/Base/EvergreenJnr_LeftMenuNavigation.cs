@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.Base;
@@ -48,6 +49,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
             _driver.ExecuteAction(() => detailsPage.GetSubMenuByName(tabMenuName).Click());
+
+            //TODO remove this workaround when related bug will be fixed
+            if (tabMenuName.Equals("Builder"))
+            {
+                try
+                {
+                    var bpage = _driver.NowAt<BaseDialogPage>();
+                    bpage.ClickButton("YES");
+                }
+                catch { }
+            }
         }
 
         #endregion
@@ -114,7 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenLeftSubmenuItemWithSomeCountIsDisplayed(string submenu)
         {
             var element = _driver.NowAt<BaseNavigationElements>();
-            Verify.IsTrue(element.IsSubmenuCountIsDisplayed(submenu),$"'{submenu}' submenu doesn't contains items count");
+            Verify.IsTrue(element.IsSubmenuCountIsDisplayed(submenu), $"'{submenu}' submenu doesn't contains items count");
         }
 
         [Then(@"'(.*)' left submenu item is displayed without count")]
