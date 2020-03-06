@@ -1085,6 +1085,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EndClient.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\CreateSelfServiceMvp.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateSelfServiceMvp.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfServiceAgGrid.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2439,6 +2444,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndClient\EndClient.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EndClient.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\CreateSelfServiceMvp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateSelfServiceMvp.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfServiceAgGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

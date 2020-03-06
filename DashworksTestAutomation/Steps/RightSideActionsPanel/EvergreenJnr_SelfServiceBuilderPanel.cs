@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         [Then("User sees '(.*)' tootltip text of Add Item button for item with '(.*)' type and '(.*)' name on Self Service Builder Panel")]
-        public void ThenUserClicksOnCogMenuButtonForItemWithType(string text, string contextPanelType, string contextPanelName)
+        public void ThenUserSeesTootltipTextOfAddItemButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string text, string contextPanelType, string contextPanelName)
         {
             var dashboardPage = _driver.NowAt<SelfServiceBuilderContextPanel>();
             var button = dashboardPage.ContextPanelPageAddItemButton(contextPanelType, contextPanelName);
@@ -81,7 +81,7 @@ namespace DashworksTestAutomation.Steps.RightSideActionsPanel
         }
 
         [When(@"User selects '(.*)' cogmenu option for '(.*)' item type with '(.*)' name on Self Service Builder Panel")]
-        public void WhenUserClicksOnCogMenuButtonForItemWithTypeAndNameOnSelfServiceBuilderPanel(string option, string contextPanelType, string contextPanelName)
+        public void WhenUserSelectsCogmenuOptionForItemTypeWithNameOnSelfServiceBuilderPanel(string option, string contextPanelType, string contextPanelName)
         {
             ClickOnCogMenuButtonOnSelfServiceBuilderPanel(contextPanelType, contextPanelName);
             var cogMenu = new EvergreenJnr_CogMenuActions(_driver, _automationStartTime);
