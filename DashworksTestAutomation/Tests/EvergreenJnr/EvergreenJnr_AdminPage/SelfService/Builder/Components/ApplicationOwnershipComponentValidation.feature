@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenUserScope
 	#
 	When User lists were removed by API
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
-	Then 'User Evergreen Capacity Project' content is displayed in 'Project' autocomplete
+	Then 'DAS_19910_Proj_2' content is displayed in 'Project' autocomplete
 	Then '[List not found]' content is displayed in 'User Scope' autocomplete
 	Then 'The selected list cannot be found' error message is displayed for 'User Scope' field
 	Then 'UPDATE' button is disabled
@@ -243,4 +243,4 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenProjectWa
 	When Projects created by User are removed via API
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	Then '[Project not found]' content is displayed in 'Project' autocomplete
-	Then 'The selected project cannot be found' error message is displayed for 'User Scope' field
+	Then 'The selected project cannot be found' error message is displayed for 'Project' field
