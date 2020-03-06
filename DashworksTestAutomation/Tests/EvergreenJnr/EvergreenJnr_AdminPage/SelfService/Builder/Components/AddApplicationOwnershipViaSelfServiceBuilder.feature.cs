@@ -192,7 +192,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs4_1\' name" +
                     " on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
- testRunner.Then("\'Application Ownership\' component on dialog is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Application Ownership\' item on dialog is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -297,7 +297,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'TestPageSs_2\' name " +
                     "on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
- testRunner.Then("\'Application Ownership\' component on dialog is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Application Ownership\' item on dialog is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

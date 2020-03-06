@@ -912,13 +912,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "ServiceIdentifier",
                         "Name",
-                        "ObjectTypeId",
                         "DisplayName",
                         "ShowInSelfService"});
             table15.AddRow(new string[] {
                         "Test_ID_6",
                         "TestPageSs2",
-                        "3",
                         "TestPageSsDisplay",
                         "false"});
 #line 154

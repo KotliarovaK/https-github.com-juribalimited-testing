@@ -152,8 +152,8 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserCanOpenCrea
 	| ServiceId | Name       | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate              | EndDate                | SelfServiceURL | AllowAnonymousUsers | ScopeId | scopeName | Scope     |
 	| 1         | TestProj_6 | Test_ID_6         | true    | Devimdmdmm | 3            | 2019-12-10T21:34:47.24 | 2019-12-31T21:34:47.24 | URL            | true                | 2       | bob       | 1803 Apps |
 	When User creates new Self Service Page via API
-	| ServiceIdentifier | Name        | ObjectTypeId | DisplayName       | ShowInSelfService |
-	| Test_ID_6         | TestPageSs2 | 3            | TestPageSsDisplay | false             |
+	| ServiceIdentifier | Name        | DisplayName       | ShowInSelfService |
+	| Test_ID_6         | TestPageSs2 | TestPageSsDisplay | false             |
 	When User clicks 'Admin' on the left-hand menu
 	When User navigates to the 'Self Services' parent left menu item
 	When User clicks 'Edit' option in Cog-menu for 'TestProj_6' item from 'Self Service Name' column
