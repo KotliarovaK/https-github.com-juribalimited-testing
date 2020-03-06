@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         [Then(@"User does not see '(.*)' component on dialog")]
-        public void ThenUserDoesntComponentOnDialogPage(string componentName)
+        public void ThenUserDoesnotComponentOnDialogPage(string componentName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             Verify.IsFalse(dialogContainer.IsListItemOfDialogPageDisplayed(componentName), $"'{componentName}' was displayed");

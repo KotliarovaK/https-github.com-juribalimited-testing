@@ -115,9 +115,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User clicks 'CREATE' button
 	When User clicks on Add Item button for item with 'Page' type and 'Welcome' name on Self Service Builder Panel
-	Then User doesn't see 'Application Ownership' component on dialog
+	Then User does not see 'Application Ownership' component on dialog
 	Then User sees 'Text' component on dialog
 	When User clicks 'CANCEL' button
 	When User clicks on Add Item button for item with 'Page' type and 'Thank You' name on Self Service Builder Panel
 	Then User sees 'Text' component on dialog
-	Then User doesn't see 'Application Ownership' component on dialog
+	Then User does not see 'Application Ownership' component on dialog

@@ -526,7 +526,7 @@ this.FeatureBackground();
  testRunner.When("User clicks on Add Item button for item with \'Page\' type and \'Welcome\' name on Se" +
                     "lf Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 118
- testRunner.Then("User doesn\'t see \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User does not see \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 119
  testRunner.Then("User sees \'Text\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 120
@@ -537,7 +537,7 @@ this.FeatureBackground();
 #line 122
  testRunner.Then("User sees \'Text\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 123
- testRunner.Then("User doesn\'t see \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User does not see \'Application Ownership\' component on dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
