@@ -109,15 +109,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
         #region Components
 
-        [Then(@"User sees '(.*)' component on dialog")]
-        public void ThenUserSeesItemOnDialogPage(string componentName)
+        [Then(@"User sees '(.*)' item on dialog")]
+        public void ThenUserSeesItemOnDialog(string componentName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             Verify.IsTrue(dialogContainer.IsItemInListOfDialogPageDisplayed(componentName), $"'{componentName}' wasn't displayed");
         }
 
-        [Then(@"User does not see '(.*)' component on dialog")]
-        public void ThenUserDoesnotComponentOnDialogPage(string componentName)
+        [Then(@"User does not see '(.*)' item on dialog")]
+        public void ThenUserDoesNotseeItemOnDialog(string componentName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
             Verify.IsFalse(dialogContainer.IsItemInListOfDialogPageDisplayed(componentName), $"'{componentName}' was displayed");
