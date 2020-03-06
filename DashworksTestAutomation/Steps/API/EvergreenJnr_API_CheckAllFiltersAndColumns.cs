@@ -37,7 +37,7 @@ namespace DashworksTestAutomation.Steps.API
 
         private IRestResponse GetColumnsByListName(string list)
         {
-            var url = $"{UrlProvider.RestClientBaseUrl}{list.ToLower()}/fields?$lang=en-US";
+            var url = $"{UrlProvider.RestClientBaseUrl}{list.ToLower()}/fields?$lang={UserProvider.DefaultUserLanguage}";
             var response = _client.Evergreen.Get(url.GenerateRequest());
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))
