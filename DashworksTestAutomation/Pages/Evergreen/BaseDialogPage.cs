@@ -30,11 +30,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         }
 
         //Currently are using only for Self Service Dialog Page
-        public bool IsListItemOfDialogPageDisplayed(string componentName)
+        public bool IsItemInListOfDialogPageDisplayed(string itemName)
         {
             try
             {
-                var selector = $"{PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{componentName}']";
+                var selector = $"{PopupSelector}//div[contains(@class,'mat-list-item-content') and text() = '{itemName}']";
 
                 return Driver.FindElement(By.XPath(selector)).Displayed();
             }
