@@ -214,6 +214,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipUpdateButtonValidation
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	When User waits for info message disappears under 'User Scope' field
 	When User selects 'DAS_19910_test_33' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	Then 'UPDATE' button is not disabled
 	When User selects 'DAS_19910_33' option from 'User Scope' autocomplete
 	When User waits for info message disappears under 'User Scope' field

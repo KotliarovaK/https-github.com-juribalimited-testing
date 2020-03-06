@@ -809,14 +809,16 @@ this.FeatureBackground();
 #line 216
  testRunner.When("User selects \'DAS_19910_test_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 217
- testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 218
- testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 219
  testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 218
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 219
+ testRunner.When("User selects \'DAS_19910_33\' option from \'User Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 220
- testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User waits for info message disappears under \'User Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 221
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 222
  testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -866,7 +868,7 @@ this.FeatureBackground();
                         "SelfService",
                         "DAS19910",
                         "Cleanup"});
-#line 224
+#line 225
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -882,14 +884,14 @@ this.FeatureBackground();
                         "All Users",
                         "None",
                         "Standalone Project"});
-#line 225
+#line 226
  testRunner.When("Project created via API", ((string)(null)), table25, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table26.AddRow(new string[] {
                         ""});
-#line 228
+#line 229
  testRunner.When("User create static list with \"DAS_19910_5\" name on \"Applications\" page with follo" +
                     "wing items", ((string)(null)), table26, "When ");
 #line hidden
@@ -905,7 +907,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_19910_5"});
-#line 231
+#line 232
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table27, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -923,7 +925,7 @@ this.FeatureBackground();
                         "TestPageSs2",
                         "DAS_19910_Page_2",
                         "true"});
-#line 234
+#line 235
  testRunner.When("User creates new Self Service Page via API", ((string)(null)), table28, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -936,19 +938,19 @@ this.FeatureBackground();
                         "DAS_19910_Proj_5",
                         "Allow owner to be removed only",
                         "true"});
-#line 238
+#line 239
  testRunner.When("User creates new application ownership component for \'TestPageSs1\' Self Service p" +
                     "age via API", ((string)(null)), table29, "When ");
-#line 241
+#line 242
  testRunner.When("User navigates to the \'Builder\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 243
- testRunner.When("Projects created by User are removed via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 244
+ testRunner.When("Projects created by User are removed via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 245
  testRunner.When("User selects \'Edit\' cogmenu option for \'Application Ownership\' item type with \'AO" +
                     "C Name\' name on Self Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 245
- testRunner.Then("\'[Project not found]\' content is displayed in \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 246
+ testRunner.Then("\'[Project not found]\' content is displayed in \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 247
  testRunner.Then("\'The selected project cannot be found\' error message is displayed for \'Project\' f" +
                     "ield", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
