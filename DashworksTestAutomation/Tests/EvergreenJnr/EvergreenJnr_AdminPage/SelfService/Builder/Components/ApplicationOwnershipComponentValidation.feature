@@ -113,13 +113,13 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	#Check that use is not able to create AOC with broken list
 	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
 	When User waits for info message disappears under 'User Scope' field
-	Then 'This list has errors' error message is displayed for 'User Scope' field
+	Then 'The selected list has errors' error message is displayed for 'User Scope' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check that use is not able to create AOC with list with missed columns
 	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
 	When User waits for info message disappears under 'User Scope' field
-	Then 'This list has errors' error message is displayed for 'User Scope' field
+	Then 'The selected list has errors' error message is displayed for 'User Scope' field
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check Broken list column validation
@@ -131,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User selects 'Broken_DAS_19910_33' option from 'User Scope' autocomplete
 	When User waits for info message disappears under 'User Scope' field
-	Then 'This list has errors' error message is displayed for 'User Scope' field
+	Then 'The selected list has errors' error message is displayed for 'User Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#Check list with missed column validation
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipPageValidationWhenBrokenLis
 	When User waits for info message disappears under 'User Scope' field
 	When User selects 'MissedClolumn_DAS_19910_33' option from 'User Scope' autocomplete
 	When User waits for info message disappears under 'User Scope' field
-	Then 'This list has errors' error message is displayed for 'User Scope' field
+	Then 'The selected list has errors' error message is displayed for 'User Scope' field
 	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 
