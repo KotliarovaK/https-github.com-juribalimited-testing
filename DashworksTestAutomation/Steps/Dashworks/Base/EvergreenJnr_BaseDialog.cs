@@ -113,14 +113,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenUserSeesComponentOnDialogPage(string componentName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
-            Verify.IsTrue(dialogContainer.IsComponentOfDialogPageDisplayed(componentName), $"'{componentName}' wasn't displayed");
+            Verify.IsTrue(dialogContainer.IsListItemOfDialogPageDisplayed(componentName), $"'{componentName}' wasn't displayed");
         }
 
-        [Then(@"User doesn't see '(.*)' component on dialog")]
+        [Then(@"User does not see '(.*)' component on dialog")]
         public void ThenUserDoesntComponentOnDialogPage(string componentName)
         {
             var dialogContainer = _driver.NowAt<BaseDialogPage>();
-            Verify.IsFalse(dialogContainer.IsComponentOfDialogPageDisplayed(componentName), $"'{componentName}' was displayed");
+            Verify.IsFalse(dialogContainer.IsListItemOfDialogPageDisplayed(componentName), $"'{componentName}' was displayed");
         }
 
         [When(@"User clicks on '(.*)' component on dialog")]

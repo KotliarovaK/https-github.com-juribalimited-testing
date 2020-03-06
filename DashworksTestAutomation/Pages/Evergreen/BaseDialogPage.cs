@@ -29,7 +29,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(selector));
         }
 
-        public bool IsComponentOfDialogPageDisplayed(string componentName)
+        //Currently are using only for Self Service Dialog Page
+        public bool IsListItemOfDialogPageDisplayed(string componentName)
         {
             try
             {

@@ -38,7 +38,6 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatTwoPagesWillBeC
 	When User navigates to the 'Builder' left menu item
 	Then 'Welcome' page subheader is displayed to user
 
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19950 @SelfServiceMVP @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToEditTheNamesInEditMode
     When User create static list with "1803 Apps" name on "Applications" page with following items
