@@ -542,6 +542,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetTextbox(placeholder).Click();
         }
 
+        [When(@"User waits for info message disappears under '(.*)' field")]
+        public void WhenUserWaitForInfoMessageDisappearsUnderField(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.WaitForTextboxInfoMessageDisappears(placeholder);
+        }
+
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
         public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
         {
@@ -593,6 +600,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field exclamation icon");
+        }
+
+        [Then(@"User sees '(.*)' hint below '(.*)' field")]
+        public void ThenUserSeesHintBelowField(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(filterElement.GetFieldHint(fieldName).Text, Is.EqualTo(instruction),
+                $"{fieldName} has no or wrong instruction");
         }
 
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
@@ -889,6 +904,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.SelectDropdownForField(value, fieldName);
         }
 
+        //| Value |
         [Then(@"following Values are displayed in the dropdown for the '(.*)' field:")]
         public void ThenFollowingValuesAreDisplayedInTheDropdownForTheField(string fieldName, Table table)
         {
@@ -1449,15 +1465,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         #endregion
 
         #region Slide toggle
-
-        //TODO AnnI 2/21/20: please update tests for 'Dashboards' and remove this step
-        //please, use only WhenUserChecksSlideToggle/WhenUserUnchecksSlideToggle steps
-        [When(@"User clicks '(.*)' slide toggle")]
-        public void WhenUserClicksSlideToggle(string slideToggleName)
-        {
-            var slide = _driver.NowAt<BaseDashboardPage>();
-            slide.GetSlideToggle(slideToggleName).Click();
-        }
 
         [When(@"User checks '(.*)' slide toggle")]
         public void WhenUserChecksSlideToggle(string slideToggleName)

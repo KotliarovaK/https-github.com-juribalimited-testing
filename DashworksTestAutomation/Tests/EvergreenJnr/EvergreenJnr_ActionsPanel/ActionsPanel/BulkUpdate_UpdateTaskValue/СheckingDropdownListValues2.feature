@@ -71,8 +71,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18269 @DAS18233 @Not_Ready
-#Waiting for 'Update relative to now'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18269 @DAS18233 @Void
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -84,17 +83,16 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeProp
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Date Computer' option from 'Task' autocomplete
+	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
+	| Options                                   |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18233 @Not_Ready
-#Waiting for 'Update relative to now'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18233 @Void
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -106,15 +104,15 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProp
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
-	| No change                        |
+	| Options                                   |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
+	| No change                                 |
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties
@@ -160,11 +158,10 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
-	When User selects 'Project Dates' option from 'Stage' autocomplete
-	When User selects 'Forecast Date' option from 'Task' autocomplete
+	When User selects 'Project Dates \ Forecast Date' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
 	When User enters '12' text to 'Value' textbox
 	When User selects 'Days' in the 'Units' dropdown
@@ -175,7 +172,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	Then 'After now' content is displayed in 'Before or After' dropdown
 	When User selects 'Before now' in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @DAS19276 @Void
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Void
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -190,5 +187,5 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
 	When User selects 'Audit & Configuration \ Validate User Device Ownership' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	Then User sees instruction '0 to 100,000' below 'Value' field
+	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete

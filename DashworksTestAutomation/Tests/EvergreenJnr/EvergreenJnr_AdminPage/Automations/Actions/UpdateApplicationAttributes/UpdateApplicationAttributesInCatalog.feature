@@ -189,3 +189,36 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then '1' content is displayed in the 'Objects' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19926 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckRunningAutomationsBasedOnApplicationsListWithInScopeFilter
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	When User refreshes agGrid
+	When User create dynamic list with "19926_List" name on "Applications" page
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
+	| 19926_Automation | 19926       | true   | false              | 19926_List | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '19926_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
+	When User selects 'TRUE' in the 'Hide From End Users' dropdown
+	When User clicks 'CREATE' button
+	#Run Automation
+	When User clicks 'Automations' header breadcrumb
+	When User enters "19926_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19926_Automation' item from 'Automation' column
+	When '19926_Automation' automation '19926_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When '19926_Automation' automation '19926_Action' action run has finished
+	When User enters "19926_Automation" text in the Search field for "Automation" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then "SUCCESS" content is displayed for "Outcome" column

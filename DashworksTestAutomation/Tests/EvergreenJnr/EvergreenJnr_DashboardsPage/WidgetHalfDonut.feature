@@ -7,7 +7,7 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15918
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List         | AggregateFunction | SplitBy                                |
@@ -27,7 +27,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	| HDD Total Size (GB) |
 	And User create dynamic list with "DAS16167_HddList" name on "Devices" page
 	When Dashboard with 'DAS16167_HddList' name created via API and opened
-	When User clicks 'Edit mode' slide toggle
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType   | Title           | List             | SplitBy          | AggregateFunction | AggregateBy         | OrderBy                         |

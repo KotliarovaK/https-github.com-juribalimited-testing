@@ -35,10 +35,9 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When User enters ' ' text to 'Component Name' textbox
 	Then 'Enter a component name' error message is displayed for 'Component Name' field
 	Then '' content is displayed in 'Project' autocomplete
-	#TODO update this part after 20114 will be implemented
-	#Then 'Project' autocomplete contains following options:
-	#| values         |
-	#| DAS_20019_Proj |
+	Then 'Project' autocomplete contains following options:
+	| values         |
+	| DAS_20019_Proj |
 	Then 'Do not allow owner to be changed' radio button is checked
 	Then 'User Scope' autocomplete is not displayed
 	When User checks 'Allow owner to be removed only' radio button
@@ -54,10 +53,10 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	| DAS_20019_11 |
 	Then 'User Scope' autocomplete first option is 'All Users'
 	Then following fields to display are displayed on application ownership component page
-	| fields          |
-	| Username (User) |
-	| Domain          |
-	| Display Name    |
+	| fields       |
+	| Username     |
+	| Domain       |
+	| Display Name |
 	Then 'CREATE' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 
@@ -96,14 +95,14 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	Then 'User Evergreen Capacity Project' content is displayed in 'Project' autocomplete
 	Then 'Do not allow owner to be changed' radio button is checked
 	Then 'Show this component' checkbox is unchecked
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#Update information
 	When User enters 'AOC_Updated Name' text to 'Component Name' textbox
 	#When User selects 'DAS_19909_Proj_Up' option from 'Project' autocomplete
 	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
-	#Then 'DAS_19909_3' content is displayed in 'User Scope' autocomplete
 	When User selects 'DAS_19909_3' option from 'User Scope' autocomplete
+	When User waits for info message disappears under 'User Scope' field
 	When User checks 'Show this component' checkbox
 	When User clicks 'UPDATE' button
 	#Check updated data
@@ -138,17 +137,11 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19909_2_SI        | TestPageSs1 | DAS_19909_Page_1 | true              |
 	| 19909_2_SI        | TestPageSs2 | DAS_19909_Page_2 | true              |
+	#Change project name to DAS_19909_Proj after DAS-20114 fix
+	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
+	| ComponentName | ProjectName                     | OwnerPermission                  |
+	| AOC Name      | User Evergreen Capacity Project | Do not allow owner to be changed |
 	When User navigates to the 'Builder' left submenu item
-	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs1' name on Self Service Builder Panel
-	When User clicks on 'Application Ownership' component on dialog
-	When User clicks 'ADD' button on popup
-	Then Page with 'Create App Ownership Component' subheader is displayed to user
-	#Create AOC with default setting
-	When User enters 'AOC Name' text to 'Component Name' textbox
-	#Uncomment this and remove line below when all rpojects will be available to select: DAS-20114
-	#When User selects 'DAS_19909_Proj' option from 'Project' autocomplete
-	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
-	When User clicks 'CREATE' button
 	#Update information
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	When User enters 'AOC_Updated Name' text to 'Component Name' textbox

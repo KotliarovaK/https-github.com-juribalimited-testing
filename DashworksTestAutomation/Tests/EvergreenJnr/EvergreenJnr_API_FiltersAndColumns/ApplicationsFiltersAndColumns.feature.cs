@@ -163,7 +163,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Application", "Inventory Site", "applications?$filter=(packageSite%20NOT%20EQUALS%20(\'Altiris\'%2C\'SMS_GEN\'))&$sele" +
             "ct=packageName,packageManufacturer,packageVersion,packageSite&$orderby=packageSi" +
             "te%20asc", null)]
-        [NUnit.Framework.TestCaseAttribute("Application", "User Count (Entitled)", "applications?$filter=(userEntitlements%20>%3D%2020)&$select=packageName,packageMa" +
+        [NUnit.Framework.TestCaseAttribute("Application", "User Count (Entitled)", "applications?$filter=(userEntitlements%20>%3D%2010)&$select=packageName,packageMa" +
             "nufacturer,packageVersion,userEntitlements&$orderby=userEntitlements%20asc", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "User Count (Used)", "applications?$filter=(userUsage%20<%203)&$select=packageName,packageManufacturer," +
             "packageVersion,userUsage&$orderby=userUsage%20desc", null)]
@@ -355,7 +355,7 @@ this.FeatureBackground();
             "Application%20Development\')%20WHERE%20(uod%2Cetd))", null)]
         [NUnit.Framework.TestCaseAttribute("Device Owner Custom Fields", "Device Owner Zip Code", "applications?$filter=(deviceOwnerCustomField_34%20CONTAINS%20(\'EC1\')%20WHERE%20(u" +
             "od%2Cetd%2Ciod))", null)]
-        [NUnit.Framework.TestCaseAttribute("Automations", "X-Proj Paths", "applications?$filter=(automationField_16%20NOT%20EQUALS%20(\'337\'%2C\'336\'))", null)]
+        [NUnit.Framework.TestCaseAttribute("Automations", "X-Proj Paths", "applications?$filter=(automationField_11_10%20EQUALS%20(\'NULL\'))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User (Saved List)", "applications?$filter=(userSavedListId%20NOT%20EQUALS%20(\'61\'%2C\'38\')%20WHERE%20(h" +
             "ua%2Ceta%2Codwawuo%2Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User", "applications?$filter=(user%20EQUALS%20(\'25833\'%2C\'26113\'%2C\'27427\'%2C\'26448\')%20W" +
@@ -367,8 +367,8 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("User", "User Dashworks First Seen", "applications?$filter=(userDashworksFirstSeenDate%20IS%20EMPTY%20()%20WHERE%20(dno" +
             "dwaiet%2Cdnodwawuo%2Cdnodwaiio))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Description", "applications?$filter=(userDescription%20NOT%20CONTAINS%20(\'it\'%2C\'the\')%20WHERE%2" +
-            "0(hua))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Device Count", "applications?$filter=(userDevices%20>%3D%202%20WHERE%20(eta%2Chua))", null)]
+            "0(eta))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Device Count", "applications?$filter=(userDevices%20<%3D%205%20WHERE%20(odwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Directory Type", "applications?$filter=(userDirectoryType%20IS%20NOT%20EMPTY%20()%20WHERE%20(hua%2C" +
             "odwawuo%2Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Display Name", "applications?$filter=(userDisplayName%20IS%20NOT%20EMPTY%20()%20WHERE%20(hua%2Cet" +
@@ -387,26 +387,25 @@ this.FeatureBackground();
             "aiet%2Codwaiio))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User GUID", "applications?$filter=(userGUID%20NOT%20CONTAINS%20(\'vineivi\'%2C\'hydewwue\')%20WHER" +
             "E%20(hua%2Ceta))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Home Directory", "applications?$filter=(userHomeDirectory%20IS%20NOT%20EMPTY%20()%20WHERE%20(odwawu" +
-            "o%2Codwaiet%2Codwaiio))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Home Drive", "applications?$filter=(userHomeDrive%20CONTAINS%20(\'H\')%20WHERE%20(odwaiet%2Codwai" +
-            "io%2Codwawuo))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Key", "applications?$filter=(userKey%20%3D%201000%20WHERE%20(hua%2Ceta%2Codwawuo%2Codwai" +
-            "et%2Codwaiio))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Home Directory", "applications?$filter=(userHomeDirectory%20IS%20EMPTY%20()%20WHERE%20(odwawuo%2Cod" +
+            "waiet%2Codwaiio))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Home Drive", "applications?$filter=(userHomeDrive%20CONTAINS%20(\'H\')%20WHERE%20(hua%2Ceta))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Key", "applications?$filter=(userKey%20>%3D%201000%20WHERE%20(hua%2Ceta%2Codwawuo%2Codwa" +
+            "iet%2Codwaiio))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Last Logon Date", "applications?$filter=(userLastLogonDate%20>%3D%20(\'2010-01-01\')%20WHERE%20(hua%2C" +
             "eta))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Mailbox Count (Access)", "applications?$filter=(userAccessibleMailboxesCount%20>%3D%201%20WHERE%20(hua%2Cet" +
             "a%2Codwawuo%2Codwaiet%2Codwaiio))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Organizational Unit", "applications?$filter=(userOrganizationalUnit%20IS%20EMPTY%20()%20WHERE%20(hua%2Co" +
-            "dwawuo%2Codwaiet))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Organizational Unit", "applications?$filter=(userOrganizationalUnit%20IS%20NOT%20EMPTY%20()%20WHERE%20(h" +
+            "ua%2Codwawuo%2Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Parent Distinguished Name", "applications?$filter=(userParentDistinguishedName%20NOT%20CONTAINS%20(\'sdthyjuki\'" +
             "%2C\'wefwrtn\'%2C\'xzxfcbgfgh\')%20WHERE%20(odwaiet%2Codwaiio))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User SID", "applications?$filter=(userSID%20IS%20NOT%20EMPTY%20()%20WHERE%20(dnodwaiio%2Cdnod" +
             "waiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Surname", "applications?$filter=(userSurname%20BEGINS%20WITH%20(\'Jon\'%2C\'Smi\'%2C\'Mar\')%20WHE" +
             "RE%20(eta%2Codwawuo))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Username", "applications?$filter=(userUsername%20NOT%20EQUALS%20(\'efwrthyu\'%2C\'sfrty567\')%20W" +
-            "HERE%20(odwawuo))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Username", "applications?$filter=(userUsername%20NOT%20CONTAINS%20(\'123\')%20WHERE%20(odwawuo%" +
+            "2Chua%2Ceta))", null)]
         [NUnit.Framework.TestCaseAttribute("User Location", "User Building", "applications?$filter=(userBuilding%20NOT%20EQUALS%20(\'NULL\')%20WHERE%20(odwaiio%2" +
             "Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User Location", "User City", "applications?$filter=(userCity%20EQUALS%20(\'Belfast\'%2C\'Calgary\'%2C\'Cardiff\'%2C\'E" +
@@ -421,7 +420,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("User Location", "User Postal Code", "applications?$filter=(userPostalCode%20DOES%20NOT%20END%20WITH%20(\'1we\'%2C\'5t\')%2" +
             "0WHERE%20(odwawuo%2Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User Location", "User Region", "applications?$filter=(userRegion%20EQUALS%20(\'NULL\'%2C\'AU\'%2C\'CA\'%2C\'US-E\'%2C\'US-" +
-            "W\')%20WHERE%20(odwawuo%2Chua))", null)]
+            "W\')%20WHERE%20(odwawuo%2Chua%2Ceta))", null)]
         [NUnit.Framework.TestCaseAttribute("User Location", "User State or County", "applications?$filter=(userStateCounty%20EQUALS%20(\'AB\'%2C\'CA\')%20WHERE%20(odwaiet" +
             "%2Codwawuo))", null)]
         [NUnit.Framework.TestCaseAttribute("User Organisation", "User Cost Centre", "applications?$filter=(userCostCentre%20DOES%20NOT%20BEGIN%20WITH%20(\'rtg\'%2C\'sdf\'" +
@@ -583,9 +582,8 @@ this.FeatureBackground();
             "packageManufacturer,packageVersion,project_56_targetUserCount", null)]
         [NUnit.Framework.TestCaseAttribute("Project Tasks: UserEvergr", "UserEvergr: Stage 1 \\ Text Task (App)", "applications?$filter=(project_task_56_13257_3_Task%20IS%20EMPTY%20())&$select=pac" +
             "kageName,packageManufacturer,packageVersion,project_task_56_13257_3_Task", null)]
-        [NUnit.Framework.TestCaseAttribute("Project Tasks: UserEvergr", "UserEvergr: Stage 2 \\ Application Delivery Date", "applications?$filter=(project_task_56_13256_2_Task%20AFTER%20RELATIVE%20(250_day_" +
-            "ago))&$select=packageName,packageManufacturer,packageVersion,project_task_56_132" +
-            "56_2_Task", null)]
+        [NUnit.Framework.TestCaseAttribute("Project Tasks: UserEvergr", "UserEvergr: Stage 2 \\ Application Delivery Date", "applications?$filter=(project_task_56_13256_2_Task%20<%3D%20\'2020-03-05\')&$select" +
+            "=packageName,packageManufacturer,packageVersion,project_task_56_13256_2_Task", null)]
         [NUnit.Framework.TestCaseAttribute("Project Tasks: UserEvergr", "UserEvergr: Stage 2 \\ Application Delivery Date (Slot)", "applications?$filter=(project_task_56_13256_2_taskSlotId%20EQUALS%20(\'NULL\'%2C\'33" +
             "\'))&$select=packageName,packageManufacturer,packageVersion,project_task_56_13256" +
             "_2_taskSlot", null)]
@@ -822,240 +820,6 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS17579")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplayingInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplayingInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckUserPostalCodeOptionsDisplaying", null, new string[] {
-                        "Evergreen",
-                        "Applications",
-                        "API",
-                        "FiltersAndColumns",
-                        "DAS17579"});
-#line 305
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "OperatorValues"});
-            table2.AddRow(new string[] {
-                        "Equals"});
-            table2.AddRow(new string[] {
-                        "Does not equal"});
-            table2.AddRow(new string[] {
-                        "Contains"});
-            table2.AddRow(new string[] {
-                        "Does not contain"});
-            table2.AddRow(new string[] {
-                        "Begins with"});
-            table2.AddRow(new string[] {
-                        "Does not begin with"});
-            table2.AddRow(new string[] {
-                        "Ends with"});
-            table2.AddRow(new string[] {
-                        "Does not end with"});
-            table2.AddRow(new string[] {
-                        "Empty"});
-            table2.AddRow(new string[] {
-                        "Not empty"});
-#line 306
- testRunner.Then("following operators are displayed in \"User Location\" category for \"User Postal Co" +
-                    "de\" filter on \"Applications\" page:", ((string)(null)), table2, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrectFilterOptio" +
-            "ns")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS15194")]
-        [NUnit.Framework.CategoryAttribute("DAS16485")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrectFilterOptions()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrectFilterOptionsInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrectFilterOptionsInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatDeviceOwnerCustomItemHasCorrectFilterOptio" +
-                    "ns", null, new string[] {
-                        "Evergreen",
-                        "Applications",
-                        "API",
-                        "FiltersAndColumns",
-                        "DAS15194",
-                        "DAS16485"});
-#line 320
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "OperatorValues"});
-            table3.AddRow(new string[] {
-                        "Equals"});
-            table3.AddRow(new string[] {
-                        "Does not equal"});
-            table3.AddRow(new string[] {
-                        "Contains"});
-            table3.AddRow(new string[] {
-                        "Does not contain"});
-            table3.AddRow(new string[] {
-                        "Begins with"});
-            table3.AddRow(new string[] {
-                        "Does not begin with"});
-            table3.AddRow(new string[] {
-                        "Ends with"});
-            table3.AddRow(new string[] {
-                        "Does not end with"});
-            table3.AddRow(new string[] {
-                        "Empty"});
-            table3.AddRow(new string[] {
-                        "Not empty"});
-#line 321
- testRunner.Then("following operators are displayed in \"Device Owner Custom Fields\" category for \"D" +
-                    "evice Owner Zip Code\" filter on \"Applications\" page:", ((string)(null)), table3, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergree" +
-            "nCategoryInFiltersPanel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("DAS12940")]
-        [NUnit.Framework.CategoryAttribute("DAS13201")]
-        [NUnit.Framework.CategoryAttribute("DAS14325")]
-        [NUnit.Framework.TestCaseAttribute("Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInFiltersPanel(string listName, string[] exampleTags)
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInFiltersPanelInternal(listName,exampleTags);
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInFiltersPanelInternal(string listName, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Applications",
-                    "API",
-                    "FiltersAndColumns",
-                    "DAS12940",
-                    "DAS13201",
-                    "DAS14325"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergree" +
-                    "nCategoryInFiltersPanel", null, @__tags);
-#line 335
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "value"});
-            table4.AddRow(new string[] {
-                        "Evergreen Bucket"});
-            table4.AddRow(new string[] {
-                        "Evergreen Capacity Unit"});
-            table4.AddRow(new string[] {
-                        "Evergreen Ring"});
-#line 336
- testRunner.Then(string.Format("the following filter subcategories are displayed for \'Evergreen\' category on \'{0}" +
-                        "\' page:", listName), ((string)(null)), table4, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore

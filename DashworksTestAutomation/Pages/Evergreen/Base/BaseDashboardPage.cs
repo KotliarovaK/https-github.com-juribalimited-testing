@@ -500,10 +500,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public void PopulateTextbox(string placeholder, string value, bool clear = true)
         {
             if (clear)
+            {
                 GetTextbox(placeholder).Clear();
+            }
 
             if (!string.IsNullOrEmpty(value))
+            {
                 GetTextbox(placeholder).SendKeys(value);
+            }
         }
 
         public void PopulateTextboxWithAddButton(string placeholder, string option)
@@ -513,6 +517,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             button.ClearWithBackspaces();
             button.SendKeys(option);
             GetTextboxAddButton(placeholder).Click();
+        }
+
+        public IWebElement GetFieldHint(string placeholder)
+        {
+            var hitSelector = By.XPath("./ancestor::div[@class='mat-form-field-wrapper']//mat-hint");
+            Driver.WaitForElementInElementToBeDisplayed(GetTextbox(placeholder), hitSelector);
+            return GetTextbox(placeholder).FindElement(hitSelector);
         }
 
         public IWebElement GetTextboxAddButton(string placeholder)
@@ -551,6 +562,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             var error = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[not (@class)]"));
             return error.Text;
+        }
+
+        private By textboxInfoSelector = By.XPath("./span[contains(@class,'info-text')]");
+
+        public string GetTextboxInfoMessage(string placeholder)
+        {
+
+            var error = GetTextboxErrorMessageElement(placeholder).FindElement(textboxInfoSelector);
+            return error.Text;
+        }
+
+        public void WaitForTextboxInfoMessageDisappears(string placeholder)
+        {
+            try
+            {
+                Driver.WaitForElementToBeNotDisplayed(GetTextboxErrorMessageElement(placeholder), textboxInfoSelector);
+            }
+            catch
+            {
+                //No error/info message located. Nothing to wait
+            }
         }
 
         public IWebElement GetTextboxErrorMessageExclamationIcon(string placeholder)
