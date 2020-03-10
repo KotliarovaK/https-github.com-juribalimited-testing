@@ -327,3 +327,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavig
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "Migration Type Capacity" list
 	Then Columnmetadata request contains ArchivedItem parameter
+
+@Evergreen @EvergreenJnr_BaseDashboardPage @DAS20056
+Scenario: EvergreenJnr_DevicesList_CheckThat500FullErrorPageIsDisplyed
+    When User navigates to 'device/4534543553/details/device' url via address line
+    Then error page with '500' status code and 'The server has encountered an unexpected error.' error message is displayed
