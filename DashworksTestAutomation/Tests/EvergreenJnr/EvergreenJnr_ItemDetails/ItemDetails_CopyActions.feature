@@ -80,12 +80,3 @@ Examples:
 	| Device   | 05PFM2OWVCSCZ1                   | Device     | Hostname        | 05PFM2OWVCSCZ1      |
 	| User     | 03714167684E45F7A8F              | User       | Domain          | BCLABS              |
 	| Mailbox  | 06D7AE4F161F4A3AA7F@bclabs.local | Mailbox    | Alias           | 06D7AE4F161F4A3AA7F |
-
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @archived
-Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
-	When User type "NL00G001" in Global Search Field
-	Then User clicks on "NL00G001" search result
-	When User selects "Description" text from key value grid on the Details Page
-	Then 'Description' text is highlighted
-	When User selects "Unknown" text from key value grid on the Details Page
-	Then 'Unknown' text is highlighted

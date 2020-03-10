@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnT
 	And table content is present
 	Then 'Collections' left submenu item is displayed
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067 DAS18535
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067 @DAS18535
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Applications' left menu item
