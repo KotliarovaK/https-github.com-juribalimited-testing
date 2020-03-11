@@ -1572,10 +1572,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line 333
-    testRunner.When("User navigates to \'device/4534543553/details/device\' url via address line", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("User navigates to \'device/453454353/details/device\' url via address line", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 334
-    testRunner.Then("error page with \'500\' status code and \'The server has encountered an unexpected e" +
-                    "rror.\' error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("error page with \'500\' status code and \'Object reference not set to an instance of" +
+                    " an object.\' error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
