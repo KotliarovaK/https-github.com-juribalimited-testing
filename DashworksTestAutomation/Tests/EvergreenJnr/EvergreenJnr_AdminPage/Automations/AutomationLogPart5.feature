@@ -17,8 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User enters '17974_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Stage 3' option from 'Stage' autocomplete
-	When User selects 'DDL Slot Task' option from 'Task' autocomplete
+	When User selects 'Stage 3 \ DDL Slot Task' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button

@@ -23,8 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner Comp Req B' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
@@ -41,8 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
-	Then 'One' content is displayed in 'Stage' textbox
-	Then 'Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
+	Then 'One \ Radio Rag Date Owner Comp Req B' content is displayed in 'Task' textbox
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Update' value is displayed in the 'Update Owner' dropdown
@@ -86,8 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	When User enters '18432_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '18432Project' option from 'Project' autocomplete
-	When User selects '18432_Stage' option from 'Stage' autocomplete
-	When User selects '18432_Task' option from 'Task' autocomplete
+	When User selects '18432_Stage \ 18432_Task' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
@@ -111,6 +108,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then '[Project not found]' content is displayed in 'Project' textbox
 	When User selects '2004 Rollout' option from 'Project' autocomplete
-	Then '' content is displayed in 'Stage' textbox
-	When User selects 'Pre-Migration' option from 'Stage' autocomplete
 	Then '' content is displayed in 'Task' textbox

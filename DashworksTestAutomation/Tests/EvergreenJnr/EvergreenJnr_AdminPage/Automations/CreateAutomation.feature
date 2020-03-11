@@ -18,6 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	Then Main lists are displayed correctly in the Scope dropdown
 	| ListName         |
 	| All Devices      |
+	| All Device Types |
 	| All Users        |
 	| All Applications |
 	| All Mailboxes    |

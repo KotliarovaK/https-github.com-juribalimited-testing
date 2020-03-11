@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	Then following Values are displayed in the 'Sticky Compliance' dropdown:
 	| Options   |
 	| No change |
-	| Empty     |
+	| Remove    |
 	| UNKNOWN   |
 	| RED       |
 	| AMBER     |
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User enters '18834_Action' text to 'Action Name' textbox
 	When User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User selects 'Empty' in the 'Sticky Compliance' dropdown
+	When User selects 'Remove' in the 'Sticky Compliance' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb

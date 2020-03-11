@@ -644,8 +644,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User enters 'DAS17797_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Complete' in the 'Value' dropdown
@@ -663,9 +662,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	Then 'CANCEL' button is not disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#DAS-17816 <=
-	When User selects 'Radio Rag only Comp' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag only Comp' option from 'Task' autocomplete
 	When User clicks Body container
-	When User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then 'Update Value' content is displayed in 'Update Value' dropdown
 	Then 'Update Date' content is displayed in 'Update Date' dropdown
 	Then 'Update Owner' content is displayed in 'Update Owner' dropdown
@@ -693,8 +692,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User enters 'DAS17744_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects 'One' option from 'Stage' autocomplete
-	And User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
+	And User selects 'One \ Radio Rag Date Owner User Req A' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Started' in the 'Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
@@ -734,7 +732,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	And User enters 'DAS17772_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	Then 'Stage' autocomplete does NOT have options
+	Then 'Task' autocomplete does NOT have options
 	| Options         |
 	| Read only tasks |
 	When User clicks 'Users' on the left-hand menu
@@ -748,7 +746,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	Then 'Stage' autocomplete does NOT have options
+	Then 'Task' autocomplete does NOT have options
 	| Options         |
 	| Read only tasks |
 

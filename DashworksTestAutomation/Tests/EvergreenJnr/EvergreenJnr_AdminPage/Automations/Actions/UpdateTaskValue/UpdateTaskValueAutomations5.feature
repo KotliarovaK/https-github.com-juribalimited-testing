@@ -322,8 +322,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingActio
 	And User enters '18705_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User selects 'Pre-Migration' option from 'Stage' autocomplete
-	When User selects 'Device Priority' option from 'Task' autocomplete
+	When User selects 'Pre-Migration \ Device Priority' option from 'Task' autocomplete
 	When User selects 'Medium' in the 'Value' dropdown
 	When User clicks 'CREATE' button
 	Then "2004 Rollout" content is displayed for "Project" column
