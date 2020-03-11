@@ -31,8 +31,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
+	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<NewValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
@@ -55,8 +54,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
+	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<DefaultValue>' in the 'Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
@@ -107,8 +105,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
+	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<NewValue>' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -129,8 +126,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
+	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects '<DefaultValue>' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -180,8 +176,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
+	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Complete' in the 'Value' dropdown
 	And User selects 'Remove' in the 'Update Date' dropdown
@@ -200,8 +195,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
+	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
@@ -244,8 +238,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
+	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '28 Nov 2018' text to 'Date' datepicker
@@ -264,8 +257,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'User Acceptance Test' option from 'Stage' autocomplete
-	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
+	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '27 Dec 2018' text to 'Date' datepicker

@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	| Empty            |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Evergreen Capacity Unit 1' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -38,8 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects '2004 Rollout' option from 'Project' autocomplete
-	And User selects 'Migration' option from 'Stage' autocomplete
-	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	Then User sees that 'Capacity Slot' dropdown contains following options:
@@ -62,8 +61,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User selects 'Migration' option from 'Stage' autocomplete
-	When User selects 'Migrated Date' option from 'Task' autocomplete
+	When User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	When User clicks 'UPDATE' button 
@@ -126,8 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Date Computer' option from 'Task' autocomplete
+	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options                          |
 	| Update                           |
