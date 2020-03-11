@@ -7562,7 +7562,7 @@
 		"tooltip": null,
 		"dataType": "Key",
 		"sortOrder": "Default",
-		"sortByField": null,
+		"sortByField": "",
 		"customUiTransformation": null,
 		"options": null
 	},
@@ -9632,7 +9632,7 @@
 		"tooltip": null,
 		"dataType": "Key",
 		"sortOrder": "Default",
-		"sortByField": null,
+		"sortByField": "",
 		"customUiTransformation": null,
 		"options": null
 	},
@@ -10736,7 +10736,7 @@
 		"tooltip": null,
 		"dataType": "Key",
 		"sortOrder": "Default",
-		"sortByField": null,
+		"sortByField": "",
 		"customUiTransformation": null,
 		"options": null
 	},
@@ -11725,7 +11725,7 @@
 		"tooltip": null,
 		"dataType": "Key",
 		"sortOrder": "Default",
-		"sortByField": null,
+		"sortByField": "",
 		"customUiTransformation": null,
 		"options": null
 	},

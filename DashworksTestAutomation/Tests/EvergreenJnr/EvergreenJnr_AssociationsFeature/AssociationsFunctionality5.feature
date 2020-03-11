@@ -10,12 +10,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedTo
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then "Used by device owner" filter is presented in the filters list
 	Then "Entitled to device owner" filter is presented in the filters list
 	When User selects 'Entitled to device owner' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then "Used by device owner" filter is presented in the filters list
 	Then "Not used by device owner" filter is presented in the filters list
 	When User selects 'Not used by device owner' option in 'Search associations' autocomplete of Associations panel
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListCanBeGeneratedBasedOnOsBran
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Installed on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "Device OS Branch" filter where type is "Equals" without added column and following checkboxes:
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThat
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatListRunSuccessfullyAfterAddingC
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "Device LabelDAS19185" filter where type is "Not empty" with added column and following value:
