@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00KLL9S8NRF0X6   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00DBB114BE1B41B0A38 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 01C4FB7C6D2C4F979BD@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 7-Zip 9.20 (x64 edition) |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit13201' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -282,7 +282,7 @@ Examples:
 	| Devices      | Hostname      | Havoc(BigD: In Scope                     | FALSE          | 08HRHU20R2JY3W                             | Havoc(BigD: In Scope is False                              |
 	| Devices      | Hostname      | ComputerSc: Path                         | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Path is Request Type A                         |
 	| Applications | Application   | Havoc(BigD: Hide From End Users          | Empty          | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide From End Users is Empty                   |
-	| Applications | Application   | Barry'sUse: Core Application             | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | Barry'sUse: Core Application is False                      |
+	| Applications | Application   | Barry'sUse: In Scope                     | FALSE          | Amazon Redshift ODBC Driver 64-bit         | Barry'sUse: In Scope is False                              |
 	| Mailboxes    | Email Address | EmailMigra: Mobile Devices \ Device Type | Not Identified | 238BAE24882E48BFA9F@bclabs.local           | EmailMigra: Mobile Devices \ Device Type is Not Identified |
 
 @Evergreen @Evergreen_FiltersFeature @Filter_AllLists @DAS14524
