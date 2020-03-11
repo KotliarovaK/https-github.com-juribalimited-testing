@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault
 	When User navigates to the "All Device Applications" list
 	Then Associations panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User selects 'Pivot' in the 'Create' dropdown
@@ -133,5 +133,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault
 	When User navigates to the "All Device Applications" list
 	Then "Associations" panel is displayed to the user
 	When User navigates to the "DAS19937_Pivot" list
+	Then Actions panel is not displayed to the user
 	Then Pivot panel is not displayed to the user
 	Then Associations panel is not displayed to the user
