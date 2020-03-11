@@ -437,7 +437,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ApplicationsTab")]
         [NUnit.Framework.CategoryAttribute("DAS20047")]
         [NUnit.Framework.CategoryAttribute("DAS20088")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [NUnit.Framework.CategoryAttribute("DAS20186")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutAName()
         {
             System.Exception lastException = null;
@@ -474,7 +475,8 @@ this.FeatureBackground();
                         "ApplicationsTab",
                         "DAS20047",
                         "DAS20088",
-                        "Void"});
+                        "DAS20186",
+                        "Not_Ready"});
 #line 80
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -496,6 +498,9 @@ this.FeatureBackground();
 #line 87
  testRunner.When("User clicks \"Empty\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
+ testRunner.Then("\'User Evergreen Capacity Project\' content is displayed in \'Item Details Project\' " +
+                    "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 89
  testRunner.Then("\'Details\' left menu item is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
