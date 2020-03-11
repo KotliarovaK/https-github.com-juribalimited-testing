@@ -1473,11 +1473,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MailboxesDetails_Trend.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes_MailboxPermissions.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UsersDetails_Mailboxes_MailboxPermissions.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\ProjectDetails_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1642,11 +1637,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Offboard_MailboxesPage.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UsersDetails_Mailboxes.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Bucket_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2837,10 +2827,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MailboxesDetails_Trend.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes_MailboxPermissions.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UsersDetails_Mailboxes_MailboxPermissions.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\ProjectDetails_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectDetails_UsersPage.feature.cs</LastGenOutput>
@@ -2972,10 +2958,6 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Offboard_MailboxesPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Offboard_MailboxesPage.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UsersDetails_Mailboxes.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Bucket_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -3287,6 +3269,7 @@
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\ActiveDirectory\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Specification\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\" />
+    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
