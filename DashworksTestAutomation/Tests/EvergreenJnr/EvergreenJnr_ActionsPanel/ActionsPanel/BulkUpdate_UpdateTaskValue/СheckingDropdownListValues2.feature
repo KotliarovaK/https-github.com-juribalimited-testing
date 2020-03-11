@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeProp
 	| Update relative to a different task value |
 	| Remove                                    |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18233 @Void
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18233
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProp
 	| Remove                                    |
 	| No change                                 |
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233 @DAS20109
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -126,27 +126,27 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Date Computer' option from 'Task' autocomplete
+	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
+	| Options                                   |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	Then 'Days' content is displayed in 'Units' dropdown
 	Then 'After current value' content is displayed in 'Before or After' dropdown
 	When User enters '999999' text to 'Value' textbox
 	Then '100000' content is displayed in 'Value' textbox
 	When User enters '-5' text to 'Value' textbox
-	Then '1' content is displayed in 'Value' textbox
+	Then '0' content is displayed in 'Value' textbox
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options              |
 	| Before current value |
 	| After current value  |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274 @Void
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user

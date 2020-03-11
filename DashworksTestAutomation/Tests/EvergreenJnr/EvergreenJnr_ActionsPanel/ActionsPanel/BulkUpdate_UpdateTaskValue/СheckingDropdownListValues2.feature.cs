@@ -473,7 +473,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18233")]
-        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProperties()
         {
             System.Exception lastException = null;
@@ -507,8 +506,7 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
-                        "DAS18233",
-                        "Void"});
+                        "DAS18233"});
 #line 96
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -566,6 +564,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18270")]
         [NUnit.Framework.CategoryAttribute("DAS18233")]
+        [NUnit.Framework.CategoryAttribute("DAS20109")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties()
         {
             System.Exception lastException = null;
@@ -599,7 +598,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS18270",
-                        "DAS18233"});
+                        "DAS18233",
+                        "DAS20109"});
 #line 118
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -627,9 +627,7 @@ this.FeatureBackground();
 #line 128
  testRunner.When("User selects \'Computer Scheduled Test (Jo)\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 129
- testRunner.When("User selects \'One\' option from \'Stage\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 130
- testRunner.When("User selects \'Date Computer\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'One \\ Date Computer\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -640,8 +638,10 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "Update relative to now"});
             table12.AddRow(new string[] {
+                        "Update relative to a different task value"});
+            table12.AddRow(new string[] {
                         "Remove"});
-#line 131
+#line 130
  testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table12, "Then ");
 #line 137
  testRunner.When("User selects \'Update relative to current value\' in the \'Update Date\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -656,7 +656,7 @@ this.FeatureBackground();
 #line 142
  testRunner.When("User enters \'-5\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 143
- testRunner.Then("\'1\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'0\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -680,7 +680,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18281")]
         [NUnit.Framework.CategoryAttribute("DAS18233")]
         [NUnit.Framework.CategoryAttribute("DAS19274")]
-        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties()
         {
             System.Exception lastException = null;
@@ -716,8 +715,7 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS18281",
                         "DAS18233",
-                        "DAS19274",
-                        "Void"});
+                        "DAS19274"});
 #line 150
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

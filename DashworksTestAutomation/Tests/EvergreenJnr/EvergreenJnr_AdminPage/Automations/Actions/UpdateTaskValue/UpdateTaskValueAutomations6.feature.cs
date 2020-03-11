@@ -417,7 +417,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19854")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue()
         {
             System.Exception lastException = null;
@@ -452,7 +452,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS19854",
                         "Cleanup",
-                        "Void"});
+                        "Wormhole"});
 #line 118
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

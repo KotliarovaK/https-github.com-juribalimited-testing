@@ -165,8 +165,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 	Then 'NOT STARTED' content is displayed in the 'zDeviceAut: Relative BU \ DT Auto Device' column
 	Then '' content is displayed in the 'zDeviceAut: Relative BU \ DT Auto Device (Date)' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18543 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18543 @DAS20109 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnTheTask
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -187,6 +186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User selects 'DDL Slot Task' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	Then ' ' content is displayed in 'Units' dropdown
 	When User enters '10' text to 'Value' textbox
 	When User selects 'Hours' in the 'Units' dropdown
 	Then 'CREATE' button is not disabled

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19273 @Void
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19273 @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -27,8 +27,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
 	When User selects 'Stage B \ Original Task' option from 'Task' autocomplete
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
-	#Waiting for renamed Relative Project dropdown
-	#When User selects 'zUser Sch for Automations Feature' option from 'Relative Project' autocomplete
+	When User selects 'zUser Sch for Automations Feature' option from 'Relative Project' autocomplete
 	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
 	When User enters '5' text to 'Value' textbox
 	When User selects 'Days' in the 'Units' dropdown
