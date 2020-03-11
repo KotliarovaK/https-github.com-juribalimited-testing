@@ -466,21 +466,22 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatMoveBucketFunctionalityIsDisplayedCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCor" +
+            "rectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16360")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DevicesList_ChecksThatMoveBucketFunctionalityIsDisplayedCorrectly()
+        public virtual void EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_ChecksThatMoveBucketFunctionalityIsDisplayedCorrectlyInternal();
+                    this.EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCorrectlyInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -499,9 +500,10 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_ChecksThatMoveBucketFunctionalityIsDisplayedCorrectlyInternal()
+        private void EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCorrectlyInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatMoveBucketFunctionalityIsDisplayedCorrectly", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCor" +
+                    "rectly", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
@@ -519,7 +521,7 @@ this.FeatureBackground();
                         "TeamName",
                         "IsDefault"});
             table5.AddRow(new string[] {
-                        "BucketDAS16360",
+                        "BucketDAS16360_1",
                         "My Team",
                         "false"});
 #line 120
@@ -554,17 +556,232 @@ this.FeatureBackground();
 #line 136
  testRunner.Then("\'Move all\' checkbox is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 137
- testRunner.When("User selects \'BucketDAS16360\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'BucketDAS16360_1\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
  testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 139
- testRunner.Then("\'The selected objects will be moved to Birmingham\' text is displayed on inline ti" +
-                    "p banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected objects will be moved to BucketDAS16360_1\' text is displayed on inl" +
+                    "ine tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 140
  testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 141
- testRunner.Then("\'The selected objects successfully moved to Birmingham\' text is displayed on inli" +
-                    "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'The selected objects successfully moved to BucketDAS16360_1\' text is displayed o" +
+                    "n inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfully")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS16360")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfully()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfullyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfullyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfully", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS16360",
+                        "Cleanup"});
+#line 144
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "TeamName",
+                        "IsDefault"});
+            table7.AddRow(new string[] {
+                        "BucketDAS16360_2_1",
+                        "My Team",
+                        "false"});
+            table7.AddRow(new string[] {
+                        "BucketDAS16360_2_2",
+                        "My Team",
+                        "false"});
+#line 145
+ testRunner.When("User creates new Bucket via api", ((string)(null)), table7, "When ");
+#line 149
+ testRunner.When("User navigates to the \'Device\' details page for \'CDBR7TV3Y9T2ITS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 150
+ testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 151
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 152
+ testRunner.When("User clicks on edit button for \'Evergreen Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 153
+ testRunner.When("User selects \'BucketDAS16360_2_1\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 154
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 155
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 156
+ testRunner.Then("\'The selected objects successfully moved to BucketDAS16360_2_1\' text is displayed" +
+                    " on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table8.AddRow(new string[] {
+                        "Evergreen Bucket",
+                        "BucketDAS16360_2_1"});
+#line 157
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table8, "Then ");
+#line 160
+ testRunner.When("User clicks on edit button for \'Evergreen Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 161
+ testRunner.When("User selects \'BucketDAS16360_2_2\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 162
+ testRunner.When("User navigates to \'evergreen/#/admin/evergreen/buckets\' URL in a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table9.AddRow(new string[] {
+                        "BucketDAS16360_2_2"});
+#line 163
+ testRunner.When("User select \"Bucket\" rows in the grid", ((string)(null)), table9, "When ");
+#line 166
+ testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 167
+ testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 168
+ testRunner.And("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 169
+ testRunner.Then("\'The selected bucket has been deleted\' text is displayed on inline success banner" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 170
+ testRunner.When("User switches to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 171
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 172
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 173
+ testRunner.Then("\'The selected bucket has been deleted\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreen" +
+            "Bucket")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS16360")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreenBucket()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreenBucketInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreenBucketInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreen" +
+                    "Bucket", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS16360",
+                        "Cleanup"});
+#line 176
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Email",
+                        "FullName",
+                        "Password",
+                        "Roles"});
+            table10.AddRow(new string[] {
+                        "UserDAS16360",
+                        "Value",
+                        "DAS16360",
+                        "m!gration",
+                        "Project Computer Object Editor"});
+#line 177
+ testRunner.When("User create new User via API", ((string)(null)), table10, "When ");
+#line 180
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Username",
+                        "Password"});
+            table11.AddRow(new string[] {
+                        "UserDAS16360",
+                        "m!gration"});
+#line 181
+  testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table11, "When ");
+#line 184
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 185
+ testRunner.When("User navigates to the \'Device\' details page for \'CDBR7TV3Y9T2ITS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 186
+ testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 187
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 188
+ testRunner.Then("button for editing the \'Evergreen Bucket\' field is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

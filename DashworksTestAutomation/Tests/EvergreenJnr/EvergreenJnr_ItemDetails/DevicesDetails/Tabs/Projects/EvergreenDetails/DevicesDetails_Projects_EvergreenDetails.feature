@@ -116,10 +116,10 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	And There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16360 @Cleanup
-Scenario: EvergreenJnr_DevicesList_ChecksThatMoveBucketFunctionalityIsDisplayedCorrectly
+Scenario: EvergreenJnr_DevicesList_ChecksThatMoveEvergreenBucketFunctionalityIsDisplayedCorrectly
 	When User creates new Bucket via api
-	| Name           | TeamName | IsDefault |
-	| BucketDAS16360 | My Team  | false     |
+	| Name             | TeamName | IsDefault |
+	| BucketDAS16360_1 | My Team  | false     |
 	When User navigates to the 'Device' details page for '01ERDGD48UDQKE' item
 	Then Details page for '01ERDGD48UDQKE' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
@@ -134,8 +134,55 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatMoveBucketFunctionalityIsDisplayedC
 	| Distinguished Name |
 	| Display Name       |
 	Then 'Move all' checkbox is not displayed
-	When User selects 'BucketDAS16360' option from 'Move Bucket' autocomplete
+	When User selects 'BucketDAS16360_1' option from 'Move Bucket' autocomplete
 	When User clicks 'MOVE' button on popup
-	Then 'The selected objects will be moved to Birmingham' text is displayed on inline tip banner
+	Then 'The selected objects will be moved to BucketDAS16360_1' text is displayed on inline tip banner
 	When User clicks 'MOVE' button on popup
-	Then 'The selected objects successfully moved to Birmingham' text is displayed on inline success banner
+	Then 'The selected objects successfully moved to BucketDAS16360_1' text is displayed on inline success banner
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS16360 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatValueForEvergreenBucketIsChangingSuccessfully
+	When User creates new Bucket via api
+	| Name               | TeamName | IsDefault |
+	| BucketDAS16360_2_1 | My Team  | false     |
+	| BucketDAS16360_2_2 | My Team  | false     |
+	When User navigates to the 'Device' details page for 'CDBR7TV3Y9T2ITS' item
+	Then Details page for 'CDBR7TV3Y9T2ITS' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	When User clicks on edit button for 'Evergreen Bucket' field
+	When User selects 'BucketDAS16360_2_1' option from 'Move Bucket' autocomplete
+	When User clicks 'MOVE' button on popup
+	When User clicks 'MOVE' button on popup
+	Then 'The selected objects successfully moved to BucketDAS16360_2_1' text is displayed on inline success banner
+	Then following content is displayed on the Details Page
+	| Title            | Value              |
+	| Evergreen Bucket | BucketDAS16360_2_1 |
+	When User clicks on edit button for 'Evergreen Bucket' field
+	When User selects 'BucketDAS16360_2_2' option from 'Move Bucket' autocomplete
+	When User navigates to 'evergreen/#/admin/evergreen/buckets' URL in a new tab
+	When User select "Bucket" rows in the grid
+	| SelectedRowsName   |
+	| BucketDAS16360_2_2 |
+	When User selects 'Delete' in the 'Actions' dropdown
+	When User clicks 'DELETE' button
+	And User clicks 'DELETE' button on inline tip banner
+	Then 'The selected bucket has been deleted' text is displayed on inline success banner
+	When User switches to previous tab
+	When User clicks 'MOVE' button on popup
+	When User clicks 'MOVE' button on popup
+	Then 'The selected bucket has been deleted' text is displayed on inline tip banner
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS16360 @Cleanup
+Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheEvergreenBucket
+	When User create new User via API
+	| Username     | Email | FullName | Password  | Roles                          |
+	| UserDAS16360 | Value | DAS16360 | m!gration | Project Computer Object Editor |
+	When User clicks the Logout button
+ 	When User is logged in to the Evergreen as
+ 	| Username     | Password  |
+ 	| UserDAS16360 | m!gration |
+	Then Evergreen Dashboards page should be displayed to the user
+	When User navigates to the 'Device' details page for 'CDBR7TV3Y9T2ITS' item
+	Then Details page for 'CDBR7TV3Y9T2ITS' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	Then button for editing the 'Evergreen Bucket' field is not displayed
