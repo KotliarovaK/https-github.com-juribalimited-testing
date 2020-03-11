@@ -32,7 +32,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelinkOptionIsWorkedCorrectlyForProj
 	| Title        | Value           |
 	| Name         | QSFCLB19N5524S  |
 	| Device Owner | Gerard C. Kelly |
-	When User clicks 'RELINK' button 
+	When User clicks 'RELINK' button
+	When User unchecks 'Resync owner' checkbox
 	And User enters '06RIV0KXJMHJ1K' in the 'Device' autocomplete field and selects '06RIV0KXJMHJ1K' value
 	And User clicks 'RELINK' button on popup
 	And User clicks 'RELINK' button on popup
