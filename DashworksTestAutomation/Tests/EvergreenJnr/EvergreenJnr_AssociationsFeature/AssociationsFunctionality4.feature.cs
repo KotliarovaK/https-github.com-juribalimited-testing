@@ -130,7 +130,7 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.When("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
  testRunner.When("User selects \'Installed on device\' option in \'Search associations\' autocomplete o" +
                     "f Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -211,7 +211,7 @@ this.FeatureBackground();
 #line 29
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
- testRunner.When("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
  testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
                     " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -297,7 +297,7 @@ this.FeatureBackground();
 #line 48
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49
- testRunner.When("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
  testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
                     " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -380,7 +380,7 @@ this.FeatureBackground();
 #line 63
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
- testRunner.When("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
  testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
                     "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -456,7 +456,7 @@ this.FeatureBackground();
 #line 83
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
- testRunner.When("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 85
  testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
                     "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

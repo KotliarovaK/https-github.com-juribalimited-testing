@@ -11,10 +11,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOrRequestHasCorrectOperatorPara
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add New button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then Associations request has correct operator
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceLocationColumnsAndFilters
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Columns button
 	When User collapses 'Selected Columns' category

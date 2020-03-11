@@ -460,8 +460,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Project: EmailMigra", "EmailMigra: Category", "applications?$filter=(project_48_subCategoryId%20EQUALS%20(\'NULL\'))&$select=packa" +
             "geName,packageManufacturer,packageVersion,project_48_subCategory,project_48_subC" +
             "ategoryId", null)]
-        [NUnit.Framework.TestCaseAttribute("Project: EmailMigra", "EmailMigra: Core Application", "applications?$filter=(project_48_coreApplication%20NOT%20EQUALS%20(\'NULL\'))&$sele" +
-            "ct=packageName,packageManufacturer,packageVersion,project_48_coreApplication", null)]
         [NUnit.Framework.TestCaseAttribute("Project: EmailMigra", "EmailMigra: Current Device Count", "applications?$filter=(project_48_currentDeviceCount%20%3D%200)&$select=packageNam" +
             "e,packageManufacturer,packageVersion,project_48_currentDeviceCount", null)]
         [NUnit.Framework.TestCaseAttribute("Project: EmailMigra", "EmailMigra: Current User Count", "applications?$filter=(project_48_currentUserCount%20<%3D%201)&$select=packageName" +
@@ -534,8 +532,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Project: UserEvergr", "UserEvergr: Category", "applications?$filter=(project_56_subCategoryId%20NOT%20EQUALS%20(\'373\'))&$select=" +
             "packageName,packageManufacturer,packageVersion,project_56_subCategory,project_56" +
             "_subCategoryId", null)]
-        [NUnit.Framework.TestCaseAttribute("Project: UserEvergr", "UserEvergr: Core Application", "applications?$filter=(project_56_coreApplication%20EQUALS%20(\'0\'%2C\'1\'))&$select=" +
-            "packageName,packageManufacturer,packageVersion,project_56_coreApplication", null)]
         [NUnit.Framework.TestCaseAttribute("Project: UserEvergr", "UserEvergr: Current Device Count", "applications?$filter=(project_56_currentDeviceCount%20>%3D%201)&$select=packageNa" +
             "me,packageManufacturer,packageVersion,project_56_currentDeviceCount", null)]
         [NUnit.Framework.TestCaseAttribute("Project: UserEvergr", "UserEvergr: Current User Count", "applications?$filter=(project_56_currentUserCount%20<%3D%202)&$select=packageName" +
@@ -631,8 +627,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Project: Windows7Mi", "Windows7Mi: Category", "applications?$filter=(project_1_subCategoryId%20EQUALS%20(\'NULL\'))&$select=packag" +
             "eName,packageManufacturer,packageVersion,project_1_subCategory,project_1_subCate" +
             "goryId", null)]
-        [NUnit.Framework.TestCaseAttribute("Project: Windows7Mi", "Windows7Mi: Core Application", "applications?$filter=(project_1_coreApplication%20EQUALS%20(\'0\'%2C\'1\'))&$select=p" +
-            "ackageName,packageManufacturer,packageVersion,project_1_coreApplication", null)]
         [NUnit.Framework.TestCaseAttribute("Project: Windows7Mi", "Windows7Mi: Current Device Count", "applications?$filter=(project_1_currentDeviceCount%20>%3D%2010)&$select=packageNa" +
             "me,packageManufacturer,packageVersion,project_1_currentDeviceCount", null)]
         [NUnit.Framework.TestCaseAttribute("Project: Windows7Mi", "Windows7Mi: Current User Count", "applications?$filter=(project_1_currentUserCount%20<%3D%2010)&$select=packageName" +
