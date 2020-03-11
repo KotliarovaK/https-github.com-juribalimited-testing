@@ -542,6 +542,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.GetTextbox(placeholder).Click();
         }
 
+        [When(@"User waits for info message disappears under '(.*)' field")]
+        public void WhenUserWaitForInfoMessageDisappearsUnderField(string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.WaitForTextboxInfoMessageDisappears(placeholder);
+        }
+
         [Then(@"'(.*)' content is displayed in '(.*)' textbox")]
         public void ThenContentIsDisplayedInTextbox(string expectedText, string placeholder)
         {

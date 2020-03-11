@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	When User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
 	When User clicks 'CREATE' button
 	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs4_1' name on Self Service Builder Panel
-	Then 'Application Ownership' component on dialog is disabled
+	Then 'Application Ownership' item on dialog is disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS19982 @Cleanup
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNotAllowAnyInteractiveComponentToBeAdded 
@@ -44,4 +44,4 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatLastPageDoesNot
 	Then Self Service Details page is displayed correctly
 	When User navigates to the 'Builder' left menu item
 	When User clicks on Add Item button for item with 'Page' type and 'TestPageSs_2' name on Self Service Builder Panel
-	Then 'Application Ownership' component on dialog is disabled
+	Then 'Application Ownership' item on dialog is disabled
