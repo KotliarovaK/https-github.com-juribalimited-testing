@@ -224,10 +224,10 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	Then Details page for 'AAG081456' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Bucket' field
-	When User selects 'AutoTestBucket_DAS_13335' option from 'New Bucket' autocomplete
-	When User expands 'Related Devices' category
+	When User selects 'AutoTestBucket_DAS_13335' option from 'Move Bucket' autocomplete
 	When User selects all rows on the grid
-	And User clicks 'UPDATE' button
+	And User clicks 'MOVE' button
+	And User clicks 'MOVE' button
 	When User navigates to the 'Device' details page for 'I55HL8MSBYK0VG' item
 	Then Details page for 'I55HL8MSBYK0VG' item is displayed to the user
 	When User navigates to the 'Projects' left menu item

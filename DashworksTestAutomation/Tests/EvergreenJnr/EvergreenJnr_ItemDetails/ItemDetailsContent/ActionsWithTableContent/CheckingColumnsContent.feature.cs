@@ -920,13 +920,13 @@ this.FeatureBackground();
 #line 226
  testRunner.When("User clicks on edit button for \'Evergreen Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 227
- testRunner.When("User selects \'AutoTestBucket_DAS_13335\' option from \'New Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'AutoTestBucket_DAS_13335\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 228
- testRunner.When("User expands \'Related Devices\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 229
  testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 229
+ testRunner.And("User clicks \'MOVE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 230
- testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \'MOVE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 231
  testRunner.When("User navigates to the \'Device\' details page for \'I55HL8MSBYK0VG\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 232

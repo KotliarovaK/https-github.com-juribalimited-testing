@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| N7GXB25TPJY73EH  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Devices_CU_DAS14103' option from 'Capacity Unit' autocomplete
 	When User selects 'None' in the 'Also Move Users' dropdown
 	When User clicks 'UPDATE' button
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| B569F47FE6B1491CAEC |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Users_CU_DAS14103' option from 'Capacity Unit' autocomplete
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Windows Live Messenger (8.1.0178.00) |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Applications_CU_DAS14103' option from 'Capacity Unit' autocomplete
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button

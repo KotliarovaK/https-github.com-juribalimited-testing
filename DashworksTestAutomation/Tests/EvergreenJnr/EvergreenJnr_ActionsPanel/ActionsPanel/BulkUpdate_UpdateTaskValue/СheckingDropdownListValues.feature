@@ -195,8 +195,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects '2004 Rollout' option from 'Project' autocomplete
-	And User selects 'Migration' option from 'Stage' autocomplete
-	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	And User selects 'Slot17833_1' in the 'Capacity Slot' dropdown
@@ -210,8 +209,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects '2004 Rollout' option from 'Project' autocomplete
-	And User selects 'Migration' option from 'Stage' autocomplete
-	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	Then User sees that 'Capacity Slot' dropdown contains following options:

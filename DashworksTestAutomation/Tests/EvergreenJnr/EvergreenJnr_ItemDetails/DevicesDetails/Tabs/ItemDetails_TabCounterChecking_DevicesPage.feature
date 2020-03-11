@@ -39,7 +39,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Project Details        |
 	| Projects Summary       |
 	| Owner Projects Summary |
-	And 'Project Details' left submenu item is disabled
 	#================ checks counters ================#
 	And 'Projects Summary' left submenu item with some count is displayed
 	And 'Owner Projects Summary' left submenu item with some count is displayed

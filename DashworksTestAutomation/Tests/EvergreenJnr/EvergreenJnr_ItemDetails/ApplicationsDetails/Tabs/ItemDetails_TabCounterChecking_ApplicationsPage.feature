@@ -36,10 +36,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| Evergreen Details       |
 	| Evergreen Incoming Apps |
 	| Project Details         |
+	| Project Incoming Apps   |
 	| Projects                |
-	And 'Project Details' left submenu item is disabled
 	#================ checks counters ================#
 	And 'Projects' left submenu item with some count is displayed
+	And 'Evergreen Incoming Apps' left submenu item with some count is displayed
+	And 'Project Incoming Apps' left submenu item with some count is displayed
 	And 'Evergreen Details' left submenu item is displayed without count
 	And 'Project Details' left submenu item is displayed without count
 	#================ checks sub-menu for main MSI tab ================#
@@ -97,9 +99,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| Evergreen Details       |
 	| Evergreen Incoming Apps |
 	| Project Details         |
+	| Project Incoming Apps   |
 	| Projects                |
 	#================ checks counters ================#
 	And 'Projects' left submenu item with some count is displayed
+	And 'Evergreen Incoming Apps' left submenu item with some count is displayed
+	And 'Project Incoming Apps' left submenu item with some count is displayed
 	And 'Evergreen Details' left submenu item is displayed without count
 	And 'Project Details' left submenu item is displayed without count
 	#================ checks sub-menu for main MSI tab ================#

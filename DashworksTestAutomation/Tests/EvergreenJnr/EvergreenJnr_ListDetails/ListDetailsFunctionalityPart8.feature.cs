@@ -201,6 +201,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
+        [NUnit.Framework.CategoryAttribute("DAS20346")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "00HA7MKAVVFDAV\\tLaptop\\tWindows 7\\tKris C. Herman", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "$6BE000-SUDQ9614UVO8\\tBCLABS\\tExchange Online-ApplicationAccount\\tExchange Online" +
             "-ApplicationAccount.Users.bclabs.local", null)]
@@ -240,7 +241,8 @@ this.FeatureBackground();
                     "AllLists",
                     "EvergreenJnr_ListDetails",
                     "ListDetailsFunctionality",
-                    "DAS12968"};
+                    "DAS12968",
+                    "DAS20346"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

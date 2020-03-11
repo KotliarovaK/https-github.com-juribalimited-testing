@@ -53,19 +53,19 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then Error message is not displayed
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then popup is displayed to User
-	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
-	When User expands 'Related Users' category
+	When User selects 'Bucket12883' option from 'Move Bucket' autocomplete
 	When User selects all rows on the grid
-	And User clicks 'UPDATE' button 
+	And User clicks 'MOVE' button
+	And User clicks 'MOVE' button
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then popup is displayed to User
-	When User expands 'Related Users' category
 	When User selects all rows on the grid
-	When User selects 'Unassigned' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
+	When User selects 'Unassigned' option from 'Move Bucket' autocomplete
+	And User clicks 'MOVE' button
+	And User clicks 'MOVE' button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 	#============================================================================#
@@ -75,18 +75,18 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then popup is displayed to User
-	When User expands 'Related Mailboxes' category
 	When User selects all rows on the grid
-	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
+	When User selects 'Bucket12883' option from 'Move Bucket' autocomplete
+	And User clicks 'MOVE' button
+	And User clicks 'MOVE' button
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on edit button for 'Evergreen Bucket' field
-	When User expands 'Related Mailboxes' category
 	When User selects all rows on the grid
-	When User selects 'Unassigned' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
+	When User selects 'Unassigned' option from 'Move Bucket' autocomplete
+	And User clicks 'MOVE' button
+	And User clicks 'MOVE' button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 	#============================================================================#
@@ -96,23 +96,24 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User navigates to the 'Projects' left menu item
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then popup is displayed to User
-	When User expands 'Related Users' category
 	When User selects all rows on the grid
-	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
+	When User selects 'Bucket12883' option from 'Move Bucket' autocomplete
+	And User clicks 'MOVE' button
+	And User clicks 'MOVE' button
 	Then "Bucket12883" link is displayed on the Details Page
 	And There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on edit button for 'Evergreen Bucket' field
 	Then popup is displayed to User
-	When User expands 'Related Users' category
 	When User selects all rows on the grid
-	When User selects 'Unassigned' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
+	When User selects 'Unassigned' option from 'Move Bucket' autocomplete
+	And User clicks 'MOVE' button
+	And User clicks 'MOVE' button
 	Then "Unassigned" link is displayed on the Details Page
 	And There are no errors in the browser console
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Cleanup
+#AnnI 3/11/20: archived to 'wormhole'. in development, will be redesigned.
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
 	When User creates new Capacity Unit via api
 	| Name              | Description | IsDefault |
