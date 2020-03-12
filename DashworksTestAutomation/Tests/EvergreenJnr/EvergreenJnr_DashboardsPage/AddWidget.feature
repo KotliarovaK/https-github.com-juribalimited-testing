@@ -335,20 +335,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnGroupsFi
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20170 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendsNotDuplicatedAfterChangingWidgetType
-  When Dashboard with 'DAS20170_Dashboard' name created via API and opened
-  When User checks 'Edit mode' slide toggle
-  When User clicks 'ADD WIDGET' button
-  When User creates new Widget
-  | WidgetType | Title               | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend | 
-  | Bar        | WidgetForDAS20170   | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
-  Then 'WidgetForDAS20170' Widget is displayed to the user
-  When User clicks Ellipsis menu for 'WidgetForDAS20170' Widget on Dashboards page
-  And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-  And User updates Widget with following info:
-  | WidgetType | Title               |
-  | Pie        | WidgetForDAS20170   |
-  Then 'WidgetForDAS20170' Widget is displayed to the user
-  Then Data Legends values are displayed in 'WidgetForDAS20170' widget on the Dashboard page
-  | LegendsValue |
-  | Migrated     |
-  | Offboarded   |
+	When Dashboard with 'DAS20170_Dashboard' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button
+	When User creates new Widget
+	| WidgetType | Title             | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend |
+	| Bar        | WidgetForDAS20170 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
+	Then 'WidgetForDAS20170' Widget is displayed to the user
+	When User clicks Ellipsis menu for 'WidgetForDAS20170' Widget on Dashboards page
+	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	And User updates Widget with following info:
+	| WidgetType | Title             |
+	| Pie        | WidgetForDAS20170 |
+	Then 'WidgetForDAS20170' Widget is displayed to the user
+	Then Data Legends values are displayed in 'WidgetForDAS20170' widget on the Dashboard page
+	| LegendsValue |
+	| Migrated     |
+	| Offboarded   |
