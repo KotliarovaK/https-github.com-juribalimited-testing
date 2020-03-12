@@ -721,7 +721,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	Then 'Unassigned' content is displayed in the 'ComputerSc: One \ Radio Rag Date Owner User Req A (Owner)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @DAS17948 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData
+Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| DAS17772       | 17772       | true   | false              | All Users | Manual |

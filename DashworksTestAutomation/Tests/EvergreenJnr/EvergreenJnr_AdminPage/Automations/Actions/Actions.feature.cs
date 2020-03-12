@@ -2395,7 +2395,7 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
@@ -2403,14 +2403,14 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17772")]
         [NUnit.Framework.CategoryAttribute("DAS17948")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData()
+        public virtual void EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificDataInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificDataInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -2429,9 +2429,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificDataInternal()
+        private void EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificDataInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
