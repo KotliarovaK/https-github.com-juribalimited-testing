@@ -121,3 +121,23 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatUserIsAbleToAdd
 	When User clicks on Add Item button for item with 'Page' type and 'Thank You' name on Self Service Builder Panel
 	Then User sees 'Text' item on dialog
 	Then User does not see 'Application Ownership' item on dialog
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20272 @SelfServiceMVP @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatTheBannerAboutCreatedSelfServiceWontBeDisplayedIfUserSwitchBetweenPages
+    When User create static list with "1803 Apps" name on "Applications" page with following items
+	| ItemName |
+	|          |
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Self Services' parent left menu item
+	When User clicks 'CREATE SELF SERVICE' button
+	Then There are no errors in the browser console
+	When User enters 'TestProj_5' text to 'Self Service Name' textbox
+	When User selects '1803 Apps' option from 'Self Service Scope' autocomplete
+	When User enters 'TestP_ID_5' text to 'Self Service Identifier' textbox
+	When User clicks 'CREATE' button
+	Then 'The self service has been created' text is displayed on inline success banner
+	Then 'click here to view the TestProj_5 self service' link is displayed on inline success banner
+	When User navigates to the 'Details' left menu item
+	Then inline success banner is not displayed
+	When User navigates to the 'Builder' left menu item
+	Then inline success banner is not displayed
