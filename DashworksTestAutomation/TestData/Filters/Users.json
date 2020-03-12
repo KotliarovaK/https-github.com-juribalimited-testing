@@ -2530,6 +2530,74 @@
 		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.7.0, Culture=neutral, PublicKeyToken=null"
 	},
 	{
+		"id": "ownedApplicationsCount",
+		"label": "App Count (Owned)",
+		"translatedShortLabel": null,
+		"translatedTextLabel": "App Count (Owned)",
+		"customTranslatedTextLabel": null,
+		"translatedCategory": "Application",
+		"translatedNoItems": null,
+		"category": "Application",
+		"filterType": 2,
+		"type": "number",
+		"operators": [
+			{
+				"key": "Equals",
+				"translatedDropdownValue": "Equals",
+				"translatedTextValue": "is"
+			},
+			{
+				"key": "Does not equal",
+				"translatedDropdownValue": "Does not equal",
+				"translatedTextValue": "is not"
+			},
+			{
+				"key": "Greater than",
+				"translatedDropdownValue": "Greater than",
+				"translatedTextValue": "is greater than"
+			},
+			{
+				"key": "Greater than or equal to",
+				"translatedDropdownValue": "Greater than or equal to",
+				"translatedTextValue": "is greater than or equal to"
+			},
+			{
+				"key": "Less than",
+				"translatedDropdownValue": "Less than",
+				"translatedTextValue": "is less than"
+			},
+			{
+				"key": "Less than or equal to",
+				"translatedDropdownValue": "Less than or equal to",
+				"translatedTextValue": "is less than or equal to"
+			}
+		],
+		"options": [],
+		"addEmptyValue": true,
+		"optionsUrl": "",
+		"getOptionsMethodParams": null,
+		"validate": false,
+		"displayType": null,
+		"displayOrder": 0,
+		"parameterCount": 0,
+		"getAssociationsMethodParams": null,
+		"associations": [],
+		"hasCorrespondingColumn": true,
+		"columns": [
+			{
+				"translatedName": "App Count (Owned)",
+				"name": "ownedApplicationsCount"
+			}
+		],
+		"tooltip": null,
+		"includeOperators": null,
+		"excludeOperators": null,
+		"savedListFilter": false,
+		"objectTypeId": 0,
+		"taskFilter": false,
+		"typeId": "Dashworks.Model.Evergreen.ListFilterAttribute, Dashworks.Model, Version=5.4.7.0, Culture=neutral, PublicKeyToken=null"
+	},
+	{
 		"id": "usedApplications",
 		"label": "App Count (Used)",
 		"translatedShortLabel": null,
