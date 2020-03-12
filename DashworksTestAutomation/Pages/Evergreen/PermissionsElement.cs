@@ -28,6 +28,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//td[@class='permission']")]
         public IList<IWebElement> PermissionTypeOfAccess { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'item-buttons-bar')]//i[text()='person_add']")]
+        public IWebElement AddUserIconButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'item-buttons-bar')]//i[text()='group_add']")]
+        public IWebElement AddTeamIconButton { get; set; }
+
         //TODO will be replaced COG MENU element
         public IWebElement GetMenuOfSharedUser(string username)
         {

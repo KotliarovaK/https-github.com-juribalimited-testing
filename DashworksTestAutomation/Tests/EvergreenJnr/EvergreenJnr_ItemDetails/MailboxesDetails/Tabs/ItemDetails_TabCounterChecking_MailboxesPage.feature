@@ -40,7 +40,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Project Details       |
 	| Mailbox Projects      |
 	| Mailbox User Projects |
-	And 'Project Details' left submenu item is disabled
 	#================ checks counters ================#
 	And 'Mailbox Projects' left submenu item with some count is displayed
 	And 'Mailbox User Projects' left submenu item with some count is displayed

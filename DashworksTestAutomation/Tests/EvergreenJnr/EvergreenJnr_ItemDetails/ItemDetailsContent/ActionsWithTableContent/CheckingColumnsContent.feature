@@ -214,26 +214,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	When User navigates to the 'Projects Summary' left submenu item
 	Then All data is unique in the 'Project' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup
-Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
-	When User creates new Bucket via api
-	| Name                     | TeamName | IsDefault |
-	| AutoTestBucket_DAS_13335 | Admin IT | false     |
-	#============================================================================#
-	When User navigates to the 'User' details page for 'AAG081456' item
-	Then Details page for 'AAG081456' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	When User clicks on edit button for 'Evergreen Bucket' field
-	When User selects 'AutoTestBucket_DAS_13335' option from 'New Bucket' autocomplete
-	When User expands 'Related Devices' category
-	When User selects all rows on the grid
-	And User clicks 'UPDATE' button
-	When User navigates to the 'Device' details page for 'I55HL8MSBYK0VG' item
-	Then Details page for 'I55HL8MSBYK0VG' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	Then User sees "AutoTestBucket_DAS_13335" Evergreen Bucket in Project Summary section on the Details Page
-	And There are no errors in the browser console
-
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255
 Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item

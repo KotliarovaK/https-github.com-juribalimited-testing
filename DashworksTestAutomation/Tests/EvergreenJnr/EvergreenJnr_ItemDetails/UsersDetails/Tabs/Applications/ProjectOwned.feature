@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS17808 @DAS18408
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS17808 @DAS18408 @DAS19246
 Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	When User navigates to the 'User' details page for 'ZZP911429' item
 	Then Details page for 'ZZP911429' item is displayed to the user
@@ -29,7 +29,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly
 	| Vendor               |
 	| Version              |
 	| Rationalisation      |
-	| Target App Core      |
 	| Path                 |
 	| Category             |
 	| Workflow             |
@@ -76,8 +75,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfter
 	When User selects 'Havoc (Big Data)' in the 'Item Details Project' dropdown with wait
 	Then 'Vertigo Managed Smart Documents Wrapper (SMS_GEN)' content is displayed in the 'Current App' column
 
-#This is fixed only on void
-@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS20047 @DAS20088 @Void
+#AnnI 3/11/20 need gold data. will be ready by next week.
+@Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS20047 @DAS20088 @DAS20186 @Not_Ready
 Scenario: EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutAName
 	When User navigates to the 'User' details page for the item with '537' ID
 	Then Details page for 'CVS3269200' item is displayed to the user
@@ -86,4 +85,5 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANa
 	When User navigates to the 'Project Owned' left submenu item
 	Then 'Empty' content is displayed in the 'Current App' column
 	When User clicks "Empty" link on the Details Page
+	Then 'User Evergreen Capacity Project' content is displayed in 'Item Details Project' dropdown
 	Then 'Details' left menu item is expanded

@@ -71,7 +71,6 @@ Examples:
 	| ColumnName                        |
 	| Windows7Mi: Rationalisation       |
 	| Windows7Mi: Application Readiness |
-	| Windows7Mi: Core Application      |
 	| Windows7Mi: Hide From End Users   |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871

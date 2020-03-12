@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	| 01ERDGD48UDQKE   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit12141Devices' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	| 00BDBAEA57334C7C8F4  |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit12141Users' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	| 0036 - Microsoft Access 97 SR-2 English                         |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit12141Applications' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	| 00A5B910A1004CF5AC4@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'CapacityUnit12141Mailboxes' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button

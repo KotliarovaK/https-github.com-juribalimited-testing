@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	| 016E1B57C2DD4FCC986@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' in the 'Project or Evergreen' dropdown
+	And User selects 'Project' option from 'Project or Evergreen' autocomplete
 	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
 	Then following Values are displayed in the 'Also Move Users' dropdown:
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdate
 	| 016E1B57C2DD4FCC986@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' in the 'Project or Evergreen' dropdown
+	And User selects 'Project' option from 'Project or Evergreen' autocomplete
 	Then 'Project' autocomplete contains following options:
 	| Options                            |
 	| Email Migration                    |

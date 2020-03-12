@@ -25,8 +25,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT BU Dev' option from 'Task' autocomplete
+	When User selects 'Relative BU \ DT BU Dev' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '1' text to 'Value' textbox
 	When User selects 'Before current value' in the 'Before or After' dropdown
@@ -45,8 +44,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT BU Dev' option from 'Task' autocomplete
+	When User selects 'Relative BU \ DT BU Dev' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '1' text to 'Value' textbox
 	And User clicks 'UPDATE' button
@@ -168,7 +166,6 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	Then 'UPDATE' button is disabled
 	And 'CANCEL' button is not disabled
 	When User selects '<ProjectName>' option from 'Project' autocomplete
-	And User selects '<StageName>' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
 	And User selects '<Value>' in the 'Value' dropdown
 	When User clicks 'UPDATE' button 
@@ -178,11 +175,11 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	Then There are no errors in the browser console
 
 Examples: 
-	| PageName     | ColumnHeader  | RowName                          | ProjectName              | StageName      | TaskName                | Value                    |
-	| Devices      | Hostname      | 001PSUMZYOW581                   | User Scheduled Test (Jo) | Two            | Radio Non Rag only Comp | Not Applicable           |
-	| Users        | Username      | 003F5D8E1A844B1FAA5              | User Scheduled Test (Jo) | Two            | Radio Non Rag only User | Not Applicable           |
-	| Applications | Application   | 7zip                             | User Scheduled Test (Jo) | Two            | Radio Non Rag only App  | Not Applicable           |
-	| Mailboxes    | Email Address | 00BDBAEA57334C7C8F4@bclabs.local | Email Migration          | Mobile Devices | Mobile Device Status    | Identified & In Progress |
+	| PageName     | ColumnHeader  | RowName                          | ProjectName              | TaskName                              | Value                    |
+	| Devices      | Hostname      | 001PSUMZYOW581                   | User Scheduled Test (Jo) | Two \ Radio Non Rag only Comp         | Not Applicable           |
+	| Users        | Username      | 003F5D8E1A844B1FAA5              | User Scheduled Test (Jo) | Two \ Radio Non Rag only User         | Not Applicable           |
+	| Applications | Application   | 7zip                             | User Scheduled Test (Jo) | Two \ Radio Non Rag only App          | Not Applicable           |
+	| Mailboxes    | Email Address | 00BDBAEA57334C7C8F4@bclabs.local | Email Migration          | Mobile Devices \ Mobile Device Status | Identified & In Progress |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13293 @DAS13359 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuccessfulBannerMessage
@@ -225,8 +222,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
-	And User selects 'Stage DAS12864_0' option from 'Stage' autocomplete
-	And User selects 'Task DAS12864_0' option from 'Task' autocomplete
+	And User selects 'Stage DAS12864_0 / Task DAS12864_0' option from 'Task' autocomplete
 	And User selects 'Started' in the 'Value' dropdown
 	And User clicks 'UPDATE' button 
 	Then inline warning banner is displayed
