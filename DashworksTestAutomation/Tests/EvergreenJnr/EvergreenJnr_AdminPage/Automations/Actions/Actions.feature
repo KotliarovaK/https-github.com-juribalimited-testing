@@ -407,9 +407,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	When User enters 'DAS16992_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Test17427_Project' option from 'Project' autocomplete
-	When User selects 'Pre-Migration' option from 'Stage' autocomplete
-	When User selects 'Device Task 1' option from 'Task' autocomplete
-	When User selects 'Device Task 4' option from 'Task' autocomplete
+	When User selects 'Pre-Migration \ Device Task 1' option from 'Task' autocomplete
 	When User selects 'Remove' in the 'Update Date' dropdown
 	Then 'CREATE' button is not disabled
 	When User clicks 'SAVE & CREATE ANOTHER' button
@@ -464,20 +462,20 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User enters '17234_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Test16992_Project' option from 'Project' autocomplete
-	When User selects 'Pre-Migration' option from 'Stage' autocomplete
-	When User selects 'Devices Task 1' option from 'Task' autocomplete
+	When User selects 'Pre-Migration \ Devices Task 1' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
 	| No change |
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
-	| No change                        |
+	| Options                                   |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
+	| No change                                 |
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
 	| Update                |
@@ -531,11 +529,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateTaskValueIsDisplayInAutomationsL
 	When User enters 'DAS17542_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
-	When User selects 'Stage A' option from 'Stage' autocomplete
-	When User selects 'Workflow task' option from 'Task' autocomplete
+	When User selects 'Stage A \ Workflow task' option from 'Task' autocomplete
 	And User selects 'Started' in the 'Value' dropdown
 	When User clicks 'CREATE' button 
-	Then "Workflow task" content is displayed for "Task or Field" column
+	Then "Stage A \ Workflow task" content is displayed for "Task or Field" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17604 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
@@ -551,8 +548,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User enters '17602_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Text Computer' option from 'Task' autocomplete
+	When User selects 'One \ Text Computer' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	When User enters 'To be updated' text to 'Value' textbox
 	And User clicks 'CREATE' button
@@ -567,8 +563,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	#Actions content check
 	Then "17602_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
-	Then 'One' content is displayed in 'Stage' textbox
-	Then 'Text Computer' content is displayed in 'Task' textbox
+	Then 'One \ Text Computer' content is displayed in 'Task' textbox
 	Then 'Update' value is displayed in the 'Update Value' dropdown
 	Then 'To be updated' content is displayed in 'Value' textbox
 
@@ -590,8 +585,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User enters '17605_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Text Computer' option from 'Task' autocomplete
+	When User selects 'One \ Text Computer' option from 'Task' autocomplete
 	When User selects 'Remove' in the 'Update Value' dropdown
 	And User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb
@@ -604,8 +598,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	Then "17605_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' autocomplete
-	Then 'One' content is displayed in 'Stage' autocomplete
-	Then 'Text Computer' content is displayed in 'Task' autocomplete
+	Then 'One \ Text Computer' content is displayed in 'Task' autocomplete
 	Then 'Remove' value is displayed in the 'Update Value' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @Cleanup
@@ -620,8 +613,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User enters '17606_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Date Computer' option from 'Task' autocomplete
+	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Aug 2019' text to 'Date' datepicker
 	And User clicks 'CREATE' button 
@@ -636,8 +628,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	Then "17606_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' autocomplete
-	Then 'One' content is displayed in 'Stage' autocomplete
-	Then 'Date Computer' content is displayed in 'Task' autocomplete
+	Then 'One \ Date Computer' content is displayed in 'Task' autocomplete
 	Then 'Update' value is displayed in the 'Update Date' dropdown
 	Then "5 Aug 2019" content is displayed in "Date" field
 
@@ -653,8 +644,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User enters 'DAS17797_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Complete' in the 'Value' dropdown
@@ -672,9 +662,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	Then 'CANCEL' button is not disabled
 	Then 'UPDATE' button has tooltip with 'No changes made' text
 	#DAS-17816 <=
-	When User selects 'Radio Rag only Comp' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag only Comp' option from 'Task' autocomplete
 	When User clicks Body container
-	When User selects 'Radio Rag Date Owner' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then 'Update Value' content is displayed in 'Update Value' dropdown
 	Then 'Update Date' content is displayed in 'Update Date' dropdown
 	Then 'Update Owner' content is displayed in 'Update Owner' dropdown
@@ -702,8 +692,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User enters 'DAS17744_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects 'One' option from 'Stage' autocomplete
-	And User selects 'Radio Rag Date Owner User Req A' option from 'Task' autocomplete
+	And User selects 'One \ Radio Rag Date Owner User Req A' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Started' in the 'Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
@@ -732,7 +721,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	Then 'Unassigned' content is displayed in the 'ComputerSc: One \ Radio Rag Date Owner User Req A (Owner)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @DAS17948 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpecificData
+Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData
 	When User creates new Automation via API and open it
 	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| DAS17772       | 17772       | true   | false              | All Users | Manual |
@@ -743,7 +732,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	And User enters 'DAS17772_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	Then 'Stage' autocomplete does NOT have options
+	Then 'Task' autocomplete does NOT have options
 	| Options         |
 	| Read only tasks |
 	When User clicks 'Users' on the left-hand menu
@@ -757,7 +746,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionStageSelectboxIsDisplayedForSpec
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	Then 'Stage' autocomplete does NOT have options
+	Then 'Task' autocomplete does NOT have options
 	| Options         |
 	| Read only tasks |
 

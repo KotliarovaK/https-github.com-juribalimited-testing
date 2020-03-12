@@ -84,7 +84,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
         public IWebElement WarningPopUp { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-optgroup//span")]
+        [FindsBy(How = How.XPath, Using = ".//mat-optgroup//span//span")]
         public IList<IWebElement> ScopeDropdownSectionList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='btn-group-sm pull-right ng-star-inserted']")]

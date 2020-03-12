@@ -133,5 +133,6 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatPivotManagerIsNotOpenedByDefault
 	When User navigates to the "All Device Applications" list
 	Then "Associations" panel is displayed to the user
 	When User navigates to the "DAS19937_Pivot" list
+	Then Actions panel is not displayed to the user
 	Then Pivot panel is not displayed to the user
 	Then Associations panel is not displayed to the user

@@ -133,8 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User enters '17738_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Comp' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Failed' in the 'Value' dropdown
@@ -158,8 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner User Req B' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
@@ -173,8 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
-	And 'One' content is displayed in 'Stage' textbox
-	And 'Radio Rag Date Owner User Req B' content is displayed in 'Task' textbox
+	And 'One \ Radio Rag Date Owner User Req B' content is displayed in 'Task' textbox
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Remove owner' value is displayed in the 'Update Owner' dropdown
