@@ -335,6 +335,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ProjectsTab")]
         [NUnit.Framework.CategoryAttribute("DAS20286")]
+        [NUnit.Framework.CategoryAttribute("DAS20362")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnEvergreenIncomingAppsTab()
         {
@@ -371,6 +372,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ProjectsTab",
                         "DAS20286",
+                        "DAS20362",
                         "Not_Ready"});
 #line 62
 this.ScenarioInitialize(scenarioInfo);
@@ -392,6 +394,22 @@ this.FeatureBackground();
  testRunner.When("User enters \"11.2.5058.0\" text in the Search field for \"Version\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 69
  testRunner.Then("\'Empty\' content is displayed in the \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "checkboxes"});
+            table2.AddRow(new string[] {
+                        "Application"});
+#line 70
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Application\'" +
+                    " column:", ((string)(null)), table2, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table3.AddRow(new string[] {
+                        "Empty"});
+#line 73
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Path\' col" +
+                    "umn:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
