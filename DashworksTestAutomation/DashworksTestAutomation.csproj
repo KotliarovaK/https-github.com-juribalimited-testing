@@ -1358,10 +1358,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ApplicationsDetails_Distribution_Groups.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenIncomingApps\EvergreenIncomingApps.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\AppDetails_Projects_EvergreenIncomingApps.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EvergreenIncomingApps.feature</DependentUpon>
+      <DependentUpon>AppDetails_Projects_EvergreenIncomingApps.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\AppDetails_Projects_ProjectIncomingApps.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDetails_Projects_ProjectIncomingApps.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\InCatalog_ApplicationsPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1518,10 +1523,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TopBar.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Applications\ProjectOwned.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Applications\UsersDetails_Applications_ProjectOwned.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectOwned.feature</DependentUpon>
+      <DependentUpon>UsersDetails_Applications_ProjectOwned.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\CreateNewCustomField.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1703,10 +1708,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resync_UsersPage.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Applications\EvergreenOwned.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Applications\UsersDetails_Applications_EvergreenOwned.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EvergreenOwned.feature</DependentUpon>
+      <DependentUpon>UsersDetails_Applications_EvergreenOwned.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Ring_UsersPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2749,9 +2754,13 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ApplicationsDetails_Distribution_Groups.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenIncomingApps\EvergreenIncomingApps.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\AppDetails_Projects_EvergreenIncomingApps.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EvergreenIncomingApps.feature.cs</LastGenOutput>
+      <LastGenOutput>AppDetails_Projects_EvergreenIncomingApps.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\AppDetails_Projects_ProjectIncomingApps.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AppDetails_Projects_ProjectIncomingApps.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\InCatalog_ApplicationsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2873,9 +2882,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TopBar.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Applications\ProjectOwned.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Applications\UsersDetails_Applications_ProjectOwned.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ProjectOwned.feature.cs</LastGenOutput>
+      <LastGenOutput>UsersDetails_Applications_ProjectOwned.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\CustomFields\CreateNewCustomField.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -3021,9 +3030,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Resync_UsersPage.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Applications\EvergreenOwned.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Applications\UsersDetails_Applications_EvergreenOwned.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>EvergreenOwned.feature.cs</LastGenOutput>
+      <LastGenOutput>UsersDetails_Applications_EvergreenOwned.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\ProjectDetails\Ring_UsersPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
