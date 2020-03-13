@@ -1,5 +1,5 @@
-﻿Feature: ProjectOwned
-	Runs Project Owned related tests
+﻿Feature: UsersDetails_Applications_ProjectOwned.feature
+	Runs related tests for Applications > Project Owned tab 
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatGridIsUpdatedOnTheProjectOwnedTabAfter
 
 #AnnI 3/11/20 need gold data. will be ready by next week.
 @Evergreen @Users @EvergreenJnr_ItemDetails @UsersDetails @ApplicationsTab @DAS20047 @DAS20088 @DAS20186 @Not_Ready
-Scenario: EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutAName
+Scenario: EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnProjectOwnedTab
 	When User navigates to the 'User' details page for the item with '537' ID
 	Then Details page for 'CVS3269200' item is displayed to the user
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait

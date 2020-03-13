@@ -52,8 +52,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForT
 	When User navigates to the 'Project Details' left submenu item
 	Then arrow for editing the 'Ring' field is not displayed
 
-#AnnI: These updates are only developed on the 'void'.
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @Void
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144
 Scenario: EvergreenJnr_DevicesList_CheckThatListOfRingsIsDisplayedCorrectlyOnTheDetailsPage
 	When User navigates to the 'Device' details page for 'CDBR7TV3Y9T2ITS' item
 	Then Details page for 'CDBR7TV3Y9T2ITS' item is displayed to the user
@@ -70,3 +69,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListOfRingsIsDisplayedCorrectlyOnThe
 	| Business Wave 2  |
 	| Business Wave 3  |
 	| Critical Systems |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS19948
+Scenario: EvergreenJnr_DevicesList_CheckThatRingFieldIsDisplayedDependingOnTheProjectScopeForDevicePage
+	When User navigates to the 'Device' details page for the item with '6793' ID
+	Then Details page for '00KWQ4J3WKQM0G' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title | Value      |
+	| Ring  | Unassigned |
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
+	Then 'Ring' field is not displayed in the table
