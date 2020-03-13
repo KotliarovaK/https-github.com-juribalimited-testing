@@ -186,3 +186,13 @@ Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForT
 	Then Details page for 'CDBR7TV3Y9T2ITS' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	Then button for editing the 'Evergreen Bucket' field is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20336
+Scenario: EvergreenJnr_DevicesList_CheckThatTheShowOnlySelectedItemsButtonAreNotDisplayedOnTheMoveBucketPopupIfDeviceDoesntHaveAnyAssociatedUsers
+	When User navigates to the 'Device' details page for 'BNYXDHH4GUIIOM' item
+	Then Details page for 'BNYXDHH4GUIIOM' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	When User clicks on edit button for 'Evergreen Bucket' field
+	Then 'Show only selected items' slide toggle is not displayed
+	Then "13510TestProject" is not displayed in the filter dropdown
+	Then 'Select the bucket to move this device to.' text is displayed on popup

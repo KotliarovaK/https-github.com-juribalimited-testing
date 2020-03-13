@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#AnnI: These updates are only developed on the 'void'.
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @DAS17164 @Cleanup @Void
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @DAS17164 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckThatValueForRingIsChangingSuccessfully
 	When User creates new Ring via api
 	| Name           | Description | IsDefault | Project                              |
@@ -33,3 +32,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatValueForRingIsChangingSuccessfully
 	When User switches to previous tab
 	When User selects 'RingDAS17144_2' in the dropdown for the 'Ring' field
 	Then 'Ring does not exist' text is displayed on inline error banner
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS19948
+Scenario: EvergreenJnr_MailboxesList_CheckThatRingFieldIsDisplayedDependingOnTheProjectScopeForMailboxesPage
+	When User navigates to the 'Mailbox' details page for the item with '43917' ID
+	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title | Value      |
+	| Ring  | Unassigned |

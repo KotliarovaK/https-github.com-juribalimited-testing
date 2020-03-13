@@ -1,5 +1,5 @@
-﻿Feature: EvergreenIncomingApps
-	Runs related tests for Evergreen Incoming Apps tab
+﻿Feature: AppDetails_Projects_EvergreenIncomingApps.feature
+	Runs related tests for Projects > Evergreen Incoming Apps tab
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -56,3 +56,20 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIncomingAppCounterIsDynamicall
 	When User navigates to the 'Evergreen Incoming Apps' left submenu item
 	Then 'Evergreen Incoming Apps' left submenu item with '0' count is displayed
 	Then 'No Evergreen incoming apps found for this application' message is displayed on empty greed
+
+#AnnI 3/12/20 need gold data. will be ready by next week.
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectsTab @DAS20286 @DAS20362 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnEvergreenIncomingAppsTab
+	When User navigates to the 'User' details page for the item with '839' ID
+	Then Details page for 'Access 95' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Evergreen Incoming Apps' left submenu item
+	When User enters "11.2.5058.0" text in the Search field for "Version" column
+	Then 'Empty' content is displayed in the 'Application' column
+	When User clicks following checkboxes from Column Settings panel for the 'Application' column:
+	| checkboxes  |
+	| Application |
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Path' column:
+	| Values |
+	| Empty  |
