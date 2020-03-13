@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsValueForDuplacatedAutomation
 	When User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20116 @Cleanup @Void
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20116 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtTheSameTime
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -151,8 +151,11 @@ Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtThe
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then '4 automations started,' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
+	When '20116_Automation1' automation '20116_Action1' action run has finished
+	When '20116_Automation2' automation '20116_Action2' action run has finished
+	When '20116_Automation3' automation '20116_Action3' action run has finished
+	When '20116_Automation4' automation '20116_Action4' action run has finished
 	When User clicks refresh button in the browser
 	When User enters "20116_Automation1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -161,16 +164,10 @@ Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtThe
 	Then "Action Finish" content is displayed for "Type" column
 	When User enters "20116_Automation2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "Action Finish" content is displayed for "Type" column
 	When User enters "20116_Automation3" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "Action Finish" content is displayed for "Type" column
 	When User enters "20116_Automation4" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "Action Finish" content is displayed for "Type" column
