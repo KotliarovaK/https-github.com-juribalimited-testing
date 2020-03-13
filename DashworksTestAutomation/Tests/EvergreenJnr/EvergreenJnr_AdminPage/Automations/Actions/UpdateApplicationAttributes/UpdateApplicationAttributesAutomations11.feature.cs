@@ -385,7 +385,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19663")]
         [NUnit.Framework.CategoryAttribute("DAS19229")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted()
         {
             System.Exception lastException = null;
@@ -420,8 +419,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS19663",
                         "DAS19229",
-                        "Cleanup",
-                        "Void"});
+                        "Cleanup"});
 #line 102
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

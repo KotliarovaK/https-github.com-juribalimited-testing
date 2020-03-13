@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	And User clicks content from "Objects" column
 	Then 'RETIRE' content is displayed in the 'Evergreen Rationalisation' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19663 @DAS19229 @Cleanup @Void
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19663 @DAS19229 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
