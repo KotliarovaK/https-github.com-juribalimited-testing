@@ -1481,5 +1481,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         #endregion
+
+        #region Icons
+
+        [When(@"User clicks '(.*)' icon")]
+        public void WhenUserClicksIcon(string iconTextInDom)
+        {
+            var icon = _driver.NowAt<BaseDashboardPage>();
+            icon.GetIcon(iconTextInDom).Click();
+        }
+
+        #endregion
     }
 }

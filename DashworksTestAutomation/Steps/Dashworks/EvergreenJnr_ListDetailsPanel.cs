@@ -224,7 +224,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddsNewPersonToSharingList(Table table)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClickButton("ADD USER");
+            action.GetIcon("person_add").Click();
 
             foreach (var row in table.Rows)
             {

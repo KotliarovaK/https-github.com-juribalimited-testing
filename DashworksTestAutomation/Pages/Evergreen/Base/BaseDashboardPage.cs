@@ -1318,5 +1318,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         }
 
         #endregion
+
+        #region Icons
+
+        public IWebElement GetIcon(string iconTextInDom)
+        {
+            return Driver.FindElement(By.XPath($".//i[@class='material-icons'][text()='{iconTextInDom}']"));
+        }
+
+        #endregion
     }
 }
