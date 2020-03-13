@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19273 @Void
+#AnnI 3/13/20 GD is only ready on 'Wormhole'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19273 @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToDifferentTaskValue
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

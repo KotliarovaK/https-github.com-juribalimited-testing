@@ -365,11 +365,9 @@ this.FeatureBackground();
 #line 70
  testRunner.And("User selects \'Update bucket\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.And("User selects \'Project\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'User Evergreen Capacity Project\' option from \'Project or Evergreen\'" +
+                    " autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
- testRunner.And("User selects \'User Evergreen Capacity Project\' option from \'Project\' autocomplete" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
  testRunner.And("User selects \'Unassigned\' option from \'Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -380,11 +378,11 @@ this.FeatureBackground();
                         "Owned devices only"});
             table7.AddRow(new string[] {
                         "All linked devices"});
-#line 74
+#line 73
  testRunner.Then("following Values are displayed in the \'Also Move Devices\' dropdown:", ((string)(null)), table7, "Then ");
-#line 79
+#line 78
  testRunner.When("User selects \'Owned devices only\' in the \'Also Move Devices\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 79
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -438,18 +436,18 @@ this.FeatureBackground();
                         "DAS14563",
                         "DAS13960",
                         "DAS14160"});
-#line 83
+#line 82
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 84
+#line 83
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 84
  testRunner.Then("\'All Users\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 86
+#line 85
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
+#line 86
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -458,18 +456,16 @@ this.FeatureBackground();
                         "0072B088173449E3A93"});
             table8.AddRow(new string[] {
                         "00C8BC63E7424A6E862"});
-#line 88
+#line 87
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table8, "When ");
-#line 92
+#line 91
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 92
  testRunner.And("User selects \'Update bucket\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.And("User selects \'Mailbox Evergreen Capacity Project\' option from \'Project or Evergre" +
+                    "en\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
- testRunner.And("User selects \'Project\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
- testRunner.And("User selects \'Mailbox Evergreen Capacity Project\' option from \'Project\' autocompl" +
-                    "ete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
  testRunner.And("User selects \'Unassigned\' option from \'Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -480,11 +476,11 @@ this.FeatureBackground();
                         "Owners only"});
             table9.AddRow(new string[] {
                         "All linked users"});
-#line 97
+#line 95
  testRunner.Then("following Values are displayed in the \'Also Move Mailboxes\' dropdown:", ((string)(null)), table9, "Then ");
-#line 102
+#line 100
  testRunner.When("User selects \'Owners only\' in the \'Also Move Mailboxes\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 103
+#line 101
  testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -534,31 +530,29 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS14421"});
-#line 106
+#line 104
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 107
+#line 105
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 106
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table10.AddRow(new string[] {
                         "00A5B910A1004CF5AC4"});
-#line 109
+#line 107
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table10, "When ");
-#line 112
+#line 110
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
+#line 111
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
- testRunner.And("User selects \'Project\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
- testRunner.And("User selects \'Email Migration\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 112
+ testRunner.And("User selects \'Email Migration\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
  testRunner.When("User selects \'Unassigned\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -569,7 +563,7 @@ this.FeatureBackground();
                         "Owned mailboxes only"});
             table11.AddRow(new string[] {
                         "All linked mailboxes"});
-#line 117
+#line 114
  testRunner.Then("following Values are displayed in the \'Also Move Mailboxes\' dropdown:", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
