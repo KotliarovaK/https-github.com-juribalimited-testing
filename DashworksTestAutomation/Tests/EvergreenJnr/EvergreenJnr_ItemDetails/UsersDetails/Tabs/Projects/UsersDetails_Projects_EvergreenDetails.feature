@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20323 @Cleanup
-Scenario: EvergreenJnr_UsersList_CheckThat
+Scenario: EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDetailsPageIfEvergreenBucketChangedByAdminUser
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
  	| Username           | Password |
