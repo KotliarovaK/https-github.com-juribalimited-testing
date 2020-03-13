@@ -39,6 +39,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//h3")]
+        public IWebElement SecondLevelSubHeader { get; set; }
+
         private const string TextEditorSelector = ".//quill-editor/..";
 
         [FindsBy(How = How.XPath, Using = TextEditorSelector)]
