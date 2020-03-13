@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIncomingAppCounterIsDynamicall
 #AnnI 3/12/20 need gold data. will be ready by next week.
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectsTab @DAS20286 @DAS20362 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnEvergreenIncomingAppsTab
-	When User navigates to the 'User' details page for the item with '839' ID
+	When User navigates to the 'Application' details page for the item with '839' ID
 	Then Details page for 'Access 95' item is displayed to the user
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item

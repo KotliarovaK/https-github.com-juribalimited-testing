@@ -380,7 +380,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 63
- testRunner.When("User navigates to the \'User\' details page for the item with \'839\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Application\' details page for the item with \'839\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
  testRunner.Then("Details page for \'Access 95\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 65
