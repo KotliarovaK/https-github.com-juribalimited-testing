@@ -76,6 +76,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual(subHeader, page.SubHeader.Text, "Incorrect page subheader");
         }
 
+        [Then(@"Page with '(.*)' second level subheader is displayed to user")]
+        public void ThenPageWithSecondLevelSubheaderIsDisplayedToUser(string secondLevelSubHeader)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(_driver.IsElementDisplayed(page.SecondLevelSubHeader, WebDriverExtensions.WaitTime.Short), $"Page with '{secondLevelSubHeader}' is not displayed");
+            Verify.AreEqual(secondLevelSubHeader, page.SecondLevelSubHeader.Text, "Incorrect page second level subheader");
+        }
+
         #endregion
 
         #region Text Editor
