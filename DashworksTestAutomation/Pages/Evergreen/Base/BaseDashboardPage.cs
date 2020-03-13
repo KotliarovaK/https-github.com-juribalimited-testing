@@ -1306,6 +1306,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElement(By.XPath($".//mat-slide-toggle//span[text()='{slideToggle}']"));
         }
 
+        public bool GetDisplayStateForSlideToggle(string slideToggle)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//mat-slide-toggle//span[text()='{slideToggle}']"));
+        }
+
         public bool GetSlideToggleCondition(string slideToggle)
         {
             return GetSlideToggle(slideToggle).GetAttribute("class").Contains("checked");
@@ -1315,6 +1320,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             if (!GetSlideToggleCondition(slideToggle).Equals(expectedCondition))
                 GetSlideToggle(slideToggle).Click();
+        }
+
+        #endregion
+
+        #region Icons
+
+        public IWebElement GetIcon(string iconTextInDom)
+        {
+            return Driver.FindElement(By.XPath($".//i[@class='material-icons'][text()='{iconTextInDom}']"));
         }
 
         #endregion

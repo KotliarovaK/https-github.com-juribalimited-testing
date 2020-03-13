@@ -1,5 +1,5 @@
-﻿Feature: EvergreenOwned
-	Runs Evergreen Owned related tests
+﻿Feature: UsersDetails_Applications_EvergreenOwned.feature
+	Runs related tests for Applications > Evergreen Owned tab
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen
@@ -46,8 +46,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatLinksInEvergreenOwnedSubtabAreWorkingC
 	Then User click back button in the browser
 	And Details page for 'ZZP911429' item is displayed to the user
 
-#This is fixed only on void (DAS-20046)
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20046 @Set_Application_Owned_User @Void
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20046 @Set_Application_Owned_User
 Scenario: EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink
 	Given Link user to the Evergreen application owned
 	| UserName  | ApplicationId |
@@ -60,3 +59,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatGroupedNameIsNotDisplayedAsALink
 	| Checkboxes  | State |
 	| Application | true  |
 	Then 'DirectX 8.1 SDK for Visual Basic' grouped name is not displayed as a link
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20047 @Set_Application_Owned_User
+Scenario: EvergreenJnr_UsersList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnEvergreenOwnedTab
+	Given Link user to the Evergreen application owned
+	| UserName   | ApplicationId |
+	| CVS3269200 | 4252          |
+	When User navigates to the 'User' details page for 'CVS3269200' item
+	Then Details page for 'CVS3269200' item is displayed to the user
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Evergreen Owned' left submenu item
+	Then 'Empty' content is displayed in the 'Application' column

@@ -1,4 +1,4 @@
-﻿Feature: UsersDetails_Mailboxes
+﻿Feature: UsersDetails_Mailboxes_Mailboxes
 	Runs related tests for Mailboxes tab
 
 Background: Pre-Conditions

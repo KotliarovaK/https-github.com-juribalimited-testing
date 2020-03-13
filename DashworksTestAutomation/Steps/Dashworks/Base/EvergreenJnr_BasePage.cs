@@ -1480,6 +1480,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             slide.SetSlideToggleCondition(slideToggleName, false);
         }
 
+        [Then(@"'(.*)' slide toggle is not displayed")]
+        public void ThenSlideToggleIsNotDisplayed(string slideToggleName)
+        {
+            var slide = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsFalse(slide.GetDisplayStateForSlideToggle(slideToggleName), $"'{slideToggleName}' slide toggle should not be displayed");
+        }
+
+        #endregion
+
+        #region Icons
+
+        [When(@"User clicks '(.*)' icon")]
+        public void WhenUserClicksIcon(string iconTextInDom)
+        {
+            var icon = _driver.NowAt<BaseDashboardPage>();
+            icon.GetIcon(iconTextInDom).Click();
+        }
+
         #endregion
     }
 }
