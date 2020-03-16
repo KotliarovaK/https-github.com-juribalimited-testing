@@ -182,8 +182,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	And User selects '[Default (Computer)]' option from 'Path' autocomplete
 	#====#
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' option from 'Project or Evergreen' autocomplete
-	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project or Evergreen' autocomplete
 	And User selects 'Unassigned' option from 'Ring' autocomplete
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'Evergreen Ring 1' option from 'Ring' autocomplete
@@ -200,8 +199,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Not_Ready
-#The problem with the gold data. Contact Kate for more details.
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149
 Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSecurity
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
@@ -221,7 +219,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
-	Then Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "Z11REX196H34MG"
 	Then 'Unassigned' content is displayed in the 'Evergreen Ring' column
@@ -235,7 +233,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
-	Then Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
+	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "Z11REX196H34MG"
 	Then '[Default (Computer)]' content is displayed in the 'zDeviceAut: Path' column

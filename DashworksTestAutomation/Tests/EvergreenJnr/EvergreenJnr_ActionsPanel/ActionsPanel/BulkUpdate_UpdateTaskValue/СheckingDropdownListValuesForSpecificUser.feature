@@ -82,12 +82,13 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| No change             |
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
-	| No change                        |
+	| Options                                   |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
+	| No change                                 |
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
@@ -172,12 +173,13 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Update                |
 	| No change             |
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
-	| No change                        |
+	| Options                                   |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
+	| No change                                 |
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
 	| Update                |

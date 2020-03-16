@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCriticalityWhenUpdateButtonCl
 	| Not Important |
 	| Uncategorised |
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19225 @DAS19562 @Universe
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19225 @DAS19562
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateCriticality
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Columns button
@@ -96,17 +96,21 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateC
 	When User clicks 'UPDATE' button
 	Then Success message with "1 update has been queued" text is displayed on Action panel
 	When User refreshes agGrid
+	When User clicks Close panel button
 	Then 'Core' content is displayed in the 'Criticality' column
 	Then 'GREEN' content is displayed in the 'Sticky Compliance' column
 	Then 'RETIRE' content is displayed in the 'Evergreen Rationalisation' column
 	Then 'FALSE' content is displayed in the 'In Catalog' column
 	Then 'TRUE' content is displayed in the 'Hide From End Users' column
 	#Revert changes
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User selects all rows on the grid
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Uncategorised' in the 'Criticality' dropdown
-	When User selects 'Empty' in the 'Sticky Compliance' dropdown
+	When User selects 'Remove' in the 'Sticky Compliance' dropdown
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	When User selects 'TRUE' in the 'In Catalog' dropdown
 	When User selects 'FALSE' in the 'Hide From End Users' dropdown
@@ -115,6 +119,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateC
 	When User clicks 'UPDATE' button
 	Then Success message with "1 update has been queued" text is displayed on Action panel
 	When User refreshes agGrid
+	When User clicks Close panel button
 	Then 'Uncategorised' content is displayed in the 'Criticality' column
 	Then '' content is displayed in the 'Sticky Compliance' column
 	Then 'KEEP' content is displayed in the 'Evergreen Rationalisation' column
