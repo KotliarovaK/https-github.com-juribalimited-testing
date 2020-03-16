@@ -90,11 +90,5 @@ namespace DashworksTestAutomation.Steps.API
                     "'Unknown' text is displayed for field ");
             }
         }
-
-        [When(@"Administrator changes Evergreen Bucket via API")]
-        public void WhenAdministratorChangesEvergreenBucketViaAPI(Table table)
-        {
-
-        }
     }
 }
