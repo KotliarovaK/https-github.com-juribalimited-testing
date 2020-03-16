@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Havoc (Big Data)' option from 'Project' autocomplete
-	And User selects 'Stage DAS12864_0 / Task DAS12864_0' option from 'Task' autocomplete
+	And User selects 'Stage DAS12864_0 \ Task DAS12864_0' option from 'Task' autocomplete
 	And User selects 'Started' in the 'Value' dropdown
 	And User clicks 'UPDATE' button 
 	Then inline warning banner is displayed
@@ -270,7 +270,8 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	When User refreshes agGrid
 	Then "+5 days from current" content is displayed for "zDeviceAut: Relative BU \ DT BU App" column
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19656 @Void
+#AnnI 3/13/20 GD is only ready on 'Wormhole'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19656 @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckUnitsDropDownUpdateTaskValueForBulkUpdate
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -313,7 +314,8 @@ Scenario: EvergreenJnr_UsersList_CheckUnitsDropDownUpdateTaskValueForBulkUpdate
 	When User refreshes agGrid
 	Then "17 Feb 2020" content is displayed for "zDeviceAut: Stage A \ Weekdays BU Task" column
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Void
+#AnnI 3/13/20 GD is only ready on 'Wormhole'
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

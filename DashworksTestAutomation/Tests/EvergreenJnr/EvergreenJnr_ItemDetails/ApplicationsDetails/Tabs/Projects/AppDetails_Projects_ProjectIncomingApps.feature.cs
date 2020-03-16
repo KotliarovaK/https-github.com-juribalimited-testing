@@ -87,6 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ap
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ProjectsTab")]
         [NUnit.Framework.CategoryAttribute("DAS20286")]
+        [NUnit.Framework.CategoryAttribute("DAS20362")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnProjectIncomingAppsTab()
         {
@@ -123,6 +124,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ap
                         "EvergreenJnr_ItemDetails",
                         "ProjectsTab",
                         "DAS20286",
+                        "DAS20362",
                         "Not_Ready"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
@@ -130,7 +132,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 11
- testRunner.When("User navigates to the \'User\' details page for the item with \'839\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Application\' details page for the item with \'839\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
  testRunner.Then("Details page for \'Access 95\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
@@ -144,6 +146,22 @@ this.FeatureBackground();
  testRunner.When("User enters \"11.2.5058.0\" text in the Search field for \"Version\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
  testRunner.Then("\'Empty\' content is displayed in the \'Application\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "checkboxes"});
+            table1.AddRow(new string[] {
+                        "Application"});
+#line 18
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Application\'" +
+                    " column:", ((string)(null)), table1, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table2.AddRow(new string[] {
+                        "Empty"});
+#line 21
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Path\' col" +
+                    "umn:", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

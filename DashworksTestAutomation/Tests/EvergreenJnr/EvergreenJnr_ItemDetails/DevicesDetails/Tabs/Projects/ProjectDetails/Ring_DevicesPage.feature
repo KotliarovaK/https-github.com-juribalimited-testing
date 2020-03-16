@@ -6,7 +6,8 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #AnnI: These updates are only developed on the 'void'.
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @DAS17163 @Cleanup @Void
+#upd 3/13/20: edit mode for 'ring' hidden until 'Wormhole'.
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @DAS17163 @Cleanup @Wormhole
 Scenario: EvergreenJnr_DevicesList_CheckThatValueForRingIsChangingSuccessfully
 	When User creates new Ring via api
 	| Name           | Description | IsDefault | Project      |
@@ -34,8 +35,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForRingIsChangingSuccessfully
 	When User selects 'RingDAS17144_2' in the dropdown for the 'Ring' field
 	Then 'Ring does not exist' text is displayed on inline error banner
 
-#AnnI: These updates are only developed on the 'void'.
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @Cleanup @Void
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheRingField
 	When User create new User via API
 	| Username     | Email | FullName | Password  | Roles                          |
@@ -52,7 +52,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForT
 	When User navigates to the 'Project Details' left submenu item
 	Then arrow for editing the 'Ring' field is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144
+#AnnI 3/13/20: edit mode for 'ring' hidden until 'Wormhole'.
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144  @Wormhole
 Scenario: EvergreenJnr_DevicesList_CheckThatListOfRingsIsDisplayedCorrectlyOnTheDetailsPage
 	When User navigates to the 'Device' details page for 'CDBR7TV3Y9T2ITS' item
 	Then Details page for 'CDBR7TV3Y9T2ITS' item is displayed to the user

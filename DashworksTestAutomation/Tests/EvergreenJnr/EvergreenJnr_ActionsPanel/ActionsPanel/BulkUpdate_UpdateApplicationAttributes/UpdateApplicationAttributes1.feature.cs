@@ -86,7 +86,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18647")]
         [NUnit.Framework.CategoryAttribute("DAS18461")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation()
         {
             System.Exception lastException = null;
@@ -120,8 +119,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ActionsPanel.A
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS18647",
-                        "DAS18461",
-                        "Universe"});
+                        "DAS18461"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -179,7 +177,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "No change"});
             table3.AddRow(new string[] {
-                        "Empty"});
+                        "Remove"});
             table3.AddRow(new string[] {
                         "UNKNOWN"});
             table3.AddRow(new string[] {
@@ -280,7 +278,7 @@ this.FeatureBackground();
 #line 60
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 61
- testRunner.When("User selects \'Empty\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Remove\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63

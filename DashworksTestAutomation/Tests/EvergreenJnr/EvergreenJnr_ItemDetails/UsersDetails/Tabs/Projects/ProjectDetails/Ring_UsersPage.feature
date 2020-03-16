@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @DAS17145 @Cleanup
+#AnnI 3/13/20: edit mode for 'ring' hidden until 'Wormhole'.
+@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS17144 @DAS17145 @Cleanup @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckThatValueForRingIsChangingSuccessfully
 	When User creates new Ring via api
 	| Name           | Description | IsDefault | Project                           |

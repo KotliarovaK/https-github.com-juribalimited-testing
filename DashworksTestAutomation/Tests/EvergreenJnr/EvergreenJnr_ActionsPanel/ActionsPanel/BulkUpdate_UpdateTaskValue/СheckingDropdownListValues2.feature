@@ -126,11 +126,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
+	| Options                                   |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	Then 'Days' content is displayed in 'Units' dropdown
 	Then 'After current value' content is displayed in 'Before or After' dropdown

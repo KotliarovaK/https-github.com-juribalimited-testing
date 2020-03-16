@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18647 @DAS18461 @Universe
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18647 @DAS18461
 Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	Then following Values are displayed in the 'Sticky Compliance' dropdown:
 	| Options   |
 	| No change |
-	| Empty     |
+	| Remove    |
 	| UNKNOWN   |
 	| RED       |
 	| AMBER     |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User selects 'Empty' in the 'Sticky Compliance' dropdown
+	When User selects 'Remove' in the 'Sticky Compliance' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button

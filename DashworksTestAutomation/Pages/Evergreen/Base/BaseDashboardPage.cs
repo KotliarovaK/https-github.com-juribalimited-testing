@@ -39,6 +39,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement SubHeader { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//h3")]
+        public IWebElement SecondLevelSubHeader { get; set; }
+
         private const string TextEditorSelector = ".//quill-editor/..";
 
         [FindsBy(How = How.XPath, Using = TextEditorSelector)]
@@ -1320,6 +1323,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             if (!GetSlideToggleCondition(slideToggle).Equals(expectedCondition))
                 GetSlideToggle(slideToggle).Click();
+        }
+
+        #endregion
+
+        #region Icons
+
+        public IWebElement GetIcon(string iconTextInDom)
+        {
+            return Driver.FindElement(By.XPath($".//i[@class='material-icons'][text()='{iconTextInDom}']"));
         }
 
         #endregion

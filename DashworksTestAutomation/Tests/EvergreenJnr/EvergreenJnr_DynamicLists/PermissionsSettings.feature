@@ -34,16 +34,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	When User create dynamic list with "TestList9507DA" name on "Users" page
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'ADD TEAM' button
+	When User clicks 'group_add' icon
 	Then form container is displayed to the user
 	When User selects 'Team 1054' option from 'Team' autocomplete
-	When User selects 'Admin' option from 'Permission' autocomplete
+	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'ADD USER' button
+	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
-	When User selects 'Admin' option from 'Permission' autocomplete
-	When User clicks 'ADD USER' button
+	When User selects 'Admin' in the 'Permission' dropdown
+	When User clicks 'person_add' icon
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 	And User clicks the List Details button

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19656 @Cleanup @Void
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19656 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                   | Run    |
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue
 	And User clicks content from "Objects" column
 	Then '17 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19274 @Cleanup @Void
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19274 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope                   | Run    |
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	And User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @Cleanup @Void
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |

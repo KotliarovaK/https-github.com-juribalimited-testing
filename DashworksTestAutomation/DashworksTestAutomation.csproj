@@ -3304,7 +3304,9 @@
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\MSI\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\ActiveDirectory\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Specification\" />
+    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\" />
+    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
