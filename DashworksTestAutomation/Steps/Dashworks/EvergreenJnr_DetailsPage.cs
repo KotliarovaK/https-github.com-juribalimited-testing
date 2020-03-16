@@ -401,7 +401,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
             { }
             else
-                Utils.Verify.AreEqual("98px", filterPanel.PackageSiteColumnWidth(), "Column is not a standard size!");
+                Utils.Verify.AreEqual("97px", filterPanel.PackageSiteColumnWidth(), "Column is not a standard size!");
         }
 
         [Then(@"Bucket pop-up has standard size on the Details Page")]

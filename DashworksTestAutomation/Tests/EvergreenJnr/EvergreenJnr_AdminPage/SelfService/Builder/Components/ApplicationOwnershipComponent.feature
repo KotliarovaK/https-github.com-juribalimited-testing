@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20019 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20019 @DAS20153 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When Project created via API
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
@@ -28,6 +28,12 @@ Scenario: EvergreenJnr_AdminPage_ApplicationOwnershipComponentUiCheck
 	When User clicks on 'Application Ownership' component on dialog
 	When User clicks 'ADD' button on popup
 	Then Page with 'Create App Ownership Component' subheader is displayed to user
+	Then Page with 'Owner' second level subheader is displayed to user
+	Then following fields to display are displayed on application ownership component page
+	| Fields to display |
+	| Username          |
+	| Domain            |
+	| Display Name      |
 	Then 'TestPageSs1' label with self service parent page name is displayed
 	Then '' content is displayed in 'Component Name' textbox
 	Then 'Show this component' checkbox is unchecked

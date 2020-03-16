@@ -25,7 +25,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects '<ProjectName>' option from 'Project' autocomplete
-	And User selects '<StageName>' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
 	And User selects '<UpdateDate>' in the 'Update Date' dropdown
 	Then 'UPDATE' button is not disabled
@@ -49,11 +48,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And User removes "<UserName>" User
 
 Examples:
-	| UserName              | PageName     | ColumnName    | RowName                                  | ProjectName                  | StageName             | TaskName                 | UpdateDate |
-	| DAS13264_Devices      | Devices      | Hostname      | 00CWZRC4UK6W20                           | Computer Scheduled Test (Jo) | One                   | Date Computer            | Remove     |
-	| DAS13264_Users        | Users        | Username      | 0088FC8A50DD4344B92                      | Barry's User Project         | Project Dates         | Scheduled Date           | Remove     |
-	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project         | Audit & Configuration | Package Delivery Date    | Remove     |
-	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration              | Pre-Migration         | Out Of Office Start Date | Remove     |
+	| UserName              | PageName     | ColumnName    | RowName                                  | ProjectName                  | TaskName                                      | UpdateDate |
+	| DAS13264_Devices      | Devices      | Hostname      | 00CWZRC4UK6W20                           | Computer Scheduled Test (Jo) | One \ Date Computer                           | Remove     |
+	| DAS13264_Users        | Users        | Username      | 0088FC8A50DD4344B92                      | Barry's User Project         | Project Dates \ Scheduled Date                | Remove     |
+	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project         | Audit & Configuration \ Package Delivery Date | Remove     |
+	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration              | Pre-Migration \ Out Of Office Start Date      | Remove     |
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
@@ -75,10 +74,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
-	Then 'Stage' autocomplete options are sorted in the alphabetical order
-	When User selects 'Audit & Configuration' option from 'Stage' autocomplete
 	Then 'Task' autocomplete options are sorted in the alphabetical order
-	When User selects 'Validate User Device Ownership' option from 'Task' autocomplete
+	When User selects 'Audit & Configuration \ Validate User Device Ownership' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options               |
 	| Update                |
@@ -135,8 +132,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects 'One' option from 'Stage' autocomplete
-	And User selects 'Radio Rag Only Comp' option from 'Task' autocomplete
+	And User selects 'One \ Radio Rag Only Comp' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Value' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	Then 'Value' dropdown is not displayed
@@ -170,8 +166,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'Computer Information ---- Text fill; Text fill;' option from 'Stage' autocomplete
-	And User selects 'Computer Read Only Task in Self Service' option from 'Task' autocomplete
+	And User selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options               |
 	| Update                |

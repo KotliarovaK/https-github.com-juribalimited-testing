@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	| 00HA7MKAVVFDAV   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'London - Southbank' option from 'Capacity Unit' autocomplete
 	#====#
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
@@ -182,18 +182,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	And User selects '[Default (Computer)]' option from 'Path' autocomplete
 	#====#
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' in the 'Project or Evergreen' dropdown
+	And User selects 'Project' option from 'Project or Evergreen' autocomplete
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'Unassigned' option from 'Ring' autocomplete
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'Evergreen Ring 1' option from 'Ring' autocomplete
 	#====#
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects 'Stage 2 \ Date Task (Computer)' option from 'Task' autocomplete
+	And User selects 'Stage 2' option from 'Stage' autocomplete
+	And User selects 'Date Task (Computer)' option from 'Task' autocomplete
 	#====#
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'Evergreen Bucket 1' option from 'Bucket' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
@@ -215,7 +216,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'TestBulkUpdate' option from 'Ring' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -229,7 +230,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel

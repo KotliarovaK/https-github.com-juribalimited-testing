@@ -166,7 +166,7 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "No change"});
             table2.AddRow(new string[] {
-                        "Empty"});
+                        "Remove"});
             table2.AddRow(new string[] {
                         "UNKNOWN"});
             table2.AddRow(new string[] {
@@ -422,7 +422,7 @@ this.FeatureBackground();
 #line 95
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 96
- testRunner.When("User selects \'Empty\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Remove\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 99

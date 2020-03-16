@@ -42,8 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User enters '17429_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17429Project' option from 'Project' autocomplete
-	When User selects '17429_Stage' option from 'Stage' autocomplete
-	When User selects '17429_Task' option from 'Task' autocomplete
+	When User selects '17429_Stage \ 17429_Task' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action

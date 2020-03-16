@@ -390,7 +390,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12780")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Rationalisation", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", null)]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide From End Users", null)]
         public virtual void EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages(string columnName, string[] exampleTags)
         {
@@ -504,7 +503,7 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserSchedu" +
                     "ReadinessIDColumn", null, @__tags);
-#line 78
+#line 77
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -514,25 +513,25 @@ this.FeatureBackground();
                         "ColumnName"});
             table9.AddRow(new string[] {
                         "UserSchedu: Readiness ID"});
-#line 79
+#line 78
  testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", listName), ((string)(null)), table9, "When ");
-#line 82
+#line 81
  testRunner.When("User clicks on \'UserSchedu: Readiness ID\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table10.AddRow(new string[] {
                         "UserSchedu: Readiness ID"});
-#line 83
+#line 82
  testRunner.Then("Content is present in the newly added column", ((string)(null)), table10, "Then ");
-#line 86
+#line 85
  testRunner.When("User clicks on \'UserSchedu: Readiness ID\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
+#line 86
  testRunner.Then("numeric data in table is sorted by \'UserSchedu: Readiness ID\' column in descendin" +
                     "g order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 88
+#line 87
  testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 89
+#line 88
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -584,55 +583,55 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS11649",
                         "DAS12199"});
-#line 98
+#line 97
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 99
+#line 98
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 100
+#line 99
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 101
+#line 100
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 102
+#line 101
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table11.AddRow(new string[] {
                         "KEEP"});
-#line 103
+#line 102
  testRunner.When("User add \"Windows7Mi: Rationalisation\" filter where type is \"Equal\" with added co" +
                     "lumn and following checkboxes:", ((string)(null)), table11, "When ");
-#line 106
+#line 105
  testRunner.Then("\"Windows7Mi: Rationalisation\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table12.AddRow(new string[] {
                         "FALSE"});
-#line 107
+#line 106
  testRunner.When("User add \"Windows7Mi: In Scope\" filter where type is \"Equal\" with added column an" +
                     "d following checkboxes:", ((string)(null)), table12, "When ");
-#line 110
+#line 109
  testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 111
+#line 110
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 112
+#line 111
  testRunner.When("User removes \"Application\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 113
+#line 112
  testRunner.When("User clicks on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 114
+#line 113
  testRunner.And("User clicks on \'Windows7Mi: In Scope\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 114
  testRunner.Then("data in table is sorted by \'Windows7Mi: In Scope\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table13.AddRow(new string[] {
                         "Windows7Mi: Rationalisation"});
-#line 116
+#line 115
  testRunner.Then("Content is empty in the column", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -680,40 +679,40 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
                         "DAS11839"});
-#line 121
+#line 120
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 122
+#line 121
  testRunner.When("User clicks \'Mailboxes\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 123
+#line 122
  testRunner.Then("\'All Mailboxes\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 124
+#line 123
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 125
+#line 124
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table14.AddRow(new string[] {
                         "User Count"});
-#line 126
+#line 125
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table14, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table15.AddRow(new string[] {
                         "User Count"});
-#line 129
+#line 128
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table15, "Then ");
+#line 131
+ testRunner.When("User clicks on \'User Count\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
  testRunner.When("User clicks on \'User Count\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 133
- testRunner.When("User clicks on \'User Count\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 134
  testRunner.Then("numeric data in table is sorted by \'User Count\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 135
+#line 134
  testRunner.Then("Lowest value of \"User Count\" column is null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -775,18 +774,18 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedAfterAddingComplianceDataToL" +
                     "ists", null, @__tags);
-#line 138
+#line 137
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 139
+#line 138
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
+#line 139
  testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 141
+#line 140
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 141
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -801,20 +800,20 @@ this.FeatureBackground();
                         "Green"});
             table16.AddRow(new string[] {
                         "Empty"});
-#line 143
+#line 142
  testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
                         "kboxes:", filterName), ((string)(null)), table16, "When ");
-#line 150
+#line 149
  testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 151
+#line 150
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 152
+#line 151
  testRunner.And(string.Format("User clicks on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 153
+#line 152
  testRunner.Then(string.Format("color data is sorted by \'{0}\' column in ascending order", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 154
+#line 153
  testRunner.When(string.Format("User clicks on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 155
+#line 154
  testRunner.Then(string.Format("color data is sorted by \'{0}\' column in descending order", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -873,38 +872,38 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatObjectKeyColumnsContainCorrectLinks", null, @__tags);
-#line 166
+#line 165
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 167
+#line 166
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 168
+#line 167
  testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 169
+#line 168
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 170
+#line 169
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table17.AddRow(new string[] {
                         string.Format("{0}", columnName)});
-#line 171
+#line 170
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table17, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table18.AddRow(new string[] {
                         string.Format("{0}", columnName)});
-#line 174
+#line 173
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table18, "Then ");
-#line 177
+#line 176
  testRunner.Then(string.Format("Links from \"{0}\" column is displayed to the user", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 178
+#line 177
  testRunner.When(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 179
+#line 178
  testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -960,28 +959,28 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatEvergreenBucketColumnCanBeAddedToTheGrid", null, @__tags);
-#line 189
+#line 188
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 190
+#line 189
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 191
+#line 190
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table19.AddRow(new string[] {
                         "Evergreen Bucket"});
-#line 192
+#line 191
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table19, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table20.AddRow(new string[] {
                         "Evergreen Bucket"});
-#line 195
+#line 194
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1038,28 +1037,28 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatEvergreenCapacityUnitColumnCanBeAddedToTheGrid", null, @__tags);
-#line 206
+#line 205
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 207
+#line 206
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 208
+#line 207
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table21.AddRow(new string[] {
                         "Evergreen Capacity Unit"});
-#line 209
+#line 208
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table21, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table22.AddRow(new string[] {
                         "Evergreen Capacity Unit"});
-#line 212
+#line 211
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table22, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1111,14 +1110,14 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS9820",
                         "DAS13296"});
-#line 224
+#line 223
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 225
+#line 224
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 226
+#line 225
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1129,7 +1128,7 @@ this.FeatureBackground();
                         "Group Count"});
             table23.AddRow(new string[] {
                         "Mailbox Count (Access)"});
-#line 227
+#line 226
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table23, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1140,7 +1139,7 @@ this.FeatureBackground();
                         "Group Count"});
             table24.AddRow(new string[] {
                         "Mailbox Count (Access)"});
-#line 233
+#line 232
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table24, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1190,18 +1189,18 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
                         "DAS13024"});
-#line 241
+#line 240
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 242
+#line 241
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 243
+#line 242
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 244
+#line 243
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 245
+#line 244
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1210,7 +1209,7 @@ this.FeatureBackground();
                         "Owner accountexpires"});
             table25.AddRow(new string[] {
                         "frscomputerreferencebl"});
-#line 246
+#line 245
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table25, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1219,15 +1218,15 @@ this.FeatureBackground();
                         "Owner accountexpires"});
             table26.AddRow(new string[] {
                         "frscomputerreferencebl"});
-#line 250
+#line 249
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table26, "Then ");
-#line 254
+#line 253
  testRunner.And("\"17,279\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 255
+#line 254
  testRunner.And("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 256
+#line 255
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 257
+#line 256
  testRunner.And("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1279,30 +1278,30 @@ this.FeatureBackground();
                         "RemoveColumn",
                         "AddColumnAction",
                         "DAS12910"});
-#line 260
+#line 259
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 261
+#line 260
  testRunner.When("User clicks \'Mailboxes\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 262
+#line 261
  testRunner.Then("\'All Mailboxes\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 263
+#line 262
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 264
+#line 263
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 265
+#line 264
  testRunner.When("User removes \"Owner Display Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 266
+#line 265
  testRunner.And("User removes \"Mailbox Type\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 267
+#line 266
  testRunner.And("User removes \"Mail Server\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 268
+#line 267
  testRunner.And("User removes \"Mailbox Platform\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 269
+#line 268
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 270
+#line 269
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1311,7 +1310,7 @@ this.FeatureBackground();
                         "Blue"});
             table27.AddRow(new string[] {
                         "Light Blue"});
-#line 271
+#line 270
  testRunner.When("User add \"EmailMigra: Readiness\" filter where type is \"Equals\" with added column " +
                     "and Lookup option", ((string)(null)), table27, "When ");
 #line hidden
@@ -1319,25 +1318,25 @@ this.FeatureBackground();
                         "ColumnName"});
             table28.AddRow(new string[] {
                         "EmailMigra: Readiness"});
-#line 275
+#line 274
  testRunner.Then("Content is present in the newly added column", ((string)(null)), table28, "Then ");
-#line 278
+#line 277
  testRunner.And("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 279
+#line 278
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 280
+#line 279
  testRunner.And("Add And button is displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
             table29.AddRow(new string[] {
                         "Out Of Scope"});
-#line 281
+#line 280
  testRunner.When("User selects And \"EmailMigra: Readiness\" filter where type is \"Equals\" with added" +
                     " column and Lookup option:", ((string)(null)), table29, "When ");
-#line 284
+#line 283
  testRunner.And("User clicks \'CANCEL\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 285
+#line 284
  testRunner.Then("Add And button is displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1393,18 +1392,18 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumnsAreDisplayed", null, @__tags);
-#line 288
+#line 287
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 289
+#line 288
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 290
+#line 289
  testRunner.Then(string.Format("\'All {0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 291
+#line 290
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 292
+#line 291
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1413,7 +1412,7 @@ this.FeatureBackground();
                         "State/County"});
             table30.AddRow(new string[] {
                         "Postal Code"});
-#line 293
+#line 292
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table30, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1422,23 +1421,23 @@ this.FeatureBackground();
                         "State/County"});
             table31.AddRow(new string[] {
                         "Postal Code"});
-#line 297
+#line 296
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table31, "Then ");
+#line 300
+ testRunner.When("User clicks on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 301
- testRunner.When("User clicks on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 302
  testRunner.Then("data in table is sorted by \'State/County\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 303
+#line 302
  testRunner.When("User clicks on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 304
+#line 303
  testRunner.Then("data in table is sorted by \'State/County\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 304
+ testRunner.When("User clicks on \'Postal Code\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 305
- testRunner.When("User clicks on \'Postal Code\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 306
  testRunner.Then("data in table is sorted by \'Postal Code\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 307
+#line 306
  testRunner.When("User clicks on \'Postal Code\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 308
+#line 307
  testRunner.Then("data in table is sorted by \'Postal Code\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1486,34 +1485,34 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS15807"});
-#line 317
+#line 316
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 318
+#line 317
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 319
+#line 318
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table32.AddRow(new string[] {
                         "Windows7Mi: Language"});
-#line 320
+#line 319
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table32, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table33.AddRow(new string[] {
                         "Windows7Mi: Language"});
-#line 323
+#line 322
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table33, "Then ");
+#line 325
+ testRunner.When("User clicks on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 326
  testRunner.When("User clicks on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 327
- testRunner.When("User clicks on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 328
  testRunner.Then("\'English\' content is displayed in the \'Windows7Mi: Language\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1570,29 +1569,29 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWorks", null, @__tags);
-#line 331
+#line 330
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 332
+#line 331
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 333
+#line 332
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table34.AddRow(new string[] {
                         "Evergreen Ring"});
-#line 334
+#line 333
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table34, "And ");
-#line 337
+#line 336
  testRunner.And("User clicks on \'Evergreen Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 338
+#line 337
  testRunner.Then("data in table is sorted by \'Evergreen Ring\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 339
+#line 338
  testRunner.When("User clicks on \'Evergreen Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 340
+#line 339
  testRunner.Then("data in table is sorted by \'Evergreen Ring\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1649,7 +1648,7 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated", null, @__tags);
-#line 348
+#line 347
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1659,23 +1658,23 @@ this.FeatureBackground();
                         "ColumnName"});
             table35.AddRow(new string[] {
                         string.Format("{0}", filterName)});
-#line 349
+#line 348
  testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", listName), ((string)(null)), table35, "When ");
-#line 352
+#line 351
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table36.AddRow(new string[] {
                         string.Format("{0}", filterValue)});
-#line 353
+#line 352
  testRunner.And(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
                         "kboxes:", filterName), ((string)(null)), table36, "And ");
-#line 356
+#line 355
  testRunner.And("User language is changed to \"Deutsch\" via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 357
+#line 356
  testRunner.And("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 358
+#line 357
  testRunner.Then(string.Format("\'{0}\' content is displayed in the \'{1}\' column", translatedFilterValue, translatedColumnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1725,30 +1724,30 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
                         "DAS17945"});
-#line 368
+#line 367
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 369
+#line 368
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table37.AddRow(new string[] {
                         "Barry\'sUse: Application Readiness"});
-#line 370
+#line 369
  testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table37, "When ");
-#line 373
+#line 372
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 374
+#line 373
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table38.AddRow(new string[] {
                         "TRUE"});
-#line 375
+#line 374
  testRunner.When("User add \"Barry\'sUse: In Scope\" filter where type is \"Equals\" without added colum" +
                     "n and following checkboxes:", ((string)(null)), table38, "When ");
 #line hidden
@@ -1756,12 +1755,12 @@ this.FeatureBackground();
                         "ColumnName"});
             table39.AddRow(new string[] {
                         "Barry\'sUse: Application Readiness"});
-#line 378
+#line 377
  testRunner.Then("Content is present in the newly added column", ((string)(null)), table39, "Then ");
-#line 381
+#line 380
  testRunner.Then("Color data displayed with correct color for \'Barry\'sUse: Application Readiness\' c" +
                     "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 382
+#line 381
  testRunner.Then("\'Ignore\' tooltip is displayed for \'IGNORE\' content in the \'Barry\'sUse: Applicatio" +
                     "n Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1810,27 +1809,27 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "AddColumnAction",
                         "DAS16364"});
-#line 385
+#line 384
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 386
+#line 385
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table40.AddRow(new string[] {
                         "2004: Status"});
-#line 387
+#line 386
  testRunner.And("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table40, "And ");
+#line 389
+ testRunner.When("User clicks on \'2004: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 390
- testRunner.When("User clicks on \'2004: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 391
  testRunner.Then("\'Not Onboarded\' content is displayed in the \'2004: Status\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 392
+#line 391
  testRunner.When("User clicks on \'2004: Status\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 393
+#line 392
  testRunner.Then("\'Offboarded\' content is displayed in the \'2004: Status\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1880,29 +1879,29 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS18762",
                         "Cleanup"});
-#line 396
+#line 395
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 397
+#line 396
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table41.AddRow(new string[] {
                         "Sticky Compliance"});
-#line 398
+#line 397
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table41, "And ");
-#line 401
+#line 400
  testRunner.When("User create dynamic list with \"DAS18762_List\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 402
+#line 401
  testRunner.Then("\"DAS18762_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 402
+ testRunner.When("User clicks on \'Sticky Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 403
  testRunner.When("User clicks on \'Sticky Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 404
- testRunner.When("User clicks on \'Sticky Compliance\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 405
  testRunner.Then("\'IGNORE\' content is displayed in the \'Sticky Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1952,27 +1951,27 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS18961",
                         "Cleanup"});
-#line 408
+#line 407
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 409
+#line 408
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table42.AddRow(new string[] {
                         "Evergreen Target App Name"});
-#line 410
+#line 409
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table42, "And ");
-#line 413
+#line 412
  testRunner.When("User create dynamic list with \"DAS18961_List\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 414
+#line 413
  testRunner.Then("\"DAS18961_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 415
+#line 414
  testRunner.When("User clicks on \'Evergreen Target App Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 416
+#line 415
  testRunner.Then("data in table is sorted by \'Evergreen Target App Name\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2022,32 +2021,32 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS18961",
                         "Cleanup"});
-#line 419
+#line 418
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 420
+#line 419
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table43.AddRow(new string[] {
                         "2004: Target App Key"});
-#line 421
+#line 420
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table43, "And ");
-#line 424
+#line 423
  testRunner.When("User create dynamic list with \"DAS18961_List1\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 425
+#line 424
  testRunner.Then("\"DAS18961_List1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 426
+#line 425
  testRunner.When("User clicks on \'2004: Target App Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 427
+#line 426
  testRunner.Then("numeric data in table is sorted by \'2004: Target App Key\' column in ascending ord" +
                     "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 428
+#line 427
  testRunner.When("User clicks on \'2004: Target App Key\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 429
+#line 428
  testRunner.Then("numeric data in table is sorted by \'2004: Target App Key\' column in descending or" +
                     "der", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -2098,32 +2097,32 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS18961",
                         "Cleanup"});
-#line 432
+#line 431
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 433
+#line 432
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table44.AddRow(new string[] {
                         "Evergreen Target App Vendor"});
-#line 434
+#line 433
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table44, "And ");
-#line 437
+#line 436
  testRunner.When("User create dynamic list with \"DAS18961_List2\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 438
+#line 437
  testRunner.Then("\"DAS18961_List2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 439
+#line 438
  testRunner.When("User clicks on \'Evergreen Target App Vendor\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 440
+#line 439
  testRunner.Then("data in table is sorted by \'Evergreen Target App Vendor\' column in ascending orde" +
                     "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 441
+#line 440
  testRunner.When("User clicks on \'Evergreen Target App Vendor\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 442
+#line 441
  testRunner.Then("data in table is sorted by \'Evergreen Target App Vendor\' column in descending ord" +
                     "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -2174,31 +2173,31 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS18961",
                         "Cleanup"});
-#line 445
+#line 444
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 446
+#line 445
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table45.AddRow(new string[] {
                         "2004: Target App Version"});
-#line 447
+#line 446
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table45, "And ");
-#line 450
+#line 449
  testRunner.When("User create dynamic list with \"DAS18961_List3\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 451
+#line 450
  testRunner.Then("\"DAS18961_List3\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 451
+ testRunner.When("User clicks on \'2004: Target App Version\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 452
- testRunner.When("User clicks on \'2004: Target App Version\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 453
  testRunner.Then("data in table is sorted by \'2004: Target App Version\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 454
+#line 453
  testRunner.When("User clicks on \'2004: Target App Version\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 455
+#line 454
  testRunner.Then("data in table is sorted by \'2004: Target App Version\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2248,32 +2247,32 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS18961",
                         "Cleanup"});
-#line 458
+#line 457
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 459
+#line 458
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table46.AddRow(new string[] {
                         "2004: Target App Readiness"});
-#line 460
+#line 459
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table46, "And ");
-#line 463
+#line 462
  testRunner.When("User create dynamic list with \"DAS18961_List4\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 464
+#line 463
  testRunner.Then("\"DAS18961_List4\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 465
+#line 464
  testRunner.When("User clicks on \'2004: Target App Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 466
+#line 465
  testRunner.Then("data in table is sorted by \'2004: Target App Readiness\' column in descending orde" +
                     "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 467
+#line 466
  testRunner.When("User clicks on \'2004: Target App Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 468
+#line 467
  testRunner.Then("data in table is sorted by \'2004: Target App Readiness\' column in ascending order" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -2324,30 +2323,30 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS18896",
                         "Cleanup"});
-#line 471
+#line 470
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 472
+#line 471
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table47.AddRow(new string[] {
                         "Evergreen Rationalisation"});
-#line 473
+#line 472
  testRunner.And("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table47, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table48.AddRow(new string[] {
                         "Evergreen Rationalisation"});
-#line 476
+#line 475
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table48, "Then ");
-#line 479
+#line 478
  testRunner.When("User create dynamic list with \"DAS18896_List\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 480
+#line 479
  testRunner.Then("\"DAS18896_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2397,38 +2396,38 @@ this.FeatureBackground();
                         "AddColumnAction",
                         "DAS19239",
                         "Cleanup"});
-#line 483
+#line 482
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 484
+#line 483
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table49.AddRow(new string[] {
                         "Evergreen Target App Name"});
-#line 485
+#line 484
  testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table49, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table50.AddRow(new string[] {
                         "Evergreen Target App Name"});
-#line 488
+#line 487
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table50, "Then ");
-#line 491
+#line 490
  testRunner.When("User create dynamic list with \"DAS19239_List\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 492
+#line 491
  testRunner.Then("\"DAS19239_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 492
+ testRunner.When("User clicks on \'Evergreen Target App Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 493
- testRunner.When("User clicks on \'Evergreen Target App Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 494
  testRunner.Then("data in table is sorted by \'Evergreen Target App Name\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 495
+#line 494
  testRunner.When("User clicks on \'Evergreen Target App Name\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 496
+#line 495
  testRunner.Then("data in table is sorted by \'Evergreen Target App Name\' column in descending order" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

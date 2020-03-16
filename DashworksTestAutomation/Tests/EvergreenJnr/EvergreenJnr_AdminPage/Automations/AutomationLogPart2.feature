@@ -17,8 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	And User enters '17682_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	And User selects 'Stage 1' option from 'Stage' autocomplete
-	And User selects 'Radiobutton Date App Task' option from 'Task' autocomplete
+	And User selects 'Stage 1 \ Radiobutton Date App Task' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
@@ -489,8 +488,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User enters '17430_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
-	When User selects 'Stage 1' option from 'Stage' autocomplete
-	When User selects 'Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
+	When User selects 'Stage 1 \ Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
 	And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown

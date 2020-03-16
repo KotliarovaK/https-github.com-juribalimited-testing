@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks
 	| Empty            |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Evergreen Capacity Unit 1' option from 'Capacity Unit' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -38,8 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWith
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects '2004 Rollout' option from 'Project' autocomplete
-	And User selects 'Migration' option from 'Stage' autocomplete
-	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	Then User sees that 'Capacity Slot' dropdown contains following options:
@@ -62,8 +61,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabled
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
-	When User selects 'Migration' option from 'Stage' autocomplete
-	When User selects 'Migrated Date' option from 'Task' autocomplete
+	When User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	When User clicks 'UPDATE' button 
@@ -92,7 +90,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeProp
 	| Update relative to a different task value |
 	| Remove                                    |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18233
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18233 @Void
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -114,7 +112,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProp
 	| Remove                                    |
 	| No change                                 |
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233 @DAS20109
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -128,25 +126,24 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                                   |
-	| Update                                    |
-	| Update relative to current value          |
-	| Update relative to now                    |
-	| Update relative to a different task value |
-	| Remove                                    |
+	| Options                          |
+	| Update                           |
+	| Update relative to current value |
+	| Update relative to now           |
+	| Remove                           |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	Then 'Days' content is displayed in 'Units' dropdown
 	Then 'After current value' content is displayed in 'Before or After' dropdown
 	When User enters '999999' text to 'Value' textbox
 	Then '100000' content is displayed in 'Value' textbox
 	When User enters '-5' text to 'Value' textbox
-	Then '0' content is displayed in 'Value' textbox
+	Then '1' content is displayed in 'Value' textbox
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options              |
 	| Before current value |
 	| After current value  |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274 @Void
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -169,8 +166,8 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	| Options    |
 	| Before now |
 	| After now  |
-	Then 'After task value' content is displayed in 'Before or After' dropdown
-	When User selects 'Before task value' in the 'Before or After' dropdown
+	Then 'After now' content is displayed in 'Before or After' dropdown
+	When User selects 'Before now' in the 'Before or After' dropdown
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Void
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue

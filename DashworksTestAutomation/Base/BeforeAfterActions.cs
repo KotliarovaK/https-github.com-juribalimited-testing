@@ -174,7 +174,7 @@ namespace DashworksTestAutomation.Base
                 catch { }
             }
             //FOR DEBUG ONLY
-            
+            /*
             try
             {
                 var requestUri = "http://autorelease.corp.juriba.com:81/applications?$top=1000&$skip=0&$filter=(project_43_applicationReadinessId%20EQUALS%20(%27NULL%27))&$select=packageName,packageManufacturer,packageVersion,project_43_hideFromEndUsers,project_43_applicationReadiness";
@@ -192,7 +192,7 @@ namespace DashworksTestAutomation.Base
             {
                 Logger.Write(e);
                 Logger.Write("AFTER ============> !!! FILTER WAS CHANGED !!! <============");
-            }
+            }*/
         }
 
         [BeforeTestRun]

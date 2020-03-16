@@ -18,6 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	Then Main lists are displayed correctly in the Scope dropdown
 	| ListName         |
 	| All Devices      |
+	| All Device Types |
 	| All Users        |
 	| All Applications |
 	| All Mailboxes    |
@@ -95,18 +96,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingAr
 	And User selects 'Manual' in the 'Run' dropdown
 	And User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
-	Then 'The automation has been created' text is displayed on inline success banner
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17241 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckScopeListItemsForAutomations
-	When User clicks 'Admin' on the left-hand menu
-	When User navigates to the 'Automations' left menu item
-	When User clicks 'CREATE AUTOMATION' button 
-	Then 'Create Automation' page subheader is displayed to user
-	When User enters 'DAS16844_Automation' text to 'Automation Name' textbox
-	When User enters 'DAS16844' text to 'Description' textbox
-	When User selects 'List16844' option from 'Scope' autocomplete
-	When User selects 'Manual' in the 'Run' dropdown
-	When User checks 'Active' checkbox
-	When User clicks 'CREATE' button 
 	Then 'The automation has been created' text is displayed on inline success banner

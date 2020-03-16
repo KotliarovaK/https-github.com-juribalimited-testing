@@ -18,8 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	And User enters '18292_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT Auto App' option from 'Task' autocomplete
+	When User selects 'Relative BU \ DT Auto App' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
@@ -82,8 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	And User enters '18292_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT Auto Mail' option from 'Task' autocomplete
+	When User selects 'Relative BU \ DT Auto Mail' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
 	When User selects 'After current value' in the 'Before or After' dropdown
@@ -137,8 +135,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 	And User enters '18292_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT Auto Device' option from 'Task' autocomplete
+	When User selects 'Relative BU \ DT Auto Device' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Not Started' in the 'Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
@@ -165,7 +162,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 	Then 'NOT STARTED' content is displayed in the 'zDeviceAut: Relative BU \ DT Auto Device' column
 	Then '' content is displayed in the 'zDeviceAut: Relative BU \ DT Auto Device (Date)' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18543 @DAS20109 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18543 @Cleanup @Not_Ready
+#Waiting for 'Update relative to current value' value in dropdown
 Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnTheTask
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -177,8 +175,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User enters '18543_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Stage 3' option from 'Stage' autocomplete
-	When User selects 'Date Only with Capacity User' option from 'Task' autocomplete
+	When User selects 'Stage 3 \ Date Only with Capacity User' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
 	Then 'Units' dropdown is disabled
@@ -186,7 +183,6 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User selects 'DDL Slot Task' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
-	Then ' ' content is displayed in 'Units' dropdown
 	When User enters '10' text to 'Value' textbox
 	When User selects 'Hours' in the 'Units' dropdown
 	Then 'CREATE' button is not disabled
@@ -204,8 +200,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
 	When User enters '18619_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Comp' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Remove' in the 'Update Date' dropdown
 	When User clicks 'CREATE' button
@@ -255,8 +250,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
 	When User enters '18644_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'DAS18644_Project' option from 'Project' autocomplete
-	When User selects 'DAS18644_Stage' option from 'Stage' autocomplete
-	When User selects 'DAS18644_Task' option from 'Task' autocomplete
+	When User selects 'DAS18644_Stage \ DAS18644_Task' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |

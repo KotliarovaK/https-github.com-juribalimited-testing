@@ -39,7 +39,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
 	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Rationalisation' column
-	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Name' column
+	#Discussed it with Maryna (3/10/2020)
+	#Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Name' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForwardPath

@@ -1243,7 +1243,8 @@ Examples:
 	| Havoc(BigD: Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | Havoc(BigD: Rationalisation is Uncategorised | 1,068     |
 	| UserSchedu: Rationalisation | Equals, Does not equal, Not empty | UNCATEGORISED | UserSchedu: Rationalisation is Uncategorised | 981       |
 
-@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11507
+# Yurii T. 11 Mar 2020: tag archived is aadded accroding to DAS-20152 - Project Core Application should not exists
+@Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS10512 @DAS11507 @archived
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user

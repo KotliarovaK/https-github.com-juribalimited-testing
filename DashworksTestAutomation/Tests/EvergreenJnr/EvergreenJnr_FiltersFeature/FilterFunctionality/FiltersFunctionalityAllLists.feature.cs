@@ -336,7 +336,7 @@ this.FeatureBackground();
 #line 68
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
- testRunner.And("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
  testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
@@ -382,7 +382,7 @@ this.FeatureBackground();
 #line 89
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
- testRunner.And("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
  testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
@@ -430,7 +430,7 @@ this.FeatureBackground();
 #line 111
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 112
- testRunner.And("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 113
  testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
@@ -476,7 +476,7 @@ this.FeatureBackground();
 #line 132
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
- testRunner.And("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 134
  testRunner.And("User selects \'CapacityUnit13201\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
@@ -968,7 +968,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Havoc(BigD: In Scope", "FALSE", "08HRHU20R2JY3W", "Havoc(BigD: In Scope is False", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ComputerSc: Path", "Request Type A", "47NK3ATE5DM2HD", "ComputerSc: Path is Request Type A", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Havoc(BigD: Hide From End Users", "Empty", "Adobe Flash Player 10 ActiveX (10.0.12.36)", "Havoc(BigD: Hide From End Users is Empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Barry\'sUse: Core Application", "FALSE", "Adobe Download Manager 2.0 (Remove Only)", "Barry\'sUse: Core Application is False", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Barry\'sUse: In Scope", "FALSE", "Amazon Redshift ODBC Driver 64-bit", "Barry\'sUse: In Scope is False", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "EmailMigra: Mobile Devices \\ Device Type", "Not Identified", "238BAE24882E48BFA9F@bclabs.local", "EmailMigra: Mobile Devices \\ Device Type is Not Identified", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult(string pageName, string columnName, string filterName, string filterValue, string search, string filterInfo, string[] exampleTags)
         {

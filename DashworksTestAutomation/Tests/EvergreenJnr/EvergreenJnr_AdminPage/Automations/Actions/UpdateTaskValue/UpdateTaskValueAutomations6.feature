@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	When User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	When User selects 'Before task value' in the 'Before or After' dropdown
+	When User selects 'Before now' in the 'Before or After' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	And User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @Cleanup @Void
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
 	When User enters '0' text to 'Value' textbox
 	When User selects 'Week days' in the 'Units' dropdown
-	When User selects 'After task value' in the 'Before or After' dropdown
+	When User selects 'After now' in the 'Before or After' dropdown
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
