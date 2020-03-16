@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIncomingAppCounterIsDynamicall
 	Then 'No Evergreen incoming apps found for this application' message is displayed on empty greed
 
 #AnnI 3/12/20 need gold data. will be ready by next week.
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectsTab @DAS20286 @DAS20362 @Not_Ready
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectsTab @DAS20286 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWithoutANameOnEvergreenIncomingAppsTab
 	When User navigates to the 'Application' details page for the item with '839' ID
 	Then Details page for 'Access 95' item is displayed to the user
@@ -67,9 +67,3 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWit
 	When User navigates to the 'Evergreen Incoming Apps' left submenu item
 	When User enters "11.2.5058.0" text in the Search field for "Version" column
 	Then 'Empty' content is displayed in the 'Application' column
-	When User clicks following checkboxes from Column Settings panel for the 'Application' column:
-	| checkboxes  |
-	| Application |
-	Then following checkboxes are displayed in the filter dropdown menu for the 'Path' column:
-	| Values |
-	| Empty  |
