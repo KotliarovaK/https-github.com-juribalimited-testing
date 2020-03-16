@@ -19,15 +19,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDeta
 	| Title            | Value     |
 	| Evergreen Bucket | Evergreen |
 	When User clicks on edit button for 'Evergreen Bucket' field
+	When User selects 'Manchester' option from 'Move Bucket' autocomplete
+	When User clicks 'MOVE' button on popup
+	Then 'The selected objects will be moved to Manchester' text is displayed on inline tip banner
+	When User navigates to 'evergreen/#/user/87443/projects/evergreen' URL in a new tab
+	When User clicks on edit button for 'Evergreen Bucket' field
 	When User selects 'Birmingham' option from 'Move Bucket' autocomplete
 	When User clicks 'MOVE' button on popup
-	Then 'The selected objects will be moved to Birmingham.' text is displayed on inline tip banner
-	When User navigates to 'evergreen/#/admin/evergreen/buckets' URL in a new tab
-	
 	Then 'The selected objects will be moved to Birmingham, you will no longer be able to edit these objects' text is displayed on inline tip banner
-	
+	When User clicks 'MOVE' button on popup
+	When User switches to previous tab
 	When User clicks 'MOVE' button on popup
 	Then 'You are not authorized to view this page, speak to your Dashworks administrator' text is displayed on inline error banner
 	Then following content is displayed on the Details Page
-	| Title            | Value |
-	| Evergreen Bucket |       |
+	| Title            | Value      |
+	| Evergreen Bucket | Birmingham |
