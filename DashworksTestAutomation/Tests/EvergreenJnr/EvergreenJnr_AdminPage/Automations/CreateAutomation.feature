@@ -97,3 +97,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingAr
 	And User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	Then 'The automation has been created' text is displayed on inline success banner
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17241 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckScopeListsIconsForAutomations
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Automations' left menu item
+	When User clicks 'CREATE AUTOMATION' button 
+	Then 'Create Automation' page subheader is displayed to user
+	When User enters 'DAS17241_Automation' text to 'Automation Name' textbox
+	When User enters 'DAS17241' text to 'Description' textbox
+	Then appropriate icon displayed for option from 'Scope' autocomplete
+	| icon    | optionName  |
+	| setting | All Devices |
+	Then Image item from "Name" column is displayed to the user

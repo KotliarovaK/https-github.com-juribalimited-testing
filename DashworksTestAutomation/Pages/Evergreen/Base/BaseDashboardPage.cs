@@ -59,6 +59,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-option//span//i")]
+        public IWebElement OptionIcon { get; set; }
+
         private const string MenuPanelSelector = ".//div[@class='mat-menu-content']";
         [FindsBy(How = How.XPath, Using = MenuPanelSelector)]
         public IWebElement MenuPanelElement { get; set; }
