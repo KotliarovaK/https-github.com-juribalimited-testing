@@ -288,3 +288,38 @@ Scenario: EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmal
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15896
 Scenario: EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCount
 	Then Number of requests to '/dashboard' is not greater than '11'
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS20070 @Cleanup
+Scenario Outline: EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetType
+	When Dashboard with '<DashboardName>' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType   | Title        | List        | SplitBy  | AggregateFunction | OrderBy      |
+	| <WidgetType> | <WidgetName> | All Devices | Hostname | Count             | Hostname ASC |
+	Then '<WidgetName>' Widget is displayed to the user
+	When User clicks Ellipsis menu for '<WidgetName>' Widget on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	Then 'UPDATE' button is disabled
+	When User selects '<UpdatedType>' in the 'Widget Type' dropdown
+	Then 'UPDATE' button is not disabled
+
+Examples:
+	| DashboardName       | WidgetType | WidgetName | UpdatedType |
+	| DashboardDAS20070_1 | Column     | DAS20070_1 | Pie         |
+	| DashboardDAS20070_2 | Pie        | DAS20070_2 | Column      |
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS20070 @Cleanup
+Scenario: EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilled
+	When Dashboard with 'DashboardDAS20070_3' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
+	| WidgetType | Title      | List        | SplitBy  | CategoriseBy | DisplayType | AggregateFunction | OrderBy      |
+	| Column     | DAS20070_3 | All Devices | Hostname | Device Type  | Clustered   | Count             | Hostname ASC |
+	Then 'DAS20070_3' Widget is displayed to the user
+	When User clicks Ellipsis menu for 'DAS20070_3' Widget on Dashboards page
+	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	Then 'UPDATE' button is disabled
+	When User selects 'Stacked' in the 'Display Type' dropdown
+	Then 'UPDATE' button is not disabled
