@@ -371,22 +371,20 @@ this.FeatureBackground();
 #line 83
  testRunner.And("User selects \'Update ring\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
- testRunner.And("User selects \'Project\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \'Mailbox Evergreen Capacity Project\' option from \'Project or Evergre" +
+                    "en\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
- testRunner.And("User selects \'Mailbox Evergreen Capacity Project\' option from \'Project\' autocompl" +
-                    "ete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
  testRunner.When("User selects \'Unassigned\' option from \'Ring\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
+#line 86
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 87
  testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
                     "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 89
+#line 88
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 90
+#line 89
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 91
+#line 90
  testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -437,32 +435,30 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS16356"});
-#line 94
+#line 93
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 95
+#line 94
  testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 96
+#line 95
  testRunner.Then("\'All Users\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 97
+#line 96
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 98
+#line 97
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table7.AddRow(new string[] {
                         "$231000-3AC04R8AR431"});
-#line 99
+#line 98
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table7, "When ");
-#line 102
+#line 101
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 102
  testRunner.And("User selects \'Update ring\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
- testRunner.And("User selects \'Project\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
@@ -474,8 +470,8 @@ this.FeatureBackground();
                         "User Evergreen Capacity Project"});
             table8.AddRow(new string[] {
                         "User Scheduled Test (Jo)"});
-#line 105
- testRunner.Then("\'Project\' autocomplete contains following options:", ((string)(null)), table8, "Then ");
+#line 103
+ testRunner.Then("\'Project or Evergreen\' autocomplete contains following options:", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -524,33 +520,33 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS16640"});
-#line 113
+#line 111
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 114
+#line 112
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
+#line 113
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 116
+#line 114
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 117
+#line 115
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table9.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-#line 118
+#line 116
  testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table9, "When ");
-#line 121
+#line 119
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 120
  testRunner.And("User selects \'Update bucket\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
+#line 121
  testRunner.And("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 122
  testRunner.Then("\'Bucket\' autocomplete options are sorted in the alphabetical order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -604,33 +600,33 @@ this.FeatureBackground();
                         "DAS16822",
                         "Do_Not_Run_With_Capacity",
                         "Do_Not_Run_With_CapacityUnits"});
-#line 127
+#line 125
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 128
+#line 126
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 129
+#line 127
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 130
+#line 128
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 131
+#line 129
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table10.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-#line 132
+#line 130
  testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table10, "When ");
-#line 135
+#line 133
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 136
+#line 134
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
+#line 135
  testRunner.And("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
+#line 136
  testRunner.Then("\'Capacity Unit\' autocomplete options are sorted in the alphabetical order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

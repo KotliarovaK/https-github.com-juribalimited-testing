@@ -62,19 +62,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PermissionsElement>();
             Utils.Verify.IsFalse(page.SharingUserList.Displayed(), "User list for sharing is displayed");
         }
-
-        [When(@"User clicks Add Team button")]
-        public void WhenUserClicksAddTeamButton()
-        {
-            var button = _driver.NowAt<PermissionsElement>();
-            button.AddTeamIconButton.Click();
-        }
-
-        [When(@"User clicks Add User button")]
-        public void WhenUserClicksAddUserButton()
-        {
-            var button = _driver.NowAt<PermissionsElement>();
-            button.AddUserIconButton.Click();
-        }
     }
 }

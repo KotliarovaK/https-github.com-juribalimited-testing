@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19656")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckUnitsDropDownForUpdateTaskValue()
         {
             System.Exception lastException = null;
@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
                         "Automations",
                         "DAS19656",
                         "Cleanup",
-                        "Void"});
+                        "Wormhole"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -253,7 +253,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19274")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation()
         {
             System.Exception lastException = null;
@@ -288,7 +288,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS19274",
                         "Cleanup",
-                        "Void"});
+                        "Wormhole"});
 #line 64
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -417,7 +417,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19854")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue()
         {
             System.Exception lastException = null;
@@ -452,7 +452,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS19854",
                         "Cleanup",
-                        "Void"});
+                        "Wormhole"});
 #line 118
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

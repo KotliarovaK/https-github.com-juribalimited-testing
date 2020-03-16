@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
         [NUnit.Framework.CategoryAttribute("DAS17144")]
         [NUnit.Framework.CategoryAttribute("DAS17163")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_DevicesList_CheckThatValueForRingIsChangingSuccessfully()
         {
             System.Exception lastException = null;
@@ -125,8 +125,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
                         "DAS17144",
                         "DAS17163",
                         "Cleanup",
-                        "Void"});
-#line 10
+                        "Wormhole"});
+#line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -147,21 +147,21 @@ this.FeatureBackground();
                         "DAS17144",
                         "false",
                         "2004 Rollout"});
-#line 11
+#line 12
  testRunner.When("User creates new Ring via api", ((string)(null)), table1, "When ");
-#line 15
- testRunner.When("User navigates to the \'Device\' details page for \'CDBR7TV3Y9T2ITS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'Device\' details page for \'CDBR7TV3Y9T2ITS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
- testRunner.When("User selects \'2004 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'2004 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
- testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
- testRunner.When("User selects \'RingDAS17144_1\' in the dropdown for the \'Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
+ testRunner.When("User selects \'RingDAS17144_1\' in the dropdown for the \'Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
  testRunner.Then("\'Device successfully moved to RingDAS17144_1\' text is displayed on inline success" +
                     " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -171,30 +171,30 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Ring",
                         "RingDAS17144_1"});
-#line 22
+#line 23
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2, "Then ");
-#line 25
+#line 26
  testRunner.When("User navigates to \'evergreen/#/admin/project/63/rings\' URL in a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table3.AddRow(new string[] {
                         "RingDAS17144_2"});
-#line 26
+#line 27
  testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table3, "When ");
-#line 29
- testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
- testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
- testRunner.And("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
- testRunner.Then("\'The selected ring has been deleted\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
- testRunner.When("User switches to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'The selected ring has been deleted\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 34
- testRunner.When("User selects \'RingDAS17144_2\' in the dropdown for the \'Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User switches to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 35
+ testRunner.When("User selects \'RingDAS17144_2\' in the dropdown for the \'Ring\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
  testRunner.Then("\'Ring does not exist\' text is displayed on inline error banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -210,7 +210,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS17144")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_DevicesList_ChecksthatThePermissionIsWorkingCorrectlyForTheRingField()
         {
             System.Exception lastException = null;
@@ -246,8 +245,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ProjectDetailsTab",
                         "DAS17144",
-                        "Cleanup",
-                        "Void"});
+                        "Cleanup"});
 #line 39
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -306,6 +304,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS17144")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_DevicesList_CheckThatListOfRingsIsDisplayedCorrectlyOnTheDetailsPage()
         {
             System.Exception lastException = null;
@@ -340,21 +339,22 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ProjectDetailsTab",
-                        "DAS17144"});
-#line 56
+                        "DAS17144",
+                        "Wormhole"});
+#line 57
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 57
- testRunner.When("User navigates to the \'Device\' details page for \'CDBR7TV3Y9T2ITS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 58
- testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'Device\' details page for \'CDBR7TV3Y9T2ITS\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
- testRunner.When("User selects \'2004 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \'CDBR7TV3Y9T2ITS\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 60
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'2004 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 61
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -375,7 +375,7 @@ this.FeatureBackground();
                         "Business Wave 3"});
             table6.AddRow(new string[] {
                         "Critical Systems"});
-#line 62
+#line 63
  testRunner.Then("following Values are displayed in the dropdown for the \'Ring\' field:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -425,21 +425,21 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ProjectDetailsTab",
                         "DAS19948"});
-#line 74
+#line 75
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 75
- testRunner.When("User navigates to the \'Device\' details page for the item with \'6793\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
- testRunner.Then("Details page for \'00KWQ4J3WKQM0G\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'Device\' details page for the item with \'6793\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
+ testRunner.Then("Details page for \'00KWQ4J3WKQM0G\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 78
  testRunner.When("User selects \'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' in the \'Item Details Project\'" +
                     " dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 80
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -448,12 +448,12 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Ring",
                         "Unassigned"});
-#line 80
+#line 81
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table7, "Then ");
-#line 83
+#line 84
  testRunner.When("User selects \'USE ME FOR AUTOMATION(USR SCHDLD)\' in the \'Item Details Project\' dr" +
                     "opdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 85
  testRunner.Then("\'Ring\' field is not displayed in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
