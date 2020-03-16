@@ -19,5 +19,5 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWit
 	| checkboxes  |
 	| Application |
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Path' column:
-	| Values                 |
-	| [Defaul (Application)] |
+	| Values                  |
+	| [Default (Application)] |
