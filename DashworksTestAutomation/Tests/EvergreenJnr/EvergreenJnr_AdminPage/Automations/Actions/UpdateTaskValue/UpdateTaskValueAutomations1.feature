@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'After current value' value is displayed in the 'Before or After' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @DAS19274 @Cleanup @Void
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @DAS19274 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
 	| AutomationName    | Description | Active | StopOnFailedAction | Scope     | Run    |
@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	| After now  |
 	When User enters '4' text to 'Value' textbox
 	When User selects 'Hours' in the 'Units' dropdown
-	When User selects 'Before now' in the 'Before or After' dropdown
+	When User selects 'Before task value' in the 'Before or After' dropdown
 	And User clicks 'CREATE' button
 	#Check created Action
 	When User clicks content from "Action" column

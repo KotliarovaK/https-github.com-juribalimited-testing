@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_UsersList_CheckRelativeUpdatesToTaskValues
 	When User selects 'DT BU App' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '5' text to 'Value' textbox
-	When User selects 'After now' in the 'Before or After' dropdown
+	When User selects 'After task value' in the 'Before or After' dropdown
 	And User clicks 'UPDATE' button 
 	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner
@@ -340,7 +340,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateRelativeToNowValueForBulkUpdate
 	When User selects 'Stage A \ Weekdays BU Task' option from 'Task' autocomplete
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
 	When User enters '0' text to 'Value' textbox
-	When User selects 'Before now' in the 'Before or After' dropdown
+	When User selects 'Before task value' in the 'Before or After' dropdown
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
 	Then Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel

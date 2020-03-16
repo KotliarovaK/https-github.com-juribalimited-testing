@@ -169,8 +169,8 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	| Options    |
 	| Before now |
 	| After now  |
-	Then 'After now' content is displayed in 'Before or After' dropdown
-	When User selects 'Before now' in the 'Before or After' dropdown
+	Then 'After task value' content is displayed in 'Before or After' dropdown
+	When User selects 'Before task value' in the 'Before or After' dropdown
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Void
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue
