@@ -66,18 +66,18 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	Then 'Specific users / teams' content is displayed in 'Sharing' dropdown
-	When User clicks 'ADD TEAM' button 
+	When User clicks 'group_add' icon
 	When User selects '1803 Team' option from 'Team' autocomplete
 	Then 'ADD TEAM' button is disabled
-	When User clicks 'CANCEL' button 
-	When User clicks 'ADD TEAM' button 
+	When User clicks 'CANCEL' button
+	When User clicks 'group_add' icon
 	When User selects '1803 Team' option from 'Team' autocomplete
 	When User clicks 'CANCEL' button 
-	When User clicks 'ADD USER' button 
+	When User clicks 'person_add' icon
 	Then form container is displayed to the user
 	When User selects 'Administrator' option from 'User' autocomplete
 	When User clicks 'CANCEL' button 
-	And User clicks 'ADD USER' button
+	When User clicks 'person_add' icon
 	When User selects 'Administrator' option from 'User' autocomplete
 	When User selects 'Edit' in the 'Permission' dropdown
 	And User clicks 'ADD USER' button
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	Then There are no errors in the browser console
 	And "Admin" Sharing user is displayed correctly
 	And form container is not displayed to the user
-	When User clicks 'ADD USER' button 
+	When User clicks 'person_add' icon
 	And User clicks 'CANCEL' button 
 	Then User list for sharing is not displayed
 	And There are no errors in the browser console

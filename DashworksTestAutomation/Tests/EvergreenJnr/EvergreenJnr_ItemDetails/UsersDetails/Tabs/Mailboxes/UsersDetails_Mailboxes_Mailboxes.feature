@@ -1,5 +1,5 @@
-﻿Feature: Mailboxes
-	Runs Mailboxes related tests
+﻿Feature: UsersDetails_Mailboxes_Mailboxes
+	Runs related tests for Mailboxes tab
 
 Background: Pre-Conditions
 	Given User is logged in to the Evergreen

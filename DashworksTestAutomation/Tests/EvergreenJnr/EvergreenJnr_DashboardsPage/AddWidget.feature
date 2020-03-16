@@ -157,11 +157,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	And Dashboard with 'Dashboard for DAS17539' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	And User creates new Widget
 	| WidgetType | Title                 | List              | SplitBy          | AggregateFunction | OrderBy              |
 	| Table      | DAS-TestList_DAS17539 | TestList_DAS17539 | Mailbox Platform | Count             | Mailbox Platform ASC |
-	Then Widget Preview is displayed to the user
-	And 'This widget refers to a list which has errors' alert is displayed in Preview
+	Then User sees 'This widget refers to list TestList_DAS17539 which has errors' text in warning message of 'DAS-TestList_DAS17539' widget on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18151 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedIfUserClicksFastOnTheCreateButtonSeveralTimes
