@@ -439,7 +439,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             textbox.Click();
             textbox.Clear();
             textbox.SendKeys(optionName);
-            Verify.IsTrue(page.IsIconDisplayedFromDropdownOptions(icon), $"{icon} is not displayed for {optionName}");
+            Verify.IsTrue(page.IsIconDisplayedFromDropdownOptions(icon), $"'{icon}' is not displayed for '{optionName}'");
         }
 
         #endregion
