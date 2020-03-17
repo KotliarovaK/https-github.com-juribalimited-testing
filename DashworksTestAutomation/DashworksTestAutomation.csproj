@@ -1723,6 +1723,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDetails_Projects_DeviceProjectSummary.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\UsersDetails_Projects_EvergreenDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDetails_Projects_EvergreenDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\TopBar.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3042,6 +3047,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UsersDetails_Projects_DeviceProjectSummary.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\UsersDetails_Projects_EvergreenDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UsersDetails_Projects_EvergreenDetails.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TopBar.feature.cs</LastGenOutput>
@@ -3295,9 +3304,7 @@
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\MSI\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\ActiveDirectory\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Specification\" />
-    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\" />
     <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Users\" />
-    <Folder Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

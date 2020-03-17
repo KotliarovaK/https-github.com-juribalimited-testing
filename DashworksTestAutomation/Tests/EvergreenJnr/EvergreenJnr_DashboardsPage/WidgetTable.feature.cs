@@ -2786,6 +2786,117 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetT" +
+            "able")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS20227")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetTable()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetTableInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetTableInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetT" +
+                    "able", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS20227",
+                        "Cleanup"});
+#line 596
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 597
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 598
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table58.AddRow(new string[] {
+                        "Me"});
+#line 599
+ testRunner.When("User add \"Windows7Mi: Pre-Migration \\ VDI Only Task (Owner)\" filter where type is" +
+                    " \"Does not equal\" with added column and following checkboxes:", ((string)(null)), table58, "When ");
+#line 602
+ testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 603
+ testRunner.When("User create dynamic list with \"Devices_List_DAS20227\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 604
+ testRunner.When("Dashboard with \'DAS20227_Dashboard\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 605
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 606
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "OrderBy"});
+            table59.AddRow(new string[] {
+                        "Table",
+                        "DAS20227_Widget",
+                        "Devices_List_DAS20227",
+                        "Windows7Mi: Pre-Migration \\ VDI Only Task (Owner)",
+                        "Count",
+                        "Windows7Mi: Pre-Migration \\ VDI Only Task (Owner) ASC"});
+#line 607
+ testRunner.When("User adds new Widget", ((string)(null)), table59, "When ");
+#line 610
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 611
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 612
+ testRunner.Then("\'DAS20227_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                        "headers"});
+            table60.AddRow(new string[] {
+                        "Empty"});
+            table60.AddRow(new string[] {
+                        "Administrator"});
+            table60.AddRow(new string[] {
+                        "Joanne Gall"});
+            table60.AddRow(new string[] {
+                        "Unassigned"});
+#line 613
+ testRunner.Then("Table columns of \'DAS20227_Widget\' widget placed in the next order:", ((string)(null)), table60, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
