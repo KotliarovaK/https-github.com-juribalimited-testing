@@ -1723,6 +1723,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDetails_Projects_DeviceProjectSummary.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\UsersDetails_Projects_EvergreenDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDetails_Projects_EvergreenDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\TopBar.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3041,6 +3046,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\UsersDetails_Projects_DeviceProjectSummary.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UsersDetails_Projects_DeviceProjectSummary.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Projects\UsersDetails_Projects_EvergreenDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UsersDetails_Projects_EvergreenDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\TopBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
