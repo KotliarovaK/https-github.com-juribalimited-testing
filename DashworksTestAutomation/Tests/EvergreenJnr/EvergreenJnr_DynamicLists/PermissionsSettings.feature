@@ -43,7 +43,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
 	When User selects 'Admin' in the 'Permission' dropdown
-	When User clicks 'person_add' icon
+	When User clicks 'ADD USER' button
 	When User selects 'Automation Admin 1' in the 'Owner' dropdown
 	When User clicks 'ACCEPT' button on inline tip banner
 	And User clicks the List Details button
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	Then "List_DAS16228" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'ADD TEAM' button
+	When User clicks 'group_add' icon
 	When User selects 'Team 1' option from 'Team' autocomplete
 	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 

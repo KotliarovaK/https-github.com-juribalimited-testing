@@ -35,7 +35,7 @@ Examples:
 	| Mailboxes    | Email Address |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
-Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllLink
+Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllDevicesOrAllUsersLink
 	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to the "<AllItems>" list
 	Then grid headers are displayed in the following order
@@ -44,14 +44,33 @@ Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAll
 	| <Column2>  |
 	| <Column3>  |
 	| <Column4>  |
-	| <Column5>  |
 
 Examples: 
-	| ListName     | AllItems         | Column1       | Column2          | Column3          | Column4            | Column5            |
-	| Devices      | All Devices      | Hostname      | Device Type      | Operating System | Owner Display Name |                    |
-	| Users        | All Users        | Username      | Domain           | Display Name     | Distinguished Name |                    |
-	| Applications | All Applications | Application   | Vendor           | Version          |                    |                    |
-	| Mailboxes    | All Mailboxes    | Email Address | Mailbox Platform | Mail Server      | Mailbox Type       | Owner Display Name |
+	| ListName     | AllItems         | Column1       | Column2          | Column3          | Column4            |
+	| Devices      | All Devices      | Hostname      | Device Type      | Operating System | Owner Display Name |
+	| Users        | All Users        | Username      | Domain           | Display Name     | Distinguished Name |
+
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
+Scenario: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllApplicationsLink
+	When User clicks 'Applications' on the left-hand menu
+	And User navigates to the "All Applications" list
+	Then grid headers are displayed in the following order
+	| ColumnName  |
+	| Application |
+	| Vendor      |
+	| Version     |
+
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
+Scenario: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllMailboxesLink
+	When User clicks 'Mailboxes' on the left-hand menu
+	And User navigates to the "All Mailboxes" list
+	Then grid headers are displayed in the following order
+	| ColumnName         |
+	| Email Address      |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11988 @DAS10972
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns

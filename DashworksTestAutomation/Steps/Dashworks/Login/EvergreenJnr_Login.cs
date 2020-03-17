@@ -126,12 +126,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
                     loginPage.UserNameTextBox.SendKeys(row["Username"]);
                     loginPage.PasswordTextBox.SendKeys(row["Password"]);
                     loginPage.LoginButton.Click();
+                    UserDto user = new UserDto();
+                    user.Username = row["Username"];
+                    user.Password = row["Password"];
+                    UsedUsers.Value.Add(user);
                 }
                 else
                 {
                     loginPage.SplashUserNameTextBox.SendKeys(row["Username"]);
                     loginPage.SplashPasswordTextBox.SendKeys(row["Password"]);
                     loginPage.SplashLoginButton.Click();
+                    UserDto user = new UserDto();
+                    user.Username = row["Username"];
+                    user.Password = row["Password"];
+                    UsedUsers.Value.Add(user);
                 }
         }
 
