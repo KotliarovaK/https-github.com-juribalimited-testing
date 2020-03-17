@@ -597,8 +597,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplay
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
 	When User add "Windows7Mi: Pre-Migration \ VDI Only Task (Owner)" filter where type is "Does not equal" with added column and following checkboxes:
-    | SelectedCheckboxes |
-    | Me                 |
+	| SelectedCheckboxes |
+	| Me                 |
 	When User clicks Save button on the list panel
 	When User create dynamic list with "Devices_List_DAS20227" name on "Devices" page
 	When Dashboard with 'DAS20227_Dashboard' name created via API and opened
