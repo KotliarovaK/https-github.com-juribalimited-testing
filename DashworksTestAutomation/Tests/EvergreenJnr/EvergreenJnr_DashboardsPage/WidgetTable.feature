@@ -591,3 +591,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenClicki
 	Then Filters panel is displayed to the user
 	When User clicks Filter Expression icon in Filter Panel
 	Then "(2004: In Scope = true AND 2004: In Scope = true) OR (2004: Readiness = Empty, Green or Amber AND 2004: In Scope = true)" text is displayed in filter container
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20227 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplayedOnWidgetTable
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Windows7Mi: Pre-Migration \ VDI Only Task (Owner)" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Me                 |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "Devices_List_DAS20227" name on "Devices" page
+	When Dashboard with 'DAS20227_Dashboard' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title           | List                  | SplitBy                                           | AggregateFunction | OrderBy                                               |
+	| Table      | DAS20227_Widget | Devices_List_DAS20227 | Windows7Mi: Pre-Migration \ VDI Only Task (Owner) | Count             | Windows7Mi: Pre-Migration \ VDI Only Task (Owner) ASC |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button
+	Then 'DAS20227_Widget' Widget is displayed to the user
+	Then Table columns of 'DAS20227_Widget' widget placed in the next order:
+	| headers       |
+	| Empty         |
+	| Administrator |
+	| Joanne Gall   |
+	| Unassigned    |
