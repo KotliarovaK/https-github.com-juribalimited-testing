@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
         [NUnit.Framework.CategoryAttribute("DAS13632")]
         [NUnit.Framework.CategoryAttribute("DAS13602")]
         [NUnit.Framework.CategoryAttribute("DAS17123")]
+        [NUnit.Framework.CategoryAttribute("Teams")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeam()
         {
@@ -127,6 +128,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
                         "DAS13632",
                         "DAS13602",
                         "DAS17123",
+                        "Teams",
                         "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
