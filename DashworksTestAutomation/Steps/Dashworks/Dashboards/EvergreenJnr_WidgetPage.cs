@@ -77,6 +77,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 //baseActionItem.SelectDropdown(row["SplitBy"], "SplitBy");
             }
 
+            if (row.ContainsKey("CategoriseBy") && !string.IsNullOrEmpty(row["CategoriseBy"]))
+            {
+                baseActionItem.SelectDropdown(row["CategoriseBy"], "CategoriseBy");
+            }
+
+            if (row.ContainsKey("DisplayType") && !string.IsNullOrEmpty(row["DisplayType"]))
+            {
+                baseActionItem.SelectDropdown(row["DisplayType"], "DisplayType");
+            }
+
             if (row.ContainsKey("AggregateFunction") && !string.IsNullOrEmpty(row["AggregateFunction"]))
             {
                 Thread.Sleep(500);

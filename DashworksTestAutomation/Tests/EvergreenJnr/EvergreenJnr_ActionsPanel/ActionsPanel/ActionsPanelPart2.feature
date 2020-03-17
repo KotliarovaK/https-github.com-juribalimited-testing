@@ -81,8 +81,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMai
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' option from 'Project or Evergreen' autocomplete
-	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -101,8 +100,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	| $231000-3AC04R8AR431 |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' option from 'Project or Evergreen' autocomplete
-	Then 'Project' autocomplete contains following options:
+	Then 'Project or Evergreen' autocomplete contains following options:
 	| Options                                  |
 	| Barry's User Project                     |
 	| Project with associated broken list      |
