@@ -439,8 +439,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             textbox.Click();
             textbox.Clear();
             textbox.SendKeys(optionName);
-            _driver.WaitForElementToBeDisplayed(page.DropdownOptionsIcon);
-            Verify.IsTrue(page.GetIconFromDropdownOptions(icon, optionName), $"{icon} is not displayed for {optionName}");
+            Verify.IsTrue(page.IsIconDisplayedFromDropdownOptions(icon), $"{icon} is not displayed for {optionName}");
         }
 
         #endregion

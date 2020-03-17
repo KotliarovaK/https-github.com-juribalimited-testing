@@ -546,7 +546,6 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
 
             page.BulkUpdate.SetCheckboxState(_taskPropertiesDetailsDto.BulkUpdate);
             page.Automation.SetCheckboxState(_taskPropertiesDetailsDto.Automation);
-            //page.Automation.SetCheckboxState(_taskPropertiesDetailsDto.Automation);
 
             page.UpdateTaskButton.Click();
         }

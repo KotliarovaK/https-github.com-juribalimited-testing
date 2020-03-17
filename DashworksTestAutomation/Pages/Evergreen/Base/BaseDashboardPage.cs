@@ -59,9 +59,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Open calendar']")]
         public IWebElement DatePickerIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-option//span//i")]
-        public IWebElement DropdownOptionsIcon { get; set; }
-
         private const string MenuPanelSelector = ".//div[@class='mat-menu-content']";
         [FindsBy(How = How.XPath, Using = MenuPanelSelector)]
         public IWebElement MenuPanelElement { get; set; }
@@ -874,11 +871,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElements(By.XPath($"{DropdownOptionsSelector(withoutSelected)}/preceding-sibling::i[contains(@class, 'material-icons')]"));
         }
 
-        public bool GetIconFromDropdownOptions(string iconName, string optionName)
+        public bool IsIconDisplayedFromDropdownOptions(string iconName, bool withoutSelected = false)
         {
-            var selector =
-                By.XPath(
-                    $".//div[@class='option-with-icon']//i[contains(@class, '{iconName}')]/parent::div//span[text()='{optionName}']");
+            var selector = By.XPath($"{DropdownOptionsSelector(withoutSelected)}/parent::div//i[contains(@class, '{iconName}')]");
             return Driver.IsElementDisplayed(selector);
         }
 

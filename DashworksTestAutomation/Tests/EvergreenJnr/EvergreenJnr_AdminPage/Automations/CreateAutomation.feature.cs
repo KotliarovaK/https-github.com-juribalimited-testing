@@ -531,20 +531,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 103
- testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 104
- testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'All Users\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 105
- testRunner.When("User clicks \'CREATE AUTOMATION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on \'Username\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 106
- testRunner.Then("\'Create Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User create dynamic list with \"17241_List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
- testRunner.Then("\'setting\' icon displayed for \'All Devices\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"17241_List\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 108
- testRunner.Then("\'hide\' icon displayed for \'2004 Stages\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 109
+ testRunner.When("User navigates to the \'Automations\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 110
+ testRunner.When("User clicks \'CREATE AUTOMATION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 111
+ testRunner.Then("\'Create Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 112
+ testRunner.Then("\'setting\' icon displayed for \'All Devices\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 113
+ testRunner.Then("\'hide\' icon displayed for \'2004 Stages\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 114
  testRunner.Then("\'visibility\' icon displayed for \'Migration Type Capacity\' option from \'Scope\' aut" +
                     "ocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 115
+ testRunner.Then("\'visibility_off\' icon displayed for \'17241_List\' option from \'Scope\' autocomplete" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
