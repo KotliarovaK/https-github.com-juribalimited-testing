@@ -156,10 +156,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	And Projects created by User are removed via API
 	And Dashboard with 'Dashboard for DAS17539' name created via API and opened
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	And User clicks 'ADD WIDGET' button
+	When User adds new Widget
 	| WidgetType | Title                 | List              | SplitBy          | AggregateFunction | OrderBy              |
 	| Table      | DAS-TestList_DAS17539 | TestList_DAS17539 | Mailbox Platform | Count             | Mailbox Platform ASC |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button
 	Then User sees 'This widget refers to list TestList_DAS17539 which has errors' text in warning message of 'DAS-TestList_DAS17539' widget on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18151 @Cleanup

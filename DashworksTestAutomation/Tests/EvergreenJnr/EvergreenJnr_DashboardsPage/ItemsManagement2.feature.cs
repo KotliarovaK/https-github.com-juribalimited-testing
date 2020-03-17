@@ -1455,6 +1455,189 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
+            "ype")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DAS20070")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.TestCaseAttribute("DashboardDAS20070_1", "Column", "DAS20070_1", "Pie", null)]
+        [NUnit.Framework.TestCaseAttribute("DashboardDAS20070_2", "Pie", "DAS20070_2", "Column", null)]
+        public virtual void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetType(string dashboardName, string widgetType, string widgetName, string updatedType, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeInternal(dashboardName,widgetType,widgetName,updatedType,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeInternal(string dashboardName, string widgetType, string widgetName, string updatedType, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "EvergreenJnr_DashboardsPage",
+                    "DAS20070",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
+                    "ype", null, @__tags);
+#line 293
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 294
+ testRunner.When(string.Format("Dashboard with \'{0}\' name created via API and opened", dashboardName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 295
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 296
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "OrderBy"});
+            table24.AddRow(new string[] {
+                        string.Format("{0}", widgetType),
+                        string.Format("{0}", widgetName),
+                        "All Devices",
+                        "Hostname",
+                        "Count",
+                        "Hostname ASC"});
+#line 297
+ testRunner.When("User creates new Widget", ((string)(null)), table24, "When ");
+#line 300
+ testRunner.Then(string.Format("\'{0}\' Widget is displayed to the user", widgetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 301
+ testRunner.When(string.Format("User clicks Ellipsis menu for \'{0}\' Widget on Dashboards page", widgetName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 302
+ testRunner.When("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 303
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 304
+ testRunner.When(string.Format("User selects \'{0}\' in the \'Widget Type\' dropdown", updatedType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 305
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
+            "ypeIfAllFieldsAreFilled")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DAS20070")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilled()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilledInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilledInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
+                    "ypeIfAllFieldsAreFilled", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DAS20070",
+                        "Cleanup"});
+#line 313
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 314
+ testRunner.When("Dashboard with \'DashboardDAS20070_3\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 315
+ testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 316
+ testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "CategoriseBy",
+                        "DisplayType",
+                        "AggregateFunction",
+                        "OrderBy"});
+            table25.AddRow(new string[] {
+                        "Column",
+                        "DAS20070_3",
+                        "All Devices",
+                        "Hostname",
+                        "Device Type",
+                        "Clustered",
+                        "Count",
+                        "Hostname ASC"});
+#line 317
+ testRunner.When("User creates new Widget", ((string)(null)), table25, "When ");
+#line 320
+ testRunner.Then("\'DAS20070_3\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 321
+ testRunner.When("User clicks Ellipsis menu for \'DAS20070_3\' Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 322
+ testRunner.When("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 323
+ testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 324
+ testRunner.When("User selects \'Stacked\' in the \'Display Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 325
+ testRunner.Then("\'UPDATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
