@@ -455,17 +455,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRe
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS20282 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatListGridIsDisplayedAfterRemovingMissingColumn
 	When Project created via API and opened
-	| ProjectName  | Scope       | ProjectTemplate | Mode               |
-	| 20282        | All Devices | None            | Standalone Project |
-    When User clicks 'Devices' on the left-hand menu
-    Then 'All Devices' list should be displayed to the user
-    When User clicks the Columns button
-    Then Columns panel is displayed to the user
-    When ColumnName is entered into the search box and the selection is clicked
-    | ColumnName                   |
+	| ProjectName | Scope       | ProjectTemplate | Mode               |
+	| 20282       | All Devices | None            | Standalone Project |
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                   |
 	| 20282: Application Readiness |
-    Then ColumnName is added to the list
-    | ColumnName                   |
+	Then ColumnName is added to the list
+	| ColumnName                   |
 	| 20282: Application Readiness |
 	When User create dynamic list with "DAS20282_List" name on "Devices" page
 	Then "DAS20282_List" list is displayed to user
@@ -474,6 +474,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListGridIsDisplayedAfterRemovingMiss
 	And User navigates to the "DAS20282_List" list
 	Then "Fix the errors in this list before editing it, this list contains a missing column" message is displayed in the lists panel
 	When User clicks the Columns button
-    Then Columns panel is displayed to the user
+	Then Columns panel is displayed to the user
 	When User removes "[Missing Column]" column by Column panel
 	Then 'DAS20282_List' list should be displayed to the user
