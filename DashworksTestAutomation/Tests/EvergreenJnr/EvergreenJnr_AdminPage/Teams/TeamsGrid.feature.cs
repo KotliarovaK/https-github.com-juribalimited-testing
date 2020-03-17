@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeam")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
@@ -89,19 +89,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
         [NUnit.Framework.CategoryAttribute("DAS13632")]
         [NUnit.Framework.CategoryAttribute("DAS13602")]
         [NUnit.Framework.CategoryAttribute("DAS17123")]
-        [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
-        [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage()
+        public virtual void EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeam()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPageInternal();
+                    this.EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeamInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -120,9 +116,111 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
             }
         }
 
-        private void EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPageInternal()
+        private void EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeamInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckMessageWhenDeletingTeam", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS13000",
+                        "DAS13632",
+                        "DAS13602",
+                        "DAS17123",
+                        "Cleanup"});
+#line 9
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "TeamName",
+                        "Description",
+                        "IsDefault"});
+            table1.AddRow(new string[] {
+                        "NewTeam_Test",
+                        "12894587454",
+                        "false"});
+#line 10
+ testRunner.When("User creates new Team via api", ((string)(null)), table1, "When ");
+#line 13
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+ testRunner.When("User navigates to the \'Teams\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.Then("Page with \'Teams\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+ testRunner.When("User enters \"NewTeam_Test\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+ testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+ testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.Then("\'The selected team will be permanently deleted, users which are members of this t" +
+                    "eam will not be deleted, do you want to proceed?\' text is displayed on inline ti" +
+                    "p banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+ testRunner.When("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.Then("\'The selected team has been deleted, and their buckets reassigned\' text is displa" +
+                    "yed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatDefaultTeamUpdatesToFalseAfterCreatingNewDefault" +
+            "Team")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS13000")]
+        [NUnit.Framework.CategoryAttribute("DAS13632")]
+        [NUnit.Framework.CategoryAttribute("DAS13602")]
+        [NUnit.Framework.CategoryAttribute("DAS17123")]
+        [NUnit.Framework.CategoryAttribute("Teams")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
+        [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultTeamUpdatesToFalseAfterCreatingNewDefaultTeam()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_ChecksThatDefaultTeamUpdatesToFalseAfterCreatingNewDefaultTeamInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_ChecksThatDefaultTeamUpdatesToFalseAfterCreatingNewDefaultTeamInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatDefaultTeamUpdatesToFalseAfterCreatingNewDefault" +
+                    "Team", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
@@ -135,69 +233,53 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Team
                         "Do_Not_Run_With_Teams",
                         "Set_Default_Team",
                         "Do_Not_Run_With_Buckets",
+                        "Do_Not_Run_With_Projects",
                         "Cleanup"});
-#line 11
+#line 26
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "TeamName",
-                        "Description",
-                        "IsDefault"});
-            table1.AddRow(new string[] {
-                        "testDASTeam_default",
-                        "test_team",
-                        "true"});
-#line 12
- testRunner.When("User creates new Team via api", ((string)(null)), table1, "When ");
-#line 15
- testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
- testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 17
- testRunner.When("User navigates to the \'Teams\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 18
- testRunner.Then("Page with \'Teams\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 19
- testRunner.When("User enters \"testDASTeam_default\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
- testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
- testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
- testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
- testRunner.Then("\'You cannot delete the default team\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 24
- testRunner.When("User close message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "TeamName",
                         "Description",
                         "IsDefault"});
             table2.AddRow(new string[] {
-                        "NewDefaulTeam_Test",
+                        "das13000test_default",
+                        "test_team",
+                        "true"});
+#line 27
+ testRunner.When("User creates new Team via api", ((string)(null)), table2, "When ");
+#line 30
+ testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
+ testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 32
+ testRunner.When("User navigates to the \'Teams\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+ testRunner.Then("Page with \'Teams\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 34
+ testRunner.When("User enters \"das13000test_default\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.Then("\'TRUE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "TeamName",
+                        "Description",
+                        "IsDefault"});
+            table3.AddRow(new string[] {
+                        "das15000test_default2",
                         "12894587454",
                         "true"});
-#line 25
- testRunner.When("User creates new Team via api", ((string)(null)), table2, "When ");
-#line 28
- testRunner.And("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.And("User enters \"testDASTeam_default\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
- testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
- testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
- testRunner.When("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 33
- testRunner.When("User clicks \'DELETE\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 34
- testRunner.Then("\'The selected team has been deleted, and their buckets reassigned\' text is displa" +
-                    "yed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 36
+ testRunner.When("User creates new Team via api", ((string)(null)), table3, "When ");
+#line 39
+ testRunner.When("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.When("User enters \"das13000test_default\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 41
+ testRunner.Then("\'FALSE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
