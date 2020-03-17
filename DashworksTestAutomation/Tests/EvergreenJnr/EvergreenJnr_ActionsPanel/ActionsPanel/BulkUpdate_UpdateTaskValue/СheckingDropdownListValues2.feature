@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	When User enters '999999' text to 'Value' textbox
 	Then '100000' content is displayed in 'Value' textbox
 	When User enters '-5' text to 'Value' textbox
-	Then '1' content is displayed in 'Value' textbox
+	Then '0' content is displayed in 'Value' textbox
 	Then following Values are displayed in the 'Before or After' dropdown:
 	| Options              |
 	| Before current value |
