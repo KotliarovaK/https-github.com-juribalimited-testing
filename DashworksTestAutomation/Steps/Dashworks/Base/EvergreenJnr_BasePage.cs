@@ -431,18 +431,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
-        [Then(@"appropriate icon displayed for option from '(.*)' autocomplete")]
-        public void ThenAppropriateIconDisplayedForOptionFromAutocomplete(string placeholder, Table table)
+        [Then(@"'(.*)' icon displayed for '(.*)' option from '(.*)' autocomplete")]
+        public void ThenIconDisplayedForOptionFromAutocomplete(string icon, string optionName, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            foreach (string value in table.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault()))
-            {
-                var textbox = page.GetTextbox(placeholder);
-                textbox.Click();
-                textbox.Clear();
-                textbox.SendKeys(table.Rows.First()["optionName"]);
-                Verify.That(page.OptionIcon.GetAttribute("class").Contains(table.Rows.Last()["icon"]), Is.True, $"{table.Rows.Last()["icon"]} is not displayed for option" );
-            }
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Click();
+            textbox.Clear();
+            textbox.SendKeys(optionName);
+            _driver.WaitForElementToBeDisplayed(page.OptionIcon);
+            Verify.IsTrue(page.GetIconFromDropdownOptions(icon, optionName), $"{icon} is not displayed for {optionName}");
         }
 
         #endregion

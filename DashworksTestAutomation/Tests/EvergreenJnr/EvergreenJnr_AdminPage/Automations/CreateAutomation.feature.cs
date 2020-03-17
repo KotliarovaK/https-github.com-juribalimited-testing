@@ -380,6 +380,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17241")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckScopeListsIconsForAutomations()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckScopeListsIconsForAutomations", null, new string[] {
@@ -388,7 +389,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17241",
-                        "Cleanup"});
+                        "Cleanup",
+                        "Wormhole"});
 #line 102
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -403,20 +405,12 @@ this.FeatureBackground();
 #line 106
  testRunner.Then("\'Create Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 107
- testRunner.When("User enters \'DAS17241_Automation\' text to \'Automation Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'setting\' icon displayed for \'All Devices\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 108
- testRunner.When("User enters \'DAS17241\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "icon",
-                        "optionName"});
-            table3.AddRow(new string[] {
-                        "setting",
-                        "All Devices"});
+ testRunner.Then("\'hide\' icon displayed for \'2004 Stages\' option from \'Scope\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 109
- testRunner.Then("appropriate icon displayed for option from \'Scope\' autocomplete", ((string)(null)), table3, "Then ");
-#line 112
- testRunner.Then("Image item from \"Name\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'visibility\' icon displayed for \'Migration Type Capacity\' option from \'Scope\' aut" +
+                    "ocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -426,9 +426,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForReadOnlyInAuto
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	Then 'This task is read only for automation' error message is displayed for 'Task' field
+	Then 'This task is read-only for automations' error message is displayed for 'Task' field
 	Then 'UPDATE' button is disabled
-	When User selects '18669_Project' option from 'Project' autocomplete
+	When User selects '18669_Project1' option from 'Project' autocomplete
 	When User selects '18669_Stage \ 18669_Task2' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	And User enters '1 Oct 2019' text to 'Date' datepicker

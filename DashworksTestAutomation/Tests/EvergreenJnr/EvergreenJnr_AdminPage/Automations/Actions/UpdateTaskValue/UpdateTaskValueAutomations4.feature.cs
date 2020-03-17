@@ -1339,12 +1339,12 @@ this.FeatureBackground();
 #line 428
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 429
- testRunner.Then("\'This task is read only for automation\' error message is displayed for \'Task\' fie" +
-                    "ld", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This task is read-only for automations\' error message is displayed for \'Task\' fi" +
+                    "eld", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 430
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 431
- testRunner.When("User selects \'18669_Project\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'18669_Project1\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 432
  testRunner.When("User selects \'18669_Stage \\ 18669_Task2\' option from \'Task\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 433

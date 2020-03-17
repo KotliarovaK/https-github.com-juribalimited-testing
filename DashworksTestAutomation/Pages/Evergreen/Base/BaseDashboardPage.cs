@@ -874,6 +874,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return Driver.FindElements(By.XPath($"{DropdownOptionsSelector(withoutSelected)}/preceding-sibling::i[contains(@class, 'material-icons')]"));
         }
 
+        public bool GetIconFromDropdownOptions(string iconName, string optionName)
+        {
+            var selector =
+                By.XPath(
+                    $".//div[@class='option-with-icon']//i[contains(@class, '{iconName}')]/parent::div//span[text()='{optionName}']");
+            return Driver.IsElementDisplayed(selector);
+        }
+
         public bool IsDropdownOpened(bool withoutSelected = false)
         {
             return Driver.FindElements(By.XPath(DropdownOptionsSelector(withoutSelected))).Any();
