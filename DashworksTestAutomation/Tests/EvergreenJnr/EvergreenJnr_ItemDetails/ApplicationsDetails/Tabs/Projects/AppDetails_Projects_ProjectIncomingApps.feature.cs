@@ -158,7 +158,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table2.AddRow(new string[] {
-                        "Empty"});
+                        "[Default (Application)]"});
 #line 21
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Path\' col" +
                     "umn:", ((string)(null)), table2, "Then ");
