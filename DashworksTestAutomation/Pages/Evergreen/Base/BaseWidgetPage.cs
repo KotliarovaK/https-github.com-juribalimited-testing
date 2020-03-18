@@ -79,5 +79,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             Driver.WaitForDataLoading();
             return GetWidget(widgetName).FindElements(legend);
         }
+
+        public IWebElement GetWidgetDragAndDropElement(string widgetName)
+        {
+            var dragAndDropElement = By.XPath(".//button[contains(@class,'drag-drop')]");
+            return GetWidget(widgetName).FindElement(dragAndDropElement);
+        }
     }
 }
