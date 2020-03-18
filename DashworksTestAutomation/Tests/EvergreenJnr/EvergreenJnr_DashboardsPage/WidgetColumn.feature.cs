@@ -460,7 +460,7 @@ this.FeatureBackground();
 #line 100
  testRunner.Then("Line X labels of \'ColumnWidget\' column widget is displayed in following order:", ((string)(null)), table10, "Then ");
 #line 104
- testRunner.Then("User sees color code \'ColumnWidget\' on the \'rgb(30, 45, 114)\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User sees color code \'rgb(30, 45, 114)\' on the \'ColumnWidget\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

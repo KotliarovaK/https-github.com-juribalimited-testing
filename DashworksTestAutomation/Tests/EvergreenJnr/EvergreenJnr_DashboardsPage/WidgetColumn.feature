@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	| ColumnName |
 	| Other      |
 	| OS X 10.5  |
-	Then User sees color code 'ColumnWidget' on the 'rgb(30, 45, 114)' widget
+	Then User sees color code 'rgb(30, 45, 114)' on the 'ColumnWidget' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited

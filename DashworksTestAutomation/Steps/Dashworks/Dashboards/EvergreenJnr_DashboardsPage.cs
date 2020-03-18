@@ -863,7 +863,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees color code '(.*)' on the '(.*)' widget")]
-        public void ThenNextColorDisplayedForWidget(string widget, string colorCode)
+        public void ThenNextColorDisplayedForWidget(string colorCode, string widget)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
