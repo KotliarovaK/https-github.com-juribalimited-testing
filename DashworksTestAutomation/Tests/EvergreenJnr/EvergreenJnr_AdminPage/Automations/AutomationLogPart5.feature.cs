@@ -207,7 +207,7 @@ this.FeatureBackground();
 #line 38
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2, "When ");
 #line 43
- testRunner.Then("\'Started\' content is displayed in the \'zUserAutom: Stage 3 \\ DDL Slot Task\' colum" +
+ testRunner.Then("\'STARTED\' content is displayed in the \'zUserAutom: Stage 3 \\ DDL Slot Task\' colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 44
  testRunner.Then("\'\' content is displayed in the \'zUserAutom: Stage 3 \\ DDL Slot Task (Date)\' colum" +

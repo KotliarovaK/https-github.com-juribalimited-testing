@@ -271,13 +271,13 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table8.AddRow(new string[] {
-                        "Not Applicable"});
+                        "NOT APPLICABLE"});
             table8.AddRow(new string[] {
-                        "Started"});
+                        "STARTED"});
             table8.AddRow(new string[] {
-                        "Failed"});
+                        "FAILED"});
             table8.AddRow(new string[] {
-                        "Complete"});
+                        "COMPLETE"});
 #line 48
  testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table8, "Then ");
 #line hidden
