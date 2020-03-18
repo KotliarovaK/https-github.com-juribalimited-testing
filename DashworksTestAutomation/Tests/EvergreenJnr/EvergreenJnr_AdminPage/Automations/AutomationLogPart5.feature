@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	| zUserAutom: Stage 3 \ DDL Slot Task        |
 	| zUserAutom: Stage 3 \ DDL Slot Task (Date) |
 	| zUserAutom: Stage 3 \ DDL Slot Task (Slot) |
-	Then 'Started' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task' column
+	Then 'STARTED' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task' column
 	Then '' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task (Date)' column
 	Then '' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task (Slot)' column
 

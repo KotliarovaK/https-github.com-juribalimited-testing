@@ -47,10 +47,10 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	Then Empty value is not displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
-	| Not Applicable |
-	| Started        |
-	| Failed         |
-	| Complete       |
+	| NOT APPLICABLE |
+	| STARTED        |
+	| FAILED         |
+	| COMPLETE       |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrderForUsers
