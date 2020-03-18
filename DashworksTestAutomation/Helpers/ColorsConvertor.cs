@@ -57,8 +57,11 @@ namespace DashworksTestAutomation.Helpers
             {
                case "green":
                    return "#7ebd38";
-                
-               default:
+
+               case "rgb(30, 45, 114)":
+                   return "#1E2D72";
+
+                default:
                    throw new Exception($"{colorName} color not found in convertor");
             }
         }

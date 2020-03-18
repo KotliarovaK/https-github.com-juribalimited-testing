@@ -102,6 +102,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             Driver.FindElement(By.XPath($".//mat-option[{index}]")).Click();
         }
 
+        public void ClickColorSchemeByColorCode(string code)
+        {
+            ColorSchemePartByCode(code).FindElement(By.XPath("./parent::span")).Click();
+        }
+
+        public IWebElement ColorSchemePartByCode(string code)
+        {
+            return Driver.FindElements(By.XPath($".//mat-option/span/div")).First(x => x.GetAttribute("style").Contains(code));
+        }
+
         public bool GetCheckboxByName(string checkboxName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox"));

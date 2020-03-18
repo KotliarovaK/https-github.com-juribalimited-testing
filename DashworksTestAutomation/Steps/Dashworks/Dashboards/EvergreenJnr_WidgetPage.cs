@@ -203,6 +203,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User selects the Colour Scheme by color code '(.*)'")]
+        public void SetColorSchemeByColorCode(string code)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+
+            createWidgetElement.ColorScheme.Click();
+            _driver.WaitForElementToBeDisplayed(createWidgetElement.ColorSchemePartByCode(code));
+
+            createWidgetElement.ClickColorSchemeByColorCode(code);
+        }
+
         [When(@"User selects '(.*)' checkbox on the Create Widget page")]
         public void WhenUserSelectsCheckboxOnTheCreateWidgetPage(string checkboxName)
         {

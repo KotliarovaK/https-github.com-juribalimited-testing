@@ -1176,6 +1176,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersFiltersAndColumns.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality7.feature.cs">
+      <DependentUpon>AssociationsFunctionality7.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality6.feature.cs">
       <DependentUpon>AssociationsFunctionality6.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2612,6 +2617,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_API_FiltersAndColumns\UsersFiltersAndColumns.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UsersFiltersAndColumns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality7.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsFunctionality7.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality6.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
