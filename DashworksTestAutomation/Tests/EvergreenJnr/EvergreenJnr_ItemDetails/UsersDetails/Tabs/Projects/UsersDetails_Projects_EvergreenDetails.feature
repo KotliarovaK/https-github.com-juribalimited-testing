@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #AnnI 3/18/20: This is implemented only for 'Wormhole'
-@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20323 @Cleanup @Wormhole
+@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20323 @DAS20382 @Cleanup @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDetailsPageIfEvergreenBucketChangedByAdminUser
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDeta
 	When User clicks 'MOVE' button on popup
 	When User switches to previous tab
 	When User clicks 'MOVE' button on popup
-	Then 'Something has gone wrong' text is displayed on inline error banner
+	Then 'You no longer has the permission to edit this User' text is displayed on inline error banner
 	Then following content is displayed on the Details Page
 	| Title            | Value      |
 	| Evergreen Bucket | Birmingham |
