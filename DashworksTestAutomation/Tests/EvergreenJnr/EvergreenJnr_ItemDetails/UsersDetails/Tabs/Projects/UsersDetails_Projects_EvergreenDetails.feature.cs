@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS20323")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDetailsPageIfEvergreenBucketChangedByAdminUser()
         {
             System.Exception lastException = null;
@@ -123,13 +124,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
                         "EvergreenJnr_ItemDetails",
                         "ProjectDetailsTab",
                         "DAS20323",
-                        "Cleanup"});
-#line 9
+                        "Cleanup",
+                        "Wormhole"});
+#line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 10
+#line 11
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -138,15 +140,15 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "TestAnalysisEditor",
                         "qa111111"});
-#line 11
+#line 12
   testRunner.When("User is logged in to the Evergreen as", ((string)(null)), table1, "When ");
-#line 14
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
- testRunner.When("User navigates to the \'User\' details page for \'00BDBAEA57334C7C8F4\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
- testRunner.Then("Details page for \'00BDBAEA57334C7C8F4\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'User\' details page for \'00BDBAEA57334C7C8F4\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
+ testRunner.Then("Details page for \'00BDBAEA57334C7C8F4\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -155,37 +157,36 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Evergreen Bucket",
                         "Evergreen"});
-#line 18
+#line 19
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2, "Then ");
-#line 21
- testRunner.When("User clicks on edit button for \'Evergreen Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.When("User selects \'Manchester\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on edit button for \'Evergreen Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Manchester\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
  testRunner.Then("\'The selected objects will be moved to Manchester\' text is displayed on inline ti" +
                     "p banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
- testRunner.When("User navigates to \'evergreen/#/user/87443/projects/evergreen\' URL in a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.When("User clicks on edit button for \'Evergreen Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to \'evergreen/#/user/87443/projects/evergreen\' URL in a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.When("User selects \'Birmingham\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks on edit button for \'Evergreen Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Birmingham\' option from \'Move Bucket\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
  testRunner.Then("\'The selected objects will be moved to Birmingham, you will no longer be able to " +
                     "edit these objects\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 30
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
- testRunner.When("User switches to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
  testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.When("User switches to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
- testRunner.Then("\'You are not authorized to view this page, speak to your Dashworks administrator\'" +
-                    " text is displayed on inline error banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.Then("\'Something has gone wrong\' text is displayed on inline error banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
@@ -193,7 +194,7 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "Evergreen Bucket",
                         "Birmingham"});
-#line 34
+#line 35
  testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();

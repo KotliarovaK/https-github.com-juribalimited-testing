@@ -5,7 +5,8 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20323 @Cleanup
+#AnnI 3/18/20: This is implemented only for 'Wormhole'
+@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS20323 @Cleanup @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDetailsPageIfEvergreenBucketChangedByAdminUser
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
@@ -30,7 +31,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatErrorMessageIsDisplayedOnTheObjectDeta
 	When User clicks 'MOVE' button on popup
 	When User switches to previous tab
 	When User clicks 'MOVE' button on popup
-	Then 'You are not authorized to view this page, speak to your Dashworks administrator' text is displayed on inline error banner
+	Then 'Something has gone wrong' text is displayed on inline error banner
 	Then following content is displayed on the Details Page
 	| Title            | Value      |
 	| Evergreen Bucket | Birmingham |
