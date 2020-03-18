@@ -431,6 +431,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             page.BodyContainer.Click();
         }
 
+        [Then(@"'(.*)' icon displayed for '(.*)' option from '(.*)' autocomplete")]
+        public void ThenIconDisplayedForOptionFromAutocomplete(string icon, string optionName, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var textbox = page.GetTextbox(placeholder);
+            textbox.Click();
+            textbox.Clear();
+            textbox.SendKeys(optionName);
+            Verify.IsTrue(page.IsIconDisplayedFromDropdownOptions(icon), $"'{icon}' is not displayed for '{optionName}'");
+        }
+
         #endregion
 
         #region Textbox

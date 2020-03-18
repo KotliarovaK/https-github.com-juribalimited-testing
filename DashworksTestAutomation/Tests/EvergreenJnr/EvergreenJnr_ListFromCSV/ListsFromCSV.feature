@@ -23,7 +23,8 @@ Examples:
 	| Applications | All Applications | Import Applications from CSV | Application key |
 	| Mailboxes    | All Mailboxes    | Import Mailboxes from CSV    | Mailbox key     |
 
-@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS16616 @DAS16585 @DAS18336 @Void
+#Yurii T. 17Mar2020: added not_ready tag because DAS-20329 and current releas is void
+@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS16616 @DAS16585 @DAS18336 @Not_Ready
 Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -46,7 +47,8 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	When User clicks 'YES' button on popup
 	Then 'All Devices' list should be displayed to the user
 
-@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS18451 @Void
+#Yurii T. 17Mar2020: added not_ready tag because DAS-20329 and current releas is void
+@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS18451 @Not_Ready
 Scenario: EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFromCSV
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user

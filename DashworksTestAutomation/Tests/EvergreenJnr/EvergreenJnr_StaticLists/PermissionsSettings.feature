@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then "NotOwnerSpecifiedAdmin" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'ADD USER' button
+	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
 	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then "NotOwnerSpecifiedEdit" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'ADD USER' button
+	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
 	When User selects 'Edit' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then "NotOwnerSpecifiedRead" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'ADD USER' button
+	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
 	When User selects 'Read' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button

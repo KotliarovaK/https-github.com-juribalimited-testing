@@ -97,3 +97,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingAr
 	And User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	Then 'The automation has been created' text is displayed on inline success banner
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17241 @Cleanup @Wormhole
+Scenario: EvergreenJnr_AdminPage_CheckScopeListsIconsForAutomations
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks on 'Username' column header
+	And User create dynamic list with "17241_List" name on "Users" page
+	Then "17241_List" list is displayed to user
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Automations' left menu item
+	When User clicks 'CREATE AUTOMATION' button 
+	Then 'Create Automation' page subheader is displayed to user
+	Then 'setting' icon displayed for 'All Devices' option from 'Scope' autocomplete
+	Then 'hide' icon displayed for '2004 Stages' option from 'Scope' autocomplete
+	Then 'visibility' icon displayed for 'Migration Type Capacity' option from 'Scope' autocomplete
+	Then 'visibility_off' icon displayed for '17241_List' option from 'Scope' autocomplete
