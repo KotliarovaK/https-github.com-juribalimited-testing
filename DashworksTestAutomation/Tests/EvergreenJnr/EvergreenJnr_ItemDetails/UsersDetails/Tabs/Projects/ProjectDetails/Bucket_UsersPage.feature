@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS18227
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS18227 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedDevices
 	When User navigates to the 'User' details page for the item with '23726' ID
 	Then Details page for 'QLL295118 (Nicole P. Braun)' item is displayed to the user
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorre
 	| Content  |
 	| Group111 |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS18227
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS18227 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedMailboxes
 	When User navigates to the 'User' details page for the item with '92682' ID
 	Then Details page for '003F5D8E1A844B1FAA5 (Hunter, Melanie)' item is displayed to the user

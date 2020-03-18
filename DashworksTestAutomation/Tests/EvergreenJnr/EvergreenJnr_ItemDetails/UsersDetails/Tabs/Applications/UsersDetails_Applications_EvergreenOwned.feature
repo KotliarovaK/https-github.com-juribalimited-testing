@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18198 @DAS18876 @Set_Application_Owned_User
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18198 @DAS18876 @Set_Application_Owned_User @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly
 	Given Link user to the Evergreen application owned
 	| UserName  | ApplicationId |

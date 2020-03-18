@@ -214,6 +214,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17909")]
         [NUnit.Framework.CategoryAttribute("DAS17959")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", null)]
         [NUnit.Framework.TestCaseAttribute("User", "ACG370114", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Adobe Download Manager 2.0 (Remove Only)", null)]
@@ -252,7 +253,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "CustomFields",
                     "DAS17909",
-                    "DAS17959"};
+                    "DAS17959",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -463,7 +465,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18363")]
         [NUnit.Framework.CategoryAttribute("DAS18502")]
         [NUnit.Framework.CategoryAttribute("DAS18436")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab()
         {
             System.Exception lastException = null;
@@ -502,7 +504,7 @@ this.FeatureBackground();
                         "DAS18363",
                         "DAS18502",
                         "DAS18436",
-                        "Universe"});
+                        "Zion_NewGrid"});
 #line 77
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

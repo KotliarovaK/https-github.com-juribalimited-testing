@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatContextMenuCopyRowForTheRowActionsIs
 	And User selects 'Copy row' option in context menu
 	Then Next data 'ComputerCustomField      0.665371384' is copied
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @CustomFields @DAS17909 @DAS17959
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @CustomFields @DAS17909 @DAS17959 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatContextMenuCopyRowForTheRowActionsIsDisplayedAndWorkedCorrectlyForCustomFields
 	When User navigates to the '<ItemType>' details page for '<ItemName>' item
 	And User navigates to the 'Custom Fields' left submenu item
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCustomFieldsTheGroupByElementContain
 	| Values       |
 	| Custom Field |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776 @DAS18363 @DAS18502 @DAS18436 @Universe
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17776 @DAS18363 @DAS18502 @DAS18436 @Zion_NewGrid 
 Scenario: EvergreenJnr_DevicesList_CheckThatItsNotPossibleToUnselectTheLastColumnOnCustomFieldsTab
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	And User navigates to the 'Custom Fields' left submenu item
