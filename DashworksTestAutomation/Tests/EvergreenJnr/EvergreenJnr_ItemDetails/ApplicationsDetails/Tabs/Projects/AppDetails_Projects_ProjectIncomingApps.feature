@@ -30,6 +30,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsW
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Incoming Apps' left submenu item
-	When User enters "11.2.5058.0" text in the Search field for "Version" column
-	Then 'Empty' content is displayed in the 'Application' column
+	Then 'Projects' left menu item is expanded
+	Then 'Project Incoming Apps' left submenu item is active
 	When User selects 'Evergreen' in the 'Item Details Project' dropdown with wait
+	Then 'Details' left menu item is expanded
+	Then 'Projects' left menu item is collapsed
+	Then 'Application' left submenu item is active
