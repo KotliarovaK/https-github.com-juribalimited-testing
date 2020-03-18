@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17481 @DAS18871  @Cleanup @Not_Ready
-#Waiting for updated Validation messages on the automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17481 @DAS18871 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -46,11 +45,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner
 	When User enters '17481_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17481_Project' option from 'Project' autocomplete
-	When User selects '17481_Stage' option from 'Stage' autocomplete
-	When User selects '17481_Task' option from 'Task' autocomplete
-	Then inline error banner is displayed
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Not Started' in the 'Value' dropdown
+	When User selects '17481_Stage \ 17481_Task' option from 'Task' autocomplete
+	When User selects 'Not Started' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
 	#Change Task
@@ -71,8 +67,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasOwner
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	#Warning message check
-	Then 'This action has parameters which are not shown and no longer applicable to the task type, update the action to remove these' text is displayed on inline error banner
+	Then 'The configuration of this task has changed, this action has parameters that are not shown and no longer valid, update the action to remove these' text is displayed on inline error banner
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17481 @Cleanup @Not_Ready
 #Waiting for updated Validation messages on the automation
@@ -115,8 +110,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasDueDate
 	When User enters '17481_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17482_Project' option from 'Project' autocomplete
-	When User selects '17482_Stage' option from 'Stage' autocomplete
-	When User selects '17482_Task' option from 'Task' autocomplete
+	When User selects '17482_Stage \ 17482_Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Not Started' in the 'Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
@@ -184,8 +178,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasNotDueDate
 	When User enters '17481_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17483_Project' option from 'Project' autocomplete
-	When User selects '17483_Stage' option from 'Stage' autocomplete
-	When User selects '17483_Task' option from 'Task' autocomplete
+	When User selects '17483_Stage \ 17483_Task' option from 'Task' autocomplete
 	When User selects 'Not Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button
 	#Change Task
@@ -250,8 +243,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValidationForTaskThatHasNotOwner
 	When User enters '17481_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17484_Project' option from 'Project' autocomplete
-	When User selects '17484_Stage' option from 'Stage' autocomplete
-	When User selects '17484_Task' option from 'Task' autocomplete
+	When User selects '17484_Stage \ 17484_Task' option from 'Task' autocomplete
 	When User selects 'Not Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button
 	#Change Task

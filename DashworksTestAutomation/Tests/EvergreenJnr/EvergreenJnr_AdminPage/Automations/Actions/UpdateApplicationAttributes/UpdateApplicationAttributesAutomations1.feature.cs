@@ -1120,7 +1120,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18978")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicationAttributes()
         {
             System.Exception lastException = null;
@@ -1155,8 +1154,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18978",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 273
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
