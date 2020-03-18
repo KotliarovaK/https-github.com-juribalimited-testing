@@ -171,3 +171,34 @@ Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtThe
 	When User enters "20116_Automation4" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	Then "Action Finish" content is displayed for "Type" column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20248 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "ComputerSc: Group Stage \ Group Computer No Request Type (Team)" filter where type is "Equals" with added column and "My Team" Lookup option
+	When User refreshes agGrid
+	When User create dynamic list with "20248_TestList" name on "Devices" page
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope          | Run    |
+	| 20248_Automation | 20248       | true   | false              | 20248_TestList | Manual |
+	Then Automation page is displayed correctly
+	Then 'This list uses, or refers to a list that uses, a value of "My Team" which is not valid as a project scope' error message is displayed for 'Scope' field
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button 
+	And User enters '20248_Action' text to 'Action Name' textbox
+	And User selects 'Update custom field' in the 'Action Type' dropdown
+	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
+	When User selects 'Replace single value' in the 'Update Values' dropdown
+	When User enters 'firstTest' text to 'Find Value' textbox
+	When User enters 'secondTest' text to 'Replace Value' textbox
+	When User clicks 'CREATE' button
+	#Run Automations
+	When User clicks 'Automations' header breadcrumb
+	When User enters "20248_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '20248_Automation' item from 'Automation' column
+	When '20248_Automation' automation run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When User enters "20248_Automation" text in the Search field for "Automation" column
+	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
