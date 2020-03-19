@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.UsersDetails.Tabs.Mailboxes
+namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.MailboxesDetails.Tabs.Projects.ProjectDetails
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UsersDetails_Mailboxes_Mailboxes")]
-    public partial class UsersDetails_Mailboxes_MailboxesFeature
+    [NUnit.Framework.DescriptionAttribute("Bucket_ProjectDetails_Projects_MailDetails")]
+    public partial class Bucket_ProjectDetails_Projects_MailDetailsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "UsersDetails_Mailboxes_Mailboxes.feature"
+#line 1 "Bucket_ProjectDetails_Projects_MailDetails.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UsersDetails_Mailboxes_Mailboxes", "\tRuns related tests for Mailboxes tab", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Bucket_ProjectDetails_Projects_MailDetails", "\tRuns related tests for Bucket field on Mailboxes Details page", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,20 +80,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatAllColumnsAreDisplayedOnMailboxesSubTab")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatBucketGridOnTheItemDetailsPageIsDisplayedCorr" +
+            "ectlyForAssociatedUsers")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS19365")]
-        public virtual void EvergreenJnr_UsersList_CheckThatAllColumnsAreDisplayedOnMailboxesSubTab()
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS19175")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatBucketGridOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedUsers()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_UsersList_CheckThatAllColumnsAreDisplayedOnMailboxesSubTabInternal();
+                    this.EvergreenJnr_MailboxesList_CheckThatBucketGridOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedUsersInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -112,45 +114,67 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
             }
         }
 
-        private void EvergreenJnr_UsersList_CheckThatAllColumnsAreDisplayedOnMailboxesSubTabInternal()
+        private void EvergreenJnr_MailboxesList_CheckThatBucketGridOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedUsersInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatAllColumnsAreDisplayedOnMailboxesSubTab", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatBucketGridOnTheItemDetailsPageIsDisplayedCorr" +
+                    "ectlyForAssociatedUsers", null, new string[] {
                         "Evergreen",
-                        "Users",
+                        "Mailboxes",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
-                        "DAS19365"});
+                        "ProjectDetailsTab",
+                        "DAS19175",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line 10
- testRunner.When("User navigates to the \'User\' details page for the item with \'89026\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Mailbox\' details page for \'0141713E5CF84ADE907@bclabs.loca" +
+                    "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Details page for \'0561008DF1F3412F90B (Haws, Jacquelyn)\' item is displayed to the" +
-                    " user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'0141713E5CF84ADE907@bclabs.local\' item is displayed to the user" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.When("User navigates to the \'Mailboxes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' in the \'Item Details Project\' d" +
+                    "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.And("User navigates to the \'Mailboxes\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.When("User clicks on edit button for \'Bucket\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table1.AddRow(new string[] {
-                        "Email Address"});
+                        "Username"});
             table1.AddRow(new string[] {
-                        "Mailbox Platform"});
+                        "Display Name"});
             table1.AddRow(new string[] {
-                        "Mail Server"});
+                        "Domain"});
             table1.AddRow(new string[] {
-                        "Mailbox Type"});
+                        "Owner"});
             table1.AddRow(new string[] {
-                        "Recipient Type"});
-            table1.AddRow(new string[] {
-                        "Owner Display Name"});
-#line 14
+                        "Bucket"});
+#line 16
  testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table1, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table2.AddRow(new string[] {
+                        "BCLABS"});
+#line 23
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Domain\' c" +
+                    "olumn:", ((string)(null)), table2, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table3.AddRow(new string[] {
+                        "True"});
+#line 26
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Owner\' co" +
+                    "lumn:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

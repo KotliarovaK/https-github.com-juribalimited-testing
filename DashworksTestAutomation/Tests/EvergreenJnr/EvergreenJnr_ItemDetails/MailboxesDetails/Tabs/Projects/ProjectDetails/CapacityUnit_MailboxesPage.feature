@@ -31,3 +31,21 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatValueForCapacityUnitIsChangingSucc
 	Then following content is displayed on the Details Page
 	| Title         | Value         |
 	| Capacity Unit | cu_DAS19538_4 |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS19175 @Zion_NewGrid
+Scenario: EvergreenJnr_MailboxesList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly
+	When User navigates to the 'Mailbox' details page for '0141713E5CF84ADE907@bclabs.local' item
+	Then Details page for '0141713E5CF84ADE907@bclabs.local' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	When User checks 'Show only selected items' slide toggle
+	Then following columns are displayed on the Item details page:
+	| ColumnName    |
+	| Username      |
+	| Display Name  |
+	| Domain        |
+	| Owner         |
+	| Capacity Unit |
+	| Bucket        |

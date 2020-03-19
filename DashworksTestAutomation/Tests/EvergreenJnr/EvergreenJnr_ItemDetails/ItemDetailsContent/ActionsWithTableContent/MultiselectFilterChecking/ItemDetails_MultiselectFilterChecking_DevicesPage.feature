@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @DAS18405
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @DAS18405 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForUsersTabOnDevicesPage
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Values |
 	| GREY   |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnDevicesPage
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Values |
 	| True   |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnDevicesPage
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Values  |
 	| Install |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnDevicesPage
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Values       |
 	| TierA Site01 |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnDevicesPage
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Values       |
 	| TierA Site01 |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabHardwareRulesOnDevicesPage
 	When User navigates to the 'Device' details page for '00RUUMAH9OZN9A' item
 	Then Details page for '00RUUMAH9OZN9A' item is displayed to the user
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Values |
 	| AMBER  |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabApplicationIssuesOnDevicesPage
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOnlyValueIncludedInTheColumnIsDispla
 	| Values |
 	| RED    |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12253 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowColumnBlanksFilterAfterUncheckingIt
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user

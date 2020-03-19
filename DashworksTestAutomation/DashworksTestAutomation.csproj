@@ -1472,6 +1472,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MailboxesDetails_Details_MailboxOwner.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Bucket_ProjectDetails_Projects_MailDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bucket_ProjectDetails_Projects_MailDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\MailboxesDetails_Projects_ProjectDetails.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2850,6 +2855,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Details\MailboxesDetails_Details_MailboxOwner.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MailboxesDetails_Details_MailboxOwner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Bucket_ProjectDetails_Projects_MailDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Bucket_ProjectDetails_Projects_MailDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\MailboxesDetails_Projects_ProjectDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

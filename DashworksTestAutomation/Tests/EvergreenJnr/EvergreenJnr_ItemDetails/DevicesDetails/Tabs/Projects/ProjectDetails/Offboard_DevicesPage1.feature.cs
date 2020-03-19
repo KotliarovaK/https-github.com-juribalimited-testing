@@ -496,6 +496,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("Offboard")]
         [NUnit.Framework.CategoryAttribute("DAS18036")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -529,7 +530,8 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "Offboard",
-                        "DAS18036"});
+                        "DAS18036",
+                        "Zion_NewGrid"});
 #line 108
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -769,7 +771,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ProjectsTab")]
         [NUnit.Framework.CategoryAttribute("DAS19843")]
         [NUnit.Framework.CategoryAttribute("DAS20088")]
-        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffboardPopUp()
         {
             System.Exception lastException = null;
@@ -804,8 +805,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ProjectsTab",
                         "DAS19843",
-                        "DAS20088",
-                        "Void"});
+                        "DAS20088"});
 #line 188
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

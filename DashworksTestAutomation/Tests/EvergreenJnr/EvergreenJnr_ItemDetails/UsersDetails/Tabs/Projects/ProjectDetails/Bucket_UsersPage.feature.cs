@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS18227")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedDevices()
         {
             System.Exception lastException = null;
@@ -123,7 +124,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "ProjectDetailsTab",
-                        "DAS18227"});
+                        "DAS18227",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -274,6 +276,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS18227")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedMailboxes()
         {
             System.Exception lastException = null;
@@ -309,7 +312,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "ProjectDetailsTab",
-                        "DAS18227"});
+                        "DAS18227",
+                        "Zion_NewGrid"});
 #line 48
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

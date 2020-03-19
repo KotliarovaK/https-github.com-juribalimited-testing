@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
         [NUnit.Framework.CategoryAttribute("DAS19463")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatValueForCapacityUnitIsChangingSuccessfully()
         {
             System.Exception lastException = null;
@@ -127,7 +128,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
                         "DAS19538",
                         "DAS19463",
                         "Cleanup",
-                        "Set_Default_Capacity_Unit"});
+                        "Set_Default_Capacity_Unit",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -738,7 +740,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ProjectsTab")]
         [NUnit.Framework.CategoryAttribute("DAS19985")]
         [NUnit.Framework.CategoryAttribute("DAS20088")]
-        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheCapacityUnitPopUp()
         {
             System.Exception lastException = null;
@@ -774,8 +775,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ProjectsTab",
                         "DAS19985",
-                        "DAS20088",
-                        "Void"});
+                        "DAS20088"});
 #line 208
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
