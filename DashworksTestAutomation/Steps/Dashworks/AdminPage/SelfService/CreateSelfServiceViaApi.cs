@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
@@ -23,20 +24,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         private readonly SelfServices _selfServices;
         private readonly RestWebClient _client;
         private readonly SelfServiceApiMethods _selfServiceApiMethods;
+        private SelfServicePages _selfServicePages;
 
-        public CreateSelfServiceViaApi(SelfServices selfServices, RestWebClient client)
+        public CreateSelfServiceViaApi(SelfServices selfServices, RestWebClient client, SelfServicePages selfServicePages)
         {
             _selfServices = selfServices;
             _client = client;
             _selfServiceApiMethods = new SelfServiceApiMethods(selfServices, client);
+            _selfServicePages = selfServicePages;
         }
 
         //| ServiceId | Name | ServiceIdentifier | Enabled | ObjectType | ObjectTypeId | StartDate | EndDate | SelfServiceURL | AllowAnonymousUsers | ScopeId |
         [When(@"User creates Self Service via API")]
         public void WhenUserCreatesSelfServiceViaApi(Table table)
         {
-            var exception = string.Empty;
-            _selfServices.Value.AddRange(_selfServiceApiMethods.CreateSelfService(table, out exception).Value);
+            _selfServices.Value.AddRange(_selfServiceApiMethods.CreateSelfService(table, out var exception, ref _selfServicePages).Value);
             if (!string.IsNullOrEmpty(exception))
             {
                 throw new Exception(exception);
@@ -140,7 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
             var selfService = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(selfServiceIdentifier));
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/action";
             var request = requestUri.GenerateRequest();
-            request.AddObject( new { ServiceIds = new List<int>() { selfService.ServiceId }.ToArray(), ActionRequestType = state ? "enable" : "disable" });
+            request.AddObject(new { ServiceIds = new List<int>() { selfService.ServiceId }.ToArray(), ActionRequestType = state ? "enable" : "disable" });
             var response = _client.Evergreen.Put(request);
 
             if (!response.StatusCode.Equals(HttpStatusCode.OK))

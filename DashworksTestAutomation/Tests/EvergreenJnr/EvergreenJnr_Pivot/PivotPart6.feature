@@ -101,6 +101,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDispl
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
 	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
 	| GREEN      |
 	| IGNORE     |
 

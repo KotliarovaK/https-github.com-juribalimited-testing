@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
 using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -26,44 +28,76 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
             _client = client;
         }
 
-        public SelfServices CreateSelfService(Table table, out string exception)
+        public SelfServices CreateSelfService(Table table, out string exception, ref SelfServicePages selfServicePages)
         {
-            SelfServices createdSs = new SelfServices();
+            exception = string.Empty;
 
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices";
-            var createSelfService = table.CreateSet<SelfServiceDto>();
-
-            foreach (SelfServiceDto SelfService in createSelfService)
+            try
             {
-                var request = requestUri.GenerateRequest();
-                request.AddObject(SelfService);
-                var response = _client.Evergreen.Post(request);
+                SelfServices createdSs = new SelfServices();
 
-                if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/default";
+                var createSelfService = table.CreateSet<SelfServiceDto>();
+
+                foreach (SelfServiceDto SelfService in createSelfService)
                 {
-                    createdSs.Value.Add(new SelfServiceDto() { ServiceIdentifier = SelfService.ServiceIdentifier });
-                    exception = $"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}";
-                    return createdSs;
+                    var request = requestUri.GenerateRequest();
+                    request.AddObject(SelfService);
+                    var response = _client.Evergreen.Post(request);
+
+                    if (!response.StatusCode.Equals(HttpStatusCode.OK))
+                    {
+                        createdSs.Value.Add(new SelfServiceDto() { ServiceIdentifier = SelfService.ServiceIdentifier });
+                        exception = $"Unable to create Self Service: {response.StatusCode}, {response.ErrorMessage}";
+                        return createdSs;
+                    }
+
+                    var content = response.Content;
+                    var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(content);
+
+                    SelfService.ServiceId = selfServiceObjResponse.ServiceId;
+                    SelfService.CreatedByUser = selfServiceObjResponse.CreatedByUser;
+                    SelfService.ScopeId = selfServiceObjResponse.ScopeId;
+                    SelfService.ScopeName = selfServiceObjResponse.ScopeName;
+                    SelfService.StartDate = selfServiceObjResponse.StartDate;
+                    SelfService.EndDate = selfServiceObjResponse.EndDate;
+                    SelfService.ObjectType = selfServiceObjResponse.ObjectType;
+                    SelfService.ObjectTypeId = selfServiceObjResponse.ObjectTypeId;
+                    SelfService.SelfServiceURL = selfServiceObjResponse.SelfServiceURL;
+
+                    createdSs.Value.Add(SelfService);
+
+                    #region Get Pages/Components created by default
+
+                    var drUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservices/{SelfService.ServiceId}/pages";
+
+                    var dRequest = drUri.GenerateRequest();
+                    var dResponse = _client.Evergreen.Get(dRequest);
+
+                    if (!dResponse.StatusCode.Equals(HttpStatusCode.OK))
+                    {
+                        exception = $"Unable to get default Pages/Components for '{SelfService.Name}' Self Service";
+                    }
+
+                    var dContent = dResponse.Content;
+
+                    var settings = new JsonSerializerSettings();
+                    settings.Converters.Add(new SelfServiceComponentConverter());
+
+                    var defaultPagesAndComponents = JsonConvert.DeserializeObject<List<SelfServicePageDto>>(dContent, settings);
+
+                    selfServicePages.Value.AddRange(defaultPagesAndComponents);
+
+                    #endregion
                 }
 
-                var content = response.Content;
-                var selfServiceObjResponse = JsonConvert.DeserializeObject<SelfServiceDto>(content);
-
-                SelfService.ServiceId = selfServiceObjResponse.ServiceId;
-                SelfService.CreatedByUser = selfServiceObjResponse.CreatedByUser;
-                SelfService.ScopeId = selfServiceObjResponse.ScopeId;
-                SelfService.ScopeName = selfServiceObjResponse.ScopeName;
-                SelfService.StartDate = selfServiceObjResponse.StartDate;
-                SelfService.EndDate = selfServiceObjResponse.EndDate;
-                SelfService.ObjectType = selfServiceObjResponse.ObjectType;
-                SelfService.ObjectTypeId = selfServiceObjResponse.ObjectTypeId;
-                SelfService.SelfServiceURL = selfServiceObjResponse.SelfServiceURL;
-
-                createdSs.Value.Add(SelfService);
+                return createdSs;
             }
-
-            exception = string.Empty;
-            return createdSs;
+            catch (Exception e)
+            {
+                exception = e.Message;
+                return null;
+            }
         }
 
         public void DeleteSelfService()

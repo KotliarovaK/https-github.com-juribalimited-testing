@@ -2,32 +2,32 @@
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components
 {
-    public class SelfServiceTextComponent
+    public class SelfServiceTextComponent : BaseSelfServiceComponent
     {
-        public SelfServicePageDto SelfServicePage { get; set; }
+        //public SelfServicePageDto SelfServicePage { get; set; }
 
-        [JsonProperty("componentId")] public int ComponentId = 1;
+        //[JsonProperty("componentId")] public int ComponentId = 1;
 
-        [JsonProperty("pageId")] public int PageId => SelfServicePage.PageId;
+        //[JsonProperty("pageId")] public int PageId => SelfServicePage.PageId;
 
-        [JsonProperty("componentTypeId")] public int ComponentTypeId = 1;
+        //[JsonProperty("componentTypeId")] public int ComponentTypeId = 1;
 
-        [JsonProperty("order")] public int Order = 1;
+        //[JsonProperty("order")] public int Order = 1;
 
-        [JsonProperty("componentName")]
-        public string ComponentName { get; set; }
+        //[JsonProperty("componentName")]
+        //public string ComponentName { get; set; }
 
-        [JsonProperty("helpText")]
-        public string HelpText { get; set; }
+        //[JsonProperty("helpText")]
+        //public string HelpText { get; set; }
 
-        [JsonProperty("componentType")]
-        public string ComponentType { get; set; }
+        //[JsonProperty("componentType")]
+        //public string ComponentType { get; set; }
 
-        [JsonProperty("componentTypeDescription")]
-        public string ComponentTypeDescription { get; set; }
+        //[JsonProperty("componentTypeDescription")]
+        //public string ComponentTypeDescription { get; set; }
 
-        [JsonProperty("showInSelfService")]
-        public bool ShowInSelfService { get; set; }
+        //[JsonProperty("showInSelfService")]
+        //public bool ShowInSelfService { get; set; }
 
         [JsonProperty("extraProperties")]
         public ExtraProperties ExtraProperties = new ExtraProperties();
@@ -36,6 +36,12 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Compon
         {
             get => ExtraProperties.Text;
             set => ExtraProperties.Text = value;
+        }
+
+        public SelfServiceTextComponent()
+        {
+            ComponentId = 1;
+            ComponentTypeId = 1;
         }
     }
 

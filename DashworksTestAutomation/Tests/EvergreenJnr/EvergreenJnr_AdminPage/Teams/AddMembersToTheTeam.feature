@@ -145,7 +145,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorAppearsAfterCreatingTeamHavingC
 	Then There are no errors in the browser console
 	When User selects following Objects from the expandable multiselect
 	| Objects   |
-	| 1803 Team |
+	| 2004 Team |
 	When User selects 'Add individual members' in the 'Add Members (Optional)' dropdown
 	Then There are no errors in the browser console
 	Then Chips for 'Search' field are not displayed

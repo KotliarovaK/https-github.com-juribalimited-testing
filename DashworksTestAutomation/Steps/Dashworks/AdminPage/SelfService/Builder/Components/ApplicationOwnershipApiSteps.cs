@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder.
             }
 
             var ssPage = _selfServicePages.Value.First(x => x.Name.Equals(ssPageName));
-            component.PageId = ssPage.PageId;
+            component.SelfServicePage = ssPage;
 
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicecomponents";
             var request = requestUri.GenerateRequest();
@@ -50,6 +50,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder.
             {
                 throw new Exception($"Unable to create Self Service Application Ownership component: {response.StatusCode}, {response.ErrorMessage}");
             }
+
+            //Assign created component back to the page
+            _selfServicePages.Value.First(x => x.Name.Equals(ssPageName)).Components.Add(component);
         }
     }
 }
