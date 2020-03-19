@@ -870,6 +870,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13180")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab()
         {
             System.Exception lastException = null;
@@ -905,7 +906,8 @@ this.FeatureBackground();
                         "AllLists",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS13180"});
+                        "DAS13180",
+                        "Zion_NewGrid"});
 #line 168
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -985,6 +987,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS14431")]
         [NUnit.Framework.CategoryAttribute("DAS19243")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate()
         {
             System.Exception lastException = null;
@@ -1020,7 +1023,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS14431",
-                        "DAS19243"});
+                        "DAS19243",
+                        "Zion_NewGrid"});
 #line 198
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1320,6 +1324,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage()
         {
             System.Exception lastException = null;
@@ -1354,7 +1359,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS16817"});
+                        "DAS16817",
+                        "Zion_NewGrid"});
 #line 277
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

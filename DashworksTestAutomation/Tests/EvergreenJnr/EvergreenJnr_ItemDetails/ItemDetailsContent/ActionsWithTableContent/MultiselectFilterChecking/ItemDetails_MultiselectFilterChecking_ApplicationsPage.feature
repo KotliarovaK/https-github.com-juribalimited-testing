@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDetailsTabAdvertisementsOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for 'Accessible FormNet Fill 2.2' item is displayed to the user
@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	| Values |
 	| True   |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMsiTabOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for 'Accessible FormNet Fill 2.2' item is displayed to the user
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsD
 	| Values |
 	| GREEN  |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForDistributionTabOnApplicationsPage
 	When User navigates to the 'Application' details page for 'Accessible FormNet Fill 2.2' item
 	Then Details page for 'Accessible FormNet Fill 2.2' item is displayed to the user
