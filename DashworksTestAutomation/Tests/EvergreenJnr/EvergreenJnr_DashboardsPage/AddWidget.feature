@@ -367,4 +367,5 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterE
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
 	And User enters 'titleForDAS20170' text to 'Title' textbox
 	And User clicks 'UPDATE' button
+	Then 'Section successfully updated' text is displayed on inline success banner
 	Then 'WidgetForDAS20170' Widget is displayed to the user
