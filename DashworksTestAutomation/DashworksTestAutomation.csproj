@@ -125,6 +125,7 @@
     <Compile Include="DTO\Evergreen\Admin\Readiness\ReadinessDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\AllPagesOfSelfServiceDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\Components\BaseSelfServiceComponent.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\Components\SelfServiceApplicationOwnershipComponent.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePages.cs" />
