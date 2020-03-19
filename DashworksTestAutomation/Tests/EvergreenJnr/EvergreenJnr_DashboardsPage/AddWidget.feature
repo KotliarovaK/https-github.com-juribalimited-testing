@@ -357,15 +357,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendsNotDuplicatedAfterCh
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20412 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashboardSection
-	When Dashboard with 'DashboardForDAS20170' name created via API and opened
+	When Dashboard with 'DashboardForDAS20412' name created via API and opened
 	And User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button
 	And User creates new Widget
 	| WidgetType | Title             | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend |
-	| Bar        | WidgetForDAS20170 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
-	And User clicks Ellipsis menu for Section having 'WidgetForDAS20170' Widget on Dashboards page
+	| Bar        | WidgetForDAS20412 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
+	And User clicks Ellipsis menu for Section having 'WidgetForDAS20412' Widget on Dashboards page
 	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User enters 'titleForDAS20170' text to 'Title' textbox
+	And User enters 'titleForDAS20412' text to 'Title' textbox
 	And User clicks 'UPDATE' button
 	Then 'Section successfully updated' text is displayed on inline success banner
-	Then 'WidgetForDAS20170' Widget is displayed to the user
+	Then 'WidgetForDAS20412' Widget is displayed to the user

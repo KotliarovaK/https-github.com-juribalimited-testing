@@ -1937,7 +1937,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 360
- testRunner.When("Dashboard with \'DashboardForDAS20170\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Dashboard with \'DashboardForDAS20412\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 361
  testRunner.And("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 362
@@ -1954,7 +1954,7 @@ this.FeatureBackground();
                         "ShowLegend"});
             table31.AddRow(new string[] {
                         "Bar",
-                        "WidgetForDAS20170",
+                        "WidgetForDAS20412",
                         "2004 Rollout",
                         "2004: Status",
                         "Device Type",
@@ -1964,18 +1964,18 @@ this.FeatureBackground();
 #line 363
  testRunner.And("User creates new Widget", ((string)(null)), table31, "And ");
 #line 366
- testRunner.And("User clicks Ellipsis menu for Section having \'WidgetForDAS20170\' Widget on Dashbo" +
+ testRunner.And("User clicks Ellipsis menu for Section having \'WidgetForDAS20412\' Widget on Dashbo" +
                     "ards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 367
  testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 368
- testRunner.And("User enters \'titleForDAS20170\' text to \'Title\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'titleForDAS20412\' text to \'Title\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 369
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 370
  testRunner.Then("\'Section successfully updated\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 371
- testRunner.Then("\'WidgetForDAS20170\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'WidgetForDAS20412\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
