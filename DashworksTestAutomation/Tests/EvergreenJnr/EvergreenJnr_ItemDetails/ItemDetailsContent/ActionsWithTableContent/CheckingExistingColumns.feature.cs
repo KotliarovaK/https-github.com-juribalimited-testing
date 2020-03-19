@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
         [NUnit.Framework.CategoryAttribute("DAS11091")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
         [NUnit.Framework.CategoryAttribute("DAS16564")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckRenamedColumnForApplicationTabOnTheDetailsPage()
         {
             System.Exception lastException = null;
@@ -123,7 +124,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
                         "ItemDetailsDisplay",
                         "DAS11091",
                         "DAS14923",
-                        "DAS16564"});
+                        "DAS16564",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -165,6 +167,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16564")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetailsPage()
         {
             System.Exception lastException = null;
@@ -198,7 +201,8 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS16564"});
+                        "DAS16564",
+                        "Zion_NewGrid"});
 #line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -236,6 +240,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12088")]
         [NUnit.Framework.CategoryAttribute("DAS12321")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -271,7 +276,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS12088",
-                        "DAS12321"});
+                        "DAS12321",
+                        "Zion_NewGrid"});
 #line 36
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

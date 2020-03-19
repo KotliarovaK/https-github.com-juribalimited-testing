@@ -383,8 +383,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS19538")]
-        [NUnit.Framework.CategoryAttribute("DAS19463")]
+        [NUnit.Framework.CategoryAttribute("DAS19175")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly()
         {
@@ -419,8 +418,7 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ProjectDetailsTab",
-                        "DAS19538",
-                        "DAS19463",
+                        "DAS19175",
                         "Zion_NewGrid"});
 #line 69
 this.ScenarioInitialize(scenarioInfo);

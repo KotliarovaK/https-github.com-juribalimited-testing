@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheAssociatedDevicesAreMovedToTheSelec
 	When User clicks on edit button for 'Capacity Unit' field
 	Then 'zen_DAS19846_1' content is displayed in the 'Capacity Unit' column
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS19538 @DAS19463 @Zion_NewGrid
+@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS19175 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly
 	When User navigates to the 'User' details page for '0137C8E69921432992B' item
 	Then Details page for '0137C8E69921432992B' item is displayed to the user
