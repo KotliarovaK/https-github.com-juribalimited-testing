@@ -594,7 +594,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table8.AddRow(new string[] {
-                        "1803 Team"});
+                        "2004 Team"});
 #line 146
  testRunner.When("User selects following Objects from the expandable multiselect", ((string)(null)), table8, "When ");
 #line 149
