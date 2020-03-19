@@ -21,6 +21,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         [FindsBy(How = How.XPath, Using = ".//div[@class='ssw-tools']")]
         public IWebElement SelfServiceToolsPanel { get; set; }
 
+        public IWebElement GetComponentItemOnEndUserPage(int order)
+        {
+            var selector = By.XPath($".//h2[text()='Welcome']//..//div[@class='component-item ng-star-inserted'][{order}]");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

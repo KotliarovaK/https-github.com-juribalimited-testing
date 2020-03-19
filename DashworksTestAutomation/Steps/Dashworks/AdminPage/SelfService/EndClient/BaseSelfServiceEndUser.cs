@@ -26,5 +26,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
             Verify.IsTrue(page.SelfServiceToolsPanel.Displayed, "Self Service Tools Panel are missing");
         }
+
+
+
+
     }
 }
