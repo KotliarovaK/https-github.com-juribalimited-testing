@@ -982,7 +982,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWork
 	Then Content is present in the newly added column
 	| ColumnName                 |
 	| zMailboxAu: Owner In Scope |
-	Then "14,784" rows are displayed in the agGrid
+	Then "14,884" rows are displayed in the agGrid
 	When User clicks on 'zMailboxAu: Owner In Scope' column header
 	Then data in table is sorted by 'zMailboxAu: Owner In Scope' column in descending order
 	When User clicks on 'zMailboxAu: Owner In Scope' column header
@@ -995,7 +995,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckzzMailboxAuOwnerInScopeFilterWork
 	| FALSE              |
 	| Empty              |
 	Then "zMailboxAu: Owner In Scope" filter is added to the list
-	Then "14,784" rows are displayed in the agGrid
+	Then "14,884" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_ApplicationsList @DAS19550
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNoErrorDisplayedWhenFilteringListBySavedList
@@ -1297,7 +1297,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterI
 Examples: 
 	| ColumnName                      | Operators                         | FilterOption | Text                                     | RowsCount |
 	| Windows7Mi: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | Windows7Mi: Hide From End Users is False | 1,067     |
-	| Pr00: Hide From End Users       | Equals, Does not equal, Not empty | Empty        | Pr00: Hide From End Users is Empty       | 1,096     |
+	| Pr000: Hide From End Users      | Equals, Does not equal, Not empty | Empty        | Pr000: Hide From End Users is Empty      | 1,096     |
 	| Barry'sUse: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | Barry'sUse: Hide From End Users is False | 1,078     |
 	| ComputerSc: Hide From End Users | Equals, Does not equal, Not empty | FALSE        | ComputerSc: Hide From End Users is False | 1,043     |
 	| Havoc(BigD: Hide From End Users | Equals, Does not equal, Not empty | Empty        | Havoc(BigD: Hide From End Users is Empty | 1,155     |

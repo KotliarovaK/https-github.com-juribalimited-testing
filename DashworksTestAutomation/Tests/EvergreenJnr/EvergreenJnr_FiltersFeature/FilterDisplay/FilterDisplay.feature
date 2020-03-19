@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpda
 	And "3,294" rows are displayed in the agGrid
 	And table data is filtered correctly
 	When User have reset all filters
-	Then "14,784" rows are displayed in the agGrid
+	Then "14,884" rows are displayed in the agGrid
 	And "City" filter is removed from filters
 
 @Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS12635 @Cleanup
@@ -999,11 +999,11 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectIn
 
 	Examples:
 		| operatorValue  | filterOption | rowsCount | operatorValueInInfo |
-		| Not empty      |              | 14,778    | is not empty        |
-		| Does not equal | 8 Mar 2016   | 14,781    | is not              |
+		| Not empty      |              | 14,878    | is not empty        |
+		| Does not equal | 8 Mar 2016   | 14,881    | is not              |
 		| Equals         | 8 Mar 2016   | 3         | is                  |
 		| Empty          |              | 6         | is empty            |
-		| Before         | 8 Mar 2016   | 4,699     | is before           |
+		| Before         | 8 Mar 2016   | 4,799     | is before           |
 		| After          | 8 Mar 2016   | 10,076    | is after            |
 
 @Evergreen @Evergreen_FiltersFeature @FiltersDisplay @DAS10696 @DAS11090 @DAS12114 @DAS12698

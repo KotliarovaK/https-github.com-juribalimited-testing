@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNav
 	And message 'No mailboxes found' is displayed to the user
 	When User navigates to the "All Mailboxes" list
 	Then 'All Mailboxes' list should be displayed to the user
-	And "14,784" rows are displayed in the agGrid
+	And "14,884" rows are displayed in the agGrid
 
 @Evergreen @Evergreen_FiltersFeature @Filter_MailboxesList @DAS11831
 Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter
