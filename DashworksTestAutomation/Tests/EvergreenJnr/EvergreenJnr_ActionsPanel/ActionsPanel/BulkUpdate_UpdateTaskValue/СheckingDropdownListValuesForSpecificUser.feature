@@ -54,7 +54,8 @@ Examples:
 	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project         | Audit & Configuration \ Package Delivery Date | Remove     |
 	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration              | Pre-Migration \ Out Of Office Start Date      | Remove     |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup
+	#AnnI 3/18/20 Fixed and updated for 'Wormhole'
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup @Wormhole
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
@@ -77,29 +78,33 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	Then 'Task' autocomplete options are sorted in the alphabetical order
 	When User selects 'Audit & Configuration \ Validate User Device Ownership' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
-	| Options               |
-	| Update                |
-	| No change             |
+	| Options        |
+	| No change      |
+	| Not Applicable |
+	| Awaiting Audit |
+	| Audit Failed   |
+	| Audit Complete |
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options                                   |
+	| No change                                 |
 	| Update                                    |
 	| Update relative to current value          |
 	| Update relative to now                    |
 	| Update relative to a different task value |
 	| Remove                                    |
-	| No change                                 |
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
+	| No change             |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	| No change             |
 	When User selects 'Update' in the 'Update Owner' dropdown
 	Then 'Team' autocomplete options are sorted in the alphabetical order
 	When User selects 'Team 0' option from 'Team' autocomplete
-	Then 'Owner' textbox is not displayed
+	When User navigate to the bottom of the Action panel
+	Then 'Owner' textbox is displayed
 	When User selects 'IB Team' option from 'Team' autocomplete
 	Then 'Owner' textbox is displayed
 	When User selects 'IB User' option from 'Owner' autocomplete
@@ -147,7 +152,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13280" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup
+	#AnnI 3/18/20 Fixed and updated for 'Wormhole'
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup @Wormhole
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User create new User via API
 	| Username   | Email | FullName | Password  | Roles                 |
@@ -169,35 +175,41 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
-	| Options               |
-	| Update                |
-	| No change             |
+	| Options        |
+	| No change      |
+	| Not Applicable |
+	| Not Started    |
+	| Started        |
+	| Failed         |
+	| Complete       |
 	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options                                   |
+	| No change                                 |
 	| Update                                    |
 	| Update relative to current value          |
 	| Update relative to now                    |
 	| Update relative to a different task value |
 	| Remove                                    |
-	| No change                                 |
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
+	| No change             |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	| No change             |
-	When User selects 'Workstation Text Task' option from 'Task' autocomplete
+	When User selects 'Computer Information ---- Text fill; Text fill; \ Workstation Text Task' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
 	| Remove    |
-	When User selects 'Computer Read Only Task in Self Service' option from 'Task' autocomplete
+	When User selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
-	| Options               |
-	| Update                |
-	| No change             |
-	When User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Started' in the 'Value' dropdown
+	| No change      |
+	| Not Applicable |
+	| Not Started    |
+	| Started        |
+	| Failed         |
+	| Complete       |
+	When User selects 'Started' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown

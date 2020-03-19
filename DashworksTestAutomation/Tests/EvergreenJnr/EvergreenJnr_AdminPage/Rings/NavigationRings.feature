@@ -38,3 +38,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	When User tries to open same page with non existing item id
 	Then Page not found displayed for the user
 	Then There are only 'Page not found' errors in console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS20159
+Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenAfterClickingGridValue
+	When User navigates to "Mailbox Evergreen Capacity Project" project details
+	When User navigates to the 'Rings' left menu item
+	When User enters "Unassigned" text in the Search field for "Ring" column
+	When User clicks content from "Mailboxes" column
+	Then 'All Mailboxes' list should be displayed to the user

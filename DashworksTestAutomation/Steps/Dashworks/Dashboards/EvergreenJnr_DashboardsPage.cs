@@ -862,6 +862,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 .Select(x => x.Text.Equals(value) && x.GetAttribute("style").Contains(ColorsConvertor.ConvertToHex(color))).Count(), Is.GreaterThan(0), $"Wrong color detected");
         }
 
+        [Then(@"User sees color code '(.*)' on the '(.*)' widget")]
+        public void ThenNextColorDisplayedForWidget(string colorCode, string widget)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            Verify.That(page.IsChartHasSpecifiedColor(widget, ColorsConvertor.ConvertToHex(colorCode)), Is.True, "Color is missing");
+        }
+
         #endregion
 
         #region Permission popup
