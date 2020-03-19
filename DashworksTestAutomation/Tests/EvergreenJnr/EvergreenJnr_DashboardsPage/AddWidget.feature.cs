@@ -1971,6 +1971,8 @@ this.FeatureBackground();
 #line 368
  testRunner.And("User enters \'titleForDAS20170\' text to \'Title\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 369
+ testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 370
  testRunner.Then("\'WidgetForDAS20170\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
