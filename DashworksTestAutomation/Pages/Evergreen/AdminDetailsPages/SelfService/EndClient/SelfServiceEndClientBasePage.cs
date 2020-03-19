@@ -7,6 +7,7 @@ using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.EndClient
 {
@@ -26,6 +27,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
             var selector = By.XPath($".//h2[text()='Welcome']//..//div[@class='component-item ng-star-inserted'][{order}]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public int GetComponentItemOnEndUserPageByName(SelfServiceTextComponent component)
+        {
+            component.Order;
         }
 
         public override List<By> GetPageIdentitySelectors()

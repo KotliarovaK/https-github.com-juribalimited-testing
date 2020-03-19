@@ -13,46 +13,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
 {
     class SelfServiceEndUserTextComponentPage : SelfServiceEndClientBasePage
     {
-
-
-        public IWebElement GetStyledTextFromEndUserTextComponent(string style, string text, int order)
+        public bool GetStyledTextFromEndUserTextComponent(string style, string text, int order)
         {
-            IWebElement element = GetComponentItemOnEndUserPage(order);
-
             switch (style)
             {
                 case "Bold":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//strong[text()='{text}']"));
-                    break;
+                    return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//strong[text()='{text}']"));
                 case "Italic":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//em[text()='{text}']"));
-                    break;
+                    return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//em[text()='{text}']"));
                 case "Underline":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//u[text()='{text}']"));
-                    break;
+                    return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//u[text()='{text}']"));
                 case "Heading 1":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//h1[text()='{text}']"));
-                    break;
+                    return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//h1[text()='{text}']"));
                 case "Heading 2":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//h2[text()='{text}']"));
-                    break;
+                    return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//h2[text()='{text}']"));
                 case "Heading 3":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//h3[text()='{text}']"));
-                    break;
+                    return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//h3[text()='{text}']"));
                 case "Heading 4":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//h4[text()='{text}']"));
-                    break;
+                    return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//h4[text()='{text}']"));
                 case "Heading 5":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//h5[text()='{text}']"));
-                    break;
+                    return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//h5[text()='{text}']"));
                 case "Normal":
-                    element = GetComponentItemOnEndUserPage(order).FindElement(By.XPath($".//p[text()='{text}']"));
-                    break;
+                   return GetComponentItemOnEndUserPage(order).IsElementDisplayed(By.XPath($".//p[text()='{text}']"));
                 default:
-                    throw new Exception($"That kind of styling does not exist (Do not forget to use capital letter, for ex. 'Bold')"); ;
+                    throw new Exception($"That kind of styling '{style}' does not exist (Do not forget to use capital letter, for ex. 'Bold')"); ;
             }
-
-            return element;
         }
 
         public override List<By> GetPageIdentitySelectors()
