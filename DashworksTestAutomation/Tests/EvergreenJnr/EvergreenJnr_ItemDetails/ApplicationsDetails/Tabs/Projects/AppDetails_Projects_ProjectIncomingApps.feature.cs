@@ -174,8 +174,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ProjectsTab")]
-        [NUnit.Framework.CategoryAttribute("DAS20286")]
-        [NUnit.Framework.CategoryAttribute("DAS20362")]
+        [NUnit.Framework.CategoryAttribute("DAS20356")]
+        [NUnit.Framework.CategoryAttribute("DAS20445")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsWorkedCorrectlyAfterSwitchingBetweenProjectsAndEvergreenModes()
         {
@@ -211,8 +211,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ProjectsTab",
-                        "DAS20286",
-                        "DAS20362",
+                        "DAS20356",
+                        "DAS20445",
                         "Wormhole"});
 #line 27
 this.ScenarioInitialize(scenarioInfo);
