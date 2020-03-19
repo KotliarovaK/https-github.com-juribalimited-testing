@@ -62,7 +62,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
                 component.ComponentId = createdTextComponent.ComponentId;
                 component.Order = createdTextComponent.Order;
                 component.ComponentTypeId = createdTextComponent.ComponentTypeId;
-                _selfServiceTextComponents.Value.Add(component);
+
+                //Assign created component back to the page
+                _selfServicePages.Value.First(x => x.Name.Equals(ssPageName)).Components.Add(component);
             }
         }
     }

@@ -232,6 +232,21 @@ Examples:
 	| DAS12974DUPLICATED |
 	| DAS12974duplicated |
 
+@Evergreen @EvergreenJnr_DashboardsPage @DAS20395 @Cleanup
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboard
+	When Dashboard with 'DAS20395duplicated' name created via API and opened
+	When User clicks 'Dashboards' on the left-hand menu
+	When User clicks 'CREATE DASHBOARD' button 
+	When User types '<DashboardName>' as dashboard title
+	Then Warning message with "Dashboard name should be unique" is displayed
+	When User clicks 'CANCEL' button
+	Then Warning message with 'Dashboard name should be unique' text is not displayed
+
+Examples:
+	| DashboardName      |
+	| DAS20395DUPLICATED |
+	| DAS20395duplicated |
+
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17985 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff
 	When Dashboard with 'Dashboard for DAS17985' name created via API and opened
