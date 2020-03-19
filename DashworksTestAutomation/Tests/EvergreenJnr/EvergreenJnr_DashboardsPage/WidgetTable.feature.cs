@@ -3046,7 +3046,7 @@ this.FeatureBackground();
 #line 648
  testRunner.And("User move \'WidgetTwoDAS20027\' widget to \'WidgetOneDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 649
- testRunner.And("User expand list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 650
  testRunner.And("User opens \'Overview\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

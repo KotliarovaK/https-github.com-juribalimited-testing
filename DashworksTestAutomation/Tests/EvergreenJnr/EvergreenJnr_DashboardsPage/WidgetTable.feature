@@ -646,7 +646,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardAreOpenedAfterDragAndDro
 	And User move 'WidgetThreeDAS20027' widget to 'WidgetTwoDAS20027' widget
 	And User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
 	And User move 'WidgetTwoDAS20027' widget to 'WidgetOneDAS20027' widget
-	And User expand list panel
+	And User clicks Show Dashboards panel icon on Dashboards page
 	And User opens 'Overview' dashboard
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles       |

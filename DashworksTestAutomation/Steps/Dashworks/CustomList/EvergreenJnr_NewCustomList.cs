@@ -419,13 +419,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             listElement.CloseButton.Click();
         }
 
-        [When(@"User expand list panel")]
-        public void WhenUserExpandListPanel()
-        {
-            var listElement = _driver.NowAt<CustomListElement>();
-            listElement.ExpandSideNavPanelIcon.Click();
-        }
-
         [Then(@"Lists panel is hidden")]
         public void ThenListsPanelIsHidden()
         {
