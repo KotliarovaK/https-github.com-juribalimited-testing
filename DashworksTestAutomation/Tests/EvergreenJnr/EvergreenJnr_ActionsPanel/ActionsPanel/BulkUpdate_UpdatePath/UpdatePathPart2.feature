@@ -189,8 +189,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	#====#
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects 'Stage 2' option from 'Stage' autocomplete
-	And User selects 'Date Task (Computer)' option from 'Task' autocomplete
+	And User selects 'Stage 2 \ Date Task (Computer)' option from 'Task' autocomplete
 	#====#
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
 	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete

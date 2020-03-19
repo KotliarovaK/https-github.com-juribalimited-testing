@@ -1,7 +1,6 @@
 ﻿using System;
 using KellermanSoftware.CompareNetObjects;
 using Newtonsoft.Json;
-using NewsStyleUriParser = System.NewsStyleUriParser;
 
 namespace DashworksTestAutomation.DTO.Evergreen.API
 {
@@ -63,6 +62,5 @@ namespace DashworksTestAutomation.DTO.Evergreen.API
         {
             return base.GetHashCode();
         }
-
     }
 }

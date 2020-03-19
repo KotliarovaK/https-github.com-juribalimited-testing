@@ -41290,7 +41290,7 @@
 		"translatedCategory": "Project Tasks: zUserAutom",
 		"category": "ProjectTasks-zUserAutom",
 		"categoryOrder": 8,
-		"displayType": "String",
+		"displayType": "Readiness",
 		"displayOrder": 0,
 		"default": false,
 		"visible": true,

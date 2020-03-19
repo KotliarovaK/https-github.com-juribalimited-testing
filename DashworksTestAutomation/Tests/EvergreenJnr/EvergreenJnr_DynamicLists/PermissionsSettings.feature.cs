@@ -265,7 +265,7 @@ this.FeatureBackground();
 #line 45
  testRunner.When("User selects \'Admin\' in the \'Permission\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.When("User clicks \'person_add\' icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'ADD USER\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
  testRunner.When("User selects \'Automation Admin 1\' in the \'Owner\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48
@@ -447,7 +447,7 @@ this.FeatureBackground();
 #line 87
  testRunner.When("User selects \'Specific users / teams\' in the \'Sharing\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
- testRunner.When("User clicks \'ADD TEAM\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'group_add\' icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 89
  testRunner.When("User selects \'Team 1\' option from \'Team\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 90

@@ -402,6 +402,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             return Driver.FindElements(columnHeaders);
         }
 
+        public bool IsChartHasSpecifiedColor(string widgetName, string colorCode)
+        {
+            var coloredPart = By.XPath($".//*[text()='{widgetName}']//ancestor :: div[@class='widget-whole']//*[@fill='{colorCode}']");
+            return Driver.IsElementDisplayed(coloredPart);
+        }
+
         #endregion
 
         #region Card
