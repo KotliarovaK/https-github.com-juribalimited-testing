@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValues
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -33,8 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValu
 	Then 'CANCEL' button is not disabled
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingValues
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope         | Run    |
@@ -95,8 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	When User enters 'New_Action' text to 'Action Name' textbox
 	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecificValues
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -119,8 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecific
 	Then 'CANCEL' button is not disabled
 	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17751 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17751 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleValue
 	When User creates new Automation via API and open it
 	| AutomationName     | Description | Active | StopOnFailedAction | Scope       | Run    |
