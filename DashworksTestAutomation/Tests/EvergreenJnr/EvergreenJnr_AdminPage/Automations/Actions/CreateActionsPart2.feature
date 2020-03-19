@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
-	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects '2004 Team' option from 'Team' autocomplete
 	When User selects 'Akhila Varghese' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button 
 	When User clicks 'Automations' header breadcrumb
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Update' value is displayed in the 'Update Owner' dropdown
-	Then "1803 Team" content is displayed in "Team" field
+	Then "2004 Team" content is displayed in "Team" field
 	Then "Akhila Varghese" content is displayed in "Owner" field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18432 @DAS18739 @Cleanup
