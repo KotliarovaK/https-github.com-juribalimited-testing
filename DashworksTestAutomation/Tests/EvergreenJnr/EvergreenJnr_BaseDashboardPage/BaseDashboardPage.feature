@@ -278,7 +278,7 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @Widgets @DAS15444 @Cleanup @Cleanup
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @Widgets @DAS15444 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependencies
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -292,19 +292,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User click Delete button for custom list with "DynamicList15444" name
+	When User clicks 'Delete' option in cogmenu for 'DynamicList15444' list
 	Then ""DynamicList15444" list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	When User clicks 'Dashboards' on the left-hand menu
-	When User clicks 'CREATE DASHBOARD' button 
-	And User creates new Dashboard with "Dashboard for DAS15444" name
+	When User clicks 'CREATE DASHBOARD' button
+	And User creates new Dashboard with 'Dashboard for DAS15444' name
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                | List             | MaxRows | MaxColumns |
 	| List       | Widget_For_ DAS15444 | DynamicList15444 | 10      | 10         |
-	Then "Widget_For_ DAS15444" Widget is displayed to the user
+	Then 'Widget_For_ DAS15444' Widget is displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User click Delete button for custom list with "DynamicList15444" name
+	When User clicks 'Delete' option in cogmenu for 'DynamicList15444' list
 	Then ""DynamicList15444" list is used by 1 project and 1 dashboard, do you wish to proceed?" message is displayed in the lists panel
 
 @Evergreen @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS16558 @Cleanup
