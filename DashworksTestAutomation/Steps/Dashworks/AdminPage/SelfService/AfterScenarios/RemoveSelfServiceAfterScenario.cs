@@ -10,6 +10,7 @@ using DashworksTestAutomation.Utils;
 using RestSharp;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios
 {
