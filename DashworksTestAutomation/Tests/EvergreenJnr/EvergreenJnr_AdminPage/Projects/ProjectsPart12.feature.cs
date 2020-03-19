@@ -305,7 +305,7 @@ this.FeatureBackground();
 #line 62
  testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
+ testRunner.Then("\"Users to add (0 of 14757 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 64
  testRunner.When("User navigates to the \'Scope Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -373,7 +373,7 @@ this.FeatureBackground();
 #line 93
  testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
- testRunner.Then("\"Users to add (0 of 14753 selected)\" is displayed to the user in the Project Scop" +
+ testRunner.Then("\"Users to add (0 of 14767 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 95
  testRunner.When("User navigates to the \'Scope Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -629,7 +629,7 @@ this.FeatureBackground();
 #line 159
  testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 162
- testRunner.Then("\"Mailboxes to add (0 of 14784 selected)\" is displayed to the user in the Project " +
+ testRunner.Then("\"Mailboxes to add (0 of 14884 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 163
  testRunner.And("\"Mailboxes to remove (0 of 0 selected)\" is displayed to the user in the Project S" +
@@ -661,7 +661,7 @@ this.FeatureBackground();
  testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
                     "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 176
- testRunner.And("\"Mailboxes to add (0 of 14782 selected)\" is displayed to the user in the Project " +
+ testRunner.And("\"Mailboxes to add (0 of 14882 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 177
  testRunner.And("\"[Default (Mailbox)]\" Path is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

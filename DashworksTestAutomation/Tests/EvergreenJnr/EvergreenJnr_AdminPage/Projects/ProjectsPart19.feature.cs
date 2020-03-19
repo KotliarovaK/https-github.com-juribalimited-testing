@@ -161,7 +161,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Mailbox Evergreen Capacity Project"});
             table1.AddRow(new string[] {
-                        "Project 00 M Computer Scheduled"});
+                        "Project 000 M Computer Scheduled"});
             table1.AddRow(new string[] {
                         "Project using broken list as scope"});
             table1.AddRow(new string[] {

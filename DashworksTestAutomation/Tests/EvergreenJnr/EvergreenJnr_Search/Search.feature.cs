@@ -343,7 +343,7 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("\'All Mailboxes\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 55
- testRunner.And("\"14,784\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"14,884\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
  testRunner.And("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -440,7 +440,7 @@ this.FeatureBackground();
                         "1,996"});
             table9.AddRow(new string[] {
                         "Windows Vista",
-                        "475"});
+                        "124"});
             table9.AddRow(new string[] {
                         "O\'Connor",
                         "13"});
