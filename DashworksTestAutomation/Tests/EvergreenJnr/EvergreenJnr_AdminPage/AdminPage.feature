@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then '9420' content is displayed in the 'Devices' column
 	Then '27140' content is displayed in the 'Users' column
-	Then '5292' content is displayed in the 'Mailboxes' column
+	Then '5291' content is displayed in the 'Mailboxes' column
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
