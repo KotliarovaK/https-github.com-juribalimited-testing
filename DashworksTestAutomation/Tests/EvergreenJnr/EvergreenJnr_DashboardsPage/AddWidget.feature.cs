@@ -1985,9 +1985,7 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUserIsAbleToDeleteNotDefaultDashboard")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS20358")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatUserIsAbleToDeleteNotDefaultDashboard()
         {
             System.Exception lastException = null;
@@ -2019,9 +2017,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatUserIsAbleToDeleteNotDefaultDashboard", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
-                        "Widgets",
-                        "DAS20358",
-                        "Cleanup"});
+                        "DAS20358"});
 #line 374
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
