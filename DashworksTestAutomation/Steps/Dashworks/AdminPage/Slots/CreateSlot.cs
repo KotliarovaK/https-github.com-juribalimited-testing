@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Slots;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -60,13 +61,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
                 switch (slot.CapacityType)
                 {
                     case "Capacity Units":
-                        Utils.Verify.IsTrue(action.GetTextbox("Capacity Units").GetAttribute("value").Contains("All Capacity Units"),
+                        Verify.IsTrue(action.GetTextbox("Capacity Units").GetAttribute("value").Contains("All Capacity Units"),
                             $"Default text in Capacity Units field is incorrect");
                         break;
                     case "Teams and Paths":
-                        Utils.Verify.IsTrue(action.GetTextbox("Teams").GetAttribute("value").Contains("All Teams"),
+                        Verify.IsTrue(action.GetTextbox("Teams").GetAttribute("value").Contains("All Teams"),
                             $"Default text in Teams field is incorrect");
-                        Utils.Verify.IsTrue(action.GetTextbox("Paths").GetAttribute("value").Contains("All Paths"),
+                        Verify.IsTrue(action.GetTextbox("Paths").GetAttribute("value").Contains("All Paths"),
                             $"Default text in Paths field is incorrect");
                         break;
                     default:

@@ -14,11 +14,14 @@ Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Windows XP     | 15           |
+	| Android        | 22           |
 	When User clicks on 'Boot Up Date' column header
 	Then date in table is sorted by 'Boot Up Date' column in descending order
 	When User clicks on 'Boot Up Date' column header
 	Then date in table is sorted by 'Boot Up Date' column in ascending order
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Windows 10     | 16,969       |
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
 	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in descending order
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header

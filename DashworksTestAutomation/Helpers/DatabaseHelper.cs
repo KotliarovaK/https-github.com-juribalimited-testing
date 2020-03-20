@@ -666,6 +666,15 @@ namespace DashworksTestAutomation.Helpers
             return selfServiceId;
         }
 
+        //ListID - Id of the list used in Scope for created Self Service
+        public static string GetSelfServiceObjectGuid(string selfServiceIdentifier, int listId)
+        {
+            string query =
+                $"SELECT [ObjectGUID] FROM [PM].[dbo].[ProjectObjects] PO ,PM.ss.OwnershipComponent OWC ,PM.ss.SelfServiceComponent SSC ,PM.ss.SelfServicePage SSP ,pm.ss.SelfService SSS ,[PM].[API].[ApplicationListItems_Get]({listId}, DEFAULT) LI where PO.ObjectTypeId = 3 and [ObjectGUID] is NOT null and [ObjectKey] = LI.ApplicationKey and OWC.ProjectId = PO.ProjectID and owc.ComponentId = ssc.ComponentId and ssp.PageId = ssc.PageId and sss.SelfServiceId = ssp.SelfServiceId and sss.SelfServiceIdentifier='{selfServiceIdentifier}'";
+            var guid = DatabaseHelper.ExecuteReader(query, 0)[0];
+            return guid;
+        }
+
         #region Builder
 
         public static int GetSelfServicePageId(SelfServicePageDto page)

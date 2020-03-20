@@ -303,7 +303,7 @@ namespace DashworksTestAutomation.Extensions
             //foreach (var entry in driver.Manage().Logs.GetLog(LogType.Browser).ToList())
             //    if (entry.Level == LogLevel.Severe)
             //        errorsList.Add(entry);
-            //Utils.Verify.IsEmpty(errorsList, "Error message is displayed in the console");
+            //Verify.IsEmpty(errorsList, "Error message is displayed in the console");
         }
 
         public static void CheckConsoleErrors(this RemoteWebDriver driver, string expectedConsoleError)

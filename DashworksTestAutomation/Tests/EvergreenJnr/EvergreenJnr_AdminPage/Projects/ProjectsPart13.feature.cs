@@ -156,7 +156,7 @@ this.FeatureBackground();
  testRunner.When("User Add And \"Device Type\" filter where type is \"Equals\" with added column and Lo" +
                     "okup option", ((string)(null)), table2, "When ");
 #line 20
- testRunner.Then("\"222\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"57\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
  testRunner.When("User create dynamic list with \"DynamicList4811\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
@@ -179,8 +179,8 @@ this.FeatureBackground();
 #line 27
  testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.Then("\"Devices to add (0 of 222 selected)\" is displayed to the user in the Project Scop" +
-                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Devices to add (0 of 57 selected)\" is displayed to the user in the Project Scope" +
+                    " Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 29
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

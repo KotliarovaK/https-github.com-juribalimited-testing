@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	And User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @DAS20363 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -133,8 +133,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
 	When User enters '0' text to 'Value' textbox
 	When User selects 'Week days' in the 'Units' dropdown
-	When User selects 'After now' in the 'Before or After' dropdown
+	When User selects 'After task value' in the 'Before or After' dropdown
 	When User clicks 'CREATE' button
+	Then 'Complete, zUser Sch for Automations Feature, Stage 2 \ Relative Task, 0 weekday after task value' content is displayed in the 'Value' column
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19854_Automation" text in the Search field for "Automation" column
@@ -176,3 +177,24 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	And User clicks content from "Objects" column
 	Then '' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task (Date)' column
 	Then 'COMPLETE' content is displayed in the 'zUserAutom: Stage 1 \ Original Auto Task' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20278 @Cleanup @Wormhole
+Scenario: EvergreenJnr_AdminPage_CheckOwnerDropdownDisplayingAfterSelectingEmptyTeam
+	When User creates new Team via api
+	| TeamName   | Description | IsDefault |
+	| 20278_Test | test        | false     |
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| 20278_Automation | 20278       | true   | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '20278_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage C \ Readiness Owner Date Don't Change' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Owner' dropdown
+	When User selects '20278_Test' option from 'Team' autocomplete
+	When User selects 'Unassigned' option from 'Owner' autocomplete
+	Then 'CREATE' button is not disabled

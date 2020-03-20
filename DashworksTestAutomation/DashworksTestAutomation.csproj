@@ -37,8 +37,8 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutomationUtils, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutomationUtils.1.0.1\lib\netstandard2.0\AutomationUtils.dll</HintPath>
+    <Reference Include="AutomationUtils, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutomationUtils.1.0.3\lib\netstandard2.0\AutomationUtils.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.22.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.22\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -705,6 +705,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateCustomFieldAutomations1.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Automations2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Automations2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1005,10 +1010,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectsPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Automations.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Automations1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Automations.feature</DependentUpon>
+      <DependentUpon>Automations1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Rings\CreateRing.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2037,9 +2042,6 @@
     <Compile Include="Utils\LockCategory.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\LoggingExtensions.cs" />
-    <Compile Include="Utils\MsgUtils.cs" />
-    <Compile Include="Utils\TestDataGenerator.cs" />
-    <Compile Include="Utils\Verify.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -2245,6 +2247,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateCustomFieldAutomations1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Automations2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Automations2.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2486,9 +2492,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ProjectsPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Automations.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Automations1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Automations.feature.cs</LastGenOutput>
+      <LastGenOutput>Automations1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Rings\CreateRing.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -909,7 +909,7 @@ this.FeatureBackground();
             "20WHERE%20(iod%2Cubdo))", "1,003", "Application Owner begins with app installed on device; or used by device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("General information field 5 (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20END%20WITH%" +
             "20(\'0.5\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))&$select=hostname,chassisCat" +
-            "egory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79", "52", "General information field 5 does not end with 0.5 used on device; entitled to dev" +
+            "egory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79", "115", "General information field 5 does not end with 0.5 used on device; entitled to dev" +
             "ice; installed on device; used by device\'s owner; or entitled to device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20(\'7zip\')%20WHERE%20" +
             "(ubdo))", "160", "Application whose Name is not 7zip used by device\'s owner", null)]

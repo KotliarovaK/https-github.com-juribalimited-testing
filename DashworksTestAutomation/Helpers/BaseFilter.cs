@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -305,11 +306,11 @@ namespace DashworksTestAutomation.Helpers
                 switch (_operatorValue)
                 {
                     case "Does not equal":
-                        Utils.Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
+                        Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => !value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
                         break;
 
                     case "Equals":
-                        Utils.Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
+                        Verify.IsTrue(_optionsTable.Rows.Select(x => x["SelectedCheckboxes"]).All(x => value.Equals(x)), "PLEASE ADD EXCEPTION MESSAGE");
                         break;
 
                     default:
@@ -398,7 +399,7 @@ namespace DashworksTestAutomation.Helpers
                     var addedOptions = _driver.FindElements(By.XPath(allAddedOptionsSelector))
                         .Select(value => value.Text).ToList();
                     _driver.WaitForDataLoading();
-                    Utils.Verify.Contains(row["Values"], addedOptions, "PLEASE ADD EXCEPTION MESSAGE");
+                    Verify.Contains(row["Values"], addedOptions, "PLEASE ADD EXCEPTION MESSAGE");
                 }
             }
             SaveFilter();

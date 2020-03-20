@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	| 22 May 2014 | 22 May 2018 |
 	Then Rows counter contains "2" found row of all rows
 
-@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
+@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	| False      |
 	Then Rows counter shows "94" of "168" rows
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431 @DAS19243
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431 @DAS19243 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 	| Values            |
 	| Empty             |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage
 	When User navigates to the 'Application' details page for 'ACDSee 5.0.1 PowerPack' item
 	Then Details page for 'ACDSee 5.0.1 PowerPack' item is displayed to the user
