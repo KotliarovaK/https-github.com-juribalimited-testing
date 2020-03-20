@@ -1089,7 +1089,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
-            Verify.AreEqual(list.OrderBy(s => s, StringComparer.OrdinalIgnoreCase), list, "Teams are not in alphabetical order");
+            Verify.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
             page.BodyContainer.Click();
         }
 
