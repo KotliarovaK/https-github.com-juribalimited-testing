@@ -12,6 +12,7 @@ using OpenQA.Selenium.Remote;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using TechTalk.SpecFlow;
 
@@ -144,7 +145,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
+            Verify.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
         }
 
         [Then(@"full list content is displayed to the user")]
@@ -152,7 +153,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(page.TableContent);
-            Utils.Verify.IsTrue(page.TableRows.Count > 5, "Table is empty");
+            Verify.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
         [Then(@"User sees ""(.*)"" rows in grid")]
@@ -184,7 +185,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var rows = page.TableRows;
             foreach (var row in rows)
             {
-                Utils.Verify.That(row.FindElement(By.XPath(BaseDashboardPage.GridCell)).Displayed, Is.True);
+                Verify.That(row.FindElement(By.XPath(BaseDashboardPage.GridCell)).Displayed, Is.True);
             }
         }
 

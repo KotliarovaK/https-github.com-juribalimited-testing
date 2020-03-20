@@ -37,8 +37,8 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutomationUtils, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutomationUtils.1.0.2\lib\netstandard2.0\AutomationUtils.dll</HintPath>
+    <Reference Include="AutomationUtils, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutomationUtils.1.0.3\lib\netstandard2.0\AutomationUtils.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.22.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.22\lib\Net45\HtmlAgilityPack.dll</HintPath>
@@ -2037,8 +2037,6 @@
     <Compile Include="Utils\LockCategory.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\LoggingExtensions.cs" />
-    <Compile Include="Utils\MsgUtils.cs" />
-    <Compile Include="Utils\Verify.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -1,12 +1,13 @@
 ﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -34,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRingSettingsMapsToEvergreenIsDisplayedCorrectly(string ringName)
         {
             var page = _driver.NowAt<CreateRingPage>();
-            Utils.Verify.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
+            Verify.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
         }
 
         [When(@"User doubleclicks Create button on Create Ring page")]

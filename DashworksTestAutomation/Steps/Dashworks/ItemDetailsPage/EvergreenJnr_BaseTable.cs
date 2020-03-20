@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using AutomationUtils.Utils;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;

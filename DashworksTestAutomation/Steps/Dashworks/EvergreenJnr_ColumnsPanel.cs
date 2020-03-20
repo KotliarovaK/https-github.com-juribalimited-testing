@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -9,10 +10,10 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -30,7 +31,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColumnsPanelIsDisplayedToTheUser()
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Utils.Verify.IsTrue(columnElement.ColumnsPanel.Displayed(), "Columns panel is not displayed");
+            Verify.IsTrue(columnElement.ColumnsPanel.Displayed(), "Columns panel is not displayed");
             Logger.Write("Columns panel is visible");
         }
 
@@ -171,8 +172,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var currentUrl = _driver.Url;
             var sorting = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
-            Utils.Verify.Contains("%20asc", currentUrl, columnName);
+            Verify.IsTrue(sorting.AscendingSortingIcon.Displayed(), "Ascending icon is not displayed");
+            Verify.Contains("%20asc", currentUrl, columnName);
         }
 
         [Then(@"default URL is displayed on ""(.*)"" page")]
@@ -181,7 +182,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var currentUrl = _driver.Url;
             const string pattern = @"evergreen\/#\/(.*)";
             var currentPageName = Regex.Match(currentUrl, pattern).Groups[1].Value;
-            Utils.Verify.AreEqual(currentPageName, pageName.ToLower(), "Incorrect Page Name in URL");
+            Verify.AreEqual(currentPageName, pageName.ToLower(), "Incorrect Page Name in URL");
         }
 
         [When(@"User remove sorted column on ""(.*)"" page by URL")]
@@ -297,7 +298,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var resetButton = columnElement.SearchTextBoxResetButton;
             if (resetButton.Displayed()) resetButton.Click();
 
-            Utils.Verify.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName),
+            Verify.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName),
                 $"Incorrect subcategories count for {categoryName} category");
         }
 
@@ -305,7 +306,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSubcategoryIsDisplayedForCategory(string subCategory, string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Utils.Verify.AreEqual(subCategory, columnElement.GetSubcategoryByCategoryName(categoryName),
+            Verify.AreEqual(subCategory, columnElement.GetSubcategoryByCategoryName(categoryName),
                 $"Incorrect subcategory for {categoryName} category");
         }
 
@@ -313,7 +314,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSubcategoryIsSelectedInColumnPanel(string subCategoriesName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Utils.Verify.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName),
+            Verify.IsTrue(columnElement.SubcategoryIsSelected(subCategoriesName),
                 $"{subCategoriesName} is not selected");
         }
 
@@ -321,7 +322,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsNotDisplayedInTheColumnsPanel(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Utils.Verify.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
+            Verify.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
                 $"{categoryName} category still displayed in Column Panel");
         }
 
@@ -329,7 +330,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsDisplayedInTheColumnsPanel(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Utils.Verify.IsTrue(columnElement.CategoryIsDisplayed(categoryName),
+            Verify.IsTrue(columnElement.CategoryIsDisplayed(categoryName),
                 $"{categoryName} category is not displayed in Column Panel");
         }
 
@@ -351,7 +352,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             var groupCount = columnElement.GroupTitle.Count;
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
+            Verify.AreEqual(groupCount, columnElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
 
         [Then(@"Maximize buttons are displayed for all category in Columns panel")]
@@ -360,14 +361,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             _driver.WaitForDataLoading();
             var groupCount = columnElement.GroupTitle.Count - 1;
-            Utils.Verify.AreEqual(groupCount, columnElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
+            Verify.AreEqual(groupCount, columnElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
 
         [Then(@"Maximize or Minimize button is not displayed for ""(.*)"" category")]
         public void ThenMaximizeOrMinimizeButtonIsNotDisplayedForCategory(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Utils.Verify.IsFalse(columnElement.MaximizeOrMinimizeButtonByCategory(categoryName).Displayed(),
+            Verify.IsFalse(columnElement.MaximizeOrMinimizeButtonByCategory(categoryName).Displayed(),
                 $"Maximize/Minimize button is displayed for empty {categoryName} category");
         }
 
@@ -375,7 +376,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMinimizeButtonIsDisplayedForCategory(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Utils.Verify.IsTrue(columnElement.MinimizeButtonByCategory(categoryName).Displayed(),
+            Verify.IsTrue(columnElement.MinimizeButtonByCategory(categoryName).Displayed(),
                 $"Minimize button is not displayed for {categoryName} category");
         }
 
@@ -383,7 +384,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMaximizeButtonIsDisplayedForCategory(string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            Utils.Verify.IsTrue(columnElement.MaximizeButtonByCategory(categoryName).Displayed(),
+            Verify.IsTrue(columnElement.MaximizeButtonByCategory(categoryName).Displayed(),
                 $"Maximize button is not displayed for {categoryName} category");
         }
 
@@ -434,7 +435,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ColumnsElement>();
 
             foreach (var row in table.Rows)
-                Utils.Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(), Is.EqualTo(row["Number"]),
+                Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(), Is.EqualTo(row["Number"]),
                     $"Check {row["Category"]} category");
         }
 
@@ -444,7 +445,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ColumnsElement>();
 
             foreach (var row in table.Rows)
-                Utils.Verify.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
+                Verify.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
                     $"Check {row["Category"]} category");
         }
 
