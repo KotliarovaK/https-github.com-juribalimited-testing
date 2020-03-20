@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	And User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @DAS20363 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -133,8 +133,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
 	When User enters '0' text to 'Value' textbox
 	When User selects 'Week days' in the 'Units' dropdown
-	When User selects 'After now' in the 'Before or After' dropdown
+	When User selects 'After task value' in the 'Before or After' dropdown
 	When User clicks 'CREATE' button
+	Then 'Complete, zUser Sch for Automations Feature, Stage 2 \ Relative Task, 0 weekday after task value' content is displayed in the 'Value' column
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19854_Automation" text in the Search field for "Automation" column

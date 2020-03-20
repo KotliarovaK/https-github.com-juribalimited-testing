@@ -237,6 +237,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRenamedListDisplayingInAutomationLog
 	When User changes list name to "Renamed_16318_TestList"
 	Then "Renamed_16318_TestList" name is displayed in list details panel
 	#Chaeck Scoped List name 
+	#(should be renamed list name)
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
@@ -249,9 +250,10 @@ Scenario: EvergreenJnr_AdminPage_CheckRenamedListDisplayingInAutomationLog
 	When User clicks Column button on the Column Settings panel
 	When User select "Scope" checkbox on the Column Settings panel
 	When User clicks Column button on the Column Settings panel
-	Then "16318_TestList" content is displayed for "Scope" column
-	When User clicks content from "Objects" column
+	Then "Renamed_16318_TestList" content is displayed for "Scope" column
+	When User clicks content from "Scope" column
 	Then "Renamed_16318_TestList" list is displayed to user
+	#(steps described below should be removed after Sprint review)
 	#Run Automation with Renamed List
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
