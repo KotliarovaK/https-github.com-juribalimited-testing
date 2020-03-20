@@ -452,8 +452,8 @@ this.FeatureBackground();
  testRunner.Then("Details page for \'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030\' " +
                     "item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 78
- testRunner.When("User selects \'Project 00 M Computer Scheduled\' in the \'Item Details Project\' drop" +
-                    "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Project 000 M Computer Scheduled\' in the \'Item Details Project\' dro" +
+                    "pdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 79
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 80
@@ -463,8 +463,9 @@ this.FeatureBackground();
 #line 82
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83
- testRunner.When("User enters \'4019\' in the \'Application\' autocomplete field and selects \'Microsoft" +
-                    " Corporation Microsoft .NET Framework 4.5 4.5.50709 (4019)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'Microsoft Corporation Microsoft .NET Framework 4.5 4.5.50709\' in the" +
+                    " \'Application\' autocomplete field and selects \'Microsoft Corporation Microsoft ." +
+                    "NET Framework 4.5 4.5.50709\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
  testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 85
@@ -476,9 +477,7 @@ this.FeatureBackground();
 #line 89
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 90
- testRunner.When("User enters \'4018\' in the \'Application\' autocomplete field and selects \'Microsoft" +
-                    " Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030 11.0." +
-                    "61030 (4018)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(@"User enters 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.50727 11.0.50727' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.50727 11.0.50727' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 91
  testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92

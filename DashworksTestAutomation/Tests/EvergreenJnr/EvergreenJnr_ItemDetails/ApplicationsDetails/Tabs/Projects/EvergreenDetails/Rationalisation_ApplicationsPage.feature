@@ -45,8 +45,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDis
 	| RETIRE        |
 	| UNCATEGORISED |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Cleanup @Universe
-	#AnnI 1/16/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppliedSuccessfully
 	When User navigates to the 'Application' details page for the item with '675' ID
 	Then Details page for 'Music Visualizer Library 1.0' item is displayed to the user
@@ -67,7 +66,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppl
 	And User navigates to the 'Evergreen Details' left submenu item
 	When User clicks on edit button for 'Rationalisation' field
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Corel WordPerfect' in the 'Application' autocomplete field and selects 'Corel WordPerfect 8 (327)' value
+	When User enters 'Corel WordPerfect' in the 'Application' autocomplete field and selects 'Corel WordPerfect Key Demo' value
 	When User clicks 'UPDATE' button on popup
 	Then following content is displayed on the Details Page
 	| Title           | Value        |
@@ -96,8 +95,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppl
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button on popup
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19448 @Cleanup @Universe
-	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19448 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRationalisationFromKeepToForwardPathIsConsistentWithProjectRationalisationBehaviour
 		#--app 1 to app 2--#
 	When User navigates to the 'Application' details page for the item with '251' ID
