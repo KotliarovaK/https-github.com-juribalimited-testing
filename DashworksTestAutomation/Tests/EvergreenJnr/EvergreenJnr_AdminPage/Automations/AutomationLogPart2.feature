@@ -509,9 +509,4 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                                         |
-	| USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User) |
 	Then 'FAILED' content is displayed in the 'USEMEFORA2: Stage 1 \ Radiobutton Readiness Date Owner Task (User)' column
