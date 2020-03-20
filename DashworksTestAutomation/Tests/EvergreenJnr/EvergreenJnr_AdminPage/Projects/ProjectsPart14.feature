@@ -14,10 +14,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
 	Then Page with 'Buckets' header is displayed to user
-	When User clicks String Filter button for "Project" column on the Admin page
-	Then Projects in filter dropdown are displayed in alphabetical order
-	When User clicks String Filter button for "Owned By Team" column on the Admin page
-	Then Teams in filter dropdown are displayed in alphabetical order
+	Then options are sorted in alphabetical order in dropdown for 'Project' column
+	Then options are sorted in alphabetical order in dropdown for 'Owned By Team' column
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User enters "project12949" text in the Search field for "Project" column
