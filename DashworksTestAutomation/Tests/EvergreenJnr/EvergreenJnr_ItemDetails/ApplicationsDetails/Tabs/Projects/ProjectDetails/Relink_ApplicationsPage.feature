@@ -75,19 +75,19 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithoutOwnerToWithoutOwner
 	When User navigates to the 'Application' details page for the item with '4018' ID
 	Then Details page for 'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030' item is displayed to the user
-	When User selects 'Project 00 M Computer Scheduled' in the 'Item Details Project' dropdown with wait
+	When User selects 'Project 000 M Computer Scheduled' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button 
 	Then popup is displayed to User
-	When User enters '4019' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft .NET Framework 4.5 4.5.50709 (4019)' value
+	When User enters 'Microsoft Corporation Microsoft .NET Framework 4.5 4.5.50709' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft .NET Framework 4.5 4.5.50709' value
 	When User clicks 'RELINK' button on popup
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 	#return values ​​back
-	When User clicks 'RELINK' button 
+	When User clicks 'RELINK' button
 	Then popup is displayed to User
-	When User enters '4018' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030 11.0.61030 (4018)' value
+	When User enters 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.50727 11.0.50727' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.50727 11.0.50727' value
 	When User clicks 'RELINK' button on popup
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner

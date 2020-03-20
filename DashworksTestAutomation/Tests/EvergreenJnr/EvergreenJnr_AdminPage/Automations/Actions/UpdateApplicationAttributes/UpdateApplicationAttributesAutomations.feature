@@ -269,7 +269,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	Then 'Rationalisation' content is displayed in the 'Task or Field' column
 	Then '2004 Rollout' content is displayed in the 'Project' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicationAttributes
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
