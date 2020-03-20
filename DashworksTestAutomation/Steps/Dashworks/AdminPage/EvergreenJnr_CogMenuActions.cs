@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -127,7 +128,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenCogMenuIsNotDisplayedOnTheAdminPage()
         {
             var cogMenu = _driver.NowAt<CogMenuElements>();
-            Utils.Verify.IsFalse(cogMenu.CogMenu.Displayed(), "Cog menu is displayed");
+            Verify.IsFalse(cogMenu.CogMenu.Displayed(), "Cog menu is displayed");
         }
 
         [When(@"User clicks '(.*)' option in opened Cog-menu")]
@@ -143,8 +144,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 
             _driver.WaitForDataLoading();
             cogMenu.CogMenu.Click();
-            Utils.Verify.AreEqual("rgba(21, 40, 69, 1)", cogMenu.GetCogMenuDropdownColor(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.AreEqual("rgba(0, 0, 0, 0)", cogMenu.GetCogMenuDropdownLabelColor(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("rgba(21, 40, 69, 1)", cogMenu.GetCogMenuDropdownColor(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("rgba(0, 0, 0, 0)", cogMenu.GetCogMenuDropdownLabelColor(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         public void ClickOnCogMenuOption(string option)

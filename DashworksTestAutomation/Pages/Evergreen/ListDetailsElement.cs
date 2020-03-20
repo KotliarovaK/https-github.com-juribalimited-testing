@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using HtmlAgilityPack;
@@ -84,7 +85,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             doc.LoadHtml(pageSource);
             var node = doc.DocumentNode.SelectNodes($".//div[@id='{openPermissionsSection}']")[0];
             var openPermissionsSectionTooltip = node.InnerHtml;
-            Utils.Verify.AreEqual(tooltipText, openPermissionsSectionTooltip, "Tooltip is incorrect for button");
+            Verify.AreEqual(tooltipText, openPermissionsSectionTooltip, "Tooltip is incorrect for button");
         }
 
         public IWebElement GetDependentListByName(string listName)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks;
@@ -44,8 +45,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<Projects_DashboardsGroupsPage>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.GetPageHeaderByGroupName(groupName).Displayed, "Selected Group is not displayed");
-            Utils.Verify.IsTrue(page.Table.Displayed, "Table for selected group is not loaded");
+            Verify.IsTrue(page.GetPageHeaderByGroupName(groupName).Displayed, "Selected Group is not displayed");
+            Verify.IsTrue(page.Table.Displayed, "Table for selected group is not loaded");
         }
 
         [When(@"User creates new Project on Senior")]
@@ -93,7 +94,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCсEmailFieldIsDisplayedWithTextOnSenior(string emailText)
         {
             var page = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(page.GetTextInCcEmailAddressField(emailText).Displayed(),
+            Verify.IsTrue(page.GetTextInCcEmailAddressField(emailText).Displayed(),
                 $"Email with '{emailText}' text is not displayed");
         }
 
@@ -101,7 +102,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenBCсEmailFieldIsDisplayedWithTextOnSenior(string emailText)
         {
             var page = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsTrue(page.GetTextInBccEmailAddressField(emailText).Displayed(),
+            Verify.IsTrue(page.GetTextInBccEmailAddressField(emailText).Displayed(),
                 $"Email with '{emailText}' text is not displayed");
         }
 
@@ -123,14 +124,14 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenCсEmailFieldOnSeniorIsEmpty()
         {
             var page = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsEmpty(page.CcEmail.GetAttribute("value"), "CC email field is not empty");
+            Verify.IsEmpty(page.CcEmail.GetAttribute("value"), "CC email field is not empty");
         }
 
         [Then(@"BCC email field on Senior is empty")]
         public void ThenBссEmailFieldOnSeniorIsEmpty()
         {
             var page = _driver.NowAt<DetailsPage>();
-            Utils.Verify.IsEmpty(page.BccEmail.GetAttribute("value"), "BCC email field is not empty");
+            Verify.IsEmpty(page.BccEmail.GetAttribute("value"), "BCC email field is not empty");
         }
 
         [When(@"User selects ""(.*)"" as Task Value Type")]
@@ -148,7 +149,7 @@ namespace DashworksTestAutomation.Steps.Projects
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Thread.Sleep(500);
             var actualList = action.OptionsOfObjectTypeProperty.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Items are different");
+            Verify.AreEqual(expectedList, actualList, "Items are different");
         }
     }
 }

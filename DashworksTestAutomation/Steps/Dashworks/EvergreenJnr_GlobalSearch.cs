@@ -1,11 +1,12 @@
 ﻿using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -62,7 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitForElementToBeDisplayed(listPageElement.ResultsRowsCount);
 
-                Utils.Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                     listPageElement.ResultsRowsCount.Text, "Incorrect rows count");
                 Logger.Write(
                     $"Evergreen Global Search returned the correct number of rows for: {numberOfRows}  search");
@@ -71,9 +72,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _driver.IsElementDisplayed(listPageElement.ResultsRowsCount);
                 _driver.WaitForElementToBeNotDisplayed(listPageElement.ResultsRowsCount);
-                Utils.Verify.IsFalse(listPageElement.ResultsRowsCount.Displayed(), "Rows count is displayed");
+                Verify.IsFalse(listPageElement.ResultsRowsCount.Displayed(), "Rows count is displayed");
                 _driver.WaitForElementToBeDisplayed(listPageElement.ResultsRowsCount);
-                Utils.Verify.IsTrue(listPageElement.ResultsRowsCount.Displayed(),
+                Verify.IsTrue(listPageElement.ResultsRowsCount.Displayed(),
                     "'No Results Found' message not displayed");
                 Logger.Write(
                     $"Evergreen agGrid Search returned '{listPageElement.ResultsRowsCount.Text}' message");
@@ -95,7 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.NoResultFound);
-            Utils.Verify.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
+            Verify.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
         }
 
         [Then(@"'(.*)' label is displayed below Global Search field")]
@@ -104,14 +105,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.ShowAllResultsLabel);
 
-            Utils.Verify.AreEqual(label, searchElement.ShowAllResultsLabel.Text, $"{label} is not displayed");
+            Verify.AreEqual(label, searchElement.ShowAllResultsLabel.Text, $"{label} is not displayed");
         }
 
         [Then(@"""(.*)"" message is not displayed below Global Search field")]
         public void ThenMessageIsNotDisplayedBelowGlobalSearchField(string text)
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
-            Utils.Verify.IsFalse(searchElement.NoResultFound.Displayed(), $"{text} is not displayed");
+            Verify.IsFalse(searchElement.NoResultFound.Displayed(), $"{text} is not displayed");
         }
 
         [Then(@"message ""(.*)"" is displayed to the user below Search results")]
@@ -119,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
+            Verify.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"Search results are displayed below Global Search field")]
@@ -127,7 +128,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.SearchResults);
-            Utils.Verify.IsTrue(searchElement.SearchResults.Displayed(), "Search Result are not displayed");
+            Verify.IsTrue(searchElement.SearchResults.Displayed(), "Search Result are not displayed");
         }
 
         [Then(@"list of results is displayed to the user")]
@@ -135,8 +136,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.TableOfSearchResults);
-            Utils.Verify.IsTrue(searchElement.TableOfSearchResults.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsTrue(searchElement.TableContent.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(searchElement.TableOfSearchResults.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(searchElement.TableContent.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"reset button in Global Search field is displayed")]
@@ -144,7 +145,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForElementToBeDisplayed(searchElement.GlobalSearchTextBoxResetButton);
-            Utils.Verify.IsTrue(searchElement.GlobalSearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
+            Verify.IsTrue(searchElement.GlobalSearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
 
@@ -163,8 +164,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var listOfValues = page.GetVersionColumnDataOfSearchResult().Select(x => x.Text).ToList();
 
-            Utils.Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");
-            Utils.Verify.That(listOfValues, Does.Not.Contain("[9999999]"), "[9999999] item displayed in column");
+            Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");
+            Verify.That(listOfValues, Does.Not.Contain("[9999999]"), "[9999999] item displayed in column");
         }
 
         [Then(@"Package Version column of Search Results has no Unknown item")]
@@ -174,8 +175,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var listOfValues = page.GetPackageVersionColumnDataOfGrid().Select(x => x.Text).ToList();
 
-            Utils.Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");
-            Utils.Verify.That(listOfValues, Does.Not.Contain("[9999999]"), "[9999999] item displayed in column");
+            Verify.That(listOfValues, Does.Not.Contain("Unknown"), "Unknown item displayed in column");
+            Verify.That(listOfValues, Does.Not.Contain("[9999999]"), "[9999999] item displayed in column");
         }
 
         

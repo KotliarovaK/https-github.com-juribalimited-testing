@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
@@ -141,7 +142,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var allFieldsContent = Driver.FindElements(By.XPath(".//tbody/tr/td[2]"));
 
-            foreach (var element in allFieldsContent) Utils.Verify.IsFalse(string.IsNullOrEmpty(element.Text), "PLEASE ADD EXCEPTION MESSAGE");
+            foreach (var element in allFieldsContent) Verify.IsFalse(string.IsNullOrEmpty(element.Text), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         public int GetColumnNumberByName(string columnName)
