@@ -86,7 +86,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19365")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_UsersList_CheckThatAllColumnsAreDisplayedOnMailboxesSubTab()
         {
             System.Exception lastException = null;
@@ -120,8 +119,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS19365",
-                        "Universe"});
+                        "DAS19365"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

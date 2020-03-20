@@ -1020,7 +1020,7 @@ this.FeatureBackground();
 #line 215
  testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 216
- testRunner.Then("\"14,784\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"14,884\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 217
  testRunner.And("\"City\" filter is removed from filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -4215,11 +4215,11 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10696")]
         [NUnit.Framework.CategoryAttribute("DAS12114")]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,778", "is not empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,781", "is not", null)]
+        [NUnit.Framework.TestCaseAttribute("Not empty", "", "14,878", "is not empty", null)]
+        [NUnit.Framework.TestCaseAttribute("Does not equal", "8 Mar 2016", "14,881", "is not", null)]
         [NUnit.Framework.TestCaseAttribute("Equals", "8 Mar 2016", "3", "is", null)]
         [NUnit.Framework.TestCaseAttribute("Empty", "", "6", "is empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,699", "is before", null)]
+        [NUnit.Framework.TestCaseAttribute("Before", "8 Mar 2016", "4,799", "is before", null)]
         [NUnit.Framework.TestCaseAttribute("After", "8 Mar 2016", "10,076", "is after", null)]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterOperatorsIsCorrectInFilterInfo(string operatorValue, string filterOption, string rowsCount, string operatorValueInInfo, string[] exampleTags)
         {

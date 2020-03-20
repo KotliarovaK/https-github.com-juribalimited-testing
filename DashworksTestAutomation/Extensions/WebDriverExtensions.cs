@@ -11,7 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using AutomationUtils.Utils;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -301,7 +303,7 @@ namespace DashworksTestAutomation.Extensions
             //foreach (var entry in driver.Manage().Logs.GetLog(LogType.Browser).ToList())
             //    if (entry.Level == LogLevel.Severe)
             //        errorsList.Add(entry);
-            //Utils.Verify.IsEmpty(errorsList, "Error message is displayed in the console");
+            //Verify.IsEmpty(errorsList, "Error message is displayed in the console");
         }
 
         public static void CheckConsoleErrors(this RemoteWebDriver driver, string expectedConsoleError)

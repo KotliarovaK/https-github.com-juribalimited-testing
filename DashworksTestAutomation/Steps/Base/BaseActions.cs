@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
@@ -72,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Base
         [Then(@"'(.*)' text is highlighted")]
         public void ThenSelectedTextIsHighlighted(string textSelected)
         {
-            Utils.Verify.That(_driver.GetSelectedText(), Is.EqualTo(textSelected));
+            Verify.That(_driver.GetSelectedText(), Is.EqualTo(textSelected));
         }
 
         [When(@"User waits for '(.*)' seconds")]

@@ -262,20 +262,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	Then 'WidgetForDAS18091' Widget is displayed to the user
 	Then There is no 'Empty' column for 'WidgetForDAS18091' widget
 	#DAS18090 
-	When User clicks 'NOT READY' value for 'Windows 7' column
+	When User clicks 'NOT READY' value for 'Windows 10' column
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Operating System is Windows 7" is displayed in added filter info
+	Then "Operating System is Windows 10" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 	Then "2004: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
-	#DAS16516
-	When Dashboard with 'Dashboard for DAS18091' name is opened via API
-	When User clicks 'READY' value for 'Windows Vista' column
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	Then "Operating System is Windows Vista" is displayed in added filter info
-	Then "Any Device in list 2004 Rollout" is displayed in added filter info
-	Then "2004: Pre-Migration \ Ready to Migrate is Ready" is displayed in added filter info
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidget
@@ -616,3 +608,41 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplay
 	| Administrator |
 	| Joanne Gall   |
 	| Unassigned    |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20027 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardAreOpenedAfterDragAndDropWidgetsRepeatedly
+	When Dashboard with 'Dashboard DAS20027' name created via API and opened
+	And User checks 'Edit mode' slide toggle
+	And User clicks 'ADD WIDGET' button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetOneDAS20027 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
+	Then 'WidgetOneDAS20027' Widget is displayed to the user
+	When User clicks 'ADD WIDGET' button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetTwoDAS20027 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
+	Then 'WidgetTwoDAS20027' Widget is displayed to the user
+	When User clicks 'ADD WIDGET' button
+	And User creates new Widget
+	| WidgetType | Title               | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetThreeDAS20027 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
+	Then 'WidgetThreeDAS20027' Widget is displayed to the user
+	When User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
+	And User move 'WidgetThreeDAS20027' widget to 'WidgetOneDAS20027' widget
+	And User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
+	And User move 'WidgetTwoDAS20027' widget to 'WidgetOneDAS20027' widget
+	And User move 'WidgetThreeDAS20027' widget to 'WidgetTwoDAS20027' widget
+	And User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
+	And User move 'WidgetTwoDAS20027' widget to 'WidgetOneDAS20027' widget
+	And User move 'WidgetThreeDAS20027' widget to 'WidgetTwoDAS20027' widget
+	And User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
+	And User move 'WidgetTwoDAS20027' widget to 'WidgetOneDAS20027' widget
+	And User clicks Show Dashboards panel icon on Dashboards page
+	And User opens 'Overview' dashboard
+	Then User sees following Widgets on Dashboards page:
+	| WidgetTitles       |
+	| Device Profile     |
+	| Operating Systems  |
+	| Top 10 App Vendors |
+	| Domain Profile     |

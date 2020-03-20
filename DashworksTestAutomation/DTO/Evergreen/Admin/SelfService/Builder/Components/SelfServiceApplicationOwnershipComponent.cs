@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components
 {
-    public class SelfServiceApplicationOwnershipComponent
+    public class SelfServiceApplicationOwnershipComponent : BaseSelfServiceComponent
     {
         private string _project;
         public string ProjectName
@@ -56,26 +56,11 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Compon
             }
         }
 
-        [JsonProperty("componentId")] public int ComponentId = 1;
-
-        [JsonProperty("pageId")]
-        public int PageId { get; set; }
-
-        [JsonProperty("componentTypeId")] public int ComponentTypeId = 2;
-
-        [JsonProperty("componentName")]
-        public string ComponentName { get; set; }
-
-        [JsonProperty("order")] public int Order = 1;
-
-        [JsonProperty("helpText")]
-        public string HelpText { get; set; }
-
-        [JsonProperty("componentTypeDescription")]
-        public string ComponentTypeDescription { get; set; }
-
-        [JsonProperty("showInSelfService")]
-        public bool ShowInSelfService { get; set; }
+        public SelfServiceApplicationOwnershipComponent()
+        {
+            ComponentId = 1;
+            ComponentTypeId = 2;
+        }
 
         [JsonProperty("extraProperties")]
         public ApplicationOwnershipExtraProperties ExtraProperties = new ApplicationOwnershipExtraProperties();

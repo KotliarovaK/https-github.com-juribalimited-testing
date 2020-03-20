@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
         [NUnit.Framework.CategoryAttribute("DAS17218")]
         [NUnit.Framework.CategoryAttribute("DAS11053")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode()
         {
             System.Exception lastException = null;
@@ -127,7 +128,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
                         "DAS17182",
                         "DAS17218",
                         "DAS11053",
-                        "DAS14923"});
+                        "DAS14923",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

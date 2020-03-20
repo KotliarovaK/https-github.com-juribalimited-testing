@@ -457,7 +457,7 @@ this.FeatureBackground();
 #line 115
  testRunner.And("User checks \'Admin IT\' option after search from \'Teams\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
- testRunner.And("User checks \'1803 Team\' option after search from \'Teams\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User checks \'2004 Team\' option after search from \'Teams\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
  testRunner.And("User checks \'[Default (Application)]\' option after search from \'Paths\' autocomple" +
                     "te", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -485,7 +485,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table14.AddRow(new string[] {
-                        "1803 Team"});
+                        "2004 Team"});
 #line 128
  testRunner.Then("only below options are selected in the \'Teams\' autocomplete", ((string)(null)), table14, "Then ");
 #line 131

@@ -8,10 +8,13 @@ namespace DashworksTestAutomation.Utils
 
         public static string RandomString(int length = 6)
         {
-            if (length > 32)
-                length = 32;
+            var baseString = Guid.NewGuid().ToString("N");
+            while (baseString.Length <= length)
+            {
+                baseString = Guid.NewGuid().ToString("N");
+            }
 
-            return Guid.NewGuid().ToString("N").Substring(0, length);
+            return baseString.Substring(0, length);
         }
 
         public static string RandomEmail()

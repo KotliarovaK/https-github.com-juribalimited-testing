@@ -193,6 +193,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12239")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters()
         {
             System.Exception lastException = null;
@@ -226,7 +227,8 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12239"});
+                        "DAS12239",
+                        "Zion_NewGrid"});
 #line 36
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -306,6 +308,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12738")]
         [NUnit.Framework.CategoryAttribute("DAS12371")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Projects", "Projects Summary", "10", null)]
         [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Projects", "Owner Projects Summary", "7", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections(string pageName, string searchTerm, string mainTabName, string subTabName, string countRows, string[] exampleTags)
@@ -344,7 +347,8 @@ this.FeatureBackground();
                     "DAS12210",
                     "DAS12738",
                     "DAS12371",
-                    "DAS13409"};
+                    "DAS13409",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -500,6 +504,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12765")]
         [NUnit.Framework.CategoryAttribute("DAS12321")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -539,7 +544,8 @@ this.FeatureBackground();
                         "DAS12371",
                         "DAS12765",
                         "DAS12321",
-                        "DAS13409"});
+                        "DAS13409",
+                        "Zion_NewGrid"});
 #line 112
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -582,6 +588,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17113")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForDevicesObjectsOnUsersTabInEvergreenMode()
         {
             System.Exception lastException = null;
@@ -616,7 +623,8 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17113"});
+                        "DAS17113",
+                        "Zion_NewGrid"});
 #line 126
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -645,6 +653,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17113")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUsersObjectsOnUsersTabInEvergreenMode()
         {
             System.Exception lastException = null;
@@ -679,7 +688,8 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17113"});
+                        "DAS17113",
+                        "Zion_NewGrid"});
 #line 134
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -710,6 +720,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17113")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForMailboxesObjectsOnUsersTabInEvergreenMode()
         {
             System.Exception lastException = null;
@@ -744,7 +755,8 @@ this.FeatureBackground();
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17113"});
+                        "DAS17113",
+                        "Zion_NewGrid"});
 #line 143
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -858,6 +870,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13180")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab()
         {
             System.Exception lastException = null;
@@ -893,7 +906,8 @@ this.FeatureBackground();
                         "AllLists",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS13180"});
+                        "DAS13180",
+                        "Zion_NewGrid"});
 #line 168
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -973,6 +987,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS14431")]
         [NUnit.Framework.CategoryAttribute("DAS19243")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate()
         {
             System.Exception lastException = null;
@@ -1008,7 +1023,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS14431",
-                        "DAS19243"});
+                        "DAS19243",
+                        "Zion_NewGrid"});
 #line 198
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1058,6 +1074,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
         [NUnit.Framework.CategoryAttribute("DAS17726")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage()
         {
             System.Exception lastException = null;
@@ -1092,7 +1109,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16817",
-                        "DAS17726"});
+                        "DAS17726",
+                        "Zion_NewGrid"});
 #line 214
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1306,6 +1324,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage()
         {
             System.Exception lastException = null;
@@ -1340,7 +1359,8 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS16817"});
+                        "DAS16817",
+                        "Zion_NewGrid"});
 #line 277
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1385,6 +1405,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
         [NUnit.Framework.CategoryAttribute("DAS17726")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage()
         {
             System.Exception lastException = null;
@@ -1420,7 +1441,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16817",
-                        "DAS17726"});
+                        "DAS17726",
+                        "Zion_NewGrid"});
 #line 290
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

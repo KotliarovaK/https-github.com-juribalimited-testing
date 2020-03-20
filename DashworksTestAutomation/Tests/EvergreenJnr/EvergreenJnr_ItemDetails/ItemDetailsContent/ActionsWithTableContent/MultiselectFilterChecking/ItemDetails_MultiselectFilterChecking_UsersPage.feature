@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForActiveDirectoryTabGroupsOnUsersPage
 	When User navigates to the 'User' details page for 'ZWS705179' item
 	Then Details page for 'ZWS705179 (Derick I. Thomas)' item is displayed to the user
@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	| Values           |
 	| Active Directory |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenSummaryOnUsersPage
 	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for 'allanj (Jo Allan)' item is displayed to the user
@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	| Values |
 	| False  |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabEvergreenDetailOnUsersPage
 	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for 'allanj (Jo Allan)' item is displayed to the user
@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	| Values   |
 	| Entitled |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabAdvertisementsOnUsersPage
 	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for 'allanj (Jo Allan)' item is displayed to the user
@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	| Values      |
 	| JuribaDEV50 |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForApplicationsTabCollectionsOnUsersPage
 	When User navigates to the 'User' details page for 'allanj' item
 	Then Details page for 'allanj (Jo Allan)' item is displayed to the user
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	| Values      |
 	| JuribaDEV50 |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMailboxesTabOnUsersPage
 	When User navigates to the 'User' details page for '02BE025D56CF4899889' item
 	Then Details page for '02BE025D56CF4899889 (Wegemer, Susan)' item is displayed to the user
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplaye
 	| FullAccess     |
 	| ReadPermission |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForComplianceTabOnUsersPage
 	When User navigates to the 'User' details page for 'ZWS705179' item
 	Then Details page for 'ZWS705179 (Derick I. Thomas)' item is displayed to the user

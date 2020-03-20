@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBucketsSortingAndFiltersForTeams
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Teams' left menu item
 	Then Page with 'Teams' header is displayed to user
-	When User enters "1803 Team" text in the Search field for "Team" column
+	When User enters "2004 Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User navigates to the 'Buckets' left menu item
 	When User click on "Bucket" column header on the Admin page

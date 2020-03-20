@@ -1877,12 +1877,109 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "LegendsValue"});
             table30.AddRow(new string[] {
+                        "Onboarded"});
+            table30.AddRow(new string[] {
+                        "Scheduled"});
+            table30.AddRow(new string[] {
                         "Migrated"});
             table30.AddRow(new string[] {
                         "Offboarded"});
 #line 353
  testRunner.Then("Data Legends values are displayed in \'WidgetForDAS20170\' widget on the Dashboard " +
                     "page", ((string)(null)), table30, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashb" +
+            "oardSection")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS20412")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashboardSection()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashboardSectionInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashboardSectionInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashb" +
+                    "oardSection", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS20412",
+                        "Cleanup"});
+#line 361
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 362
+ testRunner.When("Dashboard with \'DashboardForDAS20412\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 363
+ testRunner.And("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 364
+ testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "CategorizeBy",
+                        "AggregateFunction",
+                        "OrderBy",
+                        "ShowLegend"});
+            table31.AddRow(new string[] {
+                        "Bar",
+                        "WidgetForDAS20412",
+                        "2004 Rollout",
+                        "2004: Status",
+                        "Device Type",
+                        "Count",
+                        "2004: Status ASC",
+                        "true"});
+#line 365
+ testRunner.And("User creates new Widget", ((string)(null)), table31, "And ");
+#line 368
+ testRunner.And("User clicks Ellipsis menu for Section having \'WidgetForDAS20412\' Widget on Dashbo" +
+                    "ards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 369
+ testRunner.And("User clicks \'Edit\' item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 370
+ testRunner.And("User enters \'titleForDAS20412\' text to \'Title\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 371
+ testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 372
+ testRunner.Then("\'Section successfully updated\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 373
+ testRunner.Then("\'WidgetForDAS20412\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

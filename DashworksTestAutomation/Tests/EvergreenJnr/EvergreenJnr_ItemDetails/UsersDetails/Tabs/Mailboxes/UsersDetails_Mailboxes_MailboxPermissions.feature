@@ -14,3 +14,19 @@ Scenario: EvergreenJnr_UsersList_CheckThatToolTipForMailboxPermissionOnMailboxPe
 	When User enters "Exchange 2007" text in the Search field for "Mailbox Platform" column
 	Then 'FullAccess' content is displayed in the 'Permission' column
 	Then 'FullAccess' tooltip is displayed for 'FullAccess' content in the 'Permission' column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19365 @Zion_NewGrid
+Scenario: EvergreenJnr_UsersList_CheckThatAllColumnsAreDisplayedOnMailboxPermissionSubTab
+	When User navigates to the 'User' details page for the item with '89026' ID
+	Then Details page for '0561008DF1F3412F90B (Haws, Jacquelyn)' item is displayed to the user
+	When User navigates to the 'Mailboxes' left menu item
+	And User navigates to the 'Mailbox Permissions' left submenu item
+	Then following columns are displayed on the Item details page:
+	| ColumnName       |
+	| Mailbox Platform |
+	| Server           |
+	| Email Address    |
+	| Display Name     |
+	| Via              |
+	| Permission       |
+	| Folder           |

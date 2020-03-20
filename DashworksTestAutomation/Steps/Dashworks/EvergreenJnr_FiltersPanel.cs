@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -11,11 +12,11 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -38,7 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFiltersPanelIsDisplayedToTheUser()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(filterElement.FiltersPanel.Displayed(), "Actions panel was not displayed");
+            Verify.IsTrue(filterElement.FiltersPanel.Displayed(), "Actions panel was not displayed");
             Logger.Write("Actions Panel panel is visible");
         }
 
@@ -46,8 +47,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFiltersPanelIsNotDisplayedToTheUser()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(filterElement.FiltersPanel.Displayed(), "Filters panel was displayed");
+            Verify.IsFalse(filterElement.FiltersPanel.Displayed(), "Filters panel was displayed");
             Logger.Write("Actions Panel panel is hidden");
+        }
+
+        [Then(@"Add New button on Filter panel has tooltip with '(.*)' text")]
+        public void ThenAddNewButtonOnFilterPanelHaveTooltipWithText(string text)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.MouseHover(page.AddNewFilterButton);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
         }
 
         [When(@"User clicks Add New button on the Filter panel")]
@@ -72,14 +82,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAddAndButtonIsDisplayedOnTheFilterPanel()
         {
             var button = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
+            Verify.IsTrue(button.AddAndFilterButton.Displayed(), "Add And button is not displayed");
         }
 
         [Then(@"Add And button is not displayed on the Filter panel")]
         public void ThenAddAndButtonIsNotDisplayedOnTheFilterPanel()
         {
             var button = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(button.AddAndFilterButton.Displayed(), "Add And button is displayed");
+            Verify.IsFalse(button.AddAndFilterButton.Displayed(), "Add And button is displayed");
         }
 
         [When(@"User moves to the end of categories list")]
@@ -112,7 +122,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesSectionExpandedByDefaultInFilterPanel(string expectedSection)
         {
             var page = _driver.NowAt<FiltersElement>();
-            Utils.Verify.That(page.GetExpandedSection(), Is.EqualTo(expectedSection), "Wrong section expanded");
+            Verify.That(page.GetExpandedSection(), Is.EqualTo(expectedSection), "Wrong section expanded");
         }
 
         [When(@"User double clicks Filter Expression text")]
@@ -134,7 +144,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 filter.FilterExpressionIcon.Click();
             }
-            Utils.Verify.AreEqual(text, filter.FilterContent.Text.TrimStart(' ').TrimEnd(' '),
+            Verify.AreEqual(text, filter.FilterContent.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
 
@@ -142,7 +152,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedInFilterContainerForList(string text, string listName)
         {
             var page = _driver.NowAt<FiltersElement>();
-            Utils.Verify.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
+            Verify.AreEqual(text.Replace("{LIST_ID}", _listDetails.GetListIdByName(listName)),
                 page.FilterContent.Text.TrimStart(' ').TrimEnd(' '),
                 "Filter is created incorrectly");
         }
@@ -175,7 +185,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAddNewButtonIsDisplayedOnTheFilterPanel()
         {
             var button = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(button.AddNewFilterButton.Displayed(), "Add New button is not displayed");
+            Verify.IsTrue(button.AddNewFilterButton.Displayed(), "Add New button is not displayed");
         }
 
         [When(@"user select ""(.*)"" filter")]
@@ -204,7 +214,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(filterElement.GetOpenedFilter(filterName).Displayed(),
+            Verify.IsTrue(filterElement.GetOpenedFilter(filterName).Displayed(),
                 "Setting section for selected filter is not loaded");
         }
 
@@ -254,7 +264,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenValueIsDisplayedForSelectedLookupFilter(string value)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(filterElement.GetValueForLookupFilter(value).Displayed(),
+            Verify.IsTrue(filterElement.GetValueForLookupFilter(value).Displayed(),
                 $"{value} is not displayed for that filter");
         }
 
@@ -321,14 +331,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenChipBoxIsNotDisplayedInTheFilterPanel()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(filterElement.FilterChipBox.Displayed(), "Chip box is displayed in the Filter panel");
+            Verify.IsFalse(filterElement.FilterChipBox.Displayed(), "Chip box is displayed in the Filter panel");
         }
 
         [Then(@"Search field in selected Filter is empty")]
         public void ThenSearchFieldInSelectedFilterIsEmpty()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsEmpty(filterElement.FilterSearchTextBox.Text, "Search field in selected Filter is not empty");
+            Verify.IsEmpty(filterElement.FilterSearchTextBox.Text, "Search field in selected Filter is not empty");
         }
 
         [When(@"User enters ""(.*)"" in Association search field")]
@@ -397,9 +407,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AssociationSearchTextBox.Click();
             filterElement.CloseAssociationSearchButton.Click();
             filterElement.AssociationSearchTextBox.Click();
-            Utils.Verify.AreEqual(5, filterElement.AssociationCheckbox.Count, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(5, filterElement.AssociationCheckbox.Count, "PLEASE ADD EXCEPTION MESSAGE");
             foreach (var element in filterElement.Association)
-                Utils.Verify.DoesNotContain("not", element.Text, "Negative association is displayed");
+                Verify.DoesNotContain("not", element.Text, "Negative association is displayed");
         }
 
         [Then(@"only negative Associations is displayed")]
@@ -408,9 +418,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.CloseAssociationSearchButton.Click();
             filterElement.AssociationSearchTextBox.Click();
-            Utils.Verify.AreEqual(5, filterElement.AssociationCheckbox.Count, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(5, filterElement.AssociationCheckbox.Count, "PLEASE ADD EXCEPTION MESSAGE");
             foreach (var element in filterElement.Association)
-                Utils.Verify.Contains("not", element.Text.ToLower(), "Positive association is displayed");
+                Verify.Contains("not", element.Text.ToLower(), "Positive association is displayed");
         }
 
         [Then(@"search values in Association section working by specific search criteria")]
@@ -420,7 +430,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchCriteria = filterElement.LookupFilterSearchTextBox.GetAttribute("value");
             var associationList = filterElement.GetAssociationsList().Select(element => element.Text).ToList();
             foreach (var association in associationList)
-                Utils.Verify.Contains(searchCriteria.ToLower(), association.ToLower(),
+                Verify.Contains(searchCriteria.ToLower(), association.ToLower(),
                     $"Search in Associations list is not working for '{searchCriteria}' value");
         }
 
@@ -428,7 +438,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsNotPresentedInTheFiltersList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(filterElement.CheckFilterAvailability(filterName),
+            Verify.IsFalse(filterElement.CheckFilterAvailability(filterName),
                 $"{filterName} is available in the search");
         }
 
@@ -437,7 +447,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(filterElement.CheckFilterAvailability(filterName),
+            Verify.IsTrue(filterElement.CheckFilterAvailability(filterName),
                 $"{filterName} is not available in the search");
         }
 
@@ -454,7 +464,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
 
-            Utils.Verify.That(expectedList, Is.EqualTo(filterElement.SelectOperatorOptions()), "Lists are different");
+            Verify.That(expectedList, Is.EqualTo(filterElement.SelectOperatorOptions()), "Lists are different");
         }
 
         [When(@"User adds column for the selected filter")]
@@ -856,7 +866,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsAddedToTheList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.That(filterElement.GetFiltersNamesFromFilterPanel(filterName), Does.Contain(filterName));
+            Verify.That(filterElement.GetFiltersNamesFromFilterPanel(filterName), Does.Contain(filterName));
         }
 
         [Then(@"table data is filtered correctly")]
@@ -899,7 +909,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     if (result) break;
                 }
 
-                Utils.Verify.IsTrue(result, "Table data is filtered incorrectly");
+                Verify.IsTrue(result, "Table data is filtered incorrectly");
             }
         }
 
@@ -924,7 +934,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.RemoveFilterButton.Click();
-            Utils.Verify.IsTrue(filterElement.ResultsOnPageCount.Displayed(), "agGrid is reload");
+            Verify.IsTrue(filterElement.ResultsOnPageCount.Displayed(), "agGrid is reload");
         }
 
         [When(@"User cancels filter and agGrid does not reload")]
@@ -932,7 +942,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.CancelButton.Click();
-            Utils.Verify.IsTrue(filterElement.ResultsOnPageCount.Displayed(), "agGrid is reload");
+            Verify.IsTrue(filterElement.ResultsOnPageCount.Displayed(), "agGrid is reload");
         }
 
         [When(@"User click Edit button for ""(.*)"" filter")]
@@ -954,7 +964,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEditButtonIsDisplayedCorrectlyForFilter(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(filterElement.GetEditFilterButton(filterName).Displayed(),
+            Verify.IsTrue(filterElement.GetEditFilterButton(filterName).Displayed(),
                 $"Edit button is not displayed for '{filterName}' filter");
         }
 
@@ -978,7 +988,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserDescriptionFieldIsNotDisplayed()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(filterElement.UserDescriptionField.Displayed(), "User Description field is visible");
+            Verify.IsFalse(filterElement.UserDescriptionField.Displayed(), "User Description field is visible");
         }
 
         [When(@"User deletes the selected lookup filter ""(.*)"" value")]
@@ -1009,7 +1019,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.FilterSearchInputs.FirstOrDefault().Click();
-            Utils.Verify.IsTrue(filterElement.ListNameForSavedListFilter(listName),
+            Verify.IsTrue(filterElement.ListNameForSavedListFilter(listName),
                 $"{listName} is not displayed for Saved List filter");
         }
 
@@ -1017,7 +1027,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsNotDisplayedForSavedListFilter(string listName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(filterElement.ListNameForSavedListFilter(listName),
+            Verify.IsFalse(filterElement.ListNameForSavedListFilter(listName),
                 $"{listName} is displayed for Saved List filter");
         }
 
@@ -1027,14 +1037,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.MouseHover(filterElement.EditFilterButton);
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" filter is removed from filters")]
         public void ThenFilterIsRemovedFromFilters(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(filterElement.CheckThatFilterIsRemoved(filterName),
+            Verify.IsFalse(filterElement.CheckThatFilterIsRemoved(filterName),
                 $"{filterName} filter is not removed from filters");
         }
 
@@ -1054,7 +1064,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsChecked(string addColumn)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is not checked");
+            Verify.IsTrue(filterElement.AddCategoryColumnCheckbox.Selected, $"{addColumn} Checkbox is not checked");
         }
 
         [Then(@"Add ""(.*)"" column checkbox is displayed to the user")]
@@ -1092,14 +1102,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void AssertAddColumnCheckboxChekedState(bool expectedCondition, string addColumn)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.AreEqual(expectedCondition, filterElement.AddCategoryColumnCheckbox.Selected,
+            Verify.AreEqual(expectedCondition, filterElement.AddCategoryColumnCheckbox.Selected,
                 $"{addColumn} Cheked state is incorrect");
         }
 
         private void AssertAddColumnCheckboxEnabledState(bool expectedCondition, string addColumn)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.AreEqual(expectedCondition,
+            Verify.AreEqual(expectedCondition,
                 Convert.ToBoolean(filterElement.AddCategoryColumnCheckbox.GetAttribute("disabled")),
                 $"{addColumn} Checkbox state is incorrect");
         }
@@ -1108,7 +1118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsNotDisplayed(string checkbox)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(filterElement.AddCategoryColumnCheckbox.Displayed(),
+            Verify.IsFalse(filterElement.AddCategoryColumnCheckbox.Displayed(),
                 $"{checkbox} checkbox is not displayed");
             Logger.Write($"{checkbox} checkbox is displayed");
         }
@@ -1119,7 +1129,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = filterElement.AddCategoryColumnName.Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedList, actualList, "Filter settings values are different");
+            Verify.AreEqual(expectedList, actualList, "Filter settings values are different");
         }
 
         #endregion
@@ -1128,7 +1138,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOptionIsAvailableAtFirstPlace(string optionName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.AreEqual(optionName, filterElement.GetSelectBoxes().First().Text,
+            Verify.AreEqual(optionName, filterElement.GetSelectBoxes().First().Text,
                 $"{optionName} is not available at first place");
         }
 
@@ -1138,7 +1148,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = filterElement.FilterValues.Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedList, actualList, "Filter settings values are different");
+            Verify.AreEqual(expectedList, actualList, "Filter settings values are different");
         }
 
         [Then(@"""(.*)"" filter is displayed in the Filters panel")]
@@ -1152,12 +1162,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCorrectTrueAndFalseOptionsAreDisplayedInFilterSettings()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/tick.png",
+            Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/tick.png",
                 filterElement.GetBooleanCheckboxImg("TRUE").GetAttribute("src"), "Incorrect image for True value");
-            Utils.Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/cross.png",
+            Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/cross.png",
                 filterElement.GetBooleanCheckboxImg("FALSE").GetAttribute("src"), "Incorrect image for False value");
             //TODO: Yurii 10oct2019 - remove below check per Kristina's answer about UNKNOWN option and img, it was changed to Empty
-            //Utils.Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/unknown.png",
+            //Verify.AreEqual($"{UrlProvider.Url}evergreen/assets/img/unknown.png",
             //filterElement.GetBooleanCheckboxImg("UNKNOWN").GetAttribute("src"),
             //"Incorrect image for Unknown value");
         }
@@ -1169,7 +1179,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.OperatorDropdown.Click();
             _driver.WaitForElementsToBeDisplayed(filterElement.OperatorOptions);
             var availableOptions = filterElement.OperatorOptions.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(optionName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
+            Verify.AreEqual(optionName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
                 availableOptions, "Some options are not available for selected filter");
             filterElement.BodyContainer.Click();
         }
@@ -1179,7 +1189,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             var availableOptions = filterElement.FilterCheckboxOptions.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(checkboxName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
+            Verify.AreEqual(checkboxName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
                 availableOptions, "Some checkbox are not available for selected filter");
             filterElement.BodyContainer.Click();
         }
@@ -1190,7 +1200,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             var availableOptions = filterElement.FilterCheckboxOptionsLabels.Select(value => value.GetAttribute("textContent")).ToList();
 
-            Utils.Verify.That(availableOptions, Does.Not.Contain(checkboxName), "Checkbox available for current opened filter");
+            Verify.That(availableOptions, Does.Not.Contain(checkboxName), "Checkbox available for current opened filter");
         }
 
         [Then(@"Following checkboxes are available for current opened filter:")]
@@ -1202,7 +1212,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in checkboxes.Rows)
             {
-                Utils.Verify.That(availableOptions, Does.Contain(row.Values.FirstOrDefault()), "Checkbox available for current opened filter");
+                Verify.That(availableOptions, Does.Contain(row.Values.FirstOrDefault()), "Checkbox available for current opened filter");
             }
         }
 
@@ -1219,7 +1229,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersPanel = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(showedResultsCount, filtersPanel.GetShowedResultsCount(),
+            Verify.AreEqual(showedResultsCount, filtersPanel.GetShowedResultsCount(),
                 $"Number of rows is not {showedResultsCount}");
         }
 
@@ -1228,7 +1238,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersPanel = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
-            Utils.Verify.That(filtersPanel.GetShowedResultsCount(), Does.Contain($"{showedResultsCount.ToString()} of "),
+            Verify.That(filtersPanel.GetShowedResultsCount(), Does.Contain($"{showedResultsCount.ToString()} of "),
                 $"Shown label doesn't contain {showedResultsCount} found rows");
         }
 
@@ -1270,10 +1280,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
             var valuesList = values.Split(',');
             foreach (var value in valuesList)
-                Utils.Verify.Contains(value.TrimStart(' ').TrimEnd(' ').ToLower(), urlPartToCheck.ToLower(),
+                Verify.Contains(value.TrimStart(' ').TrimEnd(' ').ToLower(), urlPartToCheck.ToLower(),
                     $"{value} is not added to URL for {filterName} filter");
 
-            Utils.Verify.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(),
+            Verify.Contains(ColumnNameToUrlConvertor.Convert(pageName, filterName).ToLower(),
                 urlPartToCheck.ToLower(),
                 $"{filterName} is not added to URL");
         }
@@ -1285,7 +1295,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             var expectedList = table.Rows.SelectMany(row => row.Values);
             var actualList = filterElement.FilterOperators.Select(value => value.Text);
-            Utils.Verify.AreEqual(expectedList, actualList, "Filter settings options are different");
+            Verify.AreEqual(expectedList, actualList, "Filter settings options are different");
         }
 
         [Then(@"Associations is displayed in the filter")]
@@ -1300,14 +1310,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAssociationsPanelIsDisplayedInTheFilter()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(filterElement.AssociationSearchTextBox.Displayed(), "Associations panel is not displayed");
+            Verify.IsTrue(filterElement.AssociationSearchTextBox.Displayed(), "Associations panel is not displayed");
         }
 
         [Then(@"Associations panel is not displayed to the user")]
         public void ThenAssociationsPanelIsNotDisplayedToTheUser()
         {
             var rightSideActionsPanel = _driver.NowAt<BaseRightSideActionsPanel>();
-            Utils.Verify.IsFalse(rightSideActionsPanel.IsPanelOpened("Associations"), "Associations panel is displayed");
+            Verify.IsFalse(rightSideActionsPanel.IsPanelOpened("Associations"), "Associations panel is displayed");
         }
 
         [Then(@"""(.*)"" is displayed in added filter info")]
@@ -1315,21 +1325,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             var filterLabels = filterElement.AddedFilterLabels.Select(element => element.Text).ToList();
-            Utils.Verify.Contains(text, filterLabels, $"Filter with {text} not found in the list");
+            Verify.Contains(text, filterLabels, $"Filter with {text} not found in the list");
         }
 
         [Then(@"Filter name is colored in the added filter info")]
         public void ThenFilterNameIsColoredInTheAddedFilterInfo()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.AreEqual("rgba(242, 88, 49, 1)", filterElement.GetFilterFontColor(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("rgba(242, 88, 49, 1)", filterElement.GetFilterFontColor(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Filter value is shown in bold in the added filter info")]
         public void ThenFilterValueIsShownInBoldInTheAddedFilterInfo()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.AreEqual("700", filterElement.GetFilterFontWeight(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("700", filterElement.GetFilterFontWeight(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         #region Sections
@@ -1338,7 +1348,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWithCategoryIsDisplayedOnFiltersPanel(string filterName, string categoryCount)
         {
             var page = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(page.GetFilterCategory(filterName, categoryCount).Displayed(),
+            Verify.IsTrue(page.GetFilterCategory(filterName, categoryCount).Displayed(),
                 "Incorrect subcategories count for selected category");
         }
 
@@ -1346,7 +1356,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsNotDisplayedInTheFilterPanel(string categoryName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsFalse(filterElement.CategoryIsDisplayed(categoryName),
+            Verify.IsFalse(filterElement.CategoryIsDisplayed(categoryName),
                 $"{categoryName} category still displayed in Filter Panel");
         }
 
@@ -1356,7 +1366,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<FiltersElement>();
 
             foreach (var row in table.Rows)
-                Utils.Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(), Is.EqualTo(row["Number"]),
+                Verify.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(), Is.EqualTo(row["Number"]),
                     $"Check {row["Category"]} category");
         }
 
@@ -1366,7 +1376,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<FiltersElement>();
 
             foreach (var row in table.Rows)
-                Utils.Verify.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
+                Verify.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
                     $"Check {row["Category"]} category");
         }
 
@@ -1374,7 +1384,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsDisplayedInTheFilterPanel(string categoryName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            Utils.Verify.IsTrue(filterElement.CategoryIsDisplayed(categoryName),
+            Verify.IsTrue(filterElement.CategoryIsDisplayed(categoryName),
                 $"{categoryName} category is not displayed in Filter Panel");
         }
 
@@ -1384,7 +1394,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
             var groupCount = filterElement.GroupTitle.Count;
-            Utils.Verify.AreEqual(groupCount, filterElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
+            Verify.AreEqual(groupCount, filterElement.MinimizeGroupButton.Count, "Minimize buttons are not displayed");
         }
 
         [Then(@"Maximize buttons are displayed for all category in Filters panel")]
@@ -1393,7 +1403,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
             var groupCount = filterElement.GroupTitle.Count - 1;
-            Utils.Verify.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
+            Verify.AreEqual(groupCount, filterElement.MaximizeGroupButton.Count, "Maximize buttons are not displayed");
         }
 
         [Then(@"the following Filters subcategories are displayed for open category:")]
@@ -1402,7 +1412,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
+            Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
         [Then(@"the following Filters subcategories are presented for open category:")]
@@ -1414,7 +1424,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var item in expectedList)
             {
-                Utils.Verify.That(actualList, Does.Contain(item), $"{item} value is missing");
+                Verify.That(actualList, Does.Contain(item), $"{item} value is missing");
             }
         }
 
@@ -1424,7 +1434,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).Where(x => !string.IsNullOrEmpty(x)).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
+            Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
         [Then(@"the following subcategories are displayed for Selected Columns category:")]
@@ -1433,7 +1443,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.ColumnSubcategoryList.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
+            Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
         [Then(@"the following subcategories are NOT displayed for Selected Columns category:")]
@@ -1443,7 +1453,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
             foreach (var value in expectedList)
-                Utils.Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
+                Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
         }
 
         [Then(@"the following subcategories are NOT displayed for Filters categories:")]
@@ -1453,7 +1463,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.SelectedFiltersSubcategoryList.Select(value => value.Text).ToList();
             foreach (var value in expectedList)
-                Utils.Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
+                Verify.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
         }
 
         [Then(@"the following subcategories are displayed for Selected Filters category:")]
@@ -1462,7 +1472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.FilterSubcategoryList.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
+            Verify.AreEqual(expectedList, actualList, "Subcategory values are different");
         }
 
         [Then(@"the subcategories are displayed for open category in alphabetical order")]
@@ -1470,7 +1480,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var list = page.SelectedFiltersSubcategoryList.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
+            Verify.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
         }
 
         [Then(@"the subcategories are displayed for open category in alphabetical order on Filters panel")]
@@ -1478,7 +1488,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             var list = page.FilterSubcategoryList.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
+            Verify.AreEqual(list.OrderBy(s => s), list, "Subcategories are not in alphabetical order");
         }
 
         #endregion
@@ -1488,7 +1498,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<FiltersElement>();
             _driver.WaitForDataLoading();
-            Utils.Verify.AreEqual(message, page.NoResultsFoundMessage.Text.Replace("\r\n", " "), $"{message} is not displayed");
+            Verify.AreEqual(message, page.NoResultsFoundMessage.Text.Replace("\r\n", " "), $"{message} is not displayed");
         }
 
         [When(@"User change selected checkboxes:")]
@@ -1530,7 +1540,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<FiltersElement>();
             _driver.WaitForElementToBeDisplayed(page.CloseAssociationSearchButton);
-            Utils.Verify.IsTrue(page.CloseAssociationSearchButton.Displayed(), "Reset button is not displayed");
+            Verify.IsTrue(page.CloseAssociationSearchButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
 
@@ -1542,7 +1552,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var getColor = page.GetColorForReadinessFilterValue(row["Color"]).GetAttribute("style").Split(';')
                     .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
-                Utils.Verify.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different");
+                Verify.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different");
             }
         }
 
@@ -1550,7 +1560,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNoRingIconDisplayedForEmptyItemInLookup()
         {
             var page = _driver.NowAt<FiltersElement>();
-            Utils.Verify.That(page.IsComplianceOptionHasRingIcon("Empty"), Is.False, "Status icon displayed for current option");
+            Verify.That(page.IsComplianceOptionHasRingIcon("Empty"), Is.False, "Status icon displayed for current option");
         }
 
         [Then(@"Category Automations displayed before projects categories")]
@@ -1579,7 +1589,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var getFirstAutomationItem = VisibleLabels.Select((Value, Index) => new { Value, Index })
                 .Single(p => p.Value.StartsWith("Automation Actions"));
 
-            Utils.Verify.That(getFirstAutomationItem.Index, Is.LessThan(getFirstProjectItem.Index), "Looks like projects placed before Automations");
+            Verify.That(getFirstAutomationItem.Index, Is.LessThan(getFirstProjectItem.Index), "Looks like projects placed before Automations");
         }
 
         [Then(@"the following Filters categories are presented in Filter panel:")]
@@ -1591,7 +1601,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var item in expectedList)
             {
-                Utils.Verify.That(VisibleLabels, Does.Contain(item), $"{item} value is missing");
+                Verify.That(VisibleLabels, Does.Contain(item), $"{item} value is missing");
             }
         }
 

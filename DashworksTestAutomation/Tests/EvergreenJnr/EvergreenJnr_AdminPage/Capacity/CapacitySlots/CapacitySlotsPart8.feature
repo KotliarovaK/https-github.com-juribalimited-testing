@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	#Change data in the slot
 	When User selects 'Application' in the 'Object Type' dropdown
 	And User checks 'Admin IT' option after search from 'Teams' autocomplete
-	And User checks '1803 Team' option after search from 'Teams' autocomplete
+	And User checks '2004 Team' option after search from 'Teams' autocomplete
 	And User checks '[Default (Application)]' option after search from 'Paths' autocomplete
 	And User clicks 'UPDATE' button 
 	Then 'The capacity slot details have been updated' text is displayed on inline success banner
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	| [Default (Computer)]    |
 	Then only below options are selected in the 'Teams' autocomplete
 	| Options   |
-	| 1803 Team |
+	| 2004 Team |
 	When User selects 'Capacity Units' in the 'Capacity Type' dropdown
 	And User clicks 'UPDATE' button 
 	#Check updated Capacity Type value

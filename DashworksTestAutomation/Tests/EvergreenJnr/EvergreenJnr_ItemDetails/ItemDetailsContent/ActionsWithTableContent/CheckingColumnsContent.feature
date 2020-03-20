@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @DAS12321
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @DAS12321 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
 	When User navigates to the 'Mailbox' details page for '00C8BC63E7424A6E862@bclabs.local' item
 	Then Details page for '00C8BC63E7424A6E862@bclabs.local' item is displayed to the user
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	When User navigates to the 'Users' left menu item
 	Then '00A5B910A1004CF5AC4' content is displayed in the 'Username' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnUsersPageGoingToSenior
 	When User navigates to the 'User' details page for '000F977AC8824FE39B8' item
 	Then Details page for '000F977AC8824FE39B8' item is displayed to the user
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnApplicationsPageGoingToSenior
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
 	
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnMailboxesPageGoingToSenior
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13849
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13849 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProjectsGridOnProjectsTabOfParticularDevice
 	When User clicks 'Devices' on the left-hand menu
 	And User perform search by "00BDM1JUR8IF419"
@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	When User navigates to the 'Projects Summary' left submenu item
 	Then All data is unique in the 'Project' column
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	Then "1" rows found label displays on Details Page
 	Then '[Default (User)]' checkbox is checked in the filter dropdown for the 'Path' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -296,7 +296,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS15039
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS15039 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -305,7 +305,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
 	Then '31 May 2019' content is displayed in the 'Date' column
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAProjectOnTheMailboxDetailsPage
 	When User navigates to the 'Mailbox' details page for 'abel.y.hanson@dwlabs.local' item
 	Then Details page for 'abel.y.hanson@dwlabs.local' item is displayed to the user
@@ -316,7 +316,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	Then "1" rows found label displays on Details Page
 	And 'hansonay' content is displayed in the 'Username' column
 
-@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734 @DAS17733
+@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734 @DAS17733 @Zion_NewGrid
 Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesOnDevicesDetailsPageForProjectMode
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	And "RED" content is displayed for "Stage C" column
 	And "AMBER" content is displayed for "Stage D" column
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18263
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18263 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUnknownValuesAreEmptyOnObjectDetailsInDistributiontab
 	When User navigates to the 'Application' details page for '7zip' item
 	Then Details page for '7zip' item is displayed to the user

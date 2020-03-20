@@ -651,7 +651,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '31 Aug 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
-	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects '2004 Team' option from 'Team' autocomplete
 	When User selects 'Unassigned' option from 'Owner' autocomplete
 	When User clicks 'CREATE' button 
 	#Test
@@ -698,10 +698,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '5 Sep 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
-	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects '2004 Team' option from 'Team' autocomplete
 	When User selects 'Unassigned' option from 'Owner' autocomplete
 	And User clicks 'CREATE' button
-	Then 'Started, 2019-09-05, 1803 Team' content is displayed in the 'Value' column
+	Then 'Started, 2019-09-05, 2004 Team' content is displayed in the 'Value' column
 	#Run Automations
 	When User clicks 'Automations' header breadcrumb
 	When User enters "DAS17744" text in the Search field for "Automation" column

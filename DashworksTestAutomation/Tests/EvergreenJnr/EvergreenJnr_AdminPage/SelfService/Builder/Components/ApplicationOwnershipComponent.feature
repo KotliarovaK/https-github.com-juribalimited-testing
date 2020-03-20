@@ -87,7 +87,6 @@ Scenario: EvergreenJnr_AdminPage_EditApplicationOwnershipComponent
 	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
 	| 19909_2_SI        | TestPageSs1 | DAS_19909_Page_1 | true              |
 	| 19909_2_SI        | TestPageSs2 | DAS_19909_Page_2 | true              |
-	#Change project name to DAS_19909_Proj after DAS-20114 fix
 	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
 	| ComponentName | ProjectName    | OwnerPermission                  |
 	| AOC Name      | DAS_19909_Proj | Do not allow owner to be changed |
@@ -137,20 +136,14 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	When User creates Self Service via API and open it
 	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope       |
 	| DAS_19909_SS_2 | 19909_2_SI        | true    | true                | DAS_19909_2 |
-	When User creates new Self Service Page via API
-	| ServiceIdentifier | Name        | DisplayName      | ShowInSelfService |
-	| 19909_2_SI        | TestPageSs1 | DAS_19909_Page_1 | true              |
-	| 19909_2_SI        | TestPageSs2 | DAS_19909_Page_2 | true              |
-	#Change project name to DAS_19909_Proj after DAS-20114 fix
-	When User creates new application ownership component for 'TestPageSs1' Self Service page via API
-	| ComponentName | ProjectName                     | OwnerPermission                  |
-	| AOC Name      | User Evergreen Capacity Project | Do not allow owner to be changed |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName    | OwnerPermission                  |
+	| AOC Name      | DAS_19909_Proj | Do not allow owner to be changed |
 	When User navigates to the 'Builder' left submenu item
 	#Update information
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	When User enters 'AOC_Updated Name' text to 'Component Name' textbox
-	#When User selects 'DAS_19909_Proj_Up' option from 'Project' autocomplete
-	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	When User selects 'DAS_19909_Proj_Up' option from 'Project' autocomplete
 	When User checks 'Allow owner to be set to another user only' radio button
 	When User selects 'DAS_19909_3' option from 'User Scope' autocomplete
 	When User waits for info message disappears under 'User Scope' field
@@ -160,8 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CancelApplicationOwnershipComponentEditing
 	When User selects 'Edit' cogmenu option for 'Application Ownership' item type with 'AOC Name' name on Self Service Builder Panel
 	When User waits for info message disappears under 'User Scope' field
 	Then 'AOC Name' content is displayed in 'Component Name' textbox
-	#Then 'DAS_19909_Proj' content is displayed in 'Project' autocomplete
-	Then 'User Evergreen Capacity Project' content is displayed in 'Project' autocomplete
+	Then 'DAS_19909_Proj' content is displayed in 'Project' autocomplete
 	Then 'Do not allow owner to be changed' radio button is checked
 	Then 'User Scope' autocomplete is not displayed
 	When User checks 'Allow owner to be set to another user only' radio button

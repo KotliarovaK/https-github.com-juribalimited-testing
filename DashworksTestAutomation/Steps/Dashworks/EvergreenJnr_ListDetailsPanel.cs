@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -9,11 +10,11 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -65,7 +66,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
-            Utils.Verify.AreEqual(listName, listDetailsElement.ListNameField.GetAttribute("value"),
+            Verify.AreEqual(listName, listDetailsElement.ListNameField.GetAttribute("value"),
                 $"{listName} is not displayed in Name Field");
         }
 
@@ -75,21 +76,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(listDetailsElement.ListDetailsPanel);
-            Utils.Verify.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
+            Verify.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
         }
         
         [Then(@"'(.*)' label is displayed in List Details")]
         public void ThenLabelIsDisplayedInListDetailsPanel(string text)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsTrue(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel doesn't have {text} label");
+            Verify.IsTrue(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel doesn't have {text} label");
         }
 
         [Then(@"'(.*)' label is not displayed in List Details")]
         public void ThenLabelIsNotDisplayedInListDetailsPanel(string text)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsFalse(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel has {text} label");
+            Verify.IsFalse(listDetailsElement.GetListDetailsLabelByText(text).Displayed(), $"List Details panel has {text} label");
             Logger.Write("List Details does not have label");
         }
 
@@ -104,7 +105,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDependentListIsDisplayed(string listName)
         {
             var list = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsTrue(list.GetDependentListByName(listName).Displayed(),
+            Verify.IsTrue(list.GetDependentListByName(listName).Displayed(),
                 $"Dependent '{listName}' list is not displayed");
         }
 
@@ -119,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOwnerFieldIsDisabledAsRead_Only()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsFalse(listDetailsElement.AvailableOwnerField.Displayed(), "Owner field is active");
+            Verify.IsFalse(listDetailsElement.AvailableOwnerField.Displayed(), "Owner field is active");
         }
 
         [Then(@"no Warning message is displayed in the list details panel")]
@@ -127,7 +128,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForElementToBeDisplayed(listDetailsElement.ListDetailsPanel);
-            Utils.Verify.IsFalse(listDetailsElement.WarningMessage.Displayed(),
+            Verify.IsFalse(listDetailsElement.WarningMessage.Displayed(),
                 "Warning message is displayed in the list details panel");
         }
 
@@ -135,7 +136,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDependantsSectionIsCollapsedByDefault()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsFalse(listDetailsElement.ExpandedDependantsSection.Displayed(), "Dependants section is expanded");
+            Verify.IsFalse(listDetailsElement.ExpandedDependantsSection.Displayed(), "Dependants section is expanded");
         }
 
         [When(@"User closes Permissions section in the list panel")]
@@ -151,7 +152,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             _driver.MouseHover(By.XPath(".//i[@class='material-icons mat-item_add ng-star-inserted']"));
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"tooltip is displayed with ""(.*)"" text for Dependants section")]
@@ -159,7 +160,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             _driver.MouseHover(By.XPath(".//i[@class='material-icons mat-item_add ng-star-inserted']"));
             var toolTipText = _driver.GetTooltipText();
-            Utils.Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(text, toolTipText, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User expand Dependants section")]
@@ -174,7 +175,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForElementToBeDisplayed(listDetailsElement.ListDetailsPanel);
-            Utils.Verify.IsTrue(listDetailsElement.DependantsSection.Displayed(), "Dependants section is not displayed");
+            Verify.IsTrue(listDetailsElement.DependantsSection.Displayed(), "Dependants section is not displayed");
             Logger.Write("Dependants section is visible");
         }
 
@@ -190,7 +191,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListIsDisplayedInTheDependantsSection(string listName)
         {
             var page = _driver.NowAt<ListDetailsElement>();
-            Utils.Verify.IsTrue(page.ListNameInDependantsSection(listName).Displayed(), $"{listName} is not displayed");
+            Verify.IsTrue(page.ListNameInDependantsSection(listName).Displayed(), $"{listName} is not displayed");
         }
 
         [When(@"User clicks '(.*)' option in Cog-menu for '(.*)' user on Details panel")]
@@ -262,14 +263,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(listElement.ErrorMessage);
-            Utils.Verify.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
+            Verify.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
+        }
+
+        [Then(@"Warning message with '(.*)' text is not displayed")]
+        public void ThenWarningMessageWithTextIsNotDisplayed(string message)
+        {
+            var listElement = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            Verify.IsFalse(listElement.ErrorMessage.Displayed(), $"'{message}' was displayed but should not");
         }
 
         [Then(@"""(.*)"" message is displayed in the lists panel")]
         public void ThenMessageIsDisplayedInTheListsPanel(string warningText)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Utils.Verify.IsTrue(listElement.RemovingDependencyListMessage(warningText),
+            Verify.IsTrue(listElement.RemovingDependencyListMessage(warningText),
                 $"'{warningText}' message is not displayed in the list details panel");
         }
 
@@ -277,7 +286,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsNotDisplayedInTheListsPanel(string warningText)
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(listElement.DoesNotExistListMessage.Displayed(),
+            Verify.IsFalse(listElement.DoesNotExistListMessage.Displayed(),
                 $"{warningText} message is displayed in the list details panel");
         }
 
@@ -307,35 +316,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAppropriateIconIsDisplayedForFavourites()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.FavoritesIcon.Displayed(), "Appropriate icon is not displayed");
+            Verify.IsTrue(page.FavoritesIcon.Displayed(), "Appropriate icon is not displayed");
         }
 
         [Then(@"appropriate icon is displayed for My lists")]
         public void ThenAppropriateIconIsDisplayedForMyLists()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.MyListsIcon.Displayed(), "Appropriate icon is not displayed");
+            Verify.IsTrue(page.MyListsIcon.Displayed(), "Appropriate icon is not displayed");
         }
 
         [Then(@"appropriate icon is displayed for Shared with me")]
         public void ThenAppropriateIconIsDisplayedForSharedWithMe()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.SharedWithMeIcon.Displayed(), "Appropriate icon is not displayed");
+            Verify.IsTrue(page.SharedWithMeIcon.Displayed(), "Appropriate icon is not displayed");
         }
 
         [Then(@"appropriate icon is displayed for Dynamic lists")]
         public void ThenAppropriateIconIsDisplayedForDynamicLists()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.DynamicListsIcon.Displayed(), "Appropriate icon is not displayed");
+            Verify.IsTrue(page.DynamicListsIcon.Displayed(), "Appropriate icon is not displayed");
         }
 
         [Then(@"appropriate icon is displayed for Static lists")]
         public void ThenAppropriateIconIsDisplayedForStaticLists()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.StaticListsIcon.Displayed(), "Appropriate icon is not displayed");
+            Verify.IsTrue(page.StaticListsIcon.Displayed(), "Appropriate icon is not displayed");
         }
 
         [When(@"User selects ""(.*)"" option on the All lists dropdown")]
@@ -349,7 +358,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAppropriateIconIsDisplayedForAllLists()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.AllListsIcon.Displayed(), "Appropriate icon is not displayed");
+            Verify.IsTrue(page.AllListsIcon.Displayed(), "Appropriate icon is not displayed");
         }
     }
 }

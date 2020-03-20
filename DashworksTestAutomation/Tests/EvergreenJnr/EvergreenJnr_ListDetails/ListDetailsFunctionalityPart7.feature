@@ -67,11 +67,11 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	Then 'Specific users / teams' content is displayed in 'Sharing' dropdown
 	When User clicks 'group_add' icon
-	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects '2004 Team' option from 'Team' autocomplete
 	Then 'ADD TEAM' button is disabled
 	When User clicks 'CANCEL' button
 	When User clicks 'group_add' icon
-	When User selects '1803 Team' option from 'Team' autocomplete
+	When User selects '2004 Team' option from 'Team' autocomplete
 	When User clicks 'CANCEL' button 
 	When User clicks 'person_add' icon
 	Then form container is displayed to the user
