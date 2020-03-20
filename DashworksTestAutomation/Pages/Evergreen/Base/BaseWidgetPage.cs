@@ -83,7 +83,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         public IWebElement GetWidgetDragAndDropElement(string widgetName)
         {
             var dragAndDropElement = By.XPath(".//button[contains(@class,'drag-drop')]");
-            return GetWidget(widgetName).FindElement(dragAndDropElement);
+            var widget = GetWidget(widgetName);
+
+            Driver.WaitForElementInElementToBeDisplayed(widget, dragAndDropElement);
+            return widget.FindElement(dragAndDropElement);
         }
     }
 }
