@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
@@ -906,7 +907,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 _driver.MouseHover(icon);
                 var toolTipText = _driver.GetTooltipText();
 
-                Utils.Verify.That(tooltips, Does.Contain(toolTipText), "Unexpected/missing tooltip");
+                Verify.That(tooltips, Does.Contain(toolTipText), "Unexpected/missing tooltip");
 
                 attempts++;
             }

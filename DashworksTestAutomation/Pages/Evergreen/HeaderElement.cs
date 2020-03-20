@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -50,8 +51,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
             #region Check menu Items
 
             Logger.Write("Check User account menu items count");
-            Utils.Verify.AreEqual(2, MenuItems.Count, "PLEASE ADD EXCEPTION MESSAGE");
-            Utils.Verify.IsTrue(ProfileButton.Displayed(), "My Profile menu item is not displayed");
+            Verify.AreEqual(2, MenuItems.Count, "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(ProfileButton.Displayed(), "My Profile menu item is not displayed");
 
             #endregion Check menu Items
 

@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| Email Migration                                   |
 	| Havoc (Big Data)                                  |
 	| Mailbox Evergreen Capacity Project                |
-	| Project 00 M Computer Scheduled                   |
+	| Project 000 M Computer Scheduled                  |
 	| Project using broken list as scope                |
 	| Project with associated broken list               |
 	| USE ME FOR AUTOMATION(DEVICE SCHDLD)              |

@@ -51,7 +51,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| Computer Scheduled Test (Jo)                     |
 	| Devices Evergreen Capacity Project               |
 	| Havoc (Big Data)                                 |
-	| Project 00 M Computer Scheduled                  |
 	| USE ME FOR AUTOMATION(DEVICE SCHDLD)             |
 	| USE ME FOR AUTOMATION(USR SCHDLD)                |
 	| User Evergreen Capacity Project                  |

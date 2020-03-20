@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -69,8 +70,8 @@ namespace DashworksTestAutomation.Steps.API
             }
             else
             {
-                Utils.Verify.AreEqual(pageSize, gridPageSize, "Incorrect Page Size on Account page");
-                Utils.Verify.AreEqual(pageCache, gridPageCache, "Incorrect Cache Size on Account page");
+                Verify.AreEqual(pageSize, gridPageSize, "Incorrect Page Size on Account page");
+                Verify.AreEqual(pageCache, gridPageCache, "Incorrect Cache Size on Account page");
             }
         }
 
@@ -79,7 +80,7 @@ namespace DashworksTestAutomation.Steps.API
         {
             _driver.WaitForDataLoading();
             var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
-            Utils.Verify.That(lastNetworkRequest["name"].ToString(), Does.Contain($"?$top={pageSize}"), $"Page Size is not {pageSize}");
+            Verify.That(lastNetworkRequest["name"].ToString(), Does.Contain($"?$top={pageSize}"), $"Page Size is not {pageSize}");
         }
 
         [When(@"User language is changed to ""(.*)"" via API")]

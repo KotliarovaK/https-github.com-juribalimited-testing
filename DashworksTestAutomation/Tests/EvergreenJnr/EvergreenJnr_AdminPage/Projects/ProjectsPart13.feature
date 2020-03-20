@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When User Add And "Device Type" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Desktop        |
-	Then "222" rows are displayed in the agGrid
+	Then "57" rows are displayed in the agGrid
 	When User create dynamic list with "DynamicList4811" name on "Devices" page
 	Then "DynamicList4811" list is displayed to user
 	When Project created via API and opened
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	| DevicesProject1982 | DynamicList4811 | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
-	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 57 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Cleanup @Projects

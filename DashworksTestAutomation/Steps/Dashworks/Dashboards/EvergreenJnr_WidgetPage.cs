@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
@@ -573,6 +574,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             _driver.ExecuteAction(() => page.GetWidgetChartItem(widgetName, category).Click());
+        }
+
+        [When(@"User move '(.*)' widget to '(.*)' widget")]
+        public void WhenUserMoveWidgetToWidget(string widgetName, string widgetNameToMove)
+        {
+            var page = _driver.NowAt<BaseWidgetPage>();
+            _driver.DragAndDrop(page.GetWidgetDragAndDropElement(widgetName),
+                page.GetWidget(widgetNameToMove));
         }
     }
 }

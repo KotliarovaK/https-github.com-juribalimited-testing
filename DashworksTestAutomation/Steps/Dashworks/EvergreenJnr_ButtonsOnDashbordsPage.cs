@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -115,14 +116,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForElementToBeDisplayed(button.CreateActionButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateActionButton.GetAttribute("aria-disabled")), "Filter Button is active!");
+            Verify.IsTrue(Convert.ToBoolean(button.CreateActionButton.GetAttribute("aria-disabled")), "Filter Button is active!");
         }
 
         [Then(@"Create button is not displayed")]
         public void ThenCreateButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsFalse(button.CreateActionButton.Displayed(),
+            Verify.IsFalse(button.CreateActionButton.Displayed(),
                 "Create button is displayed on the Base Dashboard Page");
         }
 
@@ -164,7 +165,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseHeaderElement>();
             _driver.WaitForElementToBeDisplayed(menu.FilterButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")),
+            Verify.IsTrue(Convert.ToBoolean(menu.FilterButton.GetAttribute("disabled")),
                 "Filter button on AGgrid is active");
         }
 
@@ -172,7 +173,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.AreEqual("Empty", page.GetColumnContentByColumnName(columnName).First(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual("Empty", page.GetColumnContentByColumnName(columnName).First(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Account Profile menu is displayed correctly")]
@@ -217,7 +218,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Waiting for changed List details button state
             Thread.Sleep(500);
             _driver.WaitForElementToBeDisplayed(menu.ListDetailsButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
+            Verify.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
                 "List Details Button is active");
         }
 

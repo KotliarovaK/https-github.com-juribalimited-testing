@@ -10,11 +10,12 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using RestSharp;
 using Newtonsoft.Json;
-using DashworksTestAutomation.Utils;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 {

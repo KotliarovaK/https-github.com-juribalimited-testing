@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.BulkUpdatePage;
 using DashworksTestAutomation.Pages.Projects;
@@ -49,7 +50,7 @@ namespace DashworksTestAutomation
         {
             var page = _driver.NowAt<BulkUpdatePage>();
             _driver.WaitForDataLoadingOnProjects();
-            Utils.Verify.That(page.BulkUpdateTypeOptions.Any(x => x.Text.Equals(option)), Is.True, "Option was not found in list");
+            Verify.That(page.BulkUpdateTypeOptions.Any(x => x.Text.Equals(option)), Is.True, "Option was not found in list");
         }
     }
 }

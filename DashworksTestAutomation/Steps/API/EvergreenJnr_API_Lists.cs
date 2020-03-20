@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.ManagementConsole;
@@ -21,6 +22,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.API
 {
