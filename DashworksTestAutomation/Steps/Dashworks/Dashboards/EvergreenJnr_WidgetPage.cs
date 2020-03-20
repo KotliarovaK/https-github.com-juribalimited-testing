@@ -574,5 +574,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.ExecuteAction(() => page.GetWidgetChartItem(widgetName, category).Click());
         }
+
+        [When(@"User move '(.*)' widget to '(.*)' widget")]
+        public void WhenUserMoveWidgetToWidget(string widgetName, string widgetNameToMove)
+        {
+            var page = _driver.NowAt<BaseWidgetPage>();
+            _driver.DragAndDrop(page.GetWidgetDragAndDropElement(widgetName),
+                page.GetWidget(widgetNameToMove));
+        }
     }
 }

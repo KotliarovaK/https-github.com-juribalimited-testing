@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page
-	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14757 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	And User checks 'Other mailbox permissions' checkbox
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	| Delegated mailboxes |
 	When User navigates to the 'Scope Changes' left menu item
 	And User navigates to the 'Users' tab on Project Scope Changes page
-	Then "Users to add (0 of 14753 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14767 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	And User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User removes following chips of 'ADD PERMISSION' button
@@ -159,7 +159,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	And User navigates to the 'Scope Changes' left menu item
 	#Then "18RequestTypeName" Path is displayed to the user
 	#Then "18MailboxCategory" Category is displayed to the user
-	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Mailboxes to add (0 of 14884 selected)" is displayed to the user in the Project Scope Changes section
 	And "Mailboxes to remove (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	And 'Mailboxes 0/0' tab is displayed on Project Scope Changes page
 	When User expands multiselect and selects following Objects
@@ -173,7 +173,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	And 'Mailboxes 2/0' tab is displayed on Project Scope Changes page
 	When User clicks 'UPDATE PROJECT' button 
 	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
-	And "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
+	And "Mailboxes to add (0 of 14882 selected)" is displayed to the user in the Project Scope Changes section
 	And "[Default (Mailbox)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And Add Objects panel is collapsed

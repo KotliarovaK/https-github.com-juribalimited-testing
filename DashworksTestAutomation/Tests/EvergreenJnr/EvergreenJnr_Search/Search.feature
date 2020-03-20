@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	| Python         | 7            |
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
-	And "14,784" rows are displayed in the agGrid
+	And "14,884" rows are displayed in the agGrid
 	And Search field is empty
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| SearchCriteria      | NumberOfRows |
 	| Véronique Duplessis | 1            |
 	| Virtual             | 1,996        |
-	| Windows Vista       | 475          |
+	| Windows Vista       | 124          |
 	| O'Connor            | 13           |
 	| @demo.juriba.com    | 16,771       |
 	| 192.168.6           | 5,094        |

@@ -608,3 +608,41 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplay
 	| Administrator |
 	| Joanne Gall   |
 	| Unassigned    |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20027 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardAreOpenedAfterDragAndDropWidgetsRepeatedly
+	When Dashboard with 'Dashboard DAS20027' name created via API and opened
+	And User checks 'Edit mode' slide toggle
+	And User clicks 'ADD WIDGET' button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetOneDAS20027 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
+	Then 'WidgetOneDAS20027' Widget is displayed to the user
+	When User clicks 'ADD WIDGET' button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetTwoDAS20027 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
+	Then 'WidgetTwoDAS20027' Widget is displayed to the user
+	When User clicks 'ADD WIDGET' button
+	And User creates new Widget
+	| WidgetType | Title               | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetThreeDAS20027 | All Applications | Application | Application | Count distinct    | Application ASC | 10        |
+	Then 'WidgetThreeDAS20027' Widget is displayed to the user
+	When User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
+	And User move 'WidgetThreeDAS20027' widget to 'WidgetOneDAS20027' widget
+	And User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
+	And User move 'WidgetTwoDAS20027' widget to 'WidgetOneDAS20027' widget
+	And User move 'WidgetThreeDAS20027' widget to 'WidgetTwoDAS20027' widget
+	And User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
+	And User move 'WidgetTwoDAS20027' widget to 'WidgetOneDAS20027' widget
+	And User move 'WidgetThreeDAS20027' widget to 'WidgetTwoDAS20027' widget
+	And User move 'WidgetOneDAS20027' widget to 'WidgetThreeDAS20027' widget
+	And User move 'WidgetTwoDAS20027' widget to 'WidgetOneDAS20027' widget
+	And User clicks Show Dashboards panel icon on Dashboards page
+	And User opens 'Overview' dashboard
+	Then User sees following Widgets on Dashboards page:
+	| WidgetTitles       |
+	| Device Profile     |
+	| Operating Systems  |
+	| Top 10 App Vendors |
+	| Domain Profile     |
