@@ -409,6 +409,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS12799")]
         [NUnit.Framework.CategoryAttribute("DAS13657")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "Details", "Advertisements", "Advertisement", "Advertisement Key", "Advertisement Key", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "Details", "Advertisements", "Advertisement", "Collection Key", "Collection Key", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "Details", "Programs", "Program", "Program Key", "Program Key", null)]
@@ -448,7 +449,8 @@ this.FeatureBackground();
                     "DAS11732",
                     "DAS12235",
                     "DAS12799",
-                    "DAS13657"};
+                    "DAS13657",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -502,6 +504,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11732")]
         [NUnit.Framework.CategoryAttribute("DAS12235")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Distribution", "Devices", "Computer Key", null)]
         [NUnit.Framework.TestCaseAttribute("Distribution", "Devices", "Advertisement Key", null)]
         [NUnit.Framework.TestCaseAttribute("Distribution", "Devices", "Collection Key", null)]
@@ -540,7 +543,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS11732",
-                    "DAS12235"};
+                    "DAS12235",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
