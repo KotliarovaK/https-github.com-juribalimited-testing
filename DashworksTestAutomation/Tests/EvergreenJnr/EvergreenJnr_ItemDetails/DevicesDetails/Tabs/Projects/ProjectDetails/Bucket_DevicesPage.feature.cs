@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS18227")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedUsers()
         {
             System.Exception lastException = null;
@@ -123,7 +124,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.De
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "ProjectDetailsTab",
-                        "DAS18227"});
+                        "DAS18227",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -395,7 +397,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ProjectsTab")]
         [NUnit.Framework.CategoryAttribute("DAS19985")]
         [NUnit.Framework.CategoryAttribute("DAS20088")]
-        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheBucketPopUp()
         {
             System.Exception lastException = null;
@@ -430,8 +431,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ProjectsTab",
                         "DAS19985",
-                        "DAS20088",
-                        "Void"});
+                        "DAS20088"});
 #line 78
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

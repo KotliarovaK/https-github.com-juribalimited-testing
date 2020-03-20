@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
 using DashworksTestAutomation.Extensions;
@@ -20,19 +21,21 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         private readonly RemoteWebDriver _driver;
         private readonly SelfServices _selfServices;
         private readonly SelfServiceApiMethods _selfServiceApiMethods;
+        private SelfServicePages _selfServicePages;
 
-        public CreateSelfService(RemoteWebDriver driver, SelfServices selfServices, RestWebClient client)
+        public CreateSelfService(RemoteWebDriver driver, SelfServices selfServices, RestWebClient client, SelfServicePages selfServicePages)
         {
             _driver = driver;
             _selfServices = selfServices;
             _selfServiceApiMethods = new SelfServiceApiMethods(selfServices, client);
+            _selfServicePages = selfServicePages;
         }
 
         [When(@"User creates Self Service via API and open it")]
         public void WhenUserCreatesSelfServiceViaAPIAndOpenIt(Table table)
         {
             var exception = string.Empty;
-            _selfServices.Value.AddRange(_selfServiceApiMethods.CreateSelfService(table, out exception).Value);
+            _selfServices.Value.AddRange(_selfServiceApiMethods.CreateSelfService(table, out exception, ref _selfServicePages).Value);
             if (!string.IsNullOrEmpty(exception))
             {
                 throw new Exception(exception);
@@ -61,7 +64,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
         public void WhenUserOpensSelfServiceInANewTab(string selfService)
         {
             var ss = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(selfService));
-            _driver.WaitForDataLoading();   
+            _driver.WaitForDataLoading();
             var url = $"{UrlProvider.EvergreenUrl}#/admin/selfservice/{ss.ServiceId}/details";
 
             _driver.OpenInNewTab(url);

@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	| Options                                          |
 	| Windows 7 Migration (Computer Scheduled Project) |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18036
+@Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18036 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObje
 	Then 'This device has been offboarded from User Evergreen Capacity Project' text is displayed on inline tip banner
 	Then 'OFFBOARD' button is disabled
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19843 @DAS20088 @Void
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19843 @DAS20088
 Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffboardPopUp
 	When User navigates to the 'Device' details page for '32UIH1IBLQ050JY' item
 	Then Details page for '32UIH1IBLQ050JY' item is displayed to the user

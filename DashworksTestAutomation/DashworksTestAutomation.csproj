@@ -37,8 +37,11 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HtmlAgilityPack, Version=1.11.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlAgilityPack.1.11.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    <Reference Include="AutomationUtils, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutomationUtils.1.0.1\lib\netstandard2.0\AutomationUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.22.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.22\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=4.61.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
       <HintPath>..\packages\CompareNETObjects.4.61.0\lib\net46\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
@@ -53,8 +56,8 @@
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp, Version=106.6.9.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.10.1\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetSeleniumExtras.PageObjects.3.11.0\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
@@ -122,6 +125,7 @@
     <Compile Include="DTO\Evergreen\Admin\Readiness\ReadinessDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\AllPagesOfSelfServiceDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\Components\BaseSelfServiceComponent.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\Components\SelfServiceApplicationOwnershipComponent.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePageDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\SelfService\Builder\SelfServicePages.cs" />
@@ -1473,6 +1477,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MailboxesDetails_Details_MailboxOwner.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Bucket_ProjectDetails_Projects_MailDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bucket_ProjectDetails_Projects_MailDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\MailboxesDetails_Projects_ProjectDetails.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2026,7 +2035,6 @@
     <Compile Include="Utils\BambooUtil.cs" />
     <Compile Include="Utils\BrowserFactory.cs" />
     <Compile Include="Utils\BrowsersList.cs" />
-    <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\DatabaseWorker.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
     <Compile Include="Utils\FluentWait.cs" />
@@ -2856,6 +2864,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Details\MailboxesDetails_Details_MailboxOwner.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MailboxesDetails_Details_MailboxOwner.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\Bucket_ProjectDetails_Projects_MailDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Bucket_ProjectDetails_Projects_MailDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Projects\ProjectDetails\MailboxesDetails_Projects_ProjectDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

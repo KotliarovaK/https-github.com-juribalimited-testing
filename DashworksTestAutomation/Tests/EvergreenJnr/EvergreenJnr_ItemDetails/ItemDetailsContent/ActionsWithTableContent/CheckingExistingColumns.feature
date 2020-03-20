@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564  @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckRenamedColumnForApplicationTabOnTheDetailsPage
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_DevicesList_CheckRenamedColumnForApplicationTabOnTheDetai
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16564
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16564 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetailsPage
 	When User navigates to the 'User' details page for 'ZZZ588323' item
 	Then Details page for 'ZZZ588323' item is displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetails
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088 @DAS12321
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088 @DAS12321 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
 	When User navigates to the 'Mailbox' details page for 'abraham.f.wong@dwlabs.local' item
 	Then Details page for 'abraham.f.wong@dwlabs.local' item is displayed to the user

@@ -262,20 +262,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	Then 'WidgetForDAS18091' Widget is displayed to the user
 	Then There is no 'Empty' column for 'WidgetForDAS18091' widget
 	#DAS18090 
-	When User clicks 'NOT READY' value for 'Windows 7' column
+	When User clicks 'NOT READY' value for 'Windows 10' column
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then "Operating System is Windows 7" is displayed in added filter info
+	Then "Operating System is Windows 10" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
 	Then "2004: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
-	#DAS16516
-	When Dashboard with 'Dashboard for DAS18091' name is opened via API
-	When User clicks 'READY' value for 'Windows Vista' column
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	Then "Operating System is Windows Vista" is displayed in added filter info
-	Then "Any Device in list 2004 Rollout" is displayed in added filter info
-	Then "2004: Pre-Migration \ Ready to Migrate is Ready" is displayed in added filter info
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidget

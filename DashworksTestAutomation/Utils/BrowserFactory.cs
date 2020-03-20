@@ -55,7 +55,9 @@ namespace DashworksTestAutomation.Utils
                     options.AddUserProfilePreference("download.directory_upgrade", true);
                     options.AddUserProfilePreference("safebrowsing.enabled", true);
                     if (Browser.RemoteDriver.Equals("local"))
+                    {
                         options.AddArgument("--start-maximized");
+                    }
                     options.UseSpecCompliantProtocol = false;
                     options.SetLoggingPreference(LogType.Browser, LogLevel.All);
 

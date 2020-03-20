@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS18227
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS18227 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedUsers
 	When User navigates to the 'Device' details page for '02M88BG4P29EEM' item
 	Then Details page for '02M88BG4P29EEM' item is displayed to the user
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForBucketIsChangingSuccessfullyFor
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Bucket' field is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19985 @DAS20088 @Void
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19985 @DAS20088
 Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheBucketPopUp
 	When User navigates to the 'Device' details page for '32UIH1IBLQ050JY' item
 	Then Details page for '32UIH1IBLQ050JY' item is displayed to the user

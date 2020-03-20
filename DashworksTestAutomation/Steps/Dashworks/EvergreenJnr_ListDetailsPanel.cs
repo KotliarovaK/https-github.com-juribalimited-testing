@@ -265,6 +265,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Utils.Verify.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
         }
 
+        [Then(@"Warning message with '(.*)' text is not displayed")]
+        public void ThenWarningMessageWithTextIsNotDisplayed(string message)
+        {
+            var listElement = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            Utils.Verify.IsFalse(listElement.ErrorMessage.Displayed(), $"'{message}' was displayed but should not");
+        }
+
         [Then(@"""(.*)"" message is displayed in the lists panel")]
         public void ThenMessageIsDisplayedInTheListsPanel(string warningText)
         {
