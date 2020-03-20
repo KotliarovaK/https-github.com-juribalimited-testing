@@ -79,3 +79,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfter
 	When User navigates to the 'Scope Changes' left submenu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then inline error banner is not displayed
+
+@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS20393 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterReselectingSharingOption
+	When User clicks 'Devices' on the left-hand menu
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName                 |
+	| CPU Virtualisation Capable |
+	When User create dynamic list with "List20393" name on "Devices" page
+	Then "List20393" list is displayed to user
+	When User clicks the Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'person_add' icon
+	When User selects 'Private' in the 'Sharing' dropdown
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User adds user to list of shared person
+	| User               | Permission |
+	| Automation Admin 1 | Admin      |
