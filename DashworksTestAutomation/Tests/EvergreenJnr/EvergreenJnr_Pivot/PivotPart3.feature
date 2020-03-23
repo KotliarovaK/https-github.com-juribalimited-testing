@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 	| Country |
 	And User selects the following Values on Pivot:
 	| Values                            |
-	| Babel(Engl: Application Readiness |
+	| ComputerSc: Application Readiness |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Country" filter
@@ -151,9 +151,9 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 	When User expanded "101 Hudson Street" left-pinned value on Pivot
 	Then following values are displayed for "USA" column on Pivot
 	| Value1            | Value2 |
-	| 101 Hudson Street | BLUE   |
-	| 20                | IGNORE |
-	| 21                | BLUE   |
+	| 101 Hudson Street | GREEN  |
+	| 20                | GREEN  |
+	| 21                | GREEN  |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS17669
 Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForDevices
