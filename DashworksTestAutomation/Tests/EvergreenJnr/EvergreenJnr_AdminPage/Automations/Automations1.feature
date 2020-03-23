@@ -430,7 +430,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	| Users (0)        |
 	| Applications (0) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @DAS17275 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @DAS17275 @DAS20328 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
 	When User clicks 'Devices' on the left-hand menu
 	And User clicks the Filters button
@@ -460,6 +460,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
 	When User enters "15423_Automation" text in the Search field for "Automation" column
+	Then "[List not found]" content is displayed for "Scope" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
 	Then '[List not found]' content is displayed in 'Scope' textbox
