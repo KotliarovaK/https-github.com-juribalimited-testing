@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeProp
 	| Update relative to a different task value |
 	| Remove                                    |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18233 @Void
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18233 @Wormhole
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProperties
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -105,12 +105,12 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProp
 	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options                                   |
+	| No change                                 |
 	| Update                                    |
 	| Update relative to current value          |
 	| Update relative to now                    |
 	| Update relative to a different task value |
 	| Remove                                    |
-	| No change                                 |
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18270 @DAS18233
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties
