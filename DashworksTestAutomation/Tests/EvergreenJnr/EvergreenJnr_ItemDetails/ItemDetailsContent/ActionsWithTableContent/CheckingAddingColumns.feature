@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657 @DAS14923
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657 @DAS14923 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for '<SearchTerm>' item is displayed to the user
@@ -28,7 +28,7 @@ Examples:
 	| Application | Microsoft Office Visio 2000 Solutions - Custom Patterns | Projects     | Projects          | Project     | Object ID    | Object ID     |
 	| Application | Microsoft Office Visio 2000 Solutions - Custom Patterns | Projects     | Projects          | Project     | Object Key   | Object Key    |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @DAS13004 @DAS13657
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @DAS13004 @DAS13657 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -57,7 +57,7 @@ Examples:
 	| Projects    | Owner Projects Summary | Username    | Category Key     | Category Key     |
 	| Projects    | Owner Projects Summary | Username    | Status Key       | Status Key       |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @DAS13657
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @DAS13657 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for '<SearchTerm>' item is displayed to the user
