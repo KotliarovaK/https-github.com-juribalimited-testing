@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToNowValueForAutomation
 	And User clicks content from "Objects" column
 	Then '10 Feb 2020' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @DAS20363 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19854 @DAS2036 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRelativeToDifferentTaskValue
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -198,3 +198,31 @@ Scenario: EvergreenJnr_AdminPage_CheckOwnerDropdownDisplayingAfterSelectingEmpty
 	When User selects '20278_Test' option from 'Team' autocomplete
 	When User selects 'Unassigned' option from 'Owner' autocomplete
 	Then 'CREATE' button is not disabled
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20363 @Cleanup @Wormhole
+Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueActionDateWhileEditingAction
+	When User creates new Automation via API and open it
+	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
+	| 20364_Automation | 20364       | true   | false              | New York - Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '20364_Action' text to 'Action Name' textbox
+	When User selects 'Update task value' in the 'Action Type' dropdown
+	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
+	When User selects 'Stage 1 \ Original Auto Task' option from 'Task' autocomplete
+	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
+	When User selects 'Update' in the 'Update Value' dropdown
+	When User selects 'Complete' in the 'Value' dropdown
+	When User selects 'Stage 2 \ Relative Task' option from 'Relative Task' autocomplete
+	When User enters '0' text to 'Value' textbox
+	When User selects 'Week days' in the 'Units' dropdown
+	When User selects 'After task value' in the 'Before or After' dropdown
+	When User clicks 'CREATE' button
+	When User clicks content from "Action" column
+	When User selects 'Update' in the 'Update Date' dropdown
+	Then '' content is displayed in 'Date' textbox
+	When User enters '2 Mar 2020' text to 'Date' textbox
+	When User clicks 'UPDATE' button
+	Then 'The automation action has been updated' text is displayed on inline success banner
