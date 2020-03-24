@@ -5,112 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @DAS18911 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
-	When Dashboard with 'Dashboard for DAS15721' name created via API and opened
-	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD SECTION' button 
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 1_Widget | All Devices | 5       | 5          |
-	Then '1_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 2_Widget | All Devices | 5       | 5          |
-	Then '2_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 3_Widget | All Devices | 5       | 5          |
-	Then '3_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 4_Widget | All Devices | 5       | 5          |
-	Then '4_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 5_Widget | All Devices | 5       | 5          |
-	Then '5_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 6_Widget | All Devices | 5       | 5          |
-	Then '6_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 7_Widget | All Devices | 5       | 5          |
-	Then '7_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 8_Widget | All Devices | 5       | 5          |
-	Then '8_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
-	| List       | 9_Widget | All Devices | 5       | 5          |
-	Then '9_Widget' Widget is displayed to the user
-	#==========================================================#
-	When User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title     | List        | MaxRows | MaxColumns |
-	| List       | 10_Widget | All Devices | 5       | 5          |
-	Then '10_Widget' Widget is displayed to the user
-	#==========================================================#
-	And 'ADD WIDGET' button is disabled
-	Then 'ADD WIDGET' button has tooltip with 'Maximum number of widgets has been reached for this dashboard' text
-	When User clicks Ellipsis menu for '10_Widget' Widget on Dashboards page
-	Then User sees following Ellipsis menu items on Dashboards page:
-	| items            |
-	| Edit             |
-	| Duplicate        |
-	| Move to start    |
-	| Move to end      |
-	| Move to position |
-	| Move to section  |
-	| Delete           |
-	Then 'Duplicate' Ellipsis menu item is disabled on Dashboards page
-	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
-	When Dashboard with 'Dashboard_DAS14618' name created via API and opened
-	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    |
-	| Pie        | WidgetForDAS14618 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |
-	Then 'WidgetForDAS14618' Widget is displayed to the user
-	When User clicks 'ADD SECTION' button 
-	And User clicks Ellipsis menu for 'WidgetForDAS14618' Widget on Dashboards page
-	And User clicks 'Move to section' item from Ellipsis menu on Dashboards page
-	Then Move to Section pop up is displayed to the User
-	When User clicks 'CANCEL' button on the Move to Section Pop up
-	Then Move to Section pop up is not displayed to the User
-	When User clicks Ellipsis menu for 'WidgetForDAS14618' Widget on Dashboards page
-	And User clicks 'Move to section' item from Ellipsis menu on Dashboards page
-	When User selects '2' section on the Move to Section pop up
-	When User clicks 'MOVE' button on the Move to Section Pop up
-	When User expands all sections on Dashboards page
-	Then 'WidgetForDAS14618' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS14618' Widget on Dashboards page
-	And User clicks 'Move to section' item from Ellipsis menu on Dashboards page
-	When User selects '1' section on the Move to Section pop up
-	When User clicks 'MOVE' button on the Move to Section Pop up
-	Then 'WidgetForDAS14618' Widget is displayed to the user
-
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @DAS17150 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with 'Dashboard_DAS16326' name created via API and opened
@@ -197,28 +91,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	Then Dashboard with name 'Dashboard_DAS12974Default' marked as default
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
-	When Dashboard with 'Dashboard for DAS12974SECTION' name created via API and opened
-	When User checks 'Edit mode' slide toggle
-	When User clicks 'ADD WIDGET' button 
-	When User creates new Widget
-	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
-	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	Then 'DAS12974SECTION1' Widget is displayed to the user
-	When User clicks 'ADD SECTION' button 
-	When User clicks ADD WIDGET button for '2' Section on Dashboards page
-	When User creates new Widget
-	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
-	| Pie        | DAS12974SECTION2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-	Then 'DAS12974SECTION2' Widget is displayed to the user
-	When User remembers number of Sections and Widgets on Dashboards page
-	When User clicks Ellipsis menu for Section having 'DAS12974SECTION1' Widget on Dashboards page
-	When User clicks 'Delete' item from Ellipsis menu on Dashboards page
-	When User confirms item deleting on Dashboards page
-	Then User sees number of Sections increased by '-1' on Dashboards page
-	Then User sees number of Widgets increased by '-1' on Dashboards page
-
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
 	When Dashboard with 'DAS12974DUPLICATED' name created via API and opened
 	When User clicks 'Dashboards' on the left-hand menu
@@ -255,8 +127,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenE
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS17985 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
-	When User clicks Ellipsis menu for 'WidgetForDAS17985' Widget on Dashboards page
-	When User clicks 'Delete' item from Ellipsis menu on Dashboards page
+	When User clicks 'Delete' menu option for 'WidgetForDAS17985' widget
 	Then User sees 'WidgetForDAS17985 will be permanently deleted' text in warning message of 'WidgetForDAS17985' widget on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18152 @Cleanup
@@ -273,10 +144,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWi
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 2_Widget | All Devices | 5       | 5          |
 	Then '2_Widget' Widget is displayed to the user
-	When User clicks Ellipsis menu for '1_Widget' Widget on Dashboards page
-	When User clicks 'Move to end' item from Ellipsis menu on Dashboards page
-	When User clicks Ellipsis menu for '1_Widget' Widget on Dashboards page
-	When User clicks 'Duplicate' item from Ellipsis menu on Dashboards page
+	When User clicks 'Move to end' menu option for '1_Widget' widget
+	When User clicks 'Duplicate' menu option for '1_Widget' widget
 	Then User sees following Widgets in one Section on Dashboards page:
 	| WidgetNames |
 	| 2_Widget    |
@@ -313,8 +182,7 @@ Scenario Outline: EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveA
 	| WidgetType   | Title        | List        | SplitBy  | AggregateFunction | OrderBy      |
 	| <WidgetType> | <WidgetName> | All Devices | Hostname | Count             | Hostname ASC |
 	Then '<WidgetName>' Widget is displayed to the user
-	When User clicks Ellipsis menu for '<WidgetName>' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for '<WidgetName>' widget
 	Then 'UPDATE' button is disabled
 	When User selects '<UpdatedType>' in the 'Widget Type' dropdown
 	Then 'UPDATE' button is not disabled
@@ -333,8 +201,7 @@ Scenario: EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChan
 	| WidgetType | Title      | List        | SplitBy  | CategoriseBy | DisplayType | AggregateFunction | OrderBy      |
 	| Column     | DAS20070_3 | All Devices | Hostname | Device Type  | Clustered   | Count             | Hostname ASC |
 	Then 'DAS20070_3' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'DAS20070_3' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'DAS20070_3' widget
 	Then 'UPDATE' button is disabled
 	When User selects 'Stacked' in the 'Display Type' dropdown
 	Then 'UPDATE' button is not disabled

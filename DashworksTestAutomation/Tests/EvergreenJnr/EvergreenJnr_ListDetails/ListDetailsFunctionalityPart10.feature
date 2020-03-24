@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterR
 	Then "List20393" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'person_add' icon
+	When User clicks 'group_add' icon
 	When User selects 'Private' in the 'Sharing' dropdown
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person

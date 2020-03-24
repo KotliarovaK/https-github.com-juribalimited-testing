@@ -8,12 +8,10 @@ using DashworksTestAutomation.DTO.Evergreen.Admin;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.Dashboards;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -260,24 +258,135 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User clicks Ellipsis menu for '(.*)' Widget on Dashboards page")]
-        public void WhenUserClicksEllipsisMenuForWidgetOnDashboardsPage(string widgetName)
+        [Then(@"User sees '(.*)' widget placed in '(.*)' section")]
+        public void ThenUserSeesWidgetPlacedInCorrectSection(string widgetName, string sectionNumber)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitForDataLoading();
-            var ellipsisMenu = page.GetEllipsisMenuForWidget(widgetName);
+            ThenUserSeesDashboardPageOpened();
+            var currentNumber = int.Parse(page.GetSectionNumberByWidgetName(widgetName)) + 1;
+            Verify.That(sectionNumber, Is.EqualTo(currentNumber.ToString()), "Wrong section number");
+        }
 
-            if (ellipsisMenu != null)
+        [When(@"User clicks menu for section with '(.*)' widget")]
+        public void ClickSectionMenuByWidgetName(string widgetName)
+        {
+            var dash = _driver.NowAt<EvergreenDashboardsPage>();
+            ThenUserSeesDashboardPageOpened();
+            dash.GetSectionMenuByWidgetName(widgetName).Click();
+        }
+
+        [When(@"User clicks menu for '(.*)' widget")]
+        public void ClickWidgetMenuByWidgetName(string widgetName)
+        {
+            var dash = _driver.NowAt<EvergreenDashboardsPage>();
+            ThenUserSeesDashboardPageOpened();
+            dash.GetEllipsisMenuForWidget(widgetName).Click();
+        }
+
+        private void DisabledMenuItemHasNextTooltip(string menuItem, string tooltip)
+        {
+            var dash = _driver.NowAt<EvergreenDashboardsPage>();
+            var item = dash.GetDisabledMenuItemByName(menuItem);
+            Verify.IsTrue(item.Displayed(), $"{menuItem} menu item is enabled");
+
+            _driver.MouseHover(item);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(tooltip, toolTipText, "Tooltip text is not correctly");
+
+            var body = _driver.NowAt<BaseGridPage>();
+            body.BodyContainer.Click();
+        }
+
+        [When(@"User clicks '(.*)' menu option for section with '(.*)' widget")]
+        public void WhenUserClicksMenuOptionForSectionWithWidget(string menuOption, string widgetName)
+        {
+            ClickSectionMenuByWidgetName(widgetName);
+
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetMenuButtonByName(menuOption).Click();
+        }
+
+        [When(@"User clicks '(.*)' menu option for '(.*)' widget")]
+        public void WhenUserClicksMenuOptionForWidget(string menuOption, string widgetName)
+        {
+            ClickWidgetMenuByWidgetName(widgetName);
+
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetMenuButtonByName(menuOption).Click();
+        }
+
+        [Then(@"'(.*)' menu item for '(.*)' widget is disabled and has '(.*)' tooltip")]
+        public void WidgetMenuItemIsDisabledAndHasTooltip(string menuItem, string widgetName, string tooltip)
+        {
+            ClickWidgetMenuByWidgetName(widgetName);
+            DisabledMenuItemHasNextTooltip(menuItem, tooltip);
+        }
+
+        [Then(@"User sees following items for expanded menu:")]
+        public void WhenUserSeesFollowingMenuItemsOnPage(Table items)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            for (var i = 0; i < items.RowCount; i++)
+                Verify.That(page.EllipsisMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
+                    "Items are not the same");
+        }
+
+        [When(@"User sets expand status to '(.*)' for '(.*)' section")]
+        public void WhenUserExpandsOrCollapseSectionByName(string status, string sectionName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.SetSectionExpandStatusTo(sectionName, status);
+        }
+
+        [Then(@"User sees '(.*)' description for '(.*)' section")]
+        public void ThenUserSeesSectionDescriptionBySectionName(string description, string section)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Verify.That(page.SectionDescriptionByName(section).Text, Is.EqualTo(description), "Description are not the same");
+        }
+
+        [When(@"User clicks '(.*)' link in description for '(.*)' section")]
+        public void WhenUserSeesLinkDescriptionBySectionName(string link, string section)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.SectionDescriptionLinkByName(section, link).Click();
+        }
+
+        //works for 3 widgets only
+        [Then(@"Listed widgets are placed by '(.*)' in line:")]
+        public void ThenListedWidgetsArePlacedOnTheSameLine(string nPerLine, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            List<int> y_coordinates = new List<int>();
+
+            var widgets = table.Rows.SelectMany(row => row.Values).ToList();
+
+            foreach (var widget in widgets)
             {
-                page.GetEllipsisMenuForWidget(widgetName).Click();
-                var bdp = _driver.NowAt<BaseDashboardPage>();
-                _driver.WaitForElementToBeDisplayed(bdp.MenuPanelElement);
+                y_coordinates.Add(page.GetWidget(widget).Location.Y);
             }
-            else
+
+            switch (nPerLine)
             {
-                throw new Exception($"Ellipsis menu is not available");
+                case ("3"):
+                {
+                    Verify.That(y_coordinates.Any(o => o != y_coordinates[0]), Is.False, "Y coordinates are different");
+                    break;
+                }
+
+                case ("1"):
+                {
+                    Verify.That(y_coordinates.Distinct().ToList().Count.Equals(y_coordinates.Count), Is.True, "some of Y coordinates are same");
+                    break;
+                }
+
+                default:
+                    throw new Exception($"'{nPerLine}' is not one of expected");
             }
         }
+
+
 
         [Then(@"User sees Ellipsis icon enabled for '(.*)' Widget on Dashboards page")]
         public void ThenUserSeesEllipsisIconEnabledForWidgetOnDashboardsPage(string widgetName)
@@ -292,16 +401,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Verify.That(page.GetEllipsisMenuForWidget(widgetName), Is.Null);
-        }
-
-        [When(@"User clicks Ellipsis menu for Section having '(.*)' Widget on Dashboards page")]
-        public void WhenUserClicksEllipsisMenuForSectionHavingWidgetOnDashboardsPage(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Click();
-            var bdp = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForElementToBeDisplayed(bdp.MenuPanelElement);
         }
 
         [Then(@"User sees Ellipsis icon enabled for Section having '(.*)' Widget on Dashboards page")]
@@ -331,20 +430,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Is.True);
         }
 
-        [When(@"User collapses all sections on Dashboards page")]
-        public void WhenUserCollapsesAllSectionsOnDashboardsPage()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            foreach (var arrow in page.AllCollapseExpandSectionsArrows)
-            {
-                if (arrow.GetAttribute("class").Contains("arrow_up"))
-                {
-                    arrow.Click();
-                }
-            }
-        }
-
         [When(@"User expands all sections on Dashboards page")]
         public void WhenUserExpandsAllSectionsOnDashboardsPage()
         {
@@ -359,40 +444,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"User sees following Ellipsis menu items on Dashboards page:")]
-        public void WhenUserSeesFollowingEllipsisMenuItemsOnDashboardsPage(Table items)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            for (var i = 0; i < items.RowCount; i++)
-                Verify.That(page.EllipsisMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
-                    "Items are not the same");
-        }
-
-        [Then(@"'(.*)' Ellipsis menu item is disabled on Dashboards page")]
-        public void ThenEllipsisMenuItemIsDisabledOnDashboardsPage(string itemName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.IsTrue(page.GetDisabledEllipsisItemByName(itemName).Displayed(), "Ellipsis menu item is enabled");
-            var body = _driver.NowAt<BaseGridPage>();
-            body.BodyContainer.Click();
-        }
-
-        [When(@"User clicks '(.*)' item from Ellipsis menu on Dashboards page")]
-        public void WhenUserClicksItemFromEllipsisMenuOnDashboardsPage(string itemName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            try
-            {
-                page.EllipsisMenuItems.Select(x => x).Where(c => c.Text.Equals(itemName)).FirstOrDefault().Click();
-                _driver.WaitForDataLoading();
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"'{itemName}' menu item is not valid", e);
-            }
-        }
 
         [When(@"User remembers number of Sections and Widgets on Dashboards page")]
         public void WhenUserRemembersNumberOfSectionsAndWidgetsOnDashboardsPage()
@@ -455,7 +506,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetAddWidgetButtons().ElementAt(section - 1).Click();
         }
 
-        [Then(@"User cant see widget with the next name '(.*)' on Dashboards page")]
+        [Then(@"Widget with the name '(.*)' is missing")]
         public void ThenUserCantSeeWidgetWithTheNextNameOnDashboardsPage(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
@@ -470,16 +521,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
             Verify.That(page.AllWidgetsTitles.Select(x => x.Text.Equals(widgetName)).ToList().Count, Is.EqualTo(numberOfWidgets), "More than {numberOfWidgets} widgets were displayed.");
-        }
-
-        [When(@"User deletes '(.*)' Widget on Dashboards page")]
-        public void WhenUserDeletesWidgetOnDashboardsPage(string widgetName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-
-            page.GetEllipsisMenuForWidget(widgetName).Click();
-            page.EllipsisMenuItems.Select(x => x).Where(c => c.Text.Equals("Delete")).FirstOrDefault().Click();
-            page.AlertButton("DELETE").Click();
         }
 
         [When(@"User clicks edit option for broken widget on Dashboards page")]
@@ -538,35 +579,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Verify.AreEqual(text, page.DashboardsAlert.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
-
-        [Then(@"Move to Section pop up is displayed to the User")]
-        public void ThenMoveToSectionPopUpIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.IsTrue(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is not displayed");
-        }
-
-        [Then(@"Move to Section pop up is not displayed to the User")]
-        public void ThenMoveToSectionPopUpIsNotDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.IsFalse(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is displayed");
-        }
-
-        [When(@"User selects '(.*)' section on the Move to Section pop up")]
-        public void WhenUserSelectsSectionOnTheMoveToSectionPopUp(string sectionName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.SelectSectionToMove(sectionName);
-        }
-
-        [When(@"User clicks '(.*)' button on the Move to Section Pop up")]
-        public void WhenUserClicksButtonOnTheMoveToSectionPopUp(string buttonName)
-        {
-            var page = _driver.NowAt<EvergreenDashboardsPage>();
-            page.ClickMoveToSectionPopUpButton(buttonName);
-        }
-
 
         #endregion
 
@@ -727,18 +739,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenThereIsNoSpecifiedColumnForWidget(string column, string widget)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var headers = page.GetTableWidgetHeaders(widget);
+            var headers = page.GetTableWidgetHorizontalHeaders(widget);
 
             Verify.That(headers.Select(x => x.Text).ToList().FindAll(x => x.ToLower().Contains(column.ToLower())).Count(), Is.EqualTo(0), $"Table contains {column} header");
         }
 
-        [Then(@"Table columns of '(.*)' widget placed in the next order:")]
-        public void ThenThereIsNoSpecifiedColumnForWidget(string widget, Table table)
+        [Then(@"Headers of '(.*)' table widget with '(.*)' orientation are placed in the next order:")]
+        public void ThenHeadersOfTableWidgetArePlacedInNextOrder(string widget, string orientation, Table table)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
+            List<string> headers;
 
-            var headers = page.GetTableWidgetHeaders(widget).Select(column => column.Text).ToList();
+            switch (orientation.ToLower())
+            {
+                case ("horizontal"):
+                    headers = page.GetTableWidgetHorizontalHeaders(widget).Select(column => column.Text).ToList();
+                    break;
+
+                case ("vertical"):
+                    headers = page.GetTableWidgetVerticalHeaders(widget).Select(column => column.Text).ToList();
+                    break;
+
+                default:
+                    throw new Exception($"'{orientation}' is not defined orientation");
+            }
+
+
             var expectedTable = table.Rows.SelectMany(row => row.Values);
 
             Verify.That(headers, Is.EqualTo(expectedTable), $"Table orders is wrong");

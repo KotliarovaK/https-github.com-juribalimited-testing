@@ -1245,6 +1245,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\DashboardSections.feature.cs">
+      <DependentUpon>DashboardSections.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\ItemsManagement2.feature.cs">
       <DependentUpon>ItemsManagement2.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -2678,6 +2684,11 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\DashboardSharing2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DashboardSharing2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\DashboardSections.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DashboardSections.feature.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\ItemsManagement2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
