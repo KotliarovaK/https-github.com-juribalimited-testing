@@ -371,3 +371,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterE
 	And User clicks 'UPDATE' button
 	Then 'Section successfully updated' text is displayed on inline success banner
 	Then 'WidgetForDAS20412' Widget is displayed to the user
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS20358
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUserIsAbleToDeleteNotDefaultDashboard
+	When User clicks 'Dashboards' on the left-hand menu
+	And User clicks 'CREATE DASHBOARD' button
+	And User creates new Dashboard with 'DashboardDAS20358' name
+	And User clicks the Dashboard Details button
+	And User clicks Delete list button
+	And User clicks 'DELETE' button
+	Then "Dashboard deleted" message is displayed
