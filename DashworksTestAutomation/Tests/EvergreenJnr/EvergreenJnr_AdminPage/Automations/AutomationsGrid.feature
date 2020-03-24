@@ -133,9 +133,6 @@ Scenario: EvergreenJnr_AdminPage_CheckScopeClickableLinkOnTheAutomationsGrid
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "AV Automation - CF" text in the Search field for "Automation" column
-	Then '{groupName}' grouped name is not displayed as a link
-	#When User clicks content from "Scope" column
-	#Then Page with 'Automations' header is displayed to user
 	When User enters "Devices_Scope" text in the Search field for "Automation" column
 	When User clicks content from "Scope" column
 	Then 'All Devices' list should be displayed to the user
