@@ -401,7 +401,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then 'Stop on failed action' checkbox is checked
 	Then 'UPDATE' button is disabled
 	Then 'CANCEL' button is not disabled
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'UPDATE' button has tooltip with 'No changes made' text
 	When User clicks 'Automations' header breadcrumb
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks 'Delete' option in Cog-menu for '16764_Automation' item from 'Automation' column
