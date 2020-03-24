@@ -22,7 +22,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.API
 {
@@ -145,7 +144,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listType", "dynamic");
             request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
+            request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             var response = _client.Evergreen.Post(request);
 
@@ -211,7 +210,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
+            request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             var response = _client.Evergreen.Post(request);
 
@@ -257,7 +256,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listType", "Static");
             request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
+            request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             response = _client.Evergreen.Put(request);
 

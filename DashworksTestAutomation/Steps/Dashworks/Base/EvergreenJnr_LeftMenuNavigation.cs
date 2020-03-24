@@ -13,7 +13,6 @@ using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {

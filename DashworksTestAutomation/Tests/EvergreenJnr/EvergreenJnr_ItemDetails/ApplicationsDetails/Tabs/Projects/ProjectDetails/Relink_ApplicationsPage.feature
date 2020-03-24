@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
-	| Title | Value                     |
-	| App Owner |      |
+	| Title     | Value |
+	| App Owner |       |
 	#return values ​​back
 	When User clicks 'RELINK' button 
 	Then popup is displayed to User

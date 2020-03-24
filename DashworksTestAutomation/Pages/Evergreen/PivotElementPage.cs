@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetLeftPinnedExpandButtonByName(string text)
         {
-            var selector = By.XPath($"//div[@role='gridcell']//span[contains(text(),'{text}')]//ancestor::div[@col-id='ag-Grid-AutoColumn']//span[@class='ag-icon ag-icon-expanded']");
+            var selector = By.XPath($"//div[@role='gridcell']//span[contains(text(),'{text}')]//ancestor::div[@col-id='ag-Grid-AutoColumn']//span[@class='ag-icon ag-icon-contracted']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

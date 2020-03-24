@@ -175,25 +175,22 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	Then "DAS14263_Pivot" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
-	When User clicks 'ADD USER' button
+	When User clicks 'person_add' icon
 	When User selects 'Administrator' option from 'User' autocomplete
 	When User clicks 'CANCEL' button 
-	When User clicks 'ADD USER' button 
-	When User selects 'Administrator' option from 'User' autocomplete
-	When User clicks 'CANCEL' button 
-	When User clicks 'ADD TEAM' button 
+	When User clicks 'group_add' icon
 	When User selects 'Team 1062' option from 'Team' autocomplete
 	Then 'ADD TEAM' button is disabled
-	When User selects 'Edit' option from 'Permission' autocomplete
+	When User selects 'Edit' in the 'Permission' dropdown
 	Then 'ADD TEAM' button is not disabled
 	When User clicks 'CANCEL' button 
-	When User clicks 'ADD TEAM' button 
+	When User clicks 'group_add' icon
 	When User selects 'Team 1062' option from 'Team' autocomplete
-	When User selects 'Admin' option from 'Permission' autocomplete
+	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 
-	When User clicks 'ADD TEAM' button 
+	When User clicks 'group_add' icon
 	When User selects 'Team 1062' option from 'Team' autocomplete
-	When User selects 'Read' option from 'Permission' autocomplete
+	When User selects 'Read' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 
 	When User navigates to the "DAS14263_Pivot" list
 	Then User remove list with "DAS14263_Pivot" name on "Devices" page

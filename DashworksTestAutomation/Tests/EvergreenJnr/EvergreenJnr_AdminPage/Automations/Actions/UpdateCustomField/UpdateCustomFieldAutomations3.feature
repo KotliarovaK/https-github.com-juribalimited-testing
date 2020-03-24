@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope          | Run    |
 	| 20248_Automation | 20248       | true   | false              | 20248_TestList | Manual |
 	Then Automation page is displayed correctly
-	Then 'This list uses, or refers to a list that uses, a value of "My Team" which is not valid as a project scope' error message is displayed for 'Scope' field
+	Then 'This list uses, or refers to a list that uses, a value of "My Team" which is not valid as an automation scope' error message is displayed for 'Scope' field
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
@@ -203,7 +203,7 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList
 	When User enters "20248_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20394 @DAS16318 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20394 @DAS16318 @DAS20473 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckRenamedListDisplayingInAutomationLog
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
@@ -237,7 +237,6 @@ Scenario: EvergreenJnr_AdminPage_CheckRenamedListDisplayingInAutomationLog
 	When User changes list name to "Renamed_16318_TestList"
 	Then "Renamed_16318_TestList" name is displayed in list details panel
 	#Chaeck Scoped List name 
-	#(should be renamed list name)
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
@@ -253,20 +252,3 @@ Scenario: EvergreenJnr_AdminPage_CheckRenamedListDisplayingInAutomationLog
 	Then "Renamed_16318_TestList" content is displayed for "Scope" column
 	When User clicks content from "Scope" column
 	Then "Renamed_16318_TestList" list is displayed to user
-	#(steps described below should be removed after Sprint review)
-	#Run Automation with Renamed List
-	When User clicks 'Admin' on the left-hand menu
-	Then 'Admin' list should be displayed to the user
-	When User navigates to the 'Automations' left menu item
-	When User enters "16318_Automation" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for '16318_Automation' item from 'Automation' column
-	When '16318_Automation' automation '16318_Action' action run has finished
-	When User navigates to the 'Automation Log' left menu item
-	When User enters "16318_Automation" text in the Search field for "Automation" column
-	When User clicks String Filter button for "Type" column on the Admin page
-	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	When User opens 'Action' column settings
-	When User clicks Column button on the Column Settings panel
-	When User select "Scope" checkbox on the Column Settings panel
-	When User clicks Column button on the Column Settings panel
-	Then "Renamed_16318_TestList" content is displayed for "Scope" column

@@ -1,4 +1,5 @@
 ﻿using System;
+using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
