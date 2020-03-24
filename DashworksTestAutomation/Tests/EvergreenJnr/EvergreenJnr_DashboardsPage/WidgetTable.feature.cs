@@ -2926,16 +2926,16 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS20027",
                         "Cleanup"});
-#line 621
+#line 613
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 622
+#line 614
  testRunner.When("Dashboard with \'Dashboard DAS20027\' name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 623
+#line 615
  testRunner.And("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 624
+#line 616
  testRunner.And("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2956,11 +2956,11 @@ this.FeatureBackground();
                         "Count distinct",
                         "Application ASC",
                         "10"});
-#line 625
+#line 617
  testRunner.And("User creates new Widget", ((string)(null)), table61, "And ");
-#line 628
+#line 620
  testRunner.Then("\'WidgetOneDAS20027\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 629
+#line 621
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2981,11 +2981,11 @@ this.FeatureBackground();
                         "Count distinct",
                         "Application ASC",
                         "10"});
-#line 630
+#line 622
  testRunner.And("User creates new Widget", ((string)(null)), table62, "And ");
-#line 633
+#line 625
  testRunner.Then("\'WidgetTwoDAS20027\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 634
+#line 626
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3006,33 +3006,33 @@ this.FeatureBackground();
                         "Count distinct",
                         "Application ASC",
                         "10"});
-#line 635
+#line 627
  testRunner.And("User creates new Widget", ((string)(null)), table63, "And ");
-#line 638
+#line 630
  testRunner.Then("\'WidgetThreeDAS20027\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 639
+#line 631
  testRunner.When("User move \'WidgetOneDAS20027\' widget to \'WidgetThreeDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 640
+#line 632
  testRunner.And("User move \'WidgetThreeDAS20027\' widget to \'WidgetOneDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 633
+ testRunner.And("User move \'WidgetOneDAS20027\' widget to \'WidgetThreeDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 634
+ testRunner.And("User move \'WidgetTwoDAS20027\' widget to \'WidgetOneDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 635
+ testRunner.And("User move \'WidgetThreeDAS20027\' widget to \'WidgetTwoDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 636
+ testRunner.And("User move \'WidgetOneDAS20027\' widget to \'WidgetThreeDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 637
+ testRunner.And("User move \'WidgetTwoDAS20027\' widget to \'WidgetOneDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 638
+ testRunner.And("User move \'WidgetThreeDAS20027\' widget to \'WidgetTwoDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 639
+ testRunner.And("User move \'WidgetOneDAS20027\' widget to \'WidgetThreeDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 640
+ testRunner.And("User move \'WidgetTwoDAS20027\' widget to \'WidgetOneDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 641
- testRunner.And("User move \'WidgetOneDAS20027\' widget to \'WidgetThreeDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 642
- testRunner.And("User move \'WidgetTwoDAS20027\' widget to \'WidgetOneDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 643
- testRunner.And("User move \'WidgetThreeDAS20027\' widget to \'WidgetTwoDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 644
- testRunner.And("User move \'WidgetOneDAS20027\' widget to \'WidgetThreeDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 645
- testRunner.And("User move \'WidgetTwoDAS20027\' widget to \'WidgetOneDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 646
- testRunner.And("User move \'WidgetThreeDAS20027\' widget to \'WidgetTwoDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 647
- testRunner.And("User move \'WidgetOneDAS20027\' widget to \'WidgetThreeDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 648
- testRunner.And("User move \'WidgetTwoDAS20027\' widget to \'WidgetOneDAS20027\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 649
  testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 650
+#line 642
  testRunner.And("User opens \'Overview\' dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3045,7 +3045,7 @@ this.FeatureBackground();
                         "Top 10 App Vendors"});
             table64.AddRow(new string[] {
                         "Domain Profile"});
-#line 651
+#line 643
  testRunner.Then("User sees following Widgets on Dashboards page:", ((string)(null)), table64, "Then ");
 #line hidden
             this.ScenarioCleanup();

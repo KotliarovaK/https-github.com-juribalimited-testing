@@ -9,6 +9,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -1014,7 +1015,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserMovesSlotToSlot(string slot, string moveToSlot)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            var slotFrom = page.GetMoveButtonBySlotName(slot);  
+            var slotFrom = page.GetMoveButtonBySlotName(slot);
             var slotTo = page.GetMoveButtonBySlotName(moveToSlot);
             _driver.DragAndDrop(slotFrom, slotTo);
         }
@@ -1076,31 +1077,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
-        public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
+        [Then(@"options are sorted in alphabetical order in dropdown for '(.*)' column")]
+        public void ThenOptionsAreSortedInAlphabeticalOrderInTheDropdownForColumn(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
-            Verify.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
-            page.BodyContainer.Click();
-        }
+            page.OpenColumnFilter(columnName);
 
-        [Then(@"Teams in filter dropdown are displayed in alphabetical order")]
-        public void ThenTeamsInFilterDropdownAreDisplayedInAlphabeticalOrder()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
-            Verify.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
-            page.BodyContainer.Click();
-        }
+            List<String> list = page.OptionsListInFilterDropdown.Select(x => x.Text).ToList();
+            list.Remove("Select All"); //Remove 'Select All' checkbox that can be present on some filters (ALWAYS IN THE TOP)
 
-        [Then(@"Type of Projects in filter dropdown are displayed in alphabetical order")]
-        public void ThenTypeOfProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var list = page.ProjectsTypeListInFilterDropdown.Select(x => x.Text).ToList();
-            Verify.AreEqual(list.OrderBy(s => s), list, "Projects Type are not in alphabetical order");
             page.BodyContainer.Click();
+            Verify.AreEqual(list.OrderBy(s => s), list, $"Values in '{columnName}'column are not in alphabetical order");
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
