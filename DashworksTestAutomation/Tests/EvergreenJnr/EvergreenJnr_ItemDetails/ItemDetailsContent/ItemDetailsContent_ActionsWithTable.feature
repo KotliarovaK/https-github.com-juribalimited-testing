@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16121 @DAS17305
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16121 @DAS17305 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
 	When User navigates to the '<PageName>' details page for '<SelectedName>' item
 	Then Details page for '<SelectedName>' item is displayed to the user
@@ -31,7 +31,7 @@ Examples:
 	| Device   | 001BAQXT6JWFPI | 2         |
 	| User     | EKS951231      | 4         |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813 @DAS14923
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813 @DAS14923 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for '<SearchTerm>' item is displayed to the user
@@ -48,7 +48,7 @@ Examples:
 	| Application | Microsoft Office Visio 2000 Solutions - Custom Patterns | MSI          | File Name      |
 	| Mailbox     | aaron.u.flores@dwlabs.local                             | Users        | Username       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11647 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn
 	When User navigates to the 'Device' details page for '30BGMTLBM9PTW5' item
 	Then Details page for '30BGMTLBM9PTW5' item is displayed to the user
@@ -64,7 +64,7 @@ Examples:
 	| Advertisements |
 	| Collections    |
 
-@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @DAS14923
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @DAS14923 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for '<SearchTerm>' item is displayed to the user
@@ -77,7 +77,7 @@ Examples:
 	| Application | IEWatch 2.1         | MSI       | MSI Files |
 	| User        | 01A921EFD05545818AA | Mailboxes | Mailboxes |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009 @DAS15951
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009 @DAS15951 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSummarySection
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Applications' left menu item
@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Used Date            |
 	| Used Duration (Mins) |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16719
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16719 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage
 	When User navigates to the 'User' details page for 'AAD1011948' item
 	Then Details page for 'AAD1011948' item is displayed to the user
