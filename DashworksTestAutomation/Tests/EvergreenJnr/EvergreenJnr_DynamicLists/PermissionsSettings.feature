@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	When User create dynamic list with "TestList83C1C0" name on "Users" page
 	When User clicks the Permissions button
 	When User selects 'Everyone can see' in the 'Sharing' dropdown
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	And User select current user in Select User dropdown
 	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	And User clicks the List Details button
 	Then Delete list button is disabled in List Details panel
@@ -99,4 +99,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatExpandIconIsInactiveForOwnerDdlForNo
 	When User navigates to the "2004 Rollout" list
 	Then "2004 Rollout" list is displayed to user
 	When User clicks the Permissions button
-	Then 'Owner' dropdown is disabled
+	Then 'Owner' textbox is disabled

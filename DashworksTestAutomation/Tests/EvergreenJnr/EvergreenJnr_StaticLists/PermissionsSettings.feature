@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then "Static List TestName23" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Everyone can see' in the 'Sharing' dropdown
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -25,10 +25,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	| ColumnName      |
 	| Last Logon Date |
 	Then Update list option is NOT available
-	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
+	Then 'SAVE AS NEW STATIC LIST' menu button is displayed for 'SAVE' button
 
 @Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @DAS12152 @DAS12602 @Cleanup @Do_Not_Run_With_PermissionsSettings
 Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel
+	When User create new User via API
+	| Username | Email | FullName      | Password  | Roles                 |
+	| DAS12602 | Value | Test DAS12602 | m!gration | Project Administrator |
 	When User create static list with "OwnerPrivate" name on "Devices" page with following items
 	| ItemName        |
 	| 001BAQXT6JWFPI  |
@@ -51,7 +54,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User select current user in Select User dropdown
 	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
@@ -68,7 +71,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User select current user in Select User dropdown
 	When User selects 'Edit' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
@@ -85,7 +88,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	And User select current user in Select User dropdown
 	When User selects 'Read' in the 'Permission' dropdown
 	When User clicks 'ADD USER' button
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
@@ -98,7 +101,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then "NotOwnerEveryoneCanEdit" list is displayed to user
 	When User clicks the Permissions button
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
@@ -109,10 +112,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| CAS            |
 	| WIN8RETAILPRO  |
 	Then "NotOwnerEveryoneCanSee" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
+	When User clicks the Permissions button
 	When User selects 'Everyone can see' in the 'Sharing' dropdown
-	When User selects 'Automation Admin 1' in the 'Owner' dropdown
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
 	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
@@ -120,7 +122,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Add to static list' in the 'Action' dropdown
-	Then following Values are displayed in the 'Action' dropdown:
+	Then following Values are displayed in the 'Choose static list' dropdown:
 	| Listnames               |
 	| NotOwnerEveryoneCanEdit |
 	| NotOwnerSpecifiedAdmin  |
