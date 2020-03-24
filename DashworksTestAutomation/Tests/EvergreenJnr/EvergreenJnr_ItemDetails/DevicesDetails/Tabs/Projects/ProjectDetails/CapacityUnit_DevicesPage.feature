@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	| Name              | Description | IsDefault | Project                              |
 	| cu_DAS19538_4645s | DAS19538    | false     | USE ME FOR AUTOMATION(DEVICE SCHDLD) |
 	When User create new User via API
-	| Username         | Email | FullName | Password  | Roles                                                                                                                                                                    |
+	| Username         | Email | FullName | Password  | Roles                                                                                                                        |
 	| UserDAS195381654 | Value | DAS19538 | m!gration | Project Application Object Editor, Project Computer Object Editor, Project Mailbox Object Editor, Project User Object Editor |
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
