@@ -67,7 +67,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	When User clicks 'Run now' option in Cog-menu for '19542_Automation' item from 'Automation' column
 	When '19542_Automation' automation '19542_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When '19542_Automation' automation '19542_Action' action run has finished
 	When User enters "19542_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
