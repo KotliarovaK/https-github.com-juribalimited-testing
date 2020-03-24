@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFilterWorkingCorrectly
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -92,7 +92,7 @@ Examples:
 	| Device   | 001BAQXT6JWFPI                                  | Projects    | Projects Summary        | 10        |
 	| Device   | 001BAQXT6JWFPI                                  | Projects    | Owner Projects Summary  | 7         |
 	
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for '<SearchTerm>' item is displayed to the user
@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDoma
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	Then string filter is displayed for 'Domain' column
 
-	#Ann.Ilchenko 8/10/19: Waiting for attribute updates for automation (from Andrey).
+#Ann.Ilchenko 3/24/20: this functionality is broken.
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
@@ -237,7 +237,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevi
 	| Values |
 	| None   |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage
 	When User navigates to the 'User' details page for 'ZXJ550185' item
 	Then Details page for 'ZXJ550185' item is displayed to the user

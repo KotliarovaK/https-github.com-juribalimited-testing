@@ -91,6 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
         [NUnit.Framework.CategoryAttribute("DAS13409")]
         [NUnit.Framework.CategoryAttribute("DAS13657")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Applications", "Evergreen Summary", "Application", "Key", "Key", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Projects", "Projects", "Project", "Object ID", "Object ID", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Projects", "Projects", "Project", "Object Key", "Object Key", null)]
@@ -131,7 +132,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
                     "DAS12235",
                     "DAS13409",
                     "DAS13657",
-                    "DAS14923"};
+                    "DAS14923",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -192,6 +194,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS13004")]
         [NUnit.Framework.CategoryAttribute("DAS13657")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Compliance", "Application Issues", "Application", "Package Key", "Package Key", null)]
         [NUnit.Framework.TestCaseAttribute("Projects", "Projects Summary", "Project", "Object ID", "Object ID", null)]
         [NUnit.Framework.TestCaseAttribute("Projects", "Projects Summary", "Project", "Key", "Key", null)]
@@ -237,7 +240,8 @@ this.FeatureBackground();
                     "DAS12053",
                     "DAS12235",
                     "DAS13004",
-                    "DAS13657"};
+                    "DAS13657",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -298,6 +302,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS12799")]
         [NUnit.Framework.CategoryAttribute("DAS13657")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Hostname", "Applications", "Evergreen Detail", "Application", "Application Key", "Application Key", null)]
         [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Hostname", "Applications", "Evergreen Detail", "Application", "Advertisement Key", "Advertisement Key", null)]
         [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Hostname", "Applications", "Evergreen Detail", "Application", "Group Key", "Group Key", null)]
@@ -351,7 +356,8 @@ this.FeatureBackground();
                     "DAS11732",
                     "DAS12235",
                     "DAS12799",
-                    "DAS13657"};
+                    "DAS13657",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

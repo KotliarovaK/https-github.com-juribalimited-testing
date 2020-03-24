@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
         [NUnit.Framework.CategoryAttribute("DAS14923")]
         [NUnit.Framework.CategoryAttribute("DAS16121")]
         [NUnit.Framework.CategoryAttribute("DAS17305")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "2", null)]
         [NUnit.Framework.TestCaseAttribute("User", "EKS951231", "4", null)]
         public virtual void EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage(string pageName, string selectedName, string countRows, string[] exampleTags)
@@ -128,7 +129,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
                     "DAS11091",
                     "DAS14923",
                     "DAS16121",
-                    "DAS17305"};
+                    "DAS17305",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -194,6 +196,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS13813")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Applications", "Application", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "MSI", "File Name", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox", "aaron.u.flores@dwlabs.local", "Users", "Username", null)]
@@ -233,7 +236,8 @@ this.FeatureBackground();
                     "DAS11762",
                     "DAS12235",
                     "DAS13813",
-                    "DAS14923"};
+                    "DAS14923",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -273,6 +277,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11647")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Advertisements", null)]
         [NUnit.Framework.TestCaseAttribute("Collections", null)]
         public virtual void EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectlyForSiteColumn(string subMenuName, string[] exampleTags)
@@ -308,7 +313,8 @@ this.FeatureBackground();
                     "Devices",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS11647"};
+                    "DAS11647",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -348,6 +354,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12491")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Application", "IEWatch 2.1", "MSI", "MSI Files", null)]
         [NUnit.Framework.TestCaseAttribute("User", "01A921EFD05545818AA", "Mailboxes", "Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages(string pageName, string searchTerm, string mainTab, string subTab, string[] exampleTags)
@@ -384,7 +391,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS12491",
-                    "DAS14923"};
+                    "DAS14923",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -419,6 +427,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16009")]
         [NUnit.Framework.CategoryAttribute("DAS15951")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSummarySection()
         {
             System.Exception lastException = null;
@@ -454,7 +463,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16009",
-                        "DAS15951"});
+                        "DAS15951",
+                        "Zion_NewGrid"});
 #line 81
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -535,6 +545,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16719")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage()
         {
             System.Exception lastException = null;
@@ -569,7 +580,8 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS16719"});
+                        "DAS16719",
+                        "Zion_NewGrid"});
 #line 114
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
