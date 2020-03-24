@@ -51,6 +51,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions Panel panel is hidden");
         }
 
+        [Then(@"Add New button on Filter panel has tooltip with '(.*)' text")]
+        public void ThenAddNewButtonOnFilterPanelHaveTooltipWithText(string text)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.MouseHover(page.AddNewFilterButton);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+        }
+
         [When(@"User clicks Add New button on the Filter panel")]
         public void WhenUserClicksAddNewButtonOnTheFilterPanel()
         {

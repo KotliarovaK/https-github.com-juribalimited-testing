@@ -352,6 +352,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendsNotDuplicatedAfterCh
 	Then 'WidgetForDAS20170' Widget is displayed to the user
 	Then Data Legends values are displayed in 'WidgetForDAS20170' widget on the Dashboard page
 	| LegendsValue |
+	| Onboarded    |
+	| Scheduled    |
 	| Migrated     |
 	| Offboarded   |
 

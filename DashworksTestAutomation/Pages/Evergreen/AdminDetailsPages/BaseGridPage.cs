@@ -23,12 +23,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public const string GroupedValue =
             ".//div[@role='row'][@row-index]//span[@class='ag-group-value']";
 
-        public const string ProjectInFilterDropdown =
-            "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted']";
-
-        public const string TeamInFilterDropdown =
-            "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-selected']";
-
         public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
 
         public const string Row = "//div[@col-id='name']//a";
@@ -149,14 +143,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
         public IWebElement TableBody { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
-        public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
-        public IList<IWebElement> ProjectsTypeListInFilterDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
-        public IList<IWebElement> TeamListInFilterDropdown { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-option-multiple')]")]
+        public IList<IWebElement> OptionsListInFilterDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = Row)]
         public IList<IWebElement> RowsList { get; set; }
