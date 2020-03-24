@@ -8,6 +8,7 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.EndC
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Utils;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClient
 {
