@@ -126,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
 	When User clicks content from "Automation" column
 	Then 'Users' content is displayed in 'Object Type' autocomplete
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20328 @Cleanup @Wormhole
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20328 @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckScopeClickableLinkOnTheAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
