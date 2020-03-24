@@ -326,6 +326,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             if (!listElement.UpdateCurrentListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
             Verify.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
+
+            listElement.BodyContainer.Click();
         }
 
         [Then(@"Delete List option is NOT available")]
