@@ -20,7 +20,6 @@ using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {

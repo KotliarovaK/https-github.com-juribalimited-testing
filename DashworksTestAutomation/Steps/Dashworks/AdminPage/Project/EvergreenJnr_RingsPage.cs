@@ -7,7 +7,6 @@ using System.Threading;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using TechTalk.SpecFlow;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {

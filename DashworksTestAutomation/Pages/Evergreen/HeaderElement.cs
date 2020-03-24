@@ -5,7 +5,6 @@ using DashworksTestAutomation.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {

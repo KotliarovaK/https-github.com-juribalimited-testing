@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Web.ModelBinding;
+using AutomationUtils.Extensions;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Steps.Projects;
 using DashworksTestAutomation.Utils;

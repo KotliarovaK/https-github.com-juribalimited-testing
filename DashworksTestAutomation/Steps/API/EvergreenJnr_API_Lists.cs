@@ -22,7 +22,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.API
 {
