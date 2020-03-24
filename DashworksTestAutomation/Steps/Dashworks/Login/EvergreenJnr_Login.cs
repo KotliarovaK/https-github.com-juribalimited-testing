@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -16,6 +17,7 @@ using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Login
 {
@@ -148,8 +150,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
         {
             var headerMenu = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            Utils.Verify.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
-            Utils.Verify.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
+            Verify.AreEqual("Home - Dashworks", _driver.Title, "Incorrect page is displayed");
+            Verify.AreEqual("Home", headerMenu.PageHeader.Text, "Incorrect page is displayed");
             Logger.Write("Dashworks homepage is displayed and is in a logged in state");
         }
 

@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| DWLABS     |
 	Then Rows counter shows "0" of "7" rows
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
 	Then Details page for '001PSUMZYOW581' item is displayed to the user
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	Then Rows counter contains "0" found row of all rows
 	When User clicks button with 'ResetFilters' aria label
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for '<SearchTerm>' item is displayed to the user
@@ -108,7 +108,7 @@ Examples:
 	| Application | 0036 - Microsoft Access 97 SR-2 English | Projects    | Projects         |
 	| Mailbox     | 040698EE82354C17B60@bclabs.local        | Projects    | Mailbox Projects |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321 @DAS13409
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321 @DAS13409 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
 	When User navigates to the 'Mailbox' details page for '040698EE82354C17B60@bclabs.local' item
 	Then Details page for '040698EE82354C17B60@bclabs.local' item is displayed to the user
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 	When User clicks String Filter button for "Category" column 
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForDevicesObjectsOnUsersTabInEvergreenMode
 	When User navigates to the 'Device' details page for '00HA7MKAVVFDAV' item
 	Then Details page for '00HA7MKAVVFDAV' item is displayed to the user
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomain
 	And User clicks String Filter button for "Domain" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUsersObjectsOnUsersTabInEvergreenMode
 	When User navigates to the 'User' details page for '01C44C91EB7E4BE88F6' item
 	Then Details page for '01C44C91EB7E4BE88F6' item is displayed to the user
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainCo
 	And User clicks String Filter button for "Domain" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForMailboxesObjectsOnUsersTabInEvergreenMode
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	| 22 May 2014 | 22 May 2018 |
 	Then Rows counter contains "2" found row of all rows
 
-@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
+@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -194,7 +194,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	| False      |
 	Then Rows counter shows "94" of "168" rows
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431 @DAS19243
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431 @DAS19243 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -210,7 +210,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 	Then Rows counter shows "1" of "15" rows
 	And There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 	| Values            |
 	| Empty             |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage
 	When User navigates to the 'Application' details page for 'ACDSee 5.0.1 PowerPack' item
 	Then Details page for 'ACDSee 5.0.1 PowerPack' item is displayed to the user
@@ -286,7 +286,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueO
 	| Values            |
 	| Empty             |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '06C02CDC00044A7DB59@bclabs.local' item
 	Then Details page for '06C02CDC00044A7DB59@bclabs.local' item is displayed to the user

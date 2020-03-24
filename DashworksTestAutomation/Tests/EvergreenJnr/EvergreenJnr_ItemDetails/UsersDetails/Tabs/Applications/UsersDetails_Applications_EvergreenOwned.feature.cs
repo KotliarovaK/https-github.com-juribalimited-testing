@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
         [NUnit.Framework.CategoryAttribute("DAS18198")]
         [NUnit.Framework.CategoryAttribute("DAS18876")]
         [NUnit.Framework.CategoryAttribute("Set_Application_Owned_User")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatEvergreenOwnedSubtabIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -123,7 +124,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
                         "ItemDetailsDisplay",
                         "DAS18198",
                         "DAS18876",
-                        "Set_Application_Owned_User"});
+                        "Set_Application_Owned_User",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

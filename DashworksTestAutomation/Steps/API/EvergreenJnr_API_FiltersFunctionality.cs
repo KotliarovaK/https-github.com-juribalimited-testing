@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -47,7 +48,7 @@ namespace DashworksTestAutomation.Steps.API
                 x["label"].ToString().Equals(filterName));
             var allOperators = filter["operators"];
             var operatorsValues = allOperators.Select(x => x["translatedDropdownValue"].ToString()).ToList();
-            Utils.Verify.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues,
+            Verify.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues,
                 $"Incorrect operators are displayed for {filterName} filter");
         }
 
@@ -73,7 +74,7 @@ namespace DashworksTestAutomation.Steps.API
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             foreach (var value in expectedList)
             {
-                Utils.Verify.IsTrue(filterValueList.Contains(value), "Selected values are not displayed in that filter");
+                Verify.IsTrue(filterValueList.Contains(value), "Selected values are not displayed in that filter");
             }
         }
 
@@ -98,7 +99,7 @@ namespace DashworksTestAutomation.Steps.API
             var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             foreach (var value in expectedList)
-                Utils.Verify.AreEqual(expectedList, filterValueList, "Values are not displayed in the correct order");
+                Verify.AreEqual(expectedList, filterValueList, "Values are not displayed in the correct order");
         }
 
         [Then(@"""(.*)"" is displayed after ""(.*)"" in Application list filter")]
@@ -121,7 +122,7 @@ namespace DashworksTestAutomation.Steps.API
             var responseContent = JsonConvert.DeserializeObject<JArray>(content).ToList();
             var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
             var itemByIndex2 = filterValueList.FindIndex(s => s.Equals(item2));
-            Utils.Verify.AreEqual(item1, filterValueList[itemByIndex2 + 1], "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(item1, filterValueList[itemByIndex2 + 1], "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"the following subcategories are NOT displayed for ""(.*)"" Columns category:")]
@@ -147,7 +148,7 @@ namespace DashworksTestAutomation.Steps.API
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             foreach (var value in expectedList)
             {
-                Utils.Verify.IsFalse(subcategoryList.Contains(value), "Selected values are not displayed in that filter");
+                Verify.IsFalse(subcategoryList.Contains(value), "Selected values are not displayed in that filter");
             }
         }
 

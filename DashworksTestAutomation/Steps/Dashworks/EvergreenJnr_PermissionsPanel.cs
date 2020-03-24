@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -38,21 +39,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFormContainerIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<PermissionsElement>();
-            Utils.Verify.IsTrue(page.SharingFormContainer.Displayed(), "Form container is not loaded");
+            Verify.IsTrue(page.SharingFormContainer.Displayed(), "Form container is not loaded");
         }
 
         [Then(@"form container is not displayed to the user")]
         public void ThenFormContainerIsNotDisplayedToTheUser()
         {
             var page = _driver.NowAt<PermissionsElement>();
-            Utils.Verify.IsFalse(page.SharingFormContainer.Displayed(), "Form container is loaded");
+            Verify.IsFalse(page.SharingFormContainer.Displayed(), "Form container is loaded");
         }
 
         [Then(@"""(.*)"" Sharing user is displayed correctly")]
         public void ThenSharingUserIsDisplayedCorrectly(string userName)
         {
             var page = _driver.NowAt<PermissionsElement>();
-            Utils.Verify.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(),
+            Verify.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(),
                 "Selected Sharing user is not displayed on Details panel");
         }
 
@@ -60,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserListForSharingIsNotDisplayed()
         {
             var page = _driver.NowAt<PermissionsElement>();
-            Utils.Verify.IsFalse(page.SharingUserList.Displayed(), "User list for sharing is displayed");
+            Verify.IsFalse(page.SharingUserList.Displayed(), "User list for sharing is displayed");
         }
     }
 }

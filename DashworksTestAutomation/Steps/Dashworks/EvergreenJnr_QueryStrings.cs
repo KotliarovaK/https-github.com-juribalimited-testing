@@ -1,4 +1,5 @@
 ﻿using System;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
@@ -10,6 +11,7 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -54,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Only check the login link is visible if the forced login splash page is not displayed
             if (!loginPage.LoginSplashPanel.Displayed()) return;
-            Utils.Verify.IsTrue(loginPage.LoginLink.Displayed, "Login link is NOT visible");
+            Verify.IsTrue(loginPage.LoginLink.Displayed, "Login link is NOT visible");
             Logger.Write("Login link is visible");
         }
 
@@ -82,7 +84,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
-                Utils.Verify.IsTrue(loginPage.SplashLoginGroupBox.Displayed(), "Login Splash page is NOT visible");
+                Verify.IsTrue(loginPage.SplashLoginGroupBox.Displayed(), "Login Splash page is NOT visible");
                 Logger.Write("Login Splash page is visible");
             }
         }

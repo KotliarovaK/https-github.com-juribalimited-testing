@@ -21,3 +21,18 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWit
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Path' column:
 	| Values                  |
 	| [Default (Application)] |
+
+#AnnI 3/18/20: This functionality is implemented only for 'Wormhole'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectsTab @DAS20356 @DAS20445 @Wormhole
+Scenario: EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsWorkedCorrectlyAfterSwitchingBetweenProjectsAndEvergreenModes
+	When User navigates to the 'Application' details page for the item with '839' ID
+	Then Details page for 'Access 95' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Incoming Apps' left submenu item
+	Then 'Projects' left menu item is expanded
+	Then 'Project Incoming Apps' left submenu item is active
+	When User selects 'Evergreen' in the 'Item Details Project' dropdown with wait
+	Then 'Details' left menu item is expanded
+	Then 'Projects' left menu item is collapsed
+	Then 'Application' left submenu item is active

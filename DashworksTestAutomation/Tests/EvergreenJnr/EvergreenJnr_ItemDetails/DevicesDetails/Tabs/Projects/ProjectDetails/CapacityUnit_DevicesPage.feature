@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS19538 @DAS19463 @Cleanup @Set_Default_Capacity_Unit
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS19538 @DAS19463 @Cleanup @Set_Default_Capacity_Unit @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatValueForCapacityUnitIsChangingSuccessfully
 	When User creates new Capacity Unit via api
 	| Name          | Description | IsDefault | Project          |
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	| Title         | Value                   |
 	| Capacity Unit | Project Capacity Unit 1 |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19985 @DAS20088 @Void
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19985 @DAS20088
 Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheCapacityUnitPopUp
 	When User navigates to the 'Device' details page for '32UIH1IBLQ050JY' item
 	Then Details page for '32UIH1IBLQ050JY' item is displayed to the user

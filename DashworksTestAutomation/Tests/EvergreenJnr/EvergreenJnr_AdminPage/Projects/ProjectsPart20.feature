@@ -84,8 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	And User selects 'All Mailboxes' option from 'Scope' autocomplete
 	And User clicks 'CREATE' button
 	Then 'The project has been created' text is displayed on inline success banner
-	When User clicks String Filter button for "Type" column on the Admin page
-	Then Type of Projects in filter dropdown are displayed in alphabetical order
+	Then options are sorted in alphabetical order in dropdown for 'Type' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12183 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWorkedCorrectly

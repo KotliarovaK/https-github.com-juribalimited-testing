@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace DashworksTestAutomation.Utils
 {
-    internal class FluentWait : IWait<IWebDriver>
+    public class FluentWait : IWait<IWebDriver>
     {
         private readonly TimeSpan _deafultTimeout = TimeSpan.FromSeconds(5);
         private IWebDriver _driver;

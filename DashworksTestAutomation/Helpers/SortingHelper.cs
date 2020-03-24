@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
 using NUnit.Framework;
 using RestSharp.Extensions;
@@ -20,13 +21,13 @@ namespace DashworksTestAutomation.Helpers
             try
             {
                 //Compare two lists
-                Utils.Verify.AreEqual(expectedList, originalList, "Incorrect sorting order");
+                Verify.AreEqual(expectedList, originalList, "Incorrect sorting order");
             }
             catch (Exception)
             {
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
-                    Utils.Verify.AreEqual(expectedList[i],
+                    Verify.AreEqual(expectedList[i],
                         originalList[i], "Incorrect sorting order");
             }
         }
@@ -47,13 +48,13 @@ namespace DashworksTestAutomation.Helpers
             try
             {
                 //Compare two lists
-                Utils.Verify.AreEqual(originalColorsListSorted, originalColorsList, "Incorrect sorting order");
+                Verify.AreEqual(originalColorsListSorted, originalColorsList, "Incorrect sorting order");
             }
             catch (Exception)
             {
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalColorsList.Count; i++)
-                    Utils.Verify.AreEqual(originalColorsListSorted.ToList()[i],
+                    Verify.AreEqual(originalColorsListSorted.ToList()[i],
                         originalColorsList[i], "Incorrect sorting order");
             }
         }
@@ -78,7 +79,7 @@ namespace DashworksTestAutomation.Helpers
 
             //Get count of the values from original list that can't be converted to Numeric
             var unsortedCount = originalList.Count(x => !int.TryParse(x.Replace(",", string.Empty), out intValue));
-            Utils.Verify.AreNotEqual(unsortedCount, originalList.Count,
+            Verify.AreNotEqual(unsortedCount, originalList.Count,
                 "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
 
             List<KeyValuePair<int, string>> sortedList = unsortedList.OrderBy(s => s.Key).ToList();
@@ -88,14 +89,14 @@ namespace DashworksTestAutomation.Helpers
             try
             {
                 //Compare two lists
-                Utils.Verify.AreEqual(sortedList.Select(s => s.Value), originalList, "Incorrect sorting order");
+                Verify.AreEqual(sortedList.Select(s => s.Value), originalList, "Incorrect sorting order");
             }
             catch (Exception)
             {
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
                 {
-                    Utils.Verify.AreEqual(sortedList[i].Value, originalList[i], "Incorrect sorting order");
+                    Verify.AreEqual(sortedList[i].Value, originalList[i], "Incorrect sorting order");
                 }
             }
         }
@@ -120,7 +121,7 @@ namespace DashworksTestAutomation.Helpers
 
             //Get count of the values from original list that can't be converted to DateTime
             var unsortedCount = originalList.Count(x => !DateTime.TryParse(x, out datevalue));
-            Utils.Verify.AreNotEqual(unsortedCount, originalList.Count,
+            Verify.AreNotEqual(unsortedCount, originalList.Count,
                 "Original list was not sorted at all/Can't be sorted. Nothing to compare. Please check method logic or input list");
 
             List<KeyValuePair<DateTime, string>> sortedList = unsortedList.OrderBy(s => s.Key).ToList();
@@ -130,13 +131,13 @@ namespace DashworksTestAutomation.Helpers
             try
             {
                 //Compare two lists
-                Utils.Verify.AreEqual(sortedList.Select(s => s.Value), originalList, "Incorrect sorting order");
+                Verify.AreEqual(sortedList.Select(s => s.Value), originalList, "Incorrect sorting order");
             }
             catch (Exception)
             {
                 //Compare each elements just to find elements that a different
                 for (int i = 0; i < originalList.Count; i++)
-                    Utils.Verify.AreEqual(sortedList[i].Value, originalList[i], "Incorrect sorting order");
+                    Verify.AreEqual(sortedList[i].Value, originalList[i], "Incorrect sorting order");
             }
         }
     }

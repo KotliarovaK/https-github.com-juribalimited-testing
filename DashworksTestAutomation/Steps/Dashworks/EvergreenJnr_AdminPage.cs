@@ -9,10 +9,12 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Projects.Tasks;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using DashworksTestAutomation.Pages.Evergreen.Base;
@@ -47,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectsPage = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
-                Utils.Verify.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]),
+                Verify.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]),
                     $"'{row["Checkboxes"]}' are not displayed");
         }
 
@@ -58,7 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 _driver.WaitForDataLoading();
-                Utils.Verify.IsTrue(associations.GetDisabledAssociationName(row["AssociationName"]),
+                Verify.IsTrue(associations.GetDisabledAssociationName(row["AssociationName"]),
                     $"Following '{row["AssociationName"]}' are active");
             }
         }
@@ -67,7 +69,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAllAssociationsAreAvailable()
         {
             var associations = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(associations.DisabledAssociation.Displayed(), "Some Associations are disabled");
+            Verify.IsFalse(associations.DisabledAssociation.Displayed(), "Some Associations are disabled");
         }
 
         [When(@"User clicks ""(.*)"" tab in the Project Scope Changes section")]
@@ -92,7 +94,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
 
-            Utils.Verify.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
+            Verify.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
                 $"{tabName} is not displayed in the Project Scope Changes section");
         }
 
@@ -101,7 +103,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             var tabState = projectTabs.ActiveTabOnScopeChangesSection.GetAttribute("aria-selected");
-            Utils.Verify.AreEqual("true", tabState, "Tab state is incorrect");
+            Verify.AreEqual("true", tabState, "Tab state is incorrect");
         }
 
         [Then(@"User sees next Units on the Capacity Units page:")]
@@ -111,7 +113,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
 
             for (var i = 0; i < slots.RowCount; i++)
-                Utils.Verify.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
+                Verify.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
                     "Units are not the same");
         }
 
@@ -171,35 +173,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAllAssociationsAreSelectedByDefault()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
+            Verify.IsFalse(projectsPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are selected");
         }
 
         [Then(@"All Associations are disabled")]
         public void ThenAllAssociationsAreDisabled()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectsPage.DisabledAllAssociations.Displayed(), "All Associations is active");
+            Verify.IsTrue(projectsPage.DisabledAllAssociations.Displayed(), "All Associations is active");
         }
 
         [Then(@"User Scope checkboxes are disabled")]
         public void ThenUserScopeCheckboxesAreDisabled()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(projectsPage.UserScopeCheckboxes.Displayed(), "User Scope checkboxes are active");
+            Verify.IsFalse(projectsPage.UserScopeCheckboxes.Displayed(), "User Scope checkboxes are active");
         }
 
         [Then(@"User Scope checkboxes are active")]
         public void ThenUserScopeCheckboxesAreActive()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectsPage.UserScopeCheckboxes.Displayed(), "User Scope checkboxes are disabled");
+            Verify.IsTrue(projectsPage.UserScopeCheckboxes.Displayed(), "User Scope checkboxes are disabled");
         }
 
         [Then(@"Application Scope checkboxes are disabled")]
         public void ThenApplicationScopeCheckboxesAreDisabled()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectsPage.ApplicationScopeCheckboxes.Displayed(),
+            Verify.IsTrue(projectsPage.ApplicationScopeCheckboxes.Displayed(),
                 "Application Scope checkboxes are active");
         }
 
@@ -207,7 +209,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenApplicationScopeCheckboxesAreActive()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(projectsPage.ApplicationScopeCheckboxes.Displayed(),
+            Verify.IsFalse(projectsPage.ApplicationScopeCheckboxes.Displayed(),
                 "Application Scope checkboxes are disabled");
         }
 
@@ -215,7 +217,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsNotDisplayedOnTheAdminPage(string checkboxName)
         {
             var filterElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(filterElement.GetCheckboxByName(checkboxName), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(filterElement.GetCheckboxByName(checkboxName), "PLEASE ADD EXCEPTION MESSAGE");
             Logger.Write($"{checkboxName} checkbox is displayed");
         }
 
@@ -223,21 +225,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsDisplayedOnTheAdminPage(string checkboxName)
         {
             var filterElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(filterElement.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is not displayed");
+            Verify.IsTrue(filterElement.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is not displayed");
         }
 
         [Then(@"Application Scope tab is hidden")]
         public void ThenApplicationScopeTabIsHidden()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsFalse(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is displayed");
+            Verify.IsFalse(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is displayed");
         }
 
         [Then(@"Application Scope tab is displayed")]
         public void ThenApplicationScopeTabIsDisplayed()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
+            Verify.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
         }
 
         [When(@"User changes Path to ""(.*)""")]
@@ -262,7 +264,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenPathIsDisplayedToTheUser(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectsPage.GetPathOrCategory(pathName).Displayed(),
+            Verify.IsTrue(projectsPage.GetPathOrCategory(pathName).Displayed(),
                 "Incorrect Path is displayed");
         }
 
@@ -270,7 +272,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCategoryIsDisplayedToTheUser(string categoryName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectsPage.GetPathOrCategory(categoryName).Displayed(),
+            Verify.IsTrue(projectsPage.GetPathOrCategory(categoryName).Displayed(),
                 "Incorrect Category is displayed");
         }
 
@@ -288,7 +290,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
 
             _driver.WaitForDataLoading();
-            Utils.Verify.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
+            Verify.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
                 $"{text} is not displayed in the Project Scope Changes section");
         }
 
@@ -312,7 +314,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsDisabledOnTheAdminPage(string checkboxName)
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(checkbox.GetdisabledCheckboxByName(checkboxName).Displayed(), $"{checkboxName} is active");
+            Verify.IsTrue(checkbox.GetdisabledCheckboxByName(checkboxName).Displayed(), $"{checkboxName} is active");
         }
 
         [Then(@"""(.*)"" checkbox is checked and cannot be unchecked")]
@@ -321,15 +323,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             var checkbox = page.GetAssociatedCheckboxByName(radioButtonName);
-            Utils.Verify.AreEqual(true, checkbox.Selected, "Checkbox Selected state is incorrect");
-            Utils.Verify.AreEqual(true, Convert.ToBoolean(checkbox.GetAttribute("disabled")), "Checkbox state is incorrect");
+            Verify.AreEqual(true, checkbox.Selected, "Checkbox Selected state is incorrect");
+            Verify.AreEqual(true, Convert.ToBoolean(checkbox.GetAttribute("disabled")), "Checkbox state is incorrect");
         }
 
         [Then(@"""(.*)"" associated checkbox is checked")]
         public void ThenAssociatedCheckboxIsChecked(string radioButtonName)
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected,
+            Verify.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected,
                 "Checkbox state is incorrect");
         }
 
@@ -365,7 +367,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsDisplayedInField(string text, string fieldName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Utils.Verify.IsTrue(page.GetTextbox(fieldName).GetAttribute("value").Contains(text),
+            Verify.IsTrue(page.GetTextbox(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
         }
 
@@ -394,7 +396,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDefaultTeamCheckboxIsNotActive()
         {
             var teamElement = _driver.NowAt<TeamsPage>();
-            Utils.Verify.IsTrue(teamElement.DefaultTeamCheckbox.Displayed(), "Default Team checkbox is active");
+            Verify.IsTrue(teamElement.DefaultTeamCheckbox.Displayed(), "Default Team checkbox is active");
         }
 
         [When(@"User selects ""(.*)"" tab on the Team details page")]
@@ -422,7 +424,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var tableElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(tableElement.TableContent);
-            Utils.Verify.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
+            Verify.IsTrue(tableElement.TableContent.Displayed(), "Table is empty");
         }
 
         [Then(@"Panel of available members is displayed to the user")]
@@ -430,7 +432,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var panel = _driver.NowAt<TeamsPage>();
             _driver.WaitForElementToBeDisplayed(panel.TeamMembersPanel);
-            Utils.Verify.IsTrue(panel.TeamMembersPanel.Displayed(), "Team Members Panel is not displayed on the Teams page");
+            Verify.IsTrue(panel.TeamMembersPanel.Displayed(), "Team Members Panel is not displayed on the Teams page");
         }
 
         [Then(@"Create Team button is disabled")]
@@ -438,7 +440,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<CreateTeamPage>();
             _driver.WaitForElementToBeDisplayed(button.CreateTeamButton);
-            Utils.Verify.IsTrue(Convert.ToBoolean(button.CreateTeamButton.GetAttribute("disabled")),
+            Verify.IsTrue(Convert.ToBoolean(button.CreateTeamButton.GetAttribute("disabled")),
                 "Create Team button is active");
         }
 
@@ -478,7 +480,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                     var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
                     var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
-                    Utils.Verify.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                    Verify.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
                 }
                 else
                 {
@@ -486,7 +488,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                     var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
                     var actualRowList = page.RowsList.Select(value => value.Text).ToList();
-                    Utils.Verify.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                    Verify.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
                 }
             }
             catch (Exception)
@@ -497,7 +499,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.Navigate().Refresh();
                     var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
                     var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
-                    Utils.Verify.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                    Verify.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
                 }
                 else
                 {
@@ -505,7 +507,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.Navigate().Refresh();
                     var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
                     var actualRowList = page.RowsList.Select(value => value.Text).ToList();
-                    Utils.Verify.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                    Verify.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
                 }
             }
         }
@@ -602,7 +604,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
             {
-                Utils.Verify.IsTrue(projectElement.WaitForHistoryOnboardedObject(row["Items"], 30),
+                Verify.IsTrue(projectElement.WaitForHistoryOnboardedObject(row["Items"], 30),
                     $"History table doesn't contains '{row["Items"]}' item");
             }
         }
@@ -613,7 +615,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
             {
-                Utils.Verify.IsTrue(projectElement.QueueOnboardedObjectDisplayed(row["Items"]).Displayed,
+                Verify.IsTrue(projectElement.QueueOnboardedObjectDisplayed(row["Items"]).Displayed,
                     $"{row["Items"]} is not displayed in Queue table");
             }
         }
@@ -655,7 +657,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < table.RowCount; i++)
             {
                 var row = table.Rows.ElementAt(i);
-                Utils.Verify.AreEqual(projectElement.GetTableStringRowNumber(row["Items"]), i.ToString(),
+                Verify.AreEqual(projectElement.GetTableStringRowNumber(row["Items"]), i.ToString(),
                     $"{row["Items"]} is not displayed in History table");
             }
         }
@@ -664,14 +666,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOnboardedObjectsAreDisplayedInTheDropdown()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(projectElement.ReonboardedItem.Displayed(), "Re-onboarded objects are displayed");
+            Verify.IsFalse(projectElement.ReonboardedItem.Displayed(), "Re-onboarded objects are displayed");
         }
 
         [Then(@"Add Objects panel is collapsed")]
         public void ThenAddObjectsPanelIsCollapsed()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsTrue(projectElement.AddObjectsPanelCollapsed.Displayed(), "Panel is expanded");
+            Verify.IsTrue(projectElement.AddObjectsPanelCollapsed.Displayed(), "Panel is expanded");
         }
 
         #endregion
@@ -702,7 +704,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForElementToBeDisplayed(page.DetailsPageWasNotFound);
-            Utils.Verify.That(page.DetailsPageWasNotFound.Text, Is.EqualTo("404"), "Page 404 was not opened");
+            Verify.That(page.DetailsPageWasNotFound.Text, Is.EqualTo("404"), "Page 404 was not opened");
         }
 
         [Then(@"Import Project button is not displayed")]
@@ -720,7 +722,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.ScopeProjectField.SendKeys("All");
             var listNames = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
             var expectedlistName = table.Rows.SelectMany(row => row.Values).ToList();
-            Utils.Verify.AreEqual(listNames, expectedlistName, "Main lists are not displayed correctly");
+            Verify.AreEqual(listNames, expectedlistName, "Main lists are not displayed correctly");
         }
 
         [Then(@"following lists are displayed in the Scope dropdown:")]
@@ -730,7 +732,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.ScopeProjectField.Click();
             foreach (var row in table.Rows)
             {
-                Utils.Verify.IsTrue(createProjectElement.GetListByNameInScopeDropdown(row["Lists"]).Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+                Verify.IsTrue(createProjectElement.GetListByNameInScopeDropdown(row["Lists"]).Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
             }
         }
 
@@ -748,30 +750,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ScopeListDropdownDisplayedWithListValue(string listName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.That(projectElement.ScopeListDropdownValue.Text, Is.EqualTo(listName), $"Wrong scope value displayed");
+            Verify.That(projectElement.ScopeListDropdownValue.Text, Is.EqualTo(listName), $"Wrong scope value displayed");
         }
 
         [Then(@"Scope List dropdown is disabled")]
         public void ThenScopeListDropdownIsDisabled()
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectElement.DisabledScopeListDropdown.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(projectElement.DisabledScopeListDropdown.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"""(.*)"" is displayed in the disabled Project Type field")]
         public void ThenIsDisplayedInTheDisabledProjectTypeField(string projectType)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(Convert.ToBoolean(projectElement.ProjectType.GetAttribute("disabled")),
+            Verify.IsTrue(Convert.ToBoolean(projectElement.ProjectType.GetAttribute("disabled")),
                 "Project Type field is active");
-            Utils.Verify.AreEqual(projectType, projectElement.ProjectType.GetAttribute("value"), "Project Type is incorrect");
+            Verify.AreEqual(projectType, projectElement.ProjectType.GetAttribute("value"), "Project Type is incorrect");
         }
 
         [Then(@"Scope List dropdown is active")]
         public void ThenScopeListDropdownIsActive()
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.IsTrue(projectElement.ActiveScopeListDropdown.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsTrue(projectElement.ActiveScopeListDropdown.Displayed(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User clicks in the Scope field on the Admin page")]
@@ -785,7 +787,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenScopeDDLHaveTheWidth(string width)
         {
             var panelSize = _driver.NowAt<ProjectsPage>();
-            Utils.Verify.AreEqual(width, panelSize.GetDllPanelWidth().Split('.').First(), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.AreEqual(width, panelSize.GetDllPanelWidth().Split('.').First(), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [When(@"User selects ""(.*)"" in the Buckets Project dropdown")]
@@ -865,7 +867,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCancelButtonIsDisplayedInWarning()
         {
             var projectPage = _driver.NowAt<ProjectDetailsPage>();
-            Utils.Verify.IsTrue(projectPage.CancelConvertToEvergreenButton.Displayed(),
+            Verify.IsTrue(projectPage.CancelConvertToEvergreenButton.Displayed(),
                 "Cancel button is not displayed in warning");
         }
 
@@ -900,7 +902,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!_tasks.Value.Any())
                 throw new Exception("No tasks were created!");
 
-            Utils.Verify.That(GetTaskCapacityEnabledFlag(_tasks.Value.Last().Id),
+            Verify.That(GetTaskCapacityEnabledFlag(_tasks.Value.Last().Id),
                 Is.EqualTo(flagState), $"Flag state is in different state");
         }
 
@@ -981,7 +983,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.DropdownTaskItemsList.Select(value => value.Text).ToList();
-            Utils.Verify.AreEqual(expectedList, actualList, "Tasks are different");
+            Verify.AreEqual(expectedList, actualList, "Tasks are different");
         }
 
         [When(@"User enters ""(.*)"" value in Move to position dialog")]
@@ -1013,7 +1015,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserMovesSlotToSlot(string slot, string moveToSlot)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            var slotFrom = page.GetMoveButtonBySlotName(slot);  
+            var slotFrom = page.GetMoveButtonBySlotName(slot);
             var slotTo = page.GetMoveButtonBySlotName(moveToSlot);
             _driver.DragAndDrop(slotFrom, slotTo);
         }
@@ -1056,7 +1058,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var field = _driver.NowAt<ProjectsPage>();
             field.GetFieldByName(fieldName).SendKeys(checkbox);
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            Utils.Verify.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is available for select");
+            Verify.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is available for select");
         }
 
         //TODO: AnnI 12/18/19 replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn remove this step
@@ -1072,34 +1074,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            Utils.Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
+            Verify.IsFalse(filterElement.GetDisplayStateForStringFilterByName(filterName), "PLEASE ADD EXCEPTION MESSAGE");
         }
 
-        [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
-        public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
+        [Then(@"options are sorted in alphabetical order in dropdown for '(.*)' column")]
+        public void ThenOptionsAreSortedInAlphabeticalOrderInTheDropdownForColumn(string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
-            Utils.Verify.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
-            page.BodyContainer.Click();
-        }
+            page.OpenColumnFilter(columnName);
 
-        [Then(@"Teams in filter dropdown are displayed in alphabetical order")]
-        public void ThenTeamsInFilterDropdownAreDisplayedInAlphabeticalOrder()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
-            Verify.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
-            page.BodyContainer.Click();
-        }
+            List<String> list = page.OptionsListInFilterDropdown.Select(x => x.Text).ToList();
+            list.Remove("Select All"); //Remove 'Select All' checkbox that can be present on some filters (ALWAYS IN THE TOP)
 
-        [Then(@"Type of Projects in filter dropdown are displayed in alphabetical order")]
-        public void ThenTypeOfProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var list = page.ProjectsTypeListInFilterDropdown.Select(x => x.Text).ToList();
-            Verify.AreEqual(list.OrderBy(s => s), list, "Projects Type are not in alphabetical order");
             page.BodyContainer.Click();
+            Verify.AreEqual(list.OrderBy(s => s), list, $"Values in '{columnName}'column are not in alphabetical order");
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
@@ -1166,7 +1154,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.RowsCounter);
-            Utils.Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+            Verify.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
         }
 
@@ -1176,7 +1164,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.RowsCounter);
-            Utils.Verify.AreEqualIgnoringCase(
+            Verify.AreEqualIgnoringCase(
                 ofRows.Equals("1") ? $"{selectedRows} of {ofRows} row" : $"{selectedRows} of {ofRows} rows",
                 foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
         }
@@ -1188,7 +1176,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(page.RowsCounter);
-            Utils.Verify.That(page.RowsCounter.Text, Does.Contain(foundRows + " of "),
+            Verify.That(page.RowsCounter.Text, Does.Contain(foundRows + " of "),
                 $"Found rows counter doesn't contain {foundRows} found rows");
         }
 
@@ -1200,7 +1188,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(page.RowsCounter);
             var foundRowsOfAllRowsLabel = page.RowsCounter.Text;
             var foundRowsInt = Int32.Parse(foundRowsOfAllRowsLabel.Substring(0, foundRowsOfAllRowsLabel.IndexOf("of")).Replace(",", string.Empty));
-            Utils.Verify.That(foundRowsInt, Is.GreaterThanOrEqualTo(foundRows),
+            Verify.That(foundRowsInt, Is.GreaterThanOrEqualTo(foundRows),
                 $"Found rows counter {foundRowsInt} is not greater or equal to expected {foundRows}");
         }
 
@@ -1210,7 +1198,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForElementToBeDisplayed(foundRowsCounter.RowsCounter);
-            Utils.Verify.AreEqualIgnoringCase($"{selectedRows} of {ofRows} selected",
+            Verify.AreEqualIgnoringCase($"{selectedRows} of {ofRows} selected",
                 foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
         }
 
@@ -1246,7 +1234,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
 
-            Utils.Verify.IsTrue(page.GetButtonOnWarningContainerByName(text).Displayed(), $"{text} button is not displayed in the Warning message");
+            Verify.IsTrue(page.GetButtonOnWarningContainerByName(text).Displayed(), $"{text} button is not displayed in the Warning message");
         }
 
         [Then(@"User sees following Display order on the Automation page")]
@@ -1255,7 +1243,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
             for (var i = 0; i < displayOrder.RowCount; i++)
-                Utils.Verify.That(page.DisplayOrderValues[i].Text, Is.EqualTo(displayOrder.Rows[i].Values.FirstOrDefault()),
+                Verify.That(page.DisplayOrderValues[i].Text, Is.EqualTo(displayOrder.Rows[i].Values.FirstOrDefault()),
                     "Display order values are displayed in the wrong order");
         }
 
@@ -1290,7 +1278,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             int zIndexExpend = Convert.ToInt32(page.SidePanelIcon.GetCssValue("z-index"));
 
-            Utils.Verify.That(zIndexExpend, Is.GreaterThan(2),
+            Verify.That(zIndexExpend, Is.GreaterThan(2),
                 $"Wrong overlapping: zIndex: {zIndexExpend} < zIndex: {2}");
         }
 

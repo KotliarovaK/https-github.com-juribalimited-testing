@@ -64,3 +64,21 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheAssociatedDevicesAreMovedToTheSelec
 	Then 'The selected objects successfully moved to zen_DAS19846_1' text is displayed on inline success banner
 	When User clicks on edit button for 'Capacity Unit' field
 	Then 'zen_DAS19846_1' content is displayed in the 'Capacity Unit' column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ProjectDetailsTab @DAS19175 @Zion_NewGrid
+Scenario: EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly
+	When User navigates to the 'User' details page for '0137C8E69921432992B' item
+	Then Details page for '0137C8E69921432992B' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	When User clicks following checkboxes from Column Settings panel for the 'Owned' column:
+	| checkboxes         |
+	| Owner Display Name |
+	Then following columns are displayed on the Item details page:
+	| ColumnName         |
+	| Email Address      |
+	| Owned              |
+	| Capacity Unit      |
+	| Bucket             |

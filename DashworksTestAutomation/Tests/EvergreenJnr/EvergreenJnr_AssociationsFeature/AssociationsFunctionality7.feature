@@ -23,3 +23,25 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsA
 	When User navigates to the "All Device Applications" list
 	When User navigates to the "Association20187" list
 	Then Rows counter number equals to remembered value
+
+@Evergreen @Associations @DAS20131
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociations
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
+	Then 'ADD NEW' button is disabled
+	Then 'ADD NEW' button has tooltip with 'Maximum of 5 association groups are allowed' text

@@ -6,6 +6,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System.Linq;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -45,7 +46,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLanguageIsDisplayedInTranslationsTableOnTheCapacitySlotPage(string language)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            Utils.Verify.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
+            Verify.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
         }
 
         [When(@"User types ""(.*)"" in Display Name field for ""(.*)"" Language in Translations table on the Capacity Slot page")]
@@ -60,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            Utils.Verify.AreEqual(text, page.GetDisplayNameFieldByLanguage(language).GetAttribute("value"), $"'{text}' text is not displayed in Display Name field");
+            Verify.AreEqual(text, page.GetDisplayNameFieldByLanguage(language).GetAttribute("value"), $"'{text}' text is not displayed in Display Name field");
         }
     }
 }
