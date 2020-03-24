@@ -22,16 +22,24 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         [FindsBy(How = How.XPath, Using = ".//div[@class='ssw-tools']")]
         public IWebElement SelfServiceToolsPanel { get; set; }
 
-        public IWebElement GetComponentItemOnEndUserPage(int order)
+        public IWebElement GetComponentItemOnEndUserPage(string pageName, int order)
         {
-            var selector = By.XPath($".//h2[text()='Welcome']//..//div[@class='component-item ng-star-inserted'][{order}]");
+            var selector = By.XPath($".//h2[text()='{pageName}']//..//div[@class='component-item ng-star-inserted'][{order}]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
-        public int GetComponentItemOnEndUserPageByName(SelfServiceTextComponent component)
+        public bool СheckThatComponentIsDisplayedOnEndUserPage(string pageName, int order)
         {
-            component.Order;
+            return Driver.IsElementDisplayed(GetComponentItemOnEndUserPage(pageName, order));
+        }
+
+        public IWebElement GetButtonOnEndUserPage(string buttonName)
+        {
+            var selector = By.XPath($".//button[text()='{buttonName}']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+
         }
 
         public override List<By> GetPageIdentitySelectors()
@@ -40,7 +48,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
             return new List<By>
             {
                 SelectorFor(this, p=> p.Header),
-                SelectorFor(this, p=> p.Footer)
+                //SelectorFor(this, p=> p.Footer)
             };
         }
     }

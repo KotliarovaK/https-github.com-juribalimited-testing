@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterSce
                 foreach (SelfServiceDto SelfService in createSelfService)
                 {
                     var request = requestUri.GenerateRequest();
-                    request.AddObject(SelfService);
+                    request.AddJsonBody(SelfService);
                     var response = _client.Evergreen.Post(request);
 
                     if (!response.StatusCode.Equals(HttpStatusCode.OK))

@@ -24,7 +24,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         public void ThenSelfServiceToolsPanelDisplayedForEndClient()
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
-            Verify.IsTrue(page.SelfServiceToolsPanel.Displayed, "Self Service Tools Panel are missing");
+            Verify.IsTrue(page.SelfServiceToolsPanel.Displayed, "Self Service Tools Panel is missing");
+        }
+
+        [When(@"User clicks on '(.*)' button on end-user Self Service page")]
+        public void WhenUserClicksOnButtonOnEndUserSelfServicePage(string buttonName)
+        {
+            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
+            var button = page.GetButtonOnEndUserPage(buttonName);
+            _driver.WaitForElementToBeEnabled(button);
+            button.Click();
+            _driver.WaitForDataLoading(50);
         }
     }
 }

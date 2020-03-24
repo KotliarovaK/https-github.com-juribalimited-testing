@@ -49,17 +49,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var detailsPage = _driver.NowAt<BaseNavigationElements>();
             _driver.ExecuteAction(() => detailsPage.GetSubMenuByName(tabMenuName).Click());
-
-            //TODO remove this workaround when related bug will be fixed
-            if (tabMenuName.Equals("Builder"))
-            {
-                try
-                {
-                    var bpage = _driver.NowAt<BaseDialogPage>();
-                    bpage.ClickButton("YES");
-                }
-                catch { }
-            }
         }
 
         #endregion
