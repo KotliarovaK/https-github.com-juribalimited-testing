@@ -1364,6 +1364,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataInTable.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\ProjectSelectionPopup_AppDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectSelectionPopup_AppDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Distribution\ApplicationsDetails_Distribution_Devices.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1403,6 +1408,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HideFromEndUsers_ApplicationsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\ProjectSelectionPopup_DevicesDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectSelectionPopup_DevicesDetails.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\DevicesDetails_Applications_EvergreenDetail.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1469,6 +1479,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetails_CopyActions.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\ProjectSelectionPopup_MailDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectSelectionPopup_MailDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Details\MailboxesDetails_Details_Mailbox.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1498,6 +1513,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MailboxesDetails_Trend.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ProjectSelectionPopup_UsersDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectSelectionPopup_UsersDetails.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes_Mailboxes.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2778,6 +2798,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DataInTable.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\ProjectSelectionPopup_AppDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectSelectionPopup_AppDetails.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Distribution\ApplicationsDetails_Distribution_Devices.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ApplicationsDetails_Distribution_Devices.feature.cs</LastGenOutput>
@@ -2809,6 +2833,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\Tabs\Projects\EvergreenDetails\HideFromEndUsers_ApplicationsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>HideFromEndUsers_ApplicationsPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\ProjectSelectionPopup_DevicesDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectSelectionPopup_DevicesDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Applications\DevicesDetails_Applications_EvergreenDetail.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2858,6 +2886,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetails_CopyActions.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\ProjectSelectionPopup_MailDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectSelectionPopup_MailDetails.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Details\MailboxesDetails_Details_Mailbox.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MailboxesDetails_Details_Mailbox.feature.cs</LastGenOutput>
@@ -2881,6 +2913,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\Tabs\Trend\MailboxesDetails_Trend.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MailboxesDetails_Trend.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\ProjectSelectionPopup_UsersDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectSelectionPopup_UsersDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\Tabs\Mailboxes\UsersDetails_Mailboxes_Mailboxes.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
