@@ -45,3 +45,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	When User right clicks on 'egcs-objc' cell from 'Application' column
 	And User selects 'Copy row' option in context menu
 	Then Next data 'egcs-objc   Red Hat   1.1.2   Red   Unknown   True   False' is copied
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20559
+Scenario: EvergreenJnr_DevicesList_CheckThatInformationIsOrderedInTheUsedDurationMinsColumnOfTheApplicationsEvergreenDetailsTabAfterApplyingTheSorting
+	When User navigates to the 'Device' details page for '01COJATLYVAR7A6' item
+	When User navigates to the 'Applications' left menu item
+	When User navigates to the 'Evergreen Detail' left submenu item
+	When User clicks following checkboxes from Column Settings panel for the 'Application' column:
+	| checkboxes    |
+	| Advertisement |
+	| Association   |
+	| Compliance    |
+	When User clicks on 'Used Duration (Mins)' column header
+	Then numeric data in table is sorted by 'Used Duration (Mins)' column in ascending order
+	When User clicks on 'Used Duration (Mins)' column header
+	Then numeric data in table is sorted by 'Used Duration (Mins)' column in descending order
+	Then There are no errors in the browser console
