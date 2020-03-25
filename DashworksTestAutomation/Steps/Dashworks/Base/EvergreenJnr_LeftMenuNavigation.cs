@@ -9,10 +9,11 @@ using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
+
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {

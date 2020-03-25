@@ -37,8 +37,8 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutomationUtils, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutomationUtils.1.0.6\lib\netstandard2.0\AutomationUtils.dll</HintPath>
+    <Reference Include="AutomationUtils, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutomationUtils.1.0.7\lib\netstandard2.0\AutomationUtils.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.11.22.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.22\lib\Net45\HtmlAgilityPack.dll</HintPath>
