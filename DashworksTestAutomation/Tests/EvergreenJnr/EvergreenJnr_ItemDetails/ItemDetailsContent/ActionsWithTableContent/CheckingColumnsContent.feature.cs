@@ -239,6 +239,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16860")]
+        [NUnit.Framework.CategoryAttribute("DAS20468")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior()
         {
@@ -275,6 +276,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16860",
+                        "DAS20468",
                         "Zion_NewGrid"});
 #line 34
 this.ScenarioInitialize(scenarioInfo);
@@ -370,6 +372,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16860")]
+        [NUnit.Framework.CategoryAttribute("DAS20468")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnUsersPageGoingToSenior()
         {
@@ -406,6 +409,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16860",
+                        "DAS20468",
                         "Zion_NewGrid"});
 #line 74
 this.ScenarioInitialize(scenarioInfo);
@@ -557,6 +561,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16860")]
+        [NUnit.Framework.CategoryAttribute("DAS20468")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnApplicationsPageGoingToSenior()
         {
@@ -593,6 +598,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16860",
+                        "DAS20468",
                         "Zion_NewGrid"});
 #line 146
 this.ScenarioInitialize(scenarioInfo);
@@ -657,6 +663,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16860")]
+        [NUnit.Framework.CategoryAttribute("DAS20468")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnMailboxesPageGoingToSenior()
         {
@@ -693,6 +700,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16860",
+                        "DAS20468",
                         "Zion_NewGrid"});
 #line 168
 this.ScenarioInitialize(scenarioInfo);
