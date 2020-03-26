@@ -15,6 +15,7 @@ using DashworksTestAutomation.Pages.Evergreen.Dashboards;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {

@@ -2765,31 +2765,6 @@ namespace DashworksTestAutomation.Extensions
 
         #endregion
 
-        public static bool IsAttributePresent(this IWebElement element, string attribute)
-        {
-            try
-            {
-                var value = element.GetAttribute(attribute);
-                return value != null;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (StaleElementReferenceException)
-            {
-                return false;
-            }
-            catch (TargetInvocationException)
-            {
-                return false;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
         public static void WaitFor(this RemoteWebDriver driver, Func<bool> flag)
         {
             for (int i = 0; i < 60; i++)

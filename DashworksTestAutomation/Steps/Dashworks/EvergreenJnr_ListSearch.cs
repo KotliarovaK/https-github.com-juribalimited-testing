@@ -8,6 +8,7 @@ using DashworksTestAutomation.Pages.Evergreen.Base;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {

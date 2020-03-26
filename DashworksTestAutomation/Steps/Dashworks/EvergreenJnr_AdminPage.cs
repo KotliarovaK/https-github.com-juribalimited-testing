@@ -14,6 +14,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Projects.Tasks;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
