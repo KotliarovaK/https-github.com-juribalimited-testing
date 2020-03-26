@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        //TODO: AnnI 12/17/19 Replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step
+        //TODO: AnnI 3/25/20 Can we replace with WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
         [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterOnTheAdminPage(string filterName)
         {
@@ -146,7 +146,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        //TODO: AnnI 12/17/19 Can we replace with WhenUserSelectsFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
+        //TODO: AnnI 3/25/20 Can we replace with WhenUserChecksFollowingCheckboxesInTheFilterDropdownMenuForTheColumn and delete this step?
         [When(@"User selects ""(.*)"" checkbox from String Filter with item list on the Admin page")]
         public void WhenUserSelectsCheckboxFromStringFilterWithItemListOnTheAdminPage(string filterName)
         {

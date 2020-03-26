@@ -305,6 +305,89 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatInformationIsOrderedInTheUsedDurationMinsColumn" +
+            "OfTheApplicationsEvergreenDetailsTabAfterApplyingTheSorting")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS20559")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatInformationIsOrderedInTheUsedDurationMinsColumnOfTheApplicationsEvergreenDetailsTabAfterApplyingTheSorting()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatInformationIsOrderedInTheUsedDurationMinsColumnOfTheApplicationsEvergreenDetailsTabAfterApplyingTheSortingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatInformationIsOrderedInTheUsedDurationMinsColumnOfTheApplicationsEvergreenDetailsTabAfterApplyingTheSortingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatInformationIsOrderedInTheUsedDurationMinsColumn" +
+                    "OfTheApplicationsEvergreenDetailsTabAfterApplyingTheSorting", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS20559"});
+#line 50
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 51
+ testRunner.When("User navigates to the \'Device\' details page for \'01COJATLYVAR7A6\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 52
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.When("User navigates to the \'Evergreen Detail\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "checkboxes"});
+            table1.AddRow(new string[] {
+                        "Advertisement"});
+            table1.AddRow(new string[] {
+                        "Association"});
+            table1.AddRow(new string[] {
+                        "Compliance"});
+#line 54
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Application\'" +
+                    " column:", ((string)(null)), table1, "When ");
+#line 59
+ testRunner.When("User clicks on \'Used Duration (Mins)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 60
+ testRunner.Then("numeric data in table is sorted by \'Used Duration (Mins)\' column in ascending ord" +
+                    "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.When("User clicks on \'Used Duration (Mins)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
+ testRunner.Then("numeric data in table is sorted by \'Used Duration (Mins)\' column in descending or" +
+                    "der", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 63
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

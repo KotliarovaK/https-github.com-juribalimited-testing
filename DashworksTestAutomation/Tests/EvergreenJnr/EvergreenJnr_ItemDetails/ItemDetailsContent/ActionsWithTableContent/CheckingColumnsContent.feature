@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	When User navigates to the 'Users' left menu item
 	Then '00A5B910A1004CF5AC4' content is displayed in the 'Username' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @Zion_NewGrid
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @Zion_NewGrid
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnUsersPageGoingToSenior
 	When User navigates to the 'User' details page for '000F977AC8824FE39B8' item
 	Then Details page for '000F977AC8824FE39B8' item is displayed to the user
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @Zion_NewGrid
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnApplicationsPageGoingToSenior
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
 	
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @Zion_NewGrid
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnMailboxesPageGoingToSenior
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
@@ -350,3 +350,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUnknownValuesAreEmptyOnObjectDe
 	And User navigates to the 'Devices' left submenu item
 	Then "" content is displayed for "Owner" column
 	Then "" content is displayed for "Owner Display Name" column
+
+@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20503 @Zion_NewGrid
+Scenario: EvergreenJnr_DeviceList_CheckThatValueInTheRingColumnOnDeviceDetailsIsDisplayedCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Owner Projects Summary' left submenu item
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes       |
+	| Select All       |
+	| Havoc (Big Data) |
+	Then '' content is displayed in the 'Ring' column
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                      |
+	| Havoc (Big Data)                |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                      |
+	| User Evergreen Capacity Project |
+	Then 'Unassigned' content is displayed in the 'Ring' column
