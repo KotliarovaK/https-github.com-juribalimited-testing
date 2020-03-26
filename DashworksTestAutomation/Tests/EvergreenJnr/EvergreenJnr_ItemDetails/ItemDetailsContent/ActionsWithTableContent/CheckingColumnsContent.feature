@@ -350,3 +350,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUnknownValuesAreEmptyOnObjectDe
 	And User navigates to the 'Devices' left submenu item
 	Then "" content is displayed for "Owner" column
 	Then "" content is displayed for "Owner Display Name" column
+
+@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20503 @Zion_NewGrid
+Scenario: EvergreenJnr_DeviceList_CheckThatValueInTheRingColumnOnDeviceDetailsIsDisplayedCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Owner Projects Summary' left submenu item
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes       |
+	| Select All       |
+	| Havoc (Big Data) |
+	Then '' content is displayed in the 'Ring' column
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                      |
+	| Havoc (Big Data)                |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                      |
+	| User Evergreen Capacity Project |
+	Then 'Unassigned' content is displayed in the 'Ring' column
