@@ -452,7 +452,7 @@ this.FeatureBackground();
 #line 81
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 82
- testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(@"User navigates to 'deviceapplications?$filter=(packageManufacturer%20IS%20NOT%20EMPTY%20()%20AND%20packageVersion%20IS%20EMPTY%20()%20AND%20packageName%20CONTAINS%20('0')%20AND%20applicationListId%20IN%20('36')%20AND%20packageKey%20>%202%20AND%20migrationRAG%20EQUALS%20('Unknown'%2C'Green')%20AND%20dashworksFirstSeenDate%20IS%20EMPTY%20()%20AND%20computerEntitlements%20>%3D%200%20AND%20installed%20>%3D%200%20AND%20computerUsage%20<>%205%20AND%20distributionHierarchy%20IS%20NOT%20EMPTY%20()%20AND%20distributionType%20NOT%20EQUALS%20('Altiris%206')%20AND%20packageSite%20IS%20NOT%20EMPTY%20()%20AND%20userEntitlements%20<>%2045%20AND%20userUsage%20<>%203)&$select=hostname,chassisCategory,packageName,packageManufacturer,packageVersion,packageKey,packageSite,distributionType,distributionHierarchy,computerUsage,installed,computerEntitlements,dashworksFirstSeenDate,migrationRAG,userEntitlements,userUsage' url via address line", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 83
  testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
@@ -461,112 +461,14 @@ this.FeatureBackground();
  testRunner.When("User selects \'Used on device\' option in \'Search associations\' autocomplete of Ass" +
                     "ociations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
- testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
- testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Subcategories"});
-            table5.AddRow(new string[] {
-                        "App Vendor"});
-            table5.AddRow(new string[] {
-                        "App Version"});
-            table5.AddRow(new string[] {
-                        "Application Name"});
-            table5.AddRow(new string[] {
-                        "Device Type"});
-            table5.AddRow(new string[] {
-                        "Hostname"});
-#line 88
- testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table5, "Then ");
-#line 95
- testRunner.When("User closes \"Suggested\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 96
- testRunner.When("User expands \"Application\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Subcategories"});
-            table6.AddRow(new string[] {
-                        "Application (Saved List)"});
-            table6.AddRow(new string[] {
-                        "Application Key"});
-            table6.AddRow(new string[] {
-                        "Compliance"});
-            table6.AddRow(new string[] {
-                        "Dashworks First Seen"});
-            table6.AddRow(new string[] {
-                        "Device Count (Entitled)"});
-            table6.AddRow(new string[] {
-                        "Device Count (Installed)"});
-            table6.AddRow(new string[] {
-                        "Device Count (Used)"});
-            table6.AddRow(new string[] {
-                        "Import"});
-            table6.AddRow(new string[] {
-                        "Import Type"});
-            table6.AddRow(new string[] {
-                        "Inventory Site"});
-            table6.AddRow(new string[] {
-                        "User Count (Entitled)"});
-            table6.AddRow(new string[] {
-                        "User Count (Used)"});
-#line 97
- testRunner.Then("the following Filters subcategories are presented for open category:", ((string)(null)), table6, "Then ");
-#line 111
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Subcategories"});
-            table7.AddRow(new string[] {
-                        "Hostname"});
-            table7.AddRow(new string[] {
-                        "Device Type"});
-            table7.AddRow(new string[] {
-                        "Application Name"});
-            table7.AddRow(new string[] {
-                        "App Vendor"});
-            table7.AddRow(new string[] {
-                        "App Version"});
-#line 112
- testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table7, "Then ");
-#line 119
- testRunner.When("User collapses \'Selected Columns\' category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table8.AddRow(new string[] {
-                        "Application Key"});
-            table8.AddRow(new string[] {
-                        "Compliance"});
-            table8.AddRow(new string[] {
-                        "Dashworks First Seen"});
-            table8.AddRow(new string[] {
-                        "Device Count (Entitled)"});
-            table8.AddRow(new string[] {
-                        "Device Count (Installed)"});
-            table8.AddRow(new string[] {
-                        "Device Count (Used)"});
-            table8.AddRow(new string[] {
-                        "Import"});
-            table8.AddRow(new string[] {
-                        "Import Type"});
-            table8.AddRow(new string[] {
-                        "Inventory Site"});
-            table8.AddRow(new string[] {
-                        "User Count (Entitled)"});
-            table8.AddRow(new string[] {
-                        "User Count (Used)"});
-#line 120
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
-#line 133
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 134
+#line 87
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 135
+#line 88
  testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 136
+#line 89
  testRunner.When("User creates \'AssociationList18470\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 137
+#line 90
  testRunner.Then("\"AssociationList18470\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

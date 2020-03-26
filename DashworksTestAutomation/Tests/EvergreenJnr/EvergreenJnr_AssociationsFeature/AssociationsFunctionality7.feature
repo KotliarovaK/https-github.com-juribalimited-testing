@@ -45,3 +45,41 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociat
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	Then 'ADD NEW' button is disabled
 	Then 'ADD NEW' button has tooltip with 'Maximum of 5 association groups are allowed' text
+
+@Evergreen @Associations @DAS20130
+Scenario: EvergreenJnr_ApplicationsList_CheckThatParticularAssociationWork
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	When User clicks Add New button on the Filter panel
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project or Evergreen' autocomplete
+	When User selects 'Target' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Not used by device owner' option in 'Search associations' autocomplete of Associations panel
+	When User clicks 'RUN LIST' button
+	Then table content is present
+
+@Evergreen @Associations @DAS20130
+Scenario: EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssociations
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to 'deviceapplications?$filter=(chassisCategory%20EQUALS%20('Desktop'%2C'Laptop'))' url via address line
+	When User clicks Add New button on the Filter panel
+	When User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project or Evergreen' autocomplete
+	When User selects 'Current' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Not used on device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Not entitled to device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Installed on device' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Not entitled to device owner' option in 'Search associations' autocomplete of Associations panel
+	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Not used by device owner' option in 'Search associations' autocomplete of Associations panel
+	When User clicks 'RUN LIST' button
+	Then table content is present

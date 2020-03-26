@@ -152,8 +152,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckAutomationsCategoryOrder
 	And User closes "Suggested" filter category
 	Then Category Automations displayed before projects categories
 
-
-
 @Evergreen @Devices @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS18150
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterSubcategoriesAreSortedByCaseInsensitiveAlphabetOrder
 	When User clicks 'Devices' on the left-hand menu
