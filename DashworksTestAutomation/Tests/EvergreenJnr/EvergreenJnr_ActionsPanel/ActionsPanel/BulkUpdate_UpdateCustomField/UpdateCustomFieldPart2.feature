@@ -26,8 +26,7 @@ Examples:
 	| Applications | Application   | 7-Zip 16.02 (x64)                | Application Owner | Mailbox Filter 1    |
 	| Mailboxes    | Email Address | 002B5DC7D4D34D5C895@bclabs.local | Mailbox Filter 2  | Friendly Model Name |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18027 @Not_Ready
-#Waiting for "Update custom field" on the automation
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18027
 Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
@@ -65,10 +64,9 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemove
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then '111, 000' content is displayed in the 'Phoenix Field' column
+	Then '000, 111' content is displayed in the 'Phoenix Field' column
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
-#Waiting for "Update custom field" on the automation
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027
 Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues
 	When User clicks 'Users' on the left-hand menu
 	When User clicks the Filters button
@@ -89,7 +87,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	When User selects 'Add to existing values' in the 'Update Values' dropdown
 	#DAS18031
-	When User clicks 'UPDATE' button
+	Then 'UPDATE' button is disabled
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
 	#DAS18031
 	When User adds 'alpha' value from 'Value' textbox
@@ -98,7 +96,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then 'beta, alpha' content is displayed in the 'Phoenix Field' column
+	Then 'alpha, beta' content is displayed in the 'Phoenix Field' column
 		#Revert 'Update custom field' changes to default
 	When User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update custom field' in the 'Bulk Update Type' dropdown
@@ -114,8 +112,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExi
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027 @Not_Ready
-#Waiting for "Update custom field" on the automation
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18045 @DAS18031 @DAS18027
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
