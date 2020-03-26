@@ -5,9 +5,12 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen via API
 
 @Evergreen @Mailboxes @API @FiltersAndColumns
-Scenario: EvergreenJnr_MailboxesList_CheckAllColumnsAndFilters 
-	Then All filters with correct data are returned from the API for 'Mailboxes' list
+Scenario: EvergreenJnr_MailboxesList_CheckAllColumns
 	Then All columns with correct data are returned from the API for 'Mailboxes' list
+
+@Evergreen @Mailboxes @API @FiltersAndColumns
+Scenario: EvergreenJnr_MailboxesList_CheckAllFilters 
+	Then All filters with correct data are returned from the API for 'Mailboxes' list
 
 @Evergreen @Mailboxes @API @FiltersAndColumns
 Scenario Outline: EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData
