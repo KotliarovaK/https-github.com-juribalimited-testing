@@ -44,8 +44,8 @@
     <Reference Include="ApprovalUtilities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=11bd7d124fc62e0f, processorArchitecture=MSIL">
       <HintPath>..\packages\ApprovalUtilities.4.5.1\lib\net461\ApprovalUtilities.dll</HintPath>
     </Reference>
-    <Reference Include="AutomationUtils, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutomationUtils.1.0.7\lib\netstandard2.0\AutomationUtils.dll</HintPath>
+    <Reference Include="AutomationUtils, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutomationUtils.1.0.10\lib\netstandard2.0\AutomationUtils.dll</HintPath>
     </Reference>
     <Reference Include="EmptyFiles, Version=0.7.0.0, Culture=neutral, PublicKeyToken=c7a34512ecd69090, processorArchitecture=MSIL">
       <HintPath>..\packages\EmptyFiles.0.7.0\lib\netstandard2.0\EmptyFiles.dll</HintPath>
