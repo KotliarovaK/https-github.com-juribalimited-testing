@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #AnnI 3/24/20: This functionality is implemented only for 'Wormhole'
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19704 @Wormholes
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19704 @Wormhole
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectSelectionPopupForMailboxesDetailsPageIsWorkingCorrectly
 	When User navigates to the 'Mailbox' details page for '003F5D8E1A844B1FAA5@bclabs.local' item
 	Then Details page for '003F5D8E1A844B1FAA5@bclabs.local' item is displayed to the user
