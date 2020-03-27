@@ -600,7 +600,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	Then 'One \ Text Computer' content is displayed in 'Task' autocomplete
 	Then 'Remove' value is displayed in the 'Update Value' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @DAS20455 @DAS20455 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
@@ -614,8 +614,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
-	And User enters '5 Aug 2019' text to 'Date' datepicker
-	And User clicks 'CREATE' button 
+	When User enters '5 Aug 2019' text to 'Date' datepicker
+	When User clicks 'CREATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17606_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
@@ -630,6 +630,18 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	Then 'One \ Date Computer' content is displayed in 'Task' autocomplete
 	Then 'Update' value is displayed in the 'Update Date' dropdown
 	Then "5 Aug 2019" content is displayed in "Date" field
+	#Update Action
+	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
+	When User selects 'One \ Radio Rag Date Comp' option from 'Relative Task' autocomplete
+	When User enters '2' text to 'Value' textbox
+	When User selects 'days after task value' in the 'Units' dropdown
+	When User clicks 'UPDATE' button
+	Then 'The automation action has been updated' text is displayed on inline success banner
+	When User clicks content from "Action" column
+	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Relative Project' autocomplete
+	Then 'One \ Radio Rag Date Comp' content is displayed in 'Relative Task' autocomplete
+	Then 'days before task value' value is displayed in the 'Units' dropdown
+	Then '2' content is displayed in 'Value' textbox
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @DAS19117 @DAS17485 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData
