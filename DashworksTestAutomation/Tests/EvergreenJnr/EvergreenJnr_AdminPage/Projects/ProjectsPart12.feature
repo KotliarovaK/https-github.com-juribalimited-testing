@@ -47,9 +47,9 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	Then There are no errors in the browser console
 
 Examples:
-	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                         | ObjectsToAdd2                         |
-	| All Applications | StaticList1529  | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
-	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
+	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                          | ObjectsToAdd2                         |
+	| All Applications | StaticList1529  | Applications to add (0 of 37 selected) | Applications to add (0 of 0 selected) |
+	| StaticList1529   | DynamicList87   | Applications to add (0 of 0 selected)  | Applications to add (0 of 0 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS18369 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
