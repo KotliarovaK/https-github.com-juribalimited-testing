@@ -1150,6 +1150,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"'{buttonName}' button tooltip is incorrect");
         }
 
+        [Then(@"'(.*)' button is displayed in high contrast")]
+        public void ThenButtonIsDisplayedInHighContrast(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButton(buttonName);
+
+            Verify.That(button.GetCssValue("background-color").Equals("rgba(21, 40, 69, 1)"), Is.True, "Button has wrong background");
+            Verify.That(button.GetCssValue("color").Equals("rgba(255, 255, 255, 1)"), Is.True, "Button has wrong color");
+        }
+
         #endregion
 
         #region Button with aria label
