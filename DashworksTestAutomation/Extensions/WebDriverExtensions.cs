@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Extensions
     public static class WebDriverExtensions
     {
         private const int NumberOfTimesToWait = 2;
-        private const int WaitTimeoutSeconds = 30;
+        private const int WaitTimeoutSeconds = 60;
         private static readonly TimeSpan WaitTimeout = TimeSpan.FromSeconds(WaitTimeoutSeconds);
         private static readonly TimeSpan PollingInterval = TimeSpan.FromSeconds(5);
         private static readonly By matOptionsSelector = By.XPath(".//mat-option//*[@class='mat-option-text']");

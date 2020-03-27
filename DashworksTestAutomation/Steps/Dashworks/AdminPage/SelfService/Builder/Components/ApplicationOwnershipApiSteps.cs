@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder.
             }
 
             var ssPage = _selfServicePages.Value.First(x => x.Name.Equals(ssPageName));
-            component.SelfServicePage = ssPage;
+            component.PageId = ssPage.PageId;
 
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicecomponents";
             var request = requestUri.GenerateRequest();

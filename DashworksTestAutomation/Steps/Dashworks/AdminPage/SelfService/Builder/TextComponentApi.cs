@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
 
             foreach (SelfServiceTextComponent component in textComponents)
             {
-                component.SelfServicePage = ssPage;
+                component.PageId = ssPage.PageId;
 
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicecomponents";
                 var request = requestUri.GenerateRequest();

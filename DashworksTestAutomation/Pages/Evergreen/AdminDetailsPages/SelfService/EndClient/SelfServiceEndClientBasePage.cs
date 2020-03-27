@@ -41,6 +41,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
             return Driver.FindElement(selector);
 
         }
+        public IWebElement SubjectTitleOnEndUserPage(string title)
+        {
+            var selector = By.XPath($".//div[@class='ssw-title' and text()='{title}']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
 
         public override List<By> GetPageIdentitySelectors()
         {
