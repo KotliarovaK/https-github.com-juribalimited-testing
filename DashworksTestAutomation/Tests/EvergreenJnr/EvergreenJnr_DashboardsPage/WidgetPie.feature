@@ -148,8 +148,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	| First Seen Date                      |
 	| Windows7Mi: Communication \ DateTime |
 	| Compliance                           |
-	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
-	And Dashboard with 'All Data Types for DAS15508' name created via API and opened
+	When User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
+	When Dashboard with 'All Data Types for DAS15508' name created via API and opened
+	When User waits for '3' seconds
 	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown

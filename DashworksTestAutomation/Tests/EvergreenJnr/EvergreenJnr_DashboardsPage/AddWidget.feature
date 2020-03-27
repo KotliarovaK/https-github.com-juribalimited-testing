@@ -363,7 +363,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterE
 	When User clicks 'Edit' menu option for 'WidgetForDAS20412' widget
 	When User enters 'titleForDAS20412' text to 'Title' textbox
 	When User clicks 'UPDATE' button
-	Then 'Section successfully updated' text is displayed on inline success banner
+	#Then 'Section successfully updated' text is displayed on inline success banner
 	Then 'WidgetForDAS20412' Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS20358

@@ -1275,6 +1275,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18090")]
         [NUnit.Framework.CategoryAttribute("DAS16516")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashboardPageForTheListWithoutArchivedItem()
         {
             System.Exception lastException = null;
@@ -1311,7 +1312,8 @@ this.FeatureBackground();
                         "DAS18091",
                         "DAS18090",
                         "DAS16516",
-                        "Cleanup"});
+                        "Cleanup",
+                        "Not_Ready"});
 #line 253
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1347,7 +1349,7 @@ this.FeatureBackground();
 #line 261
  testRunner.Then("There is no \'Empty\' column for \'WidgetForDAS18091\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 263
- testRunner.When("User clicks \'NOT READY\' value for \'Windows 10\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Empty\' value for \'Windows 10\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 264
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 265
@@ -1357,8 +1359,8 @@ this.FeatureBackground();
 #line 267
  testRunner.Then("\"Any Device in list 2004 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 268
- testRunner.Then("\"2004: Pre-Migration \\ Ready to Migrate is Not Ready\" is displayed in added filte" +
-                    "r info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"2004: Pre-Migration \\ Ready to Migrate is Empty\" is displayed in added filter in" +
+                    "fo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

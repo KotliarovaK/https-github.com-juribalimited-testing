@@ -1617,7 +1617,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsOptionInExpandedAutocomplete(string option, string placeholder)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.GetTextbox(placeholder).SendKeys(option);
+            action.GetTextbox(placeholder).ClearSendKeys(option);
 
             var page = _driver.NowAt<FiltersElement>();
             page.SelectAssociation(placeholder, option);

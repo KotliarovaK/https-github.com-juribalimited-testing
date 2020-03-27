@@ -12,12 +12,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewDeviceOwnerOptionsAreAddedTo
 	When User clicks Add New button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then "Used by device owner" filter is presented in the filters list
-	Then "Entitled to device owner" filter is presented in the filters list
 	When User selects 'Entitled to device owner' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then "Used by device owner" filter is presented in the filters list
-	Then "Not used by device owner" filter is presented in the filters list
 	When User selects 'Not used by device owner' option in 'Search associations' autocomplete of Associations panel
 	Then Remove icon displayed in 'false' state for 'Entitled to device owner' association
 	When User clicks 'RUN LIST' button

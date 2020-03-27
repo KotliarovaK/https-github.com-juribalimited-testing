@@ -39,7 +39,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | Section2_WidgetForDAS12989_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
 	When User remembers number of Sections and Widgets on Dashboards page
-	When User clicks 'Duplicate' menu option for section with 'Section1_WidgetForDAS12989_1' widget
+	When User clicks 'Duplicate' menu option for 'Section1_WidgetForDAS12989_1' widget
 	Then User sees following Widgets in one Section on Dashboards page:
 	| WidgetNames                   |
 	| Section1_WidgetForDAS12989_1  |
@@ -59,7 +59,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidget
 	| WidgetType | Title   | List   | SplitBy   | AggregateBy   | AggregateFunction  | OrderBy   | MaxValues | ShowLegend   |
 	| <Type>     | <Title> | <List> | <SplitBy> | <AggregateBy> | <AggregateFunctio> | <OrderBy> | 10        | <ShowLegend> |
 	When User remembers number of Sections and Widgets on Dashboards page
-	When User clicks 'Duplicate' menu option for section with '<Title>' widget
+	When User clicks 'Duplicate' menu option for '<Title>' widget
 	Then User sees number of Sections increased by '0' on Dashboards page
 	Then User sees number of Widgets increased by '1' on Dashboards page
 	Then '<TitleCloned>' Widget is displayed to the user
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	When User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Bar        | WidgetForDAS12978_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC | 10        | true       |
-    When User clicks 'Edit' menu option for section with 'WidgetForDAS12978_2' widget
+    When User clicks 'Edit' menu option for 'WidgetForDAS12978_2' widget
 	When User updates Widget with following info:
 	| WidgetType | Title                      | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy     | MaxValues | ShowLegend |
 	| Bar        | WidgetForDAS12978_2_Edited | All Applications | Version | Application | Count distinct    | Version ASC | 10        | true       |
@@ -104,6 +104,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	| WidgetForDAS12978          |
 	| WidgetForDAS12978_2_Edited |
 	When User clicks 'Delete' menu option for 'WidgetForDAS12978' widget
+	When User confirms item deleting on Dashboards page
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles               |
 	| WidgetForDAS12978_2_Edited |
@@ -158,8 +159,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 	| Move to position |
 	| Delete           |
 	When User clicks Body container
-	When User clicks 'Move to start' menu option for section with 'WidgetForDAS14583_3' widget
-	When User clicks 'Edit' menu option for section with 'WidgetForDAS14583_3' widget
+	When User clicks 'Move to start' menu option for 'WidgetForDAS14583_3' widget
+	When User clicks 'Edit' menu option for 'WidgetForDAS14583_3' widget
 	When User updates Widget with following info:
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Vendor      | Count distinct    | Vendor ASC | 10        | false      |
@@ -177,11 +178,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
-	When User clicks 'Delete' menu option for section with 'WidgetForDAS14855' widget
+	When User clicks 'Delete' menu option for 'WidgetForDAS14855' widget
 	Then User sees 'WidgetForDAS14855 will be permanently deleted' text in warning message of 'WidgetForDAS14855' widget on Dashboards page
 	Then User sees Widget square colored in amber
 	When User clicks Cancel button in Delete Widget warning on Dashboards page
-	When User clicks 'Delete' menu option for section with 'WidgetForDAS14855' widget
+	When User clicks 'Delete' menu option for 'WidgetForDAS14855' widget
+	When User confirms item deleting on Dashboards page
 	Then Widget with the name 'WidgetForDAS14855' is missing
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14610
