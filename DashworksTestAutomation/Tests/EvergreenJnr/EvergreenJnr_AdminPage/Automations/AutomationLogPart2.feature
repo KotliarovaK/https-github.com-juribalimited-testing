@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	| Pr00: Planning \ Get technical information |
 	Then 'Started' content is displayed in the 'Pr00: Planning \ Get technical information' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17642 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17642 @DAS20360 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -108,28 +108,24 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	When User enters '17642_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Email Migration' option from 'Project' autocomplete
-	When User selects 'Comms & Exceptions' option from 'Stage' autocomplete
-	When User selects 'Mailbox Dropdown Non RAG Owner' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Maybe' in the 'Value' dropdown
+	When User selects 'Comms & Exceptions \ Mailbox Dropdown Non RAG Owner' option from 'Task' autocomplete
+	And User selects 'Maybe' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button 
-	#Create Action
+	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '17642_Automation' item from 'Automation' column
+	When '17642_Automation' automation '17642_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17642_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                                      |
-	| EmailMigra: Comms & Exceptions \ Mailbox Dropdown Non RAG Owner |
+	When User clicks content from "Objects" column
+	Then "EmailMigra: Comms & Exceptions \ Mailbox Dropdown Non RAG Owner (Team)" column is not displayed to the user
+	Then "EmailMigra: Comms & Exceptions \ Mailbox Dropdown Non RAG Owner (Owner)" column is not displayed to the user
 	Then 'Maybe' content is displayed in the 'EmailMigra: Comms & Exceptions \ Mailbox Dropdown Non RAG Owner' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17643 @Cleanup @Not_Ready
