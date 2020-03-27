@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using AutomationUtils.Extensions;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.Extensions;
 

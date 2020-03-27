@@ -2,10 +2,9 @@
 using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using Logger = DashworksTestAutomation.Utils.Logger;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {

@@ -469,7 +469,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18233")]
-        [NUnit.Framework.CategoryAttribute("Void")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProperties()
         {
             System.Exception lastException = null;
@@ -504,7 +504,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS18233",
-                        "Void"});
+                        "Wormhole"});
 #line 94
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -537,6 +537,8 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table10.AddRow(new string[] {
+                        "No change"});
+            table10.AddRow(new string[] {
                         "Update"});
             table10.AddRow(new string[] {
                         "Update relative to current value"});
@@ -546,8 +548,6 @@ this.FeatureBackground();
                         "Update relative to a different task value"});
             table10.AddRow(new string[] {
                         "Remove"});
-            table10.AddRow(new string[] {
-                        "No change"});
 #line 106
  testRunner.Then("following Values are displayed in the \'Update Date\' dropdown:", ((string)(null)), table10, "Then ");
 #line hidden

@@ -131,8 +131,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	Then Text Only is displayed for Card widget
 	Then 'Red' color is displayed for Card Widget
 	
-	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15355' widget
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
 	Then 'Red' color is displayed for Card Widget on Preview
@@ -142,8 +141,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	Then 'Red' color is displayed for Card Widget
 	Then Icon and Text is displayed for Card widget
 	
-	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15355' widget
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
 	Then 'Red' color is displayed for Card Widget on Preview
@@ -166,8 +164,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS15134' Widget is displayed to the user
 	Then 'Pink' color is displayed for Card Widget
-	When User clicks Ellipsis menu for 'WidgetForDAS15134' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15134' widget
 	When User selects 'Amber' in the Colour Scheme
 	When User clicks 'UPDATE' button 
 	Then 'Amber' color is displayed for Card Widget
@@ -223,16 +220,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	Then 'WidgetForDAS15355' Widget is displayed to the user
 	Then Text Only is displayed for Card widget
 	
-	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15355' widget
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
 	And 'Amber' color is displayed for Card Widget on Preview
 	When User clicks 'UPDATE' button
 	Then 'WidgetForDAS15355' Widget is displayed to the user
 	Then Icon and Text is displayed for Card widget
-	When User clicks Ellipsis menu for 'WidgetForDAS15355' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15355' widget
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
 	And 'Amber' color is displayed for Card Widget on Preview
@@ -260,15 +255,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	| WidgetType | Title               | List          | Type       | Layout    |
 	| Card       | WidgetForDAS15355_1 | DAS15355_List | First Cell | Text Only |
 	Then Text Only is displayed for Card widget on Preview
-	And 'Green' color is displayed for Card Widget on Preview
-	And 'Data Label' checkbox is not displayed on the Create Widget page
+	Then 'Green' color is displayed for Card Widget on Preview
+	Then 'Show data labels' checkbox is not displayed
 	When User clicks 'CREATE' button
 	Then 'WidgetForDAS15355_1' Widget is displayed to the user
 	Then Text Only is displayed for Card widget
 	And 'Green' color is displayed for Card Widget
 	
-	When User clicks Ellipsis menu for 'WidgetForDAS15355_1' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15355_1' widget
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
 	And 'Green' color is displayed for Card Widget on Preview
@@ -277,8 +271,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	Then 'Green' color is displayed for Card Widget
 	And Icon and Text is displayed for Card widget
 
-	When User clicks Ellipsis menu for 'WidgetForDAS15355_1' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15355_1' widget
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
 	And 'Green' color is displayed for Card Widget on Preview
@@ -416,8 +409,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then Text Only is displayed for Card widget
 	And 'Red' color is displayed for Card Widget
 
-	When User clicks Ellipsis menu for 'WidgetForDAS16336' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS16336' widget
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
 	And 'Red' color is displayed for Card Widget on Preview
@@ -428,8 +420,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	And Icon Only is displayed for Card widget
 	And 'Red' color is displayed for Card Widget
 	
-	When User clicks Ellipsis menu for 'WidgetForDAS16336' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS16336' widget
 	When User selects 'Icon and Text' in the 'Layout' dropdown
 	Then Icon and Text is displayed for Card widget on Preview
 	And 'Red' color is displayed for Card Widget on Preview

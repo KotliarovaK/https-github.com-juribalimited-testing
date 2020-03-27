@@ -94,23 +94,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	When Dashboard with 'DAS15662_Dashboard' name created via API and opened
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType   | Title             | List        | SplitBy  | AggregateFunction | OrderBy   |
 	| <WidgetType> | WidgetForDAS15662 | All Devices | Hostname | Count             | Count ASC |
-	And User selects 'Show data labels' checkbox on the Create Widget page
+	When User selects 'Show data labels' checkbox on the Create Widget page
 	Then Data Labels are displayed on the Preview page
-	And '<DataLabel>' data label is displayed on the Preview page
+	Then '<DataLabel>' data label is displayed on the Preview page
 	When User clicks 'CREATE' button 
 	Then Data Labels are displayed on the Dashboards page
-	And '<DataLabel>' data label is displayed on the Dashboards page
-	When User clicks Ellipsis menu for 'WidgetForDAS15662' Widget on Dashboards page
-	And User clicks 'Duplicate' item from Ellipsis menu on Dashboards page
-	And User clicks Ellipsis menu for 'WidgetForDAS156622' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	Then 'Show data labels' checkbox is checked on the Create Widget page
-	And Data Labels are displayed on the Preview page
-	And '<DataLabel>' data label is displayed on the Preview page
+	Then '<DataLabel>' data label is displayed on the Dashboards page
+	When User clicks 'Duplicate' menu option for 'WidgetForDAS15662' widget
+	When User clicks 'Edit' menu option for 'WidgetForDAS156622' widget
+	Then 'Show data labels' checkbox is checked
+	Then Data Labels are displayed on the Preview page
+	Then '<DataLabel>' data label is displayed on the Preview page
 
 Examples:
 	| WidgetType | DataLabel      |
@@ -127,8 +125,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggre
 	| WidgetType | Title           | List        | SplitBy  | AggregateFunction | OrderBy      | MaxValues |
 	| Pie        | Widget_DAS15500 | All Devices | Hostname | Count             | Hostname ASC | 5         |
 	Then 'Widget_DAS15500' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'Widget_DAS15500' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'Widget_DAS15500' widget
 	When User selects '<WidgetType>' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
@@ -468,8 +465,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	Then Color Scheme dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
-	When User clicks Ellipsis menu for 'WidgetForDAS17515' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS17515' widget
 	When User selects 'Application Compliance' in the 'SplitBy' dropdown
 	Then User sees 'Application Compliance ASC' option for Order By selector on Create Widget page
 	Then Color Scheme dropdown displayed with 'Compliance' placeholder 
@@ -512,8 +508,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatPreviewDisplayedForWidgetWhenRead
 	Then There are no errors in the browser console
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS18635' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS18635' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS18635' widget
 	When User adds new Widget
 	| WidgetType | Title             | List                               | SplitBy               | AggregateFunction | AggregateBy | OrderBy                   |
 	| Pie        | WidgetForDAS18635 | Device Readiness Columns & Filters | UserEvergr: Readiness | Count distinct    | Device Type | UserEvergr: Readiness ASC |

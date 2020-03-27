@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {

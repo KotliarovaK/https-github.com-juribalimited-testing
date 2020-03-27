@@ -40,8 +40,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
 	Then 'WidgetForDAS15900' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS15900' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15900' widget
 	And User adds new Widget
 	| WidgetType | Title                    | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname | Count             | Count ASC | 11        | true       |
@@ -118,8 +117,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
 	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS16853 | All Devices | Hostname | Count             | Count ASC | 10        | true       |
 	Then 'WidgetForDAS16853' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS16853' widget
 	Then 'Show legend' checkbox has a correct label
 	And 'Show data labels' checkbox has a correct label
 
@@ -188,8 +186,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
 	| Bar        | WidgetForDAS16853 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
 	Then 'WidgetForDAS16853' Widget is displayed to the user
-	When  User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS16853' widget
 	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
 	When User selects 'Hostname' in the 'AggregateBy' dropdown
 	Then Widget Preview is displayed to the user
@@ -203,8 +200,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
 	| Bar        | WidgetForDAS16853 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
 	Then 'WidgetForDAS16853' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS16853' widget
 	Then following Values are displayed in the 'OrderBy' dropdown:
     | Dropdowns                    |
     | Hostname ASC                 |
@@ -344,8 +340,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendsNotDuplicatedAfterCh
 	| WidgetType | Title             | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend |
 	| Bar        | WidgetForDAS20170 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
 	Then 'WidgetForDAS20170' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS20170' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS20170' widget
 	And User updates Widget with following info:
 	| WidgetType | Title             |
 	| Pie        | WidgetForDAS20170 |
@@ -365,9 +360,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterE
 	And User creates new Widget
 	| WidgetType | Title             | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend |
 	| Bar        | WidgetForDAS20412 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
-	And User clicks Ellipsis menu for Section having 'WidgetForDAS20412' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User enters 'titleForDAS20412' text to 'Title' textbox
-	And User clicks 'UPDATE' button
+	When User clicks 'Edit' menu option for 'WidgetForDAS20412' widget
+	When User enters 'titleForDAS20412' text to 'Title' textbox
+	When User clicks 'UPDATE' button
 	Then 'Section successfully updated' text is displayed on inline success banner
 	Then 'WidgetForDAS20412' Widget is displayed to the user
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS20358
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUserIsAbleToDeleteNotDefaultDashboard
+	When User clicks 'Dashboards' on the left-hand menu
+	And User clicks 'CREATE DASHBOARD' button
+	And User creates new Dashboard with 'DashboardDAS20358' name
+	And User clicks the Dashboard Details button
+	And User clicks Delete list button
+	And User clicks 'DELETE' button
+	Then "Dashboard deleted" message is displayed

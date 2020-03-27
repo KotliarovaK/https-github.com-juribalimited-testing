@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.DTO.Projects.Tasks;
@@ -543,10 +544,10 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             {
                 page.ProjectObject.SetCheckboxState(_taskPropertiesDetailsDto.ProjectObject);
                 page.SelfService.SetCheckboxState(_taskPropertiesDetailsDto.SelfService);
+                page.Automation.SetCheckboxState(_taskPropertiesDetailsDto.Automation);
             }
 
             page.BulkUpdate.SetCheckboxState(_taskPropertiesDetailsDto.BulkUpdate);
-            page.Automation.SetCheckboxState(_taskPropertiesDetailsDto.Automation);
 
             page.UpdateTaskButton.Click();
         }

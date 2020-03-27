@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-panel']//button")]
         public IWebElement CloseListDetailsPanelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'delete')]")]
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'delete')]/ancestor::button")]
         public IWebElement RemoveListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-notification ng-star-inserted')]//button[contains(@class,'btn mat-button')]")]

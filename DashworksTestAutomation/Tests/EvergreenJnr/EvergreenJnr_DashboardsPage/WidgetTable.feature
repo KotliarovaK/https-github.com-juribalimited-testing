@@ -113,8 +113,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	| Slot 2018-10-01 to 2018-12-31 |
 	| Slot 2018-11-01 - 2020-12-26  |
 	| Empty                         |
-	When User clicks Ellipsis menu for 'DAS16275_Widget' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'DAS16275_Widget' widget
 	When User selects 'Count DESC' in the 'Order By' dropdown
 	And User clicks 'UPDATE' button 
 	Then content in the Widget is displayed in following order:
@@ -145,8 +144,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| Evergreen Ring 1 |
 	| Evergreen Ring 2 |
 	| Evergreen Ring 3 |
-	When User clicks Ellipsis menu for 'DAS15826_Widget' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'DAS15826_Widget' widget
 	When User selects 'UserEvergr: Ring (All Users) DESC' in the 'OrderBy' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'DAS15826_Widget' Widget is displayed to the user
@@ -287,20 +285,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidg
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS-15852' Widget is displayed to the user
-	Then Table columns of 'DAS-15852' widget placed in the next order:
+	Then Headers of 'DAS-15852' table widget with 'Horizontal' orientation are placed in the next order:
 	| headers   |
 	| Empty     |
 	| Not Ready |
 	| On Target |
 	| Ready     |
 	| Unknown   |
-	When User clicks Ellipsis menu for 'DAS-15852' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'DAS-15852' widget
 	When User selects '2004: Pre-Migration \ Ready to Migrate DESC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	When User clicks 'UPDATE' button
 	Then 'DAS-15852' Widget is displayed to the user
-	Then Table columns of 'DAS-15852' widget placed in the next order:
+	Then Headers of 'DAS-15852' table widget with 'Horizontal' orientation are placed in the next order:
 	| headers   |
 	| Ready     |
 	| On Target |
@@ -439,8 +436,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	Then 'WidgetForDAS18232' Widget is displayed to the user
 	Then Icon and Text is displayed for Card widget
 	Then 'Red' color is displayed for Card Widget
-	When User clicks Ellipsis menu for 'WidgetForDAS18232' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS18232' widget
 	When User selects 'Text Only' in the 'Layout' dropdown
 	Then Text Only is displayed for Card widget on Preview
 	Then 'Red' color is displayed for Card Widget on Preview
@@ -448,8 +444,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	Then 'WidgetForDAS18232' Widget is displayed to the user
 	Then Text Only is displayed for Card widget
 	Then 'Red' color is displayed for Card Widget
-	When User clicks Ellipsis menu for 'WidgetForDAS18232' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS18232' widget
 	When User selects 'Icon Only' in the 'Layout' dropdown
 	Then Icon Only is displayed for Card widget on Preview
 	Then 'Red' color is displayed for Card Widget on Preview
@@ -458,7 +453,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	Then Icon Only is displayed for Card widget
 	Then 'Red' color is displayed for Card Widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19369 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19369 @DAS14400 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedInTableWidgetBasedOnSeverityAfterSelectingProjectStageTaskReadinessTask
 	When User clicks 'Devices' on the left-hand menu
 	When User add following columns using URL to the "Devices" page:
@@ -474,7 +469,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedI
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'DAS-19369' Widget is displayed to the user
-	Then Table columns of 'DAS-19369' widget placed in the next order:
+	Then Headers of 'DAS-19369' table widget with 'Horizontal' orientation are placed in the next order:
 	| headers     |
 	| Data Centre |
 	| Desktop     |
@@ -482,6 +477,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOnlyOnboardedObjectsAreDisplayedI
 	| Mobile      |
 	| Other       |
 	| Virtual     |
+	When User clicks 'Edit' menu option for 'DAS-19369' widget
+	When User selects 'Vertical' in the 'TableOrientation' dropdown
+	When User clicks 'UPDATE' button
+	Then 'DAS-19369' Widget is displayed to the user
+	Then Headers of 'DAS-19369' table widget with 'Vertical' orientation are placed in the next order:
+	| headers     |
+	| Data Centre |
+	| Desktop     |
+	| Laptop      |
+	| Mobile      |
+	| Other       |
+	| Virtual     | 
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS19383 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetCanBeCreatedForListUsingComplienceFilter
@@ -545,7 +552,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeveri
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then '19736_List' Widget is displayed to the user
-	Then Table columns of '19736_List' widget placed in the next order:
+	Then Headers of '19736_List' table widget with 'Horizontal' orientation are placed in the next order:
 	| headers        |
 	| Empty          |
 	| Started        |
@@ -602,7 +609,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatProjectTaskMeColumnValueIsDisplay
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button
 	Then 'DAS20227_Widget' Widget is displayed to the user
-	Then Table columns of 'DAS20227_Widget' widget placed in the next order:
+	Then Headers of 'DAS20227_Widget' table widget with 'Horizontal' orientation are placed in the next order:
 	| headers       |
 	| Empty         |
 	| Administrator |

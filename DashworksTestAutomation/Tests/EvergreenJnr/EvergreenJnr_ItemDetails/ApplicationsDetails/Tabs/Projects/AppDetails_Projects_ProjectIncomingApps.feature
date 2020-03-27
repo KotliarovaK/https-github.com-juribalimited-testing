@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatEmptyValueIsDisplayedForAppWit
 	| [Default (Application)] |
 
 #AnnI 3/18/20: This functionality is implemented only for 'Wormhole'
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectsTab @DAS20356 @DAS20445 @Wormhole
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ProjectsTab @DAS20356 @DAS20445 @DAS19704 @Wormhole
 Scenario: EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsWorkedCorrectlyAfterSwitchingBetweenProjectsAndEvergreenModes
 	When User navigates to the 'Application' details page for the item with '839' ID
 	Then Details page for 'Access 95' item is displayed to the user
@@ -36,3 +36,4 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsW
 	Then 'Details' left menu item is expanded
 	Then 'Projects' left menu item is collapsed
 	Then 'Application' left submenu item is active
+	Then There are no errors in the browser console

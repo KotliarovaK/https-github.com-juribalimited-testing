@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17761 @Zion_NewGrid
 Scenario: EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMembersTabOnGroupsPage
 	When User type "Schema Admins" in Global Search Field
 	Then User clicks on "Schema Admins" search result

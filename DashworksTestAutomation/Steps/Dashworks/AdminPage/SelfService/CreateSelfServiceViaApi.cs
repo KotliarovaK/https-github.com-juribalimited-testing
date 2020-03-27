@@ -15,7 +15,6 @@ using System.Collections.Generic;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService
 {

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.BulkUpdatePage;

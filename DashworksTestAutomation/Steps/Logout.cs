@@ -2,10 +2,9 @@
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Utils;
-using NUnit.Framework;
+using AutomationUtils.Extensions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
-using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps
 {

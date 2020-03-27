@@ -3,7 +3,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Senior;
 using DashworksTestAutomation.Providers;
-using NUnit.Framework;
+using AutomationUtils.Extensions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
