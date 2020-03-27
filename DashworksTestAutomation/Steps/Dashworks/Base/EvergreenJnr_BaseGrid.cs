@@ -16,6 +16,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {

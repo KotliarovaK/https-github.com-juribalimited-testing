@@ -2,10 +2,10 @@
 using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 {

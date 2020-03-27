@@ -176,6 +176,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ProjectsTab")]
         [NUnit.Framework.CategoryAttribute("DAS20356")]
         [NUnit.Framework.CategoryAttribute("DAS20445")]
+        [NUnit.Framework.CategoryAttribute("DAS19704")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatOpenedProjectIncomingAppsTabIsWorkedCorrectlyAfterSwitchingBetweenProjectsAndEvergreenModes()
         {
@@ -213,6 +214,7 @@ this.FeatureBackground();
                         "ProjectsTab",
                         "DAS20356",
                         "DAS20445",
+                        "DAS19704",
                         "Wormhole"});
 #line 27
 this.ScenarioInitialize(scenarioInfo);
@@ -242,6 +244,8 @@ this.FeatureBackground();
  testRunner.Then("\'Projects\' left menu item is collapsed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 38
  testRunner.Then("\'Application\' left submenu item is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -666,8 +666,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomati
 	And user select "15949_Automation \ 15949_Action_1" filter
 	And User select "Equals" Operator value
 	When User selects current date checkbox from Filter panel
+	When User adds column for the selected filter
 	And User clicks Save filter button
 	Then "51" rows are displayed in the agGrid
+	When User click on "15949_Automation \ 15949_Action_1" column header on the Admin page
+	Then date in table is sorted by '15949_Automation \ 15949_Action_1' column in descending order
+	When User click on "15949_Automation \ 15949_Action_1" column header on the Admin page
+	Then date in table is sorted by '15949_Automation \ 15949_Action_1' column in ascending order
 	#check log
 	When User clicks 'Admin' on the left-hand menu
 	And User navigates to the 'Automations' left menu item

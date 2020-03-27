@@ -7,6 +7,7 @@ using DashworksTestAutomation.Pages.Evergreen.Base;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage;
 using DashworksTestAutomation.DTO.RuntimeVariables;

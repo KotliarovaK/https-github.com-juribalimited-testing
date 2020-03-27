@@ -14,6 +14,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.CustomList
 {

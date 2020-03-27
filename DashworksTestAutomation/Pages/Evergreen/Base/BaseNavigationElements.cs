@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
         {
             Driver.WaitForElementsToBeDisplayed(By.XPath(LeftParentMenuSelector), 30, false);
             return Driver.FindElements(By.XPath(LeftParentMenuSelector))
-                .Where(x => WebElementExtensions.Displayed(x));
+                .Where(x => AutomationUtils.Extensions.WebElementExtensions.Displayed(x));
         }
 
         public IWebElement GetParentMenuByName(string name)

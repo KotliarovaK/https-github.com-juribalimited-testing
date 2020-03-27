@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -464,13 +465,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values);
 
             Verify.That(expectedList, Is.EqualTo(filterElement.SelectOperatorOptions()), "Lists are different");
-        }
-
-        [When(@"User adds column for the selected filter")]
-        public void WhenUserAddsColumnForTheSelectedFilter()
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.AddFiltersColumnName.Click();
         }
 
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
@@ -1059,6 +1053,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Checkboxes on Filter panel
 
+        [When(@"User adds column for the selected filter")]
+        public void WhenUserAddsColumnForTheSelectedFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AddFiltersColumnName.Click();
+        }
+
         [Then(@"""(.*)"" checkbox is checked")]
         public void ThenCheckboxIsChecked(string addColumn)
         {
@@ -1615,6 +1616,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects '(.*)' option in '(.*)' autocomplete of Associations panel")]
         public void WhenUserSelectsOptionInExpandedAutocomplete(string option, string placeholder)
         {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetTextbox(placeholder).SendKeys(option);
+
             var page = _driver.NowAt<FiltersElement>();
             page.SelectAssociation(placeholder, option);
         }

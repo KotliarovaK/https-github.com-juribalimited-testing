@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutomationUtils.Utils;
-using DashworksTestAutomation.Base;
+﻿using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {

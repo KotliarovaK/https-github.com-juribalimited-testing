@@ -15,44 +15,6 @@ namespace DashworksTestAutomation.Extensions
 {
     public static class WebElementExtensions
     {
-        public static void ClearWithBackspaces(this IWebElement textbox, int charectersCount = 50)
-        {
-            for (int i = 0; i < charectersCount; i++) textbox.SendKeys(Keys.Backspace);
-        }
-
-        public static void ClearWithHomeButton(this IWebElement textbox, RemoteWebDriver driver)
-        {
-            Actions action = new Actions(driver);
-            action.Click(textbox).SendKeys(Keys.End).KeyDown(Keys.Shift).SendKeys(Keys.Home).KeyUp(Keys.Shift)
-                .SendKeys(Keys.Backspace).Perform();
-        }
-
-        public static void SendkeysWithDelay(this IWebElement textbox, string input)
-        {
-            foreach (char letter in input) textbox.SendKeys(letter.ToString());
-        }
-
-        //This is specific method for 'ng-table-select-count' elements
-        public static void SelectboxSelect(this IWebElement selectbox, string option, bool ignoreCase = false)
-        {
-            if (ignoreCase)
-            {
-                var selectElement = new SelectElement(selectbox);
-                IList<IWebElement> options = selectElement.Options;
-                for (int i = 0; i < options.Count; i++)
-                    if (string.Equals(options[i].Text, option, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        selectElement.SelectByIndex(i);
-                        break;
-                    }
-            }
-            else
-            {
-                var selectElement = new SelectElement(selectbox);
-                selectElement.SelectByText(option);
-            }
-        }
-
         //This is specific method for 'ng-table-select-count' elements
         public static string GetSelectedValue(this IWebElement selectbox)
         {
@@ -75,18 +37,6 @@ namespace DashworksTestAutomation.Extensions
             return element;
         }
 
-        public static bool Displayed(this IWebElement element)
-        {
-            try
-            {
-                return element.Displayed;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         public static bool Disabled(this IWebElement element)
         {
             var isDisabled = element.GetAttribute("disabled");
@@ -106,18 +56,6 @@ namespace DashworksTestAutomation.Extensions
             {
                 element.FindElement(by);
                 return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public static bool IsElementDisplayed(this IWebElement element, By by)
-        {
-            try
-            {
-                return element.FindElement(by).Displayed;
             }
             catch
             {
@@ -252,12 +190,5 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion
-
-        public static string GetText(this IWebElement element)
-        {
-            var elementText = string.IsNullOrEmpty(element.Text) ? element.GetAttribute("value") : element.Text;
-
-            return elementText;
-        }
     }
 }

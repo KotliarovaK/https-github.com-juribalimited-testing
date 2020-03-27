@@ -5,23 +5,19 @@ using System.Net;
 using System.Text.RegularExpressions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Steps.Senior.CustomeFields.CreateCustomFields;
-using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.API
 {
