@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS20360 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicationsAutomation
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -29,8 +28,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18292_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18292_Automation' item from 'Automation' column
+	When '18292_Automation' automation '18292_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
 	When User enters "18292_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
