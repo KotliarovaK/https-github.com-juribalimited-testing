@@ -22,12 +22,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
                 _driver = driver;
             }
 
-        [Then(@"User sees component with '(.*)' name placed on '(.*)' position")]
+        [Then(@"User sees component of '(.*)' page placed on '(.*)' position")]
         public void ThenUserSeesComponentWithNameOnEndUserPageOnPosition(string componentName, int order)
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
-            Verify.IsTrue(page.СheckThatComponentIsDisplayedOnEndUserPage(componentName, order), "Self Service Tools Panel is missing");
+            Verify.IsTrue(page.СheckThatComponentIsDisplayedOnEndUserPage(componentName, order), "Component is missing or placed on wrong position");
         }
-
     }
 }

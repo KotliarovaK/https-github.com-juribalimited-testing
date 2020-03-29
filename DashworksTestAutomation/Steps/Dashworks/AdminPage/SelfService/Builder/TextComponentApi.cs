@@ -59,6 +59,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
 
                 var content = response.Content;
                 var createdTextComponent = JsonConvert.DeserializeObject<SelfServiceTextComponent>(content);
+                component.ComponentType = createdTextComponent.ComponentType;
                 component.ComponentId = createdTextComponent.ComponentId;
                 component.Order = createdTextComponent.Order;
                 component.ComponentTypeId = createdTextComponent.ComponentTypeId;

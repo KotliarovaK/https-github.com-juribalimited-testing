@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
 using Logger = DashworksTestAutomation.Utils.Logger;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClient
@@ -30,25 +31,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         private readonly RemoteWebDriver _driver;
         private readonly SelfServices _selfServices;
         private readonly ComponentsOfSelfServicePageDto _componentsOfSelfServicePageDto;
-        //private readonly SelfServicePages = _selfServicePages;
+        private readonly SelfServicePages _selfServicePages;
+        
 
-        public BaseSelfServiceEndUser(RemoteWebDriver driver, SelfServices selfServices, ComponentsOfSelfServicePageDto componentsOfSelfServicePageDto)
+        public BaseSelfServiceEndUser(RemoteWebDriver driver, SelfServices selfServices, ComponentsOfSelfServicePageDto componentsOfSelfServicePageDto, SelfServicePages selfServicePages)
         {
             _driver = driver;
             _selfServices = selfServices;
             _componentsOfSelfServicePageDto = componentsOfSelfServicePageDto;
-            //_selfServicePages = ;
+            _selfServicePages = selfServicePages;
         }
 
-        [When(@"User navigates to End User firs page with '(.*)' Self Service Identifier")]
-        public void WhenUserNavigatesToEndUserFirsPageOfSelfService(string selfServiceIdentifier)
+        [When(@"User navigates to firs End User page with '(.*)' Self Service Identifier")]
+        public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifier(string selfServiceIdentifier)
         {
-            var selfService = _selfServices.Value.First(x => x.ServiceIdentifier.Equals(selfServiceIdentifier));
-            int componentId = _componentsOfSelfServicePageDto.ComponentId;
-
-            string ssGuid = DatabaseHelper.GetSelfServiceObjectGuid(selfServiceIdentifier, componentId);
-
+            SelfServicePageDto page = _selfServicePages.Value.First(x => x.Name.Equals("Welcome"));
+            SelfServiceApplicationOwnershipComponent appOwnershipComponent = (SelfServiceApplicationOwnershipComponent)page.Components.First(x => x.ComponentType.Equals("Application Ownership"));
+            int appOwnershipcomponentId = appOwnershipComponent.ComponentId;
+            string ssGuid = DatabaseHelper.GetSelfServiceObjectGuid(selfServiceIdentifier, appOwnershipcomponentId);
             string navigationUrl = $"{UrlProvider.EvergreenUrl}#/selfservice/{selfServiceIdentifier}?ObjectId={ssGuid}";
+
             _driver.NavigateToUrl(navigationUrl);
         }
 
@@ -59,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             Verify.IsTrue(page.SelfServiceToolsPanel.Displayed, "Self Service Tools Panel is missing");
         }
 
-        [When(@"User clicks on '(.*)' button on end-user Self Service page")]
+        [When(@"User clicks on '(.*)' button on end user Self Service page")]
         public void WhenUserClicksOnButtonOnEndUserSelfServicePage(string buttonName)
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
@@ -82,9 +84,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         public void ThenButtonIsNotDisplayedForEndUser(string buttonTitle)
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
-            var button = page.GetButtonOnEndUserPage(buttonTitle);
 
-            Verify.IsFalse(button.Displayed, $"'{buttonTitle}' button was displayed for End User");
+            Verify.IsFalse(page.IsButtonDisplayed(buttonTitle), $"'{buttonTitle}' button was displayed to End User");
+        }
+
+        [Then(@"'(.*)' button displayed for End User")]
+        public void ThenButtonDisplayedForEndUser(string buttonTitle)
+        {
+            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
+
+            Verify.IsTrue(page.IsButtonDisplayed(buttonTitle), $"'{buttonTitle}' button wasn't displayed to End User");
         }
 
         [Then(@"Header is displayed on End User page")]

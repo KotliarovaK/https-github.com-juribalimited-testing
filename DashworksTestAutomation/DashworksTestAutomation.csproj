@@ -1113,6 +1113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddApplicationOwnershipViaSelfServiceBuilderMvp.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\LastPageMVP.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LastPageMVP.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\TextComponentMvp.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2578,6 +2583,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\AddApplicationOwnershipViaSelfServiceBuilderMvp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddApplicationOwnershipViaSelfServiceBuilderMvp.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\LastPageMVP.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LastPageMVP.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\TextComponentMvp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

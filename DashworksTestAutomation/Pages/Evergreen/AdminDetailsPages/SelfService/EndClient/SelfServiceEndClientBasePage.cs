@@ -34,13 +34,32 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
             return Driver.IsElementDisplayed(GetComponentItemOnEndUserPage(pageName, order));
         }
 
-        public IWebElement GetButtonOnEndUserPage(string buttonName)
+        public IWebElement GetButtonOnEndUserPage(string buttonName, bool shouldBeDisplayed = true)
         {
             var selector = By.XPath($".//button[text()='{buttonName}']");
+
+            if (shouldBeDisplayed.Equals(false))
+            {
+                Driver.WaitForElementToBeDisplayed(selector, 3);
+                return Driver.FindElement(selector);
+            }
+
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
-
         }
+
+        public bool IsButtonDisplayed(string buttonName)
+        {
+            try
+            {
+                return GetButtonOnEndUserPage(buttonName, false).Displayed;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public IWebElement SubjectTitleOnEndUserPage(string title)
         {
             var selector = By.XPath($".//div[@class='ssw-title' and text()='{title}']");
