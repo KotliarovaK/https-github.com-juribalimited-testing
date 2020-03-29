@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutomationUtils.Extensions;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;

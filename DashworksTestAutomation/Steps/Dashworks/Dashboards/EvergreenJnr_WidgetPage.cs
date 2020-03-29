@@ -13,6 +13,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -326,22 +327,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
             Verify.AreEqual(baseActionItem.GetDropdown("OrderBy").Text, option, "Incorrect option in OrderBy dropdown");
-        }
-
-        [Then(@"'(.*)' checkbox is checked on the Create Widget page")]
-        public void ThenCheckboxIsCheckedOnTheCreateWidgetPage(string checkboxName)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsTrue(page.GetDashboardCheckboxByName(checkboxName).GetAttribute("class").Contains("checked"),
-                "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"'(.*)' checkbox is not displayed on the Create Widget page")]
-        public void ThenCheckboxIsNotDisplayedOnTheCreateWidgetPage(string checkboxName)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            Verify.IsFalse(page.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is displayed");
         }
 
         [Then(@"User sees '(.*)' warning text below Lists field")]

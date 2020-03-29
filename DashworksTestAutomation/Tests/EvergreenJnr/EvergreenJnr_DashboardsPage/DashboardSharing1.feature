@@ -326,7 +326,6 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChang
 	When User create dynamic list with "<listName>" name on "Devices" page
 	When User waits for '3' seconds
 	Then "<listName>" list is displayed to user
-	When User clicks the List Details button
 	When User clicks the Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	When User adds user to list of shared person

@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
-using HtmlAgilityPack;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {

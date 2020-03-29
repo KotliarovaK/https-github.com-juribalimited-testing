@@ -134,8 +134,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	When User clicks Show Dashboards panel icon on Dashboards page
 	When User clicks 'Manage' option in cogmenu for 'Dashboard for DAS15550' list
 	When User checks 'Edit mode' slide toggle
-	When User clicks Ellipsis menu for 'WidgetForDAS15550' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS15550' widget
 	When User updates Widget with following info:
 	| WidgetType | Title                    | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Table      | WidgetForDAS15550_Edited | All Applications | Application | Application | Count distinct    | Application ASC | 5         |

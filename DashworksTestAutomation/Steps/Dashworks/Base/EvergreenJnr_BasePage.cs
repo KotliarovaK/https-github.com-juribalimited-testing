@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using AutomationUtils.Extensions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
@@ -19,7 +20,6 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -1148,6 +1148,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             var toolTipText = _driver.GetTooltipText();
             Verify.AreEqual(text, toolTipText,
                 $"'{buttonName}' button tooltip is incorrect");
+        }
+
+        [Then(@"'(.*)' button is displayed in high contrast")]
+        public void ThenButtonIsDisplayedInHighContrast(string buttonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetButton(buttonName);
+
+            Verify.That(button.GetCssValue("background-color").Equals("rgba(21, 40, 69, 1)"), Is.True, "Button has wrong background");
+            Verify.That(button.GetCssValue("color").Equals("rgba(255, 255, 255, 1)"), Is.True, "Button has wrong color");
         }
 
         #endregion

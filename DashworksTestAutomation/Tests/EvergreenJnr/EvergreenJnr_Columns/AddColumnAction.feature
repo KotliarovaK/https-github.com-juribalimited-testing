@@ -493,3 +493,18 @@ Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppNameColumnDisplaying
 	Then data in table is sorted by 'Evergreen Target App Name' column in ascending order
 	When User clicks on 'Evergreen Target App Name' column header
 	Then data in table is sorted by 'Evergreen Target App Name' column in descending order
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS17431
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToList
+	When User add following columns using URL to the "<ListName>" page:
+	| ColumnName                    |
+	| Applications_Scope \ Action_1 |
+	Then ColumnName is added to the list
+	| ColumnName                    |
+	| Applications_Scope \ Action_1 |
+
+Examples:
+	| ListName     |
+	| Mailboxes    |
+	| Users        |
+	| Applications |

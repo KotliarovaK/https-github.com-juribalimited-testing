@@ -633,7 +633,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table20.AddRow(new string[] {
-                        "Babel(Engl: Application Readiness"});
+                        "ComputerSc: Application Readiness"});
 #line 137
  testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table20, "And ");
 #line 140
@@ -666,13 +666,13 @@ this.FeatureBackground();
                         "Value2"});
             table21.AddRow(new string[] {
                         "101 Hudson Street",
-                        "BLUE"});
+                        "GREEN"});
             table21.AddRow(new string[] {
                         "20",
-                        "IGNORE"});
+                        "GREEN"});
             table21.AddRow(new string[] {
                         "21",
-                        "BLUE"});
+                        "GREEN"});
 #line 152
  testRunner.Then("following values are displayed for \"USA\" column on Pivot", ((string)(null)), table21, "Then ");
 #line hidden

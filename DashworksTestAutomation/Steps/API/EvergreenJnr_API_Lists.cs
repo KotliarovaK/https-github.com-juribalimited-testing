@@ -5,24 +5,19 @@ using System.Net;
 using System.Text.RegularExpressions;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.ManagementConsole;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Steps.Senior.CustomeFields.CreateCustomFields;
-using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
-using Logger = DashworksTestAutomation.Utils.Logger;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.API
 {
@@ -145,7 +140,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listType", "dynamic");
             request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
+            request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             var response = _client.Evergreen.Post(request);
 
@@ -211,7 +206,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
+            request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             var response = _client.Evergreen.Post(request);
 
@@ -257,7 +252,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listType", "Static");
             request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
+            request.AddParameter("userId", DatabaseHelper.GetUserIdByLogin(_user.Username));
 
             response = _client.Evergreen.Put(request);
 

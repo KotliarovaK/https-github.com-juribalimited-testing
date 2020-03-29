@@ -1,18 +1,10 @@
 ﻿using System;
-using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
-using System.Linq;
-using System.Threading;
 using AutomationUtils.Utils;
-using DashworksTestAutomation.Base;
-using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.Base;
-using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {

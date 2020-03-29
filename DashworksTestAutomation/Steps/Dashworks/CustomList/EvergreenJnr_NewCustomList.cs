@@ -14,7 +14,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
-using Logger = DashworksTestAutomation.Utils.Logger;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.CustomList
 {
@@ -326,6 +326,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.CustomList
             if (!listElement.UpdateCurrentListButton.Displayed()) listElement.SaveAsDropdown.Click();
 
             Verify.IsFalse(listElement.UpdateCurrentListButton.Displayed(), "Update Current List button is displayed");
+
+            listElement.BodyContainer.Click();
         }
 
         [Then(@"Delete List option is NOT available")]

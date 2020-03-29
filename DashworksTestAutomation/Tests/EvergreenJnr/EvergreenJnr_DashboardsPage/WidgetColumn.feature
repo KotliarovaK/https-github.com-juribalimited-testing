@@ -38,8 +38,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Scheduled     |
 	| Migrated      |
 	| Complete      |
-	When User clicks Ellipsis menu for 'DAS16278_Widget' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'DAS16278_Widget' widget
 	When User selects 'Windows7Mi: Status DESC' in the 'OrderBy' dropdown
 	When User clicks 'UPDATE' button 
 	Then 'DAS16278_Widget' Widget is displayed to the user
@@ -115,8 +114,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'ColumnWidget#1' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'ColumnWidget#1' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'ColumnWidget#1' widget
 	When User adds new Widget
 	| WidgetType | Title          | List        | AggregateFunction | SplitBy          | OrderBy              | AggregateBy | MaxValues |
 	| Pie        | ColumnWidget#2 | All Devices | Count distinct    | Operating System | Operating System ASC | Hostname    | 3         |

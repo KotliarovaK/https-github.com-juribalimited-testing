@@ -315,6 +315,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12765")]
         [NUnit.Framework.CategoryAttribute("DAS12860")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Owner Projects Summary", null)]
         [NUnit.Framework.TestCaseAttribute("User", "hurstbl", "User Projects", null)]
         [NUnit.Framework.TestCaseAttribute("User", "hurstbl", "Mailbox Project Summary", null)]
@@ -354,7 +355,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS12765",
-                    "DAS12860"};
+                    "DAS12860",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

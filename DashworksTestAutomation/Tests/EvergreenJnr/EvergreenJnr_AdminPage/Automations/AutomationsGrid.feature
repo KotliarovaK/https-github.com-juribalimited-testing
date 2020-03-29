@@ -125,3 +125,14 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
 	Then "DAS-15949 - all users scope" content is displayed for "Automation" column
 	When User clicks content from "Automation" column
 	Then 'Users' content is displayed in 'Object Type' autocomplete
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20328 @Wormhole
+Scenario: EvergreenJnr_AdminPage_CheckScopeClickableLinkOnTheAutomationsGrid
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User enters "AV Automation - CF" text in the Search field for "Automation" column
+	When User enters "Devices_Scope" text in the Search field for "Automation" column
+	When User clicks content from "Scope" column
+	Then 'All Devices' list should be displayed to the user

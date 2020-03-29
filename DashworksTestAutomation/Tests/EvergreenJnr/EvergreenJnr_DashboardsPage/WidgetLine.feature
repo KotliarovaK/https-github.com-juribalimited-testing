@@ -23,7 +23,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	When User selects 'prK: Application Readiness ASC' in the 'OrderBy' dropdown
 	And User clicks on the Colour Scheme dropdown
 	Then Colour Scheme dropdown is displayed to the user
-	And 'Data Label' checkbox is not displayed on the Create Widget page
+	Then 'Show data labels' checkbox is not displayed
+	Then 'Show legend' checkbox is not displayed
 	When User clicks 'CREATE' button 
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup
@@ -82,7 +83,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	| WidgetType | Title                 | List            | AggregateFunction | SplitBy                       | OrderBy                           | Drilldown |
 	| Line       | LineWidgetForDas15920 | ListForDas15920 | Count             | Device Application Compliance | Device Application Compliance ASC | Yes       |
 	Then Widget Preview is displayed to the user
-	Then 'Data Label' checkbox is not displayed on the Create Widget page
+	Then 'Show data labels' checkbox is not displayed
 	When User clicks 'CREATE' button
 	Then 'LineWidgetForDas15920' Widget is displayed to the user
 	And Line chart displayed in 'LineWidgetForDas15920' widget
@@ -154,8 +155,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS17825' Widget is displayed to the user
 	And Line chart displayed in 'WidgetForDAS17825' widget
-	When User clicks Ellipsis menu for 'WidgetForDAS17825' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS17825' widget
 	When User selects 'Application Compliance' in the 'SplitBy' dropdown
 	When User selects 'Application Compliance ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user

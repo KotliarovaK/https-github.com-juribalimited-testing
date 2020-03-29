@@ -13,7 +13,7 @@ using System.Reflection;
 using System.Threading;
 using AutomationUtils.Utils;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
-using Logger = DashworksTestAutomation.Utils.Logger;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -2764,31 +2764,6 @@ namespace DashworksTestAutomation.Extensions
         }
 
         #endregion
-
-        public static bool IsAttributePresent(this IWebElement element, string attribute)
-        {
-            try
-            {
-                var value = element.GetAttribute(attribute);
-                return value != null;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (StaleElementReferenceException)
-            {
-                return false;
-            }
-            catch (TargetInvocationException)
-            {
-                return false;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
 
         public static void WaitFor(this RemoteWebDriver driver, Func<bool> flag)
         {

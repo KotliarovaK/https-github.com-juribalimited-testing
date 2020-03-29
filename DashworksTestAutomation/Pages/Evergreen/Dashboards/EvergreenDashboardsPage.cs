@@ -49,18 +49,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]//i[contains(@class,'arrow')]")]
         public IList<IWebElement> AllCollapseExpandSectionsArrows { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@id='dashboardsModes']//mat-expansion-panel-header")]
-        public IList<IWebElement> SectionsBlocks { get; set; }
-
+                                                                     
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]")]
         public IList<IWebElement> AllSections { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//app-dialog//span[text()='Select Section']")]
-        public IWebElement MoveToSectionPopUp { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Select Section']")]
-        public IWebElement SelectSectionDropdown { get; set; }
 
         public IWebElement AlertButton(string buttonName) =>
             Driver.FindElement(By.XPath($".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='{buttonName}']"));
@@ -158,34 +149,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         #region Details Panel Methods
 
-        public void ClickMenuButtonByDashboardName(string dashboardName)
-        {
-            var settingsButton = $".//span[@class='submenu-actions-dashboards-name' and text()='{dashboardName}']//ancestor::li//i[contains(@class,'settings')]";
-            Driver.MouseHover(By.XPath(settingsButton));
-            Driver.FindElement(By.XPath(settingsButton)).Click();
-        }
-
-        public bool GetFavoriteStateInDashboardDetailsPane()
-        {
-            var starIconEmpty = $".//i[@class='material-icons list-star-icon mat-star_border']";
-            var starIconFilled = $".//i[@class='material-icons list-star-icon mat-star']";
-
-            return Driver.FindElements(By.XPath(starIconFilled)).Count == 1 &&
-                   Driver.FindElements(By.XPath(starIconEmpty)).Count == 0;
-        }
-
-        public void MarkFavoriteInDashboardDetails()
-        {
-            var starIconEmpty = $".//i[@class='material-icons list-star-icon mat-star_border']";
-            Driver.FindElement(By.XPath(starIconEmpty)).Click();
-        }
-
-        public void UnMarkFavoriteInDashboardDetails()
-        {
-            var starIconFilled = $".//i[@class='material-icons list-star-icon mat-star']";
-            Driver.FindElement(By.XPath(starIconFilled)).Click();
-        }
-
         public bool IsDashboardMarkedAsFavoriteInList(string dashboardName)
         {
             var starIcon =
@@ -241,18 +204,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         #region Widgets Area Methods
 
-        public void SelectSectionToMove(string sectionName)
+        public string GetSectionNumberByWidgetName(string widgetName)
         {
-            var selector = $".//mat-option//span[text()='{sectionName}']";
-            SelectSectionDropdown.Click();
-            Driver.WaitForElementToBeDisplayed(Driver.FindElement(By.XPath(selector)));
-            Driver.FindElement(By.XPath(selector)).Click();
+            var locator = By.XPath($".//span[text()='{widgetName}']/ancestor::div[@class='section ng-star-inserted']");
+            return Driver.FindElement(locator).GetAttribute("id");
         }
 
-        public void ClickMoveToSectionPopUpButton(string buttonName)
+        public IWebElement GetSectionMenuByWidgetName(string widgetName)
         {
-            var listNameSelector = $".//app-dialog//button/span[text()='{buttonName}']";
-            Driver.FindElement(By.XPath(listNameSelector)).Click();
+            var locator = By.XPath($".//span[text()='{widgetName}']/ancestor::div[@class='section ng-star-inserted']//div[contains(@class, 'edit-block-toggle')]//button//i[contains(@class,'more')]");
+            return Driver.FindElement(locator);
         }
 
         public List<List<string>> GetWidgetsNamesInSections()
@@ -298,18 +259,40 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
                 $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
         }
 
-        public IWebElement GetDashboardMenuByName(string dashboardName)
+        public void SetSectionExpandStatusTo(string sectionName, string state)
         {
-            var dashboardSettingsSelector = By.XPath($".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i[contains(@class,'menu')]");
-            Driver.MouseHover(dashboardSettingsSelector);
-            Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
-            return Driver.FindElement(dashboardSettingsSelector);
+            var collapsed = By.XPath($".//mat-panel-title[text()='{sectionName}']/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow_down')]");
+            var expanded = By.XPath($".//mat-panel-title[text()='{sectionName}']/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow_up')]");
+
+            if (state.Equals("true") && Driver.FindElements(collapsed).Any())
+            {
+                Driver.FindElement(collapsed).Click();
+                Driver.WaitForElementToBeDisplayed(expanded);
+            }
+
+            if (state.Equals("false") && Driver.FindElements(expanded).Any())
+            {
+                Driver.FindElement(expanded).Click();
+                Driver.WaitForElementToBeDisplayed(collapsed);
+            }
         }
 
-        public IWebElement GetDisabledEllipsisItemByName(string itemName)
+        public IWebElement SectionDescriptionByName(string sectionName)
+        {
+            var by = By.XPath($".//mat-panel-title[text()='{sectionName}']/following-sibling::div/div[contains(@class, 'description')]/div");
+            return Driver.FindElement(by);
+        }
+
+        public IWebElement SectionDescriptionLinkByName(string sectionName, string link)
+        {
+            var by = By.XPath($".//mat-panel-title[text()='{sectionName}']/following-sibling::div/div[contains(@class, 'description')]//a[text()='{link}']");
+            return Driver.FindElement(by);
+        }
+
+
+        public IWebElement GetDisabledMenuItemByName(string itemName)
         {
             var ellipsisItem = By.XPath($".//button[@aria-disabled='true'][text()='{itemName}']");
-            Driver.WaitForDataLoading();
             return Driver.FindElement(ellipsisItem);
         }
 
@@ -390,9 +373,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             return Driver.FindElement(dashboardWidget);
         }
 
-        public IList<IWebElement> GetTableWidgetHeaders(string widgetName)
+        public IList<IWebElement> GetTableWidgetHorizontalHeaders(string widgetName)
         {
             var columnHeaders = By.XPath($".//*[text()='{widgetName}']/ancestor :: div//table//thead//th");
+            return Driver.FindElements(columnHeaders);
+        }
+
+        public IList<IWebElement> GetTableWidgetVerticalHeaders(string widgetName)
+        {
+            var columnHeaders = By.XPath($".//*[text()='{widgetName}']/ancestor :: div//table/tbody//td[1]/span");
             return Driver.FindElements(columnHeaders);
         }
 

@@ -61,8 +61,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 	Then following content is displayed on the Details Page
-	| Title | Value                     |
-	| App Owner |      |
+	| Title     | Value |
+	| App Owner |       |
 	#return values ​​back
 	When User clicks 'RELINK' button 
 	Then popup is displayed to User
@@ -71,7 +71,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyFo
 	When User clicks 'RELINK' button on popup
 	Then 'Application successfully relinked' text is displayed on inline success banner
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196
+#AnnI 3/27/20: This bug is fixed only for 'Wormhole'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @Relink @DAS18002 @DAS18112 @DAS17899 @DAS18196 @Wormhole
 Scenario: EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithoutOwnerToWithoutOwner
 	When User navigates to the 'Application' details page for the item with '4018' ID
 	Then Details page for 'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030' item is displayed to the user

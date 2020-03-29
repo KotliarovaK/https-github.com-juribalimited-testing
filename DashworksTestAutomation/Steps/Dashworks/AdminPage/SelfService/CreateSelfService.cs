@@ -10,7 +10,7 @@ using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
-using DashworksTestAutomation.Utils;
+using AutomationUtils.Extensions;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 

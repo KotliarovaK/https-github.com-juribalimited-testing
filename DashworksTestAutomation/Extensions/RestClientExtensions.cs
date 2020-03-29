@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
+using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Utils;
 using HtmlAgilityPack;
 using RestSharp;
 

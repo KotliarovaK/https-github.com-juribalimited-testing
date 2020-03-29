@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using ApprovalTests;
+using ApprovalTests.Reporters;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -48,49 +50,45 @@ namespace DashworksTestAutomation.Steps.API
             return response;
         }
 
+        [UseReporter(typeof(DiffReporter))]
         [Then(@"All columns with correct data are returned from the API for '(.*)' list")]
         public void ThenAllColumnsWithCorrectDataAreReturnedFromTheAPIForList(string list)
         {
             var response = GetColumnsByListName(list);
 
-            var currentColumns = JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content).OrderBy(x => x.TranslatedColumnName).ToList();
-            var expectedColumns = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json").OrderBy(x => x.TranslatedColumnName).ToList();
+            //var currentColumns = JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content).OrderBy(x => x.TranslatedColumnName).ToList();
+            //var expectedColumns = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json").OrderBy(x => x.TranslatedColumnName).ToList();
 
-            Verify.AreEqual(currentColumns.Count, expectedColumns.Count, "Columns count are different");
+            Approvals.VerifyJson(response.Content);
 
-            for (int i = 0; i < expectedColumns.Count; i++)
-            {
-                Verify.That(JsonConvert.SerializeObject(expectedColumns[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
-                    Is.EqualTo(JsonConvert.SerializeObject(currentColumns[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })), 
-                    $"Incorrect data for column");
-            }
-            
-            //foreach (ColumnDto columnDto in expectedColumns)
+            //Verify.AreEqual(currentColumns.Count, expectedColumns.Count, "Columns count are different");
+
+            //for (int i = 0; i < expectedColumns.Count; i++)
             //{
-            //    Verify.That(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.ColumnName}' name");
+            //    Verify.That(JsonConvert.SerializeObject(expectedColumns[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+            //        Is.EqualTo(JsonConvert.SerializeObject(currentColumns[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })), 
+            //        $"Incorrect data for column");
             //}
         }
 
+        [UseReporter(typeof(DiffReporter))]
         [Then(@"All filters with correct data are returned from the API for '(.*)' list")]
         public void ThenAllFiltersWithCorrectDataAreReturnedFromTheAPIForList(string list)
         {
             var response = GetFiltersByListName(list);
 
-            var currentFilters = JsonConvert.DeserializeObject<List<FilterDto>>(response.Content).OrderBy(x => x.TranslatedTextLabel).ToList();
-            var expectedFilters = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json").OrderBy(x => x.TranslatedTextLabel).ToList();
+            //var currentFilters = JsonConvert.DeserializeObject<List<FilterDto>>(response.Content).OrderBy(x => x.TranslatedTextLabel).ToList();
+            //var expectedFilters = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json").OrderBy(x => x.TranslatedTextLabel).ToList();
 
-            Verify.AreEqual(expectedFilters.Count, currentFilters.Count, "Filters count are different");
+            Approvals.VerifyJson(response.Content);
 
-            for (int i = 0; i < expectedFilters.Count; i++)
-            {
-                Verify.That(JsonConvert.SerializeObject(expectedFilters[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
-                    Is.EqualTo(JsonConvert.SerializeObject(currentFilters[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })),
-                    $"Incorrect data for filter");
-            }
+            //Verify.AreEqual(expectedFilters.Count, currentFilters.Count, "Filters count are different");
 
-            //foreach (FilterDto filterDto in expectedFilters)
+            //for (int i = 0; i < expectedFilters.Count; i++)
             //{
-            //    Verify.IsTrue(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.Label}' name");
+            //    Verify.That(JsonConvert.SerializeObject(expectedFilters[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+            //        Is.EqualTo(JsonConvert.SerializeObject(currentFilters[i], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })),
+            //        $"Incorrect data for filter");
             //}
         }
 

@@ -108,11 +108,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName        |
-	| Sticky Compliance |
 	Then '' content is displayed in the 'Sticky Compliance' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
@@ -135,11 +130,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName        |
-	| Sticky Compliance |
 	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
