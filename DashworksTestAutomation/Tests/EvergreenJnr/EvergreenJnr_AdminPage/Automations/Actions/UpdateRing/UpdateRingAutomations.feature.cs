@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
         [NUnit.Framework.TestCaseAttribute("All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("All Users", null)]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
-        public virtual void ?(string listName, string[] exampleTags)
+        public virtual void EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType(string listName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
