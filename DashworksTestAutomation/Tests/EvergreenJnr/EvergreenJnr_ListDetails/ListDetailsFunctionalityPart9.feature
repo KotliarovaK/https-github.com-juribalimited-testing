@@ -20,7 +20,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemStillRemainsInStaticList
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList17651" name
 	Then "StaticList17651" list is displayed to user
-	And "2" rows are displayed in the agGrid
+	When User closes Tools panel
+	Then "2" rows are displayed in the agGrid
 	When User navigates to the "2004 Rollout" list
 	Then "2004 Rollout" list is displayed to user
 	When User navigates to the "StaticList17651" list

@@ -97,8 +97,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	Then 'ADD WIDGET' button is disabled
 	Then 'ADD WIDGET' button has tooltip with 'Maximum number of widgets has been reached for this dashboard' text
 	Then 'Duplicate' menu item for '10_Widget' widget is disabled and has 'Maximum number of widgets has been reached for this dashboard' tooltip
+	When User remembers number of Sections and Widgets on Dashboards page
 	When User clicks 'ADD SECTION' button
+	Then 'Section successfully created' text is displayed on inline success banner
 	Then User sees number of Sections increased by '1' on Dashboards page
+	
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections

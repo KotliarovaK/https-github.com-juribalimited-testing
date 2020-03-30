@@ -28,18 +28,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceLocationColumnsAndFilters
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Columns button
-	When User collapses 'Selected Columns' category
-	When User expands 'Device Location' category
-	Then the following Column subcategories are displayed for open category:
-		| Subcategories        |
-		| Device Building      |
-		| Device City          |
-		| Device Country       |
-		| Device Floor         |
-		| Device Location Name |
-		| Device Postal Code   |
-		| Device Region        |
-		| Device State County  |
 	When ColumnName is entered into the search box and the selection is clicked
 		| ColumnName     |
 		| Device Country |
@@ -47,17 +35,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckDeviceLocationColumnsAndFilters
 	When User clicks 'RUN LIST' button
 	When User clicks the Filters button
 	When User clicks Add New button on the Filter panel
-	When User closes "Suggested" filter category
-	When User expands "Device Location" filter category
-	Then the following Filters subcategories are displayed for open category:
-		| Subcategories        |
-		| Device Building      |
-		| Device City          |
-		| Device Floor         |
-		| Device Location Name |
-		| Device Postal Code   |
-		| Device Region        |
-		| Device State County  |
 	When User add "Device Country" filter where type is "Equals" with added column and Lookup option
 		| SelectedValues |
 		| USA            |

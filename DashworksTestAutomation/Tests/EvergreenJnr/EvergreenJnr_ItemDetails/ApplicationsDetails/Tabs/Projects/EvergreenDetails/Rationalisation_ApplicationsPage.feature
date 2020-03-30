@@ -28,8 +28,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheTargetAppForForwardPathRatio
 	When User selects 'UNCATEGORISED' in the 'Rationalisation' dropdown
 	When User clicks 'UPDATE' button on popup
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Universe
-	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDisplayedCorrectly
 	When User navigates to the 'Application' details page for 'Mozilla Sunbird (0.2a.)' item
 	Then Details page for 'Mozilla Sunbird (0.2a.)' item is displayed to the user
@@ -45,7 +44,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDis
 	| RETIRE        |
 	| UNCATEGORISED |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Cleanup
+#AnnI 3/27/20: This bug is fixed only for 'Wormhole'
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19026 @Cleanup @Wormhole
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppliedSuccessfully
 	When User navigates to the 'Application' details page for the item with '675' ID
 	Then Details page for 'Music Visualizer Library 1.0' item is displayed to the user

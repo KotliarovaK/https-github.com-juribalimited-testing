@@ -360,11 +360,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterE
 	And User creates new Widget
 	| WidgetType | Title             | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend |
 	| Bar        | WidgetForDAS20412 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
-	When User clicks 'Edit' menu option for 'WidgetForDAS20412' widget
+	When User clicks 'Edit' menu option for section with 'WidgetForDAS20412' widget
 	When User enters 'titleForDAS20412' text to 'Title' textbox
 	When User clicks 'UPDATE' button
 	Then 'Section successfully updated' text is displayed on inline success banner
-	Then 'WidgetForDAS20412' Widget is displayed to the user
+	Then 'titleForDAS20412' Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS20358
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserIsAbleToDeleteNotDefaultDashboard

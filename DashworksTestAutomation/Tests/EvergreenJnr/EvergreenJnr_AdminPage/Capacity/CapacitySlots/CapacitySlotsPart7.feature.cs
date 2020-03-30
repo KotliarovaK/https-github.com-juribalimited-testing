@@ -542,8 +542,8 @@ this.FeatureBackground();
                         "Tasks"});
             table15.AddRow(new string[] {
                         "Windows 7 Migration (Computer Scheduled Project)",
-                        "Slot 1",
-                        "Slot 1",
+                        "Slot 1 DAS13636",
+                        "Slot 1 DAS13636",
                         "Pre-Migration \\ Scheduled Date‡Pre-Migration \\ Forecast Date‡Computer Information" +
                             " ---- Text fill; Text fill; \\ Group Computer Rag Radio Date Owner"});
 #line 118
@@ -578,7 +578,8 @@ this.FeatureBackground();
 #line 134
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 135
- testRunner.And("User enters \"Slot 1\" text in the Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"Slot 1 DAS13636\" text in the Search field for \"Capacity Slot\" column" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 136
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -598,9 +599,9 @@ this.FeatureBackground();
 #line 143
  testRunner.And("User clicks \'CREATE SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
- testRunner.And("User enters \'Slot 2\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'Slot 2 DAS13636\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 145
- testRunner.And("User enters \'Slot 2\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'Slot 2 DAS13636\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "options"});
@@ -624,7 +625,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table19.AddRow(new string[] {
-                        "Slot 1"});
+                        "Slot 1 DAS13636"});
 #line 154
  testRunner.And("User select \"Capacity Slot\" rows in the grid", ((string)(null)), table19, "And ");
 #line 157
@@ -920,8 +921,8 @@ this.FeatureBackground();
                         "Tasks"});
             table25.AddRow(new string[] {
                         "Windows 7 Migration (Computer Scheduled Project)",
-                        "Slot 1",
-                        "Slot 1",
+                        "Slot 1 DAS13500",
+                        "Slot 1 DAS13500",
                         "Capacity Units",
                         "Computer Information ---- Text fill; Text fill; \\ 1Task13500‡Computer Information" +
                             " ---- Text fill; Text fill; \\ 2Task13500‡Pre-Migration \\ Scheduled Date"});
@@ -958,7 +959,8 @@ this.FeatureBackground();
 #line 232
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 233
- testRunner.And("User enters \"Slot 1\" text in the Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"Slot 1 DAS13500\" text in the Search field for \"Capacity Slot\" column" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 234
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -973,9 +975,9 @@ this.FeatureBackground();
 #line 239
  testRunner.And("User clicks \'CREATE SLOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 240
- testRunner.And("User enters \'Slot 2\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'Slot 2 DAS13500\' text to \'Slot Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 241
- testRunner.And("User enters \'Slot 2\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \'Slot 2 DAS13500\' text to \'Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 242
  testRunner.And("User selects \'Capacity Units\' in the \'Capacity Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

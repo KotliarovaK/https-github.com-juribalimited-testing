@@ -83,3 +83,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssocia
 	When User selects 'Not used by device owner' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
+
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS18234 @Remove_Profile_Changes
+Scenario: EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying
+	When User clicks Profile in Account Dropdown
+	Then Profile page is displayed to user
+	When User navigates to the 'Preferences' left menu item
+	When User selects 'High Contrast' in the 'Display Mode' dropdown
+	When User clicks 'UPDATE' button
+	When User clicks 'Applications' on the left-hand menu
+	When User navigates to the "All Device Applications" list
+	Then 'RUN LIST' button is disabled
+	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
+	Then 'RUN LIST' button is not disabled
+	Then 'RUN LIST' button is displayed in high contrast
+	When User language is changed to "Test Language" via API
+	When User clicks refresh button in the browser
+	Then '[9999999]' button is displayed

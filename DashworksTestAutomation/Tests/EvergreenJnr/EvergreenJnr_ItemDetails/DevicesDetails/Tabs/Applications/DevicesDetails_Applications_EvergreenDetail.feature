@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatInformationIsOrderedInTheUsedDuratio
 	| Association   |
 	| Compliance    |
 	When User clicks on 'Used Duration (Mins)' column header
-	Then numeric data in table is sorted by 'Used Duration (Mins)' column in ascending order
-	When User clicks on 'Used Duration (Mins)' column header
 	Then numeric data in table is sorted by 'Used Duration (Mins)' column in descending order
+	When User clicks on 'Used Duration (Mins)' column header
+	Then numeric data in table is sorted by 'Used Duration (Mins)' column in ascending order
 	Then There are no errors in the browser console

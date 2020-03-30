@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ma
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19704")]
-        [NUnit.Framework.CategoryAttribute("Wormholes")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatProjectSelectionPopupForMailboxesDetailsPageIsWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Ma
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS19704",
-                        "Wormholes"});
+                        "Wormhole"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -249,7 +249,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoEndlessSpinnerInPreviewIfCreate
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18091 @DAS18090 @DAS16516 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18091 @DAS18090 @DAS16516 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashboardPageForTheListWithoutArchivedItem
 	When Dashboard with 'Dashboard for DAS18091' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -260,12 +260,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckTheEmptyItemIsNotDisplayedOnTheDashbo
 	Then 'WidgetForDAS18091' Widget is displayed to the user
 	Then There is no 'Empty' column for 'WidgetForDAS18091' widget
 	#DAS18090 
-	When User clicks 'NOT READY' value for 'Windows 10' column
+	When User clicks 'Empty' value for 'Windows 10' column
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Operating System is Windows 10" is displayed in added filter info
 	Then "Any Device in list 2004 Rollout" is displayed in added filter info
-	Then "2004: Pre-Migration \ Ready to Migrate is Not Ready" is displayed in added filter info
+	Then "2004: Pre-Migration \ Ready to Migrate is Empty" is displayed in added filter info
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15852 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNewSeverityOptionDisplayedForWidget
