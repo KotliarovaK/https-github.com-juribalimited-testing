@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @DAS17339 @Cleanup @Wormhole
 Scenario Outline: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainListsType
 	When User creates new Automation via API and open it
 	| AutomationName        | Description | Active | StopOnFailedAction | Scope      | Run    |
@@ -17,12 +17,13 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForMainLis
 	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
 	Then following Values are displayed in the 'Action Type' dropdown:
-	| Values              |
-	| Update bucket       |
-	| Update custom field |
-	| Update path         |
-	| Update ring         |
-	| Update task value   |
+	| Values               |
+	| Update bucket        |
+	| Update capacity unit |
+	| Update custom field  |
+	| Update path          |
+	| Update ring          |
+	| Update task value    |
 		 
 Examples:
 	| ListName      |
@@ -30,7 +31,7 @@ Examples:
 	| All Users     |
 	| All Mailboxes |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17556 @DAS17339 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists
 	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope            | Run    |
@@ -43,7 +44,6 @@ Scenario: EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLis
 	Then Create Action page is displayed to the User
 	Then following Values are displayed in the 'Action Type' dropdown:
 	| Values                        |
-	| Update bucket                 |
 	| Update application attributes |
 	| Update custom field           |
 	| Update path                   |
