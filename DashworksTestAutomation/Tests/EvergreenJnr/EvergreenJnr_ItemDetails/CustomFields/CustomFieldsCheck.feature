@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllAgGridHeaderButtonsAreDisplayedFo
 	Then 'Custom Field' column is 'Left' Pinned
 	Then Grid is grouped
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18121 @Cleanup
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS18121 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
 	When User creates Custom Field via API
 	| ObjectType | ObjectId | FieldName        | Value | FieldIndex |
@@ -135,7 +135,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid
 	When User perform search by "Z75ievru6r751l"
 	Then '001, 002, aaa, bbb' content is displayed in the 'Computer Warranty' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228 @DAS17229 @DAS17265
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17159 @DAS17161 @DAS17162 @DAS17228 @DAS17229 @DAS17265
 Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
 	When User navigates to the 'Device' details page for '04R5RM0R0MVFCM' item
 	Then Details page for '04R5RM0R0MVFCM' item is displayed to the user
@@ -150,14 +150,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	| Custom Field |
 	|              |
 	| Value        |
-	Then User sees "2" rows in grid
+	Then User sees "6" rows in grid
 	Then 'ResetFilters' button with aria label is disabled
 	Then 'reload' button with aria label is displayed
 	Then 'Export' button with aria label is displayed
 	Then 'GroupBy' button with aria label is displayed
 	When User enters "com" text in the Search field for "Custom Field" column
 	Then 'ResetFilters' button with aria label is not disabled
-	Then Rows counter shows "1" of "2" rows
+	Then Rows counter shows "1" of "6" rows
 	When User clicks button with 'ResetFilters' aria label
 	Then 'ResetFilters' button with aria label is disabled
 	When User clicks Group By button and set checkboxes state
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	| Value      | true  |
 	Then Grid is grouped
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17906
+@Evergreen @Devices @EvergreenJnr_ItemDetails @CustomFields @DAS17906
 Scenario: EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupByAction
 	When User navigates to the 'Device' details page for '04R5RM0R0MVFCM' item
 	Then Details page for '04R5RM0R0MVFCM' item is displayed to the user
