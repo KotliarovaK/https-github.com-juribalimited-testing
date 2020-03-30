@@ -85,7 +85,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17556")]
-        [NUnit.Framework.CategoryAttribute("DAS17339")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         [NUnit.Framework.TestCaseAttribute("All Devices", null)]
@@ -124,7 +123,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
                     "EvergreenJnr_AdminPage",
                     "Automations",
                     "DAS17556",
-                    "DAS17339",
                     "Cleanup",
                     "Wormhole"};
             if ((exampleTags != null))
@@ -170,8 +168,6 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Update bucket"});
             table2.AddRow(new string[] {
-                        "Update capacity unit"});
-            table2.AddRow(new string[] {
                         "Update custom field"});
             table2.AddRow(new string[] {
                         "Update path"});
@@ -192,7 +188,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17556")]
-        [NUnit.Framework.CategoryAttribute("DAS17339")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckActionTypeDropdownValuesForApplicationsLists()
@@ -228,10 +223,9 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS17556",
-                        "DAS17339",
                         "Cleanup",
                         "Wormhole"});
-#line 35
+#line 34
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -251,21 +245,23 @@ this.FeatureBackground();
                         "false",
                         "All Applications",
                         "Manual"});
-#line 36
+#line 35
  testRunner.When("User creates new Automation via API and open it", ((string)(null)), table3, "When ");
-#line 39
+#line 38
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 40
+#line 39
  testRunner.Then("\'Edit Automation\' page subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 41
+#line 40
  testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 42
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 44
+#line 43
  testRunner.Then("Create Action page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
+            table4.AddRow(new string[] {
+                        "Update bucket"});
             table4.AddRow(new string[] {
                         "Update application attributes"});
             table4.AddRow(new string[] {
@@ -274,7 +270,7 @@ this.FeatureBackground();
                         "Update path"});
             table4.AddRow(new string[] {
                         "Update task value"});
-#line 45
+#line 44
  testRunner.Then("following Values are displayed in the \'Action Type\' dropdown:", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
