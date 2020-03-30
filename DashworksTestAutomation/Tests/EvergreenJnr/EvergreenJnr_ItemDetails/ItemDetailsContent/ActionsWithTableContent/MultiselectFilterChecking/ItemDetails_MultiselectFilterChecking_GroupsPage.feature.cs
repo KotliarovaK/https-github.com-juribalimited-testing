@@ -87,6 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17761")]
+        [NUnit.Framework.CategoryAttribute("DAS20491")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMembersTabOnGroupsPage()
         {
@@ -123,6 +124,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.It
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS17761",
+                        "DAS20491",
                         "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -177,6 +179,141 @@ this.FeatureBackground();
 #line 28
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Directory" +
                     " Type\' column:", ((string)(null)), table3, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollecti" +
+            "onsSubTabForGroupPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Groups")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS20490")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        public virtual void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollectionsSubTabForGroupPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollectionsSubTabForGroupPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollectionsSubTabForGroupPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollecti" +
+                    "onsSubTabForGroupPage", null, new string[] {
+                        "Evergreen",
+                        "Groups",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS20490",
+                        "Zion_NewGrid"});
+#line 33
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 34
+ testRunner.When("User type \"Schema Admins\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.Then("User clicks on \"Schema Admins\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 36
+ testRunner.And("Details page for \'Schema Admins\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+ testRunner.When("User navigates to the \'Collections\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table4.AddRow(new string[] {
+                        "All Active Directory Security Groups"});
+            table4.AddRow(new string[] {
+                        "All User Groups"});
+#line 39
+ testRunner.Then("Content in the \'Collection\' column is equal to", ((string)(null)), table4, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table5.AddRow(new string[] {
+                        "JuribaDEV50"});
+            table5.AddRow(new string[] {
+                        "JuribaDEV50"});
+#line 43
+ testRunner.Then("Content in the \'Site\' column is equal to", ((string)(null)), table5, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table6.AddRow(new string[] {
+                        "SMS/SCCM 2007"});
+            table6.AddRow(new string[] {
+                        "SMS/SCCM 2007"});
+#line 47
+ testRunner.Then("Content in the \'Import Type\' column is equal to", ((string)(null)), table6, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Content"});
+            table7.AddRow(new string[] {
+                        "DC1 SMS (DEV50)"});
+            table7.AddRow(new string[] {
+                        "DC1 SMS (DEV50)"});
+#line 51
+ testRunner.Then("Content in the \'Import\' column is equal to", ((string)(null)), table7, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table8.AddRow(new string[] {
+                        "All Active Directory Security Groups"});
+            table8.AddRow(new string[] {
+                        "All User Groups"});
+#line 55
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Collectio" +
+                    "n\' column:", ((string)(null)), table8, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table9.AddRow(new string[] {
+                        "JuribaDEV50"});
+#line 59
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Site\' col" +
+                    "umn:", ((string)(null)), table9, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table10.AddRow(new string[] {
+                        "SMS/SCCM 2007"});
+#line 62
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Import Ty" +
+                    "pe\' column:", ((string)(null)), table10, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table11.AddRow(new string[] {
+                        "DC1 SMS (DEV50)"});
+#line 65
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Import\' c" +
+                    "olumn:", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
