@@ -16,6 +16,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
+using OpenQA.Selenium;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -344,7 +345,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesSectionDescriptionBySectionName(string description, string section)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            Verify.That(page.SectionDescriptionByName(section).Text, Is.EqualTo(description), "Description are not the same");
+            Verify.That(page.SectionDescriptionByName(section), Is.EqualTo(description), "Description are not the same");
         }
 
         [When(@"User clicks '(.*)' link in description for '(.*)' section")]
