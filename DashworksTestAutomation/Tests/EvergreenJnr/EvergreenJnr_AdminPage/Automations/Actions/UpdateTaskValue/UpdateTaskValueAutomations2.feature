@@ -21,8 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
-	When User selects 'Hours' in the 'Units' dropdown
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User selects 'hours before current value' in the 'Units' dropdown
 	And User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -50,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	When User selects 'After current value' in the 'Before or After' dropdown
+	When User selects 'hours after current value' in the 'Units' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18292_Automation" text in the Search field for "Automation" column

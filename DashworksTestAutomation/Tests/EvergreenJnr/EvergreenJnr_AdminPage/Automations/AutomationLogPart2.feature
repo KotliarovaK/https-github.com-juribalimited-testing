@@ -49,7 +49,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	Then 'FAILED' content is displayed in the 'zUserAutom: Stage 1 \ Radiobutton Date App Task' column
 	And '13 Aug 2019' content is displayed in the 'zUserAutom: Stage 1 \ Radiobutton Date App Task (Date)' column
 
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17636 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
