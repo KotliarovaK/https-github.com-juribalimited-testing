@@ -133,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageForUpdateRing
 	Then 'Owned mailboxes only' content is displayed in 'Also Move Mailboxes' dropdown
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19083 @Cleanup @Wormhole
-Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLinkedDevices
+Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLinkedDevicesAndAllLinkedMailboxes
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Actions button
@@ -156,6 +156,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'SY_Ring 1' option from 'Ring' autocomplete
 	When User selects 'All linked devices' in the 'Also Move Devices' dropdown
+	When User selects 'All linked mailboxes' in the 'Also Move Mailboxes' dropdown
 	When User clicks 'CREATE' button 
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -190,7 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForEvergreenAllLink
 	When User enters "19083_Automation" text in the Search field for "Automation" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	Then '1' content is displayed in the 'Objects' column
+	Then '2' content is displayed in the 'Objects' column
 	When User clicks content from "Objects" column
 	Then 'Unassigned' content is displayed in the 'Evergreen Ring' column
 
