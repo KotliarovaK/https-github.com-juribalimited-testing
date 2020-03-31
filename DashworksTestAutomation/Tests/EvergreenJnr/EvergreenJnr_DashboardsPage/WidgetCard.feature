@@ -120,7 +120,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	| WidgetType | Title             | List                | Type       |
 	| Card       | WidgetForDAS15355 | 2004 App Compliance | First Cell |
 	Then Widget Preview is displayed to the user
-	Then Colour Scheme dropdown is not displayed to the user
+	Then 'Colour Scheme' dropdown is not displayed
 	
 	When User selects 'Text Only' in the 'Layout' dropdown
 	Then Text Only is displayed for Card widget on Preview
