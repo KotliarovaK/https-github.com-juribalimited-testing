@@ -833,7 +833,7 @@ this.FeatureBackground();
 #line 148
  testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table9, "Then ");
 #line 153
- testRunner.Then("User sees \"6\" rows in grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User sees \"2\" rows in grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 154
  testRunner.Then("\'ResetFilters\' button with aria label is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 155
@@ -847,7 +847,7 @@ this.FeatureBackground();
 #line 159
  testRunner.Then("\'ResetFilters\' button with aria label is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 160
- testRunner.Then("Rows counter shows \"1\" of \"6\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter shows \"1\" of \"2\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 161
  testRunner.When("User clicks button with \'ResetFilters\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 162
