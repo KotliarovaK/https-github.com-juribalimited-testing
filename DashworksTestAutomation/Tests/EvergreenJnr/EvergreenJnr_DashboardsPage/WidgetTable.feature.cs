@@ -881,8 +881,8 @@ this.FeatureBackground();
 #line 169
  testRunner.When("User selects \'Sum\' in the \'AggregateFunction\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 170
- testRunner.Then("User sees \'There are no fields available for this aggregate function\' warning tex" +
-                    "t below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'There are no fields available for this aggregate function\' error message is disp" +
+                    "layed for \'Aggregate Function\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1783,8 +1783,8 @@ this.FeatureBackground();
 #line 355
  testRunner.And("User adds new Widget", ((string)(null)), table33, "And ");
 #line 358
- testRunner.Then("User sees \'There are no fields available for this aggregate function\' warning tex" +
-                    "t below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'There are no fields available for this aggregate function\' error message is disp" +
+                    "layed for \'Aggregate Function\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -1801,8 +1801,8 @@ this.FeatureBackground();
 #line 359
  testRunner.When("User adds new Widget", ((string)(null)), table34, "When ");
 #line 362
- testRunner.Then("User sees \'There are no fields available for this aggregate function\' warning tex" +
-                    "t below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'There are no fields available for this aggregate function\' error message is disp" +
+                    "layed for \'Aggregate Function\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

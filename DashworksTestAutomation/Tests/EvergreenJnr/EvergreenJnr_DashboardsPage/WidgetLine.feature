@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	When User selects 'prK: Application Readiness' in the 'SplitBy' dropdown
 	When User selects 'Count' in the 'AggregateFunction' dropdown
 	When User selects 'prK: Application Readiness ASC' in the 'OrderBy' dropdown
-	And User clicks on the Colour Scheme dropdown
+	When User clicks 'Colour Scheme' dropdown
 	Then Colour Scheme dropdown is displayed to the user
 	Then 'Show data labels' checkbox is not displayed
 	Then 'Show legend' checkbox is not displayed

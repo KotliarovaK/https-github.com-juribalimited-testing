@@ -370,8 +370,8 @@ this.FeatureBackground();
 #line 86
  testRunner.When("User selects \'Second_List_DAS16380_2\' as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
- testRunner.Then("User sees \'You have chosen a restricted list for a shared dashboard, some users m" +
-                    "ay not be able to see this widget\' warning text below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'You have chosen a restricted list for a shared dashboard, some users may not be " +
+                    "able to see this widget\' error message is displayed for \'List\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 89
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 90
@@ -391,8 +391,8 @@ this.FeatureBackground();
 #line 97
  testRunner.When("User selects \'Second_List_DAS16380_2\' as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 98
- testRunner.Then("User sees \'You have chosen a restricted list for a shared dashboard, some users m" +
-                    "ay not be able to see this widget\' warning text below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'You have chosen a restricted list for a shared dashboard, some users may not be " +
+                    "able to see this widget\' error message is displayed for \'List\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 100
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 101
@@ -412,8 +412,8 @@ this.FeatureBackground();
 #line 108
  testRunner.When("User selects \'Second_List_DAS16380_2\' as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 109
- testRunner.Then("User sees \'You have chosen a restricted list for a shared dashboard, some users m" +
-                    "ay not be able to see this widget\' warning text below Lists field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'You have chosen a restricted list for a shared dashboard, some users may not be " +
+                    "able to see this widget\' error message is displayed for \'List\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
