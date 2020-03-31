@@ -33,12 +33,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
 
         public bool СheckThatComponentIsDisplayedOnEndUserPage(SelfServicePageDto page, string textComponentName)
         {
-            return Driver.IsElementDisplayed(GetComponentItemOnEndUserPage(page, textComponentName));
+            try
+            {
+                return Driver.IsElementDisplayed(GetComponentItemOnEndUserPage(page, textComponentName));
+            } 
+            catch
+            {
+                return false;
+            }
+            
         }
 
         public void SetExpectedComponentOrderInDto(SelfServicePageDto page, int order, string textComponentName)
         {
-            page.Components.First(x => x.Equals(textComponentName)).Order = order;
+            page.Components.First(x => x.ComponentName.Equals(textComponentName)).Order = order;
         }
 
         public IWebElement GetButtonOnEndUserPage(string buttonName, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)

@@ -97,8 +97,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
         public void CheckBuilderContextPanelItemDisplayState(string contextPanelType, string contextPanelName, bool expectedDisplayState)
         {
             var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}";
+            Driver.WaitForDataLoading();
             Verify.AreEqual(expectedDisplayState, Driver.IsElementDisplayed(Driver.FindElement(By.XPath(selector)),
-                WebDriverExtensions.WaitTime.Medium), $"Builder Context Panel Item Display State isn't: {expectedDisplayState}");
+                WebDriverExtensions.WaitTime.Long), $"Builder Context Panel Item Display State isn't: {expectedDisplayState}");
         }
 
         public bool IsContentPanelHighlighted(string contextPanelType, string contextPanelName)

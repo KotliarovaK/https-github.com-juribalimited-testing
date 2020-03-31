@@ -286,7 +286,7 @@ this.FeatureBackground();
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 66
  testRunner.Then("User sees \'Text component 0\' text styled as \'Normal\' in the Text Component \'Text_" +
-                    "Component_Name_2\' that placed on \'1\' position on \'Welcome\' End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "Component_Name_2\' that moved to \'1\' position on \'Welcome\' End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

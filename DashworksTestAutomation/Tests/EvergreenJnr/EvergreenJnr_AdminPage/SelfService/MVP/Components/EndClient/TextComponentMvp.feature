@@ -63,4 +63,4 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEditingAndChangingO
 	When User enters 'Text component 0' text to the text editor
 	When User clicks 'UPDATE' button
 	When User navigates to End User landing page with '20050_2_SI' Self Service Identifier
-	Then User sees 'Text component 0' text styled as 'Normal' in the Text Component 'Text_Component_Name_2' that placed on '1' position on 'Welcome' End User page
+	Then User sees 'Text component 0' text styled as 'Normal' in the Text Component 'Text_Component_Name_2' that moved to '1' position on 'Welcome' End User page

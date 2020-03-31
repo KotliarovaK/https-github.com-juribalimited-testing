@@ -48,6 +48,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         {
             var page = _driver.NowAt<SelfServiceEndUserTextComponentPage>();
             var sSpage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
+
+            Verify.IsTrue(page.CheckThatStyledTextFromEndUserTextComponentIsDisplayed(sSpage, style, text, textComponentName), $"The text styled as '{style}' in the Text Component that placed on '{order}' position with '{pageName}' end user page name is missing");
+        }
+
+        [Then(@"User sees '(.*)' text styled as '(.*)' in the Text Component '(.*)' that moved to '(.*)' position on '(.*)' End User page")]
+        public void ThenUserSeesTextStyledAsInTheTextComponentThatMovedToPositionOnEndUserPage(string text, string style, string textComponentName, int order, string pageName)
+        {
+            var page = _driver.NowAt<SelfServiceEndUserTextComponentPage>();
+            var sSpage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
             page.SetExpectedComponentOrderInDto(sSpage, order, textComponentName);
 
             Verify.IsTrue(page.CheckThatStyledTextFromEndUserTextComponentIsDisplayed(sSpage, style, text, textComponentName), $"The text styled as '{style}' in the Text Component that placed on '{order}' position with '{pageName}' end user page name is missing");
