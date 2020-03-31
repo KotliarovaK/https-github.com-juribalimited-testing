@@ -310,11 +310,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	| 1_Widget   |
 	| 2_Widget   |
 	| 3_Widget   |
-	When User unchecks 'Edit mode' slide toggle
-	When User clicks refresh button in the browser
+	When User clicks 'Devices' on the left-hand menu
+	When Dashboard with 'Dashboard for SectionEditing' name is opened via API
 	Then Widget with the name '1_Widget' is missing
 
-# BUG:DAS-20171
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckLongDescriptionCanBeHiddenAndShown
 	When Dashboard with 'Dashboard for SectionDescription' name created via API and opened

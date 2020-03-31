@@ -158,21 +158,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             baseActionItem.PopulateTextbox("Title", widgetTitle);
         }
 
-        [When(@"User expands Widget List dropdown")]
-        public void WhenUserExpandsWidgetListDropdown()
-        {
-            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            baseActionItem.GetDropdown("List").Click();
-            Thread.Sleep(1000);
-        }
-
-        [When(@"User selects '(.*)' as Widget List")]
-        public void WhenUserSetsWidgetList(string widgetList)
-        {
-            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            baseActionItem.AutocompleteSelect("List", widgetList, true);
-        }
-
         [When(@"User selects '(.*)' in the Colour Scheme")]
         public void WhenUserSelectsInTheColourScheme(string colorTitle)
         {
@@ -203,6 +188,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dropdown = _driver.NowAt<BaseDashboardPage>();
             dropdown.GetDropdown("Colour Scheme").Click();
+
+            _driver.WaitForDataLoading();
 
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForElementToBeDisplayed(createWidgetElement.ColorSchemePartByCode(code));
@@ -264,15 +251,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Verify.AreEqual(baseActionItem.GetDropdown(").Title").GetAttribute("innerHTML"), text,
                 "Widget title is not the same");
-        }
-
-        [Then(@"Error message with '(.*)' text is displayed on Widget page")]
-        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
-            Verify.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
         [Then(@"Unsaved Changes alert not displayed to the user")]
