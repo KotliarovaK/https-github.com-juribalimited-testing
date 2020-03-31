@@ -41,7 +41,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
 	Then '9 Oct 2019 14:00' content is displayed in the 'zUserAutom: Relative BU \ DT Auto App (Date)' column
 	Then "zUserAutom: Relative BU \ DT Auto App" column is not displayed to the user
-	#Return to previous value
+		#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item

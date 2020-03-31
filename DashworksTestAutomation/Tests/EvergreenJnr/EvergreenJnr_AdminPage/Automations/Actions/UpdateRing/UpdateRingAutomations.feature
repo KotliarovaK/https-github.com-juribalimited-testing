@@ -411,13 +411,11 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then '1' content is displayed in the 'Objects' column
 	#Delete Project
-	When User clicks 'Automations' header breadcrumb
 	When User navigates to the 'Projects' left menu item
 	And User enters "119083_Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 	#Run Automation
-	When User clicks 'Projects' header breadcrumb
 	When User navigates to the 'Automations' left menu item
 	When User enters "19083_3_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '19083_3_Automation' item from 'Automation' column
@@ -427,7 +425,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogUpdateRingForDeletedProject
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
-	Then '1' content is displayed in the 'Objects' column
 	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks content from "Automation" column
 	Then Automation page is displayed correctly
