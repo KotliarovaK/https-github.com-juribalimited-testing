@@ -324,11 +324,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckLongDescriptionCanBeHiddenAndShown
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 1_Widget | All Devices | 5       | 5          |
 	Then '1_Widget' Widget is displayed to the user
-	When User clicks ' Edit' menu option for section with '3_Widget' widget
+	When User clicks ' Edit' menu option for section with '1_Widget' widget
 	When User enters 'SectionName' text to 'Title' textbox
-	When User enters 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text' text to 'Description' textbox
+	When User enters 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long' text to 'Description' textbox
 	When User clicks 'UPDATE' button
 	When User clicks 'See full description' link in description for 'SectionName' section
-	Then User sees 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text' description for 'SectionName' section
+	Then User sees 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long' description for 'SectionName' section
 	When User clicks 'Hide full description' link in description for 'SectionName' section
-	Then User sees 'Description Long Text Description Long Text Description...' description for 'SectionName' section

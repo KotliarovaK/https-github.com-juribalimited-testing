@@ -1403,25 +1403,20 @@ this.FeatureBackground();
 #line 326
  testRunner.Then("\'1_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 327
- testRunner.When("User clicks \' Edit\' menu option for section with \'3_Widget\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \' Edit\' menu option for section with \'1_Widget\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 328
  testRunner.When("User enters \'SectionName\' text to \'Title\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 329
- testRunner.When("User enters \'Description Long Text Description Long Text Description Long Text De" +
-                    "scription Long Text Description Long Text\' text to \'Description\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(@"User enters 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long' text to 'Description' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 330
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 331
  testRunner.When("User clicks \'See full description\' link in description for \'SectionName\' section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 332
- testRunner.Then("User sees \'Description Long Text Description Long Text Description Long Text Desc" +
-                    "ription Long Text Description Long Text\' description for \'SectionName\' section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(@"User sees 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long' description for 'SectionName' section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 333
  testRunner.When("User clicks \'Hide full description\' link in description for \'SectionName\' section" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 334
- testRunner.Then("User sees \'Description Long Text Description Long Text Description...\' descriptio" +
-                    "n for \'SectionName\' section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

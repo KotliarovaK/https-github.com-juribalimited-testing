@@ -373,6 +373,15 @@ namespace DashworksTestAutomation.Helpers
                             throw new Exception($"'{pageName}' page not found in convertor");
                     }
 
+                case "2004: Readiness":
+                    switch (pageName)
+                    {
+                        case "Devices":
+                            return "project_63_ragStatus";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
                 case "2004: Pre-Migration \\ Ready to Migrate":
                     return "project_task_63_13266_1_Task";
 

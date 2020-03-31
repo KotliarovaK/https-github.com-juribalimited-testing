@@ -4,11 +4,9 @@ using System.Threading;
 using AutomationUtils.Utils;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
-using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.Base;
 using DashworksTestAutomation.Pages.Evergreen.Dashboards;
-using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -175,28 +173,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             baseActionItem.AutocompleteSelect("List", widgetList, true);
         }
 
-        [When(@"User clicks on the Colour Scheme dropdown")]
-        public void WhenUserClicksOnTheColourSchemeDropdown()
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            createWidgetElement.ColorScheme.Click();
-        }
-
         [When(@"User selects '(.*)' in the Colour Scheme")]
         public void WhenUserSelectsInTheColourScheme(string colorTitle)
         {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdown("Colour Scheme").Click();
+
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForDataLoading();
-            createWidgetElement.ColorScheme.Click();
             createWidgetElement.GetColorFromColorScheme(colorTitle).Click();
         }
 
         [When(@"User selects the Colour Scheme by index '(.*)'")]
         public void SetColourSchemeByIndex(string index)
         {
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdown("Colour Scheme").Click();
+
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForDataLoading();
-            createWidgetElement.ColorScheme.Click();
             _driver.WaitForElementToBeDisplayed(createWidgetElement.GetDropdownOptions().First());
 
             if (Convert.ToInt32(index) <= createWidgetElement.GetDropdownOptions().Count)
@@ -208,10 +201,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects the Colour Scheme by color code '(.*)'")]
         public void SetColorSchemeByColorCode(string code)
         {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForDataLoading();
+            var dropdown = _driver.NowAt<BaseDashboardPage>();
+            dropdown.GetDropdown("Colour Scheme").Click();
 
-            createWidgetElement.ColorScheme.Click();
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForElementToBeDisplayed(createWidgetElement.ColorSchemePartByCode(code));
 
             createWidgetElement.ClickColorSchemeByColorCode(code);
@@ -243,15 +236,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
         }
-
-        [Then(@"Colour Scheme dropdown is not displayed to the user")]
-        public void ThenColourSchemeDropdownIsNotDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForDataLoading();
-            Verify.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
-        }
-
+       
         [Then(@"Color Scheme dropdown displayed with '(.*)' placeholder")]
         public void ThenColourSchemeHasCorrectPlaceholder(string placeholder)
         {
@@ -327,13 +312,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
             Verify.AreEqual(baseActionItem.GetDropdown("OrderBy").Text, option, "Incorrect option in OrderBy dropdown");
-        }
-
-        [Then(@"User sees '(.*)' warning text below Lists field")]
-        public void ThenUserSeesWarningTextBelowListsField(string text)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            Verify.AreEqual(text, page.WarningTextUnderField.Text, "PLEASE ADD EXCEPTION MESSAGE");
         }
 
         [Then(@"Aggregate Function dropdown is placed above the Aggregate By dropdown")]

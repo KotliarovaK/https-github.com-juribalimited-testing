@@ -39,3 +39,5 @@ Version.h
 Version.cpp
 /failed dashboard tests.playlist
 /playlist.playlist
+/DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_API_FiltersAndColumns/ApplicationsFiltersAndColumnsFeature.EvergreenJnr_ApplicationsList_CheckAllFilters.received.json
+/DashworksTestAutomation/Tests/EvergreenJnr/EvergreenJnr_API_FiltersAndColumns/ApplicationsFiltersAndColumnsFeature.EvergreenJnr_ApplicationsList_CheckAllColumns.received.json

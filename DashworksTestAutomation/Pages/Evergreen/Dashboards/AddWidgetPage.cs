@@ -20,9 +20,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IList<IWebElement> Dropdowns { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Colour Scheme']")]
-        public IWebElement ColorScheme { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='colourSchemeId']")]
         public IWebElement ColorSchemeDropdown { get; set; }
 
@@ -45,9 +42,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         [FindsBy(How = How.XPath, Using = ".//deactivate-guard-dialog/parent::mat-dialog-container")]
         public IWebElement UnsavedChangesAlert { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-error//span")]
-        public IWebElement WarningTextUnderField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement ListDoesNotExistMessage { get; set; }
@@ -110,11 +104,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         public IWebElement ColorSchemePartByCode(string code)
         {
             return Driver.FindElements(By.XPath($".//mat-option/span/div")).First(x => x.GetAttribute("style").Contains(code));
-        }
-
-        public bool GetCheckboxByName(string checkboxName)
-        {
-            return Driver.IsElementDisplayed(By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox"));
         }
 
         public IWebElement GetDashboardCheckboxByName(string checkboxName)

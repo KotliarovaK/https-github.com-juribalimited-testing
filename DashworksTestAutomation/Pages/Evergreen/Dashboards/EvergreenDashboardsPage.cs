@@ -277,10 +277,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             }
         }
 
-        public IWebElement SectionDescriptionByName(string sectionName)
+        public string SectionDescriptionByName(string sectionName)
         {
             var by = By.XPath($".//mat-panel-title[text()='{sectionName}']/following-sibling::div/div[contains(@class, 'description')]/div");
-            return Driver.FindElement(by);
+            IWebElement elem = Driver.FindElement(by);
+
+            return  (String)((IJavaScriptExecutor)Driver).ExecuteScript("return arguments[0].childNodes[0].textContent;", elem);
         }
 
         public IWebElement SectionDescriptionLinkByName(string sectionName, string link)
