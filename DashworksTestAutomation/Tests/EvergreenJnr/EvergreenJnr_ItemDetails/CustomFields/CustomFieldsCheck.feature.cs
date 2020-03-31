@@ -655,7 +655,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS18121")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCustomFieldOrderIsCorrectInGrid()
@@ -690,7 +690,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
+                        "CustomFields",
                         "DAS18121",
                         "Cleanup"});
 #line 124
@@ -754,7 +754,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17159")]
         [NUnit.Framework.CategoryAttribute("DAS17161")]
         [NUnit.Framework.CategoryAttribute("DAS17162")]
@@ -793,7 +793,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
+                        "CustomFields",
                         "DAS17159",
                         "DAS17161",
                         "DAS17162",
@@ -874,7 +874,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
-        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("CustomFields")]
         [NUnit.Framework.CategoryAttribute("DAS17906")]
         public virtual void EvergreenJnr_DevicesList_CheckThatTheGroupingIsDoneAfterTheFirstClickOnTheGroupByAction()
         {
@@ -909,7 +909,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
-                        "ItemDetailsDisplay",
+                        "CustomFields",
                         "DAS17906"});
 #line 169
 this.ScenarioInitialize(scenarioInfo);
