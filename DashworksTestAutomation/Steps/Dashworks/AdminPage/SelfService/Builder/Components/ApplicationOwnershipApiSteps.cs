@@ -12,6 +12,7 @@ using DashworksTestAutomation.Providers;
 using RestSharp;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using Newtonsoft.Json;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder.Components
 {
@@ -38,7 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder.
             }
 
             var ssPage = _selfServicePages.Value.First(x => x.Name.Equals(ssPageName));
-            component.SelfServicePage = ssPage;
+            component.PageId = ssPage.PageId;
 
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/selfservicecomponents";
             var request = requestUri.GenerateRequest();
@@ -50,6 +51,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder.
             {
                 throw new Exception($"Unable to create Self Service Application Ownership component: {response.StatusCode}, {response.ErrorMessage}");
             }
+
+            var content = response.Content;
+            var createdTextComponent = JsonConvert.DeserializeObject<SelfServiceApplicationOwnershipComponent>(content);
+            component.ComponentType = createdTextComponent.ComponentType;
+            component.ComponentId = createdTextComponent.ComponentId;
+            component.Order = createdTextComponent.Order;
+            component.ComponentTypeId = createdTextComponent.ComponentTypeId;
 
             //Assign created component back to the page
             _selfServicePages.Value.First(x => x.Name.Equals(ssPageName)).Components.Add(component);

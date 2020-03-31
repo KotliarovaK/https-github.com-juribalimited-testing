@@ -10,11 +10,9 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Compon
 {
     public abstract class BaseSelfServiceComponent
     {
-        public SelfServicePageDto SelfServicePage { get; set; }
-
         [JsonProperty("componentId")] public int ComponentId = 1;
 
-        [JsonProperty("pageId")] public int PageId => SelfServicePage.PageId;
+        [JsonProperty("pageId")] public int PageId { get; set; }
 
         [JsonProperty("componentTypeId")]
         public int ComponentTypeId { get; set; }

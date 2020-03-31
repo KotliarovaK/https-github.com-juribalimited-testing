@@ -7,6 +7,8 @@ using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.EndClient
 {
@@ -21,13 +23,71 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         [FindsBy(How = How.XPath, Using = ".//div[@class='ssw-tools']")]
         public IWebElement SelfServiceToolsPanel { get; set; }
 
+        public IWebElement GetComponentItemOnEndUserPage(SelfServicePageDto page, string textComponentName)
+        {
+            var order = page.Components.First(x => x.ComponentName.Equals(textComponentName)).Order;
+            var selector = By.XPath($".//h2[text()='{page.Name}']//..//div[contains(@class, 'component-item')][{order}]");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public bool IsComponentDisplayedOnEndUserPage(SelfServicePageDto page, string textComponentName)
+        {
+            try
+            {
+                return Driver.IsElementDisplayed(GetComponentItemOnEndUserPage(page, textComponentName));
+            } 
+            catch
+            {
+                return false;
+            }
+            
+        }
+
+        public void SetExpectedComponentOrderInDto(SelfServicePageDto page, int order, string textComponentName)
+        {
+            page.Components.First(x => x.ComponentName.Equals(textComponentName)).Order = order;
+        }
+
+        public IWebElement GetButtonOnEndUserPage(string buttonName, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var time = int.Parse(waitTime.GetValue());
+            var selector = By.XPath($".//button[text()='{buttonName}']");
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
+            return Driver.FindElement(selector);
+        }
+
+        public bool IsButtonDisplayed(string name)
+        {
+            try
+            {
+                return GetButtonOnEndUserPage(name, WebDriverExtensions.WaitTime.Short).Displayed();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public IWebElement SubjectTitleOnEndUserPage(string title)
+        {
+            var selector = By.XPath($".//div[@class='ssw-title' and text()='{title}']");
+
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+            {
+                throw new Exception($"'{title}' subject title was not displayed");
+            }
+          
+            return Driver.FindElement(selector);
+        }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
                 SelectorFor(this, p=> p.Header),
-                SelectorFor(this, p=> p.Footer)
             };
         }
     }
