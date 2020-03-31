@@ -125,3 +125,12 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 	Then User verifies data in the fields on details page
 	| Field             | Data |
 	| Sticky Compliance |      |
+
+	#AnnI 3/30/20: DAS20669 will be fixed only for 'Wormhole'
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20454 @DAS20669 @Wormhole
+Scenario: EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectlyForEnabledFieldOnTheUsersDetailsPage
+	When User navigates to the 'User' details page for 'NPS8676905' item
+	Then Details page for 'NPS8676905' item is displayed to the user
+	Then User verifies data in the fields on details page
+	| Field   | Data  |
+	| Enabled | FALSE |

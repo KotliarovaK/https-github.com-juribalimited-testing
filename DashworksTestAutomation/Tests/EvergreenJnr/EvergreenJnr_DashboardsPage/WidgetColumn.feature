@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	When User adds new Widget
 	| WidgetType | Title        | List        | AggregateFunction | SplitBy          | CategoriseBy | DisplayType | OrderBy | AggregateBy | MaxValues |
 	| Column     | ColumnWidget | All Devices | Count distinct    | Operating System | Device Type  | Stacked     |Operating System ASC | Hostname    | 2         |
-	When User selects the Colour Scheme by color code 'rgb(30, 45, 114)'
+	When User selects the Colour Scheme by color code 'rgb(143, 20, 64)'
 	Then Widget Preview is displayed to the user
 	When User clicks 'CREATE' button 
 	Then 'ColumnWidget' Widget is displayed to the user
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	| ColumnName |
 	| Other      |
 	| OS X 10.5  |
-	Then User sees color code 'rgb(30, 45, 114)' on the 'ColumnWidget' widget
+	Then User sees color code 'rgb(143, 20, 64)' on the 'ColumnWidget' widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited

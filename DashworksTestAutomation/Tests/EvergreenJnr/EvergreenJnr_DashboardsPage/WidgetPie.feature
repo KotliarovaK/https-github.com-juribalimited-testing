@@ -540,3 +540,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckClickingThroughReadinessValueOfPageWi
 	Then 'WidgetForDAS18574' Widget is displayed to the user
 	When User clicks on 'Green' category of 'WidgetForDAS18574' widget
 	Then table content is present
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20366 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageDisplayedForWidgetBasedOnListWithMissingColumn
+	When User clicks 'Devices' on the left-hand menu
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName      |
+	| 2004: Readiness |
+	When User create dynamic list with "20366_List" name on "Devices" page
+	When Dashboard with 'Dashboard for DAS20366' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+		When User adds new Widget
+	| WidgetType | Title             | List       | SplitBy         | AggregateFunction | AggregateBy     | OrderBy             |
+	| Pie        | WidgetForDAS20366 | 20366_List | 2004: Readiness | Count distinct    | 2004: Readiness | 2004: Readiness ASC |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button 
+	Then 'WidgetForDAS20366' Widget is displayed to the user
+	When User clicks 'Devices' on the left-hand menu
+	When User navigates to the "20366_List" list
+	When User clicks the Columns button
+	When User removes "2004: Readiness" column by Column panel
+	When User clicks 'SAVE' button and select 'UPDATE DYNAMIC LIST' menu button
+	When Dashboard with 'Dashboard for DAS20366' name is opened via API
+	When User checks 'Edit mode' slide toggle
+	Then User sees 'This widget refers to a column which is not in the list' text in warning message of 'WidgetForDAS20366' widget on Dashboards page
+	When User clicks edit option for broken widget on Dashboards page
+	Then 'This widget refers to a column which is not in the list' error message is displayed for 'Split By' dropdown
+	Then 'This widget refers to a column which is not in the list' error message is displayed for 'Aggregate By' dropdown
+	Then Widget Preview is not displayed to the user
