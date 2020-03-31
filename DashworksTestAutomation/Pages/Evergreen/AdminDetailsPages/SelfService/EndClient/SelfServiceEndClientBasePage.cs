@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
             return Driver.FindElement(selector);
         }
 
-        public bool СheckThatComponentIsDisplayedOnEndUserPage(SelfServicePageDto page, string textComponentName)
+        public bool isComponentDisplayedOnEndUserPage(SelfServicePageDto page, string textComponentName)
         {
             try
             {

@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             var page = _driver.NowAt<SelfServiceEndUserTextComponentPage>();
             var sSpage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
 
-            Verify.IsTrue(page.СheckThatComponentIsDisplayedOnEndUserPage(sSpage, textComponentName), $"Text component '{textComponentName}' on '{pageName}' end user page is missing");
+            Verify.IsTrue(page.isComponentDisplayedOnEndUserPage(sSpage, textComponentName), $"Text component '{textComponentName}' on '{pageName}' end user page is missing");
         }
 
         [Then(@"User sees '(.*)' text styled as '(.*)' in '(.*)' Text Component of '(.*)' on end user page")]
