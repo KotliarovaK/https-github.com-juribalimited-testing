@@ -437,6 +437,104 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMember" +
+            "sSubTabForGroupPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Groups")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS20492")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
+        public virtual void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMembersSubTabForGroupPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMembersSubTabForGroupPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMembersSubTabForGroupPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMember" +
+                    "sSubTabForGroupPage", null, new string[] {
+                        "Evergreen",
+                        "Groups",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS20492",
+                        "Zion_NewGrid",
+                        "Wormhole"});
+#line 103
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 104
+ testRunner.When("User type \"GSMS-ReportViewer\" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 105
+ testRunner.Then("User clicks on \"GSMS-ReportViewer\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 106
+ testRunner.And("Details page for \'GSMS-ReportViewer\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.When("User navigates to the \'Members\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 108
+ testRunner.When("User navigates to the \'Device Members\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table15.AddRow(new string[] {
+                        "Hostname"});
+            table15.AddRow(new string[] {
+                        "Owner Username"});
+            table15.AddRow(new string[] {
+                        "Owner Display Name"});
+            table15.AddRow(new string[] {
+                        "Operating System"});
+#line 109
+ testRunner.Then("ColumnName is displayed in following order on the Details page:", ((string)(null)), table15, "Then ");
+#line 115
+ testRunner.When("User enters \"W1383515700\" text in the Search field for \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 116
+ testRunner.Then("\'W1383515700\' content is displayed in the \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 117
+ testRunner.Then("\'Empty\' content is displayed in the \'Owner Username\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 118
+ testRunner.Then("\'Empty\' content is displayed in the \'Owner Display Name\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 119
+ testRunner.Then("\'\' content is displayed in the \'Operating System\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table16.AddRow(new string[] {
+                        "Empty"});
+#line 120
+ testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Operating" +
+                    " System\' column:", ((string)(null)), table16, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

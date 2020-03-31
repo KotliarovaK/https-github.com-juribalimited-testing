@@ -97,3 +97,26 @@ Scenario: EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplication
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Site' column:
 	| Values      |
 	| JuribaDEV50 |
+
+	#AnnI 3/31/20: some functionality is ready only for 'Wormhole'
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20492 @Zion_NewGrid @Wormhole
+Scenario: EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMembersSubTabForGroupPage
+	When User type "GSMS-ReportViewer" in Global Search Field
+	Then User clicks on "GSMS-ReportViewer" search result
+	And Details page for 'GSMS-ReportViewer' item is displayed to the user
+	When User navigates to the 'Members' left menu item
+	When User navigates to the 'Device Members' left submenu item
+	Then ColumnName is displayed in following order on the Details page:
+	| ColumnName         |
+	| Hostname           |
+	| Owner Username     |
+	| Owner Display Name |
+	| Operating System   |
+	When User enters "W1383515700" text in the Search field for "Hostname" column
+	Then 'W1383515700' content is displayed in the 'Hostname' column
+	Then 'Empty' content is displayed in the 'Owner Username' column
+	Then 'Empty' content is displayed in the 'Owner Display Name' column
+	Then '' content is displayed in the 'Operating System' column
+	Then following checkboxes are displayed in the filter dropdown menu for the 'Operating System' column:
+	| Values |
+	| Empty  |
