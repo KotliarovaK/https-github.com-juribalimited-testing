@@ -21,12 +21,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             {
                 _driver = driver;
             }
-
-        [Then(@"User sees component of '(.*)' page placed on '(.*)' position")]
-        public void ThenUserSeesComponentWithNameOnEndUserPageOnPosition(string componentName, int order)
-        {
-            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
-            Verify.IsTrue(page.СheckThatComponentIsDisplayedOnEndUserPage(componentName, order), "Component is missing or placed on wrong position");
-        }
     }
 }

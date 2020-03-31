@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckDisplayAndFormating
 	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName  | OwnerPermission                  |
 	| AOC Name      | 2004 Rollout | Do not allow owner to be changed |
-	When User navigates to firs End User page with '20050_1_SI' Self Service Identifier
+	When User navigates to End User landing page with '20050_1_SI' Self Service Identifier
 	Then User sees 'bold ' text styled as 'Bold' in 'Text_Component_Name_1' Text Component of 'Welcome' on end user page
 	Then User sees 'italic ' text styled as 'Italic' in 'Text_Component_Name_1' Text Component of 'Welcome' on end user page
 	Then User sees 'underline' text styled as 'Underline' in 'Text_Component_Name_1' Text Component of 'Welcome' on end user page
@@ -52,9 +52,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEditingAndChangingO
 	When User creates new application ownership component for 'Welcome' Self Service page via API
 	| ComponentName | ProjectName  | OwnerPermission                  |
 	| AOC Name      | 2004 Rollout | Do not allow owner to be changed |
-	When User navigates to firs End User page with '20050_2_SI' Self Service Identifier
-	Then User sees 'Text component 1' text styled as 'Normal' in the Text Component that placed on '1' position with 'Welcome' end user page name
-	Then User sees 'Text component 2' text styled as 'Normal' in the Text Component that placed on '2' position with 'Welcome' end user page name
+	When User navigates to End User landing page with '20050_2_SI' Self Service Identifier
+	Then User sees 'Text component 1' text styled as 'Normal' in the Text Component 'Text_Component_Name_1' that placed on '1' position on 'Welcome' End User page
+	Then User sees 'Text component 2' text styled as 'Normal' in the Text Component 'Text_Component_Name_2' that placed on '2' position on 'Welcome' End User page
 	When User opens 'DAS_20050_SS_2' Self Service
 	When User navigates to the 'Builder' left menu item
 	When User selects 'Move to bottom' cogmenu option for 'Text' item type with 'Text_Component_Name_1' name on Self Service Builder Panel
@@ -62,5 +62,5 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEditingAndChangingO
 	When User clears text editor
 	When User enters 'Text component 0' text to the text editor
 	When User clicks 'UPDATE' button
-	When User navigates to firs End User page with '20050_2_SI' Self Service Identifier
-	Then User sees 'Text component 0' text styled as 'Normal' in the Text Component that placed on '1' position with 'Welcome' end user page name
+	When User navigates to End User landing page with '20050_2_SI' Self Service Identifier
+	Then User sees 'Text component 0' text styled as 'Normal' in the Text Component 'Text_Component_Name_2' that placed on '1' position on 'Welcome' End User page

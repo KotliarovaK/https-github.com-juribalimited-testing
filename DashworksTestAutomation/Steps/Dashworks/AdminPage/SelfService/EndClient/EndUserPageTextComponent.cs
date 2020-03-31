@@ -29,27 +29,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         public void ThenUserSeesTextComponentOnEndUserPage(string textComponentName, string pageName)
         {
             var page = _driver.NowAt<SelfServiceEndUserTextComponentPage>();
-            int order = page.GetTextComponentOrderByName(_selfServicePages.Value.First(x => x.Name.Equals(pageName)).Components.First(x => x.ComponentName.Equals(textComponentName)));
+            var sSpage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
 
-            Verify.IsTrue(page.СheckThatComponentIsDisplayedOnEndUserPage(pageName, order), $"Text component '{textComponentName}' on '{pageName}' end user page is missing");
+            Verify.IsTrue(page.СheckThatComponentIsDisplayedOnEndUserPage(sSpage, textComponentName), $"Text component '{textComponentName}' on '{pageName}' end user page is missing");
         }
 
         [Then(@"User sees '(.*)' text styled as '(.*)' in '(.*)' Text Component of '(.*)' on end user page")]
         public void ThenUserSeesTextStyledAsInTextComponentOfOnEndUserPage(string text, string style, string textComponentName, string pageName)
         {
             var page = _driver.NowAt<SelfServiceEndUserTextComponentPage>();
-            int order = page.GetTextComponentOrderByName(_selfServicePages.Value.First(x => x.Name.Equals(pageName)).Components.First(x => x.ComponentName.Equals(textComponentName)));
+            var sSpage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
 
-            Verify.IsTrue(page.CheckThatStyledTextFromEndUserTextComponentIsDisplayed(pageName, style, text, order), $"The text itself or text styled as '{style}' is missing");
+            Verify.IsTrue(page.CheckThatStyledTextFromEndUserTextComponentIsDisplayed(sSpage, style, text, textComponentName), $"The text itself or text styled as '{style}' is missing");
         }
 
-        [Then(@"User sees '(.*)' text styled as '(.*)' in the Text Component that placed on '(.*)' position with '(.*)' end user page name")]
-        public void ThenUserSeesTextStyledAsInTheTextComponentThatPlacedOnPositionWithEndUserPageName(string text, string style, int position, string pageName)
+        [Then(@"User sees '(.*)' text styled as '(.*)' in the Text Component '(.*)' that placed on '(.*)' position on '(.*)' End User page")]
+        public void ThenUserSeesTextStyledAsInTheTextComponentThatPlacedOnPositionOnEndUserPage(string text, string style, string textComponentName, int order, string pageName)
         {
             var page = _driver.NowAt<SelfServiceEndUserTextComponentPage>();
+            var sSpage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
+            page.SetExpectedComponentOrderInDto(sSpage, order, textComponentName);
 
-            Verify.IsTrue(page.CheckThatStyledTextFromEndUserTextComponentIsDisplayed(pageName, style, text, position), $"The text styled as '{style}' in the Text Component that placed on '{position}' position with '{pageName}' end user page name is missing");
+            Verify.IsTrue(page.CheckThatStyledTextFromEndUserTextComponentIsDisplayed(sSpage, style, text, textComponentName), $"The text styled as '{style}' in the Text Component that placed on '{order}' position with '{pageName}' end user page name is missing");
         }
     }
 }
-

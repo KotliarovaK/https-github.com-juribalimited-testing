@@ -6,52 +6,44 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
-using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.EndClient
 {
     class SelfServiceEndUserTextComponentPage : SelfServiceEndClientBasePage
     {
-        public bool CheckThatStyledTextFromEndUserTextComponentIsDisplayed(string pageName, string style, string text, int order)
+        public bool CheckThatStyledTextFromEndUserTextComponentIsDisplayed(SelfServicePageDto page, string style, string text, string textComponentName)
         {
+            var componentitem = GetComponentItemOnEndUserPage(page, textComponentName);
             switch (style)
             {
                 case "Bold":
-                    return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//strong[text()='{text}']"));
+                    return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//strong[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 case "Italic":
-                    return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//em[text()='{text}']"));
+                    return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//em[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 case "Underline":
-                    return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//u[text()='{text}']"));
+                    return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//u[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 case "Heading 1":
-                    return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//h1[text()='{text}']"));
+                    return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//h1[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 case "Heading 2":
-                    return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//h2[text()='{text}']"));
+                    return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//h2[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 case "Heading 3":
-                    return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//h3[text()='{text}']"));
+                    return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//h3[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 case "Heading 4":
-                    return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//h4[text()='{text}']"));
+                    return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//h4[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 case "Heading 5":
-                    return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//h5[text()='{text}']"));
+                    return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//h5[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 case "Normal":
-                   return GetComponentItemOnEndUserPage(pageName, order).IsElementDisplayed(By.XPath($".//p[text()='{text}']"));
+                   return Driver.IsElementInElementDisplayed(componentitem, By.XPath($".//p[text()='{text}']"), WebDriverExtensions.WaitTime.Short);
                 default:
-                    throw new Exception($"That kind of styling '{style}' does not exist (Do not forget to use capital letter, for ex. 'Bold')"); ;
+                    throw new Exception($"That kind of styling '{style}' does not exist (Do not forget to use capital letter, for ex. 'Bold')");
             }
-        }
-
-        public int GetTextComponentOrderByName(BaseSelfServiceComponent component)
-        {
-            return component.Order;
         }
 
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
-            return new List<By>
-            {
-
-            };
+            return new List<By>{};
         }
     }
 }

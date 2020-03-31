@@ -7,7 +7,8 @@ using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.EndClient
 {
@@ -22,37 +23,38 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         [FindsBy(How = How.XPath, Using = ".//div[@class='ssw-tools']")]
         public IWebElement SelfServiceToolsPanel { get; set; }
 
-        public IWebElement GetComponentItemOnEndUserPage(string pageName, int order)
+        public IWebElement GetComponentItemOnEndUserPage(SelfServicePageDto page, string textComponentName)
         {
-            var selector = By.XPath($".//h2[text()='{pageName}']//..//div[@class='component-item ng-star-inserted'][{order}]");
+            var order = page.Components.First(x => x.ComponentName.Equals(textComponentName)).Order;
+            var selector = By.XPath($".//h2[text()='{page.Name}']//..//div[contains(@class, 'component-item')][{order}]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
-        public bool СheckThatComponentIsDisplayedOnEndUserPage(string pageName, int order)
+        public bool СheckThatComponentIsDisplayedOnEndUserPage(SelfServicePageDto page, string textComponentName)
         {
-            return Driver.IsElementDisplayed(GetComponentItemOnEndUserPage(pageName, order));
+            return Driver.IsElementDisplayed(GetComponentItemOnEndUserPage(page, textComponentName));
         }
 
-        public IWebElement GetButtonOnEndUserPage(string buttonName, bool shouldBeDisplayed = true)
+        public void SetExpectedComponentOrderInDto(SelfServicePageDto page, int order, string textComponentName)
         {
+            page.Components.First(x => x.Equals(textComponentName)).Order = order;
+        }
+
+        public IWebElement GetButtonOnEndUserPage(string buttonName, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
+        {
+            var time = int.Parse(waitTime.GetValue());
             var selector = By.XPath($".//button[text()='{buttonName}']");
-
-            if (shouldBeDisplayed.Equals(false))
-            {
-                Driver.WaitForElementToBeDisplayed(selector, 3);
-                return Driver.FindElement(selector);
-            }
-
-            Driver.WaitForElementToBeDisplayed(selector);
+            Driver.WaitForDataLoading();
+            Driver.WaitForElementsToBeDisplayed(selector, time, false);
             return Driver.FindElement(selector);
         }
 
-        public bool IsButtonDisplayed(string buttonName)
+        public bool IsButtonDisplayed(string name)
         {
             try
             {
-                return GetButtonOnEndUserPage(buttonName, false).Displayed;
+                return GetButtonOnEndUserPage(name, WebDriverExtensions.WaitTime.Short).Displayed();
             }
             catch
             {
@@ -63,7 +65,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         public IWebElement SubjectTitleOnEndUserPage(string title)
         {
             var selector = By.XPath($".//div[@class='ssw-title' and text()='{title}']");
-            Driver.WaitForElementToBeDisplayed(selector);
+
+            if (!Driver.IsElementDisplayed(selector, WebDriverExtensions.WaitTime.Medium))
+            {
+                throw new Exception($"'{title}' subject title was not displayed");
+            }
+          
             return Driver.FindElement(selector);
         }
 
@@ -73,7 +80,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
             return new List<By>
             {
                 SelectorFor(this, p=> p.Header),
-                //SelectorFor(this, p=> p.Footer)
             };
         }
     }

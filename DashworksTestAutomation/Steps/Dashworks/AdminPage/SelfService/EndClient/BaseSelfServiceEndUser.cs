@@ -11,17 +11,11 @@ using OpenQA.Selenium.Remote;
 using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.Helpers;
-using TechTalk.SpecFlow.Assist;
 using DashworksTestAutomation.DTO.RuntimeVariables.SelfService;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
-using DashworksTestAutomation.DTO.RuntimeVariables;
-using RestSharp;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
-using DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.AfterScenarios;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder.Components;
-using Logger = DashworksTestAutomation.Utils.Logger;
+using AutomationUtils.Extensions;
 
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClient
 {
@@ -42,7 +36,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _selfServicePages = selfServicePages;
         }
 
-        [When(@"User navigates to firs End User page with '(.*)' Self Service Identifier")]
+        [When(@"User navigates to End User landing page with '(.*)' Self Service Identifier")]
         public void WhenUserNavigatesToFirsEndUserPageWithSelfServiceIdentifier(string selfServiceIdentifier)
         {
             SelfServicePageDto page = _selfServicePages.Value.First(x => x.Name.Equals("Welcome"));
@@ -58,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         public void ThenSelfServiceToolsPanelDisplayedForEndClient()
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
-            Verify.IsTrue(page.SelfServiceToolsPanel.Displayed, "Self Service Tools Panel is missing");
+            Verify.IsTrue(page.SelfServiceToolsPanel.Displayed(), "Self Service Tools Panel is missing");
         }
 
         [When(@"User clicks on '(.*)' button on end user Self Service page")]
@@ -68,24 +62,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             var button = page.GetButtonOnEndUserPage(buttonName);
             _driver.WaitForElementToBeEnabled(button);
             button.Click();
-            _driver.WaitForDataLoading(50);
-        }
-
-        [Then(@"'(.*)' button is displayed for End User")]
-        public void ThenButtonIsDisplayedForEndUser(string buttonTitle)
-        {
-            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
-            var button = page.GetButtonOnEndUserPage(buttonTitle);
-
-            Verify.IsTrue(button.Displayed, $"'{buttonTitle}' button was not displayed for End User");
-        }
-
-        [Then(@"'(.*)' button is not displayed for End User")]
-        public void ThenButtonIsNotDisplayedForEndUser(string buttonTitle)
-        {
-            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
-
-            Verify.IsFalse(page.IsButtonDisplayed(buttonTitle), $"'{buttonTitle}' button was displayed to End User");
         }
 
         [Then(@"'(.*)' button displayed for End User")]
@@ -96,12 +72,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             Verify.IsTrue(page.IsButtonDisplayed(buttonTitle), $"'{buttonTitle}' button wasn't displayed to End User");
         }
 
+        [Then(@"'(.*)' button is not displayed for End User")]
+        public void ThenButtonIsNotDisplayedForEndUser(string buttonTitle)
+        {
+            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
+
+            Verify.IsFalse(page.IsButtonDisplayed(buttonTitle), $"'{buttonTitle}' button was displayed for End User");
+        }
+
         [Then(@"Header is displayed on End User page")]
         public void ThenHeaderIsDisplayedOnEndUserPage()
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
 
-            Verify.IsTrue(page.Header.Displayed, $"Header button was not displayed for End User");
+            Verify.IsTrue(page.Header.Displayed(), $"Header  was not displayed for End User");
         }
 
         [Then(@"Subject Title '(.*)' is displayed on End User page")]
@@ -109,7 +93,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
 
-            Verify.IsTrue(page.SubjectTitleOnEndUserPage(subjTitle).Displayed, $"Header button was not displayed for End User");
+            Verify.IsTrue(page.SubjectTitleOnEndUserPage(subjTitle).Displayed(), $"Header button was not displayed for End User");
         }
     }
 }

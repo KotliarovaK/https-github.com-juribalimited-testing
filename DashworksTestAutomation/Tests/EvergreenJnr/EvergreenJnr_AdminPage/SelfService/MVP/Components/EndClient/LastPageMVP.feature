@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckEndUserLastPage
 	| AOC Name      | 2004 Rollout | Do not allow owner to be changed |
 	When User navigates to the 'Builder' left menu item
 	Then User sees item with 'Text' type and 'Thank You' name on Self Service Builder Panel
-	When User navigates to firs End User page with '20325_1_SI' Self Service Identifier
+	When User navigates to End User landing page with '20325_1_SI' Self Service Identifier
 	When User clicks on 'Continue' button on end user Self Service page
 	Then Header is displayed on End User page
 	Then Subject Title 'Application: VSCmdShell' is displayed on End User page
