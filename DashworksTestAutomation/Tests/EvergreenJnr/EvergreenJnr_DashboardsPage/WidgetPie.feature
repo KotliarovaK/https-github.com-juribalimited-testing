@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'ListWithAllDatatypes' as Widget List
+	When User selects 'ListWithAllDatatypes' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count' in the 'AggregateFunction' dropdown
 	Then Aggregate By dropdown is disabled
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'ListWithAllDatatypes' as Widget List
+	When User selects 'ListWithAllDatatypes' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
 	Then User sees following options for Aggregate By selector on Create Widget page:
@@ -210,7 +210,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctio
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'ListWithAllDatatypes' as Widget List
+	When User selects 'ListWithAllDatatypes' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects '<AggFunc>' in the 'AggregateFunction' dropdown
 	Then User sees following options for Aggregate By selector on Create Widget page:
@@ -241,7 +241,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'ListWithAllDatatypes' as Widget List
+	When User selects 'ListWithAllDatatypes' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count' in the 'AggregateFunction' dropdown
 	Then Aggregate By dropdown is disabled
@@ -259,7 +259,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAgg
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'All Devices' as Widget List
+	When User selects 'All Devices' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count' in the 'AggregateFunction' dropdown
 	Then User sees following options for Order By selector on Create Widget page:
@@ -276,7 +276,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDis
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'All Devices' as Widget List
+	When User selects 'All Devices' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
 	When User selects 'Hostname' in the 'AggregateBy' dropdown
@@ -299,7 +299,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggre
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'HddList' as Widget List
+	When User selects 'HddList' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Sum' in the 'AggregateFunction' dropdown
 	When User selects 'HDD Total Size (GB)' in the 'AggregateBy' dropdown
@@ -322,7 +322,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggre
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'HddList' as Widget List
+	When User selects 'HddList' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Minimum' in the 'AggregateFunction' dropdown
 	When User selects 'HDD Total Size (GB)' in the 'AggregateBy' dropdown
@@ -345,7 +345,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggre
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'HddList' as Widget List
+	When User selects 'HddList' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Maximum' in the 'AggregateFunction' dropdown
 	When User selects 'HDD Total Size (GB)' in the 'AggregateBy' dropdown
@@ -368,7 +368,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggre
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Pie' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'HddList' as Widget List
+	When User selects 'HddList' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Average' in the 'AggregateFunction' dropdown
 	When User selects 'HDD Total Size (GB)' in the 'AggregateBy' dropdown

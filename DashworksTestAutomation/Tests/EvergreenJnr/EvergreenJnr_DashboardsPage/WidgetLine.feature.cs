@@ -151,7 +151,7 @@ this.FeatureBackground();
 #line 19
  testRunner.And("User enters \'DAS15737\' as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("User selects \'TestList_DAS15737\' as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'TestList_DAS15737\' option from \'List\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
  testRunner.When("User selects \'prK: Application Readiness\' in the \'SplitBy\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22

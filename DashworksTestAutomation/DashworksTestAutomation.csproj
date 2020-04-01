@@ -264,6 +264,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\AppOwnershipComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndUserTextComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\SelfServiceBaseComponents.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\SelfServiceDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\Base\BaseErrorPage.cs" />
@@ -418,6 +419,8 @@
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfService.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\BaseSelfServiceEndUser.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\BaseSelfServiceEndUserComponent.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\EndUserPageTextComponent.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\EndClient\ErrorMessagePage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\SelfServiceAgGrid.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Settings\SettingsApi.cs" />
@@ -627,10 +630,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateApplicationAttributesAutomations1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateCapacityUnit\UpdateCapacityUnitAutomation.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateBucket\UpdateBucketAutomations.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UpdateCapacityUnitAutomation.feature</DependentUpon>
+      <DependentUpon>UpdateBucketAutomations.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature.cs">
       <AutoGen>True</AutoGen>
@@ -646,6 +649,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateCustomFieldForAutomations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateRing\UpdateRingAutomations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UpdateRingAutomations.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations6.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1136,6 +1144,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AddApplicationOwnershipViaSelfServiceBuilderMvp.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\LastPageMVP.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LastPageMVP.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\TextComponentMvp.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextComponentMvp.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\CreateSelfServiceMvp.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2218,9 +2236,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateApplicationAttributesAutomations11.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateCapacityUnit\UpdateCapacityUnitAutomation.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateBucket\UpdateBucketAutomations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateCapacityUnitAutomation.feature.cs</LastGenOutput>
+      <LastGenOutput>UpdateBucketAutomations.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\UpdateCustomFieldAutomations3.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2233,6 +2251,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateCustomField\CreateCustomFieldForAutomations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateCustomFieldForAutomations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateRing\UpdateRingAutomations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateRingAutomations.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Automations\Actions\UpdateTaskValue\UpdateTaskValueAutomations6.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -2625,6 +2647,14 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\AddApplicationOwnershipViaSelfServiceBuilderMvp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddApplicationOwnershipViaSelfServiceBuilderMvp.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\LastPageMVP.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LastPageMVP.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\TextComponentMvp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TextComponentMvp.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\CreateSelfServiceMvp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

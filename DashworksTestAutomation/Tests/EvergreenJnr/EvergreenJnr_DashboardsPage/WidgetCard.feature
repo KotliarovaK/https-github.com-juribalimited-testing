@@ -11,20 +11,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                 |
 	| CPU Virtualisation Capable |
-	And User move 'CPU Virtualisation Capable' column to 'Hostname' column
-	And User move 'Hostname' column to 'Operating System' column
+	When User move 'CPU Virtualisation Capable' column to 'Hostname' column
+	When User move 'Hostname' column to 'Operating System' column
 	Then 'All Devices' list should be displayed to the user
 	When User create dynamic list with "List15364" name on "Devices" page
 	Then "List15364" list is displayed to user
 	When Dashboard with 'Dashboard for DAS15364' name created via API and opened
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType | Title             | List      | Type       |
 	| Card       | WidgetForDAS15364 | List15364 | First Cell |
 	Then Widget Preview is displayed to the user
-	And Card widget displayed inside preview pane
-	And There are no errors in the browser console
+	Then Card widget displayed inside preview pane
+	Then There are no errors in the browser console
 	When User clicks 'CREATE' button
 	Then There are no errors in the browser console
 

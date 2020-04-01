@@ -218,11 +218,14 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
+	When User closes Actions panel
 	When User refreshes agGrid
 	And User perform search by "Z11REX196H34MG"
 	Then 'Unassigned' content is displayed in the 'Evergreen Ring' column
 	When User clicks cross icon in Table search field
 		#Revert Changes
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown

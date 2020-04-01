@@ -13,7 +13,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	And User creates new Widget
 	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Pie        |       | All Devices | Device Type | Hostname    | Count distinct    | Device Type ASC | 10        |
-	Then Error message with 'Widget Title should not be empty' text is displayed on Widget page
+	Then 'Widget Title should not be empty' text is displayed on inline error banner
 	And There are no errors in the browser console
 	When User creates new Widget
 	| WidgetType | Title                  | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         |

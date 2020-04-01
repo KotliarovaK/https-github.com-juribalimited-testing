@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Line' in the 'WidgetType' dropdown
 	And User enters 'DAS15737' as Widget Title
-	And User selects 'TestList_DAS15737' as Widget List
+	When User selects 'TestList_DAS15737' option from 'List' autocomplete
 	When User selects 'prK: Application Readiness' in the 'SplitBy' dropdown
 	When User selects 'Count' in the 'AggregateFunction' dropdown
 	When User selects 'prK: Application Readiness ASC' in the 'OrderBy' dropdown
