@@ -900,3 +900,10 @@ Examples:
 	| OperatorValues |
 	| Empty          |
 	| Not Empty      |
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS20619
+Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorDisplayedWhenFilterIncludesRadiobuttonEmptyTaskValue
+	When User clicks 'Devices' on the left-hand menu
+	When User navigates to 'devices?$filter=(project_task_1_8397_1_Task_Value%20EQUALS%20('NULL'))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_task_1_8397_1_Task' url via address line
+	Then table content is present
+	Then There are no errors in the browser console
