@@ -44,8 +44,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	Then '' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task (Date)' column
 	Then '' content is displayed in the 'zUserAutom: Stage 3 \ DDL Slot Task (Slot)' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17829 @Cleanup @Not_Ready
-#Waiting for 'zMailbox Sch for Automations Feature' project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17829 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScopedAutomation
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
@@ -57,8 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User enters '17829_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Stage 3' option from 'Stage' autocomplete
-	When User selects 'Radio Date Owner' option from 'Task' autocomplete
+	When User selects 'Stage 3 \ Radio Date Owner' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
@@ -69,8 +67,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerInMailboxScop
 	When User clicks 'Run now' option in Cog-menu for '17829_Automation' item from 'Automation' column
 	When '17829_Automation' automation '17829_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
-	When User refreshes agGrid
 	When User enters "17829_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
