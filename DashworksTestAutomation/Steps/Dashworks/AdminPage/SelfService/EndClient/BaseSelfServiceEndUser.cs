@@ -80,12 +80,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             Verify.IsFalse(page.IsButtonDisplayed(buttonTitle), $"'{buttonTitle}' button was displayed for End User");
         }
 
+        [Then(@"'(.*)' button is disabled for End User")]
+        public void ThenButtonIsDisabled(string buttonTitle)
+        {
+            var page = _driver.NowAt<SelfServiceEndClientBasePage>();
+
+            Verify.IsFalse(page.IsButtonEnabled(buttonTitle), $"'{buttonTitle}' button was enabled for End User");
+        }
+
         [Then(@"Header is displayed on End User page")]
         public void ThenHeaderIsDisplayedOnEndUserPage()
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
 
-            Verify.IsTrue(page.Header.Displayed(), $"Header  was not displayed for End User");
+            Verify.IsTrue(page.Header.Displayed(), $"Header was not displayed for End User");
         }
 
         [Then(@"Subject Title '(.*)' is displayed on End User page")]
@@ -93,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
 
-            Verify.IsTrue(page.SubjectTitleOnEndUserPage(subjTitle).Displayed(), $"Header button was not displayed for End User");
+            Verify.IsTrue(page.SubjectTitleOnEndUserPage(subjTitle).Displayed(), $"'{subjTitle}' subject title was not displayed for End User");
         }
     }
 }
