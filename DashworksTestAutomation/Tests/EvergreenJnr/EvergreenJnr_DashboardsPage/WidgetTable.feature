@@ -164,7 +164,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereTh
 	When User clicks 'ADD WIDGET' button
 	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'All Devices' as Widget List
+	When User selects 'All Devices' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Sum' in the 'AggregateFunction' dropdown
 	Then 'There are no fields available for this aggregate function' error message is displayed for 'Aggregate Function' dropdown
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'LastLogout' as Widget List
+	When User selects 'LastLogout' option from 'List' autocomplete
 	When User selects 'Domain' in the 'SplitBy' dropdown
 	When User selects 'First' in the 'AggregateFunction' dropdown
 	When User selects 'Last Logon Date' in the 'AggregateBy' dropdown
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggr
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'Table' in the 'WidgetType' dropdown
 	And User enters 'Widget Name' as Widget Title
-	And User selects 'LastLogout' as Widget List
+	When User selects 'LastLogout' option from 'List' autocomplete
 	When User selects 'Domain' in the 'SplitBy' dropdown
 	When User selects 'Last' in the 'AggregateFunction' dropdown
 	When User selects 'Last Logon Date' in the 'AggregateBy' dropdown
@@ -422,7 +422,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatComplianceLayoutCorrectlyDisplaye
 	| Red                |
 	When User creates 'AppCompliance18232' dynamic list
 	When User waits for '3' seconds
-	When User create dynamic list with "AppCompliance18232" name on "Applications" page
 	Then "AppCompliance18232" list is displayed to user
 	When Dashboard with 'Dashboard for DAS18232' name created via API and opened
 	When User checks 'Edit mode' slide toggle
@@ -557,8 +556,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetBasedOnTaskValueSeveri
 	| Empty          |
 	| Started        |
 	| Complete       |
-	| Not Started    |
 	| Not Applicable |
+	| Not Started    |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18631 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenClickingThroughWidgetBasedOnListWithTwoFiltersSepartedByOr

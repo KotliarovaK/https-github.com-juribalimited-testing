@@ -155,8 +155,7 @@ this.FeatureBackground();
 #line 13
  testRunner.And("User creates new Widget", ((string)(null)), table1, "And ");
 #line 16
- testRunner.Then("Error message with \'Widget Title should not be empty\' text is displayed on Widget" +
-                    " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Widget Title should not be empty\' text is displayed on inline error banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

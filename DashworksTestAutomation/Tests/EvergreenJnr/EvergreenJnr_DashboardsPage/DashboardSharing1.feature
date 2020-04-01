@@ -83,8 +83,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	When User clicks 'ADD WIDGET' button 
 	When User selects 'List' in the 'WidgetType' dropdown
 	When User enters 'Widget_For_DAS16380_1' as Widget Title
-	When User selects 'Second_List_DAS16380_2' as Widget List
-	Then 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' error message is displayed for 'List' dropdown
+	When User selects 'Second_List_DAS16380_2' option from 'List' autocomplete
+	Then 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' message is displayed for 'List' field
 	#change permission to Everyone can edit
 	When User clicks 'CREATE' button 
 	Then 'Widget_For_DAS16380_1' Widget is displayed to the user
@@ -94,8 +94,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	When User clicks 'ADD WIDGET' button 
 	When User selects 'List' in the 'WidgetType' dropdown
 	When User enters 'Widget_For_DAS16380_2' as Widget Title
-	When User selects 'Second_List_DAS16380_2' as Widget List
-	Then 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' error message is displayed for 'List' dropdown
+	When User selects 'Second_List_DAS16380_2' option from 'List' autocomplete
+	Then 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' message is displayed for 'List' field
 	#change permission to Everyone can edit
 	When User clicks 'CREATE' button
 	Then 'Widget_For_DAS16380_2' Widget is displayed to the user
@@ -105,8 +105,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	When User clicks 'ADD WIDGET' button 
 	When User selects 'List' in the 'WidgetType' dropdown
 	When User enters 'Widget_For_DAS16380_3' as Widget Title
-	When User selects 'Second_List_DAS16380_2' as Widget List
-	Then 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' error message is displayed for 'List' dropdown
+	When User selects 'Second_List_DAS16380_2' option from 'List' autocomplete
+	Then 'You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget' message is displayed for 'List' field
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPermisson

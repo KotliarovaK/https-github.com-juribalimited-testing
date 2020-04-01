@@ -590,14 +590,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.That(page.IsTextboxDisplayedWithError(placeholder), Is.False, $"Error message was displayed for '{placeholder}' textbox");
         }
 
-        [Then(@"'(.*)' error message is displayed for '(.*)' field")]
-        public void ThenErrorMessageIsDisplayedForField(string errorMessage, string placeholder)
+        [Then(@"'(.*)' message is displayed for '(.*)' field")]
+        public void ThenMessageIsDisplayedForField(string message, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.BodyContainer.Click();
 
-            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
+            Verify.AreEqual(message, page.GetTextboxErrorMessage(placeholder),
+                $"Incorrect message is displayed in the '{placeholder}' field");
+        }
+
+        [Then(@"'(.*)' error message is displayed for '(.*)' field")]
+        public void ThenErrorMessageIsDisplayedForField(string errorMessage, string placeholder)
+        {
+            ThenMessageIsDisplayedForField(errorMessage, placeholder);
+
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
@@ -609,11 +617,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         [Then(@"'(.*)' information message is displayed for '(.*)' field")]
         public void ThenInformationMessageIsDisplayedForField(string errorMessage, string placeholder)
         {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            page.BodyContainer.Click();
+            ThenMessageIsDisplayedForField(errorMessage, placeholder);
 
-            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");

@@ -368,10 +368,10 @@ this.FeatureBackground();
 #line 85
  testRunner.When("User enters \'Widget_For_DAS16380_1\' as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 86
- testRunner.When("User selects \'Second_List_DAS16380_2\' as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Second_List_DAS16380_2\' option from \'List\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
  testRunner.Then("\'You have chosen a restricted list for a shared dashboard, some users may not be " +
-                    "able to see this widget\' error message is displayed for \'List\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "able to see this widget\' message is displayed for \'List\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 89
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 90
@@ -389,10 +389,10 @@ this.FeatureBackground();
 #line 96
  testRunner.When("User enters \'Widget_For_DAS16380_2\' as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
- testRunner.When("User selects \'Second_List_DAS16380_2\' as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Second_List_DAS16380_2\' option from \'List\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 98
  testRunner.Then("\'You have chosen a restricted list for a shared dashboard, some users may not be " +
-                    "able to see this widget\' error message is displayed for \'List\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "able to see this widget\' message is displayed for \'List\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 100
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 101
@@ -410,10 +410,10 @@ this.FeatureBackground();
 #line 107
  testRunner.When("User enters \'Widget_For_DAS16380_3\' as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 108
- testRunner.When("User selects \'Second_List_DAS16380_2\' as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Second_List_DAS16380_2\' option from \'List\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 109
  testRunner.Then("\'You have chosen a restricted list for a shared dashboard, some users may not be " +
-                    "able to see this widget\' error message is displayed for \'List\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                    "able to see this widget\' message is displayed for \'List\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
