@@ -591,13 +591,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         }
 
         [Then(@"'(.*)' message is displayed for '(.*)' field")]
-        public void ThenMessageIsDisplayedForField(string errorMessage, string placeholder)
+        public void ThenMessageIsDisplayedForField(string message, string placeholder)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             page.BodyContainer.Click();
 
-            Verify.AreEqual(errorMessage, page.GetTextboxErrorMessage(placeholder),
-                $"Incorrect error message is displayed in the '{placeholder}' field");
+            Verify.AreEqual(message, page.GetTextboxErrorMessage(placeholder),
+                $"Incorrect message is displayed in the '{placeholder}' field");
         }
 
         [Then(@"'(.*)' error message is displayed for '(.*)' field")]
