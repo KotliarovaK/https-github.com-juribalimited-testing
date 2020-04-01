@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtThe
 	Then "SUCCESS" content is displayed for "Outcome" column
 	Then "Action Finish" content is displayed for "Type" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20248 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20248 @DAS20388 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button

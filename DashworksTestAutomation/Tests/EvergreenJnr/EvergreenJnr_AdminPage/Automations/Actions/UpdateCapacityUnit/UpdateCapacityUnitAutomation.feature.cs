@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_AdminPage.Auto
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         [NUnit.Framework.TestCaseAttribute("All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
+        [NUnit.Framework.TestCaseAttribute("All Application", null)]
         public virtual void EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit(string listName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -143,8 +144,8 @@ this.FeatureBackground();
                         "Scope",
                         "Run"});
             table1.AddRow(new string[] {
-                        "17339_Automation",
-                        "17339",
+                        "17288_Automation",
+                        "17288",
                         "true",
                         "false",
                         string.Format("{0}", listName),
@@ -160,7 +161,7 @@ this.FeatureBackground();
 #line 17
  testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
- testRunner.When("User enters \'17339_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'17288_Action\' text to \'Action Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
  testRunner.When("User selects \'Update bucket\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
@@ -173,8 +174,6 @@ this.FeatureBackground();
  testRunner.When("User selects \'Owners only\' in the \'Also Move Users\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
  testRunner.Then("\'CREATE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 26
- testRunner.Then("current date is displayed for \'zDeviceAut: Stage A \\ Weekdays BU Task\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -643,6 +643,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS20248")]
+        [NUnit.Framework.CategoryAttribute("DAS20388")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList()
         {
@@ -677,6 +678,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS20248",
+                        "DAS20388",
                         "Cleanup"});
 #line 176
 this.ScenarioInitialize(scenarioInfo);

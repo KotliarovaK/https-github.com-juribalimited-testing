@@ -140,6 +140,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"current date and time is displayed for '(.*)' column")]
+        public void ThenCurrentDateAndTimeIsDisplayedForColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var currentDate = DateTime.Now.ToString("d MMM yyyy hh mm");
+            var allCells = page.GetColumnElementsByColumnName(columnName);
+            _driver.WaitForElementToContainsText(allCells, currentDate);
+            var columnContent = page.GetColumnContentByColumnName(columnName);
+            foreach (string content in columnContent)
+            {
+                Verify.AreEqual(currentDate, content, $"'{currentDate}' is not displayed in the '{columnName}'");
+            }
+        }
+
         [Then(@"""(.*)"" italic content is displayed")]
         public void ThenItalicContentIsDisplayed(string textContent)
         {

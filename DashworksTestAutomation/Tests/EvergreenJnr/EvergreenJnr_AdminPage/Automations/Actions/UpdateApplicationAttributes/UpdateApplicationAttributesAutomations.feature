@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'GREEN' content is displayed in 'Sticky Compliance' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @DAS19033 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @DAS19033 @DAS17675 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -101,9 +101,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
 	When '18834_Automation' automation '18834_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When '18834_Automation' automation '18834_Action' action run has finished
-	When User clicks refresh button in the browser
 	When User enters "18834_Automation" text in the Search field for "Automation" column
+	Then current date and time is displayed for 'Date' column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page

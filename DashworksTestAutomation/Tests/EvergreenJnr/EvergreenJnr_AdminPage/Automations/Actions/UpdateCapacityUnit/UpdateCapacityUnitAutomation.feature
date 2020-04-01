@@ -9,13 +9,13 @@ Background: Pre-Conditions
 Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 17339_Automation | 17339       | true   | false              | <ListName> | Manual |
+	| 17288_Automation | 17288       | true   | false              | <ListName> | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
-	When User enters '17339_Action' text to 'Action Name' textbox
+	When User enters '17288_Action' text to 'Action Name' textbox
 	When User selects 'Update bucket' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Bucket' autocomplete
@@ -23,12 +23,11 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdat
 	When User selects 'Owners only' in the 'Also Move Users' dropdown
 	Then 'CREATE' button is not disabled
 
-	Then current date is displayed for 'zDeviceAut: Stage A \ Weekdays BU Task' column
-
 Examples:
-	| ListName      |
-	| All Devices   |
-	| All Mailboxes |
+	| ListName        |
+	| All Devices     |
+	| All Mailboxes   |
+	| All Application |
 
 #@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17339 @Cleanup @Wormhole
 #Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateBucket

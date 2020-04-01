@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
 	Then '10 Oct 2019 00:00' content is displayed in the 'zUserAutom: Relative BU \ DT Auto App (Date)' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @DAS17675 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxesAutomation
 	When User creates new Automation via API and open it
 	| AutomationName      | Description | Active | StopOnFailedAction | Scope                               | Run    |
@@ -93,6 +93,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When 'Test18292Automation' automation '18292_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
+	Then current date and time is displayed for 'Date' column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
