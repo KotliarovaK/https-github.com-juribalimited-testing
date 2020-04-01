@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
                 {
                     try
                     {
-                        _id = DatabaseHelper.GetAutomationId(automationName);
+                        _id = DatabaseHelper.GetAutomationId(name);
                     }
                     catch { }
                 }
@@ -27,16 +27,16 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
             set => _id = value;
         }
 
-        [JsonProperty("active")]
+        [JsonProperty("isActive")]
         public bool Active { get; set; }
-        public int automationId => -1;
-        public string automationName { get; set; }
-        public string automationSqlAgentJobId { get; set; }
+        public int id => -1;
+        public string name { get; set; }
+        public string sqlAgentJobId { get; set; }
         public string description { get; set; }
         private string AutomationListName { get; set; }
         public bool stopOnFailedAction { get; set; }
 
-        [JsonProperty("automationScheduleTypeId")]
+        [JsonProperty("scheduleTypeId")]
         public int AutomationScheduleTypeId { get; private set; }
         private string _run;
         public string Run

@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| Name             | Description | Active | StopOnFailedAction | Scope     | Run    |
 	| 17104_Automation | 17104       | false  | false              | All Users | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user

@@ -471,7 +471,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     _slots.Value.Add(new SlotDto() { SlotName = text });
                     break;
                 case "Automation Name":
-                    _automations.Value.Add(new AutomationsDto() { automationName = text });
+                    _automations.Value.Add(new AutomationsDto() { name = text });
                     break;
                 case "Ring name":
                     //Get project ID if Ring is inside project
