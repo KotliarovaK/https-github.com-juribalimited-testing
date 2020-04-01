@@ -43,12 +43,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Teams _teams;
         private readonly Buckets _buckets;
         private readonly SelfServices _selfServices;
-        private readonly SelfServicePages _selfServicePages;
 
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,
-            Teams teams, Buckets buckets, SelfServices selfServices, SelfServicePages selfServicePages)
+            Teams teams, Buckets buckets, SelfServices selfServices)
         {
             _driver = driver;
             _automationActions = automationActions;
@@ -60,7 +59,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             _teams = teams;
             _buckets = buckets;
             _selfServices = selfServices;
-            _selfServicePages = selfServicePages;
         }
 
         #region Page Header/SubHeader
@@ -458,9 +456,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             {
                 case "Self Service Identifier":
                     _selfServices.Value.Add(new SelfServiceDto() { ServiceIdentifier = text });
-                    break;
-                case "Page Display Name":
-                    _selfServicePages.Value.First(x => x.Name.Equals("Welcome")).DisplayName = text;
                     break;
                 case "Action Name":
                     _automationActions.Value.Add(text);

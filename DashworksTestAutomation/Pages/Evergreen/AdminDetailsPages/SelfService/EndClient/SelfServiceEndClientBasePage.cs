@@ -70,18 +70,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
             }
         }
 
-        public bool IsButtonEnabled(string name)
-        {
-            try
-            {
-                return GetButtonOnEndUserPage(name, WebDriverExtensions.WaitTime.Short).Enabled;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         public IWebElement SubjectTitleOnEndUserPage(string title)
         {
             var selector = By.XPath($".//div[@class='ssw-title' and text()='{title}']");

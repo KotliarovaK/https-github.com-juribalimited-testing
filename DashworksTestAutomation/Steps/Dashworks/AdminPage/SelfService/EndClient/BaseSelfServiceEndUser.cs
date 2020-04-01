@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
 
-            Verify.IsFalse(page.IsButtonEnabled(buttonTitle), $"'{buttonTitle}' button was enabled for End User");
+            Verify.IsFalse(page.GetButtonOnEndUserPage(buttonTitle).Enabled, $"'{buttonTitle}' button was enabled for End User");
         }
 
         [Then(@"Header is displayed on End User page")]
