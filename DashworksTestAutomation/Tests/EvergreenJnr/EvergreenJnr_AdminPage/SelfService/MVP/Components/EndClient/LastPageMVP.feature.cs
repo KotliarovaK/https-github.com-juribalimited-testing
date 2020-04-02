@@ -310,6 +310,129 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("SelfService")]
+        [NUnit.Framework.CategoryAttribute("DAS20342")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "SelfService",
+                        "DAS20342",
+                        "Cleanup"});
+#line 64
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ProjectName",
+                        "Scope",
+                        "ProjectTemplate",
+                        "Mode"});
+            table7.AddRow(new string[] {
+                        "DAS_20342_Proj",
+                        "All Users",
+                        "None",
+                        "Standalone Project"});
+#line 65
+ testRunner.When("Project created via API", ((string)(null)), table7, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table8.AddRow(new string[] {
+                        "VSCmdShell"});
+#line 68
+ testRunner.When("User create static list with \"DAS_20342\" name on \"Applications\" page with followi" +
+                    "ng items", ((string)(null)), table8, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "ServiceIdentifier",
+                        "Enabled",
+                        "AllowAnonymousUsers",
+                        "Scope"});
+            table9.AddRow(new string[] {
+                        "DAS_20342_SS_1",
+                        "20342_1_SI",
+                        "true",
+                        "true",
+                        "DAS_20342"});
+#line 75
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table9, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ComponentName",
+                        "ProjectName",
+                        "OwnerPermission"});
+            table10.AddRow(new string[] {
+                        "AOC Name",
+                        "2004 Rollout",
+                        "Do not allow owner to be changed"});
+#line 78
+ testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
+                    "via API", ((string)(null)), table10, "When ");
+#line 81
+ testRunner.When("User navigates to End User landing page with \'20342_1_SI\' Self Service Identifier" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 82
+ testRunner.Then("\'Owner\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+ testRunner.Then("\'Remove Owner\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Column",
+                        "Value"});
+            table11.AddRow(new string[] {
+                        "Username",
+                        "VGZ6407126"});
+            table11.AddRow(new string[] {
+                        "Domain",
+                        "FR"});
+            table11.AddRow(new string[] {
+                        "Display Name",
+                        "Arlette Sicard"});
+#line 84
+ testRunner.Then("User sees following items for \'AOC Name\' component on \'Welcome\' end user page:", ((string)(null)), table11, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
