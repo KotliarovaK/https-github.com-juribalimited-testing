@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	Then "1" rows found label displays on Details Page
 	Then '[Default (User)]' checkbox is checked in the filter dropdown for the 'Path' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535 @Zion_NewGrid
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535 @DAS20604 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -295,6 +295,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#When User enters "ACG370114" text in the Search field for "Linked By" column
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
+
+#AnnI 4/01/20: DAS20604 will be fixed only for 'Wormhole' and we are waiting GD for this test.
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20604 @Zion_NewGrid @Wormhole
+Scenario: EvergreenJnr_DevicesList_CheckThatEmptyValueIsDisplayedAndRedirectsTheUserCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Related' left menu item
+	And User enters "00CWZRC4UK6W20" text in the Search field for "Device" column
+	Then "" content is displayed for "Owner" column
+	Then "" content is displayed for "Owner Display Name" column
+	And User clicks "00CWZRC4UK6W20" link on the Details Page
+	Then 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' content is displayed in 'Item Details Project' dropdown
+	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS15039 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed

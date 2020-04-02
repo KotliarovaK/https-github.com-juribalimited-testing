@@ -1523,6 +1523,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DevicesDetails_Users.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\ColumnGroupingCheck.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumnGroupingCheck.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetails_CopyActions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2954,6 +2959,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Users\DevicesDetails_Users.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DevicesDetails_Users.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\ColumnGroupingCheck.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ColumnGroupingCheck.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetails_CopyActions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

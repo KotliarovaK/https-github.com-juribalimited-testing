@@ -212,7 +212,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	Then 'Project or Evergreen' autocomplete is displayed
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'TestBulkUpdate' option from 'Ring' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
@@ -229,7 +230,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSe
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
+	Then 'Project or Evergreen' autocomplete is displayed
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Unassigned' option from 'Ring' autocomplete
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
