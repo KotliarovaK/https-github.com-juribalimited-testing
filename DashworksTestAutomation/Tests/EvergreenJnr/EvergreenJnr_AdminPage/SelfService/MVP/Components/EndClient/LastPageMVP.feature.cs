@@ -248,7 +248,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[0]);
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table4.AddRow(new string[] {
+                        "VSCmdShell"});
 #line 38
  testRunner.When("User create static list with \"DAS_20291\" name on \"Applications\" page with followi" +
                     "ng items", ((string)(null)), table4, "When ");
@@ -265,7 +268,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_20291"});
-#line 43
+#line 45
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table5, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -276,32 +279,32 @@ this.FeatureBackground();
                         "AOC Name",
                         "2004 Rollout",
                         "Allow owner to be set to another user only"});
-#line 46
+#line 48
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
                     "via API", ((string)(null)), table6, "When ");
-#line 49
+#line 51
  testRunner.When("User navigates to the \'Builder\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 50
+#line 52
  testRunner.And("User selects \'Edit\' cogmenu option for \'Page\' item type with \'Welcome\' name on Se" +
                     "lf Service Builder Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And("User enters \'First Page\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
- testRunner.Then("Page with \'First Page\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User enters \'First Page\' text to \'Page Display Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
+ testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.Then("Page with \'First Page\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 56
  testRunner.When("User navigates to End User landing page with \'20291_1_SI\' Self Service Identifier" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
- testRunner.Then("Subject Title \'Application: VSCmdShell\' is displayed on End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 56
- testRunner.Then("Page with \'First Page\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 57
- testRunner.Then("\'Continue\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Subject Title \'Application: VSCmdShell\' is displayed on End User page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
- testRunner.Then("\'Back\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page with \'First Page\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
+ testRunner.Then("\'Continue\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 60
+ testRunner.Then("\'Back\' button displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
  testRunner.Then("\'Back\' button is disabled for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
