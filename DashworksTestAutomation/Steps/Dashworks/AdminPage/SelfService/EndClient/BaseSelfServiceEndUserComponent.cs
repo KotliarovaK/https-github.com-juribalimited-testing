@@ -28,8 +28,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         }
 
         [Then(@"User sees following items for '(.*)' component on '(.*)' end user page:")]
-        public void ThenUserSeesFollowingItemsInComponentOnEnnUserPage(string сomponentName, string pageName,
-            Table table)
+        public void ThenUserSeesFollowingItemsForComponentOnEndUserPage(string сomponentName, string pageName, Table table)
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
             var selfServicePage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
