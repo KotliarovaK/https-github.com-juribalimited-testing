@@ -1617,6 +1617,72 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatTheCorrectSymbolsAreDisplayedToTheUserOnHardwareR" +
+            "ulesTabForConditionColumn")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS206117")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        public virtual void EvergreenJnr_UsersList_CheckThatTheCorrectSymbolsAreDisplayedToTheUserOnHardwareRulesTabForConditionColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatTheCorrectSymbolsAreDisplayedToTheUserOnHardwareRulesTabForConditionColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatTheCorrectSymbolsAreDisplayedToTheUserOnHardwareRulesTabForConditionColumnInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatTheCorrectSymbolsAreDisplayedToTheUserOnHardwareR" +
+                    "ulesTabForConditionColumn", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS206117",
+                        "Zion_NewGrid"});
+#line 388
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 389
+ testRunner.When("User navigates to the \'User\' details page for the item with \'66921\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 390
+ testRunner.Then("Details page for \'Administrator\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 391
+ testRunner.When("User navigates to the \'Compliance\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 392
+ testRunner.When("User navigates to the \'Hardware Rules\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 393
+ testRunner.Then("\'Hard Disk Total Space (MB) < 100000000\' content is displayed in the \'Condition\' " +
+                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
