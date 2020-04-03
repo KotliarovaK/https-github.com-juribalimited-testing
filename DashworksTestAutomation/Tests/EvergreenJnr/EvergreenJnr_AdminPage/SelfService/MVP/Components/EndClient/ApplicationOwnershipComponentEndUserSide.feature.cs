@@ -113,15 +113,15 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "VSCmdShell"});
 #line 10
- testRunner.Given("User resync \'DAS_20421\' objects for \'2004 Rollout\' project", ((string)(null)), table1, "Given ");
+ testRunner.Given("User resync \'Application\' objects for \'2004 Rollout\' project", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table2.AddRow(new string[] {
                         "VSCmdShell"});
 #line 13
- testRunner.When("User create static list with \"Application\" name on \"Applications\" page with follo" +
-                    "wing items", ((string)(null)), table2, "When ");
+ testRunner.When("User create static list with \"DAS_20421\" name on \"Applications\" page with followi" +
+                    "ng items", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",

@@ -7,10 +7,10 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20322 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
-	Given User resync 'DAS_20421' objects for '2004 Rollout' project
+	Given User resync 'Application' objects for '2004 Rollout' project
     | values     |
     | VSCmdShell |
-	When User create static list with "Application" name on "Applications" page with following items
+	When User create static list with "DAS_20421" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
