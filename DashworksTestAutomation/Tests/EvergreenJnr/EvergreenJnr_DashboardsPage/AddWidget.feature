@@ -46,29 +46,31 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname | Count             | Count ASC | 11        | true       |
 	When User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks first Dashboard in dashboards list
+	When User navigates to the 'Devices' left menu item
 	Then User sees 'You have unsaved changes. Are you sure you want to leave the page?' text in alert on Edit Widget page
 	When User clicks 'NO' button in Unsaved Changes alert
 	Then Unsaved Changes alert not displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Cleanup
-Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
+Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
-	When User selects '<WidgetType>' in the 'WidgetType' dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Bar' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Column' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Line' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Donut' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Table' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Card' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
-Examples: 
-	| WidgetType |
-	| Pie        |
-	| Bar        |
-	| Column     |
-	| Line       |
-	| Donut      |
-	| Half donut |
-	| Table      |
-	| Card       |
-	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @DAS14605 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
