@@ -180,11 +180,12 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList
 	When User refreshes agGrid
 	When User create dynamic list with "20248_TestList" name on "Devices" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope          | Run    |
-	| 20248_Automation | 20248       | true   | false              | 20248_TestList | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope          | Run    |
+	| 20248_Automation | 20248       | true     | false              | 20248_TestList | Manual |
 	Then Automation page is displayed correctly
 	Then 'This list uses, or refers to a list that uses, a value of "My Team" which is not valid as an automation scope' error message is displayed for 'Scope' field
 	When User navigates to the 'Actions' left menu item
+	When User waits for info message disappears under 'Scope' field
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
 	And User enters '20248_Action' text to 'Action Name' textbox

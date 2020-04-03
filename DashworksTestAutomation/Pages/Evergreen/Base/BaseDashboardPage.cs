@@ -575,6 +575,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             return error.Text;
         }
 
+        private By textboxSucceddSelector = By.XPath("./span[contains(@class,'success-text')]");
+
+        public string GetSuccessfulValidatedMessage(string placeholder)
+        {
+
+            var error = GetTextboxErrorMessageElement(placeholder).FindElement(textboxSucceddSelector);
+            return error.Text;
+        }
+
         public void WaitForTextboxInfoMessageDisappears(string placeholder)
         {
             try

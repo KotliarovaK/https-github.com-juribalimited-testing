@@ -33,7 +33,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             if (!_automations.Value.Any())
                 return;
 
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automation/deleteAutomations";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automations";
 
             foreach (AutomationsDto automation in _automations.Value)
             {
@@ -41,10 +41,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                 {
                     var request = requestUri.GenerateRequest();
                     request.AddParameter("objectId", null);
-                    request.AddParameter("selectedObjectsList", automation.Id);
+                    request.AddParameter("automationIds", automation.Id);
 
-                    var resp = _client.Evergreen.Put(request);
-                    if (resp.StatusCode != HttpStatusCode.OK)
+                    var resp = _client.Evergreen.Delete(request);
+                    if (resp.StatusCode != HttpStatusCode.NoContent)
                     {
                         Logger.Write($"Unable to delete Automation via API: {resp.StatusCode}");
                     }

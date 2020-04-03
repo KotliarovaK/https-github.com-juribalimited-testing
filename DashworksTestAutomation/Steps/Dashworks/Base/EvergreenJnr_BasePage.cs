@@ -610,8 +610,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+            //Need to delete check for Exclamation Icon,  it has to be removed for all project
+            //Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+            //    $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
         [Then(@"'(.*)' information message is displayed for '(.*)' field")]

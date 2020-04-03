@@ -604,7 +604,7 @@ namespace DashworksTestAutomation.Helpers
             try
             {
                 var time = dateTime.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss.fff");
-                var result = Convert.ToInt32(ExecuteReader($"SELECT [LogId] FROM [PM].[dbo].[AutomationLog] WHERE [name] = '{automation}' AND [LogDate] >= Convert(datetime, '{time}')  AND [LogTypeId] = 2", 0)[0]) > 0;
+                var result = Convert.ToInt32(ExecuteReader($"SELECT [LogId] FROM [PM].[dbo].[AutomationLog] WHERE [AutomationName] = '{automation}' AND [LogDate] >= Convert(datetime, '{time}')  AND [LogTypeId] = 2", 0)[0]) > 0;
                 return result;
             }
             catch (Exception)

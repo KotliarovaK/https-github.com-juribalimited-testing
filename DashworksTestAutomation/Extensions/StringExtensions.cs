@@ -18,9 +18,9 @@ namespace DashworksTestAutomation.Extensions
         {
             var request = new RestRequest(requestUri);
 
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+            //request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("referer", UrlProvider.EvergreenUrl);
 
             return request;
         }
