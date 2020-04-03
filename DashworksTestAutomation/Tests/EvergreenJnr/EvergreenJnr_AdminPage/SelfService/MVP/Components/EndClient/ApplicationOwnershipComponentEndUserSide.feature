@@ -2,7 +2,7 @@
 		Scenarios related to last End User page
 
 Background: Pre-Conditions
-	Given User is logged in to the Evergreen	
+	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20322 @Cleanup @SelfServiceMVP
@@ -39,7 +39,6 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksPro
 	Then following content is displayed on the Details Page
 	| Title     | Value |
 	| App Owner |       |
-
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
