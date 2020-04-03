@@ -2,12 +2,15 @@
 		Scenarios related to last End User page
 
 Background: Pre-Conditions
-	Given User is logged in to the Evergreen
+	Given User is logged in to the Evergreen	
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20322 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
-	When User create static list with "DAS_20421" name on "Applications" page with following items
+	Given User resync 'DAS_20421' objects for '2004 Rollout' project
+    | values     |
+    | VSCmdShell |
+	When User create static list with "Application" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
 	#Use the step blow as soon as it will be possible instead of gold data
