@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationUtils.Extensions;
+using DashworksTestAutomation.DTO.ItemDetails;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -16,11 +18,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.BeforeS
     [Binding]
     class ResyncObject : SpecFlowContext
     {
-        private readonly RestWebClient _client;
+        private readonly ResyncMethods.ResyncMethods _resyncMethods;
+        private readonly ResyncObjects _resyncObjects;
 
-        public ResyncObject(RestWebClient client)
+        public ResyncObject(RestWebClient client, ResyncObjects resyncObjects)
         {
-            _client = client;
+            _resyncMethods = new ResyncMethods.ResyncMethods(client);
+            _resyncObjects = resyncObjects;
         }
 
         [Given(@"User resync '(.*)' objects for '(.*)' project")]
@@ -28,26 +32,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.BeforeS
         {
             var projId = DatabaseHelper.GetProjectId(projectName);
 
+            var resyncObjects = new ResyncItemst
+            {
+                List = listName,
+                ProjectName = projectName
+            };
+
             foreach (string itemName in table.Rows.Select(x => x.Values.First()))
             {
-                var id = DatabaseHelper.GetItemId(listName, itemName);
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}/{listName.ToLower()}/{id}/relinkObjects";
-                var request = requestUri.GenerateRequest();
-                request.AddParameter("projectId", projId);
-                request.AddParameter("IsOwnerResync", true);
-                request.AddParameter("IsAppsResync", true);
-                request.AddParameter("IsNameResync", true);
-                request.AddParameter("IsSkipRelink", true);
-                request.AddParameter("objectId", id);
-
-                var response = _client.Evergreen.Post(request);
-
-                if (response.StatusCode != HttpStatusCode.OK)
-                {
-                    throw new Exception(
-                        $"Unable to resynk '{itemName}' {listName} object for '{projectName}' project: {response.StatusCode}, {response.ErrorMessage}");
-                }
+                resyncObjects.Objects.Add(itemName);
             }
+
+            _resyncObjects.Value.Add(resyncObjects);
+            _resyncMethods.Resync(resyncObjects);
         }
     }
 }
