@@ -383,3 +383,11 @@ Scenario: EvergreenJnr_DeviceList_CheckThatValueInTheRingColumnOnDeviceDetailsIs
 	| checkboxes                      |
 	| User Evergreen Capacity Project |
 	Then 'Unassigned' content is displayed in the 'Ring' column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS206117 @Zion_NewGrid
+Scenario: EvergreenJnr_UsersList_CheckThatTheCorrectSymbolsAreDisplayedToTheUserOnHardwareRulesTabForConditionColumn
+	When User navigates to the 'User' details page for the item with '66921' ID
+	Then Details page for 'Administrator' item is displayed to the user
+	When User navigates to the 'Compliance' left menu item
+	When User navigates to the 'Hardware Rules' left submenu item
+	Then 'Hard Disk Total Space (MB) < 100000000' content is displayed in the 'Condition' column
