@@ -4126,6 +4126,67 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNoErrorDisplayedWhenFilterIncludesRadiobuttonEm" +
+            "ptyTaskValue")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("Filter_DevicesList")]
+        [NUnit.Framework.CategoryAttribute("DAS20619")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatNoErrorDisplayedWhenFilterIncludesRadiobuttonEmptyTaskValue()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatNoErrorDisplayedWhenFilterIncludesRadiobuttonEmptyTaskValueInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatNoErrorDisplayedWhenFilterIncludesRadiobuttonEmptyTaskValueInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatNoErrorDisplayedWhenFilterIncludesRadiobuttonEm" +
+                    "ptyTaskValue", null, new string[] {
+                        "Evergreen",
+                        "Evergreen_FiltersFeature",
+                        "Filter_DevicesList",
+                        "DAS20619"});
+#line 905
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 906
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 907
+ testRunner.When("User navigates to \'devices?$filter=(project_task_1_8397_1_Task_Value%20EQUALS%20(" +
+                    "\'NULL\'))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_ta" +
+                    "sk_1_8397_1_Task\' url via address line", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 908
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 909
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

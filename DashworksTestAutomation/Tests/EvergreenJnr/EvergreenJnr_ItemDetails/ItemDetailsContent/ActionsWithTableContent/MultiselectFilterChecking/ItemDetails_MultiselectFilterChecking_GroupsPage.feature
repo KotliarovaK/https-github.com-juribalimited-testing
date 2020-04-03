@@ -98,7 +98,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplication
 	| Values      |
 	| JuribaDEV50 |
 
-	#AnnI 3/31/20: some functionality is ready only for 'Wormhole'
+#AnnI 4/01/20: some functionality is ready only for 'Wormhole'
 @Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20492 @Zion_NewGrid @Wormhole
 Scenario: EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMembersSubTabForGroupPage
 	When User type "GSMS-ReportViewer" in Global Search Field

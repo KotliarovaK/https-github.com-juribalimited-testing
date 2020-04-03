@@ -25,6 +25,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService;
+using DashworksTestAutomation.DTO.Evergreen.Admin.SelfService.Builder;
 
 namespace DashworksTestAutomation.Steps.Dashworks.Base
 {
@@ -42,6 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         private readonly Teams _teams;
         private readonly Buckets _buckets;
         private readonly SelfServices _selfServices;
+
 
         public EvergreenJnr_BasePage(RemoteWebDriver driver, AutomationActions automationActions,
             Automations automations, Slots slots, Rings rings, CapacityUnits capacityUnits, DTO.RuntimeVariables.Projects projects,

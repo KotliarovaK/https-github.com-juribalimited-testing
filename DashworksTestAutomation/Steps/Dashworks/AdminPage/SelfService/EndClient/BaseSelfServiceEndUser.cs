@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
 
-            Verify.IsTrue(page.Header.Displayed(), $"Header  was not displayed for End User");
+            Verify.IsTrue(page.Header.Displayed(), $"Header was not displayed for End User");
         }
 
         [Then(@"Subject Title '(.*)' is displayed on End User page")]
@@ -109,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
 
-            Verify.IsTrue(page.SubjectTitleOnEndUserPage(subjTitle).Displayed(), $"Header button was not displayed for End User");
+            Verify.IsTrue(page.SubjectTitleOnEndUserPage(subjTitle).Displayed(), $"'{subjTitle}' subject title was not displayed for End User");
         }
     }
 }
