@@ -761,7 +761,7 @@ this.FeatureBackground();
 #line 160
  testRunner.When("User selects \'Count\' in the \'AggregateFunction\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 161
- testRunner.Then("Aggregate By dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Aggregate By\' dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1078,7 +1078,7 @@ this.FeatureBackground();
 #line 246
  testRunner.When("User selects \'Count\' in the \'AggregateFunction\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 247
- testRunner.Then("Aggregate By dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Aggregate By\' dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
@@ -1751,7 +1751,7 @@ this.FeatureBackground();
 #line 405
  testRunner.And("Color Scheme dropdown displayed with \'Compliance\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 406
- testRunner.And("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'Colour Scheme\' dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 407
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 408
@@ -1881,7 +1881,7 @@ this.FeatureBackground();
 #line 438
  testRunner.Then("Color Scheme dropdown displayed with \'Readiness\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 439
- testRunner.Then("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Colour Scheme\' dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 440
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -2002,7 +2002,7 @@ this.FeatureBackground();
 #line 465
  testRunner.Then("Color Scheme dropdown displayed with \'Readiness\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 466
- testRunner.Then("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Colour Scheme\' dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 467
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 468
@@ -2012,12 +2012,11 @@ this.FeatureBackground();
 #line 470
  testRunner.When("User selects \'Application Compliance\' in the \'SplitBy\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 471
- testRunner.Then("User sees \'Application Compliance ASC\' option for Order By selector on Create Wid" +
-                    "get page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Application Compliance ASC\' content is displayed in \'Order By\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 472
  testRunner.Then("Color Scheme dropdown displayed with \'Compliance\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 473
- testRunner.Then("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Colour Scheme\' dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 474
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 475

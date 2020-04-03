@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	When User selects 'ListWithAllDatatypes' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count' in the 'AggregateFunction' dropdown
-	Then Aggregate By dropdown is disabled
+	Then 'Aggregate By' dropdown is disabled
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
@@ -244,7 +244,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	When User selects 'ListWithAllDatatypes' option from 'List' autocomplete
 	When User selects 'Operating System' in the 'SplitBy' dropdown
 	When User selects 'Count' in the 'AggregateFunction' dropdown
-	Then Aggregate By dropdown is disabled
+	Then 'Aggregate By' dropdown is disabled
 	And User sees following options for Order By selector on Create Widget page:
 	| items                 |
 	| Operating System ASC  |
@@ -403,7 +403,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckNameAndLabelAndColorSchemeForEmptyOwn
 	And User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with 'Compliance' placeholder 
-	And Color Scheme dropdown is disabled
+	Then 'Colour Scheme' dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS17467' Widget is displayed to the user
 	Then Data Legends values are displayed in 'WidgetForDAS17467' widget on the Dashboard page
@@ -436,7 +436,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckColorSchemePlaceholderForReadiness
 	When User selects 'Show data labels' checkbox on the Create Widget page
 	Then Widget Preview is displayed to the user
 	Then Color Scheme dropdown displayed with 'Readiness' placeholder 
-	Then Color Scheme dropdown is disabled
+	Then 'Colour Scheme' dropdown is disabled
 	Then There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17515 @DAS17987 @Cleanup
@@ -463,14 +463,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectColorSchemeisUsedWhenWidge
 	Then Widget Preview is displayed to the user
 	Then There are no errors in the browser console
 	Then Color Scheme dropdown displayed with 'Readiness' placeholder
-	Then Color Scheme dropdown is disabled
+	Then 'Colour Scheme' dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then There are no errors in the browser console
 	When User clicks 'Edit' menu option for 'WidgetForDAS17515' widget
 	When User selects 'Application Compliance' in the 'SplitBy' dropdown
-	Then User sees 'Application Compliance ASC' option for Order By selector on Create Widget page
+	Then 'Application Compliance ASC' content is displayed in 'Order By' dropdown
 	Then Color Scheme dropdown displayed with 'Compliance' placeholder 
-	Then Color Scheme dropdown is disabled
+	Then 'Colour Scheme' dropdown is disabled
 	When User clicks 'UPDATE' button 
 	Then There are no errors in the browser console
 

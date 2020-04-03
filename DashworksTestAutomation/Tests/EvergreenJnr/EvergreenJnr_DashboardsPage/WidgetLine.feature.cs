@@ -733,7 +733,7 @@ this.FeatureBackground();
 #line 153
  testRunner.And("Color Scheme dropdown displayed with \'Readiness\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 154
- testRunner.And("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'Colour Scheme\' dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 155
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 156
@@ -751,7 +751,7 @@ this.FeatureBackground();
 #line 162
  testRunner.And("Color Scheme dropdown displayed with \'Compliance\' placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 163
- testRunner.And("Color Scheme dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\'Colour Scheme\' dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 164
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 165

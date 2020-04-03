@@ -158,6 +158,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             baseActionItem.PopulateTextbox("Title", widgetTitle);
         }
 
+
+        #region Color Scheme
+
         [When(@"User selects '(.*)' in the Colour Scheme")]
         public void WhenUserSelectsInTheColourScheme(string colorTitle)
         {
@@ -167,6 +170,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
             createWidgetElement.GetColorFromColorScheme(colorTitle).Click();
         }
+
 
         [When(@"User selects the Colour Scheme by index '(.*)'")]
         public void SetColourSchemeByIndex(string index)
@@ -197,20 +201,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.ClickColorSchemeByColorCode(code);
         }
 
-        [When(@"User selects '(.*)' checkbox on the Create Widget page")]
-        public void WhenUserSelectsCheckboxOnTheCreateWidgetPage(string checkboxName)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            page.GetDashboardCheckboxByName(checkboxName).Click();
-        }
-
-        [When(@"User clicks '(.*)' button in Unsaved Changes alert")]
-        public void WhenUserClickButtonInUnsavedChangesAlert(string buttonTitle)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            page.UnsavedChangesAlertButton(buttonTitle).Click();
-        }
-
         [Then(@"Colour Scheme dropdown is displayed to the user")]
         public void ThenColourSchemeDropdownIsDisplayedToTheUser()
         {
@@ -223,13 +213,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
         }
-       
+
         [Then(@"Color Scheme dropdown displayed with '(.*)' placeholder")]
         public void ThenColourSchemeHasCorrectPlaceholder(string placeholder)
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
             Verify.That(page.ColorSchemePlaceholder.Text, Is.EqualTo(placeholder), "Colour Scheme dropdown is displayed with wrong placeholder");
+        }
+
+        #endregion
+
+
+        [When(@"User selects '(.*)' checkbox on the Create Widget page")]
+        public void WhenUserSelectsCheckboxOnTheCreateWidgetPage(string checkboxName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.GetDashboardCheckboxByName(checkboxName).Click();
         }
 
         [Then(@"Table widget displayed inside preview pane correctly")]
@@ -243,32 +243,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Verify.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
         }
-
-        [Then(@"Widget title '(.*)' is displayed on Widget page")]
-        public void ThenWidgetTitleDisplayedOnThePage(string text)
-        {
-            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-
-            Verify.AreEqual(baseActionItem.GetDropdown(").Title").GetAttribute("innerHTML"), text,
-                "Widget title is not the same");
-        }
-
-        [Then(@"Unsaved Changes alert not displayed to the user")]
-        public void ThenNoUnsavedChangesAlertDisplayedOnEditWidgetPage()
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForElementToBeNotDisplayed(page.UnsavedChangesAlert);
-            Verify.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"User sees '(.*)' text in alert on Edit Widget page")]
-        public void ThenUserSeesTextInAlertOnEditWidgetPage(string text)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitForElementToBeDisplayed(page.UnsavedChangesAlert);
-            Verify.AreEqual(text, page.GetUnsavedChangesAlertText().Text, "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
+     
         [Then(@"User sees following options for Order By selector on Create Widget page:")]
         public void WhenUserSeesFollowingOptionsForOrderBySelectorOnCreateWidgetPage(Table items)
         {
@@ -285,42 +260,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             baseActionItem.GetDropdown("OrderBy").SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
-        [Then(@"User sees '(.*)' option for Order By selector on Create Widget page")]
-        public void WhenUserSeesFollowingOptionForOrderBySelectorOnCreateWidgetPage(string option)
-        {
-            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            Verify.AreEqual(baseActionItem.GetDropdown("OrderBy").Text, option, "Incorrect option in OrderBy dropdown");
-        }
-
         [Then(@"Aggregate Function dropdown is placed above the Aggregate By dropdown")]
         public void ThenUserSeesAggregateFunctionAboveTheAggregateByDropdown()
         {
             var baseActionItem = _driver.NowAt<BaseDashboardPage>();
 
             Verify.That(baseActionItem.GetDropdown("AggregateFunction").Location.Y, Is.LessThan(baseActionItem.GetDropdown("AggregateBy").Location.Y));
-        }
-
-        [Then(@"'(.*)' dropdown is missing")]
-        public void ThenSelectedDropdownIsMissing(string label)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-
-            Verify.That(page.Dropdowns.Any(x => x.Text.Equals(label)), Is.EqualTo(false));
-        }
-
-        [Then(@"Aggregate By dropdown is disabled")]
-        public void ThenSelectedDropdownIsMissing()
-        {
-            var baseActionItem = _driver.NowAt<BaseDashboardPage>();
-            Assert.That(Convert.ToBoolean(baseActionItem.GetDropdown("AggregateBy").GetAttribute("aria-disabled")), Is.EqualTo(true), "PLEASE ADD EXCEPTION MESSAGE");
-        }
-
-        [Then(@"Color Scheme dropdown is disabled")]
-        public void ThenColorSchemeDropdownIsDisabled()
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-
-            Assert.That(page.IsColorSchemeDropdownDisabled, Is.EqualTo(true), "Color Scheme dropdown displayed enabled");
         }
 
         [Then(@"User sees following options for Aggregate By selector on Create Widget page:")]
@@ -441,13 +386,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             Verify.That(page.PreviewPaneAlertText.Text, Is.EqualTo(message), "Preview alert is different.");
-        }
-
-        [When(@"User clicks first Dashboard in dashboards list")]
-        public void WhenUserClickFirstDashboardInDashboardsList()
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            page.GetFirstDashboardFromList().Click();
         }
 
         [Then(@"Data Labels are displayed on the Preview page")]
