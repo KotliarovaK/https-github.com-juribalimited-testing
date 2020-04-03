@@ -21,5 +21,10 @@ namespace DashworksTestAutomation.DTO.ItemDetails
         public string List { get; set; }
         public string ProjectName { get; set; }
         public List<string> Objects { get; set; }
+
+        public ResyncItemst()
+        {
+            Objects = new List<string>();
+        }
     }
 }
