@@ -166,6 +166,7 @@
     <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
     <Compile Include="DTO\ItemDetails\ApplicationOwnedUserDto.cs" />
     <Compile Include="DTO\ItemDetails\CustomFieldDto.cs" />
+    <Compile Include="DTO\ItemDetails\ResyncObjects.cs" />
     <Compile Include="DTO\ManagementConsole\SeniorCustomFieldDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
@@ -463,6 +464,9 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_PageContent.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_TopBar.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\Resynk\AfterScenario\ResyncObject.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\Resynk\BeforeScenario\ResyncObject.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\Resynk\ResyncMethods\ResyncMethods.cs" />
     <Compile Include="Steps\Dashworks\Login\BaseLoginActions.cs" />
     <Compile Include="Steps\Dashworks\Login\EvergreenJnr_LoginApi.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />

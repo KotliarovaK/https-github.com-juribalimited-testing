@@ -21,26 +21,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [When(@"User navigates to the '(.*)' details page for '(.*)' item")]
         public void WhenUserNavigatesToTheDetailsPageForItem(string listName, string itemName)
         {
-            listName = listName.ToLower();
-            var id = string.Empty;
-
-            switch (listName)
-            {
-                case "device":
-                    id = DatabaseHelper.GetDeviceDetailsIdByName(itemName);
-                    break;
-                case "user":
-                    id = DatabaseHelper.GetUserDetailsIdByName(itemName);
-                    break;
-                case "application":
-                    id = DatabaseHelper.GetApplicationDetailsIdByName(itemName);
-                    break;
-                case "mailbox":
-                    id = DatabaseHelper.GetMailboxDetailsIdByName(itemName);
-                    break;
-                default:
-                    throw new Exception($"Unknown list type: {listName}");
-            }
+            var id = DatabaseHelper.GetItemId(listName, itemName);
 
             OpenItemDetailsById(listName, id);
         }

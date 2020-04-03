@@ -59,3 +59,27 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatEndUserPageDisp
 	Then 'Continue' button displayed for End User
 	Then 'Back' button displayed for End User
 	Then 'Back' button is disabled for End User
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20342 @Cleanup
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage
+	When User create static list with "DAS_20342" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	#Use the step blow as soon as it will be possible instead of gold data
+	#When Project created via API
+	#| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	#| DAS_20342_Proj | All Users | None            | Standalone Project |
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
+	| DAS_20342_SS_1 | 20342_1_SI        | true    | true                | DAS_20342 |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName  | OwnerPermission                  | ShowInSelfService |
+	| AOC Name      | 2004 Rollout | Do not allow owner to be changed | true              |
+	When User navigates to End User landing page with '20342_1_SI' Self Service Identifier
+	Then 'Owner' button is not displayed for End User
+	Then 'Remove Owner' button is not displayed for End User
+	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
+	| FirstColumn  | SecondColumn   |
+	| Username     | VGZ6407126     |
+	| Domain       | FR             |
+	| Display Name | Arlette Sicard |
