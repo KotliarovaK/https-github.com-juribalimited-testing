@@ -5,8 +5,11 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @Cleanup @SelfServiceMVP
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20322 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSide
+	Given User resync 'Application' objects for '2004 Rollout' project
+    | values     |
+    | VSCmdShell |
 	When User create static list with "DAS_20421" name on "Applications" page with following items
 	| ItemName   |
 	| VSCmdShell |
@@ -23,7 +26,19 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksPro
 	When User navigates to End User landing page with '20421_1_SI' Self Service Identifier
 	When User clicks on 'Remove Owner' button on end user Self Service page
 	Then 'Remove Owner' button is disabled for End User
-	#Username, Domain and Display Name are empty
+	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
+ 	| FirstColumn  | SecondColumn |
+ 	| Username     |              |
+ 	| Domain       |              |
+ 	| Display Name |              |
+	When User clicks on 'Continue' button on end user Self Service page
+	When User navigates to the 'Application' details page for 'VSCmdShell' item
+	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title     | Value |
+	| App Owner |       |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @Cleanup @SelfServiceMVP
 Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeOwnerWorksProperlyOnEndUserSide
