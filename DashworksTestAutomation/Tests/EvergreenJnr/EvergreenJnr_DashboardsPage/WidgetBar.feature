@@ -34,8 +34,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	When User add "Owner Display Name" filter where type is "Equals" with added column and following value:
 	| Values |
 	| ZZZZ   |
-	When User clicks Save button on the list panel
-	When User create dynamic list with "ListForDAS16167" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS16167' list
 	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
 	When User checks 'Edit mode' slide toggle

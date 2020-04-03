@@ -263,7 +263,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCantBeDuplicatedWhenWidget
 	When User clicks 'Duplicate' menu option for section with '9_Widget' widget
 	Then 'Maximum number of widgets has been reached for this dashboard' text is displayed on inline error banner
 
-@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	When Dashboard with 'Dashboard for SectionEditing' name created via API and opened
 	When User checks 'Edit mode' slide toggle

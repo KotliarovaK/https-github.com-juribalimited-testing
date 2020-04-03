@@ -1170,7 +1170,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Sections")]
         [NUnit.Framework.CategoryAttribute("DAS14472")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection()
         {
             System.Exception lastException = null;
@@ -1203,8 +1202,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "Sections",
-                        "DAS14472",
-                        "Cleanup"});
+                        "DAS14472"});
 #line 267
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
