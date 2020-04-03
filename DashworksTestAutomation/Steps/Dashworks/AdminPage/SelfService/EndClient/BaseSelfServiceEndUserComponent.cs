@@ -38,11 +38,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             var expectedFirstColumnsList = table.GetDataByKey("FirstColumn");
             var expectedSecondColumnList = table.GetDataByKey("SecondColumn");
 
-            var actualColumnList = component.FindElements(By.XPath(".//li/span[1]")).Select(x => x.Text).ToList();
-            var actualValuesList = component.FindElements(By.XPath(".//li/span[2]")).Select(x => x.Text).ToList();
+            var actualFirstColumnList = component.FindElements(By.XPath(".//li/span[1]")).Select(x => x.Text).ToList();
+            var actualSecondColumnList = component.FindElements(By.XPath(".//li/span[2]")).Select(x => x.Text).ToList();
 
-            Verify.AreEqual(expectedFirstColumnsList, actualColumnList, $"Incorrect column items for '{сomponentName}' application ownership component on '{pageName}' end user page");
-            Verify.AreEqual(expectedSecondColumnList, actualValuesList, $"Incorrect values items for '{сomponentName}' application ownership component on '{pageName}' end user page");
+            Verify.AreEqual(expectedFirstColumnsList, actualFirstColumnList, $"Incorrect column items for '{сomponentName}' application ownership component on '{pageName}' end user page");
+            Verify.AreEqual(expectedSecondColumnList, actualSecondColumnList, $"Incorrect values items for '{сomponentName}' application ownership component on '{pageName}' end user page");
         }
     }
 }
