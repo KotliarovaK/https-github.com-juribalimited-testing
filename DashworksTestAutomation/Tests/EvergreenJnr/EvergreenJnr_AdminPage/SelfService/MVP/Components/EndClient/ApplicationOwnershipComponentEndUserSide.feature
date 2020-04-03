@@ -74,3 +74,10 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeAndRemoveOwne
 	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
 	Then 'Change Owner' button is disabled on popup
 	Then 'Cancel' button is not disabled on popup
+	When User checks 'Remove owner' radio button
+	Then 'Change Owner' button is not disabled on popup
+	When User checks 'Assign an owner' radio button
+	Then 'Owner' autocomplete is displayed
+	Then 'Change Owner' button is disabled on popup
+	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
+	Then 'Cancel' button is not disabled on popup
