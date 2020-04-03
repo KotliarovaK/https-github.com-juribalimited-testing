@@ -361,74 +361,64 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ProjectName",
-                        "Scope",
-                        "ProjectTemplate",
-                        "Mode"});
+                        "ItemName"});
             table7.AddRow(new string[] {
-                        "DAS_20342_Proj",
-                        "All Users",
-                        "None",
-                        "Standalone Project"});
+                        "VSCmdShell"});
 #line 65
- testRunner.When("Project created via API", ((string)(null)), table7, "When ");
+ testRunner.When("User create static list with \"DAS_20342\" name on \"Applications\" page with followi" +
+                    "ng items", ((string)(null)), table7, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
-            table8.AddRow(new string[] {
-                        "VSCmdShell"});
-#line 68
- testRunner.When("User create static list with \"DAS_20342\" name on \"Applications\" page with followi" +
-                    "ng items", ((string)(null)), table8, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "ServiceIdentifier",
                         "Enabled",
                         "AllowAnonymousUsers",
                         "Scope"});
-            table9.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "DAS_20342_SS_1",
                         "20342_1_SI",
                         "true",
                         "true",
                         "DAS_20342"});
-#line 75
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table9, "When ");
+#line 72
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table8, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "ComponentName",
                         "ProjectName",
-                        "OwnerPermission"});
-            table10.AddRow(new string[] {
+                        "OwnerPermission",
+                        "ShowInSelfService"});
+            table9.AddRow(new string[] {
                         "AOC Name",
                         "2004 Rollout",
-                        "Do not allow owner to be changed"});
-#line 78
+                        "Do not allow owner to be changed",
+                        "true"});
+#line 75
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                    "via API", ((string)(null)), table10, "When ");
-#line 81
+                    "via API", ((string)(null)), table9, "When ");
+#line 78
  testRunner.When("User navigates to End User landing page with \'20342_1_SI\' Self Service Identifier" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 79
  testRunner.Then("\'Owner\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 83
+#line 80
  testRunner.Then("\'Remove Owner\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Column",
                         "Value"});
-            table11.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Username",
                         "VGZ6407126"});
-            table11.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Domain",
                         "FR"});
-            table11.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Display Name",
                         "Arlette Sicard"});
-#line 84
- testRunner.Then("User sees following items for \'AOC Name\' component on \'Welcome\' end user page:", ((string)(null)), table11, "Then ");
+#line 81
+ testRunner.Then("User sees following items for \'AOC Name\' application ownership component on \'Welc" +
+                    "ome\' end user page", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

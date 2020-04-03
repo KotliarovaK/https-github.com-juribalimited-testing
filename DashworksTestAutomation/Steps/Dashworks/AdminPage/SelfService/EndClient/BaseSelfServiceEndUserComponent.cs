@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,30 +28,17 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             _selfServicePages = selfServicePages;
         }
 
-        [Then(@"User sees following items for '(.*)' component on '(.*)' end user page:")]
-        public void ThenUserSeesFollowingItemsForComponentOnEndUserPage(string сomponentName, string pageName, Table table)
+        [Then(@"User sees following items for '(.*)' application ownership component on '(.*)' end user page")]
+        public void ThenUserSeesFollowingItemsForApplicationOwnershipComponentOnEndUserPage(string сomponentName, string pageName, Table table)
         {
             var page = _driver.NowAt<SelfServiceEndClientBasePage>();
             var selfServicePage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
             var component = page.GetComponentItemOnEndUserPage(selfServicePage, сomponentName);
-            var eachValueInRow = By.XPath(".//span");
-            var i = 0;
-            
-            IList<IWebElement> rowList = component.FindElements(By.XPath(".//li"));
-            
-            foreach (var row in table.Rows)
-            {
-                var expectedColumn = row["Column"];
-                var expectedValue = row["Value"];
 
-                Verify.IsTrue(
-                    rowList[i].FindElements(eachValueInRow).Any(x => x.Text.Equals(expectedColumn)),
-                    $"Incorrect items for '{сomponentName}' component on '{pageName}' end user page");
-                Verify.IsTrue(
-                    rowList[i].FindElements(eachValueInRow).Any(x => x.Text.Equals(expectedValue)),
-                    $"Incorrect items for '{сomponentName}' component on '{pageName}' end user page");
-                i++;
-            }
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = component.FindElements(By.XPath(".//span")).Select(x => x.Text).ToList();
+
+            Verify.AreEqual(expectedList, actualList, $"Incorrect items for '{сomponentName}' application ownership component on '{pageName}' end user page");
         }
     }
 }
