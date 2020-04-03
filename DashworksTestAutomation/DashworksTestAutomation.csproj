@@ -463,6 +463,7 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_PageContent.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_TopBar.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\Resynk\BeforeScenario\ResyncObject.cs" />
     <Compile Include="Steps\Dashworks\Login\BaseLoginActions.cs" />
     <Compile Include="Steps\Dashworks\Login\EvergreenJnr_LoginApi.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
