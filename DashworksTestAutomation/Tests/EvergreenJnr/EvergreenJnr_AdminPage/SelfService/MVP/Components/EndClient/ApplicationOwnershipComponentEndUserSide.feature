@@ -23,12 +23,11 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksPro
 	When User navigates to End User landing page with '20421_1_SI' Self Service Identifier
 	When User clicks on 'Remove Owner' button on end user Self Service page
 	Then 'Remove Owner' button is disabled for End User
-	#Username, Domain and Display Name are empty
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
- 	| Column       | Value |
- 	| Username     |       |
- 	| Domain       |       |
- 	| Display Name |       |
+ 	| FirstColumn  | SecondColumn |
+ 	| Username     |              |
+ 	| Domain       |              |
+ 	| Display Name |              |
 	When User clicks on 'Continue' button on end user Self Service page
 	When User navigates to the 'Application' details page for 'VSCmdShell' item
 	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
@@ -95,26 +94,3 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeAndRemoveOwne
 	Then 'Change Owner' button is disabled on popup
 	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
 	Then 'Cancel' button is not disabled on popup
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @DAS20322 @Cleanup @SelfServiceMVP
-Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSidezzzzzzzzzzz
-	When User create static list with "DAS_20421" name on "Applications" page with following items
-	| ItemName   |
-	| VSCmdShell |
-	#Use the step blow as soon as it will be possible instead of gold data
-	#When Project created via API
-	#| ProjectName    | Scope     | ProjectTemplate | Mode               |
-	#| DAS_20325_Proj | All Users | None            | Standalone Project |
-	When User creates Self Service via API and open it
-	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
-	| DAS_20421_SS_1 | 20421_1_SI        | true    | true                | DAS_20421 |
-	When User creates new application ownership component for 'Welcome' Self Service page via API
-	| ComponentName | ProjectName  | OwnerPermission                |
-	| AOC Name      | 2004 Rollout | Allow owner to be removed only |
-	When User navigates to the 'Application' details page for 'VSCmdShell' item
-	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
-	When User navigates to the 'Projects' left menu item
-	When User navigates to the 'Project Details' left submenu item
-	Then User verifies data in the fields on details page
-	| Field     | Data           |
-	| App Owner | Arlette Sicard |

@@ -151,8 +151,8 @@ this.FeatureBackground();
  testRunner.Then("\'Remove Owner\' button is disabled for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Column",
-                        "Value"});
+                        "FirstColumn",
+                        "SecondColumn"});
             table4.AddRow(new string[] {
                         "Username",
                         ""});
@@ -162,18 +162,18 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "Display Name",
                         ""});
-#line 27
+#line 26
  testRunner.Then("User sees following items for \'AOC Name\' application ownership component on \'Welc" +
                     "ome\' end user page", ((string)(null)), table4, "Then ");
-#line 32
+#line 31
  testRunner.When("User clicks on \'Continue\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 33
+#line 32
  testRunner.When("User navigates to the \'Application\' details page for \'VSCmdShell\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 34
+#line 33
  testRunner.When("User selects \'2004 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 34
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 35
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -182,7 +182,7 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "App Owner",
                         ""});
-#line 37
+#line 36
  testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -209,7 +209,7 @@ this.FeatureBackground();
                         "DAS20421",
                         "Cleanup",
                         "SelfServiceMVP"});
-#line 43
+#line 42
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -219,7 +219,7 @@ this.FeatureBackground();
                         "ItemName"});
             table6.AddRow(new string[] {
                         "VSCmdShell"});
-#line 44
+#line 43
  testRunner.When("User create static list with \"DAS_20421\" name on \"Applications\" page with followi" +
                     "ng items", ((string)(null)), table6, "When ");
 #line hidden
@@ -235,7 +235,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_20421"});
-#line 51
+#line 50
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table7, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -246,28 +246,28 @@ this.FeatureBackground();
                         "AOC Name",
                         "2004 Rollout",
                         "Allow owner to be set to another user only"});
-#line 54
+#line 53
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
                     "via API", ((string)(null)), table8, "When ");
-#line 57
+#line 56
  testRunner.When("User navigates to End User landing page with \'20421_1_SI\' Self Service Identifier" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 57
  testRunner.When("User clicks on \'Change Owner\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
+#line 58
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 60
+#line 59
  testRunner.Then("popup with \'Change Owner\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 61
+#line 60
  testRunner.Then("\'Owner\' autocomplete is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
+#line 61
  testRunner.Then("\'Change Owner\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 63
+#line 62
  testRunner.Then("Button \'Change Owner\' has \'Some values are missing or not valid\' tooltip on popup" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 64
+#line 63
  testRunner.When("User clicks \'Cancel\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
+#line 64
  testRunner.Then("popup is not displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -294,7 +294,7 @@ this.FeatureBackground();
                         "DAS20421",
                         "Cleanup",
                         "SelfServiceMVP"});
-#line 68
+#line 67
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -304,7 +304,7 @@ this.FeatureBackground();
                         "ItemName"});
             table9.AddRow(new string[] {
                         "VSCmdShell"});
-#line 69
+#line 68
  testRunner.When("User create static list with \"DAS_20421\" name on \"Applications\" page with followi" +
                     "ng items", ((string)(null)), table9, "When ");
 #line hidden
@@ -320,7 +320,7 @@ this.FeatureBackground();
                         "true",
                         "true",
                         "DAS_20421"});
-#line 76
+#line 75
  testRunner.When("User creates Self Service via API and open it", ((string)(null)), table10, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -331,128 +331,44 @@ this.FeatureBackground();
                         "AOC Name",
                         "2004 Rollout",
                         "Allow owner to be removed or set to another user"});
-#line 79
+#line 78
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
                     "via API", ((string)(null)), table11, "When ");
-#line 82
+#line 81
  testRunner.When("User navigates to End User landing page with \'20421_1_SI\' Self Service Identifier" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 83
+#line 82
  testRunner.When("User clicks on \'Change Owner\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 83
  testRunner.Then("popup with \'Change Owner\' title is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 85
+#line 84
  testRunner.Then("\'Remove owner\' radio button is enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 86
+#line 85
  testRunner.Then("\'Assign an owner\' radio button is enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 86
+ testRunner.Then("\'Change Owner\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 87
- testRunner.Then("\'Change Owner\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Button \'Change Owner\' has \'Some values are missing or not valid\' tooltip on popup" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 88
- testRunner.Then("Button \'Change Owner\' has \'Some values are missing or not valid\' tooltip on popup" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'Change Owner\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 89
- testRunner.Then("\'Change Owner\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 90
  testRunner.Then("\'Cancel\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 91
+#line 90
  testRunner.When("User checks \'Remove owner\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 92
+#line 91
  testRunner.Then("\'Change Owner\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 93
+#line 92
  testRunner.When("User checks \'Assign an owner\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 94
+#line 93
  testRunner.Then("\'Owner\' autocomplete is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 95
+#line 94
  testRunner.Then("\'Change Owner\' button is disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 96
+#line 95
  testRunner.Then("Button \'Change Owner\' has \'Some values are missing or not valid\' tooltip on popup" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 97
+#line 96
  testRunner.Then("\'Cancel\' button is not disabled on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndU" +
-            "serSidezzzzzzzzzzz")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("SelfService")]
-        [NUnit.Framework.CategoryAttribute("DAS20421")]
-        [NUnit.Framework.CategoryAttribute("DAS20322")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("SelfServiceMVP")]
-        public virtual void EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndUserSidezzzzzzzzzzz()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksProperlyOnEndU" +
-                    "serSidezzzzzzzzzzz", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "SelfService",
-                        "DAS20421",
-                        "DAS20322",
-                        "Cleanup",
-                        "SelfServiceMVP"});
-#line 100
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemName"});
-            table12.AddRow(new string[] {
-                        "VSCmdShell"});
-#line 101
- testRunner.When("User create static list with \"DAS_20421\" name on \"Applications\" page with followi" +
-                    "ng items", ((string)(null)), table12, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "ServiceIdentifier",
-                        "Enabled",
-                        "AllowAnonymousUsers",
-                        "Scope"});
-            table13.AddRow(new string[] {
-                        "DAS_20421_SS_1",
-                        "20421_1_SI",
-                        "true",
-                        "true",
-                        "DAS_20421"});
-#line 108
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table13, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ComponentName",
-                        "ProjectName",
-                        "OwnerPermission"});
-            table14.AddRow(new string[] {
-                        "AOC Name",
-                        "2004 Rollout",
-                        "Allow owner to be removed only"});
-#line 111
- testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                    "via API", ((string)(null)), table14, "When ");
-#line 114
- testRunner.When("User navigates to the \'Application\' details page for \'VSCmdShell\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
- testRunner.When("User selects \'2004 Rollout\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 116
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 117
- testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Data"});
-            table15.AddRow(new string[] {
-                        "App Owner",
-                        "Arlette Sicard"});
-#line 118
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table15, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
