@@ -1358,6 +1358,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.IsFalse(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not disabled");
         }
 
+        [Then(@"'(.*)' radio button is enabled")]
+        public void ThenRadioButtonIsEnabled(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not enabled");
+        }
+
         [Then(@"'(.*)' radio button is checked")]
         public void ThenRadioButtonIsChecked(string radioButtonName)
         {
