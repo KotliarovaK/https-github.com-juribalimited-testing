@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_CheckComponentOnEndUserPage
 	Then 'Owner' button is not displayed for End User
 	Then 'Remove Owner' button is not displayed for End User
 	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
-	| Column       | Value          |
+	| FirstColumn  | SecondColumn   |
 	| Username     | VGZ6407126     |
 	| Domain       | FR             |
 	| Display Name | Arlette Sicard |

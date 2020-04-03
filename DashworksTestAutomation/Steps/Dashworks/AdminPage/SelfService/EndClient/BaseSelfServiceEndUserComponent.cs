@@ -35,10 +35,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.EndClien
             var selfServicePage = _selfServicePages.Value.First(x => x.Name.Equals(pageName));
             var component = page.GetComponentItemOnEndUserPage(selfServicePage, сomponentName);
 
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = component.FindElements(By.XPath(".//span")).Select(x => x.Text).ToList();
+            var expectedFirstColumnsList = table.GetDataByKey("FirstColumn");
+            var expectedSecondColumnList = table.GetDataByKey("SecondColumn");
 
-            Verify.AreEqual(expectedList, actualList, $"Incorrect items for '{сomponentName}' application ownership component on '{pageName}' end user page");
+            var actualColumnList = component.FindElements(By.XPath(".//li/span[1]")).Select(x => x.Text).ToList();
+            var actualValuesList = component.FindElements(By.XPath(".//li/span[2]")).Select(x => x.Text).ToList();
+
+            Verify.AreEqual(expectedFirstColumnsList, actualColumnList, $"Incorrect column items for '{сomponentName}' application ownership component on '{pageName}' end user page");
+            Verify.AreEqual(expectedSecondColumnList, actualValuesList, $"Incorrect values items for '{сomponentName}' application ownership component on '{pageName}' end user page");
         }
     }
 }

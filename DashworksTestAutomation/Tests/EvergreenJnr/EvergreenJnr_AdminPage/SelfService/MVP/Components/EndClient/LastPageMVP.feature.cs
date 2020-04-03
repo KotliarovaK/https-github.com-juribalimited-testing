@@ -405,8 +405,8 @@ this.FeatureBackground();
  testRunner.Then("\'Remove Owner\' button is not displayed for End User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Column",
-                        "Value"});
+                        "FirstColumn",
+                        "SecondColumn"});
             table10.AddRow(new string[] {
                         "Username",
                         "VGZ6407126"});
