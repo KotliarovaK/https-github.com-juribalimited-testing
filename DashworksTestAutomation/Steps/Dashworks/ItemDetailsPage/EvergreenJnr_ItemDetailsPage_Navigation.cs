@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var id = DatabaseHelper.GetItemId(listName, itemName);
 
-            OpenItemDetailsById(listName, id);
+            OpenItemDetailsById(listName.ToLower(), id);
         }
 
         [When(@"User navigates to the '(.*)' details page for the item with '(.*)' ID")]
@@ -36,7 +36,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
         private void OpenItemDetailsById(string listName, string id)
         {
+            //Navigate back to evergreeen from self service end user page
+            if (_driver.Url.Contains("selfservice") && _driver.Url.Contains("ObjectId"))
+            {
+                _driver.NavigateToUrl(UrlProvider.EvergreenUrl);
+            }
+
             _driver.NowAt<BaseHeaderElement>();
+
             var url = $"{UrlProvider.EvergreenUrl}#/{listName}/{id}/details/{listName}";
 
             _driver.NavigateToUrl(url);

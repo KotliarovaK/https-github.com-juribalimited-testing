@@ -36,9 +36,9 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemoveOwnerWorksPro
 	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
-	Then User verifies data in the fields on details page
-	| Field     | Data |
-	| App Owner |      |
+	Then following content is displayed on the Details Page
+	| Title     | Value |
+	| App Owner |       |
 
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20421 @Cleanup @SelfServiceMVP

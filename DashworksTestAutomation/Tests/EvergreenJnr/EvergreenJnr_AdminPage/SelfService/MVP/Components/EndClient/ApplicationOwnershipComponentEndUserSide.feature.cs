@@ -184,13 +184,13 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Data"});
+                        "Title",
+                        "Value"});
             table6.AddRow(new string[] {
                         "App Owner",
                         ""});
 #line 39
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table6, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

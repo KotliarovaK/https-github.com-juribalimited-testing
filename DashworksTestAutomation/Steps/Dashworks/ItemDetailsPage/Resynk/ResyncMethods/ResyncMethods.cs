@@ -27,9 +27,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.ResyncM
             foreach (string itemName in item.Objects)
             {
                 var id = DatabaseHelper.GetItemId(item.List, itemName);
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}/{item.List.ToLower()}/{id}/relinkObjects";
+                var projId = DatabaseHelper.GetProjectId(item.ProjectName);
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}{item.List.ToLower()}/{id}/relinkObjects";
                 var request = requestUri.GenerateRequest();
-                request.AddParameter("projectId", DatabaseHelper.GetProjectId(item.ProjectName));
+                request.AddParameter("projectId", projId);
                 request.AddParameter("IsOwnerResync", true);
                 request.AddParameter("IsAppsResync", true);
                 request.AddParameter("IsNameResync", true);
@@ -42,6 +43,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.ResyncM
                 {
                     throw new Exception(
                         $"Unable to resynk '{itemName}' {item.List} object for '{item.ProjectName}' project: {response.StatusCode}, {response.ErrorMessage}");
+                }
+
+                //Ping application about project status
+                var projRequestUri = $"{UrlProvider.RestClientBaseUrl}application/{id}/project?$lang=en-GB&projectId={projId}";
+                var projRequest = projRequestUri.GenerateRequest();
+
+                var projResponse = _client.Evergreen.Get(projRequest);
+
+                if (projResponse.StatusCode != HttpStatusCode.OK)
+                {
+                    throw new Exception(
+                        $"Bad request from proj details. Unable to resynk '{itemName}' {item.List} object for '{item.ProjectName}' project: {response.StatusCode}, {response.ErrorMessage}");
                 }
             }
         }
