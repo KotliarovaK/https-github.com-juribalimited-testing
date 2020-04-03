@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage.Resynk.ResyncM
                 var id = DatabaseHelper.GetItemId(item.List, itemName);
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}/{item.List.ToLower()}/{id}/relinkObjects";
                 var request = requestUri.GenerateRequest();
-                request.AddParameter("projectId", item.ProjectName);
+                request.AddParameter("projectId", DatabaseHelper.GetProjectId(item.ProjectName));
                 request.AddParameter("IsOwnerResync", true);
                 request.AddParameter("IsAppsResync", true);
                 request.AddParameter("IsNameResync", true);
