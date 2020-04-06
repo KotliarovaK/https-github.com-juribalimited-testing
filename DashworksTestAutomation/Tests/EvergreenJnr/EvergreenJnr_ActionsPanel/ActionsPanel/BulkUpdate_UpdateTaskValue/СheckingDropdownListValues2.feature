@@ -133,16 +133,17 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPro
 	| Update relative to a different task value |
 	| Remove                                    |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
-	Then 'Days' content is displayed in 'Units' dropdown
-	Then 'After current value' content is displayed in 'Before or After' dropdown
+	Then 'days before current value' content is displayed in 'Units' dropdown
 	When User enters '999999' text to 'Value' textbox
 	Then '100000' content is displayed in 'Value' textbox
 	When User enters '-5' text to 'Value' textbox
 	Then '0' content is displayed in 'Value' textbox
-	Then following Values are displayed in the 'Before or After' dropdown:
-	| Options              |
-	| Before current value |
-	| After current value  |
+	Then following Values are displayed in the 'Units' dropdown:
+	| Options             |
+	| days before now     |
+	| days after now      |
+	| weekdays before now |
+	| weekdays after now  |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18281 @DAS18233 @DAS19274 @Void
 Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties
@@ -162,13 +163,16 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTask
 	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
 	When User enters '12' text to 'Value' textbox
-	When User selects 'Days' in the 'Units' dropdown
-	Then following Values are displayed in the 'Before or After' dropdown:
-	| Options    |
-	| Before now |
-	| After now  |
-	Then 'After now' content is displayed in 'Before or After' dropdown
-	When User selects 'Before now' in the 'Before or After' dropdown
+	When User selects 'days before now' in the 'Units' dropdown
+	Then following Values are displayed in the 'Units' dropdown:
+	| Options             |
+	| days before now     |
+	| days after now      |
+	| weekdays before now |
+	| weekdays after now  |
+	| hours before now    |
+	| hours after now     |
+	When User selects 'weekdays before now' in the 'Units' dropdown
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19274 @Void
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValue

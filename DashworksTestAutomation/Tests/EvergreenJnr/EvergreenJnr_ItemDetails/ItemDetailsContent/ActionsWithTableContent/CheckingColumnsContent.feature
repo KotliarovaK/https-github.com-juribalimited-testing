@@ -268,29 +268,30 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	| Date                  |
 	| Stage 1               |
 	| Stage 2               |
-	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
+	When User enters "0OO2ON48JAZM8A" text in the Search field for "Device" column
 	Then Links from "Device" column is displayed to the user on the Details Page
 	And Links from "Owner" column is displayed to the user on the Details Page
 	And Links from "Owner Display Name" column is displayed to the user on the Details Page
 	#link function is not ready yet
 	#And Links from "Linked By" column is displayed to the user on the Details Page
-	When User clicks "03ME2G7TIR4GBN" link on the Details Page
+	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
+	When User click content from "Device" column
 	Then Details page for '03ME2G7TIR4GBN' item is displayed to the user
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User navigates to the 'Related' left menu item
-	And User enters "ACG370114" text in the Search field for "Owner" column
-	And User clicks "ACG370114" link on the Details Page
-	Then Details page for 'ACG370114 (James N. Snow)' item is displayed to the user
+	Then 'Related' left submenu item is active
+	When User enters "ADL183503" text in the Search field for "Owner" column
+	When User click content from "Owner" column
+	Then Details page for 'ADL183503 (Austin O. Ball)' item is displayed to the user
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User navigates to the 'Related' left menu item
-	And User enters "James N. Snow" text in the Search field for "Owner Display Name" column
-	And User clicks "James N. Snow" link on the Details Page
-	Then Details page for 'ACG370114 (James N. Snow)' item is displayed to the user
+	Then 'Related' left submenu item is active
+	When User enters "Austin O. Ball" text in the Search field for "Owner Display Name" column
+	When User click content from "Owner Display Name" column
+	Then Details page for 'ADL183503 (Austin O. Ball)' item is displayed to the user
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User navigates to the 'Related' left menu item
+	Then 'Related' left submenu item is active
 	#link function is not ready yet
 	#When User enters "ACG370114" text in the Search field for "Linked By" column
 	#When User clicks "ACG370114" link on the Details Page

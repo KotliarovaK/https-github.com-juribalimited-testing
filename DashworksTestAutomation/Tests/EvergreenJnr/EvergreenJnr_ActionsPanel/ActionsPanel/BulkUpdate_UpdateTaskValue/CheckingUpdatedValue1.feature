@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_UsersList_CheckUpdateTaskValueWithBeforeCurrentValueUpdat
 	When User selects 'Relative BU \ DT BU Dev' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '1' text to 'Value' textbox
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User selects 'days before current value' in the 'Units' dropdown
 	And User clicks 'UPDATE' button
 	Then inline warning banner is displayed
 	Then 'UPDATE' button is displayed on inline tip banner

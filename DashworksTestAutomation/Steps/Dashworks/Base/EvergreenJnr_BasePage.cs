@@ -269,8 +269,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 var textbox = page.GetTextbox(placeholder);
                 textbox.Clear();
                 textbox.SendKeys(value);
-                Verify.IsTrue(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some autocomplete checkboxes found for '{value}' text");
-                Verify.IsFalse(page.IsAutocompleteCheckboxDisplayed(value), $"Some autocomplete checkboxes found for '{value}' text");
+                //Verify.IsTrue(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some checkboxes found for '{placeholder}' autocomplete");
+                Verify.IsFalse(page.IsAutocompleteCheckboxDisplayed(value), $"'{value}' checkbox is displayed, but should not");
                 page.BodyContainer.Click();
             }
         }
@@ -285,7 +285,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 var textbox = page.GetTextbox(placeholder);
                 textbox.Clear();
                 textbox.SendKeys(value);
-                Verify.IsFalse(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some autocomplete checkboxes found for '{value}' text");
+                Verify.IsFalse(page.IsAutocompleteResultsCountMessageDisplayed(), $"Some checkboxes not found for '{placeholder}' autocomplete");
                 Verify.IsTrue(page.IsAutocompleteCheckboxDisplayed(value), $"'{value}' checkbox is missed");
                 page.BodyContainer.Click();
             }
