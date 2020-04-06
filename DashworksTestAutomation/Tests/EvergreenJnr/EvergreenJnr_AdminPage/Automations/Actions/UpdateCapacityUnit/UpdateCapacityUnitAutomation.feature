@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup @Wormhole
 Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdateCapacityUnit
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 17288_Automation | 17288       | true   | false              | <ListName> | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 17288_Automation | 17288       | true     | false              | <ListName> | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -18,16 +18,16 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckAlsoMoveUsersFunctionalityForUpdat
 	When User enters '17288_Action' text to 'Action Name' textbox
 	When User selects 'Update capacity unit' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User selects 'Unassigned' option from 'Bucket' autocomplete
+	When User selects 'Unassigned' option from 'Capacity Unit' autocomplete
 	Then 'None' content is displayed in 'Also Move Users' dropdown
 	When User selects 'Owners only' in the 'Also Move Users' dropdown
 	Then 'CREATE' button is not disabled
 
 Examples:
-	| ListName        |
-	| All Devices     |
-	| All Mailboxes   |
-	| All Application |
+	| ListName         |
+	| All Devices      |
+	| All Mailboxes    |
+	| All Applications |
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacityUnit
