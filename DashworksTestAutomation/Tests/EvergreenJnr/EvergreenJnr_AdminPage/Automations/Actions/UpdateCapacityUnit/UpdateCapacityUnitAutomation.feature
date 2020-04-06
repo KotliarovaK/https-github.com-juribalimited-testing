@@ -27,7 +27,6 @@ Examples:
 	| ListName         |
 	| All Devices      |
 	| All Mailboxes    |
-	| All Applications |
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17288 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckAlsoMoveDevicesAndMailboxesFunctionalityUpdateCapacityUnit
