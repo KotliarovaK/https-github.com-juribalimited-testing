@@ -142,7 +142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"current date and time are displayed for '(.*)' Automation")]
+        [Then(@"current date and time are displayed for '(.*)' automation")]
         public void ThenCurrentDateAndTimeAreDisplayedForAutomation(string automationName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
