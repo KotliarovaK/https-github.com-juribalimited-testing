@@ -147,7 +147,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});

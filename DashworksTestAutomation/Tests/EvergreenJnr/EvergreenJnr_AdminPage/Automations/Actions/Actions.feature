@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| Name                  | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_15427 | 15427       | true   | false              | All Devices | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_15427 | 15427       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action 1
