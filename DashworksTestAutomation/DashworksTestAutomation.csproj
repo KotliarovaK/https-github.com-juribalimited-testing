@@ -166,6 +166,7 @@
     <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
     <Compile Include="DTO\ItemDetails\ApplicationOwnedUserDto.cs" />
     <Compile Include="DTO\ItemDetails\CustomFieldDto.cs" />
+    <Compile Include="DTO\ItemDetails\ResyncObjects.cs" />
     <Compile Include="DTO\ManagementConsole\SeniorCustomFieldDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
@@ -463,6 +464,9 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_PageContent.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_TopBar.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\Resynk\AfterScenario\ResyncObject.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\Resynk\BeforeScenario\ResyncObject.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\Resynk\ResyncMethods\ResyncMethods.cs" />
     <Compile Include="Steps\Dashworks\Login\BaseLoginActions.cs" />
     <Compile Include="Steps\Dashworks\Login\EvergreenJnr_LoginApi.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
@@ -1150,6 +1154,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddApplicationOwnershipViaSelfServiceBuilderMvp.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\ApplicationOwnershipComponentEndUserSide.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationOwnershipComponentEndUserSide.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\LastPageMVP.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1527,6 +1536,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DevicesDetails_Users.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\ColumnGroupingCheck.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumnGroupingCheck.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetails_CopyActions.feature.cs">
       <AutoGen>True</AutoGen>
@@ -2657,6 +2671,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddApplicationOwnershipViaSelfServiceBuilderMvp.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\ApplicationOwnershipComponentEndUserSide.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ApplicationOwnershipComponentEndUserSide.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\LastPageMVP.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LastPageMVP.feature.cs</LastGenOutput>
@@ -2963,6 +2981,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\Tabs\Users\DevicesDetails_Users.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DevicesDetails_Users.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\ActionsWithTableContent\ColumnGroupingCheck.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ColumnGroupingCheck.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetails_CopyActions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

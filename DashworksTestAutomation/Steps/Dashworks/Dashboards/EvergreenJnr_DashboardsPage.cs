@@ -16,7 +16,6 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using AutomationUtils.Extensions;
-using OpenQA.Selenium;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -285,20 +284,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dash.GetEllipsisMenuForWidget(widgetName).Click();
         }
 
-        private void DisabledMenuItemHasNextTooltip(string menuItem, string tooltip)
-        {
-            var dash = _driver.NowAt<EvergreenDashboardsPage>();
-            var item = dash.GetDisabledMenuItemByName(menuItem);
-            Verify.IsTrue(item.Displayed(), $"{menuItem} menu item is enabled");
-
-            _driver.MouseHover(item);
-            var toolTipText = _driver.GetTooltipText();
-            Verify.AreEqual(tooltip, toolTipText, "Tooltip text is not correctly");
-
-            var body = _driver.NowAt<BaseGridPage>();
-            body.BodyContainer.Click();
-        }
-
+        
         [When(@"User clicks '(.*)' menu option for section with '(.*)' widget")]
         public void WhenUserClicksMenuOptionForSectionWithWidget(string menuOption, string widgetName)
         {
@@ -322,6 +308,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             ClickWidgetMenuByWidgetName(widgetName);
             DisabledMenuItemHasNextTooltip(menuItem, tooltip);
+        }
+
+        private void DisabledMenuItemHasNextTooltip(string menuItem, string tooltip)
+        {
+            var dash = _driver.NowAt<EvergreenDashboardsPage>();
+            var item = dash.GetDisabledMenuItemByName(menuItem);
+            Verify.IsTrue(item.Displayed(), $"{menuItem} menu item is enabled");
+
+            _driver.MouseHover(item);
+            var toolTipText = _driver.GetTooltipText();
+            Verify.AreEqual(tooltip, toolTipText, "Tooltip text is not correctly");
+
+            var body = _driver.NowAt<BaseGridPage>();
+            body.BodyContainer.Click();
         }
 
         [Then(@"User sees following items for expanded menu:")]
@@ -427,7 +427,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
 
-            var aa = page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault();
             Verify.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
                 Is.True);
         }
@@ -522,7 +521,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Verify.That(page.AllWidgetsTitles.Select(x => x.Text.Equals(widgetName)).ToList().Count, Is.EqualTo(numberOfWidgets), "More than {numberOfWidgets} widgets were displayed.");
+            Verify.That(page.AllWidgetsTitles.Select(x => x.Text.Equals(widgetName)).ToList().Count, Is.EqualTo(numberOfWidgets), $"More than {numberOfWidgets} widgets were displayed.");
         }
 
         [When(@"User clicks edit option for broken widget on Dashboards page")]

@@ -30,24 +30,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16167 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
-	And User add "Owner Display Name" filter where type is "Equals" with added column and following value:
+	When User clicks the Filters button
+	When User add "Owner Display Name" filter where type is "Equals" with added column and following value:
 	| Values |
 	| ZZZZ   |
-	And User clicks Save button on the list panel
-	And User create dynamic list with "ListForDAS16167" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS16167' list
 	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType   | Title             | List            | SplitBy          | AggregateFunction | OrderBy              |
 	| <WidgetType> | WidgetForDAS16167 | ListForDAS16167 | Operating System | Count             | Operating System ASC |
 	Then Widget Preview is displayed to the user
-	And 'This list does not contain any rows' message is displayed in Preview
+	Then 'This list does not contain any rows' message is displayed in Preview
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16167' Widget is displayed to the user
-	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
+	Then 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
 
 Examples: 
 	| WidgetType |
