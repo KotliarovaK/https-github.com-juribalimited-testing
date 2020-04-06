@@ -1204,7 +1204,7 @@ this.FeatureBackground();
 #line 308
  testRunner.Then("\"\" content is displayed for \"Owner Display Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 309
- testRunner.And("User clicks \"00CWZRC4UK6W20\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \"00CWZRC4UK6W20\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 310
  testRunner.Then("\'USE ME FOR AUTOMATION(DEVICE SCHDLD)\' content is displayed in \'Item Details Proj" +
                     "ect\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
