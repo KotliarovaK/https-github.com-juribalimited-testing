@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| Name                  | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Name                  | Description | IsIsActive | StopOnFailedAction | Scope       | Run    |
 	| Test_Automation_15427 | 15427       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
@@ -154,8 +154,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName           | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_DAS15938 | DAS15938    | true   | false              | All Devices | Manual |
+	| Name                     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_DAS15938 | DAS15938    | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -283,8 +283,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 15425_Automation | 15425       | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 15425_Automation | 15425       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -538,8 +538,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17602_Automation | 17602       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17602_Automation | 17602       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -571,8 +571,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17605_Automation | 17605       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17605_Automation | 17605       | true     | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17605_Automation" text in the Search field for "Automation" column
@@ -603,8 +603,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @DAS20455 @DAS20455 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17606_Automation | 17606       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17606_Automation | 17606       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action with
@@ -646,8 +646,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @DAS19117 @DAS17485 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| DAS17797       | 17797       | true   | false              | All Devices | Manual |
+	| Name     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| DAS17797 | 17797       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action
@@ -694,8 +694,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User refreshes agGrid
 	Then "ListDAS17485" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope        | Run    |
-	| DAS17744       | 17744       | true   | false              | ListDAS17485 | Manual |
+	| Name     | Description | IsActive | StopOnFailedAction | Scope        | Run    |
+	| DAS17744 | 17744       | true     | false              | ListDAS17485 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action
@@ -734,8 +734,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @DAS17948 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| DAS17772       | 17772       | true   | false              | All Users | Manual |
+	| Name     | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| DAS17772 | 17772       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action
@@ -764,8 +764,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpeci
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Not_Ready @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| DA17778        | 17778       | true   | false              | All Devices | Manual |
+	| Name    | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| DA17778 | 17778       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action 1
@@ -831,8 +831,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS19066 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValidationForActionName
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| DAS19066       | 19066       | true   | false              | All Devices | Manual |
+	| Name     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| DAS19066 | 19066       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

@@ -147,7 +147,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description",
-                        "IsActive",
+                        "IsIsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -566,9 +566,9 @@ this.FeatureBackground();
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -943,9 +943,9 @@ this.FeatureBackground();
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -1792,9 +1792,9 @@ this.FeatureBackground();
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -1912,9 +1912,9 @@ this.FeatureBackground();
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -2040,9 +2040,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -2188,9 +2188,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -2338,9 +2338,9 @@ this.FeatureBackground();
  testRunner.Then("\"ListDAS17485\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -2478,9 +2478,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -2601,9 +2601,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -2835,9 +2835,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});

@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_17511 | 17511       | true   | false              | All Devices | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_17511 | 17511       | true     | false              | All Devices | Manual |
 	Then 'Edit Automation' page subheader is displayed to user
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
@@ -106,8 +106,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17691_Automation | DAS17691    | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17691_Automation | DAS17691    | true     | false              | All Users | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17691_Automation" text in the Search field for "Automation" column
@@ -123,8 +123,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17738_Automation | 17430       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17738_Automation | 17430       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	Then 'All Devices' content is displayed in 'Scope' textbox
 	When User navigates to the 'Actions' left menu item
@@ -148,8 +148,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoadedCorrectly
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17619_Automation | 17619       | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17619_Automation | 17619       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

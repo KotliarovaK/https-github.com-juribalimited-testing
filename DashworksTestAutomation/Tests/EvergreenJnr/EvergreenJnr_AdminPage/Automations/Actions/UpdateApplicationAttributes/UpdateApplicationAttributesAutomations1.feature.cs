@@ -867,7 +867,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19240")]
         [NUnit.Framework.CategoryAttribute("DAS18886")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalisation()
         {
             System.Exception lastException = null;
@@ -902,8 +901,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS19240",
                         "DAS18886",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 200
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -987,7 +985,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19094")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid()
         {
             System.Exception lastException = null;
@@ -1021,8 +1018,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19094",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 232
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1030,9 +1026,9 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});

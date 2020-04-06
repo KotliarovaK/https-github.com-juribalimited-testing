@@ -160,9 +160,9 @@ this.FeatureBackground();
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -307,7 +307,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17169")]
         [NUnit.Framework.CategoryAttribute("DAS17774")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun()
         {
             System.Exception lastException = null;
@@ -345,8 +344,7 @@ this.FeatureBackground();
                         "DAS17110",
                         "DAS17169",
                         "DAS17774",
-                        "Cleanup",
-                        "Not_Ready"});
+                        "Cleanup"});
 #line 80
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -719,9 +717,9 @@ this.FeatureBackground();
  testRunner.And("User create dynamic list with \"17011_List\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -740,9 +738,9 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});
@@ -845,7 +843,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17212")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         [NUnit.Framework.TestCaseAttribute("17212_Devices", "All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("17212_Users", "All Users", null)]
         [NUnit.Framework.TestCaseAttribute("17212_Applications", "All Applications", null)]
@@ -885,8 +882,7 @@ this.FeatureBackground();
                     "AutomationLog",
                     "Automations",
                     "DAS17212",
-                    "Cleanup",
-                    "Not_Ready"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -932,7 +928,7 @@ this.FeatureBackground();
 #line 238
  testRunner.When("User clicks \'RUN\' button on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 239
- testRunner.Then("\'1 automation started,\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'1 automation started\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 240
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 241
