@@ -24,12 +24,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly RemoteWebDriver _driver;
         private readonly ColumnValue _columnValue;
         private readonly GridRowsCount _rowCountValue;
+        private readonly RunNowAutomationStartTime _automationStartTime;
 
-        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ColumnValue columnValue, GridRowsCount rowCountValue)
+        public EvergreenJnr_BaseDashboardPage(RemoteWebDriver driver, ColumnValue columnValue, GridRowsCount rowCountValue, RunNowAutomationStartTime automationStartTime)
         {
             _driver = driver;
             _columnValue = columnValue;
             _rowCountValue = rowCountValue;
+            _automationStartTime = automationStartTime;
         }
 
         [When(@"User navigate to the bottom of the Action panel")]
@@ -140,18 +142,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"current date and time is displayed for '(.*)' column")]
-        public void ThenCurrentDateAndTimeIsDisplayedForColumn(string columnName)
+        [Then(@"current date and time are displayed for '(.*)' Automation")]
+        public void ThenCurrentDateAndTimeAreDisplayedForAutomation(string automationName)
         {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.PopulateSearchFieldByColumnName("Automation", automationName);
             var page = _driver.NowAt<BaseGridPage>();
-            var currentDate = DateTime.Now.ToString("d MMM yyyy hh mm");
-            var allCells = page.GetColumnElementsByColumnName(columnName);
-            _driver.WaitForElementToContainsText(allCells, currentDate);
-            var columnContent = page.GetColumnContentByColumnName(columnName);
-            foreach (string content in columnContent)
-            {
-                Verify.AreEqual(currentDate, content, $"'{currentDate}' is not displayed in the '{columnName}'");
-            }
+            var currentDate = _automationStartTime.Value.ToUniversalTime().ToString("d MMM yyyy HH:mm");
+            var dateValue = page.GetColumnContentByColumnName("Date").First();
+            Verify.IsTrue(dateValue.Contains(currentDate), $"'{currentDate}' is not displayed for the Automation Log");
         }
 
         [Then(@"""(.*)"" italic content is displayed")]

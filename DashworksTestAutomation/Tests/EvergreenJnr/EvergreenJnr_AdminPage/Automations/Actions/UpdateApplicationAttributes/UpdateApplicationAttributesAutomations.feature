@@ -84,8 +84,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User create static list with "StaticList18834" name
 	Then "StaticList18834" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope           | Run    |
-	| 18834_Automation | 18834       | true   | false              | StaticList18834 | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope           | Run    |
+	| 18834_Automation | 18834       | true     | false              | StaticList18834 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -101,8 +101,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
 	When '18834_Automation' automation '18834_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
+	Then current date and time are displayed for '18834_Automation' Automation
 	When User enters "18834_Automation" text in the Search field for "Automation" column
-	Then current date and time is displayed for 'Date' column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
@@ -118,9 +118,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	Then 'UPDATE' button is disabled
-	When User selects 'IGNORE' in the 'Sticky Compliance' dropdown
+	When User selects 'AMBER' in the 'Sticky Compliance' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
+	When User enters "18834_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
@@ -129,7 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
+	Then 'AMBER' content is displayed in the 'Sticky Compliance' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesNotShownForNoApplicationScopedAutomation

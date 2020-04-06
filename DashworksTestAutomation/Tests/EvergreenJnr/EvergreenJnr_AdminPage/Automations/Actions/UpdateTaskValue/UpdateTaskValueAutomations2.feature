@@ -91,8 +91,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks 'Run now' option in Cog-menu for 'Test18292Automation' item from 'Automation' column
 	When 'Test18292Automation' automation '18292_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
+	Then current date and time are displayed for 'Test18292Automation' Automation
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
-	Then current date and time is displayed for 'Date' column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
