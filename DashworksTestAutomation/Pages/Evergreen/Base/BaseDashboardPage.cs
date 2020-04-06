@@ -570,7 +570,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public string GetTextboxInfoMessage(string placeholder)
         {
-
             var error = GetTextboxErrorMessageElement(placeholder).FindElement(textboxInfoSelector);
             return error.Text;
         }

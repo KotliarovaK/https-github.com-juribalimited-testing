@@ -81,8 +81,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17104_Automation | 17104       | false  | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17104_Automation | 17104       | false    | false              | All Users | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17104_Automation" text in the Search field for "Automation" column
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then '1 automation started,' text is displayed on inline success banner
+	Then '1 automation started' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks Group By button and set checkboxes state
 	| Checkboxes | State |
