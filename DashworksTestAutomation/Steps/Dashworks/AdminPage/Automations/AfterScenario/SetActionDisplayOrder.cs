@@ -28,13 +28,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.AfterSce
         {
             var automationId = DatabaseHelper.GetAutomationId(automationName);
             var actionId = DatabaseHelper.GetAutomationActionId(actionName, automationId);
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automation/{actionId}/changeActionOrder";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automations/{automationId}/actions/{actionId}";
             var request = requestUri.GenerateRequest();
-            request.AddParameter("displayOrder", order);
+            request.AddParameter("order", order);
 
-            var resp = _client.Evergreen.Put(request);
+            var resp = _client.Evergreen.Patch(request);
 
-            if (resp.StatusCode != HttpStatusCode.OK)
+            if (resp.StatusCode != HttpStatusCode.NoContent)
             {
                 throw new Exception($"Unable to set '{order}' processing order for '{actionName}' action");
             }
