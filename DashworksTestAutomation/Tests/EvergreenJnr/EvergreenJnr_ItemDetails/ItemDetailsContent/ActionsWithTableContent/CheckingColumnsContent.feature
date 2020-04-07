@@ -36,26 +36,34 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects Summary' left submenu item
-	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                   |
+	| Select All                   |
+	| Computer Scheduled Test (Jo) |
+	When User clicks content from "Project" column
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User opens 'Project' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Object ID" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
+	| checkboxes |
+	| Object ID  |
 	Then following columns added to the table:
 	| ColumnName |
 	| Object ID  |
-	When User clicks "33819" link on the Details Page
+	When User enters "33819" text in the Search field for "Object ID" column
+	When User clicks content from "Object ID" column
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 	And User click back button in the browser
 	#=====================================================================================#
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Owner Projects Summary' left submenu item
-	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                   |
+	| Select All                   |
+	| Computer Scheduled Test (Jo) |
+	When User clicks content from "Project" column
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 	And User click back button in the browser
@@ -66,7 +74,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	Then following columns added to the table:
 	| ColumnName |
 	| Object ID  |
-	When User clicks "34305" link on the Details Page
+	When User enters "34305" text in the Search field for "Object ID" column
+	When User clicks content from "Object ID" column
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 
