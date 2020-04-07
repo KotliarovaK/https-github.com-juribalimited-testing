@@ -131,6 +131,7 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatOwnerDropdownSh
 	Then only below options are displayed in 'Owner' autocomplete after search by '03C54BC1198843A4A03 (Jones, Tina)' text
 	| Options                           |
 	| 03C54BC1198843A4A03 (Jones, Tina) |
+	When User clicks on 'Change Owner' button on end user Self Service page
 	Then only below options are displayed in 'Owner' autocomplete after search by '024213574157421A9CD (Reyes, Natasha)' text
 	| Options          |
 	| No results found |

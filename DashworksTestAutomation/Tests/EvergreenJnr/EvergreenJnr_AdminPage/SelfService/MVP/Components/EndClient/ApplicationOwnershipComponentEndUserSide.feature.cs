@@ -611,12 +611,14 @@ this.FeatureBackground();
 #line 131
  testRunner.Then("only below options are displayed in \'Owner\' autocomplete after search by \'03C54BC" +
                     "1198843A4A03 (Jones, Tina)\' text", ((string)(null)), table19, "Then ");
+#line 134
+ testRunner.When("User clicks on \'Change Owner\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table20.AddRow(new string[] {
                         "No results found"});
-#line 134
+#line 135
  testRunner.Then("only below options are displayed in \'Owner\' autocomplete after search by \'0242135" +
                     "74157421A9CD (Reyes, Natasha)\' text", ((string)(null)), table20, "Then ");
 #line hidden
