@@ -45,11 +45,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAut
 	| Not Important |
 	| Uncategorised |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18674 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18674 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForAutomations
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18674_Test_Automation | 18674       | true   | false              | All Applications | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18674_Test_Automation | 18674       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -77,8 +77,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForA
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DASDAS19601 @DAS19150 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForEvergreen
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19311_Automation | 19311       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19311_Automation | 19311       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -137,8 +137,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavi
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19311 @DAS19353 @DASDAS19601 @DAS19150 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForProject
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19311_Test_Automation | 19311       | true   | false              | All Applications | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19311_Test_Automation | 19311       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -205,8 +205,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User refreshes agGrid
 	Then "StaticList19312" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope           | Run    |
-	| 19312_Automation | 19312       | true   | false              | StaticList19312 | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope           | Run    |
+	| 19312_Automation | 19312       | true     | false              | StaticList19312 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -248,8 +248,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunN
 	When User create static list with "TestList19312" name
 	Then "TestList19312" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope         | Run    |
-	| Test_19312_Automation | test19312   | true   | false              | TestList19312 | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope         | Run    |
+	| Test_19312_Automation | test19312   | true     | false              | TestList19312 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

@@ -135,14 +135,12 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Radio Rag Date Comp' option from 'Task' autocomplete
 	Then inline error banner is not displayed
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Failed' in the 'Value' dropdown
+	When User selects 'Failed' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then 'CREATE' button is not disabled
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then 'CREATE' button is disabled
-	When User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Failed' in the 'Value' dropdown
+	When User selects 'Failed' in the 'Update Value' dropdown
 	Then 'CREATE' button is not disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup
