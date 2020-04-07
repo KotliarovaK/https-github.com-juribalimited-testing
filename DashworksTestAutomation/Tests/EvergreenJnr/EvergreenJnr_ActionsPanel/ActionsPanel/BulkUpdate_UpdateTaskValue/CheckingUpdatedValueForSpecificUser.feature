@@ -269,7 +269,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '28 Nov 2018' text to 'Date' datepicker
-	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	And User clicks datepicker icon 
+	And User selects '28' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for '3' seconds
+	And User clicks datepicker icon
+	And User selects '29' day in the Datepicker
+	And User navigate to the bottom of the Action panel
+	And User selects 'User Slot' in the 'Slot' dropdown
 	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
 	Then inline warning banner is displayed
@@ -294,7 +301,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '27 Dec 2018' text to 'Date' datepicker
-	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	And User clicks datepicker icon 
+	And User selects '27' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for '3' seconds
+	And User clicks datepicker icon
+	And User selects '28' day in the Datepicker
+	And User navigate to the bottom of the Action panel
+	And User selects 'User Slot' in the 'Slot' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
 	Then inline warning banner is displayed
