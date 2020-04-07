@@ -562,6 +562,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18270")]
         [NUnit.Framework.CategoryAttribute("DAS18233")]
+        [NUnit.Framework.CategoryAttribute("DAS19781")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties()
         {
             System.Exception lastException = null;
@@ -595,7 +596,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS18270",
-                        "DAS18233"});
+                        "DAS18233",
+                        "DAS19781"});
 #line 116
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -646,22 +648,22 @@ this.FeatureBackground();
 #line 137
  testRunner.When("User enters \'999999\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 138
- testRunner.Then("\'100000\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'999999\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 139
  testRunner.When("User enters \'-5\' text to \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 140
- testRunner.Then("\'0\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'-5\' content is displayed in \'Value\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table13.AddRow(new string[] {
-                        "days before now"});
+                        "days before current value"});
             table13.AddRow(new string[] {
-                        "days after now"});
+                        "days after current value"});
             table13.AddRow(new string[] {
-                        "weekdays before now"});
+                        "weekdays before current value"});
             table13.AddRow(new string[] {
-                        "weekdays after now"});
+                        "weekdays after current value"});
 #line 141
  testRunner.Then("following Values are displayed in the \'Units\' dropdown:", ((string)(null)), table13, "Then ");
 #line hidden
