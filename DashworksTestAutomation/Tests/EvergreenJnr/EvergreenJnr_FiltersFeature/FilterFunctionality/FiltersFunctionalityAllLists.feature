@@ -354,6 +354,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilt
 	When User enters '100001' text to 'dayValue' textbox
 	Then '100000' content is displayed in 'dayValue' textbox
 	Then User sees '0 to 100000' hint below 'dayValue' field
+	#Update after Eugene add automation attribute "Units"
+	#When User selects 'days ahead' in the 'Units' dropdown
 
 Examples:
 	| List         | Filter                       | Operator                |

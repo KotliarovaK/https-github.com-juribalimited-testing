@@ -523,7 +523,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
 
         public IWebElement GetFieldHint(string placeholder)
         {
-            var hitSelector = By.XPath("./ancestor::div[@class='mat-form-field-wrapper']//mat-hint");
+            var hitSelector = By.XPath("./ancestor::div[@class='mat-form-field-wrapper']//mat-hint/span");
             Driver.WaitForElementInElementToBeDisplayed(GetTextbox(placeholder), hitSelector);
             return GetTextbox(placeholder).FindElement(hitSelector);
         }

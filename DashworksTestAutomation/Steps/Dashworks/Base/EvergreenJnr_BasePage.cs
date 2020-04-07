@@ -640,6 +640,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                 $"{fieldName} has no or wrong instruction");
         }
 
+        [Then(@"User sees '(.*)' red hint below '(.*)' field")]
+        public void ThenUserSeesRedHintBelowField(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(filterElement.GetFieldHint(fieldName).GetCssValue("color"), Is.EqualTo("rgba(242, 88, 49, 1)"),
+                $"{fieldName} has incorrect color for hint");
+            Verify.That(filterElement.GetFieldHint(fieldName).Text, Is.EqualTo(instruction),
+                $"{fieldName} has no or wrong instruction");
+        }
+
         [Then(@"'(.*)' add button tooltip is displayed for '(.*)' textbox")]
         public void ThenAddButtonTooltipIsDisplayedForTextbox(string text, string fieldName)
         {

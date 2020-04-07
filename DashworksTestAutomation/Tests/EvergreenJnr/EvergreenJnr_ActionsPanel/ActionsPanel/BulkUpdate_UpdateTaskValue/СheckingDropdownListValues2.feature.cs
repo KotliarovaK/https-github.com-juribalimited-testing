@@ -676,7 +676,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18281")]
         [NUnit.Framework.CategoryAttribute("DAS18233")]
         [NUnit.Framework.CategoryAttribute("DAS19274")]
-        [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties()
         {
             System.Exception lastException = null;
@@ -712,8 +711,7 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS18281",
                         "DAS18233",
-                        "DAS19274",
-                        "Void"});
+                        "DAS19274"});
 #line 148
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
