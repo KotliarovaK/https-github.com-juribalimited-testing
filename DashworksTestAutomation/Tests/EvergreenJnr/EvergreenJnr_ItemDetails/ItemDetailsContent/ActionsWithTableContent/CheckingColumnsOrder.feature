@@ -18,13 +18,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumn
 	| Operating System   |
 	| Compliance         |
 	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User clicks following checkboxes from Column Settings panel for the 'Hostname' column:
+	| checkboxes       |
+	| Operating System |
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
 	| Hostname              |
 	| Device Type           |
 	| Owner                 |
 	| Owner Display Name    |
-	| Operating System      |
 	| Readiness             |
 	| Path                  |
 	| Category              |

@@ -77,7 +77,7 @@ Examples:
 	| Application | IEWatch 2.1         | MSI       | MSI Files |
 	| User        | 01A921EFD05545818AA | Mailboxes | Mailboxes |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009 @DAS15951 @Zion_NewGrid
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009 @DAS15951 @DAS20748 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSummarySection
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	When User navigates to the 'Applications' left menu item
