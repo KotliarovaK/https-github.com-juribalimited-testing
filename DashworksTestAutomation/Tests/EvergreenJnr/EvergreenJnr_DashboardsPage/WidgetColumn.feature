@@ -33,7 +33,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	Then Line X labels of 'DAS16278_Widget' column widget is displayed in following order:
 	| ColumnName    |
 	| Onboarded     |
-	| Forecast      |
 	| Targeted      |
 	| Scheduled     |
 	| Migrated      |
@@ -48,7 +47,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Migrated      |
 	| Scheduled     |
 	| Targeted      |
-	| Forecast      |
 	| Onboarded     |
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15780 @Cleanup

@@ -88,6 +88,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	#change permission to Everyone can edit
 	When User clicks 'CREATE' button 
 	Then 'Widget_For_DAS16380_1' Widget is displayed to the user
+	When User clicks the Dashboard Permissions button
 	When User selects 'Everyone can edit' in the 'Sharing' dropdown
 	Then Review Widget List Permissions is displayed to the User
 	When User clicks 'IGNORE & SHARE' button 
@@ -99,6 +100,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	#change permission to Everyone can edit
 	When User clicks 'CREATE' button
 	Then 'Widget_For_DAS16380_2' Widget is displayed to the user
+	When User clicks the Dashboard Permissions button
 	When User selects 'Specific users / teams' in the 'Sharing' dropdown
 	Then Review Widget List Permissions is displayed to the User
 	When User clicks 'IGNORE & SHARE' button 

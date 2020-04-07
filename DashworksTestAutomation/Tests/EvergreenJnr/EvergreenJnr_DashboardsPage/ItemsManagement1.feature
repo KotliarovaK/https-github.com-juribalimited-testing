@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	When User checks 'Edit mode' slide toggle
 	Then User sees Edit mode trigger is in the On position on Dashboards page
 	Then User sees Edit mode trigger has blue style on Dashboards page
-	Then 'CREATE DASHBOARD' button is disabled
+	Then 'CREATE DASHBOARD' button is not disabled
 	Then 'ADD SECTION' button is not disabled
 	Then 'ADD WIDGET' button is not disabled
 	Then User sees Collapse/Expand icon enabled for Section having 'WidgetForDAS12978' Widget on Dashboards page
