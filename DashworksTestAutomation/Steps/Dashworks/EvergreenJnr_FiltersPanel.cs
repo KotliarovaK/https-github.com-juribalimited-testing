@@ -306,13 +306,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             baseElement.PopulateTextbox(placeholder, searchedText, false);
         }
 
-        [Then(@"Ahead or Ago dropdown is disabled")]
-        public void ThenValueIsDisplayedForSelectedLookupFilter()
-        {
-            var filterElement = _driver.NowAt<FiltersElement>();
-            Verify.That(filterElement.AheadOrAgoInput.Disabled(), Is.True, $"Dropdown enabled");
-        }
-
         [When(@"User clicks Add button for input filter value")]
         public void WhenUserClicksAddButtonForInputFilterValue()
         {

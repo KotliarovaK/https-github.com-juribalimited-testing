@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17684 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17684
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17684_Automation | 17684       | true   | false              | Apps with a Vendor | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 17684_Automation | 17684       | true     | false              | Apps with a Vendor | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -54,8 +54,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDeviceScope
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17636_Automation | 17636       | true   | false              | New York - Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 17636_Automation | 17636       | true     | false              | New York - Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17636_Automation" text in the Search field for "Automation" column
@@ -94,8 +94,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope                  | Run    |
-	| 17642_Automation | 17642       | true   | false              | Mailbox List (Complex) | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope                  | Run    |
+	| 17642_Automation | 17642       | true     | false              | Mailbox List (Complex) | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17642_Automation" text in the Search field for "Automation" column
@@ -127,13 +127,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInMailboxScop
 	Then "EmailMigra: Comms & Exceptions \ Mailbox Dropdown Non RAG Owner (Owner)" column is not displayed to the user
 	Then 'Maybe' content is displayed in the 'EmailMigra: Comms & Exceptions \ Mailbox Dropdown Non RAG Owner' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17643 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17643 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplicationScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17643_Automation | 17643       | true   | false              | Apps with a Vendor | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 17643_Automation | 17643       | true     | false              | Apps with a Vendor | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17643_Automation" text in the Search field for "Automation" column
@@ -145,10 +145,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	When User enters '17643_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
-	When User selects 'Stage 1' option from 'Stage' autocomplete
-	When User selects 'Text Task (App)' option from 'Task' autocomplete
+	When User selects 'Stage 1 \ Text Task (App)' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'New Text value' option from 'Value' autocomplete
+	When User enters 'New Text value' text to 'Value' textbox
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
@@ -168,13 +167,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInApplication
 	| USEMEFORA2: Stage 1 \ Text Task (App) |
 	Then 'New Text value' content is displayed in the 'USEMEFORA2: Stage 1 \ Text Task (App)' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17799 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17799 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17799_Automation | 17799       | true   | false              | New York - Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 17799_Automation | 17799       | true     | false              | New York - Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17799_Automation" text in the Search field for "Automation" column
@@ -186,16 +185,15 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	When User enters '17799_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Stage B' option from 'Stage' autocomplete
-	When User selects 'Readiness Date Comp Task' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Started' in the 'Value' dropdown
+	When User selects 'Stage B \ Readiness Date Comp Task' option from 'Task' autocomplete
+	And User selects 'Started' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
 	When User enters "17799_Automation" text in the Search field for "Automation" column
-	When User clicks 'Run now' option in Cog-menu for '17643_Automation' item from 'Automation' column
+	When User clicks 'Run now' option in Cog-menu for '17799_Automation' item from 'Automation' column
+	When '17799_Automation' automation '17799_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
 	When User enters "17799_Automation" text in the Search field for "Automation" column
@@ -207,7 +205,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInDevicesScop
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName                                            |
-	| zDeviceAut: Stage B \ Readiness Date Comp Task        |
 	| zDeviceAut: Stage B \ Readiness Date Comp Task (Date) |
 	Then 'STARTED' content is displayed in the 'zDeviceAut: Stage B \ Readiness Date Comp Task' column
 	When User clicks the Columns button
@@ -223,8 +220,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
-	| 17678_Automation | 17643       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope                               | Run    |
+	| 17678_Automation | 17643       | true     | false              | Mailbox Readiness Columns & Filters | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17678_Automation" text in the Search field for "Automation" column
@@ -310,8 +307,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueAndOwnerInDev
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17682_Automation | 17682       | true   | false              | New York - Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 17682_Automation | 17682       | true     | false              | New York - Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17682_Automation" text in the Search field for "Automation" column
@@ -364,8 +361,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForRemoveOwnerAndTeamInDevi
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17682_Automation_2 | 17682       | true   | false              | New York - Devices | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 17682_Automation_2 | 17682       | true     | false              | New York - Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17682_Automation_2" text in the Search field for "Automation" column
@@ -418,8 +415,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope                   | Run    |
-	| 17678_Automation_1 | 17643_1     | true   | false              | Users with Device Count | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
+	| 17678_Automation_1 | 17643_1     | true     | false              | Users with Device Count | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17678_Automation_1" text in the Search field for "Automation" column
@@ -431,10 +428,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User enters '17678_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
-	When User selects 'Stage A' option from 'Stage' autocomplete
-	When User selects 'Radiobutton Readiness Date Task No CS' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Failed' in the 'Value' dropdown
+	When User selects 'Stage A \ Radiobutton Readiness Date Task No CS' option from 'Task' autocomplete
+	And User selects 'Failed' in the 'Update Value' dropdown
 	And User selects 'Remove' in the 'Update Date' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
@@ -451,8 +446,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedA
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                                   |
-	| UseMeForAu: Stage A \ Radiobutton Readiness Date Task No CS        |
+	| ColumnName                                                         |
 	| UseMeForAu: Stage A \ Radiobutton Readiness Date Task No CS (Date) |
 	Then 'FAILED' content is displayed in the 'UseMeForAu: Stage A \ Radiobutton Readiness Date Task No CS' column
 	Then '' content is displayed in the 'UseMeForAu: Stage A \ Radiobutton Readiness Date Task No CS (Date)' column
@@ -474,8 +468,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatClickingOnTheObjectsCountOpensTheCorre
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17430 @DAS17518 @DAS18374 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS17430
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17430_Automation | 17430       | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17430_Automation | 17430       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

@@ -15,8 +15,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User refreshes agGrid
 	When User create dynamic list with "19832_List" name on "Applications" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 19003_Automation | 19003       | true   | false              | 19832_List | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 19003_Automation | 19003       | true     | false              | 19832_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -39,8 +39,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRun
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
 	Then 'FORWARD PATH' content is displayed in the 'zDeviceAut: Rationalisation' column
-	#Discussed it with Maryna (3/10/2020)
-	#Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Name' column
+	Then 'yEnc32 (remove only)' content is displayed in the 'zDeviceAut: Target App Name' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19003 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForwardPath
@@ -52,8 +51,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 	When User refreshes agGrid
 	When User create dynamic list with "19003_List" name on "Applications" page
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 19003_Automation1 | test_19003  | true   | false              | 19003_List | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 19003_Automation1 | test_19003  | true     | false              | 19003_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -101,8 +100,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationsRunForward
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19663 @DAS19229 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19663_Automation | 19663       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19663_Automation | 19663       | true     | false              | All Applications | Manual |
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
 	| 19663_Project | All Devices | None            | Standalone Project |
@@ -161,8 +160,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatTargetApplicationNotFoundIsNotDisplayedOnEditActionPage
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19690_Automation | 19690       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19690_Automation | 19690       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
