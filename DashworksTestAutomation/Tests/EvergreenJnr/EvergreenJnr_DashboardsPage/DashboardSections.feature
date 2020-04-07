@@ -311,6 +311,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	| 3_Widget   |
 
 	When User clicks 'Edit' menu option for section with '3_Widget' widget
+	Then 'Hide section' checkbox is unchecked
 	When User checks 'Hide section' checkbox
 	Then 'Hide section' checkbox is checked
 	When User clicks 'UPDATE' button
