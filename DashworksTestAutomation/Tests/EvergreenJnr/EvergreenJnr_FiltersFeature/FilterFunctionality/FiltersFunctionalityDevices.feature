@@ -611,7 +611,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	| SelectedCheckboxes |
 	| One                |
 	| Three              |
-	And User Add And "UserSchedu: One \ Radio Rag Date Comp" filter where type is "Equals" with added column and following checkboxes:
+	When User Add And "UserSchedu: One \ Radio Rag Date Comp" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Not Applicable     |
 	| Started            |
@@ -626,16 +626,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "Windows7Mi: Migration \ Values but no RAG is One or Three" is displayed in added filter info
-	And "UserSchedu: One \ Radio Rag Date Comp is Not Applicable, Started, Failed or Complete" is displayed in added filter info
+	Then "UserSchedu: One \ Radio Rag Date Comp is Not Applicable, Started, Failed or Complete" is displayed in added filter info
 	When User click Edit button for "Windows7Mi: Migration \ Values but no RAG" filter
-	And User change selected checkboxes:
+	When User change selected checkboxes:
 	| Option | State |
 	| One    | false |
 	| Two    | false |
 	| Three  | true  |
-	And User click Edit button for "UserSchedu: One \ Radio Rag Date Comp" filter
-	And User select "Does not equal" Operator value
-	And User change selected checkboxes:
+	When User click Edit button for "UserSchedu: One \ Radio Rag Date Comp" filter
+	When User select "Does not equal" Operator value
+	When User change selected checkboxes:
 	| Option         | State |
 	| Not Applicable | true  |
 	| Not Started    | false |
@@ -907,3 +907,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorDisplayedWhenFilterIncludesRa
 	When User navigates to 'devices?$filter=(project_task_1_8397_1_Task_Value%20EQUALS%20('NULL'))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,project_task_1_8397_1_Task' url via address line
 	Then table content is present
 	Then There are no errors in the browser console
+
+@Evergreen @Evergreen_FiltersFeature @Filter_DevicesList @DAS20637
+Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersCanBeDeletedWithoutError
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "UserSchedu: One \ Radio Rag Date Comp Req B" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Started            |
+	When User have removed "UserSchedu: One \ Radio Rag Date Comp Req B" filter
+	Then 'All Devices' list should be displayed to the user
+	Then There are no errors in the browser console
+	Then table content is present
