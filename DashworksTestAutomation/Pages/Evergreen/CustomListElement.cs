@@ -86,6 +86,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 case "All Users":
                 case "All Applications":
                 case "All Device Applications":
+                case "All User Applications":
                 case "All Mailboxes":
                     return Driver.FindElementByXPath(string.Format(TopSubMenuItemByName, listName));
 
