@@ -163,10 +163,13 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
 	Then following Values are displayed in the 'Action Type' dropdown:
-	| Values              |
-	| Update custom field |
-	| Update path         |
-	| Update task value   |
+	| Values               |
+	| Update bucket        |
+	| Update capacity unit |
+	| Update custom field  |
+	| Update path          |
+	| Update ring          |
+	| Update task value    |
 	When User enters '15428_Action_1' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
@@ -464,24 +467,28 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User selects 'Pre-Migration \ Devices Task 1' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	Then following Values are displayed in the 'Update Value' dropdown:
-	| Options   |
-	| Update    |
-	| No change |
+	| Options        |
+	| No change      |
+	| Not Applicable |
+	| Not Started    |
+	| Started        |
+	| Failed         |
+	| Complete       |
 	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options                                   |
+	| No change                                 |
 	| Update                                    |
 	| Update relative to current value          |
 	| Update relative to now                    |
 	| Update relative to a different task value |
 	| Remove                                    |
-	| No change                                 |
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
+	| No change             |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	| No change             |
-
+	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @DAS19317 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage
 	When User clicks 'Admin' on the left-hand menu
@@ -657,8 +664,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then inline error banner is not displayed
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Complete' in the 'Value' dropdown
+	When User selects 'Complete' in the 'Update Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '31 Aug 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -677,8 +683,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User clicks Body container
 	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then 'Update Value' content is displayed in 'Update Value' dropdown
-	Then 'Update Date' content is displayed in 'Update Date' dropdown
-	Then 'Update Owner' content is displayed in 'Update Owner' dropdown
+	Then 'No change' content is displayed in 'Update Date' dropdown
+	Then 'No change' content is displayed in 'Update Owner' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17744 @DAS17485 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
@@ -704,8 +710,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One \ Radio Rag Date Owner User Req A' option from 'Task' autocomplete
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Started' in the 'Value' dropdown
+	When User selects 'Started' in the 'Update Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '5 Sep 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
