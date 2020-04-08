@@ -1322,22 +1322,20 @@ this.FeatureBackground();
 #line 313
  testRunner.When("User clicks \'Edit\' menu option for section with \'3_Widget\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 314
- testRunner.Then("\'Hide section\' checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks Hide section checkbox on Edit Section page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 315
- testRunner.When("User checks \'Hide section\' checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 316
  testRunner.Then("\'Hide section\' checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 317
+#line 316
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 318
+#line 317
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 319
+#line 318
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 320
+#line 319
  testRunner.When("Dashboard with \'Dashboard for SectionEditing\' name is opened via API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 321
+#line 320
  testRunner.When("User waits for \'3\' seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 322
+#line 321
  testRunner.Then("Widget with the name \'1_Widget\' is missing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1385,17 +1383,17 @@ this.FeatureBackground();
                         "Sections",
                         "DAS14472",
                         "Cleanup"});
-#line 325
+#line 324
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 326
+#line 325
  testRunner.When("Dashboard with \'Dashboard for SectionDescription\' name created via API and opened" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 327
+#line 326
  testRunner.When("User checks \'Edit mode\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 328
+#line 327
  testRunner.When("User clicks \'ADD WIDGET\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1410,23 +1408,23 @@ this.FeatureBackground();
                         "All Devices",
                         "5",
                         "5"});
-#line 329
+#line 328
  testRunner.When("User creates new Widget", ((string)(null)), table31, "When ");
-#line 332
+#line 331
  testRunner.Then("\'1_Widget\' Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 333
+#line 332
  testRunner.When("User clicks \'Edit\' menu option for section with \'1_Widget\' widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 334
+#line 333
  testRunner.When("User enters \'SectionName\' text to \'Title\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 335
+#line 334
  testRunner.When(@"User enters 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long' text to 'Description' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 336
+#line 335
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 337
+#line 336
  testRunner.When("User clicks \'See full description\' link in description for \'SectionName\' section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 338
+#line 337
  testRunner.Then(@"User sees 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long' description for 'SectionName' section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 339
+#line 338
  testRunner.When("User clicks \'Hide full description\' link in description for \'SectionName\' section" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden

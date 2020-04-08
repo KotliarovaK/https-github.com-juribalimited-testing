@@ -388,7 +388,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-
+        //TODO TEMPORARY SOLUTION
+        [When(@"User clicks Hide section checkbox on Edit Section page")]
+        public void WhenUserClicksHideSectionCheckboxOnEditSection()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.SectionHideSectionCheckbox.Click();
+            Thread.Sleep(TimeSpan.FromSeconds(2));
+        }
 
         [Then(@"User sees Ellipsis icon enabled for '(.*)' Widget on Dashboards page")]
         public void ThenUserSeesEllipsisIconEnabledForWidgetOnDashboardsPage(string widgetName)
