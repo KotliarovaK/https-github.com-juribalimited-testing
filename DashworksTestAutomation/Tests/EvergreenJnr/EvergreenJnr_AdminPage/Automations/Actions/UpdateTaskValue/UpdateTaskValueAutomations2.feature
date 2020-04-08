@@ -71,8 +71,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @DAS17675 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxesAutomation
 	When User creates new Automation via API and open it
-	| AutomationName      | Description | Active | StopOnFailedAction | Scope                               | Run    |
-	| Test18292Automation | 18292       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
+	| Name                | Description | IsActive | StopOnFailedAction | Scope                               | Run    |
+	| Test18292Automation | 18292       | true     | false              | Mailbox Readiness Columns & Filters | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User selects 'Relative BU \ DT Auto Mail' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
-	When User selects 'After current value' in the 'Before or After' dropdown
+	When User selects 'days after current value' in the 'Units' dropdown
 	And User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	Then inline error banner is not displayed
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User selects 'days before current value' in the 'Units' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
@@ -241,8 +241,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
 	When User navigate to Evergreen link
 	#Pre-requisites:
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18644_Automation | 18644       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18644_Automation | 18644       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -254,7 +254,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
+	| No change             |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	| No change             |

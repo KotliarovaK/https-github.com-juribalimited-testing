@@ -740,7 +740,8 @@ namespace DashworksTestAutomation.Helpers
         //ListID - Id of the list used in Scope for created Self Service
         public static string GetSelfServiceObjectGuid(string selfServiceIdentifier, int componentId)
         {
-            string query = $"declare @SelfServiceIdentifier nvarchar(100) = '{selfServiceIdentifier}' declare @ComponentId int = {componentId} declare @ProjectId int declare @ListId int select @ProjectId = ProjectId from[PM].[SS].[OwnershipComponent] where ComponentId = @ComponentId select @ListId = ListId from[PM].[SS].[SelfService] where SelfServiceIdentifier = @SelfServiceIdentifier select EO.ObjectGuid from DesktopBI.dbo.EvergreenObjects EO join[PM].[API].[ApplicationListItems_Get](@ListId, DEFAULT) LI on LI.ApplicationKey = EO.ObjectKey and EO.ObjectTypeID = 3 join[PM].[dbo].[ProjectObjects] PO on PO.ObjectKey = EO.ObjectKey and PO.ObjectTypeID = EO.ObjectTypeID and PO.ProjectId = @ProjectId where EO.ObjectTypeId = 3";
+            //replace '@ComponentId int = 3' to '@ComponentId int = {componentId}' when compoment ID will be working with GetSelfServiceObjectGuid query 
+            string query = $"declare @SelfServiceIdentifier nvarchar(100) = '{selfServiceIdentifier}' declare @ComponentId int = 3 declare @ProjectId int declare @ListId int select @ProjectId = ProjectId from[PM].[SS].[OwnershipComponent] where ComponentId = @ComponentId select @ListId = ListId from[PM].[SS].[SelfService] where SelfServiceIdentifier = @SelfServiceIdentifier select EO.ObjectGuid from DesktopBI.dbo.EvergreenObjects EO join[PM].[API].[ApplicationListItems_Get](@ListId, DEFAULT) LI on LI.ApplicationKey = EO.ObjectKey and EO.ObjectTypeID = 3 join[PM].[dbo].[ProjectObjects] PO on PO.ObjectKey = EO.ObjectKey and PO.ObjectTypeID = EO.ObjectTypeID and PO.ProjectId = @ProjectId where EO.ObjectTypeId = 3";
             
             var guid = DatabaseHelper.ExecuteReader(query, 0)[0];
             return guid;

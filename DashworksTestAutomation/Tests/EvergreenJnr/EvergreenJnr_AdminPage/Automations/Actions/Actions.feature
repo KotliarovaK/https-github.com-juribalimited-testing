@@ -682,7 +682,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User selects 'One \ Radio Rag only Comp' option from 'Task' autocomplete
 	When User clicks Body container
 	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
-	Then 'Update Value' content is displayed in 'Update Value' dropdown
+	Then 'No change' content is displayed in 'Update Value' dropdown
 	Then 'No change' content is displayed in 'Update Date' dropdown
 	Then 'No change' content is displayed in 'Update Owner' dropdown
 

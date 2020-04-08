@@ -313,8 +313,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateAfterTaskChangingToTaskWi
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19065 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingAction
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 19065_Automation  | 19065       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 19065_Automation | 19065       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -378,7 +378,7 @@ Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	When User checks 'Enable Capacity' checkbox
 	When User clicks 'UPDATE' button
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20013 @Cleanup @Void
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20013 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScreenIfSlotWasNotSelected
 	When User clicks 'Users' on the left-hand menu
 	When User clicks the Filters button
@@ -419,8 +419,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScree
 	| Project       | SlotName   | DisplayName | CapacityType   | ObjectType | Sunday | Tasks                    |
 	| 20013_Project | slot_20013 | slot_20013  | Capacity Units | User       | 0      | 20013_Stage \ 20013_Task |
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 20013_Automation | 20013       | true   | false              | 20013_List | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 20013_Automation | 20013       | true     | false              | 20013_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -431,7 +431,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorMessageAppearsOnEditActionScree
 	When User selects '20013_Stage \ 20013_Task' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '12' text to 'Value' textbox
-	When User selects 'Days' in the 'Units' dropdown
+	When User selects 'days before current value' in the 'Units' dropdown
 	When User clicks 'CREATE' button
 	When User clicks content from "Action" column
 	Then inline error banner is not displayed
