@@ -1078,6 +1078,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
         [NUnit.Framework.CategoryAttribute("DAS17726")]
+        [NUnit.Framework.CategoryAttribute("DAS20761")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage()
         {
@@ -1114,6 +1115,7 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS16817",
                         "DAS17726",
+                        "DAS20761",
                         "Zion_NewGrid"});
 #line 214
 this.ScenarioInitialize(scenarioInfo);

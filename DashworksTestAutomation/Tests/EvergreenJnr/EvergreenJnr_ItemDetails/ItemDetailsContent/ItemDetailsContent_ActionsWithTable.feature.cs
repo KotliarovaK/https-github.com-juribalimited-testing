@@ -427,6 +427,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16009")]
         [NUnit.Framework.CategoryAttribute("DAS15951")]
+        [NUnit.Framework.CategoryAttribute("DAS20748")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSummarySection()
         {
@@ -464,6 +465,7 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS16009",
                         "DAS15951",
+                        "DAS20748",
                         "Zion_NewGrid"});
 #line 81
 this.ScenarioInitialize(scenarioInfo);
