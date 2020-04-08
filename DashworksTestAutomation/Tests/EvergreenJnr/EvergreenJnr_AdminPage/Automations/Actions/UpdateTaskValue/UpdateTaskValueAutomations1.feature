@@ -77,12 +77,12 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options                                   |
+	| No change                                 |
 	| Update                                    |
 	| Update relative to current value          |
 	| Update relative to now                    |
 	| Update relative to a different task value |
 	| Remove                                    |
-	| No change                                 |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '2' text to 'Value' textbox
 	When User selects 'days after current value' in the 'Units' dropdown
@@ -116,7 +116,6 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'Update relative to current value' value is displayed in the 'Update Date' dropdown
 	Then 'No change' value is displayed in the 'Update Owner' dropdown
-	Then 'Days' value is displayed in the 'Units' dropdown
 	Then 'days after current value' value is displayed in the 'Units' dropdown
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup
