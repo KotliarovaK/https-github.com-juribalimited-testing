@@ -23,8 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then 'CREATE' button is disabled
 	And 'SAVE & CREATE ANOTHER' button is disabled
-	When User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Failed' in the 'Value' dropdown
+	When User selects 'Failed' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '13 Aug 2019' text to 'Date' textbox
 	And User clicks 'CREATE' button 
@@ -40,12 +39,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	When User clicks String Filter button for "Type" column on the Admin page
 	And User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                             |
-	| zUserAutom: Stage 1 \ Radiobutton Date App Task        |
-	| zUserAutom: Stage 1 \ Radiobutton Date App Task (Date) |
 	Then 'FAILED' content is displayed in the 'zUserAutom: Stage 1 \ Radiobutton Date App Task' column
 	And '13 Aug 2019' content is displayed in the 'zUserAutom: Stage 1 \ Radiobutton Date App Task (Date)' column
 
@@ -478,8 +471,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueActionDAS
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' option from 'Project' autocomplete
 	When User selects 'Stage 1 \ Radiobutton Readiness Date Owner Task (User)' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Failed' in the 'Value' dropdown
+	And User selects 'Failed' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '19 Nov 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown

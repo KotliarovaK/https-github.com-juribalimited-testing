@@ -42,6 +42,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	When User navigates to the 'Device' details page for '00BDM1JUR8IF419' item
 	When User navigates to the 'Applications' left menu item
+	When User enters "egcs-objc" text in the Search field for "Application" column
 	When User right clicks on 'egcs-objc' cell from 'Application' column
 	And User selects 'Copy row' option in context menu
 	Then Next data 'egcs-objc   Red Hat   1.1.2   Red   Unknown   True   False' is copied

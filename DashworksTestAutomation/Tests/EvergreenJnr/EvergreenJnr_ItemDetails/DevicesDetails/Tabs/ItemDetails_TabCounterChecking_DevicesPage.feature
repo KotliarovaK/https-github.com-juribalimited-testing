@@ -18,7 +18,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Applications     |
 	| Compliance       |
 	And 'Users' left submenu item with some count is displayed
-	And 'Related' left submenu item is disabled
 	#================ checks sub-menu for main Details tab ================#
 	And 'Details' left menu have following submenu items:
 	| SubTabName              |

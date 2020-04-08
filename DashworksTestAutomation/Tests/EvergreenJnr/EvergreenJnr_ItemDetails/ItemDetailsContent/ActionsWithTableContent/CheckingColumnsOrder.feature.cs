@@ -161,29 +161,35 @@ this.FeatureBackground();
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table2.AddRow(new string[] {
-                        "Hostname"});
-            table2.AddRow(new string[] {
-                        "Device Type"});
-            table2.AddRow(new string[] {
-                        "Owner"});
-            table2.AddRow(new string[] {
-                        "Owner Display Name"});
+                        "checkboxes"});
             table2.AddRow(new string[] {
                         "Operating System"});
-            table2.AddRow(new string[] {
-                        "Readiness"});
-            table2.AddRow(new string[] {
-                        "Path"});
-            table2.AddRow(new string[] {
-                        "Category"});
-            table2.AddRow(new string[] {
-                        "Application Readiness"});
-            table2.AddRow(new string[] {
-                        "Stage 1"});
 #line 21
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2, "Then ");
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Hostname\' co" +
+                    "lumn:", ((string)(null)), table2, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table3.AddRow(new string[] {
+                        "Hostname"});
+            table3.AddRow(new string[] {
+                        "Device Type"});
+            table3.AddRow(new string[] {
+                        "Owner"});
+            table3.AddRow(new string[] {
+                        "Owner Display Name"});
+            table3.AddRow(new string[] {
+                        "Readiness"});
+            table3.AddRow(new string[] {
+                        "Path"});
+            table3.AddRow(new string[] {
+                        "Category"});
+            table3.AddRow(new string[] {
+                        "Application Readiness"});
+            table3.AddRow(new string[] {
+                        "Stage 1"});
+#line 24
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
