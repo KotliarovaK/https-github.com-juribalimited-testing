@@ -113,6 +113,14 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatOwnerDropdownSh
 	Then '1 user will be added' text is displayed on inline tip banner
 	When User clicks 'UPDATE PROJECT' button
 	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	And User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+	| Objects    |
+	| VSCmdShell |
+	And User clicks 'UPDATE ALL CHANGES' button
+	Then '1 application will be added' text is displayed on inline tip banner
+	When User clicks 'UPDATE PROJECT' button
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User create static list with "DAS_20647_forComponent" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |
@@ -132,6 +140,5 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatOwnerDropdownSh
 	| Options                           |
 	| 03C54BC1198843A4A03 (Jones, Tina) |
 	When User clicks on 'Change Owner' button on end user Self Service page
-	Then only below options are displayed in 'Owner' autocomplete after search by '024213574157421A9CD (Reyes, Natasha)' text
-	| Options          |
-	| No results found |
+	When User enters '024213574157421A9CD (Reyes, Natasha)' text to 'Owner' textbox
+	Then 'Owner' autocomplete is not displayed
