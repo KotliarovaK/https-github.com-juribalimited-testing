@@ -32,14 +32,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//*[starts-with(@class, 'inline-tip')]")]
         public IWebElement DashboardsAlert { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[@class='submenu-actions-dashboards']//span[contains(@class,'dashboards-name')]")]
-        public IList<IWebElement> DashboardsList { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//app-dashboard-submenu-action//div[@class='menu']//li")]
-        public IList<IWebElement> DashboardsSettingsItems { get; set; }
-
-        public IWebElement DashboardsSettingsItemByName(string itemName) => Driver.FindElement(By.XPath($".//li[text()='{itemName}']"));
-
         #endregion
 
         #region Dashboard Area
@@ -49,7 +41,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]//i[contains(@class,'arrow')]")]
         public IList<IWebElement> AllCollapseExpandSectionsArrows { get; set; }
-                                                                     
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]")]
         public IList<IWebElement> AllSections { get; set; }
 
@@ -84,9 +76,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         #region Dashboard Details
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='context-container']")]
-        public IWebElement DashboardDetailsPanel { get; set; }
-        
         [FindsBy(How = How.XPath, Using = ".//input[@id='DashboardName']")]
         public IWebElement DetailsDashboardName { get; set; }
 
@@ -290,7 +279,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             var by = By.XPath($".//mat-panel-title[text()='{sectionName}']/following-sibling::div/div[contains(@class, 'description')]//a[text()='{link}']");
             return Driver.FindElement(by);
         }
-
 
         public IWebElement GetDisabledMenuItemByName(string itemName)
         {

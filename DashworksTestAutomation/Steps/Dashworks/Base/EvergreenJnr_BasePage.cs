@@ -473,7 +473,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
                     _slots.Value.Add(new SlotDto() { SlotName = text });
                     break;
                 case "Automation Name":
-                    _automations.Value.Add(new AutomationsDto() { automationName = text });
+                    _automations.Value.Add(new AutomationsDto() { name = text });
                     break;
                 case "Ring name":
                     //Get project ID if Ring is inside project
@@ -612,8 +612,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
 
-            Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+            //Need to delete check for Exclamation Icon,  it has to be removed for all objects
+            //Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+            //    $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
         [Then(@"'(.*)' information message is displayed for '(.*)' field")]
@@ -626,14 +627,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageElement(placeholder).GetCssValue("color"),
                 $"Incorrect error message color for '{placeholder}' field");
 
-            Verify.AreEqual("rgba(49, 122, 193, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
-                $"Incorrect error message color for '{placeholder}' field exclamation icon");
+            //Need to delete check for Exclamation Icon,  it has to be removed for all objects
+            //Verify.AreEqual("rgba(242, 88, 49, 1)", page.GetTextboxErrorMessageExclamationIcon(placeholder).GetCssValue("color"),
+            //    $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
         [Then(@"User sees '(.*)' hint below '(.*)' field")]
         public void ThenUserSeesHintBelowField(string instruction, string fieldName)
         {
             var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(filterElement.GetFieldHint(fieldName).Text, Is.EqualTo(instruction),
+                $"{fieldName} has no or wrong instruction");
+        }
+
+        [Then(@"User sees '(.*)' red hint below '(.*)' field")]
+        public void ThenUserSeesRedHintBelowField(string instruction, string fieldName)
+        {
+            var filterElement = _driver.NowAt<BaseDashboardPage>();
+            Verify.That(filterElement.GetFieldHint(fieldName).GetCssValue("color"), Is.EqualTo("rgba(242, 88, 49, 1)"),
+                $"{fieldName} has incorrect color for hint");
             Verify.That(filterElement.GetFieldHint(fieldName).Text, Is.EqualTo(instruction),
                 $"{fieldName} has no or wrong instruction");
         }
@@ -1356,6 +1368,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Verify.IsFalse(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not disabled");
+        }
+
+        [Then(@"'(.*)' radio button is enabled")]
+        public void ThenRadioButtonIsEnabled(string radioButtonName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Verify.IsTrue(page.IsRadioButtonEnabled(radioButtonName), $"'{radioButtonName}' radio button is not enabled");
         }
 
         [Then(@"'(.*)' radio button is checked")]

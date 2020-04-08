@@ -50,8 +50,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	When User refreshes agGrid
 	When User create dynamic list with "19542_List" name on "Applications" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 19542_Automation | 19542       | true   | false              | 19542_List | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 19542_Automation | 19542       | true     | false              | 19542_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -95,11 +95,11 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	And User clicks content from "Objects" column
 	Then 'FALSE' content is displayed in the 'In Catalog' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19541 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19541 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogSavingAndRestoringValues
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19541_Automation | 19541       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19541_Automation | 19541       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -142,8 +142,8 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	When User refreshes agGrid
 	When User create dynamic list with "19629_List" name on "Applications" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 19629_Automation | 19629       | true   | false              | 19629_List | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 19629_Automation | 19629       | true     | false              | 19629_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -199,8 +199,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRunningAutomationsBasedOnApplicationsListW
 	When User refreshes agGrid
 	When User create dynamic list with "19926_List" name on "Applications" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 19926_Automation | 19926       | true   | false              | 19926_List | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 19926_Automation | 19926       | true     | false              | 19926_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

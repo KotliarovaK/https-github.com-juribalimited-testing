@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	| List       | 3_Widget | All Devices | 5       | 5          |
 	Then '3_Widget' Widget is displayed to the user
 	#==========================================================#
-	When User clicks ' Edit' menu option for section with '3_Widget' widget
+	When User clicks 'Edit' menu option for section with '3_Widget' widget
 	When User enters 'SectionName' text to 'Title' textbox
 	When User enters 'DescriptionName' text to 'Description' textbox
 	When User selects '3 Column' in the 'Layout' dropdown
@@ -299,10 +299,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	| 2_Widget   |
 	| 3_Widget   |
 
-	When User clicks ' Edit' menu option for section with '3_Widget' widget
+	When User clicks 'Edit' menu option for section with '3_Widget' widget
 	When User selects '1 Column' in the 'Layout' dropdown
 	When User unchecks 'Collapsed on load' checkbox
-	When User checks 'Hide section' checkbox
 	When User clicks 'UPDATE' button
 	When User sets expand status to 'true' for 'SectionName' section
 	Then Listed widgets are placed by '1' in line:
@@ -310,8 +309,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	| 1_Widget   |
 	| 2_Widget   |
 	| 3_Widget   |
+
+	When User clicks 'Edit' menu option for section with '3_Widget' widget
+	Then 'Hide section' checkbox is unchecked
+	When User checks 'Hide section' checkbox
+	Then 'Hide section' checkbox is checked
+	When User clicks 'UPDATE' button
 	When User clicks 'Devices' on the left-hand menu
-	When User waits for '3' seconds
+	Then 'All Devices' list should be displayed to the user
 	When Dashboard with 'Dashboard for SectionEditing' name is opened via API
 	When User waits for '3' seconds
 	Then Widget with the name '1_Widget' is missing
@@ -325,7 +330,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckLongDescriptionCanBeHiddenAndShown
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
 	| List       | 1_Widget | All Devices | 5       | 5          |
 	Then '1_Widget' Widget is displayed to the user
-	When User clicks ' Edit' menu option for section with '1_Widget' widget
+	When User clicks 'Edit' menu option for section with '1_Widget' widget
 	When User enters 'SectionName' text to 'Title' textbox
 	When User enters 'Description Long Text Description Long Text Description Long Text Description Long Text Description Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long Text Long' text to 'Description' textbox
 	When User clicks 'UPDATE' button

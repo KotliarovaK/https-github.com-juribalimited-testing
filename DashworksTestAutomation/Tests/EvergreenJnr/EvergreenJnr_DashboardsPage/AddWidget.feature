@@ -31,52 +31,58 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	Then 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' Widget is displayed to the user
 	Then Widget name 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' has word break style on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @DAS18054 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
 	When Dashboard with 'Dashboard for DAS15900' name created via API and opened
 	When User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
 	Then 'WidgetForDAS15900' Widget is displayed to the user
 	When User clicks 'Edit' menu option for 'WidgetForDAS15900' widget
-	And User adds new Widget
+	When User adds new Widget
 	| WidgetType | Title                    | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname | Count             | Count ASC | 11        | true       |
-	When User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks first Dashboard in dashboards list
-	Then User sees 'You have unsaved changes. Are you sure you want to leave the page?' text in alert on Edit Widget page
-	When User clicks 'NO' button in Unsaved Changes alert
-	Then Unsaved Changes alert not displayed to the user
+	When User clicks Profile in Account Dropdown
+	Then popup is displayed to User
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
+	When User clicks 'NO' button 
+	Then popup is not displayed to User
+	When User clicks Profile in Account Dropdown
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
+	When User clicks 'YES' button
+	When User waits for '6' seconds
+	Then Profile page is displayed to user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Cleanup
-Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
+Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
-	When User selects '<WidgetType>' in the 'WidgetType' dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Bar' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Column' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Line' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Donut' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Table' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Card' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
-Examples: 
-	| WidgetType |
-	| Pie        |
-	| Bar        |
-	| Column     |
-	| Line       |
-	| Donut      |
-	| Half donut |
-	| Table      |
-	| Card       |
-	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @DAS14605 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
 	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'List' in the 'WidgetType' dropdown
-	Then 'Aggregate Function' dropdown is missing
-	And 'Aggregate By' dropdown is missing
+	Then 'Aggregate Function' dropdown is not displayed
+	Then 'Aggregate By' dropdown is not displayed
 	Then List dropdown has next item categories:
 	| item         |
 	| Devices      |
@@ -295,21 +301,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAny
 	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	Then only options having search term 'De' are displayed in 'List' autocomplete
-
-@Evergreen @EvergreenJnr_DashboardsPage @DAS18054 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPage
-	When Dashboard with 'Dashboard for DAS18054' name created via API and opened
-	When User checks 'Edit mode' slide toggle
-	When User clicks 'ADD WIDGET' button 
-	When User adds new Widget
-	| WidgetType | Title             | List        |
-	| Bar        | WidgetForDAS18054 | All Devices |
-	When User clicks Profile in Account Dropdown
-	Then User sees 'You have unsaved changes. Are you sure you want to leave the page?' text in alert on Edit Widget page
-	When User clicks 'YES' button in Unsaved Changes alert
-	When User waits for '3' seconds
-	When User waits for '3' seconds
-	Then Profile page is displayed to user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18759 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnGroupsFilteredList

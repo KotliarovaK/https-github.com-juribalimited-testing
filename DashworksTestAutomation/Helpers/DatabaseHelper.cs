@@ -160,6 +160,32 @@ namespace DashworksTestAutomation.Helpers
 
         #region Item Details - All lists: Devices, Users, Applications, Mailboxes
 
+        public static string GetItemId(string list, string itemName)
+        {
+            list = list.ToLower();
+            var id = string.Empty;
+
+            switch (list)
+            {
+                case "device":
+                    id = DatabaseHelper.GetDeviceDetailsIdByName(itemName);
+                    break;
+                case "user":
+                    id = DatabaseHelper.GetUserDetailsIdByName(itemName);
+                    break;
+                case "application":
+                    id = DatabaseHelper.GetApplicationDetailsIdByName(itemName);
+                    break;
+                case "mailbox":
+                    id = DatabaseHelper.GetMailboxDetailsIdByName(itemName);
+                    break;
+                default:
+                    throw new Exception($"Unknown list type: {list}");
+            }
+
+            return id;
+        }
+
         public static string GetDeviceDetailsIdByName(string name)
         {
             var id =
@@ -574,14 +600,14 @@ namespace DashworksTestAutomation.Helpers
 
         #region Automation
 
-        public static string GetAutomationId(string automationName)
+        public static string GetAutomationId(string name)
         {
-            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{automationName}'", 0)[0];
+            return DatabaseHelper.ExecuteReader($"select [AutomationId] from [PM].[dbo].[Automations] where [AutomationName] = '{name}'", 0)[0];
         }
 
-        public static string GetAutomationActionId(string actionName, string automationId)
+        public static string GetAutomationActionId(string actionName, string id)
         {
-            return DatabaseHelper.ExecuteReader($"select [ActionId] from [PM].[dbo].[AutomationActions] where [AutomationId] = {automationId} and [ActionName] = '{actionName}'", 0)[0];
+            return DatabaseHelper.ExecuteReader($"select [ActionId] from [PM].[dbo].[AutomationActions] where [AutomationId] = {id} and [ActionName] = '{actionName}'", 0)[0];
         }
 
         public static List<string> GetAutomationActions(string actionName)

@@ -33,8 +33,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17429_Automation | 16890       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17429_Automation | 16890       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -65,7 +65,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	#Then 'The selected project cannot be found' error message is displayed for 'Project' field
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS17429 @DAS18739 @DAS19228 @Cleanup @Not_Ready
-#Waiting for resolving issue with empty Stage ddl after deleted stage
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDeletedStage
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -93,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
+	| Name    | Description | IsActive | StopOnFailedAction | Scope       | Run    |
 	| 17429_Automation1 | 16890       | true   | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
@@ -102,8 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueAutomationValidationsForDel
 	When User enters '17429_Action1' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '17429Project1' option from 'Project' autocomplete
-	When User selects '17429_Stage1' option from 'Stage' autocomplete
-	When User selects '17429_Task1' option from 'Task' autocomplete
+	When User selects '17429_Stage1 \ 17429_Task1' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Delete Stage

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
@@ -16,9 +15,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='WidgetType']")]
         public IWebElement WidgetType { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
-        public IList<IWebElement> Dropdowns { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//*[@formcontrolname='colourSchemeId']")]
         public IWebElement ColorSchemeDropdown { get; set; }
@@ -40,9 +36,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//deactivate-guard-dialog/parent::mat-dialog-container")]
-        public IWebElement UnsavedChangesAlert { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement ListDoesNotExistMessage { get; set; }
 
@@ -63,20 +56,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             {
                 SelectorFor(this, p => p.WidgetType),
             };
-        }
-
-        public IWebElement GetUnsavedChangesAlertText()
-        {
-            var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//p";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            return Driver.FindElement(By.XPath(selector));
-        }
-
-        public IWebElement UnsavedChangesAlertButton(string buttonTitle)
-        {
-            var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//span[text()='{buttonTitle}']";
-            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
-            return Driver.FindElement(By.XPath(selector));
         }
 
         public IWebElement GetColorFromColorScheme(string colorTitle)
@@ -117,11 +96,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             return Driver.FindElement(By.XPath(".//div[@class='table-responsive']"));
         }
 
-        public bool IsColorSchemeDropdownDisabled()
-        {
-            return Convert.ToBoolean(ColorSchemeDropdown.GetAttribute("aria-disabled"));
-        }
-
         public IWebElement GetWidgetPreviewText()
         {
             try
@@ -133,13 +107,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
             {
                 return Driver.FindElement(By.XPath(".//div[contains(@class, 'widget-data')]"));
             }
-        }
-
-        public IWebElement GetFirstDashboardFromList()
-        {
-            var widg = By.XPath(".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
-            Driver.WaitForDataLoading();
-            return Driver.FindElements(widg).First();
         }
 
         public string GetOrderBySelectedOption()

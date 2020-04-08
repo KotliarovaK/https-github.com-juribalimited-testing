@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.SelfService.
         public IWebElement GetButtonOnEndUserPage(string buttonName, WebDriverExtensions.WaitTime waitTime = WebDriverExtensions.WaitTime.Long)
         {
             var time = int.Parse(waitTime.GetValue());
-            var selector = By.XPath($".//button[text()='{buttonName}']");
+            var selector = By.XPath($".//button//*[text()='{buttonName}']/.. | .//button[text()='{buttonName}']");
             Driver.WaitForDataLoading();
             Driver.WaitForElementsToBeDisplayed(selector, time, false);
             return Driver.FindElement(selector);

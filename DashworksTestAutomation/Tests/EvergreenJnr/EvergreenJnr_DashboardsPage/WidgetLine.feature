@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	| Line       | WidgetForDAS17825 | ListForDAS17825 | Windows7Mi: Application Readiness | Count             | Count ASC |
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with 'Readiness' placeholder
-	And Color Scheme dropdown is disabled
+	Then 'Colour Scheme' dropdown is disabled
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS17825' Widget is displayed to the user
 	And Line chart displayed in 'WidgetForDAS17825' widget
@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetsShowsGraphDataWhenSpli
 	When User selects 'Application Compliance ASC' in the 'OrderBy' dropdown
 	Then Widget Preview is displayed to the user
 	And Color Scheme dropdown displayed with 'Compliance' placeholder 
-	And Color Scheme dropdown is disabled
+	Then 'Colour Scheme' dropdown is disabled
 	When User clicks 'UPDATE' button 
 	Then 'WidgetForDAS17825' Widget is displayed to the user
 	And Line chart displayed in 'WidgetForDAS17825' widget

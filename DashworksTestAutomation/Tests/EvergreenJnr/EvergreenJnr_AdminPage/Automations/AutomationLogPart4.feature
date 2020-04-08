@@ -20,8 +20,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope                               | Run    |
-	| 17683_Automation | 17683       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope                               | Run    |
+	| 17683_Automation | 17683       | true     | false              | Mailbox Readiness Columns & Filters | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -85,12 +85,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	Then '' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Task (Date)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17859 @Cleanup @Not_Ready
+#Discuss with Kate how we can change Capacity Slot 7/4/2020
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName      | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| DAS17859_Automation | 17859       | true   | false              | Apps with a Vendor | Manual |
+	| Name                | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| DAS17859_Automation | 17859       | true     | false              | Apps with a Vendor | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -98,10 +99,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedA
 	And User enters 'DAS17859_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	And User selects 'Stage 2' option from 'Stage' autocomplete
-	And User selects 'Radio Date Slot App' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Complete' in the 'Value' dropdown
+	And User selects 'Stage 2 \ Radio Date Slot App' option from 'Task' autocomplete
+	And User selects 'Complete' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '9 Sep 2019' text to 'Date' textbox
 	And User selects 'None' in the 'Capacity Slot' dropdown
@@ -137,8 +136,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueWithNoChangeDateForUpdateTaskVa
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| DAS17859_Aut_Test | 17859       | true   | false              | New York - Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| DAS17859_Aut_Test | 17859       | true     | false              | New York - Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

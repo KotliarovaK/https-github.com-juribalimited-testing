@@ -652,3 +652,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardAreOpenedAfterDragAndDro
 	| Operating Systems  |
 	| Top 10 App Vendors |
 	| Domain Profile     |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20678 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnListWithEvergreenRings
+	When User clicks 'Devices' on the left-hand menu
+	When User clicks the Filters button
+	When User add "Evergreen Ring" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues   |
+	| Evergreen Ring 1 |
+	| Evergreen Ring 2 |
+	When User Add And "Compliance" filter where type is "Does not equal" with added column and Lookup option
+	| SelectedValues |
+	| Empty          |
+	When User clicks Save button on the list panel
+	When User create dynamic list with "Devices_List_DAS20678" name on "Devices" page
+	Then "Devices_List_DAS20678" list is displayed to user
+	When Dashboard with 'DAS20678_Dashboard' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType | Title           | List                  | SplitBy        | AggregateFunction | AggregateBy | OrderBy            |
+	| Table      | DAS20678_Widget | Devices_List_DAS20678 | Evergreen Ring | Severity          | Compliance  | Evergreen Ring ASC |
+	Then Widget Preview is displayed to the user
+	When User clicks 'CREATE' button 
+	Then 'DAS20678_Widget' Widget is displayed to the user

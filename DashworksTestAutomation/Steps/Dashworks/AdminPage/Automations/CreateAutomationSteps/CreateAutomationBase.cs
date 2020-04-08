@@ -32,13 +32,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAu
             if (automations == null || !automations.Any())
                 throw new Exception("Automation table is not set");
 
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automation";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/automations";
 
             foreach (var automation in automations)
             {
                 _automation.Value.Add(automation);
 
-                if (string.IsNullOrEmpty(automation.automationName))
+                if (string.IsNullOrEmpty(automation.name))
                     throw new Exception("Unable to create Automation with empty name");
 
                 var request = requestUri.GenerateRequest();
@@ -48,10 +48,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations.CreateAu
 
                 var response = updated ? _client.Evergreen.Put(request) : _client.Evergreen.Post(request);
 
-                if (response.StatusCode != HttpStatusCode.OK)
+                if (response.StatusCode != HttpStatusCode.Created)
                 {
                     throw new Exception(
-                        $"Automation with {automation.automationName} name was not created via api: {response.ErrorMessage}");
+                        $"Automation with {automation.name} name was not created via api: {response.ErrorMessage}");
                 }
 
                 var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
