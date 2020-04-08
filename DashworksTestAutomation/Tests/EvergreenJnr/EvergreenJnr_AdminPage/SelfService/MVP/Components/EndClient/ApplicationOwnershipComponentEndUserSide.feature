@@ -96,3 +96,49 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckChangeAndRemoveOwne
 	Then 'Change Owner' button is disabled on popup
 	Then Button 'Change Owner' has 'Some values are missing or not valid' tooltip on popup
 	Then 'Cancel' button is not disabled on popup
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20647 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatOwnerDropdownShowOnlyUsersThatHaveBeenOnboardedIntoProject
+	When Project created via API and opened
+	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| DAS_20647_Proj | All Users | None            | Standalone Project |
+	Then Page with 'DAS_20647_Proj' header is displayed to user
+	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
+	And User navigates to the 'Users' tab on Project Scope Changes page
+	And User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
+	| Objects                           |
+	| 03C54BC1198843A4A03 (Jones, Tina) |
+	And User clicks 'UPDATE ALL CHANGES' button
+	Then '1 user will be added' text is displayed on inline tip banner
+	When User clicks 'UPDATE PROJECT' button
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	And User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+	| Objects    |
+	| VSCmdShell |
+	And User clicks 'UPDATE ALL CHANGES' button
+	Then '1 application will be added' text is displayed on inline tip banner
+	When User clicks 'UPDATE PROJECT' button
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	When User create static list with "DAS_20647_forComponent" name on "Users" page with following items
+	| ItemName            |
+	| 03C54BC1198843A4A03 |
+	| 024213574157421A9CD |
+	When User create static list with "DAS_20647" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
+	| DAS_20647_SS_1 | 20647_1_SI        | true    | true                | DAS_20647 |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName    | OwnerPermission                                  | UserScope              |
+	| AOC Name      | DAS_20647_Proj | Allow owner to be removed or set to another user | DAS_20647_forComponent |
+	When User navigates to End User landing page with '20647_1_SI' Self Service Identifier
+	When User clicks on 'Change Owner' button on end user Self Service page
+	Then only below options are displayed in 'Owner' autocomplete after search by '03C54BC1198843A4A03 (Jones, Tina)' text
+	| Options                           |
+	| 03C54BC1198843A4A03 (Jones, Tina) |
+	When User clicks on 'Change Owner' button on end user Self Service page
+	When User enters '024213574157421A9CD (Reyes, Natasha)' text to 'Owner' textbox
+	Then 'Owner' autocomplete is not displayed
