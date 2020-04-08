@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18320 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDisplayedInProjectDropdown
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18320_Automation | 18320       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18320_Automation | 18320       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -152,11 +152,11 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	Then '3' content is displayed in 'Value' textbox
 	Then 'days before current value' value is displayed in the 'Units' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @DAS19274 @Cleanup @Void
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @DAS19274 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 182484_Automation | 18248       | true   | false              | All Users | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 182484_Automation | 18248       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -170,13 +170,16 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	When User enters '0' text to 'Value' textbox
 	Then User sees '0 to 100,000' hint below 'Value' field
 	Then '0' content is displayed in 'Value' autocomplete
-	Then following Values are displayed in the 'Before or After' dropdown:
-	| Options    |
-	| Before now |
-	| After now  |
+	Then following Values are displayed in the 'Units' dropdown:
+	| Options             |
+	| days before now     |
+	| days after now      |
+	| weekdays before now |
+	| weekdays after now  |
+	| hours before now    |
+	| hours after now     |
 	When User enters '4' text to 'Value' textbox
-	When User selects 'Hours' in the 'Units' dropdown
-	When User selects 'Before now' in the 'Before or After' dropdown
+	When User selects 'hours before now' in the 'Units' dropdown
 	And User clicks 'CREATE' button
 	#Check created Action
 	When User clicks content from "Action" column
@@ -186,6 +189,5 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	Then 'Barry's User Project' content is displayed in 'Project' textbox
 	Then 'Project Dates \ Forecast Date' content is displayed in 'Task' textbox
 	Then '4' content is displayed in 'Value' textbox
-	Then 'Hours' value is displayed in the 'Units' dropdown
+	Then 'hours before now' value is displayed in the 'Units' dropdown
 	Then 'Update relative to now' value is displayed in the 'Update Date' dropdown
-	Then 'Before now' value is displayed in the 'Before or After' dropdown

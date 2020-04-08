@@ -202,7 +202,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	And 'Maryna Kyslyak' content is displayed in the 'zDeviceAut: Stage B \ Combination Task App (Owner)' column
 	And 'Admin IT' content is displayed in the 'zDeviceAut: Stage B \ Combination Task App (Team)' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @DAS17974 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @DAS17974 @Cleanup @Not_Ready
+#Discuss with Kate how we can change Capacity Slot 7/4/2020
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAutomationWithCapacitySlot
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -219,7 +220,6 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	And User selects 'Stage C \ Date Only with Capacity' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Sep 2019' text to 'Date' textbox
-	And User selects 'DAS-17846 Slot Device' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
@@ -271,7 +271,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	And '' content is displayed in the 'zDeviceAut: Stage C \ Date Only with Capacity (Slot)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup
-Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutomationWithoutCapacitySlot
+Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
@@ -284,10 +284,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	And User enters 'DAS17846_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	And User selects 'Stage 3 \ Date Only with Capacity User' option from 'Task' autocomplete
+	And User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '13 Aug 2019' text to 'Date' textbox
-	And User selects 'None' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
@@ -300,11 +299,4 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	When User clicks String Filter button for "Type" column on the Admin page
 	And User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                                |
-	| zUserAutom: Stage 3 \ Date Only with Capacity User        |
-	| zUserAutom: Stage 3 \ Date Only with Capacity User (Slot) |
-	Then '13 Aug 2019' content is displayed in the 'zUserAutom: Stage 3 \ Date Only with Capacity User' column
-	And '' content is displayed in the 'zUserAutom: Stage 3 \ Date Only with Capacity User (Slot)' column
+	Then '13 Aug 2019' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column

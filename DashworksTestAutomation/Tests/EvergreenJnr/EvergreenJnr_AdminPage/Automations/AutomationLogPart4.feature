@@ -84,7 +84,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndRemoveTaskValueForUpdateValueInUs
 	Then 'NOT STARTED' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Task' column
 	Then '' content is displayed in the 'zMailboxAu: Stage 3 \ Radio Date Task (Date)' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17859 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17859 @Cleanup @Not_Ready
+#Discuss with Kate how we can change Capacity Slot 7/4/2020
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInAppsScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
