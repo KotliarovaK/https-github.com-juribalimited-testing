@@ -82,8 +82,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |
-	| DAS17681_Automation | DAS17681    | true   | false              | Users with Device Count | Manual |
+	| Name                | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
+	| DAS17681_Automation | DAS17681    | true     | false              | Users with Device Count | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -137,8 +137,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope                   | Run    |
-	| 17681_Automation | 17681       | true   | false              | Users with Device Count | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
+	| 17681_Automation | 17681       | true     | false              | Users with Device Count | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	When User clicks 'CREATE ACTION' button 
@@ -154,14 +154,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForUpdateValueInUserScopedU
 	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
 	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17830 @Cleanup @Not_Ready
-#Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17830 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17830_Automation | 17830       | true   | false              | Apps with a Vendor | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 17830_Automation | 17830       | true     | false              | Apps with a Vendor | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -169,8 +168,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	And User enters '17830_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	And User selects 'Stage B' option from 'Stage' autocomplete
-	And User selects 'Combination Task App' option from 'Task' autocomplete
+	And User selects 'Stage B \ Combination Task App' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User selects 'Update' in the 'Update Owner' dropdown
@@ -205,13 +203,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateOwnerForUpdateValueInDevicesScopedAu
 	And 'Admin IT' content is displayed in the 'zDeviceAut: Stage B \ Combination Task App (Team)' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @DAS17974 @Cleanup @Not_Ready
-#Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
+#Discuss with Kate how we can change Capacity Slot 7/4/2020
 Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAutomationWithCapacitySlot
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 17846_Automation | 17846       | true   | false              | New York - Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 17846_Automation | 17846       | true     | false              | New York - Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -219,11 +217,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	And User enters '17846_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	And User selects 'Stage C' option from 'Stage' autocomplete
-	And User selects 'Date Only with Capacity' option from 'Task' autocomplete
+	And User selects 'Stage C \ Date Only with Capacity' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '5 Sep 2019' text to 'Date' textbox
-	And User selects 'DAS-17846 Slot Device' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
@@ -274,14 +270,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInDevicesScopedAut
 	Then '' content is displayed in the 'zDeviceAut: Stage C \ Date Only with Capacity' column
 	And '' content is displayed in the 'zDeviceAut: Stage C \ Date Only with Capacity (Slot)' column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup @Not_Ready
-#Waiting for "zDevice Sch for Automations Feature" project on automation server from GD
-Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutomationWithoutCapacitySlot
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17846 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName      | Description | Active | StopOnFailedAction | Scope                   | Run    |
-	| DAS17846_Automation | 17846       | true   | false              | Users with Device Count | Manual |
+	| Name                | Description | IsActive | StopOnFailedAction | Scope                   | Run    |
+	| DAS17846_Automation | 17846       | true     | false              | Users with Device Count | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -289,11 +284,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	And User enters 'DAS17846_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	And User selects 'Stage 3' option from 'Stage' autocomplete
-	And User selects 'Date Only with Capacity User' option from 'Task' autocomplete
+	And User selects 'Stage 2 \ Weekdays Task' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '13 Aug 2019' text to 'Date' textbox
-	And User selects 'None' in the 'Capacity Slot' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
 	When User clicks 'Automations' header breadcrumb
@@ -306,11 +299,4 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateDateForUpdateValueInUsersScopedAutom
 	When User clicks String Filter button for "Type" column on the Admin page
 	And User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                                                |
-	| zUserAutom: Stage 3 \ Date Only with Capacity User        |
-	| zUserAutom: Stage 3 \ Date Only with Capacity User (Slot) |
-	Then '13 Aug 2019' content is displayed in the 'zUserAutom: Stage 3 \ Date Only with Capacity User' column
-	And '' content is displayed in the 'zUserAutom: Stage 3 \ Date Only with Capacity User (Slot)' column
+	Then '13 Aug 2019' content is displayed in the 'zUserAutom: Stage 2 \ Weekdays Task' column

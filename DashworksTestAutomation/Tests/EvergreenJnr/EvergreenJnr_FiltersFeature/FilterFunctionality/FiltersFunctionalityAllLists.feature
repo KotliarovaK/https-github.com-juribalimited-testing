@@ -350,16 +350,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilt
 	When User select "<Operator>" Operator value
 	When User enters '-1' text to 'dayValue' textbox
 	Then '0' content is displayed in 'dayValue' textbox
-	# Yurii T. 18 Feb 2020 this step is skipped because there is no such message on UI in current app version, it replaced to autmatically set values. But it will be returned
-	# Void version with following task - https://juriba.atlassian.net/browse/DAS-19781. When it's done return check for message and Ago/Ahead dropdown activity
-	#Then User sees instruction 'Enter a value between 0 and 100,000' below 'Value' field
-	#Then Ahead or Ago dropdown is disabled
+	Then User sees '0 to 100000' hint below 'dayValue' field
 	When User enters '100001' text to 'dayValue' textbox
 	Then '100000' content is displayed in 'dayValue' textbox
-	# Yurii T. 18 Feb 2020 this step is skipped because there is no such message on UI in current app version, it replaced to autmatically set values. But it will be returned
-	# Void version with following task - https://juriba.atlassian.net/browse/DAS-19781. When it's done return check for message and Ago/Ahead dropdown activity
-	#Then User sees instruction 'Enter a value between 0 and 100,000' below 'Value' field
-	#Then Ahead or Ago dropdown is disabled
+	Then User sees '0 to 100000' hint below 'dayValue' field
+	#Update after Eugene add automation attribute "Units"
+	#When User selects 'days ahead' in the 'Units' dropdown
 
 Examples:
 	| List         | Filter                       | Operator                |

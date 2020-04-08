@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithUpdateOwnerIsLoaded
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17617_Automation | 17617       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17617_Automation | 17617       | true     | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17617_Automation" text in the Search field for "Automation" column
@@ -75,8 +75,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFieldIsBlankAfterChangingProject
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18432_Automation | 18432       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18432_Automation | 18432       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

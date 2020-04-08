@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test258_Automation | Test258     | true   | false              | All Devices | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test258_Automation | Test258     | true     | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Test258_Automation" text in the Search field for "Automation" column
@@ -107,10 +107,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 15431_First_Inactive  | DAS15431    | false  | false              | All Users | Manual |
-	| 15431_Second_Inactive | DAS15431    | false  | false              | All Users | Manual |
-	| 15431_Third_Active    | DAS15431    | true   | false              | All Users | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 15431_First_Inactive  | DAS15431    | false    | false              | All Users | Manual |
+	| 15431_Second_Inactive | DAS15431    | false    | false              | All Users | Manual |
+	| 15431_Third_Active    | DAS15431    | true     | false              | All Users | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	#First inactive automation
@@ -479,9 +479,9 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName         | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_First  | test        | true   | false              | All Devices | Manual |
-	| Test_Automation_Second | test        | true   | false              | All Users   | Manual |
+	| Name                   | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_First  | test        | true     | false              | All Devices | Manual |
+	| Test_Automation_Second | test        | true     | false              | All Users   | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "Test_Automation" text in the Search field for "Automation" column
@@ -625,13 +625,13 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15949 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatDeviceLisFiltertHasAppropriateAutomation
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
-	And User add "Device Type" filter where type is "Equals" with added column and "Virtual" Lookup option
-	And User create dynamic list with "Das15949_list" name on "Devices" page
+	When User clicks the Filters button
+	When User add "Device Type" filter where type is "Equals" with added column and "Virtual" Lookup option
+	When User create dynamic list with "Das15949_list" name on "Devices" page
 	#create automation
-	And User creates new Automation via API and open it
-	| AutomationName   | Description  | Active | StopOnFailedAction | Scope         | Run    |
-	| 15949_Automation | testDAS15949 | true   | false              | DAS15949_List | Manual |
+	When User creates new Automation via API and open it
+	| Name             | Description  | IsActive | StopOnFailedAction | Scope         | Run    |
+	| 15949_Automation | testDAS15949 | true     | false              | DAS15949_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#create action #1
@@ -689,9 +689,9 @@ Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName          | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Active_Automation1287   | test        | true   | false              | All Devices | Manual |
-	| Inactive_Automation6578 | test        | false  | false              | All Devices | Manual |
+	| Name                    | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Active_Automation1287   | test        | true     | false              | All Devices | Manual |
+	| Inactive_Automation6578 | test        | false    | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	#Chenge Active_Test_Automation

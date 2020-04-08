@@ -12,8 +12,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	| 16890Project | All Devices | None            | Standalone Project |
 	And User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 16890_Automation | 16890       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 16890_Automation | 16890       | true     | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User clicks Export button on the Admin page
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User selects "ONE OR MORE ACTIONS FAILED" checkbox from String Filter with item list on the Admin page
 	Then "16890_Automation" content is displayed for "Automation" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @DAS17774 @Cleanup @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @DAS17774 @Cleanup
 #Use Inactive automation
 Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun
 	When User clicks 'Admin' on the left-hand menu
@@ -103,8 +103,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	Then Date column shows Date and Time values
 	When User enters "17104_Automation" text in the Search field for "Automation" column
 	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column
-	When User clicks Export button on the Admin page
-	Then User checks that file "Dashworks export" was downloaded
+	#Investigate downloading file on Remote
+	#When User clicks Export button on the Admin page
+	#Then User checks that file "Dashworks export" was downloaded
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "SUCCESS" content is displayed for "Outcome" column
@@ -172,13 +173,13 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	And User add "Country" filter where type is "Equals" with added column and "England" Lookup option
 	And User create dynamic list with "17011_List" name on "Devices" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 17011_Automation | 17011       | true   | false              | 17011_List | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 17011_Automation | 17011       | true     | false              | 17011_List | Manual |
 	Then Automation page is displayed correctly
 	When User clicks 'Automations' header breadcrumb
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Second_Automation | 17011_1     | true   | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Second_Automation | 17011_1     | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User clicks 'Devices' on the left-hand menu
 	When User navigates to the "17011_List" list
@@ -217,7 +218,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User selects "Automation Start" checkbox from String Filter on the Admin page
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Cleanup @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -236,7 +237,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMai
 	And User selects 'Run now' in the 'Actions' dropdown
 	When User clicks 'RUN' button 
 	When User clicks 'RUN' button on inline tip banner
-	Then '1 automation started,' text is displayed on inline success banner
+	Then '1 automation started' text is displayed on inline success banner
 	When User navigates to the 'Automation Log' left menu item
 	When User enters "<AutomationName>" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
