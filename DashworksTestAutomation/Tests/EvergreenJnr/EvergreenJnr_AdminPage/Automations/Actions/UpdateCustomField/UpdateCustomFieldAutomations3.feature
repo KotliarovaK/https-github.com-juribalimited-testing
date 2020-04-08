@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18317 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionsUpdateCustomFieldValues
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18317_Automation | 18317       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18317_Automation | 18317       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -27,8 +27,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsUpdateCustomFieldValues
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18411 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedContentIsUpdatedAfterChangingUpdateValues
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18411_Automation | 18411       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18411_Automation | 18411       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -47,8 +47,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedContentIsUpdatedAfterChangingU
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18705 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckActionsValueForDuplacatedAutomation
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18705_Automation  | 18705       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18705_Automation | 18705       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -86,11 +86,11 @@ Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtThe
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 20116_Automation1 | 20116       | true   | false              | All Devices | Manual |
-	| 20116_Automation2 | 20116       | true   | false              | All Devices | Manual |
-	| 20116_Automation3 | 20116       | true   | false              | All Devices | Manual |
-	| 20116_Automation4 | 20116       | true   | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 20116_Automation1 | 20116       | true     | false              | All Devices | Manual |
+	| 20116_Automation2 | 20116       | true     | false              | All Devices | Manual |
+	| 20116_Automation3 | 20116       | true     | false              | All Devices | Manual |
+	| 20116_Automation4 | 20116       | true     | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "20116_Automation1" text in the Search field for "Automation" column
@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionFinishForAutomationsWereRunningAtThe
 	Then "SUCCESS" content is displayed for "Outcome" column
 	Then "Action Finish" content is displayed for "Type" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20248 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS20248 @DAS20388 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList
 	When User clicks 'Devices' on the left-hand menu
 	When User clicks the Filters button
@@ -180,11 +180,12 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorForRunAutomationBasedOnNotValidList
 	When User refreshes agGrid
 	When User create dynamic list with "20248_TestList" name on "Devices" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope          | Run    |
-	| 20248_Automation | 20248       | true   | false              | 20248_TestList | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope          | Run    |
+	| 20248_Automation | 20248       | true     | false              | 20248_TestList | Manual |
 	Then Automation page is displayed correctly
 	Then 'This list uses, or refers to a list that uses, a value of "My Team" which is not valid as an automation scope' error message is displayed for 'Scope' field
 	When User navigates to the 'Actions' left menu item
+	When User waits for info message disappears under 'Scope' field
 	#Create Action
 	When User clicks 'CREATE ACTION' button 
 	And User enters '20248_Action' text to 'Action Name' textbox
@@ -211,8 +212,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRenamedListDisplayingInAutomationLog
 	When User refreshes agGrid
 	When User create dynamic list with "16318_TestList" name on "Devices" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope          | Run    |
-	| 16318_Automation | 16318       | true   | false              | 16318_TestList | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope          | Run    |
+	| 16318_Automation | 16318       | true     | false              | 16318_TestList | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByAdvertisementC
 Scenario: EvergreenJnr_DevicesList_CheckThatDataInTheGridIsCropedByRingColumnOnOwnerProjectsSummaryTabForDevicesPage
 	When User navigates to the 'Device' details page for the item with '9114' ID
 	Then Details page for 'RWAV0TLVTYON4G' item is displayed to the user
-	And User navigates to the 'Projects' left menu item
+	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Owner Projects Summary' left submenu item
 	When User clicks Group By button and set checkboxes state
 	| Checkboxes | State |

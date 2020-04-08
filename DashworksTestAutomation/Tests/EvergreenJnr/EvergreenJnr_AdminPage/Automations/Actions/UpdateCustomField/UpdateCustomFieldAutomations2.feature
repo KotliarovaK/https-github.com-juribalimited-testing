@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @DAS18179 @DAS20274 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldAddToExistingValues
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
-	| 18187_Automation | 18187       | true   | false              | New York - Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope              | Run    |
+	| 18187_Automation | 18187       | true     | false              | New York - Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -65,12 +65,11 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	And User clicks content from "Objects" column
 	Then 'zero' content is displayed in the 'Phoenix Field' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @DAS18374 @Cleanup @Not_Ready
-#Waiting for 'Phoenix Field' from GD to automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @DAS18374 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceSingleValue
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope                             | Run    |
-	| 18187_Automation_1 | 18187       | true   | false              | Users Readiness Columns & Filters | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope                             | Run    |
+	| 18187_Automation_1 | 18187       | true     | false              | Users Readiness Columns & Filters | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -90,7 +89,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	When User clicks refresh button in the browser
 	When User enters "18187_Automation_1" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	When User enters "1024" text in the Search field for "Objects" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -126,11 +126,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	Then '012345' content is displayed in the 'Phoenix Field' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @Cleanup @Not_Ready
-#Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldRemoveAllValues
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 18187_Automation_2 | 18187       | true   | false              | 1803 Apps | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope        | Run    |
+	| 18187_Automation_2 | 18187       | true     | false              | 2004 Rollout | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -185,11 +184,10 @@ Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomField
 	Then '1 value' content is displayed in the 'Phoenix Field' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18187 @DAS18374 @Cleanup @Not_Ready
-#Waiting for 'Phoenix Field' from GD to automation
 Scenario: EvergreenJnr_AdminPage_CheckValuesChangingAutomationsUpdateCustomFieldReplaceAllValues
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope                               | Run    |
-	| 18187_Automation_3 | 18187       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope                               | Run    |
+	| 18187_Automation_3 | 18187       | true     | false              | Mailbox Readiness Columns & Filters | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

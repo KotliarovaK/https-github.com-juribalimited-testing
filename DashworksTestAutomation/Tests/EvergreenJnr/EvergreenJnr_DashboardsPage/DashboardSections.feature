@@ -301,7 +301,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 
 	When User clicks 'Edit' menu option for section with '3_Widget' widget
 	When User selects '1 Column' in the 'Layout' dropdown
-	When User checks 'Hide section' checkbox
 	When User unchecks 'Collapsed on load' checkbox
 	When User clicks 'UPDATE' button
 	When User sets expand status to 'true' for 'SectionName' section
@@ -310,7 +309,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	| 1_Widget   |
 	| 2_Widget   |
 	| 3_Widget   |
+
+	When User clicks 'Edit' menu option for section with '3_Widget' widget
+	Then 'Hide section' checkbox is unchecked
+	When User checks 'Hide section' checkbox
+	Then 'Hide section' checkbox is checked
+	When User clicks 'UPDATE' button
 	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When Dashboard with 'Dashboard for SectionEditing' name is opened via API
 	When User waits for '3' seconds
 	Then Widget with the name '1_Widget' is missing

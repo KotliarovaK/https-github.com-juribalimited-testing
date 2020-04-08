@@ -524,3 +524,34 @@ Examples:
 	| DAS17431_Mail | action_DAS17431_mail | Mailboxes    |
 	| DAS17431_User | action_DAS17431_user | Users        |
 	| DAS17431_App  | action_DAS17431_app  | Applications |
+
+
+@Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS20722 @Cleanup
+Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsCanBeAddedIfSomePivotWasOpenedBefore
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Compliance |
+	When User selects the following Columns on Pivot:
+	| Columns |
+	| City    |
+	When User selects the following Values on Pivot:
+	| Values      |
+	| Cost Centre |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	When User creates Pivot list with "Pivot_DAS_20722" name
+	When User navigates to the "Pivot_DAS_20722" list
+	When User navigates to the "All Devices" list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName        |
+	| BIOS Manufacturer |
+	| Owner Building    |
+	Then ColumnName is added to the list
+	| ColumnName        |
+	| BIOS Manufacturer |
+	| Owner Building    |

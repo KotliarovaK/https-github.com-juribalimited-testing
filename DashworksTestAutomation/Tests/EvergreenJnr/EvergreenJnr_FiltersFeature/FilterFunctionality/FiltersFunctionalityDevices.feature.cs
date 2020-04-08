@@ -2960,8 +2960,8 @@ this.FeatureBackground();
             table67.AddRow(new string[] {
                         "Complete"});
 #line 614
- testRunner.And("User Add And \"UserSchedu: One \\ Radio Rag Date Comp\" filter where type is \"Equals" +
-                    "\" with added column and following checkboxes:", ((string)(null)), table67, "And ");
+ testRunner.When("User Add And \"UserSchedu: One \\ Radio Rag Date Comp\" filter where type is \"Equals" +
+                    "\" with added column and following checkboxes:", ((string)(null)), table67, "When ");
 #line 620
  testRunner.Then("\"233\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 621
@@ -2983,8 +2983,8 @@ this.FeatureBackground();
  testRunner.Then("\"Windows7Mi: Migration \\ Values but no RAG is One or Three\" is displayed in added" +
                     " filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 629
- testRunner.And("\"UserSchedu: One \\ Radio Rag Date Comp is Not Applicable, Started, Failed or Comp" +
-                    "lete\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\"UserSchedu: One \\ Radio Rag Date Comp is Not Applicable, Started, Failed or Comp" +
+                    "lete\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 630
  testRunner.When("User click Edit button for \"Windows7Mi: Migration \\ Values but no RAG\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -3001,11 +3001,11 @@ this.FeatureBackground();
                         "Three",
                         "true"});
 #line 631
- testRunner.And("User change selected checkboxes:", ((string)(null)), table68, "And ");
+ testRunner.When("User change selected checkboxes:", ((string)(null)), table68, "When ");
 #line 636
- testRunner.And("User click Edit button for \"UserSchedu: One \\ Radio Rag Date Comp\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User click Edit button for \"UserSchedu: One \\ Radio Rag Date Comp\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 637
- testRunner.And("User select \"Does not equal\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User select \"Does not equal\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option",
@@ -3026,7 +3026,7 @@ this.FeatureBackground();
                         "Complete",
                         "false"});
 #line 638
- testRunner.And("User change selected checkboxes:", ((string)(null)), table69, "And ");
+ testRunner.When("User change selected checkboxes:", ((string)(null)), table69, "When ");
 #line 645
  testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 646
@@ -4183,6 +4183,81 @@ this.FeatureBackground();
  testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 909
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersCanBeDeletedWithou" +
+            "tError")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("Filter_DevicesList")]
+        [NUnit.Framework.CategoryAttribute("DAS20637")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersCanBeDeletedWithoutError()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersCanBeDeletedWithoutErrorInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersCanBeDeletedWithoutErrorInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersCanBeDeletedWithou" +
+                    "tError", null, new string[] {
+                        "Evergreen",
+                        "Evergreen_FiltersFeature",
+                        "Filter_DevicesList",
+                        "DAS20637"});
+#line 912
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 913
+ testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 914
+ testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 915
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 916
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table84.AddRow(new string[] {
+                        "Started"});
+#line 917
+ testRunner.When("User add \"UserSchedu: One \\ Radio Rag Date Comp Req B\" filter where type is \"Equa" +
+                    "ls\" with added column and following checkboxes:", ((string)(null)), table84, "When ");
+#line 920
+ testRunner.When("User have removed \"UserSchedu: One \\ Radio Rag Date Comp Req B\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 921
+ testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 922
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 923
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

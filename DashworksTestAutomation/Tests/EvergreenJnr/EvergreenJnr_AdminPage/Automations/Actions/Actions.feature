@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_15427 | 15427       | true   | false              | All Devices | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_15427 | 15427       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action 1
@@ -154,8 +154,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName           | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_DAS15938 | DAS15938    | true   | false              | All Devices | Manual |
+	| Name                     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_DAS15938 | DAS15938    | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	Then 'Edit Automation' page subheader is displayed to user
 	When User navigates to the 'Actions' left menu item
@@ -163,10 +163,13 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User clicks 'CREATE ACTION' button 
 	Then Create Action page is displayed to the User
 	Then following Values are displayed in the 'Action Type' dropdown:
-	| Values              |
-	| Update custom field |
-	| Update path         |
-	| Update task value   |
+	| Values               |
+	| Update bucket        |
+	| Update capacity unit |
+	| Update custom field  |
+	| Update path          |
+	| Update ring          |
+	| Update task value    |
 	When User enters '15428_Action_1' text to 'Action Name' textbox
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects '2004 Rollout' option from 'Project' autocomplete
@@ -283,8 +286,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 15425_Automation | 15425       | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 15425_Automation | 15425       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -464,24 +467,28 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdatingTaskWhichImpactsReadinessOwnerAndD
 	When User selects 'Pre-Migration \ Devices Task 1' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	Then following Values are displayed in the 'Update Value' dropdown:
-	| Options   |
-	| Update    |
-	| No change |
+	| Options        |
+	| No change      |
+	| Not Applicable |
+	| Not Started    |
+	| Started        |
+	| Failed         |
+	| Complete       |
 	Then following Values are displayed in the 'Update Date' dropdown:
 	| Options                                   |
+	| No change                                 |
 	| Update                                    |
 	| Update relative to current value          |
 	| Update relative to now                    |
 	| Update relative to a different task value |
 	| Remove                                    |
-	| No change                                 |
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
+	| No change             |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	| No change             |
-
+	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17544 @DAS19317 @Cleanup
 Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPage
 	When User clicks 'Admin' on the left-hand menu
@@ -538,8 +545,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateTextValue
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17602_Automation | 17602       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17602_Automation | 17602       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -571,8 +578,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17605_Automation | 17605       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17605_Automation | 17605       | true     | false              | All Devices | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17605_Automation" text in the Search field for "Automation" column
@@ -603,8 +610,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @DAS20455 @DAS20455 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17606_Automation | 17606       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17606_Automation | 17606       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action with
@@ -646,8 +653,8 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @DAS19117 @DAS17485 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| DAS17797       | 17797       | true   | false              | All Devices | Manual |
+	| Name     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| DAS17797 | 17797       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action
@@ -657,8 +664,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then inline error banner is not displayed
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Complete' in the 'Value' dropdown
+	When User selects 'Complete' in the 'Update Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '31 Aug 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -677,8 +683,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldD
 	When User clicks Body container
 	When User selects 'One \ Radio Rag Date Owner' option from 'Task' autocomplete
 	Then 'Update Value' content is displayed in 'Update Value' dropdown
-	Then 'Update Date' content is displayed in 'Update Date' dropdown
-	Then 'Update Owner' content is displayed in 'Update Owner' dropdown
+	Then 'No change' content is displayed in 'Update Date' dropdown
+	Then 'No change' content is displayed in 'Update Owner' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17744 @DAS17485 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
@@ -694,8 +700,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	When User refreshes agGrid
 	Then "ListDAS17485" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope        | Run    |
-	| DAS17744       | 17744       | true   | false              | ListDAS17485 | Manual |
+	| Name     | Description | IsActive | StopOnFailedAction | Scope        | Run    |
+	| DAS17744 | 17744       | true     | false              | ListDAS17485 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action
@@ -704,8 +710,7 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	And User selects 'One \ Radio Rag Date Owner User Req A' option from 'Task' autocomplete
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Started' in the 'Value' dropdown
+	When User selects 'Started' in the 'Update Value' dropdown
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '5 Sep 2019' text to 'Date' datepicker
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -734,8 +739,8 @@ Scenario: EvergreenJnr_AdminPage_CheckValueDataInTheGridForActions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17772 @DAS17948 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpecificData
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| DAS17772       | 17772       | true   | false              | All Users | Manual |
+	| Name     | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| DAS17772 | 17772       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action
@@ -764,8 +769,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionTaskSelectboxIsDisplayedForSpeci
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17778 @Not_Ready @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckCapacitySlotDataForActions
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| DA17778        | 17778       | true   | false              | All Devices | Manual |
+	| Name    | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| DA17778 | 17778       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Action 1
@@ -831,8 +836,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateOnEditActionPage
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS19066 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckValidationForActionName
 	When User creates new Automation via API and open it
-	| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| DAS19066       | 19066       | true   | false              | All Devices | Manual |
+	| Name     | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| DAS19066 | 19066       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

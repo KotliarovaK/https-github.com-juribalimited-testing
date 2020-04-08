@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18727 @DAS18966 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18727_Automation | 18727       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18727_Automation | 18727       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -48,8 +48,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesForAutomations
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18830 @DAS19135 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestoringValues
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18830_Automation | 18830       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18830_Automation | 18830       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesSavingAndRestor
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
 	Then 'GREEN' content is displayed in 'Sticky Compliance' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @DAS19033 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18834 @DAS19033 @DAS17675 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -84,8 +84,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User create static list with "StaticList18834" name
 	Then "StaticList18834" list is displayed to user
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope           | Run    |
-	| 18834_Automation | 18834       | true   | false              | StaticList18834 | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope           | Run    |
+	| 18834_Automation | 18834       | true     | false              | StaticList18834 | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -101,8 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
 	When '18834_Automation' automation '18834_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When '18834_Automation' automation '18834_Action' action run has finished
-	When User clicks refresh button in the browser
+	Then current date and time are displayed for '18834_Automation' automation
 	When User enters "18834_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -119,9 +118,10 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	Then 'UPDATE' button is disabled
-	When User selects 'IGNORE' in the 'Sticky Compliance' dropdown
+	When User selects 'AMBER' in the 'Sticky Compliance' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
+	When User enters "18834_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18834_Automation' item from 'Automation' column
 	When User navigates to the 'Automation Log' left menu item
 	When User clicks refresh button in the browser
@@ -130,23 +130,26 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesRunAutomation
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	Then 'IGNORE' content is displayed in the 'Sticky Compliance' column
+	Then 'AMBER' content is displayed in the 'Sticky Compliance' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesNotShownForNoApplicationScopedAutomation
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 18966_User_Automation | 18966       | true   | false              | All Users | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 18966_User_Automation | 18966       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
 	And User enters '18966_Action' text to 'Action Name' textbox
 	Then following Values are displayed in the 'Action Type' dropdown:
-	| Value               |
-	| Update custom field |
-	| Update path         |
-	| Update task value   |
+	| Value                |
+	| Update bucket        |
+	| Update capacity unit |
+	| Update custom field  |
+	| Update path          |
+	| Update ring          |
+	| Update task value    |
 	Then following Values are not displayed in the 'Action Type' dropdown:
 	| Options                       |
 	| Update application attributes |
@@ -154,8 +157,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesNotShownForNoAp
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsForMailboxesScopedProject
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18966_Automation1 | 18966       | true   | false              | All Applications | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18966_Automation1 | 18966       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -169,8 +172,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsForUserScopedProject
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18966_Automation2 | 18966       | true   | false              | All Applications | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18966_Automation2 | 18966       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -184,8 +187,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18966 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsForDevicesScopedProject
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18966_Automation3 | 18966       | true   | false              | All Applications | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18966_Automation3 | 18966       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -196,11 +199,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateUpplicationAttributesInAutomationsFo
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @DAS18886 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19240 @DAS18886 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalisation
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19240_Automation | 19240       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19240_Automation | 19240       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -228,11 +231,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUnknownValueDisplayingForUnknownRationalis
 	| Update Type   |
 	| Value         |
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19094 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19094_Automation | 19094       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19094_Automation | 19094       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -262,8 +265,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationInActionGrid
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18978 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicationAttributes
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18978_Automation | 18978       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18978_Automation | 18978       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -301,8 +304,8 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingAndRestoringActionForUpdateApplicati
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18988 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateRationalisationValidationWhenForwardPathIsSelected
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18988_Automation | 18988       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18988_Automation | 18988       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
