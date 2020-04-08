@@ -32,8 +32,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects '<NewValue>' in the 'Value' dropdown
+	And User selects '<NewValue>' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
@@ -112,8 +111,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects '<NewValue>' in the 'Value' dropdown
+	And User selects '<NewValue>' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '28 Nov 2018' text to 'Date' datepicker
 	And User clicks datepicker icon 
@@ -145,8 +143,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects '<DefaultValue>' in the 'Value' dropdown
+	And User selects '<DefaultValue>' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '9 Jan 2019' text to 'Date' datepicker
 	And User clicks datepicker icon 
@@ -201,8 +198,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Complete' in the 'Value' dropdown
+	And User selects 'Complete' in the 'Update Value' dropdown
+	#And User selects 'Complete' in the 'Value' dropdown
 	And User selects 'Remove' in the 'Update Date' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User navigate to the bottom of the Action panel
@@ -226,8 +223,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
-	And User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Failed' in the 'Value' dropdown
+	And User selects 'Failed' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '28 Nov 2018' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
@@ -272,7 +268,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '28 Nov 2018' text to 'Date' datepicker
-	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	And User clicks datepicker icon 
+	And User selects '28' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for '3' seconds
+	And User clicks datepicker icon
+	And User selects '29' day in the Datepicker
+	And User navigate to the bottom of the Action panel
+	And User selects 'User Slot' in the 'Slot' dropdown
 	When User selects 'Remove owner and team' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
 	Then inline warning banner is displayed
@@ -284,7 +287,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User refreshes agGrid
 	When User closes Actions panel
 	Then 'FAILED' content is displayed in the 'Windows7Mi: User Acceptance Test \ Perform User Acceptance Test' column
-#returns default object state
+	#returns default object state
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
@@ -297,7 +300,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '27 Dec 2018' text to 'Date' datepicker
-	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	And User clicks datepicker icon 
+	And User selects '27' day in the Datepicker
+	#Added wait as we need some time fo datepicker to be updated
+	And User waits for '3' seconds
+	And User clicks datepicker icon
+	And User selects '28' day in the Datepicker
+	And User navigate to the bottom of the Action panel
+	And User selects 'User Slot' in the 'Slot' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'UPDATE' button 
 	Then inline warning banner is displayed
