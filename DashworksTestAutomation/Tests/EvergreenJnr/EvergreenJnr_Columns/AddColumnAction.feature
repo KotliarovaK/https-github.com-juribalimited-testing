@@ -501,7 +501,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAdde
 	| <AutoName> | 16890       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
-	#Create Action1
+	#Create Action
 	When User clicks 'CREATE ACTION' button
 	And User enters '<ActionName>' text to 'Action Name' textbox
 	And User selects 'Update path' in the 'Action Type' dropdown
@@ -524,7 +524,6 @@ Examples:
 	| DAS17431_Mail | action_DAS17431_mail | Mailboxes    |
 	| DAS17431_User | action_DAS17431_user | Users        |
 	| DAS17431_App  | action_DAS17431_app  | Applications |
-
 
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS20722 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsCanBeAddedIfSomePivotWasOpenedBefore
