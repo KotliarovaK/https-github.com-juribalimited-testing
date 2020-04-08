@@ -2442,17 +2442,17 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS17431")]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToList(string listName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("DAS17431_Mail", "action_DAS17431_mail", "Mailboxes", null)]
+        [NUnit.Framework.TestCaseAttribute("DAS17431_User", "action_DAS17431_user", "Users", null)]
+        [NUnit.Framework.TestCaseAttribute("DAS17431_App", "action_DAS17431_app", "Applications", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToList(string autoName, string actionName, string listName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToListInternal(listName,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToListInternal(autoName,actionName,listName,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -2471,7 +2471,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToListInternal(string listName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToListInternal(string autoName, string actionName, string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2491,18 +2491,59 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
+                        "Name",
+                        "Description",
+                        "IsActive",
+                        "StopOnFailedAction",
+                        "Scope",
+                        "Run"});
             table51.AddRow(new string[] {
-                        "Applications_Scope \\ Action_1"});
+                        string.Format("{0}", autoName),
+                        "16890",
+                        "true",
+                        "false",
+                        "All Devices",
+                        "Manual"});
 #line 499
- testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", listName), ((string)(null)), table51, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table51, "When ");
+#line 502
+ testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 503
+ testRunner.When("User navigates to the \'Actions\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 505
+ testRunner.When("User clicks \'CREATE ACTION\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 506
+ testRunner.And(string.Format("User enters \'{0}\' text to \'Action Name\' textbox", actionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 507
+ testRunner.And("User selects \'Update path\' in the \'Action Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 508
+ testRunner.When("User selects \'2004 Rollout\' option from \'Project\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 509
+ testRunner.When("User selects \'Undetermined\' option from \'Path\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 510
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 511
+ testRunner.When("User clicks \'Automations\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 512
+ testRunner.When(string.Format("User enters \"{0}\" text in the Search field for \"Automation\" column", autoName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 513
+ testRunner.When(string.Format("User clicks \'Run now\' option in Cog-menu for \'{0}\' item from \'Automation\' column", autoName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 514
+ testRunner.When(string.Format("\'{0}\' automation \'{1}\' action run has finished", autoName, actionName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table52.AddRow(new string[] {
                         "Applications_Scope \\ Action_1"});
-#line 502
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table52, "Then ");
+#line 515
+ testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", listName), ((string)(null)), table52, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table53.AddRow(new string[] {
+                        "Applications_Scope \\ Action_1"});
+#line 518
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table53, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

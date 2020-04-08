@@ -496,6 +496,22 @@ Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppNameColumnDisplaying
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS17431
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToList
+	When User creates new Automation via API and open it
+	| Name       | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| <AutoName> | 16890       | true     | false              | All Devices | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action1
+	When User clicks 'CREATE ACTION' button
+	And User enters '<ActionName>' text to 'Action Name' textbox
+	And User selects 'Update path' in the 'Action Type' dropdown
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'Undetermined' option from 'Path' autocomplete
+	When User clicks 'CREATE' button
+	When User clicks 'Automations' header breadcrumb
+	When User enters "<AutoName>" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '<AutoName>' item from 'Automation' column
+	When '<AutoName>' automation '<ActionName>' action run has finished
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName                    |
 	| Applications_Scope \ Action_1 |
@@ -504,7 +520,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAdde
 	| Applications_Scope \ Action_1 |
 
 Examples:
-	| ListName     |
-	| Mailboxes    |
-	| Users        |
-	| Applications |
+	| AutoName      | ActionName           | ListName     |
+	| DAS17431_Mail | action_DAS17431_mail | Mailboxes    |
+	| DAS17431_User | action_DAS17431_user | Users        |
+	| DAS17431_App  | action_DAS17431_app  | Applications |
