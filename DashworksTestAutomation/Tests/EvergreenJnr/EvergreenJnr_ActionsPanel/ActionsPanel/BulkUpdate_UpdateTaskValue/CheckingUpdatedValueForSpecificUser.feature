@@ -224,7 +224,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
 	And User selects 'User Acceptance Test \ Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'Failed' in the 'Update Value' dropdown
-	#And User selects 'Failed' in the 'Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '28 Nov 2018' text to 'Date' datepicker
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
@@ -288,7 +287,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User refreshes agGrid
 	When User closes Actions panel
 	Then 'FAILED' content is displayed in the 'Windows7Mi: User Acceptance Test \ Perform User Acceptance Test' column
-#returns default object state
+	#returns default object state
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
