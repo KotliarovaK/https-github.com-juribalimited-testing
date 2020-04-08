@@ -134,3 +134,19 @@ Scenario: EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectly
 	Then User verifies data in the fields on details page
 	| Field   | Data  |
 	| Enabled | FALSE |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19977
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage
+	When User navigates to the '<PageName>' details page for '<ItemName>' item
+	Then Details page for '<ItemName>' item is displayed to the user
+	When User selects '<ProjectName>' in the 'Item Details Project' dropdown with wait
+	And User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	When User clicks "<OwnerLinkName>" link on the Details Page
+	Then Details page for '<OwnerPage>' item is displayed to the user
+
+Examples: 
+	| PageName    | ItemName                                  | ProjectName                        | OwnerLinkName    | OwnerPage                            |
+	| Device      | 00OMQQXWA1DRI6                            | Computer Scheduled Test (Jo)       | Sandra R. Castro | YRD045946 (Sandra R. Castro)         |
+	| Application | ABBYY FineReader 8.0 Professional Edition | Barry's User Project               | Sherry M. Berger | NOK673558 (Sherry M. Berger)         |
+	| Mailbox     | 00B5CCB89AD0404B965@bclabs.local          | Mailbox Evergreen Capacity Project | Smith, Delores   | 00B5CCB89AD0404B965 (Smith, Delores) |
