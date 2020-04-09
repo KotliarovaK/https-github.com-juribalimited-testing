@@ -178,3 +178,77 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckThatOwnerDropdownSh
 	When User clicks on 'Change Owner' button on end user Self Service page
 	When User enters '024213574157421A9CD (Reyes, Natasha)' text to 'Owner' textbox
 	Then 'Owner' autocomplete is not displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20425 @Cleanup @SelfServiceMVP
+Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemovingAndAssigningNewOwner
+	When Project created via API and opened
+	| ProjectName    | Scope     | ProjectTemplate | Mode               |
+	| DAS_20425_Proj | All Users | None            | Standalone Project |
+	#Change onbording to API step when DAS-20820 will be done
+	When User navigates to the 'Scope' left menu item
+	And User navigates to the 'Scope Changes' left menu item
+	And User navigates to the 'Users' tab on Project Scope Changes page
+	And User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
+	| Objects                              |
+	| 024213574157421A9CD (Reyes, Natasha) |
+	| 03C54BC1198843A4A03 (Jones, Tina)    |
+	And User clicks 'UPDATE ALL CHANGES' button
+	And User clicks 'UPDATE PROJECT' button
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	#Change onbording to API step when DAS-20820 will be done
+	When User navigates to the 'Applications' tab on Project Scope Changes page
+	And User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+	| Objects    |
+	| VSCmdShell |
+	And User clicks 'UPDATE ALL CHANGES' button
+	And User clicks 'UPDATE PROJECT' button
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	When User create static list with "DAS_20425_forComponent" name on "Users" page with following items
+	| ItemName            |
+	| 03C54BC1198843A4A03 |
+	| 024213574157421A9CD |
+	When User create static list with "DAS_20425" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
+	| DAS_20425_SS_1 | 20425_1_SI        | true    | true                | DAS_20425 |
+	When User creates new application ownership component for 'Welcome' Self Service page via API
+	| ComponentName | ProjectName    | OwnerPermission                                  | UserScope              | ShowInSelfService |
+	| AOC Name      | DAS_20425_Proj | Allow owner to be removed or set to another user | DAS_20425_forComponent | true              |
+	When User navigates to End User landing page with '20425_1_SI' Self Service Identifier
+	And User clicks on 'Change Owner' button on end user Self Service page
+	And User enters 'Jones' in the 'Owner' autocomplete field and selects '03C54BC1198843A4A03 (Jones, Tina)' value
+	And User clicks 'Change Owner' button on popup
+	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
+	| FirstColumn  | SecondColumn        |
+	| Username     | 03C54BC1198843A4A03 |
+	| Domain       | BCLABS              |
+	| Display Name | Jones, Tina         |
+	When User clicks on 'Continue' button on end user Self Service page
+	And User navigates to the 'Application' details page for 'VSCmdShell' item
+	Then Details page for 'VSCmdShell' item is displayed to the user
+	When User selects 'DAS_20425_Proj' in the 'Item Details Project' dropdown with wait
+	And User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title     | Value      |
+	| App Owner | Jones Tina |
+	When User navigates to End User landing page with '20425_1_SI' Self Service Identifier
+	And User clicks on 'Change Owner' button on end user Self Service page
+	And User checks 'Remove owner' radio button
+	And User clicks 'Change Owner' button on popup
+	Then User sees following items for 'AOC Name' application ownership component on 'Welcome' end user page
+	| FirstColumn  | SecondColumn |
+	| Username     |              |
+	| Domain       |              |
+	| Display Name |              |
+	When User clicks on 'Continue' button on end user Self Service page
+	And User navigates to the 'Application' details page for 'VSCmdShell' item
+	Then Details page for 'VSCmdShell' item is displayed to the user
+	When User selects 'DAS_20425_Proj' in the 'Item Details Project' dropdown with wait
+	And User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	Then following content is displayed on the Details Page
+	| Title     | Value |
+	| App Owner |       |
