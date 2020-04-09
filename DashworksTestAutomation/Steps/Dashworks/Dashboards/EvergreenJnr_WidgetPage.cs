@@ -74,7 +74,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (row.ContainsKey("SplitBy") && !string.IsNullOrEmpty(row["SplitBy"]))
             {
                 createWidgetElement.SelectSplitByItem(row["SplitBy"]);
-                //baseActionItem.SelectDropdown(row["SplitBy"], "SplitBy");
             }
 
             if (row.ContainsKey("CategoriseBy") && !string.IsNullOrEmpty(row["CategoriseBy"]))

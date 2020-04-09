@@ -67,3 +67,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoPopupDisplayedWhenUserNavigatesFromS
 	When User clicks 'Projects' header breadcrumb
 	Then Warning Pop-up is not displayed
 	Then Page with 'Projects' header is displayed to user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS20276 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatUserScopeValueCanBeChangedForProjectBacedOnBrokenList
+	When User creates broken list with 'Broken list DAS20276' name on 'Devices' page
+	When Project created via API and opened
+	| ProjectName   | Scope                | ProjectTemplate | Mode               |
+	| 20276_Project | Broken list DAS20276 | None            | Standalone Project |
+	Then Page with '20276_Project' header is displayed to user
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left menu item
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
+	When User selects 'Users with Device Count' in the 'User Scope' dropdown
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Scope Details' left menu item
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
+	Then 'Users with Device Count' content is displayed in 'User Scope' dropdown
