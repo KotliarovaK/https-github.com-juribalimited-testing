@@ -560,6 +560,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.Base
             }
         }
 
+        private By textboxSuccessSelector = By.XPath("./span[@class='success-text']");
+        public IWebElement GetTextboxSuccessMessageElement(string placeholder)
+        {
+            return GetTextboxErrorMessageElement(placeholder).FindElement(textboxSuccessSelector);
+        }
         public string GetTextboxErrorMessage(string placeholder)
         {
             var error = GetTextboxErrorMessageElement(placeholder).FindElement(By.XPath("./span[not (@class)]"));

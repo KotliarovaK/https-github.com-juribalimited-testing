@@ -562,6 +562,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS19690")]
+        [NUnit.Framework.CategoryAttribute("DAS20720")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatTargetApplicationNotFoundIsNotDisplayedOnEditActionPage()
         {
@@ -597,6 +598,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19690",
+                        "DAS20720",
                         "Cleanup"});
 #line 161
 this.ScenarioInitialize(scenarioInfo);

@@ -268,7 +268,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "SLOT NOT ASSOCIATED TO THE TASK" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @DAS20038 @Cleanup @Wormhole
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @DAS20038 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForUnpublishedTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -313,8 +313,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForUnpublishedTas
 	#Create Automation
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18669_Automation | 18669       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18669_Automation | 18669       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action

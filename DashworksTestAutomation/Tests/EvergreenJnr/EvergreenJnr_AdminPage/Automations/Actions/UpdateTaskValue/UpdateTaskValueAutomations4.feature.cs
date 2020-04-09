@@ -906,7 +906,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18669")]
         [NUnit.Framework.CategoryAttribute("DAS20038")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForUnpublishedTask()
         {
             System.Exception lastException = null;
@@ -941,8 +940,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS18669",
                         "DAS20038",
-                        "Cleanup",
-                        "Wormhole"});
+                        "Cleanup"});
 #line 272
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1100,9 +1098,9 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
-                        "AutomationName",
+                        "Name",
                         "Description",
-                        "Active",
+                        "IsActive",
                         "StopOnFailedAction",
                         "Scope",
                         "Run"});

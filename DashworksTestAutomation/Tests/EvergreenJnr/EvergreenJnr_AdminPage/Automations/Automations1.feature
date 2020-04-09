@@ -617,6 +617,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownList
 	Then Page with 'Automations' header is displayed to user
 	When User clicks 'CREATE AUTOMATION' button 
 	When User selects '17003_List' option from 'Scope' autocomplete
+	Then 'List validated' success message for 'Scope' field
 	When User clicks 'Projects' on the left-hand menu
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
@@ -704,6 +705,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActivePositionChangingForAutomation
 	When User clicks content from "Automation" column
 	Then 'Active' checkbox is unchecked
 	When User click on Back button
+	When User refreshes agGrid
 	When User enters "Active_Automation1287" text in the Search field for "Automation" column
 	Then "FALSE" content is displayed for "Active" column
 	#Chenge Inactive_Test_Automation
