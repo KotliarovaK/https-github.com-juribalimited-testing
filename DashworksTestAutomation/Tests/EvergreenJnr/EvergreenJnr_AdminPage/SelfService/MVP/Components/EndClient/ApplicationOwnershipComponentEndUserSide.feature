@@ -184,21 +184,25 @@ Scenario: EvergreenJnr_AdminPage_EvergreenJnr_AdminPage_CheckRemovingAndAssignin
 	When Project created via API and opened
 	| ProjectName    | Scope     | ProjectTemplate | Mode               |
 	| DAS_20425_Proj | All Users | None            | Standalone Project |
+	#Change onbording to API step when DAS-20820 will be done
 	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Changes' left menu item
-	When User navigates to the 'Users' tab on Project Scope Changes page
-	When User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
+	And User navigates to the 'Scope Changes' left menu item
+	And User navigates to the 'Users' tab on Project Scope Changes page
+	And User expands 'Users to add' multiselect to the 'Users' tab on Project Scope Changes page and selects following Objects
 	| Objects                              |
 	| 024213574157421A9CD (Reyes, Natasha) |
 	| 03C54BC1198843A4A03 (Jones, Tina)    |
-	When User clicks 'UPDATE ALL CHANGES' button
-	When User clicks 'UPDATE PROJECT' button
+	And User clicks 'UPDATE ALL CHANGES' button
+	And User clicks 'UPDATE PROJECT' button
+	Then '2 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
+	#Change onbording to API step when DAS-20820 will be done
 	When User navigates to the 'Applications' tab on Project Scope Changes page
-	When User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
+	And User expands 'Applications to add' multiselect to the 'Applications' tab on Project Scope Changes page and selects following Objects
 	| Objects    |
 	| VSCmdShell |
-	When User clicks 'UPDATE ALL CHANGES' button
-	When User clicks 'UPDATE PROJECT' button
+	And User clicks 'UPDATE ALL CHANGES' button
+	And User clicks 'UPDATE PROJECT' button
+	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	When User create static list with "DAS_20425_forComponent" name on "Users" page with following items
 	| ItemName            |
 	| 03C54BC1198843A4A03 |

@@ -609,133 +609,133 @@ this.FeatureBackground();
                         "DAS20647",
                         "Cleanup",
                         "SelfServiceMVP"});
-#line 101
+#line 137
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "Scope",
                         "ProjectTemplate",
                         "Mode"});
-            table13.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "DAS_20647_Proj",
                         "All Users",
                         "None",
                         "Standalone Project"});
-#line 102
- testRunner.When("Project created via API and opened", ((string)(null)), table13, "When ");
-#line 105
+#line 138
+ testRunner.When("Project created via API and opened", ((string)(null)), table19, "When ");
+#line 141
  testRunner.Then("Page with \'DAS_20647_Proj\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 106
+#line 142
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 107
+#line 143
  testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
+#line 144
  testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table14.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "03C54BC1198843A4A03 (Jones, Tina)"});
-#line 109
+#line 145
  testRunner.And("User expands \'Users to add\' multiselect to the \'Users\' tab on Project Scope Chang" +
-                    "es page and selects following Objects", ((string)(null)), table14, "And ");
-#line 112
+                    "es page and selects following Objects", ((string)(null)), table20, "And ");
+#line 148
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
+#line 149
  testRunner.Then("\'1 user will be added\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 114
+#line 150
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
+#line 151
  testRunner.Then("\'1 object queued for onboarding, 0 objects offboarded\' text is displayed on inlin" +
                     "e success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 116
+#line 152
  testRunner.When("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table15.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "VSCmdShell"});
-#line 117
+#line 153
  testRunner.And("User expands \'Applications to add\' multiselect to the \'Applications\' tab on Proje" +
-                    "ct Scope Changes page and selects following Objects", ((string)(null)), table15, "And ");
-#line 120
+                    "ct Scope Changes page and selects following Objects", ((string)(null)), table21, "And ");
+#line 156
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
+#line 157
  testRunner.Then("\'1 application will be added\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 122
+#line 158
  testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 123
+#line 159
  testRunner.Then("\'1 object queued for onboarding, 0 objects offboarded\' text is displayed on inlin" +
                     "e success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table16.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "03C54BC1198843A4A03"});
-            table16.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "024213574157421A9CD"});
-#line 124
+#line 160
  testRunner.When("User create static list with \"DAS_20647_forComponent\" name on \"Users\" page with f" +
-                    "ollowing items", ((string)(null)), table16, "When ");
+                    "ollowing items", ((string)(null)), table22, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table17.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "VSCmdShell"});
-#line 128
+#line 164
  testRunner.When("User create static list with \"DAS_20647\" name on \"Applications\" page with followi" +
-                    "ng items", ((string)(null)), table17, "When ");
+                    "ng items", ((string)(null)), table23, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "ServiceIdentifier",
                         "Enabled",
                         "AllowAnonymousUsers",
                         "Scope"});
-            table18.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "DAS_20647_SS_1",
                         "20647_1_SI",
                         "true",
                         "true",
                         "DAS_20647"});
-#line 131
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table18, "When ");
+#line 167
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table24, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "ComponentName",
                         "ProjectName",
                         "OwnerPermission",
                         "UserScope"});
-            table19.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "AOC Name",
                         "DAS_20647_Proj",
                         "Allow owner to be removed or set to another user",
                         "DAS_20647_forComponent"});
-#line 134
+#line 170
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                    "via API", ((string)(null)), table19, "When ");
-#line 137
+                    "via API", ((string)(null)), table25, "When ");
+#line 173
  testRunner.When("User navigates to End User landing page with \'20647_1_SI\' Self Service Identifier" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 138
+#line 174
  testRunner.When("User clicks on \'Change Owner\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
-            table20.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "03C54BC1198843A4A03 (Jones, Tina)"});
-#line 139
+#line 175
  testRunner.Then("only below options are displayed in \'Owner\' autocomplete after search by \'03C54BC" +
-                    "1198843A4A03 (Jones, Tina)\' text", ((string)(null)), table20, "Then ");
-#line 142
+                    "1198843A4A03 (Jones, Tina)\' text", ((string)(null)), table26, "Then ");
+#line 178
  testRunner.When("User clicks on \'Change Owner\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 143
+#line 179
  testRunner.When("User enters \'024213574157421A9CD (Reyes, Natasha)\' text to \'Owner\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
+#line 180
  testRunner.Then("\'Owner\' autocomplete is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -787,200 +787,206 @@ this.FeatureBackground();
                         "DAS20425",
                         "Cleanup",
                         "SelfServiceMVP"});
-#line 147
+#line 183
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProjectName",
                         "Scope",
                         "ProjectTemplate",
                         "Mode"});
-            table21.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "DAS_20425_Proj",
                         "All Users",
                         "None",
                         "Standalone Project"});
-#line 148
- testRunner.When("Project created via API and opened", ((string)(null)), table21, "When ");
-#line 151
+#line 184
+ testRunner.When("Project created via API and opened", ((string)(null)), table27, "When ");
+#line 188
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 152
- testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 153
- testRunner.When("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 189
+ testRunner.And("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table22.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "024213574157421A9CD (Reyes, Natasha)"});
-            table22.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "03C54BC1198843A4A03 (Jones, Tina)"});
-#line 154
- testRunner.When("User expands \'Users to add\' multiselect to the \'Users\' tab on Project Scope Chang" +
-                    "es page and selects following Objects", ((string)(null)), table22, "When ");
-#line 158
- testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 159
- testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 160
+#line 191
+ testRunner.And("User expands \'Users to add\' multiselect to the \'Users\' tab on Project Scope Chang" +
+                    "es page and selects following Objects", ((string)(null)), table28, "And ");
+#line 195
+ testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 197
+ testRunner.Then("\'2 objects queued for onboarding, 0 objects offboarded\' text is displayed on inli" +
+                    "ne success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 199
  testRunner.When("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table23.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "VSCmdShell"});
-#line 161
- testRunner.When("User expands \'Applications to add\' multiselect to the \'Applications\' tab on Proje" +
-                    "ct Scope Changes page and selects following Objects", ((string)(null)), table23, "When ");
-#line 164
- testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 165
- testRunner.When("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 200
+ testRunner.And("User expands \'Applications to add\' multiselect to the \'Applications\' tab on Proje" +
+                    "ct Scope Changes page and selects following Objects", ((string)(null)), table29, "And ");
+#line 203
+ testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 204
+ testRunner.And("User clicks \'UPDATE PROJECT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 205
+ testRunner.Then("\'1 object queued for onboarding, 0 objects offboarded\' text is displayed on inlin" +
+                    "e success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table24.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "03C54BC1198843A4A03"});
-            table24.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "024213574157421A9CD"});
-#line 166
+#line 206
  testRunner.When("User create static list with \"DAS_20425_forComponent\" name on \"Users\" page with f" +
-                    "ollowing items", ((string)(null)), table24, "When ");
+                    "ollowing items", ((string)(null)), table30, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table25.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "VSCmdShell"});
-#line 170
+#line 210
  testRunner.When("User create static list with \"DAS_20425\" name on \"Applications\" page with followi" +
-                    "ng items", ((string)(null)), table25, "When ");
+                    "ng items", ((string)(null)), table31, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "ServiceIdentifier",
                         "Enabled",
                         "AllowAnonymousUsers",
                         "Scope"});
-            table26.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "DAS_20425_SS_1",
                         "20425_1_SI",
                         "true",
                         "true",
                         "DAS_20425"});
-#line 173
- testRunner.When("User creates Self Service via API and open it", ((string)(null)), table26, "When ");
+#line 213
+ testRunner.When("User creates Self Service via API and open it", ((string)(null)), table32, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "ComponentName",
                         "ProjectName",
                         "OwnerPermission",
                         "UserScope",
                         "ShowInSelfService"});
-            table27.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "AOC Name",
                         "DAS_20425_Proj",
                         "Allow owner to be removed or set to another user",
                         "DAS_20425_forComponent",
                         "true"});
-#line 176
+#line 216
  testRunner.When("User creates new application ownership component for \'Welcome\' Self Service page " +
-                    "via API", ((string)(null)), table27, "When ");
-#line 179
+                    "via API", ((string)(null)), table33, "When ");
+#line 219
  testRunner.When("User navigates to End User landing page with \'20425_1_SI\' Self Service Identifier" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 180
+#line 220
  testRunner.And("User clicks on \'Change Owner\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 181
+#line 221
  testRunner.And("User enters \'Jones\' in the \'Owner\' autocomplete field and selects \'03C54BC1198843" +
                     "A4A03 (Jones, Tina)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 182
+#line 222
  testRunner.And("User clicks \'Change Owner\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "FirstColumn",
                         "SecondColumn"});
-            table28.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "Username",
                         "03C54BC1198843A4A03"});
-            table28.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "Domain",
                         "BCLABS"});
-            table28.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "Display Name",
                         "Jones, Tina"});
-#line 183
+#line 223
  testRunner.Then("User sees following items for \'AOC Name\' application ownership component on \'Welc" +
-                    "ome\' end user page", ((string)(null)), table28, "Then ");
-#line 188
+                    "ome\' end user page", ((string)(null)), table34, "Then ");
+#line 228
  testRunner.When("User clicks on \'Continue\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 189
+#line 229
  testRunner.And("User navigates to the \'Application\' details page for \'VSCmdShell\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 190
+#line 230
  testRunner.Then("Details page for \'VSCmdShell\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 191
+#line 231
  testRunner.When("User selects \'DAS_20425_Proj\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 192
+#line 232
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 193
+#line 233
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
                         "Value"});
-            table29.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "App Owner",
                         "Jones Tina"});
-#line 194
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table29, "Then ");
-#line 197
+#line 234
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table35, "Then ");
+#line 237
  testRunner.When("User navigates to End User landing page with \'20425_1_SI\' Self Service Identifier" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 198
+#line 238
  testRunner.And("User clicks on \'Change Owner\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
+#line 239
  testRunner.And("User checks \'Remove owner\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 200
+#line 240
  testRunner.And("User clicks \'Change Owner\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "FirstColumn",
                         "SecondColumn"});
-            table30.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "Username",
                         ""});
-            table30.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "Domain",
                         ""});
-            table30.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "Display Name",
                         ""});
-#line 201
+#line 241
  testRunner.Then("User sees following items for \'AOC Name\' application ownership component on \'Welc" +
-                    "ome\' end user page", ((string)(null)), table30, "Then ");
-#line 206
+                    "ome\' end user page", ((string)(null)), table36, "Then ");
+#line 246
  testRunner.When("User clicks on \'Continue\' button on end user Self Service page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 207
+#line 247
  testRunner.And("User navigates to the \'Application\' details page for \'VSCmdShell\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 208
+#line 248
  testRunner.Then("Details page for \'VSCmdShell\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 209
+#line 249
  testRunner.When("User selects \'DAS_20425_Proj\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 210
+#line 250
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 211
+#line 251
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "Title",
                         "Value"});
-            table31.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "App Owner",
                         ""});
-#line 212
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table31, "Then ");
+#line 252
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table37, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
