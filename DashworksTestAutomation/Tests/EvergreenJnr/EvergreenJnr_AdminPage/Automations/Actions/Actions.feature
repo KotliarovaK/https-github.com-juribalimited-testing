@@ -321,7 +321,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then 'UPDATE' button is disabled
 	When User enters 'TEST NEW' text to 'Action Name' textbox
 	Then 'UPDATE' button is not disabled
-	When User selects 'Migration Project Phase 2 (User Project)' option from 'Project' autocomplete
+	When User selects 'Email Migration' option from 'Project' autocomplete
 	Then 'UPDATE' button is disabled
 	Then '' content is displayed in 'Path' autocomplete
 	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
@@ -607,7 +607,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForRemoveTextValue
 	Then 'One \ Text Computer' content is displayed in 'Task' autocomplete
 	Then 'Remove' value is displayed in the 'Update Value' dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @DAS20455 @DAS20455 @Cleanup @Wormhole
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17602 @DAS17606 @DAS19117 @DAS20455 @DAS20455 @DAS20721 @DAS20720 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
@@ -631,6 +631,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User clicks content from "Action" column
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	#Actions content check
+	Then 'UPDATE' button is disabled
 	Then "17606_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' autocomplete
@@ -641,14 +642,24 @@ Scenario: EvergreenJnr_AdminPage_CheckEditPageLoadingForUpdateDate
 	When User selects 'Update relative to a different task value' in the 'Update Date' dropdown
 	When User selects 'One \ Radio Rag Date Comp' option from 'Relative Task' autocomplete
 	When User enters '2' text to 'Value' textbox
-	When User selects 'days after task value' in the 'Units' dropdown
+	When User selects 'days after task value' in the 'DateUnit' dropdown
 	When User clicks 'UPDATE' button
 	Then 'The automation action has been updated' text is displayed on inline success banner
 	When User clicks content from "Action" column
+	Then 'UPDATE' button is disabled
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Relative Project' autocomplete
 	Then 'One \ Radio Rag Date Comp' content is displayed in 'Relative Task' autocomplete
-	Then 'days before task value' value is displayed in the 'Units' dropdown
+	Then 'days after task value' value is displayed in the 'DateUnit' dropdown
 	Then '2' content is displayed in 'Value' textbox
+	#Update Action
+	When User selects 'Update' in the 'Update Date' dropdown
+	When User enters '5 Aug 2019' text to 'Date' datepicker
+	When User clicks 'UPDATE' button
+	Then 'The automation action has been updated' text is displayed on inline success banner
+	When User clicks content from "Action" column
+	Then 'UPDATE' button is disabled
+	Then 'Update' value is displayed in the 'Update Date' dropdown
+	Then "5 Aug 2019" content is displayed in "Date" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17797 @DAS17816 @DAS19117 @DAS17485 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThanActionFieldsAreNotPrepopulatedWithOldData

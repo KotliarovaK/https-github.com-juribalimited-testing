@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPageIfProjectWasDeleted
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then No error message is displayed for 'Project or Evergreen' field
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19690 @DAS20720 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatTargetApplicationNotFoundIsNotDisplayedOnEditActionPage
 	When User creates new Automation via API and open it
 	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
