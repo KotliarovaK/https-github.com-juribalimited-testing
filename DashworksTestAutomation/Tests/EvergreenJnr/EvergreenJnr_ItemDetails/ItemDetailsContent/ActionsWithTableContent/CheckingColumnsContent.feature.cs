@@ -1025,6 +1025,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15039")]
         [NUnit.Framework.CategoryAttribute("DAS18535")]
         [NUnit.Framework.CategoryAttribute("DAS20604")]
+        [NUnit.Framework.CategoryAttribute("DAS20764")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns()
         {
@@ -1063,6 +1064,7 @@ this.FeatureBackground();
                         "DAS15039",
                         "DAS18535",
                         "DAS20604",
+                        "DAS20764",
                         "Zion_NewGrid"});
 #line 260
 this.ScenarioInitialize(scenarioInfo);
@@ -1170,6 +1172,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS20604")]
+        [NUnit.Framework.CategoryAttribute("DAS20764")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_DevicesList_CheckThatEmptyValueIsDisplayedAndRedirectsTheUserCorrectly()
@@ -1207,6 +1210,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS20604",
+                        "DAS20764",
                         "Zion_NewGrid",
                         "Wormhole"});
 #line 311
