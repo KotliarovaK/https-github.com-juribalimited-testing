@@ -513,11 +513,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAdde
 	When User clicks 'Run now' option in Cog-menu for '<AutoName>' item from 'Automation' column
 	When '<AutoName>' automation '<ActionName>' action run has finished
 	When User add following columns using URL to the "<ListName>" page:
-	| ColumnName                    |
-	| Applications_Scope \ Action_1 |
+	| ColumnName                |
+	| <AutoName> \ <ActionName> |
 	Then ColumnName is added to the list
-	| ColumnName                    |
-	| Applications_Scope \ Action_1 |
+	| ColumnName                |
+	| <AutoName> \ <ActionName> |
 
 Examples:
 	| AutoName      | ActionName           | ListName     |

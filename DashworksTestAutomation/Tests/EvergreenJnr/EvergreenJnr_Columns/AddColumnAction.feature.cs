@@ -2534,14 +2534,14 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table52.AddRow(new string[] {
-                        "Applications_Scope \\ Action_1"});
+                        string.Format("{0} \\ {1}", autoName, actionName)});
 #line 515
  testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", listName), ((string)(null)), table52, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table53.AddRow(new string[] {
-                        "Applications_Scope \\ Action_1"});
+                        string.Format("{0} \\ {1}", autoName, actionName)});
 #line 518
  testRunner.Then("ColumnName is added to the list", ((string)(null)), table53, "Then ");
 #line hidden
