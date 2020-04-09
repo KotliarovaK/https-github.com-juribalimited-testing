@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	Then "1" rows found label displays on Details Page
 	Then '[Default (User)]' checkbox is checked in the filter dropdown for the 'Path' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535 @DAS20604 @Zion_NewGrid
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535 @DAS20604 @DAS20764 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -307,7 +307,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#Then Details page for "ACG370114" item is displayed correctly
 
 #AnnI 4/01/20: DAS20604 will be fixed only for 'Wormhole' and we are waiting GD for this test.
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20604 @Zion_NewGrid @Wormhole
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20604 @DAS20764 @Zion_NewGrid @Wormhole
 Scenario: EvergreenJnr_DevicesList_CheckThatEmptyValueIsDisplayedAndRedirectsTheUserCorrectly
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
