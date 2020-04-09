@@ -36,6 +36,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
 
         #region Dashboard Area
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Hide section']/ancestor::label")]
+        public IWebElement SectionHideSectionCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-menu-item')]")]
         public IList<IWebElement> EllipsisMenuItems { get; set; }
 
