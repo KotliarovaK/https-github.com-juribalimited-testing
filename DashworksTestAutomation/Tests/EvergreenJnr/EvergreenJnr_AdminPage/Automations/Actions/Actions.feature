@@ -500,6 +500,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckListOfProjectsOnTheCreateActionsPa
 	When User enters '<AutomationName>' text to 'Automation Name' textbox
 	When User enters '17544' text to 'Description' textbox
 	When User selects '<Scope>' option from 'Scope' autocomplete
+	Then 'List validated' success message for 'Scope' field
 	When User selects 'Manual' in the 'Run' dropdown
 	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
