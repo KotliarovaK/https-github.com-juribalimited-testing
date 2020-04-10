@@ -391,17 +391,8 @@ namespace DashworksTestAutomation.Helpers
                 case "Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Radiobutton Task for Workstation":
                     return "project_task_1_8397_1_Task";
 
-                case "Applications_Scope \\ Action_1":
-                    return "automationField_14_19_date";
-
-                case "DAS17431_Mail \\ action_DAS17431_mail":
-                    return "automationField_1452_495_date";
-
-                case "DAS17431_App \\ action_DAS17431_app":
-                    return "automationField_1454_497_date";
-
-                case "DAS17431_User \\ action_DAS17431_user":
-                    return "automationField_1455_498_date";
+                case "Devices_Scope \\ First_Action":
+                    return "automationField_11_10_date";
 
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
