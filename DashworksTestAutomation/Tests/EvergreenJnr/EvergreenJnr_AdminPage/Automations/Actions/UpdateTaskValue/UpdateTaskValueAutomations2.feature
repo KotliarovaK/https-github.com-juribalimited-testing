@@ -187,12 +187,11 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User selects 'Hours' in the 'Units' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18619 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18619 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18619_Automation | 18619       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18619_Automation | 18619       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -206,8 +205,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
 	When User clicks 'CREATE' button
 	#Check Value dropdown
 	When User clicks content from "Action" column
-	When User selects 'Update' in the 'Update Value' dropdown
-	Then 'Value' content is displayed in 'Value' dropdown
+	Then 'Remove' content is displayed in 'Update Date' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18644 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
