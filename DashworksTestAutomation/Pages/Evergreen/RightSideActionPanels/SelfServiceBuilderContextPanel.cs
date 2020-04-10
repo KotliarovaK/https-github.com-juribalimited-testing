@@ -22,9 +22,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             };
         }
 
-        public String ContextPanelPagePath(string contextPanelType, string contextPanelName)
+        public string ContextPanelPagePath(string contextPanelType, string contextPanelName)
         {
             return $".//div[text()='{contextPanelName}']/preceding-sibling::div[text()='{contextPanelType}']/ancestor::div[contains(@class,'level-info')]";
+        }
+
+        public string PageComponentByOrderPath(string componentName, string componentType, string expectedComponentOrder, string contextPanelName, string contextPanelType = "Page")
+        {
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}//ancestor::div[contains(@class, 'pages-list-inner')]//div[contains(@class, 'page-sublevels')]/div[contains(@class, 'page-sublevels')][{expectedComponentOrder}]//div[text()='{componentName}']/preceding-sibling::div[text()='{componentType}']";
+            return selector;
         }
 
         public IWebElement ContextPanelArrow(string contextPanelType, string contextPanelName)
@@ -43,7 +49,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public IWebElement ContextPanelPageCogMenuButton(string contextPanelType, string contextPanelName)
         {
-            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'level')]//div[contains(@class, 'menu-wrapper')]";
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}/ancestor::div[contains(@class,'page-sublevels-wrap')]//div[contains(@class, 'menu-wrapper')]";
             Driver.WaitForElementToBeDisplayed(By.XPath(selector));
 
             if (!Driver.IsElementDisplayed(By.XPath(selector), WebDriverExtensions.WaitTime.Short))
@@ -96,10 +102,23 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
 
         public void CheckBuilderContextPanelItemDisplayState(string contextPanelType, string contextPanelName, bool expectedDisplayState)
         {
-            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}";
             Driver.WaitForDataLoading();
-            Verify.AreEqual(expectedDisplayState, Driver.IsElementDisplayed(Driver.FindElement(By.XPath(selector)),
-                WebDriverExtensions.WaitTime.Long), $"Builder Context Panel Item Display State isn't: {expectedDisplayState}");
+            Verify.AreEqual(expectedDisplayState, TryToGetContextPanel(contextPanelType, contextPanelName),
+                $"Builder Context Panel Item Display State is not equal to: {expectedDisplayState}", WebDriverExtensions.WaitTime.Medium);
+        }
+
+        public bool TryToGetContextPanel(string contextPanelType, string contextPanelName)
+        {
+            var selector = $"{ContextPanelPagePath(contextPanelType, contextPanelName)}";
+            try
+            {
+                Driver.FindElement(By.XPath(selector));
+                return true;
+            } 
+            catch
+            {
+                return false;
+            }
         }
 
         public bool IsContentPanelHighlighted(string contextPanelType, string contextPanelName)
@@ -116,6 +135,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.RightSideActionPanels
             var bgColor = Driver.FindElement(By.XPath(selector)).GetCssValue("color");
             var result = bgColor.Equals("rgba(0,0,0,.87)");
             return result;
+        }
+
+        public bool isTheComponentOrderInSSBuilderAsExpected(string componentName, string componentType, string expectedComponentOrder, string contextPanelName)
+        {
+            var selector = PageComponentByOrderPath(componentName, componentType, expectedComponentOrder, contextPanelName);
+
+            try
+            {
+                Driver.WaitForElementToBeDisplayed(By.XPath(selector));
+                Driver.FindElement(By.XPath(selector));
+                return true;
+            } 
+            catch
+            {
+                return false;
+            }
         }
     }
 }
