@@ -270,8 +270,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateButtonStateAfterTaskChangingToTaskWi
 	When User navigate to Evergreen link
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18712_Automation3 | 18712       | true   | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18712_Automation3 | 18712       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -336,8 +336,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectColumnChangedAfterUpdatingActio
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18716 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18716_Automation  | 18716       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18716_Automation | 18716       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -345,8 +345,7 @@ Scenario: EvergreenJnr_AdminPage_CheckImprovementsForCapacityDisabledCase
 	And User enters '18705_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Stage C' option from 'Stage' autocomplete
-	When User selects 'Date Only with Capacity' option from 'Task' autocomplete
+	When User selects 'Stage C \ Date Only with Capacity' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	When User enters '1 Sep 2019' text to 'Date' datepicker
 	When User selects 'DAS-17846 Slot Device' in the 'Capacity Slot' dropdown

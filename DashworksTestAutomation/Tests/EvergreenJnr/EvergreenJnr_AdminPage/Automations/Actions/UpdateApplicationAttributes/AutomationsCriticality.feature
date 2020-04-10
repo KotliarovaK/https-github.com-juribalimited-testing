@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18674 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAutomationsIsVisible
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18674_Automation | 18674       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18674_Automation | 18674       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -31,8 +31,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAut
 	| Uncategorised |
 	Then 'CREATE' button is disabled
 	Then 'SAVE & CREATE ANOTHER' button is disabled
-	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
-	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Select at least one value to change' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'No change' content is displayed in 'Criticality' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown

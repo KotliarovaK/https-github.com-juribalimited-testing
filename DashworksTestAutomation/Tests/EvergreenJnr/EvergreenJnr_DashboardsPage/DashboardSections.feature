@@ -313,11 +313,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUserCanEditSection
 	When User clicks 'Edit' menu option for section with '3_Widget' widget
 	When User clicks Hide section checkbox on Edit Section page
 	Then 'Hide section' checkbox is checked
-	When User clicks 'UPDATE' button
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When Dashboard with 'Dashboard for SectionEditing' name is opened via API
-	When User waits for '3' seconds
 	Then Widget with the name '1_Widget' is missing
 
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14472 @Cleanup

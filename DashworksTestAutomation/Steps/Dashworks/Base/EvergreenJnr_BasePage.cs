@@ -632,6 +632,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
             //    $"Incorrect error message color for '{placeholder}' field exclamation icon");
         }
 
+        [Then(@"'(.*)' success message for '(.*)' field")]
+        public void ThenSuccessMessageForField(string successMessage, string placeholder)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            Verify.AreEqual(successMessage, page.GetTextboxSuccessMessageElement(placeholder).Text,
+                $"Incorrect message is displayed in the '{placeholder}' field");
+            var t = page.GetTextboxSuccessMessageElement(placeholder).GetCssValue("color");
+            Verify.AreEqual("rgba(126, 189, 56, 1)", page.GetTextboxSuccessMessageElement(placeholder).GetCssValue("color"),
+                $"Incorrect success message color for '{placeholder}' field");
+        }
+
         [Then(@"User sees '(.*)' hint below '(.*)' field")]
         public void ThenUserSeesHintBelowField(string instruction, string fieldName)
         {
