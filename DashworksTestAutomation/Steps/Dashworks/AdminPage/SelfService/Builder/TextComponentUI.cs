@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.SelfService.Builder
         }
 
         [Then(@"header format options are displayed on the text component page")]
-        public void ThenFormattingOpe(Table table)
+        public void ThenHeaderFormatOPtionsAreDisplayedOnTheTextComponentPage(Table table)
         {
             var page = _driver.NowAt<TextComponentPage>();
             _driver.WaitForElementToBeDisplayed(page.ToolbarWithFormattingOptions);
