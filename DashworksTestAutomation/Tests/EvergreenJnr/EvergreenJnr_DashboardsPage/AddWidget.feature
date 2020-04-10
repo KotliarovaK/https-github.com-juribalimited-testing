@@ -344,16 +344,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendsNotDuplicatedAfterCh
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20412 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashboardSection
 	When Dashboard with 'DashboardForDAS20412' name created via API and opened
-	And User checks 'Edit mode' slide toggle
-	And User clicks 'ADD WIDGET' button
-	And User creates new Widget
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button
+	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend |
 	| Bar        | WidgetForDAS20412 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
 	When User clicks 'Edit' menu option for section with 'WidgetForDAS20412' widget
 	When User enters 'titleForDAS20412' text to 'Title' textbox
 	When User clicks 'UPDATE' button
 	Then 'Section successfully updated' text is displayed on inline success banner
-	Then 'titleForDAS20412' Widget is displayed to the user
+	Then 'WidgetForDAS20412' Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS20358
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUserIsAbleToDeleteNotDefaultDashboard
