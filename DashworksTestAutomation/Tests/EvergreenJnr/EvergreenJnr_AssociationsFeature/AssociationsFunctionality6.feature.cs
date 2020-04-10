@@ -195,163 +195,189 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 24
- testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(@"User navigates to 'deviceapplications?$filter=(country%20EQUALS%20('USA'%2C'Australia'%2C'England')%20AND%20buildingName%20IS%20NOT%20EMPTY%20()%20AND%20city%20NOT%20EQUALS%20('London')%20AND%20floor%20IS%20NOT%20EMPTY%20()%20AND%20locationName%20EQUALS%20('101%20Hudson%20Street%20F20'%2C'101%20Hudson%20Street%20F21'%2C'120%20Collins%20Street%20F5')%20AND%20postalCode%20NOT%20CONTAINS%20('3000')%20AND%20stateCounty%20EQUALS%20('AB'%2C'NULL'%2C'CA'%2C'NJ'%2C'NY'%2C'VIC'))&$select=hostname,chassisCategory,packageName,packageManufacturer,packageVersion,country,buildingName,city,floor,locationName,postalCode,stateCounty&$association=(etd)' url via address line", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.When("User navigates to the \"All Device Applications\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 27
- testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then(@"URL contains 'deviceapplications?$filter=(country%20EQUALS%20('USA'%2C'Australia'%2C'England')%20AND%20buildingName%20IS%20NOT%20EMPTY%20()%20AND%20city%20NOT%20EQUALS%20('London')%20AND%20floor%20IS%20NOT%20EMPTY%20()%20AND%20locationName%20EQUALS%20('101%20Hudson%20Street%20F20'%2C'101%20Hudson%20Street%20F21'%2C'120%20Collins%20Street%20F5')%20AND%20postalCode%20NOT%20CONTAINS%20('3000')%20AND%20stateCounty%20EQUALS%20('AB'%2C'NULL'%2C'CA'%2C'NJ'%2C'NY'%2C'VIC'))&$select=hostname,chassisCategory,packageName,packageManufacturer,packageVersion,country,buildingName,city,floor,locationName,postalCode,stateCounty&$association=(etd)'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 28
- testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
- testRunner.When("User selects \'Entitled to device\' option in \'Search associations\' autocomplete of" +
-                    " Associations panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table1.AddRow(new string[] {
-                        "Device Country"});
-#line 31
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table1, "When ");
-#line 34
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
- testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
- testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
- testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedValues"});
-            table2.AddRow(new string[] {
-                        "USA"});
-            table2.AddRow(new string[] {
-                        "Australia"});
-            table2.AddRow(new string[] {
-                        "England"});
-#line 38
- testRunner.When("User add \"Device Country\" filter where type is \"Equals\" with added column and Loo" +
-                    "kup option", ((string)(null)), table2, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedValues"});
-#line 43
- testRunner.When("User Add And \"Device Building\" filter where type is \"Not empty\" with added column" +
-                    " and Lookup option", ((string)(null)), table3, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedValues"});
-            table4.AddRow(new string[] {
-                        "London"});
-#line 45
- testRunner.When("User Add And \"Device City\" filter where type is \"Does not equal\" with added colum" +
-                    "n and Lookup option", ((string)(null)), table4, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedValues"});
-#line 48
- testRunner.When("User Add And \"Device Floor\" filter where type is \"Not empty\" with added column an" +
-                    "d Lookup option", ((string)(null)), table5, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedValues"});
-            table6.AddRow(new string[] {
-                        "101 Hudson Street F20"});
-            table6.AddRow(new string[] {
-                        "101 Hudson Street F21"});
-            table6.AddRow(new string[] {
-                        "120 Collins Street F5"});
-#line 50
- testRunner.When("User Add And \"Device Location Name\" filter where type is \"Equals\" with added colu" +
-                    "mn and Lookup option", ((string)(null)), table6, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
-            table7.AddRow(new string[] {
-                        "3000"});
-#line 55
- testRunner.When("User Add And \"Device Postal Code\" filter where type is \"Does not contain\" with ad" +
-                    "ded column and following value:", ((string)(null)), table7, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedValues"});
-            table8.AddRow(new string[] {
-                        "AB"});
-            table8.AddRow(new string[] {
-                        "Empty"});
-            table8.AddRow(new string[] {
-                        "CA"});
-            table8.AddRow(new string[] {
-                        "NJ"});
-            table8.AddRow(new string[] {
-                        "NY"});
-            table8.AddRow(new string[] {
-                        "VIC"});
-#line 58
- testRunner.When("User Add And \"Device State County\" filter where type is \"Equals\" with added colum" +
-                    "n and Lookup option", ((string)(null)), table8, "When ");
-#line 66
- testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 67
  testRunner.When("User creates \'List_DAS18859\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
+#line 29
  testRunner.Then("\"List_DAS18859\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 69
+#line 30
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
-            table9.AddRow(new string[] {
+            table1.AddRow(new string[] {
                         "Device Country"});
-            table9.AddRow(new string[] {
+            table1.AddRow(new string[] {
                         "Device Building"});
-            table9.AddRow(new string[] {
+            table1.AddRow(new string[] {
                         "Device City"});
-            table9.AddRow(new string[] {
+            table1.AddRow(new string[] {
                         "Device Floor"});
-#line 70
- testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table9, "When ");
+#line 31
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table1, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
-            table10.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Device Location Name"});
-            table10.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Device Postal Code"});
-#line 76
- testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table10, "When ");
+#line 37
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table2, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table11.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Device Region"});
-            table11.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Device State County"});
-#line 80
- testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table11, "When ");
-#line 84
+#line 41
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table3, "When ");
+#line 45
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 46
  testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 86
+#line 47
  testRunner.When("User creates Pivot list with \"Pivot_DAS18859\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
+#line 48
  testRunner.Then("\"Pivot_DAS18859\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 88
+#line 49
  testRunner.When("User navigates to the \"List_DAS18859\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 89
+#line 50
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 90
+#line 51
  testRunner.When("User removes \"Device Postal Code\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 91
+#line 52
  testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 92
+#line 53
  testRunner.Then("\'(Edited)\' prefix for active list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 93
+#line 54
+ testRunner.Then("\'SAVE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListWithAllDeviceOsFiltersCanBeCreated")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Associations")]
+        [NUnit.Framework.CategoryAttribute("DAS18467")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatListWithAllDeviceOsFiltersCanBeCreated()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatListWithAllDeviceOsFiltersCanBeCreatedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatListWithAllDeviceOsFiltersCanBeCreatedInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatListWithAllDeviceOsFiltersCanBeCreated", null, new string[] {
+                        "Evergreen",
+                        "Associations",
+                        "DAS18467",
+                        "Cleanup"});
+#line 57
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 58
+ testRunner.When(@"User navigates to 'deviceapplications?$filter=(oSCategory%20NOT%20EQUALS%20('NULL')%20AND%20oSArchitecture%20EQUALS%20('64')%20AND%20oSName%20NOT%20EQUALS%20('NULL')%20AND%20oSVersion%20EQUALS%20('Service%20Pack%204')%20AND%20oSServicePackName%20NOT%20EQUALS%20('NULL'%2C'No%20Service%20Pack'%2C'Service%20Pack%201')%20AND%20oSBranch%20EQUALS%20('NULL')%20AND%20oSServicingState%20EQUALS%20('Expired'%2C'NULL'%2C'Expire%20soon'%2C'Current'))&$select=hostname,chassisCategory,packageName,packageManufacturer,packageVersion,oSCategory,oSArchitecture,oSName,oSServicePackName,oSVersion,oSBranch,oSServicingState&$association=(etd)' url via address line", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 59
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 60
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.Then(@"URL contains 'deviceapplications?$filter=(oSCategory%20NOT%20EQUALS%20('NULL')%20AND%20oSArchitecture%20EQUALS%20('64')%20AND%20oSName%20NOT%20EQUALS%20('NULL')%20AND%20oSVersion%20EQUALS%20('Service%20Pack%204')%20AND%20oSServicePackName%20NOT%20EQUALS%20('NULL'%2C'No%20Service%20Pack'%2C'Service%20Pack%201')%20AND%20oSBranch%20EQUALS%20('NULL')%20AND%20oSServicingState%20EQUALS%20('Expired'%2C'NULL'%2C'Expire%20soon'%2C'Current'))&$select=hostname,chassisCategory,packageName,packageManufacturer,packageVersion,oSCategory,oSArchitecture,oSName,oSServicePackName,oSVersion,oSBranch,oSServicingState&$association=(etd)'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 62
+ testRunner.When("User creates \'List_DAS18467\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 63
+ testRunner.Then("\"List_DAS18467\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 64
+ testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table4.AddRow(new string[] {
+                        "Device OS Branch"});
+            table4.AddRow(new string[] {
+                        "Device OS Architecture"});
+            table4.AddRow(new string[] {
+                        "Device OS Full Name"});
+#line 65
+ testRunner.When("User selects the following Row Groups on Pivot:", ((string)(null)), table4, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table5.AddRow(new string[] {
+                        "Device OS Servicing State"});
+            table5.AddRow(new string[] {
+                        "Device Operating System"});
+#line 70
+ testRunner.When("User selects the following Columns on Pivot:", ((string)(null)), table5, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table6.AddRow(new string[] {
+                        "Device Service Pack or Build"});
+#line 74
+ testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table6, "When ");
+#line 77
+ testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 78
+ testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 79
+ testRunner.When("User creates Pivot list with \"Pivot_DAS18467\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 80
+ testRunner.Then("\"Pivot_DAS18467\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 81
+ testRunner.When("User navigates to the \"List_DAS18467\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 82
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 83
+ testRunner.When("User removes \"Device OS Full Name\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 84
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 85
+ testRunner.Then("\'(Edited)\' prefix for active list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 86
+ testRunner.Then("\'SAVE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 87
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.When("User have removed \"Device OS Architecture\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 89
+ testRunner.When("User clicks \'RUN LIST\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 90
+ testRunner.Then("\'(Edited)\' prefix for active list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 91
  testRunner.Then("\'SAVE\' button is not disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

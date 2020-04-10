@@ -125,4 +125,4 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageForScopeDropdown
 	When User selects '20331_BrokenList' option from 'Scope' autocomplete
 	Then 'This list has errors' error message is displayed for 'Scope' field
 	When User selects 'All Users' option from 'Scope' autocomplete
-	Then No error message is displayed for 'Scope' field
+	Then 'List validated' success message for 'Scope' field

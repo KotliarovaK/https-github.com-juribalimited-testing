@@ -1069,122 +1069,122 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeleteRings.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponent.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\ApplicationOwnershipComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApplicationOwnershipComponent.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddApplicationOwnershipViaSelfServiceBuilder.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\AddApplicationOwnershipViaSelfServiceBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AddApplicationOwnershipViaSelfServiceBuilder.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddComponentPopUp.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\AddComponentPopUp.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AddComponentPopUp.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddTextComponentViaSelfServiceBuilder.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\AddTextComponentViaSelfServiceBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AddTextComponentViaSelfServiceBuilder.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponentValidation.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\ApplicationOwnershipComponentValidation.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApplicationOwnershipComponentValidation.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CreatePageViaBuilder.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\CreatePageViaBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreatePageViaBuilder.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CerateSelfServicePageViaBuilderApi.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\CerateSelfServicePageViaBuilderApi.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CerateSelfServicePageViaBuilderApi.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ManageComponents.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\ManageComponents.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ManageComponents.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\SelfServiceBuilderContextPanelActions.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\SelfServiceBuilderContextPanelActions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SelfServiceBuilderContextPanelActions.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\TextComponent.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\TextComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TextComponent.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\UpdatePageViaBuilder.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\UpdatePageViaBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdatePageViaBuilder.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\UpdateSelfServiceViaBuilderApi.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\UpdateSelfServiceViaBuilderApi.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UpdateSelfServiceViaBuilderApi.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfService.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\CreateSelfService.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateSelfService.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfServiceViaApi.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\CreateSelfServiceViaApi.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateSelfServiceViaApi.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EditSelfService1.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\EditSelfService1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EditSelfService.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndClient\EndClient.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\PrepareForMVP\EndClient.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EndClient.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\AddApplicationOwnershipViaSelfServiceBuilderMvp.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Components\AddApplicationOwnershipViaSelfServiceBuilderMvp.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AddApplicationOwnershipViaSelfServiceBuilderMvp.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\ApplicationOwnershipComponentEndUserSide.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\Components\ApplicationOwnershipComponentEndUserSide.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApplicationOwnershipComponentEndUserSide.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\LastPageMVP.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\Components\LastPageMVP.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LastPageMVP.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\TextComponentMvp.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\Components\TextComponentMvp.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TextComponentMvp.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\CreateSelfServiceMvp.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\CreateSelfServiceMvp.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateSelfServiceMvp.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfServiceAgGrid.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\SelfServiceAgGrid.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SelfServiceAgGrid.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Settings\BaseUrlApi.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Settings\BaseUrlApi.feature.cs">
       <DependentUpon>BaseUrlApi.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Settings\BaseUrl.feature.cs">
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Settings\BaseUrl.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseUrl.feature</DependentUpon>
@@ -1243,6 +1243,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersFiltersAndColumns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality8.feature.cs">
+      <DependentUpon>AssociationsFunctionality8.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality7.feature.cs">
       <DependentUpon>AssociationsFunctionality7.feature</DependentUpon>
@@ -2603,99 +2608,99 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponent.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\ApplicationOwnershipComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ApplicationOwnershipComponent.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddApplicationOwnershipViaSelfServiceBuilder.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\AddApplicationOwnershipViaSelfServiceBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddApplicationOwnershipViaSelfServiceBuilder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddComponentPopUp.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\AddComponentPopUp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddComponentPopUp.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\AddTextComponentViaSelfServiceBuilder.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\AddTextComponentViaSelfServiceBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddTextComponentViaSelfServiceBuilder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\ApplicationOwnershipComponentValidation.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\ApplicationOwnershipComponentValidation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ApplicationOwnershipComponentValidation.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CreatePageViaBuilder.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\CreatePageViaBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreatePageViaBuilder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\CerateSelfServicePageViaBuilderApi.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\CerateSelfServicePageViaBuilderApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CerateSelfServicePageViaBuilderApi.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\ManageComponents.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\ManageComponents.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ManageComponents.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\SelfServiceBuilderContextPanelActions.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\SelfServiceBuilderContextPanelActions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SelfServiceBuilderContextPanelActions.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\Components\TextComponent.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\TextComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TextComponent.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\UpdatePageViaBuilder.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\UpdatePageViaBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdatePageViaBuilder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Builder\UpdateSelfServiceViaBuilderApi.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Builder\UpdateSelfServiceViaBuilderApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UpdateSelfServiceViaBuilderApi.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfService.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\CreateSelfService.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateSelfService.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\CreateSelfServiceViaApi.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\CreateSelfServiceViaApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateSelfServiceViaApi.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EditSelfService.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\EditSelfService.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditSelfService1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndClient\EndClient.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\PrepareForMVP\EndClient.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EndClient.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\AddApplicationOwnershipViaSelfServiceBuilderMvp.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Components\AddApplicationOwnershipViaSelfServiceBuilderMvp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddApplicationOwnershipViaSelfServiceBuilderMvp.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\ApplicationOwnershipComponentEndUserSide.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\Components\ApplicationOwnershipComponentEndUserSide.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ApplicationOwnershipComponentEndUserSide.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\LastPageMVP.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\Components\LastPageMVP.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LastPageMVP.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\Components\EndClient\TextComponentMvp.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\EndUserSide\Components\TextComponentMvp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TextComponentMvp.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\MVP\CreateSelfServiceMvp.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\CreateSelfServiceMvp.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateSelfServiceMvp.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\SelfServiceAgGrid.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\SelfServiceAgGrid.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SelfServiceAgGrid.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Settings\BaseUrlApi.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Settings\BaseUrlApi.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BaseUrlApi.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\Settings\BaseUrl.feature">
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Settings\BaseUrl.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BaseUrl.feature.cs</LastGenOutput>
     </None>
@@ -2751,6 +2756,10 @@
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_API_FiltersAndColumns\UsersFiltersAndColumnsFeature.EvergreenJnr_UsersList_CheckAllColumns.approved.json" />
     <None Include="Tests\EvergreenJnr\EvergreenJnr_API_FiltersAndColumns\UsersFiltersAndColumnsFeature.EvergreenJnr_UsersList_CheckAllFilters.approved.json" />
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality8.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AssociationsFunctionality8.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\AssociationsFunctionality7.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AssociationsFunctionality7.feature.cs</LastGenOutput>

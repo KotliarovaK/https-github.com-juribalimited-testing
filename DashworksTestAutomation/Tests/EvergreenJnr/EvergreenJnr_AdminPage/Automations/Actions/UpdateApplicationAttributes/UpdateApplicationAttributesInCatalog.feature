@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS19259 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageDisplay
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19259_Automation | 19259       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19259_Automation | 19259       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageD
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' value is displayed in the 'In Catalog' dropdown
 	Then 'CREATE' button is disabled
-	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	When User selects 'TRUE' in the 'In Catalog' dropdown
 	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
