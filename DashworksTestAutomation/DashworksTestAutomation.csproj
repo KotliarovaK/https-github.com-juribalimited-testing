@@ -262,6 +262,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsGridPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\TextComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\Components\AppOwnershipComponentPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientErrorPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\SelfService\EndClient\SelfServiceEndClientBasePage.cs" />
@@ -416,6 +417,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\Components\AppOwnershipComponentSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\ParentPageLabel.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\SsBuilderPageApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\TextComponentUI.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\Builder\TextComponentApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfService.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\SelfService\CreateSelfServiceViaApi.cs" />

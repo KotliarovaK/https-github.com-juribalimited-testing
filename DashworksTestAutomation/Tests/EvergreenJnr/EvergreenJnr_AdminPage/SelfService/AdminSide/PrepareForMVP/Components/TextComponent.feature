@@ -121,3 +121,26 @@ Scenario: EvergreenJnr_AdminPage_TextComponentUiCheckForCancelUpdateFunctionalit
 	Then text editor does not contains text
 	| text            |
 	| Additional Text |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @SelfService @DAS20160 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatTextEditorOptionsIsAvailableForTextComponent
+	When User create static list with "DAS_20160" name on "Applications" page with following items
+	| ItemName   |
+	| VSCmdShell |
+	When User creates Self Service via API and open it
+	| Name           | ServiceIdentifier | Enabled | AllowAnonymousUsers | Scope     |
+	| DAS_20160_SS_3 | 20160_3_SI        | true    | true                | DAS_20160 |
+	When User creates new text component for 'Welcome' Self Service page via API
+	| ComponentName       | ExtraPropertiesText | ShowInSelfService |
+	| Text_Component_Name | <p>Some_Content</p> | true              |
+	When User navigates to the 'Builder' left submenu item
+	When User selects 'Edit' cogmenu option for 'Text' item type with 'Text_Component_Name' name on Self Service Builder Panel
+	Then formatting options are displayed on the text component page
+	Then header format options are displayed on the text component page
+	| Options   |
+	| Heading 1 |
+	| Heading 2 |
+	| Heading 3 |
+	| Heading 4 |
+	| Heading 5 |
+	| Normal    |
