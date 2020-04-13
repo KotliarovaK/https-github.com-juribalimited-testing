@@ -148,7 +148,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenFormattingOptionsAreDisplayedOnTheTextComponentPage()
         {
             var page = _driver.NowAt<TextComponentPage>();
-            _driver.WaitForElementToBeDisplayed(page.ToolbarWithFormattingOptions);
 
             Verify.That(page.BoldStyleButton.Displayed(), "Bold style button is not displayed");
             Verify.That(page.ItalicStyleButton.Displayed(), "Italic style button is not displayed");
@@ -160,7 +159,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
         public void ThenHeaderFormatOptionsAreDisplayedOnTheTextComponentPage(Table table)
         {
             var page = _driver.NowAt<TextComponentPage>();
-            _driver.WaitForElementToBeDisplayed(page.ToolbarWithFormattingOptions);
 
             page.HeadersPickerButton.Click();
             _driver.WaitForElementsToBeDisplayed(page.HeaderOptions);
