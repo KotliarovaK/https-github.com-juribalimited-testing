@@ -95,6 +95,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersIsVisible()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersIsVisibleInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersIsVisibleInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "EvergreenJnr_ActionsPanel",
@@ -222,6 +248,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

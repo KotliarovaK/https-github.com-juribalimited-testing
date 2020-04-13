@@ -100,6 +100,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Key", "01BC4B0500344065B61@bclabs.local", "evergreen/#/mailbox/45374/details/mailbox", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage(string pageName, string column, string itemName, string uRL, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPageInternal(pageName,column,itemName,uRL,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPageInternal(string pageName, string column, string itemName, string uRL, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -166,6 +192,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplaye" +
@@ -176,6 +203,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16338")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayed()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayedInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -286,6 +339,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNotExistingIt" +
@@ -296,6 +350,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS18827")]
         public virtual void EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNotExistingItem()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNotExistingItemInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatSiteContinueWorkingAfterNavigationToNotExistingItemInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -357,6 +437,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount")]
@@ -370,6 +451,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "WPF/E\" (codename) Community Technology Preview (Feb 2007)", "Application", "/application/493/", "6", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "000F977AC8824FE39B8@bclabs.local", "Email Address", "/mailbox/43917/", "6", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCount(string listType, string listTitle, string itemName, string column, string url, string requests, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCountInternal(listType,listTitle,itemName,column,url,requests,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatNumberOfRequestsToItemDontExceedAllowedCountInternal(string listType, string listTitle, string itemName, string column, string url, string requests, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -427,6 +534,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

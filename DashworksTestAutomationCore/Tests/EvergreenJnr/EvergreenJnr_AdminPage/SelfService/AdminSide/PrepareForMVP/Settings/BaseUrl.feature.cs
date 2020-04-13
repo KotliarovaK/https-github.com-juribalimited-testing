@@ -95,6 +95,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         [NUnit.Framework.CategoryAttribute("DAS19821")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrl()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrlInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatUserCanEditBaseUrlInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Admin",
@@ -194,6 +220,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckBaseUrlValidationMessages")]
@@ -204,6 +231,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18941")]
         [NUnit.Framework.CategoryAttribute("DAS19821")]
         public virtual void EvergreenJnr_AdminPage_CheckBaseUrlValidationMessages()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckBaseUrlValidationMessagesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckBaseUrlValidationMessagesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -343,6 +396,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditing")]
@@ -352,6 +406,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("SelfService")]
         [NUnit.Framework.CategoryAttribute("DAS19821")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditing()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatUserCanCancelBaseUrlEditingInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -418,6 +498,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

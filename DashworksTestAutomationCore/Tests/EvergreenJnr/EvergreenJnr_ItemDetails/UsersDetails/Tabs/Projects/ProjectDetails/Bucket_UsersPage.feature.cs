@@ -97,6 +97,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedDevices()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedDevicesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedDevicesInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Users",
@@ -186,6 +212,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAsso" +
@@ -198,6 +225,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18227")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedDevices()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedDevicesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedDevicesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -292,6 +345,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyFor" +
@@ -304,6 +358,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18227")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedMailboxes()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedMailboxesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsDisplayedCorrectlyForAssociatedMailboxesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -398,6 +478,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAsso" +
@@ -410,6 +491,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18227")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedMailboxes()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedMailboxesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatBucketOnTheItemDetailsPageIsWorksCorrectlyForAssociatedMailboxesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -515,6 +622,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

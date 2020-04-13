@@ -101,6 +101,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_BaseDashbo
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToDesign(string listName, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToDesignInternal(listName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToDesignInternal(string listName, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -151,6 +177,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists")]
@@ -164,6 +191,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", null)]
         public virtual void EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists(string listName, string columnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckDefaultSortOrderOnTheListsInternal(listName,columnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckDefaultSortOrderOnTheListsInternal(string listName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -215,6 +268,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllDevicesOrAllUsersLi" +
@@ -227,6 +281,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Hostname", "Device Type", "Operating System", "Owner Display Name", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Username", "Domain", "Display Name", "Distinguished Name", null)]
         public virtual void EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllDevicesOrAllUsersLink(string listName, string allItems, string column1, string column2, string column3, string column4, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllDevicesOrAllUsersLinkInternal(listName,allItems,column1,column2,column3,column4,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllDevicesOrAllUsersLinkInternal(string listName, string allItems, string column1, string column2, string column3, string column4, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -286,6 +366,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllApplicationsLink")]
@@ -295,6 +376,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS14700")]
         public virtual void EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllApplicationsLink()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllApplicationsLinkInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllApplicationsLinkInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -351,6 +458,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllMailboxesLink")]
@@ -360,6 +468,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS14700")]
         public virtual void EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllMailboxesLink()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllMailboxesLinkInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllMailboxesLinkInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -420,6 +554,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns")]
@@ -434,6 +569,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Mailbox Platform", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns(string listName, string columnName, string addSortOrders, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(listName,columnName,addSortOrders,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumnsInternal(string listName, string columnName, string addSortOrders, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -528,6 +689,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetw" +
@@ -538,6 +700,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS11895")]
         public virtual void EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetweenMainTabs()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetweenMainTabsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyNavigateBetweenMainTabsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -596,6 +784,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckPositionOfContextMenuInGrid")]
@@ -611,6 +800,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "11.2.5388.0", "Application", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "002B5DC7D4D34D5C895@bclabs.local", "Email Address", null)]
         public virtual void EvergreenJnr_AllList_CheckPositionOfContextMenuInGrid(string listName, string cellText, string columnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckPositionOfContextMenuInGridInternal(listName,cellText,columnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckPositionOfContextMenuInGridInternal(string listName, string cellText, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -661,6 +876,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumns")]
@@ -670,6 +886,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS12174")]
         public virtual void EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumns()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumnsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndColumnsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -756,6 +998,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters")]
@@ -767,6 +1010,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13001")]
         [NUnit.Framework.CategoryAttribute("DAS16300")]
         public virtual void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFiltersInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFiltersInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -867,6 +1136,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClicka" +
@@ -877,6 +1147,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS11641")]
         public virtual void EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocksInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocksInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -935,6 +1231,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumns")]
@@ -950,6 +1247,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", "UserSchedu: Readiness ID", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Mailbox Platform", "EmailMigra: Readiness ID", null)]
         public virtual void EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumns(string listName, string columnName, string addSortOrders, string addColumn, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumnsInternal(listName,columnName,addSortOrders,addColumn,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfterSortingColumnsInternal(string listName, string columnName, string addSortOrders, string addColumn, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1118,6 +1441,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAn" +
@@ -1133,6 +1457,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16961")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedListInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1205,6 +1555,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObje" +
@@ -1219,6 +1570,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType(string listName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListTypeInternal(listName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListTypeInternal(string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1278,6 +1655,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForA" +
@@ -1289,6 +1667,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14189")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1347,6 +1751,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData")]
@@ -1359,6 +1764,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData(string listName, string columnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoDataInternal(listName,columnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoDataInternal(string listName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1407,6 +1838,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhic" +
@@ -1419,6 +1851,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15444")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependencies()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependenciesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependenciesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1549,6 +2007,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrectly")]
@@ -1558,6 +2017,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16558")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrectlyInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1695,6 +2180,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavigatingIntoLi" +
@@ -1705,6 +2191,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17140")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavigatingIntoList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavigatingIntoListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavigatingIntoListInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1757,6 +2269,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500FullErrorPageIsDisplyed")]
@@ -1764,6 +2277,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS20056")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500FullErrorPageIsDisplyed()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThat500FullErrorPageIsDisplyedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThat500FullErrorPageIsDisplyedInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1806,6 +2345,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

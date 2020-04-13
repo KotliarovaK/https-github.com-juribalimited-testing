@@ -98,6 +98,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Enabled", "Cost Centre", "Department Full Path", "Pivot_User_List_14224", "Applications", "All Applications", "User (Saved List)", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter(string pageNameForPivot, string pageLabelForPivot, string rowGroups, string columns, string values, string pivotName, string pageNameForFilter, string pageLabelForFilter, string filterName, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilterInternal(pageNameForPivot,pageLabelForPivot,rowGroups,columns,values,pivotName,pageNameForFilter,pageLabelForFilter,filterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilterInternal(string pageNameForPivot, string pageLabelForPivot, string rowGroups, string columns, string values, string pivotName, string pageNameForFilter, string pageLabelForFilter, string filterName, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -201,6 +227,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWit" +
@@ -214,6 +241,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories(string listName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategoriesInternal(listName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategoriesInternal(string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -347,6 +400,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainEvergreenCat" +
@@ -357,6 +411,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14325")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategoriesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -532,6 +612,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot")]
@@ -547,6 +628,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "All Mailboxes", "Alias", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Evergreen Capacity Unit", "Vendor", "All Applications", "Application Key", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot(string listName, string rowGroup, string column, string value, string link, string columnToBeAdded, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivotInternal(listName,rowGroup,column,value,link,columnToBeAdded,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivotInternal(string listName, string rowGroup, string column, string value, string link, string columnToBeAdded, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -647,6 +754,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNe" +
@@ -661,6 +769,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Department Name", "Country", "Display Name", "Mailbox", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", "2004: Category", "Application Key", "Application Key", "Application", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNewPivot(string listName, string rowGroup, string column, string value, string filterName, string categoryName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNewPivotInternal(listName,rowGroup,column,value,filterName,categoryName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNewPivotInternal(string listName, string rowGroup, string column, string value, string filterName, string categoryName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -746,6 +880,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSa" +
@@ -761,6 +896,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "Pivot_Mailboxes_List_13747", "Display Name", "Mailbox", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Evergreen Capacity Unit", "Vendor", "Pivot_Applications_List_13747", "Application Key", "Application", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSavedPivot(string listName, string rowGroup, string column, string value, string pivotName, string filterName, string categoryName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSavedPivotInternal(listName,rowGroup,column,value,pivotName,filterName,categoryName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSavedPivotInternal(string listName, string rowGroup, string column, string value, string pivotName, string filterName, string categoryName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -859,6 +1020,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

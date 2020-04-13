@@ -96,6 +96,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ProfileDet
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "ProfileDetails",
@@ -171,6 +197,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed")]
@@ -183,6 +210,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11523")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayedInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -313,6 +366,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwic" +
@@ -325,6 +379,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwiceInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwiceInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -408,6 +488,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChecksListPageSizeAPI")]
@@ -418,6 +499,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13026")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_UserProfile_ChecksListPageSizeAPI()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_ChecksListPageSizeAPIInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_ChecksListPageSizeAPIInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -504,6 +611,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API")]
@@ -514,6 +622,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11723")]
         [NUnit.Framework.CategoryAttribute("DAS16979")]
         public virtual void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000APIInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000APIInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -558,6 +692,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds")]
@@ -572,6 +707,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16232")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5SecondsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5SecondsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -699,6 +860,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache")]
@@ -709,6 +871,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13026")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCacheInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCacheInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -795,6 +983,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChangingPassword")]
@@ -806,6 +995,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14187")]
         [NUnit.Framework.CategoryAttribute("Remove_Password_Changes")]
         public virtual void EvergreenJnr_UserProfile_ChangingPassword()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_ChangingPasswordInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_ChangingPasswordInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -953,6 +1168,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated")]
@@ -962,6 +1178,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS18672")]
         public virtual void EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdated()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdatedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatTimeZoneCanBeValidatedAndUpdatedInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1044,6 +1286,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTabsWithoutAny" +
@@ -1054,6 +1297,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS19054")]
         public virtual void EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTabsWithoutAnyChanges()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTabsWithoutAnyChangesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckUpdateButtonStateWhenSwitchingBetweenTabsWithoutAnyChangesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1124,6 +1393,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZ" +
@@ -1134,6 +1404,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS19271")]
         public virtual void EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZoneOption()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZoneOptionInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatNoValidationErrorDisplayedAfterReselectingTimeZoneOptionInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1213,6 +1509,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

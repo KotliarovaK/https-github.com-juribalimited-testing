@@ -94,6 +94,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatUpdateCriticalityIsVisible()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatUpdateCriticalityIsVisibleInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatUpdateCriticalityIsVisibleInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "EvergreenJnr_ActionsPanel",
@@ -221,6 +247,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckUpdateCriticalityWhenUpdateButtonClicked")]
@@ -230,6 +257,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19225")]
         [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckUpdateCriticalityWhenUpdateButtonClicked()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckUpdateCriticalityWhenUpdateButtonClickedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckUpdateCriticalityWhenUpdateButtonClickedInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -320,6 +373,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateCriticality")]
@@ -329,6 +383,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19225")]
         [NUnit.Framework.CategoryAttribute("DAS19562")]
         public virtual void EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateCriticality()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateCriticalityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckUpdateButtonForEvergreenBulkUpdateCriticalityInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -532,6 +612,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCriticality")]
@@ -542,6 +623,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19562")]
         [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCriticality()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCriticalityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckUpdateButtonForProjectBulkUpdateCriticalityInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -706,6 +813,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

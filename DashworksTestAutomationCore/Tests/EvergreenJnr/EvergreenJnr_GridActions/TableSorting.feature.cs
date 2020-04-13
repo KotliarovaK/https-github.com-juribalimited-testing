@@ -97,6 +97,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
         [NUnit.Framework.CategoryAttribute("DAS10612")]
         public virtual void EvergreenJnr_DevicesList_CheckSortByDateFunctionality()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckSortByDateFunctionalityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckSortByDateFunctionalityInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Devices",
@@ -192,6 +218,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality")]
@@ -201,6 +228,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS10612")]
         public virtual void EvergreenJnr_ApplicationsList_CheckSortByDateFunctionality()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckSortByDateFunctionalityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckSortByDateFunctionalityInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -273,6 +326,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSortByDateFunctionality")]
@@ -282,6 +336,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS10612")]
         public virtual void EvergreenJnr_MailboxesList_CheckSortByDateFunctionality()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckSortByDateFunctionalityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckSortByDateFunctionalityInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -366,6 +446,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSortByDateFunctionality")]
@@ -375,6 +456,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS10612")]
         public virtual void EvergreenJnr_UsersList_CheckSortByDateFunctionality()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckSortByDateFunctionalityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckSortByDateFunctionalityInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -459,6 +566,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianc" +
@@ -469,6 +577,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS11568")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesListInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -540,6 +674,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate")]
@@ -553,6 +688,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Version", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Display Name", null)]
         public virtual void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriate(string listName, string columnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriateInternal(listName,columnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppropriateInternal(string listName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -610,6 +771,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList")]
@@ -625,6 +787,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: Project ID", "All Applications", "DynamicList2857", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Team ID", "All Mailboxes", "DynamicList3857", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList(string listName, string columnName, string allListName, string dynamicListName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedListInternal(listName,columnName,allListName,dynamicListName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedListInternal(string listName, string columnName, string allListName, string dynamicListName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -729,6 +917,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

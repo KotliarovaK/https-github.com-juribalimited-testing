@@ -100,6 +100,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListPanel
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", "Username", "UserDefault1", "UserDefault2", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicList(string listType, string listTitle, string column, string listName1, string listName2, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicListInternal(listType,listTitle,column,listName1,listName2,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForDynamicListInternal(string listType, string listTitle, string column, string listName1, string listName2, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -193,6 +219,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList")]
@@ -209,6 +236,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "ApplicationDefault1", "ApplicationDefault2", "Microsoft SDK Update February 2003 (5.2.3790.0)", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "MailboxDefault1", "MailboxDefault2", "000F977AC8824FE39B8@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticList(string listType, string listTitle, string listName1, string listName2, string itemName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticListInternal(listType,listTitle,listName1,listName2,itemName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatDefaultListOptionWorksForStaticListInternal(string listType, string listTitle, string listName1, string listName2, string itemName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -302,6 +355,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Devices_CheckThatDefaultListOptionInDetailsPanelWorks")]
@@ -312,6 +366,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13130")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Devices_CheckThatDefaultListOptionInDetailsPanelWorks()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Devices_CheckThatDefaultListOptionInDetailsPanelWorksInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Devices_CheckThatDefaultListOptionInDetailsPanelWorksInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -383,6 +463,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Devices_CheckThatNewUserHasNoDefaultListSet")]
@@ -392,6 +473,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13185")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Devices_CheckThatNewUserHasNoDefaultListSet()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Devices_CheckThatNewUserHasNoDefaultListSetInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Devices_CheckThatNewUserHasNoDefaultListSetInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -464,6 +571,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaible")]
@@ -473,6 +581,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13136")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaible()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaibleInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Devices_CheckDefaultListIsResetIfItWasNoLongerAvalaibleInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -620,6 +754,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

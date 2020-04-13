@@ -102,6 +102,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_GridAction
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", null)]
         public virtual void EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling(string listName, string columnName, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrollingInternal(listName,columnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrollingInternal(string listName, string columnName, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -158,6 +184,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

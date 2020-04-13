@@ -95,6 +95,32 @@ namespace DashworksTestAutomationCore.Tests.Senior
         [NUnit.Framework.TestCaseAttribute("Computer Dashboard", null)]
         public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectlyInternal(pageName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectlyInternal(string pageName, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Senior",
                     "Dashworks",
@@ -153,6 +179,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage")]
@@ -162,6 +189,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Teams")]
         [NUnit.Framework.CategoryAttribute("DAS13000")]
         public virtual void Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Senior",
@@ -267,6 +320,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask")]
@@ -278,6 +332,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14322")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTaskInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTaskInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Senior",
@@ -431,6 +511,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
@@ -440,6 +521,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14171")]
         public virtual void Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutErrorInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutErrorInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Senior",
@@ -496,6 +603,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
@@ -505,6 +613,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
         [NUnit.Framework.CategoryAttribute("DAS13887")]
         public virtual void Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueTypeInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueTypeInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Senior",
@@ -594,6 +728,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName")]
@@ -603,6 +738,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18247")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskName()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskNameInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_TasksPage_ChecksThatSpecialSymbolsCanBeUsedInTaskNameInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Senior",
@@ -723,6 +884,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

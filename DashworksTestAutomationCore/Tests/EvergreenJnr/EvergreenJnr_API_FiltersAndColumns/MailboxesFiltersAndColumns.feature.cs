@@ -90,6 +90,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         public virtual void EvergreenJnr_MailboxesList_CheckAllColumns()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckAllColumnsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckAllColumnsInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Mailboxes",
@@ -129,6 +155,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckAllFilters")]
@@ -137,6 +164,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         public virtual void EvergreenJnr_MailboxesList_CheckAllFilters()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckAllFiltersInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckAllFiltersInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -177,6 +230,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData")]
@@ -186,6 +240,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         [NUnit.Framework.TestCaseAttribute("Organization", "Department Level 1", "mailboxes?$filter=(departmentLevelFieldId_1%20EQUALS%20(\'2\'%2C\'9\'))", null)]
         public virtual void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal(filterCategory,filterName,queryString,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckFiltersAndColumnsResponseDataInternal(string filterCategory, string filterName, string queryString, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -235,6 +315,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

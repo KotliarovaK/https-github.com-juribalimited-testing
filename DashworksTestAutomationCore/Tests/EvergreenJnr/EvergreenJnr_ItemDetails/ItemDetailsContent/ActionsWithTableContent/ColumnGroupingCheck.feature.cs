@@ -98,6 +98,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_UsersList_CheckThatItIsPossibleToApplyTheGroupingToTheMigrationColumnInTheSelectedProjectOnDevicesTab()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatItIsPossibleToApplyTheGroupingToTheMigrationColumnInTheSelectedProjectOnDevicesTabInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatItIsPossibleToApplyTheGroupingToTheMigrationColumnInTheSelectedProjectOnDevicesTabInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Users",
@@ -188,6 +214,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnDeviceMembersT" +
@@ -200,6 +227,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnDeviceMembersTabForGroupPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnDeviceMembersTabForGroupPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByKeyColumnOnDeviceMembersTabForGroupPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -279,6 +332,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByAdvertisementColumnOnAppl" +
@@ -291,6 +345,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByAdvertisementColumnOnApplicationsTabForGroupPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByAdvertisementColumnOnApplicationsTabForGroupPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatDataInTheGridIsCropedByAdvertisementColumnOnApplicationsTabForGroupPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -362,6 +442,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDataInTheGridIsCropedByRingColumnOnOwnerProject" +
@@ -374,6 +455,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDataInTheGridIsCropedByRingColumnOnOwnerProjectsSummaryTabForDevicesPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatDataInTheGridIsCropedByRingColumnOnOwnerProjectsSummaryTabForDevicesPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatDataInTheGridIsCropedByRingColumnOnOwnerProjectsSummaryTabForDevicesPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -442,6 +549,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

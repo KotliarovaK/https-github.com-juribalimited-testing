@@ -93,6 +93,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         [NUnit.Framework.CategoryAttribute("DAS15918")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonutInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonutInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "EvergreenJnr_DashboardsPage",
@@ -163,6 +189,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetRes" +
@@ -176,6 +203,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Donut", null)]
         [NUnit.Framework.TestCaseAttribute("Half donut", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZero(string widgetType, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZeroInternal(widgetType,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIftheWidgetResultsAreAllZeroInternal(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -272,6 +325,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

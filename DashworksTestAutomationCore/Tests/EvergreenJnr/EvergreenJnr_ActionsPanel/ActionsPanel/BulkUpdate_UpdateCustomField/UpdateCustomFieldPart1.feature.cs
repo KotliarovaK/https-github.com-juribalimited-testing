@@ -98,6 +98,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidation(string listName, string columnName, string row, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveAllValuesValidationInternal(string listName, string columnName, string row, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "EvergreenJnr_ActionsPanel",
@@ -170,6 +196,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation")]
@@ -184,6 +211,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidation(string listName, string columnName, string row, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceAllValuesValidationInternal(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -289,6 +342,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation")]
@@ -302,6 +356,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidation(string listName, string columnName, string row, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForAddToExistingValuesValidationInternal(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -375,6 +455,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation")]
@@ -388,6 +469,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidation(string listName, string columnName, string row, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForRemoveSpecificValuesValidationInternal(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -461,6 +568,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation")]
@@ -474,6 +582,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "00DB4000EDD84951993@bclabs.local", null)]
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidation(string listName, string columnName, string row, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidationInternal(listName,columnName,row,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldForReplaceSingleValueValidationInternal(string listName, string columnName, string row, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -553,6 +687,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

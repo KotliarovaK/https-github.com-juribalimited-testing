@@ -97,6 +97,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         public virtual void EvergreenJnr_UsersList_CheckThatValueForCapacityUnitIsChangingSuccessfully()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatValueForCapacityUnitIsChangingSuccessfullyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatValueForCapacityUnitIsChangingSuccessfullyInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Users",
@@ -198,6 +224,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatCheckboxesForAssociatedObjectsAredisplayedInChang" +
@@ -209,6 +236,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
         [NUnit.Framework.CategoryAttribute("DAS19378")]
         public virtual void EvergreenJnr_UsersList_CheckThatCheckboxesForAssociatedObjectsAredisplayedInChangeCapacityPopup()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatCheckboxesForAssociatedObjectsAredisplayedInChangeCapacityPopupInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatCheckboxesForAssociatedObjectsAredisplayedInChangeCapacityPopupInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -304,6 +357,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatTheAssociatedDevicesAreMovedToTheSelectedCapacity" +
@@ -318,6 +372,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_UsersList_CheckThatTheAssociatedDevicesAreMovedToTheSelectedCapacityUnitInTheMoveCapacityUnitModalPopup()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatTheAssociatedDevicesAreMovedToTheSelectedCapacityUnitInTheMoveCapacityUnitModalPopupInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatTheAssociatedDevicesAreMovedToTheSelectedCapacityUnitInTheMoveCapacityUnitModalPopupInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -417,6 +497,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly")]
@@ -427,6 +508,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19175")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectlyInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -508,6 +615,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

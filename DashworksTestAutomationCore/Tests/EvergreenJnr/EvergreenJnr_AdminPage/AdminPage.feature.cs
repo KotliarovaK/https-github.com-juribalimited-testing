@@ -96,6 +96,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
         public virtual void EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPages()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPagesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPagesInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Admin",
@@ -232,6 +258,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid")]
@@ -244,6 +271,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Projects", "EmailMigra", "Short Name", null)]
         [NUnit.Framework.TestCaseAttribute("Teams", "IB Team", "Team", null)]
         public virtual void EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid(string pageName, string cellText, string column, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridInternal(pageName,cellText,column,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridInternal(string pageName, string cellText, string column, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -296,6 +349,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBucketsAndCapacityUnits" +
@@ -309,6 +363,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Buckets", "Evergreen", "Project", null)]
         [NUnit.Framework.TestCaseAttribute("Capacity Units", "True", "Default", null)]
         public virtual void EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBucketsAndCapacityUnits(string pageName, string cellText, string column, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBucketsAndCapacityUnitsInternal(pageName,cellText,column,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBucketsAndCapacityUnitsInternal(string pageName, string cellText, string column, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -365,6 +445,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects")]
@@ -380,6 +461,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Set_Default_Bucket")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjectsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjectsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -567,6 +674,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues")]
@@ -576,6 +684,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS16417")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValuesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValuesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -672,6 +806,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBuckets")]
@@ -681,6 +816,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS16384")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBuckets()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBucketsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBucketsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -798,6 +959,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromCapacityUnit" +
@@ -808,6 +970,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS16384")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromCapacityUnits()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromCapacityUnitsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromCapacityUnitsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -957,6 +1145,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromRings")]
@@ -966,6 +1155,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS16384")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromRings()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromRingsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromRingsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1108,6 +1323,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickingCrumbTrail" +
@@ -1119,6 +1335,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16675")]
         [NUnit.Framework.CategoryAttribute("DAS16676")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickingCrumbTrailOnAdminPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickingCrumbTrailOnAdminPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickingCrumbTrailOnAdminPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1236,6 +1478,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNumberOfRequestsDontExceedAllowedCount")]
@@ -1245,6 +1488,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS15896")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNumberOfRequestsDontExceedAllowedCount()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatNumberOfRequestsDontExceedAllowedCountInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatNumberOfRequestsDontExceedAllowedCountInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1293,6 +1562,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

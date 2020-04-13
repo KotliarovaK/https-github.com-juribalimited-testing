@@ -103,6 +103,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListFromCS
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Import Mailboxes from CSV", "Mailbox key", null)]
         public virtual void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage(string listName, string listName1, string importPage, string fileContains, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPageInternal(listName,listName1,importPage,fileContains,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPageInternal(string listName, string listName1, string importPage, string fileContains, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -172,6 +198,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV")]
@@ -183,6 +210,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18336")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSVInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSVInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -287,6 +340,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFr" +
@@ -297,6 +351,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18451")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFromCSV()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFromCSVInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckErrorBannerWhenTryingUploadIncorrectFileOnCreateListFromCSVInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -380,6 +460,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

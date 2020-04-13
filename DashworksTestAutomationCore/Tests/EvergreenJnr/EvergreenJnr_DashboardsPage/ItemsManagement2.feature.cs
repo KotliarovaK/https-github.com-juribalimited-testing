@@ -95,6 +95,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessageInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "EvergreenJnr_DashboardsPage",
@@ -174,6 +200,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList")]
@@ -184,6 +211,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17150")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckErrorTextDisplayingWhenListRefersToBrokenListInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -329,6 +382,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard")]
@@ -337,6 +391,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15877")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboardInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboardInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -396,6 +476,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite")]
@@ -404,6 +485,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12974")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavoriteInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavoriteInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -471,6 +578,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault")]
@@ -479,6 +587,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12974")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefaultInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefaultInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -543,6 +677,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists" +
@@ -554,6 +689,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("DAS12974DUPLICATED", null)]
         [NUnit.Framework.TestCaseAttribute("DAS12974duplicated", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists(string dashboardName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExistsInternal(dashboardName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExistsInternal(string dashboardName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -611,6 +772,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisapp" +
@@ -622,6 +784,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("DAS20395DUPLICATED", null)]
         [NUnit.Framework.TestCaseAttribute("DAS20395duplicated", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboard(string dashboardName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboardInternal(dashboardName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatErrorMessageAboutExistingDashboardNameDisappearsAfterCancelCreatingDashboardInternal(string dashboardName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -682,6 +870,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOf" +
@@ -692,6 +881,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17985")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOff()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOffInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatItsNotPossibleToDeleteWidgetWhenEditModeIsOffInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -769,6 +984,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget")]
@@ -778,6 +994,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18152")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidget()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidgetInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatDuplicateOptionWorksAfterMovingWidgetInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -882,6 +1124,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewMode" +
@@ -890,6 +1133,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS18080")]
         public virtual void EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogo()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogoInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Dashboard_CheckThatThereIsNoPossibilityGoBackGromThePrintPreviewModeAfterClickingTheDashworksLogoInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -938,6 +1207,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmallLetters")]
@@ -946,6 +1216,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18483")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmallLetters()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmallLettersInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Dashboard_CheckThatDashboardsCanBeFoundUsingAnyCapsOrSmallLettersInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1004,6 +1300,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCount")]
@@ -1011,6 +1308,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS15896")]
         public virtual void EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCount()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCountInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Dashboard_CheckThatNumberOfRequestsDontExceedAllowedCountInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1049,6 +1372,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
@@ -1060,6 +1384,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("DashboardDAS20070_1", "Column", "DAS20070_1", "Pie", null)]
         [NUnit.Framework.TestCaseAttribute("DashboardDAS20070_2", "Pie", "DAS20070_2", "Column", null)]
         public virtual void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetType(string dashboardName, string widgetType, string widgetName, string updatedType, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeInternal(dashboardName,widgetType,widgetName,updatedType,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeInternal(string dashboardName, string widgetType, string widgetName, string updatedType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1140,6 +1490,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetT" +
@@ -1149,6 +1500,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS20070")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilled()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilledInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Dashboard_CheckThatUpdateButtonIsDisplayedActiveAfterChangingWidgetTypeIfAllFieldsAreFilledInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1232,6 +1609,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

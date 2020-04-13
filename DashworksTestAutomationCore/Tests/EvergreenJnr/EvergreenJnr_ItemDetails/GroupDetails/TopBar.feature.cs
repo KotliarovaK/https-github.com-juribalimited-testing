@@ -94,6 +94,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("DAS11721")]
         public virtual void EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPage()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPageInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -141,6 +167,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnGroup" +
@@ -151,6 +178,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16743")]
         public virtual void EvergreenJnr_GroupsList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnGroupsPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnGroupsPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyOnGroupsPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -204,6 +257,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

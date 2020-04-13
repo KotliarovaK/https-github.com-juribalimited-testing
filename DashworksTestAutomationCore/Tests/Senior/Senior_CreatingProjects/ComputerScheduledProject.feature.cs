@@ -92,6 +92,32 @@ namespace DashworksTestAutomationCore.Tests.Senior.Senior_CreatingProjects
         [NUnit.Framework.CategoryAttribute("ComputerScheduledProject")]
         public virtual void Projects_CreateComputerScheduledProject()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Projects_CreateComputerScheduledProjectInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Projects_CreateComputerScheduledProjectInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "ProjectsOnSenior",
                     "Projects_Administration",
@@ -2808,6 +2834,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

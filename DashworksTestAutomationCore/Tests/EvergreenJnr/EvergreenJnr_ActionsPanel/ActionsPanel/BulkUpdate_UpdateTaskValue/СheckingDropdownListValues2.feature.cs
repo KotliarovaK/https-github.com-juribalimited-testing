@@ -94,6 +94,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         [NUnit.Framework.CategoryAttribute("DAS16844")]
         public virtual void EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorks()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorksInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatBulkUpdateOfArchivedItemsWorksInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Devices",
@@ -184,6 +210,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCa" +
@@ -194,6 +221,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17639")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacity()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacityInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatSlotIsDisplayedInDDLIfSelectDateWithUnlimitedCapacityInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -293,6 +346,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabledDateTasks")]
@@ -302,6 +356,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS15618")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabledDateTasks()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabledDateTasksInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_ChecksThatCapacityAffectingNonCapacityEnabledDateTasksInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -402,6 +482,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeProperties")]
@@ -413,6 +494,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18233")]
         [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeProperties()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimePropertiesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimePropertiesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -502,6 +609,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProperties")]
@@ -512,6 +620,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18233")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonProperties()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonPropertiesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithRadiobuttonPropertiesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -601,6 +735,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties")]
@@ -611,6 +746,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18233")]
         [NUnit.Framework.CategoryAttribute("DAS19781")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyProperties()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPropertiesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckUpdateDateDropdownValueWithDateTaskOnlyPropertiesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -729,6 +890,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties")]
@@ -740,6 +902,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18233")]
         [NUnit.Framework.CategoryAttribute("DAS19274")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskProperties()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskPropertiesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckUpdateDateDropdownValueWithDateAndTimeTaskPropertiesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -852,6 +1040,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckUpdateTaskValue")]
@@ -861,6 +1050,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19274")]
         [NUnit.Framework.CategoryAttribute("Void")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateTaskValue()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckUpdateTaskValueInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckUpdateTaskValueInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -944,6 +1159,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

@@ -97,6 +97,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMembersTabOnGroupsPage()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMembersTabOnGroupsPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatOnlyValueIncludedInTheColumnIsDisplayedInTheRelatedMultiselectFilterForMembersTabOnGroupsPageInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Groups",
@@ -200,6 +226,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollecti" +
@@ -211,6 +238,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS20490")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollectionsSubTabForGroupPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollectionsSubTabForGroupPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabCollectionsSubTabForGroupPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -338,6 +391,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabApplicat" +
@@ -349,6 +403,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS20489")]
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabApplicationsSubTabForGroupPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabApplicationsSubTabForGroupPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnApplicationTabApplicationsSubTabForGroupPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -468,6 +548,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMember" +
@@ -480,6 +561,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMembersSubTabForGroupPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMembersSubTabForGroupPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_GroupsList_CheckThatGridIsDisplayedCorrectlyOnMembersTabDeviceMembersSubTabForGroupPageInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -575,6 +682,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

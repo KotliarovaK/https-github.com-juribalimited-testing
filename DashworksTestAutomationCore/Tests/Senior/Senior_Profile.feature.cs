@@ -94,6 +94,32 @@ namespace DashworksTestAutomationCore.Tests.Senior
         [NUnit.Framework.CategoryAttribute("DAS17586")]
         public virtual void Senior_ChecksThatUserCanUpdateUserPasswordOnSenior()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_ChecksThatUserCanUpdateUserPasswordOnSeniorInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_ChecksThatUserCanUpdateUserPasswordOnSeniorInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Senior",
                     "Dashworks",
@@ -186,6 +212,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

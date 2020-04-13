@@ -95,6 +95,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS14375")]
         public virtual void EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumnInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Users",
@@ -202,6 +228,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn")]
@@ -212,6 +239,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13863")]
         [NUnit.Framework.CategoryAttribute("DAS14375")]
         public virtual void EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumnInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -306,6 +359,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValue" +
@@ -322,6 +376,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Application", "Count(Application)", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Building", "Count(Building)", null)]
         public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues(string list, string listLabel, string addValues, string countAggregateFunctions, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValuesInternal(list,listLabel,addValues,countAggregateFunctions,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValuesInternal(string list, string listLabel, string addValues, string countAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -406,6 +486,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues" +
@@ -421,6 +502,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "Windows7Mi: Application Information \\ Technical Task3 (Date)", "Count(Windows7Mi: Application Information \\ Technical Task3 (Date))", "First(Windows7Mi: Application Information \\ Technical Task3 (Date))", "Last(Windows7Mi: Application Information \\ Technical Task3 (Date))", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Created Date", "Count(Created Date)", "First(Created Date)", "Last(Created Date)", null)]
         public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues(string list, string listLabel, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValuesInternal(list,listLabel,addValues,countAggregateFunctions,firstAggregateFunctions,lastAggregateFunctions,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValuesInternal(string list, string listLabel, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -519,6 +626,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericVal" +
@@ -534,6 +642,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", "2004: Current User Count", "Count(2004: Current User Count)", "Sum(2004: Current User Count)", "Min(2004: Current User Count)", "Max(2004: Current User Count)", "Avg(2004: Current User Count)", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Associated Item Count", "Count(Associated Item Count)", "Sum(Associated Item Count)", "Min(Associated Item Count)", "Max(Associated Item Count)", "Avg(Associated Item Count)", null)]
         public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues(string list, string listLabel, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValuesInternal(list,listLabel,addValues,countAggregateFunctions,sumAggregateFunctions,minAggregateFunctions,maxAggregateFunctions,avgAggregateFunctions,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValuesInternal(string list, string listLabel, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -650,6 +784,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel")]
@@ -662,6 +797,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16407")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanelInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanelInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -812,6 +973,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot")]
@@ -822,6 +984,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16815")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivotInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivotInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -939,6 +1127,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

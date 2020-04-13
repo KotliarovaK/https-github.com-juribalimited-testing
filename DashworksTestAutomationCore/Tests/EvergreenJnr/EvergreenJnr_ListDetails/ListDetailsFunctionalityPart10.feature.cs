@@ -97,6 +97,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ListDetail
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "AStaticApplications18127", "List Type: Static", "Data: Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList(string lists, string column, string row, string listName, string listType, string data, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticListInternal(lists,column,row,listName,listType,data,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticListInternal(string lists, string column, string row, string listName, string listType, string data, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Devices",
@@ -173,6 +199,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot")]
@@ -185,6 +212,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Owner Compliance", "Owner City", "APivotDevices18127", "List Type: Dynamic Pivot", "Data: Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "APivotMailboxes18127", "List Type: Dynamic Pivot", "Data: Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot(string lists, string rowGroup, string column, string value, string pivotName, string listType, string data, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivotInternal(lists,rowGroup,column,value,pivotName,listType,data,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivotInternal(string lists, string rowGroup, string column, string value, string pivotName, string listType, string data, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -279,6 +332,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfterSelectingLi" +
@@ -290,6 +344,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18376")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfterSelectingListWithTheAppliedAdvancedFilterOn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfterSelectingListWithTheAppliedAdvancedFilterOnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatNoRedBannerWithErrorIsDisplayedAfterSelectingListWithTheAppliedAdvancedFilterOnInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -401,6 +481,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterReselectingS" +
@@ -412,6 +493,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS20393")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterReselectingSharingOption()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterReselectingSharingOptionInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatPermissionPanelContinuesToWorkAfterReselectingSharingOptionInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -494,6 +601,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

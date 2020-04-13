@@ -97,6 +97,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "002B5DC7D4D34D5C895@bclabs.local", "Mailbox Filter 2", "Friendly Model Name", null)]
         public virtual void EvergreenJnr_AllLists_CheckUpdateCustomFieldValues(string listName, string columnName, string row, string customFieldValue, string missingContent, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckUpdateCustomFieldValuesInternal(listName,columnName,row,customFieldValue,missingContent,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckUpdateCustomFieldValuesInternal(string listName, string columnName, string row, string customFieldValue, string missingContent, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "EvergreenJnr_ActionsPanel",
@@ -165,6 +191,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues")]
@@ -175,6 +202,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18045")]
         [NUnit.Framework.CategoryAttribute("DAS18027")]
         public virtual void EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValues()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValuesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckUpdateCustomFieldUpdatingValuesForRemoveAllValuesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -325,6 +378,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues" +
@@ -337,6 +391,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18031")]
         [NUnit.Framework.CategoryAttribute("DAS18027")]
         public virtual void EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValues()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValuesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckUpdateCustomFieldUpdatingValuesForAddToExistingValuesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -496,6 +576,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingl" +
@@ -508,6 +589,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18031")]
         [NUnit.Framework.CategoryAttribute("DAS18027")]
         public virtual void EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValueInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValueInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -667,6 +774,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleVa" +
@@ -680,6 +788,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18027")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValue()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValueInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckUpdateCustomFieldUpdatingValuesForReplaceSingleValueInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -853,6 +987,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

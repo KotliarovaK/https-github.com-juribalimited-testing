@@ -98,6 +98,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.TestCaseAttribute("Mailbox", "aaron.u.flores@dwlabs.local", "Users", "Users", "Username", "floresau", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails(string pageName, string searchTerm, string mainTabName, string subTabName, string columnName, string targetCell, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetailsInternal(pageName,searchTerm,mainTabName,subTabName,columnName,targetCell,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetailsInternal(string pageName, string searchTerm, string mainTabName, string subTabName, string columnName, string targetCell, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "AllLists",
@@ -154,6 +180,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTab")]
@@ -165,6 +192,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Device", "30BGMTLBM9PTW5", "Applications", "Evergreen Summary", "Access 95", "Application", "Access 95   Microsoft      Green   True   Unknown   True", null)]
         [NUnit.Framework.TestCaseAttribute("User", "003F5D8E1A844B1FAA5", "Active Directory", "Groups", "Domain Users", "Group", "Domain Users   BCLABS   Global Security Group   All domain users", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTab(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string columnName, string expectedData, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTabInternal(pageName,searchTerm,mainTabName,subTabName,targetCell,columnName,expectedData,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedMainTabInternal(string pageName, string searchTerm, string mainTabName, string subTabName, string targetCell, string columnName, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -222,6 +275,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab")]
@@ -233,6 +287,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Application", "ACD Display 3.4", "Programs", "Install", "Program", "Install   setup.exe /q", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox", "Zurong.Wu@bclabs.local", "Email Addresses", "SMTP", "Type", "SMTP   Zurong.Wu@bclabs.local   True", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTab(string pageName, string searchTerm, string subTabName, string targetCell, string columnName, string expectedData, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTabInternal(pageName,searchTerm,subTabName,targetCell,columnName,expectedData,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetailsOnSelectedSabTabInternal(string pageName, string searchTerm, string subTabName, string targetCell, string columnName, string expectedData, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -287,6 +367,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSele" +
@@ -302,6 +383,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("User", "03714167684E45F7A8F", "User", "Domain", "BCLABS", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "Adobe Acrobat Reader 5.0", "Details", "Vendor", "Adobe", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedMainMenu(string pageName, string searchTerm, string mainTabName, string keyToBeSelected, string valueToBeSelected, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedMainMenuInternal(pageName,searchTerm,mainTabName,keyToBeSelected,valueToBeSelected,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedMainMenuInternal(string pageName, string searchTerm, string mainTabName, string keyToBeSelected, string valueToBeSelected, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -364,6 +471,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSele" +
@@ -378,6 +486,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("User", "03714167684E45F7A8F", "User", "Domain", "BCLABS", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox", "06D7AE4F161F4A3AA7F@bclabs.local", "Mailbox", "Alias", "06D7AE4F161F4A3AA7F", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenu(string pageName, string searchTerm, string subTabName, string keyToBeSelected, string valueToBeSelected, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenuInternal(pageName,searchTerm,subTabName,keyToBeSelected,valueToBeSelected,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPageOnSelectedSubMenuInternal(string pageName, string searchTerm, string subTabName, string keyToBeSelected, string valueToBeSelected, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -440,6 +574,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

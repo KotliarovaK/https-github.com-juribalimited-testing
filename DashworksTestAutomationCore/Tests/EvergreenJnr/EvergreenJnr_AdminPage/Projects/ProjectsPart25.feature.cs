@@ -96,6 +96,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForDeviceProjects()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForDeviceProjectsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForDeviceProjectsInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Admin",
@@ -184,6 +210,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailboxProjects")]
@@ -195,6 +222,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17699")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailboxProjects()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailboxProjectsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailboxProjectsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -287,6 +340,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject")]
@@ -299,6 +353,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18943")]
         [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "Device Scope", "2004 Rollout", "Application Scope", "Apps with a Vendor", null)]
         public virtual void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject(string projectName, string tab1, string list1, string tab2, string list2, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProjectInternal(projectName,tab1,list1,tab2,list2,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProjectInternal(string projectName, string tab1, string list1, string tab2, string list2, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -379,6 +459,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter")]
@@ -389,6 +470,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS17967")]
         public virtual void EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilterInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -454,6 +561,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScopeDetailsPage")]
@@ -467,6 +575,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "User Scope", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox Evergreen Capacity Project", "Mailbox Scope", null)]
         public virtual void EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScopeDetailsPage(string projectName, string tab, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScopeDetailsPageInternal(projectName,tab,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScopeDetailsPageInternal(string projectName, string tab, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -533,6 +667,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingNotEmptyOperatorCanBeCrea" +
@@ -548,6 +683,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Import Type", "Not empty", "ListForDAS18100_3", "18100Project", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Recipient Type", "Not empty", "ListForDAS19348_1", "19348Project", null)]
         public virtual void EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingNotEmptyOperatorCanBeCreated(string listType, string listName, string filter, string @operator, string savedList, string projectName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingNotEmptyOperatorCanBeCreatedInternal(listType,listName,filter,@operator,savedList,projectName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingNotEmptyOperatorCanBeCreatedInternal(string listType, string listName, string filter, string @operator, string savedList, string projectName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -653,6 +814,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWh" +
@@ -665,6 +827,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16844")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncluded()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncludedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncludedInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -731,6 +919,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

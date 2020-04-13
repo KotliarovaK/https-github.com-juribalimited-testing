@@ -94,6 +94,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemoveIcon()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemoveIconInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemoveIconInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Associations",
@@ -181,6 +207,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations")]
@@ -189,6 +216,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18531")]
         [NUnit.Framework.CategoryAttribute("DAS18763")]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociations()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociationsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAssociationsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -266,6 +319,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList")]
@@ -274,6 +328,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18531")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRelatedListInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -394,6 +474,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossib" +
@@ -405,6 +486,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Used on device", "Not entitled to device", "Not installed on device", "Entitled to device owner", "Used by device owner", null)]
         [NUnit.Framework.TestCaseAttribute("Entitled to device", "Not used on device", "Installed on device", "Entitled to device owner", "Used by device owner", null)]
         public virtual void EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAdded(string operator1, string operator2, string operator3, string operator4, string operator5, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAddedInternal(operator1,operator2,operator3,operator4,operator5,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotDisplayedIfAllPossibleAssociationsAreAddedInternal(string operator1, string operator2, string operator3, string operator4, string operator5, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -499,6 +606,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded")]
@@ -507,6 +615,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18379")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloaded()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloadedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBeDownloadedInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -582,6 +716,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

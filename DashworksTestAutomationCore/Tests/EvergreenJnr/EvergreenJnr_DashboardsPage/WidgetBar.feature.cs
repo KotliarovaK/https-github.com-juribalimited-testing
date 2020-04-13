@@ -95,6 +95,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Dashboards
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumnsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumnsInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "EvergreenJnr_DashboardsPage",
@@ -201,6 +227,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceLis" +
@@ -218,6 +245,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Half donut", null)]
         [NUnit.Framework.TestCaseAttribute("Table", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows(string widgetType, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRowsInternal(widgetType,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRowsInternal(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -321,6 +374,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated")]
@@ -333,6 +387,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", "Import Type", "Not empty", "ListForDAS18100_2", "DAS18100_Dashboard", "WidgetForDAS18100", "Import Type ASC", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", "Recipient Type", "Not empty", "ListForDAS19348_2", "DAS19348_Dashboard", "WidgetForDAS19348", "Recipient Type ASC", null)]
         public virtual void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreated(string listType, string listName, string filter, string @operator, string savedList, string dashboardName, string widgetName, string orderBy, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreatedInternal(listType,listName,filter,@operator,savedList,dashboardName,widgetName,orderBy,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorCanBeCreatedInternal(string listType, string listName, string filter, string @operator, string savedList, string dashboardName, string widgetName, string orderBy, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -437,6 +517,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType")]
@@ -450,6 +531,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Bar", "Clustered", null)]
         [NUnit.Framework.TestCaseAttribute("Column", "Clustered", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType(string widgetType, string displyType, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedTypeInternal(widgetType,displyType,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedTypeInternal(string widgetType, string displyType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -534,6 +641,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet")]
@@ -545,6 +653,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Bar", null)]
         [NUnit.Framework.TestCaseAttribute("Column", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet(string widgetType, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySetInternal(widgetType,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySetInternal(string widgetType, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -625,6 +759,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

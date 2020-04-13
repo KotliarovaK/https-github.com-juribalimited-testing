@@ -96,6 +96,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
         [NUnit.Framework.TestCaseAttribute("EmailMigra: Path", "Personal Mailbox - VIP", "6", null)]
         public virtual void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPageInternal(filterName,selectedCheckboxes,rows,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPageInternal(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Evergreen_FiltersFeature",
@@ -163,6 +189,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes")]
@@ -171,6 +198,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
         [NUnit.Framework.CategoryAttribute("DAS15291")]
         public virtual void EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxesInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -268,6 +321,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems")]
@@ -276,6 +330,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
         [NUnit.Framework.CategoryAttribute("DAS17004")]
         public virtual void EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckDepartmentLevelFilterItemsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -332,6 +412,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNavigatingToAN" +
@@ -341,6 +422,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
         [NUnit.Framework.CategoryAttribute("DAS11552")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNavigatingToANewList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNavigatingToANewListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatRelevantDataSetBeDisplayedAfterNavigatingToANewListInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -416,6 +523,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingThe" +
@@ -425,6 +533,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
         [NUnit.Framework.CategoryAttribute("DAS11831")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfterDeletingTheCharactersInEmailMigraTeamFilterInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -492,6 +626,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketF" +
@@ -501,6 +636,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
         [NUnit.Framework.CategoryAttribute("DAS12940")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilterInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -624,6 +785,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenC" +
@@ -634,6 +796,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13201")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilterInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -774,6 +962,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock")]
@@ -782,6 +971,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
         [NUnit.Framework.CategoryAttribute("DAS12547")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlockInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlockInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -879,6 +1094,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilter")]
@@ -887,6 +1103,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
         [NUnit.Framework.CategoryAttribute("DAS18367")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatThereIsNoEmptyOptionInInListFilterInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -942,6 +1184,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly")]
@@ -950,6 +1193,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Filter_MailboxesList")]
         [NUnit.Framework.CategoryAttribute("DAS19348")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatNewRecipientTypeColumnDisplayedCorrectlyInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -1043,6 +1312,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

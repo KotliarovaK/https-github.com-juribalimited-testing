@@ -79,6 +79,32 @@ namespace DashworksTestAutomationCore.Tests
         [NUnit.Framework.CategoryAttribute("Login_Logout")]
         public virtual void EvergreenJnr_Login_Logout_CheckThatLoginAndLogOutWorksCorrectly()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Login_Logout_CheckThatLoginAndLogOutWorksCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Login_Logout_CheckThatLoginAndLogOutWorksCorrectlyInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Login_Logout"};
@@ -150,6 +176,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

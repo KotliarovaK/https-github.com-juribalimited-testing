@@ -94,6 +94,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_Associatio
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsArePersistedOfTheAllValues()
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsArePersistedOfTheAllValuesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatProjectApplicationAssociationsArePersistedOfTheAllValuesInternal()
+        {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Associations",
@@ -182,6 +208,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociations")]
@@ -189,6 +216,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Associations")]
         [NUnit.Framework.CategoryAttribute("DAS20131")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociations()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociationsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatUserCantAddMoreThanFiveAssociationsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -287,6 +340,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatParticularAssociationWork")]
@@ -295,6 +349,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS20130")]
         [NUnit.Framework.CategoryAttribute("DAS20450")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatParticularAssociationWork()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatParticularAssociationWorkInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatParticularAssociationWorkInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -345,6 +425,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssociations")]
@@ -353,6 +434,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS20130")]
         [NUnit.Framework.CategoryAttribute("DAS20450")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssociations()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssociationsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatParticularFilterWorkWithAssociationsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -409,6 +516,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying")]
@@ -419,6 +527,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18234")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplaying()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplayingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckAssociationsRunListButtonDisplayingInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -509,6 +643,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCusto" +
@@ -518,6 +653,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19810")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCustomField()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCustomFieldInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatListCanBeCreatedWithColumnApplicationCustomFieldInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -595,6 +756,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

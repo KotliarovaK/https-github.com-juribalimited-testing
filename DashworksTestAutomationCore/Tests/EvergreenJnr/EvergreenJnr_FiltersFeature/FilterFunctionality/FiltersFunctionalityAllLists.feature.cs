@@ -98,6 +98,32 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_FiltersFea
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address (Primary)", "ale", "Email Address", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColumn(string listName, string filterName, string filterValue, string columnName, string[] exampleTags)
         {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColumnInternal(listName,filterName,filterValue,columnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatPrimaryColumnIsDisplayedAfterAddingAFilterWithColumnInternal(string listName, string filterName, string filterValue, string columnName, string[] exampleTags)
+        {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Evergreen_FiltersFeature",
@@ -166,6 +192,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoi" +
@@ -178,6 +205,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Barry\'sUse: Target App", "Python 2.2a4 (SMS_GEN)", "1", "Application", "Python 2.2a4", "Barry\'sUse: Target App is Python 2.2a4 (SMS_GEN)", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Migration \\ BT/QMM Switch Status", "Not Started", "729", "Email Address", "alex.cristea@juriba.com", "EmailMigra: Migration \\ BT/QMM Switch Status is Not Started", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFilters(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFiltersInternal(listName,filterName,filterValue,rowsCount,columnName,objectName,text,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForLookupFiltersInternal(string listName, string filterName, string filterValue, string rowsCount, string columnName, string objectName, string text, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -260,6 +313,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsC" +
@@ -271,6 +325,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14757")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItemsInternal()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -591,6 +671,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsN" +
@@ -603,6 +684,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Category", "EmailMigra: Category", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Category", "Windows7Mi: Category", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperator(string listName, string filterName, string newlyAddedColumn, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperatorInternal(listName,filterName,newlyAddedColumn,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatContentIsDisplayedInTheAddedColumnAfterApplyingIsNotNoneOperatorInternal(string listName, string filterName, string newlyAddedColumn, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -670,6 +777,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly")]
@@ -682,6 +790,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", "NY", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "VIC", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectly(string listName, string filterValue, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectlyInternal(listName,filterValue,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatLocationFilterIsEditedCorrectlyInternal(string listName, string filterValue, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -782,6 +916,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilter")]
@@ -794,6 +929,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "No applications found", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mail Server", "No mailboxes found", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilter(string listName, string filterName, string message, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilterInternal(listName,filterName,message,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilterInternal(string listName, string filterName, string message, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -855,6 +1016,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDep" +
@@ -867,6 +1029,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", "Application Development", "1,858", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Application Development", "1,118", null)]
         public virtual void EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilterInternal(pageName,selectedCheckboxes,rows,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilterInternal(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -928,6 +1116,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAr" +
@@ -938,6 +1127,32 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13145")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices(string pageName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevicesInternal(pageName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevicesInternal(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1018,6 +1233,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjec" +
@@ -1034,6 +1250,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Barry\'sUse: In Scope", "FALSE", "Amazon Redshift ODBC Driver 64-bit", "Barry\'sUse: In Scope is False", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "EmailMigra: Mobile Devices \\ Device Type", "Not Identified", "238BAE24882E48BFA9F@bclabs.local", "EmailMigra: Mobile Devices \\ Device Type is Not Identified", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult(string pageName, string columnName, string filterName, string filterValue, string search, string filterInfo, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResultInternal(pageName,columnName,filterName,filterValue,search,filterInfo,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResultInternal(string pageName, string columnName, string filterName, string filterValue, string search, string filterInfo, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1118,6 +1360,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFilterWithSelectedValu" +
@@ -1131,6 +1374,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", "Organisational Unit", "Begins with", "Users", "23,728", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Organisational Unit", "Not Empty", "", "14,837", null)]
         public virtual void EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFilterWithSelectedValue(string page, string filterName, string type, string value, string rows, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFilterWithSelectedValueInternal(page,filterName,type,value,rows,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFilterWithSelectedValueInternal(string page, string filterName, string type, string value, string rows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1195,6 +1464,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilter")]
@@ -1207,6 +1477,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Konformität", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Konformität des Inhabers", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilter(string listName, string translatedColumnName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilterInternal(listName,translatedColumnName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslatedInFilterInternal(string listName, string translatedColumnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1277,6 +1573,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelat" +
@@ -1291,6 +1588,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Owner Last Logon Date", "1", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Owner Last Logon Date", "2.37457468568568568568658464554575547547547", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelative(string list, string filter, string value, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelativeInternal(list,filter,value,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatThereIsNoErrorAfterSavingListWithFilterEqualsRelativeInternal(string list, string filter, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1349,6 +1672,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilter")]
@@ -1361,6 +1685,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", "Last Logon Date", "After (relative)", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Created Date", "On or before (relative)", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilter(string list, string filter, string @operator, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilterInternal(list,filter,@operator,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatZeroCanBeSelectedInRelativeFilterInternal(string list, string filter, string @operator, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1429,6 +1779,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatFilterStaysWorkingAfterAddingDepartmentFilter")]
@@ -1440,6 +1791,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", "Department", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Department", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatFilterStaysWorkingAfterAddingDepartmentFilter(string list, string filter, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatFilterStaysWorkingAfterAddingDepartmentFilterInternal(list,filter,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatFilterStaysWorkingAfterAddingDepartmentFilterInternal(string list, string filter, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1503,6 +1880,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList")]
@@ -1516,6 +1894,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "2,223", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "14,784", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList(string listName, string rowsCount, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterListInternal(listName,rowsCount,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterListInternal(string listName, string rowsCount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1601,6 +2005,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategorie" +
@@ -1614,6 +2019,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: One \\ Computer Off/On", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: One \\ Application Off/On", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories(string pageName, string filterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategoriesInternal(pageName,filterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategoriesInternal(string pageName, string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1672,6 +2103,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters")]
@@ -1686,6 +2118,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "Havoc(BigD: Category", "Compliance", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Category", "Owner Compliance", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters(string pageName, string filterName, string newFilterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFiltersInternal(pageName,filterName,newFilterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFiltersInternal(string pageName, string filterName, string newFilterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1800,6 +2258,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFilters")]
@@ -1814,6 +2273,32 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Applications", "UserSchedu: Three \\ Date App Req A", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Created Date", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFilters(string listName, string filterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFiltersInternal(listName,filterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedForDateFiltersInternal(string listName, string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -1870,6 +2355,7 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore
