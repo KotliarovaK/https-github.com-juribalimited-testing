@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS20360 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicationsAutomation
 	When User creates new Automation via API and open it
 	| AutomationName   | Description | Active | StopOnFailedAction | Scope              | Run    |
@@ -18,20 +17,18 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	And User enters '18292_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT Auto App' option from 'Task' autocomplete
+	When User selects 'Relative BU \ DT Auto App' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
-	When User selects 'Hours' in the 'Units' dropdown
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User selects 'hours before current value' in the 'Units' dropdown
 	And User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18292_Automation" text in the Search field for "Automation" column
 	When User clicks 'Run now' option in Cog-menu for '18292_Automation' item from 'Automation' column
+	When '18292_Automation' automation '18292_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When User clicks refresh button in the browser
 	When User enters "18292_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -43,7 +40,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	| ColumnName                                   |
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
 	Then '9 Oct 2019 14:00' content is displayed in the 'zUserAutom: Relative BU \ DT Auto App (Date)' column
-	#Return to previous value
+	Then "zUserAutom: Relative BU \ DT Auto App" column is not displayed to the user
+		#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User navigates to the 'Automations' left menu item
@@ -51,7 +49,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	When User clicks content from "Automation" column
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
-	When User selects 'After current value' in the 'Before or After' dropdown
+	When User selects 'hours after current value' in the 'Units' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "18292_Automation" text in the Search field for "Automation" column
@@ -70,11 +68,11 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInApplicati
 	| zUserAutom: Relative BU \ DT Auto App (Date) |
 	Then '10 Oct 2019 00:00' content is displayed in the 'zUserAutom: Relative BU \ DT Auto App (Date)' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @DAS18739 @DAS17675 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxesAutomation
 	When User creates new Automation via API and open it
-	| AutomationName      | Description | Active | StopOnFailedAction | Scope                               | Run    |
-	| Test18292Automation | 18292       | true   | false              | Mailbox Readiness Columns & Filters | Manual |
+	| Name                | Description | IsActive | StopOnFailedAction | Scope                               | Run    |
+	| Test18292Automation | 18292       | true     | false              | Mailbox Readiness Columns & Filters | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -82,11 +80,10 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	And User enters '18292_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zMailbox Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT Auto Mail' option from 'Task' autocomplete
+	When User selects 'Relative BU \ DT Auto Mail' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
-	When User selects 'After current value' in the 'Before or After' dropdown
+	When User selects 'days after current value' in the 'Units' dropdown
 	And User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -99,11 +96,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                             |
-	| zMailboxAu: Relative BU \ DT Auto Mail |
 	Then '25 Oct 2019' content is displayed in the 'zMailboxAu: Relative BU \ DT Auto Mail' column
 	#Return to previous value
 	When User clicks 'Admin' on the left-hand menu
@@ -115,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	Then inline error banner is not displayed
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User selects 'days before current value' in the 'Units' dropdown
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "Test18292Automation" text in the Search field for "Automation" column
@@ -127,11 +119,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInMailboxes
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	And User clicks content from "Objects" column
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                             |
-	| zMailboxAu: Relative BU \ DT Auto Mail |
 	Then '15 Oct 2019' content is displayed in the 'zMailboxAu: Relative BU \ DT Auto Mail' column
 
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18292 @Cleanup @Not_Ready
@@ -147,8 +134,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationLogForUpdateTaskValueInDevicesAu
 	And User enters '18292_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zDevice Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Relative BU' option from 'Stage' autocomplete
-	When User selects 'DT Auto Device' option from 'Task' autocomplete
+	When User selects 'Relative BU \ DT Auto Device' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Value' dropdown
 	When User selects 'Not Started' in the 'Value' dropdown
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
@@ -188,8 +174,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User enters '18543_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'zUser Sch for Automations Feature' option from 'Project' autocomplete
-	When User selects 'Stage 3' option from 'Stage' autocomplete
-	When User selects 'Date Only with Capacity User' option from 'Task' autocomplete
+	When User selects 'Stage 3 \ Date Only with Capacity User' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '10' text to 'Value' textbox
 	Then 'Units' dropdown is disabled
@@ -201,12 +186,11 @@ Scenario: EvergreenJnr_AdminPage_CheckTheAvailabilityOfTheUnitsfieldDependingOnT
 	When User selects 'Hours' in the 'Units' dropdown
 	Then 'CREATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18619 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18619 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18619_Automation | 18619       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18619_Automation | 18619       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -214,15 +198,13 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDropdownAfterChangingItem
 	When User enters '18619_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Comp' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'Remove' in the 'Update Date' dropdown
 	When User clicks 'CREATE' button
 	#Check Value dropdown
 	When User clicks content from "Action" column
-	When User selects 'Update' in the 'Update Value' dropdown
-	Then 'Value' content is displayed in 'Value' dropdown
+	Then 'Remove' content is displayed in 'Update Date' dropdown
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS18644 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
@@ -256,8 +238,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
 	When User navigate to Evergreen link
 	#Pre-requisites:
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18644_Automation | 18644       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18644_Automation | 18644       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -265,12 +247,11 @@ Scenario: EvergreenJnr_AdminPage_CheckRemoveOwnerOptionWhenTaskDoesNotHaveDate
 	When User enters '18644_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'DAS18644_Project' option from 'Project' autocomplete
-	When User selects 'DAS18644_Stage' option from 'Stage' autocomplete
-	When User selects 'DAS18644_Task' option from 'Task' autocomplete
+	When User selects 'DAS18644_Stage \ DAS18644_Task' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
+	| No change             |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	| No change             |

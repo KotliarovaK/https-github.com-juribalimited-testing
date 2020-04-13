@@ -126,7 +126,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                         "DAS14037",
                         "DAS15823",
                         "Cleanup"});
-#line 10
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -149,69 +149,67 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table749 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table818 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table749.AddRow(new string[] {
+                table818.AddRow(new string[] {
                             "ProjectForCapacity13720",
                             "All Users",
                             "None",
                             "Standalone Project"});
-#line 11
- testRunner.When("Project created via API and opened", ((string)(null)), table749, "When ");
+#line 10
+ testRunner.When("Project created via API and opened", ((string)(null)), table818, "When ");
 #line hidden
-#line 14
+#line 13
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 15
+#line 14
  testRunner.Then("\'Capacity Units\' content is displayed in \'Capacity Mode\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 16
+#line 15
  testRunner.When("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 16
  testRunner.And("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 18
- testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+ testRunner.Then("Rows counter shows \"1\" of \"1\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 19
+#line 18
  testRunner.When("User clicks content from \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
+#line 19
  testRunner.And("User enters \'Default Capacity Unit\' text to \'Capacity Unit Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 21
+#line 20
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 22
+#line 21
  testRunner.Then("\'The capacity unit details have been updated\' text is displayed on inline success" +
                         " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table750 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table819 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table750.AddRow(new string[] {
-                            ""});
-                table750.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "Capacity Unit"});
-                table750.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             ""});
-                table750.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "Description"});
-                table750.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "Default"});
-                table750.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "Slots"});
-                table750.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "Devices"});
-                table750.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "Users"});
-                table750.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "Applications"});
-#line 23
- testRunner.And("grid headers are displayed in the following order", ((string)(null)), table750, "And ");
+#line 22
+ testRunner.And("grid headers are displayed in the following order", ((string)(null)), table819, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -244,7 +242,7 @@ this.FeatureBackground();
                         "Units",
                         "DAS13431",
                         "Cleanup"});
-#line 36
+#line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -267,45 +265,45 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table751 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table820 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table751.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "13431DevicesProject",
                             "All Devices",
                             "None",
                             "Standalone Project"});
-#line 37
- testRunner.When("Project created via API and opened", ((string)(null)), table751, "When ");
+#line 35
+ testRunner.When("Project created via API and opened", ((string)(null)), table820, "When ");
 #line hidden
-#line 40
+#line 38
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 41
+#line 39
  testRunner.And("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table752 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table821 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table752.AddRow(new string[] {
+                table821.AddRow(new string[] {
                             "Capacity Unit"});
-                table752.AddRow(new string[] {
+                table821.AddRow(new string[] {
                             ""});
-                table752.AddRow(new string[] {
+                table821.AddRow(new string[] {
                             "Description"});
-                table752.AddRow(new string[] {
+                table821.AddRow(new string[] {
                             "Default"});
-                table752.AddRow(new string[] {
+                table821.AddRow(new string[] {
                             "Slots"});
-                table752.AddRow(new string[] {
+                table821.AddRow(new string[] {
                             "Devices"});
-                table752.AddRow(new string[] {
+                table821.AddRow(new string[] {
                             "Users"});
-                table752.AddRow(new string[] {
+                table821.AddRow(new string[] {
                             "Applications"});
-#line 42
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table752, "Then ");
+#line 40
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table821, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -338,7 +336,7 @@ this.FeatureBackground();
                         "Units",
                         "DAS13431",
                         "Cleanup"});
-#line 54
+#line 52
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -361,45 +359,45 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table753 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table822 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table753.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "13431MailboxesProject",
                             "All Mailboxes",
                             "None",
                             "Standalone Project"});
-#line 55
- testRunner.When("Project created via API and opened", ((string)(null)), table753, "When ");
+#line 53
+ testRunner.When("Project created via API and opened", ((string)(null)), table822, "When ");
 #line hidden
-#line 58
+#line 56
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 59
+#line 57
  testRunner.And("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table754 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table823 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table754.AddRow(new string[] {
+                table823.AddRow(new string[] {
                             "Capacity Unit"});
-                table754.AddRow(new string[] {
+                table823.AddRow(new string[] {
                             ""});
-                table754.AddRow(new string[] {
+                table823.AddRow(new string[] {
                             "Description"});
-                table754.AddRow(new string[] {
+                table823.AddRow(new string[] {
                             "Default"});
-                table754.AddRow(new string[] {
+                table823.AddRow(new string[] {
                             "Slots"});
-                table754.AddRow(new string[] {
+                table823.AddRow(new string[] {
                             "Users"});
-                table754.AddRow(new string[] {
+                table823.AddRow(new string[] {
                             "Mailboxes"});
-                table754.AddRow(new string[] {
+                table823.AddRow(new string[] {
                             "Applications"});
-#line 60
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table754, "Then ");
+#line 58
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table823, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -438,7 +436,7 @@ this.FeatureBackground();
                         "DAS13370",
                         "DAS18646",
                         "Cleanup"});
-#line 72
+#line 70
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -461,114 +459,114 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table755 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table824 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table755.AddRow(new string[] {
+                table824.AddRow(new string[] {
                             "ProjectForCapacity13723",
                             "All Devices",
                             "None",
                             "Standalone Project"});
-#line 73
- testRunner.When("Project created via API and opened", ((string)(null)), table755, "When ");
+#line 71
+ testRunner.When("Project created via API and opened", ((string)(null)), table824, "When ");
 #line hidden
-#line 76
+#line 74
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 77
+#line 75
  testRunner.When("User navigates to the \'Override Dates\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 78
+#line 76
  testRunner.When("User clicks \'CREATE OVERRIDE DATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 79
+#line 77
  testRunner.When("User enters \'5 Jan 2019\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 80
- testRunner.When("User enters \'\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 78
+ testRunner.When("User clears \'Override End Date\' textbox with backspaces", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 81
+#line 79
  testRunner.Then("\'An override end date must be entered\' error message is displayed for \'Override E" +
                         "nd Date\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 82
+#line 80
  testRunner.When("User enters \'4 Oct 2018\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 83
+#line 81
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 84
+#line 82
  testRunner.Then("\'CREATE\' button has tooltip with \'Some settings are not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 85
- testRunner.When("User enters \'\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 83
+ testRunner.When("User clears \'Override Start Date\' textbox with backspaces", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 86
+#line 84
  testRunner.Then("\'An override start date must be entered\' error message is displayed for \'Override" +
                         " Start Date\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 87
+#line 85
  testRunner.When("User enters \'4 Oct 2018\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 88
+#line 86
  testRunner.When("User enters \'7 Oct 2018\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 89
+#line 87
  testRunner.When("User selects \'All\' in the \'Slot\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 90
+#line 88
  testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 91
+#line 89
  testRunner.Then("\'Your override date has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 92
+#line 90
  testRunner.Then("\'Unlimited\' content is displayed in the \'Capacity\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 93
+#line 91
  testRunner.When("User enters \">1\" text in the Search field for \"Capacity\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 94
+#line 92
  testRunner.Then("Rows counter shows \"1\" of \"1\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 95
+#line 93
  testRunner.When("User clicks content from \"Start Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 96
+#line 94
  testRunner.When("User enters \'3 Oct 2018\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 97
+#line 95
  testRunner.Then("\'UPDATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 98
+#line 96
  testRunner.Then("\'UPDATE\' button has tooltip with \'No changes made\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 99
+#line 97
  testRunner.When("User enters \'\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 100
+#line 98
  testRunner.When("User enters \'\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 101
+#line 99
  testRunner.Then("\'An override end date must be entered\' error message is displayed for \'Override E" +
                         "nd Date\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 102
+#line 100
  testRunner.Then("\'An override start date must be entered\' error message is displayed for \'Override" +
                         " Start Date\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 103
+#line 101
  testRunner.When("User enters \'5 Oct 2019\' text to \'Override Start Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 104
+#line 102
  testRunner.When("User enters \'5 Oct 2019\' text to \'Override End Date\' datepicker", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 105
+#line 103
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 106
+#line 104
  testRunner.Then("\'The override date details have been updated\' text is displayed on inline success" +
                         " banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

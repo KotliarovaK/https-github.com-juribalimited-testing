@@ -108,7 +108,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	Then Page with '1MailboxesProject' header is displayed to user
 	When User navigates to the 'Details' left menu item
 	Then "Mailbox scoped project" is displayed in the disabled Project Type field
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone Evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	And User clicks content from "Project" column
 	Then Page with '13530Project' header is displayed to user
 	When User navigates to the 'Capacity' left menu item
-	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
+	And User selects 'Clone Evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	When User clicks 'Administration' header breadcrumb

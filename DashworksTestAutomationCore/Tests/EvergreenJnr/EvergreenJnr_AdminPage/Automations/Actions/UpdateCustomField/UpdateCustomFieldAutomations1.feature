@@ -5,12 +5,11 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValues
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17881_Automation | 17881       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17881_Automation | 17881       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -20,26 +19,24 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceAllValu
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Replace all values' in the 'Update Values' dropdown
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	Then Add button for 'Value' textbox is disabled
 	Then 'Enter a value' add button tooltip is displayed for 'Value' textbox
 	When User enters 'test' text to 'Value' textbox
 	Then 'Add value' add button tooltip is displayed for 'Value' textbox
 	When User adds '1' value from 'Value' textbox
 	Then 'CREATE' button is not disabled
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
-	#Create Action
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingValues
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope         | Run    |
-	| 17881_Automation_2 | 17881       | true   | false              | All Mailboxes | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope         | Run    |
+	| 17881_Automation_2 | 17881       | true     | false              | All Mailboxes | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -49,21 +46,20 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldAddToExistingV
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Add to existing values' in the 'Update Values' dropdown
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User adds 'TEST' value from 'Value' textbox
 	Then 'CREATE' button is not disabled
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @DAS17751 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17289 @DAS17751 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValues
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17881_Automation_3 | 17881       | true   | false              | All Users | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17881_Automation_3 | 17881       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -81,6 +77,10 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	When User selects 'Remove all values' in the 'Update Values' dropdown
 	When User clicks 'CREATE' button
 	Then 'The automation action has been created' text is displayed on inline success banner
+	When User clicks 'Automations' header breadcrumb
+	When User enters "17881_Automation_3" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks content from "Action" column
 	Then 'Edit Action' page subheader is displayed to user
@@ -93,12 +93,11 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveAllValue
 	When User enters 'New_Action' text to 'Action Name' textbox
 	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecificValues
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 17881_Automation_4 | 17881       | true   | false              | All Applications | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 17881_Automation_4 | 17881       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -108,21 +107,20 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldRemoveSpecific
 	When User selects 'Phoenix Field' option from 'Custom Field' autocomplete
 	And User selects 'Remove specific values' in the 'Update Values' dropdown
 	Then 'CREATE' button is disabled
-	Then 'SAVE AND CREATE ANOTHER' button is disabled
+	Then 'SAVE & CREATE ANOTHER' button is disabled
 	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
-	Then 'SAVE AND CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
+	Then 'SAVE & CREATE ANOTHER' button has tooltip with 'Some values are missing or not valid' text
 	When User adds '1' value from 'Value' textbox
 	Then 'CREATE' button is not disabled
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 	Then 'CANCEL' button is not disabled
-	Then 'SAVE AND CREATE ANOTHER' button is not disabled
+	Then 'SAVE & CREATE ANOTHER' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17751 @Cleanup @Not_Ready
-#Waiting 'Update custom field' in the 'Action Type' dropdown for automation
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS17881 @DAS17751 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleValue
 	When User creates new Automation via API and open it
-	| AutomationName     | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17881_Automation_4 | 17881       | true   | false              | All Devices | Manual |
+	| Name               | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17881_Automation_4 | 17881       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -133,7 +131,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsUpdateCustomFieldReplaceSingleV
 	And User selects 'Replace single value' in the 'Update Values' dropdown
 	When User enters 'first value' text to 'Find Value' textbox
 	When User enters 'second' text to 'Replace Value' textbox
-	When User clicks 'SAVE AND CREATE ANOTHER' button
+	When User clicks 'SAVE & CREATE ANOTHER' button
 	Then 'The automation action has been created' text is displayed on inline success banner
 	#Create Action
 	Then Create Action page is displayed to the User

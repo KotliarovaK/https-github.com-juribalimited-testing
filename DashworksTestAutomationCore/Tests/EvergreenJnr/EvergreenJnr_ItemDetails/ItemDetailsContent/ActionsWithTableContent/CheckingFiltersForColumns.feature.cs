@@ -93,6 +93,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12283")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFilterWorkingCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -100,14 +101,16 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
                     "Devices",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS12283"};
+                    "DAS12283",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFi" +
                     "lterWorkingCorrectly", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12283"});
+                        "DAS12283",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -146,23 +149,23 @@ this.FeatureBackground();
 #line 14
  testRunner.When("User navigates to the \'Members\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2336 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2790 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2336.AddRow(new string[] {
+                table2790.AddRow(new string[] {
                             "True"});
-                table2336.AddRow(new string[] {
+                table2790.AddRow(new string[] {
                             "False"});
 #line 15
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Enabled\' " +
-                        "column:", ((string)(null)), table2336, "Then ");
+                        "column:", ((string)(null)), table2790, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2337 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2791 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2337.AddRow(new string[] {
+                table2791.AddRow(new string[] {
                             "True"});
 #line 19
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Enabled\' " +
-                        "column:", ((string)(null)), table2337, "When ");
+                        "column:", ((string)(null)), table2791, "When ");
 #line hidden
 #line 22
  testRunner.Then("Content is present in the table on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -188,13 +191,13 @@ this.FeatureBackground();
 #line 29
  testRunner.When("User clicks button with \'ResetFilters\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2338 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2792 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2338.AddRow(new string[] {
+                table2792.AddRow(new string[] {
                             "DWLABS"});
 #line 30
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Domain\' c" +
-                        "olumn:", ((string)(null)), table2338, "When ");
+                        "olumn:", ((string)(null)), table2792, "When ");
 #line hidden
 #line 33
  testRunner.Then("Rows counter shows \"0\" of \"7\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -210,6 +213,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12239")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters()
         {
             string[] tagsOfScenario = new string[] {
@@ -217,13 +221,15 @@ this.FeatureBackground();
                     "Devices",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS12239"};
+                    "DAS12239",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12239"});
+                        "DAS12239",
+                        "Zion_NewGrid"});
 #line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -259,13 +265,13 @@ this.FeatureBackground();
 #line 40
  testRunner.Then("\'All\' text is displayed in the filter dropdown for the \'Compliance\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2339 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2793 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2339.AddRow(new string[] {
+                table2793.AddRow(new string[] {
                             "RED"});
 #line 41
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Complianc" +
-                        "e\' column:", ((string)(null)), table2339, "When ");
+                        "e\' column:", ((string)(null)), table2793, "When ");
 #line hidden
 #line 45
  testRunner.Then("All text is not displayed for \"Compliance\" column in the String Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -294,13 +300,13 @@ this.FeatureBackground();
 #line 53
  testRunner.When("User clicks button with \'ResetFilters\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2340 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2794 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2340.AddRow(new string[] {
+                table2794.AddRow(new string[] {
                             "Unknown"});
 #line 54
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Used\' col" +
-                        "umn:", ((string)(null)), table2340, "When ");
+                        "umn:", ((string)(null)), table2794, "When ");
 #line hidden
 #line 57
  testRunner.Then("Rows counter contains \"0\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -308,13 +314,13 @@ this.FeatureBackground();
 #line 58
  testRunner.When("User clicks button with \'ResetFilters\' aria label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2341 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2795 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2341.AddRow(new string[] {
+                table2795.AddRow(new string[] {
                             "True"});
 #line 59
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Entitled\'" +
-                        " column:", ((string)(null)), table2341, "When ");
+                        " column:", ((string)(null)), table2795, "When ");
 #line hidden
 #line 62
  testRunner.Then("Rows counter contains \"0\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -327,36 +333,43 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplaye" +
-            "dCorrectlyForCollapsedSections")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnProjectsSummaryTabAreDisp" +
+            "layedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12210")]
         [NUnit.Framework.CategoryAttribute("DAS12738")]
         [NUnit.Framework.CategoryAttribute("DAS12371")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
-        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Projects", "Projects Summary", "11", null)]
-        [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Projects", "Owner Projects Summary", "8", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections(string pageName, string searchTerm, string mainTabName, string subTabName, string countRows, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("DAS16565")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnProjectsSummaryTabAreDisplayedCorrectly()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Evergreen",
-                    "AllLists",
+                    "Devices",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS12210",
                     "DAS12738",
                     "DAS12371",
-                    "DAS13409"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplaye" +
-                    "dCorrectlyForCollapsedSections", null, @__tags);
+                    "DAS13409",
+                    "DAS16565",
+                    "Zion_NewGrid"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnProjectsSummaryTabAreDisp" +
+                    "layedCorrectly", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS12210",
+                        "DAS12738",
+                        "DAS12371",
+                        "DAS13409",
+                        "DAS16565",
+                        "Zion_NewGrid"});
 #line 66
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -381,67 +394,64 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 67
- testRunner.When(string.Format("User navigates to the \'{0}\' details page for \'{1}\' item", pageName, searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 68
- testRunner.Then(string.Format("Details page for \'{0}\' item is displayed to the user", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 69
- testRunner.When(string.Format("User navigates to the \'{0}\' left menu item", mainTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 70
- testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \'Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 71
- testRunner.Then(string.Format("\"{0}\" rows found label displays on Details Page", countRows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 72
  testRunner.When("User clicks String Filter button for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 72
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
 #line 73
- testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 74
- testRunner.When("User clicks String Filter button for \"Workflow\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 75
- testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 76
- testRunner.When("User clicks String Filter button for \"Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 77
- testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 78
  testRunner.When("User clicks String Filter button for \"Project Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 79
+#line 74
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 80
- testRunner.When("User clicks String Filter button for \"Category\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 75
+ testRunner.When("User clicks String Filter button for \"Workflow\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 81
+#line 76
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2796 = new TechTalk.SpecFlow.Table(new string[] {
+                            "checkboxes"});
+                table2796.AddRow(new string[] {
+                            "Project"});
+                table2796.AddRow(new string[] {
+                            "Project Type"});
+                table2796.AddRow(new string[] {
+                            "Slot"});
+#line 77
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Project\' col" +
+                        "umn:", ((string)(null)), table2796, "When ");
 #line hidden
 #line 82
- testRunner.When("User opens \'Project\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks String Filter button for \"Category\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 83
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 84
- testRunner.And("User select \"Project Type\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks String Filter button for \"Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 85
- testRunner.And("User select \"Slot\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 86
- testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("string filter is displayed for \'Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 87
- testRunner.And("User clicks String Filter button for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks String Filter button for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 88
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -451,37 +461,44 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplaye" +
-            "dCorrectlyForExpandedSections")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsSummaryTabAr" +
+            "eDisplayedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12210")]
         [NUnit.Framework.CategoryAttribute("DAS12738")]
         [NUnit.Framework.CategoryAttribute("DAS12371")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
-        [NUnit.Framework.TestCaseAttribute("Application", "0036 - Microsoft Access 97 SR-2 English", "Projects", "Projects", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailbox", "040698EE82354C17B60@bclabs.local", "Projects", "Mailbox Projects", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections(string pageName, string searchTerm, string mainTabName, string subTabName, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("DAS16565")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsSummaryTabAreDisplayedCorrectly()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Evergreen",
-                    "AllLists",
+                    "Devices",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS12210",
                     "DAS12738",
                     "DAS12371",
-                    "DAS13409"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplaye" +
-                    "dCorrectlyForExpandedSections", null, @__tags);
-#line 96
+                    "DAS13409",
+                    "DAS16565",
+                    "Zion_NewGrid"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsSummaryTabAr" +
+                    "eDisplayedCorrectly", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS12210",
+                        "DAS12738",
+                        "DAS12371",
+                        "DAS13409",
+                        "DAS16565",
+                        "Zion_NewGrid"});
+#line 91
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -504,28 +521,167 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
+#line 92
+ testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 93
+ testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 94
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 95
+ testRunner.And("User navigates to the \'Owner Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 96
+ testRunner.When("User clicks String Filter button for \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 97
- testRunner.When(string.Format("User navigates to the \'{0}\' details page for \'{1}\' item", pageName, searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 98
- testRunner.Then(string.Format("Details page for \'{0}\' item is displayed to the user", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 99
- testRunner.When(string.Format("User navigates to the \'{0}\' left menu item", mainTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 100
- testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 101
- testRunner.And("User clicks String Filter button for \"Project Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 102
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 98
+ testRunner.When("User clicks String Filter button for \"Display Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 99
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 100
+ testRunner.When("User clicks String Filter button for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 101
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 102
+ testRunner.When("User clicks String Filter button for \"Project Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 103
- testRunner.When("User clicks String Filter button for \"Category\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 104
+ testRunner.When("User clicks String Filter button for \"Workflow\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 105
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2797 = new TechTalk.SpecFlow.Table(new string[] {
+                            "checkboxes"});
+                table2797.AddRow(new string[] {
+                            "Username"});
+                table2797.AddRow(new string[] {
+                            "Display Name"});
+                table2797.AddRow(new string[] {
+                            "Project"});
+                table2797.AddRow(new string[] {
+                            "Project Type"});
+                table2797.AddRow(new string[] {
+                            "Slot"});
+#line 106
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Project\' col" +
+                        "umn:", ((string)(null)), table2797, "When ");
+#line hidden
+#line 113
+ testRunner.When("User clicks String Filter button for \"Category\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 114
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 115
+ testRunner.When("User clicks String Filter button for \"Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 116
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 117
+ testRunner.Then("string filter is displayed for \'Readiness\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 118
+ testRunner.When("User clicks String Filter button for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 119
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplaye" +
+            "dCorrectlyForExpandedSections")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12210")]
+        [NUnit.Framework.CategoryAttribute("DAS12738")]
+        [NUnit.Framework.CategoryAttribute("DAS12371")]
+        [NUnit.Framework.CategoryAttribute("DAS13409")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        [NUnit.Framework.TestCaseAttribute("Application", "0036 - Microsoft Access 97 SR-2 English", "Projects", "Projects", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailbox", "040698EE82354C17B60@bclabs.local", "Projects", "Mailbox Projects", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections(string pageName, string searchTerm, string mainTabName, string subTabName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_ItemDetails",
+                    "ItemDetailsDisplay",
+                    "DAS12210",
+                    "DAS12738",
+                    "DAS12371",
+                    "DAS13409",
+                    "Zion_NewGrid"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplaye" +
+                    "dCorrectlyForExpandedSections", null, @__tags);
+#line 122
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 123
+ testRunner.When(string.Format("User navigates to the \'{0}\' details page for \'{1}\' item", pageName, searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 124
+ testRunner.Then(string.Format("Details page for \'{0}\' item is displayed to the user", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 125
+ testRunner.When(string.Format("User navigates to the \'{0}\' left menu item", mainTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 126
+ testRunner.And(string.Format("User navigates to the \'{0}\' left submenu item", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 127
+ testRunner.And("User clicks String Filter button for \"Project Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 128
+ testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 129
+ testRunner.When("User clicks String Filter button for \"Category\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 130
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -545,6 +701,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12765")]
         [NUnit.Framework.CategoryAttribute("DAS12321")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -557,7 +714,8 @@ this.FeatureBackground();
                     "DAS12371",
                     "DAS12765",
                     "DAS12321",
-                    "DAS13409"};
+                    "DAS13409",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDis" +
                     "playedCorrectly", null, new string[] {
                         "Evergreen",
@@ -569,8 +727,9 @@ this.FeatureBackground();
                         "DAS12371",
                         "DAS12765",
                         "DAS12321",
-                        "DAS13409"});
-#line 112
+                        "DAS13409",
+                        "Zion_NewGrid"});
+#line 138
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -593,39 +752,39 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 113
+#line 139
  testRunner.When("User navigates to the \'Mailbox\' details page for \'040698EE82354C17B60@bclabs.loca" +
                         "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 114
+#line 140
  testRunner.Then("Details page for \'040698EE82354C17B60@bclabs.local\' item is displayed to the user" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 115
+#line 141
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 116
+#line 142
  testRunner.And("User navigates to the \'Mailbox Projects\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 117
+#line 143
  testRunner.Then("\"Bucket\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 118
+#line 144
  testRunner.When("User navigates to the \'Mailbox User Projects\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 119
+#line 145
  testRunner.Then("\"Bucket\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 120
+#line 146
  testRunner.When("User clicks String Filter button for \"Project Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 121
+#line 147
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 122
+#line 148
  testRunner.When("User clicks String Filter button for \"Category\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 123
+#line 149
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -640,6 +799,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17113")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForDevicesObjectsOnUsersTabInEvergreenMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -647,15 +807,17 @@ this.FeatureBackground();
                     "Devices",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS17113"};
+                    "DAS17113",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForDe" +
                     "vicesObjectsOnUsersTabInEvergreenMode", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17113"});
-#line 126
+                        "DAS17113",
+                        "Zion_NewGrid"});
+#line 152
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -678,19 +840,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 127
+#line 153
  testRunner.When("User navigates to the \'Device\' details page for \'00HA7MKAVVFDAV\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 128
+#line 154
  testRunner.Then("Details page for \'00HA7MKAVVFDAV\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 129
+#line 155
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 130
+#line 156
  testRunner.And("User clicks String Filter button for \"Domain\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 131
+#line 157
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -705,6 +867,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17113")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUsersObjectsOnUsersTabInEvergreenMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -712,15 +875,17 @@ this.FeatureBackground();
                     "Users",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS17113"};
+                    "DAS17113",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUser" +
                     "sObjectsOnUsersTabInEvergreenMode", null, new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17113"});
-#line 134
+                        "DAS17113",
+                        "Zion_NewGrid"});
+#line 160
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -743,22 +908,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 135
+#line 161
  testRunner.When("User navigates to the \'User\' details page for \'01C44C91EB7E4BE88F6\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 136
+#line 162
  testRunner.Then("Details page for \'01C44C91EB7E4BE88F6\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 137
+#line 163
  testRunner.When("User navigates to the \'Active Directory\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 138
+#line 164
  testRunner.And("User navigates to the \'Groups\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 139
+#line 165
  testRunner.And("User clicks String Filter button for \"Domain\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 140
+#line 166
  testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -773,6 +938,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17113")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForMailboxesObjectsOnUsersTabInEvergreenMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -780,15 +946,17 @@ this.FeatureBackground();
                     "Mailboxes",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS17113"};
+                    "DAS17113",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnFor" +
                     "MailboxesObjectsOnUsersTabInEvergreenMode", null, new string[] {
                         "Evergreen",
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17113"});
-#line 143
+                        "DAS17113",
+                        "Zion_NewGrid"});
+#line 169
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -811,30 +979,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 144
+#line 170
  testRunner.When("User navigates to the \'Mailbox\' details page for \'000F977AC8824FE39B8@bclabs.loca" +
                         "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 145
+#line 171
  testRunner.Then("Details page for \'000F977AC8824FE39B8@bclabs.local\' item is displayed to the user" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 146
+#line 172
  testRunner.When("User navigates to the \'Users\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 147
+#line 173
  testRunner.Then("string filter is displayed for \'Domain\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 148
+#line 174
  testRunner.When("User navigates to the \'Groups\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 149
+#line 175
  testRunner.Then("string filter is displayed for \'Domain\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 150
+#line 176
  testRunner.When("User navigates to the \'Mailbox Permissions\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 151
+#line 177
  testRunner.Then("string filter is displayed for \'Domain\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -865,7 +1033,7 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS12292",
                         "Not_Run"});
-#line 155
+#line 181
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -888,34 +1056,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 156
+#line 182
  testRunner.When("User navigates to the \'Device\' details page for \'001PSUMZYOW581\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 157
+#line 183
  testRunner.Then("Details page for \'001PSUMZYOW581\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 158
+#line 184
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 159
+#line 185
  testRunner.When("User navigates to the \'Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 160
+#line 186
  testRunner.And("User opens \'Date\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 161
+#line 187
  testRunner.And("User clicks Filter button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2342 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2798 = new TechTalk.SpecFlow.Table(new string[] {
                             "DateFrom",
                             "DateTo"});
-                table2342.AddRow(new string[] {
+                table2798.AddRow(new string[] {
                             "22 May 2014",
                             "22 May 2018"});
-#line 162
- testRunner.And("User select In Range value with following date:", ((string)(null)), table2342, "And ");
+#line 188
+ testRunner.And("User select In Range value with following date:", ((string)(null)), table2798, "And ");
 #line hidden
-#line 165
+#line 191
  testRunner.Then("Rows counter contains \"2\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -931,6 +1099,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13180")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -939,7 +1108,8 @@ this.FeatureBackground();
                     "AllLists",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS13180"};
+                    "DAS13180",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnA" +
                     "pplicationTabAndApplicationDistributionTab", null, new string[] {
                         "Evergreen",
@@ -947,8 +1117,9 @@ this.FeatureBackground();
                         "AllLists",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS13180"});
-#line 168
+                        "DAS13180",
+                        "Zion_NewGrid"});
+#line 194
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -971,77 +1142,77 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 169
+#line 195
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 170
+#line 196
  testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 171
+#line 197
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 172
+#line 198
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2343 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2799 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2343.AddRow(new string[] {
+                table2799.AddRow(new string[] {
                             "Device Count (Used)"});
-                table2343.AddRow(new string[] {
+                table2799.AddRow(new string[] {
                             "User Count (Used)"});
-#line 173
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2343, "When ");
+#line 199
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table2799, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2344 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2800 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2344.AddRow(new string[] {
+                table2800.AddRow(new string[] {
                             "Device Count (Used)"});
-                table2344.AddRow(new string[] {
+                table2800.AddRow(new string[] {
                             "User Count (Used)"});
-#line 177
- testRunner.Then("ColumnName is added to the list", ((string)(null)), table2344, "Then ");
+#line 203
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table2800, "Then ");
 #line hidden
-#line 181
+#line 207
  testRunner.When("User perform search by \"Microsoft DirectX 5 DDK\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 182
+#line 208
  testRunner.Then("\'94\' content is displayed in the \'Device Count (Used)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 183
+#line 209
  testRunner.And("\'98\' content is displayed in the \'User Count (Used)\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 184
+#line 210
  testRunner.When("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 185
+#line 211
  testRunner.When("User navigates to the \'Distribution\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 186
+#line 212
  testRunner.When("User navigates to the \'Users\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2345 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2801 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2345.AddRow(new string[] {
+                table2801.AddRow(new string[] {
                             "False"});
-#line 187
+#line 213
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Used\' col" +
-                        "umn:", ((string)(null)), table2345, "When ");
+                        "umn:", ((string)(null)), table2801, "When ");
 #line hidden
-#line 190
+#line 216
  testRunner.Then("Rows counter shows \"98\" of \"194\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 191
+#line 217
  testRunner.When("User navigates to the \'Devices\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2346 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2802 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table2346.AddRow(new string[] {
+                table2802.AddRow(new string[] {
                             "False"});
-#line 192
+#line 218
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Used\' col" +
-                        "umn:", ((string)(null)), table2346, "When ");
+                        "umn:", ((string)(null)), table2802, "When ");
 #line hidden
-#line 195
+#line 221
  testRunner.Then("Rows counter shows \"94\" of \"168\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1057,6 +1228,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS14431")]
         [NUnit.Framework.CategoryAttribute("DAS19243")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate()
         {
             string[] tagsOfScenario = new string[] {
@@ -1065,7 +1237,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS14431",
-                    "DAS19243"};
+                    "DAS19243",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionSta" +
                     "ysTheSameWhenSettingDeliveryDate", null, new string[] {
                         "Evergreen",
@@ -1073,8 +1246,9 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS14431",
-                        "DAS19243"});
-#line 198
+                        "DAS19243",
+                        "Zion_NewGrid"});
+#line 224
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1097,46 +1271,46 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 199
+#line 225
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                         "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 200
+#line 226
  testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                         "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 201
+#line 227
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 202
+#line 228
  testRunner.When("User navigates to the \'Projects\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 203
+#line 229
  testRunner.And("User opens \'Delivery Date\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 204
+#line 230
  testRunner.And("User clicks Filter button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 205
+#line 231
  testRunner.And("User remembers the date input position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2347 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2803 = new TechTalk.SpecFlow.Table(new string[] {
                             "Criteria",
                             "Date"});
-                table2347.AddRow(new string[] {
+                table2803.AddRow(new string[] {
                             "Not Equal",
                             "23032018"});
-#line 206
- testRunner.And("User select criteria with following date:", ((string)(null)), table2347, "And ");
+#line 232
+ testRunner.And("User select criteria with following date:", ((string)(null)), table2803, "And ");
 #line hidden
-#line 209
+#line 235
  testRunner.Then("User checks that date input has same position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 210
- testRunner.Then("Rows counter shows \"1\" of \"15\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 236
+ testRunner.Then("Rows counter contains \"1\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 211
- testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 237
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1150,6 +1324,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
         [NUnit.Framework.CategoryAttribute("DAS17726")]
+        [NUnit.Framework.CategoryAttribute("DAS20761")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1158,15 +1334,19 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS16817",
-                    "DAS17726"};
+                    "DAS17726",
+                    "DAS20761",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16817",
-                        "DAS17726"});
-#line 214
+                        "DAS17726",
+                        "DAS20761",
+                        "Zion_NewGrid"});
+#line 240
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1189,71 +1369,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 215
+#line 241
  testRunner.When("User navigates to the \'Device\' details page for \'001BAQXT6JWFPI\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 216
+#line 242
  testRunner.Then("Details page for \'001BAQXT6JWFPI\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 217
+#line 243
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 218
+#line 244
  testRunner.And("User navigates to the \'Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2348 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2804 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2348.AddRow(new string[] {
+                table2804.AddRow(new string[] {
                             "Empty"});
-#line 219
+#line 245
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
-                        " column:", ((string)(null)), table2348, "Then ");
+                        " column:", ((string)(null)), table2804, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2349 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2805 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2349.AddRow(new string[] {
+                table2805.AddRow(new string[] {
                             "Empty"});
-#line 222
+#line 248
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
-                        " column:", ((string)(null)), table2349, "Then ");
+                        " column:", ((string)(null)), table2805, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2350 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2806 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2350.AddRow(new string[] {
+                table2806.AddRow(new string[] {
                             "None"});
-#line 225
+#line 251
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Status\' c" +
-                        "olumn:", ((string)(null)), table2350, "Then ");
+                        "olumn:", ((string)(null)), table2806, "Then ");
 #line hidden
-#line 228
+#line 254
  testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 229
+#line 255
  testRunner.When("User navigates to the \'Owner Projects Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2351 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2807 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2351.AddRow(new string[] {
+                table2807.AddRow(new string[] {
                             "Empty"});
-#line 230
+#line 256
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
-                        " column:", ((string)(null)), table2351, "Then ");
+                        " column:", ((string)(null)), table2807, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2352 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2808 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2352.AddRow(new string[] {
+                table2808.AddRow(new string[] {
                             "Empty"});
-#line 233
+#line 259
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
-                        " column:", ((string)(null)), table2352, "Then ");
+                        " column:", ((string)(null)), table2808, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2353 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2809 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2353.AddRow(new string[] {
+                table2809.AddRow(new string[] {
                             "None"});
-#line 236
+#line 262
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Status\' c" +
-                        "olumn:", ((string)(null)), table2353, "Then ");
+                        "olumn:", ((string)(null)), table2809, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1267,6 +1447,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
         [NUnit.Framework.CategoryAttribute("DAS17726")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1275,15 +1456,17 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS16817",
-                    "DAS17726"};
+                    "DAS17726",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage", null, new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16817",
-                        "DAS17726"});
-#line 241
+                        "DAS17726",
+                        "Zion_NewGrid"});
+#line 267
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1306,96 +1489,96 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 242
+#line 268
  testRunner.When("User navigates to the \'User\' details page for \'ZXJ550185\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 243
+#line 269
  testRunner.Then("Details page for \'ZXJ550185\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 244
+#line 270
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 245
+#line 271
  testRunner.And("User navigates to the \'User Projects\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2354 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2810 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2354.AddRow(new string[] {
-                            "Empty"});
-#line 246
- testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
-                        " column:", ((string)(null)), table2354, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2355 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
-                table2355.AddRow(new string[] {
-                            "Empty"});
-#line 249
- testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
-                        " column:", ((string)(null)), table2355, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2356 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
-                table2356.AddRow(new string[] {
-                            "None"});
-#line 252
- testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Status\' c" +
-                        "olumn:", ((string)(null)), table2356, "Then ");
-#line hidden
-#line 255
- testRunner.When("User navigates to the \'Device Project Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table2357 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
-                table2357.AddRow(new string[] {
-                            "Empty"});
-#line 256
- testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
-                        " column:", ((string)(null)), table2357, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2358 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
-                table2358.AddRow(new string[] {
-                            "Empty"});
-#line 259
- testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
-                        " column:", ((string)(null)), table2358, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2359 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
-                table2359.AddRow(new string[] {
-                            "None"});
-#line 262
- testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Status\' c" +
-                        "olumn:", ((string)(null)), table2359, "Then ");
-#line hidden
-#line 265
- testRunner.When("User navigates to the \'User\' details page for \'0137C8E69921432992B\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 266
- testRunner.Then("Details page for \'0137C8E69921432992B\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 267
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 268
- testRunner.When("User navigates to the \'Mailbox Project Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table2360 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
-                table2360.AddRow(new string[] {
-                            "Empty"});
-#line 269
- testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
-                        " column:", ((string)(null)), table2360, "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2361 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
-                table2361.AddRow(new string[] {
+                table2810.AddRow(new string[] {
                             "Empty"});
 #line 272
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
+                        " column:", ((string)(null)), table2810, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2811 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Values"});
+                table2811.AddRow(new string[] {
+                            "Empty"});
+#line 275
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
-                        " column:", ((string)(null)), table2361, "Then ");
+                        " column:", ((string)(null)), table2811, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2812 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Values"});
+                table2812.AddRow(new string[] {
+                            "None"});
+#line 278
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Status\' c" +
+                        "olumn:", ((string)(null)), table2812, "Then ");
+#line hidden
+#line 281
+ testRunner.When("User navigates to the \'Device Project Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table2813 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Values"});
+                table2813.AddRow(new string[] {
+                            "Empty"});
+#line 282
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
+                        " column:", ((string)(null)), table2813, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2814 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Values"});
+                table2814.AddRow(new string[] {
+                            "Empty"});
+#line 285
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
+                        " column:", ((string)(null)), table2814, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2815 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Values"});
+                table2815.AddRow(new string[] {
+                            "None"});
+#line 288
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Status\' c" +
+                        "olumn:", ((string)(null)), table2815, "Then ");
+#line hidden
+#line 291
+ testRunner.When("User navigates to the \'User\' details page for \'0137C8E69921432992B\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 292
+ testRunner.Then("Details page for \'0137C8E69921432992B\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 293
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 294
+ testRunner.When("User navigates to the \'Mailbox Project Summary\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table2816 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Values"});
+                table2816.AddRow(new string[] {
+                            "Empty"});
+#line 295
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
+                        " column:", ((string)(null)), table2816, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2817 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Values"});
+                table2817.AddRow(new string[] {
+                            "Empty"});
+#line 298
+ testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
+                        " column:", ((string)(null)), table2817, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1409,6 +1592,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1416,15 +1600,17 @@ this.FeatureBackground();
                     "Applications",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS16817"};
+                    "DAS16817",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicatio" +
                     "nsPage", null, new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS16817"});
-#line 277
+                        "DAS16817",
+                        "Zion_NewGrid"});
+#line 303
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1447,34 +1633,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 278
+#line 304
  testRunner.When("User navigates to the \'Application\' details page for \'ACDSee 5.0.1 PowerPack\' ite" +
                         "m", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 279
+#line 305
  testRunner.Then("Details page for \'ACDSee 5.0.1 PowerPack\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 280
+#line 306
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 281
+#line 307
  testRunner.And("User navigates to the \'Projects\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2362 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2818 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2362.AddRow(new string[] {
+                table2818.AddRow(new string[] {
                             "Empty"});
-#line 282
+#line 308
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
-                        " column:", ((string)(null)), table2362, "Then ");
+                        " column:", ((string)(null)), table2818, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2363 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2819 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2363.AddRow(new string[] {
+                table2819.AddRow(new string[] {
                             "Empty"});
-#line 285
+#line 311
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
-                        " column:", ((string)(null)), table2363, "Then ");
+                        " column:", ((string)(null)), table2819, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1489,6 +1675,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16817")]
         [NUnit.Framework.CategoryAttribute("DAS17726")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -1497,7 +1684,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS16817",
-                    "DAS17726"};
+                    "DAS17726",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage" +
                     "", null, new string[] {
                         "Evergreen",
@@ -1505,8 +1693,9 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16817",
-                        "DAS17726"});
-#line 290
+                        "DAS17726",
+                        "Zion_NewGrid"});
+#line 316
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1529,62 +1718,62 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 291
+#line 317
  testRunner.When("User navigates to the \'Mailbox\' details page for \'06C02CDC00044A7DB59@bclabs.loca" +
                         "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 292
+#line 318
  testRunner.Then("Details page for \'06C02CDC00044A7DB59@bclabs.local\' item is displayed to the user" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 293
+#line 319
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 294
+#line 320
  testRunner.And("User navigates to the \'Mailbox Projects\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2364 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2820 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2364.AddRow(new string[] {
+                table2820.AddRow(new string[] {
                             "Empty"});
-#line 295
+#line 321
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
-                        " column:", ((string)(null)), table2364, "Then ");
+                        " column:", ((string)(null)), table2820, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2365 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2821 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2365.AddRow(new string[] {
+                table2821.AddRow(new string[] {
                             "Empty"});
-#line 298
+#line 324
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
-                        " column:", ((string)(null)), table2365, "Then ");
+                        " column:", ((string)(null)), table2821, "Then ");
 #line hidden
-#line 301
+#line 327
  testRunner.When("User navigates to the \'Mailbox User Projects\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2366 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2822 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2366.AddRow(new string[] {
+                table2822.AddRow(new string[] {
                             "Empty"});
-#line 302
+#line 328
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Workflow\'" +
-                        " column:", ((string)(null)), table2366, "Then ");
+                        " column:", ((string)(null)), table2822, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2367 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2823 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2367.AddRow(new string[] {
+                table2823.AddRow(new string[] {
                             "Empty"});
-#line 305
+#line 331
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Category\'" +
-                        " column:", ((string)(null)), table2367, "Then ");
+                        " column:", ((string)(null)), table2823, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2368 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2824 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2368.AddRow(new string[] {
+                table2824.AddRow(new string[] {
                             "None"});
-#line 308
+#line 334
  testRunner.Then("following checkboxes are contained in the filter dropdown menu for the \'Status\' c" +
-                        "olumn:", ((string)(null)), table2368, "Then ");
+                        "olumn:", ((string)(null)), table2824, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

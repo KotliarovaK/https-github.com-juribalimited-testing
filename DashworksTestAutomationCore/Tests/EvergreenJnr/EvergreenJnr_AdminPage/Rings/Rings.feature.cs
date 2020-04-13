@@ -135,18 +135,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1098 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1166 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1098.AddRow(new string[] {
+                table1166.AddRow(new string[] {
                             "ProjectForDAS14780",
                             "All Devices",
                             "None",
                             "Clone from Evergreen to Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1098, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1166, "When ");
 #line hidden
 #line 13
  testRunner.Then("Page with \'ProjectForDAS14780\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -155,7 +155,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 15
- testRunner.Then("\'Clone evergreen rings to project rings\' content is displayed in \'Rings\' dropdown" +
+ testRunner.Then("\'Clone Evergreen rings to project rings\' content is displayed in \'Rings\' dropdown" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 16
@@ -205,12 +205,12 @@ this.FeatureBackground();
  testRunner.And("User selects \"ProjectForDAS14780\" checkbox from String Filter with item list on t" +
                         "he Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1099 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1167 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table1099.AddRow(new string[] {
+                table1167.AddRow(new string[] {
                             "Unassigned"});
 #line 31
- testRunner.Then("Content in the \'Bucket\' column is equal to", ((string)(null)), table1099, "Then ");
+ testRunner.Then("Content in the \'Bucket\' column is equal to", ((string)(null)), table1167, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -281,18 +281,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1100 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1168 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1100.AddRow(new string[] {
+                table1168.AddRow(new string[] {
                             "14690_Project",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 37
- testRunner.When("Project created via API and opened", ((string)(null)), table1100, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1168, "When ");
 #line hidden
 #line 40
  testRunner.When("User navigates to the \'Rings\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -339,12 +339,12 @@ this.FeatureBackground();
 #line 54
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1101 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1169 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1101.AddRow(new string[] {
+                table1169.AddRow(new string[] {
                             "Maps to Evergreen"});
 #line 55
- testRunner.Then("Content is empty in the column", ((string)(null)), table1101, "Then ");
+ testRunner.Then("Content is empty in the column", ((string)(null)), table1169, "Then ");
 #line hidden
 #line 58
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -365,21 +365,21 @@ this.FeatureBackground();
  testRunner.When("User changes Project Description to \"New_14690_Description\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 64
- testRunner.When("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
+ testRunner.When("User selects \"Clone Evergreen buckets to project buckets\" in the Buckets Project " +
                         "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 65
  testRunner.Then("\"Device scoped project\" is displayed in the disabled Project Type field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 66
- testRunner.When("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
+ testRunner.When("User selects \"Clone Evergreen buckets to project buckets\" in the Buckets Project " +
                         "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 67
  testRunner.Then("\'Use project rings\' content is displayed in \'Rings\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 68
- testRunner.When("User selects \'Clone evergreen rings to project rings\' in the \'Rings\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Clone Evergreen rings to project rings\' in the \'Rings\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 69
  testRunner.When("User clicks \'Projects\' header breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -397,11 +397,11 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 74
- testRunner.Then("\'Clone evergreen buckets to project buckets\' content is displayed in \'Buckets\' dr" +
+ testRunner.Then("\'Clone Evergreen buckets to project buckets\' content is displayed in \'Buckets\' dr" +
                         "opdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 75
- testRunner.Then("\'Clone evergreen rings to project rings\' content is displayed in \'Rings\' dropdown" +
+ testRunner.Then("\'Clone Evergreen rings to project rings\' content is displayed in \'Rings\' dropdown" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 76
@@ -470,14 +470,14 @@ this.FeatureBackground();
 #line 84
  testRunner.Then("Page with \'Rings\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1102 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1170 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table1102.AddRow(new string[] {
+                table1170.AddRow(new string[] {
                             "Ring",
                             "true"});
 #line 85
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table1102, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table1170, "When ");
 #line hidden
 #line 88
  testRunner.Then("Cog menu is not displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

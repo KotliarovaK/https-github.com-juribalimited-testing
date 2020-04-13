@@ -247,12 +247,12 @@ this.FeatureBackground();
 #line 31
  testRunner.Then("Page with \'Capacity Units\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table609 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table676 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table609.AddRow(new string[] {
+                table676.AddRow(new string[] {
                             "Evergreen Capacity Unit 1"});
 #line 32
- testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table609, "When ");
+ testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table676, "When ");
 #line hidden
 #line 35
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -264,12 +264,12 @@ this.FeatureBackground();
  testRunner.Then("\'This unit will be permanently deleted and any objects within it reassigned to th" +
                         "e default unit\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table610 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table677 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table610.AddRow(new string[] {
+                table677.AddRow(new string[] {
                             "Evergreen Capacity Unit 2"});
 #line 38
- testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table610, "When ");
+ testRunner.When("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table677, "When ");
 #line hidden
 #line 41
  testRunner.And("User clicks \'DELETE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

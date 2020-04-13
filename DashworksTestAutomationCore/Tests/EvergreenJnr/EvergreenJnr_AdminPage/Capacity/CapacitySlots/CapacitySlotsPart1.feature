@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @DAS17271 @DAS18918 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @DAS17271 @DAS18918 @Cleanup @Universe
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
 	When Project created via API and opened
 	| ProjectName             | Scope       | ProjectTemplate | Mode               |
@@ -22,10 +22,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| SlotName      | DisplayName | CapacityType   |
 	| CapacitySlot1 | DAS13432    | Capacity Units |
 	Then 'Your capacity slot has been created' text is displayed on inline success banner
+	When User clicks following checkboxes from Column Settings panel for the 'Capacity Slot' column:
+	| checkboxes |
+	| Monday     |
+	| Tuesday    |
 	Then 'All Capacity Units' content is displayed in the 'Capacity Units' column
 	When User clicks 'CREATE SLOT' button
 	And User enters 'CapacitySlot1' text to 'Slot Name' textbox
 	Then 'A slot already exists with this name' error message is displayed for 'Slot Name' field
+	When User clicks 'CANCEL' button 
 	When User creates new Slot via Api
 	| Project                 | SlotName       | DisplayName |
 	| ProjectForCapacity13171 | UniqueNameSlot | DAS13432    |
@@ -46,6 +51,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	| SlotName      | DisplayName | CapacityType    |
 	| CapacitySlot2 | DAS13432    | Teams and Paths |
 	Then 'Your capacity slot has been created' text is displayed on inline success banner
+	When User clicks following checkboxes from Column Settings panel for the 'Capacity Slot' column:
+	| checkboxes |
+	| Monday     |
+	| Tuesday    |
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
 	Then 'No units' text is displayed in the filter dropdown for the 'Capacity Units' column
@@ -115,8 +124,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	| Project                    | SlotName             | DisplayName | SlotAvailableFrom | SlotAvailableTo |
 	| ProjectForCapacityDAS13824 | CapacitySlotDAS13824 | DAS13824    | 29 Oct 2018       | 30 Oct 2018     |
 	And User navigates to newly created Slot
-	When User enters '' text to 'Slot Available From' datepicker
-	When User enters '' text to 'Slot Available To' datepicker
+	When User clears 'Slot Available From' textbox with backspaces
+	When User clears 'Slot Available To' textbox with backspaces
 	When User clicks 'UPDATE' button 
 	When User clicks content from "Capacity Slot" column
 	Then '' content is displayed in 'Slot Available From' textbox

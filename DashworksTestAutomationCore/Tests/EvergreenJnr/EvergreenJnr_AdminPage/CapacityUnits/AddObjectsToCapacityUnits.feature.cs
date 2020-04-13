@@ -141,16 +141,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table601 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table668 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table601.AddRow(new string[] {
+                table668.AddRow(new string[] {
                             "CapacityUnit12141Devices",
                             "Devices",
                             "false"});
 #line 10
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table601, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table668, "When ");
 #line hidden
 #line 13
  testRunner.And("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -164,20 +164,20 @@ this.FeatureBackground();
 #line 16
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table602 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table669 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table602.AddRow(new string[] {
+                table669.AddRow(new string[] {
                             "00I0COBFWHOF27"});
-                table602.AddRow(new string[] {
+                table669.AddRow(new string[] {
                             "00K4CEEQ737BA4L"});
-                table602.AddRow(new string[] {
+                table669.AddRow(new string[] {
                             "00KLL9S8NRF0X6"});
-                table602.AddRow(new string[] {
+                table669.AddRow(new string[] {
                             "00KWQ4J3WKQM0G"});
-                table602.AddRow(new string[] {
+                table669.AddRow(new string[] {
                             "01ERDGD48UDQKE"});
 #line 17
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table602, "When ");
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table669, "When ");
 #line hidden
 #line 24
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -186,7 +186,7 @@ this.FeatureBackground();
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 26
- testRunner.And("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 27
  testRunner.And("User selects \'CapacityUnit12141Devices\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -283,16 +283,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table603 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table670 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table603.AddRow(new string[] {
+                table670.AddRow(new string[] {
                             "CapacityUnit12141Users",
                             "Users",
                             "false"});
 #line 41
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table603, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table670, "When ");
 #line hidden
 #line 44
  testRunner.And("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -306,20 +306,20 @@ this.FeatureBackground();
 #line 47
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table604 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table671 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table604.AddRow(new string[] {
+                table671.AddRow(new string[] {
                             "$231000-3AC04R8AR431"});
-                table604.AddRow(new string[] {
+                table671.AddRow(new string[] {
                             "$6BE000-SUDQ9614UVO8"});
-                table604.AddRow(new string[] {
+                table671.AddRow(new string[] {
                             "___ ___"});
-                table604.AddRow(new string[] {
+                table671.AddRow(new string[] {
                             "002B5DC7D4D34D5C895"});
-                table604.AddRow(new string[] {
+                table671.AddRow(new string[] {
                             "00BDBAEA57334C7C8F4"});
 #line 48
- testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table604, "When ");
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table671, "When ");
 #line hidden
 #line 55
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -328,7 +328,7 @@ this.FeatureBackground();
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 57
- testRunner.And("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 58
  testRunner.And("User selects \'CapacityUnit12141Users\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -434,16 +434,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table605 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table672 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table605.AddRow(new string[] {
+                table672.AddRow(new string[] {
                             "CapacityUnit12141Applications",
                             "Applications",
                             "false"});
 #line 72
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table605, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table672, "When ");
 #line hidden
 #line 75
  testRunner.And("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -457,20 +457,20 @@ this.FeatureBackground();
 #line 78
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table606 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table673 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table606.AddRow(new string[] {
+                table673.AddRow(new string[] {
                             "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-                table606.AddRow(new string[] {
+                table673.AddRow(new string[] {
                             "%SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013"});
-                table606.AddRow(new string[] {
+                table673.AddRow(new string[] {
                             "%SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI"});
-                table606.AddRow(new string[] {
+                table673.AddRow(new string[] {
                             "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
-                table606.AddRow(new string[] {
+                table673.AddRow(new string[] {
                             "0036 - Microsoft Access 97 SR-2 English"});
 #line 79
- testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table606, "When ");
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table673, "When ");
 #line hidden
 #line 86
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -479,7 +479,7 @@ this.FeatureBackground();
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 88
- testRunner.And("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 89
  testRunner.And("User selects \'CapacityUnit12141Applications\' option from \'Capacity Unit\' autocomp" +
@@ -577,16 +577,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table607 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table674 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault"});
-                table607.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "CapacityUnit12141Mailboxes",
                             "Mailboxes",
                             "false"});
 #line 103
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table607, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table674, "When ");
 #line hidden
 #line 106
  testRunner.And("User clicks \'Mailboxes\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -600,20 +600,20 @@ this.FeatureBackground();
 #line 109
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table608 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table675 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table608.AddRow(new string[] {
+                table675.AddRow(new string[] {
                             "000F977AC8824FE39B8@bclabs.local"});
-                table608.AddRow(new string[] {
+                table675.AddRow(new string[] {
                             "002B5DC7D4D34D5C895@bclabs.local"});
-                table608.AddRow(new string[] {
+                table675.AddRow(new string[] {
                             "003F5D8E1A844B1FAA5@bclabs.local"});
-                table608.AddRow(new string[] {
+                table675.AddRow(new string[] {
                             "0072B088173449E3A93@bclabs.local"});
-                table608.AddRow(new string[] {
+                table675.AddRow(new string[] {
                             "00A5B910A1004CF5AC4@bclabs.local"});
 #line 110
- testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table608, "When ");
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table675, "When ");
 #line hidden
 #line 117
  testRunner.And("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -622,7 +622,7 @@ this.FeatureBackground();
  testRunner.And("User selects \'Update capacity unit\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 119
- testRunner.And("User selects \'Evergreen\' in the \'Project or Evergreen\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 120
  testRunner.And("User selects \'CapacityUnit12141Mailboxes\' option from \'Capacity Unit\' autocomplet" +

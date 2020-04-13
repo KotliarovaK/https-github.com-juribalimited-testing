@@ -28,7 +28,7 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 	| MailboxesProject3 | All Mailboxes | None            | Standalone Project |
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
-	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Mailboxes to add (0 of 14884 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Scope Details' left menu item
 	And User selects '<ChangingToList1>' in the 'Scope' dropdown with wait
 	And User navigates to the 'Scope Changes' left menu item
@@ -41,7 +41,7 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 
 Examples:
 	| ChangingToList1 | ChangingToList2 | ObjectsToAdd1                          | ObjectsToAdd2                      |
-	| All Mailboxes   | StaticList1429  | Mailboxes to add (0 of 14784 selected) | Mailboxes to add (0 of 2 selected) |
+	| All Mailboxes   | StaticList1429  | Mailboxes to add (0 of 14884 selected) | Mailboxes to add (0 of 2 selected) |
 	| StaticList1429  | DynamicList77   | Mailboxes to add (0 of 2 selected)     | Mailboxes to add (0 of 6 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
@@ -68,7 +68,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 	Then Application Scope tab is displayed
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14757 selected)" is displayed to the user in the Project Scope Changes section
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Cleanup @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxProject
@@ -84,7 +84,6 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	Then Application Scope checkboxes are active
 	When User selects "Do not include applications" checkbox on the Project details page
 	Then Scope List dropdown is disabled
-	Then Application Scope checkboxes are disabled
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Applications' tab on Project Scope Changes page
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
@@ -105,13 +104,13 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	Then Page with 'TestProject65' header is displayed to user
 	When User navigates to the 'Scope Changes' left menu item
-	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Mailboxes to add (0 of 14884 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect and selects following Objects
 	| Objects                                            |
 	| 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) |
 	| 00DB4000EDD84951993@bclabs.local (CSC, SS)         |
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	Then "Users to add (0 of 14747 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14757 selected)" is displayed to the user in the Project Scope Changes section
 	When User expands multiselect and selects following Objects
 	| Objects                            |
 	| 02E0346DF7804F25835 (Gill, Donna)  |
@@ -128,6 +127,6 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	Then '4 objects queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
 	#Then "Applications to add (0 of 2079 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Mailboxes' tab on Project Scope Changes page
-	Then "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Mailboxes to add (0 of 14882 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Users' tab on Project Scope Changes page
-	Then "Users to add (0 of 14745 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14755 selected)" is displayed to the user in the Project Scope Changes section

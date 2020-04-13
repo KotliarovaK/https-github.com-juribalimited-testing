@@ -26,8 +26,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| Update ring          |
 	| Update task value    |
 	When User selects 'Update path' in the 'Bulk Update Type' dropdown
-	And User selects 'Babel (English, German and French)' option from 'Project' autocomplete
-	And User selects 'Machines' option from 'Path' autocomplete
+	And User selects 'Devices Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Request Type:Device' option from 'Path' autocomplete
 	And User clicks 'CANCEL' button 
 	Then Actions panel is not displayed to the user
 	Then checkboxes are not displayed for content in the grid
@@ -46,15 +46,11 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	Then 'Project' autocomplete contains following options:
 	| Options                                          |
 	| *Project K-Computer Scheduled Project            |
-	| 1803 Rollout                                     |
-	| Babel (English, German and French)               |
+	| 2004 Rollout                                     |
 	| Barry's User Project                             |
 	| Computer Scheduled Test (Jo)                     |
 	| Devices Evergreen Capacity Project               |
 	| Havoc (Big Data)                                 |
-	| I-Computer Scheduled Project                     |
-	| Migration Project Phase 2 (User Project)         |
-	| Project 00 M Computer Scheduled                  |
 	| USE ME FOR AUTOMATION(DEVICE SCHDLD)             |
 	| USE ME FOR AUTOMATION(USR SCHDLD)                |
 	| User Evergreen Capacity Project                  |
@@ -177,71 +173,29 @@ Scenario: EvergreenJnr_DevicesList_CheckThatChangingProjectOrEvergreenDoesNotMak
 	| 00HA7MKAVVFDAV   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'London - Southbank' option from 'Capacity Unit' autocomplete
 	#====#
 	And User selects 'Update path' in the 'Bulk Update Type' dropdown
-	And User selects 'I-Computer Scheduled Project' option from 'Project' autocomplete
+	And User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	And User selects '[Default (Computer)]' option from 'Path' autocomplete
 	#====#
 	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' in the 'Project or Evergreen' dropdown
-	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
+	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project or Evergreen' autocomplete
 	And User selects 'Unassigned' option from 'Ring' autocomplete
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'Evergreen Ring 1' option from 'Ring' autocomplete
 	#====#
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects 'Babel (English, German and French)' option from 'Project' autocomplete
-	And User selects 'Initiation' option from 'Stage' autocomplete
-	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Stage 2 \ Date Task (Computer)' option from 'Task' autocomplete
 	#====#
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	And User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	And User selects 'Evergreen Bucket 1' option from 'Bucket' autocomplete
 	And User clicks 'UPDATE' button 
 	When User clicks 'UPDATE' button
 	Then Success message with "2 updates have been queued" text is displayed on Action panel
-
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149 @Not_Ready
-#The problem with the gold data. Contact Kate for more details.
-Scenario: EvergreenJnr_DevicesList_ChecksUpdateRingInBulkUpdateTypeTeamToGroupSecurity
-	When User clicks the Logout button
- 	When User is logged in to the Evergreen as
- 	| Username        | Password  |
- 	| TestBulkUpdater | m!gration |
-	Then Evergreen Dashboards page should be displayed to the user
-	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "Bulk Update Roles" list
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User selects all rows on the grid
-	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
-	When User selects 'TestBulkUpdate' option from 'Ring' autocomplete
-	And User clicks 'UPDATE' button 
-	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	When User clicks 'UPDATE' button
-	Then Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
-	When User refreshes agGrid
-	And User perform search by "Z11REX196H34MG"
-	Then 'Unassigned' content is displayed in the 'Evergreen Ring' column
-	When User clicks cross icon in Table search field
-		#Revert Changes
-	When User selects all rows on the grid
-	And User selects 'Bulk update' in the 'Action' dropdown
-	And User selects 'Update ring' in the 'Bulk Update Type' dropdown
-	And User selects 'Evergreen' in the 'Project or Evergreen' dropdown
-	When User selects 'Unassigned' option from 'Ring' autocomplete
-	And User clicks 'UPDATE' button 
-	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
-	When User clicks 'UPDATE' button
-	Then Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
-	When User refreshes agGrid
-	And User perform search by "Z11REX196H34MG"
-	Then '[Default (Computer)]' content is displayed in the 'zDeviceAut: Path' column
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19149
 Scenario: EvergreenJnr_DevicesList_ChecksUpdatePathInBulkUpdateTypeTeamToGroupSecurity

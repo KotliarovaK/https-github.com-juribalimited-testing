@@ -93,7 +93,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18674")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAutomationsIsVisible()
         {
             string[] tagsOfScenario = new string[] {
@@ -101,16 +100,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                     "EvergreenJnr_AdminPage",
                     "Automations",
                     "DAS18674",
-                    "Cleanup",
-                    "Universe"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatApplicationAttributesCriticalityForAutomationsIsV" +
                     "isible", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18674",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -134,14 +131,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table295 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                TechTalk.SpecFlow.Table table309 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table295.AddRow(new string[] {
+                table309.AddRow(new string[] {
                             "18674_Automation",
                             "18674",
                             "true",
@@ -149,7 +146,7 @@ this.FeatureBackground();
                             "All Applications",
                             "Manual"});
 #line 10
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table295, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table309, "When ");
 #line hidden
 #line 13
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -181,38 +178,38 @@ this.FeatureBackground();
 #line 23
  testRunner.Then("\'No change\' content is displayed in \'In Catalog\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table296 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table310 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table296.AddRow(new string[] {
+                table310.AddRow(new string[] {
                             "No change"});
-                table296.AddRow(new string[] {
+                table310.AddRow(new string[] {
                             "Core"});
-                table296.AddRow(new string[] {
+                table310.AddRow(new string[] {
                             "Critical"});
-                table296.AddRow(new string[] {
+                table310.AddRow(new string[] {
                             "Important"});
-                table296.AddRow(new string[] {
+                table310.AddRow(new string[] {
                             "Not Important"});
-                table296.AddRow(new string[] {
+                table310.AddRow(new string[] {
                             "Uncategorised"});
 #line 24
- testRunner.Then("following Values are displayed in the \'Criticality\' dropdown:", ((string)(null)), table296, "Then ");
+ testRunner.Then("following Values are displayed in the \'Criticality\' dropdown:", ((string)(null)), table310, "Then ");
 #line hidden
 #line 32
  testRunner.Then("\'CREATE\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 33
- testRunner.Then("\'SAVE AND CREATE ANOTHER\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'SAVE & CREATE ANOTHER\' button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 34
- testRunner.Then("\'CREATE\' button has tooltip with \'Select at least one value to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'CREATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 35
- testRunner.Then("\'SAVE AND CREATE ANOTHER\' button has tooltip with \'Select at least one value to c" +
-                        "hange\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'SAVE & CREATE ANOTHER\' button has tooltip with \'Some values are missing or not v" +
+                        "alid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 36
- testRunner.When("User selects \'1803 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'2004 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 37
  testRunner.Then("\'No change\' content is displayed in \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -220,22 +217,22 @@ this.FeatureBackground();
 #line 38
  testRunner.Then("\'No change\' content is displayed in \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table297 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table311 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table297.AddRow(new string[] {
+                table311.AddRow(new string[] {
                             "No change"});
-                table297.AddRow(new string[] {
+                table311.AddRow(new string[] {
                             "Core"});
-                table297.AddRow(new string[] {
+                table311.AddRow(new string[] {
                             "Critical"});
-                table297.AddRow(new string[] {
+                table311.AddRow(new string[] {
                             "Important"});
-                table297.AddRow(new string[] {
+                table311.AddRow(new string[] {
                             "Not Important"});
-                table297.AddRow(new string[] {
+                table311.AddRow(new string[] {
                             "Uncategorised"});
 #line 39
- testRunner.Then("following Values are displayed in the \'Criticality\' dropdown:", ((string)(null)), table297, "Then ");
+ testRunner.Then("following Values are displayed in the \'Criticality\' dropdown:", ((string)(null)), table311, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -248,7 +245,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS18674")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForAutomations()
         {
             string[] tagsOfScenario = new string[] {
@@ -256,15 +252,13 @@ this.FeatureBackground();
                     "EvergreenJnr_AdminPage",
                     "Automations",
                     "DAS18674",
-                    "Cleanup",
-                    "Universe"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityForAutomations", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS18674",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 49
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -288,14 +282,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table298 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                TechTalk.SpecFlow.Table table312 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table298.AddRow(new string[] {
+                table312.AddRow(new string[] {
                             "18674_Test_Automation",
                             "18674",
                             "true",
@@ -303,7 +297,7 @@ this.FeatureBackground();
                             "All Applications",
                             "Manual"});
 #line 50
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table298, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table312, "When ");
 #line hidden
 #line 53
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -379,7 +373,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DASDAS19601")]
         [NUnit.Framework.CategoryAttribute("DAS19150")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForEvergreen()
         {
             string[] tagsOfScenario = new string[] {
@@ -389,8 +382,7 @@ this.FeatureBackground();
                     "DAS19311",
                     "DASDAS19601",
                     "DAS19150",
-                    "Cleanup",
-                    "Universe"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestor" +
                     "ingValuesForEvergreen", null, new string[] {
                         "Evergreen",
@@ -399,8 +391,7 @@ this.FeatureBackground();
                         "DAS19311",
                         "DASDAS19601",
                         "DAS19150",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 78
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -424,14 +415,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table299 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                TechTalk.SpecFlow.Table table313 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table299.AddRow(new string[] {
+                table313.AddRow(new string[] {
                             "19311_Automation",
                             "19311",
                             "true",
@@ -439,7 +430,7 @@ this.FeatureBackground();
                             "All Applications",
                             "Manual"});
 #line 79
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table299, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table313, "When ");
 #line hidden
 #line 82
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -484,11 +475,11 @@ this.FeatureBackground();
  testRunner.Then("\"\" content is displayed for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 98
- testRunner.Then("\"Sticky Compliance, Rationalisation, In Catalog, Criticality, Hide From End Users" +
+ testRunner.Then("\"Sticky Compliance, In Catalog, Criticality, Rationalisation, Hide From End Users" +
                         "\" content is displayed for \"Task or Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 99
- testRunner.Then("\"Red, Keep, False, Critical, True\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Red, False, Critical, Keep, True\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 101
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -551,11 +542,11 @@ this.FeatureBackground();
  testRunner.Then("\"\" content is displayed for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 123
- testRunner.Then("\"Sticky Compliance, Rationalisation, In Catalog, Criticality, Hide From End Users" +
+ testRunner.Then("\"Sticky Compliance, In Catalog, Criticality, Rationalisation, Hide From End Users" +
                         "\" content is displayed for \"Task or Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 124
- testRunner.Then("\"Green, Retire, True, Core, False\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Green, True, Core, Retire, False\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 126
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -602,7 +593,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DASDAS19601")]
         [NUnit.Framework.CategoryAttribute("DAS19150")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestoringValuesForProject()
         {
             string[] tagsOfScenario = new string[] {
@@ -613,8 +603,7 @@ this.FeatureBackground();
                     "DAS19353",
                     "DASDAS19601",
                     "DAS19150",
-                    "Cleanup",
-                    "Universe"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalitySavingAndRestor" +
                     "ingValuesForProject", null, new string[] {
                         "Evergreen",
@@ -624,8 +613,7 @@ this.FeatureBackground();
                         "DAS19353",
                         "DASDAS19601",
                         "DAS19150",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 138
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -649,14 +637,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table300 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                TechTalk.SpecFlow.Table table314 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table300.AddRow(new string[] {
+                table314.AddRow(new string[] {
                             "19311_Test_Automation",
                             "19311",
                             "true",
@@ -664,7 +652,7 @@ this.FeatureBackground();
                             "All Applications",
                             "Manual"});
 #line 139
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table300, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table314, "When ");
 #line hidden
 #line 142
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -704,11 +692,11 @@ this.FeatureBackground();
  testRunner.Then("\"USE ME FOR AUTOMATION(DEVICE SCHDLD)\" content is displayed for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 156
- testRunner.Then("\"Rationalisation, Criticality, Hide From End Users\" content is displayed for \"Tas" +
+ testRunner.Then("\"Criticality, Rationalisation, Hide From End Users\" content is displayed for \"Tas" +
                         "k or Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 157
- testRunner.Then("\"Keep, Important, True\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Important, Keep, True\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 158
  testRunner.When("User opens \'Action\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -775,11 +763,11 @@ this.FeatureBackground();
  testRunner.Then("\"USE ME FOR AUTOMATION(DEVICE SCHDLD)\" content is displayed for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 182
- testRunner.Then("\"Rationalisation, Criticality, Hide From End Users\" content is displayed for \"Tas" +
+ testRunner.Then("\"Criticality, Rationalisation, Hide From End Users\" content is displayed for \"Tas" +
                         "k or Field\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 183
- testRunner.Then("\"Uncategorised, Core, False\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Core, Uncategorised, False\" content is displayed for \"Value\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 185
  testRunner.When("User clicks content from \"Action\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -818,7 +806,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS19312")]
         [NUnit.Framework.CategoryAttribute("DAS19566")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow()
         {
             string[] tagsOfScenario = new string[] {
@@ -827,16 +814,14 @@ this.FeatureBackground();
                     "Automations",
                     "DAS19312",
                     "DAS19566",
-                    "Cleanup",
-                    "Universe"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckUpdateApplicationAttributesCriticalityRunNow", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS19312",
                         "DAS19566",
-                        "Cleanup",
-                        "Universe"});
+                        "Cleanup"});
 #line 195
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -866,13 +851,13 @@ this.FeatureBackground();
 #line 197
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table301 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table315 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table301.AddRow(new string[] {
-                            "TiffSurfer 3.4"});
+                table315.AddRow(new string[] {
+                            "Microsoft Office XP SP1"});
 #line 198
  testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
-                        "ing value:", ((string)(null)), table301, "When ");
+                        "ing value:", ((string)(null)), table315, "When ");
 #line hidden
 #line 201
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -892,14 +877,14 @@ this.FeatureBackground();
 #line 206
  testRunner.Then("\"StaticList19312\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table302 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                TechTalk.SpecFlow.Table table316 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table302.AddRow(new string[] {
+                table316.AddRow(new string[] {
                             "19312_Automation",
                             "19312",
                             "true",
@@ -907,7 +892,7 @@ this.FeatureBackground();
                             "StaticList19312",
                             "Manual"});
 #line 207
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table302, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table316, "When ");
 #line hidden
 #line 210
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -950,6 +935,9 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Run now\' option in Cog-menu for \'19312_Automation\' item from \'Automa" +
                         "tion\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 225
+ testRunner.When("\'19312_Automation\' automation \'19312_Action\' action run has finished", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 226
  testRunner.When("User navigates to the \'Automation Log\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -976,8 +964,7 @@ this.FeatureBackground();
  testRunner.Then("\'Core\' content is displayed in the \'UseMeForAu: Criticality\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 234
- testRunner.Then("\'KEEP\' content is displayed in the \'UseMeForAu: Application Rationalisation\' colu" +
-                        "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'KEEP\' content is displayed in the \'UseMeForAu: Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 235
  testRunner.Then("\'TRUE\' content is displayed in the \'UseMeForAu: Hide From End Users\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1044,13 +1031,13 @@ this.FeatureBackground();
 #line 240
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table303 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table317 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table303.AddRow(new string[] {
+                table317.AddRow(new string[] {
                             "TIFNY 3"});
 #line 241
  testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
-                        "ing value:", ((string)(null)), table303, "When ");
+                        "ing value:", ((string)(null)), table317, "When ");
 #line hidden
 #line 244
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1070,14 +1057,14 @@ this.FeatureBackground();
 #line 249
  testRunner.Then("\"TestList19312\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table304 = new TechTalk.SpecFlow.Table(new string[] {
-                            "AutomationName",
+                TechTalk.SpecFlow.Table table318 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
                             "Description",
-                            "Active",
+                            "IsActive",
                             "StopOnFailedAction",
                             "Scope",
                             "Run"});
-                table304.AddRow(new string[] {
+                table318.AddRow(new string[] {
                             "Test_19312_Automation",
                             "test19312",
                             "true",
@@ -1085,7 +1072,7 @@ this.FeatureBackground();
                             "TestList19312",
                             "Manual"});
 #line 250
- testRunner.When("User creates new Automation via API and open it", ((string)(null)), table304, "When ");
+ testRunner.When("User creates new Automation via API and open it", ((string)(null)), table318, "When ");
 #line hidden
 #line 253
  testRunner.Then("Automation page is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

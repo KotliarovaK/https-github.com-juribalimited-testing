@@ -141,14 +141,14 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2211 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2565 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2211.AddRow(new string[] {
+                table2565.AddRow(new string[] {
                             "In Catalog",
                             "FALSE"});
 #line 13
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2211, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2565, "Then ");
 #line hidden
 #line 16
  testRunner.When("User selects \'TRUE\' in the dropdown for the \'In Catalog\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -159,26 +159,26 @@ this.FeatureBackground();
 #line 18
  testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2212 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2566 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2212.AddRow(new string[] {
+                table2566.AddRow(new string[] {
                             "In Catalog",
                             "TRUE"});
 #line 19
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2212, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2566, "Then ");
 #line hidden
 #line 22
  testRunner.When("User selects \'FALSE\' in the dropdown for the \'In Catalog\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2213 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2567 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2213.AddRow(new string[] {
+                table2567.AddRow(new string[] {
                             "In Catalog",
                             "FALSE"});
 #line 23
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2213, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2567, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

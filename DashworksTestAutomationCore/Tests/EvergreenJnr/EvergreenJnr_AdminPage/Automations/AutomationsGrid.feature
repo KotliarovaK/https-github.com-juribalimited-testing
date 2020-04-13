@@ -35,7 +35,7 @@ Scenario: EvergreenJnr_AdminPage_CheckFiltersForAutomationsGrid
 	Then Cog menu is not displayed on the Admin page
 	Then Grid is grouped
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17774 @Do_Not_Run_With_Automations @Do_Not_Run_With_Actions
 Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
@@ -47,9 +47,9 @@ Scenario: EvergreenJnr_AdminPage_CheckSortingAutomationsGrid
 	Then data in table is sorted by 'Automation' column in descending order
 	#Run steps after fixing Boolean sorting
 	#When User clicks on 'Active' column header
-	#Then Boolean data in table is sorted by 'Active' column in ascending order
+	#Then boolean data is sorted by 'Active' column in ascending order
 	#When User clicks on 'Active' column header
-	#Then Boolean data in table is sorted by 'Active' column in descending order
+	#Then boolean data is sorted by 'Active' column in descending order
 	When User clicks on 'Running' column header
 	Then boolean data is sorted by 'Running' column in ascending order
 	When User clicks on 'Running' column header
@@ -125,3 +125,14 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectTypeFieldOnAutomationsGrid
 	Then "DAS-15949 - all users scope" content is displayed for "Automation" column
 	When User clicks content from "Automation" column
 	Then 'Users' content is displayed in 'Object Type' autocomplete
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20328 @Wormhole
+Scenario: EvergreenJnr_AdminPage_CheckScopeClickableLinkOnTheAutomationsGrid
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	Then Page with 'Automations' header is displayed to user
+	When User enters "AV Automation - CF" text in the Search field for "Automation" column
+	When User enters "Devices_Scope" text in the Search field for "Automation" column
+	When User clicks content from "Scope" column
+	Then 'All Devices' list should be displayed to the user

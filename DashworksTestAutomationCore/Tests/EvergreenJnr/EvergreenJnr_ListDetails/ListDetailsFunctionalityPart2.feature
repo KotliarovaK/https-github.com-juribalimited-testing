@@ -28,9 +28,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForDynam
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	Then "TestListCED2D6" name is displayed in list details panel
-	Then List is NOT marked as favorite
-	Then current user is selected as a owner of a list
-	Then "Private" sharing option is selected
+	Then 'Favourite List' checkbox is unchecked
+	When User clicks the Permissions button
+	Then current user is selected in 'Owner' autocomplete
+	Then 'Private' content is displayed in 'Sharing' dropdown
 
 Examples: 
 	| PageName     | Columnname    |
@@ -47,9 +48,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDefaultOptionsInListDetailsForStati
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
 	Then "Static List TestName" name is displayed in list details panel
-	Then List is NOT marked as favorite
-	Then current user is selected as a owner of a list
-	Then "Private" sharing option is selected
+	Then 'Favourite List' checkbox is unchecked
+	When User clicks the Permissions button
+	Then current user is selected in 'Owner' autocomplete
+	Then 'Private' content is displayed in 'Sharing' dropdown
 
 Examples: 
 	| PageName     |
@@ -66,13 +68,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDeta
 	Then data in table is sorted by '<Columnname>' column in ascending order
 	When User creates 'TestListE11493' dynamic list
 	Then "TestListE11493" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks the Permissions button
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	Then List details button is disabled
-	And list with "TestListE11493" name is not displayed
-	And 'All <PageName>' list should be displayed to the user
+	Then list with "TestListE11493" name is not displayed
+	Then 'All <PageName>' list should be displayed to the user
 
 Examples: 
 	| PageName     | Columnname    |

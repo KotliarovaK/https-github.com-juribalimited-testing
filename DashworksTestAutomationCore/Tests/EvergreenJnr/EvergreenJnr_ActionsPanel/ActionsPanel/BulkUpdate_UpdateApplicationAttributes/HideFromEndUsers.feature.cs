@@ -139,12 +139,12 @@ this.FeatureBackground();
 #line 12
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table42.AddRow(new string[] {
+                table44.AddRow(new string[] {
                             "7-Zip 16.02 (x64)"});
 #line 13
- testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table42, "When ");
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table44, "When ");
 #line hidden
 #line 16
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -153,7 +153,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
- testRunner.When("User selects \'1803 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'2004 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
  testRunner.Then("\'No change\' content is displayed in \'Criticality\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -173,16 +173,16 @@ this.FeatureBackground();
 #line 24
  testRunner.Then("\'UPDATE\' button has tooltip with \'Select at least one value to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table43.AddRow(new string[] {
+                table45.AddRow(new string[] {
                             "No change"});
-                table43.AddRow(new string[] {
+                table45.AddRow(new string[] {
                             "TRUE"});
-                table43.AddRow(new string[] {
+                table45.AddRow(new string[] {
                             "FALSE"});
 #line 25
- testRunner.Then("following Values are displayed in the \'Hide From End Users\' dropdown:", ((string)(null)), table43, "Then ");
+ testRunner.Then("following Values are displayed in the \'Hide From End Users\' dropdown:", ((string)(null)), table45, "Then ");
 #line hidden
 #line 30
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -208,16 +208,16 @@ this.FeatureBackground();
 #line 37
  testRunner.Then("\'UPDATE\' button has tooltip with \'Select at least one value to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table44.AddRow(new string[] {
+                table46.AddRow(new string[] {
                             "No change"});
-                table44.AddRow(new string[] {
+                table46.AddRow(new string[] {
                             "TRUE"});
-                table44.AddRow(new string[] {
+                table46.AddRow(new string[] {
                             "FALSE"});
 #line 38
- testRunner.Then("following Values are displayed in the \'Hide From End Users\' dropdown:", ((string)(null)), table44, "Then ");
+ testRunner.Then("following Values are displayed in the \'Hide From End Users\' dropdown:", ((string)(null)), table46, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

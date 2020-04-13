@@ -142,12 +142,12 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table70.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             string.Format("{0}", row)});
 #line 14
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table70, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table72, "When ");
 #line hidden
 #line 17
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -230,12 +230,12 @@ this.FeatureBackground();
 #line 36
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table71.AddRow(new string[] {
+                table73.AddRow(new string[] {
                             string.Format("{0}", row)});
 #line 37
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table71, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table73, "When ");
 #line hidden
 #line 40
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -347,12 +347,12 @@ this.FeatureBackground();
 #line 70
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table72.AddRow(new string[] {
+                table74.AddRow(new string[] {
                             string.Format("{0}", row)});
 #line 71
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table72, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table74, "When ");
 #line hidden
 #line 74
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -433,12 +433,12 @@ this.FeatureBackground();
 #line 93
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table73.AddRow(new string[] {
+                table75.AddRow(new string[] {
                             string.Format("{0}", row)});
 #line 94
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table73, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table75, "When ");
 #line hidden
 #line 97
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -519,12 +519,12 @@ this.FeatureBackground();
 #line 116
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table74.AddRow(new string[] {
+                table76.AddRow(new string[] {
                             string.Format("{0}", row)});
 #line 117
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table74, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table76, "When ");
 #line hidden
 #line 120
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

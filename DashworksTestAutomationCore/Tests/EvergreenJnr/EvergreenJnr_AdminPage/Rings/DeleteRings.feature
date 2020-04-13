@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRin
 	And User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'TestRing' text to 'Ring name' textbox
-	And User clicks Create button on the Create Ring page
+	When User clicks 'CREATE' button
 	Then 'The ring has been created' text is displayed on inline success banner
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |

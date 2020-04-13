@@ -158,13 +158,13 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table914 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table979 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table914.AddRow(new string[] {
+                table979.AddRow(new string[] {
                             "Red"});
 #line 14
  testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
-                        "ng checkboxes:", ((string)(null)), table914, "When ");
+                        "ng checkboxes:", ((string)(null)), table979, "When ");
 #line hidden
 #line 17
  testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -227,7 +227,7 @@ this.FeatureBackground();
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 37
- testRunner.When("User clicks \'Delete\' option in Cog-menu for \'TestList0A78U9\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Delete\' option in cogmenu for \'TestList0A78U9\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 38
  testRunner.Then("\"TestList0A78U9 list will be permanently deleted\" message is displayed in the lis" +
@@ -316,18 +316,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table915 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table980 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table915.AddRow(new string[] {
+                table980.AddRow(new string[] {
                             "TestProject5",
                             "All Users",
                             "None",
                             "Standalone Project"});
 #line 44
- testRunner.When("Project created via API and opened", ((string)(null)), table915, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table980, "When ");
 #line hidden
 #line 47
  testRunner.Then("Page with \'TestProject5\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -373,16 +373,16 @@ this.FeatureBackground();
 #line 60
  testRunner.When("User navigates to the \'Application Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table916 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table981 = new TechTalk.SpecFlow.Table(new string[] {
                             "AssociationName"});
-                table916.AddRow(new string[] {
+                table981.AddRow(new string[] {
                             "Entitled to a device owned by the user"});
-                table916.AddRow(new string[] {
+                table981.AddRow(new string[] {
                             "Installed on a device owned by the user"});
-                table916.AddRow(new string[] {
+                table981.AddRow(new string[] {
                             "Used on an owned device by any user"});
 #line 61
- testRunner.Then("following associations are disabled:", ((string)(null)), table916, "Then ");
+ testRunner.Then("following associations are disabled:", ((string)(null)), table981, "Then ");
 #line hidden
 #line 66
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -405,7 +405,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 72
- testRunner.And("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
+ testRunner.And("User selects \"Clone Evergreen buckets to project buckets\" in the Buckets Project " +
                         "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 73
@@ -497,18 +497,18 @@ this.FeatureBackground();
 #line 83
  testRunner.And("User create dynamic list with \"ListForProject\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table917 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table982 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table917.AddRow(new string[] {
+                table982.AddRow(new string[] {
                             "TestProject1",
                             "ListForProject",
                             "None",
                             "Standalone Project"});
 #line 84
- testRunner.When("Project created via API and opened", ((string)(null)), table917, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table982, "When ");
 #line hidden
 #line 87
  testRunner.And("User clicks \'Users\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -523,7 +523,7 @@ this.FeatureBackground();
  testRunner.Then("\"ListForProject\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 91
- testRunner.When("User clicks \'Delete\' option in Cog-menu for \'ListForProject\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks \'Delete\' option in cogmenu for \'ListForProject\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 92
  testRunner.Then("\"list is used by 1 project, do you wish to proceed?\" message is displayed in the " +
@@ -667,18 +667,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table918 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table983 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table918.AddRow(new string[] {
+                table983.AddRow(new string[] {
                             "TestProjectDAS11977",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 111
- testRunner.When("Project created via API and opened", ((string)(null)), table918, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table983, "When ");
 #line hidden
 #line 114
  testRunner.Then("Page with \'TestProjectDAS11977\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -711,7 +711,7 @@ this.FeatureBackground();
  testRunner.Then("inline error banner is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 124
- testRunner.When("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
+ testRunner.When("User selects \"Clone Evergreen buckets to project buckets\" in the Buckets Project " +
                         "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 125
@@ -774,14 +774,14 @@ this.FeatureBackground();
 #line 144
  testRunner.When("User navigates to the \'Application Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table919 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table984 = new TechTalk.SpecFlow.Table(new string[] {
                             "AssociationName"});
-                table919.AddRow(new string[] {
+                table984.AddRow(new string[] {
                             "Entitled to the device owner"});
-                table919.AddRow(new string[] {
+                table984.AddRow(new string[] {
                             "Used by the device owner on any device"});
 #line 145
- testRunner.Then("following associations are disabled:", ((string)(null)), table919, "Then ");
+ testRunner.Then("following associations are disabled:", ((string)(null)), table984, "Then ");
 #line hidden
 #line 149
  testRunner.When("User navigates to the \'Scope Changes\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -833,18 +833,18 @@ this.FeatureBackground();
 #line 164
  testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table920 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table985 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table920.AddRow(new string[] {
+                table985.AddRow(new string[] {
                             "TestProjectDAS11977",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 165
- testRunner.When("Project created via API and opened", ((string)(null)), table920, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table985, "When ");
 #line hidden
 #line 168
  testRunner.Then("Page with \'TestProjectDAS11977\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

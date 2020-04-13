@@ -8,11 +8,12 @@ Background: Pre-Conditions
 @Evergreen @Associations @DAS18445 @Cleanup
 Scenario: EvergreenJnr_AllDeviceApplications_CheckThatOnlyOneFilterDeletedAfterClickingRemoveIcon
 	When User clicks 'Applications' on the left-hand menu
-	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
@@ -28,6 +29,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterResetAsso
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "App Version" filter where type is "Equals" with added column and following value:
@@ -52,6 +54,7 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "Device (Saved List)" filter where type is "In list" without added column and "ADevicesList18531" Lookup option
@@ -60,7 +63,8 @@ Scenario: EvergreenJnr_AllDeviceApplications_CheckMessageAppearingAfterDeletedRe
 	Then "AssociationList18531" list is displayed to user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User removes custom list with "ADevicesList18531" name
+	When User clicks 'Delete' option in cogmenu for 'ADevicesList18531' list
+	When User confirms list removing
 	Then list with "ADevicesList18531" name is removed
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
@@ -71,16 +75,22 @@ Scenario Outline: EvergreenJnr_AllDeviceApplications_CheckThatAddAndButtonIsNotD
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator1>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator2>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator3>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator4>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator5>' option in 'Search associations' autocomplete of Associations panel
-	Then Add And button is not displayed on the Filter panel
+	#sz: should be updated after implementation DAS-19580
+	#Then Add And button is not displayed on the Filter panel
 
 Examples: 
 	| operator1          | operator2              | operator3               | operator4                | operator5            |
@@ -93,8 +103,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAllDevicesApplicationsListCanBe
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User creates 'AssociationList18379' dynamic list

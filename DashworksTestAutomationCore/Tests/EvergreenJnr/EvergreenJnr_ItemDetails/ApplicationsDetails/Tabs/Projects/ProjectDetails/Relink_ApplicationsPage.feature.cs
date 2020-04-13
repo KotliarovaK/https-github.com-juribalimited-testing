@@ -161,14 +161,14 @@ this.FeatureBackground();
 #line 14
  testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2236 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Data"});
-                table2236.AddRow(new string[] {
+                TechTalk.SpecFlow.Table table2590 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Title",
+                            "Value"});
+                table2590.AddRow(new string[] {
                             "Name",
                             "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
 #line 15
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2236, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2590, "Then ");
 #line hidden
 #line 18
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -196,14 +196,14 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("Details page for \'Microsoft SQL Server 2012\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2237 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Data"});
-                table2237.AddRow(new string[] {
+                TechTalk.SpecFlow.Table table2591 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Title",
+                            "Value"});
+                table2591.AddRow(new string[] {
                             "Name",
                             "Microsoft SQL Server 2012"});
 #line 26
- testRunner.And("User verifies data in the fields on details page", ((string)(null)), table2237, "And ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2591, "Then ");
 #line hidden
 #line 29
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -412,14 +412,14 @@ this.FeatureBackground();
 #line 62
  testRunner.Then("\'Application successfully relinked\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2238 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Data"});
-                table2238.AddRow(new string[] {
+                TechTalk.SpecFlow.Table table2592 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Title",
+                            "Value"});
+                table2592.AddRow(new string[] {
                             "App Owner",
                             ""});
 #line 63
- testRunner.Then("User verifies data in the fields on details page", ((string)(null)), table2238, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2592, "Then ");
 #line hidden
 #line 67
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -456,6 +456,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS18112")]
         [NUnit.Framework.CategoryAttribute("DAS17899")]
         [NUnit.Framework.CategoryAttribute("DAS18196")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDetailsOnApplicationsPage_WithoutOwnerToWithoutOwner()
         {
             string[] tagsOfScenario = new string[] {
@@ -466,7 +467,8 @@ this.FeatureBackground();
                     "DAS18002",
                     "DAS18112",
                     "DAS17899",
-                    "DAS18196"};
+                    "DAS18196",
+                    "Wormhole"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatRelinkOptionIsWorkedCorrectlyForProjectDet" +
                     "ailsOnApplicationsPage_WithoutOwnerToWithoutOwner", null, new string[] {
                         "Evergreen",
@@ -476,8 +478,9 @@ this.FeatureBackground();
                         "DAS18002",
                         "DAS18112",
                         "DAS17899",
-                        "DAS18196"});
-#line 75
+                        "DAS18196",
+                        "Wormhole"});
+#line 76
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -500,60 +503,59 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 76
+#line 77
  testRunner.When("User navigates to the \'Application\' details page for the item with \'4018\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 77
+#line 78
  testRunner.Then("Details page for \'Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030\' " +
                         "item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 78
- testRunner.When("User selects \'Project 00 M Computer Scheduled\' in the \'Item Details Project\' drop" +
-                        "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 79
- testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Project 000 M Computer Scheduled\' in the \'Item Details Project\' dro" +
+                        "pdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 80
- testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 81
- testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 82
- testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 83
- testRunner.When("User enters \'4019\' in the \'Application\' autocomplete field and selects \'Microsoft" +
-                        " Corporation Microsoft .NET Framework 4.5 4.5.50709 (4019)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 84
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'Microsoft Corporation Microsoft .NET Framework 4.5 4.5.50709\' in the" +
+                        " \'Application\' autocomplete field and selects \'Microsoft Corporation Microsoft ." +
+                        "NET Framework 4.5 4.5.50709\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 85
  testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 86
+ testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 87
  testRunner.Then("\'Application successfully relinked\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 88
+#line 89
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 89
+#line 90
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 90
- testRunner.When("User enters \'4018\' in the \'Application\' autocomplete field and selects \'Microsoft" +
-                        " Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030 11.0." +
-                        "61030 (4018)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 91
- testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(@"User enters 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.50727 11.0.50727' in the 'Application' autocomplete field and selects 'Microsoft Corporation Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.50727 11.0.50727' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 92
  testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 93
+ testRunner.When("User clicks \'RELINK\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 94
  testRunner.Then("\'Application successfully relinked\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -581,7 +583,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS19335"});
-#line 96
+#line 97
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -604,31 +606,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 97
+#line 98
  testRunner.When("User navigates to the \'Application\' details page for \'Adobe Acrobat Reader 3.01 O" +
                         "riginal\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 98
+#line 99
  testRunner.Then("Details page for \'Adobe Acrobat Reader 3.01 Original\' item is displayed to the us" +
                         "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 99
+#line 100
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                         "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 100
+#line 101
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 101
+#line 102
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 102
+#line 103
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 103
+#line 104
  testRunner.Then("popup is displayed to User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 104
+#line 105
  testRunner.Then("Button \'RELINK\' has \'Select an application\' tooltip on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -661,7 +663,7 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS19323",
                         "Universe"});
-#line 107
+#line 108
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -684,25 +686,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 108
+#line 109
  testRunner.When("User navigates to the \'Application\' details page for \'7-Zip 16.04 (x64)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 109
+#line 110
  testRunner.Then("Details page for \'7-Zip 16.04 (x64)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 110
+#line 111
  testRunner.When("User selects \'Email Migration\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 111
+#line 112
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 112
+#line 113
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 113
+#line 114
  testRunner.When("User clicks \'RELINK\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 114
+#line 115
  testRunner.Then("only options having search term \'230\' are displayed in \'Application\' autocomplete" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

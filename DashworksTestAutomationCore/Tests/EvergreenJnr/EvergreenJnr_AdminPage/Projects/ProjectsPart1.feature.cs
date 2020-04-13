@@ -247,16 +247,16 @@ this.FeatureBackground();
 #line 32
  testRunner.Then("All items in the \'Scope\' autocomplete have icons", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table809 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table878 = new TechTalk.SpecFlow.Table(new string[] {
                             "tooltip"});
-                table809.AddRow(new string[] {
+                table878.AddRow(new string[] {
                             "System"});
-                table809.AddRow(new string[] {
+                table878.AddRow(new string[] {
                             "Private"});
-                table809.AddRow(new string[] {
+                table878.AddRow(new string[] {
                             "Shared"});
 #line 33
- testRunner.Then("All icon items in the \'Scope\' autocomplete have any of tooltip", ((string)(null)), table809, "Then ");
+ testRunner.Then("All icon items in the \'Scope\' autocomplete have any of tooltip", ((string)(null)), table878, "Then ");
 #line hidden
 #line 38
  testRunner.When("User enters \'TestProject7\' text to \'Project Name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -542,13 +542,13 @@ this.FeatureBackground();
 #line 92
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table810 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table879 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table810.AddRow(new string[] {
+                table879.AddRow(new string[] {
                             "Adobe"});
 #line 93
  testRunner.When("User add \"Vendor\" filter where type is \"Equals\" with added column and following v" +
-                        "alue:", ((string)(null)), table810, "When ");
+                        "alue:", ((string)(null)), table879, "When ");
 #line hidden
 #line 96
  testRunner.Then("\"Vendor\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -568,21 +568,21 @@ this.FeatureBackground();
 #line 101
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table811 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table880 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedList",
                             "Association"});
-                table811.AddRow(new string[] {
+                table880.AddRow(new string[] {
                             "Vendor is adobe",
                             "Used on device"});
-                table811.AddRow(new string[] {
+                table880.AddRow(new string[] {
                             "Vendor is adobe",
                             "Entitled to device"});
-                table811.AddRow(new string[] {
+                table880.AddRow(new string[] {
                             "Vendor is adobe",
                             "Installed on device"});
 #line 102
  testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                        "Value and following Association:", ((string)(null)), table811, "When ");
+                        "Value and following Association:", ((string)(null)), table880, "When ");
 #line hidden
 #line 107
  testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

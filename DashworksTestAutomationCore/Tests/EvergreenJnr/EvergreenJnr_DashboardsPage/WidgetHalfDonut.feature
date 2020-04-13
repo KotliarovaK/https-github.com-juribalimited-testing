@@ -7,15 +7,15 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15918
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List         | AggregateFunction | SplitBy                                |
-	| Half donut | WidgetForDAS15918 | 1803 Rollout | Count             | 1803: Pre-Migration \ Ready to Migrate |
+	| Half donut | WidgetForDAS15918 | 2004 Rollout | Count             | 2004: Pre-Migration \ Ready to Migrate |
 	Then User sees following options for Order By selector on Create Widget page:
 	| items                                       |
-	| 1803: Pre-Migration \ Ready to Migrate ASC  |
-	| 1803: Pre-Migration \ Ready to Migrate DESC |
+	| 2004: Pre-Migration \ Ready to Migrate ASC  |
+	| 2004: Pre-Migration \ Ready to Migrate DESC |
 	| Count ASC                                   |
 	| Count DESC                                  |
 
@@ -27,7 +27,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWi
 	| HDD Total Size (GB) |
 	And User create dynamic list with "DAS16167_HddList" name on "Devices" page
 	When Dashboard with 'DAS16167_HddList' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType   | Title           | List             | SplitBy          | AggregateFunction | AggregateBy         | OrderBy                         |

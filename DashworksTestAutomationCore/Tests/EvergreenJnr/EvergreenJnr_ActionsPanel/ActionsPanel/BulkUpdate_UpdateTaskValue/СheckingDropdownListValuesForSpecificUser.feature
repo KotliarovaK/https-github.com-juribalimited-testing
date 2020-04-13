@@ -25,7 +25,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects '<ProjectName>' option from 'Project' autocomplete
-	And User selects '<StageName>' option from 'Stage' autocomplete
 	And User selects '<TaskName>' option from 'Task' autocomplete
 	And User selects '<UpdateDate>' in the 'Update Date' dropdown
 	Then 'UPDATE' button is not disabled
@@ -49,14 +48,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And User removes "<UserName>" User
 
 Examples:
-	| UserName              | PageName     | ColumnName    | RowName                                  | ProjectName                        | StageName             | TaskName                 | UpdateDate |
-	| DAS13264_Devices      | Devices      | Hostname      | 00CWZRC4UK6W20                           | Babel (English, German and French) | Initiation            | Scheduled Date           | Remove     |
-	| DAS13264_Users        | Users        | Username      | 0088FC8A50DD4344B92                      | Barry's User Project               | Project Dates         | Scheduled Date           | Remove     |
-	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project               | Audit & Configuration | Package Delivery Date    | Remove     |
-	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration                    | Pre-Migration         | Out Of Office Start Date | Remove     |
+	| UserName              | PageName     | ColumnName    | RowName                                  | ProjectName                  | TaskName                                      | UpdateDate |
+	| DAS13264_Devices      | Devices      | Hostname      | 00CWZRC4UK6W20                           | Computer Scheduled Test (Jo) | One \ Date Computer                           | Remove     |
+	| DAS13264_Users        | Users        | Username      | 0088FC8A50DD4344B92                      | Barry's User Project         | Project Dates \ Scheduled Date                | Remove     |
+	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project         | Audit & Configuration \ Package Delivery Date | Remove     |
+	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration              | Pre-Migration \ Out Of Office Start Date      | Remove     |
 
-
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup
+	#AnnI 3/18/20 Fixed and updated for 'Wormhole'
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Cleanup @Wormhole
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
@@ -76,33 +75,36 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Barry's User Project' option from 'Project' autocomplete
-	Then 'Stage' autocomplete options are sorted in the alphabetical order
-	When User selects 'Audit & Configuration' option from 'Stage' autocomplete
 	Then 'Task' autocomplete options are sorted in the alphabetical order
-	When User selects 'Validate User Device Ownership' option from 'Task' autocomplete
+	When User selects 'Audit & Configuration \ Validate User Device Ownership' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
-	| Options               |
-	| Update                |
-	| No change             |
+	| Options        |
+	| No change      |
+	| Not Applicable |
+	| Awaiting Audit |
+	| Audit Failed   |
+	| Audit Complete |
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
-	| No change                        |
+	| Options                                   |
+	| No change                                 |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
+	| No change             |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	| No change             |
 	When User selects 'Update' in the 'Update Owner' dropdown
 	Then 'Team' autocomplete options are sorted in the alphabetical order
 	When User selects 'Team 0' option from 'Team' autocomplete
-	Then 'Owner' textbox is not displayed
+	When User navigate to the bottom of the Action panel
+	Then 'Owner' textbox is displayed
 	When User selects 'IB Team' option from 'Team' autocomplete
 	Then 'Owner' textbox is displayed
 	When User selects 'IB User' option from 'Owner' autocomplete
@@ -136,8 +138,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects 'One' option from 'Stage' autocomplete
-	And User selects 'Radio Rag Only Comp' option from 'Task' autocomplete
+	And User selects 'One \ Radio Rag Only Comp' option from 'Task' autocomplete
 	When User selects 'Started' in the 'Value' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
 	Then 'Value' dropdown is not displayed
@@ -151,11 +152,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13280" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup
+	#AnnI 3/18/20 Fixed and updated for 'Wormhole'
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13281 @DAS13284 @DAS13285 @Cleanup @Wormhole
 Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly
 	When User create new User via API
-	| Username   | Email | FullName | Password  | Roles                                            |
-	| DAS13281_2 | Value | Test     | m!gration | Project Administrator  |
+	| Username   | Email | FullName | Password  | Roles                 |
+	| DAS13281_2 | Value | Test     | m!gration | Project Administrator |
 	When User clicks the Logout button
 	When User is logged in to the Evergreen as
 	| Username   | Password  |
@@ -171,37 +173,43 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'Computer Information ---- Text fill; Text fill;' option from 'Stage' autocomplete
-	And User selects 'Computer Read Only Task in Self Service' option from 'Task' autocomplete
+	And User selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
-	| Options               |
-	| Update                |
-	| No change             |
+	| Options        |
+	| No change      |
+	| Not Applicable |
+	| Not Started    |
+	| Started        |
+	| Failed         |
+	| Complete       |
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
-	| No change                        |
+	| Options                                   |
+	| No change                                 |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
 	Then following Values are displayed in the 'Update Owner' dropdown:
 	| Options               |
+	| No change             |
 	| Update                |
 	| Remove owner          |
 	| Remove owner and team |
-	| No change             |
-	When User selects 'Workstation Text Task' option from 'Task' autocomplete
+	When User selects 'Computer Information ---- Text fill; Text fill; \ Workstation Text Task' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Options   |
 	| Update    |
 	| Remove    |
-	When User selects 'Computer Read Only Task in Self Service' option from 'Task' autocomplete
+	When User selects 'Computer Information ---- Text fill; Text fill; \ Computer Read Only Task in Self Service' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
-	| Options               |
-	| Update                |
-	| No change             |
-	When User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Started' in the 'Value' dropdown
+	| No change      |
+	| Not Applicable |
+	| Not Started    |
+	| Started        |
+	| Failed         |
+	| Complete       |
+	When User selects 'Started' in the 'Update Value' dropdown
 	And User selects 'No change' in the 'Update Date' dropdown
 	And User navigate to the bottom of the Action panel
 	When User selects 'No change' in the 'Update Owner' dropdown
@@ -233,9 +241,9 @@ Examples:
 	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
 	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
 
-#Awaiting Lisa's response and updating the autotest scenario
-#sz: NotRun tag removed 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup
+	#AnnI. 2/21/20 Will be checked on Monday with Marina.
+	#It looks like access has changed. Need to update the test.
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup @Not_Ready
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User create new User via API
 	| Username | Email | FullName | Password  | Roles                 |
@@ -265,9 +273,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Nov 29, 2018' text to 'Date' datepicker
+	And User enters 'Jan 20, 2019' text to 'Date' datepicker
+	When User focus on 'Capacity Slot' dropdown
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects '<NewTeam>' option from 'Team' autocomplete
 	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
@@ -287,9 +298,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects 'Perform User Acceptance Test' option from 'Task' autocomplete
 	And User selects 'No change' in the 'Update Value' dropdown
 	And User selects 'Update' in the 'Update Date' dropdown
-	And User enters 'Jan 5, 2019' text to 'Date' datepicker
+	And User enters 'Jan 20, 2019' text to 'Date' datepicker
+	When User focus on 'Capacity Slot' dropdown
 	And User selects 'User Slot' in the 'Capacity Slot' dropdown
+	When User focus on 'Update Owner' dropdown
 	When User selects 'Update' in the 'Update Owner' dropdown
+	When User navigate to the bottom of the Action panel
 	When User selects '<DefaultTeam>' option from 'Team' autocomplete
 	And User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 

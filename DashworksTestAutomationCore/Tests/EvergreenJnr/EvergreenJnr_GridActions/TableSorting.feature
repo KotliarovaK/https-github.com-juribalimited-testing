@@ -14,11 +14,14 @@ Scenario: EvergreenJnr_DevicesList_CheckSortByDateFunctionality
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Windows XP     | 15           |
+	| Android        | 22           |
 	When User clicks on 'Boot Up Date' column header
 	Then date in table is sorted by 'Boot Up Date' column in descending order
 	When User clicks on 'Boot Up Date' column header
 	Then date in table is sorted by 'Boot Up Date' column in ascending order
+	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
+	| SearchCriteria | NumberOfRows |
+	| Windows 10     | 16,969       |
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
 	Then date in table is sorted by 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column in descending order
 	When User clicks on 'Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task' column header
@@ -58,9 +61,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortByDateFunctionality
 @Evergreen @Users @EvergreenJnr_GridActions @TableSorting @DAS10612
 Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	When User add following columns using URL to the "Users" page:
-	| ColumnName                                  |
-	| Last Logon Date                             |
-	| MigrationP: Important Dates \ Migrated Date |
+	| ColumnName                                |
+	| Last Logon Date                           |
+	| Barry'sUse: Project Dates \ Migrated Date |
 	Then User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
 	| Tim            | 147          |
@@ -68,10 +71,10 @@ Scenario: EvergreenJnr_UsersList_CheckSortByDateFunctionality
 	Then date in table is sorted by 'Last Logon Date' column in descending order
 	When User clicks on 'Last Logon Date' column header
 	Then date in table is sorted by 'Last Logon Date' column in ascending order
-	When User clicks on 'MigrationP: Important Dates \ Migrated Date' column header
-	Then date in table is sorted by 'MigrationP: Important Dates \ Migrated Date' column in descending order
-	When User clicks on 'MigrationP: Important Dates \ Migrated Date' column header
-	Then date in table is sorted by 'MigrationP: Important Dates \ Migrated Date' column in ascending order
+	When User clicks on 'Barry'sUse: Project Dates \ Migrated Date' column header
+	Then date in table is sorted by 'Barry'sUse: Project Dates \ Migrated Date' column in descending order
+	When User clicks on 'Barry'sUse: Project Dates \ Migrated Date' column header
+	Then date in table is sorted by 'Barry'sUse: Project Dates \ Migrated Date' column in ascending order
 
 @Evergreen @Devices @EvergreenJnr_GridActions @TableSorting @DAS11568
 Scenario: EvergreenJnr_DevicesList_CheckThat500ErrorIsNotDisplayedWhenSortingOwnerComplianceColumnOnDevicesList

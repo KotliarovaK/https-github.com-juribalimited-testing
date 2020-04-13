@@ -13,11 +13,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "TestList83C1C0" name on "Users" page
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Everyone can see" sharing option
-	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks the Permissions button
+	When User selects 'Everyone can see' in the 'Sharing' dropdown
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Display Name" filter where type is "Equals" with added column and following value:
@@ -33,21 +32,20 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	When User clicks on 'Username' column header
 	Then data in table is sorted by 'Username' column in ascending order
 	When User create dynamic list with "TestList9507DA" name on "Users" page
-	And User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Specific users / teams" sharing option
-	When User clicks 'ADD TEAM' button 
+	When User clicks the Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'group_add' icon
 	Then form container is displayed to the user
-	When User selects the "Team 1054" team for sharing
-	And User select "Admin" in Select Access dropdown
+	When User selects 'Team 1054' option from 'Team' autocomplete
+	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 
-	When User select "Specific users" sharing option
-	And User click Add User button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
-	And User select "Admin" in Select Access dropdown
-	And User click Add User button
-	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User selects 'Admin' in the 'Permission' dropdown
+	When User clicks 'ADD USER' button
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	And User clicks the List Details button
 	Then Delete list button is disabled in List Details panel
 	And Delete List option is NOT available
@@ -85,12 +83,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	When User clicks on 'Hostname' column header
 	When User creates 'List_DAS16228' dynamic list
 	Then "List_DAS16228" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Specific users / teams" sharing option
-	When User clicks 'ADD TEAM' button 
-	When User selects the "Team 1" team for sharing
-	And User select "Admin" in Permission dropdown
+	When User clicks the Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'group_add' icon
+	When User selects 'Team 1' option from 'Team' autocomplete
+	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 
 	When User navigates to the "All Devices" list
 	Then All lists are unique on the Lists panel
@@ -99,8 +96,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 Scenario: EvergreenJnr_DevicesList_CheckThatExpandIconIsInactiveForOwnerDdlForNonOwnerUserInItemDetails
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "1803 Rollout" list
-	Then "1803 Rollout" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	Then Owner Drop-down list is disabled on List details panel
+	When User navigates to the "2004 Rollout" list
+	Then "2004 Rollout" list is displayed to user
+	When User clicks the Permissions button
+	Then 'Owner' textbox is disabled

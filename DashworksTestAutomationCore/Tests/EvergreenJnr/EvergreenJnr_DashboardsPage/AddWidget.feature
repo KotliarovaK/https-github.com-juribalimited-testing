@@ -8,12 +8,12 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14587 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
 	When Dashboard with 'Dashboard for DAS14587' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
 	| Pie        |       | All Devices | Device Type | Hostname    | Count distinct    | Device Type ASC | 10        |
-	Then Error message with 'Widget Title should not be empty' text is displayed on Widget page
+	Then 'Widget Title should not be empty' text is displayed on inline error banner
 	And There are no errors in the browser console
 	When User creates new Widget
 	| WidgetType | Title                  | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         |
@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When Dashboard with 'Dashboard for DAS14578' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User creates new Widget
 	| WidgetType | Title                                                                                                       | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues |
@@ -31,53 +31,58 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	Then 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' Widget is displayed to the user
 	Then Widget name 'Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an' has word break style on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @Cleanup
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @DAS18054 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
 	When Dashboard with 'Dashboard for DAS15900' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User creates new Widget
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             | Count ASC | 10        | true       |
 	Then 'WidgetForDAS15900' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS15900' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
-	And User adds new Widget
+	When User clicks 'Edit' menu option for 'WidgetForDAS15900' widget
+	When User adds new Widget
 	| WidgetType | Title                    | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname | Count             | Count ASC | 11        | true       |
-	When User clicks Show Dashboards panel icon on Dashboards page
-	And User clicks first Dashboard in dashboards list
-	Then User sees 'You have unsaved changes. Are you sure you want to leave the page?' text in alert on Edit Widget page
-	When User clicks 'NO' button in Unsaved Changes alert
-	Then Unsaved Changes alert not displayed to the user
+	When User clicks Profile in Account Dropdown
+	Then popup is displayed to User
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
+	When User clicks 'NO' button 
+	Then popup is not displayed to User
+	When User clicks Profile in Account Dropdown
+	Then 'You have unsaved changes. Are you sure you want to leave the page?' text is displayed on popup
+	When User clicks 'YES' button
+	When User waits for '6' seconds
+	Then Profile page is displayed to user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Cleanup
-Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
+Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
-	When User selects '<WidgetType>' in the 'WidgetType' dropdown
+	When User selects 'Pie' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Bar' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Column' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Line' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Donut' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Table' in the 'WidgetType' dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+	When User selects 'Card' in the 'WidgetType' dropdown
 	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
 
-Examples: 
-	| WidgetType |
-	| Pie        |
-	| Bar        |
-	| Column     |
-	| Line       |
-	| Donut      |
-	| Half donut |
-	| Table      |
-	| Card       |
-	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @DAS14605 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
 	When Dashboard with 'Dashboard for DAS15437' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	When User selects 'List' in the 'WidgetType' dropdown
-	Then 'Aggregate Function' dropdown is missing
-	And 'Aggregate By' dropdown is missing
+	Then 'Aggregate Function' dropdown is not displayed
+	Then 'Aggregate By' dropdown is not displayed
 	Then List dropdown has next item categories:
 	| item         |
 	| Devices      |
@@ -93,7 +98,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 	| Secure Boot Enabled |
 	When User create dynamic list with "List16958" name on "Devices" page
 	When Dashboard with 'Dashboard for DAS16958' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | MaxValues | ShowLegend |
@@ -103,14 +108,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 	When User lists were removed by API
 	When User clicks refresh button in the browser
 	When Dashboard page loaded
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks edit option for broken widget on Dashboards page
 	Then Message saying that list is unavailable appears in Edit Widget page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16853 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
 	When Dashboard with 'DAS16853_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	Then 'Show legend' checkbox has a correct label
 	And 'Show data labels' checkbox has a correct label
@@ -118,8 +123,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
 	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy   | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS16853 | All Devices | Hostname | Count             | Count ASC | 10        | true       |
 	Then 'WidgetForDAS16853' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS16853' widget
 	Then 'Show legend' checkbox has a correct label
 	And 'Show data labels' checkbox has a correct label
 
@@ -155,18 +159,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatThereIsNoPossibilityToCreateWidge
 	And User create static list with "TestList_DAS17539" name
 	And Projects created by User are removed via API
 	And Dashboard with 'Dashboard for DAS17539' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User checks 'Edit mode' slide toggle
+	And User clicks 'ADD WIDGET' button
+	When User adds new Widget
 	| WidgetType | Title                 | List              | SplitBy          | AggregateFunction | OrderBy              |
 	| Table      | DAS-TestList_DAS17539 | TestList_DAS17539 | Mailbox Platform | Count             | Mailbox Platform ASC |
 	Then Widget Preview is displayed to the user
-	And 'This widget refers to a list which has errors' alert is displayed in Preview
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button
+	Then User sees 'This widget refers to list TestList_DAS17539 which has errors' text in warning message of 'DAS-TestList_DAS17539' widget on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18151 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedIfUserClicksFastOnTheCreateButtonSeveralTimes
 	When Dashboard with 'DAS18151_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	Then 'Show legend' checkbox has a correct label
 	And 'Show data labels' checkbox has a correct label
@@ -180,14 +186,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDuplicateWidgetsWillNotbeCreatedI
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18167 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateByAndOrderFieldsAreEnabledForEditingAndTheWidgetIsDisplayedInThePreviewBlock
 	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
-	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
+	| Bar        | WidgetForDAS16853 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
 	Then 'WidgetForDAS16853' Widget is displayed to the user
-	When  User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
-	And User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS16853' widget
 	When User selects 'Count distinct' in the 'AggregateFunction' dropdown
 	When User selects 'Hostname' in the 'AggregateBy' dropdown
 	Then Widget Preview is displayed to the user
@@ -195,14 +200,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAggregateFunctionAndAggregateB
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18163 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithTheListOfAvailableOptionsForSelecting
 	When Dashboard with 'DAS18163_Dashboard' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      | MaxValues |
-	| Bar        | WidgetForDAS16853 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
+	| Bar        | WidgetForDAS16853 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC | 10        |
 	Then 'WidgetForDAS16853' Widget is displayed to the user
-	When User clicks Ellipsis menu for 'WidgetForDAS16853' Widget on Dashboards page
-	When User clicks 'Edit' item from Ellipsis menu on Dashboards page
+	When User clicks 'Edit' menu option for 'WidgetForDAS16853' widget
 	Then following Values are displayed in the 'OrderBy' dropdown:
     | Dropdowns                    |
     | Hostname ASC                 |
@@ -221,7 +225,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheOrderByDropdownIsExpandedWithT
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18066 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyValueIsApplied
 	When Dashboard with 'DAS18167_Dashboard' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | OrderBy    | DrillDown | ShowLegend |
@@ -236,7 +240,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTheAppropriateFilterWithTheEmptyV
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16842 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropdown
 	When Dashboard with 'DAS16842_Dashboard' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	Then All items in the 'List' autocomplete have icons
 	Then All icon items in the 'List' autocomplete have any of tooltip
@@ -246,9 +250,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckImageAndTooltipDisplayingForListDropd
 	| Shared  |
 	When User creates new Widget
 	| WidgetType | Title             | List         | SplitBy  | AggregateFunction   | AggregateBy | OrderBy      |
-	| Bar        | WidgetForDAS16842 | 1803 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC |
+	| Bar        | WidgetForDAS16842 | 2004 Rollout | Hostname | Count distinct      | Hostname    |Hostname DESC |
 	Then 'WidgetForDAS16842' Widget is displayed to the user
-	When User clicks Dashboards Details icon on Dashboards page
+	When User clicks the Dashboard Details button
 	When User expands the list of shared lists
 	Then User sees list icon displayed for 'WidgetForDAS16842' widget in List section of Dashboards Details
 	Then User sees list icon displayed with tooltip for 'WidgetForDAS16842' widget in List section of Dashboards Details
@@ -264,7 +268,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 	When User create dynamic list with "DAS18168_List" name on "Devices" page
 	Then "DAS18168_List" list is displayed to user
 	When Dashboard with 'DAS18168_Dashboard' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User adds new Widget
     | WidgetType | Title             | List          | SplitBy   | AggregateBy | AggregateFunction | OrderBy       | MaxValues | ShowLegend | ShowDataLabels |
@@ -294,24 +298,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAllValuesInTheLegendAndInTheLabel
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18741 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatRelevantListIsShownAfterTypingAnyCharacters
 	When Dashboard with 'DAS18741_Dashboard' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	Then only options having search term 'De' are displayed in 'List' autocomplete
-
-@Evergreen @EvergreenJnr_DashboardsPage @DAS18054 @Cleanup
-Scenario: EvergreenJnr_DashboardsPage_CheckThatUserProfilePageOpenedWhenUserNavigatesFromUnsavedWidgetPage
-	When Dashboard with 'Dashboard for DAS18054' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
-	When User clicks 'ADD WIDGET' button 
-	When User adds new Widget
-	| WidgetType | Title             | List        |
-	| Bar        | WidgetForDAS18054 | All Devices |
-	When User clicks Profile in Account Dropdown
-	Then User sees 'You have unsaved changes. Are you sure you want to leave the page?' text in alert on Edit Widget page
-	When User clicks 'YES' button in Unsaved Changes alert
-	When User waits for '3' seconds
-	When User waits for '3' seconds
-	Then Profile page is displayed to user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18759 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnGroupsFilteredList
@@ -323,12 +312,55 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetCanBeCreatedBasedOnGroupsFi
 	When User create dynamic list with "ListForDAS18759_1" name on "Devices" page
 	Then "ListForDAS18759_1" list is displayed to user
 	When Dashboard with 'DAS18759_Dashboard' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button
 	When User creates new Widget
 	| WidgetType | Title               | List              | SplitBy  | AggregateFunction | AggregateBy | OrderBy       |
 	| Bar        | WidgetForDAS18759_1 | ListForDAS18759_1 | Hostname | Count distinct    | Hostname    | Hostname DESC |
 	Then 'WidgetForDAS18759_1' Widget is displayed to the user
-	When User clicks Dashboards Details icon on Dashboards page
+	When User clicks the Dashboard Details button
 	When User expands the list of shared lists
 	Then User sees list icon displayed for 'WidgetForDAS18759_1' widget in List section of Dashboards Details
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20170 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendsNotDuplicatedAfterChangingWidgetType
+	When Dashboard with 'DAS20170_Dashboard' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button
+	When User creates new Widget
+	| WidgetType | Title             | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend |
+	| Bar        | WidgetForDAS20170 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
+	Then 'WidgetForDAS20170' Widget is displayed to the user
+	When User clicks 'Edit' menu option for 'WidgetForDAS20170' widget
+	And User updates Widget with following info:
+	| WidgetType | Title             |
+	| Pie        | WidgetForDAS20170 |
+	Then 'WidgetForDAS20170' Widget is displayed to the user
+	Then Data Legends values are displayed in 'WidgetForDAS20170' widget on the Dashboard page
+	| LegendsValue |
+	| Migrated     |
+	| Offboarded   |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS20412 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUserRedirectToDashboardPageAfterEditingDashboardSection
+	When Dashboard with 'DashboardForDAS20412' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button
+	When User creates new Widget
+	| WidgetType | Title             | List         | SplitBy      | CategorizeBy | AggregateFunction | OrderBy          | ShowLegend |
+	| Bar        | WidgetForDAS20412 | 2004 Rollout | 2004: Status | Device Type  | Count             | 2004: Status ASC | true       |
+	When User clicks 'Edit' menu option for section with 'WidgetForDAS20412' widget
+	When User enters 'titleForDAS20412' text to 'Title' textbox
+	When User clicks 'UPDATE' button
+	Then 'Section successfully updated' text is displayed on inline success banner
+	Then 'WidgetForDAS20412' Widget is displayed to the user
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS20358
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUserIsAbleToDeleteNotDefaultDashboard
+	When User clicks 'Dashboards' on the left-hand menu
+	And User clicks 'CREATE DASHBOARD' button
+	And User creates new Dashboard with 'DashboardDAS20358' name
+	And User clicks the Dashboard Details button
+	And User clicks Delete list button
+	And User clicks 'DELETE' button
+	Then "Dashboard deleted" message is displayed

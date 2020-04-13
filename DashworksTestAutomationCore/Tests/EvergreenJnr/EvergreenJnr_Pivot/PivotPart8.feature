@@ -84,11 +84,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWor
 	Then "<AdditionalValue>" subcategory is displayed for "<CategoryName>" category
 
 Examples:
-	| PageName     | PageLabel        | RowGroup    | Column                            | Value          | AdditionalValue      | ListName                | FilterName             | ValuesForFilter | CategoryName     |
-	| Devices      | All Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | OS Branch            | Devices_List_11103      | Application Compliance | Red             | Operating System |
-	| Users        | All Users        | Compliance  | App Count (Entitled)              | Domain         | Dashworks First Seen | Users_List_11103        | Compliance             | Red             | User             |
-	| Mailboxes    | All Mailboxes    | Alias       | Owner City                        | Created Date   | Alias                | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
-	| Applications | All Applications | Application | Evergreen Capacity Unit           | Vendor         | Application Owner    | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
+	| PageName     | PageLabel        | RowGroup    | Column                      | Value          | AdditionalValue      | ListName                | FilterName             | ValuesForFilter | CategoryName     |
+	| Devices      | All Devices      | Compliance  | 2004: Application Readiness | Last Seen Date | OS Branch            | Devices_List_11103      | Application Compliance | Red             | Operating System |
+	| Users        | All Users        | Compliance  | App Count (Entitled)        | Domain         | Dashworks First Seen | Users_List_11103        | Compliance             | Red             | User             |
+	| Mailboxes    | All Mailboxes    | Import      | Owner City                  | Created Date   | Alias                | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
+	| Applications | All Applications | Application | Evergreen Capacity Unit     | Vendor         | Application Owner    | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS13819 @DAS13818 @DAS13817 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues

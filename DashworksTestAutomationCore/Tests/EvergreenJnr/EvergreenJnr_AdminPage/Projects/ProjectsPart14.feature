@@ -14,10 +14,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	And User navigates to the 'Evergreen' left menu item
 	And User navigates to the 'Buckets' left menu item
 	Then Page with 'Buckets' header is displayed to user
-	When User clicks String Filter button for "Project" column on the Admin page
-	Then Projects in filter dropdown are displayed in alphabetical order
-	When User clicks String Filter button for "Owned By Team" column on the Admin page
-	Then Teams in filter dropdown are displayed in alphabetical order
+	Then options are sorted in alphabetical order in dropdown for 'Project' column
+	Then options are sorted in alphabetical order in dropdown for 'Owned By Team' column
 	When User navigates to the 'Projects' left menu item
 	Then Page with 'Projects' header is displayed to user
 	When User enters "project12949" text in the Search field for "Project" column
@@ -88,41 +86,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	Then Page with 'Buckets' header is displayed to user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
-
-#sz: removed not run tag
-@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12965 @DAS12485 @DAS12825 @DASDAS14617 @Cleanup
-Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly
-	When Project created via API and opened
-	| ProjectName  | Scope       | ProjectTemplate | Mode               |
-	| Project12965 | All Devices | None            | Standalone Project |
-	Then Page with 'Project12965' header is displayed to user
-	When User navigates to the 'Scope' left menu item
-	When User navigates to the 'Scope Details' left menu item
-	And User navigates to the 'Application Scope' tab on Project Scope Changes page
-	And User selects "RED" color in the Application Scope tab on the Project details page
-	And User navigates to the 'Scope Changes' left menu item
-	And User navigates to the 'Applications' tab on Project Scope Changes page
-	And User expands multiselect to add objects 
-	And User selects following Objects from the expandable multiselect
-	| Objects                                                      |
-	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
-	When User clicks 'UPDATE ALL CHANGES' button 
-	And User clicks 'UPDATE PROJECT' button 
-	Then '1 object queued for onboarding, 0 objects offboarded' text is displayed on inline success banner
-	When User navigates to the 'Queue' left menu item
-	Then following Items are displayed in the Queue table
-	| Items                                                        |
-	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
-	When User refreshes agGrid
-	When User navigates to the 'History' left menu item
-	Then following Items are displayed in the History table
-	| Items                                                        |
-	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
-	When User refreshes agGrid
-	When User enters "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook" text in the Search field for "Item" column
-	And User clicks content from "Item" column
-	Then "Project Object" page is displayed to the user
-	And Colour of onboarded app is "Red"
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12496 @DAS12485 @DAS12108 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove

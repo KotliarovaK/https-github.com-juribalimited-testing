@@ -68,11 +68,10 @@ Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplaye
 	Then There are no errors in the browser console
 
 Examples:
-	| ColumnName                              |
-	| Windows7Mi: Application Rationalisation |
-	| Windows7Mi: Application Readiness       |
-	| Windows7Mi: Core Application            |
-	| Windows7Mi: Hide from End Users         |
+	| ColumnName                        |
+	| Windows7Mi: Rationalisation       |
+	| Windows7Mi: Application Readiness |
+	| Windows7Mi: Hide From End Users   |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn
@@ -100,21 +99,22 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatNoDataIsDisplayedInTheApplicat
 	Then 'All Applications' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Application Rationalisation" filter where type is "Equal" with added column and following checkboxes:
+	When User add "Windows7Mi: Rationalisation" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| KEEP               |
-	Then "Windows7Mi: Application Rationalisation" filter is added to the list
+	Then "Windows7Mi: Rationalisation" filter is added to the list
 	When User add "Windows7Mi: In Scope" filter where type is "Equal" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| FALSE              |
 	Then "Windows7Mi: In Scope" filter is added to the list
+	When User clicks the Columns button
+	When User removes "Application" column by Column panel
 	When User clicks on 'Windows7Mi: In Scope' column header
 	And User clicks on 'Windows7Mi: In Scope' column header
-	When User clicks the Filters button
 	Then data in table is sorted by 'Windows7Mi: In Scope' column in ascending order
 	Then Content is empty in the column
-	| ColumnName                              |
-	| Windows7Mi: Application Rationalisation |
+	| ColumnName                  |
+	| Windows7Mi: Rationalisation |
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @AddColumnAction @DAS11839
 Scenario: EvergreenJnr_MailboxesLists_CheckThatTheLowestValueOfUserCountColumnIsNull
@@ -343,7 +343,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWork
 	| Users        |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @FilterFunctionality @DAS16912
+@Evergreen @AllLists @EvergreenJnr_Columns @FilterFunctionality @DAS16912 @DAS20685
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplinceNoneOptionIsTranslated
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName   |
@@ -385,11 +385,11 @@ Scenario: EvergreenJnr_Devices_CheckOrderByStatusColumnSorting
 	When User clicks 'Devices' on the left-hand menu
 	And User add following columns using URL to the "Devices" page:
 	| ColumnName   |
-	| 1803: Status |
-	When User clicks on '1803: Status' column header
-	Then 'Not Onboarded' content is displayed in the '1803: Status' column
-	When User clicks on '1803: Status' column header
-	Then 'Offboarded' content is displayed in the '1803: Status' column
+	| 2004: Status |
+	When User clicks on '2004: Status' column header
+	Then 'Not Onboarded' content is displayed in the '2004: Status' column
+	When User clicks on '2004: Status' column header
+	Then 'Offboarded' content is displayed in the '2004: Status' column
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18762 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckStickyComplianceColumnDisplaying
@@ -419,13 +419,13 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppKeyColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName           |
-	| 1803: Target App Key |
+	| 2004: Target App Key |
 	When User create dynamic list with "DAS18961_List1" name on "Applications" page
 	Then "DAS18961_List1" list is displayed to user
-	When User clicks on '1803: Target App Key' column header
-	Then numeric data in table is sorted by '1803: Target App Key' column in ascending order
-	When User clicks on '1803: Target App Key' column header
-	Then numeric data in table is sorted by '1803: Target App Key' column in descending order
+	When User clicks on '2004: Target App Key' column header
+	Then numeric data in table is sorted by '2004: Target App Key' column in ascending order
+	When User clicks on '2004: Target App Key' column header
+	Then numeric data in table is sorted by '2004: Target App Key' column in descending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppVendorColumnDisplaying
@@ -445,26 +445,26 @@ Scenario: EvergreenJnr_Applications_CheckTargetAppVersionColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName               |
-	| 1803: Target App Version |
+	| 2004: Target App Version |
 	When User create dynamic list with "DAS18961_List3" name on "Applications" page
 	Then "DAS18961_List3" list is displayed to user
-	When User clicks on '1803: Target App Version' column header
-	Then data in table is sorted by '1803: Target App Version' column in ascending order
-	When User clicks on '1803: Target App Version' column header
-	Then data in table is sorted by '1803: Target App Version' column in descending order
+	When User clicks on '2004: Target App Version' column header
+	Then data in table is sorted by '2004: Target App Version' column in ascending order
+	When User clicks on '2004: Target App Version' column header
+	Then data in table is sorted by '2004: Target App Version' column in descending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18961 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckTargetAppReadinessColumnDisplaying
 	When User clicks 'Applications' on the left-hand menu
 	And User add following columns using URL to the "Applications" page:
 	| ColumnName                 |
-	| 1803: Target App Readiness |
+	| 2004: Target App Readiness |
 	When User create dynamic list with "DAS18961_List4" name on "Applications" page
 	Then "DAS18961_List4" list is displayed to user
-	When User clicks on '1803: Target App Readiness' column header
-	Then data in table is sorted by '1803: Target App Readiness' column in descending order
-	When User clicks on '1803: Target App Readiness' column header
-	Then data in table is sorted by '1803: Target App Readiness' column in ascending order
+	When User clicks on '2004: Target App Readiness' column header
+	Then data in table is sorted by '2004: Target App Readiness' column in descending order
+	When User clicks on '2004: Target App Readiness' column header
+	Then data in table is sorted by '2004: Target App Readiness' column in ascending order
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS18896 @Cleanup
 Scenario: EvergreenJnr_Applications_CheckEvergreenRationalisationColumnDisplaying
@@ -493,3 +493,54 @@ Scenario: EvergreenJnr_Applications_CheckEvergreenTargetAppNameColumnDisplaying
 	Then data in table is sorted by 'Evergreen Target App Name' column in ascending order
 	When User clicks on 'Evergreen Target App Name' column header
 	Then data in table is sorted by 'Evergreen Target App Name' column in descending order
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS17431
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAutomationActionColumnCanBeAddedToList
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	When User navigates to the 'Automations' left menu item
+	When User enters "Devices_Scope" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for 'Devices_Scope' item from 'Automation' column
+	When 'Devices_Scope' automation 'First_Action' action run has finished
+	When User add following columns using URL to the "<ListName>" page:
+	| ColumnName                   |
+	| Devices_Scope \ First_Action |
+	Then ColumnName is added to the list
+	| ColumnName                   |
+	| Devices_Scope \ First_Action |
+
+Examples:
+	| ListName     |
+	| Mailboxes    |
+	| Users        |
+	| Applications |
+
+@Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS20722 @Cleanup
+Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsCanBeAddedIfSomePivotWasOpenedBefore
+	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
+	When User selects 'Pivot' in the 'Create' dropdown
+	When User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Compliance |
+	When User selects the following Columns on Pivot:
+	| Columns |
+	| City    |
+	When User selects the following Values on Pivot:
+	| Values      |
+	| Cost Centre |
+	When User clicks 'RUN PIVOT' button 
+	Then Pivot run was completed
+	When User creates Pivot list with "Pivot_DAS_20722" name
+	When User navigates to the "Pivot_DAS_20722" list
+	When User navigates to the "All Devices" list
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName        |
+	| BIOS Manufacturer |
+	| Owner Building    |
+	Then ColumnName is added to the list
+	| ColumnName        |
+	| BIOS Manufacturer |
+	| Owner Building    |

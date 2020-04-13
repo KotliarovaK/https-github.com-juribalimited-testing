@@ -92,7 +92,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18647")]
         [NUnit.Framework.CategoryAttribute("DAS18461")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation()
         {
             string[] tagsOfScenario = new string[] {
@@ -100,15 +99,13 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ActionsPan
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
                     "DAS18647",
-                    "DAS18461",
-                    "Universe"};
+                    "DAS18461"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS18647",
-                        "DAS18461",
-                        "Universe"});
+                        "DAS18461"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -141,12 +138,12 @@ this.FeatureBackground();
 #line 12
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table45.AddRow(new string[] {
+                table47.AddRow(new string[] {
                             "7-Zip 16.02 (x64)"});
 #line 13
- testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table45, "When ");
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table47, "When ");
 #line hidden
 #line 16
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -175,39 +172,39 @@ this.FeatureBackground();
 #line 24
  testRunner.Then("\'UPDATE\' button has tooltip with \'Select at least one value to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table46.AddRow(new string[] {
+                table48.AddRow(new string[] {
                             "No change"});
-                table46.AddRow(new string[] {
+                table48.AddRow(new string[] {
                             "FORWARD PATH"});
-                table46.AddRow(new string[] {
+                table48.AddRow(new string[] {
                             "KEEP"});
-                table46.AddRow(new string[] {
+                table48.AddRow(new string[] {
                             "RETIRE"});
-                table46.AddRow(new string[] {
+                table48.AddRow(new string[] {
                             "UNCATEGORISED"});
 #line 25
- testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table46, "Then ");
+ testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table48, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table47.AddRow(new string[] {
+                table49.AddRow(new string[] {
                             "No change"});
-                table47.AddRow(new string[] {
-                            "Empty"});
-                table47.AddRow(new string[] {
+                table49.AddRow(new string[] {
+                            "Remove"});
+                table49.AddRow(new string[] {
                             "UNKNOWN"});
-                table47.AddRow(new string[] {
+                table49.AddRow(new string[] {
                             "RED"});
-                table47.AddRow(new string[] {
+                table49.AddRow(new string[] {
                             "AMBER"});
-                table47.AddRow(new string[] {
+                table49.AddRow(new string[] {
                             "GREEN"});
-                table47.AddRow(new string[] {
+                table49.AddRow(new string[] {
                             "IGNORE"});
 #line 32
- testRunner.Then("following Values are displayed in the \'Sticky Compliance\' dropdown:", ((string)(null)), table47, "Then ");
+ testRunner.Then("following Values are displayed in the \'Sticky Compliance\' dropdown:", ((string)(null)), table49, "Then ");
 #line hidden
 #line 41
  testRunner.When("User selects \'RED\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -275,12 +272,12 @@ this.FeatureBackground();
 #line 49
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table48.AddRow(new string[] {
+                table50.AddRow(new string[] {
                             "Sticky Compliance"});
 #line 50
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table48, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table50, "When ");
 #line hidden
 #line 53
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -288,12 +285,12 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table49.AddRow(new string[] {
+                table51.AddRow(new string[] {
                             "0047 - Microsoft Access 97 SR-2 Francais"});
 #line 55
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table49, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table51, "When ");
 #line hidden
 #line 58
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -305,7 +302,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 61
- testRunner.When("User selects \'Empty\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Remove\' in the \'Sticky Compliance\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 62
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -419,12 +416,12 @@ this.FeatureBackground();
 #line 85
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table50.AddRow(new string[] {
+                table52.AddRow(new string[] {
                             "Sticky Compliance"});
 #line 86
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table50, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table52, "When ");
 #line hidden
 #line 89
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -432,12 +429,12 @@ this.FeatureBackground();
 #line 90
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table51.AddRow(new string[] {
+                table53.AddRow(new string[] {
                             "0047 - Microsoft Access 97 SR-2 Francais"});
 #line 91
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table51, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table53, "When ");
 #line hidden
 #line 94
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -457,39 +454,39 @@ this.FeatureBackground();
 #line 99
  testRunner.Then("\'UPDATE\' button has tooltip with \'Select at least one value to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table52.AddRow(new string[] {
+                table54.AddRow(new string[] {
                             "No change"});
-                table52.AddRow(new string[] {
+                table54.AddRow(new string[] {
                             "FORWARD PATH"});
-                table52.AddRow(new string[] {
+                table54.AddRow(new string[] {
                             "KEEP"});
-                table52.AddRow(new string[] {
+                table54.AddRow(new string[] {
                             "RETIRE"});
-                table52.AddRow(new string[] {
+                table54.AddRow(new string[] {
                             "UNCATEGORISED"});
 #line 100
- testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table52, "Then ");
+ testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table54, "Then ");
 #line hidden
 #line 107
- testRunner.When("User selects \'1803 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'2004 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 108
  testRunner.Then("\'Sticky Compliance\' dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                             "Options"});
-                table53.AddRow(new string[] {
+                table55.AddRow(new string[] {
                             "FORWARD PATH"});
-                table53.AddRow(new string[] {
+                table55.AddRow(new string[] {
                             "KEEP"});
-                table53.AddRow(new string[] {
+                table55.AddRow(new string[] {
                             "RETIRE"});
-                table53.AddRow(new string[] {
+                table55.AddRow(new string[] {
                             "UNCATEGORISED"});
 #line 109
- testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table53, "Then ");
+ testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table55, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -547,12 +544,12 @@ this.FeatureBackground();
 #line 120
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table54.AddRow(new string[] {
+                table56.AddRow(new string[] {
                             "0047 - Microsoft Access 97 SR-2 Francais"});
 #line 121
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table54, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table56, "When ");
 #line hidden
 #line 124
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -561,7 +558,7 @@ this.FeatureBackground();
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 126
- testRunner.When("User selects \'1803 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'2004 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 127
  testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -622,12 +619,12 @@ this.FeatureBackground();
 #line 133
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table55.AddRow(new string[] {
+                table57.AddRow(new string[] {
                             "0047 - Microsoft Access 97 SR-2 Francais"});
 #line 134
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table55, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table57, "When ");
 #line hidden
 #line 137
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -698,12 +695,12 @@ this.FeatureBackground();
 #line 146
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table56.AddRow(new string[] {
+                table58.AddRow(new string[] {
                             "0047 - Microsoft Access 97 SR-2 Francais"});
 #line 147
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table56, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table58, "When ");
 #line hidden
 #line 150
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -776,12 +773,12 @@ this.FeatureBackground();
 #line 160
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table57.AddRow(new string[] {
+                table59.AddRow(new string[] {
                             "CodeWright 6.0BETA"});
 #line 161
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table57, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table59, "When ");
 #line hidden
 #line 164
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -872,12 +869,12 @@ this.FeatureBackground();
 #line 179
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table58.AddRow(new string[] {
+                table60.AddRow(new string[] {
                             "CodeWright 6.0BETA"});
 #line 180
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table58, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table60, "When ");
 #line hidden
 #line 183
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -922,23 +919,20 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS18463")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdateRationalisationValidations()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
-                    "DAS18463",
-                    "Not_Ready"};
+                    "DAS18463"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdateRationalis" +
                     "ationValidations", null, new string[] {
                         "Evergreen",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
-                        "DAS18463",
-                        "Not_Ready"});
-#line 195
+                        "DAS18463"});
+#line 194
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -961,33 +955,33 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 196
+#line 195
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 197
+#line 196
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 198
+#line 197
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table59.AddRow(new string[] {
+                table61.AddRow(new string[] {
                             "CodeWright 6.0BETA"});
-#line 199
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table59, "When ");
+#line 198
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table61, "When ");
 #line hidden
-#line 202
+#line 201
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 203
+#line 202
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 204
- testRunner.When("User selects \'1803 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 203
+ testRunner.When("User selects \'2004 Rollout\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 205
- testRunner.Then("\'UPDATE\' button has tooltip with \'Some values are missing or not valid\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 204
+ testRunner.Then("\'UPDATE\' button has tooltip with \'Select at least one value to change\' text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1016,7 +1010,7 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS18516",
                         "Not_Ready"});
-#line 209
+#line 208
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1039,97 +1033,97 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 210
+#line 209
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 211
+#line 210
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 212
+#line 211
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table60.AddRow(new string[] {
+                table62.AddRow(new string[] {
                             "Evergreen Rationalisation"});
-#line 213
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table60, "When ");
+#line 212
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table62, "When ");
 #line hidden
-#line 216
+#line 215
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 217
+#line 216
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table61.AddRow(new string[] {
+                table63.AddRow(new string[] {
                             "CodeWright 6.0BETA"});
-#line 218
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table61, "When ");
+#line 217
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table63, "When ");
+#line hidden
+#line 220
+ testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 221
- testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 222
- testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 223
- testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 224
  testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 225
+#line 224
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 225
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                        "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 226
- testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
-                        "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 227
- testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 228
  testRunner.Then("Success message with \"1 update has been queued\" text is displayed on Action panel" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 229
+#line 228
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 231
+#line 230
  testRunner.Then("\'KEEP\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 233
+#line 232
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 234
+#line 233
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 235
+#line 234
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 236
+#line 235
  testRunner.When("User selects \'UNCATEGORISED\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 237
+#line 236
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 238
+#line 237
  testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
                         "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 239
+#line 238
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 240
+#line 239
  testRunner.Then("Success message with \"1 update has been queued\" text is displayed on Action panel" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 241
+#line 240
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 242
+#line 241
  testRunner.Then("\'UNCATEGORISED\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1159,7 +1153,7 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS18516",
                         "Not_Ready"});
-#line 246
+#line 245
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1182,101 +1176,101 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 247
+#line 246
  testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 248
+#line 247
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 249
+#line 248
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table62.AddRow(new string[] {
+                table64.AddRow(new string[] {
                             "Evergreen Rationalisation"});
-#line 250
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table62, "When ");
+#line 249
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table64, "When ");
 #line hidden
-#line 253
+#line 252
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 254
+#line 253
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table63.AddRow(new string[] {
+                table65.AddRow(new string[] {
                             "Image Express Utility 2.0"});
-#line 255
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table63, "When ");
+#line 254
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table65, "When ");
 #line hidden
-#line 258
+#line 257
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 259
+#line 258
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 260
+#line 259
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 261
+#line 260
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 262
+#line 261
  testRunner.When("User enters \'PlexTools Professional V2.21\' in the \'Target Application\' autocomple" +
                         "te field and selects \'PlexTools Professional V2.21\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 263
+#line 262
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 263
+ testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
+                        "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 264
- testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
-                        "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 265
- testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 266
  testRunner.Then("Success message with \"1 update has been queued\" text is displayed on Action panel" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 267
+#line 266
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 269
+#line 268
  testRunner.Then("\'FORWARD PATH\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 271
+#line 270
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 272
+#line 271
  testRunner.When("User selects \'Update application attributes\' in the \'Bulk Update Type\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 273
+#line 272
  testRunner.When("User selects \'Evergreen\' option from \'Project or Evergreen\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 274
+#line 273
  testRunner.When("User selects \'UNCATEGORISED\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 275
+#line 274
  testRunner.And("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 276
+#line 275
  testRunner.Then("Warning message with \"This operation cannot be undone\" text is displayed on Actio" +
                         "n panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 277
+#line 276
  testRunner.When("User clicks \'UPDATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 278
+#line 277
  testRunner.Then("Success message with \"1 update has been queued\" text is displayed on Action panel" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 279
+#line 278
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 280
+#line 279
  testRunner.Then("\'UNCATEGORISED\' content is displayed in the \'Evergreen Rationalisation\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

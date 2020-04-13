@@ -5,157 +5,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_API_FiltersAndColumns\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_BaseDashboardPage\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_Columns\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_GlobalSearch\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_GridActions\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\GroupDetails\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\**" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\**" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ListDetails\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ListFromCSV\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ListPanel\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ProfileDetails\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_QueryStrings\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_Search\**" />
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_StaticLists\**" />
-    <Compile Remove="Tests\Senior\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_API_FiltersAndColumns\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_BaseDashboardPage\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_Columns\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_GlobalSearch\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_GridActions\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\GroupDetails\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\**" />
     <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\**" />
     <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ListDetails\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ListFromCSV\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ListPanel\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_ProfileDetails\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_QueryStrings\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_Search\**" />
-    <EmbeddedResource Remove="Tests\EvergreenJnr\EvergreenJnr_StaticLists\**" />
-    <EmbeddedResource Remove="Tests\Senior\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_API_FiltersAndColumns\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_BaseDashboardPage\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_Columns\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_GlobalSearch\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_GridActions\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\GroupDetails\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\**" />
     <None Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\**" />
     <None Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ListDetails\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ListFromCSV\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ListPanel\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_ProfileDetails\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_QueryStrings\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_Search\**" />
-    <None Remove="Tests\EvergreenJnr\EvergreenJnr_StaticLists\**" />
-    <None Remove="Tests\Senior\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_API_FiltersAndColumns\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_BaseDashboardPage\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Columns\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_GlobalSearch\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_GridActions\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\GroupDetails\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\**" />
     <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\**" />
     <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ListDetails\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ListFromCSV\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ListPanel\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ProfileDetails\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_QueryStrings\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Search\**" />
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_StaticLists\**" />
-    <SpecFlowFeatureFiles Remove="Tests\Senior\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ActionsPanel\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AdminPage\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_API_FiltersAndColumns\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_AssociationsFeature\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_BaseDashboardPage\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Columns\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DashboardsPage\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_DynamicLists\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_FiltersFeature\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_GlobalSearch\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_GridActions\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ApplicationsDetails\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\DevicesDetails\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\GroupDetails\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsContent\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsTabs\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\MailboxesDetails\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\ProjectDetails\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\UsersDetails\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ListDetails\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ListFromCSV\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ListPanel\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Pivot\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ProfileDetails\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_QueryStrings\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_Search\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\EvergreenJnr\EvergreenJnr_StaticLists\**" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Tests\Senior\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\CustomFieldsCheck.feature.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\DeleteCustomFields.feature.cs" />
     <Compile Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\EditClickableValueField.feature.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature" />
     <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\CustomFieldsCheck.feature" />
     <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\DeleteCustomFields.feature" />
     <SpecFlowFeatureFiles Remove="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\Tabs\CustomFields\EditClickableValueField.feature" />
@@ -191,6 +59,12 @@
     <None Update="Tests\TestFeature.feature">
       <Generator></Generator>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Tests\EvergreenJnr\EvergreenJnr_ItemDetails\ItemDetailsDisplay.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 
 </Project>

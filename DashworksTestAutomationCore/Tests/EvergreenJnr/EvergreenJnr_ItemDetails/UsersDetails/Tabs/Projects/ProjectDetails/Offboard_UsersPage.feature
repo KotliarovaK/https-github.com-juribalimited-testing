@@ -25,7 +25,6 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 02X387UQLFP3ISU  |
-	Then "02X387UQLFP3ISU" chip have tooltip with "02X387UQLFP3ISU" text
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
@@ -81,3 +80,58 @@ Scenario: EvergreenJnr_UsersList_VerifyThatTheMessageAppearsCorrectlyOnTheOffboa
 	And User clicks 'OFFBOARD' button 
 	Then popup is displayed to User
 	And 'Offboarding user BCLABS\0088FC8A50DD4344B92 (Barland, Steinar). Offboarding an object deletes all project related information about it.' text is displayed on popup
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @Offboard @DAS18036 @Zion_NewGrid
+Scenario: EvergreenJnr_UsersList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly
+	When User navigates to the 'User' details page for '0137C8E69921432992B' item
+	Then Details page for '0137C8E69921432992B' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
+	And User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	And User clicks 'OFFBOARD' button 
+	Then popup is displayed to User
+	And following columns are displayed on the Item details page:
+	| ColumnName         |
+	| Email Address      |
+	| Owner Display Name |
+	| Owned              |
+	| Bucket             |
+	When User deselect all rows on the grid
+	Then following columns are displayed on the Item details page:
+	| ColumnName         |
+	| Email Address      |
+	| Owner Display Name |
+	| Owned              |
+	| Bucket             |
+	When User selects all rows on the grid
+	Then following columns are displayed on the Item details page:
+	| ColumnName         |
+	| Email Address      |
+	| Owner Display Name |
+	| Owned              |
+	| Bucket             |
+	When User clicks following checkboxes from Column Settings panel for the 'Owned' column:
+	| checkboxes         |
+	| Email Address      |
+	| Owner Display Name |
+	Then following columns are displayed on the Item details page:
+	| ColumnName |
+	| Owned      |
+	| Bucket     |
+	When User clicks following checkboxes from Column Settings panel for the 'Owned' column:
+	| checkboxes         |
+	| Owner Display Name |
+	Then following columns are displayed on the Item details page:
+	| ColumnName         |
+	| Owner Display Name |
+	| Owned              |
+	| Bucket             |
+	When User clicks following checkboxes from Column Settings panel for the 'Owned' column:
+	| checkboxes    |
+	| Email Address |
+	Then following columns are displayed on the Item details page:
+	| ColumnName         |
+	| Email Address      |
+	| Owner Display Name |
+	| Owned              |
+	| Bucket             |

@@ -146,37 +146,37 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table654 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table723 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table654.AddRow(new string[] {
+                table723.AddRow(new string[] {
                             "13382ProjectForCapacity",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table654, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table723, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table655 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table724 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName"});
-                table655.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "13382ProjectForCapacity",
                             "Slot13147",
                             "Name13147"});
-                table655.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "13382ProjectForCapacity",
                             "NewName",
                             "Name1"});
-                table655.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "13382ProjectForCapacity",
                             "Name1",
                             "Name1"});
 #line 13
- testRunner.And("User creates new Slot via Api", ((string)(null)), table655, "And ");
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table724, "And ");
 #line hidden
 #line 18
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -203,16 +203,16 @@ this.FeatureBackground();
  testRunner.Then("numeric data in table is sorted by \'Display Order\' column in ascending order by d" +
                         "efault", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table656 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table725 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table656.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "Slot13147"});
-                table656.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "NewName"});
-                table656.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "Name1"});
 #line 26
- testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table656, "Then ");
+ testRunner.Then("Content in the \'Capacity Slot\' column is equal to", ((string)(null)), table725, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -276,18 +276,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table657 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table726 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table657.AddRow(new string[] {
+                table726.AddRow(new string[] {
                             "ChecksLanguage13955",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 34
- testRunner.When("Project created via API and opened", ((string)(null)), table657, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table726, "When ");
 #line hidden
 #line 37
  testRunner.And("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -298,16 +298,16 @@ this.FeatureBackground();
 #line 39
  testRunner.And("User selects \"Dutch\" language on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table658 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table727 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName"});
-                table658.AddRow(new string[] {
+                table727.AddRow(new string[] {
                             "ChecksLanguage13955",
                             "ChecksLanguage",
                             "DAS13955"});
 #line 40
- testRunner.And("User creates new Slot via Api", ((string)(null)), table658, "And ");
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table727, "And ");
 #line hidden
 #line 43
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -402,16 +402,16 @@ this.FeatureBackground();
 #line 73
  testRunner.And("User navigates to the \'Slots\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table659 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table728 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName"});
-                table659.AddRow(new string[] {
+                table728.AddRow(new string[] {
                             "ChecksLanguage13955",
                             "ChecksLanguage 2",
                             "DAS13955"});
 #line 74
- testRunner.And("User creates new Slot via Api", ((string)(null)), table659, "And ");
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table728, "And ");
 #line hidden
 #line 77
  testRunner.And("User navigates to newly created Slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -475,31 +475,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table660 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table729 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table660.AddRow(new string[] {
+                table729.AddRow(new string[] {
                             "ProjectForDAS14103",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 82
- testRunner.When("Project created via API and opened", ((string)(null)), table660, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table729, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table661 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table730 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "CapacityType"});
-                table661.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "ProjectForDAS14103",
                             "capacity type = Teams and Paths",
                             "capacity type = Teams and Paths",
                             "Teams and Paths"});
 #line 85
- testRunner.And("User creates new Slot via Api", ((string)(null)), table661, "And ");
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table730, "And ");
 #line hidden
 #line 88
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -564,36 +564,36 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table662 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table731 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table662.AddRow(new string[] {
+                table731.AddRow(new string[] {
                             "ProjectForDAS13417",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 94
- testRunner.When("Project created via API and opened", ((string)(null)), table662, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table731, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table663 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table732 = new TechTalk.SpecFlow.Table(new string[] {
                             "Project",
                             "SlotName",
                             "DisplayName",
                             "CapacityType"});
-                table663.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "ProjectForDAS13417",
                             "capacity type = Teams and Paths",
                             "capacity type = Teams and Paths",
                             "Teams and Paths"});
-                table663.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "ProjectForDAS13417",
                             "capacity type = Capacity Units",
                             "capacity type = Capacity Units",
                             "Capacity Units"});
 #line 97
- testRunner.And("User creates new Slot via Api", ((string)(null)), table663, "And ");
+ testRunner.And("User creates new Slot via Api", ((string)(null)), table732, "And ");
 #line hidden
 #line 101
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

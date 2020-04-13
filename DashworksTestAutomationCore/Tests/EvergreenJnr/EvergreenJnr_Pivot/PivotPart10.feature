@@ -152,7 +152,7 @@ Examples:
 	| List         | ListLabel        | AddValues                | CountAggregateFunctions         | SumAggregateFunctions         | MinAggregateFunctions         | MaxAggregateFunctions         | AvgAggregateFunctions         |
 	| Devices      | All Devices      | HDD Count                | Count(HDD Count)                | Sum(HDD Count)                | Min(HDD Count)                | Max(HDD Count)                | Avg(HDD Count)                |
 	| Users        | All Users        | Device Count             | Count(Device Count)             | Sum(Device Count)             | Min(Device Count)             | Max(Device Count)             | Avg(Device Count)             |
-	| Applications | All Applications | 1803: Current User Count | Count(1803: Current User Count) | Sum(1803: Current User Count) | Min(1803: Current User Count) | Max(1803: Current User Count) | Avg(1803: Current User Count) |
+	| Applications | All Applications | 2004: Current User Count | Count(2004: Current User Count) | Sum(2004: Current User Count) | Min(2004: Current User Count) | Max(2004: Current User Count) | Avg(2004: Current User Count) |
 	| Mailboxes    | All Mailboxes    | Associated Item Count    | Count(Associated Item Count)    | Sum(Associated Item Count)    | Min(Associated Item Count)    | Max(Associated Item Count)    | Avg(Associated Item Count)    |
 
 @Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @DAS16403 @DAS16407 @Cleanup
@@ -173,28 +173,24 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	Then Pivot run was completed
 	When User creates Pivot list with "DAS14263_Pivot" name
 	Then "DAS14263_Pivot" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Specific users / teams" sharing option
-	When User clicks 'ADD USER' button 
-	When User selects the "Administrator" user for sharing
+	When User clicks the Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'person_add' icon
+	When User selects 'Administrator' option from 'User' autocomplete
 	When User clicks 'CANCEL' button 
-	When User clicks 'ADD USER' button 
-	When User selects the "Administrator" user for sharing
-	When User clicks 'CANCEL' button 
-	When User clicks 'ADD TEAM' button 
-	When User selects the "Team 1062" team for sharing
+	When User clicks 'group_add' icon
+	When User selects 'Team 1062' option from 'Team' autocomplete
 	Then 'ADD TEAM' button is disabled
-	When User select "Edit" in Select Access dropdown
+	When User selects 'Edit' in the 'Permission' dropdown
 	Then 'ADD TEAM' button is not disabled
 	When User clicks 'CANCEL' button 
-	When User clicks 'ADD TEAM' button 
-	When User selects the "Team 1062" team for sharing
-	When User select "Admin" in Select Access dropdown
+	When User clicks 'group_add' icon
+	When User selects 'Team 1062' option from 'Team' autocomplete
+	When User selects 'Admin' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 
-	When User clicks 'ADD TEAM' button 
-	When User selects the "Team 1062" team for sharing
-	When User select "Read" in Select Access dropdown
+	When User clicks 'group_add' icon
+	When User selects 'Team 1062' option from 'Team' autocomplete
+	When User selects 'Read' in the 'Permission' dropdown
 	When User clicks 'CANCEL' button 
 	When User navigates to the "DAS14263_Pivot" list
 	Then User remove list with "DAS14263_Pivot" name on "Devices" page
@@ -204,7 +200,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckArchivedItemIncludingInPivot
 	When User clicks 'Devices' on the left-hand menu
 	And User sets includes archived devices in 'true'
 	And User clicks the Filters button
-	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	And User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
 	And User selects 'Pivot' in the 'Create' dropdown

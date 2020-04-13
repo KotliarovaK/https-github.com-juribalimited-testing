@@ -132,20 +132,20 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
                             "FieldName",
                             "FieldLabel",
                             "AllowExternalUpdate",
                             "Enabled",
                             "User"});
-                table68.AddRow(new string[] {
+                table70.AddRow(new string[] {
                             "DAS18166",
                             "18166_CF",
                             "true",
                             "false",
                             "true"});
 #line 11
- testRunner.When("User creates new Custom Field", ((string)(null)), table68, "When ");
+ testRunner.When("User creates new Custom Field", ((string)(null)), table70, "When ");
 #line hidden
 #line 14
  testRunner.And("User navigate to Evergreen URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -156,12 +156,12 @@ this.FeatureBackground();
 #line 16
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table69.AddRow(new string[] {
+                table71.AddRow(new string[] {
                             "Hunter, Melanie"});
 #line 17
- testRunner.And("User select \"Display Name\" rows in the grid", ((string)(null)), table69, "And ");
+ testRunner.And("User select \"Display Name\" rows in the grid", ((string)(null)), table71, "And ");
 #line hidden
 #line 20
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

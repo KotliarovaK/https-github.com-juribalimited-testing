@@ -138,18 +138,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2493 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2995 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table2493.AddRow(new string[] {
+                table2995.AddRow(new string[] {
                             "cu_DAS19538_2",
                             "DAS19538",
                             "false",
                             "User Evergreen Capacity Project"});
 #line 10
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2493, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2995, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'User\' details page for \'0088FC8A50DD4344B92\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -183,17 +183,17 @@ this.FeatureBackground();
  testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
- testRunner.Then("\'The selected objects successfully moved to cu_DAS19538_2\' text is displayed on i" +
-                        "nline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'User successfully moved to cu_DAS19538_2\' text is displayed on inline success ba" +
+                        "nner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2494 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2996 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2494.AddRow(new string[] {
+                table2996.AddRow(new string[] {
                             "Capacity Unit",
                             "cu_DAS19538_2"});
 #line 24
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2494, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2996, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -275,25 +275,31 @@ this.FeatureBackground();
 #line 38
  testRunner.Then("select all rows checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2495 = new TechTalk.SpecFlow.Table(new string[] {
-                            "SelectedRowsName"});
-                table2495.AddRow(new string[] {
-                            "01BQIYGGUW5PRP6"});
 #line 39
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table2495, "When ");
+ testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 42
+#line 40
  testRunner.Then("select all rows checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2496 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2997 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table2496.AddRow(new string[] {
+                table2997.AddRow(new string[] {
                             "01BQIYGGUW5PRP6"});
-#line 43
- testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table2496, "When ");
+#line 41
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table2997, "When ");
 #line hidden
-#line 46
+#line 44
  testRunner.Then("select all rows checkbox is unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2998 = new TechTalk.SpecFlow.Table(new string[] {
+                            "SelectedRowsName"});
+                table2998.AddRow(new string[] {
+                            "01BQIYGGUW5PRP6"});
+#line 45
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table2998, "When ");
+#line hidden
+#line 48
+ testRunner.Then("select all rows checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -334,7 +340,7 @@ this.FeatureBackground();
                         "Cleanup",
                         "Set_Default_Capacity_Unit",
                         "Universe"});
-#line 49
+#line 51
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -357,56 +363,147 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2497 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2999 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table2497.AddRow(new string[] {
+                table2999.AddRow(new string[] {
                             "zen_DAS19846_1",
                             "DAS19846",
                             "false",
                             "User Evergreen Capacity Project"});
-#line 50
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2497, "When ");
-#line hidden
-#line 53
- testRunner.When("User navigates to the \'User\' details page for the item with \'17815\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 54
- testRunner.Then("Details page for \'AKK984561 (Erik Q. Chan)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 52
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2999, "When ");
 #line hidden
 #line 55
+ testRunner.When("User navigates to the \'User\' details page for the item with \'17815\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 56
+ testRunner.Then("Details page for \'AKK984561 (Erik Q. Chan)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 57
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                         "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 56
+#line 58
  testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 57
+#line 59
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 58
+#line 60
  testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 59
+#line 61
  testRunner.When("User selects \'zen_DAS19846_1\' option from \'Capacity Unit\' autocomplete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 60
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 61
- testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 62
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 63
+ testRunner.When("User clicks \'MOVE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 64
  testRunner.Then("\'The selected objects successfully moved to zen_DAS19846_1\' text is displayed on " +
                         "inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 63
+#line 65
  testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 64
+#line 66
  testRunner.Then("\'zen_DAS19846_1\' content is displayed in the \'Capacity Unit\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS19175")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        public virtual void EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Evergreen",
+                    "Users",
+                    "EvergreenJnr_ItemDetails",
+                    "ProjectDetailsTab",
+                    "DAS19175",
+                    "Zion_NewGrid"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS19175",
+                        "Zion_NewGrid"});
+#line 69
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 70
+ testRunner.When("User navigates to the \'User\' details page for \'0137C8E69921432992B\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 71
+ testRunner.Then("Details page for \'0137C8E69921432992B\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 72
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' in the \'Item Details Project\' d" +
+                        "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 73
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 74
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 75
+ testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3000 = new TechTalk.SpecFlow.Table(new string[] {
+                            "checkboxes"});
+                table3000.AddRow(new string[] {
+                            "Owner Display Name"});
+#line 76
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Owned\' colum" +
+                        "n:", ((string)(null)), table3000, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3001 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ColumnName"});
+                table3001.AddRow(new string[] {
+                            "Email Address"});
+                table3001.AddRow(new string[] {
+                            "Owned"});
+                table3001.AddRow(new string[] {
+                            "Capacity Unit"});
+                table3001.AddRow(new string[] {
+                            "Bucket"});
+#line 79
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table3001, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

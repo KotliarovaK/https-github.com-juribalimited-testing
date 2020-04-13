@@ -20,7 +20,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks newly created object link
 	And User navigates to the 'Details' left menu item
-	#Then 'Clone evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
+	#Then 'Clone Evergreen buckets to project buckets' content is displayed in 'Buckets' dropdown
 	When User selects "Use project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item

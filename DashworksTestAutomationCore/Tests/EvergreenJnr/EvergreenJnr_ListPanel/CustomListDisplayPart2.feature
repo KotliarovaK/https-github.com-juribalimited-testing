@@ -61,10 +61,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	Then 'All Users' list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Babel(Engl: Initiation \ Another task" filter where type is "Equals" without added column and following checkboxes:
-	| SelectedCheckboxes |
-	| Started            |
-	Then "Babel(Engl: Initiation \ Another task" filter is added to the list
+	When User add "2004: Readiness" filter where type is "Equals" with added column and "Empty" Lookup option
+	Then "2004: Readiness" filter is added to the list
 	When User create dynamic list with "A TestList Custom List" name on "Users" page
 	Then "A TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list

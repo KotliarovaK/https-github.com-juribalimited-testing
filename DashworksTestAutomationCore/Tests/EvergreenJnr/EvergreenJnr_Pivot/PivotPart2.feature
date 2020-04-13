@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	Then User sees that 'Scope' dropdown contains following options:
 	| Values                                |
 	| All Devices                           |
-	| 1803 Rollout                          |
+	| 2004 Rollout                          |
 	| Auto: X-Proj Paths Scope              |
 	| Dependant List Filter - BROKEN LIST   |
 	| Depot Capacity                        |

@@ -148,25 +148,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2874 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3415 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2874.AddRow(new string[] {
+                table3415.AddRow(new string[] {
                             "Date field combo",
                             @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,bootupDate,buildDate,lastSeenDate,firstSeenDate,purchaseDate,warrantyDate,ownerLastLogoffDate,ownerLastLogonDate,project_task_1_9950_2_Task,project_task_1_250_2_Task,project_task_41_12903_2_Task,project_task_41_12785_2_Task,project_task_1_1_2_Task,project_task_1_4_2_Task,project_task_1_3_2_Task,project_task_1_2_2_Task"});
-                table2874.AddRow(new string[] {
+                table3415.AddRow(new string[] {
                             "Devices owners with apostrophes",
                             @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(ownerDisplayName%20CONTAINS%20('O''Connor')%20)%20OR%20(ownerDisplayName%20CONTAINS%20('O''Neill')%20)%20OR%20(ownerDisplayName%20CONTAINS%20('O'''%2C'O''Neal')%20)%20OR%20(ownerDisplayName%20EQUALS%20('O''Connell')%20)"});
-                table2874.AddRow(new string[] {
+                table3415.AddRow(new string[] {
                             "Users with apostrophes",
                             @"evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName&$filter=(displayName%20CONTAINS%20('O''Connell')%20)%20OR%20(displayName%20CONTAINS%20('O''Neal')%20)%20OR%20(displayName%20CONTAINS%20('O''Neill')%20)%20OR%20(displayName%20CONTAINS%20('O''Connor')%20)%20OR%20(displayName%20CONTAINS%20('O''Donnell')%20)%20OR%20(displayName%20CONTAINS%20('O''Brian')%20)"});
-                table2874.AddRow(new string[] {
+                table3415.AddRow(new string[] {
                             "Mailboxes with apostrophes",
                             "evergreen/#/mailboxes?$filter=(displayName%20CONTAINS%20(\'o\'\'donnell\'%2C\'o\'\'brien" +
                                 "\'%2C\'o\'\'neil\')%20)&$select=principalEmailAddress,mailboxPlatform,serverName,mail" +
                                 "boxType,ownerDisplayName,displayName"});
 #line 12
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2874, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3415, "When ");
 #line hidden
 #line 18
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -229,23 +229,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2875 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3416 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2875.AddRow(new string[] {
+                table3416.AddRow(new string[] {
                             "Devices complex query",
                             @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,migrationRAG,computerKey,distributionType,lastSeenDate,manufacturer,model,oSVersion,oSServicePackName,ownerMigrationRAG,entitledApplications,installedApplications,usedApplications,costCentre&$filter=(migrationRAG%20EQUALS%20('Red'%2C'Amber'%2C'Unknown')%20%20AND%20chassisCategory%20EQUALS%20('Desktop'%2C'Laptop'%2C'Mobile')%20%20AND%20installedApplications%20%3E%3D%201%20)&$orderby=migrationRAG%20asc%2ClastSeenDate%20desc"});
-                table2875.AddRow(new string[] {
+                table3416.AddRow(new string[] {
                             "Users complex query",
                             @"evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedObjectName,userMigrationRAG,commonObjectName,devices,lastLogonDate,objectKey,entitledToDeviceApplications,installedApplications,usedApplications,costCentre,fullDepartmentPath,buildingName,city,country,floor,locationName,project_40_subCategory,project_40_groupName,project_40_ragStatus,project_40_requestType,project_40_objectStatus,project_40_teamName&$filter=(userMigrationRAG%20EQUALS%20('Red'%2C'Amber'%2C'Unknown'%2C'Green')%20%20AND%20devices%20%3E%3D%201%20%20AND%20entitledToDeviceApplications%20%3E%3D%201%20%20AND%20lastLogonDate%20%3E%20'2010-12-31'%20%20AND%20directoryName%20EQUALS%20('FR'%2C'DWLABS'%2C'RDLABS'%2C'BCLABS')%20)&$orderby=lastLogonDate%20desc"});
-                table2875.AddRow(new string[] {
+                table3416.AddRow(new string[] {
                             "Applications complex query",
                             @"evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,packageKey,migrationRAG,computerEntitlements,installed,distributionType,project_40_applicationReadiness,project_40_hideFromEndUsers,project_40_groupName,project_40_teamName,userEntitlements&$filter=(migrationRAG%20EQUALS%20('Red'%2C'Amber'%2C'Green')%20%20AND%20packageName%20CONTAINS%20('Microsoft')%20%20AND%20computerEntitlements%20%3E%3D%201%20%20AND%20userEntitlements%20%3E%3D%201%20)&$orderby=computerEntitlements%20desc%2CuserEntitlements%20desc"});
-                table2875.AddRow(new string[] {
+                table3416.AddRow(new string[] {
                             "Mailboxes complex query",
                             @"evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,createdDate,totalDeletedItemSizeMB,disconnectDate,displayName,importType,languageName,lastLogonDate,totalItemSizeMB,retainDeletedItemsDays,usersCount,isActive,databaseName,emailCount,ownerCommonName,ownerParentDistinguishedName,ownerUsername,ownerGivenName,ownerDepartmentFullPath,costCentre,fullDepartmentPath,buildingName,floor,city,country,locationName,project_42_subCategory,project_42_groupName,project_42_ragStatus,project_42_requestType,project_42_objectStatus,project_42_teamName,ownerMigrationRAG&$filter=(ownerMigrationRAG%20EQUALS%20('Red'%2C'Amber'%2C'Green'%2C'Unknown')%20%20AND%20emailCount%20%3E%3D%201%20%20AND%20usersCount%20%3E%3D%201%20%20AND%20mailboxPlatform%20EQUALS%20('Exchange%202013'%2C'Exchange%202010')%20)&$orderby=createdDate%20desc%2CemailCount%20desc%2CownerMigrationRAG%20asc"});
 #line 23
- testRunner.When("Evergreen QueryStringURL is entered for Complex QueryType", ((string)(null)), table2875, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Complex QueryType", ((string)(null)), table3416, "When ");
 #line hidden
 #line 29
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -304,25 +304,25 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2876 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3417 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2876.AddRow(new string[] {
+                table3417.AddRow(new string[] {
                             "All Devices",
                             "evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName"});
-                table2876.AddRow(new string[] {
+                table3417.AddRow(new string[] {
                             "All Users",
                             "evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedOb" +
                                 "jectName"});
-                table2876.AddRow(new string[] {
+                table3417.AddRow(new string[] {
                             "All Applications",
                             "evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion"});
-                table2876.AddRow(new string[] {
+                table3417.AddRow(new string[] {
                             "All Mailboxes",
                             "evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,ma" +
                                 "ilboxType,ownerDisplayName"});
 #line 34
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2876, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3417, "When ");
 #line hidden
 #line 40
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -375,22 +375,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2877 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3418 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2877.AddRow(new string[] {
+                table3418.AddRow(new string[] {
                             "Target App",
                             @"evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,project_1_applicationRationalisation,project_1_applicationReadiness,project_1_coreApplication,project_1_hideFromEndUsers,project_1_inScope,project_1_objectID,project_1_projectID,project_1_ragStatus,project_1_ragStatusId,project_1_requestType,project_1_requestTypeId,project_1_tag,project_1_targetApplication"});
-                table2877.AddRow(new string[] {
+                table3418.AddRow(new string[] {
                             "Category ID",
                             "evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,p" +
                                 "roject_1_subCategory"});
-                table2877.AddRow(new string[] {
+                table3418.AddRow(new string[] {
                             "Category",
                             "evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,p" +
                                 "roject_1_subCategoryId"});
 #line 45
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2877, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3418, "When ");
 #line hidden
 #line 50
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -443,14 +443,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2878 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3419 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2878.AddRow(new string[] {
+                table3419.AddRow(new string[] {
                             "Devices",
                             @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,bootupDate,biosVersion,oSArchitecture,ownerDomain,entitledApplications,costCentre,locationName,description,lDAP_41,customField_33,project_46_subCategory,project_46_ragStatus,project_46_requestType"});
 #line 55
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2878, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3419, "When ");
 #line hidden
 #line 58
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -503,16 +503,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2879 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3420 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2879.AddRow(new string[] {
+                table3420.AddRow(new string[] {
                             "Devices",
                             "evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedOb" +
                                 "jectName,description,usedApplications,departmentCode,buildingName,lDAP_46,custom" +
                                 "Field_1,project_46_subCategory,project_46_ragStatus,project_46_requestType"});
 #line 63
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2879, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3420, "When ");
 #line hidden
 #line 66
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -565,32 +565,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2880 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3421 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2880.AddRow(new string[] {
+                table3421.AddRow(new string[] {
                             "Devices",
                             "evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,ma" +
                                 "ilboxType,ownerDisplayName,displayName,ownerEmailAddress,departmentCode,location" +
                                 "Name,customField_81,project_48_subCategory,project_48_requestType,project_48_tea" +
                                 "mName"});
-                table2880.AddRow(new string[] {
+                table3421.AddRow(new string[] {
                             "EmailMigra filters",
                             @"evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'%2C'Forecast'%2C'Targeted'%2C'Scheduled'%2C'Migrated'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus"});
-                table2880.AddRow(new string[] {
+                table3421.AddRow(new string[] {
                             "EmailMigra filters",
                             "evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20(\'1\')%20AND%20projec" +
                                 "t_48_objectStatus%20EQUALS%20(\'Scheduled\'))&$select=principalEmailAddress,mailbo" +
                                 "xPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_" +
                                 "objectStatus"});
-                table2880.AddRow(new string[] {
+                table3421.AddRow(new string[] {
                             "EmailMigra filters",
                             "evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20(\'1\')%20AND%20projec" +
                                 "t_48_objectStatus%20EQUALS%20(\'Onboarded\'))&$select=principalEmailAddress,mailbo" +
                                 "xPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_" +
                                 "objectStatus"});
 #line 71
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2880, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3421, "When ");
 #line hidden
 #line 77
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -646,19 +646,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2881 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3422 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2881.AddRow(new string[] {
+                table3422.AddRow(new string[] {
                             "Application (Saved List)",
                             "evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&" +
                                 "$filter=(applicationSavedListId%20EQUALS%20(\'4\')%20WHERE%20(uod%2Cubdo))"});
-                table2881.AddRow(new string[] {
+                table3422.AddRow(new string[] {
                             "Apps On Devices",
                             "evergreen/#/devices?$filter=(application%20EQUALS%20(\'451\')%20WHERE%20(uod%2Cetd%" +
                                 "2Ciod%2Cubdo%2Cetdo))"});
 #line 82
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2881, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3422, "When ");
 #line hidden
 #line 86
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -724,27 +724,27 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2882 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3423 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2882.AddRow(new string[] {
+                table3423.AddRow(new string[] {
                             "Sort by device key",
                             "evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName," +
                                 "monitorCount,videoCardCount,computerKey&$orderby=computerKey%20desc"});
-                table2882.AddRow(new string[] {
+                table3423.AddRow(new string[] {
                             "Sort by user key",
                             "evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedOb" +
                                 "jectName,objectKey&$orderby=objectKey%20desc"});
-                table2882.AddRow(new string[] {
+                table3423.AddRow(new string[] {
                             "Sort by application key",
                             "evergreen/#/applications?$select=packageName,packageManufacturer,packageVersion,p" +
                                 "ackageKey&$orderby=packageKey%20asc"});
-                table2882.AddRow(new string[] {
+                table3423.AddRow(new string[] {
                             "Sort by mailbox key",
                             "evergreen/#/mailboxes?$select=principalEmailAddress,mailboxPlatform,serverName,ma" +
                                 "ilboxType,ownerDisplayName,mailboxKey&$orderby=mailboxKey%20asc"});
 #line 91
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2882, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3423, "When ");
 #line hidden
 #line 97
  testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -847,17 +847,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2883 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3424 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL",
                             "RowCount"});
-                table2883.AddRow(new string[] {
+                table3424.AddRow(new string[] {
                             string.Format("{0}", filterName),
                             string.Format("{0}", queryString),
                             string.Format("{0}", rows)});
 #line 101
  testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount" +
-                        " is displayed", ((string)(null)), table2883, "When ");
+                        " is displayed", ((string)(null)), table3424, "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -905,7 +905,7 @@ this.FeatureBackground();
             "20WHERE%20(iod%2Cubdo))", "1,003", "Application Owner begins with app installed on device; or used by device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("General information field 5 (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20END%20WITH%" +
             "20(\'0.5\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))&$select=hostname,chassisCat" +
-            "egory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79", "52", "General information field 5 does not end with 0.5 used on device; entitled to dev" +
+            "egory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79", "115", "General information field 5 does not end with 0.5 used on device; entitled to dev" +
             "ice; installed on device; used by device\'s owner; or entitled to device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20(\'7zip\')%20WHERE%20" +
             "(ubdo))", "160", "Application whose Name is not 7zip used by device\'s owner", null)]
@@ -947,17 +947,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2884 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3425 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL",
                             "RowCount"});
-                table2884.AddRow(new string[] {
+                table3425.AddRow(new string[] {
                             string.Format("{0}", filterName),
                             string.Format("{0}", queryString),
                             string.Format("{0}", rows)});
 #line 132
  testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount" +
-                        " is displayed", ((string)(null)), table2884, "When ");
+                        " is displayed", ((string)(null)), table3425, "When ");
 #line hidden
 #line 135
  testRunner.When("User create dynamic list with \"AdvancedFilterDL1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1039,26 +1039,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2885 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3426 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table2885.AddRow(new string[] {
+                table3426.AddRow(new string[] {
                             ""});
 #line 163
  testRunner.When("User create static list with \"StaticList13179\" name on \"Applications\" page with f" +
-                        "ollowing items", ((string)(null)), table2885, "When ");
+                        "ollowing items", ((string)(null)), table3426, "When ");
 #line hidden
 #line 166
  testRunner.Then("\"StaticList13179\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2886 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3427 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2886.AddRow(new string[] {
+                table3427.AddRow(new string[] {
                             "Application (Saved List) - Static - All rows selected",
                             "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'285\')%20WHERE%20" +
                                 "(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))"});
 #line 167
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2886, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3427, "When ");
 #line hidden
 #line 170
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1175,15 +1175,15 @@ this.FeatureBackground();
 #line 191
  testRunner.Then("\"Dynamic13179\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2887 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3428 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2887.AddRow(new string[] {
+                table3428.AddRow(new string[] {
                             "Application (Saved List) - Dynamic - All data sorted",
                             "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'290\')%20WHERE%20" +
                                 "(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))"});
 #line 192
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2887, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3428, "When ");
 #line hidden
 #line 195
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1285,16 +1285,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2888 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3429 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2888.AddRow(new string[] {
+                table3429.AddRow(new string[] {
                             "Application (Saved List) - Static - Specific rows selected by Compliance = Red, A" +
                                 "mber or Unknown",
                             "evergreen/#/applications?$filter=(migrationRAG%20EQUALS%20(\'Red\'%2C\'Amber\'%2C\'Unk" +
                                 "nown\'))&$select=packageName,packageManufacturer,packageVersion,migrationRAG"});
 #line 212
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2888, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3429, "When ");
 #line hidden
 #line 215
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1314,16 +1314,16 @@ this.FeatureBackground();
 #line 220
  testRunner.Then("\"StaticList12911\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2889 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3430 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2889.AddRow(new string[] {
+                table3430.AddRow(new string[] {
                             "Application (Saved List) - Static - Specific rows selected by Compliance = Red, A" +
                                 "mber or Unknown",
                             "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'295\')%20WHERE%20" +
                                 "(niod))"});
 #line 221
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2889, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3430, "When ");
 #line hidden
 #line 224
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1424,15 +1424,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2890 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3431 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2890.AddRow(new string[] {
+                table3431.AddRow(new string[] {
                             "Application (Saved List) - Dynamic - With filter applied to Vendor",
                             "evergreen/#/applications?$filter=(packageManufacturer%20CONTAINS%20(\'Microsoft\'%2" +
                                 "C\'Adobe\'))"});
 #line 241
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2890, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3431, "When ");
 #line hidden
 #line 244
  testRunner.And("User create dynamic list with \"Dynamic13579\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1440,16 +1440,16 @@ this.FeatureBackground();
 #line 245
  testRunner.Then("\"Dynamic13579\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2891 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3432 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2891.AddRow(new string[] {
+                table3432.AddRow(new string[] {
                             "Application (Saved List) - Static - Specific rows selected by Compliance = Red, A" +
                                 "mber or Unknown",
                             "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'37\')%20WHERE%20(" +
                                 "uod))"});
 #line 246
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2891, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3432, "When ");
 #line hidden
 #line 249
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1574,17 +1574,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2892 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3433 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL",
                             "RowCount"});
-                table2892.AddRow(new string[] {
+                table3433.AddRow(new string[] {
                             string.Format("{0}", filterName),
                             string.Format("{0}", queryString),
                             string.Format("{0}", rows)});
 #line 266
  testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount" +
-                        " is displayed", ((string)(null)), table2892, "When ");
+                        " is displayed", ((string)(null)), table3433, "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1599,7 +1599,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/users?$filter=(entitledApplications%20%3D%2010)", "32", "App Count (Entitled) is 10", null)]
-        [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/users?$filter=(installedApplications%20%3E%3D%2010)", "1,068", "App Count (Installed) is greater than or equal to 10", null)]
+        [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/users?$filter=(installedApplications%20%3E%3D%2010)", "1,068", "App Count (Installed on Owned Device) is greater than or equal to 10", null)]
         [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/users?$filter=(usedApplications%20%3C%3D%2010)", "41,337", "App Count (Used) is less than or equal to 10", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/users?$filter=(application%20EQUALS%20(\'493\')%20WHERE%20(ubu%2Cetu%2C" +
             "uodou%2Cetdobu%2Ciodobu))", "61", "Application \"WPF/E\" (codename) Community Technology Preview (Feb 2007) (493) used" +
@@ -1658,17 +1658,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2893 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3434 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL",
                             "RowCount"});
-                table2893.AddRow(new string[] {
+                table3434.AddRow(new string[] {
                             string.Format("{0}", filterName),
                             string.Format("{0}", queryString),
                             string.Format("{0}", rows)});
 #line 296
  testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount" +
-                        " is displayed", ((string)(null)), table2893, "When ");
+                        " is displayed", ((string)(null)), table3434, "When ");
 #line hidden
 #line 299
  testRunner.When("User create dynamic list with \"AdvancedFilterUL1\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1750,14 +1750,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2894 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3435 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2894.AddRow(new string[] {
+                table3435.AddRow(new string[] {
                             "Recipient Type",
                             "/evergreen/#/mailboxes?$filter=(recipientType%20NOT%20EQUALS%20(\'NULL\'))"});
 #line 325
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2894, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3435, "When ");
 #line hidden
 #line 328
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1828,15 +1828,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2895 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3436 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table2895.AddRow(new string[] {
+                table3436.AddRow(new string[] {
                             "Recipient Type",
                             "/evergreen/#/devices?$filter=(groupId%20EQUALS%20(\'26741\'%2C\'27716\'%2C\'27402\')%20" +
                                 "WHERE%20(inm))"});
 #line 336
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table2895, "When ");
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table3436, "When ");
 #line hidden
 #line 339
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

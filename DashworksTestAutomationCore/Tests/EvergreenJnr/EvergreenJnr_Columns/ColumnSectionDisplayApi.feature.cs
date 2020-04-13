@@ -129,17 +129,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1345 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1662 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table1345.AddRow(new string[] {
+                table1662.AddRow(new string[] {
                             "Adhoc Information"});
-                table1345.AddRow(new string[] {
+                table1662.AddRow(new string[] {
                             "Targeting Date"});
-                table1345.AddRow(new string[] {
+                table1662.AddRow(new string[] {
                             "Migration Updates"});
 #line 9
  testRunner.Then("the following subcategories are NOT displayed for \"Project Tasks: Windows7Mi\" Col" +
-                        "umns category:", ((string)(null)), table1345, "Then ");
+                        "umns category:", ((string)(null)), table1662, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -195,15 +195,15 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1346 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1663 = new TechTalk.SpecFlow.Table(new string[] {
                             "Value"});
-                table1346.AddRow(new string[] {
+                table1663.AddRow(new string[] {
                             "user-norm-radb-k"});
-                table1346.AddRow(new string[] {
+                table1663.AddRow(new string[] {
                             "Email Notifications Allowed?Email Notifications Allowed?"});
 #line 17
  testRunner.Then("the following subcategories are NOT displayed for \"Project Tasks: prK\" Columns ca" +
-                        "tegory:", ((string)(null)), table1346, "Then ");
+                        "tegory:", ((string)(null)), table1663, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

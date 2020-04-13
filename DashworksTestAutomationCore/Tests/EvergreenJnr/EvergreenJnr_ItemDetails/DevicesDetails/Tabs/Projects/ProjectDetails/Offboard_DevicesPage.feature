@@ -27,7 +27,6 @@ Scenario: EvergreenJnr_DevicesList_VerifyThatTheMessageAppearsCorrectlyOnTheOffb
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| ABQ575757        |
-	Then " UK\ABQ575757" chip have tooltip with "UK\ABQ575757" text
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
@@ -105,7 +104,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatGreenBannerIsNotVisibleOnTheOtherPag
 	| Options                                          |
 	| Windows 7 Migration (Computer Scheduled Project) |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18036
+@Evergreen @Devices @EvergreenJnr_ItemDetails @Offboard @DAS18036 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -184,3 +183,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatErrorIsNotDisplayedForAssociatedObje
 	When User clicks 'OFFBOARD' button
 	Then 'This device has been offboarded from User Evergreen Capacity Project' text is displayed on inline tip banner
 	Then 'OFFBOARD' button is disabled
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19843 @DAS20088
+Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheOffboardPopUp
+	When User navigates to the 'Device' details page for '32UIH1IBLQ050JY' item
+	Then Details page for '32UIH1IBLQ050JY' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks 'OFFBOARD' button
+	When User deselect all rows on the grid
+	Then 'FQT1418241' content is displayed in the 'Username' column
+	When User checks 'Show only selected items' slide toggle
+	Then 'FQT1418241' content is not displayed in the 'Username' column

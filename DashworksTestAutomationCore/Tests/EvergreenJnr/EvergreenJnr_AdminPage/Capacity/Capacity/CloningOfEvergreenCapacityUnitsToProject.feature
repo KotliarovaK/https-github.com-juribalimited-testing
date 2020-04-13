@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| N7GXB25TPJY73EH  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Devices_CU_DAS14103' option from 'Capacity Unit' autocomplete
 	When User selects 'None' in the 'Also Move Users' dropdown
 	When User clicks 'UPDATE' button
@@ -36,7 +36,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Prj_D_DAS14103 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
-	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
+	And User selects 'Clone Evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope
@@ -83,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| B569F47FE6B1491CAEC |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Users_CU_DAS14103' option from 'Capacity Unit' autocomplete
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Prj_U_DAS14103 | All Users | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
-	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
+	And User selects 'Clone Evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Windows Live Messenger (8.1.0178.00) |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update capacity unit' in the 'Bulk Update Type' dropdown
-	When User selects 'Evergreen' in the 'Project or Evergreen' dropdown
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Applications_CU_DAS14103' option from 'Capacity Unit' autocomplete
 	When User clicks 'UPDATE' button
 	When User clicks 'UPDATE' button
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| Prj_A_DAS14103 | All Users | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item
 	When User selects 'Teams and Paths' in the 'Capacity Mode' dropdown
-	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
+	And User selects 'Clone Evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	#Add Devices to scope

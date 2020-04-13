@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User navigates to the 'Details' left menu item
-	When User selects 'Clone evergreen buckets to project buckets' in the 'Bucket' dropdown
+	When User selects 'Clone Evergreen buckets to project buckets' in the 'Buckets' dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Changes' left menu item
@@ -120,19 +120,19 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 	When User navigates to the 'Buckets' left menu item
 	And User enters "Unassigned" text in the Search field for "Bucket" column
 	Then '16933' content is displayed in the 'Devices' column
-	Then '41050' content is displayed in the 'Users' column
-	Then '14538' content is displayed in the 'Mailboxes' column
+	Then '41049' content is displayed in the 'Users' column
+	Then '14637' content is displayed in the 'Mailboxes' column
 	When User navigates to the 'Capacity Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then '9435' content is displayed in the 'Devices' column
-	Then '27155' content is displayed in the 'Users' column
-	Then '5288' content is displayed in the 'Mailboxes' column
+	Then '9420' content is displayed in the 'Devices' column
+	Then '27140' content is displayed in the 'Users' column
+	Then '5391' content is displayed in the 'Mailboxes' column
 	When User navigates to the 'Evergreen' left menu item
 	When User navigates to the 'Rings' left menu item
 	And User enters "Unassigned" text in the Search field for "Ring" column
-	Then '15802' content is displayed in the 'Devices' column
+	Then '15737' content is displayed in the 'Devices' column
 	Then '38677' content is displayed in the 'Users' column
-	Then '13752' content is displayed in the 'Mailboxes' column
+	Then '13852' content is displayed in the 'Mailboxes' column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
 Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBuckets
@@ -197,7 +197,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	| ColumnName              |
 	| Evergreen Capacity Unit |
 	When User clicks 'Admin' on the left-hand menu
-	When User enters "1803 Rollout" text in the Search field for "Project" column
+	When User enters "2004 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User navigates to the 'Capacity' left menu item
 	When User navigates to the 'Units' left menu item
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromC
 	Then 'All Applications' list should be displayed to the user
 	Then ColumnName is added to the list
 	| ColumnName          |
-	| 1803: Capacity Unit |
+	| 2004: Capacity Unit |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
 Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromRings
@@ -274,3 +274,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickin
 	When User clicks 'Automations' header breadcrumb
 	Then Page with 'Automations' header is displayed to user
 	Then 'Automations' left menu item is expanded
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15896
+Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfRequestsDontExceedAllowedCount
+	When User clicks 'Admin' on the left-hand menu
+	Then 'Admin' list should be displayed to the user
+	Then Number of requests to '/admin' is not greater than '7'

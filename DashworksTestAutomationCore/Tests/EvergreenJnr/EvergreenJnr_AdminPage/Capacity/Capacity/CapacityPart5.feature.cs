@@ -155,37 +155,37 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("\'Admin\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table783 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table852 = new TechTalk.SpecFlow.Table(new string[] {
                             "OldName",
                             "Name",
                             "Description",
                             "IsDefault"});
-                table783.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "Unassigned",
                             "New Name",
                             "",
                             ""});
 #line 12
- testRunner.When("User updates Capacity Units via api", ((string)(null)), table783, "When ");
+ testRunner.When("User updates Capacity Units via api", ((string)(null)), table852, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table784 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table853 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table784.AddRow(new string[] {
+                table853.AddRow(new string[] {
                             "ProjectForDAS13956",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 15
- testRunner.When("Project created via API and opened", ((string)(null)), table784, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table853, "When ");
 #line hidden
 #line 18
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
- testRunner.And("User selects \'Clone evergreen capacity units to project capacity units\' in the \'C" +
+ testRunner.And("User selects \'Clone Evergreen capacity units to project capacity units\' in the \'C" +
                         "apacity Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
@@ -389,31 +389,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table785 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table854 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table785.AddRow(new string[] {
+                table854.AddRow(new string[] {
                             "Project13156",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 53
- testRunner.When("Project created via API and opened", ((string)(null)), table785, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table854, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table786 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table855 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table786.AddRow(new string[] {
+                table855.AddRow(new string[] {
                             "1Test",
                             "DAS13156",
                             "true",
                             "Project13156"});
 #line 56
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table786, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table855, "When ");
 #line hidden
 #line 59
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -424,15 +424,15 @@ this.FeatureBackground();
 #line 61
  testRunner.When("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table787 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table856 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table787.AddRow(new string[] {
+                table856.AddRow(new string[] {
                             "ACDSee 4.0.2 PowerPack Trial Version (4.00.0002)"});
-                table787.AddRow(new string[] {
+                table856.AddRow(new string[] {
                             "0036 - Microsoft Access 97 SR-2 English (8.0)"});
 #line 62
  testRunner.When("User expands \'Applications to add\' multiselect to the \'Applications\' tab on Proje" +
-                        "ct Scope Changes page and selects following Objects", ((string)(null)), table787, "When ");
+                        "ct Scope Changes page and selects following Objects", ((string)(null)), table856, "When ");
 #line hidden
 #line 66
  testRunner.When("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -498,10 +498,10 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS14967")]
-        [NUnit.Framework.TestCaseAttribute("All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("All Users", null)]
-        [NUnit.Framework.TestCaseAttribute("All Applications", null)]
-        public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists(string listName, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
+        public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists(string columnName, string listName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -517,7 +517,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrec" +
                     "tFilteredLists", null, @__tags);
-#line 85
+#line 84
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -540,53 +540,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 86
+#line 85
  testRunner.When("User navigates to \"Windows 7 Migration (Computer Scheduled Project)\" project deta" +
                         "ils", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 87
+#line 86
  testRunner.And("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 88
+#line 87
  testRunner.And("User navigates to the \'Units\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 89
+#line 88
  testRunner.And("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 89
+ testRunner.And(string.Format("User remembers value in \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 90
- testRunner.And(string.Format("User remembers value in \"{0}\" column", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("User clicks content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 91
- testRunner.And(string.Format("User clicks content from \"{0}\" column", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 92
  testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 93
+#line 92
  testRunner.And("Rows counter number equals to remembered value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 94
+#line 93
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 95
+#line 94
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 96
+#line 95
  testRunner.And("\"Windows7Mi: Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table788 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table857 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table788.AddRow(new string[] {
+                table857.AddRow(new string[] {
                             "Unassigned"});
-#line 97
- testRunner.And("Values is displayed in added filter info", ((string)(null)), table788, "And ");
+#line 96
+ testRunner.And("Values is displayed in added filter info", ((string)(null)), table857, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table789 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table858 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table789.AddRow(new string[] {
+                table858.AddRow(new string[] {
                             "is"});
-#line 100
- testRunner.And("Options is displayed in added filter info", ((string)(null)), table789, "And ");
+#line 99
+ testRunner.And("Options is displayed in added filter info", ((string)(null)), table858, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

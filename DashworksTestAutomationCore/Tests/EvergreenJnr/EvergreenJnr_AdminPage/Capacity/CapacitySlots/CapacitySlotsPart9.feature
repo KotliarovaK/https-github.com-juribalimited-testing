@@ -7,13 +7,14 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS15878 @DAS15291
 Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
-	When User navigates to "1803 Rollout" project details
+	When User navigates to "2004 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot
+	When User moves "Birmingham Morning" slot to "Manchester Morning" slot
 	Then Content in the 'Capacity Slot' column is equal to
 	| Content                      |
 	| Birmingham Afternoon         |
+	| Birmingham Morning           |
 	| Manchester Morning           |
 	| Manchester Afternoon         |
 	| London - City Morning        |
@@ -23,13 +24,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London Depot 09:00 - 11:00   |
 	| London Depot 11:00 - 13:00   |
 	| London Depot 13:00 - 15:00   |
-	| Birmingham Morning           |
 	| London Depot 15:00 - 17:00   |
-	When User moves "Birmingham Morning" slot to "Birmingham Afternoon" slot
+	When User moves "Birmingham Afternoon" slot to "Manchester Morning" slot
 	Then Content in the 'Capacity Slot' column is equal to
 	| Content                      |
-	| Birmingham Afternoon         |
 	| Birmingham Morning           |
+	| Birmingham Afternoon         |
 	| Manchester Morning           |
 	| Manchester Afternoon         |
 	| London - City Morning        |
@@ -43,34 +43,37 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13671
 Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen
-	When User navigates to "I-Computer Scheduled Project" project details
+	When User navigates to "Email Migration" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Slots' left menu item
-	And User enters "Scheduled/Targeted" text in the Search field for "Capacity Slot" column
+	And User enters "Slot 2018-05-01 - 2019-05-31[Team: 3; RequestType: 458]" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
+	When User clicks close button for "Pre-Migration \ Scheduled date" chip
 	Then 'Tasks' autocomplete have following checkbox options
-	| Items                   |
-	| i-stage A \ i-Completed |
-	| i-stage A \ i-comp-radb |
-	| i-stage A \ i-Forecast  |
-	| i-stage A \ i-Migrated  |
-	| i-stage A \ i-Schedule  |
-	| i-stage A \ i-Targeted  |
-	When User navigates to the 'Capacity' left menu item
-	When User navigates to the 'Slots' left menu item
-	And User clicks 'CREATE SLOT' button 
-	#And User selects following items in "Paths" dropdown:
-	#| items         |
-	#| req type comp |
-	When User checks 'req type comp' option after search from 'Paths' autocomplete
+	| Items                                                     |
+	| Migration \ BT/QMM agent switch date                      |
+	| Migration \ Migrated date                                 |
+	| Post-Migration \ Completed date                           |
+	| Pre-Migration \ Forecast date                             |
+	| Pre-Migration \ Mailbox Radiobutton RAG Date & Time Owner |
+	| Pre-Migration \ Out Of Office End Date                    |
+	| Pre-Migration \ Out Of Office Start Date                  |
+	| Pre-Migration \ Scheduled date                            |
+	| Pre-Migration \ Target date                               |
+	When User clicks 'CANCEL' button
+	And User clicks 'CREATE SLOT' button
+	When User checks 'Shared Mailbox' option after search from 'Paths' autocomplete
 	Then 'Tasks' autocomplete have following checkbox options
-	| Items                   |
-	| i-stage A \ i-Completed |
-	| i-stage A \ i-comp-radb |
-	| i-stage A \ i-Forecast  |
-	| i-stage A \ i-Migrated  |
-	| i-stage A \ i-Schedule  |
-	| i-stage A \ i-Targeted  |
+	| Items                                                     |
+	| Migration \ BT/QMM agent switch date                      |
+	| Migration \ Migrated date                                 |
+	| Post-Migration \ Completed date                           |
+	| Pre-Migration \ Forecast date                             |
+	| Pre-Migration \ Mailbox Radiobutton RAG Date & Time Owner |
+	| Pre-Migration \ Out Of Office End Date                    |
+	| Pre-Migration \ Out Of Office Start Date                  |
+	| Pre-Migration \ Scheduled date                            |
+	| Pre-Migration \ Target date                               |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13671 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckTasksWithoutRequestTypeAlwaysAvailableForSelection

@@ -83,19 +83,19 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckAllColumnsAndFilters")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckAllColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        public virtual void EvergreenJnr_UsersList_CheckAllColumnsAndFilters()
+        public virtual void EvergreenJnr_UsersList_CheckAllColumns()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Users",
                     "API",
                     "FiltersAndColumns"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckAllColumnsAndFilters", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckAllColumns", null, new string[] {
                         "Evergreen",
                         "Users",
                         "API",
@@ -124,9 +124,6 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 9
- testRunner.Then("All filters with correct data are returned from the API for \'Users\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 10
  testRunner.Then("All columns with correct data are returned from the API for \'Users\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -134,27 +131,24 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckAllFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData()
+        public virtual void EvergreenJnr_UsersList_CheckAllFilters()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Users",
                     "API",
-                    "FiltersAndColumns",
-                    "Not_Run"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData", null, new string[] {
+                    "FiltersAndColumns"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckAllFilters", null, new string[] {
                         "Evergreen",
                         "Users",
                         "API",
-                        "FiltersAndColumns",
-                        "Not_Run"});
-#line 14
+                        "FiltersAndColumns"});
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -177,8 +171,70 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 15
- testRunner.Then("Positive number of results returned for \'UsersQueryUrls\' requests", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
+ testRunner.Then("All filters with correct data are returned from the API for \'Users\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        [NUnit.Framework.CategoryAttribute("DAS19261")]
+        [NUnit.Framework.TestCaseAttribute("Application", "App Count (Installed on Owned Device)", "users?$filter=(installedApplications%20%3D%201)&$select=username,directoryName,di" +
+            "splayName,fullyDistinguishedObjectName,installedApplications", null)]
+        [NUnit.Framework.TestCaseAttribute("Suggested", "Display Name", "users?$filter=(displayName%20EQUALS%20(\'Jeremiah%20S.%20O\'\'Connor\'))", null)]
+        public virtual void EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData(string filterCategory, string filterName, string queryString, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Users",
+                    "API",
+                    "FiltersAndColumns",
+                    "DAS19261"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckFiltersAndColumnsResponseData", null, @__tags);
+#line 16
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table1464 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FilterCategory",
+                            "FilterName",
+                            "QueryString"});
+                table1464.AddRow(new string[] {
+                            string.Format("{0}", filterCategory),
+                            string.Format("{0}", filterName),
+                            string.Format("{0}", queryString)});
+#line 17
+testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1464, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

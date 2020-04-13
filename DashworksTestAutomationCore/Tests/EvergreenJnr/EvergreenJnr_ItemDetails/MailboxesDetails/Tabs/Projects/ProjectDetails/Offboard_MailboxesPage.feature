@@ -27,7 +27,6 @@ Scenario: EvergreenJnr_MailboxesList_VerifyThatTheMessageAppearsCorrectlyOnTheOf
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 01DEAC5F18B34084B04 |
-	Then " BCLABS\01DEAC5F18B34084B04 (Owner)" chip have tooltip with "BCLABS\01DEAC5F18B34084B04 (Owner)" text
 	When User clicks 'OFFBOARD' button on popup
 	And User clicks 'OFFBOARD' button on popup
 	#going to check the object state
@@ -98,3 +97,64 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinkOnTheOffboardPopupForTheAssoci
 	Then popup is displayed to User
 	When User clicks "0286449FB2C34A12809" link on the Details Page
 	Then Details page for '0286449FB2C34A12809 (McFadden, Susan)' item is displayed to the user
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @Offboard @DAS19175 @Zion_NewGrid
+Scenario: EvergreenJnr_MailboxesList_CheckThatAddingAndRemovingColumnsInPopUpWorksCorrectly
+	When User navigates to the 'Mailbox' details page for '0141713E5CF84ADE907@bclabs.local' item
+	Then Details page for '0141713E5CF84ADE907@bclabs.local' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
+	And User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	And User clicks 'OFFBOARD' button 
+	Then popup is displayed to User
+	And following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Username     |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+	| Bucket       |
+	When User deselect all rows on the grid
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Username     |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+	| Bucket       |
+	When User selects all rows on the grid
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Username     |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+	| Bucket       |
+	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
+	| checkboxes   |
+	| Username     |
+	| Display Name |
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Domain       |
+	| Owner        |
+	| Bucket       |
+	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
+	| checkboxes   |
+	| Display Name |
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+	| Bucket       |
+	When User clicks following checkboxes from Column Settings panel for the 'Owner' column:
+	| checkboxes |
+	| Username   |
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Username     |
+	| Display Name |
+	| Domain       |
+	| Owner        |
+	| Bucket       |

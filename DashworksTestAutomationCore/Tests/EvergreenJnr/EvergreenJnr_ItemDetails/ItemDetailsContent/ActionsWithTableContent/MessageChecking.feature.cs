@@ -97,6 +97,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("DAS12321")]
         [NUnit.Framework.CategoryAttribute("DAS17279")]
         [NUnit.Framework.CategoryAttribute("DAS16678")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "06Y8HSNCPVHENV", "Device Owner", "No device owner information found for this device", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox", "alex.cristea@juriba.com", "Mailbox Owner", "No mailbox owner found for this mailbox", null)]
         [NUnit.Framework.TestCaseAttribute("Device", "00BDM1JUR8IF419", "Custom Fields", "No custom fields found for this device", null)]
@@ -111,7 +112,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
                     "DAS11531",
                     "DAS12321",
                     "DAS17279",
-                    "DAS16678"};
+                    "DAS16678",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -170,6 +172,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12285")]
         [NUnit.Framework.CategoryAttribute("DAS16678")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDevicesSectionOnTheDistributionTab()
         {
             string[] tagsOfScenario = new string[] {
@@ -178,7 +181,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS12285",
-                    "DAS16678"};
+                    "DAS16678",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDevicesSection" +
                     "OnTheDistributionTab", null, new string[] {
                         "Evergreen",
@@ -186,7 +190,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS12285",
-                        "DAS16678"});
+                        "DAS16678",
+                        "Zion_NewGrid"});
 #line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -238,6 +243,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17278")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedForDevicesSectionIfTheOwnerEqualUnknownForDeviceObjectInEvergreen()
         {
             string[] tagsOfScenario = new string[] {
@@ -245,14 +251,16 @@ this.FeatureBackground();
                     "Devices",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS17278"};
+                    "DAS17278",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedForDevicesSectionIfThe" +
                     "OwnerEqualUnknownForDeviceObjectInEvergreen", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17278"});
+                        "DAS17278",
+                        "Zion_NewGrid"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

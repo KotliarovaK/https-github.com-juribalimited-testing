@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	| Inventory Site            | A01             |
 	Then empty value is displayed for "Dashworks First Seen Date" field on the Details Page
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007 @DAS17768 @DAS17768
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007 @DAS17768 @DAS17768 @Void
 Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -40,79 +40,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	| Title    | Value   |
 	| Language | English |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Cleanup
-Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
-	When User creates new Bucket via api
-	| Name        | TeamName | IsDefault |
-	| Bucket12883 | My Team  | false     |
-	#============================================================================#
-		#go to Devices page
-	When User navigates to the 'Device' details page for '01ERDGD48UDQKE' item
-	Then Details page for '01ERDGD48UDQKE' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	Then Error message is not displayed
-	When User clicks on edit button for 'Evergreen Bucket' field
-	Then popup is displayed to User
-	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
-	When User expands 'Related Users' category
-	When User selects all rows on the grid
-	And User clicks 'UPDATE' button 
-	Then "Bucket12883" link is displayed on the Details Page
-	And There are no errors in the browser console
-		#backs the Evergreen Bucket and Capacity Unit to default value
-	When User clicks on edit button for 'Evergreen Bucket' field
-	Then popup is displayed to User
-	When User expands 'Related Users' category
-	When User selects all rows on the grid
-	When User selects 'Unassigned' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
-	Then "Unassigned" link is displayed on the Details Page
-	And There are no errors in the browser console
-	#============================================================================#
-		#go to Users page
-	When User navigates to the 'User' details page for '00DBB114BE1B41B0A38' item
-	Then Details page for '00DBB114BE1B41B0A38' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	When User clicks on edit button for 'Evergreen Bucket' field
-	Then popup is displayed to User
-	When User expands 'Related Mailboxes' category
-	When User selects all rows on the grid
-	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
-	Then "Bucket12883" link is displayed on the Details Page
-	And There are no errors in the browser console
-		#backs the Evergreen Bucket and Capacity Unit to default value
-	When User clicks on edit button for 'Evergreen Bucket' field
-	When User expands 'Related Mailboxes' category
-	When User selects all rows on the grid
-	When User selects 'Unassigned' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
-	Then "Unassigned" link is displayed on the Details Page
-	And There are no errors in the browser console
-	#============================================================================#
-		#go to Mailboxes page
-	When User navigates to the 'Mailbox' details page for '0845467C65E5438D83E@bclabs.local' item
-	Then Details page for '0845467C65E5438D83E@bclabs.local' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	When User clicks on edit button for 'Evergreen Bucket' field
-	Then popup is displayed to User
-	When User expands 'Related Users' category
-	When User selects all rows on the grid
-	When User selects 'Bucket12883' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
-	Then "Bucket12883" link is displayed on the Details Page
-	And There are no errors in the browser console
-		#backs the Evergreen Bucket and Capacity Unit to default value
-	When User clicks on edit button for 'Evergreen Bucket' field
-	Then popup is displayed to User
-	When User expands 'Related Users' category
-	When User selects all rows on the grid
-	When User selects 'Unassigned' option from 'New Bucket' autocomplete
-	And User clicks 'UPDATE' button 
-	Then "Unassigned" link is displayed on the Details Page
-	And There are no errors in the browser console
-
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Cleanup
+#AnnI 3/11/20: archived to 'wormhole'. in development, will be redesigned.
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
 	When User creates new Capacity Unit via api
 	| Name              | Description | IsDefault |
@@ -196,3 +125,28 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAppropriateValuesAreDisplayedCo
 	Then User verifies data in the fields on details page
 	| Field             | Data |
 	| Sticky Compliance |      |
+
+	#AnnI 3/30/20: DAS20669 will be fixed only for 'Wormhole'
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20454 @DAS20669 @Wormhole
+Scenario: EvergreenJnr_UsersList_CheckThatAppropriateValuesAreDisplayedCorrectlyForEnabledFieldOnTheUsersDetailsPage
+	When User navigates to the 'User' details page for 'NPS8676905' item
+	Then Details page for 'NPS8676905' item is displayed to the user
+	Then User verifies data in the fields on details page
+	| Field   | Data  |
+	| Enabled | FALSE |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19977
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheOwnerLinkOnDetailsPageRedirectsToTheCorrectPage
+	When User navigates to the '<PageName>' details page for '<ItemName>' item
+	Then Details page for '<ItemName>' item is displayed to the user
+	When User selects '<ProjectName>' in the 'Item Details Project' dropdown with wait
+	And User navigates to the 'Projects' left menu item
+	And User navigates to the 'Project Details' left submenu item
+	When User clicks "<OwnerLinkName>" link on the Details Page
+	Then Details page for '<OwnerPage>' item is displayed to the user
+
+Examples: 
+	| PageName    | ItemName                                  | ProjectName                        | OwnerLinkName    | OwnerPage                            |
+	| Device      | 00OMQQXWA1DRI6                            | Computer Scheduled Test (Jo)       | Sandra R. Castro | YRD045946 (Sandra R. Castro)         |
+	| Application | ABBYY FineReader 8.0 Professional Edition | Barry's User Project               | Sherry M. Berger | NOK673558 (Sherry M. Berger)         |
+	| Mailbox     | 00B5CCB89AD0404B965@bclabs.local          | Mailbox Evergreen Capacity Project | Smith, Delores   | 00B5CCB89AD0404B965 (Smith, Delores) |

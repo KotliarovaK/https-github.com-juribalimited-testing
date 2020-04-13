@@ -52,8 +52,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorr
 	| RowGroups |
 	| Region    |
 	And User selects the following Columns on Pivot:
-	| Columns                |
-	| Babel(Engl: Initiation |
+	| Columns |
+	| Current |
 	And User selects the following Values on Pivot:
 	| Values    |
 	| CPU Count |
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessCo
 	| Import    |
 	And User selects the following Columns on Pivot:
 	| Columns                    |
-	| 1803: Target App Readiness |
+	| 2004: Target App Readiness |
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
@@ -101,6 +101,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDispl
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
 	| UNKNOWN    |
+	| RED        |
+	| AMBER      |
 	| GREEN      |
 	| IGNORE     |
 

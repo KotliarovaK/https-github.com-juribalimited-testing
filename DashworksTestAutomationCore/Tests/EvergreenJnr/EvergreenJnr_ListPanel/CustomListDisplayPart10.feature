@@ -51,9 +51,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectly
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User create dynamic list with "TestList12891" name on "Devices" page
 	Then "TestList12891" list is displayed to user
-	When User clicks 'Delete' option in Cog-menu for 'TestList12891' list
+	When User clicks 'Delete' option in cogmenu for 'TestList12891' list
 	Then Cancel button is displayed with correctly color
-	Then User confirm removed list
+	When User confirms list removing
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13639 @DAS13643 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterForCreatedListsIsWorkedCorrectly

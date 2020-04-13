@@ -20,9 +20,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemStillRemainsInStaticList
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "StaticList17651" name
 	Then "StaticList17651" list is displayed to user
-	And "2" rows are displayed in the agGrid
-	When User navigates to the "1803 Rollout" list
-	Then "1803 Rollout" list is displayed to user
+	When User closes Tools panel
+	Then "2" rows are displayed in the agGrid
+	When User navigates to the "2004 Rollout" list
+	Then "2004 Rollout" list is displayed to user
 	When User navigates to the "StaticList17651" list
 	Then "StaticList17651" list is displayed to user
 	And "2" rows are displayed in the agGrid
@@ -46,12 +47,11 @@ Examples:
 @Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18089
 Scenario: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxDisplayedInListDetails
 	When User clicks 'Devices' on the left-hand menu
-	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "1803 Rollout" list
-	And User clicks the List Details button
+	When User navigates to the "2004 Rollout" list
+	Then "2004 Rollout" list is displayed to user
+	When User clicks the List Details button
 	Then Details panel is displayed to the user
-	And 'Archived devices included' label is displayed in List Details
-	When User clicks 'Archived devices included' checkbox in List Details
+	When User checks 'Archived Devices Included' checkbox
 	Then Archived devices icon enabled state is 'true' in toolbar
 	Then 'SAVE AS NEW STATIC LIST' menu button is displayed for 'SAVE' button
 
@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_DevicesList_CheckArchivedItemsIconDisplayingAfterDeselect
 	When User navigates to the "List17440" list
 	And User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User clicks 'Archived devices included' checkbox in List Details
+	When User checks 'Archived Devices Included' checkbox
 	Then Archived devices icon enabled state is 'false' in toolbar
 	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
 
@@ -79,7 +79,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatArchivedItemsCheckboxINotDis
 Examples: 
 	| PageName     | ListToNavigate   | List                              |
 	| Users        | All Users        | Users Readiness Columns & Filters |
-	| Applications | All Applications | 1803 Apps                         |
+	| Applications | All Applications | 2004 Apps                         |
 	| Mailboxes    | All Mailboxes    | Mailbox Pivot (Complex)           |
 
 @Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18127 @Cleanup
@@ -100,52 +100,3 @@ Examples:
 | Lists        | Filter      | SearchTerm                                | ListName                  | ListType           | Data               |
 | Devices      | Hostname    | 00CWZRC4UK6W20                            | ADynamicDevices18127      | List Type: Dynamic | Data: Devices      |
 | Applications | Application | Microsoft Office 97, Professional Edition | ADynamicApplications18127 | List Type: Dynamic | Data: Applications |
-
-@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18127 @Cleanup
-Scenario Outline: EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForStaticList
-	When User clicks '<Lists>' on the left-hand menu
-	When User clicks the Actions button
-	When User select "<Column>" rows in the grid
-	| SelectedRowsName     |
-	| <Row> |
-	When User selects 'Create static list' in the 'Action' dropdown
-	When User create static list with "<ListName>" name
-	Then "<ListName>" list is displayed to user
-	When User navigates to the "<ListName>" list
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	Then '<ListType>' label is displayed in List Details
-	Then '<Data>' label is displayed in List Details
-
-Examples: 
-| Lists     | Column        | Row                              | ListName                 | ListType          | Data            |
-| Users     | Username      | $231000-3AC04R8AR431             | AStaticUsers18127        | List Type: Static | Data: Users     |
-| Mailboxes | Email Address | 000F977AC8824FE39B8@bclabs.local | AStaticApplications18127 | List Type: Static | Data: Mailboxes |
-
-@Evergreen @Devices @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS18127 @Cleanup
-Scenario Outline: EvergreenJnr_AllLists_CheckThatListDataTypeIsDisplayedCorrectlyForPivot
-	When User clicks '<Lists>' on the left-hand menu
-	When User selects 'Pivot' in the 'Create' dropdown
-	When User selects the following Row Groups on Pivot:
-	| RowGroups |
-	| <RowGroup>  |
-	When User selects the following Columns on Pivot:
-	| Columns  |
-	| <Column> |
-	When User selects the following Values on Pivot:
-	| Values  |
-	| <Value> |
-	When User clicks 'RUN PIVOT' button 
-	Then Pivot run was completed
-	When User creates Pivot list with "<PivotName>" name
-	Then "<PivotName>" list is displayed to user
-	When User navigates to the "<PivotName>" list
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	Then '<ListType>' label is displayed in List Details
-	Then '<Data>' label is displayed in List Details
-
-Examples: 
-| Lists     | RowGroup | Column           | Value        | PivotName            | ListType                 | Data            |
-| Devices   | Hostname | Owner Compliance | Owner City   | APivotDevices18127   | List Type: Dynamic Pivot | Data: Devices   |
-| Mailboxes | Alias    | Owner City       | Created Date | APivotMailboxes18127 | List Type: Dynamic Pivot | Data: Mailboxes |

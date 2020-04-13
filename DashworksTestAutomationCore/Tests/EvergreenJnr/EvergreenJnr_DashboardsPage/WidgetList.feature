@@ -15,7 +15,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	And User selects 'Create static list' in the 'Action' dropdown
 	And User create static list with "Static_List_15432" name
 	And Dashboard with 'Dashboard for DAS15432' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
@@ -30,11 +30,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                        |
-	| 1803: Application Rationalisation |
+	| ColumnName                  |
+	| Windows7Mi: Rationalisation |
 	Then ColumnName is added to the list
-	| ColumnName                        |
-	| 1803: Application Rationalisation |
+	| ColumnName                  |
+	| Windows7Mi: Rationalisation |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Vendor" filter where type is "Equals" with added column and following value:
@@ -44,7 +44,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	When User create dynamic list with "TestList_DAS15413" name on "Applications" page
 	Then "TestList_DAS15413" list is displayed to user
 	When Dashboard with 'Dashboard for DAS15413' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThahtArchivedObjectsShouldNotBeLinked
 	And User sets includes archived devices in 'true'
 	And User create dynamic list with "List17814" name on "Devices" page
 	When Dashboard with 'Dashboard for DAS17814' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title             | List      | MaxRows | MaxColumns |
@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnListWidget
 	And User create dynamic list with "ListForDAS16167" name on "Devices" page
 	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List            |
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnListWidget
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS18634 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorDisplayedWhenSlectingWidgetTypeValue
 	When Dashboard with 'TestDashboardForDAS18634' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User selects 'Card' in the 'WidgetType' dropdown
 	Then There are no errors in the browser console

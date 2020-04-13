@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFilterWorkingCorrectly
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	| DWLABS     |
 	Then Rows counter shows "0" of "7" rows
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12239 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
 	Then Details page for '001PSUMZYOW581' item is displayed to the user
@@ -62,37 +62,63 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	Then Rows counter contains "0" found row of all rows
 	When User clicks button with 'ResetFilters' aria label
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
-Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
-	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
-	Then Details page for '<SearchTerm>' item is displayed to the user
-	When User navigates to the '<MainTabName>' left menu item
-	And User navigates to the '<SubTabName>' left submenu item
-	Then "<CountRows>" rows found label displays on Details Page
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @DAS16565 @Zion_NewGrid
+Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnProjectsSummaryTabAreDisplayedCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Projects Summary' left submenu item
 	When User clicks String Filter button for "Project" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Workflow" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Status" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Workflow" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
+	| checkboxes   |
+	| Project      |
+	| Project Type |
+	| Slot         |
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User opens 'Project' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Slot" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	And User clicks String Filter button for "Readiness" column
+	When User clicks String Filter button for "Status" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	Then string filter is displayed for 'Readiness' column
+	When User clicks String Filter button for "Readiness" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-Examples:
-	| PageName | SearchTerm                                      | MainTabName | SubTabName              | CountRows |
-	| Device   | 001BAQXT6JWFPI                                  | Projects    | Projects Summary        | 11        |
-	| Device   | 001BAQXT6JWFPI                                  | Projects    | Owner Projects Summary  | 8         |
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @DAS16565 @Zion_NewGrid
+Scenario: EvergreenJnr_DevicesList_CheckThatFiltersDropdownListsOnOwnerProjectsSummaryTabAreDisplayedCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Owner Projects Summary' left submenu item
+	When User clicks String Filter button for "Username" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Display Name" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Project" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Project Type" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Workflow" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
+	| checkboxes   |
+	| Username     |
+	| Display Name |
+	| Project      |
+	| Project Type |
+	| Slot         |
+	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Status" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	Then string filter is displayed for 'Readiness' column
+	When User clicks String Filter button for "Readiness" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Zion_NewGrid
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
 	When User navigates to the '<PageName>' details page for '<SearchTerm>' item
 	Then Details page for '<SearchTerm>' item is displayed to the user
@@ -108,7 +134,7 @@ Examples:
 	| Application | 0036 - Microsoft Access 97 SR-2 English | Projects    | Projects         |
 	| Mailbox     | 040698EE82354C17B60@bclabs.local        | Projects    | Mailbox Projects |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321 @DAS13409
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321 @DAS13409 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
 	When User navigates to the 'Mailbox' details page for '040698EE82354C17B60@bclabs.local' item
 	Then Details page for '040698EE82354C17B60@bclabs.local' item is displayed to the user
@@ -122,7 +148,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 	When User clicks String Filter button for "Category" column 
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForDevicesObjectsOnUsersTabInEvergreenMode
 	When User navigates to the 'Device' details page for '00HA7MKAVVFDAV' item
 	Then Details page for '00HA7MKAVVFDAV' item is displayed to the user
@@ -130,7 +156,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomain
 	And User clicks String Filter button for "Domain" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUsersObjectsOnUsersTabInEvergreenMode
 	When User navigates to the 'User' details page for '01C44C91EB7E4BE88F6' item
 	Then Details page for '01C44C91EB7E4BE88F6' item is displayed to the user
@@ -139,7 +165,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainCo
 	And User clicks String Filter button for "Domain" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForMailboxesObjectsOnUsersTabInEvergreenMode
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
@@ -150,7 +176,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDoma
 	When User navigates to the 'Mailbox Permissions' left submenu item
 	Then string filter is displayed for 'Domain' column
 
-	#Ann.Ilchenko 8/10/19: Waiting for attribute updates for automation (from Andrey).
+#Ann.Ilchenko 3/24/20: this functionality is broken.
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	When User navigates to the 'Device' details page for '001PSUMZYOW581' item
@@ -164,7 +190,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	| 22 May 2014 | 22 May 2018 |
 	Then Rows counter contains "2" found row of all rows
 
-@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
+@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -194,7 +220,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	| False      |
 	Then Rows counter shows "94" of "168" rows
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431 @DAS19243
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431 @DAS19243 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -207,10 +233,10 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 	| Criteria  | Date     |
 	| Not Equal | 23032018 |
 	Then User checks that date input has same position
-	Then Rows counter shows "1" of "15" rows
-	And There are no errors in the browser console
+	Then Rows counter contains "1" found row of all rows
+	Then There are no errors in the browser console
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @DAS20761 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevicesPage
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -237,7 +263,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBlanksValueChangedToEmptyValueOnDevi
 	| Values |
 	| None   |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersPage
 	When User navigates to the 'User' details page for 'ZXJ550185' item
 	Then Details page for 'ZXJ550185' item is displayed to the user
@@ -273,7 +299,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBlanksValueChangedToEmptyValueOnUsersP
 	| Values            |
 	| Empty             |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueOnApplicationsPage
 	When User navigates to the 'Application' details page for 'ACDSee 5.0.1 PowerPack' item
 	Then Details page for 'ACDSee 5.0.1 PowerPack' item is displayed to the user
@@ -286,7 +312,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBlanksValueChangedToEmptyValueO
 	| Values            |
 	| Empty             |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16817 @DAS17726 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatBlanksValueChangedToEmptyValueOnMailboxesPage
 	When User navigates to the 'Mailbox' details page for '06C02CDC00044A7DB59@bclabs.local' item
 	Then Details page for '06C02CDC00044A7DB59@bclabs.local' item is displayed to the user

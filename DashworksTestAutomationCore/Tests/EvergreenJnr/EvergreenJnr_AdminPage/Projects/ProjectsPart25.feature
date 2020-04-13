@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForMailbo
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
 	When User selects 'Users with Device Count' in the 'User Scope' dropdown with wait
 	When User navigates to the 'Application Scope' tab on Project Scope Changes page
-	When User clicks 'Include applications' radio button
+	When User checks 'Include applications' radio button
 	When User selects 'Apps with a Vendor' in the 'Application Scope' dropdown with wait
 	When User navigates to the 'Scope Changes' left menu item
 	When User navigates to the 'Scope Details' left menu item
@@ -58,7 +58,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageF
 
 Examples:
 	| ProjectName                     | tab1         | List1        | tab2              | List2              |
-	| User Evergreen Capacity Project | Device Scope | 1803 Rollout | Application Scope | Apps with a Vendor |
+	| User Evergreen Capacity Project | Device Scope | 2004 Rollout | Application Scope | Apps with a Vendor |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17967
 Scenario: EvergreenJnr_AdminPage_CheckNoConsoleErrorDisplayedWhenUsingGroupByFilter
@@ -86,7 +86,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScop
 
 Examples:
 	| ProjectName                        | tab           |
-	| 1803 Rollout                       | Device Scope  |
+	| 2004 Rollout                       | Device Scope  |
 	| User Evergreen Capacity Project    | User Scope    |
 	| Mailbox Evergreen Capacity Project | Mailbox Scope |
 
@@ -119,10 +119,12 @@ Examples:
 	| Devices   | All Devices   | Import Type    | Not empty | ListForDAS18100_3 | 18100Project |
 	| Mailboxes | All Mailboxes | Recipient Type | Not empty | ListForDAS19348_1 | 19348Project |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Projects @DAS16844 @Cleanup
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16844 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWhenArchivedItemsIncluded
 	When User clicks 'Devices' on the left-hand menu
+	Then 'All Devices' list should be displayed to the user
 	When User sets includes archived devices in 'true'
+	Then table content is present
 	When User create dynamic list with "ProjectListForDas16844" name on "Devices" page
 	When User selects 'Project' in the 'Create' dropdown
 	Then 'This list may contain archived devices which will not be onboarded' information message is displayed for 'Scope' field

@@ -73,8 +73,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	| 016E1B57C2DD4FCC986@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' in the 'Project or Evergreen' dropdown
-	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
+	And User selects 'Mailbox Evergreen Capacity Project' option from 'Project or Evergreen' autocomplete
 	And User selects 'Unassigned' option from 'Bucket' autocomplete
 	Then following Values are displayed in the 'Also Move Users' dropdown:
 	| Options          |
@@ -85,7 +84,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	Then 'UPDATE' button is not disabled
 
 @Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14162
-Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdateOptionsOnlyDisplayedEvergreenOrMailboxScopedProjects 
+Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdateOptionsOnlyDisplayedEvergreenOrMailboxScopedProjects
 	When User clicks 'Mailboxes' on the left-hand menu
 	Then 'All Mailboxes' list should be displayed to the user
 	When User clicks the Actions button
@@ -96,8 +95,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdate
 	| 016E1B57C2DD4FCC986@bclabs.local |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update bucket' in the 'Bulk Update Type' dropdown
-	And User selects 'Project' in the 'Project or Evergreen' dropdown
-	Then 'Project' autocomplete contains following options:
+	Then 'Project or Evergreen' autocomplete contains following options:
 	| Options                            |
 	| Email Migration                    |
 	| Mailbox Evergreen Capacity Project |
@@ -120,3 +118,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| Update custom field           |
 	| Update path                   |
 	| Update task value             |
+
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @DAS197462 @Cleanup
+Scenario: EvergreenJnr_UsersList_CheckActionPanelAfterAddingObjectsToStaticListViaListPanel
+	When User create static list with "FirstList197462" name on "Applications" page with following items
+	| ItemName |
+	|          |
+	Then "FirstList197462" list is displayed to user
+	When User create static list with "SecondList197462" name on "Applications" page with following items
+	| ItemName |
+	|          |
+	Then "SecondList197462" list is displayed to user
+	When User clicks on 'Vendor' column header
+	Then data in table is sorted by 'Vendor' column in ascending order
+	When User clicks 'SAVE' button and select 'ADD TO STATIC LIST' menu button
+	And User selects 'FirstList197462' in the 'Add to static list' dropdown
+	And User clicks 'SAVE' button
+	Then "FirstList197462" list is displayed to user
+	When User clicks the Actions button
+	Then 'Select at least one row' message is displayed on Actions panel to the user

@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13956 | All Devices | None            | Standalone Project |
 	And User navigates to the 'Capacity' left menu item	
-	And User selects 'Clone evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
+	And User selects 'Clone Evergreen capacity units to project capacity units' in the 'Capacity Units' dropdown
 	And User clicks 'UPDATE' button 
 	Then 'The project capacity details have been updated' text is displayed on inline success banner
 	When User navigates to the 'Units' left submenu item
@@ -80,15 +80,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User selects "Project13156" checkbox from String Filter with item list on the Admin page
 	Then '2' content is displayed in the 'Applications' column
 
-#sz: removed NotRun tag
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	And User remembers value in "<ListName>" column
-	And User clicks content from "<ListName>" column
+	And User remembers value in "<ColumnName>" column
+	And User clicks content from "<ColumnName>" column
 	Then '<ListName>' list should be displayed to the user
 	And Rows counter number equals to remembered value
 	When User clicks the Filters button
@@ -102,7 +101,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDevice
 	| is     |
 
 Examples:
-	| ListName         |
-	| All Devices      |
-	| All Users        |
-	| All Applications |
+	| ColumnName   | ListName         |
+	| Devices      | All Devices      |
+	| Users        | All Users        |
+	| Applications | All Applications |

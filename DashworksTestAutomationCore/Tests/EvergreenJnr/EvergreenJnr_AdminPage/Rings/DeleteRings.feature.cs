@@ -164,17 +164,17 @@ this.FeatureBackground();
  testRunner.When("User enters \'TestRing\' text to \'Ring name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
- testRunner.And("User clicks Create button on the Create Ring page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
  testRunner.Then("\'The ring has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1083 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1151 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table1083.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "TestRing"});
 #line 20
- testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table1083, "When ");
+ testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table1151, "When ");
 #line hidden
 #line 23
  testRunner.When("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

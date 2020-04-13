@@ -138,18 +138,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table2432 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2936 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Description",
                             "IsDefault",
                             "Project"});
-                table2432.AddRow(new string[] {
+                table2936.AddRow(new string[] {
                             "cu_DAS19538_4",
                             "DAS19538",
                             "false",
                             "Mailbox Evergreen Capacity Project"});
 #line 10
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2432, "When ");
+ testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table2936, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'Mailbox\' details page for \'013DA2178AB4444CAF2@bclabs.loca" +
@@ -188,14 +188,14 @@ this.FeatureBackground();
  testRunner.Then("\'The selected objects successfully moved to cu_DAS19538_4\' text is displayed on i" +
                         "nline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2433 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2937 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2433.AddRow(new string[] {
+                table2937.AddRow(new string[] {
                             "Capacity Unit",
                             "cu_DAS19538_4"});
 #line 24
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2433, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2937, "Then ");
 #line hidden
 #line 27
  testRunner.When("User navigates to the \'User\' details page for the item with \'93160\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -210,14 +210,106 @@ this.FeatureBackground();
 #line 30
  testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2434 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2938 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2434.AddRow(new string[] {
+                table2938.AddRow(new string[] {
                             "Capacity Unit",
                             "cu_DAS19538_4"});
 #line 31
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2434, "Then ");
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2938, "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ProjectDetailsTab")]
+        [NUnit.Framework.CategoryAttribute("DAS19175")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Evergreen",
+                    "Mailboxes",
+                    "EvergreenJnr_ItemDetails",
+                    "ProjectDetailsTab",
+                    "DAS19175",
+                    "Zion_NewGrid"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatColumnsForCapacityUnitIsDisplayedCorrectly", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_ItemDetails",
+                        "ProjectDetailsTab",
+                        "DAS19175",
+                        "Zion_NewGrid"});
+#line 36
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 37
+ testRunner.When("User navigates to the \'Mailbox\' details page for \'0141713E5CF84ADE907@bclabs.loca" +
+                        "l\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 38
+ testRunner.Then("Details page for \'0141713E5CF84ADE907@bclabs.local\' item is displayed to the user" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 39
+ testRunner.When("User selects \'USE ME FOR AUTOMATION(MAIL SCHDLD)\' in the \'Item Details Project\' d" +
+                        "ropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 40
+ testRunner.When("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+ testRunner.When("User navigates to the \'Project Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 42
+ testRunner.When("User clicks on edit button for \'Capacity Unit\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 43
+ testRunner.When("User checks \'Show only selected items\' slide toggle", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table2939 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ColumnName"});
+                table2939.AddRow(new string[] {
+                            "Username"});
+                table2939.AddRow(new string[] {
+                            "Display Name"});
+                table2939.AddRow(new string[] {
+                            "Domain"});
+                table2939.AddRow(new string[] {
+                            "Owner"});
+                table2939.AddRow(new string[] {
+                            "Capacity Unit"});
+                table2939.AddRow(new string[] {
+                            "Bucket"});
+#line 44
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2939, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

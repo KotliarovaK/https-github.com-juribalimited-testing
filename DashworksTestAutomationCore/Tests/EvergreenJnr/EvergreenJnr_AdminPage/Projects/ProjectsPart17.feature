@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User removes selected item
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User clicks 'Delete' option in Cog-menu for 'TestList0A78U9' list
+	When User clicks 'Delete' option in cogmenu for 'TestList0A78U9' list
 	Then "TestList0A78U9 list will be permanently deleted" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
 	Then inline tip banner is not displayed
@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User navigates to the 'Devices' tab on Project Scope Changes page
 	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User navigates to the 'Details' left menu item
-	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User selects "Clone Evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
@@ -88,7 +88,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then 'All Users' list should be displayed to the user
 	When User navigates to the "ListForProject" list
 	Then "ListForProject" list is displayed to user
-	When User clicks 'Delete' option in Cog-menu for 'ListForProject' list
+	When User clicks 'Delete' option in cogmenu for 'ListForProject' list
 	Then "list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
 	When User clicks 'Admin' on the left-hand menu
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language
 	Then inline error banner is not displayed
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone Evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User click on Back button
 	And User selects all rows on the grid

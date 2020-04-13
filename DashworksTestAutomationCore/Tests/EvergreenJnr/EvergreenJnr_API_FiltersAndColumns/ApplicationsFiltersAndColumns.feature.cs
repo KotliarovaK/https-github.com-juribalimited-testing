@@ -83,19 +83,19 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_API_Filter
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckAllColumnsAndFilters")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckAllColumns")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckAllColumnsAndFilters()
+        public virtual void EvergreenJnr_ApplicationsList_CheckAllColumns()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
                     "Applications",
                     "API",
                     "FiltersAndColumns"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckAllColumnsAndFilters", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckAllColumns", null, new string[] {
                         "Evergreen",
                         "Applications",
                         "API",
@@ -124,10 +124,55 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 9
- testRunner.Then("All filters with correct data are returned from the API for \'Applications\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 10
  testRunner.Then("All columns with correct data are returned from the API for \'Applications\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckAllFilters")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckAllFilters()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "API",
+                    "FiltersAndColumns"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckAllFilters", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "API",
+                        "FiltersAndColumns"});
+#line 12
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 13
+ testRunner.Then("All filters with correct data are returned from the API for \'Applications\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -139,7 +184,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.CategoryAttribute("DAS19261")]
         [NUnit.Framework.TestCaseAttribute("Suggested", "Application", "applications?$filter=(packageName%20EQUALS%20(\'32VerSee%20v.231%20en%20(C%3A%5C32" +
             "VerSee%5C§\'))", null)]
@@ -167,7 +211,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Application", "Inventory Site", "applications?$filter=(packageSite%20NOT%20EQUALS%20(\'Altiris\'%2C\'SMS_GEN\'))&$sele" +
             "ct=packageName,packageManufacturer,packageVersion,packageSite&$orderby=packageSi" +
             "te%20asc", null)]
-        [NUnit.Framework.TestCaseAttribute("Application", "User Count (Entitled)", "applications?$filter=(userEntitlements%20>%3D%2020)&$select=packageName,packageMa" +
+        [NUnit.Framework.TestCaseAttribute("Application", "User Count (Entitled)", "applications?$filter=(userEntitlements%20>%3D%2010)&$select=packageName,packageMa" +
             "nufacturer,packageVersion,userEntitlements&$orderby=userEntitlements%20asc", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "User Count (Used)", "applications?$filter=(userUsage%20<%203)&$select=packageName,packageManufacturer," +
             "packageVersion,userUsage&$orderby=userUsage%20desc", null)]
@@ -359,7 +403,7 @@ this.FeatureBackground();
             "Application%20Development\')%20WHERE%20(uod%2Cetd))", null)]
         [NUnit.Framework.TestCaseAttribute("Device Owner Custom Fields", "Device Owner Zip Code", "applications?$filter=(deviceOwnerCustomField_34%20CONTAINS%20(\'EC1\')%20WHERE%20(u" +
             "od%2Cetd%2Ciod))", null)]
-        [NUnit.Framework.TestCaseAttribute("Automations", "X-Proj Paths", "applications?$filter=(automationField_16%20NOT%20EQUALS%20(\'337\'%2C\'336\'))", null)]
+        [NUnit.Framework.TestCaseAttribute("Automations", "X-Proj Paths", "applications?$filter=(automationField_11_10%20EQUALS%20(\'NULL\'))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User (Saved List)", "applications?$filter=(userSavedListId%20NOT%20EQUALS%20(\'61\'%2C\'38\')%20WHERE%20(h" +
             "ua%2Ceta%2Codwawuo%2Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User", "applications?$filter=(user%20EQUALS%20(\'25833\'%2C\'26113\'%2C\'27427\'%2C\'26448\')%20W" +
@@ -371,8 +415,8 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("User", "User Dashworks First Seen", "applications?$filter=(userDashworksFirstSeenDate%20IS%20EMPTY%20()%20WHERE%20(dno" +
             "dwaiet%2Cdnodwawuo%2Cdnodwaiio))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Description", "applications?$filter=(userDescription%20NOT%20CONTAINS%20(\'it\'%2C\'the\')%20WHERE%2" +
-            "0(hua))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Device Count", "applications?$filter=(userDevices%20>%3D%202%20WHERE%20(eta%2Chua))", null)]
+            "0(eta))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Device Count", "applications?$filter=(userDevices%20<%3D%205%20WHERE%20(odwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Directory Type", "applications?$filter=(userDirectoryType%20IS%20NOT%20EMPTY%20()%20WHERE%20(hua%2C" +
             "odwawuo%2Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Display Name", "applications?$filter=(userDisplayName%20IS%20NOT%20EMPTY%20()%20WHERE%20(hua%2Cet" +
@@ -391,26 +435,25 @@ this.FeatureBackground();
             "aiet%2Codwaiio))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User GUID", "applications?$filter=(userGUID%20NOT%20CONTAINS%20(\'vineivi\'%2C\'hydewwue\')%20WHER" +
             "E%20(hua%2Ceta))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Home Directory", "applications?$filter=(userHomeDirectory%20IS%20NOT%20EMPTY%20()%20WHERE%20(odwawu" +
-            "o%2Codwaiet%2Codwaiio))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Home Drive", "applications?$filter=(userHomeDrive%20CONTAINS%20(\'H\')%20WHERE%20(odwaiet%2Codwai" +
-            "io%2Codwawuo))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Key", "applications?$filter=(userKey%20%3D%201000%20WHERE%20(hua%2Ceta%2Codwawuo%2Codwai" +
-            "et%2Codwaiio))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Home Directory", "applications?$filter=(userHomeDirectory%20IS%20EMPTY%20()%20WHERE%20(odwawuo%2Cod" +
+            "waiet%2Codwaiio))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Home Drive", "applications?$filter=(userHomeDrive%20CONTAINS%20(\'H\')%20WHERE%20(hua%2Ceta))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Key", "applications?$filter=(userKey%20>%3D%201000%20WHERE%20(hua%2Ceta%2Codwawuo%2Codwa" +
+            "iet%2Codwaiio))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Last Logon Date", "applications?$filter=(userLastLogonDate%20>%3D%20(\'2010-01-01\')%20WHERE%20(hua%2C" +
             "eta))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Mailbox Count (Access)", "applications?$filter=(userAccessibleMailboxesCount%20>%3D%201%20WHERE%20(hua%2Cet" +
             "a%2Codwawuo%2Codwaiet%2Codwaiio))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Organizational Unit", "applications?$filter=(userOrganizationalUnit%20IS%20EMPTY%20()%20WHERE%20(hua%2Co" +
-            "dwawuo%2Codwaiet))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Organizational Unit", "applications?$filter=(userOrganizationalUnit%20IS%20NOT%20EMPTY%20()%20WHERE%20(h" +
+            "ua%2Codwawuo%2Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Parent Distinguished Name", "applications?$filter=(userParentDistinguishedName%20NOT%20CONTAINS%20(\'sdthyjuki\'" +
             "%2C\'wefwrtn\'%2C\'xzxfcbgfgh\')%20WHERE%20(odwaiet%2Codwaiio))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User SID", "applications?$filter=(userSID%20IS%20NOT%20EMPTY%20()%20WHERE%20(dnodwaiio%2Cdnod" +
             "waiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User", "User Surname", "applications?$filter=(userSurname%20BEGINS%20WITH%20(\'Jon\'%2C\'Smi\'%2C\'Mar\')%20WHE" +
             "RE%20(eta%2Codwawuo))", null)]
-        [NUnit.Framework.TestCaseAttribute("User", "User Username", "applications?$filter=(userUsername%20NOT%20EQUALS%20(\'efwrthyu\'%2C\'sfrty567\')%20W" +
-            "HERE%20(odwawuo))", null)]
+        [NUnit.Framework.TestCaseAttribute("User", "User Username", "applications?$filter=(userUsername%20NOT%20CONTAINS%20(\'123\')%20WHERE%20(odwawuo%" +
+            "2Chua%2Ceta))", null)]
         [NUnit.Framework.TestCaseAttribute("User Location", "User Building", "applications?$filter=(userBuilding%20NOT%20EQUALS%20(\'NULL\')%20WHERE%20(odwaiio%2" +
             "Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User Location", "User City", "applications?$filter=(userCity%20EQUALS%20(\'Belfast\'%2C\'Calgary\'%2C\'Cardiff\'%2C\'E" +
@@ -425,7 +468,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("User Location", "User Postal Code", "applications?$filter=(userPostalCode%20DOES%20NOT%20END%20WITH%20(\'1we\'%2C\'5t\')%2" +
             "0WHERE%20(odwawuo%2Codwaiet))", null)]
         [NUnit.Framework.TestCaseAttribute("User Location", "User Region", "applications?$filter=(userRegion%20EQUALS%20(\'NULL\'%2C\'AU\'%2C\'CA\'%2C\'US-E\'%2C\'US-" +
-            "W\')%20WHERE%20(odwawuo%2Chua))", null)]
+            "W\')%20WHERE%20(odwawuo%2Chua%2Ceta))", null)]
         [NUnit.Framework.TestCaseAttribute("User Location", "User State or County", "applications?$filter=(userStateCounty%20EQUALS%20(\'AB\'%2C\'CA\')%20WHERE%20(odwaiet" +
             "%2Codwawuo))", null)]
         [NUnit.Framework.TestCaseAttribute("User Organisation", "User Cost Centre", "applications?$filter=(userCostCentre%20DOES%20NOT%20BEGIN%20WITH%20(\'rtg\'%2C\'sdf\'" +
@@ -465,8 +508,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Project: EmailMigra", "EmailMigra: Category", "applications?$filter=(project_48_subCategoryId%20EQUALS%20(\'NULL\'))&$select=packa" +
             "geName,packageManufacturer,packageVersion,project_48_subCategory,project_48_subC" +
             "ategoryId", null)]
-        [NUnit.Framework.TestCaseAttribute("Project: EmailMigra", "EmailMigra: Core Application", "applications?$filter=(project_48_coreApplication%20NOT%20EQUALS%20(\'NULL\'))&$sele" +
-            "ct=packageName,packageManufacturer,packageVersion,project_48_coreApplication", null)]
         [NUnit.Framework.TestCaseAttribute("Project: EmailMigra", "EmailMigra: Current Device Count", "applications?$filter=(project_48_currentDeviceCount%20%3D%200)&$select=packageNam" +
             "e,packageManufacturer,packageVersion,project_48_currentDeviceCount", null)]
         [NUnit.Framework.TestCaseAttribute("Project: EmailMigra", "EmailMigra: Current User Count", "applications?$filter=(project_48_currentUserCount%20<%3D%201)&$select=packageName" +
@@ -539,8 +580,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Project: UserEvergr", "UserEvergr: Category", "applications?$filter=(project_56_subCategoryId%20NOT%20EQUALS%20(\'373\'))&$select=" +
             "packageName,packageManufacturer,packageVersion,project_56_subCategory,project_56" +
             "_subCategoryId", null)]
-        [NUnit.Framework.TestCaseAttribute("Project: UserEvergr", "UserEvergr: Core Application", "applications?$filter=(project_56_coreApplication%20EQUALS%20(\'0\'%2C\'1\'))&$select=" +
-            "packageName,packageManufacturer,packageVersion,project_56_coreApplication", null)]
         [NUnit.Framework.TestCaseAttribute("Project: UserEvergr", "UserEvergr: Current Device Count", "applications?$filter=(project_56_currentDeviceCount%20>%3D%201)&$select=packageNa" +
             "me,packageManufacturer,packageVersion,project_56_currentDeviceCount", null)]
         [NUnit.Framework.TestCaseAttribute("Project: UserEvergr", "UserEvergr: Current User Count", "applications?$filter=(project_56_currentUserCount%20<%3D%202)&$select=packageName" +
@@ -587,9 +626,8 @@ this.FeatureBackground();
             "packageManufacturer,packageVersion,project_56_targetUserCount", null)]
         [NUnit.Framework.TestCaseAttribute("Project Tasks: UserEvergr", "UserEvergr: Stage 1 \\ Text Task (App)", "applications?$filter=(project_task_56_13257_3_Task%20IS%20EMPTY%20())&$select=pac" +
             "kageName,packageManufacturer,packageVersion,project_task_56_13257_3_Task", null)]
-        [NUnit.Framework.TestCaseAttribute("Project Tasks: UserEvergr", "UserEvergr: Stage 2 \\ Application Delivery Date", "applications?$filter=(project_task_56_13256_2_Task%20AFTER%20RELATIVE%20(250_day_" +
-            "ago))&$select=packageName,packageManufacturer,packageVersion,project_task_56_132" +
-            "56_2_Task", null)]
+        [NUnit.Framework.TestCaseAttribute("Project Tasks: UserEvergr", "UserEvergr: Stage 2 \\ Application Delivery Date", "applications?$filter=(project_task_56_13256_2_Task%20<%3D%20\'2020-03-05\')&$select" +
+            "=packageName,packageManufacturer,packageVersion,project_task_56_13256_2_Task", null)]
         [NUnit.Framework.TestCaseAttribute("Project Tasks: UserEvergr", "UserEvergr: Stage 2 \\ Application Delivery Date (Slot)", "applications?$filter=(project_task_56_13256_2_taskSlotId%20EQUALS%20(\'NULL\'%2C\'33" +
             "\'))&$select=packageName,packageManufacturer,packageVersion,project_task_56_13256" +
             "_2_taskSlot", null)]
@@ -637,8 +675,6 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Project: Windows7Mi", "Windows7Mi: Category", "applications?$filter=(project_1_subCategoryId%20EQUALS%20(\'NULL\'))&$select=packag" +
             "eName,packageManufacturer,packageVersion,project_1_subCategory,project_1_subCate" +
             "goryId", null)]
-        [NUnit.Framework.TestCaseAttribute("Project: Windows7Mi", "Windows7Mi: Core Application", "applications?$filter=(project_1_coreApplication%20EQUALS%20(\'0\'%2C\'1\'))&$select=p" +
-            "ackageName,packageManufacturer,packageVersion,project_1_coreApplication", null)]
         [NUnit.Framework.TestCaseAttribute("Project: Windows7Mi", "Windows7Mi: Current Device Count", "applications?$filter=(project_1_currentDeviceCount%20>%3D%2010)&$select=packageNa" +
             "me,packageManufacturer,packageVersion,project_1_currentDeviceCount", null)]
         [NUnit.Framework.TestCaseAttribute("Project: Windows7Mi", "Windows7Mi: Current User Count", "applications?$filter=(project_1_currentUserCount%20<%3D%2010)&$select=packageName" +
@@ -774,7 +810,6 @@ this.FeatureBackground();
                     "Applications",
                     "API",
                     "FiltersAndColumns",
-                    "Not_Run",
                     "DAS19261"};
             if ((exampleTags != null))
             {
@@ -782,7 +817,7 @@ this.FeatureBackground();
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsResponseData", null, @__tags);
-#line 14
+#line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -805,19 +840,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 15
- testRunner.Then("Positive number of results returned for \'ApplicationsQueryUrls\' requests", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table1167 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1461 = new TechTalk.SpecFlow.Table(new string[] {
                             "FilterCategory",
                             "FilterName",
                             "QueryString"});
-                table1167.AddRow(new string[] {
+                table1461.AddRow(new string[] {
                             string.Format("{0}", filterCategory),
                             string.Format("{0}", filterName),
                             string.Format("{0}", queryString)});
-#line 16
- testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1167, "Then ");
+#line 17
+ testRunner.Then("Positive number of results returned for requests:", ((string)(null)), table1461, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

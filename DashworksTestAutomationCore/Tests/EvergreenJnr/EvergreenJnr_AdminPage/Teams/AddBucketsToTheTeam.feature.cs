@@ -141,31 +141,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1149 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1442 = new TechTalk.SpecFlow.Table(new string[] {
                             "TeamName",
                             "Description",
                             "IsDefault"});
-                table1149.AddRow(new string[] {
+                table1442.AddRow(new string[] {
                             "TestTeam5",
                             "test",
                             "false"});
 #line 10
- testRunner.When("User creates new Team via api", ((string)(null)), table1149, "When ");
+ testRunner.When("User creates new Team via api", ((string)(null)), table1442, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1150 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1443 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TeamName",
                             "IsDefault"});
-                table1150.AddRow(new string[] {
+                table1443.AddRow(new string[] {
                             "TestBucket6",
                             "Team 1045",
                             "false"});
-                table1150.AddRow(new string[] {
+                table1443.AddRow(new string[] {
                             "TestBucket7",
                             "Team 1045",
                             "false"});
 #line 13
- testRunner.And("User creates new Bucket via api", ((string)(null)), table1150, "And ");
+ testRunner.And("User creates new Bucket via api", ((string)(null)), table1443, "And ");
 #line hidden
 #line 17
  testRunner.And("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -194,14 +194,14 @@ this.FeatureBackground();
 #line 25
  testRunner.Then("Page with \'Add Buckets\' subheader is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1151 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1444 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1151.AddRow(new string[] {
+                table1444.AddRow(new string[] {
                             "TestBucket6"});
-                table1151.AddRow(new string[] {
+                table1444.AddRow(new string[] {
                             "TestBucket7"});
 #line 26
- testRunner.When("User expands \'Evergreen\' multiselect and selects following Objects", ((string)(null)), table1151, "When ");
+ testRunner.When("User expands \'Evergreen\' multiselect and selects following Objects", ((string)(null)), table1444, "When ");
 #line hidden
 #line 30
  testRunner.When("User clicks \'ADD BUCKETS\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -308,7 +308,7 @@ this.FeatureBackground();
  testRunner.Then("Page with \'Teams\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 49
- testRunner.When("User enters \"1803 Team\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"2004 Team\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 50
  testRunner.And("User clicks content from \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -388,13 +388,13 @@ this.FeatureBackground();
 #line 75
  testRunner.Then("numeric data in table is sorted by \'Mailboxes\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1152 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1445 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1152.AddRow(new string[] {
+                table1445.AddRow(new string[] {
                             "False"});
 #line 77
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Default\' " +
-                        "column:", ((string)(null)), table1152, "When ");
+                        "column:", ((string)(null)), table1445, "When ");
 #line hidden
 #line 80
  testRunner.Then("Rows counter shows \"0\" of \"9\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

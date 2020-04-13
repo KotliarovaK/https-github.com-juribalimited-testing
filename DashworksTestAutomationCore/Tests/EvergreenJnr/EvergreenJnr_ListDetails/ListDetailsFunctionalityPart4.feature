@@ -5,7 +5,11 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @DAS13207 @DAS14963 @Cleanup
+	#AnnI. 2/11/20: 
+	#I decided to wait for Marina's answer.
+	#Maybe this can be applied to the new panel.
+	#Should be removed or updated??
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @DAS13207 @DAS14963 @Cleanup @archived
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -36,14 +40,18 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application1" list
 	Then "Application1" list is displayed to user
-	When User clicks 'Manage' option in Cog-menu for 'Application1' list
+	When User clicks 'Manage' option in cogmenu for 'Application1' list
 	Then Details panel is displayed to the user
 	And Dependants section is collapsed by default
 	When User expand Dependants section
 	Then "NewDevice" list is displayed in the Dependants section
 	And "Device1" list is displayed in the Dependants section
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12169 @DAS12286 @DAS12192 @DAS12623 @DAS12687 @DAS14963 @Cleanup
+	#AnnI. 2/11/20: 
+	#I decided to wait for Marina's answer.
+	#Maybe this can be applied to the new panel.
+	#Should be removed or updated??
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12169 @DAS12286 @DAS12192 @DAS12623 @DAS12687 @DAS14963 @Cleanup @archived
 Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList
 	When User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
@@ -55,7 +63,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then "Vendor" filter is added to the list
 	When User create dynamic list with "Adobe Apps" name on "Applications" page
 	Then "Adobe Apps" list is displayed to user
-	When User clicks 'Manage' option in Cog-menu for 'Adobe Apps' list
+	When User clicks 'Manage' option in cogmenu for 'Adobe Apps' list
 	Then Details panel is displayed to the user
 	When User closes Permissions section in the list panel
 	Then tooltip is displayed with "Open" text for Permissions section
@@ -73,7 +81,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Adobe Apps" list
 	Then "Adobe Apps" list is displayed to user
-	When User clicks 'Manage' option in Cog-menu for 'Adobe Apps' list
+	When User clicks 'Manage' option in cogmenu for 'Adobe Apps' list
 	Then Details panel is displayed to the user
 	Then tooltip is displayed with "Open" text for Dependants section
 	When User expand Dependants section
@@ -103,7 +111,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "A1" list
 	Then "A1" list is displayed to user
-	When User clicks 'Manage' option in Cog-menu for 'A1' list
+	When User clicks 'Manage' option in cogmenu for 'A1' list
 	Then Details panel is displayed to the user
 	When User expand Dependants section
 	Then Dependants section is displayed to the user
@@ -129,14 +137,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessag
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "<ListName1>" list
 	Then "<ListName1>" list is displayed to user
-	When User clicks 'Delete' option in Cog-menu for '<ListName1>' list
+	When User clicks 'Delete' option in cogmenu for '<ListName1>' list
 	Then Delete and Cancel buttons are available in the warning message
 	When User clicks Cancel button in the warning message
 	Then inline tip banner is not displayed
 	And "<ListName1>" list is displayed to user
-	When User clicks 'Delete' option in Cog-menu for '<ListName1>' list
+	When User clicks 'Delete' option in cogmenu for '<ListName1>' list
 	Then "<ListName1>" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
-	When User removes custom list with "<ListName1>" name
+	When User clicks 'Delete' option in cogmenu for '<ListName1>' list
+	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "<ListName2>" list

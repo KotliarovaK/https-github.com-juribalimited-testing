@@ -94,7 +94,6 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19189")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTheTargetAppForForwardPathRationalisationIsChangedAfterChangingTheTargetAppWhenForwardPathRationalisationAlreadySelected()
         {
             string[] tagsOfScenario = new string[] {
@@ -103,8 +102,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS19189",
-                    "Cleanup",
-                    "Universe"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatTheTargetAppForForwardPathRationalisationI" +
                     "sChangedAfterChangingTheTargetAppWhenForwardPathRationalisationAlreadySelected", null, new string[] {
                         "Evergreen",
@@ -112,9 +110,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS19189",
-                        "Cleanup",
-                        "Universe"});
-#line 10
+                        "Cleanup"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -137,69 +134,69 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 11
+#line 10
  testRunner.When("User navigates to the \'Application\' details page for \'\"WPF/E\" (codename) Communit" +
                         "y Technology Preview (Feb 2007)\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 11
  testRunner.Then("Details page for \'\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\' ite" +
                         "m is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 13
+#line 12
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 13
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 15
+#line 14
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 16
+#line 15
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 16
  testRunner.When("User enters \'Corel WordPerfect\' in the \'Application\' autocomplete field and selec" +
-                        "ts \'Corel WordPerfect 8 (327)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "ts \'Corel WordPerfect Key Demo (323)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 17
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2214 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2568 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2214.AddRow(new string[] {
+                table2568.AddRow(new string[] {
                             "Target App",
-                            "Corel WordPerfect 8"});
-#line 19
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2214, "Then ");
+                            "Corel WordPerfect Key Demo"});
+#line 18
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2568, "Then ");
 #line hidden
-#line 22
+#line 21
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 22
  testRunner.When("User enters \'Rosoft MP3 Encoder, Limited Edition\' in the \'Application\' autocomple" +
                         "te field and selects \'Rosoft Engineering Rosoft MP3 Encoder, Limited Edition (49" +
                         "5)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 23
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2215 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2569 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2215.AddRow(new string[] {
+                table2569.AddRow(new string[] {
                             "Target App",
                             "Rosoft Engineering Rosoft MP3 Encoder, Limited Edition"});
-#line 25
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2215, "Then ");
+#line 24
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2569, "Then ");
 #line hidden
-#line 28
+#line 27
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 28
  testRunner.When("User selects \'UNCATEGORISED\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 29
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
@@ -214,7 +211,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19026")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -222,17 +218,15 @@ this.FeatureBackground();
                     "Applications",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS19026",
-                    "Universe"};
+                    "DAS19026"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatTheRationalisationDropdownIsDisplayedCorre" +
                     "ctly", null, new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS19026",
-                        "Universe"});
-#line 34
+                        "DAS19026"});
+#line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -255,40 +249,40 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 35
+#line 33
  testRunner.When("User navigates to the \'Application\' details page for \'Mozilla Sunbird (0.2a.)\' it" +
                         "em", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 36
+#line 34
  testRunner.Then("Details page for \'Mozilla Sunbird (0.2a.)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 37
+#line 35
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 38
+#line 36
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 37
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 40
+#line 38
  testRunner.Then("\'UPDATE\' button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 41
+#line 39
  testRunner.Then("\'CANCEL\' button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2216 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2570 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2216.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "FORWARD PATH"});
-                table2216.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "KEEP"});
-                table2216.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "RETIRE"});
-                table2216.AddRow(new string[] {
+                table2570.AddRow(new string[] {
                             "UNCATEGORISED"});
-#line 42
- testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table2216, "Then ");
+#line 40
+ testRunner.Then("following Values are displayed in the \'Rationalisation\' dropdown:", ((string)(null)), table2570, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -303,7 +297,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19026")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
+        [NUnit.Framework.CategoryAttribute("Wormhole")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppliedSuccessfully()
         {
             string[] tagsOfScenario = new string[] {
@@ -313,7 +307,7 @@ this.FeatureBackground();
                     "ItemDetailsDisplay",
                     "DAS19026",
                     "Cleanup",
-                    "Universe"};
+                    "Wormhole"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatTheRationalisationValuesAreAppliedSuccessf" +
                     "ully", null, new string[] {
                         "Evergreen",
@@ -322,8 +316,8 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS19026",
                         "Cleanup",
-                        "Universe"});
-#line 51
+                        "Wormhole"});
+#line 49
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -346,149 +340,149 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 52
+#line 50
  testRunner.When("User navigates to the \'Application\' details page for the item with \'675\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 53
+#line 51
  testRunner.Then("Details page for \'Music Visualizer Library 1.0\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 54
+#line 52
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 55
+#line 53
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 56
+#line 54
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 57
+#line 55
  testRunner.When("User selects \'RETIRE\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 58
+#line 56
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2217 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2571 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2217.AddRow(new string[] {
+                table2571.AddRow(new string[] {
                             "Rationalisation",
                             "RETIRE"});
-#line 59
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2217, "Then ");
+#line 57
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2571, "Then ");
 #line hidden
-#line 62
+#line 60
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 63
+#line 61
  testRunner.When("User selects \'UNCATEGORISED\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 64
+#line 62
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 65
+#line 63
  testRunner.When("User navigates to the \'Application\' details page for the item with \'676\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 66
+#line 64
  testRunner.Then("Details page for \'Microsoft Internet Explorer 5.5 SP2 MUI Pack\' item is displayed" +
                         " to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 67
+#line 65
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 66
+ testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 67
+ testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 68
- testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 69
- testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \'Corel WordPerfect\' in the \'Application\' autocomplete field and selec" +
+                        "ts \'Corel WordPerfect Key Demo\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 70
- testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 71
- testRunner.When("User enters \'Corel WordPerfect\' in the \'Application\' autocomplete field and selec" +
-                        "ts \'Corel WordPerfect 8 (327)\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 72
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2218 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2572 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2218.AddRow(new string[] {
+                table2572.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
-#line 73
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2218, "Then ");
+#line 71
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2572, "Then ");
 #line hidden
-#line 76
+#line 74
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 77
+#line 75
  testRunner.When("User selects \'UNCATEGORISED\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 78
+#line 76
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 79
+#line 77
  testRunner.When("User navigates to the \'Application\' details page for the item with \'983\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 80
+#line 78
  testRunner.Then("Details page for \'Mozilla Sunbird (0.2a.)\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 81
+#line 79
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 82
+#line 80
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 83
+#line 81
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 84
+#line 82
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 85
+#line 83
  testRunner.When("User enters \'Microsoft Office Simplified Chinese Support\' in the \'Application\' au" +
                         "tocomplete field and selects \'Microsoft Office Simplified Chinese Support\' value" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 86
+#line 84
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2219 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2573 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2219.AddRow(new string[] {
+                table2573.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
-#line 87
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2219, "Then ");
+#line 85
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2573, "Then ");
 #line hidden
-#line 90
+#line 88
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 91
+#line 89
  testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 92
+#line 90
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2220 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2574 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2220.AddRow(new string[] {
+                table2574.AddRow(new string[] {
                             "Rationalisation",
                             "KEEP"});
-#line 93
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2220, "Then ");
+#line 91
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2574, "Then ");
 #line hidden
-#line 96
+#line 94
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 97
+#line 95
  testRunner.When("User selects \'UNCATEGORISED\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 98
+#line 96
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
@@ -504,7 +498,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19448")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatRationalisationFromKeepToForwardPathIsConsistentWithProjectRationalisationBehaviour()
         {
             string[] tagsOfScenario = new string[] {
@@ -513,8 +506,7 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS19448",
-                    "Cleanup",
-                    "Universe"};
+                    "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatRationalisationFromKeepToForwardPathIsCons" +
                     "istentWithProjectRationalisationBehaviour", null, new string[] {
                         "Evergreen",
@@ -522,9 +514,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS19448",
-                        "Cleanup",
-                        "Universe"});
-#line 102
+                        "Cleanup"});
+#line 99
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -547,147 +538,147 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 104
+#line 101
  testRunner.When("User navigates to the \'Application\' details page for the item with \'251\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 105
+#line 102
  testRunner.Then("Details page for \'AnalogX TrackSeek\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 106
+#line 103
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 107
+#line 104
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 108
+#line 105
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 109
+#line 106
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 110
+#line 107
  testRunner.When("User enters \'PID Control Toolset 6.0\' in the \'Application\' autocomplete field and" +
                         " selects \'National Instruments NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7" +
                         ".1) 7.1.0\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 111
+#line 108
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2221 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2575 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2221.AddRow(new string[] {
+                table2575.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
-                table2221.AddRow(new string[] {
+                table2575.AddRow(new string[] {
                             "Target App",
                             "National Instruments NI LabVIEW PID Control Toolset 6.0 (for LabVIEW 7.1) 7.1.0"});
-#line 112
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2221, "Then ");
+#line 109
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2575, "Then ");
 #line hidden
-#line 117
+#line 114
  testRunner.When("User navigates to the \'Application\' details page for the item with \'151\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 118
+#line 115
  testRunner.Then("Details page for \'NI LabVIEW PID Control Toolset 6.0\' item is displayed to the us" +
                         "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 119
+#line 116
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 120
+#line 117
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2222 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2576 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2222.AddRow(new string[] {
+                table2576.AddRow(new string[] {
                             "Rationalisation",
                             "KEEP"});
-#line 121
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2222, "Then ");
+#line 118
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2576, "Then ");
 #line hidden
-#line 125
+#line 122
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 126
+#line 123
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 127
+#line 124
  testRunner.When("User enters \'Carbon Copy Agent Package\' in the \'Application\' autocomplete field a" +
                         "nd selects \'Altiris Carbon Copy Agent Package 6.2.1144\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 128
+#line 125
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 129
+#line 126
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2223 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2577 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2223.AddRow(new string[] {
+                table2577.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
-                table2223.AddRow(new string[] {
+                table2577.AddRow(new string[] {
                             "Target App",
                             "Altiris Carbon Copy Agent Package 6.2.1144"});
-#line 130
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2223, "Then ");
+#line 127
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2577, "Then ");
 #line hidden
-#line 135
+#line 132
  testRunner.When("User navigates to the \'Application\' details page for the item with \'251\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 136
+#line 133
  testRunner.Then("Details page for \'AnalogX TrackSeek\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 137
+#line 134
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 138
+#line 135
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2224 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2578 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Value"});
-                table2224.AddRow(new string[] {
+                table2578.AddRow(new string[] {
                             "Rationalisation",
                             "FORWARD PATH"});
-                table2224.AddRow(new string[] {
+                table2578.AddRow(new string[] {
                             "Target App",
                             "Altiris Carbon Copy Agent Package 6.2.1144"});
-#line 139
- testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2224, "Then ");
+#line 136
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table2578, "Then ");
 #line hidden
-#line 143
+#line 140
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 144
+#line 141
  testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 145
+#line 142
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 146
+#line 143
  testRunner.When("User navigates to the \'Application\' details page for the item with \'151\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 147
+#line 144
  testRunner.Then("Details page for \'NI LabVIEW PID Control Toolset 6.0\' item is displayed to the us" +
                         "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 148
+#line 145
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 149
+#line 146
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 150
+#line 147
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 151
+#line 148
  testRunner.When("User selects \'KEEP\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 152
+#line 149
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
@@ -702,7 +693,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS19694")]
-        [NUnit.Framework.CategoryAttribute("Universe")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTextOfTheAmberMessageAfterTryingToChangeRationalisationFromKeepToAnotherOneIsDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -710,17 +700,15 @@ this.FeatureBackground();
                     "Applications",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS19694",
-                    "Universe"};
+                    "DAS19694"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatTextOfTheAmberMessageAfterTryingToChangeRa" +
                     "tionalisationFromKeepToAnotherOneIsDisplayedCorrectly", null, new string[] {
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS19694",
-                        "Universe"});
-#line 156
+                        "DAS19694"});
+#line 152
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -743,90 +731,90 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 157
+#line 153
  testRunner.When("User navigates to the \'Application\' details page for the item with \'389\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 158
+#line 154
  testRunner.Then("Details page for \'ACDSee 4.0.2 PowerPack Trial Version\' item is displayed to the " +
                         "user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 159
+#line 155
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 160
+#line 156
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 161
+#line 157
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 162
+#line 158
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 163
+#line 159
  testRunner.When("User enters \'Acrobat Reader 3.01\' in the \'Application\' autocomplete field and sel" +
                         "ects \'Acrobat Reader 3.01\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 164
+#line 160
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 165
+#line 161
  testRunner.When("User navigates to the \'Application\' details page for the item with \'705\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 166
+#line 162
  testRunner.Then("Details page for \'Acrobat Reader 3.01\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 167
+#line 163
  testRunner.When("User navigates to the \'Projects\' parent left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 168
+#line 164
  testRunner.And("User navigates to the \'Evergreen Details\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 169
+#line 165
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 170
+#line 166
  testRunner.When("User selects \'RETIRE\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 171
+#line 167
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 172
+#line 168
  testRunner.Then("\'Any apps forward pathed to this app will be changed to be Uncategorised and the " +
                         "forward path removed\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 173
+#line 169
  testRunner.When("User clicks \'CANCEL\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 174
+#line 170
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 175
+#line 171
  testRunner.When("User selects \'UNCATEGORISED\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 176
+#line 172
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 177
+#line 173
  testRunner.Then("\'Any apps forward pathed to this app will be changed to be Uncategorised and the " +
                         "forward path removed\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 178
+#line 174
  testRunner.When("User clicks \'CANCEL\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 179
+#line 175
  testRunner.When("User clicks on edit button for \'Rationalisation\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 180
+#line 176
  testRunner.When("User selects \'FORWARD PATH\' in the \'Rationalisation\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 181
- testRunner.When("User enters \'zip\' in the \'Application\' autocomplete field and selects \'7zip (2015" +
-                        ")\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 177
+ testRunner.When("User enters \'Adobe Acrobat Reader 4 1.0\' in the \'Application\' autocomplete field " +
+                        "and selects \'Adobe Acrobat Reader 4 1.0\' value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 182
+#line 178
  testRunner.When("User clicks \'UPDATE\' button on popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 183
+#line 179
  testRunner.Then("\'Any apps forward pathed to this app will remain Forward Pathed and will be targe" +
                         "ted to the application selected above\' text is displayed on inline tip banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

@@ -176,12 +176,12 @@ this.FeatureBackground();
 #line 22
  testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1044 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1112 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table1044.AddRow(new string[] {
+                table1112.AddRow(new string[] {
                             string.Format("{0}", item)});
 #line 23
- testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table1044, "When ");
+ testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table1112, "When ");
 #line hidden
 #line 26
  testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -348,12 +348,12 @@ this.FeatureBackground();
 #line 69
  testRunner.And(string.Format("User navigates to the \'{0}\' tab on Project Scope Changes page", tabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1045 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1113 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table1045.AddRow(new string[] {
+                table1113.AddRow(new string[] {
                             string.Format("{0}", objectsToAdd)});
 #line 70
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1045, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1113, "And ");
 #line hidden
 #line 73
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -525,7 +525,7 @@ this.FeatureBackground();
  testRunner.Then("\"Mailbox scoped project\" is displayed in the disabled Project Type field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 111
- testRunner.When("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
+ testRunner.When("User selects \"Clone Evergreen buckets to project buckets\" in the Buckets Project " +
                         "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 112
@@ -700,7 +700,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Capacity\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 152
- testRunner.And("User selects \'Clone evergreen capacity units to project capacity units\' in the \'C" +
+ testRunner.And("User selects \'Clone Evergreen capacity units to project capacity units\' in the \'C" +
                         "apacity Units\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 153

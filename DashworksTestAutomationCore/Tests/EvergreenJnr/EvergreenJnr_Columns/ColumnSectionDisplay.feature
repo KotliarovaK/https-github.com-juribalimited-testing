@@ -654,7 +654,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Evergreen Target App Name       |
 	| Evergreen Target App Vendor     |
 	| Evergreen Target App Version    |
-	| Hide from End Users             |
+	| Hide From End Users             |
 	| In Catalog                      |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
@@ -907,12 +907,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	Then Category with counter is displayed on Columns panel
 	| Category                  | Number |
 	| Evergreen                 | 1      |
-	| Project Rings: 1803       | 1      |
-	| Project Rings: Babel(Engl | 1      |
+	| Project Rings: 2004       | 1      |
 	| Project Rings: ComputerSc | 1      |
 	| Project Rings: DeviceSche | 1      |
 	| Project Rings: Havoc(BigD | 1      |
-	| Project Rings: ICSP       | 1      |
 	| Project Rings: prK        | 1      |
 	| Project Rings: Windows101 | 1      |
 	| Project Rings: Windows102 | 1      |
@@ -929,7 +927,6 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	| Category                  | Number |
 	| Evergreen                 | 1      |
 	| Project Rings: Barry'sUse | 1      |
-	| Project Rings: MigrationP | 1      |
 	| Project Rings: UserEvergr | 1      |
 	| Project Rings: UserSched2 | 1      |
 	| Project Rings: UserSchedu | 1      |
@@ -1042,3 +1039,32 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectRingsCategoryCorrectlyPl
 	When User clicks the Columns button
 	When User collapses 'Selected Columns' category
 	Then 'Project Rings' category is placed next to the corresponding project group
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS18861
+Scenario: EvergreenJnr_MailboxesList_CheckSubcategoriesForOwnerCategoryColumn
+	When User clicks 'Mailboxes' on the left-hand menu
+	Then 'All Mailboxes' list should be displayed to the user
+	When User clicks the Columns button
+	When User collapses 'Selected Columns' category
+	When User expands 'Mailbox Owner' category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories                   |
+	| Owner Common Name               |
+	| Owner Compliance                |
+	| Owner Description               |
+	| Owner Directory Type            |
+	| Owner Distinguished Name        |
+	| Owner Domain                    |
+	| Owner Email Address             |
+	| Owner Enabled                   |
+	| Owner Given Name                |
+	| Owner GUID                      |
+	| Owner Home Directory            |
+	| Owner Home Drive                |
+	| Owner Key                       |
+	| Owner Last Logon Date           |
+	| Owner Organisational Unit       |
+	| Owner Parent Distinguished Name |
+	| Owner SID                       |
+	| Owner Surname                   |
+	| Owner Username                  |

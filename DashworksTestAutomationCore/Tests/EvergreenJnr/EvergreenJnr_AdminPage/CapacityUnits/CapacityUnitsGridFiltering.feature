@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13017
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13017 @DAS19894
 Scenario: EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumn
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user

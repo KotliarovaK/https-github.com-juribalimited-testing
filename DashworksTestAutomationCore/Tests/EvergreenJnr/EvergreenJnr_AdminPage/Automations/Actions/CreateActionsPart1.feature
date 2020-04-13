@@ -10,8 +10,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API and open it
-	| AutomationName        | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| Test_Automation_17511 | 17511       | true   | false              | All Devices | Manual |
+	| Name                  | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| Test_Automation_17511 | 17511       | true     | false              | All Devices | Manual |
 	Then 'Edit Automation' page subheader is displayed to user
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
@@ -21,7 +21,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User selects 'Update path' in the 'Action Type' dropdown
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
-	When User clicks 'CREATE' button 
+	When User clicks 'CREATE' button
 	When User navigates to the 'Details' left menu item
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonForActionsWorksCorrectly
 	When User enters '15427_NewName' text to 'Action Name' textbox
 	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' option from 'Project' autocomplete
 	When User selects '[Default (Computer)]' option from 'Path' autocomplete
-	And User clicks 'UPDATE' button 
+	And User clicks 'UPDATE' button
 	When User clicks content from "Action" column
 	Then "15427_NewName" content is displayed in "Action Name" field
 
@@ -106,8 +106,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 	And User clicks 'Admin' on the left-hand menu
 	Then 'Admin' list should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17691_Automation | DAS17691    | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17691_Automation | DAS17691    | true     | false              | All Users | Manual |
 	When User navigates to the 'Automations' left menu item
 	Then Page with 'Automations' header is displayed to user
 	When User enters "17691_Automation" text in the Search field for "Automation" column
@@ -123,8 +123,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatStageWithoutCorrectTasksIsNotDisplayed
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17738 @DAS17625 @DAS19117 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 17738_Automation | 17430       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 17738_Automation | 17430       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	Then 'All Devices' content is displayed in 'Scope' textbox
 	When User navigates to the 'Actions' left menu item
@@ -133,24 +133,21 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateValueDateForUpdateTaskValueAction
 	When User enters '17738_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Comp' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Comp' option from 'Task' autocomplete
 	Then inline error banner is not displayed
-	When User selects 'Update' in the 'Update Value' dropdown
-	When User selects 'Failed' in the 'Value' dropdown
+	When User selects 'Failed' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	Then 'CREATE' button is not disabled
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then 'CREATE' button is disabled
-	When User selects 'Update' in the 'Update Value' dropdown
-	And User selects 'Failed' in the 'Value' dropdown
+	When User selects 'Failed' in the 'Update Value' dropdown
 	Then 'CREATE' button is not disabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS17615 @DAS17619 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoadedCorrectly
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 17619_Automation | 17619       | true   | false              | All Users | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 17619_Automation | 17619       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -158,8 +155,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	When User enters 'Update Migrated devices' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner User Req B' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner User Req B' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	When User selects 'No change' in the 'Update Date' dropdown
 	When User selects 'Remove owner' in the 'Update Owner' dropdown
@@ -173,8 +169,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditActionsPageWithRemoveOwnerIsLoaded
 	#Actions content check
 	Then "Update Migrated devices" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
-	And 'One' content is displayed in 'Stage' textbox
-	And 'Radio Rag Date Owner User Req B' content is displayed in 'Task' textbox
+	And 'One \ Radio Rag Date Owner User Req B' content is displayed in 'Task' textbox
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'No change' value is displayed in the 'Update Date' dropdown
 	Then 'Remove owner' value is displayed in the 'Update Owner' dropdown

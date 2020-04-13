@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	Then data in table is sorted by 'Manufacturer' column in ascending order
 	When User create dynamic list with "List15356" name on "Devices" page
 	And User clicks 'Dashboards' on the left-hand menu
-	And User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	And User clicks 'ADD WIDGET' button 
 	And User adds new Widget
 	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | MaxValues | ShowLegend |
@@ -30,24 +30,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16167 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageIsShownOnWidgetsIfTheSourceListHasNoRows
 	When User clicks 'Devices' on the left-hand menu
-	And User clicks the Filters button
-	And User add "Owner Display Name" filter where type is "Equals" with added column and following value:
+	When User clicks the Filters button
+	When User add "Owner Display Name" filter where type is "Equals" with added column and following value:
 	| Values |
 	| ZZZZ   |
-	And User clicks Save button on the list panel
-	And User create dynamic list with "ListForDAS16167" name on "Devices" page
+	When User selects 'SAVE AS DYNAMIC LIST' option from Save menu and creates 'ListForDAS16167' list
 	Then "ListForDAS16167" list is displayed to user
 	When Dashboard with 'DAS16167_Dashboard' name created via API and opened
-	And User clicks Edit mode trigger on Dashboards page
-	And User clicks 'ADD WIDGET' button 
-	And User adds new Widget
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
 	| WidgetType   | Title             | List            | SplitBy          | AggregateFunction | OrderBy              |
 	| <WidgetType> | WidgetForDAS16167 | ListForDAS16167 | Operating System | Count             | Operating System ASC |
 	Then Widget Preview is displayed to the user
-	And 'This list does not contain any rows' message is displayed in Preview
+	Then 'This list does not contain any rows' message is displayed in Preview
 	When User clicks 'CREATE' button 
 	Then 'WidgetForDAS16167' Widget is displayed to the user
-	And 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
+	Then 'This list does not contain any rows' message is displayed in 'WidgetForDAS16167' widget
 
 Examples: 
 	| WidgetType |
@@ -70,7 +69,7 @@ Scenario Outline: EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorC
 	When User create dynamic list with "<SavedList>" name on "<ListType>" page
 	Then "<SavedList>" list is displayed to user
 	When Dashboard with '<DashboardName>' name created via API and opened
-	When User clicks Edit mode trigger on Dashboards page
+	When User checks 'Edit mode' slide toggle
 	When User clicks 'ADD WIDGET' button 
 	When User adds new Widget
 	| WidgetType | Title        | List        | SplitBy  | AggregateFunction | OrderBy   |
@@ -85,3 +84,43 @@ Scenario Outline: EvergreenJnr_CheckThatWidgetBasedOnListHavingNotEmptyOperatorC
 	| ListType  | ListName      | Filter         | Operator  | SavedList         | DashboardName      | WidgetName        | OrderBy            |
 	| Devices   | All Devices   | Import Type    | Not empty | ListForDAS18100_2 | DAS18100_Dashboard | WidgetForDAS18100 | Import Type ASC    |
 	| Mailboxes | All Mailboxes | Recipient Type | Not empty | ListForDAS19348_2 | DAS19348_Dashboard | WidgetForDAS19348 | Recipient Type ASC |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17360 @Cleanup
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithDifferentDisplayedType
+	When Dashboard with 'DashFor17360' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType   | Title             | List        | SplitBy  | CategoriseBy | DisplayType  | AggregateFunction | OrderBy      |
+	| <WidgetType> | WidgetForDAS17360 | All Devices | Hostname | Device Type  | <DisplyType> | Count             | Hostname ASC |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button 
+	Then There are no errors in the browser console
+	Then 'WidgetForDAS17360' Widget is displayed to the user
+
+Examples:
+	| WidgetType | DisplyType |
+	| Bar        | Stacked    |
+	| Column     | Stacked    |
+	| Bar        | Clustered  |
+	| Column     | Clustered  |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS17360 @Cleanup
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckWidgetCanBeCreatedWithoutCategorizeBySet
+	When Dashboard with 'DashFor17360Cat' name created via API and opened
+	When User checks 'Edit mode' slide toggle
+	When User clicks 'ADD WIDGET' button 
+	When User adds new Widget
+	| WidgetType   | Title                | List        | SplitBy  | AggregateFunction | OrderBy      |
+	| <WidgetType> | WidgetForDAS17360Cat | All Devices | Hostname | Count             | Hostname ASC |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks 'CREATE' button 
+	Then There are no errors in the browser console
+	Then 'WidgetForDAS17360Cat' Widget is displayed to the user
+
+Examples:
+	| WidgetType |
+	| Bar        |
+	| Column     |

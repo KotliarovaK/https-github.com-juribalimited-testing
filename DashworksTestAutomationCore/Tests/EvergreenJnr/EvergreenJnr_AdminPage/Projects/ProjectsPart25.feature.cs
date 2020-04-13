@@ -135,18 +135,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table997 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1062 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table997.AddRow(new string[] {
+                table1062.AddRow(new string[] {
                             "DAS17699_AllDevices",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table997, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1062, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -235,18 +235,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table998 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1063 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table998.AddRow(new string[] {
+                table1063.AddRow(new string[] {
                             "DAS17699_AllMailboxes",
                             "All Mailboxes",
                             "None",
                             "Standalone Project"});
 #line 27
- testRunner.When("Project created via API and opened", ((string)(null)), table998, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1063, "When ");
 #line hidden
 #line 30
  testRunner.When("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -261,7 +261,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Application Scope\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 34
- testRunner.When("User clicks \'Include applications\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User checks \'Include applications\' radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
  testRunner.When("User selects \'Apps with a Vendor\' in the \'Application Scope\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -297,7 +297,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS17699")]
         [NUnit.Framework.CategoryAttribute("DAS18943")]
-        [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "Device Scope", "1803 Rollout", "Application Scope", "Apps with a Vendor", null)]
+        [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "Device Scope", "2004 Rollout", "Application Scope", "Apps with a Vendor", null)]
         public virtual void EvergreenJnr_AdminPage_CheckSavingOfChangesOnScopeDetailsPageForUserProject(string projectName, string tab1, string list1, string tab2, string list2, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -430,14 +430,14 @@ this.FeatureBackground();
 #line 65
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table999 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1064 = new TechTalk.SpecFlow.Table(new string[] {
                             "Checkboxes",
                             "State"});
-                table999.AddRow(new string[] {
+                table1064.AddRow(new string[] {
                             "Project",
                             "true"});
 #line 66
- testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table999, "When ");
+ testRunner.When("User clicks Group By button and set checkboxes state", ((string)(null)), table1064, "When ");
 #line hidden
 #line 69
  testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -463,7 +463,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16842")]
-        [NUnit.Framework.TestCaseAttribute("1803 Rollout", "Device Scope", null)]
+        [NUnit.Framework.TestCaseAttribute("2004 Rollout", "Device Scope", null)]
         [NUnit.Framework.TestCaseAttribute("User Evergreen Capacity Project", "User Scope", null)]
         [NUnit.Framework.TestCaseAttribute("Mailbox Evergreen Capacity Project", "Mailbox Scope", null)]
         public virtual void EvergreenJnr_AdminPage_CheckCorrectListTooltipDisplayingInScopeDetailsPage(string projectName, string tab, string[] exampleTags)
@@ -519,16 +519,16 @@ this.FeatureBackground();
 #line 80
  testRunner.Then("All items in the \'Scope\' dropdown have icons", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1000 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1065 = new TechTalk.SpecFlow.Table(new string[] {
                             "tooltip"});
-                table1000.AddRow(new string[] {
+                table1065.AddRow(new string[] {
                             "System"});
-                table1000.AddRow(new string[] {
+                table1065.AddRow(new string[] {
                             "Private"});
-                table1000.AddRow(new string[] {
+                table1065.AddRow(new string[] {
                             "Shared"});
 #line 81
- testRunner.Then("All icon items in the \'Scope\' dropdown have any of tooltip", ((string)(null)), table1000, "Then ");
+ testRunner.Then("All icon items in the \'Scope\' dropdown have any of tooltip", ((string)(null)), table1065, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -597,10 +597,10 @@ this.FeatureBackground();
 #line 97
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1001 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1066 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedValues"});
 #line 98
- testRunner.When(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and Lookup option", filter, @operator), ((string)(null)), table1001, "When ");
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"{1}\" with added column and Lookup option", filter, @operator), ((string)(null)), table1066, "When ");
 #line hidden
 #line 100
  testRunner.When("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -658,7 +658,9 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWh" +
             "enArchivedItemsIncluded")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16844")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
@@ -666,14 +668,18 @@ this.FeatureBackground();
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
-                    "EvergreenJnr_DashboardsPage",
+                    "Admin",
+                    "EvergreenJnr_AdminPage",
+                    "AdminPage",
                     "Projects",
                     "DAS16844",
                     "Cleanup"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatInformationMessageDisplayedForCreateProjectFormWh" +
                     "enArchivedItemsIncluded", null, new string[] {
                         "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
                         "Projects",
                         "DAS16844",
                         "Cleanup"});
@@ -704,15 +710,21 @@ this.FeatureBackground();
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 125
- testRunner.When("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 126
- testRunner.When("User create dynamic list with \"ProjectListForDas16844\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 127
- testRunner.When("User selects \'Project\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 128
+ testRunner.When("User create dynamic list with \"ProjectListForDas16844\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 129
+ testRunner.When("User selects \'Project\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 130
  testRunner.Then("\'This list may contain archived devices which will not be onboarded\' information " +
                         "message is displayed for \'Scope\' field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

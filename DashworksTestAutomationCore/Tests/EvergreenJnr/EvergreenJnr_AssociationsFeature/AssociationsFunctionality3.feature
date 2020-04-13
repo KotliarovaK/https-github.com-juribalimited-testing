@@ -10,10 +10,13 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationsItemIsDispl
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator1>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator2>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks Add And button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects '<operator3>' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User clicks content from "Hostname" column
@@ -36,6 +39,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatNoConsoleErrorDisplayed
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks the Filters button
 	When User add "<filter>" filter where type is "Equals" with added column and following value:
@@ -66,6 +70,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddedColumnIsDisplayedInGridAft
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
@@ -80,6 +85,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatSomeColumnsAreNotDuplicatedAfte
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Entitled to device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	Then table content is present
@@ -90,6 +96,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAssociationsMenuIsHighlightedAf
 	When User clicks 'Applications' on the left-hand menu
 	When User navigates to the "All Device Applications" list
 	When User clicks Add New button on the Filter panel
+	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'Used on device' option in 'Search associations' autocomplete of Associations panel
 	When User clicks 'RUN LIST' button
 	When User creates 'AssociationList18447' dynamic list

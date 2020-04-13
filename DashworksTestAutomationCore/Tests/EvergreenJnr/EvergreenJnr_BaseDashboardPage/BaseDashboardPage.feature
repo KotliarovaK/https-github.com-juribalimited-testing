@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToD
 	When User clicks '<ListName>' on the left-hand menu
 	Then 'All <ListName>' list should be displayed to the user
 	And Appropriate header font weight is displayed
-	Then 'v5.4.4.0' Application version is displayed in the left-hand menu
+	Then 'v5.4.7.0' Application version is displayed in the left-hand menu
 
 Examples:
 	| ListName     |
@@ -35,7 +35,7 @@ Examples:
 	| Mailboxes    | Email Address |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
-Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllLink
+Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllDevicesOrAllUsersLink
 	When User clicks '<ListName>' on the left-hand menu
 	And User navigates to the "<AllItems>" list
 	Then grid headers are displayed in the following order
@@ -44,14 +44,33 @@ Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAll
 	| <Column2>  |
 	| <Column3>  |
 	| <Column4>  |
-	| <Column5>  |
 
 Examples: 
-	| ListName     | AllItems         | Column1       | Column2          | Column3          | Column4            | Column5            |
-	| Devices      | All Devices      | Hostname      | Device Type      | Operating System | Owner Display Name |                    |
-	| Users        | All Users        | Username      | Domain           | Display Name     | Distinguished Name |                    |
-	| Applications | All Applications | Application   | Vendor           | Version          |                    |                    |
-	| Mailboxes    | All Mailboxes    | Email Address | Mailbox Platform | Mail Server      | Mailbox Type       | Owner Display Name |
+	| ListName     | AllItems         | Column1       | Column2          | Column3          | Column4            |
+	| Devices      | All Devices      | Hostname      | Device Type      | Operating System | Owner Display Name |
+	| Users        | All Users        | Username      | Domain           | Display Name     | Distinguished Name |
+
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
+Scenario: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllApplicationsLink
+	When User clicks 'Applications' on the left-hand menu
+	And User navigates to the "All Applications" list
+	Then grid headers are displayed in the following order
+	| ColumnName  |
+	| Application |
+	| Vendor      |
+	| Version     |
+
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
+Scenario: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllMailboxesLink
+	When User clicks 'Mailboxes' on the left-hand menu
+	And User navigates to the "All Mailboxes" list
+	Then grid headers are displayed in the following order
+	| ColumnName         |
+	| Email Address      |
+	| Mailbox Platform   |
+	| Mail Server        |
+	| Mailbox Type       |
+	| Owner Display Name |
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11988 @DAS10972
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns
@@ -124,7 +143,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	When User navigates to the "All Devices" list
 	Then default URL is displayed on "Devices" page
 
-@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001 @DAS16300 @Not_Run
+#sz: removed not run tag
+@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001 @DAS16300
 Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User clicks 'Users' on the left-hand menu
 	Then 'All Users' list should be displayed to the user
@@ -137,7 +157,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Green              |
-	Then Appropriate filter is added to URL
+	Then "Compliance" column is added to URL on "Users" page
 	When User navigates to the "All Users" list
 	Then default URL is displayed on "Users" page
 	When User clicks the Filters button
@@ -145,7 +165,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User add "User Application Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Amber              |
-	Then Appropriate filter is added to URL
+	Then "User Application Compliance" column is added to URL on "Users" page
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641
 Scenario: EvergreenJnr_DevicesList_CheckThatActionsDetailsColumnsFiltersButtonsAreNotClickableWhenOpenedNotificationsAndUserProfilesDropdownBlocks
@@ -210,7 +230,8 @@ Examples:
 	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |
 
 #'not_run' was added until 'DAS16961' bug is fixed
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867 @DAS12999 @DAS14189 @DAS16961 @Projects @Not_Run
+#sz: removed NotRun as bug looks fixed
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867 @DAS12999 @DAS14189 @DAS16961 @Projects
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -257,7 +278,7 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @Widgets @DAS15444 @Cleanup @Cleanup
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @Widgets @DAS15444 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependencies
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -271,19 +292,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	Then 'The project has been created' text is displayed on inline success banner
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User click Delete button for custom list with "DynamicList15444" name
+	When User clicks 'Delete' option in cogmenu for 'DynamicList15444' list
 	Then ""DynamicList15444" list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
 	When User clicks 'Dashboards' on the left-hand menu
-	When User clicks 'CREATE DASHBOARD' button 
-	And User creates new Dashboard with "Dashboard for DAS15444" name
+	When User clicks 'CREATE DASHBOARD' button
+	And User creates new Dashboard with 'Dashboard for DAS15444' name
 	And User clicks 'ADD WIDGET' button 
 	And User creates new Widget
 	| WidgetType | Title                | List             | MaxRows | MaxColumns |
 	| List       | Widget_For_ DAS15444 | DynamicList15444 | 10      | 10         |
-	Then "Widget_For_ DAS15444" Widget is displayed to the user
+	Then 'Widget_For_ DAS15444' Widget is displayed to the user
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User click Delete button for custom list with "DynamicList15444" name
+	When User clicks 'Delete' option in cogmenu for 'DynamicList15444' list
 	Then ""DynamicList15444" list is used by 1 project and 1 dashboard, do you wish to proceed?" message is displayed in the lists panel
 
 @Evergreen @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS16558 @Cleanup
@@ -325,3 +346,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRequestHasSpecificParameterWhenNavig
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "Migration Type Capacity" list
 	Then Columnmetadata request contains ArchivedItem parameter
+
+@Evergreen @EvergreenJnr_BaseDashboardPage @DAS20056
+Scenario: EvergreenJnr_DevicesList_CheckThat500FullErrorPageIsDisplyed
+    When User navigates to 'device/453454353/details/device' url via address line
+    Then error page with '500' status code and 'Object reference not set to an instance of an object.' error message is displayed

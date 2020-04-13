@@ -164,18 +164,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table599 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table666 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table599.AddRow(new string[] {
+                table666.AddRow(new string[] {
                             "TestProject20",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table599, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table666, "When ");
 #line hidden
 #line 13
  testRunner.Then("Page with \'TestProject20\' header is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -184,7 +184,7 @@ this.FeatureBackground();
  testRunner.When("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 15
- testRunner.And("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
+ testRunner.And("User selects \"Clone Evergreen buckets to project buckets\" in the Buckets Project " +
                         "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
@@ -196,14 +196,14 @@ this.FeatureBackground();
 #line 18
  testRunner.Then("\'Match to Evergreen Bucket\' content is displayed in \'Bucket\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table600 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table667 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table600.AddRow(new string[] {
+                table667.AddRow(new string[] {
                             "0281Z793OLLLDU6"});
-                table600.AddRow(new string[] {
+                table667.AddRow(new string[] {
                             "03U75EKEMUQMUS"});
 #line 19
- testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table600, "When ");
+ testRunner.When("User expands multiselect and selects following Objects", ((string)(null)), table667, "When ");
 #line hidden
 #line 23
  testRunner.Then("\'Devices 2/0\' tab is displayed on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

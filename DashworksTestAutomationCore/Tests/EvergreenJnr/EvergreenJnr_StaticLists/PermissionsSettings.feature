@@ -12,11 +12,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	| ItemName |
 	|          |
 	Then "Static List TestName23" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Everyone can see" sharing option
-	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks the Permissions button
+	When User selects 'Everyone can see' in the 'Sharing' dropdown
+	When User selects 'Automation Admin 1' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
@@ -26,10 +25,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	| ColumnName      |
 	| Last Logon Date |
 	Then Update list option is NOT available
-	Then 'SAVE AS NEW DYNAMIC LIST' menu button is displayed for 'SAVE' button
+	Then 'SAVE AS NEW STATIC LIST' menu button is displayed for 'SAVE' button
 
 @Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @DAS12152 @DAS12602 @Cleanup @Do_Not_Run_With_PermissionsSettings
 Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel
+	When User create new User via API
+	| Username | Email | FullName      | Password  | Roles                 |
+	| DAS12602 | Value | Test DAS12602 | m!gration | Project Administrator |
 	When User create static list with "OwnerPrivate" name on "Devices" page with following items
 	| ItemName        |
 	| 001BAQXT6JWFPI  |
@@ -46,15 +48,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 6B512UPQFLSOVF |
 	| CLUSTERSSAS    |
 	Then "NotOwnerSpecifiedAdmin" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Specific users" sharing option
-	And User click Add User button
+	When User clicks the Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
-	And User select "Admin" in Select Access dropdown
-	And User click Add User button
-	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User selects 'Admin' in the 'Permission' dropdown
+	When User clicks 'ADD USER' button
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedEdit" name on "Devices" page with following items
@@ -64,15 +65,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 0CFTD5FV5F7FDF |
 	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedEdit" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Specific users" sharing option
-	And User click Add User button
+	When User clicks the Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
-	And User select "Edit" in Select Access dropdown
-	And User click Add User button
-	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User selects 'Edit' in the 'Permission' dropdown
+	When User clicks 'ADD USER' button
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerSpecifiedRead" name on "Devices" page with following items
@@ -82,15 +82,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 0CFTD5FV5F7FDF |
 	| 0E9XQC02MAZUR2 |
 	Then "NotOwnerSpecifiedRead" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Specific users" sharing option
-	And User click Add User button
+	When User clicks the Permissions button
+	When User selects 'Specific users / teams' in the 'Sharing' dropdown
+	When User clicks 'person_add' icon
 	And User select current user in Select User dropdown
-	And User select "Read" in Select Access dropdown
-	And User click Add User button
-	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User selects 'Read' in the 'Permission' dropdown
+	When User clicks 'ADD USER' button
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerEveryoneCanEdit" name on "Devices" page with following items
@@ -100,11 +99,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| 5PH0YQ5TNBLFZBM |
 	| SANOFI2-POC     |
 	Then "NotOwnerEveryoneCanEdit" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Everyone can edit" sharing option
-	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks the Permissions button
+	When User selects 'Everyone can edit' in the 'Sharing' dropdown
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User create static list with "NotOwnerEveryoneCanSee" name on "Devices" page with following items
@@ -114,18 +112,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	| CAS            |
 	| WIN8RETAILPRO  |
 	Then "NotOwnerEveryoneCanSee" list is displayed to user
-	When User clicks the List Details button
-	Then Details panel is displayed to the user
-	When User select "Everyone can see" sharing option
-	And User select "Automation Admin 1" as a Owner of a list
-	And User click Accept button in List Details panel
+	When User clicks the Permissions button
+	When User selects 'Everyone can see' in the 'Sharing' dropdown
+	When User selects 'Test DAS12602' option from 'Owner' autocomplete
+	When User clicks 'ACCEPT' button on inline tip banner
 	When User navigates to the "All Devices" list
 	Then 'All Devices' list should be displayed to the user
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User selects all rows on the grid
 	When User selects 'Add to static list' in the 'Action' dropdown
-	Then following Values are displayed in the 'Action' dropdown:
+	Then following Values are displayed in the 'Choose static list' dropdown:
 	| Listnames               |
 	| NotOwnerEveryoneCanEdit |
 	| NotOwnerSpecifiedAdmin  |

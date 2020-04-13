@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18647 @DAS18461 @Universe
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18647 @DAS18461
 Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceValidation
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyComplianceVal
 	Then following Values are displayed in the 'Sticky Compliance' dropdown:
 	| Options   |
 	| No change |
-	| Empty     |
+	| Remove    |
 	| UNKNOWN   |
 	| RED       |
 	| AMBER     |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateStickyCompliance
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
-	When User selects 'Empty' in the 'Sticky Compliance' dropdown
+	When User selects 'Remove' in the 'Sticky Compliance' dropdown
 	When User clicks 'UPDATE' button
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckBulkUpdateUpdateRationalisationDDLD
 	| KEEP          |
 	| RETIRE        |
 	| UNCATEGORISED |
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'Sticky Compliance' dropdown is not displayed
 	Then following Values are displayed in the 'Rationalisation' dropdown:
 	| Options       |
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForDevic
 	|0047 - Microsoft Access 97 SR-2 Francais  |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	When User selects 'KEEP' in the 'Rationalisation' dropdown
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS19213
@@ -190,8 +190,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForSelec
 	When User enters 'Zune (03.01.0620.00)' text to 'Target Application' textbox
 	Then validation message 'No results found' is displayed below 'Target Application' field
 
-@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18463 @Not_Ready
-#Waiting for 'Target Application'
+@Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18463
 Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdateRationalisationValidations
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Actions button
@@ -201,8 +200,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckUpdateApplicationAttributesForUpdat
 	| CodeWright 6.0BETA |
 	When User selects 'Bulk update' in the 'Action' dropdown
 	When User selects 'Update application attributes' in the 'Bulk Update Type' dropdown
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
-	Then 'UPDATE' button has tooltip with 'Some values are missing or not valid' text
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
+	Then 'UPDATE' button has tooltip with 'Select at least one value to change' text
 
 @Evergreen @EvergreenJnr_ActionsPanel @BulkUpdate @DAS18516 @Not_Ready
 #Waiting for 'Rationalisation' dropdown

@@ -67,10 +67,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatTooltipForDisabledRelinkButtonIsDispla
 
 @Evergreen @User @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19323 @Universe
 Scenario: EvergreenJnr_UserList_CheckThatObjectsAreDisplayedInSearchResultAfterEnteringPartOfObjectKeyToAutocomplete
-	When User navigates to the 'User' details page for '0231387EA0EE4B428FE' item
-	Then Details page for '0231387EA0EE4B428FE' item is displayed to the user
-	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'User' details page for '013DA2178AB4444CAF2' item
+	Then Details page for '013DA2178AB4444CAF2 (Filler, Ed)' item is displayed to the user
+	When User selects 'Mailbox Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks 'RELINK' button
-	Then only options having search term '551' are displayed in 'User' autocomplete
+	Then only options having search term '80568' are displayed in 'User' autocomplete

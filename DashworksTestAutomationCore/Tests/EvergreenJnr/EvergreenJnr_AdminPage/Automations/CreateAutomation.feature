@@ -1,4 +1,4 @@
-﻿Feature: CreateAutomayions
+﻿Feature: CreateAutomations
 	Create Automations
 
 Background: Pre-Conditions
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	| Scheduled: Dashworks Daily |
 	When User enters 'DAS16801_Automation' text to 'Automation Name' textbox
 	When User enters 'LongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescriptionLongDescription' text to 'Description' textbox
-	When User selects '1803 Rollout' option from 'Scope' autocomplete
+	When User selects '2004 Rollout' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then 'Active' checkbox is unchecked
 	When User enters 'DAS16801_Automation_Second' text to 'Automation Name' textbox
 	When User enters 'DAS16801' text to 'Description' textbox
-	When User selects '1803 Rollout' option from 'Scope' autocomplete
+	When User selects '2004 Rollout' option from 'Scope' autocomplete
 	When User selects 'Manual' in the 'Run' dropdown
 	When User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
@@ -97,3 +97,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCanBeCreatedWithListHavingAr
 	And User checks 'Active' checkbox
 	And User clicks 'CREATE' button 
 	Then 'The automation has been created' text is displayed on inline success banner
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17241 @Cleanup @Wormhole
+Scenario: EvergreenJnr_AdminPage_CheckScopeListsIconsForAutomations
+	When User clicks 'Users' on the left-hand menu
+	Then 'All Users' list should be displayed to the user
+	When User clicks on 'Username' column header
+	And User create dynamic list with "17241_List" name on "Users" page
+	Then "17241_List" list is displayed to user
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Automations' left menu item
+	When User clicks 'CREATE AUTOMATION' button 
+	Then 'Create Automation' page subheader is displayed to user
+	Then 'setting' icon displayed for 'All Devices' option from 'Scope' autocomplete
+	Then 'hide' icon displayed for '2004 Stages' option from 'Scope' autocomplete
+	Then 'visibility' icon displayed for 'Migration Type Capacity' option from 'Scope' autocomplete
+	Then 'visibility_off' icon displayed for '17241_List' option from 'Scope' autocomplete
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS20331 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckErrorMessageForScopeDropdown
+	When User creates broken list with '20331_BrokenList' name on 'Users' page
+	When User clicks 'Admin' on the left-hand menu
+	When User navigates to the 'Automations' left menu item
+	When User clicks 'CREATE AUTOMATION' button 
+	When User enters '20331_Automation' text to 'Automation Name' textbox
+	When User enters '20331' text to 'Description' textbox
+	When User selects '20331_BrokenList' option from 'Scope' autocomplete
+	Then 'This list has errors' error message is displayed for 'Scope' field
+	When User selects 'All Users' option from 'Scope' autocomplete
+	Then 'List validated' success message for 'Scope' field

@@ -6,11 +6,11 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
-Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout
-	When User navigates to "1803 Rollout" project details
+Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004Rollout
+	When User navigates to "2004 Rollout" project details
 	And User navigates to the 'Scope' left menu item
 	And User navigates to the 'History' left menu item
-	Then Counter shows "405" found rows
+	Then Counter shows "419" found rows
 	Then following checkboxes are displayed in the filter dropdown menu for the 'Action' column:
 	| Values                     |
 	| Onboard Application Object |
@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollo
 	| checkboxes                 |
 	| Onboard Application Object |
 	| Onboard User Object        |
-	Then Rows counter shows "60" of "405" rows
+	Then Rows counter shows "60" of "419" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13959 @Projects
 Scenario: EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionInEmailMigration

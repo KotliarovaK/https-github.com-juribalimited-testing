@@ -47,10 +47,10 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	Then Empty value is not displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
-	| Not Applicable |
-	| Started        |
-	| Failed         |
-	| Complete       |
+	| NOT APPLICABLE |
+	| STARTED        |
+	| FAILED         |
+	| COMPLETE       |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrderForUsers
@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	When User selects 'Pivot' in the 'Create' dropdown
 	And User selects the following Row Groups on Pivot:
 	| RowGroups           |
-	| Organizational Unit |
+	| Organisational Unit |
 	And User selects the following Columns on Pivot:
 	| Columns                           |
 	| Windows7Mi: Application Readiness |
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	| Barry'sUse: Audit & Configuration \ Validate User Device Ownership |
 	And User selects the following Values on Pivot:
 	| Values                      |
-	| 1803: Application Readiness |
+	| 2004: Application Readiness |
 	And User clicks 'RUN PIVOT' button 
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot

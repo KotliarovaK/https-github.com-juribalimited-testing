@@ -134,24 +134,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1084 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1152 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1084.AddRow(new string[] {
+                table1152.AddRow(new string[] {
                             "ProjectForDAS14839",
                             "All Devices",
                             "None",
                             "Clone from Evergreen to Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1084, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1152, "When ");
 #line hidden
 #line 13
  testRunner.And("User navigates to the \'Details\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
- testRunner.Then("\'Clone evergreen rings to project rings\' content is displayed in \'Rings\' dropdown" +
+ testRunner.Then("\'Clone Evergreen rings to project rings\' content is displayed in \'Rings\' dropdown" +
                         "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 15

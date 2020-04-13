@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS19538 @DAS19463 @Cleanup @Set_Default_Capacity_Unit
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @ProjectDetailsTab @DAS19538 @DAS19463 @Cleanup @Set_Default_Capacity_Unit @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatValueForCapacityUnitIsChangingSuccessfully
 	When User creates new Capacity Unit via api
 	| Name          | Description | IsDefault | Project          |
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFi
 		#--Applications--#
 	When User navigates to the 'Application' details page for '20040610sqlserverck' item
 	Then Details page for '20040610sqlserverck' item is displayed to the user
-	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
@@ -80,10 +80,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatThePenButtonIsNotDisplayedForCapacityFi
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19538 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfullyForUserWithSpecificAccess
 	When User creates new Capacity Unit via api
-	| Name              | Description | IsDefault | Project                      |
-	| cu_DAS19538_4645s | DAS19538    | false     | I-Computer Scheduled Project |
+	| Name              | Description | IsDefault | Project                           |
+	| cu_DAS19538_4645s | DAS19538    | false     | USE ME FOR AUTOMATION(USR SCHDLD) |
 	When User create new User via API
-	| Username         | Email | FullName | Password  | Roles                                                                                                                                                                    |
+	| Username         | Email | FullName | Password  | Roles                                                                                                                        |
 	| UserDAS195381654 | Value | DAS19538 | m!gration | Project Application Object Editor, Project Computer Object Editor, Project Mailbox Object Editor, Project User Object Editor |
 	When User clicks the Logout button
  	When User is logged in to the Evergreen as
@@ -93,28 +93,28 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 		#--Devices--#
 	When User navigates to the 'Device' details page for the item with '13292' ID
 	Then Details page for 'CHAXTB7OLNX1W2' item is displayed to the user
-	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
+	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Users--#
 	When User navigates to the 'User' details page for the item with '27418' ID
 	Then Details page for 'REM635708' item is displayed to the user
-	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
+	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Mailboxes--#
 	When User navigates to the 'Mailbox' details page for the item with '46886' ID
 	Then Details page for '01DE1433D11E44E6A4A@bclabs.local' item is displayed to the user
-	When User selects 'TSTPROJ' in the 'Item Details Project' dropdown with wait
+	When User selects 'USE ME FOR AUTOMATION(MAIL SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	Then button for editing the 'Capacity Unit' field is not displayed
 		#--Applications--#
 	When User navigates to the 'Application' details page for the item with '93' ID
 	Then Details page for '20040610sqlserverck' item is displayed to the user
-	When User selects 'I-Computer Scheduled Project' in the 'Item Details Project' dropdown with wait
+	When User selects 'USE ME FOR AUTOMATION(USR SCHDLD)' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	When User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 		#--Devices--#
 	When User navigates to the 'Device' details page for the item with '13292' ID
 	Then Details page for 'CHAXTB7OLNX1W2' item is displayed to the user
-	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
+	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 		#--Users--#
 	When User navigates to the 'User' details page for the item with '27418' ID
 	Then Details page for 'REM635708' item is displayed to the user
-	When User selects '1803 Rollout' in the 'Item Details Project' dropdown with wait
+	When User selects '2004 Rollout' in the 'Item Details Project' dropdown with wait
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Project Details' left submenu item
 	When User clicks on edit button for 'Capacity Unit' field
@@ -203,3 +203,16 @@ Scenario: EvergreenJnr_AllLists_CheckThatValueForCapacityUnitIsChangingSuccessfu
 	Then following content is displayed on the Details Page
 	| Title         | Value                   |
 	| Capacity Unit | Project Capacity Unit 1 |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ProjectsTab @DAS19985 @DAS20088
+Scenario: EvergreenJnr_DevicesList_CheckThatSlideToggleWorksCorrectlyForTheCapacityUnitPopUp
+	When User navigates to the 'Device' details page for '32UIH1IBLQ050JY' item
+	Then Details page for '32UIH1IBLQ050JY' item is displayed to the user
+	When User selects 'User Evergreen Capacity Project' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Project Details' left submenu item
+	When User clicks on edit button for 'Capacity Unit' field
+	When User deselect all rows on the grid
+	Then 'FQT1418241' content is displayed in the 'Username' column
+	When User checks 'Show only selected items' slide toggle
+	Then 'FQT1418241' content is not displayed in the 'Username' column

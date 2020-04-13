@@ -38,7 +38,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15585
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
-	When User navigates to "1803 Rollout" project details
+	When User navigates to "2004 Rollout" project details
 	And User navigates to the 'Capacity' left menu item
 	And User unchecks 'Enable Capacity' checkbox
 	And User navigates to the 'Units' left menu item
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesA
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS17409 @DAS17936 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatWhenValueIsZeroThenBlankShouldBeDisplayed
-	When User navigates to "1803 Rollout" project details
+	When User navigates to "2004 Rollout" project details
 	When User navigates to the 'Capacity' left menu item
 	And User navigates to the 'Units' left menu item
 	When User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column

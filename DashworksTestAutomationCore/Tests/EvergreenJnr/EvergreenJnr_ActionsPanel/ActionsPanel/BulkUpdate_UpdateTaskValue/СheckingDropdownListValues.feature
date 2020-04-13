@@ -17,8 +17,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExi
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	And User selects 'One' option from 'Stage' autocomplete
-	And User selects '<TaskName>' option from 'Task' autocomplete
+	And User selects 'One \ <TaskName>' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Value' dropdown:
 	| Value  |
 	| Update |
@@ -43,22 +42,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpub
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'Windows 7 Migration (Computer Scheduled Project)' option from 'Project' autocomplete
-	And User selects 'Pre-Migration' option from 'Stage' autocomplete
+	When User enters 'Pre-Migration' text in 'Task' Search field
 	Then only below options are displayed in the 'Task' autocomplete
-	| Options                |
-	| Forecast Date          |
-	| Forecast Code          |
-	| Target Date            |
-	| Scheduled Date         |
-	| Laptop Only Task       |
-	| Physical Only Task     |
-	| VDI Only Task          |
-	| Laptop & Physical Task |
-	| Target Code            |
-	| Scheduled Code         |
-	| Further Information    |
-	| Targeting Information  |
-	| Laptop & Workstation 2 |
+	| Options                                |
+	| Pre-Migration \ Forecast Date          |
+	| Pre-Migration \ Forecast Code          |
+	| Pre-Migration \ Target Date            |
+	| Pre-Migration \ Scheduled Date         |
+	| Pre-Migration \ Laptop Only Task       |
+	| Pre-Migration \ Physical Only Task     |
+	| Pre-Migration \ VDI Only Task          |
+	| Pre-Migration \ Laptop & Physical Task |
+	| Pre-Migration \ Target Code            |
+	| Pre-Migration \ Scheduled Code         |
+	| Pre-Migration \ Further Information    |
+	| Pre-Migration \ Targeting Information  |
+	| Pre-Migration \ Laptop & Workstation 2 |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386 @DAS13477
 Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTasks
@@ -73,30 +72,58 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'User Scheduled Test (Jo)' option from 'Project' autocomplete
-	Then only below options are displayed in the 'Stage' autocomplete
-	| Options |
-	| One     |
-	| Two     |
-	| Three   |
-	When User selects 'One' option from 'Stage' autocomplete
-	Then only below options are displayed in the 'Task' autocomplete
-	| Options                            |
-	| Radio Rag only User                |
-	| Radio Rag Date User                |
-	| Radio Rag Date Owner User          |
-	| Text User                          |
-	| Radio Rag Only User Req A          |
-	| Radio Rag Date User Req A          |
-	| Radio Rag Date Owner User Req A    |
-	| Radio Rag only User Req B          |
-	| Radio Rag Date User Req B          |
-	| Radio Rag Date Owner User Req B    |
-	| Radio Rag Date Owner Req B         |
-	| SS Department and Location Enabled |
+	When User enters 'One' text in 'Task' Search field
+	Then 'Task' autocomplete contains following options:
+	| Options                                      |
+	| One \ Radio Rag only User                    |
+	| One \ Radio Rag Date User                    |
+	| One \ Radio Rag Date Owner User              |
+	| One \ Text User                              |
+	| One \ Radio Rag Only User Req A              |
+	| One \ Radio Rag Date User Req A              |
+	| One \ Radio Rag Date Owner User Req A        |
+	| One \ Radio Rag only User Req B              |
+	| One \ Radio Rag Date User Req B              |
+	| One \ Radio Rag Date Owner User Req B        |
+	| One \ Radio Rag Date Owner Req B             |
+	| One \ SS Department and Location Enabled     |
+	When User enters 'Two' text in 'Task' Search field
+	Then 'Task' autocomplete contains following options:
+	| Options                                      |
+	| Two \ Radio Non Rag only User                |
+	| Two \ Radio Non Rag Date User                |
+	| Two \ Radio Non Rag Date Owner User          |
+	| Two \ Radio Non Rag only User Req A          |
+	| Two \ Radio Non Rag Date User Req A          |
+	| Two \ Radio Non Rag Date Owner User Req A    |
+	| Two \ Radio Non Rag only User Req B          |
+	| Two \ Radio Non Rag Date User Req B          |
+	| Two \ Radio Non Rag Date Owner Req B         |
+	When User enters 'Three' text in 'Task' Search field
+	Then 'Task' autocomplete contains following options:
+	| Options                                      |
+	| Three \ Date User                            |
+	| Three \ Date User Req A                      |
+	| Three \ Text User Req A                      |
+	| Three \ Date User Req B                      |
+	| Three \ Text User Req B                      |
+	| Three \ SS Enabled                           |
+	| Three \ SS Computer Ownership Enabled        |
+	| Three \ SS Applications List Enabled         |
+	| Three \ SS Project Date Enabled              |
+	| Three \ SS Other Options Enabled             |
+	| Three \ SS Computer Ownership Complete       |
+	| Three \ SS Application List Completed        |
+	| Three \ SS Department and Location Completed |
+	| Three \ SS Other Options Completed           |
+	| Three \ SS Project Date Completed            |
+	| Three \ Forecast Date                        |
+	| Three \ Target Date                          |
+	| Three \ Scheduled Date                       |
+	| Three \ Migrated Date                        |
+	| Three \ Completed Date                       |
 
-#Ann.Ilchenko 10/2/19: remove 'not run' tag when 'DAS18368' bug will be fixed.
-#sz: bug marked as fixed so tag is removed
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @DAS18368
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @DAS18368 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots
 Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
@@ -107,9 +134,8 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	| 001BAQXT6JWFPI   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects '1803 Rollout' option from 'Project' autocomplete
-	And User selects 'Pre-Migration' option from 'Stage' autocomplete
-	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects '2004 Rollout' option from 'Project' autocomplete
+	And User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '23 Nov 2018' text to 'Date' datepicker
 	Then following Values are displayed in the 'Capacity Slot' dropdown:
@@ -137,9 +163,8 @@ Scenario: EvergreenJnr_DevicesList_CheckTooltipDisplayingInDatePickerOfBulkUpdat
 	| 00I0COBFWHOF27   |
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects '1803 Rollout' option from 'Project' autocomplete
-	And User selects 'Pre-Migration' option from 'Stage' autocomplete
-	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects '2004 Rollout' option from 'Project' autocomplete
+	And User selects 'Pre-Migration \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User enters '6 Nov 2018' text to 'Date' datepicker
 	And User clicks datepicker icon 
@@ -179,8 +204,7 @@ Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
 	And User selects 'User Evergreen Capacity Project' option from 'Project' autocomplete
-	And User selects 'Stage 2' option from 'Stage' autocomplete
-	And User selects 'Scheduled Date' option from 'Task' autocomplete
+	And User selects 'Stage 2 \ Scheduled Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	And User clicks datepicker icon 
 	Then All 'Sunday' days are green in the Datepicker
@@ -189,19 +213,19 @@ Scenario: EvergreenJnr_UsersList_CheckDateColorDisplayingInBulkUpdateDatePicker
 Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldHonourTheDateRangeButNotTheTotalCapacity
 	When User creates new Slot via Api
 	| Project      | SlotName    | DisplayName | CapacityType    | ObjectType | Tuesday | Tasks                     |
-	| 1803 Rollout | Slot17833_1 | 17833_1     | Teams and Paths | Device     | 1       | Migration \ Migrated Date |
-	| 1803 Rollout | Slot17833_2 | 17833_2     | Teams and Paths | Device     | 2       | Migration \ Migrated Date |
+	| 2004 Rollout | Slot17833_1 | 17833_1     | Teams and Paths | Device     | 1       | Migration \ Migrated Date |
+	| 2004 Rollout | Slot17833_2 | 17833_2     | Teams and Paths | Device     | 2       | Migration \ Migrated Date |
 	And User clicks 'Devices' on the left-hand menu
 	And User clicks the Actions button
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects '1803 Rollout' option from 'Project' autocomplete
-	And User selects 'Migration' option from 'Stage' autocomplete
-	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects '2004 Rollout' option from 'Project' autocomplete
+	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	And User selects 'Slot17833_1' in the 'Capacity Slot' dropdown
+	When User navigate to the bottom of the Action panel
 	And User clicks 'UPDATE' button 
 	Then Warning message with "This operation cannot be undone" text is displayed on Action panel
 	When User clicks 'UPDATE' button
@@ -210,9 +234,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFullSlotIsDisplayedWhileRulesShouldH
 	When User selects all rows on the grid
 	And User selects 'Bulk update' in the 'Action' dropdown
 	And User selects 'Update task value' in the 'Bulk Update Type' dropdown
-	And User selects '1803 Rollout' option from 'Project' autocomplete
-	And User selects 'Migration' option from 'Stage' autocomplete
-	And User selects 'Migrated Date' option from 'Task' autocomplete
+	And User selects '2004 Rollout' option from 'Project' autocomplete
+	And User selects 'Migration \ Migrated Date' option from 'Task' autocomplete
 	And User selects 'Update' in the 'Update Date' dropdown
 	When User enters next 'Tuesday' day to 'Date' textbox
 	Then User sees that 'Capacity Slot' dropdown contains following options:

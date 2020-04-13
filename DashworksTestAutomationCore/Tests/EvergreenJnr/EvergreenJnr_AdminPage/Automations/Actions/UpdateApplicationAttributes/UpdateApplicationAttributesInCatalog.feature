@@ -5,32 +5,32 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19259 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19259 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogCreateEditPageDisplay
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19259_Automation | 19259       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19259_Automation | 19259       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
 	When User clicks 'CREATE ACTION' button
 	And User enters '19259_Action' text to 'Action Name' textbox
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
-	When User selects '1803 Rollout' option from 'Project or Evergreen' autocomplete
+	When User selects '2004 Rollout' option from 'Project or Evergreen' autocomplete
 	Then 'InCatalog' dropdown is not displayed
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	Then 'No change' value is displayed in the 'In Catalog' dropdown
 	Then 'CREATE' button is disabled
-	Then 'CREATE' button has tooltip with 'Select at least one value to change' text
+	Then 'CREATE' button has tooltip with 'Some values are missing or not valid' text
 	When User selects 'TRUE' in the 'In Catalog' dropdown
 	When User selects 'UNKNOWN' in the 'Sticky Compliance' dropdown
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Trevoli' in the 'Target Application' autocomplete field and selects 'Trevoli Photo Finale 2.1.000.0000 (429)' value
+	When User enters 'Parental Controls' in the 'Target Application' autocomplete field and selects 'Yahoo! Yahoo! Parental Controls (1036)' value
 	When User clicks 'CREATE' button
 	#Check Action Grid
-	Then "Sticky Compliance, Rationalisation, In Catalog" content is displayed for "Task or Field" column
+	Then "Sticky Compliance, In Catalog, Rationalisation" content is displayed for "Task or Field" column
 	Then '' content is displayed in the 'Project' column
-	Then 'Unknown, Forward Path, Photo Finale, True' content is displayed in the 'Value' column
+	Then 'Unknown, True, Forward Path, Yahoo! Yahoo! Parental Controls' content is displayed in the 'Value' column
 	When User clicks content from "Action" column
 	#Check Edit Action Page
 	Then 'Evergreen' content is displayed in 'Project or Evergreen' autocomplete
@@ -50,8 +50,8 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	When User refreshes agGrid
 	When User create dynamic list with "19542_List" name on "Applications" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 19542_Automation | 19542       | true   | false              | 19542_List | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 19542_Automation | 19542       | true     | false              | 19542_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -67,7 +67,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	When User clicks 'Run now' option in Cog-menu for '19542_Automation' item from 'Automation' column
 	When '19542_Automation' automation '19542_Action' action run has finished
 	When User navigates to the 'Automation Log' left menu item
-	When '19542_Automation' automation '19542_Action' action run has finished
 	When User enters "19542_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -96,11 +95,11 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogRunNow
 	And User clicks content from "Objects" column
 	Then 'FALSE' content is displayed in the 'In Catalog' column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19541 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19541 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogSavingAndRestoringValues
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 19541_Automation | 19541       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 19541_Automation | 19541       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -133,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsActionsInCatalogSavingAndRestor
 	Then 'FALSE' value is displayed in the 'In Catalog' dropdown
 	Then 'No change' content is displayed in 'Rationalisation' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19629 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19629 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergreen
 	When User clicks 'Applications' on the left-hand menu
 	When User clicks the Filters button
@@ -143,8 +142,8 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	When User refreshes agGrid
 	When User create dynamic list with "19629_List" name on "Applications" page
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope      | Run    |
-	| 19629_Automation | 19629       | true   | false              | 19629_List | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 19629_Automation | 19629       | true     | false              | 19629_List | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -153,7 +152,7 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	And User selects 'Update application attributes' in the 'Action Type' dropdown
 	When User selects 'Evergreen' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Starbase CodeWright' in the 'Target Application' autocomplete field and selects 'Starbase CodeWright 6.0BETA (107)' value
+	When User enters 'Starbase Cosmic' in the 'Target Application' autocomplete field and selects 'Starbase Cosmic CodeWright Integrator (11)' value
 	When User clicks 'CREATE' button
 	#Run Automation
 	When User clicks 'Automations' header breadcrumb
@@ -177,7 +176,7 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	When User clicks content from "Action" column
 	When User selects 'zUser Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
 	When User selects 'FORWARD PATH' in the 'Rationalisation' dropdown
-	When User enters 'Starbase CodeWright' in the 'Target Application' autocomplete field and selects 'Starbase CodeWright 6.0BETA (107)' value
+	When User enters 'Starbase CodeWright ' in the 'Target Application' autocomplete field and selects 'Starbase CodeWright 6.0BETA (107)' value
 	And User clicks 'UPDATE' button
 	When User clicks 'Automations' header breadcrumb
 	When User enters "19629_Automation" text in the Search field for "Automation" column
@@ -189,3 +188,36 @@ Scenario: EvergreenJnr_AdminPage_CheckObjectsInAutomationsLogForProjectAndEvergr
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then '1' content is displayed in the 'Objects' column
+
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS19926 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckRunningAutomationsBasedOnApplicationsListWithInScopeFilter
+	When User clicks 'Applications' on the left-hand menu
+	When User clicks the Filters button
+	When User add "2004: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	When User refreshes agGrid
+	When User create dynamic list with "19926_List" name on "Applications" page
+	When User creates new Automation via API and open it
+	| Name             | Description | IsActive | StopOnFailedAction | Scope      | Run    |
+	| 19926_Automation | 19926       | true     | false              | 19926_List | Manual |
+	Then Automation page is displayed correctly
+	When User navigates to the 'Actions' left menu item
+	#Create Action
+	When User clicks 'CREATE ACTION' button
+	When User enters '19926_Action' text to 'Action Name' textbox
+	When User selects 'Update application attributes' in the 'Action Type' dropdown
+	When User selects 'zDevice Sch for Automations Feature' option from 'Project or Evergreen' autocomplete
+	When User selects 'TRUE' in the 'Hide From End Users' dropdown
+	When User clicks 'CREATE' button
+	#Run Automation
+	When User clicks 'Automations' header breadcrumb
+	When User enters "19926_Automation" text in the Search field for "Automation" column
+	When User clicks 'Run now' option in Cog-menu for '19926_Automation' item from 'Automation' column
+	When '19926_Automation' automation '19926_Action' action run has finished
+	When User navigates to the 'Automation Log' left menu item
+	When '19926_Automation' automation '19926_Action' action run has finished
+	When User enters "19926_Automation" text in the Search field for "Automation" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	Then "SUCCESS" content is displayed for "Outcome" column

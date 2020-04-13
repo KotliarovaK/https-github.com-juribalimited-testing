@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Title       | Value          |
 	| Common Name | 00OMQQXWA1DRI6 |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810 @Void
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -34,8 +34,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
-	#| App Owner        |
 	| Device Owner     |
 	| Readiness        |
 	| Path             |
@@ -47,7 +45,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Self Service URL |
 	| Tags             |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809 @DAS18095 @DAS18011 @DAS17810
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325 @DAS17645 @DAS17809 @DAS18095 @DAS18011 @DAS17810 @Void
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User navigates to the 'User' details page for '0072B088173449E3A93' item
 	Then Details page for '0072B088173449E3A93' item is displayed to the user
@@ -58,8 +56,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
-	#| App Owner        |
 	| Primary Device   |
 	| Readiness        |
 	| Path             |
@@ -72,7 +68,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Language         |
 	| Tags             |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809 @DAS18095 @DAS18011 @DAS17810
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @DAS17239 @DAS17645 @DAS17809 @DAS18095 @DAS18011 @DAS17810 @DAS19923
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -88,7 +84,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| App Readiness       |
 	| App Rationalisation |
 	| Target App          |
-	| Primary App         |
+	| Criticality         |
 	| Hide From End Users |
 	| Path                |
 	| Team                |
@@ -96,7 +92,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Category            |
 	| Tags                |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @DAS17645 @DAS17785 @DAS17809 @DAS18095 @DAS18011 @DAS17810 @Void
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User navigates to the 'Mailbox' details page for '00A5B910A1004CF5AC4@bclabs.local' item
 	Then Details page for '00A5B910A1004CF5AC4@bclabs.local' item is displayed to the user
@@ -107,8 +103,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Fields           |
 	| Object ID        |
 	| Name             |
-	#Ann.I 11/14/19: hidden for Spectrum (DAS-18877)
-	#| App Owner        |
 	| Mailbox Owner    |
 	| Readiness        |
 	| Path             |
@@ -220,8 +214,22 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplaye
 Examples:
 	| ListName | ItemName                         |
 	| Device   | 00HA7MKAVVFDAV                   |
-	| User     | 0072B088173449E3A93              |
 	| Mailbox  | 000F977AC8824FE39B8@bclabs.local |
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093 @DAS17236
+Scenario: EvergreenJnr_UsersList_CheckThatProjectSummarySectionIsDisplayedSuccessfully
+	When User navigates to the 'User' details page for '0072B088173449E3A93' item
+	Then Details page for '0072B088173449E3A93' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	And User navigates to the 'Evergreen Details' left submenu item
+	Then following fields are displayed in the open section:
+	| Fields                  |
+	| Project Count           |
+	| Evergreen Team          |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
+	And There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18423
 Scenario: EvergreenJnr_DevicesList_CheckThatSpecificationTabForDevicesWithDeviceTypeOtherIsDisplayedCorrectly
@@ -270,9 +278,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFieldsAreDisplayedCorrectlyFor
 	| Evergreen Capacity Unit |
 	| In Catalog              |
 	| Criticality             |
-	#AnnI 1/8/20: 'Rationalisation' field hidden for 'terminator' (DAS-19609)
 	| Rationalisation         |
-	| Hide From End User      |
+	| Hide From End Users     |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS19352 @Universe
 Scenario: EvergreenJnr_MailboxesList_CheckThatAllFieldsForDetailsTabMailboxSubTabAreDisplayedCorrectly

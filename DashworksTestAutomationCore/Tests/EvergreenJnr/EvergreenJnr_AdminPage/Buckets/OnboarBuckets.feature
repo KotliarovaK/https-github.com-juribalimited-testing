@@ -12,7 +12,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	| TestProject20 | All Devices | None            | Standalone Project |
 	Then Page with 'TestProject20' header is displayed to user
 	When User navigates to the 'Details' left menu item
-	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User selects "Clone Evergreen buckets to project buckets" in the Buckets Project dropdown
 	When User navigates to the 'Scope' left menu item
 	And User navigates to the 'Scope Changes' left menu item
 	Then 'Match to Evergreen Bucket' content is displayed in 'Bucket' dropdown

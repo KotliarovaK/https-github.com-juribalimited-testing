@@ -96,6 +96,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("DAS17218")]
         [NUnit.Framework.CategoryAttribute("DAS11053")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode()
         {
             string[] tagsOfScenario = new string[] {
@@ -106,7 +107,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
                     "DAS17182",
                     "DAS17218",
                     "DAS11053",
-                    "DAS14923"};
+                    "DAS14923",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDet" +
                     "ailsPageForProjectMode", null, new string[] {
                         "Evergreen",
@@ -116,7 +118,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
                         "DAS17182",
                         "DAS17218",
                         "DAS11053",
-                        "DAS14923"});
+                        "DAS14923",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -149,49 +152,55 @@ this.FeatureBackground();
 #line 12
  testRunner.When("User navigates to the \'Devices\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2334 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2787 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2334.AddRow(new string[] {
+                table2787.AddRow(new string[] {
                             "Hostname"});
-                table2334.AddRow(new string[] {
+                table2787.AddRow(new string[] {
                             "Device Type"});
-                table2334.AddRow(new string[] {
+                table2787.AddRow(new string[] {
                             "Owner Display Name"});
-                table2334.AddRow(new string[] {
+                table2787.AddRow(new string[] {
                             "Operating System"});
-                table2334.AddRow(new string[] {
+                table2787.AddRow(new string[] {
                             "Compliance"});
 #line 13
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2334, "Then ");
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2787, "Then ");
 #line hidden
 #line 20
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                         "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2335 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ColumnName"});
-                table2335.AddRow(new string[] {
-                            "Hostname"});
-                table2335.AddRow(new string[] {
-                            "Device Type"});
-                table2335.AddRow(new string[] {
-                            "Owner"});
-                table2335.AddRow(new string[] {
-                            "Owner Display Name"});
-                table2335.AddRow(new string[] {
+                TechTalk.SpecFlow.Table table2788 = new TechTalk.SpecFlow.Table(new string[] {
+                            "checkboxes"});
+                table2788.AddRow(new string[] {
                             "Operating System"});
-                table2335.AddRow(new string[] {
-                            "Readiness"});
-                table2335.AddRow(new string[] {
-                            "Path"});
-                table2335.AddRow(new string[] {
-                            "Category"});
-                table2335.AddRow(new string[] {
-                            "Application Readiness"});
-                table2335.AddRow(new string[] {
-                            "Stage 1"});
 #line 21
- testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2335, "Then ");
+ testRunner.When("User clicks following checkboxes from Column Settings panel for the \'Hostname\' co" +
+                        "lumn:", ((string)(null)), table2788, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table2789 = new TechTalk.SpecFlow.Table(new string[] {
+                            "ColumnName"});
+                table2789.AddRow(new string[] {
+                            "Hostname"});
+                table2789.AddRow(new string[] {
+                            "Device Type"});
+                table2789.AddRow(new string[] {
+                            "Owner"});
+                table2789.AddRow(new string[] {
+                            "Owner Display Name"});
+                table2789.AddRow(new string[] {
+                            "Readiness"});
+                table2789.AddRow(new string[] {
+                            "Path"});
+                table2789.AddRow(new string[] {
+                            "Category"});
+                table2789.AddRow(new string[] {
+                            "Application Readiness"});
+                table2789.AddRow(new string[] {
+                            "Stage 1"});
+#line 24
+ testRunner.Then("following columns are displayed on the Item details page:", ((string)(null)), table2789, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

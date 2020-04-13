@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @DAS12321
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11479 @DAS12321 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInTheNameAndDisplayNameColumns
 	When User navigates to the 'Mailbox' details page for '00C8BC63E7424A6E862@bclabs.local' item
 	Then Details page for '00C8BC63E7424A6E862@bclabs.local' item is displayed to the user
@@ -30,32 +30,40 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	When User navigates to the 'Users' left menu item
 	Then '00A5B910A1004CF5AC4' content is displayed in the 'Username' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Projects' left menu item
 	And User navigates to the 'Projects Summary' left submenu item
-	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                   |
+	| Select All                   |
+	| Computer Scheduled Test (Jo) |
+	When User clicks content from "Project" column
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User opens 'Project' column settings
-	And User clicks Column button on the Column Settings panel
-	And User select "Object ID" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
+	When User clicks following checkboxes from Column Settings panel for the 'Project' column:
+	| checkboxes |
+	| Object ID  |
 	Then following columns added to the table:
 	| ColumnName |
 	| Object ID  |
-	When User clicks "33819" link on the Details Page
+	When User enters "33819" text in the Search field for "Object ID" column
+	When User clicks content from "Object ID" column
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 	And User click back button in the browser
 	#=====================================================================================#
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
 	When User navigates to the 'Owner Projects Summary' left submenu item
-	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                   |
+	| Select All                   |
+	| Computer Scheduled Test (Jo) |
+	When User clicks content from "Project" column
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 	And User click back button in the browser
@@ -66,11 +74,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	Then following columns added to the table:
 	| ColumnName |
 	| Object ID  |
-	When User clicks "34305" link on the Details Page
+	When User enters "34305" text in the Search field for "Object ID" column
+	When User clicks content from "Object ID" column
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
 Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnUsersPageGoingToSenior
 	When User navigates to the 'User' details page for '000F977AC8824FE39B8' item
 	Then Details page for '000F977AC8824FE39B8' item is displayed to the user
@@ -142,7 +151,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnApplicationsPageGoingToSenior
 	When User navigates to the 'Application' details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item
 	Then Details page for '"WPF/E" (codename) Community Technology Preview (Feb 2007)' item is displayed to the user
@@ -164,7 +173,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
 	
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860 @DAS20468 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnMailboxesPageGoingToSenior
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
@@ -205,7 +214,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13849
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13849 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProjectsGridOnProjectsTabOfParticularDevice
 	When User clicks 'Devices' on the left-hand menu
 	And User perform search by "00BDM1JUR8IF419"
@@ -214,27 +223,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	When User navigates to the 'Projects Summary' left submenu item
 	Then All data is unique in the 'Project' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Cleanup
-Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
-	When User creates new Bucket via api
-	| Name                     | TeamName | IsDefault |
-	| AutoTestBucket_DAS_13335 | Admin IT | false     |
-	#============================================================================#
-	When User navigates to the 'User' details page for 'AAG081456' item
-	Then Details page for 'AAG081456' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	When User clicks on edit button for 'Evergreen Bucket' field
-	When User selects 'AutoTestBucket_DAS_13335' option from 'New Bucket' autocomplete
-	When User expands 'Related Devices' category
-	When User selects all rows on the grid
-	And User clicks 'UPDATE' button
-	When User navigates to the 'Device' details page for 'I55HL8MSBYK0VG' item
-	Then Details page for 'I55HL8MSBYK0VG' item is displayed to the user
-	When User navigates to the 'Projects' left menu item
-	Then User sees "AutoTestBucket_DAS_13335" Evergreen Bucket in Project Summary section on the Details Page
-	And There are no errors in the browser console
-
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254 @DAS17255 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
 	When User navigates to the 'Mailbox' details page for '000F977AC8824FE39B8@bclabs.local' item
 	Then Details page for '000F977AC8824FE39B8@bclabs.local' item is displayed to the user
@@ -267,7 +256,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	Then "1" rows found label displays on Details Page
 	Then '[Default (User)]' checkbox is checked in the filter dropdown for the 'Path' column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @DAS18535 @DAS20604 @DAS20764 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -288,35 +277,50 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	| Date                  |
 	| Stage 1               |
 	| Stage 2               |
-	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
+	When User enters "0OO2ON48JAZM8A" text in the Search field for "Device" column
 	Then Links from "Device" column is displayed to the user on the Details Page
 	And Links from "Owner" column is displayed to the user on the Details Page
 	And Links from "Owner Display Name" column is displayed to the user on the Details Page
 	#link function is not ready yet
 	#And Links from "Linked By" column is displayed to the user on the Details Page
-	When User clicks "03ME2G7TIR4GBN" link on the Details Page
+	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
+	When User click content from "Device" column
 	Then Details page for '03ME2G7TIR4GBN' item is displayed to the user
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User navigates to the 'Related' left menu item
-	And User enters "ACG370114" text in the Search field for "Owner" column
-	And User clicks "ACG370114" link on the Details Page
-	Then Details page for 'ACG370114 (James N. Snow)' item is displayed to the user
+	Then 'Related' left submenu item is active
+	When User enters "ADL183503" text in the Search field for "Owner" column
+	When User click content from "Owner" column
+	Then Details page for 'ADL183503 (Austin O. Ball)' item is displayed to the user
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User navigates to the 'Related' left menu item
-	And User enters "James N. Snow" text in the Search field for "Owner Display Name" column
-	And User clicks "James N. Snow" link on the Details Page
-	Then Details page for 'ACG370114 (James N. Snow)' item is displayed to the user
+	Then 'Related' left submenu item is active
+	When User enters "Austin O. Ball" text in the Search field for "Owner Display Name" column
+	When User click content from "Owner Display Name" column
+	Then Details page for 'ADL183503 (Austin O. Ball)' item is displayed to the user
 	And User click back button in the browser
 	And Details page for '001BAQXT6JWFPI' item is displayed to the user
-	When User navigates to the 'Related' left menu item
+	Then 'Related' left submenu item is active
 	#link function is not ready yet
 	#When User enters "ACG370114" text in the Search field for "Linked By" column
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS15039
+#AnnI 4/01/20: DAS20604 will be fixed only for 'Wormhole' and we are waiting GD for this test.
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20604 @DAS20764 @Zion_NewGrid @Wormhole
+Scenario: EvergreenJnr_DevicesList_CheckThatEmptyValueIsDisplayedAndRedirectsTheUserCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User selects 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' in the 'Item Details Project' dropdown with wait
+	When User navigates to the 'Related' left menu item
+	And User enters "00CWZRC4UK6W20" text in the Search field for "Device" column
+	Then "" content is displayed for "Owner" column
+	Then "" content is displayed for "Owner Display Name" column
+	When User click content from "Device" column
+	Then 'USE ME FOR AUTOMATION(DEVICE SCHDLD)' content is displayed in 'Item Details Project' dropdown
+	Then Details page for '00CWZRC4UK6W20' item is displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS15039 @Zion_NewGrid
 Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -325,7 +329,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column
 	Then '31 May 2019' content is displayed in the 'Date' column
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087 @Zion_NewGrid
 Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAProjectOnTheMailboxDetailsPage
 	When User navigates to the 'Mailbox' details page for 'abel.y.hanson@dwlabs.local' item
 	Then Details page for 'abel.y.hanson@dwlabs.local' item is displayed to the user
@@ -336,7 +340,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	Then "1" rows found label displays on Details Page
 	And 'hansonay' content is displayed in the 'Username' column
 
-@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734 @DAS17733
+@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17734 @DAS17733 @Zion_NewGrid
 Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesOnDevicesDetailsPageForProjectMode
 	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
 	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
@@ -362,7 +366,7 @@ Scenario: EvergreenJnr_DeviceList_CheckThatUsersTabIsDisplayedWithCorrectStagesO
 	And "RED" content is displayed for "Stage C" column
 	And "AMBER" content is displayed for "Stage D" column
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18263
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS18263 @Zion_NewGrid
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUnknownValuesAreEmptyOnObjectDetailsInDistributiontab
 	When User navigates to the 'Application' details page for '7zip' item
 	Then Details page for '7zip' item is displayed to the user
@@ -370,3 +374,30 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUnknownValuesAreEmptyOnObjectDe
 	And User navigates to the 'Devices' left submenu item
 	Then "" content is displayed for "Owner" column
 	Then "" content is displayed for "Owner Display Name" column
+
+@Evergreen @Device @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS20503 @Zion_NewGrid
+Scenario: EvergreenJnr_DeviceList_CheckThatValueInTheRingColumnOnDeviceDetailsIsDisplayedCorrectly
+	When User navigates to the 'Device' details page for '001BAQXT6JWFPI' item
+	Then Details page for '001BAQXT6JWFPI' item is displayed to the user
+	When User navigates to the 'Projects' left menu item
+	When User navigates to the 'Owner Projects Summary' left submenu item
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes       |
+	| Select All       |
+	| Havoc (Big Data) |
+	Then '' content is displayed in the 'Ring' column
+	When User unchecks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                      |
+	| Havoc (Big Data)                |
+	When User checks following checkboxes in the filter dropdown menu for the 'Project' column:
+	| checkboxes                      |
+	| User Evergreen Capacity Project |
+	Then 'Unassigned' content is displayed in the 'Ring' column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS206117 @Zion_NewGrid
+Scenario: EvergreenJnr_UsersList_CheckThatTheCorrectSymbolsAreDisplayedToTheUserOnHardwareRulesTabForConditionColumn
+	When User navigates to the 'User' details page for the item with '66921' ID
+	Then Details page for 'Administrator' item is displayed to the user
+	When User navigates to the 'Compliance' left menu item
+	When User navigates to the 'Hardware Rules' left submenu item
+	Then 'Hard Disk Total Space (MB) < 100000000' content is displayed in the 'Condition' column

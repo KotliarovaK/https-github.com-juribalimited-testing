@@ -138,12 +138,12 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table64.AddRow(new string[] {
+                table66.AddRow(new string[] {
                             "Image Express Utility 2.0"});
 #line 14
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table64, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table66, "When ");
 #line hidden
 #line 17
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -231,12 +231,12 @@ this.FeatureBackground();
 #line 32
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table65.AddRow(new string[] {
+                table67.AddRow(new string[] {
                             "Image Express Utility 2.0"});
 #line 33
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table65, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table67, "When ");
 #line hidden
 #line 36
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -320,12 +320,12 @@ this.FeatureBackground();
 #line 49
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table66.AddRow(new string[] {
+                table68.AddRow(new string[] {
                             "In Catalog"});
 #line 50
- testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table66, "When ");
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table68, "When ");
 #line hidden
 #line 53
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -333,12 +333,12 @@ this.FeatureBackground();
 #line 54
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table67.AddRow(new string[] {
+                table69.AddRow(new string[] {
                             "0047 - Microsoft Access 97 SR-2 Francais"});
 #line 55
- testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table67, "When ");
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table69, "When ");
 #line hidden
 #line 58
  testRunner.When("User selects \'Bulk update\' in the \'Action\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

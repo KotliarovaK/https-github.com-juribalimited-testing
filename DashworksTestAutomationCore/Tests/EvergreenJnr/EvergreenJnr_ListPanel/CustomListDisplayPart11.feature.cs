@@ -144,15 +144,15 @@ this.FeatureBackground();
 #line 11
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2569 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3094 = new TechTalk.SpecFlow.Table(new string[] {
                             "ItemName"});
-                table2569.AddRow(new string[] {
+                table3094.AddRow(new string[] {
                             "001BAQXT6JWFPI"});
-                table2569.AddRow(new string[] {
+                table3094.AddRow(new string[] {
                             "001PSUMZYOW581"});
 #line 12
  testRunner.When("User create static list with \"StaticFilterList_2\" name on \"Devices\" page with fol" +
-                        "lowing items", ((string)(null)), table2569, "When ");
+                        "lowing items", ((string)(null)), table3094, "When ");
 #line hidden
 #line 16
  testRunner.Then("\"StaticFilterList_2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -172,26 +172,26 @@ this.FeatureBackground();
 #line 21
  testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2570 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3095 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table2570.AddRow(new string[] {
+                table3095.AddRow(new string[] {
                             "Application Compliance"});
 #line 22
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table2570, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3095, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2571 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3096 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table2571.AddRow(new string[] {
+                table3096.AddRow(new string[] {
                             "Operating System"});
 #line 25
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table2571, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3096, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2572 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3097 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2572.AddRow(new string[] {
+                table3097.AddRow(new string[] {
                             "App Count (Entitled)"});
 #line 28
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table2572, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3097, "And ");
 #line hidden
 #line 31
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -211,26 +211,26 @@ this.FeatureBackground();
 #line 36
  testRunner.And("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2573 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3098 = new TechTalk.SpecFlow.Table(new string[] {
                             "RowGroups"});
-                table2573.AddRow(new string[] {
+                table3098.AddRow(new string[] {
                             "Build Date"});
 #line 37
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table2573, "And ");
+ testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table3098, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2574 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3099 = new TechTalk.SpecFlow.Table(new string[] {
                             "Columns"});
-                table2574.AddRow(new string[] {
+                table3099.AddRow(new string[] {
                             "Application Compliance"});
 #line 40
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table2574, "And ");
+ testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table3099, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2575 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3100 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table2575.AddRow(new string[] {
+                table3100.AddRow(new string[] {
                             "Owner General information field 1"});
 #line 43
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table2575, "And ");
+ testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table3100, "And ");
 #line hidden
 #line 46
  testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -368,19 +368,19 @@ this.FeatureBackground();
  testRunner.When("User apply \"Not favourite\" filter to lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 77
- testRunner.Then("\'1803 Rollout\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2004 Rollout\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 78
  testRunner.When("User apply \"Favourite\" filter to lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 79
- testRunner.Then("\'1803 Rollout\' list is not displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2004 Rollout\' list is not displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 80
- testRunner.When("User enters \"1803\" text in Search field at List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"2004\" text in Search field at List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 81
- testRunner.Then("\'1803 Rollout\' list is not displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2004 Rollout\' list is not displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -443,458 +443,19 @@ this.FeatureBackground();
  testRunner.When("User apply \"Shared with me \" filter to lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 88
- testRunner.Then("\'1803 Rollout\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2004 Rollout\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 89
  testRunner.When("User apply \"Owned by me \" filter to lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 90
- testRunner.Then("\'1803 Rollout\' list is not displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2004 Rollout\' list is not displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 91
- testRunner.When("User enters \"1803\" text in Search field at List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"2004\" text in Search field at List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 92
- testRunner.Then("\'1803 Rollout\' list is not displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSettings")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17627")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSettings()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Evergreen",
-                    "Devices",
-                    "EvergreenJnr_ListPanel",
-                    "CustomListDisplay",
-                    "DAS17627",
-                    "Cleanup"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatDashworkWorksAfterChangingPivotSettings", null, new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_ListPanel",
-                        "CustomListDisplay",
-                        "DAS17627",
-                        "Cleanup"});
-#line 95
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-#line 96
- testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 97
- testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2576 = new TechTalk.SpecFlow.Table(new string[] {
-                            "ItemName"});
-                table2576.AddRow(new string[] {
-                            "001BAQXT6JWFPI"});
-                table2576.AddRow(new string[] {
-                            "001PSUMZYOW581"});
-#line 98
- testRunner.When("User create static list with \"StaticFilterList_1\" name on \"Devices\" page with fol" +
-                        "lowing items", ((string)(null)), table2576, "When ");
-#line hidden
-#line 102
- testRunner.Then("\"StaticFilterList_1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 103
- testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 104
- testRunner.When("User clicks on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 105
- testRunner.When("User create dynamic list with \"DynamicFilterList_1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 106
- testRunner.Then("\"DynamicFilterList_1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 107
- testRunner.When("User selects \'Pivot\' in the \'Create\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table2577 = new TechTalk.SpecFlow.Table(new string[] {
-                            "RowGroups"});
-                table2577.AddRow(new string[] {
-                            "Hostname"});
-#line 108
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table2577, "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table2578 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Columns"});
-                table2578.AddRow(new string[] {
-                            "Hostname"});
-#line 111
- testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table2578, "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table2579 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Values"});
-                table2579.AddRow(new string[] {
-                            "Hostname"});
-#line 114
- testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table2579, "And ");
-#line hidden
-#line 117
- testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 118
- testRunner.And("User removes \"Hostname\" Column for Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table2580 = new TechTalk.SpecFlow.Table(new string[] {
-                            "RowGroups"});
-                table2580.AddRow(new string[] {
-                            "Floor"});
-#line 119
- testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table2580, "And ");
-#line hidden
-#line 122
- testRunner.When("User clicks \'RUN PIVOT\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 123
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 125
- testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 126
- testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterClosingLists" +
-            "Panel")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17421")]
-        [NUnit.Framework.CategoryAttribute("DAS17014")]
-        [NUnit.Framework.CategoryAttribute("DAS17014")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterClosingListsPanel()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Evergreen",
-                    "Devices",
-                    "EvergreenJnr_ListPanel",
-                    "CustomListDisplay",
-                    "DAS17421",
-                    "DAS17014",
-                    "DAS17014"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatGridHeaderIsDisplayedCorrectlyAfterClosingLists" +
-                    "Panel", null, new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_ListPanel",
-                        "CustomListDisplay",
-                        "DAS17421",
-                        "DAS17014",
-                        "DAS17014"});
-#line 129
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-#line 130
- testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 131
- testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 132
- testRunner.When("User closed list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 133
- testRunner.Then("Lists panel is hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 134
- testRunner.Then("User sees correct tooltip for Show Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS15785")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "All Mailboxes", null)]
-        public virtual void EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect(string listType, string listTitle, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Devices",
-                    "EvergreenJnr_ListPanel",
-                    "CustomListDisplay",
-                    "DAS15785"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatFilterCategoryNamingIsCorrect", null, @__tags);
-#line 137
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-#line 138
- testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", listType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 139
- testRunner.Then(string.Format("\'{0}\' list should be displayed to the user", listTitle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2581 = new TechTalk.SpecFlow.Table(new string[] {
-                            "filterItem"});
-                table2581.AddRow(new string[] {
-                            "All"});
-                table2581.AddRow(new string[] {
-                            "Favourite"});
-                table2581.AddRow(new string[] {
-                            "Not favourite"});
-                table2581.AddRow(new string[] {
-                            "All"});
-                table2581.AddRow(new string[] {
-                            "Owned by me"});
-                table2581.AddRow(new string[] {
-                            "Shared with me"});
-                table2581.AddRow(new string[] {
-                            "All"});
-                table2581.AddRow(new string[] {
-                            "Static"});
-                table2581.AddRow(new string[] {
-                            "Dynamic"});
-                table2581.AddRow(new string[] {
-                            "All"});
-                table2581.AddRow(new string[] {
-                            "Standard"});
-                table2581.AddRow(new string[] {
-                            "Pivot"});
-#line 140
- testRunner.And("List filter DDL displays the next options", ((string)(null)), table2581, "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavingListWithD" +
-            "eviceOwnerSavedListFilter")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("DAS17472")]
-        [NUnit.Framework.CategoryAttribute("Cleanup")]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavingListWithDeviceOwnerSavedListFilter()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Evergreen",
-                    "Applications",
-                    "CustomListDisplay",
-                    "EvergreenJnr_ListPanel",
-                    "DAS17472",
-                    "Cleanup"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThat500ErrorIsNotDisplayedAfterSavingListWithD" +
-                    "eviceOwnerSavedListFilter", null, new string[] {
-                        "Evergreen",
-                        "Applications",
-                        "CustomListDisplay",
-                        "EvergreenJnr_ListPanel",
-                        "DAS17472",
-                        "Cleanup"});
-#line 163
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-#line 164
- testRunner.When("User clicks \'Applications\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 165
- testRunner.Then("\'All Applications\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 166
- testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 167
- testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2582 = new TechTalk.SpecFlow.Table(new string[] {
-                            "SelectedCheckboxes",
-                            "Association"});
-                table2582.AddRow(new string[] {
-                            "Users with Device Count",
-                            "Used on device"});
-#line 168
- testRunner.When("User add \"Device Owner (Saved List)\" filter where type is \"In list\" with selected" +
-                        " Expanded Checkboxes and following Association:", ((string)(null)), table2582, "When ");
-#line hidden
-#line 171
- testRunner.Then("\"100\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 172
- testRunner.When("User creates \'Test_Application_List_DAS_17472\' dynamic list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 173
- testRunner.Then("\"Test_Application_List_DAS_17472\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 174
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatListCanBeFoundUsingAnyCapsOrSmallLetters")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
-        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS18483")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatListCanBeFoundUsingAnyCapsOrSmallLetters()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Evergreen",
-                    "Devices",
-                    "EvergreenJnr_ListPanel",
-                    "CustomListDisplay",
-                    "DAS18483"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatListCanBeFoundUsingAnyCapsOrSmallLetters", null, new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_ListPanel",
-                        "CustomListDisplay",
-                        "DAS18483"});
-#line 177
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line hidden
-#line 178
- testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 179
- testRunner.When("User enters \"new\" text in Search field at List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 180
- testRunner.Then("\'New York - Devices\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 181
- testRunner.When("User enters \"New\" text in Search field at List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 182
- testRunner.Then("\'New York - Devices\' list is displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'2004 Rollout\' list is not displayed in the Lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

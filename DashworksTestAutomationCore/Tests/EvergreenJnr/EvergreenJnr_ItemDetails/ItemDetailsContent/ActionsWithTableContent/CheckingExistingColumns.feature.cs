@@ -94,6 +94,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
         [NUnit.Framework.CategoryAttribute("DAS11091")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
         [NUnit.Framework.CategoryAttribute("DAS16564")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_DevicesList_CheckRenamedColumnForApplicationTabOnTheDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -103,7 +104,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
                     "ItemDetailsDisplay",
                     "DAS11091",
                     "DAS14923",
-                    "DAS16564"};
+                    "DAS16564",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckRenamedColumnForApplicationTabOnTheDetailsPage", null, new string[] {
                         "Evergreen",
                         "Devices",
@@ -111,7 +113,8 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_ItemDetail
                         "ItemDetailsDisplay",
                         "DAS11091",
                         "DAS14923",
-                        "DAS16564"});
+                        "DAS16564",
+                        "Zion_NewGrid"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -182,6 +185,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16564")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
@@ -189,13 +193,15 @@ this.FeatureBackground();
                     "Users",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS16564"};
+                    "DAS16564",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetailsPage", null, new string[] {
                         "Evergreen",
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS16564"});
+                        "DAS16564",
+                        "Zion_NewGrid"});
 #line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -259,6 +265,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12088")]
         [NUnit.Framework.CategoryAttribute("DAS12321")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly()
         {
             string[] tagsOfScenario = new string[] {
@@ -267,7 +274,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS12088",
-                    "DAS12321"};
+                    "DAS12321",
+                    "Zion_NewGrid"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAre" +
                     "DisplayedCorrectly", null, new string[] {
                         "Evergreen",
@@ -275,7 +283,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS12088",
-                        "DAS12321"});
+                        "DAS12321",
+                        "Zion_NewGrid"});
 #line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -339,6 +348,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12765")]
         [NUnit.Framework.CategoryAttribute("DAS12860")]
+        [NUnit.Framework.CategoryAttribute("Zion_NewGrid")]
         [NUnit.Framework.TestCaseAttribute("Device", "001BAQXT6JWFPI", "Owner Projects Summary", null)]
         [NUnit.Framework.TestCaseAttribute("User", "hurstbl", "User Projects", null)]
         [NUnit.Framework.TestCaseAttribute("User", "hurstbl", "Mailbox Project Summary", null)]
@@ -352,7 +362,8 @@ this.FeatureBackground();
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS12765",
-                    "DAS12860"};
+                    "DAS12860",
+                    "Zion_NewGrid"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

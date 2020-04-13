@@ -26,9 +26,10 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application12075" list
 	Then "Application12075" list is displayed to user
-	When User clicks 'Delete' option in Cog-menu for 'Application12075' list
+	When User clicks 'Delete' option in cogmenu for 'Application12075' list
 	Then "Application12075" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
-	When User removes custom list with "Application12075" name
+	When User clicks 'Delete' option in cogmenu for 'Application12075' list
+	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "Devices12075" list
@@ -69,9 +70,10 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application3_12075" list
 	Then "Application3_12075" list is displayed to user
-	When User clicks 'Delete' option in Cog-menu for 'Application3_12075' list
+	When User clicks 'Delete' option in cogmenu for 'Application3_12075' list
 	Then "Application3_12075" list "list is used by 2 lists, do you wish to proceed?" message is displayed in the list panel
-	When User removes custom list with "Application3_12075" name
+	When User clicks 'Delete' option in cogmenu for 'Application3_12075' list
+	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
 	When User navigates to the "Devices3_12075" list
@@ -98,17 +100,18 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoD
 	| SelectedList | Association    |
 	| Application4 | Used on device |
 	| Application5 | Used on device |
-	And User create dynamic list with "Devices4" name on "Devices" page
+	And User create dynamic list with "Devices15551" name on "Devices" page
 	And User clicks 'Applications' on the left-hand menu
 	Then 'All Applications' list should be displayed to the user
 	When User navigates to the "Application4" list
 	Then "Application4" list is displayed to user
-	When User clicks 'Delete' option in Cog-menu for 'Application4' list
+	When User clicks 'Delete' option in cogmenu for 'Application4' list
 	Then "Application4" list "list is used by 1 list, do you wish to proceed?" message is displayed in the list panel
-	When User removes custom list with "Application4" name
+	When User clicks 'Delete' option in cogmenu for 'Application4' list
+	When User confirms list removing
 	And User clicks 'Devices' on the left-hand menu
 	Then 'All Devices' list should be displayed to the user
-	When User navigates to the "Devices4" list
+	When User navigates to the "Devices15551" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] or Application5 used on device" is displayed in added filter info
@@ -131,7 +134,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	And "2" rows are displayed in the agGrid
 	When User clicks the List Details button
 	Then Details panel is displayed to the user
-	When User clicks 'DELETE LIST' button
+	When User clicks Delete list button
 	And User navigates to the "DynamicList2569" list
 	Then inline success banner is not displayed
 	When User clicks the List Details button

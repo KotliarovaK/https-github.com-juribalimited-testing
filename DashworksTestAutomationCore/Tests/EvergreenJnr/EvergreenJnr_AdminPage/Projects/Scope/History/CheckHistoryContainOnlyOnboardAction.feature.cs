@@ -86,14 +86,14 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004Rollout")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13959")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        public virtual void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout()
+        public virtual void EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004Rollout()
         {
             string[] tagsOfScenario = new string[] {
                     "Evergreen",
@@ -102,7 +102,7 @@ namespace DashworksTestAutomationCore.Tests.EvergreenJnr.EvergreenJnr_AdminPage.
                     "AdminPage",
                     "DAS13959",
                     "Projects"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn1803Rollout", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckHistoryContainOnlyOnboardActionIn2004Rollout", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
@@ -133,7 +133,7 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 10
- testRunner.When("User navigates to \"1803 Rollout\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User navigates to \"2004 Rollout\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
  testRunner.And("User navigates to the \'Scope\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -142,32 +142,32 @@ this.FeatureBackground();
  testRunner.And("User navigates to the \'History\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
- testRunner.Then("Counter shows \"405\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Counter shows \"419\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1051 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1119 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1051.AddRow(new string[] {
+                table1119.AddRow(new string[] {
                             "Onboard Application Object"});
-                table1051.AddRow(new string[] {
+                table1119.AddRow(new string[] {
                             "Onboard Device Object"});
-                table1051.AddRow(new string[] {
+                table1119.AddRow(new string[] {
                             "Onboard User Object"});
 #line 14
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Action\' c" +
-                        "olumn:", ((string)(null)), table1051, "Then ");
+                        "olumn:", ((string)(null)), table1119, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1052 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1120 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1052.AddRow(new string[] {
+                table1120.AddRow(new string[] {
                             "Onboard Application Object"});
-                table1052.AddRow(new string[] {
+                table1120.AddRow(new string[] {
                             "Onboard User Object"});
 #line 19
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Action\' c" +
-                        "olumn:", ((string)(null)), table1052, "When ");
+                        "olumn:", ((string)(null)), table1120, "When ");
 #line hidden
 #line 23
- testRunner.Then("Rows counter shows \"60\" of \"405\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter shows \"60\" of \"419\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -232,29 +232,29 @@ this.FeatureBackground();
 #line 30
  testRunner.Then("Counter shows \"1,527\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1053 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1121 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1053.AddRow(new string[] {
+                table1121.AddRow(new string[] {
                             "Onboard Application Object"});
-                table1053.AddRow(new string[] {
+                table1121.AddRow(new string[] {
                             "Onboard Mailbox Object"});
-                table1053.AddRow(new string[] {
+                table1121.AddRow(new string[] {
                             "Onboard User Object"});
-                table1053.AddRow(new string[] {
+                table1121.AddRow(new string[] {
                             "Re-onboard Mailbox Object"});
-                table1053.AddRow(new string[] {
+                table1121.AddRow(new string[] {
                             "Re-onboard User Object"});
 #line 31
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Action\' c" +
-                        "olumn:", ((string)(null)), table1053, "Then ");
+                        "olumn:", ((string)(null)), table1121, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1054 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1122 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1054.AddRow(new string[] {
+                table1122.AddRow(new string[] {
                             "Onboard User Object"});
 #line 38
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Action\' c" +
-                        "olumn:", ((string)(null)), table1054, "When ");
+                        "olumn:", ((string)(null)), table1122, "When ");
 #line hidden
 #line 41
  testRunner.Then("Rows counter shows \"807\" of \"1,527\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -324,27 +324,27 @@ this.FeatureBackground();
 #line 48
  testRunner.Then("Counter shows \"60,305\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1055 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1123 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1055.AddRow(new string[] {
+                table1123.AddRow(new string[] {
                             "Onboard Application Object"});
-                table1055.AddRow(new string[] {
+                table1123.AddRow(new string[] {
                             "Onboard Device Object"});
-                table1055.AddRow(new string[] {
+                table1123.AddRow(new string[] {
                             "Onboard User Object"});
 #line 49
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Action\' c" +
-                        "olumn:", ((string)(null)), table1055, "Then ");
+                        "olumn:", ((string)(null)), table1123, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1056 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1124 = new TechTalk.SpecFlow.Table(new string[] {
                             "checkboxes"});
-                table1056.AddRow(new string[] {
+                table1124.AddRow(new string[] {
                             "Onboard Application Object"});
-                table1056.AddRow(new string[] {
+                table1124.AddRow(new string[] {
                             "Onboard Device Object"});
 #line 54
  testRunner.When("User unchecks following checkboxes in the filter dropdown menu for the \'Action\' c" +
-                        "olumn:", ((string)(null)), table1056, "When ");
+                        "olumn:", ((string)(null)), table1124, "When ");
 #line hidden
 #line 58
  testRunner.Then("Rows counter shows \"41,339\" of \"60,305\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

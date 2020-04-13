@@ -14,7 +14,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAppOwnersSectionIsDisabledWhenDoNotInc
 	When User navigates to the 'Scope' left menu item
 	When User navigates to the 'Scope Details' left menu item
 	When User navigates to the 'User Scope' tab on Project Scope Changes page
-	When User clicks 'Do not include users' radio button
+	When User checks 'Do not include users' radio button
 	Then 'Do not include app owners' radio button is disabled
 	Then 'Include app owners' radio button is disabled
 
@@ -51,3 +51,35 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectBasedOnListHavingFilteredByGrou
 	When User expand Dependants section
 	Then Dependants section is displayed to the user
 	When User clicks "TestProject18759" list in the Dependants section
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS19883 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatNoPopupDisplayedWhenUserNavigatesFromScopeChangesPageAfterSelectingObjects
+	When Project created via API and opened
+	| ProjectName    | Scope       | ProjectTemplate | Mode               |
+	| Prj_D_DAS19883 | All Devices | None            | Standalone Project |
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Devices' tab on Project Scope Changes page
+	Then open tab in the Project Scope Changes section is active
+	When User expands multiselect and selects following Objects
+	| Objects        |
+	| 001PSUMZYOW581 |
+	When User clicks 'Projects' header breadcrumb
+	Then Warning Pop-up is not displayed
+	Then Page with 'Projects' header is displayed to user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS20276 @Cleanup
+Scenario: EvergreenJnr_AdminPage_CheckThatUserScopeValueCanBeChangedForProjectBacedOnBrokenList
+	When User creates broken list with 'Broken list DAS20276' name on 'Devices' page
+	When Project created via API and opened
+	| ProjectName   | Scope                | ProjectTemplate | Mode               |
+	| 20276_Project | Broken list DAS20276 | None            | Standalone Project |
+	Then Page with '20276_Project' header is displayed to user
+	When User navigates to the 'Scope' left menu item
+	When User navigates to the 'Scope Details' left menu item
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
+	When User selects 'Users with Device Count' in the 'User Scope' dropdown
+	When User navigates to the 'Scope Changes' left menu item
+	When User navigates to the 'Scope Details' left menu item
+	When User navigates to the 'User Scope' tab on Project Scope Changes page
+	Then 'Users with Device Count' content is displayed in 'User Scope' dropdown

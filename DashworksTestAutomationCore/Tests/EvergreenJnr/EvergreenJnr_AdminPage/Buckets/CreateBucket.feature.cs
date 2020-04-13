@@ -286,16 +286,16 @@ this.FeatureBackground();
 #line 38
  testRunner.Then("\'TRUE\' content is displayed in the \'Default\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table588 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table655 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "TeamName",
                             "IsDefault"});
-                table588.AddRow(new string[] {
+                table655.AddRow(new string[] {
                             "TestBucket5",
                             "Admin IT",
                             "true"});
 #line 39
- testRunner.When("User creates new Bucket via api", ((string)(null)), table588, "When ");
+ testRunner.When("User creates new Bucket via api", ((string)(null)), table655, "When ");
 #line hidden
 #line 42
  testRunner.And("User navigates to newly created Bucket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

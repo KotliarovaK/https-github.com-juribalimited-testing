@@ -144,18 +144,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1085 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1153 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "Scope",
                             "ProjectTemplate",
                             "Mode"});
-                table1085.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "14695_Project",
                             "All Devices",
                             "None",
                             "Standalone Project"});
 #line 10
- testRunner.When("Project created via API and opened", ((string)(null)), table1085, "When ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table1153, "When ");
 #line hidden
 #line 13
  testRunner.When("User navigates to the \'Rings\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -163,34 +163,34 @@ this.FeatureBackground();
 #line 14
  testRunner.Then("\'\' content is displayed in the \'Devices\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1086 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1154 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1086.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Ring"});
-                table1086.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             ""});
-                table1086.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Default"});
-                table1086.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "Devices"});
 #line 15
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1086, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1154, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1087 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1155 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table1087.AddRow(new string[] {
+                table1155.AddRow(new string[] {
                             "Edit"});
-                table1087.AddRow(new string[] {
+                table1155.AddRow(new string[] {
                             "Duplicate"});
-                table1087.AddRow(new string[] {
+                table1155.AddRow(new string[] {
                             "Move to top"});
-                table1087.AddRow(new string[] {
+                table1155.AddRow(new string[] {
                             "Move to bottom"});
-                table1087.AddRow(new string[] {
+                table1155.AddRow(new string[] {
                             "Move to position"});
 #line 21
  testRunner.When("User clicks Cog-menu for \'Unassigned\' item in the \'Ring\' column and sees followin" +
-                        "g cog-menu options", ((string)(null)), table1087, "When ");
+                        "g cog-menu options", ((string)(null)), table1155, "When ");
 #line hidden
 #line 28
  testRunner.When("User clicks \'CREATE PROJECT RING\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -202,7 +202,7 @@ this.FeatureBackground();
  testRunner.When("User enters \'14695_Ring\' text to \'Ring name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 31
- testRunner.And("User clicks Create button on the Create Ring page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 32
  testRunner.Then("\'The ring has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -220,7 +220,7 @@ this.FeatureBackground();
  testRunner.When("User clicks Default Ring checkbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 37
- testRunner.And("User clicks Create button on the Create Ring page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 38
  testRunner.When("User opens \'Ring\' column settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -237,27 +237,27 @@ this.FeatureBackground();
 #line 42
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1088 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1156 = new TechTalk.SpecFlow.Table(new string[] {
                             "Values"});
-                table1088.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "1"});
-                table1088.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "2"});
-                table1088.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "3"});
 #line 43
- testRunner.Then("User sees following Display order on the Automation page", ((string)(null)), table1088, "Then ");
+ testRunner.Then("User sees following Display order on the Automation page", ((string)(null)), table1156, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1089 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1157 = new TechTalk.SpecFlow.Table(new string[] {
                             "Content"});
-                table1089.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "Unassigned"});
-                table1089.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "14695_Ring"});
-                table1089.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "Ring_Test"});
 #line 48
- testRunner.Then("Content in the \'Ring\' column is equal to", ((string)(null)), table1089, "Then ");
+ testRunner.Then("Content in the \'Ring\' column is equal to", ((string)(null)), table1157, "Then ");
 #line hidden
 #line 53
  testRunner.When("User clicks on \'Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -271,32 +271,32 @@ this.FeatureBackground();
 #line 56
  testRunner.Then("data in table is sorted by \'Ring\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1090 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1158 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table1090.AddRow(new string[] {
+                table1158.AddRow(new string[] {
                             "Edit"});
-                table1090.AddRow(new string[] {
+                table1158.AddRow(new string[] {
                             "Duplicate"});
-                table1090.AddRow(new string[] {
+                table1158.AddRow(new string[] {
                             "Move to top"});
-                table1090.AddRow(new string[] {
+                table1158.AddRow(new string[] {
                             "Move to bottom"});
-                table1090.AddRow(new string[] {
+                table1158.AddRow(new string[] {
                             "Move to position"});
-                table1090.AddRow(new string[] {
+                table1158.AddRow(new string[] {
                             "Set default"});
-                table1090.AddRow(new string[] {
+                table1158.AddRow(new string[] {
                             "Delete"});
 #line 57
  testRunner.When("User clicks Cog-menu for \'Unassigned\' item in the \'Ring\' column and sees followin" +
-                        "g cog-menu options", ((string)(null)), table1090, "When ");
+                        "g cog-menu options", ((string)(null)), table1158, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1091 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1159 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table1091.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "Unassigned"});
 #line 66
- testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table1091, "When ");
+ testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table1159, "When ");
 #line hidden
 #line 69
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -377,34 +377,34 @@ this.FeatureBackground();
 #line 79
  testRunner.Then("\'729\' content is displayed in the \'Mailboxes\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1092 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1160 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table1092.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "Ring"});
-                table1092.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             ""});
-                table1092.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "Default"});
-                table1092.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "Mailboxes"});
 #line 80
- testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1092, "Then ");
+ testRunner.Then("grid headers are displayed in the following order", ((string)(null)), table1160, "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1093 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1161 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table1093.AddRow(new string[] {
+                table1161.AddRow(new string[] {
                             "Edit"});
-                table1093.AddRow(new string[] {
+                table1161.AddRow(new string[] {
                             "Duplicate"});
-                table1093.AddRow(new string[] {
+                table1161.AddRow(new string[] {
                             "Move to top"});
-                table1093.AddRow(new string[] {
+                table1161.AddRow(new string[] {
                             "Move to bottom"});
-                table1093.AddRow(new string[] {
+                table1161.AddRow(new string[] {
                             "Move to position"});
 #line 86
  testRunner.When("User clicks Cog-menu for \'Unassigned\' item in the \'Ring\' column and sees followin" +
-                        "g cog-menu options", ((string)(null)), table1093, "When ");
+                        "g cog-menu options", ((string)(null)), table1161, "When ");
 #line hidden
 #line 93
  testRunner.When("User clicks \'CREATE PROJECT RING\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -416,7 +416,7 @@ this.FeatureBackground();
  testRunner.When("User enters \'14705_Ring\' text to \'Ring name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 96
- testRunner.And("User clicks Create button on the Create Ring page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 97
  testRunner.Then("\'The ring has been created\' text is displayed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -431,7 +431,7 @@ this.FeatureBackground();
  testRunner.When("User enters \'Ring_Test\' text to \'Ring name\' textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 101
- testRunner.And("User clicks Create button on the Create Ring page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \'CREATE\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 102
  testRunner.When("User clicks on \'Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -439,25 +439,25 @@ this.FeatureBackground();
 #line 103
  testRunner.Then("data in table is sorted by \'Ring\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1094 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1162 = new TechTalk.SpecFlow.Table(new string[] {
                             "options"});
-                table1094.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "Edit"});
-                table1094.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "Duplicate"});
-                table1094.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "Move to top"});
-                table1094.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "Move to bottom"});
-                table1094.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "Move to position"});
-                table1094.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "Set default"});
-                table1094.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "Delete"});
 #line 104
  testRunner.When("User clicks Cog-menu for \'14705_Ring\' item in the \'Ring\' column and sees followin" +
-                        "g cog-menu options", ((string)(null)), table1094, "When ");
+                        "g cog-menu options", ((string)(null)), table1162, "When ");
 #line hidden
 #line 113
  testRunner.When("User clicks on \'Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -465,14 +465,14 @@ this.FeatureBackground();
 #line 114
  testRunner.Then("data in table is sorted by \'Ring\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1095 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1163 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table1095.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "Ring_Test"});
-                table1095.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "14705_Ring"});
 #line 115
- testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table1095, "When ");
+ testRunner.When("User select \"Ring\" rows in the grid", ((string)(null)), table1163, "When ");
 #line hidden
 #line 119
  testRunner.And("User selects \'Delete\' in the \'Actions\' dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

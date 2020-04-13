@@ -28,13 +28,13 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters '14695_Ring' text to 'Ring name' textbox
-	And User clicks Create button on the Create Ring page
+	When User clicks 'CREATE' button
 	Then 'The ring has been created' text is displayed on inline success banner
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'Ring_Test' text to 'Ring name' textbox
 	When User clicks Default Ring checkbox
-	And User clicks Create button on the Create Ring page
+	When User clicks 'CREATE' button
 	When User opens 'Ring' column settings
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -93,12 +93,12 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters '14705_Ring' text to 'Ring name' textbox
-	And User clicks Create button on the Create Ring page
+	When User clicks 'CREATE' button
 	Then 'The ring has been created' text is displayed on inline success banner
 	When User clicks 'CREATE PROJECT RING' button 
 	Then Page with 'Create Project Ring' subheader is displayed to user
 	When User enters 'Ring_Test' text to 'Ring name' textbox
-	And User clicks Create button on the Create Ring page
+	When User clicks 'CREATE' button
 	When User clicks on 'Ring' column header
 	Then data in table is sorted by 'Ring' column in ascending order
 	When User clicks Cog-menu for '14705_Ring' item in the 'Ring' column and sees following cog-menu options

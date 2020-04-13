@@ -139,18 +139,18 @@ this.FeatureBackground();
 #line 11
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2539 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3068 = new TechTalk.SpecFlow.Table(new string[] {
                             "OptionsName"});
-                table2539.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Copy cell"});
-                table2539.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Copy row"});
-                table2539.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Open in new tab"});
-                table2539.AddRow(new string[] {
+                table3068.AddRow(new string[] {
                             "Open in new window"});
 #line 12
- testRunner.Then("User sees context menu with next options", ((string)(null)), table2539, "Then ");
+ testRunner.Then("User sees context menu with next options", ((string)(null)), table3068, "Then ");
 #line hidden
 #line 18
  testRunner.When("User selects \'Copy cell\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -167,30 +167,30 @@ this.FeatureBackground();
 #line 22
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2540 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3069 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table2540.AddRow(new string[] {
+                table3069.AddRow(new string[] {
                             string.Format("{0}", selectedRow)});
 #line 23
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table2540, "When ");
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3069, "When ");
 #line hidden
 #line 26
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2541 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3070 = new TechTalk.SpecFlow.Table(new string[] {
                             "OptionsName"});
-                table2541.AddRow(new string[] {
+                table3070.AddRow(new string[] {
                             "Copy cell"});
-                table2541.AddRow(new string[] {
+                table3070.AddRow(new string[] {
                             "Copy row"});
-                table2541.AddRow(new string[] {
+                table3070.AddRow(new string[] {
                             "Copy selected rows"});
-                table2541.AddRow(new string[] {
+                table3070.AddRow(new string[] {
                             "Open in new tab"});
-                table2541.AddRow(new string[] {
+                table3070.AddRow(new string[] {
                             "Open in new window"});
 #line 27
- testRunner.Then("User sees context menu with next options", ((string)(null)), table2541, "Then ");
+ testRunner.Then("User sees context menu with next options", ((string)(null)), table3070, "Then ");
 #line hidden
 #line 34
  testRunner.When("User selects \'Copy cell\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -209,7 +209,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "00HA7MKAVVFDAV\\tLaptop\\tWindows 7\\tKris C. Herman", null)]
+        [NUnit.Framework.CategoryAttribute("DAS20346")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "00HA7MKAVVFDAV\\tLaptop\\tWindows 10\\tKris C. Herman", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "$6BE000-SUDQ9614UVO8\\tBCLABS\\tExchange Online-ApplicationAccount\\tExchange Online" +
             "-ApplicationAccount.Users.bclabs.local", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", "0004 - Adobe Acrobat Reader 5.0.5 Francais\\tAdobe\\t5.0.5", null)]
@@ -222,14 +223,15 @@ this.FeatureBackground();
                     "AllLists",
                     "EvergreenJnr_ListDetails",
                     "ListDetailsFunctionality",
-                    "DAS12968"};
+                    "DAS12968",
+                    "DAS20346"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks", null, @__tags);
-#line 46
+#line 45
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -252,29 +254,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 47
+#line 46
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 48
+#line 47
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 49
+#line 48
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2542 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3071 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table2542.AddRow(new string[] {
+                table3071.AddRow(new string[] {
                             string.Format("{0}", selectedRow)});
-#line 50
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table2542, "When ");
+#line 49
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3071, "When ");
 #line hidden
-#line 53
+#line 52
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 54
+#line 53
  testRunner.And("User selects \'Copy row\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 55
+#line 54
  testRunner.Then(string.Format("Next data \'{0}\' is copied", expectedData), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -288,8 +290,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "001PSUMZYOW581", "001BAQXT6JWFPI\\tDesktop\\tWindows 7\\tNicole P. Braun \\t001PSUMZYOW581\\tLaptop\\tWin" +
-            "dows 7\\tTricia G. Huang", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "001PSUMZYOW581", "001BAQXT6JWFPI\\tDesktop\\tWindows 10\\tNicole P. Braun \\t001PSUMZYOW581\\tLaptop\\tWi" +
+            "ndows 10\\tTricia G. Huang", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "002B5DC7D4D34D5C895", "000F977AC8824FE39B8\\tBCLABS\\tSpruill, Shea\\tSpruill\\, Shea.Employees.Birmingham.U" +
             "K.bclabs.local \\t002B5DC7D4D34D5C895\\tDWLABS\\tCollor, Christopher\\tCollor\\, Chri" +
             "stopher.Users.Birmingham.dwlabs.local", null)]
@@ -312,7 +314,7 @@ this.FeatureBackground();
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks", null, @__tags);
-#line 66
+#line 65
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -335,31 +337,31 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 67
+#line 66
  testRunner.When(string.Format("User clicks \'{0}\' on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 68
+#line 67
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 69
+#line 68
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2543 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3072 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedRowsName"});
-                table2543.AddRow(new string[] {
+                table3072.AddRow(new string[] {
                             string.Format("{0}", selectedRow1)});
-                table2543.AddRow(new string[] {
+                table3072.AddRow(new string[] {
                             string.Format("{0}", selectedRow2)});
-#line 70
- testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table2543, "When ");
+#line 69
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table3072, "When ");
 #line hidden
-#line 74
+#line 73
  testRunner.When(string.Format("User right clicks on \'{0}\' cell from \'{1}\' column", targetCell, columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 75
+#line 74
  testRunner.And("User selects \'Copy selected rows\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 76
+#line 75
  testRunner.Then(string.Format("Next data \'{0}\' is copied", expectedData), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -392,7 +394,7 @@ this.FeatureBackground();
                         "ListDetailsFunctionality",
                         "DAS16332",
                         "Cleanup"});
-#line 86
+#line 85
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -415,34 +417,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 87
+#line 86
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 88
+#line 87
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2544 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3073 = new TechTalk.SpecFlow.Table(new string[] {
                             "SelectedCheckboxes"});
-                table2544.AddRow(new string[] {
+                table3073.AddRow(new string[] {
                             "TRUE"});
-#line 89
- testRunner.And("User add \"1803: In Scope\" filter where type is \"Equals\" with added column and fol" +
-                        "lowing checkboxes:", ((string)(null)), table2544, "And ");
+#line 88
+ testRunner.And("User add \"2004: In Scope\" filter where type is \"Equals\" with added column and fol" +
+                        "lowing checkboxes:", ((string)(null)), table3073, "And ");
+#line hidden
+#line 91
+ testRunner.And("User create dynamic list with \"TestListName4682\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 92
- testRunner.And("User create dynamic list with \"TestListName\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\"TestListName4682\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 93
- testRunner.Then("\"TestListName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \'Manage\' option in cogmenu for \'TestListName4682\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 94
- testRunner.When("User clicks \'Manage\' option in Cog-menu for \'TestListName\' list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 95
  testRunner.And("User adds \"post\" to list name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 96
- testRunner.Then("\"TestListNamepost\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 95
+ testRunner.Then("\"TestListName4682post\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -469,7 +471,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS17632"});
-#line 99
+#line 98
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -492,29 +494,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 100
+#line 99
  testRunner.When("User clicks \'Devices\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2545 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3074 = new TechTalk.SpecFlow.Table(new string[] {
                             "ColumnName"});
-                table2545.AddRow(new string[] {
+                table3074.AddRow(new string[] {
                             "Device Key"});
-#line 101
- testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table2545, "When ");
+#line 100
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table3074, "When ");
 #line hidden
-#line 104
+#line 103
  testRunner.And("User sets includes archived devices in \'true\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 105
+#line 104
  testRunner.And("User clicks content from first row of Hostname column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 106
+#line 105
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 107
+#line 106
  testRunner.When("User clicks content from first row of Device Key column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 108
+#line 107
  testRunner.Then("\'All Devices\' list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

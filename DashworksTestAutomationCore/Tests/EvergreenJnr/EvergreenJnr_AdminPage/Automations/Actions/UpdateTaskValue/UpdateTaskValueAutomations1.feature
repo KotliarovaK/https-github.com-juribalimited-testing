@@ -8,8 +8,8 @@ Background: Pre-Conditions
 @Evergreen @EvergreenJnr_AdminPage @Automations @DAS18320 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDisplayedInProjectDropdown
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 18320_Automation | 18320       | true   | false              | All Applications | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 18320_Automation | 18320       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -17,9 +17,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	And User enters '18320_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
-	When User selects '1803 Rollout' option from 'Project' autocomplete
-	When User selects 'Pre-Migration' option from 'Stage' autocomplete
-	When User selects 'App Workflow' option from 'Task' autocomplete
+	When User selects '2004 Rollout' option from 'Project' autocomplete
+	When User selects 'Pre-Migration \ App Workflow' option from 'Task' autocomplete
 	And User selects 'Not Started' in the 'Value' dropdown
 	And User clicks 'CREATE' button 
 	#Create Action
@@ -27,11 +26,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithoutTasksForScopeIsNotDispla
 	Then 'Edit Action' page subheader is displayed to user
 	Then 'Mailbox Evergreen Capacity Project' content is not displayed in 'Project' autocomplete after search
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18640 @DAS19274 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 182481_Automation | 18248       | true   | false              | All Devices | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 182481_Automation | 18248       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -39,16 +38,18 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	And User enters '18248_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Date Computer' option from 'Task' autocomplete
+	When User selects 'One \ Date Computer' option from 'Task' autocomplete
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
+	When User enters '0' text to 'Value' textbox
+	Then User sees '0 to 100,000' hint below 'Value' field
+	Then '0' content is displayed in 'Value' autocomplete
 	When User enters '999999' text to 'Value' textbox
-	Then '100000' content is displayed in 'Value' textbox
+	Then User sees '0 to 100,000' red hint below 'Value' field
 	When User enters '-5' text to 'Value' textbox
-	Then '1' content is displayed in 'Value' textbox
+	Then User sees '0 to 100,000' red hint below 'Value' field
 	When User enters '2' text to 'Value' textbox
 	Then 'CREATE' button is not disabled
-	When User selects 'Before current value' in the 'Before or After' dropdown
+	When User selects 'days before current value' in the 'Units' dropdown
 	And User clicks 'CREATE' button
 	#Check created Action
 	When User clicks content from "Action" column
@@ -56,17 +57,15 @@ Scenario: EvergreenJnr_AdminPage_CheckDevicesAutomationsUpdateRelativeToCurrentV
 	Then "18248_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' textbox
-	Then 'One' content is displayed in 'Stage' textbox
-	Then 'Date Computer' content is displayed in 'Task' textbox
+	Then 'One \ Date Computer' content is displayed in 'Task' textbox
 	Then '2' content is displayed in 'Value' textbox
-	Then 'Days' value is displayed in the 'Units' dropdown
-	Then 'Before current value' value is displayed in the 'Before or After' dropdown
+	Then 'days before current value' value is displayed in the 'Units' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @DAS18886 @Cleanup @Universe
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS18965 @DAS18886 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope            | Run    |
-	| 182482_Automation | 18248       | true   | false              | All Applications | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope            | Run    |
+	| 182482_Automation | 18248       | true     | false              | All Applications | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -74,19 +73,19 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	And User enters '18248_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Computer Scheduled Test (Jo)' option from 'Project' autocomplete
-	When User selects 'One' option from 'Stage' autocomplete
-	When User selects 'Radio Rag Date Owner App' option from 'Task' autocomplete
+	When User selects 'One \ Radio Rag Date Owner App' option from 'Task' autocomplete
 	When User selects 'No change' in the 'Update Value' dropdown
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
-	| No change                        |
+	| Options                                   |
+	| No change                                 |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '2' text to 'Value' textbox
-	When User selects 'After current value' in the 'Before or After' dropdown
+	When User selects 'days after current value' in the 'Units' dropdown
 	When User selects 'No change' in the 'Update Owner' dropdown
 	And User clicks 'CREATE' button
 	Then 'The automation action has been created' text is displayed on inline success banner
@@ -112,21 +111,18 @@ Scenario: EvergreenJnr_AdminPage_CheckApplicationsAutomationsUpdateRelativeToCur
 	Then "18248_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Computer Scheduled Test (Jo)' content is displayed in 'Project' textbox
-	Then 'One' content is displayed in 'Stage' textbox
-	Then 'Radio Rag Date Owner App' content is displayed in 'Task' textbox
+	Then 'One \ Radio Rag Date Owner App' content is displayed in 'Task' textbox
 	Then '2' content is displayed in 'Value' textbox
 	Then 'No change' value is displayed in the 'Update Value' dropdown
 	Then 'Update relative to current value' value is displayed in the 'Update Date' dropdown
 	Then 'No change' value is displayed in the 'Update Owner' dropdown
-	Then 'Days' value is displayed in the 'Units' dropdown
-	Then 'After current value' value is displayed in the 'Before or After' dropdown
+	Then 'days after current value' value is displayed in the 'Units' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup @Not_Ready
-#Waiting for 'Update relative to current value' value in dropdown
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope         | Run    |
-	| 182483_Automation | 18248       | true   | false              | All Mailboxes | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope         | Run    |
+	| 182483_Automation | 18248       | true     | false              | All Mailboxes | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -134,14 +130,14 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	And User enters '18248_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Mailbox Evergreen Capacity Project' option from 'Project' autocomplete
-	When User selects '1' option from 'Stage' autocomplete
-	When User selects 'Completed' option from 'Task' autocomplete
+	When User selects '1 \ Completed' option from 'Task' autocomplete
 	Then following Values are displayed in the 'Update Date' dropdown:
-	| Options                          |
-	| Update                           |
-	| Update relative to current value |
-	| Update relative to now           |
-	| Remove                           |
+	| Options                                   |
+	| Update                                    |
+	| Update relative to current value          |
+	| Update relative to now                    |
+	| Update relative to a different task value |
+	| Remove                                    |
 	When User selects 'Update relative to current value' in the 'Update Date' dropdown
 	When User enters '3' text to 'Value' textbox
 	And User clicks 'CREATE' button
@@ -151,17 +147,15 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxesAutomationsUpdateRelativeToCurren
 	Then "18248_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Mailbox Evergreen Capacity Project' content is displayed in 'Project' textbox
-	Then '1' content is displayed in 'Stage' textbox
-	Then 'Completed' content is displayed in 'Task' textbox
+	Then '1 \ Completed' content is displayed in 'Task' textbox
 	Then '3' content is displayed in 'Value' textbox
-	Then 'Days' value is displayed in the 'Units' dropdown
-	Then 'After current value' value is displayed in the 'Before or After' dropdown
+	Then 'days before current value' value is displayed in the 'Units' dropdown
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @Cleanup
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18248 @DAS18276 @DAS19117 @DAS19274 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentValue
 	When User creates new Automation via API and open it
-	| AutomationName    | Description | Active | StopOnFailedAction | Scope     | Run    |
-	| 182484_Automation | 18248       | true   | false              | All Users | Manual |
+	| Name              | Description | IsActive | StopOnFailedAction | Scope     | Run    |
+	| 182484_Automation | 18248       | true     | false              | All Users | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -169,17 +163,22 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	And User enters '18248_Action' text to 'Action Name' textbox
 	And User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects 'Barry's User Project' option from 'Project' autocomplete
-	When User selects 'Project Dates' option from 'Stage' autocomplete
-	When User selects 'Forecast Date' option from 'Task' autocomplete
+	When User selects 'Project Dates \ Forecast Date' option from 'Task' autocomplete
 	Then inline error banner is not displayed
 	When User selects 'Update relative to now' in the 'Update Date' dropdown
-	Then following Values are displayed in the 'Before or After' dropdown:
-	| Options    |
-	| Before now |
-	| After now  |
+	When User enters '0' text to 'Value' textbox
+	Then User sees '0 to 100,000' hint below 'Value' field
+	Then '0' content is displayed in 'Value' autocomplete
+	Then following Values are displayed in the 'Units' dropdown:
+	| Options             |
+	| days before now     |
+	| days after now      |
+	| weekdays before now |
+	| weekdays after now  |
+	| hours before now    |
+	| hours after now     |
 	When User enters '4' text to 'Value' textbox
-	When User selects 'Hours' in the 'Units' dropdown
-	When User selects 'Before now' in the 'Before or After' dropdown
+	When User selects 'hours before now' in the 'Units' dropdown
 	And User clicks 'CREATE' button
 	#Check created Action
 	When User clicks content from "Action" column
@@ -187,9 +186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUsersAutomationsUpdateRelativeToCurrentVal
 	Then "18248_Action" content is displayed in "Action Name" field
 	Then 'Update task value' content is displayed in 'Action Type' dropdown
 	Then 'Barry's User Project' content is displayed in 'Project' textbox
-	Then 'Project Dates' content is displayed in 'Stage' textbox
-	Then 'Forecast Date' content is displayed in 'Task' textbox
+	Then 'Project Dates \ Forecast Date' content is displayed in 'Task' textbox
 	Then '4' content is displayed in 'Value' textbox
-	Then 'Hours' value is displayed in the 'Units' dropdown
+	Then 'hours before now' value is displayed in the 'Units' dropdown
 	Then 'Update relative to now' value is displayed in the 'Update Date' dropdown
-	Then 'Before now' value is displayed in the 'Before or After' dropdown

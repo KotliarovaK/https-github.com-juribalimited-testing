@@ -268,8 +268,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueCapacitySlotValidations
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	Then "SLOT NOT ASSOCIATED TO THE TASK" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @Cleanup @Not_Ready
-#Waiting for new banner message on the Create Actions page
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @DAS20038 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForUnpublishedTask
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -314,8 +313,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForUnpublishedTas
 	#Create Automation
 	When User clicks 'Admin' on the left-hand menu
 	When User creates new Automation via API and open it
-	| AutomationName   | Description | Active | StopOnFailedAction | Scope       | Run    |
-	| 18669_Automation | 18669       | true   | false              | All Devices | Manual |
+	| Name             | Description | IsActive | StopOnFailedAction | Scope       | Run    |
+	| 18669_Automation | 18669       | true     | false              | All Devices | Manual |
 	Then Automation page is displayed correctly
 	When User navigates to the 'Actions' left menu item
 	#Create Action
@@ -323,8 +322,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForUnpublishedTas
 	When User enters '18669_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '18669_Project' option from 'Project' autocomplete
-	When User selects '18669_Stage' option from 'Stage' autocomplete
-	When User selects '18669_Task' option from 'Task' autocomplete
+	When User selects '18669_Stage \ 18669_Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	And User enters '1 Oct 2019' text to 'Date' datepicker
 	When User clicks 'CREATE' button
@@ -345,9 +343,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForUnpublishedTas
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	Then 'This task is not published' error message is displayed for 'Task' field
+	Then 'UPDATE' button is disabled
+	When User selects '18669_Project' option from 'Project' autocomplete
+	When User selects '18669_Stage \ 18669_Task2' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Date' dropdown
+	And User enters '1 Oct 2019' text to 'Date' datepicker
+	Then 'UPDATE' button is not disabled
 
-@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @Cleanup @Not_Ready
-#Waiting for new banner message on the Create Actions page
+@Evergreen @EvergreenJnr_AdminPage @Automations @DAS18669 @DAS20038 @Cleanup @Wormhole
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForReadOnlyInAutomationsTask
 	When Project created via API and opened
 	| ProjectName    | Scope       | ProjectTemplate | Mode               |
@@ -401,8 +404,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForReadOnlyInAuto
 	When User enters '18669_Action' text to 'Action Name' textbox
 	When User selects 'Update task value' in the 'Action Type' dropdown
 	When User selects '18669_Project1' option from 'Project' autocomplete
-	When User selects '18669_Stage' option from 'Stage' autocomplete
-	When User selects '18669_Task' option from 'Task' autocomplete
+	When User selects '18669_Stage \ 18669_Task' option from 'Task' autocomplete
 	When User selects 'Update' in the 'Update Date' dropdown
 	And User enters '1 Oct 2019' text to 'Date' datepicker
 	When User clicks 'CREATE' button
@@ -425,3 +427,9 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueValidationForReadOnlyInAuto
 	When User navigates to the 'Actions' left menu item
 	When User clicks content from "Action" column
 	Then 'This task is read-only for automations' error message is displayed for 'Task' field
+	Then 'UPDATE' button is disabled
+	When User selects '18669_Project1' option from 'Project' autocomplete
+	When User selects '18669_Stage \ 18669_Task2' option from 'Task' autocomplete
+	When User selects 'Update' in the 'Update Date' dropdown
+	And User enters '1 Oct 2019' text to 'Date' datepicker
+	Then 'UPDATE' button is not disabled

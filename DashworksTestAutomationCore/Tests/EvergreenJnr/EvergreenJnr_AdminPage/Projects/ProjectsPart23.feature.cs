@@ -141,18 +141,18 @@ this.FeatureBackground();
 #line 11
  testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table984 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1049 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "ShortName",
                             "Description",
                             "Type"});
-                table984.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "DAS14819Project",
                             "14819",
                             "",
                             ""});
 #line 12
- testRunner.When("User creates new Project on Senior", ((string)(null)), table984, "When ");
+ testRunner.When("User creates new Project on Senior", ((string)(null)), table1049, "When ");
 #line hidden
 #line 15
  testRunner.And("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -186,8 +186,8 @@ this.FeatureBackground();
  testRunner.When("User confirms converting to Evergreen process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
- testRunner.Then("Success converting message appears with the next \"This legacy project has success" +
-                        "fully been converted to Evergreen\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'This legacy project has successfully been converted to Evergreen\' text is displa" +
+                        "yed on inline success banner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 26
  testRunner.And("Convert to Evergreen button is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -269,18 +269,18 @@ this.FeatureBackground();
 #line 35
  testRunner.And("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table985 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1050 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProjectName",
                             "ShortName",
                             "Description",
                             "Type"});
-                table985.AddRow(new string[] {
+                table1050.AddRow(new string[] {
                             "DAS15260Project",
                             "15260",
                             "",
                             ""});
 #line 36
- testRunner.And("User creates new Project on Senior", ((string)(null)), table985, "And ");
+ testRunner.And("User creates new Project on Senior", ((string)(null)), table1050, "And ");
 #line hidden
 #line 39
  testRunner.And("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -324,32 +324,32 @@ this.FeatureBackground();
 #line 52
  testRunner.And("User navigates to the \'Devices\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table986 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1051 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table986.AddRow(new string[] {
+                table1051.AddRow(new string[] {
                             "001PSUMZYOW581"});
 #line 53
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table986, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1051, "And ");
 #line hidden
 #line 56
  testRunner.And("User navigates to the \'Users\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table987 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1052 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table987.AddRow(new string[] {
+                table1052.AddRow(new string[] {
                             "AAD1011948 (Pinabel Cinq-Mars)"});
 #line 57
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table987, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1052, "And ");
 #line hidden
 #line 60
  testRunner.And("User navigates to the \'Applications\' tab on Project Scope Changes page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table988 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1053 = new TechTalk.SpecFlow.Table(new string[] {
                             "Objects"});
-                table988.AddRow(new string[] {
+                table1053.AddRow(new string[] {
                             "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
 #line 61
- testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table988, "And ");
+ testRunner.And("User expands multiselect and selects following Objects", ((string)(null)), table1053, "And ");
 #line hidden
 #line 64
  testRunner.And("User clicks \'UPDATE ALL CHANGES\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -441,7 +441,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Projects",
                         "DAS12389"});
-#line 87
+#line 86
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -464,19 +464,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 88
+#line 87
  testRunner.When("User clicks \'Admin\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 89
+#line 88
  testRunner.And("User navigates to the \'Projects\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 90
+#line 89
  testRunner.And("User tries to open not existing page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 91
+#line 90
  testRunner.Then("Page not found displayed for the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 92
+#line 91
  testRunner.And("There are only \'Page not found\' errors in console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -512,7 +512,7 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS16137",
                         "Cleanup"});
-#line 95
+#line 94
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -535,79 +535,79 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 96
+#line 95
  testRunner.When("User clicks \'Projects\' on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 97
+#line 96
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 98
+#line 97
  testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 99
+#line 98
  testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table989 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1054 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "FullName",
                             "Password",
                             "ConfirmPassword",
                             "Roles"});
-                table989.AddRow(new string[] {
+                table1054.AddRow(new string[] {
                             "DAS16137_user",
                             "Test_User",
                             "1234qwer",
                             "1234qwer",
                             "Analysis Editor"});
-#line 100
- testRunner.And("User create new User", ((string)(null)), table989, "And ");
+#line 99
+ testRunner.And("User create new User", ((string)(null)), table1054, "And ");
 #line hidden
-#line 103
+#line 102
  testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 104
+#line 103
  testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 105
+#line 104
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 106
+#line 105
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 107
+#line 106
  testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table990 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1055 = new TechTalk.SpecFlow.Table(new string[] {
                             "Username",
                             "Password"});
-                table990.AddRow(new string[] {
+                table1055.AddRow(new string[] {
                             "DAS16137_user",
                             "1234qwer"});
-#line 108
- testRunner.When("User login with following credentials:", ((string)(null)), table990, "When ");
+#line 107
+ testRunner.When("User login with following credentials:", ((string)(null)), table1055, "When ");
 #line hidden
-#line 111
+#line 110
  testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 112
+#line 111
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 113
+#line 112
  testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table991 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1056 = new TechTalk.SpecFlow.Table(new string[] {
                             "QueryType",
                             "QueryStringURL"});
-                table991.AddRow(new string[] {
+                table1056.AddRow(new string[] {
                             "Devices",
                             "evergreen/#/admin/project/63/scope/scopeChanges"});
-#line 114
- testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType with expecting error", ((string)(null)), table991, "When ");
+#line 113
+ testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType with expecting error", ((string)(null)), table1056, "When ");
 #line hidden
-#line 117
+#line 116
  testRunner.Then("\'Admin\' left-hand menu item is hidden", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 118
+#line 117
  testRunner.Then("error page with \'403\' status code and \'You are not authorized to view this page, " +
                         "speak to your Dashworks administrator\' error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
