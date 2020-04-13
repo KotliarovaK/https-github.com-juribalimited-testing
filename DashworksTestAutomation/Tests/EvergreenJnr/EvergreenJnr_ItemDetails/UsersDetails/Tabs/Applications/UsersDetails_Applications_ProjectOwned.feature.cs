@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
         [NUnit.Framework.CategoryAttribute("DAS17808")]
         [NUnit.Framework.CategoryAttribute("DAS18408")]
         [NUnit.Framework.CategoryAttribute("DAS19246")]
+        [NUnit.Framework.CategoryAttribute("DAS20802")]
         public virtual void EvergreenJnr_UsersList_CheckThatProjectOwnedSubtabIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -125,7 +126,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr.EvergreenJnr_ItemDetails.Us
                         "ApplicationsTab",
                         "DAS17808",
                         "DAS18408",
-                        "DAS19246"});
+                        "DAS19246",
+                        "DAS20802"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -177,7 +179,17 @@ this.FeatureBackground();
             table2.AddRow(new string[] {
                         "Version"});
             table2.AddRow(new string[] {
+                        "Criticality"});
+            table2.AddRow(new string[] {
                         "Rationalisation"});
+            table2.AddRow(new string[] {
+                        "Target App"});
+            table2.AddRow(new string[] {
+                        "Target App Criticality"});
+            table2.AddRow(new string[] {
+                        "Target App Hide From End Users"});
+            table2.AddRow(new string[] {
+                        "Target App Readiness"});
             table2.AddRow(new string[] {
                         "Path"});
             table2.AddRow(new string[] {
@@ -186,8 +198,6 @@ this.FeatureBackground();
                         "Workflow"});
             table2.AddRow(new string[] {
                         "Date"});
-            table2.AddRow(new string[] {
-                        "App Readiness"});
             table2.AddRow(new string[] {
                         "Stage 3"});
 #line 27
@@ -242,40 +252,40 @@ this.FeatureBackground();
                         "UsersDetails",
                         "ApplicationsTab",
                         "DAS18700"});
-#line 40
+#line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 41
+#line 45
  testRunner.When("User navigates to the \'User\' details page for \'LYZ6880619\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
+#line 46
  testRunner.Then("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
+#line 47
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 44
+#line 48
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 45
+#line 49
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 46
+#line 50
  testRunner.Then("\"Rationalisation\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
                         "UNCATEGORISED"});
-#line 47
+#line 51
  testRunner.Then("following checkboxes are displayed in the filter dropdown menu for the \'Rationali" +
                     "sation\' column:", ((string)(null)), table3, "Then ");
-#line 50
+#line 54
  testRunner.When("User closes Checkbox filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Content"});
             table4.AddRow(new string[] {
                         "UNCATEGORISED"});
-#line 51
+#line 55
  testRunner.Then("\'Rationalisation\' column contains following content", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -325,29 +335,29 @@ this.FeatureBackground();
                         "UsersDetails",
                         "ApplicationsTab",
                         "DAS18743"});
-#line 56
+#line 60
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 57
+#line 61
  testRunner.When("User navigates to the \'User\' details page for \'LYZ6880619\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 62
  testRunner.Then("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 59
+#line 63
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 60
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
- testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 62
- testRunner.When("User clicks \"Quartus II 2.0 Web Edition Full\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
- testRunner.Then("Details page for \'Quartus II 2.0 Web Edition Full\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 64
- testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
+ testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 66
+ testRunner.When("User clicks \"Quartus II 2.0 Web Edition Full\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
+ testRunner.Then("Details page for \'Quartus II 2.0 Web Edition Full\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 68
+ testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 69
  testRunner.And("Details page for \'LYZ6880619\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -399,28 +409,28 @@ this.FeatureBackground();
                         "UsersDetails",
                         "ApplicationsTab",
                         "DAS19321"});
-#line 68
+#line 72
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 69
+#line 73
  testRunner.When("User navigates to the \'User\' details page for the item with \'29342\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 70
+#line 74
  testRunner.Then("Details page for \'SNL594136\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 71
+#line 75
  testRunner.When("User selects \'Barry\'s User Project\' in the \'Item Details Project\' dropdown with w" +
                     "ait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 72
+#line 76
  testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 73
+#line 77
  testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
+#line 78
  testRunner.Then("\'VideoLAN VLC media player 0.8.2-test2 (A01)\' content is displayed in the \'Curren" +
                     "t App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 75
+#line 79
  testRunner.When("User selects \'Havoc (Big Data)\' in the \'Item Details Project\' dropdown with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 76
+#line 80
  testRunner.Then("\'Vertigo Managed Smart Documents Wrapper (SMS_GEN)\' content is displayed in the \'" +
                     "Current App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -479,30 +489,30 @@ this.FeatureBackground();
                         "DAS20088",
                         "DAS20186",
                         "Not_Ready"});
-#line 80
+#line 84
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 81
+#line 85
  testRunner.When("User navigates to the \'User\' details page for the item with \'537\' ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 86
  testRunner.Then("Details page for \'CVS3269200\' item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 83
+#line 87
  testRunner.When("User selects \'User Evergreen Capacity Project\' in the \'Item Details Project\' drop" +
                     "down with wait", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
- testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
- testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
- testRunner.Then("\'Empty\' content is displayed in the \'Current App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 87
- testRunner.When("User clicks \"Empty\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
+ testRunner.When("User navigates to the \'Applications\' left menu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 89
+ testRunner.When("User navigates to the \'Project Owned\' left submenu item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 90
+ testRunner.Then("\'Empty\' content is displayed in the \'Current App\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 91
+ testRunner.When("User clicks \"Empty\" link on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 92
  testRunner.Then("\'User Evergreen Capacity Project\' content is displayed in \'Item Details Project\' " +
                     "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 89
+#line 93
  testRunner.Then("\'Details\' left menu item is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -1074,6 +1074,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DeleteRings.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\SelfServiceBuilderContextPanelActions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelfServiceBuilderContextPanelActions.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\ApplicationOwnershipComponent.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2616,6 +2621,10 @@
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\Rings\DeleteRings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\Builder\SelfServiceBuilderContextPanelActions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SelfServiceBuilderContextPanelActions.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr\EvergreenJnr_AdminPage\SelfService\AdminSide\PrepareForMVP\Components\ApplicationOwnershipComponent.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
