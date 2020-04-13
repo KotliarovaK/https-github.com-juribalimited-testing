@@ -166,8 +166,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.Base
 
             for (int i = 0; i < page.HeaderOptions.Count; i++)
             {
-                string script = $"return window.getComputedStyle(document.getElementsByClassName('ql-picker-item')[{i}], ':before').getPropertyValue('content');";
-                string value = _driver.ExecuteScript(script).ToString().Trim('"');
+                string value = _driver.GetPseudoElementValue(page.HeaderOptions[i], ":before", "content");
                 actualheaderOptionNames.Add(value);
             }
 
